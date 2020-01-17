@@ -1,0 +1,314 @@
+\BOOKMARK [1][-]{toc.1}{Table of Contents}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{The Old Preface}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Introduction to Functions}{}% 3
+\BOOKMARK [1][-]{section.1.1}{Functions and their Representations}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.1}{Functions as Mappings}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.2}{Algebraic Representations of Functions}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.3}{Geometric Representations of Functions}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.4}{Exercises}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.5}{Answers}{section.1.1}% 9
+\BOOKMARK [1][-]{section.1.2}{Constant and Linear Functions}{chapter.1}% 10
+\BOOKMARK [2][-]{subsection.1.2.1}{Constant Functions}{section.1.2}% 11
+\BOOKMARK [2][-]{subsection.1.2.2}{Linear Functions}{section.1.2}% 12
+\BOOKMARK [2][-]{subsection.1.2.3}{Linear Regression}{section.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.2.4}{The Average Rate of Change of a Function}{section.1.2}% 14
+\BOOKMARK [2][-]{subsection.1.2.5}{Exercises}{section.1.2}% 15
+\BOOKMARK [2][-]{subsection.1.2.6}{Answers}{section.1.2}% 16
+\BOOKMARK [1][-]{section.1.3}{Absolute Value Functions}{chapter.1}% 17
+\BOOKMARK [2][-]{subsection.1.3.1}{Graphs of Absolute Value Functions}{section.1.3}% 18
+\BOOKMARK [2][-]{subsection.1.3.2}{Graphical Solution Techniques for Equations and Inequalities}{section.1.3}% 19
+\BOOKMARK [2][-]{subsection.1.3.3}{Exercises}{section.1.3}% 20
+\BOOKMARK [2][-]{subsection.1.3.4}{Answers}{section.1.3}% 21
+\BOOKMARK [1][-]{section.1.4}{Quadratic Functions}{chapter.1}% 22
+\BOOKMARK [2][-]{subsection.1.4.1}{Graphs of Quadratic Functions}{section.1.4}% 23
+\BOOKMARK [2][-]{subsection.1.4.2}{Inequalities involving Quadratic Functions}{section.1.4}% 24
+\BOOKMARK [2][-]{subsection.1.4.3}{Exercises}{section.1.4}% 25
+\BOOKMARK [2][-]{subsection.1.4.4}{Answers}{section.1.4}% 26
+\BOOKMARK [0][-]{chapter.2}{Polynomial Functions}{}% 27
+\BOOKMARK [1][-]{section.2.1}{Graphs of Polynomial Functions}{chapter.2}% 28
+\BOOKMARK [2][-]{subsection.2.1.1}{Monomial Functions}{section.2.1}% 29
+\BOOKMARK [2][-]{subsection.2.1.2}{Polynomial Functions}{section.2.1}% 30
+\BOOKMARK [2][-]{subsection.2.1.3}{Exercises}{section.2.1}% 31
+\BOOKMARK [2][-]{subsection.2.1.4}{Answers}{section.2.1}% 32
+\BOOKMARK [1][-]{section.2.2}{The Remainder and Factor Theorems}{chapter.2}% 33
+\BOOKMARK [2][-]{subsection.2.2.1}{Exercises}{section.2.2}% 34
+\BOOKMARK [2][-]{subsection.2.2.2}{Answers}{section.2.2}% 35
+\BOOKMARK [1][-]{section.2.3}{Real Zeros of Polynomials}{chapter.2}% 36
+\BOOKMARK [2][-]{subsection.2.3.1}{For Those Wishing to use a Graphing Utility}{section.2.3}% 37
+\BOOKMARK [2][-]{subsection.2.3.2}{For Those Wishing NOT to use a Graphing Calculator}{section.2.3}% 38
+\BOOKMARK [2][-]{subsection.2.3.3}{The Intermediate Value Theorem and Inequalities}{section.2.3}% 39
+\BOOKMARK [2][-]{subsection.2.3.4}{Exercises}{section.2.3}% 40
+\BOOKMARK [2][-]{subsection.2.3.5}{Answers}{section.2.3}% 41
+\BOOKMARK [1][-]{section.2.4}{Complex Zeros and the Fundamental Theorem of Algebra}{chapter.2}% 42
+\BOOKMARK [2][-]{subsection.2.4.1}{Exercises}{section.2.4}% 43
+\BOOKMARK [2][-]{subsection.2.4.2}{Answers}{section.2.4}% 44
+\BOOKMARK [0][-]{chapter.3}{Rational Functions}{}% 45
+\BOOKMARK [1][-]{section.3.1}{Introduction to Rational Functions}{chapter.3}% 46
+\BOOKMARK [2][-]{subsection.3.1.1}{Laurent Monomial Functions}{section.3.1}% 47
+\BOOKMARK [2][-]{subsection.3.1.2}{Local Behavior near Excluded Values}{section.3.1}% 48
+\BOOKMARK [2][-]{subsection.3.1.3}{End Behavior}{section.3.1}% 49
+\BOOKMARK [2][-]{subsection.3.1.4}{Exercises}{section.3.1}% 50
+\BOOKMARK [2][-]{subsection.3.1.5}{Answers}{section.3.1}% 51
+\BOOKMARK [1][-]{section.3.2}{Graphs of Rational Functions}{chapter.3}% 52
+\BOOKMARK [2][-]{subsection.3.2.1}{Exercises}{section.3.2}% 53
+\BOOKMARK [2][-]{subsection.3.2.2}{Answers}{section.3.2}% 54
+\BOOKMARK [1][-]{section.3.3}{Inequalities involving Rational Functions and Applications}{chapter.3}% 55
+\BOOKMARK [2][-]{subsection.3.3.1}{Exercises}{section.3.3}% 56
+\BOOKMARK [2][-]{subsection.3.3.2}{Answers}{section.3.3}% 57
+\BOOKMARK [0][-]{chapter.4}{Root, Radical and Power Functions}{}% 58
+\BOOKMARK [1][-]{section.4.1}{Root and Radical Functions}{chapter.4}% 59
+\BOOKMARK [2][-]{subsection.4.1.1}{Root Functions}{section.4.1}% 60
+\BOOKMARK [2][-]{subsection.4.1.2}{Other Functions involving Radicals}{section.4.1}% 61
+\BOOKMARK [2][-]{subsection.4.1.3}{Exercises}{section.4.1}% 62
+\BOOKMARK [2][-]{subsection.4.1.4}{Answers}{section.4.1}% 63
+\BOOKMARK [1][-]{section.4.2}{Power Functions}{chapter.4}% 64
+\BOOKMARK [2][-]{subsection.4.2.1}{Rational Number Exponents}{section.4.2}% 65
+\BOOKMARK [2][-]{subsection.4.2.2}{Real Number Exponents}{section.4.2}% 66
+\BOOKMARK [2][-]{subsection.4.2.3}{Exercises}{section.4.2}% 67
+\BOOKMARK [2][-]{subsection.4.2.4}{Answers}{section.4.2}% 68
+\BOOKMARK [1][-]{section.4.3}{Equations and Inequalities involving Power Functions}{chapter.4}% 69
+\BOOKMARK [2][-]{subsection.4.3.1}{Exercises}{section.4.3}% 70
+\BOOKMARK [2][-]{subsection.4.3.2}{Answers}{section.4.3}% 71
+\BOOKMARK [0][-]{chapter.5}{Further Topics on Functions}{}% 72
+\BOOKMARK [1][-]{section.5.1}{Graphs of Functions}{chapter.5}% 73
+\BOOKMARK [2][-]{subsection.5.1.1}{Exercises}{section.5.1}% 74
+\BOOKMARK [2][-]{subsection.5.1.2}{Answers}{section.5.1}% 75
+\BOOKMARK [1][-]{section.5.2}{Function Arithmetic}{chapter.5}% 76
+\BOOKMARK [2][-]{subsection.5.2.1}{Difference Quotients}{section.5.2}% 77
+\BOOKMARK [2][-]{subsection.5.2.2}{Exercises}{section.5.2}% 78
+\BOOKMARK [2][-]{subsection.5.2.3}{Answers}{section.5.2}% 79
+\BOOKMARK [1][-]{section.5.3}{Function Composition}{chapter.5}% 80
+\BOOKMARK [2][-]{subsection.5.3.1}{Exercises}{section.5.3}% 81
+\BOOKMARK [2][-]{subsection.5.3.2}{Answers}{section.5.3}% 82
+\BOOKMARK [1][-]{section.5.4}{Transformations of Graphs}{chapter.5}% 83
+\BOOKMARK [2][-]{subsection.5.4.1}{Vertical and Horizontal Shifts}{section.5.4}% 84
+\BOOKMARK [2][-]{subsection.5.4.2}{Reflections about the Coordinate Axes}{section.5.4}% 85
+\BOOKMARK [2][-]{subsection.5.4.3}{Scalings}{section.5.4}% 86
+\BOOKMARK [2][-]{subsection.5.4.4}{Transformations in Sequence}{section.5.4}% 87
+\BOOKMARK [2][-]{subsection.5.4.5}{Exercises}{section.5.4}% 88
+\BOOKMARK [2][-]{subsection.5.4.6}{Answers}{section.5.4}% 89
+\BOOKMARK [1][-]{section.5.5}{Relations and Implicit Functions}{chapter.5}% 90
+\BOOKMARK [2][-]{subsection.5.5.1}{Exercises}{section.5.5}% 91
+\BOOKMARK [2][-]{subsection.5.5.2}{Answers}{section.5.5}% 92
+\BOOKMARK [1][-]{section.5.6}{Inverse Functions}{chapter.5}% 93
+\BOOKMARK [2][-]{subsection.5.6.1}{Exercises}{section.5.6}% 94
+\BOOKMARK [2][-]{subsection.5.6.2}{Answers}{section.5.6}% 95
+\BOOKMARK [0][-]{chapter.6}{Exponential and Logarithmic Functions}{}% 96
+\BOOKMARK [1][-]{section.6.1}{Exponential Functions}{chapter.6}% 97
+\BOOKMARK [2][-]{subsection.6.1.1}{Exercises}{section.6.1}% 98
+\BOOKMARK [2][-]{subsection.6.1.2}{Answers}{section.6.1}% 99
+\BOOKMARK [1][-]{section.6.2}{Logarithmic Functions}{chapter.6}% 100
+\BOOKMARK [2][-]{subsection.6.2.1}{Exercises}{section.6.2}% 101
+\BOOKMARK [2][-]{subsection.6.2.2}{Answers}{section.6.2}% 102
+\BOOKMARK [1][-]{section.6.3}{Properties of Logarithms}{chapter.6}% 103
+\BOOKMARK [2][-]{subsection.6.3.1}{Exercises}{section.6.3}% 104
+\BOOKMARK [2][-]{subsection.6.3.2}{Answers}{section.6.3}% 105
+\BOOKMARK [1][-]{section.6.4}{Equations and Inequalities involving Exponential Functions}{chapter.6}% 106
+\BOOKMARK [2][-]{subsection.6.4.1}{Exercises}{section.6.4}% 107
+\BOOKMARK [2][-]{subsection.6.4.2}{Answers}{section.6.4}% 108
+\BOOKMARK [1][-]{section.6.5}{Equations and Inequalities involving Logarithmic Functions}{chapter.6}% 109
+\BOOKMARK [2][-]{subsection.6.5.1}{Exercises}{section.6.5}% 110
+\BOOKMARK [2][-]{subsection.6.5.2}{Answers}{section.6.5}% 111
+\BOOKMARK [1][-]{section.6.6}{Applications of Exponential and Logarithmic Functions}{chapter.6}% 112
+\BOOKMARK [2][-]{subsection.6.6.1}{Applications of Exponential Functions}{section.6.6}% 113
+\BOOKMARK [2][-]{subsection.6.6.2}{Applications of Logarithms}{section.6.6}% 114
+\BOOKMARK [2][-]{subsection.6.6.3}{Exercises}{section.6.6}% 115
+\BOOKMARK [2][-]{subsection.6.6.4}{Answers}{section.6.6}% 116
+\BOOKMARK [0][-]{chapter.7}{The Conic Sections}{}% 117
+\BOOKMARK [1][-]{section.7.1}{Introduction to Conics}{chapter.7}% 118
+\BOOKMARK [1][-]{section.7.2}{Parabolas}{chapter.7}% 119
+\BOOKMARK [2][-]{subsection.7.2.1}{Exercises}{section.7.2}% 120
+\BOOKMARK [2][-]{subsection.7.2.2}{Answers}{section.7.2}% 121
+\BOOKMARK [1][-]{section.7.3}{Circles}{chapter.7}% 122
+\BOOKMARK [2][-]{subsection.7.3.1}{Exercises}{section.7.3}% 123
+\BOOKMARK [2][-]{subsection.7.3.2}{Answers}{section.7.3}% 124
+\BOOKMARK [1][-]{section.7.4}{Ellipses}{chapter.7}% 125
+\BOOKMARK [2][-]{subsection.7.4.1}{Exercises}{section.7.4}% 126
+\BOOKMARK [2][-]{subsection.7.4.2}{Answers}{section.7.4}% 127
+\BOOKMARK [1][-]{section.7.5}{Hyperbolas}{chapter.7}% 128
+\BOOKMARK [2][-]{subsection.7.5.1}{Exercises}{section.7.5}% 129
+\BOOKMARK [2][-]{subsection.7.5.2}{Answers}{section.7.5}% 130
+\BOOKMARK [0][-]{chapter.8}{Systems of Equations and Matrices}{}% 131
+\BOOKMARK [1][-]{section.8.1}{Systems of Linear Equations: Gaussian Elimination}{chapter.8}% 132
+\BOOKMARK [2][-]{subsection.8.1.1}{Exercises}{section.8.1}% 133
+\BOOKMARK [2][-]{subsection.8.1.2}{Answers}{section.8.1}% 134
+\BOOKMARK [1][-]{section.8.2}{Systems of Linear Equations: Augmented Matrices}{chapter.8}% 135
+\BOOKMARK [2][-]{subsection.8.2.1}{Exercises}{section.8.2}% 136
+\BOOKMARK [2][-]{subsection.8.2.2}{Answers}{section.8.2}% 137
+\BOOKMARK [1][-]{section.8.3}{Matrix Arithmetic}{chapter.8}% 138
+\BOOKMARK [2][-]{subsection.8.3.1}{Exercises}{section.8.3}% 139
+\BOOKMARK [2][-]{subsection.8.3.2}{Answers}{section.8.3}% 140
+\BOOKMARK [1][-]{section.8.4}{Systems of Linear Equations: Matrix Inverses}{chapter.8}% 141
+\BOOKMARK [2][-]{subsection.8.4.1}{Exercises}{section.8.4}% 142
+\BOOKMARK [2][-]{subsection.8.4.2}{Answers}{section.8.4}% 143
+\BOOKMARK [1][-]{section.8.5}{Determinants and Cramer's Rule}{chapter.8}% 144
+\BOOKMARK [2][-]{subsection.8.5.1}{Definition and Properties of the Determinant}{section.8.5}% 145
+\BOOKMARK [2][-]{subsection.8.5.2}{Cramer's Rule and Matrix Adjoints}{section.8.5}% 146
+\BOOKMARK [2][-]{subsection.8.5.3}{Exercises}{section.8.5}% 147
+\BOOKMARK [2][-]{subsection.8.5.4}{Answers}{section.8.5}% 148
+\BOOKMARK [1][-]{section.8.6}{Partial Fraction Decomposition}{chapter.8}% 149
+\BOOKMARK [2][-]{subsection.8.6.1}{Exercises}{section.8.6}% 150
+\BOOKMARK [2][-]{subsection.8.6.2}{Answers}{section.8.6}% 151
+\BOOKMARK [1][-]{section.8.7}{Systems of Non-Linear Equations}{chapter.8}% 152
+\BOOKMARK [2][-]{subsection.8.7.1}{Exercises}{section.8.7}% 153
+\BOOKMARK [2][-]{subsection.8.7.2}{Answers}{section.8.7}% 154
+\BOOKMARK [1][-]{section.8.8}{Inequalities and Regions in the Plane}{chapter.8}% 155
+\BOOKMARK [2][-]{subsection.8.8.1}{Exercises}{section.8.8}% 156
+\BOOKMARK [2][-]{subsection.8.8.2}{Answers}{section.8.8}% 157
+\BOOKMARK [0][-]{chapter.9}{Sequences and the Binomial Theorem}{}% 158
+\BOOKMARK [1][-]{section.9.1}{Sequences}{chapter.9}% 159
+\BOOKMARK [2][-]{subsection.9.1.1}{Exercises}{section.9.1}% 160
+\BOOKMARK [2][-]{subsection.9.1.2}{Answers}{section.9.1}% 161
+\BOOKMARK [1][-]{section.9.2}{Summation Notation}{chapter.9}% 162
+\BOOKMARK [2][-]{subsection.9.2.1}{Extensions to Calculus: Geometric Series}{section.9.2}% 163
+\BOOKMARK [2][-]{subsection.9.2.2}{Extensions to Calculus: Area}{section.9.2}% 164
+\BOOKMARK [2][-]{subsection.9.2.3}{Exercises}{section.9.2}% 165
+\BOOKMARK [2][-]{subsection.9.2.4}{Answers}{section.9.2}% 166
+\BOOKMARK [1][-]{section.9.3}{Mathematical Induction}{chapter.9}% 167
+\BOOKMARK [2][-]{subsection.9.3.1}{Exercises}{section.9.3}% 168
+\BOOKMARK [2][-]{subsection.9.3.2}{Selected Answers}{section.9.3}% 169
+\BOOKMARK [1][-]{section.9.4}{The Binomial Theorem}{chapter.9}% 170
+\BOOKMARK [2][-]{subsection.9.4.1}{Exercises}{section.9.4}% 171
+\BOOKMARK [2][-]{subsection.9.4.2}{Answers}{section.9.4}% 172
+\BOOKMARK [0][-]{chapter.10}{Foundations of Trigonometry}{}% 173
+\BOOKMARK [1][-]{section.10.1}{The Radian Measure of Angles}{chapter.10}% 174
+\BOOKMARK [2][-]{subsection.10.1.1}{Applications of Radian Measure: Circular Motion}{section.10.1}% 175
+\BOOKMARK [2][-]{subsection.10.1.2}{Exercises}{section.10.1}% 176
+\BOOKMARK [2][-]{subsection.10.1.3}{Answers}{section.10.1}% 177
+\BOOKMARK [1][-]{section.10.2}{The Circular Functions: Sine and Cosine}{chapter.10}% 178
+\BOOKMARK [2][-]{subsection.10.2.1}{Beyond the Unit Circle}{section.10.2}% 179
+\BOOKMARK [2][-]{subsection.10.2.2}{Exercises}{section.10.2}% 180
+\BOOKMARK [2][-]{subsection.10.2.3}{Answers}{section.10.2}% 181
+\BOOKMARK [1][-]{section.10.3}{Graphs of Sine and Cosine}{chapter.10}% 182
+\BOOKMARK [2][-]{subsection.10.3.1}{Applications of Sinusoids}{section.10.3}% 183
+\BOOKMARK [2][-]{subsection.10.3.2}{Exercises}{section.10.3}% 184
+\BOOKMARK [2][-]{subsection.10.3.3}{Answers}{section.10.3}% 185
+\BOOKMARK [1][-]{section.10.4}{The Circular Functions: Tangent, Secant, Cosecant, and Cotangent}{chapter.10}% 186
+\BOOKMARK [2][-]{subsection.10.4.1}{Exercises}{section.10.4}% 187
+\BOOKMARK [2][-]{subsection.10.4.2}{Answers}{section.10.4}% 188
+\BOOKMARK [1][-]{section.10.5}{Graphs of Secant, Cosecant, Tangent, and Cotangent Functions}{chapter.10}% 189
+\BOOKMARK [2][-]{subsection.10.5.1}{Graphs of the Secant and Cosecant Functions}{section.10.5}% 190
+\BOOKMARK [2][-]{subsection.10.5.2}{Graphs of the Tangent and Cotangent Functions}{section.10.5}% 191
+\BOOKMARK [2][-]{subsection.10.5.3}{Extended Interval Notation}{section.10.5}% 192
+\BOOKMARK [2][-]{subsection.10.5.4}{Exercises}{section.10.5}% 193
+\BOOKMARK [2][-]{subsection.10.5.5}{Answers}{section.10.5}% 194
+\BOOKMARK [0][-]{chapter.11}{Analytical Trigonometry}{}% 195
+\BOOKMARK [1][-]{section.11.1}{The Pythagorean Identities}{chapter.11}% 196
+\BOOKMARK [2][-]{subsection.11.1.1}{Exercises}{section.11.1}% 197
+\BOOKMARK [2][-]{subsection.11.1.2}{Answers}{section.11.1}% 198
+\BOOKMARK [1][-]{section.11.2}{More Identities}{chapter.11}% 199
+\BOOKMARK [2][-]{subsection.11.2.1}{Sinusoids, Revisited}{section.11.2}% 200
+\BOOKMARK [2][-]{subsection.11.2.2}{Exercises}{section.11.2}% 201
+\BOOKMARK [2][-]{subsection.11.2.3}{Answers}{section.11.2}% 202
+\BOOKMARK [1][-]{section.11.3}{The Inverse Circular Functions}{chapter.11}% 203
+\BOOKMARK [2][-]{subsection.11.3.1}{Inverses of Secant and Cosecant: Trigonometry Friendly Approach}{section.11.3}% 204
+\BOOKMARK [2][-]{subsection.11.3.2}{Inverses of Secant and Cosecant: Calculus Friendly Approach}{section.11.3}% 205
+\BOOKMARK [2][-]{subsection.11.3.3}{Calculators and the Inverse Circular Functions.}{section.11.3}% 206
+\BOOKMARK [2][-]{subsection.11.3.4}{Solving Equations Using the Inverse Trigonometric Functions.}{section.11.3}% 207
+\BOOKMARK [2][-]{subsection.11.3.5}{Exercises}{section.11.3}% 208
+\BOOKMARK [2][-]{subsection.11.3.6}{Answers}{section.11.3}% 209
+\BOOKMARK [1][-]{section.11.4}{Equations and Inequalities Involving the Circular Functions}{chapter.11}% 210
+\BOOKMARK [2][-]{subsection.11.4.1}{Harmonic Motion}{section.11.4}% 211
+\BOOKMARK [2][-]{subsection.11.4.2}{Exercises}{section.11.4}% 212
+\BOOKMARK [2][-]{subsection.11.4.3}{Answers}{section.11.4}% 213
+\BOOKMARK [0][-]{chapter.12}{Geometric Applications of Trigonometry}{}% 214
+\BOOKMARK [1][-]{section.12.1}{The Law of Sines}{chapter.12}% 215
+\BOOKMARK [2][-]{subsection.12.1.1}{Bearings}{section.12.1}% 216
+\BOOKMARK [2][-]{subsection.12.1.2}{Exercises}{section.12.1}% 217
+\BOOKMARK [2][-]{subsection.12.1.3}{Answers}{section.12.1}% 218
+\BOOKMARK [1][-]{section.12.2}{The Law of Cosines}{chapter.12}% 219
+\BOOKMARK [2][-]{subsection.12.2.1}{Exercises}{section.12.2}% 220
+\BOOKMARK [2][-]{subsection.12.2.2}{Answers}{section.12.2}% 221
+\BOOKMARK [1][-]{section.12.3}{Vectors}{chapter.12}% 222
+\BOOKMARK [2][-]{subsection.12.3.1}{Exercises}{section.12.3}% 223
+\BOOKMARK [2][-]{subsection.12.3.2}{Answers}{section.12.3}% 224
+\BOOKMARK [1][-]{section.12.4}{The Dot Product}{chapter.12}% 225
+\BOOKMARK [2][-]{subsection.12.4.1}{Vector Projections}{section.12.4}% 226
+\BOOKMARK [2][-]{subsection.12.4.2}{Exercises}{section.12.4}% 227
+\BOOKMARK [2][-]{subsection.12.4.3}{Answers}{section.12.4}% 228
+\BOOKMARK [0][-]{chapter.13}{Polar Coordinates and Parametric Equations}{}% 229
+\BOOKMARK [1][-]{section.13.1}{Polar Coordinates}{chapter.13}% 230
+\BOOKMARK [2][-]{subsection.13.1.1}{Exercises}{section.13.1}% 231
+\BOOKMARK [2][-]{subsection.13.1.2}{Answers}{section.13.1}% 232
+\BOOKMARK [1][-]{section.13.2}{The Graphs of Polar Equations}{chapter.13}% 233
+\BOOKMARK [2][-]{subsection.13.2.1}{Exercises}{section.13.2}% 234
+\BOOKMARK [2][-]{subsection.13.2.2}{Answers}{section.13.2}% 235
+\BOOKMARK [1][-]{section.13.3}{The Polar Form of Complex Numbers}{chapter.13}% 236
+\BOOKMARK [2][-]{subsection.13.3.1}{Exercises}{section.13.3}% 237
+\BOOKMARK [2][-]{subsection.13.3.2}{Answers}{section.13.3}% 238
+\BOOKMARK [1][-]{section.13.4}{The Polar Form of the Conic Sections}{chapter.13}% 239
+\BOOKMARK [2][-]{subsection.13.4.1}{Rotation of Axes}{section.13.4}% 240
+\BOOKMARK [2][-]{subsection.13.4.2}{The Polar Form of Conics}{section.13.4}% 241
+\BOOKMARK [2][-]{subsection.13.4.3}{Exercises}{section.13.4}% 242
+\BOOKMARK [2][-]{subsection.13.4.4}{Answers}{section.13.4}% 243
+\BOOKMARK [1][-]{section.13.5}{Parametric Equations}{chapter.13}% 244
+\BOOKMARK [2][-]{subsection.13.5.1}{Exercises}{section.13.5}% 245
+\BOOKMARK [2][-]{subsection.13.5.2}{Answers}{section.13.5}% 246
+\BOOKMARK [0][-]{appendix.A}{Algebra Review}{}% 247
+\BOOKMARK [1][-]{section.A.1}{Basic Set Theory and Interval Notation}{appendix.A}% 248
+\BOOKMARK [2][-]{subsection.A.1.1}{Some Basic Set Theory Notions}{section.A.1}% 249
+\BOOKMARK [2][-]{subsection.A.1.2}{Sets of Real Numbers}{section.A.1}% 250
+\BOOKMARK [2][-]{subsection.A.1.3}{Exercises}{section.A.1}% 251
+\BOOKMARK [2][-]{subsection.A.1.4}{Answers}{section.A.1}% 252
+\BOOKMARK [1][-]{section.A.2}{Real Number Arithmetic}{appendix.A}% 253
+\BOOKMARK [2][-]{subsection.A.2.1}{Exercises}{section.A.2}% 254
+\BOOKMARK [2][-]{subsection.A.2.2}{Answers}{section.A.2}% 255
+\BOOKMARK [1][-]{section.A.3}{The Cartesian Plane}{appendix.A}% 256
+\BOOKMARK [2][-]{subsection.A.3.1}{The Cartesian Coordinate Plane}{section.A.3}% 257
+\BOOKMARK [2][-]{subsection.A.3.2}{Distance in the Plane}{section.A.3}% 258
+\BOOKMARK [2][-]{subsection.A.3.3}{Exercises}{section.A.3}% 259
+\BOOKMARK [2][-]{subsection.A.3.4}{Answers}{section.A.3}% 260
+\BOOKMARK [1][-]{section.A.4}{Linear Equations and Inequalities}{appendix.A}% 261
+\BOOKMARK [2][-]{subsection.A.4.1}{Linear Equations}{section.A.4}% 262
+\BOOKMARK [2][-]{subsection.A.4.2}{Linear Inequalities}{section.A.4}% 263
+\BOOKMARK [2][-]{subsection.A.4.3}{Exercises}{section.A.4}% 264
+\BOOKMARK [2][-]{subsection.A.4.4}{Answers}{section.A.4}% 265
+\BOOKMARK [1][-]{section.A.5}{Graphing Lines}{appendix.A}% 266
+\BOOKMARK [2][-]{subsection.A.5.1}{Exercises}{section.A.5}% 267
+\BOOKMARK [2][-]{subsection.A.5.2}{Answers}{section.A.5}% 268
+\BOOKMARK [1][-]{section.A.6}{Systems of Two Linear Equations in Two Unknowns}{appendix.A}% 269
+\BOOKMARK [2][-]{subsection.A.6.1}{Exercises}{section.A.6}% 270
+\BOOKMARK [2][-]{subsection.A.6.2}{Answers}{section.A.6}% 271
+\BOOKMARK [1][-]{section.A.7}{Absolute Value Equations and Inequalities}{appendix.A}% 272
+\BOOKMARK [2][-]{subsection.A.7.1}{Absolute Value Equations}{section.A.7}% 273
+\BOOKMARK [2][-]{subsection.A.7.2}{Absolute Value Inequalities}{section.A.7}% 274
+\BOOKMARK [2][-]{subsection.A.7.3}{Exercises}{section.A.7}% 275
+\BOOKMARK [2][-]{subsection.A.7.4}{Answers}{section.A.7}% 276
+\BOOKMARK [1][-]{section.A.8}{Polynomial Arithmetic}{appendix.A}% 277
+\BOOKMARK [2][-]{subsection.A.8.1}{Polynomial Addition, Subtraction and Multiplication.}{section.A.8}% 278
+\BOOKMARK [2][-]{subsection.A.8.2}{Polynomial Long Division.}{section.A.8}% 279
+\BOOKMARK [2][-]{subsection.A.8.3}{Exercises}{section.A.8}% 280
+\BOOKMARK [2][-]{subsection.A.8.4}{Answers}{section.A.8}% 281
+\BOOKMARK [1][-]{section.A.9}{Basic Factoring Techniques}{appendix.A}% 282
+\BOOKMARK [2][-]{subsection.A.9.1}{Solving Equations by Factoring}{section.A.9}% 283
+\BOOKMARK [2][-]{subsection.A.9.2}{Exercises}{section.A.9}% 284
+\BOOKMARK [2][-]{subsection.A.9.3}{Answers}{section.A.9}% 285
+\BOOKMARK [1][-]{section.A.10}{Quadratic Equations}{appendix.A}% 286
+\BOOKMARK [2][-]{subsection.A.10.1}{Exercises}{section.A.10}% 287
+\BOOKMARK [2][-]{subsection.A.10.2}{Answers}{section.A.10}% 288
+\BOOKMARK [1][-]{section.A.11}{Complex Numbers}{appendix.A}% 289
+\BOOKMARK [2][-]{subsection.A.11.1}{Exercises}{section.A.11}% 290
+\BOOKMARK [2][-]{subsection.A.11.2}{Answers}{section.A.11}% 291
+\BOOKMARK [1][-]{section.A.12}{Rational Expressions and Equations}{appendix.A}% 292
+\BOOKMARK [2][-]{subsection.A.12.1}{Exercises}{section.A.12}% 293
+\BOOKMARK [2][-]{subsection.A.12.2}{Answers}{section.A.12}% 294
+\BOOKMARK [1][-]{section.A.13}{Radical Equations}{appendix.A}% 295
+\BOOKMARK [2][-]{subsection.A.13.1}{Rationalizing Denominators and Numerators}{section.A.13}% 296
+\BOOKMARK [2][-]{subsection.A.13.2}{Exercises}{section.A.13}% 297
+\BOOKMARK [2][-]{subsection.A.13.3}{Answers}{section.A.13}% 298
+\BOOKMARK [1][-]{section.A.14}{Variation}{appendix.A}% 299
+\BOOKMARK [2][-]{subsection.A.14.1}{Exercises}{section.A.14}% 300
+\BOOKMARK [2][-]{subsection.A.14.2}{Answers}{section.A.14}% 301
+\BOOKMARK [0][-]{appendix.B}{Geometry Review}{}% 302
+\BOOKMARK [1][-]{section.B.1}{Angles in Degrees}{appendix.B}% 303
+\BOOKMARK [2][-]{subsection.B.1.1}{Exercises}{section.B.1}% 304
+\BOOKMARK [2][-]{subsection.B.1.2}{Answers}{section.B.1}% 305
+\BOOKMARK [1][-]{section.B.2}{Right Triangle Trigonometry}{appendix.B}% 306
+\BOOKMARK [2][-]{subsection.B.2.1}{Exercises}{section.B.2}% 307
+\BOOKMARK [2][-]{subsection.B.2.2}{Answers}{section.B.2}% 308
+\BOOKMARK [0][-]{appendix.C}{Selected Proofs}{}% 309
+\BOOKMARK [1][-]{section.C.1}{The Density of the Rationals within the Reals}{appendix.C}% 310
+\BOOKMARK [1][-]{section.C.2}{Why Pi is Actually a Constant}{appendix.C}% 311
+\BOOKMARK [1][-]{section.C.3}{Cauchy's Bound}{appendix.C}% 312
+\BOOKMARK [1][-]{section.C.4}{Fermat's Penultimate Theorem}{appendix.C}% 313
+\BOOKMARK [0][-]{section.C.4}{Index}{}% 314
