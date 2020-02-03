@@ -1,0 +1,1235 @@
+<section xml:id="FundamentalTrigonometricIdentities">
+  <title>The Pythagorean Identities</title>
+  <introduction>
+    <p>
+      In section <xref ref="TheOtherCircularFunctions">Section</xref>,
+      we first encountered the concept of an <em>identity</em>
+      when discussing <xref ref="recipquotid">Theorem</xref>.
+      Recall that an identity is an equation which is true regardless of the choice of variable.
+      Identities are important in mathematics because they facilitate changing forms.<fn>
+      We've seen the utility of changing form throughout the text,
+      most recently when we completed the square in <xref ref="TheConicSections">Chapter</xref>
+      to put general quadratic equations into standard form in order to graph them.
+      </fn>
+    </p>
+    <p>
+      We take a moment to generalize <xref ref="recipquotid">Theorem</xref> below.
+    </p>
+    <theorem xml:id="recipquotidfull">
+      <statement>
+        <p>
+          <em>Reciprocal and Quotient Identities:</em>
+              <idx><h>Reciprocal Identities</h></idx>
+              <idx><h>Quotient Identities</h></idx>
+          The following relationships hold for all angles <m>\theta</m> provided each side of each equation is defined.
+          <ul>
+            <li>
+              <p>
+                <m>\sec(\theta) = \dfrac{1}{\cos(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(\theta) = \dfrac{1}{\sec(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\csc(\theta) = \dfrac{1}{\sin(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\theta) = \dfrac{1}{\csc(\theta)}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\tan(\theta) = \dfrac{\sin(\theta)}{\cos(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot(\theta) = \dfrac{\cos(\theta)}{\sin(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot(\theta) = \dfrac{1}{\tan(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(\theta) = \dfrac{1}{\cot(\theta)}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      It is important to remember that the equivalences stated in <xref ref="recipquotidfull">Theorem</xref>
+      are valid only when <em>all</em>
+      quantities described therein are defined.
+      As an example, <m>\tan(0) = 0</m>,
+      but <m>\tan(0) \neq \frac{1}{\cot(0)}</m> since <m>\cot(0)</m> is undefined.
+    </p>
+    <p>
+      When it comes down to it,
+      the Reciprocal and Quotient Identities amount to giving different ratios on the Unit Circle different names.
+      The main focus of this section is on a more algebraic relationship between certain pairs of the circular functions: the
+          <idx><h>Pythagorean Identities</h></idx>
+          <idx><h>Identities</h><h>Pythagorean</h></idx>
+      <em>Pythagorean Identities</em>.
+    </p>
+    <p>
+      Recall in <xref ref="sinecosineunitcircledefn">Definition</xref>,
+      the cosine and sine of an angle is defined as the <m>x</m> and <m>y</m>-coordinate,
+      respectively, of a point on the Unit Circle.
+      Since the coordinates of all points <m>(x,y)</m> on the Unit Circle satisfy the equation <m>x^2+y^2 = 1</m>,
+      we get for all angles <m>\theta</m>,
+      <m>\left(\cos(\theta)\right)^2 + \left(\sin(\theta)\right)^2 = 1</m>.
+      An unfortunate<fn>
+      This is unfortunate from a <sq>function notation</sq> perspective.
+      See <xref ref="TheInverseTrigonometricFunctions">Section</xref>.
+      </fn> convention, which the authors are compelled to perpetuate,
+      is to write <m>\left(\cos(\theta)\right)^2</m> as <m>\cos^{2}(\theta)</m> and
+      <m>\left(\sin(\theta)\right)^2</m> as <m>\sin^{2}(\theta)</m>.
+      Rewriting the identity using this convention results in the following theorem,
+      which is without a doubt one of the most important results in Trigonometry.
+    </p>
+    <theorem xml:id="cosinesinepythid">
+      <statement>
+        <p>
+          <em>The Pythagorean Identity:</em>
+          For any angle <m>\theta</m>,
+          <m>\cos^{2}(\theta) + \sin^{2}(\theta) = 1</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The moniker <sq>Pythagorean</sq> brings to mind the Pythagorean Theorem,
+      from which both the Distance Formula and the equation for a circle are ultimately derived.<fn>
+      See <xref ref="AppCartesianPlane">Sections</xref>
+      and <xref ref="Circles"></xref> for details.
+      </fn> The word <sq>Identity</sq> reminds us that,
+      regardless of the angle <m>\theta</m>,
+      the equation in <xref ref="cosinesinepythid">Theorem</xref> is always true.
+    </p>
+    <p>
+      If one of <m>\cos(\theta)</m> or <m>\sin(\theta)</m> is known,
+      <xref ref="cosinesinepythid">Theorem</xref>
+      can be used to determine the other,
+      up to a (<m>\pm</m>) sign.
+      If, in addition,
+      we know where the terminal side of <m>\theta</m> lies when in standard position,
+      then we can remove the ambiguity of the (<m>\pm</m>) and completely determine the missing value.<fn>
+      See the illustration following <xref ref="circularfunctionsex">Example</xref>
+      to refresh yourself which circular functions are positive in which quadrants.
+      </fn> We illustrate this approach in the following example.
+    </p>
+    <example xml:id="cosinesinepythidex">
+      <statement>
+        <p>
+          Use <xref ref="cosinesinepythid">Theorem</xref>
+          and the given information to find the indicated value.
+          <ol>
+            <li>
+              <p>
+                If <m>\theta</m> is a Quadrant II angle with
+                <m>\sin(\theta) = \frac{3}{5}</m>, find <m>\cos(\theta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\pi \lt t \lt \frac{3\pi}{2}</m> with
+                <m>\cos(t) = -\frac{\sqrt{5}}{5}</m>, find <m>\sin(t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\sin(\theta) = 1</m>, find <m>\cos(\theta)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                When we substitute <m>\sin(\theta) = \frac{3}{5}</m> into The Pythagorean Identity,
+                <m>\cos^{2}(\theta) + \sin^{2}(\theta) = 1</m>,
+                we obtain <m>\cos^{2}(\theta) + \frac{9}{25} = 1</m>.
+                Solving, we find <m>\cos(\theta) = \pm \frac{4}{5}</m>.
+                Since <m>\theta</m> is a Quadrant II angle,
+                we know <m>\cos(\theta)\lt 0</m>.
+                Hence, we select <m>\cos(\theta) = - \frac{4}{5}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Here we're using the variable <m>t</m> instead <m>\theta</m> which usually corresponds to a real number variable instead of an angle.
+                As usual, we associate real numbers <m>t</m> with angles <m>\theta</m> measuring <m>t</m> radians,<fn>
+                See <xref ref="wrappingfunction">page</xref>
+                if you need a review of how we associate real numbers with angles in radian measure.
+                </fn> so the the Pythagorean Identity works equally well for all real numbers <m>t</m> as it does for all angles <m>\theta</m>.
+                Substituting <m>\cos(t) = -\frac{\sqrt{5}}{5}</m> into
+                <m>\cos^{2}(t) + \sin^{2}(t) = 1</m> gives <m>\sin(t) = \pm \frac{2}{\sqrt{5}} = \pm \frac{2 \sqrt{5}}{5}</m>.
+                Since <m>\pi \lt t \lt \frac{3\pi}{2}</m>,
+                we know <m>t</m> corresponds to a Quadrant III angle, so <m>\sin(t) \lt 0</m>.
+                Hence, <m>\sin(t) = -\frac{2 \sqrt{5}}{5}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                When we substitute <m>\sin(\theta) = 1</m> into <m>\cos^{2}(\theta) + \sin^{2}(\theta) = 1</m>,
+                we find <m>\cos(\theta) = 0</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The reader is encouraged to compare and contrast the solution strategies demonstrated in <xref ref="cosinesinepythidex">Example</xref>
+      with those showcases in <xref ref="advancedrefangleex">Examples</xref>
+      and <xref ref="cosinesinecircleex"></xref>
+      in <xref ref="TheCircularFunctionsSineandCosine">Section</xref>.
+    </p>
+    <p>
+      As with many tools in mathematics,
+      identities give us a different way to approach and solve problems.<fn>
+      For example, factoring, completing the square,
+      and the quadratic formula are three different
+      (yet equivalent)
+      ways to solve a quadratic equation.
+      See <xref ref="AppQuadEqus">Section</xref> for a refresher.
+      </fn> As always,
+      the key is to determine which approach makes the most sense
+      (is more efficient, for instance)
+      in the given scenario.
+    </p>
+    <p>
+      Our next task is to use use the Reciprocal and Quotient Identities found in <xref ref="recipquotidfull">Theorem</xref>
+      coupled with the Pythagorean Identity found in <xref ref="cosinesinepythid">Theorem</xref>
+      to derive new Pythagorean-like identities for the remaining four circular functions.
+    </p>
+    <p>
+      Assuming <m>\cos(\theta) \neq 0</m>,
+      we may start with <m>\cos^{2}(\theta) + \sin^{2}(\theta) = 1</m> and divide both sides by
+      <m>\cos^{2}(\theta)</m> to obtain <m>1 + \frac{\sin^{2}(\theta)}{\cos^{2}(\theta)} = \frac{1}{\cos^{2}(\theta)}</m>.
+      Using properties of exponents along with the Reciprocal and Quotient Identities,
+      this reduces to <m>1 + \tan^{2}(\theta) = \sec^{2}(\theta)</m>.
+    </p>
+    <p>
+      If <m>\sin(\theta) \neq 0</m>,
+      we can divide both sides of the identity
+      <m>\cos^{2}(\theta) + \sin^{2}(\theta) = 1</m> by <m>\sin^{2}(\theta)</m>,
+      apply <xref ref="recipquotidfull">Theorem</xref> once again,
+      and obtain <m>\cot^{2}(\theta) + 1 = \csc^{2}(\theta)</m>.
+    </p>
+    <p>
+      These three Pythagorean Identities are worth memorizing and they,
+      along with some of their other common forms,
+      are summarized in the following theorem.
+    </p>
+    <theorem xml:id="pythids">
+      <statement>
+        <p>
+          <em>The Pythagorean Identities:</em>
+              <idx><h>Pythagorean Identities</h></idx>
+          <ol>
+            <li>
+              <p>
+                <m>\cos^{2}(\theta) + \sin^{2}(\theta) = 1</m>.
+                <em>Common Alternate Forms:</em>
+                <ul>
+                  <li>
+                    <p>
+                      <m>1 - \sin^{2}(\theta) = \cos^{2}(\theta)</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>1 - \cos^{2}(\theta) = \sin^{2}(\theta)</m>
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>1 + \tan^{2}(\theta) = \sec^{2}(\theta)</m>,
+                provided <m>\cos(\theta) \neq 0</m>.
+                <em>Common Alternate Forms:</em>
+                <ul>
+                  <li>
+                    <p>
+                      <m>\sec^{2}(\theta) - \tan^{2}(\theta) = 1</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>\sec^{2}(\theta) - 1 = \tan^{2}(\theta)</m>
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>1 + \cot^{2}(\theta) = \csc^{2}(\theta)</m>,
+                provided <m>\sin(\theta) \neq 0</m>.
+                <em>Common Alternate Forms:</em>
+                <ul>
+                  <li>
+                    <p>
+                      <m>\csc^{2}(\theta) - \cot^{2}(\theta) = 1</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>\csc^{2}(\theta) - 1 = \cot^{2}(\theta)</m>
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      As usual, the formulas states in <xref ref="pythids">Theorem</xref> work equally well for
+      (the applicable)
+      angles as well as real numbers.
+    </p>
+    <example xml:id="usingidtofindvaluesex1">
+      <statement>
+        <p>
+          Use <xref ref="recipquotidfull">Theorems</xref>
+          and <xref ref="pythids"></xref> to find the indicated values.
+          <ol>
+            <li>
+              <p>
+                If <m>\theta</m> is a Quadrant IV angle with
+                <m>\sec(\theta) = 3</m>, find <m>\tan(\theta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>\csc(t)</m> if <m>\pi \lt t \lt \frac{3\pi}{2}</m> and <m>\cot(t) = 2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\theta</m> is a Quadrant II angle with <m>\cos(\theta) = -\frac{3}{5}</m>,
+                find the exact values of the remaining circular functions.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Per <xref ref="pythids">Theorem</xref>,
+                <m>\tan^{2}(\theta) = \sec^{2}(\theta) -1</m>.
+                Since <m>\sec(\theta) = 3</m>,
+                we have <m>\tan^{2}(\theta) = (3)^2 - 1 = 8</m>,
+                or <m>\tan(\theta) = \pm \sqrt{8} = \pm 2 \sqrt{2}</m>.
+                Since <m>\theta</m> is a Quadrant IV angle,
+                we know <m>\tan(\theta) \lt 0</m> so <m>\tan(\theta) = -2\sqrt{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Again, using <xref ref="pythids">Theorem</xref>,
+                we have <m>\csc^{2}(t) = 1 + \cot^{2}(t)</m>,
+                so we have <m>\csc^{2}(t) = 1 + (2)^2 = 5</m>.
+                This gives <m>\csc(t) = \pm \sqrt{5}</m>.
+                Since <m>\pi \lt t \lt \frac{3\pi}{2}</m>,
+                <m>t</m> corresponds to a Quadrant III angle,
+                so <m>\csc(t) = -\sqrt{5}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                With five function values to find,
+                we have our work cut out for us.
+                From <xref ref="recipquotidfull">Theorem</xref>,
+                we know <m>\sec(\theta) = \frac{1}{\cos(\theta)}</m>,
+                so we (quickly) get <m>\sec(\theta) = \frac{1}{-3/5} = - \frac{5}{3}</m>.
+                Next, we go after <m>\sin(\theta)</m> since between
+                <m>\sin(\theta)</m> and <m>\cos(\theta)</m>,
+                we can get all of the remaining values courtesy of <xref ref="recipquotidfull">Theorem</xref>.
+                From <xref ref="pythids">Theorem</xref>,
+                we have <m>\sin^{2}(\theta) = 1 - \cos^{2}(\theta)</m>,
+                so <m>\sin^{2}(\theta) = 1 - \left(\frac{3}{5}\right)^2 = 1 - \frac{9}{25} = \frac{16}{25}</m>.
+                Hence, <m>\sin(\theta) = \pm \frac{4}{5}</m> but since <m>\theta</m> is a Quadrant II angle,
+                we select <m>\sin(\theta) = \frac{4}{5}</m>.
+                Back to <xref ref="recipquotidfull">Theorem</xref>,
+                we get <m>\csc(\theta) = \frac{1}{\sin(\theta)} = \frac{1}{4/5} = \frac{5}{4}</m>,
+                <m>\tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)} = \frac{4/5}{-3/5} = -\frac{4}{3}</m>,
+                and <m>\cot(\theta) = \frac{\cos(\theta)}{\sin(\theta)} = \frac{-3/5}{4/5} = -\frac{3}{4}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Again, the reader is encouraged to study the solution methodology illustrated in <xref ref="usingidtofindvaluesex1">Example</xref>
+      as compared with that employed in <xref ref="circularfunctionscircleex">Example</xref>
+      in <xref ref="TheOtherCircularFunctions">Section</xref>.
+    </p>
+    <p>
+      Trigonometric identities play an important role in not just Trigonometry,
+      but in Calculus as well.
+      We'll use them in this book to find the values of the circular functions of an angle and solve equations and inequalities.
+      In Calculus,
+      they are needed to simplify otherwise complicated expressions.
+      In the next example,
+      we make good use of the <xref ref="recipquotidfull">Theorems</xref>
+      and <xref ref="pythids"></xref>.
+    </p>
+    <example xml:id="idornotex1">
+      <statement>
+        <p>
+          Verify the following identities.
+          Assume that all quantities are defined.
+          <ol cols="3">
+            <li>
+              <p>
+                <m>\tan(\theta) = \sin(\theta) \sec(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(\tan(t) - \sec(t)) (\tan(t) + \sec(t)) = -1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin^{2}(x) \cos^{3}(x) = \sin^{2}(x) \left(1 - \sin^{2}(x)\right) \cos(x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{\sec(t)}{1 - \tan(t)} = \dfrac{1}{\cos(t) - \sin(t)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>6\sec(x) \tan(x) = \dfrac{3}{1-\sin(x)} - \dfrac{3}{1 + \sin(x)}</m>
+              </p>
+            </li>
+            <li xml:id="pythconjex">
+              <p>
+                <m>\dfrac{\sin(\theta)}{1 - \cos(\theta)} = \dfrac{1 + \cos(\theta)}{\sin(\theta)}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In verifying identities,
+          we typically start with the more complicated side of the equation and use known identities to <em>transform</em>
+          it into the other side of the equation.
+          <ol>
+            <li>
+              <p>
+                Starting with the right hand side of <m>\tan(\theta) = \sin(\theta) \sec(\theta)</m>,
+                we use <m>\sec(\theta) = \frac{1}{\cos(\theta)}</m> and find:
+                <me>
+                  \sin(\theta) \sec(\theta) = \sin(\theta) \dfrac{1}{\cos(\theta)} = \dfrac{\sin(\theta)}{\cos(\theta)} = \tan(\theta)
+                </me>,
+                where the last equality is courtesy of <xref ref="recipquotidfull">Theorem</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Expanding the left hand side, we get:
+                <m>(\tan(t) - \sec(t)) (\tan(t) + \sec(t)) = \tan^{2}(t) - \sec^{2}(t)</m>.
+                From <xref ref="pythids">Theorem</xref>,
+                we know  <m>\sec^{2}(t) - \tan^{2}(t) = 1</m>,
+                which isn't <em>quite</em> what we have.
+                We are off by a negative sign (<m>-</m>),  so we factor it out:
+                <me>
+                  (\tan(t) - \sec(t)) (\tan(t) + \sec(t)) = \tan^{2}(t) - \sec^{2}(t) = (-1)( \sec^{2}(t) - \tan^{2}(t)) = (-1)(1) = -1
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Starting with the right hand side,<fn>
+                We hope by this point a shift of variable to <sq><m>x</m></sq> instead of <sq><m>\theta</m></sq> or <sq><m>t</m></sq> is a non-issue.
+                </fn> we notice we have a quantity we can immediately simplify per <xref ref="pythids">Theorem</xref>:
+                <m>1 - \sin^{2}(x) = \cos^{2}(x)</m> .  This increases the number of factors of cosine,
+                (which is part of our goal in looking at the left hand side),
+                so we proceed:
+                <me>
+                  \sin^{2}(x) \left(1 - \sin^{2}(x)\right) \cos(x) = \sin^{2}(x) \cos^{2}(x) \cos(x) = \sin^{2}(x) \cos^{3}(x)
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                While both sides of our next identity contain fractions,
+                the left side affords us more opportunities to use our identities.<fn>
+                Or, to put to another way,
+                earn more partial credit if this were an exam question!
+                </fn> Substituting
+                <m>\sec(t) = \frac{1}{\cos(t)}</m> and <m>\tan(t) = \frac{\sin(t)}{\cos(t)}</m>, we get:
+                <me>
+                  \begin{array}{rcl} \dfrac{\sec(t)}{1 - \tan(t)} \amp  = \amp  \dfrac{ \dfrac{1}{\cos(t)}}{1 - \dfrac{\sin(t)}{\cos(t)}} = \dfrac{ \dfrac{1}{\cos(t)}}{1 - \dfrac{\sin(t)}{\cos(t)}} \cdot \dfrac{\cos(t)}{\cos(t)} \\ [.4in] \amp  = \amp  \dfrac{\left( \dfrac{1}{\cos(t)} \right) ( \cos(t) )}{\left(1 - \dfrac{\sin(t)}{\cos(t)}\right)(\cos(t))} = \dfrac{1}{(1)(\cos(t)) - \left(\dfrac{\sin(t)}{\cos(t)}\right)(\cos(t))} \\ [.4in] \amp  = \amp  \dfrac{1}{\cos(t) - \sin(t)}, \end{array}
+                </me>
+                which is exactly what we had set out to show.
+              </p>
+            </li>
+            <li>
+              <p>
+                Starting with the right hand side,
+                we can get started by obtaining common denominators to add:
+                <me>
+                  \begin{array}{rcl}  \dfrac{3}{1-\sin(x)} - \dfrac{3}{1 + \sin(x)} \amp  = \amp  \dfrac{3(1 + \sin(x))}{(1-\sin(x))(1 + \sin(x))} - \dfrac{3(1-\sin(x))}{(1 + \sin(x))(1-\sin(x))} \\ [.25in] \amp  = \amp  \dfrac{3 + 3\sin(x)}{1 - \sin^{2}(x)} - \dfrac{3 - 3\sin(x)}{1 - \sin^{2}(x)} \\ [.25in] \amp  = \amp  \dfrac{(3 + 3\sin(x)) - (3 - 3\sin(x))}{1 - \sin^{2}(x)} \\ [.25in] \amp  = \amp  \dfrac{6 \sin(x)}{1 - \sin^{2}(x)} \end{array}
+                </me>
+                At this point,
+                we have at least reduced the number of fractions from two to one,
+                it may not be clear how to proceed.
+                When this happens,
+                it isn't a bad idea to start working with the other side of the identity to get some clues how to proceed.
+                Using a reciprocal and quotient identity,
+                we find <m>6\sec(x) \tan(x) = 6 \left(\frac{1}{\cos(x)}\right) \left(\frac{\sin(x)}{\cos(x)}\right) = \frac{6 \sin(x)}{\cos^{2}(x)}</m>.
+                <xref ref="pythids">Theorem</xref>
+                tells us <m>1 -  \sin^{2}(x) = \cos^{2}(x)</m>,
+                which means to our surprise and delight,
+                we are much closer to our goal that we may have originally thought:
+                <me>
+                  \begin{array}{rcl}  \dfrac{3}{1-\sin(x)} - \dfrac{3}{1 + \sin(x)} \amp  = \amp  \dfrac{6 \sin(x)}{1 - \sin^{2}(x)}= \dfrac{6 \sin(x)}{\cos^{2}(x)} \\ [.25in] \amp  = \amp   6 \left(\dfrac{1}{\cos(x)}\right)\left( \dfrac{\sin(x)}{\cos(x)}\right) = 6 \sec(x) \tan(x). \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                It is debatable which side of the identity is more complicated.
+                One thing which stands out is that the denominator on the left hand side is <m>1-\cos(\theta)</m>,
+                while the numerator of the right hand side is <m>1+\cos(\theta)</m>.
+                This suggests the strategy of starting with the left hand side and multiplying the numerator and denominator by the quantity <m>1+\cos(\theta)</m>.
+                <xref ref="pythids">Theorem</xref>
+                comes to our aid once more when we simplify <m>1-\cos^{2}(\theta) = \sin^{2}(\theta)</m>:
+                <me>
+                  \begin{array}{rcl}   \dfrac{\sin(\theta)}{1 - \cos(\theta)} \amp  = \amp  \dfrac{\sin(\theta)}{(1 - \cos(\theta))} \cdot \dfrac{(1 + \cos(\theta))}{(1 + \cos(\theta))} = \dfrac{\sin(\theta)(1 + \cos(\theta))}{(1 - \cos(\theta))(1 + \cos(\theta))} \\ [.25in] \amp  = \amp  \dfrac{\sin(\theta)(1 + \cos(\theta))}{1 - \cos^{2}(\theta)} = \dfrac{\sin(\theta)(1 + \cos(\theta))}{\sin^{2}(\theta)} \\ [.25in] \amp  = \amp  \dfrac{\cancel{\sin(\theta)}(1 + \cos(\theta))}{\cancel{\sin(\theta)}\sin(\theta)} = \dfrac{1 + \cos(\theta)}{\sin(\theta)} \end{array}
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In <xref ref="idornotex1">Example</xref>
+      <xref ref="pythconjex">number</xref> above,
+      we see that multiplying <m>1-\cos(\theta)</m> by
+      <m>1+\cos(\theta)</m> produces a difference of squares that can be simplified to one term using <xref ref="pythids">Theorem</xref>.
+    </p>
+    <p>
+      This is exactly the same kind of phenomenon that occurs when we multiply expressions such as <m>1 - \sqrt{2}</m> by
+      <m>1+\sqrt{2}</m> or <m>3 - 4i</m> by <m>3+4i</m>.
+      In algebra, these sorts of expressions were called <sq>conjugates.</sq><fn>
+      See <xref ref="AppCmpNums">Sections</xref>
+      and <xref ref="AppRadEqus"></xref>.
+      </fn>
+    </p>
+    <p>
+      For this reason, the quantities <m>(1-\cos(\theta))</m> and
+      <m>(1+\cos(\theta))</m> are called <sq>Pythagorean Conjugates.</sq> Below is a list of other common Pythagorean Conjugates.
+      <em>Pythagorean Conjugates</em>
+          <idx><h>Pythagorean Conjugates</h></idx>
+      <ul>
+        <li>
+          <p>
+            <m>1 - \cos(\theta)</m> and <m>1+\cos(\theta)</m>:
+            <m>(1-\cos(\theta))(1+\cos(\theta)) = 1 - \cos^{2}(\theta) = \sin^{2}(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1-\sin(\theta)</m> and <m>1 + \sin(\theta)</m>:
+            <m>(1-\sin(\theta))(1+\sin(\theta)) = 1 - \sin^{2}(\theta) = \cos^{2}(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta)-1</m> and <m>\sec(\theta)+1</m>:
+            <m>(\sec(\theta)-1)(\sec(\theta)+1) = \sec^{2}(\theta) - 1 = \tan^{2}(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta)-\tan(\theta)</m> and <m>\sec(\theta)+\tan(\theta)</m>:
+            <m>(\sec(\theta)-\tan(\theta))(\sec(\theta)+\tan(\theta)) = \sec^{2}(\theta) - \tan^{2}(\theta) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta)-1</m> and <m>\csc(\theta)+1</m>:
+            <m>(\csc(\theta)-1)(\csc(\theta)+1) = \csc^{2}(\theta) - 1 = \cot^{2}(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta)-\cot(\theta)</m> and <m>\csc(\theta)+\cot(\theta)</m>:
+            <m>(\csc(\theta)-\cot(\theta))(\csc(\theta)+\cot(\theta)) = \csc^{2}(\theta) - \cot^{2}(\theta) = 1</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Verifying trigonometric identities requires a healthy mix of tenacity and inspiration.
+      You will need to spend many hours struggling with them just to become proficient in the basics.
+    </p>
+    <p>
+      Like many things in life,
+      there is no short-cut here <mdash/> there is no complete algorithm for verifying identities.
+      Nevertheless, a summary of some strategies which may be helpful
+      (depending on the situation)
+      is provided below and ample practice is provided for you in the Exercises.
+      <em>Strategies for Verifying Identities</em>
+      <ul>
+        <li>
+          <p>
+            Try working on the more complicated side of the identity.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the Reciprocal and Quotient Identities in <xref ref="recipquotidfull">Theorem</xref>
+            to write functions on one side of the identity in terms of the functions on the other side of the identity.
+            Simplify the resulting complex fractions.
+          </p>
+        </li>
+        <li>
+          <p>
+            Add rational expressions with unlike denominators by obtaining common denominators.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the Pythagorean Identities in <xref ref="pythids">Theorem</xref>
+            to <sq>exchange</sq> sines and cosines,
+            secants and tangents, cosecants and cotangents,
+            and simplify sums or differences of squares to one term.
+          </p>
+        </li>
+        <li>
+          <p>
+            Multiply numerator <em>and</em>
+            denominator by Pythagorean Conjugates in order to take advantage of the Pythagorean Identities in <xref ref="pythids">Theorem</xref>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If you find yourself stuck working with one side of the identity,
+            try starting with the other side of the identity and see if you can find a way to bridge the two parts of your work.
+          </p>
+        </li>
+        <li>
+          <p>
+            Try <em>something</em>.
+            The more you work with identities,
+            the better you'll get with identities.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="useidsforvaluesfirst01">Exercises</xref>
+      - <xref ref="useidsforvalueslast01"></xref>,
+      use the Reciprocal and Quotient Identities
+      (<xref ref="recipquotidfull">Theorem</xref>)
+      along with the Pythagorean Identities
+      (<xref ref="pythids">Theorem</xref>),
+      to find the value of the circular function requested below.
+      (Find the exact value unless otherwise indicated.)
+      <ol cols="2">
+        <li xml:id="useidsforvaluesfirst01">
+          <p>
+            If <m>\sin(\theta) = \frac{\sqrt{5}}{5}</m>, find <m>\csc(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\sec(\theta) = - 4</m>, find <m>\cos(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\tan(t) = 3</m>, find <m>\cot(t)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\theta</m> is a Quadrant IV angle with
+            <m>\cos(\theta) = \frac{5}{13}</m>, find <m>\sin(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\theta</m> is a Quadrant III angle with
+            <m>\tan(\theta) = 2</m>, find <m>\sec(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\frac{\pi}{2} \lt t \lt \pi</m> with
+            <m>\cot(t) = -2</m>, find <m>\csc(t)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\sec(\theta) = 3</m> and
+            <m>\sin(\theta) \lt 0</m>, find <m>\tan(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\sin(\theta) = -\frac{2}{3}</m> but
+            <m>\tan(\theta) > 0</m>, find <m>\cos(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>0 \lt t \lt \frac{\pi}{2}</m> and <m>\sin(t) = 0.42</m>,
+            find <m>\cos(t)</m>, rounded to four decimal places.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\theta</m> is Quadrant IV angle with <m>\sec(\theta) = 1.17</m>,
+            find <m>\tan(\theta)</m>, rounded to four decimal places.
+          </p>
+        </li>
+        <li xml:id="useidsforvalueslast01">
+          <p>
+            If <m>\pi \lt t \lt \frac{3\pi}{2}</m> with <m>\cot(t) = 4.2</m>,
+            find <m>\csc(t)</m>, rounded to four decimal places.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="useidsforvaluesfirst02">Exercises</xref>
+      - <xref ref="useidsforvalueslast02"></xref>,
+      use the Reciprocal and Quotient Identities
+      (<xref ref="recipquotidfull">Theorem</xref>)
+      along with the Pythagorean Identities
+      (<xref ref="pythids">Theorem</xref>),
+      to find the exact values of the remaining circular functions.
+      (Compare your methods with how you solved <xref ref="findothercircfirst">Exercises</xref>
+      - <xref ref="findothercirclast"></xref>
+      in <xref ref="TheOtherCircularFunctions">Section</xref>.)
+      <ol cols="2">
+        <li xml:id="useidsforvaluesfirst02">
+          <p>
+            <m>\sin(\theta) = \dfrac{3}{5}</m> with <m>\theta</m> in Quadrant II
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = \dfrac{12}{5}</m> with <m>\theta</m> in Quadrant III
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = \dfrac{25}{24}</m> with <m>\theta</m> in Quadrant I
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = 7</m> with <m>\theta</m> in Quadrant IV
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = -\dfrac{10\sqrt{91}}{91}</m> with <m>\theta</m> in Quadrant III
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\theta) = -23</m> with <m>\theta</m> in Quadrant II
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = -2</m> with <m>\theta</m> in Quadrant IV.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = -4</m> with <m>\theta</m> in Quadrant II.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\theta) = \sqrt{5}</m> with <m>\theta</m> in Quadrant III.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = \dfrac{1}{3}</m> with <m>\theta</m> in Quadrant I.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(t) = 2</m> with <m>0 \lt t \lt \dfrac{\pi}{2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(t) = 5</m> with <m>\dfrac{\pi}{2} \lt t \lt \pi</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(t) = \sqrt{10}</m> with <m>\pi \lt t \lt \dfrac{3\pi}{2}</m>.
+          </p>
+        </li>
+        <li xml:id="useidsforvalueslast02">
+          <p>
+            <m>\sec(t) = 2\sqrt{5}</m> with <m>\dfrac{3\pi}{2} \lt t \lt 2\pi</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Skippy claims <m>\cos(\theta) + \sin(\theta) = 1</m> is an identity because when
+            <m>\theta = 0</m>, the equation is true.
+            Is Skippy correct?
+            Explain.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="firstcirciden">Exercises</xref>
+      - <xref ref="lastcirciden"></xref>, verify the identity.
+      Assume that all quantities are defined.
+      <ol cols="2">
+        <li xml:id="firstcirciden">
+          <p>
+            <m>\cos(\theta) \sec(\theta) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(t)\cos(t) = \sin(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\theta) \csc(\theta) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(t) \cot(t) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(x) \cos(x) = \cot(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\sin(t)}{\cos^{2}(t)} = \sec(t) \tan(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cos(\theta)}{\sin^{2}(\theta)} = \csc(\theta) \cot(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1+ \sin(x)}{\cos(x)} = \sec(x) + \tan(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1 - \cos(\theta)}{\sin(\theta)} = \csc(\theta) - \cot(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cos(t)}{1 - \sin^{2}(t)} = \sec(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\sin(x)}{1 - \cos^{2}(x)} = \csc(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\sec(t)}{1 + \tan^{2}(t)} = \cos(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\csc(\theta)}{1 + \cot^{2}(\theta)} = \sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\tan(x)}{\sec^{2}(x) - 1} = \cot(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cot(t)}{\csc^{2}(t) - 1} = \tan(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4 \cos^{2}(\theta) + 4 \sin^{2}(\theta) = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>9 - \cos^{2}(t) - \sin^{2}(t) = 8</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan^{3}(t) = \tan(t)\sec^{2}(t) - \tan(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin^{5}(x) = \left(1-\cos^{2}(x)\right)^{2} \sin(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec^{10}(t) = \left(1 + \tan^{2}(t)\right)^4 \sec^{2}(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos^{2}(x)\tan^{3}(x) = \tan(x) - \sin(x)\cos(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec^{4}(t) - \sec^{2}(t) = \tan^{2}(t) + \tan^{4}(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cos(\theta) + 1}{\cos(\theta) - 1} = \dfrac{1 + \sec(\theta)}{1 - \sec(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\sin(t) + 1}{\sin(t) - 1} = \dfrac{1 + \csc(t)}{1 - \csc(t)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1 - \cot(x)}{1+ \cot(x)} = \dfrac{\tan(x) - 1}{\tan(x) + 1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1 - \tan(t)}{1+ \tan(t)} = \dfrac{\cos(t) - \sin(t)}{\cos(t) + \sin(t)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) + \cot(\theta) = \sec(\theta)\csc(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(t) - \sin(t) = \cot(t)\cos(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(x) - \sec(x) = -\tan(x)\sin(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(x)(\tan(x) + \cot(x)) = \csc(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t)(\tan(t) + \cot(t)) = \sec(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{1-\cos(\theta)} + \dfrac{1}{1+\cos(\theta)} = 2\csc^{2}(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{\sec(t) + 1} + \dfrac{1}{\sec(t)-1} = 2 \csc(t) \cot(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{\csc(x) + 1} + \dfrac{1}{\csc(x)-1} = 2 \sec(x) \tan(x)</m>
+          </p>
+        </li>
+        \small
+        <li>
+          <p>
+            <m>\dfrac{1}{\csc(t)-\cot(t)} - \dfrac{1}{\csc(t) + \cot(t)} = 2 \cot(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cos(\theta)}{1 - \tan(\theta)} + \dfrac{\sin(\theta)}{1 - \cot(\theta)} = \sin(\theta) + \cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{\sec(t) + \tan(t)} = \sec(t) - \tan(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{\sec(x) - \tan(x)} = \sec(x) + \tan(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{\csc(t) - \cot(t)} = \csc(t) + \cot(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{\csc(\theta) + \cot(\theta)} = \csc(\theta) - \cot(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{1-\sin(x)} = \sec^{2}(x) + \sec(x) \tan(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{1+\sin(t)} = \sec^{2}(t) - \sec(t) \tan(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{1-\cos(\theta)} = \csc^{2}(\theta) + \csc(\theta) \cot(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{1+\cos(x)} = \csc^{2}(x) - \csc(x) \cot(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cos(t)}{1 + \sin(t)} = \dfrac{1-\sin(t)}{\cos(t)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) - \cot(\theta) = \dfrac{\sin(\theta)}{1 + \cos(\theta)}</m>
+          </p>
+        </li>
+        <li xml:id="lastcirciden">
+          <p>
+            <m>\dfrac{1 - \sin(x)}{1 + \sin(x)} = (\sec(x) - \tan(x))^{2}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="logcircidenfirst">Exercises</xref>
+      - <xref ref="logcircidenlast"></xref>, verify the identity.
+      You may need to consult <xref ref="AbsoluteValueFunctions">Sections</xref>
+      and <xref ref="PropertiesofLogarithms"></xref>
+      for a review of the properties of absolute value and logarithms before proceeding.
+      <ol cols="2">
+        <li xml:id="logcircidenfirst">
+          <p>
+            <m>\ln|\sec(x)| = -\ln|\cos(x)|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\ln|\csc(x)| = \ln|\sin(x)|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\ln|\sec(x) - \tan(x)| = \ln|\sec(x)+\tan(x)|</m>
+          </p>
+        </li>
+        <li xml:id="logcircidenlast">
+          <p>
+            <m>-\ln|\csc(x) + \cot(x)|= \ln|\csc(x) - \cot(x)|</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="5">
+      <li>
+        <p>
+          <m>\csc(\theta) = \sqrt{5}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = -\frac{1}{4}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(t) = \frac{1}{3}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{12}{13}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = -\sqrt{5}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(t) = \sqrt{5}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = -2\sqrt{2}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = -\frac{\sqrt{5}}{3}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(t) \approx 0.9075</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) \approx - 0.6074</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(t) \approx -4.079</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{3}{5}, \cos(\theta) = -\frac{4}{5}, \tan(\theta) = -\frac{3}{4}, \csc(\theta) = \frac{5}{3}, \sec(\theta) = -\frac{5}{4}, \cot(\theta) = -\frac{4}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{12}{13}, \cos(\theta) = -\frac{5}{13}, \tan(\theta) = \frac{12}{5}, \csc(\theta) = -\frac{13}{12}, \sec(\theta) = -\frac{13}{5}, \cot(\theta) = \frac{5}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{24}{25}, \cos(\theta) = \frac{7}{25}, \tan(\theta) = \frac{24}{7}, \csc(\theta) = \frac{25}{24}, \sec(\theta) = \frac{25}{7}, \cot(\theta) = \frac{7}{24}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{-4\sqrt{3}}{7}, \cos(\theta) = \frac{1}{7}, \tan(\theta) = -4\sqrt{3}, \csc(\theta) = -\frac{7\sqrt{3}}{12}, \sec(\theta) = 7, \cot(\theta) = -\frac{\sqrt{3}}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{\sqrt{91}}{10}, \cos(\theta) = -\frac{3}{10}, \tan(\theta) = \frac{\sqrt{91}}{3}, \csc(\theta) = -\frac{10\sqrt{91}}{91}, \sec(\theta) = -\frac{10}{3}, \cot(\theta) = \frac{3\sqrt{91}}{91}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{530}}{530}, \cos(\theta) = -\frac{23\sqrt{530}}{530}, \tan(\theta) = -\frac{1}{23}, \csc(\theta) = \sqrt{530}, \sec(\theta) = -\frac{\sqrt{530}}{23}, \cot(\theta) = -23</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{2\sqrt{5}}{5}, \cos(\theta) = \frac{\sqrt{5}}{5}, \tan(\theta) = -2, \csc(\theta) = -\frac{\sqrt{5}}{2}, \sec(\theta) = \sqrt{5}, \cot(\theta) = -\frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{15}}{4}, \cos(\theta) = -\frac{1}{4}, \tan(\theta) = -\sqrt{15}, \csc(\theta) = \frac{4\sqrt{15}}{15}, \sec(\theta) = -4, \cot(\theta) = -\frac{\sqrt{15}}{15}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{\sqrt{6}}{6}, \cos(\theta) = -\frac{\sqrt{30}}{6}, \tan(\theta) = \frac{\sqrt{5}}{5}, \csc(\theta) = -\sqrt{6}, \sec(\theta) = -\frac{\sqrt{30}}{5}, \cot(\theta) = \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{2\sqrt{2}}{3}, \cos(\theta) = \frac{1}{3}, \tan(\theta) = 2\sqrt{2}, \csc(\theta) = \frac{3\sqrt{2}}{4}, \sec(\theta) = 3, \cot(\theta) = \frac{\sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = \frac{\sqrt{5}}{5}, \cos(t) = \frac{2\sqrt{5}}{5}, \tan(t) = \frac{1}{2}, \csc(t) = \sqrt{5}, \sec(t) = \frac{\sqrt{5}}{2}, \cot(t) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = \frac{1}{5}, \cos(t) = -\frac{2\sqrt{6}}{5}, \tan(t) = -\frac{\sqrt{6}}{12}, \csc(t) = 5, \sec(t) = -\frac{5\sqrt{6}}{12}, \cot(t) = -2\sqrt{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = -\frac{\sqrt{110}}{11}, \cos(t) = -\frac{\sqrt{11}}{11}, \tan(t) = \sqrt{10}, \csc(t) = -\frac{\sqrt{110}}{10}, \sec(t) = -\sqrt{11}, \cot(t) = \frac{\sqrt{10}}{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = -\frac{\sqrt{95}}{10}, \cos(t) = \frac{\sqrt{5}}{10}, \tan(t) = -\sqrt{19}, \csc(t) = -\frac{2\sqrt{95}}{19}, \sec(t) = 2\sqrt{5}, \cot(t) = -\frac{\sqrt{19}}{19}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No, Skippy is not correct.
+          In order to be an identity,
+          an equation must hold for <em>all</em> applicable angles.
+          For example,
+          <m>\cos(\theta) + \sin(\theta) = 1</m> does not hold when <m>\theta = \pi</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

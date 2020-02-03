@@ -1,0 +1,764 @@
+<section xml:id="Circles">
+  <title>Circles</title>
+  <introduction>
+    <p>
+      Our next entry in the conic sections menagerie is the circle.
+      Recall from Geometry that a circle can be determined by fixing a point
+      (called the center)
+      and a positive number
+      (called the radius)
+      as follows.
+          <idx><h>circle</h><h>radius of</h></idx>
+          <idx><h>circle</h><h>center of</h></idx>
+          <idx><h>center</h><h>of a circle</h></idx>
+          <idx><h>radius</h><h>of a circle</h></idx>
+    </p>
+    <definition xml:id="circledefn">
+      <statement>
+        <p>
+          A <term>circle</term> with center <m>(h,k)</m> and radius <m>r>0</m> is the set of all points <m>(x, y)</m> in the plane whose distance to <m>(h,k)</m> is <m>r</m>.
+              <idx><h>circle</h><h>definition of</h></idx>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow\reverse\arrow \polyline{(0.25,0.25), (2.55,2.55)} \tlabel(-0.5,-0.8){<m>(h,k)</m>} \tlabel(1,1.55){<m>r</m>} \plotsymbol[3pt]{Cross}{(0,0)} \point[3pt]{(2.8284,2.8284)} \tlabel(3,3){<m>(x,y)</m>} \penwd{1.25pt} \circle{(0,0),4} \end{mfpic}
+    </p>
+    <p>
+      From the diagram,
+      we see that a point <m>(x,y)</m> is on the circle if and only if its distance to <m>(h,k)</m> is <m>r</m>.
+      We express this relationship algebraically using the Distance Formula,
+      <xref ref="distanceformula">Equation</xref>, as
+      <me>
+        r = \sqrt{(x - h)^2 + (y-k)^2}
+      </me>
+    </p>
+    <p>
+      By squaring both sides of this equation,
+      we get an equivalent equation
+      (since <m>r > 0</m>)
+      which gives us the standard equation of a circle.
+    </p>
+    <proposition xml:id="standardcircle">
+      <title>The Standard Equation of a Circle:</title>
+      <statement>
+        <p>
+          [The Standard Equation of a Circle:] <idx><h>circle</h><h>standard equation</h></idx>
+          <em>The Standard Equation of a Circle:</em>
+        </p>
+        <p>
+          The equation of a circle with center <m>(h,k)</m> and radius <m>r >0</m> is <m>(x-h)^2 + (y-k)^2 = r^2</m>.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Note in the standard equation of a circle,
+      <em>both</em> of the variables squared.
+      This is a quick way to distinguish the equation of a circle from that of a parabola in which only <em>one</em>
+      of the variables is squared.
+    </p>
+    <p>
+      We put <xref ref="standardcircle">Equation</xref>
+      to good use in the following example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li xml:id="circleex1">
+            <p>
+              For each of the equations below:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Graph the equation in the <m>xy</m>-plane.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Find the center and radius.
+                </p>
+              </li>
+            </ul>
+            <ol>
+              <li>
+                <p>
+                  <m>(x+2)^2+(y-1)^2 = 4</m>
+                </p>
+              </li>
+              <li xml:id="ctscircleex">
+                <p>
+                  <m>3x^2 - 6x + 3y^2 + 4y -4 = 0</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Graph <m>f(x) = - \sqrt{4x-x^2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the standard form of the circle satisfying the following characteristics:
+              <ol>
+                <li>
+                  <p>
+                    The points <m>(-1,3)</m> and <m>(2,4)</m> are the endpoints of a diameter.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The circle whose graph is below. \begin{mfpic}[15]{-5}{1}{-1}{5} \axes \xmarks{-4, -3, -2, -1, 0} \ymarks{1,2,3,4} \tlabel(1,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel[cc](-2, -0.5){<m>(-2,0)</m>} \tlabel[cc](1,2){<m>(0,2)</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4} \axislabels {y}{ {<m>4</m>} 4} \penwd{1.25pt} \circle{(-2,2),2} \point[4pt]{(-2,0), (0,2)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Rewriting <m>(x+2)^2+(y-1)^2 = 4</m> as <m>(x-(-2))^2+(y-1)^2 = (2)^2</m>,
+                    we identify <m>h = -2</m>, <m>k=1</m> and <m>r = 2</m>.
+                    Thus we have a circle centered at <m>(-2,1)</m> with a radius of <m>2</m>.
+                    To help us create a detailed graph,
+                    we start from the center <m>(-2,1)</m> and move two units to the left and two units up and down to the right to identify four points on the graph.<fn>
+                    Note the center of the circle is <em>not</em>
+                    on the graph of the circle!
+                    </fn> We get <m>(-2-2, 1) = (-4,1)</m>, <m>(-2+2, 1) = (0,1)</m>,
+                    <m>(-2, 1+2) = (-2,3)</m> and <m>(-2,1-2) = (-2,-1)</m>.
+                    Our graph is below on the left.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In order to make use of <xref ref="standardcircle">Equation</xref>,
+                    we need to put <m>3x^2 - 6x + 3y^2 + 4y -4 = 0</m> into standard form.
+                    To that end,
+                    we complete the square on both the <m>x</m> and <m>y</m> terms and collect the constants to the other side of the equation as demonstrated below.
+                    <me>
+                      \begin{array}{rclr} 3x^2 - 6x + 3y^2 + 4y -4 \amp  = \amp  0 \amp  \\ 3x^2 - 6x + 3y^2 + 4y \amp  = \amp  4 \amp  \text{ add \(4\) to both sides }  \\ 3\left(x^2 - 2x \right) + 3\left(y^2 + \dfrac{4}{3} y\right) \amp  = \amp  4 \amp  \text{ factor out leading coefficients }  \\ 3\left(x^2 - 2x + \underline{1} \right) + 3\left(y^2 + \dfrac{4}{3} y + \underline{\underline{\dfrac{4}{9}}} \right) \amp  = \amp  4 + 3\underline{(1)} + 3\underline{\underline{\left(\dfrac{4}{9}\right)}} \amp   \text{ complete the square in \(x\), \(y\) }  \\ 3(x - 1)^2 + 3\left(y + \dfrac{2}{3}\right)^2 \amp  = \amp  \dfrac{25}{3} \amp  \text{ factor }  \\ (x - 1)^2 + \left(y + \dfrac{2}{3}\right)^2 \amp  = \amp  \dfrac{25}{9} \amp  \text{ divide both sides by \(3\) }  \\ (x - 1)^2 + \left(y - \left(- \dfrac{2}{3} \right) \right)^2 \amp  = \amp  \left( \dfrac{5}{3} \right)^2 \amp  \text{ rewrite in the form of <xref ref="standardcircle">Equation</xref>. } \end{array}
+                    </me>
+                    From <xref ref="standardcircle">Equation</xref>, we identify <m>h = 1</m>,
+                    <m>k =  - \frac{2}{3}</m>, and <m>r   = \frac{5}{3}</m>.
+                    Hence, we have a circle with center
+                    <m>\left(1, -\frac{2}{3}\right)</m> and radius  <m>\frac{5}{3}</m>.
+                    As above, we find four points on the circle by starting at the center  <m>\left(1, -\frac{2}{3}\right)</m> and moving up, down,
+                    to the left, and to the right <m>\frac{5}{3}</m> units.
+                    Doing so produces the following points:
+                    <m>\left(-\frac{2}{3}, -\frac{2}{3}\right)</m> ,
+                    <m>\left(\frac{8}{3}, -\frac{2}{3}\right)</m> ,   <m>\left(1, 1\right)</m>,
+                    and <m>\left(1, -\frac{7}{3}\right)</m>.
+                    Our graph is below on the right.  \begin{mfpic}[20]{-5}{2}{-2}{4} \axes \plotsymbol[3pt]{Cross}{(-2,1)} \tlabel[cc](-2, 1.5){<m>(-2,1)</m>} \tlabel[cc](1, 1){<m>(0,1)</m>} \tlabel[cc](-5, 1){<m>(-4,1)</m>} \tlabel[cc](-2, 3.5){<m>(-2,3)</m>} \tlabel[cc](-2, -1.5){<m>(-2,-1)</m>} \tcaption{The graph of
+                    <m>(x+2)^2+(y-1)^2 = 4</m>} \xmarks{-4, -3, -2,-1,0, 1} \ymarks{-1,0,1, 2,3} \tlabel(2,-0.25){<m>x</m>} \tlabel(0.25,4){<m>y</m>} \tlpointsep{4pt}  \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1,  {<m>3</m>} 3, {<m>4</m>} 4}  \penwd{1.25pt} \circle{(-2,1),2} \point[4pt]{(0,1), (-4,1), (-2,3), (-2,-1)} \end{mfpic}  \begin{mfpic}[20]{-2}{5}{-4}{2} \axes \plotsymbol[3pt]{Cross}{(1, -0.6666)} \tlabel[cc](-1.75, -0.6666){<m>\left(-\frac{2}{3}, -\frac{2}{3}\right)</m>} \tlabel[cc](3.5, -0.6666){<m>\left(\frac{8}{3}, -\frac{2}{3}\right)</m>} \tlabel[cc](1, 1.5){<m>\left(1, 1\right)</m>} \tlabel[cc](1, -2.8){<m>\left(1, -\frac{7}{3}\right)</m>} \tlabel[cc](1, -1.25){<m>\left(1, -\frac{2}{3}\right)</m>} \tcaption{The graph of
+                    <m>3x^2 - 6x + 3y^2 + 4y -4 = 0</m>} \xmarks{-1, 1, 2, 3, 4} \ymarks{-3,-2,-1,1} \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,2){<m>y</m>} \tlpointsep{4pt}  \axislabels {x}{ {<m>2</m>} 2} \axislabels {y}{{<m>-3</m>} -3,  {<m>1</m>} 1}  \penwd{1.25pt} \circle{(1,-0.6666),1.6666} \point[4pt]{(-0.6666,-0.6666), (2.6666,-0.6666), (1,1), (1,-2.3333)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                We are asked to graph <m>f(x) = - \sqrt{4x-x^2}</m>, which,
+                at first glance, seems out of place in this section.
+                However, to graph means we graph the equation <m>y = -\sqrt{4x-x^2}</m>.
+                Squaring both sides, we get
+                <m>y^2 = (-\sqrt{4x-x^2})^2</m> or <m>y^2 = 4x - x^2</m>.
+                Rearranging this equation gives <m>x^2-4x+y^2 = 0</m>.
+                Completing the square, we obtain <m>(x-2)^2 + y^2 = 4</m> which,
+                when rewritten as <m>(x-2)^2 + (y-0)^2 = (2)^2</m> is precisely the standard form of a circle as written in <xref ref="standardcircle">Equation</xref>.
+                With <m>h = 2</m>, <m>k=0</m> and <m>r=2</m>,
+                we know the graph of <m>(x-2)^2 + y^2 = 4</m> is a circle of radius <m>2</m> centered at <m>(2,0)</m>.
+                However, the graph we want isn't the
+                <em>entire</em> circle.<fn>
+                For one thing,
+                the graph of a circle fails the Vertical Line Test so it does not represent <m>y</m> as a function of <m>x</m> in this case.
+                </fn>  Indeed, we want the graph of <m>y = -\sqrt{4x-x^2}</m>.
+                Because of the <sq><m>-</m> </sq>,
+                we want the <em>lower</em> semicircle,
+                graphed below on the left.
+              </p>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    We recall that a diameter of a circle is a line segment containing the center and two points on the circle.
+                    We plot the data given to us below on the right. \begin{mfpic}[20]{-2}{5}{-3}{3} \axes \plotsymbol[3pt]{Cross}{(2,0) } \tlabel[cc](2, -2.5){<m>(2,-2)</m>} \tlabel[cc](0.5, 0.25){<m>(0,0)</m>} \tlabel[cc](3.5, 0.25){<m>(4,0)</m>} \tlabel[cc](2, 0.25){<m>(2,0)</m>} \dotted \circle{(2,0),2} \tcaption{The graph of
+                    <m>f(x) = - \sqrt{4x-x^2}</m>.} \xmarks{-1, 1, 3, 4} \ymarks{-2,-1,1,2} \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,3){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \plrfcn{90,180,5}{4*cosd(t)} \point[4pt]{(0,0), (2,-2), (4,0)} \end{mfpic} \begin{mfpic}[20]{-2}{4}{-0.5}{5.5} \axes \dashed \circle{(0.5,3.5),3.162277660/2} \point[4pt]{(-1,3), (2,4)} \plotsymbol[3pt]{Cross}{(0.5,3.5)} \xmarks{-2,-1,0,1,2,3} \ymarks{0,1,2,3,4,5} \tlabel(4,-0.25){ <m>x</m>} \tlabel(0.25,5.5){ <m>y</m>} \arrow \reverse \arrow \polyline{(0.75,3.583),(1.75,3.916)} \tlabel[cc](0.85,3){<m>(h,k)</m>} \tlabel[cc](1.15,4){<m>r</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>}, 5} \end{mfpic} Since the given points are endpoints of a diameter,
+                    we know their midpoint <m>(h, k)</m> is the center of the circle.
+                    Likewise, the diameter of the circle is the distance between the given points,
+                    so we can find the radius of the circle by taking half of this distance.
+                    Using <xref ref="midpointformula">Equations</xref>
+                    and <xref ref="distanceformula"></xref>, respectively, we get:
+                    <m>\begin{array}{rcl} (h,k) \amp = \amp \left( \dfrac{x_{\text{ \tiny\(0\) } } + x_{\text{ \tiny\(1\) } }}{2}, \dfrac{y_{\text{ \tiny\(0\) } } + y_{\text{ \tiny\(1\) } }}{2} \right) \\ \amp = \amp \left( \dfrac{-1+2}{2}, \dfrac{3+4}{2} \right) \\ \amp = \amp \left( \dfrac{1}{2}, \dfrac{7}{2} \right) \\ \amp \amp \end{array}</m> <m>\begin{array}{rcl} r \amp = \amp \dfrac{1}{2} \sqrt{\left(x_{\text{ \tiny\(1\) } } - x_{\text{ \tiny\(0\) } }\right)^2+\left(y_{\text{ \tiny\(1\) } }-y_{\text{ \tiny\(0\) } }\right)^2} \\ \amp = \amp \dfrac{1}{2} \sqrt{(2-(-1))^2+(4-3)^2} \\ \amp = \amp \dfrac{1}{2} \sqrt{3^2+1^2} \\ \amp = \amp \dfrac{\sqrt{10}}{2} \end{array}</m> Finally,
+                    since <m>\left( \frac{\sqrt{10}}{2} \right)^2 = \frac{10}{4} = \frac{5}{2}</m>,
+                    our answer becomes <m>\left(x - \frac{1}{2} \right)^2 + \left(y - \frac{7}{2} \right)^2 =\frac{5}{2}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    From the graph given to us,
+                    we are safe to assume the center of the circle is <m>(-2,2)</m> since the circle appears to be <em>tangent</em>
+                    to the coordinate axes at <m>(-2,0)</m> and <m>(0,2)</m>.<fn>
+                    Recall that for every point <m>P</m> on the circle,
+                    the tangent line at <m>P</m> is perpendicular to the radial line containing the center and <m>P</m>.
+                    Since the circle is tangent to the <m>x</m>-axis at <m>(-2,0)</m>,
+                    the center must lie on a line perpendicular to the <m>x</m>-axis which contains <m>(-2,0)</m> or <m>x = -2</m>.
+                    Likewise, the circle is tangent to the <m>y</m>-axis at <m>(0,2)</m>,
+                    the center must lie on <m>y=2</m>.
+                    Hence the center is <m>(-2,2)</m>.
+                    </fn>  Moreover,
+                    since the distance from <m>(-2,2)</m> to either of <m>(-2,0)</m> or <m>(0,2)</m> is <m>2</m>,
+                    the radius of the circle is <m>2</m>.
+                    Per <xref ref="standardcircle">Equation</xref>,
+                    our answer is <m>(x-(-2))^2 + (y-2)^2 = (2)^2</m> or <m>(x+2)^2+(y-2)^2 = 4</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In <xref ref="ctscircleex">number</xref> above,
+      we needed to transform a given equation into the standard form as stated in <xref ref="standardcircle">Equation</xref>.
+      We record these steps below.
+      Note that given an equation that represents a circle,
+      <em>both</em> variables need to be squared and the squared terms must have the
+      <em>same</em> coefficients.
+    </p>
+    <p>
+      <em>To Write the Equation of a Circle in Standard Form</em>
+      <ol>
+        <li>
+          <p>
+            Group common variables together on one side of the equation and put the constant on the other.
+          </p>
+        </li>
+        <li>
+          <p>
+            Complete the square on both variables as needed.
+          </p>
+        </li>
+        <li>
+          <p>
+            Divide both sides by the coefficient of the squares.
+            (For circles, they will be the same.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      It is possible to obtain equations like
+      <m>(x-3)^2 + (y+1)^2 = 0</m> or <m>(x-3)^2 + (y+1)^2 = -1</m>,
+      neither of which describes a circle. (Do you see why not?) The reader is encouraged to think about what,
+      if any, points lie on the graphs of these two equations.
+    </p>
+    <p>
+      We close this section with a brief discussion of the so-called
+      <em>Unit Circle</em>.<fn>
+      Widely regarded as the most important circle in all of mathematics.
+      </fn>
+    </p>
+    <definition xml:id="UnitCircle">
+      <statement>
+        <p>
+          The <term>Unit Circle</term> <idx><h>Unit Circle</h><h>definition of</h></idx> is the circle centered at <m>(0,0)</m> with a radius of <m>1</m>.
+          The standard equation of the Unit Circle is <m>x^2 + y^2 = 1</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In some ways,
+      we may think of the Unit Circle as the progenitor of all circles.
+      Indeed, if we divide both sides of <xref ref="standardcircle">Equation</xref> by <m>r^2</m>,
+      we obtain the alternate standard form of a circle below.
+    </p>
+    <proposition xml:id="standardcirclealternate">
+      <title>The Alternate Standard Equation of a Circle:</title>
+      <statement>
+        <p>
+          [The Alternate Standard Equation of a Circle:] <idx><h>circle</h><h>standard equation,
+          alternate</h></idx> <em>The Alternate Standard Equation of a Circle:</em>
+          The equation of a circle with center <m>(h,k)</m> and radius <m>r >0</m> is
+          <me>
+            \dfrac{(x-h)^2}{r^2} + \dfrac{(y-k)^2}{r^2} = 1
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Taking this one step further,
+      we may rewrite <xref ref="standardcirclealternate">Equation</xref> as
+      <me>
+        \left( \dfrac{x-h}{r} \right)^2 +  \left( \dfrac{y-k}{r} \right)^2 = 1
+      </me>.
+    </p>
+    <p>
+      Hence, every circle can be obtained from the Unit Circle via the transformations discussed in <xref ref="Transformations">Section</xref>.<fn>
+      See <xref ref="circletransunitcircleexercise">Exercise</xref>.
+      </fn>
+    </p>
+    <p>
+      Our last example has us find some important points on the the Unit Circle.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Find the points on the unit circle with <m>y</m>-coordinate <m>\frac{\sqrt{3}}{2}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Note that all points <m>(x,y)</m> on the Unit Circle satisfy the equation <m>x^2+y^2 = 1</m>.
+          Hence, our first step is to replace <m>y</m> with
+          <m>\frac{\sqrt{3}}{2}</m> and solve for <m>x</m>.
+          <me>
+            \begin{array}{rclr} x^2 + y^2 \amp  = \amp  1 \amp  \\ x^2 + \left(\dfrac{\sqrt{3}}{2}\right)^2 \amp  = \amp  1 \amp   \\ \dfrac{3}{4} + x^2 \amp  = \amp  1 \amp  \\ x^2 \amp  = \amp  \dfrac{1}{4} \amp  \\ x  \amp  = \amp  \pm \sqrt{\dfrac{1}{4}} \amp  \text{ extract square roots }  \\ x \amp  = \amp  \pm \dfrac{1}{2} \amp \end{array}
+          </me>
+        </p>
+        <p>
+          We find <m>x = \pm \frac{1}{2}</m> so our final answers are
+          <m>\left(\frac{1}{2}, \frac{\sqrt{3}}{2} \right)</m> and <m>\left(-\frac{1}{2}, \frac{\sqrt{3}}{2} \right)</m>.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforCircles">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="circleeqnfirst">Exercises</xref>
+      - <xref ref="circleeqnlast"></xref>,
+      graph the circle in the <m>xy</m>-plane.
+      Find the center and radius.
+      <ol cols="3">
+        <li xml:id="circleeqnfirst">
+          <p>
+            <m>(x + 1)^{2} + (y + 5)^{2} = 100</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x-4)^2+(y+2)^2 = 9</m>
+          </p>
+        </li>
+        <li xml:id="oddcirclethree">
+          <p>
+            <m>\left(x + 3\right)^{2} + \left(y - \frac{7}{13}\right)^{2} = \frac{1}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x - 5)^{2} + (y + 9)^{2} = (\ln(8))^{2}</m>
+          </p>
+        </li>
+        <li xml:id="oddcirclefive">
+          <p>
+            <m>(x + e)^{2} + \left(y - \sqrt{2} \right)^{2} = \pi^{2}</m>
+          </p>
+        </li>
+        <li xml:id="circleeqnlast">
+          <p>
+            <m>\left(x - \pi \right)^{2} + \left(y - e^{2}\right)^{2} = 91^{\frac{2}{3}}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="ctscirclefirst">Exercises</xref>
+      - <xref ref="ctscirclelast"></xref>,
+      complete the square in order to put the equation into standard form.
+      Identify the center and the radius or explain why the equation does not represent a circle.<fn>
+      <ellipsis/> assuming the equation were graphed in the <m>xy</m>-plane.
+      </fn>
+      <ol cols="4">
+        <li xml:id="ctscirclefirst">
+          <p>
+            <m>x^{2} - 4x + y^{2} + 10y = -25</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-2x^{2} - 36x - 2y^{2} - 112 = 0</m>
+          </p>
+        </li>
+        <li xml:id="oddcirclenine">
+          <p>
+            <m>3x^2+3y^2+24x-30y -3 =0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2+y^2+5x-y-1=0</m>
+          </p>
+        </li>
+        <li xml:id="oddcircleeleven">
+          <p>
+            <m>x^{2} + x + y^{2} - \frac{6}{5}y = 1</m>
+          </p>
+        </li>
+        <li xml:id="ctscirclelast">
+          <p>
+            <m>4x^{2} + 4y^{2} - 24y + 36 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            For each of the odd numbered equations given in <xref ref="oddcircleone">Exercises</xref>
+            - <xref ref="oddcircleeleven"></xref>,
+            find two or more explicit functions of <m>x</m> represented by each of the equations.
+            (See <xref ref="horizontalparabolaex">Example</xref>
+            in <xref ref="Parabolas">Section</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="semicirclefunctionfirst">Exercises</xref>
+      - <xref ref="semicirclefunctionlast"></xref>,
+      graph each function by recognizing it as a semicircle.
+      <ol cols="2">
+        <li xml:id="semicirclefunctionfirst">
+          <p>
+            <m>f(x) = \sqrt{4-x^2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(x) = -\sqrt{6x-x^2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -\sqrt{3-2x-x^2}</m>
+          </p>
+        </li>
+        <li xml:id="semicirclefunctionlast">
+          <p>
+            <m>g(x) = -2 + \sqrt{9-x^2}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="buildcirclefromgraphfirst">Exercises</xref>
+      - <xref ref="buildcirclefromgraphlast"></xref>,
+      find an equation for the circle or semicircle whose graph is given.
+      <ol cols="2">
+        <li xml:id="buildcirclefromgraphfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-4}{6}{-5}{5} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1, 3.5){<m>(1,3)</m>} \tlabel[cc](1.25, -3.75){<m>(1,-3)</m>} \tlabel[cc](-3, 0.75){<m>(-2,0)</m>} \tlabel[cc](5, 0.75){<m>(4,0)</m>} \xmarks{-3 step 1 until 5} \ymarks{-4 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>5</m>} 5} \axislabels {y}{ {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4 } \penwd{1.25pt} \circle{(1,0), 3} \point[4pt]{(-2,0), (4,0), (1,3), (1,-3)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-1}{9}{-1}{9} \axes \tlabel[cc](9,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \tlabel[cc](1, 4){<m>(0,4)</m>} \tlabel[cc](7, 4){<m>(8,4)</m>} \tlabel[cc](4, 8.75){<m>(4,8)</m>} \tlabel[cc](4, 0.75){<m>(4,0)</m>} \xmarks{1 step 1 until 8} \ymarks{1 step 1 until 8} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \circle{(4,4), 4} \point[4pt]{(4,0), (0,4), (4,8), (8,4)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-5}{5}{-1}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-4, 4.5){<m>(-4,4)</m>} \tlabel[cc](4, 4.5){<m>(4,4)</m>} \tlabel[cc](0.75, -0.75){<m>(0, 0)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>4</m>} 4, {<m>3</m>} 3, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{-4,4,0.1}{4-sqrt(16-(x**2))} \point[4pt]{(-4,4), (0,0), (4,4)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="buildcirclefromgraphlast">
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-1}{9}{-1}{6} \axes \tlabel[cc](9,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](8, -0.75){<m>(8,0)</m>} \tlabel[cc](4, 4.5){<m>(4,4)</m>} \tlabel[cc](-0.75, -0.75){<m>(0, 0)</m>} \xmarks{1 step 1 until 8} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7 } \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{0,8,0.1}{sqrt(8*x-(x**2))} \point[4pt]{(8,0), (0,0), (4,4)} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="buildcirclefirst">Exercises</xref>
+      - <xref ref="buildcirclelast"></xref>,
+      find the standard equation of the circle which satisfies the given criteria.
+      <ol cols="3">
+        <li xml:id="buildcirclefirst">
+          <p>
+            center <m>(3, 5)</m>, passes through <m>(-1, -2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            center <m>(3, 6)</m>, passes through <m>(-1, 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            endpoints of a diameter: <m>(3,6)</m> and <m>(-1,4)</m>
+          </p>
+        </li>
+        <li xml:id="buildcirclelast">
+          <p>
+            endpoints of a diameter:
+            <m>\left( \frac{1}{2}, 4\right)</m>,
+            <m>\left(\frac{3}{2}, -1\right)</m>
+          </p>
+        </li>
+        <li xml:id="giantwheelcircle">
+          <p>
+            The Giant Wheel at Cedar Point is a circle with diameter 128 feet which sits on an 8 foot tall platform making its overall height is 136 feet.<fn>
+            Source:
+            <url href="http://www.cedarpoint.com/public/park/rides/tranquil/giant_wheel.cfm"><em>Cedar Point's webpage</em></url>.
+            </fn>  Find an equation for the wheel assuming that its center lies on the <m>y</m>-axis and that the ground is the <m>x</m>-axis.
+          </p>
+        </li>
+        <li>
+          <p>
+            Verify that the following points lie on the Unit Circle:
+            <m>(\pm 1, 0)</m>, <m>(0, \pm 1)</m>,
+            <m>\left(\pm \frac{\sqrt{2}}{2}, \pm \frac{\sqrt{2}}{2}\right)</m>,
+            <m>\left(\pm \frac{1}{2}, \pm \frac{\sqrt{3}}{2}\right)</m> and <m>\left(\pm \frac{\sqrt{3}}{2}, \pm \frac{1}{2}\right)</m>
+          </p>
+        </li>
+        <li xml:id="circletransunitcircleexercise">
+          <p>
+            Discuss with your classmates how to obtain the alternate standard equation of a circle,
+            <xref ref="standardcirclealternate">Equation</xref>,
+            from the equation of the Unit Circle,
+            <m>x^2+y^2=1</m> using the transformations discussed in <xref ref="Transformations">Section</xref>.
+            (Thus every circle is just a few transformations away from the Unit Circle.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Find a one-to-one function whose graph is half of a circle.
+            HINT: Think piecewise <ellipsis/>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          Center <m>(-1, -5)</m>,
+          radius <m>10</m> \begin{mfpic}[6]{-12}{10}{-16}{6} \axes \plotsymbol[4pt]{Cross}{(-1,-5)} \xmarks{-11,-1,9} \ymarks{-15,-5,5} \tlabel(10,-0.5){<m>x</m>} \tlabel(0.5,6){<m>y</m>} \tlabel(0.5,-5.25){ <m>-5</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-11</m>} -11, {<m>-1</m>} -1, {<m>9</m>} 9} \axislabels {y}{{<m>-15</m>} -15, {<m>5</m>} 5} \penwd{1.25pt} \circle{(-1,-5),10} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Center <m>(4,-2)</m>,
+          radius <m>3</m> \begin{mfpic}[15.5]{-1}{8}{-6}{2} \axes \plotsymbol[4pt]{Cross}{(4,-2)} \xmarks{1,4,7} \ymarks{-5,-2,1} \tlabel(8,-0.5){<m>x</m>} \tlabel(0.5,2){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1,{<m>4</m>} 4,{<m>7</m>} 7} \axislabels {y}{{<m>-5</m>} -5, {<m>-2</m>} -2, {<m>1</m>} 1 } \penwd{1.25pt} \circle{(4,-2),3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Center <m>\left(-3, \frac{7}{13}\right)</m>,
+          radius <m>\frac{1}{2}</m> \begin{mfpic}[35]{-4}{1}{-0.75}{2} \axes \plotsymbol[4pt]{Cross}{(-3,0.53846)} \xmarks{-3.5,-3,-2.5} \ymarks{0.03846, 0.53836, 1.03846} \tlabel(1,-0.25){<m>x</m>} \tlabel(0.25,2){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{7}{2}</m>} -3.5, {<m>-3</m>} -3, {<m>-\frac{5}{2}</m>} -2.5} \axislabels {y}{{<m>\frac{1}{26}</m>} 0.03846, {<m>\frac{7}{13}</m>} 0.53846, {<m>\frac{27}{26}</m>} 1.03846} \penwd{1.25pt} \circle{(-3,0.53846),0.5} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Center <m>(5, -9)</m>,
+          radius <m>\ln(8)</m> \begin{mfpic}[10]{-1}{8}{-12}{1} \axes \plotsymbol[4pt]{Cross}{(5,-9)} \xmarks{2.92055, 5, 7.07944} \ymarks{-11.07944, -9, -6.92055} \tlabel(8,0.5){<m>x</m>} \tlabel(0.5,1){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>5 - \ln(8)</m>} 2.92055, {<m>5</m>} 5, {<m>5 + \ln(8)</m>} 7.07944} \axislabels {y}{{<m>-9 - \ln(8)</m>} -11.07944, {<m>-9</m>} -9, {<m>-9 + \ln(8)</m>} -6.92055} \penwd{1.25pt} \circle{(5, -9),2.0794} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Center <m>\left(-e, \sqrt{2}\right)</m>,
+          radius <m>\pi</m> \begin{mfpic}[10]{-7}{3}{-3}{6} \axes \plotsymbol[4pt]{Cross}{(-2.71828, 1.41421)} \xmarks{-5.85987, -2.71828, 0.42331} \ymarks{-1.72738,1.41421, 4.55581} \tlabel(3,0.5){<m>x</m>} \tlabel(0.5,6){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-e-\pi</m>} -6.85987, {<m>-e</m>} -2.71828, {<m>-e+\pi</m>} 1.42331} \tlabel(0.5,-2.22738){<m>\sqrt{2}-\pi</m>} \tlabel(0.5,1.41421){<m>\sqrt{2}</m>} \tlabel(0.5,4.55581){<m>\sqrt{2}+\pi</m>} \penwd{1.25pt} \circle{(-2.71828, 1.41421),3.14159} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Center <m>(\pi, e^{2})</m>,
+          radius <m>\sqrt[3]{91}</m> \begin{mfpic}[10]{-2}{8.25}{-0.25}{13} \axes \plotsymbol[4pt]{Cross}{(3.14159,7.389)} \xmarks{-1.3563, 3.14159, 7.6395} \ymarks{2.8911, 7.389, 11.88699} \tlabel(8.25,0.5){<m>x</m>} \tlabel(0.25,13){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>\pi - \sqrt[3]{91}</m>} -1.3563, {<m>\pi</m>} 3.14159, {<m>\pi + \sqrt[3]{91}</m>} 7.6395} \axislabels {y}{{<m>e^{2} - \sqrt[3]{91}</m>} 2.8911, {<m>e^{2}</m>} 7.389, {<m>e^{2} + \sqrt[3]{91}</m>} 11.88699} \penwd{1.25pt} \circle{(3.14159,7.389),4.4979} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x - 2)^{2} + (y + 5)^{2} = 4</m> Center <m>(2, -5)</m>,
+          radius <m>r = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x + 9)^{2} + y^{2} = 25</m> Center <m>(-9, 0)</m>,
+          radius <m>r = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x+4)^2 + (y-5)^2 = 42</m> Center <m>(-4,5)</m>,
+          radius <m>r = \sqrt{42}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x + \frac{5}{2}\right)^2 + \left(y - \frac{1}{2}\right)^2 = \frac{30}{4}</m> Center <m>\left( -\frac{5}{2}, \frac{1}{2}\right)</m>,
+          radius <m>r = \frac{\sqrt{30}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x + \frac{1}{2}\right)^{2} + \left(y - \frac{3}{5}\right)^{2} = \frac{161}{100}</m> Center <m>\left(-\frac{1}{2}, \frac{3}{5}\right)</m>,
+          radius <m>r = \frac{\sqrt{161}}{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{2} + (y - 3)^{2} = 0</m> This is not a circle.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> For <xref ref="oddcircleone">number</xref>:
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = -5 + \sqrt{99-2x-x^2}</m> represents the upper semicircle.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(x) = -5 - \sqrt{99-2x-x^2}</m> represents the lower semicircle.
+              </p>
+            </li>
+          </ul>
+        </p>
+        For <xref ref="oddcirclethree">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = \frac{7}{13} + \frac{1}{2} \sqrt{-4x^2-24x-35}</m> represents the upper semicircle.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = \frac{7}{13} - \frac{1}{2} \sqrt{-4x^2-24x-35}</m> represents the lower semicircle.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddcirclefive">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = \sqrt{2} + \sqrt{\pi^2-e^2-2ex-x^2}</m> represents the upper semicircle.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = \sqrt{2} - \sqrt{\pi^2-e^2-2ex-x^2}</m> represents the lower semicircle.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddcircleseven">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = -5 + \sqrt{4x-x^2}</m> represents the upper semicircle.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = -5 - \sqrt{4x-x^2}</m> represents the lower semicircle.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddcirclenine">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = 5 + \sqrt{26-8x-x^2}</m> represents the upper semicircle.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = 5 - \sqrt{26-8x-x^2}</m> represents the lower semicircle.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddcircleeleven">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = \frac{3}{5} + \frac{1}{5} \sqrt{34-25x-25x^2}</m> represents the upper semicircle.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = \frac{3}{5} - \frac{1}{5} \sqrt{34-25x-25x^2}</m> represents the lower semicircle.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{4-x^2}</m> \begin{mfpic}[15]{-5}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-4, -0.5){<m>(-2,0)</m>} \tlabel[cc](4, -0.5){<m>(2, 0)</m>} \tlabel[cc](-1, 4.5){<m>(0,2)</m>} \xmarks{-4 step 2 until 4} \ymarks{0 step 2 until 4} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -2, {<m>1</m>} 2} \axislabels {y}{ {<m>1</m>} 2 } \penwd{1.25pt} \function{-4,4,0.1}{sqrt(16-(x**2))} \point[4pt]{(-4,0), (0,4), (4,0)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = -\sqrt{6x-x^2}</m> \begin{mfpic}[15]{-1}{7}{-4.5}{1.5} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,1.5){<m>y</m>} \tlabel[cc](3, -3.5){<m>(3,-3)</m>} \tlabel[cc](-0.75, 0.75){<m>(0,0)</m>} \tlabel[cc](6, 0.75){<m>(6,0)</m>} \xmarks{1 step 1 until 6} \ymarks{-4 step 1 until -1} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \function{0, 6, 0.1}{-sqrt(6*x-(x**2))} \point[4pt]{(0,0), (3,-3), (6,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = -\sqrt{3-2x-x^2}</m> \begin{mfpic}[20]{-4}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](-3, 0.5){<m>(-3,0)</m>} \tlabel[cc](-1.25, -2.5){<m>(-1,-2)</m>} \tlabel[cc](1, 0.5){<m>(1,0)</m>} \xmarks{-3 step 1 until 3} \ymarks{-3 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3, {<m>-1</m>} -1} \penwd{1.25pt} \function{-3,1,0.1}{-sqrt(3-2*x-(x**2))} \point[4pt]{(-3,0), (-1,-2), (1,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = -2 + \sqrt{9-x^2}</m> \begin{mfpic}[20]{-4}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](1,1.25){<m>(0,1)</m>} \tlabel[cc](-3, -2.5){<m>(-3,-2)</m>} \tlabel[cc](3, -2.5){<m>(3,-2)</m>} \xmarks{-3 step 1 until 3} \ymarks{-3 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>2</m>} 2, {<m>3</m>} 3, {<m>1</m>} 1} \axislabels {y}{ {<m>2</m>} 2,{<m>3</m>} 3, {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3} \penwd{1.25pt} \function{-3,3,0.1}{-2+sqrt(9-(x**2))} \point[4pt]{(0,1), (-3,-2), (3,-2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-1)^2+y^2=9</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-4)^2+(y-4)^2=16</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 4-\sqrt{16-x^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \sqrt{8x-x^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x - 3)^{2} + (y - 5)^{2} = 65</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-3)^2+(y-6)^2 = 20</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-1)^2 + (y-5)^2 = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-1)^2 + \left(y - \frac{3}{2}\right)^2 = \frac{13}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{2} + (y - 72)^{2} = 4096</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

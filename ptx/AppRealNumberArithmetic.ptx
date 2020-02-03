@@ -1,0 +1,1610 @@
+<section xml:id="AppRealNumberArithmetic">
+  <title>Real Number Arithmetic</title>
+  <introduction>
+    <p>
+      In this section we list the properties of real number arithmetic.
+      This is meant to be a succinct,
+      targeted review so we'll resist the temptation to wax poetic about these axioms and their subtleties and refer the interested reader to a more formal course in Abstract Algebra.
+      There are two primary operations one can perform with real numbers:
+      addition and multiplication.
+      We'll start with the properties of addition.
+      <em>Properties of Real Number Addition</em>
+      <ul>
+        <li>
+          <p>
+            <em>Closure:</em> For all real numbers <m>a</m> and <m>b</m>,
+            <m>a+b</m> is also a real number.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Commutativity:</em> For all real numbers <m>a</m> and <m>b</m>,
+            <m>a+b = b+a</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Associativity:</em> For all real numbers <m>a</m>,
+            <m>b</m> and <m>c</m>, <m>a+(b+c) = (a+b)+c</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Identity:</em> There is a real number <sq><m>0</m></sq> so that for all real numbers <m>a</m>,
+            <m>a+0 = a</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Inverse:</em> For all real numbers <m>a</m>,
+            there is a real number <m>-a</m> such that <m>a + (-a) = 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Definition of Subtraction:</em>
+            For all real numbers <m>a</m> and <m>b</m>, <m>a - b = a + (-b)</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Next, we give real number multiplication a similar treatment.
+      Recall that we may denote the product of two real numbers <m>a</m> and <m>b</m> a variety of ways:
+      <m>ab</m>, <m>a \cdot b</m>, <m>a(b)</m>, <m>(a)(b)</m> and so on.
+      We'll refrain from using <m>a \times b</m> for real number multiplication in this text with one notable exception in <xref ref="scientificnotation">Definition</xref>.
+      <em>Properties of Real Number Multiplication</em>
+      <ul>
+        <li>
+          <p>
+            <em>Closure:</em> For all real numbers <m>a</m> and <m>b</m>,
+            <m>ab</m> is also a real number.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Commutativity:</em> For all real numbers <m>a</m> and <m>b</m>,
+            <m>ab = ba</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Associativity:</em> For all real numbers <m>a</m>,
+            <m>b</m> and <m>c</m>, <m>a(bc) = (ab)c</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Identity:</em> There is a real number <sq><m>1</m></sq> so that for all real numbers <m>a</m>,
+            <m>a \cdot 1 = a</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Inverse:</em> For all real numbers <m>a \neq 0</m>,
+            there is a real number <m>\dfrac{1}{a}</m> such that <m>a \left(\dfrac{1}{a}\right) = 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Definition of Division:</em>
+            For all real numbers <m>a</m> and <m>b \neq 0</m>,
+            <m>a \div b = \dfrac{a}{b} = a \left(\dfrac{1}{b}\right)</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      While most students and some faculty tend to skip over these properties or give them a cursory glance at best,<fn>
+      Not unlike how Carl approached all the Elven poetry in
+      <em>The Lord of the Rings</em>.
+      </fn> it is important to realize that the properties stated above are what drive the symbolic manipulation in all of Algebra.
+      When listing a tally of more than two numbers,
+      <m>1 + 2 + 3</m> for example,
+      we don't need to specify the order in which those numbers are added.
+      Notice though, try as we might,
+      we can add only two numbers at a time and it is the associative property of addition which assures us that we could organize this sum as <m>(1+2) + 3</m> or <m>1+(2+3)</m>.
+      This brings up a note about <sq>grouping symbols</sq>.
+      Recall that parentheses and brackets are used in order to specify which operations are to be performed first.
+      In the absence of such grouping symbols, multiplication
+      (and hence division)
+      is given priority over addition
+      (and hence subtraction).
+      For example, <m>1 + 2 \cdot 3 = 1+6 = 7</m>,
+      but <m>(1+2) \cdot 3 = 3 \cdot 3 = 9</m>.
+      As you may recall,
+      we can <sq>distribute</sq> the <m>3</m> across the addition if we really wanted to do the multiplication first:
+      <m>(1+2) \cdot 3 = 1\cdot 3 + 2 \cdot 3 = 3 + 6 = 9</m>.
+      More generally, we have the following.
+      <em>The Distributive Property and Factoring</em>For all real numbers <m>a</m>,
+      <m>b</m> and <m>c</m>:
+      <ul>
+        <li>
+          <p>
+            <em>Distributive Property:</em>
+            <m>a(b+c) = ab + ac</m> and <m>(a+b)c = ac + bc</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Factoring:</em><fn>
+            Or, as Carl calls it,
+            <sq>reading the Distributive Property from right to left.</sq>
+            </fn>  <m>ab+ac = a(b+c)</m> and <m>ac + bc = (a+b)c</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      It is worth pointing out that we didn't really need to list the Distributive Property both for <m>a(b+c)</m>
+      (distributing from the left)
+      and <m>(a+b)c</m>
+      (distributing from the right),
+      since the commutative property of multiplication gives us one from the other.
+      Also, <sq>factoring</sq> is really the same equation as the distributive property,
+      just read from right to left.
+      These are the first of many redundancies in this section,
+      and they exist in this review section for one reason only - in our experience,
+      many students <em>see</em> these things differently so we will list them as such.
+    </p>
+    <p>
+      It is hard to overstate the importance of the Distributive Property.
+      For example, in the expression <m>5(2+x)</m>,
+      without knowing the value of <m>x</m>,
+      we cannot perform the addition inside the parentheses first;
+      we must rely on the distributive property here to get <m>5(2+x) = 5\cdot 2 + 5 \cdot x = 10 + 5x</m>.
+      The Distributive Property is also responsible for combining <sq>like terms</sq>.
+      Why is <m>3x + 2x = 5x</m>?
+      Because <m>3x + 2x = (3+2)x = 5x</m>.
+    </p>
+    <p>
+      We continue our review with summaries of other properties of arithmetic,
+      each of which can be derived from the properties listed above.
+      First up are properties of the additive identity <m>0</m>.
+      <em>Properties of Zero</em>
+    </p>
+    <p>
+      Suppose <m>a</m> and <m>b</m> are real numbers.
+      <ul>
+        <li>
+          <p>
+            <em>Zero Product Property:</em>
+            <m>ab = 0</m> if and only if <m>a=0</m> or <m>b=0</m>
+            (or both)
+            <em>Note:</em> This not only says that
+            <m>0 \cdot a = 0</m> for any real number <m>a</m>,
+            it also says that the <em>only</em>
+            way to get an answer of <sq><m>0</m></sq> when multiplying two real numbers is to have one
+            (or both)
+            of the numbers be <sq><m>0</m></sq> in the first place.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Zeros in Fractions:</em> If <m>a \neq 0</m>,
+            <m>\dfrac{0}{a} = 0 \cdot \left(\dfrac{1}{a}\right) = 0</m>.
+            <em>Note:</em> The quantity <m>\dfrac{a}{0}</m> is undefined.<fn>
+            The expression <m>\frac{0}{0}</m> is technically an <sq>indeterminant form</sq> as opposed to being strictly <sq>undefined</sq> meaning that with Calculus we can make some sense of it in certain situations.
+            We'll talk more about this in <xref ref="RationalFunctions">Chapter</xref>.
+            </fn>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The Zero Product Property drives most of the equation solving algorithms in Algebra because it allows us to take complicated equations and reduce them to simpler ones.
+      For example,
+      you may recall that one way to solve <m>x^2+x-6=0</m> is by factoring<fn>
+      Don't worry.
+      We'll review this in due course.
+      And, yes, this is our old friend the Distributive Property!
+      </fn> the left hand side of this equation to get <m>(x-2)(x+3) = 0</m>.
+      From here, we apply the Zero Product Property and set each factor equal to zero.
+      This yields <m>x-2=0</m> or <m>x+3=0</m> so <m>x=2</m> or <m>x=-3</m>.
+      This application to solving equations leads, in turn,
+      to some deep and profound structure theorems in <xref ref="PolynomialFunctions">Chapter</xref>.
+    </p>
+    <p>
+      Next up is a review of the arithmetic of <sq>negatives</sq>.
+      On <xref ref="realnumberaddition">page</xref>
+      we first introduced the dash which we all recognize as the <sq>negative</sq> symbol in terms of the additive inverse.
+      For example, the number <m>-3</m>
+      (read <sq>negative <m>3</m></sq>)
+      is defined so that <m>3 + (-3) = 0</m>.
+      We then defined subtraction using the concept of the additive inverse again so that,
+      for example, <m>5 - 3 = 5 + (-3)</m>.
+      In this text we do not distinguish typographically between the dashes in the expressions <sq><m>5-3</m></sq> and <sq><m>-3</m></sq> even though they are mathematically quite different.<fn>
+      We're not just being lazy here.
+      We looked at many of the big publishers' Precalculus books and none of them use different dashes, either.
+      </fn> In the expression <sq><m>5-3</m>,</sq> the dash is a
+      <em>binary</em> operation
+      (that is, an operation requiring <em>two</em> numbers)
+      whereas in <sq><m>-3</m></sq>,
+      the dash is a <em>unary</em> operation
+      (that is, an operation requiring only one number).
+      You might ask,
+      <sq>Who cares?</sq> Your calculator does - that's who!
+      In the text we can write <m>-3 - 3 = -6</m> but that will not work in your calculator.
+      Instead you'd need to type
+      <m>^{-}3 - 3</m> to get <m>-6</m> where the first dash comes from the <sq><m>+/-</m></sq> key and the second dash comes from the subtraction key.
+      <em>Properties of Negatives</em>
+    </p>
+    <p>
+      Given real numbers <m>a</m> and <m>b</m> we have the following.
+      <ul>
+        <li>
+          <p>
+            <em>Additive Inverse Properties:</em>
+            <m>-a = (-1)a</m> and <m>-(-a) = a</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Products of Negatives:</em> <m>(-a)(-b) = ab</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Negatives and Products:</em>
+            <m>-ab = -(ab) = (-a)b = a(-b)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Negatives and Fractions:</em> If <m>b</m> is nonzero,
+            <m>-\dfrac{a}{b} = \dfrac{-a}{b} = \dfrac{a}{-b}</m> and <m>\dfrac{-a}{-b} = \dfrac{a}{b}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em><sq>Distributing</sq> Negatives:</em>
+            <m>-(a+b) = -a-b</m> and <m>-(a-b) = -a + b = b-a</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em><sq>Factoring</sq> Negatives:</em><fn>
+            Or, as Carl calls it,
+            reading <sq>Distributing</sq> Negatives from right to left.
+            </fn> <m>-a-b = -(a+b)</m> and <m>b-a = -(a-b)</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      An important point here is that when we <sq>distribute</sq> negatives,
+      we do so across addition or subtraction only.
+      This is because we are really distributing a factor of <m>-1</m> across each of these terms:
+      <m>-(a+b) = (-1)(a+b) = (-1)(a) + (-1)(b) = (-a)+(-b) = -a-b</m>.
+      Negatives do not <sq>distribute</sq> across multiplication:
+      <m>- (2 \cdot 3) \neq (-2)\cdot(-3)</m>.
+      Instead, <m>-(2\cdot 3) = (-2)\cdot (3) = (2) \cdot (-3) = -6</m>.
+    </p>
+    <p>
+      The same sort of thing goes for fractions:
+      <m>- \frac{3}{5}</m> can be written as
+      <m>\frac{-3}{5}</m> or <m>\frac{3}{-5}</m>,
+      but not <m>\frac{-3}{-5}</m>.
+    </p>
+    <p>
+      Speaking of fractions, we now review their arithmetic.
+      <em>Properties of Fractions</em>
+    </p>
+    <p>
+      Suppose <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m> are real numbers.
+      Assume them to be nonzero whenever necessary;
+      for example, when they appear in a denominator.
+      <ul>
+        <li>
+          <p>
+            <em>Identity Properties:</em>
+            <m>a = \dfrac{a}{1}</m> and <m>\dfrac{a}{a} = 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Fraction Equality:</em>
+            <m>\dfrac{a}{b} = \dfrac{c}{d}</m> if and only if <m>ad = bc</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Multiplication of Fractions:</em>
+            <m>\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}</m>.
+            In particular:
+            <m>\dfrac{a}{b} \cdot c = \dfrac{a}{b} \cdot \dfrac{c}{1} = \dfrac{ac}{b}</m>
+            <em>Note:</em> A common denominator is <em>not</em>
+            required to <em>multiply</em> fractions!
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Division of Fractions:</em><fn>
+            The old <sq>invert and multiply</sq> or <sq>fraction gymnastics</sq> play.
+            </fn>  <m>\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \cdot \dfrac{d}{c} = \dfrac{ad}{bc}</m>.
+            In particular:
+            <m>1 \div \dfrac{a}{b} = \dfrac{b}{a}</m> and <m>\dfrac{a}{b} \div c = \dfrac{a}{b} \div \dfrac{c}{1} = \dfrac{a}{b} \cdot \dfrac{1}{c} = \dfrac{a}{bc}</m> <em>Note:</em>
+            A common denominator is <em>not</em>
+            required to <em>divide</em> fractions!
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Addition and Subtraction of Fractions:</em>
+            <m>\dfrac{a}{b} \pm \dfrac{c}{b} = \dfrac{a \pm c}{b}</m>.
+            <em>Note:</em> A common denominator <em>is</em>
+            required to <em>add or subtract</em> fractions!
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Equivalent Fractions:</em> <m>\dfrac{a}{b} = \dfrac{ad}{bd}</m>,
+            since <m>\dfrac{a}{b} = \dfrac{a}{b} \cdot 1 = \dfrac{a}{b} \cdot \dfrac{d}{d} = \dfrac{ad}{bd}</m>
+            <em>Note:</em> The <em>only</em>
+            way to change the denominator is to multiply both it and the numerator by the same nonzero value because we are,
+            in essence,
+            multiplying the fraction by <m>1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em><sq>Reducing</sq> Fractions:</em><fn>
+            Or <sq>Canceling</sq> Common Factors - this is really just reading the previous property <sq>from right to left</sq>.
+            </fn> <m>\dfrac{a\cancel{d}}{b\cancel{d}} = \dfrac{a}{b}</m>,
+            since <m>\dfrac{ad}{bd} = \dfrac{a}{b} \cdot \dfrac{d}{d} = \dfrac{a}{b} \cdot 1 = \dfrac{a}{b}</m>.
+            In particular, <m>\dfrac{ab}{b} = a</m> since
+            <m>\dfrac{ab}{b} = \dfrac{ab}{1 \cdot b} = \dfrac{a \cancel{b}}{1 \cdot \cancel{b}} = \dfrac{a}{1} = a</m> and <m>\dfrac{b-a}{a-b} = \dfrac{(-1)\cancel{(a-b)}}{\cancel{(a-b)}} = -1</m>.
+            <em>Note:</em> We may only cancel common <em>factors</em>
+            from both numerator and denominator.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Students make so many mistakes with fractions that we feel it is necessary to pause the narrative for a moment and offer you the following examples.
+      Please take the time to read these carefully.
+      In the main body of the text we will skip many of the steps shown here and it is your responsibility to understand the arithmetic behind the computations we use throughout the text.
+      We deliberately limited these examples to
+      <q>nice</q>
+      numbers (meaning that the numerators and denominators of the fractions are small integers) and will discuss more complicated matters later.
+      In the upcoming example, we will make use of the
+      <url href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic"><em>Fundamental Theorem of Arithmetic</em></url>
+      which essentially says that every natural number has a unique prime factorization.
+      Thus <sq>lowest terms</sq> is clearly defined when reducing the fractions you're about to see.
+    </p>
+    <example xml:id="fractionreview">
+      <statement>
+        <p>
+          Perform the indicated operations and simplify.
+          By <sq>simplify</sq> here,
+          we mean to have the final answer written in the form
+          <m>\frac{a}{b}</m> where <m>a</m> and <m>b</m> are integers which have no common factors.
+          Said another way,
+          we want <m>\frac{a}{b}</m> in <sq>lowest terms</sq>.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\dfrac{1}{4} + \dfrac{6}{7}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{5}{12} - \left(\dfrac{47}{30} - \dfrac{7}{3}\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{\dfrac{7}{3-5} - \dfrac{7}{3-5.21}}{5-5.21}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{\dfrac{12}{5} - \dfrac{7}{24}}{1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{(2(2)+1)(-3-(-3)) - 5(4-7)}{4-2(3)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\dfrac{3}{5} \right) \left(\dfrac{5}{13} \right) - \left(\dfrac{4}{5}\right) \left( - \dfrac{12}{13}\right)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                It may seem silly to start with an example this basic but experience has taught us not to take much for granted.
+                We start by finding the lowest common denominator and then we rewrite the fractions using that new denominator.
+                Since <m>4</m> and <m>7</m> are
+                <em>relatively prime</em>,
+                  <idx><h>relatively prime</h></idx>
+                meaning they have no factors in common,
+                the lowest common denominator is <m>4 \cdot 7 = 28</m>.
+                <me>
+                  \begin{array}{rclr}  \dfrac{1}{4} + \dfrac{6}{7} \amp  = \amp  \dfrac{1}{4} \cdot \dfrac{7}{7} + \dfrac{6}{7} \cdot \dfrac{4}{4} \amp   \text{ Equivalent Fractions }  \\ \amp  = \amp  \dfrac{7}{28}  + \dfrac{24}{28} \amp  \text{ Multiplication of Fractions } \\ \amp  = \amp  \dfrac{31}{28}                  \amp  \text{ Addition of Fractions } \end{array}
+                </me>
+                The result is in lowest terms because <m>31</m> and <m>28</m> are relatively prime so we're done.
+              </p>
+            </li>
+            <li>
+              <p>
+                We could begin with the subtraction in parentheses,
+                namely <m>\frac{47}{30} - \frac{7}{3}</m>,
+                and then subtract that result from <m>\frac{5}{12}</m>.
+                It's easier, however,
+                to first distribute the negative across the quantity in parentheses and then use the Associative Property to perform all of the addition and subtraction in one step.<fn>
+                See the remark on <xref ref="howtoaddonetwothree">page</xref>
+                about how we add <m>1 + 2 + 3</m>.
+                </fn>  The lowest common denominator<fn>
+                We could have used <m>12 \cdot 30 \cdot 3 = 1080</m> as our common denominator but then the numerators would become unnecessarily large.
+                It's best to use the <em>lowest</em> common denominator.
+                </fn> for all three fractions is <m>60</m>.
+                <me>
+                  \begin{array}{rclr}  \dfrac{5}{12} - \left(\dfrac{47}{30} - \dfrac{7}{3}\right) \amp  = \amp  \dfrac{5}{12} - \dfrac{47}{30} + \dfrac{7}{3} \amp  \text{ Distribute the Negative } \\ \amp  = \amp  \dfrac{5}{12} \cdot \dfrac{5}{5} - \dfrac{47}{30} \cdot \dfrac{2}{2} + \dfrac{7}{3} \cdot \dfrac{20}{20} \amp  \text{ Equivalent Fractions } \\ \amp  = \amp  \dfrac{25}{60} - \dfrac{94}{60} + \dfrac{140}{60} \amp  \text{ Multiplication of Fractions }  \\ \amp  = \amp  \dfrac{71}{60} \amp  \text{ Addition and Subtraction of Fractions } \end{array}
+                </me>
+                The numerator and denominator are relatively prime so the fraction is in lowest terms and we have our final answer.
+              </p>
+            </li>
+            <li>
+              <p>
+                What we are asked to simplify in this problem is known as a  <sq>complex</sq> or <sq>compound</sq> fraction.
+                Simply put, we have fractions within a fraction.<fn>
+                Fractionception, perhaps?
+                </fn>  The longest division line<fn>
+                Also called a <sq>vinculum</sq>.
+                </fn> acts as a grouping symbol,
+                quite literally dividing the compound fraction into a numerator
+                (containing fractions)
+                and a denominator
+                (which in this case does not contain fractions).
+                The first step to simplifying a compound fraction like this one is to see if you can simplify the little fractions inside it.
+                To that end,
+                we clean up the fractions in the numerator as follows.
+                <me>
+                  \begin{array}{rclr}  \dfrac{\dfrac{7}{3-5} - \dfrac{7}{3-5.21}}{5-5.21} \amp  = \amp  \dfrac{\dfrac{7}{-2} - \dfrac{7}{-2.21}}{-0.21} \amp  \\ \amp  = \amp  \dfrac{-\left(-\dfrac{7}{2} + \dfrac{7}{2.21}\right)}{0.21} \amp  \text{ Properties of Negatives }  \\ \amp  = \amp  \dfrac{\dfrac{7}{2} - \dfrac{7}{2.21}}{0.21} \amp  \text{ Distribute the Negative } \end{array}
+                </me>
+                We are left with a compound fraction with decimals.
+                We could replace <m>2.21</m> with
+                <m>\frac{221}{100}</m> but that would make a mess.<fn>
+                Try it if you don't believe us.
+                </fn>  It's better in this case to eliminate the decimal by multiplying the numerator and denominator of the fraction with the decimal in it by <m>100</m>
+                (since <m>2.21 \cdot 100 = 221</m> is an integer)
+                as shown below.
+                <me>
+                  \begin{array}{rclcl}  \dfrac{\dfrac{7}{2} - \dfrac{7}{2.21}}{0.21} \amp  = \amp  \dfrac{ \dfrac{7}{2} - \dfrac{7 \cdot 100}{2.21 \cdot 100}}{0.21} \amp  = \amp  \dfrac{\dfrac{7}{2} - \dfrac{700}{221}}{0.21} \end{array}
+                </me>
+                We now perform the subtraction in the numerator and replace <m>0.21</m> with <m>\frac{21}{100}</m> in the denominator.
+                This will leave us with one fraction divided by another fraction.
+                We finish by performing the <sq>division by a fraction is multiplication by the reciprocal</sq> trick and then cancel any factors that we can.
+                <me>
+                  \begin{array}{rclcl}  \dfrac{\dfrac{7}{2}-\dfrac{700}{221}}{0.21} \amp  = \amp  \dfrac{\dfrac{7}{2}\cdot\dfrac{221}{221} - \dfrac{700}{221}\cdot\dfrac{2}{2}}{\dfrac{21}{100}} \amp  = \amp  \dfrac{\dfrac{1547}{442} -\dfrac{1400}{442}}{\dfrac{21}{100}} \\ \amp  = \amp  \dfrac{\dfrac{147}{442}}{\dfrac{21}{100}} = \dfrac{147}{442} \cdot \dfrac{100}{21} \amp  = \amp  \dfrac{14700}{9282} = \dfrac{350}{221} \end{array}
+                </me>
+                The last step comes from the factorizations
+                <m>14700 = 42 \cdot 350</m> and <m>9282 = 42 \cdot 221</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We are given another compound fraction to simplify and this time both the numerator and denominator contain fractions.
+                As before, the longest division line acts as a grouping symbol to separate the numerator from the denominator.
+                <me>
+                  \begin{array}{rclr}  \dfrac{\dfrac{12}{5} - \dfrac{7}{24}}{1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)} \amp  = \amp  \dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right)}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right)} \amp \end{array}
+                </me>
+                Hence, one way to proceed is as before:
+                simplify the numerator and the denominator then perform the <sq>division by a fraction is the multiplication by the reciprocal</sq> trick.
+                While there is nothing wrong with this approach,
+                we'll use our Equivalent Fractions property to rid ourselves of the <sq>compound</sq> nature of this fraction straight away.
+                The idea is to multiply both the numerator and denominator by the lowest common denominator of each of the <sq>smaller</sq> fractions - in this case,
+                <m>24 \cdot 5 = 120</m>.
+                <me>
+                  \begin{array}{rclr}  \dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right)}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right)} \amp  = \amp \dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right) \cdot 120}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right) \cdot 120} \amp  \text{ Equivalent Fractions } \\  \amp  = \amp  \dfrac{\left(\dfrac{12}{5}\right) (120) - \left(\dfrac{7}{24}\right) (120)}{(1)(120) + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)(120)} \amp  \text{ Distributive Property }  \\  \amp  = \amp  \dfrac{\dfrac{12 \cdot 120}{5} - \dfrac{7 \cdot 120}{24}}{120 + \dfrac{12 \cdot 7 \cdot 120}{5 \cdot 24}} \amp  \text{ Multiply fractions }  \\  \amp  = \amp  \dfrac{\dfrac{12 \cdot 24 \cdot \cancel{5}}{\cancel{5}} - \dfrac{7 \cdot 5 \cdot \cancel{24}}{\cancel{24}}}{120 + \dfrac{12 \cdot 7 \cdot \cancel{5} \cdot \cancel{24}}{\cancel{5} \cdot \cancel{24}}} \amp  \text{ Factor and cancel }  \\ \amp  = \amp  \dfrac{(12 \cdot 24) - (7 \cdot 5)}{120 + (12 \cdot 7)} \amp  \\ \amp  = \amp  \dfrac{288 - 35}{120 + 84} \amp  \\ \amp  = \amp  \dfrac{253}{204} \amp \end{array}
+                </me>
+                Since <m>253 = 11 \cdot 23</m> and
+                <m>204 = 2 \cdot 2 \cdot 3 \cdot 17</m> have no common factors our result is in lowest terms which means we are done.
+              </p>
+            </li>
+            <li>
+              <p>
+                This fraction may look simpler than the one before it,
+                but the negative signs and parentheses mean that we shouldn't get complacent.
+                Again we note that the division line here acts as a grouping symbol.
+                That is,
+                <me>
+                  \dfrac{(2(2)+1)(-3-(-3)) - 5(4-7)}{4-2(3)} = \dfrac{\left((2(2)+1)(-3-(-3)) - 5(4-7) \right)}{(4-2(3))}
+                </me>
+                This means that we should simplify the numerator and denominator first,
+                then perform the division last.
+                We tend to what's in parentheses first,
+                giving multiplication priority over addition and subtraction.
+                <me>
+                  \begin{array}{rclr}   \dfrac{(2(2)+1)(-3-(-3)) - 5(4-7)}{4-2(3)} \amp  = \amp  \dfrac{(4+1)(-3+3)-5(-3)}{4 - 6} \amp   \\ \amp  = \amp  \dfrac{(5)(0) + 15}{-2}  \amp  \\ \amp  = \amp  \dfrac{15}{-2} \amp  \\ \amp  = \amp  -\dfrac{15}{2} \amp  \text{ Properties of Negatives } \end{array}
+                </me>
+                Since <m>15 = 3\cdot 5</m> and <m>2</m> have no common factors,
+                we are done.
+              </p>
+            </li>
+            <li>
+              <p>
+                In this problem, we have multiplication and subtraction.
+                Multiplication takes precedence so we perform it first.
+                Recall that to multiply fractions,
+                we do <em>not</em> need to obtain common denominators;
+                rather, we multiply the corresponding numerators together along with the corresponding denominators.
+                Like the previous example,
+                we have parentheses and negative signs for added fun!
+                <me>
+                  \begin{array}{rclr}  \left(\dfrac{3}{5} \right) \left(\dfrac{5}{13} \right) - \left(\dfrac{4}{5}\right) \left( - \dfrac{12}{13}\right) \amp  = \amp  \dfrac{3 \cdot 5}{5 \cdot 13} - \dfrac{4\cdot (-12)}{5 \cdot 13} \amp  \text{ Multiply fractions } \\  \amp  = \amp  \dfrac{15}{65} - \dfrac{-48}{65} \amp  \\ \amp  = \amp  \dfrac{15}{65} + \dfrac{48}{65} \amp  \text{ Properties of Negatives } \\ \amp  = \amp  \dfrac{15+48}{65}  \amp  \text{ Add numerators }  \\ \amp  = \amp  \dfrac{63}{65}  \amp \end{array}
+                </me>
+                Since <m>64 = 3 \cdot 3 \cdot 7</m> and
+                <m>65 = 5 \cdot 13</m> have no common factors,
+                our answer <m>\frac{63}{65}</m> is in lowest terms and we are done.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Of the issues discussed in the previous set of examples none causes students more trouble than simplifying compound fractions.
+      We presented two different methods for simplifying them:
+      one in which we simplified the overall numerator and denominator and then performed the division and one in which we removed the compound nature of the fraction at the very beginning.
+      We encourage the reader to go back and use both methods on each of the compound fractions presented.
+      Keep in mind that when a compound fraction is encountered in the rest of the text it will usually be simplified using only one method and we may not choose your favorite method.
+      Feel free to use the other one in your notes.
+    </p>
+    <p>
+      Next, we review exponents and their properties.
+      Recall that <m>2 \cdot 2 \cdot 2</m> can be written as <m>2^3</m> because exponential notation expresses repeated multiplication.
+      In the expression <m>2^3</m>,
+      <m>2</m> is called the <em>base</em>
+          <idx><h>base</h></idx>
+      and <m>3</m> is called the <em>exponent</em>.
+          <idx><h>exponent</h></idx>
+      In order to generalize exponents from natural numbers to the integers,
+      and eventually to rational and real numbers,
+      it is helpful to think of the exponent as a count of the number of factors of the base we are multiplying by <m>1</m>.
+      For instance,
+      <me>
+        2^3 = 1 \cdot (\text{ three factors of two } ) = 1 \cdot (2 \cdot 2 \cdot 2) = 8
+      </me>.
+    </p>
+    <p>
+      From this, it makes sense that
+      <me>
+        2^{0} = 1 \cdot (\text{ zero factors of two } ) = 1
+      </me>.
+    </p>
+    <p>
+      What about <m>2^{-3}</m>?
+      The <sq><m>-</m></sq> in the exponent indicates that we are <sq>taking away</sq> three factors of two,
+      essentially dividing by three factors of two.
+      So,
+      <me>
+        2^{-3} = 1 \div (\text{ three factors of two } ) = 1 \div (2 \cdot 2 \cdot 2) = \frac{1}{2 \cdot 2 \cdot 2} = \frac{1}{8}
+      </me>.
+    </p>
+    <p>
+      We summarize the properties of integer exponents below.
+      <em>Properties of Integer Exponents</em>
+    </p>
+    <p>
+      Suppose <m>a</m> and <m>b</m> are nonzero real numbers and <m>n</m> and <m>m</m> are integers.
+      <ul>
+        <li>
+          <p>
+            <em>Product Rules:</em> <m>(ab)^{n} = a^n b^n</m> and <m>a^n a^m = a^{n+m}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Quotient Rules:</em> <m>\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}</m> and <m>\dfrac{a^n}{a^m} = a^{n-m}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Power Rule:</em> <m>\left(a^{n}\right)^{m} = a^{nm}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Negatives in Exponents:</em>
+            <m>a^{-n} = \dfrac{1}{a^n}</m>.
+            In particular,
+            <m>\left(\dfrac{a}{b}\right)^{-n} = \left(\dfrac{b}{a}\right)^{n} = \dfrac{b^n}{a^n}</m> and <m>\dfrac{1}{a^{-n}} = a^{n}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Zero Powers:</em> <m>a^{0} = 1</m>.
+            <em>Note:</em> The expression <m>0^{0}</m> is an indeterminate form.<fn>
+            See the comment regarding <sq><m>\frac{0}{0}</m></sq> on <xref ref="propertiesofzero">page</xref>.
+            </fn>
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Powers of Zero:</em> For any <em>natural</em>
+            number <m>n</m>, <m>0^{n} = 0</m>.
+            <em>Note:</em> The expression <m>0^{n}</m> for integers <m>n \leq 0</m> is not defined.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      While it is important the state the Properties of Exponents,
+      it is also equally important to take a moment to discuss one of the most common errors in Algebra.
+      It is true that <m>(ab)^2 = a^2 b^2</m>
+      (which some students refer to as <sq>distributing</sq> the exponent to each factor)
+      but you cannot do this sort of thing with addition.
+      That is, in general, <m>(a+b)^2 \neq a^2 + b^2</m>.
+      (For example, take <m>a= 3</m> and <m>b = 4</m>.)
+      The same goes for any other powers.
+    </p>
+    <p>
+      With exponents now in the mix,
+      we can now state the Order of Operations Agreement.
+      <em>Order of Operations Agreement</em>
+    </p>
+    <p>
+      When evaluating an expression involving real numbers:
+      <ol>
+        <li>
+          <p>
+            Evaluate any expressions in <em>p</em>arentheses
+            (or other grouping symbols).
+          </p>
+        </li>
+        <li>
+          <p>
+            Evaluate <em>e</em>xponents.
+          </p>
+        </li>
+        <li>
+          <p>
+            Evaluate <em>m</em>ultiplication and
+            <em>d</em>ivision as you read from left to right.
+          </p>
+        </li>
+        <li>
+          <p>
+            Evaluate <em>a</em>ddition and <em>s</em>ubtraction as you read from left to right.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      We note that there are many useful mnemonic devices for remembering the order of operations.<fn>
+      Our favorite is <sq><em>P</em>lease
+      <em>e</em>ntertain <em>m</em>y
+      <em>d</em>ear <em>a</em>uld
+      <em>S</em>asquatch.</sq>
+      </fn>
+    </p>
+    <p>
+      For example,
+      <m>2 + 3\cdot 4^2 = 2 + 3\cdot 16 = 2 + 48 = 50</m>.
+      Where students get into trouble is with things like <m>-3^2</m>.
+      If we think of this as <m>0 - 3^2</m>,
+      then it is clear that we evaluate the exponent first:
+      <m>-3^2 =0 -3^2 =0 -9 = -9</m>.
+      In general, we interpret <m>-a^n = -\left(a^n\right)</m>.
+      If we want the <sq>negative</sq> to also be raised to a power,
+      we must write <m>(-a)^n</m> instead.
+      To summarize, <m>-3^2 = -9</m> but <m>(-3)^2 = 9</m>.
+    </p>
+    <p>
+      Of course, many of the <sq>properties</sq> we've stated in this section can be viewed as ways to circumvent the order of operations.
+      We've already seen how the distributive property allows us to simplify <m>5(2+x)</m> by performing the indicated multiplication <em>before</em>
+      the addition that's in parentheses.
+      Similarly, consider trying to evaluate <m>2^{30172}\cdot 2^{-30169}</m>.
+      The Order of Operations Agreement demands that the exponents be dealt with first, however,
+      trying to compute <m>2^{30172}</m> is a challenge, even for a calculator.
+      One of the Product Rules of Exponents, however,
+      allow us to rewrite this product,
+      essentially performing the multiplication first, to get:
+      <m>2^{30172-30169} = 2^{3} = 8</m>.
+    </p>
+    <p>
+      Let's take a break and enjoy another example.
+    </p>
+    <example xml:id="exponentreview">
+      <statement>
+        <p>
+          Perform the indicated operations and simplify.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\dfrac{(4-2)(2 \cdot 4)-(4)^2}{(4-2)^2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>12(-5)(-5+3)^{-4}+6(-5)^2(-4)(-5+3)^{-5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{\left(\dfrac{5\cdot 3^{51}}{4^{36}}\right)}{\left(\dfrac{5 \cdot 3^{49}}{4^{34}}\right)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{2 \left(\dfrac{5}{12}\right)^{-1}}{1 - \left(\dfrac{5}{12}\right)^{-2}}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin working inside the parentheses then deal with the exponents before working through the other operations.
+                As we saw in <xref ref="fractionreview">Example</xref>,
+                the division here acts as a grouping symbol,
+                so we save the division to the end.
+                <me>
+                  \begin{array}{rclcl}  \dfrac{(4-2)(2 \cdot 4)-(4)^2}{(4-2)^2} \amp  = \amp  \dfrac{(2)(8)-(4)^2}{(2)^2} \amp  = \amp  \dfrac{(2)(8)-16}{4} \\ \amp  = \amp  \dfrac{16-16}{4} = \dfrac{0}{4} \amp  = \amp  0 \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                As before, we simplify what's in the parentheses first,
+                then work our way through the exponents,
+                multiplication, and finally, the addition.
+                <me>
+                  \begin{array}{rclr}  12(-5)(-5+3)^{-4}+6(-5)^2(-4)(-5+3)^{-5} \amp  = \amp  12(-5)(-2)^{-4} + 6(-5)^{2}(-4)(-2)^{-5} \\ \amp  = \amp  12(-5)\left(\dfrac{1}{(-2)^4}\right) + 6(-5)^{2}(-4)\left(\dfrac{1}{(-2)^5}\right)\amp  \\  \amp  = \amp  12(-5)\left(\dfrac{1}{16}\right) + 6(25)(-4)\left(\dfrac{1}{-32}\right)\amp  \\  \amp  = \amp  (-60)\left(\dfrac{1}{16}\right) + (-600)\left(\dfrac{1}{-32}\right)\amp  \\  \amp  = \amp  \dfrac{-60}{16} + \left(\dfrac{-600}{-32}\right)\amp   \\ \amp  = \amp  \dfrac{-15\cdot \cancel{4}}{4 \cdot \cancel{4}} + \dfrac{-75 \cdot \cancel{8}}{-4 \cdot \cancel{8}} \amp  \\ \amp  = \amp  \dfrac{-15}{4} + \dfrac{-75}{-4} \amp  \\ \amp  = \amp  \dfrac{-15}{4} + \dfrac{75}{4} \amp  \\ \amp  = \amp  \dfrac{-15 + 75}{4} \amp  \\ \amp  = \amp  \dfrac{60}{4} \amp  \\ \amp  = \amp  15 \amp \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                The Order of Operations Agreement mandates that we work within each set of parentheses first,
+                giving precedence to the exponents,
+                then the multiplication, and, finally the division.
+                The trouble with this approach is that the exponents are so large that computation becomes a trifle unwieldy.
+                What we observe, however,
+                is that the bases of the exponential expressions, <m>3</m> and <m>4</m>,
+                occur in both the numerator and denominator of the compound fraction.
+                This gives us hope that we can use some of the Properties of Exponents
+                (the Quotient Rule, in particular)
+                to help us out.
+                Our first step here is to invert and multiply.
+                We see immediately that the <m>5</m>'s cancel after which we group the powers of <m>3</m> together and the powers of <m>4</m> together and apply the properties of exponents.
+                <me>
+                  \begin{array}{rclclcl}  \dfrac{\left(\dfrac{5\cdot 3^{51}}{4^{36}}\right)}{\left(\dfrac{5 \cdot 3^{49}}{4^{34}}\right)} \amp  = \amp  \dfrac{5\cdot 3^{51}}{4^{36}} \cdot \dfrac{4^{34}}{5 \cdot 3^{49}} \amp  = \amp  \dfrac{\cancel{5} \cdot 3^{51} \cdot 4^{34}}{\cancel{5} \cdot 3^{49} \cdot 4^{36}} \amp  = \amp  \dfrac{3^{51}}{3^{49}} \cdot\dfrac{4^{34}}{4^{36}} \\  \amp  = \amp  3^{51-49} \cdot 4^{34-36} \amp  = \amp  3^{2} \cdot 4^{-2} \amp  = \amp  3^{2} \cdot \left( \dfrac{1}{4^2}\right) \\  \amp  = \amp  9 \cdot \left(\dfrac{1}{16} \right) \amp  = \amp  \dfrac{9}{16} \amp  \amp \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                We have yet another instance of a compound fraction so our first order of business is to rid ourselves of the compound nature of the fraction like we did in <xref ref="fractionreview">Example</xref>.
+                To do this, however,
+                we need to tend to the exponents first so that we can determine what common denominator is needed to simplify the fraction.
+                <me>
+                  \begin{array}{rclclcl} \dfrac{2 \left(\dfrac{5}{12}\right)^{-1}}{1 - \left(\dfrac{5}{12}\right)^{-2}} \amp  = \amp  \dfrac{2 \left(\dfrac{12}{5}\right)}{1 - \left(\dfrac{12}{5}\right)^{2}} \amp  = \amp  \dfrac{\left(\dfrac{24}{5}\right)}{1 - \left(\dfrac{12^2}{5^2}\right)} \amp  = \amp  \dfrac{\left(\dfrac{24}{5}\right)}{1 - \left(\dfrac{144}{25}\right)} \\  \amp  = \amp  \dfrac{\left(\dfrac{24}{5}\right) \cdot 25}{\left(1 - \dfrac{144}{25}\right)\cdot 25} \amp  = \amp  \dfrac{\left(\dfrac{24\cdot 5 \cdot \cancel{5}}{\cancel{5}}\right)}{\left(1 \cdot 25 - \dfrac{144 \cdot \cancel{25}}{\cancel{25}}\right)} \amp  = \amp  \dfrac{120}{25-144} \\ \amp  = \amp  \dfrac{120}{-119} = -\dfrac{120}{119} \amp  \amp  \amp  \amp \end{array}
+                </me>
+                Since <m>120</m> and <m>119</m> have no common factors,
+                we are done.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      One of the places where the properties of exponents play an important role is in the use of
+      <em>Scientific Notation</em>.
+          <idx><h>Scientific Notation</h></idx>
+      The basis for scientific notation is that since we use <em>dec</em>imals
+      (base ten numerals)
+      to represent real numbers,
+      we can adjust where the decimal point lies by multiplying by an appropriate power of 10.
+      This allows scientists and engineers to focus in on the <sq>significant</sq> digits<fn>
+      Awesome pun!
+      </fn> of a number - the nonzero values - and adjust for the decimal places later.
+      For instance,
+      <m>-621 = -6.21 \times 10^2</m> and <m>0.023 = 2.3 \times 10^{-2}</m>.
+      Notice here that we revert to using the familiar <sq><times/></sq> to indicate multiplication.<fn>
+      This is the <sq>notable exception</sq> we alluded to earlier.
+      </fn> In general,
+      we arrange the real number so exactly one non-zero digit appears to the left of the decimal point.
+      We make this idea precise in the following:
+    </p>
+    <definition xml:id="scientificnotation">
+      <statement>
+        <p>
+          A real number is written in <term>Scientific Notation</term>
+          if it has the form <m>\pm n . d_{1} d_{2} \ldots \times 10^{k}</m> where <m>n</m> is a natural number,
+          <m>d_{1}</m>, <m>d_{2}</m>,
+          etc., are whole numbers, and <m>k</m> is an integer.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      On calculators,
+      scientific notation may appear using an <sq>E</sq> or <sq>EE</sq> as opposed to the <times/> symbol.
+      For instance,
+      while we will write <m>6.02 \times 10^{23}</m> in the text,
+      the calculator may display
+      <m>6.02\, \text{E} \, 23</m> or <m>6.02\, \text{ EE } \, 23</m>.
+    </p>
+    <example xml:id="scientificnotationex">
+      <statement>
+        <p>
+          Perform the indicated operations and simplify.
+          Write your final answer in scientific notation,
+          rounded to two decimal places.
+          <ol>
+            <li>
+              <p>
+                <m>\dfrac{\left(6.626 \times 10^{-34} \right) \left(3.14 \times 10^{9}\right)}{1.78 \times 10^{23}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(2.13 \times 10^{53}\right)^{100}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                As mentioned earlier,
+                the point of scientific notation is to separate out the <sq>significant</sq> parts of a calculation and deal with the powers of <m>10</m> later.
+                In that spirit,
+                we separate out the powers of <m>10</m> in both the numerator and the denominator and proceed as follows
+                <me>
+                  \begin{array}{rclr}  \dfrac{\left(6.626 \times 10^{-34} \right) \left(3.14 \times 10^{9}\right)}{1.78 \times 10^{23}} \amp  = \amp  \dfrac{(6.626)(3.14)}{1.78} \cdot \dfrac{10^{-34} \cdot 10^{9}}{10^{23}} \amp  \\ \amp  = \amp  \dfrac{20.80564}{1.78} \cdot \dfrac{10^{-34 + 9}}{10^{23}} \amp  \\ \amp  = \amp  11.685 \ldots \cdot \dfrac{10^{-25}}{10^{23}} \amp  \\ \amp  = \amp  11.685 \ldots \times 10^{-25-23} \amp  \\ \amp  = \amp  11.685 \ldots \times 10^{-48} \amp \end{array}
+                </me>
+                We are asked to write our final answer in scientific notation,
+                rounded to two decimal places.
+                To do this, we note that  <m>11.685 \ldots = 1.1685 \ldots \times 10^{1}</m>, so
+                <me>
+                  11.685 \ldots \times 10^{-48} = 1.1685 \ldots \times 10^{1} \times 10^{-48} = 1.1685 \ldots \times 10^{1-48} = 1.1685 \ldots \times 10^{-47}
+                </me>
+                Our final answer, rounded to two decimal places,
+                is <m>1.17 \times 10^{-47}</m>.
+                We could have done that whole computation on a calculator so why did we bother doing any of this by hand in the first place?
+                The answer lies in the next example.
+              </p>
+            </li>
+            <li>
+              <p>
+                If you try to compute  <m>\left(2.13 \times 10^{53}\right)^{100}</m> using most hand-held calculators,
+                you'll most likely get an <sq>overflow</sq> error.
+                It is possible, however,
+                to use the calculator in combination with the properties of exponents to compute this number.
+                Using properties of exponents, we get:
+                <me>
+                  \begin{array}{rclr}  \left(2.13 \times 10^{53}\right)^{100} \amp  = \amp  (2.13)^{100} \left(10^{53}\right)^{100} \amp  \\ \amp  = \amp  \left(6.885 \ldots \times 10^{32}\right) \left(10^{53 \times 100}\right) \amp  \\ \amp  = \amp  \left(6.885 \ldots \times 10^{32}\right) \left(10^{5300}\right) \amp  \\ \amp  = \amp  6.885 \ldots \times 10^{32} \cdot 10^{5300} \amp  \\ \amp  = \amp  6.885 \ldots \times 10^{5332} \amp \end{array}
+                </me>
+                To two decimal places our answer is <m>6.88 \times 10^{5332}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We close our review of real number arithmetic with a discussion of roots and radical notation.
+      Just as subtraction and division were defined in terms of the inverse of addition and multiplication,
+      respectively,
+      we define roots by undoing natural number exponents.
+    </p>
+    <definition xml:id="principalnthrootdefn">
+      <statement>
+        <p>
+          Let <m>a</m> be a real number and let <m>n</m> be a natural number.
+          If <m>n</m> is odd,
+          then the <idx><h><m>\text{n} ^{\text{ th } }</m> root</h><h>principal</h></idx>
+              <idx><h>principal <m>\text{n} ^{\text{ th } }</m> root</h></idx>
+          <term>principal <m>\text{n} ^{\textbf{th}}</m> root</term> of <m>a</m>
+          (denoted <m>\sqrt[n]{a}</m>)
+          is the unique real number satisfying <m>\left(\sqrt[n]{a}\right)^n = a</m>.
+          If <m>n</m> is even, <m>\sqrt[n]{a}</m> is defined similarly provided
+          <m>a \geq 0</m> and <m>\sqrt[n]{a} \geq 0</m>.
+          The number <m>n</m> is called the
+              <idx><h>root</h><h>index</h></idx>
+              <idx><h>index of a root</h></idx>
+          <term>index</term> of the root and the number <m>a</m> is called the
+              <idx><h>root</h><h>radicand</h></idx>
+              <idx><h>radicand</h></idx>
+          <term>radicand</term>.
+          For <m>n=2</m>,
+          we write <m>\sqrt{a}</m> instead of <m>\sqrt[2]{a}</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The reasons for the added stipulations for even-indexed roots in <xref ref="principalnthrootdefn">Definition</xref>
+      can be found in the Properties of Negatives.
+      First, for all real numbers,
+      <m>x^{\text{ even power } } \geq 0</m>,
+      which means it is never negative.
+      Thus if <m>a</m> is a <em>negative</em> real number,
+      there are no real numbers <m>x</m> with <m>x^{\text{ even power } } = a</m>.
+      This is why if <m>n</m> is even,
+      <m>\sqrt[n]{a}</m> only exists if <m>a \geq 0</m>.
+      The second restriction for even-indexed roots is that <m>\sqrt[n]{a} \geq 0</m>.
+      This comes from the fact that <m>x^{\text{ even power } } = (-x)^{\text{ even power } }</m>,
+      and we require <m>\sqrt[n]{a}</m> to have just one value.
+      So even though <m>2^{4} = 16</m> and <m>(-2)^{4} = 16</m>,
+      we require <m>\sqrt[4]{16} = 2</m> and ignore <m>-2</m>.
+    </p>
+    <p>
+      Dealing with odd powers is much easier.
+      For example,
+      <m>x^3 = -8</m> has one and only one real solution,
+      namely <m>x = -2</m>,
+      which means not only does <m>\sqrt[3]{-8}</m> exist,
+      there is only one choice, namely <m>\sqrt[3]{-8} = -2</m>.
+      Of course, when it comes to solving <m>x^{5213} = -117</m>,
+      it's not so clear that there is one and only one real solution,
+      let alone that the solution is <m>\sqrt[5213]{-117}</m>.
+      Such pills are easier to swallow once we've thought a bit about such equations graphically,<fn>
+      See <xref ref="PolynomialFunctions">Chapter</xref>.
+      </fn> and ultimately,
+      these things come from the completeness property of the real numbers mentioned earlier.
+    </p>
+    <p>
+      We list properties of radicals below as a <sq>theorem</sq> as opposed to a definition since they can be justified using the properties of exponents.
+    </p>
+    <theorem xml:id="radicalprops">
+      <statement>
+        <p>
+          <em>Properties of Radicals:</em>
+          Let <m>a</m> and <m>b</m> be real numbers and let <m>m</m> and <m>n</m> be natural numbers.
+          If <m>\sqrt[n]{a}</m> and <m>\sqrt[n]{b}</m> are real numbers,
+          then<idx><h>radical</h><h>properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Product Rule:</em> <m>\sqrt[n]{ab} = \sqrt[n]{a} \, \sqrt[n]{b}</m> <idx><h>product rule</h><h>for radicals</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Quotient Rule:</em> <m>\sqrt[n]{\dfrac{a}{b}} = \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}</m>,
+                provided <m>b \neq 0</m>.
+                  <idx><h>quotient rule</h><h>for radicals</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Power Rule:</em> <m>\sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m</m> <idx><h>power rule</h><h>for radicals</h></idx>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="radicalprops">Theorem</xref>
+      is based on the definition of the principal
+      <m>\text{n} ^{\text{ th } }</m> root and the Properties of Exponents.
+      To establish the product rule, consider the following.
+      If <m>n</m> is odd, then by definition
+      <m>\sqrt[n]{ab}</m> is the <em>unique</em>
+      real number such that <m>(\sqrt[n]{ab})^{n} = ab</m>.
+      Given that <m>( \sqrt[n]{a} \, \sqrt[n]{b})^n = (\sqrt[n]{a})^n (\sqrt[n]{b})^n = ab</m> as well,
+      it must be the case that <m>\sqrt[n]{ab} = \sqrt[n]{a} \, \sqrt[n]{b}</m>.
+      If <m>n</m> is even,
+      then <m>\sqrt[n]{ab}</m> is the unique non-negative real number such that <m>(\sqrt[n]{ab})^{n} = ab</m>.
+      Note that since <m>n</m> is even,
+      <m>\sqrt[n]{a}</m> and <m>\sqrt[n]{b}</m> are also non-negative thus <m>\sqrt[n]{a}\sqrt[n]{b} \geq 0</m> as well.
+      Proceeding as above,
+      we find that <m>\sqrt[n]{ab} = \sqrt[n]{a} \, \sqrt[n]{b}</m>.
+      The quotient rule is proved similarly and is left as an exercise.
+      The power rule results from repeated application of the product rule,
+      so long as <m>\sqrt[n]{a}</m> is a real number to start with.<fn>
+      Otherwise we'd run into an interesting paradox.
+      See <xref ref="AppCmpNums">Section</xref>.
+      </fn> We leave that as an exercise as well.
+    </p>
+    <p>
+      We pause here to point out one of the most common errors students make when working with radicals.
+      Obviously <m>\sqrt{9} = 3</m>,
+      <m>\sqrt{16} = 4</m> and <m>\sqrt{9 + 16} = \sqrt{25} = 5</m>.
+      Thus we can clearly see that
+      <m>5 = \sqrt{25} = \sqrt{9 + 16} \neq \sqrt{9} + \sqrt{16} = 3 + 4 = 7</m> because we all know that <m>5 \neq 7</m>.
+      The authors urge you to never consider <sq>distributing</sq> roots or exponents.
+      It's wrong and no good will come of it because in general <m>\sqrt[n]{a+b} \neq \sqrt[n]{a} + \sqrt[n]{b}</m>.
+      Since radicals have properties inherited from exponents,
+      they are often written as such.
+      We define rational exponents in terms of radicals in the box below.
+    </p>
+    <definition xml:id="rationalexponentdefn">
+      <statement>
+        <p>
+          Let <m>a</m> be a real number,
+          let <m>m</m> be an integer and let <m>n</m> be a natural number.
+              <idx><h>rational exponent</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>a^{\frac{1}{n}} = \sqrt[n]{a}</m> whenever
+                <m>\sqrt[n]{a}</m> is a real number.<fn>
+                If <m>n</m> is even we need <m>a \geq 0</m>.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>a^{\frac{m}{n}} = \left(\sqrt[n]{a}\right)^m = \sqrt[n]{a^m}</m> whenever <m>\sqrt[n]{a}</m> is a real number.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      It would make life really nice if the rational exponents defined in <xref ref="rationalexponentdefn">Definition</xref>
+      had all of the same properties that integer exponents have as listed on <xref ref="propertiesofintegerexponents">page</xref> - but they don't.
+      Why not?
+      Let's look at an example to see what goes wrong.
+      Consider the Product Rule which says that
+      <m>(ab)^{n} = a^{n}b^{n}</m> and let <m>a = -16</m>,
+      <m>b = -81</m> and <m>n = \frac{1}{4}</m>.
+      Plugging the values into the Product Rule yields the equation <m>((-16)(-81))^{1/4} = (-16)^{1/4}(-81)^{1/4}</m>.
+      The left side of this equation is
+      <m>1296^{1/4}</m> which equals <m>6</m> but the right side is undefined because neither root is a real number.
+      Would it help if, when it comes to even roots
+      (as signified by even denominators in the fractional exponents),
+      we ensure that everything they apply to is non-negative?
+      That works for some of the rules - we leave it as an exercise to see which ones - but does not work for the Power Rule.
+    </p>
+    <p>
+      Consider the expression <m>\left(a^{2/3}\right)^{3/2}</m>.
+      Applying the usual laws of exponents,
+      we'd be tempted to simplify this as <m>\left(a^{2/3}\right)^{3/2} = a^{\frac{2}{3} \cdot \frac{3}{2}} = a^{1} = a</m>.
+      However, if we substitute <m>a=-1</m> and apply <xref ref="rationalexponentdefn">Definition</xref>,
+      we find <m>(-1)^{2/3} = \left(\sqrt[3]{-1}\right)^2 = (-1)^2 = 1</m> so that <m>\left((-1)^{2/3}\right)^{3/2} = 1^{3/2} = \left(\sqrt{1}\right)^3 = 1^3 = 1</m>.
+      Thus in this case we have <m>\left(a^{2/3}\right)^{3/2} \neq a</m> even though all of the roots were defined.
+      It is true, however,
+      that <m>\left(a^{3/2}\right)^{2/3} = a</m> and we leave this for the reader to show.
+      The moral of the story is that when simplifying powers of rational exponents where the base is negative or worse,
+      unknown, it's usually best to rewrite them as radicals.<fn>
+      Much to Jeff's chagrin.
+      He's fairly traditional and therefore doesn't care much for radicals.
+      </fn>
+    </p>
+    <example>
+      <statement>
+        <p>
+          Perform the indicated operations and simplify.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\dfrac{-(-4) - \sqrt{(-4)^2-4(2)(-3)}}{2(2)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{2 \left( \dfrac{\sqrt{3}}{3}\right)}{1 - \left( \dfrac{\sqrt{3}}{3} \right)^2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(\sqrt[3]{-2} - \sqrt[3]{-54})^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2 \left(\dfrac{9}{4} - 3\right)^{1/3} + 2\left(\dfrac{9}{4}\right)\left(\dfrac{1}{3}\right)\left(\dfrac{9}{4}-3\right)^{-2/3}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin in the numerator and note that the radical here acts a grouping symbol,<fn>
+                The line extending horizontally from the square root symbol <m>\sqrt{}</m> is,
+                you guessed it, another vinculum.
+                </fn> so our first order of business is to simplify the radicand.
+                <me>
+                  \begin{array}{rclr}  \dfrac{-(-4) -\sqrt{(-4)^2-4(2)(-3)}}{2(2)}  \amp  = \amp  \dfrac{-(-4) - \sqrt{16-4(2)(-3)}}{2(2)} \amp  \\ \amp  = \amp  \dfrac{-(-4) - \sqrt{16-4(-6)}}{2(2)} \amp  \\ \amp  = \amp  \dfrac{-(-4) - \sqrt{16-(-24)}}{2(2)} \amp  \\ \amp  = \amp  \dfrac{-(-4) - \sqrt{16+24}}{2(2)} \amp  \\ \amp  = \amp  \dfrac{-(-4) - \sqrt{40}}{2(2)} \amp \end{array}
+                </me>
+                As you may recall,
+                <m>40</m> can be factored using a perfect square as
+                <m>40 = 4 \cdot 10</m> so we use the product rule of radicals to write <m>\sqrt{40} = \sqrt{4 \cdot 10} = \sqrt{4} \sqrt{10} = 2 \sqrt{10}</m>.
+                This lets us factor a <sq><m>2</m></sq> out of both terms in the numerator,
+                eventually allowing us to cancel it with a factor of <m>2</m> in the denominator.
+                <me>
+                  \begin{array}{rclcl}  \dfrac{-(-4) - \sqrt{40}}{2(2)} \amp  = \amp   \dfrac{-(-4) - 2\sqrt{10}}{2(2)} \amp  = \amp   \dfrac{4  - 2\sqrt{10}}{2(2)} \\ \amp  = \amp   \dfrac{2 \cdot 2  - 2\sqrt{10}}{2(2)} \amp  = \amp   \dfrac{2(2  - \sqrt{10})}{2(2)} \\ \amp  = \amp   \dfrac{\cancel{2}(2  - \sqrt{10})}{\cancel{2}(2)} \amp  = \amp   \dfrac{2  - \sqrt{10}}{2} \end{array}
+                </me>
+                Since the numerator and denominator have no more common factors,<fn>
+                Do you see why we aren't <sq>canceling</sq> the remaining <m>2</m>'s?
+                </fn> we are done.
+              </p>
+            </li>
+            <li>
+              <p>
+                Once again we have a compound fraction,
+                so we first simplify the exponent in the denominator to see which factor we'll need to multiply by in order to clean up the fraction.
+                <me>
+                  \begin{array}{rclcl}  \dfrac{2 \left( \dfrac{\sqrt{3}}{3}\right)}{1 - \left( \dfrac{\sqrt{3}}{3} \right)^2} \amp  = \amp  \dfrac{2 \left( \dfrac{\sqrt{3}}{3}\right)}{1 - \left( \dfrac{(\sqrt{3})^2}{3^2} \right)} \amp  = \amp  \dfrac{2 \left( \dfrac{\sqrt{3}}{3}\right)}{1 - \left( \dfrac{3}{9} \right)}\\  \amp  = \amp  \dfrac{2 \left( \dfrac{\sqrt{3}}{3}\right)}{1 - \left( \dfrac{1 \cdot \cancel{3}}{3 \cdot \cancel{3}} \right)} \amp  = \amp  \dfrac{2 \left( \dfrac{\sqrt{3}}{3}\right)}{1 - \left( \dfrac{1}{3} \right)} \\  \amp  = \amp  \dfrac{2 \left( \dfrac{\sqrt{3}}{3}\right) \cdot 3}{\left(1 - \left( \dfrac{1}{3} \right)\right) \cdot 3} \amp  = \amp  \dfrac{\dfrac{2 \cdot \sqrt{3} \cdot \cancel{3}}{\cancel{3}}}{1\cdot 3 -  \dfrac{1\cdot \cancel{3}}{\cancel{3}}} \\  \amp  = \amp  \dfrac{2 \sqrt{3}}{3 - 1} \amp  = \amp  \dfrac{\cancel{2} \sqrt{3}}{\cancel{2}} = \sqrt{3} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Working inside the parentheses,
+                we first encounter <m>\sqrt[3]{-2}</m>.
+                While the <m>-2</m> isn't a perfect cube,<fn>
+                Of an integer, that is!
+                </fn> we may think of <m>-2 = (-1)(2)</m>.
+                Since <m>(-1)^3 = -1</m>, which
+                <em>is</em> a perfect cube,
+                we may write <m>\sqrt[3]{-2} = \sqrt[3]{(-1)(2)} = \sqrt[3]{-1} \sqrt[3]{2} = - \sqrt[3]{2}</m>.
+                When it comes to <m>\sqrt[3]{54}</m>,
+                we may write it as <m>\sqrt[3]{(-27)(2)} = \sqrt[3]{-27} \sqrt[3]{2} = -3 \sqrt[3]{2}</m>.
+                So,
+                <me>
+                  \sqrt[3]{-2} - \sqrt[3]{-54} = -\sqrt[3]{2} - (-3\sqrt[3]{2}) = -\sqrt[3]{2} + 3 \sqrt[3]{2}
+                </me>.
+                At this stage,
+                we can simplify <m>-\sqrt[3]{2} + 3 \sqrt[3]{2} = 2 \sqrt[3]{2}</m>.
+                You may remember this as being called <sq>combining like radicals,</sq> but it is in fact just another application of the distributive property:
+                <me>
+                  -\sqrt[3]{2} + 3\sqrt[3]{2} = (-1)\sqrt[3]{2} + 3 \sqrt[3]{2} = (-1+3)\sqrt[3]{2} = 2\sqrt[3]{2}
+                </me>.
+                Putting all this together, we get:
+                <me>
+                  \begin{array}{rclcl} (\sqrt[3]{-2} - \sqrt[3]{-54})^2 \amp  = \amp  (-\sqrt[3]{2} + 3 \sqrt[3]{2})^2 \amp  = \amp  (2 \sqrt[3]{2})^2  \\ \amp  = \amp  2^2 (\sqrt[3]{2})^2 = 4 \sqrt[3]{2^2} \amp  = \amp  4 \sqrt[3]{4} \end{array}
+                </me>
+                There are no perfect integer cubes which are factors of <m>4</m>
+                (apart from <m>1</m>, of course),
+                so we are done.
+              </p>
+            </li>
+            <li>
+              <p>
+                We start working in the parentheses and get a common denominator to subtract the fractions:
+                <me>
+                  \dfrac{9}{4} - 3 = \dfrac{9}{4} - \dfrac{3 \cdot 4}{1 \cdot 4} = \dfrac{9}{4} - \dfrac{12}{4} = \dfrac{-3}{4}
+                </me>
+                The denominators in the fractional exponents are odd,
+                so we can proceed by using the properties of exponents:
+                <me>
+                  \begin{array}{rclr}  2 \left(\dfrac{9}{4} - 3\right)^{1/3} + 2\left(\dfrac{9}{4}\right)\left(\dfrac{1}{3}\right)\left(\dfrac{9}{4}-3\right)^{-2/3} \amp  = \amp 2 \left(\dfrac{-3}{4} \right)^{1/3} + 2\left(\dfrac{9}{4}\right)\left(\dfrac{1}{3}\right)\left(\dfrac{-3}{4}\right)^{-2/3} \amp  \\  \amp  = \amp  2 \left(\dfrac{(-3)^{1/3}}{(4)^{1/3}} \right) + 2\left(\dfrac{9}{4}\right)\left(\dfrac{1}{3}\right)\left(\dfrac{4}{-3}\right)^{2/3} \amp  \\  \amp  = \amp  2 \left(\dfrac{(-3)^{1/3}}{(4)^{1/3}} \right) + 2\left(\dfrac{9}{4}\right)\left(\dfrac{1}{3}\right)\left(\dfrac{(4)^{2/3}}{(-3)^{2/3}}\right) \amp  \\  \amp  = \amp  \dfrac{2 \cdot (-3)^{1/3}}{4^{1/3}} + \dfrac{2 \cdot 9 \cdot 1 \cdot 4^{2/3}}{4 \cdot 3 \cdot (-3)^{2/3}} \amp  \\  \amp  = \amp  \dfrac{2 \cdot (-3)^{1/3}}{4^{1/3}} + \dfrac{\cancel{2} \cdot 3 \cdot \cancel{3} \cdot 4^{2/3}}{2 \cdot \cancel{2} \cdot \cancel{3} \cdot (-3)^{2/3}} \amp  \\  \amp  = \amp  \dfrac{2 \cdot (-3)^{1/3}}{4^{1/3}} + \dfrac{3 \cdot 4^{2/3}}{2 \cdot (-3)^{2/3}} \amp \end{array}
+                </me>
+                At this point,
+                we could start looking for common denominators but it turns out that these fractions reduce even further.
+                Since <m>4 = 2^2</m>, <m>4^{1/3} = (2^2)^{1/3} = 2^{2/3}</m>.
+                Similarly, <m>4^{2/3} = (2^2)^{2/3} = 2^{4/3}</m>.
+                The expressions <m>(-3)^{1/3}</m> and
+                <m>(-3)^{2/3}</m> contain negative bases so we proceed with caution and convert them back to radical notation to get:
+                <m>(-3)^{1/3} = \sqrt[3]{-3} = -\sqrt[3]{3} = - 3^{1/3}</m> and  <m>(-3)^{2/3} = (\sqrt[3]{-3})^2 = (-\sqrt[3]{3})^2 =(\sqrt[3]{3})^2 = 3^{2/3}</m>.
+                Hence:
+                <me>
+                  \begin{array}{rclr}  \dfrac{2 \cdot (-3)^{1/3}}{4^{1/3}} + \dfrac{3 \cdot 4^{2/3}}{2 \cdot (-3)^{2/3}} \amp  = \amp  \dfrac{2 \cdot (-3^{1/3})}{2^{2/3}} + \dfrac{3 \cdot 2^{4/3}}{2 \cdot 3^{2/3}}  \amp  \\  \amp  = \amp  \dfrac{2^{1} \cdot (-3^{1/3})}{2^{2/3}} + \dfrac{3^{1} \cdot 2^{4/3}}{2^{1} \cdot 3^{2/3}}  \amp  \\  \amp  = \amp  2^{1 - 2/3} \cdot (-3^{1/3}) +3^{1- 2/3} \cdot 2^{4/3 - 1}  \amp  \\  \amp  = \amp  2^{1/3} \cdot (-3^{1/3}) +3^{1/3} \cdot 2^{1/3}  \amp  \\  \amp  = \amp   - 2^{1/3} \cdot 3^{1/3} +3^{1/3} \cdot 2^{1/3}  \amp  \\  \amp  = \amp  0 \amp \end{array}
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We close this section with a note about simplifying.
+      In the preceding examples we used
+      <q>nice</q>
+      numbers because we wanted to show as many properties as we could per example.
+      This then begs the question
+      <q>What happens when the numbers are <em>not</em> nice?</q>
+      Unfortunately, the answer is
+      <q>Not much simplifying can be done.</q>
+      Take, for example,
+      <me>
+        \frac{\sqrt{7}}{\pi} - \frac{3}{\pi^{2}} + \frac{4}{\sqrt{11}} = \frac{\pi\sqrt{77} - 3\sqrt{11} + 4\pi^{2}}{\pi^{2}\sqrt{11}}
+      </me>
+    </p>
+    <p>
+      Sadly, that's as good as it gets.
+    </p>
+  </introduction>
+  <subsection xml:id="ExercisesforAppRealNumberArithmetic">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="arithexfirst">Exercises</xref>
+      - <xref ref="arithexlast"></xref>,
+      perform the indicated operations and simplify.
+    </p>
+    <ol cols="2">
+      <li xml:id="arithexfirst">
+        <p>
+          <m>5 - 2 + 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5 - (2+3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2}{3} - \dfrac{4}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{3}{8} + \dfrac{5}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{5-3}{-2-4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2(-3)}{3 - (-3)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2(3)-(4-1)}{2^2 + 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{4 - 5.8}{2 - 2.1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{1 - 2(-3)}{5(-3) + 7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{5(3) - 7}{2(3)^2-3(3)-9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2((-1)^2-1)}{((-1)^2+1)^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(-2)^2 - (-2) - 6}{(-2)^2 - 4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{3 - \frac{4}{9}}{-2 - (-3)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\frac{2}{3} - \frac{4}{5}}{4 - \frac{7}{10}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2\left(\frac{4}{3}\right)}{1 - \left(\frac{4}{3}\right)^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{1 - \left(\frac{5}{3}\right)\left(\frac{3}{5}\right)}{1 + \left(\frac{5}{3}\right)\left(\frac{3}{5}\right)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\dfrac{2}{3}\right)^{-5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3^{-1} - 4^{-2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{1 + 2^{-3}}{3 - 4^{-1}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{3\cdot 5^{100}}{12 \cdot 5^{98}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{3^2 + 4^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{12} - \sqrt{75}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-8)^{2/3} - 9^{-3/2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\frac{32}{9}\right)^{-3/5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{(3-4)^2 + (5-2)^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{(2 - (-1))^2 + \left(\frac{1}{2} - 3\right)^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{(\sqrt{5} - 2\sqrt{5})^2 + (\sqrt{18} - \sqrt{8})^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-12 + \sqrt{18}}{21}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-2 - \sqrt{(2)^2 - 4(3)(-1)}}{2(3)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-(-4) + \sqrt{(-4)^2 - 4(1)(-1)}}{2(1)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2(-5)(-5+1)^{-1} + (-5)^2(-1)(-5+1)^{-2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3\sqrt{2(4)+1} + 3(4)\left(\frac{1}{2}\right)(2(4)+1)^{-1/2}(2)</m>
+        </p>
+      </li>
+      <li xml:id="arithexlast">
+        <p>
+          <m>2(-7)\sqrt[3]{1-(-7)} + (-7)^2 \left(\frac{1}{3}\right)(1-(-7))^{-2/3}(-1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          With the help of your calculator,
+          find <m>(3.14 \times 10^{87})^{117}</m>.
+          Write your final answer,
+          using scientific notation, rounded to two decimal places.
+          (See <xref ref="scientificnotationex">Example</xref>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove the Quotient Rule and Power Rule stated in <xref ref="radicalprops">Theorem</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Discuss with your classmates how you might attempt to simplify the following.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>\sqrt{\dfrac{1 - \sqrt{2}}{1 + \sqrt{2}}}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sqrt[5]{3} - \sqrt[3]{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dfrac{\pi + 7}{\pi}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2}{21}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{19}{24}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{1}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{3}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>18</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{7}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Undefined.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Undefined.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{23}{9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{4}{99}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{24}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{243}{32}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{13}{48}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{9}{22}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{25}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-3\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{107}{27}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{3\sqrt[5]{3}}{8} = -\dfrac{3^{6/5}}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\sqrt{61}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-4 + \sqrt{2}}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2 + \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{15}{16}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>13</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{385}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>1.38 \times 10^{10237}</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

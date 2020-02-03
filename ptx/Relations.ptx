@@ -1,0 +1,1468 @@
+<section xml:id="Relations">
+  <title>Relations and Implicit Functions</title>
+  <introduction>
+    <p>
+      Up until now in this text,
+      we have been exclusively special kinds of mappings called <em>functions</em>.
+      In this section,
+      we broaden our horizons to study more general mappings called <em>relations</em>.
+      The reader is encouraged to revisit <xref ref="functiondefn">Definition</xref>
+      in <xref ref="FunctionsandtheirRepresentations">Section</xref>
+      before proceeding with the definition of
+      <em>relation</em> below.
+    </p>
+    <definition xml:id="relationdefn">
+      <statement>
+        <p>
+          Given two sets <m>A</m> and <m>B</m>,
+          a <idx><h>relation</h><h>definition</h></idx> <term>relation</term>
+          from <m>A</m> to <m>B</m> is a process by which elements of <m>A</m> are matched with
+          (or <sq>mapped to</sq>)
+          elements of <m>B</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Unlike <xref ref="functiondefn">Definition</xref>,
+      <xref ref="relationdefn">Definition</xref>
+      puts no conditions on the process which maps elements of <m>A</m> to elements of <m>B</m>.
+      This means that while all functions are relations,
+      not all relations need be functions.
+      For example,
+      consider the mappings <m>f</m> and <m>g</m> below from <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[19]{-5}{5}{-5}{6}
+          \tlabel[cc](-4.25,6){<m>N</m> (inputs)}
+          \tlabel[cc](-4.25,5){White Paw}
+          \tlabel[cc](-4.25,3){Cooper}
+          \tlabel[cc](-4.25,1){Bingo}
+          \tlabel[cc](-4.25,-1){Kennie}
+          \tlabel[cc](0,6){<m>f</m>}
+          \tlabel[cc](3.5,5){cat}
+          \tlabel[cc](3.5,3){lizard}
+          \tlabel[cc](3.5,1){turtle}
+          \tlabel[cc](3.5,6){<m>T</m> (outputs)}
+          \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
+          \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)}
+          \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 3)}
+          \arrow[l 5pt] \polyline{(-2.5, -1), (2.5, 1)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[19]{-5}{5}{-5}{6}
+          \tlabel[cc](-3.5,6){<m>T</m> (inputs)}
+          \tlabel[cc](-3.5,5){cat}
+          \tlabel[cc](-3.5,3){lizard}
+          \tlabel[cc](-3.5,1){turtle}
+          \tlabel[cc](0,6){<m>g</m>}
+          \tlabel[cc](3.75,6){<m>N</m> (outputs)}
+          \tlabel[cc](3.75,5){White Paw}
+          \tlabel[cc](3.75,3){Cooper}
+          \tlabel[cc](3.75,1){Bingo}
+          \tlabel[cc](3.75,-1){Kennie}
+          \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
+          \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 3)}
+          \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 1)}
+          \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, -1)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      Both <m>f</m> and <m>g</m> are relations.
+      More specifically, <m>f</m> is a <em>function</em>
+      from <m>N</m> to <m>T</m> while <m>g</m> is merely <em>relation</em>
+      from <m>T</m> to <m>N</m>.
+      As with functions,
+      we may describe general relations in a variety of different ways:
+      verbally, as mapping diagrams,
+      or a set of ordered pairs.
+      For example,
+      just as we may describe the function <m>f</m> above as
+      <me>
+        f = \{ (\text{ White Paw } , \text{ cat } ), (\text{ Cooper } , \text{ cat } ), (\text{ Bingo } , \text{ lizard } ), (\text{ Kennie } , \text{ turtle } ) \}
+      </me>,
+      we may represent <m>g</m> as
+      <me>
+        g = \{ (\text{ cat } , \text{ White Paw } ), (\text{ cat } , \text{ Cooper } ), ( \text{ lizard } , \text{ Bingo } ), (\text{ turtle } , \text{ Kennie } ) \}
+      </me>.
+    </p>
+    <p>
+      Note here the grammar <sq><m>g</m> is a relation
+      <em>from</em> <m>T</m> <em>to</em>
+      <m>N</m></sq> is evidenced by the elements of <m>T</m> being listed first in the ordered pairs (i.e., the abscissae) and the elements of <m>N</m> being listed second (i.e., the ordinates.)
+    </p>
+    <p>
+      <em>Unlike</em> functions,
+      we do not use function notation when describing the input/output relationship for general relations.
+      For example,
+      we may write <sq><m>f(\text{ White Paw } ) = \text{ cat }</m></sq> since <m>f</m> maps the input <sq>White Paw</sq> to only one output,
+      <sq>cat.</sq> However,
+      <m>g(\text{ cat } )</m> is ambiguous since it could mean <sq>White Paw</sq> or <sq>Cooper.</sq><fn>
+      In more advanced texts,
+      we would write <sq><m>\text{ cat } \, g \, \text{ White Paw }</m></sq> and <sq><m>\text{ cat } \, g \, \text{ Cooper }</m></sq> to indicate <m>g</m> maps <sq>cat</sq> to both <sq>White Paw</sq> and <sq>Cooper.</sq> Our study of relations, however,
+      isn't deep enough to necessitate introducing and using this notation.
+      Similarly, we won't introduce the notions of <sq>domain,</sq> <sq>codomain,</sq> and <sq>range</sq> for relations, either.
+      </fn>
+    </p>
+    <p>
+      As with functions,
+      our focus in this course will rest with relations of real numbers.
+      Consider the relation <m>R</m> described as follows:
+      <m>R = \{ (-1,3), (0,-3), (4,-2), (4,1) \}</m>.
+      Below on the left is a mapping diagram of <m>R</m>.
+      However, since <m>R</m> relates real numbers,
+      we can also create the graph of <m>R</m> in the same way we graphed functions - by interpreting the ordered pairs which comprise <m>R</m> as points in the plane.
+      Since we have no context,
+      we use the default labels <sq><m>x</m></sq> for the horizontal axis and <sq><m>y</m></sq> for the vertical axis.
+    </p>
+    <tabular>
+      {m{2.5in}m{2.5in}}
+      \begin{mfpic}[19]{-5}{5}{-5}{5}
+      \tlabel[cc](-3.25,5){<m>-1</m>}
+      \tlabel[cc](-3.25,3){<m>0</m>}
+      \tlabel[cc](-3.25,1){<m>4</m>}
+      \tlabel[cc](3,5){<m>-3</m>}
+      \tlabel[cc](3,3){<m>-2</m>}
+      \tlabel[cc](3,1){<m>1</m>}
+      \tlabel[cc](3,-1){<m>3</m>}
+      \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, -1)}
+      \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)}
+      \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 3)}
+      \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 1)}
+      \point[3pt]{(-2.5, 5), (2.5, -1), (-2.5, 3),(2.5, 5), (-2.5, 1), (2.5, 3), (2.5, 1)}
+      \tcaption{A Mapping Diagram of <m>R</m>.}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[19]{-5}{5}{-5}{5}
+      \point[4pt]{(-1,3), (0,-3), (4,-2), (4,1)}
+      \tlabel[cc](-1,2.5){<m>(-1,3)</m>}
+      \tlabel[cc](4,-2.5){<m>(4,-2)</m>}
+      \tlabel[cc](4,0.5){<m>(4,1)</m>}
+      \tlabel[cc](1,-3){<m>(0,-3)</m>}
+      \axes
+      \tlabel[cc](5,-0.5){<m>x</m>}
+      \tlabel[cc](0.5,5){<m>y</m>}
+      \xmarks{-4,-3,-2,-1,1,2,3,4}
+      \ymarks{-4,-3,-2,-1,1,2,3,4}
+      \tcaption{The graph of <m>R</m>.}
+      \tlpointsep{5pt}
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+      \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+      \end{mfpic}
+    </tabular>
+    <p>
+      Our next example focuses on using relations to describe sets of points in the plane and vice-versa.
+    </p>
+    <example xml:id="relationgraphingexample">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol cols="2">
+          <li>
+            <p>
+              Graph the following relations.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>S = \{ \left(k, 2^{k} \right) \, | \, k = 0, \pm 1, \pm 2 \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>P = \{ \left(j, j^2\right) \, | \, \text{ \(j\) is an integer } \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>V = \{ (3,y) \, | \, \mbox{<m>y</m> is a real number} \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>R = \{ (x,y) \, | \, \text{ \(x\) is a real number, \(1 \lt y \leq 3\) } \}</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find a roster or set-builder description for each of the relations below.
+              <ol cols="2">
+                <li>
+                  <p>
+                    <m>~</m> \begin{mfpic}[18]{-5}{5}{-1}{5} \point[4pt]{(0,0),(-3,1), (4,2), (-3,2)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{The graph of <m>A</m>} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>~</m> \begin{mfpic}[18]{-5}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4} \penwd{1.25pt} \polyline{(-2,3), (4,3)} \point[4pt]{(-2,3)} \pointfillfalse \point[4pt]{(4,3)} \tcaption{The graph of <m>H</m>} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>~</m> \begin{mfpic}[18]{-5}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>s</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.1, 2.1, 0.1}{x**2} \tcaption{The graph of <m>Q</m>} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>~</m> \begin{mfpic}[18]{-5}{5}{-1}{5} \fillcolor[gray]{0.7} \gfill \rect{(-2.97,1.03), (3.97,4.75)} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \polyline{ (-3,1), (4,1), (4,5)} \arrow \dashed \polyline{(-3,1), (-3,5)} \pointfillfalse \point[4pt]{(-3,1)} \tcaption{The graph of <m>T</m>} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    The relation <m>S</m> is described using
+                    <em>set-builder notation</em>.<fn>
+                    See <xref ref="AppSetTheory">Section</xref> to review this,
+                    if needed.
+                    </fn>  To generate the ordered pairs which belong to <m>S</m>,
+                    we substitute the given values of <m>k</m>,
+                    <m>k = 0, \pm 1, \pm 2</m>, into the formula <m>\left(k, 2^{k}\right)</m>.
+                    Starting with <m>k=0</m>, we get <m>\left(0, 2^{0} \right) = (0,1)</m>.
+                    For <m>k = 1</m>,
+                    we get <m>\left(1, 2^{1} \right) = (1,2)</m>, and for <m>k = -1</m>,
+                    we get <m>\left(-1, 2^{-1} \right) = \left(-1,\frac{1}{2} \right)</m>.
+                    Continuing, we get <m>\left(2, 2^{2} \right) = (2,4)</m> for <m>k = 2</m> and,
+                    finally <m>\left(-2, 2^{-2} \right) = \left(-2,\frac{1}{4} \right)</m> for <m>k = -2</m>.
+                    Hence, a \text{ roster description } of <m>S</m> is <m>S = \{ \left(-2,\frac{1}{4} \right), \left(-1,\frac{1}{2} \right), \left(0,1 \right), \left(1,2 \right), \left(2,4 \right)\}</m>.
+                    When we graph <m>S</m>, we label the horizontal axis as the <m>k</m>-axis,
+                    since <sq><m>k</m></sq> was the variable chosen used to generate the ordered pairs and keep the default label <sq><m>y</m></sq> for the vertical axis.
+                    The graph of <m>S</m> is below on the left.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To graph the relation <m>P = \{ \left(j, j^2\right) \, | \, \text{ \(j\) is an integer } \}</m>,
+                    we proceed as above when we graphed the relation <m>S</m>.
+                    Here, <m>j</m> is restricted to being an integer,
+                    which means <m>j = 0</m>, <m>\pm 1</m>, <m>\pm 2</m>, etc.
+                    Plugging in these sample values for <m>j</m>,
+                    we obtain the ordered pairs <m>(0,0)</m>,
+                    <m>(1, 1)</m>, <m>(-1,1)</m>,
+                    <m>(2,4)</m>, <m>(-2,4)</m>, etc.
+                    Since the variable <m>j</m> takes on only integer values,
+                    we could write <m>P</m> using the roster notation:
+                    <m>P = \{ (0,0), (\pm 1, 1), (\pm 2, 4), \dots \}</m>.
+                    We plot a few of these points and use some periods of ellipsis to indicate the complete graph contains additional points not in the current field of view.
+                    The graph of <m>P</m> is below on the right. \begin{mfpic}[18]{-5}{5}{-1}{5} \point[4pt]{(-2,0.25), (-1,0.5), (0,1), (1,2), (2,4)} \axes \tlabel[cc](5,-0.5){<m>k</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{The graph of <m>S</m>} \end{mfpic} \begin{mfpic}[18]{-5}{5}{-1}{5} \point[4pt]{(0,0), (-1,1), (1,1), (-2,4), (2,4)} \axes \tlabel[cc](5,-0.5){<m>j</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](2.5,4.5){ \rotatebox{60}{<m>\cdots</m>}} \tlabel[cc](-2.5,4.5){ \rotatebox{120}{<m>\cdots</m>}} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{The graph of <m>P</m>} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Next, we come to the relation <m>V</m>, described,
+                    once again, using set-builder notation.
+                    In this case,
+                    <m>V</m> consists of all ordered pairs of the form <m>(3,y)</m> where <m>y</m> is free to be whatever real number we like,
+                    without any restriction.<fn>
+                    We'll revisit the concept of a <sq>free variable</sq> in <xref ref="LinSystems">Section</xref>.
+                    </fn>  For example,
+                    <m>(3,0)</m>, <m>(3,-1)</m>,
+                    and <m>(3,117)</m> all belong to <m>V</m> as do <m>\left(3, \frac{1}{2}\right)</m>,
+                    <m>(3,-1.0342)</m>, <m>(3, \sqrt{2})</m>, etc.
+                    After plotting some sample points,
+                    becomes apparent that the ordered pairs which belong to <m>V</m> correspond to points which lie on the vertical line <m>x = 3</m>,
+                    and vice-versa.
+                    That is, every point on the line <m>x=3</m> has coordinates which correspond to an ordered pair belonging to <m>V</m>.
+                    The graph of <m>V</m> is below on the left.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In the relation <m>R = \{ (x,y) \, | \, 1 \lt y \leq 3 \}</m>,
+                    we see <m>y</m> is restricted by the inequality <m>1 \lt y \leq 3</m>,
+                    but <m>x</m> is free to be whatever it likes.
+                    Since <m>x</m> is unrestricted,
+                    this means whatever the graph of <m>R</m> is,
+                    it will extend indefinitely off to the right and left.
+                    The restriction <m>y > 1</m> means all points on the graph of <m>R</m> have a <m>y</m>-coordinate larger than one,
+                    so they are <em>above</em> the horizontal line <m>y =1</m>.
+                    The restriction <m>y \leq 3</m>, on the other hand,
+                    means all the points on the graph of <m>R</m> have a <m>y</m>-coordinate less than or equal to <m>3</m>,
+                    meaning they are either <em>on</em> or <em>below</em>
+                    the horizontal line <m>y = 3</m>.
+                    In other words,
+                    the graph of <m>R</m> is the region in the plane between <m>y=1</m> and <m>y=3</m>,
+                    including <m>y=3</m> but not <m>y = 1</m>.
+                    We signify this by <em>shading</em>
+                    the region between these two horizontal lines.
+                    How do we communicate <m>y=1</m> is not part of the graph?
+                    One way is to visualize putting <sq>holes</sq> all along the line <m>y=1</m> to indicate this is not part of the graph.
+                    In practice,
+                    however, this looks cluttered and could be confusing.
+                    Instead, we <sq>dash</sq> the line <m>y = 1</m> as seen below on the right. \begin{mfpic}[18]{-5}{5}{-3}{3} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-2,-1,1,2} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>-1</m>} -1, {<m>-2</m>} -2} \tcaption{The graph of <m>V</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(3, -2.5), (3, 2.5)} \end{mfpic} \begin{mfpic}[18]{-5}{5}{-1}{5} \fillcolor[gray]{0.7} \gfill \rect{(-4.8,1.03), (4.8,2.97)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5,3), (5,3)} \arrow \reverse \arrow \dashed \polyline{(-5,1), (5,1)} \tcaption{The graph of <m>R</m>} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Since <m>A</m> consists of finitely many points,
+                    we can describe <m>A</m> using the roster method:
+                    <me>
+                      A = \{ (-3,2), (-3,1), (0,0), (4,2) \}
+                    </me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The graph of <m>H</m> appears to be a portion of the horizontal line <m>y=3</m> from <m>x = -2</m>
+                    (including <m>x = -2</m>)
+                    up to, but not including <m>x=4</m>.
+                    Since it is impossible<fn>
+                    Really impossible.
+                    The interested reader is encouraged to research
+                    <url href="http://en.wikipedia.org/wiki/Countable_set"><em><em>countable</em></em></url>
+                    versus
+                    <url href="http://en.wikipedia.org/wiki/Uncountable_set"><em><em>uncountable</em></em></url>
+                    sets.
+                    </fn>  to <em>list</em>
+                    each and every one of these points,
+                    we'll opt to describe <m>H</m> using set-builder as opposed to the roster method.
+                    Taking a cue from the description of the relations <m>V</m> and <m>R</m> above,
+                    we write <m>H = \{ (x, 3) \, | \, -2 \leq x \lt 4 \}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The graph of <m>Q</m> appears to be the graph of the function <m>s = f(t) = t^2</m>.
+                    Again, as the graph consists of infinitely many points,
+                    we will use set-builder notation to describe <m>Q</m> out of necessity.
+                    There are a couple of different ways to do this.
+                    Taking a cue from the relation <m>P</m> above,
+                    we could write <m>Q = \{ (t, t^2) \, | \, \text{ \(t\) is a real number } \}</m>.
+                    Alternatively, we could introduce the dependent variable,
+                    <m>s</m> into the description by writing
+                    <m>Q = \{ (t, s) \, | \, s = t^2 \}</m> where here the assumption is <m>x</m> takes in all real number values.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    As with the relation <m>R</m> above,
+                    the relation <m>T</m> describes a region in the plane, The <m>v</m>-values appear to range between <m>-3</m>
+                    (not including <m>-3</m>)
+                    and up to, and including, <m>v = 4</m>.
+                    The only restriction on the <m>w</m>-values is that <m>w \geq 1</m>,
+                    so we have <m>T = \{ (v, w) \, | \, \text{ \(-3 \lt v \leq 4\), \(w \geq 1\) } \}</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As with functions,
+      we can describe relations algebraically using equations.
+      For example,
+      the equation <m>v^2+w^3 = 1</m> relates two variables <m>v</m> and <m>w</m> each of which represent real numbers.
+      More formally,
+      we can express this sentiment by defining the relation <m>R = \{ (v,w) \, | \, v^2+w^3 = 1\}</m>.
+      An ordered pair <m>(v,w) \in R</m> means <m>v</m> and <m>w</m> are <em>related</em>
+      by the equation <m>v^2+w^3 = 1</m>;
+      that is, the pair <m>(v,w)</m> <em>satisfy</em> the equation.
+    </p>
+    <p>
+      For example, to show <m>(3,-2) \in R</m>,
+      we check that when we substitute <m>v=3</m> and <m>w=-2</m>,
+      the equation <m>v^2+w^3 = 1</m> is true.
+      Sure enough, <m>(3)^2+(-2)^3 = 9 - 8 = 1</m>.
+      Hence, <m>R</m> maps <m>3</m> to <m>-2</m>.
+      Note, however, that <m>(-2,3) \notin R</m> since
+      <m>(-2)^2+(3)^3 = -8+27 \neq 1</m> which means <m>R</m> does not map <m>-2</m> to <m>3</m>.
+    </p>
+    <p>
+      When asked to <sq>graph the equation</sq> <m>v^2+w^3 = 1</m>,
+      we really have two options.
+      We could graph the relation <m>R</m> above.
+      In this case, we would be graphing
+      <m>v^2+w^3 = 1</m> on the <m>vw</m>-plane.<fn>
+      Recall this means the horizontal axis is labeled <sq><m>v</m></sq> and the vertical axis is labeled <sq><m>w</m>.</sq>
+      </fn> Alternatively,
+      we could define <m>S = \{ (w,v) \, | \, v^2+w^3 = 1 \}</m> and graph <m>S</m>.
+      This is equivalent to graphing
+      <m>v^2+w^3 = 1</m> on the <m>wv</m>-plane.
+      We do both in our next example.
+    </p>
+    <example xml:id="firstequgraph">
+      <statement>
+        <p>
+          Graph the equation <m>v^2 + w^3 = 1</m> in the <m>vw</m>- and <m>wv</m>-planes.
+          Include the axis-intercepts.
+        </p>
+      </statement>
+      <solution>
+        <ul>
+          <li>
+            <p>
+              <em>graphing in the <m>vw</m>-plane:</em>
+              We begin by finding the axis intercepts of the graph.
+              To obtain a point on the <m>v</m>-axis, we require <m>w = 0</m>.
+              To see if we have any <m>v</m>-intercepts on the graph of the equation <m>v^2+w^3 = 1</m>,
+              we substitute <m>w=0</m> into the equation and solve for <m>v</m>:
+              <m>v^2 + (0)^3 = 1</m>.
+              We get <m>v^2 = 1</m> or <m>v = \pm 1</m> so our two <m>v</m>-intercepts,
+              as described in the <m>vw</m>-plane,
+              are <m>(1,0)</m> and <m>(-1,0)</m>.
+              Likewise, to find <m>w</m>-intercepts of the graph,
+              we substitute <m>v = 0</m> into the equation
+              <m>v^2+w^3 = 1</m> and get <m>w^3 = 1</m> or <m>w = 1</m>.
+              Hence, he have only one <m>w</m>-intercept, <m>(0,1)</m>.
+              One way to efficiently produce additional points is to solve the equation
+              <m>v^2+w^3 = 1</m> for one of the variables, say <m>w</m>,
+              in terms of the other, <m>v</m>.
+              In this way,
+              we are treating <m>w</m> as the dependent variable and <m>v</m> as the independent variable.
+              From <m>v^2 + w^3 = 1</m>,
+              we get <m>w^3 = 1 - v^2</m> or <m>w = \sqrt[3]{1-v^2}</m>.
+              We now substitute a value in for <m>v</m>,
+              determine the corresponding value <m>w</m>,
+              and plot the resulting point <m>(v,w)</m>.
+              We summarize our results below on the left.
+              By plotting additional points
+              (or getting help from a graphing utility),
+              we produce the graph below on the right.
+              <tabular>
+                {m{2.5in}m{2.5in}} <m>\begin{array}{|r||c|c|} \hline v \amp w \amp (v,w) \\ \hline -3 \amp -2 \amp (-3, -2) \\ \hline -2 \amp -\sqrt[3]{3}\amp (-2,-\sqrt[3]{3}) \\ \hline -1 \amp 0 \amp ( -1, 0) \\ \hline 0 \amp 1\amp ( 0 , 1) \\ \hline 1 \amp 0 \amp ( 1, 0) \\ \hline 2 \amp -\sqrt[3]{3}\amp (2,-\sqrt[3]{3}) \\ \hline 3 \amp -2 \amp (3, -2) \\ \hline \end{array}</m> &amp; \begin{mfpic}[15]{-5}{5}{-4}{4} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,4){<m>w</m>} \tcaption{<m>v^2+w^3=1</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \parafcn{-2.5,1,0.1}{(sqrt(1-t^3),t)} \arrow \reverse \parafcn{-2.5,1,0.1}{(-1*sqrt(1-t^3),t)} \point[4pt]{(-3,-2),(-2,-1.4422), (-1,0), (0,1), (3,-2),(2,-1.4422), (1,0)} \end{mfpic}
+              </tabular>
+            </p>
+          </li>
+          <li>
+            <p>
+              <em>graphing in the <m>wv</m>-plane:</em>
+              To graph <m>v^2+w^3 = 1</m> in the <m>wv</m>-plane,
+              all we need to do is reverse the coordinates of the ordered pairs we obtained for our graph in the <m>vw</m>-plane.
+              In particular,
+              the <m>v</m>-intercepts are written <m>(0,1)</m> and <m>(0,-1)</m> and the <m>w</m>-intercept is written <m>(1,0)</m>.
+              Using the table below on the left we produce the graph below on the right.
+              <tabular>
+                {m{2.5in}m{2.5in}} <m>\begin{array}{|r||c|c|} \hline v \amp w \amp (w,v) \\ \hline -3 \amp -2 \amp (-2,-3) \\ \hline -2 \amp -\sqrt[3]{3}\amp (-\sqrt[3]{3}, -2) \\ \hline -1 \amp 0 \amp ( 0,-1) \\ \hline 0 \amp 1\amp ( 1 ,0) \\ \hline 1 \amp 0 \amp ( 0, 1) \\ \hline 2 \amp -\sqrt[3]{3}\amp (-\sqrt[3]{3},2) \\ \hline 3 \amp -2 \amp (-2,3) \\ \hline \end{array}</m> &amp; \begin{mfpic}[15]{-5}{5}{-4}{4} \axes \tlabel[cc](5,-0.5){<m>w</m>} \tlabel[cc](0.5,4){<m>v</m>} \tcaption{<m>v^2+w^3=1</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \parafcn{-2.5,1,0.1}{(t, sqrt(1-t^3))} \arrow \reverse \parafcn{-2.5,1,0.1}{(t, -1*sqrt(1-t^3))} \point[4pt]{(-2,-3),(-1.4422,-2), (0,-1), (1,0), (-2,3),(-1.4422,2), (0,1)} \end{mfpic}
+              </tabular>
+            </p>
+          </li>
+        </ul>
+      </solution>
+    </example>
+    <p>
+      Note that regardless of which geometric depiction we choose for <m>v^2+w^3 = 1</m>,
+      the graph appears to be symmetric about the <m>w</m>-axis.
+      To prove this is the case,
+      consider a generic point <m>(v,w)</m> on the graph of
+      <m>v^2+w^3 = 1</m> in the <m>vw</m>-plane.
+    </p>
+    <p>
+      To show the point symmetric about the <m>w</m>-axis,
+      <m>(-v,w)</m> is also on the graph of <m>v^2+w^3 = 1</m>,
+      we need to show that the coordinates of the point <m>(-v,w)</m> satisfy the equation <m>v^2+w^3 = 1</m>.
+      That is, we need to show <m>(-v)^2+w^3 = 1</m>.
+      Since <m>(-v)^2+w^3 = v^2 + w^3</m>,
+      and we know by assumption <m>v^2 + w^3 = 1</m>,
+      we get <m>(-v)^2+w^3 = v^2+w^3 = 1</m>,
+      proving <m>(-v,w)</m> is also on the graph of the equation.
+    </p>
+    <p>
+      The key reason our proof above is successful is that algebraically,
+      the equation <m>v^2+w^3 = 1</m> is unchanged if <m>v</m> is replaced with <m>-v</m>.
+      Geometrically,
+      this means the graph is the same if it undergoes a reflection across the <m>w</m>-axis.
+      We generalize this reasoning in the following result.
+      Note that, as usual,
+      we default to the more common <m>x</m> and <m>y</m>-axis labels.
+    </p>
+    <theorem xml:id="symmetrytestequations">
+      <statement>
+        <p>
+          <em>Testing the Graph of an Equation for Symmetry:</em>
+        </p>
+        <p>
+          To test the graph of an equation in the <m>xy</m>-plane for symmetry:
+          <ul>
+            <li>
+              <p>
+                about the <m>x</m>-axis:
+                substitute <m>(x,-y)</m> into the equation and simplify.
+                If the result is equivalent to the original equation,
+                the graph is symmetric about the <m>x</m>-axis.
+              </p>
+            </li>
+            <li>
+              <p>
+                about the <m>y</m>-axis:
+                substitute <m>(-x,y)</m> into the equation and simplify.
+                If the result is equivalent to the original equation,
+                the graph is symmetric about the <m>y</m>-axis.
+              </p>
+            </li>
+            <li>
+              <p>
+                about the origin:
+                substitute <m>(-x,-y)</m> into the equation and simplify.
+                If the result is equivalent to the original equation,
+                the graph is symmetric about the origin.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+          <idx><h>symmetry</h><h>testing an equation for</h></idx>
+    </p>
+    <p>
+      Parts of <xref ref="symmetrytestequations">Theorem</xref>
+      should look familiar from our work with even and odd functions.
+      Indeed if a function <m>f</m> is even, <m>f(-x) = f(x)</m>.
+      Hence, the equation <m>y=f(-x)</m> reduces to the equation <m>y=f(x)</m>,
+      so the graph of <m>f</m> is symmetric about the <m>y</m>-axis.
+    </p>
+    <p>
+      Likewise if <m>f</m> is odd, then <m>f(-x) = -f(x)</m>.
+      In this case, the equation
+      <m>-y = f(-x)</m> reduces to <m>-y = -f(x)</m>,
+      or <m>y = f(x)</m>, proving the graph is symmetric about the origin.
+    </p>
+    <p>
+      When it comes to symmetry about the <m>x</m>-axis,
+      most of the time this indicates a violation of the Vertical Line Test,
+      which is why we haven't discussed that particular kind of symmetry until now.
+    </p>
+    <p>
+      We put <xref ref="symmetrytestequations">Theorem</xref>
+      to good use in the following example.
+    </p>
+    <example xml:id="graphssymmex">
+      <statement>
+        <p>
+          Graph each of the equations below in the <m>xy</m>-plane.
+          Find the axis intercepts,
+          if any, and prove any symmetry suggested by the graphs.
+          <ol>
+            <li>
+              <p>
+                <m>x^2-y^2 = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(x-1)^2+4y^2 = 16</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin graphing <m>x^2-y^2 = 4</m> by checking for axis intercepts.
+                To check for <m>x</m>-intercepts,
+                we set <m>y=0</m> and solve <m>x^2 - (0)^2 = 4</m>.
+                We get <m>x = \pm 2</m> and obtain two <m>x</m>-intercepts <m>(-2,0)</m> and <m>(2,0)</m>.
+                When looking for <m>y</m>-intercepts,
+                we set <m>x=0</m> and get <m>(0)^2 - y^2 = 4</m> or <m>y^2 = -4</m>.
+                Since this equation has no real number solutions,
+                we have no <m>y</m>-intercepts.
+                In order to produce more points on the graph,
+                we solve <m>x^2-y^2 = 4</m> for <m>y</m> and obtain <m>y = \pm \sqrt{x^2-4}</m>.
+                Since we know <m>x^2-4 \geq 0</m> in order to produce real number results for <m>y</m>,
+                we restrict our attention to <m>x \leq -2</m> and <m>x \geq 2</m>.
+                Doing so produces the table below on the left.
+                Using these, we construct the graph below the right.
+                The graph certainly appears to be symmetric about both axes and the origin.
+                To prove this, we note that the equation
+                <m>x^2-(-y)^2 = 4</m> quickly reduces to <m>x^2-y^2 = 4</m>,
+                proving the graph is symmetric about the <m>x</m>-axis.
+                Likewise, the equations <m>(-x)^2-y^2 = 4</m> and <m>(-x)^2-(-y)^2 = 4</m> also reduce to
+                <m>x^2-y^2 = 4</m>, proving the graph is,
+                indeed, symmetric about the <m>y</m>-axis and origin, respectively.
+                <tabular>
+                  {m{2.5in}m{2.5in}} <m>\begin{array}{|r||c|c|} \hline x \amp y \amp (x,y) \\ \hline -4 \amp \pm 2\sqrt{3} \amp (-4, \pm 2\sqrt{3}) \\ \hline -3 \amp \pm \sqrt{5} \amp (-3,\pm \sqrt{5}) \\ \hline -2 \amp 0 \amp ( -2, 0) \\ \hline 2 \amp 0 \amp ( 2, 0) \\ \hline 3 \amp \pm \sqrt{5} \amp (3,\pm \sqrt{5}) \\ \hline 4 \amp \pm 2\sqrt{3} \amp (4, \pm 2\sqrt{3}) \\ \hline \end{array}</m> &amp; \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tcaption{<m>x^2-y^2=4</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4, -3,-2,-1,1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \parafcn{0,1.5,0.1}{(2*cosh(t), 2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(2*cosh(t), -2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(-2*cosh(t), 2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(-2*cosh(t), -2*sinh(t))} \point[4pt]{(-2,0), (2,0), (-3, 2.236), (-3, -2.236), (3, 2.236), (3, -2.236), (4, 3.464), (4, -3.464), (-4, 3.464), (-4, -3.464)} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                To determine if there are any <m>x</m>-intercepts on the graph of <m>(x-1)^2+4y^2 = 16</m>,
+                we set <m>y=0</m> and solve <m>(x-1)^2+4(0)^2 = 16</m>.
+                This reduces to <m>(x-1)^2 = 16</m> which gives <m>x = -3</m> and <m>x=5</m>.
+                Hence, we have two <m>x</m>-intercepts,
+                <m>(-3,0)</m> and <m>(5,0)</m>.
+                Looking for <m>y</m>-intercepts,
+                we set <m>x=0</m> and solve
+                <m>(0-1)^2+4y^2 = 16</m> or <m>1 + 4y^2 = 16</m>.
+                This gives <m>y^2 = \frac{15}{4}</m> so <m>y= \pm \frac{\sqrt{15}}{2}</m>.
+                Hence, we have two <m>y</m>-intercepts:
+                <m>\left(0, \pm \frac{\sqrt{15}}{2} \right)</m>.
+                In this case, it is slightly easier<fn>
+                Read this as we're avoiding fractions.
+                </fn> to solve for <m>x</m> in terms of <m>y</m>.
+                From <m>(x-1)^2+4y^2 = 16</m> we get
+                <m>(x-1)^2 = 16-4y^2</m> which gives <m>x = 1 \pm \sqrt{16-4y^2}</m>.
+                Since we know <m>16-4y^2 \geq 0</m> to produce real number results for <m>x</m>,
+                we require <m>-2 \leq y \leq 2</m>.
+                Selecting values in that range produces the table below on the left.
+                Plotting these points,
+                along with the <m>y</m>-intercepts produces the graph on the right.
+                <tabular>
+                  {m{2.5in}m{2.5in}} <m>\begin{array}{|r||c|c|} \hline y \amp x \amp (x,y) \\ \hline -2 \amp 1 \amp (1, -2) \\ \hline -1 \amp 1 \pm 2\sqrt{3} \amp (1 \pm 2\sqrt{3},-1) \\ \hline 0 \amp 1 \pm 4 = -3, 5 \amp (-3, 0), (5,0) \\ \hline 1 \amp 1 \pm 2 \sqrt{3} \amp (1 \pm 2\sqrt{3}, 1) \\ \hline 2 \amp 1 \amp (1, 2) \\ \hline \end{array}</m> &amp; \begin{mfpic}[15]{-4}{6}{-4}{4} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tcaption{<m>(x-1)^2+4y^2=16</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>-1</m>} -1, {<m>1</m>} 1 , {<m>-3</m>} -3 , {<m>3</m>} 3 } \penwd{1.25pt} \parafcn{0,6.28,0.1}{( 1+4*cos(t) ,2*sin(t) )} \point[4pt]{(1,2), (1,-2), (-3,0), (5,0), (0, 1.936), (0, -1.936), (4.464, 1), (4.464, -1), (-2.464, 1), (-2.464, -1) } \end{mfpic}
+                </tabular>
+                The graph certainly appears to be symmetric about the <m>x</m>-axis.
+                To check, we substitute <m>(-y)</m> in for <m>y</m> and get
+                <m>(x-1)^2+4(-y)^2 = 16</m> which reduces to <m>(x-1)^2+4y^2 = 16</m>.
+                Owing to the placement of the <m>x</m>-intercepts,
+                <m>(-3,0)</m> and <m>(5,0)</m>,
+                the graph is most certainly not symmetric about the <m>y</m>-axis nor about the origin.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Looking at the graphs of the equations <m>x^2-y^2 = 4</m> and
+      <m>(x-1)^2+4y^2 = 16</m> in <xref ref="graphssymmex">Example</xref>,
+      it is evident neither of these equations represents <m>y</m> as a function of <m>x</m> nor <m>x</m> as a function of <m>y</m>. (Do you see why?)
+    </p>
+    <p>
+      With the concept of <sq>function</sq> being touted in the opening remarks of <xref ref="FunctionsandtheirRepresentations">Section</xref>
+      as being one of the <sq>universal tools</sq> with which scientists and engineers solve a wide variety of problems,
+      you may well wonder if we can't somehow apply what we know about functions to these sorts of relations.
+      It turns out that while, taken all at once,
+      these equations do not describe functions, taken in parts, they do.
+    </p>
+    <p>
+      For example, consider the equation <m>x^2 - y^2 = 4</m>.
+      Solving for <m>y</m>, we obtained <m>y = \pm \sqrt{x^2-4}</m>.
+      Defining <m>f_{1}(x) = \sqrt{x^2-4}</m> and <m>f_{2}(x) = -\sqrt{x^2-4}</m>,
+      we get a functional description for the upper and lower halves,
+      or <em>branches</em> of the curve, respectively.<fn>
+      There are many more ways to break this relation into functional parts.
+      We could, for instance,
+      go piecewise and take portions of the graph which lie in Quadrants I and III as one function and leave the parts in Quadrants II and IV as the other;
+      we could look at this as being comprised of
+      <em>four</em> functions, and so on.
+      </fn>
+    </p>
+    <p>
+      If, for instance,
+      we wanted to analyze this curve near <m>(3, -\sqrt{5})</m>,
+      we could use the <em>function</em>
+      <m>f_{2}</m> and all the associated function tools<fn>
+      including, when the time comes, Calculus
+      </fn> to do just that.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tcaption{<m>x^2-y^2=4</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4, -3,-2,-1,1,2,3,4} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \parafcn{0,1.5,0.1}{(2*cosh(t), 2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(2*cosh(t), -2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(-2*cosh(t), 2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(-2*cosh(t), -2*sinh(t))}
+    </p>
+    <p>
+      \point[4pt]{(-2,0), (2,0), (-3, 2.236), (-3, -2.236), (3, 2.236), (3, -2.236), (4, 3.464), (4, -3.464), (-4, 3.464), (-4, -3.464)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tcaption{<m>f_{1}(x) = \sqrt{x^2-4}</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4, -3,-2,-1,1,2,3,4} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \parafcn{0,1.5,0.1}{(2*cosh(t), 2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(-2*cosh(t), 2*sinh(t))}
+    </p>
+    <p>
+      \point[4pt]{(-2,0), (2,0), (-3, 2.236), (3, 2.236), (4, 3.464), (-4, 3.464)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tcaption{<m>f_{2}(x) = -\sqrt{x^2-4}</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4, -3,-2,-1,1,2,3,4} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \parafcn{0,1.5,0.1}{(2*cosh(t), -2*sinh(t))} \arrow \parafcn{0,1.5,0.1}{(-2*cosh(t), -2*sinh(t))}
+    </p>
+    <p>
+      \point[4pt]{(-2,0), (2,0), (-3, -2.236), (3, -2.236), (4, -3.464), (-4, -3.464)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      In this way we say the equation <m>x^2 - y^2 = 4</m> <em>implicitly</em>
+      describes <m>y</m> as a function of <m>x</m> meaning that given any point
+      <m>(x_{0},y_{0})</m> on <m>x^2 - y^2 = 4</m>,
+      we can find a function <m>f</m> defined
+      (on an interval)
+      containing <m>x_{0}</m> so that
+      <m>f(x_{0}) = y_{0}</m> and whose graph lies on the curve <m>x^2 - y^2 = 4</m>.
+    </p>
+    <p>
+      Note that in this case, we are fortunate to have two <em>explicit</em>
+      formulas for functions that cover the entire curve,
+      namely <m>f_{1}(x) = \sqrt{x^2-4}</m> and <m>f_{2}(x) = -\sqrt{x^2-4}</m>.
+      We explore this concept further in the next example.
+    </p>
+    <example xml:id="implicitfcnex">
+      <statement>
+        <p>
+          Consider the graph of the relation <m>R</m> below.
+          <ol>
+            <li>
+              <p>
+                Explain why this curve does not represent <m>y</m> as a function of <m>x</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Resolve the graph of <m>R</m> into two or more graphs of implicitly defined functions.
+              </p>
+            </li>
+            <li>
+              <p>
+                Explain why this curve represents <m>x</m> as a function of <m>y</m> and find a formula for <m>x = g(y)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          \begin{mfpic}[15]{-5}{5}{-3}{3} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \tlabel[cc](-3,1){<m>(-2,1)</m>} \tlabel[cc](3,-1){<m>(2,-1)</m>} \tlabel[cc](0.75,0.5){<m>(0,0)</m>} \tlabel[cc](1.5,-2){<m>(0,-\sqrt{3})</m>} \tlabel[cc](-1.5,2){<m>(0,\sqrt{3})</m>} \tcaption{The graph of <m>R</m>} \xmarks{-4,-3, -2,-1,1,2,3,4} \ymarks{-2,-1,1,2} \tlpointsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>1</m>} 1, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2.25,2.25,0.1}{(t^3-3*t, t)}
+        </p>
+        <p>
+          \point[4pt]{(0,0), (0,-1.732), (0, 1.732), (2, -1), (-2,1)}
+        </p>
+        <p>
+          \end{mfpic}
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Using the Vertical Line Test,
+                <xref ref="VLT">Theorem</xref>,
+                we find several instances where vertical lines intersect the graph of <m>R</m> more than once.
+                The <m>y</m>-axis, <m>x = 0</m> is one such line.
+                We have <m>x = 0</m> matched with <em>three</em>
+                different <m>y</m>-values:
+                <m>-\sqrt{3}</m>, <m>0</m>, and <m>\sqrt{3}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the maximum number of times a vertical line intersects the graph of <m>R</m> is three,
+                it stands to reason we need to resolve the graph of <m>R</m> into at least three pieces.
+                One strategy is to begin at the far left and begin tracing the graph until it begins to <sq>double back</sq> and repeat <m>y</m>-coordinates.
+                Doing so we get three functions
+                (represented by the bold solid lines)
+                below. \begin{mfpic}[13.5]{-5}{5}{-3}{3} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \tlabel[cc](3.25,-1){<m>(2,-1)</m>} \tlabel[cc](1.5,-2){<m>(0,-\sqrt{3})</m>} \tcaption{<m>y = f_{1}(x)</m>} \xmarks{-4,-3, -2,-1,1,2,3,4} \ymarks{-2,-1,1,2} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1} \axislabels {y}{ {<m>1</m>} 1, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \parafcn{-2.25, -1,0.1}{(t^3-3*t, t)} \dotted \parafcn{-1, 2.25,0.1}{(t^3-3*t, t)} \point[4pt]{(0,-1.732), (2, -1) } \end{mfpic} \begin{mfpic}[13.5]{-5}{5}{-3}{3} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \tlabel[cc](-3.25,1){<m>(-2,1)</m>} \tlabel[cc](3.25,-1){<m>(2,-1)</m>} \tlabel[cc](0.75,0.5){<m>(0,0)</m>} \tcaption{<m>y = f_{2}(x)</m>} \xmarks{-4,-3, -2,-1,1,2,3,4} \ymarks{-2,-1,1,2} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1} \axislabels {y}{ {<m>1</m>} 1, {<m>-1</m>} -1} \penwd{1.25pt} \parafcn{-1,1,0.1}{(t^3-3*t, t)} \dotted \parafcn{1, 2.25,0.1}{(t^3-3*t, t)} \dotted \parafcn{-2.25, -1,0.1}{(t^3-3*t, t)} \point[4pt]{(0,0), (2, -1), (-2,1)} \end{mfpic} \begin{mfpic}[13.5]{-5}{5}{-3}{3} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \tlabel[cc](-3.25,1){<m>(-2,1)</m>} \tlabel[cc](-1.5,2){<m>(0,\sqrt{3})</m>} \tcaption{<m>y = f_{3}(x)</m>} \xmarks{-4,-3, -2,-1,1,2,3,4} \ymarks{-2,-1,1,2} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>1</m>} 1, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \parafcn{1,2.25,0.1}{(t^3-3*t, t)} \dotted \parafcn{-2.25, 1,0.1}{(t^3-3*t, t)} \point[4pt]{(0, 1.732), (-2,1)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                To verify that <m>R</m> represents <m>x</m> as a function of <m>y</m>,
+                we check to see if any <m>y</m>-value has more than one <m>x</m> associated with it.
+                One way to do this is to employ the the Horizontal Line Test
+                (<xref ref="HLTExercise">Exercise</xref>
+                in <xref ref="FunctionsandtheirRepresentations">Section</xref>.)
+                Since every horizontal line intersects the graph at most once,
+                <m>x</m> is a function of <m>y</m>.
+                Using <xref ref="complexfactorization">Theorem</xref>
+                from <xref ref="PolynomialFunctions">Chapter</xref>,
+                we get <m>x = (1)y(y-\sqrt{3})(y+\sqrt{3}) = y^3 - 3y</m>,
+                a fact we can readily check using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Not all equations implicitly define <m>y</m> as a function of <m>x</m>.
+      For a quick example, take <m>x = 117</m> or any other vertical line.
+      Even if an equation implicitly describes <m>y</m> as a function of <m>x</m> near one point,
+      there's no guarantee we can find an explicit algebraic representation for that function.<fn>
+      An example of this is <m>y^5-y-x = 1</m> near <m>(-1,0)</m>.
+      </fn>
+    </p>
+    <p>
+      While the theory of implicit functions is well beyond the scope of this text,
+      we will nevertheless see this concept come into play in <xref ref="InverseFunctions">Section</xref>.
+      For our purposes,
+      it suffices to know that just because a relation is not a function doesn't mean we cannot find a way to apply what we know about functions to analyze the relation locally through a functional lens.
+    </p>
+  </introduction>
+  <subsection xml:id="ExercisesforRelations">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="relationfirst">Exercises</xref>
+      - <xref ref="relationlast"></xref>,
+      graph the given relation in the <m>xy</m>-plane.
+      <ol cols="2">
+        <li xml:id="relationfirst">
+          <p>
+            \{<m>(-3, 9)</m>, <m>\;(-2, 4)</m>,
+            <m>\;(-1, 1)</m>, <m>\;(0, 0)</m>,
+            <m>\;(1, 1)</m>, <m>\;(2, 4)</m>, <m>\;(3, 9)\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            \{<m>(-2, 0)</m>, <m>\;(-1, 1)</m>,
+            <m>\;(-1, -1)</m>, <m>\;(0, 2)</m>,
+            <m>\;(0, -2)</m>, <m>\;(1, 3)</m>, <m>\;(1, -3)\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(m, 2m \right) \, | \, m = 0, \pm 1, \pm 2 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(\frac{6}{k}, k \right) \, | \, k = \pm 1, \pm 2, \pm 3, \pm 4, \pm 5, \pm 6 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(n, 4 - n^2\right) \, | \, n = 0, \pm 1, \pm 2 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(\sqrt{j}, j \right) \, | \, j = 0, 1, 4, 9 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(x, -2 \right) \, | \, x > -4 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(x, 3 \right) \, | \, x \leq 4 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(-1, y \right) \, | \, y > 1 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(2, y \right) \, | \, y \leq 5 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ (-2, y) \, | \, -3 \lt y \leq 4\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(3,y \right) \, | \, -4 \leq y \lt 3 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ (x, 2) \, | \, -2 \leq x \lt 3 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(x,-3 \right) \, | \, -4 \lt x \leq 4 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ (x, y) \, | \, x > -2 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(x,y \right) \, | \, x \leq 3 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(x,y \right) \, | \, y \lt 4 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(x,y \right) \, | \, x \leq 3, \, y \lt 2 \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \left(x,y \right) \, | \, x > 0, \, y \lt 4 \right\}</m>
+          </p>
+        </li>
+        <li xml:id="relationlast">
+          <p>
+            <m>\{ (x, y) \, | \, -\sqrt{2} \leq x \leq \frac{2}{3}, \; \pi \lt y \leq \frac{9}{2} \}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="relationsetfirst">Exercises</xref>
+      - <xref ref="relationsetlast"></xref>,
+      describe the given relation using either the roster or set-builder method.
+      <ol cols="5">
+        <li xml:id="relationsetfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{2}{-2}{5} \point[4pt]{(-4, -1), (-2, 1), (0, 3), (1, 4)} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1} \ymarks{-1,1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{Relation <m>A</m>} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-1}{4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \polyline{(-3,3), (5,3)} \point[4pt]{(-3,3)} \tcaption{Relation <m>B</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-1}{4}{-4}{6} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{1,2,3} \ymarks{-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \polyline{(2,-3), (2,5)} \pointfillfalse \point[4pt]{(2,-3)} \tcaption{Relation <m>C</m>} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4}{1}{-5}{4} \axes \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3,-2,-1} \ymarks{-4,-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \polyline{(-2,-4), (-2,3)} \point[4pt]{(-2,-4)} \pointfillfalse \point[4pt]{(-2,3)} \tcaption{Relation <m>D</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-1}{4} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>s</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \polyline{(-4,2), (3,2)} \point[4pt]{(-4,2)} \pointfillfalse \point[4pt]{(3,2)} \tcaption{Relation <m>E</m>} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4}{4}{-1}{5} \fillcolor[gray]{.7} \gfill \rect{(-4,0), (3.75,4.75)} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>s</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, , {<m>4</m>} 4} \tcaption{Relation <m>F</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4}{4}{-4}{4} \fillcolor[gray]{.7} \gfill \rect{(-1.97,-3.75), (3.75,3.75)} \arrow \reverse \arrow \dashed \polyline{(-2,-4), (-2,4)} \axes \tlabel[cc](4,-0.5){<m>v</m>} \tlabel[cc](0.5,4){<m>w</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{ {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \tcaption{Relation <m>G</m>} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4.5}{4}{-4}{4} \fillcolor[gray]{.7} \gfill \rect{(-2.97,-3.75), (1.97,3.75)} \arrow \reverse \arrow \dashed \polyline{(-3,-4), (-3,4)} \axes \tlabel[cc](4,-0.5){<m>v</m>} \tlabel[cc](0.5,4){<m>w</m>} \xmarks{-4,-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{ {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(2,-4), (2,4)} \tcaption{Relation <m>H</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-1.5}{6}{-1.5}{6} \fillcolor[gray]{.7} \gfill \rect{(0,0), (5.75,5.75)} \axes \tlabel[cc](6,-0.5){<m>u</m>} \tlabel[cc](0.5,6){<m>v</m>} \xmarks{-1,1,2,3,4,5} \ymarks{-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{ {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \tcaption{Relation <m>I</m>} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="relationsetlast">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4.5}{5.5}{-4}{3} \fillcolor[gray]{.7} \gfill \rect{(-3.97, -2.97), (4.97, 1.97)} \dashed \polyline{(-4, -3), (-4, 2)} \dashed \polyline{(-4, 2), (5, 2)} \dashed \polyline{(5, 2), (5, -3)} \dashed \polyline{(5, -3), (-4, -3)} \axes \tlabel[cc](5.5,-0.5){<m>u</m>} \tlabel[cc](0.5,3){<m>v</m>} \xmarks{-4,-3,-2,-1,1,2,3,4,5} \ymarks{-3,-2,-1,1,2} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \tcaption{Relation <m>J</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Some relations are fairly easy to describe in words or with the roster method but are rather difficult,
+      if not impossible, to graph.
+      Discuss with your classmates how you might graph the relations given in <xref ref="cannotgraphfirst">Exercises</xref>
+      - <xref ref="cannotgraphlast"></xref>.
+      Note that in the notation below we are using the ellipsis,
+      <sq><ellipsis/>,</sq> to denote that the list does not end,
+      but rather,
+      continues to follow the established pattern indefinitely.
+    </p>
+    <p>
+      For the relations in <xref ref="cannotgraphfirst">Exercises</xref>
+      and <xref ref="cannotgraphsecond"></xref>,
+      give two examples of points which belong to the relation and two points which do not belong to the relation.
+      <ol>
+        <li xml:id="cannotgraphfirst">
+          <p>
+            <m>\{(x, y) \, | \, x \mbox{ is an odd integer,
+            and } y \mbox{ is an even integer.} \}</m>
+          </p>
+        </li>
+        <li xml:id="cannotgraphsecond">
+          <p>
+            <m>\{(x, 1) \, | \, x \mbox{ is an irrational number } \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{(1, 0), (2, 1), (4, 2), (8, 3), (16, 4), (32, 5), \ldots \}</m>
+          </p>
+        </li>
+        <li xml:id="cannotgraphlast">
+          <p>
+            <m>\{\ldots, (-3, 9), (-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4), (3, 9), \ldots \}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      For each equation given in <xref ref="oldonethreefirst">Exercises</xref>
+      - <xref ref="oldonethreelast"></xref>:
+      <ul>
+        <li>
+          <p>
+            Graph the equation in the <m>xy</m>-plane by creating a table of points.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the axis intercepts, if they exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            Test the equation for symmetry.
+            If the equation fails a symmetry test,
+            find a point on the graph of the equation whose symmetric point is not on the graph of the equation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine if the equation describes <m>y</m> as a function of <m>x</m>.
+            If not, describe the graph of the equation using two or more explicit functions of <m>x</m>.
+            Check your answers using a graphing utility.
+          </p>
+        </li>
+      </ul>
+      <ol cols="2">
+        <li xml:id="oldonethreefirst">
+          <p>
+            <m>(x+2)^2+y^2 = 16</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^{2} - y^{2} = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4y^2 - 9x^2 = 36</m>
+          </p>
+        </li>
+        <li xml:id="oldonethreelast">
+          <p>
+            <m>x^{3}y = -4</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      For each equation given in <xref ref="vwfirstrelation">Exercises</xref>
+      - <xref ref="vwlastrelation"></xref>:
+      <ul>
+        <li>
+          <p>
+            Graph the equation in the <m>vw</m>-plane by creating a table of points.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the axis intercepts, if they exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            Test the equation for symmetry.
+            If the equation fails a symmetry test,
+            find a point on the graph of the equation whose symmetric point is not on the graph of the equation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine if the equation describes <m>w</m> as a function of <m>v</m>.
+            If not, describe the graph of the equation using two or more explicit functions of <m>v</m>.
+            Check your answers using a graphing utility.
+          </p>
+        </li>
+      </ul>
+      <ol cols="2">
+        <li xml:id="vwfirstrelation">
+          <p>
+            <m>v+w^2 = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>v^{3}+w^3 =8</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>v^2w^3 = 8</m>
+          </p>
+        </li>
+        <li xml:id="vwlastrelation">
+          <p><fn>
+            HINT: <m>v^4 - 2v^2 w + w^2 = \left(v^2 - w \right)^2</m> <ellipsis/>
+            </fn> <m>v^4 - 2v^2 w + w^2 = 16</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      The procedures which we have outlined in the Examples of this section and used in <xref ref="oldonethreefirst">Exercises</xref>
+      - <xref ref="oldonethreelast"></xref>
+      all rely on the fact that the equations were
+      <q>well-behaved</q>. Not everything in Mathematics is quite so tame,
+      as the following equations will show you.
+      Discuss with your classmates how you might approach graphing the equations given in <xref ref="listofcurvesfirst">Exercises</xref>
+      - <xref ref="listofcurveslast"></xref>.
+      What difficulties arise when trying to apply the various tests and procedures given in this section?
+      For more information, including pictures of the curves,
+      each curve name is a link to its page at www.wikipedia.org.
+      For a much longer list of fascinating curves, click
+      <url href="http://en.wikipedia.org/wiki/List_of_curves"><em>here</em></url>.
+      <ol cols="3">
+        <li xml:id="listofcurvesfirst">
+          <p>
+            <m>x^{3} + y^{3} - 3xy = 0\;</m>
+            <url href="http://en.wikipedia.org/wiki/Folium_of_descartes"><em>Folium of Descartes</em></url>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^{4} = x^{2} + y^{2}\;</m>
+            <url href="http://en.wikipedia.org/wiki/Kampyle_of_Eudoxus"><em>Kampyle of Eudoxus</em></url>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y^{2} = x^{3} + 3x^{2}\;</m>
+            <url href="http://en.wikipedia.org/wiki/Tschirnhausen_cubic"><em>Tschirnhausen cubic</em></url>
+          </p>
+        </li>
+        <li xml:id="listofcurveslast">
+          <p>
+            <m>(x^{2} + y^{2})^{2} = x^{3} + y^{3}\;</m>
+            <url href="https://en.wikipedia.org/wiki/File:Crooked_egg_curve.svg"><em>Crooked egg</em></url>
+          </p>
+        </li>
+        <li>
+          <p>
+            With the help of your classmates,
+            find examples of equations whose graphs possess
+            <ul>
+              <li>
+                <p>
+                  symmetry about the <m>x</m>-axis only
+                </p>
+              </li>
+              <li>
+                <p>
+                  symmetry about the <m>y</m>-axis only
+                </p>
+              </li>
+              <li>
+                <p>
+                  symmetry about the origin only
+                </p>
+              </li>
+              <li>
+                <p>
+                  symmetry about the <m>x</m>-axis, <m>y</m>-axis, and origin
+                </p>
+              </li>
+            </ul>
+          </p>
+          Can you find an example of an equation whose graph possesses exactly <em>two</em>
+          of the symmetries listed above?
+          Why or why not?
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[13]{-4}{4}{-1}{10} \point[4pt]{(-3, 9), (-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4), (3, 9)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,10){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8,9} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-3}{3}{-4}{4} \point[4pt]{(-2, 0), (-1, -1), (-1,1), (0,2), (0,-2), (1,3), (1,-3)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-3}{3}{-5}{5} \point[4pt]{(-2, -4), (-1, -2), (0, 0), (1, 2), (2,4)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{ {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[12]{-7}{7}{-7}{7} \point[4pt]{(6, 1), (-6, -1), (3, 2), (-3, -2), (2,3), (-2, -3), (-1.5,-4), (1.5,4), (-1.2,-5), (1.2,5), (-1,-6), (1,6) } \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \tlpointsep{5pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>-6</m>} -6, {<m>-5</m>} -5,{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-3}{3}{-1}{5} \point[4pt]{(0, 4), (1, 3), (-1, 3), (2, 0), (-2,0)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[10]{-1}{4}{-1}{10} \point[4pt]{(0,0), (1,1), (2,4), (3,9)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,10){<m>y</m>} \xmarks{1,2,3} \ymarks{1,2,3,4,5,6,7,8,9} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-4}{1} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-3,-2,-1} \tlpointsep{5pt} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,1){<m>y</m>} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>-3</m>} -3, {<m>-1</m>} -1,} \penwd{1.25pt} \arrow \polyline{(-4,-2), (5,-2)} \pointfillfalse \point[4pt]{(-4,-2)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-1}{4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \polyline{(4,3), (-5,3)} \point[4pt]{(4,3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-2}{3}{-1}{9} \axes \xmarks{-1,1,2} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{5pt} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \polyline{(-1,1), (-1,9)} \pointfillfalse \point[4pt]{(-1,1)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-1}{4}{-4}{6} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{1,2,3} \ymarks{-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \polyline{(2,5), (2,-4)} \point[4pt]{(2,5)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-4}{1}{-4}{5} \axes \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1} \ymarks{-3,-2,-1,1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \polyline{(-2,-3), (-2,4)} \point[4pt]{(-2,4)} \pointfillfalse \point[4pt]{(-2,-3)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-1}{4}{-5}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{1,2,3} \ymarks{-4,-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \polyline{(3,-4), (3,3)} \point[4pt]{(3,-4)} \pointfillfalse \point[4pt]{(3,3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-1}{4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \polyline{(-2,2), (3,2)} \point[4pt]{(-2,2)} \pointfillfalse \point[4pt]{(3,2)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-4}{1} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,1){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-1,-2,-3} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3} \penwd{1.25pt} \polyline{(-4,-3), (4,-3)} \point[4pt]{(4,-3)} \pointfillfalse \point[4pt]{(-4,-3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-3}{2}{-4}{4} \fillcolor[gray]{.7} \gfill \rect{(-1.97,-3.75), (0.75,3.75)} \dashed \arrow \reverse \arrow \polyline{(-2,4), (-2,-4)} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2,-1,1} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{ {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-1}{4}{-4}{4} \fillcolor[gray]{.7} \gfill \rect{(-1,-3.75), (3,3.75)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(3,4), (3,-4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-4}{4}{-1}{5} \fillcolor[gray]{.7} \gfill \rect{(-3.75,-1), (3.75,3.97)} \arrow \reverse \arrow \dashed \polyline{(-4,4), (4,4)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-1}{4}{-4}{4} \fillcolor[gray]{.7} \gfill \rect{(-0.75,-3.75), (3,1.97)} \arrow \reverse \dashed \polyline{(-1,2), (3,2)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \polyline{(3,2), (3,-4)} \pointfillfalse \point[4pt]{(3,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-2}{4}{-1}{5} \fillcolor[gray]{.7} \gfill \rect{(0.03,-0.75), (3.75,3.97)} \arrow \dashed \polyline{(0,4), (4,4)} \arrow \dashed \polyline{(0,4), (0,-1)} \arrow \polyline{(0,4), (0,5)} \arrow \reverse \arrow \polyline{(-2,0), (4,0)} \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1,1,2,3} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \pointfillfalse \point[4pt]{(0,4)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-3}{2}{-1}{6} \fillcolor[gray]{.7} \gfill \rect{(-1.38, 3.17), (0.63, 4.47)} \dashed \polyline{(0.6667, 3.1415), (-1.414, 3.1415)} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-2,-1,1} \ymarks{1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \polyline{(-1.414, 3.1415), (-1.414, 4.5)} \polyline{(-1.414, 4.5), (0.6667, 4.5)} \polyline{(0.6667, 4.5), (0.6667, 3.1415)} \pointfillfalse \point[4pt]{(-1.414, 3.1415), (0.6667, 3.1415)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A = \{(-4, -1), (-2, 1), (0, 3), (1, 4)\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>B = \left\{ \left(x,3 \right) \, | \, x \geq -3 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>C = \{ \left(2,y) \, | \, y > -3 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>D = \{ \left(-2,y) \, | \, -4 \leq y \lt 3 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>E = \left\{ \left(t,2 \right) \, | \, -4 \lt t \leq 3 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F = \{ \left(t,s) \, | \, s \geq 0 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G = \left\{ \left(v,w \right) \, | \, v > -2 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>H = \left\{ \left(v,w\right) \, | \, -3 \lt v \leq 2 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>I = \{ \left(u,v) \, | \, u \geq 0, \! v \geq 0\right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>J = \{(u, v) \, | \, -4 \lt u \lt 5, \; -3 \lt v \lt 2\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x+2)^2+y^2=16</m> Re-write as <m>y = \pm \sqrt{16-(x+2)^2}</m>.
+          <m>x</m>-intercepts: <m>(-6, 0)</m>,
+          <m>(2,0)</m> <m>y</m>-intercepts:
+          <m>\left(0, \pm 2\sqrt{3}\right)</m>
+          <m>\begin{array}{|r||c|c|} \hline x \amp y \amp (x,y) \\ \hline -6 \amp 0 \amp (-6,0) \\ \hline -4 \amp \pm 2 \sqrt{3} \amp \left(-4,\pm 2 \sqrt{3}\right) \\ \hline -2 \amp \pm 4 \amp (-2, \pm 4) \\ \hline 0 \amp \pm 2 \sqrt{3} \amp \left(0,\pm 2 \sqrt{3}\right) \\ \hline 2 \amp 0 \amp (2, 0) \\ \hline \end{array}</m> \begin{mfpic}[10]{-8}{4}{-6}{6} \point[4pt]{(-6,0), (-4, 3.4641), (-4, -3.4641), (-2,4), (-2,-4), (0, 3.4641), (0, -3.4641), (2,0) } \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-7,-6,-5,-4,-3,-2,-1,1,2,3} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{ <m>-7</m>} -7,{ <m>-6</m>} -6, { <m>-5</m>} -5,{ <m>-4</m>} -4, { <m>-3</m>} -3,{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-5</m>} -5, { <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \penwd{1.25pt} \circle{(-2,0),4} \end{mfpic} The graph is symmetric about the <m>x</m>-axis The graph is not symmetric about the <m>y</m>-axis:
+          <m>(-6, 0)</m> is on the graph but <m>(6, 0)</m> is not.
+          The graph is not symmetric about the origin:
+          <m>(-6, 0)</m> is on the graph but <m>(6, 0)</m> is not.
+          The equation does not describe <m>y</m> as a function of <m>x</m>.
+          The graph of the equation is the graphs of
+          <m>f_{1}(x) = \sqrt{16-(x+2)^2}</m> together with <m>f_{2}(x) = -\sqrt{16-(x+2)^2}</m>. \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{2} - y^{2} = 1</m> Re-write as:
+          <m>y = \pm \sqrt{x^{2} - 1}</m>.
+          <m>x</m>-intercepts:
+          <m>(-1, 0), (1, 0)</m> The graph has no <m>y</m>-intercepts
+          <m>\begin{array}{|r||c|c|} \hline x \amp y \amp (x,y) \\ \hline -3 \amp \pm \sqrt{8} \amp (-3, \pm \sqrt{8}) \\ \hline -2 \amp \pm \sqrt{3} \amp (-2, \pm \sqrt{3}) \\ \hline -1 \amp 0 \amp (-1, 0) \\ \hline 1 \amp 0 \amp (1, 0) \\ \hline 2 \amp \pm \sqrt{3} \amp (2, \pm \sqrt{3}) \\ \hline 3 \amp \pm \sqrt{8} \amp (3, \pm \sqrt{8}) \\ \hline \end{array}</m> \begin{mfpic}[10]{-4}{4}{-4}{4} \point[4pt]{(-3,2.828), (-3,-2.828),(-2,1.732),(-2,-1.732),(-1,0),(1, 0),(3,2.828),(3,-2.828),(2,1.732),(2, -1.732)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2,2,0.1}{(cosh(t),sinh(t))} \arrow \reverse \arrow \parafcn{-2,2,0.1}{(-cosh(t),sinh(t))} \end{mfpic} The graph is symmetric about the <m>x</m>-axis.
+          The graph is symmetric about the <m>y</m>-axis.
+          The graph is symmetric about the origin.
+          The equation does not describe <m>y</m> as a function of <m>x</m>.
+          The graph of the equation is the graphs of
+          <m>f_{1}(x) = \sqrt{x^2-1}</m> together with <m>f_{2}(x) = -\sqrt{x^2-1}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4y^2-9x^2 = 36</m> Re-write as:
+          <m>y = \pm \dfrac{\sqrt{9x^2+36}}{2}</m>.
+          The graph has no <m>x</m>-intercepts <m>y</m>-intercepts:
+          <m>(0, \pm 3)</m> <m>\begin{array}{|r||c|c|} \hline x \amp y \amp (x,y) \\ \hline -4 \amp \pm 3 \sqrt{5} \amp \left(-4,\pm 3 \sqrt{5}\right) \\ \hline -2 \amp \pm 3 \sqrt{2} \amp \left(-2,\pm 3 \sqrt{2}\right) \\ \hline 0 \amp \pm 3 \amp (0, \pm 3) \\ \hline 2 \amp \pm 3 \sqrt{2} \amp \left(2,\pm 3 \sqrt{2}\right) \\ \hline 4 \amp \pm 3 \sqrt{5} \amp \left(4,\pm 3 \sqrt{5}\right) \\ \hline \end{array}</m> \begin{mfpic}[10]{-5}{5}{-8}{8} \point[4pt]{(-4, 6.708), (4, 6.708), (-2, 4.243), (2, 4.243), (0,3), (0,-3),(-4, -6.708), (4, -6.708), (-2, -4.243), (2, -4.243) } \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \xmarks{-4,-3,-2,-1, 1, 2, 3, 4} \ymarks{-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7} \tlpointsep{4pt} \axislabels {x}{{ <m>-4</m>} -4,{ <m>-3</m>} -3,{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \axislabels {y}{{ <m>-7</m>} -7, { <m>-6</m>} -6,{ <m>-5</m>} -5,{ <m>-4</m>} -4,{ <m>-3</m>} -3,{ <m>-2</m>} -2,{ <m>-1</m>} -1,{ <m>1</m>} 1,{ <m>2</m>} 2,{ <m>3</m>} 3,{ <m>4</m>} 4,{ <m>5</m>} 5,{ <m>6</m>} 6,{ <m>7</m>} 7 } \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.6,1.6,0.1}{(2*sinh(t), 3*cosh(t))} \arrow \reverse \arrow \parafcn{-1.6,1.6,0.1}{(2*sinh(t), 0-3*cosh(t))} \end{mfpic} The graph is symmetric about the <m>x</m>-axis.
+          The graph is symmetric about the <m>y</m>-axis.
+          The graph is symmetric about the origin.
+          The equation does not describe <m>y</m> as a function of <m>x</m>.
+          The graph of the equation is the graphs of
+          <m>f_{1}(x) = \dfrac{\sqrt{9x^2+36}}{2}</m> together with <m>f_{2}(x) = - \dfrac{\sqrt{9x^2+36}}{2}</m>. \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{3}y = -4</m> Re-write as:
+          <m>y = -\dfrac{4}{x^{3}} = -4x^{-3}</m>.
+          The graph has no <m>x</m>-intercepts The graph has no <m>y</m>-intercepts
+          <m>\begin{array}{|r||c|c|} \hline x \amp y \amp (x,y) \\ \hline -2 \amp \frac{1}{2} \amp (-2, \frac{1}{2}) \\ \hline -1 \amp 4 \amp (-1, 4) \\ \hline -\frac{1}{2} \amp 32 \amp (-\frac{1}{2}, 32) \\ \hline \frac{1}{2} \amp -32 \amp (\frac{1}{2}, -32)\\ \hline 1 \amp -4 \amp (1, -4) \\ \hline 2 \amp -\frac{1}{2} \amp (2, -\frac{1}{2}) \\ \hline \end{array}</m> \begin{mfpic}[10]{-5}{5}{-9}{9} \point[4pt]{(-4,0.125), (-2,1), (-1, 8), (1, -8), (2, -1), (4, -0.125)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \xmarks{-4,-2,2,4} \ymarks{-8,-1,1,8} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -4, { <m>-1</m>} -2, { <m>1</m>} 2, { <m>2</m>} 4} \axislabels {y}{{ <m>-32</m>} -8, { <m>-4</m>} -1, { <m>4</m>} 1, { <m>32</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.5, -0.95, 0.1}{-8/(x**3)} \arrow \reverse \arrow \function{0.95, 4.5, 0.1}{-8/(x**3)} \end{mfpic} The graph is not symmetric about the <m>x</m>-axis:
+          <m>(1, -4)</m> is on the graph but <m>(1, 4)</m> is not.
+          The graph is not symmetric about the <m>y</m>-axis:
+          <m>(1, -4)</m> is on the graph but <m>(-1, -4)</m> is not.
+          The graph is symmetric about the origin.
+          The equation does describe <m>y</m> as a function of <m>x</m>,
+          namely <m>y=f(x) = - 4x^{-3}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v+w^2 = 4</m> Re-write as <m>w = \pm \sqrt{4-v}</m>.
+          <m>v</m>-intercept: <m>(4,0)</m> <m>w</m>-intercepts:
+          <m>\left(0, \pm 2 \right)</m>
+          <m>\begin{array}{|r||c|c|} \hline v \amp w \amp (x,y) \\ \hline -5 \amp \pm 3 \amp (-5,\pm 3) \\ \hline -2 \amp \pm \sqrt{6} \amp \left(-2,\pm \sqrt{6}\right) \\ \hline 0 \amp \pm 2 \amp (0, \pm 2) \\ \hline 2 \amp \pm \sqrt{2} \amp \left(1,\pm \sqrt{3}\right) \\ \hline 4 \amp 0 \amp (4, 0) \\ \hline \end{array}</m> \begin{mfpic}[15]{-6}{6}{-4}{4} \point[4pt]{(-5,3), (-5,-3), (-2, 2.45), (-2, -2.45), (0,2), (0,-2), (2, 1.414), (2, -1.414), (4,0) } \axes \tlabel[cc](6,-0.5){<m>v</m>} \tlabel[cc](0.5,4){<m>w</m>} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{ { <m>-5</m>} -5,{ <m>-4</m>} -4, { <m>-3</m>} -3,{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>5</m>} 5} \axislabels {y}{{ <m>-3</m>} -3, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-3.2, 3.2, 0.1}{(4-t**2, t)} \end{mfpic} The graph is symmetric about the <m>v</m>-axis The graph is not symmetric about the <m>w</m>-axis:
+          <m>(4, 0)</m> is on the graph but <m>(-4, 0)</m> is not.
+          The graph is not symmetric about the origin:
+          <m>(4, 0)</m> is on the graph but <m>(-4, 0)</m> is not.
+          The equation does not describe <m>w</m> as a function of <m>v</m>.
+          The graph of the equation is the graphs of
+          <m>f_{1}(v) = \sqrt{4-v}</m> together with <m>f_{2}(v) = -\sqrt{4-v}</m>. \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v^{3}+w^3 =8</m> Re-write as:
+          <m>w = \sqrt[3]{8-v^3}</m>.
+          <m>v</m>-intercept: <m>(2,0)</m> <m>w</m>-intercept:
+          <m>(0,2)</m> <m>\begin{array}{|r||c|c|} \hline v \amp w \amp (v,w) \\ \hline -3 \amp \sqrt[3]{35} \amp (-3, \sqrt[3]{35}) \\ \hline -1 \amp \sqrt[3]{9} \amp (-1, \sqrt[3]{9}) \\ \hline 0 \amp 2 \amp (0, 2) \\ \hline 1 \amp \sqrt[3]{7} \amp (1, \sqrt[3]{7}) \\ \hline 2 \amp 0 \amp (2, 0) \\ \hline 3 \amp -\sqrt[3]{19} \amp (3, -\sqrt[3]{19}) \\ \hline \end{array}</m> \begin{mfpic}[15]{-4}{4}{-4}{4} \point[4pt]{ (-3, 3.271), (-1, 2.08), (0,2), (1, 1.91), (2,0), (3, -2.67)} \axes \tlabel[cc](4,-0.5){<m>v</m>} \tlabel[cc](0.5,4){<m>w</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>3</m>} 3} \axislabels {y}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \function{-4,2,0.1}{( 8-(x**3) )**(0.3333)} \arrow \function{2,4,0.1}{(-1)*(((x**3)-8)**(0.3333))} \end{mfpic} The graph is not symmetric about the <m>v</m>-axis:
+          <m>(0,2)</m> is on the graph but <m>(0,-2)</m> is not.
+          The graph is not symmetric about the <m>w</m>-axis:
+          <m>(2, 0)</m> is on the graph but <m>(-2, 0)</m> is not.
+          The graph is not symmetric about the origin:
+          <m>(0, 2)</m> is on the graph but <m>(0, -2)</m> is not.
+          The equation does describe <m>w</m> as a function of <m>v</m>,
+          namely <m>w=f(v) = \sqrt[3]{8-v^3}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v^2w^3 = 8</m> Re-write as <m>w =\dfrac{2}{\sqrt[3]{v^2}} = 2 v^{-\frac{2}{3}}</m>.
+          The graph has no <m>v</m>-intercepts.
+          The graph has no <m>w</m>-intercepts.
+          <m>\begin{array}{|r||c|c|} \hline v \amp w \amp (x,y) \\ \hline -8 \amp \frac{1}{2} \amp \left(-8, \frac{1}{2} \right) \\ \hline -1 \amp 2 \amp \left(-1, 2 \right) \\ \hline -\frac{1}{8} \amp 8 \amp \left(-\frac{1}{8}, 8 \right) \\ \hline \frac{1}{8} \amp 8 \amp \left(\frac{1}{8}, 8 \right) \\ \hline 1 \amp 2 \amp \left(1, 2 \right) \\ \hline 8 \amp \frac{1}{2} \amp \left(8, \frac{1}{2} \right) \\ \hline \end{array}</m> \begin{mfpic}[10][15]{-9}{9}{-1}{10} \point[4pt]{(-8,0.5), (-1,2), (-0.125, 8), (0.125, 8), (1,2), (8,0.5)} \axes \tlabel[cc](9,-0.5){<m>v</m>} \tlabel[cc](0.5,10){<m>w</m>} \xmarks{-8 step 1 until 8} \ymarks{1 step 1 until 9} \tlpointsep{4pt} \axislabels {x}{{ <m>-8</m>} -8, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>8</m>} 8} \axislabels {y}{ { <m>1</m>} 1, { <m>2</m>} 2, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-9, -.1, 0.1}{2* ( (x**2)**(-0.3333) )} \arrow \reverse \arrow \function{0.1, 9, 0.1}{2*( (x**2)**(-0.3333) )} \end{mfpic} The graph is not symmetric about the <m>v</m>-axis:
+          <m>(-1,2)</m> is on the graph but <m>(-1,-2)</m> is not.
+          The graph is symmetric about the <m>w</m>-axis.
+          The graph is not symmetric about the origin:
+          <m>(-1,2)</m> is on the graph but <m>(-1,-2)</m> is not.
+          The equation does describe <m>w</m> as a function of <m>v</m>,
+          namely <m>w=f(v) = 2 v^{-\frac{2}{3}}</m>. \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v^4 - 2v^2w + w^2 = 16</m> Re-write as:
+          <m>\left(v^2-w\right)^2 = 16</m> Extracting square roots gives:
+          <m>w = v^2 + 4</m> and <m>w = v^2-4</m> <m>v</m>-intercepts:
+          <m>(-2,0), (2,0)</m>.
+          <m>w</m>-intercepts: <m>(0,-4), (0,4)</m>
+          <m>\begin{array}{|r||c|c|} \hline v \amp w \amp (v,w) \\ \hline -2 \amp 8 \amp (-2,8) \\ \hline -2 \amp 0 \amp (-2,0) \\ \hline -1 \amp 5 \amp (-1, 5) \\ \hline -1 \amp -3 \amp (-1, -3) \\ \hline 0 \amp \pm 4 \amp (0, \pm4) \\ \hline 1 \amp 5 \amp (1, 5) \\ \hline 1 \amp -3 \amp (1, -3) \\ \hline 2 \amp 8 \amp (2,8) \\ \hline 2 \amp 0 \amp (2,0) \\ \hline \end{array}</m> \begin{mfpic}[10]{-4}{4}{-4.5}{9} \axes \tlabel[cc](4,-0.5){<m>v</m>} \tlabel[cc](0.5,9){<m>w</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>3</m>} 3} \axislabels {y}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1,{ <m>2</m>} 2, { <m>3</m>} 3, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.2, 2.2, 0.1}{(x**2)+4} \arrow \reverse \arrow \function{-3, 3, 0.1}{(x**2) - 4} \point[4pt]{(-2,8), (-2,0), (-1,5), (-1,-3), (0,4), (0,-4), (1,5), (1,-3), (2,0), (2,8)} \end{mfpic} The graph is not symmetric about the <m>v</m>-axis:
+          <m>(1,5)</m> is on the graph but <m>(1,-5)</m> is not.
+          The graph is symmetric about the <m>w</m>-axis.
+          The graph is not symmetric about the origin:
+          <m>(1,5)</m> is on the graph but <m>(-1, -5)</m> is not.
+          The equation does not describe <m>w</m> as a function of <m>v</m>.
+          The graph of the equation is the graphs of
+          <m>f_{1}(v) = v^2+4</m> together with <m>f_{2}(v) = v^2-4</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

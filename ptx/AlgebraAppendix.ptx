@@ -1,0 +1,118 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="AlgebraAppendix">
+  <title>Algebra Review</title>
+  <introduction>
+    <p>
+      One purpose of this Algebra Review Appendix is to support a
+      <q>co-requisite</q>
+      approach to teaching College Algebra or Precalculus.<fn>
+      Please read The New Preface for details as to why we decided to organize our book in order to support this pedagogy.
+      Also, to us Precalculus = College Algebra + College Trigonometry without the formalization of limits.
+      This distinction is not universally agreed upon so we felt the need to point it out.
+      </fn> Our goal is to provide instructors with supplemental material linked to the main textbook that can be used to support students who have minor gaps in their pre-college mathematical backgrounds.
+      To that end,
+      we have written a collection of somewhat independent sections designed to review the concepts,
+      skills and vocabulary that we believe are prerequisite to a rigorous,
+      college-level Precalculus course.
+      This review is not designed to teach the material to students who have never seen it before so the presentation is more succinct and the exercise sets are shorter than those usually found in an Intermediate Algebra or high school Algebra II text.
+      Some of this material
+      (like adding fractions and plotting points)
+      is used throughout the text but, where appropriate,
+      we have referenced specific sections of the main body of the Precalculus text in an effort to assist faculty who would like to assign the Appendix as
+      <q>just in time</q>
+      review reading to their students.
+      An outline of the chapter with short descriptions of each section is given below:
+    </p>
+    <p>
+      <xref ref="AppSetTheory">Section</xref>
+      (Basic Set Theory and Interval Notation) contains a brief summary of the set theory terminology used throughout the text including sets of real numbers and interval notation.
+    </p>
+    <p>
+      <xref ref="AppRealNumberArithmetic">Section</xref>
+      (Real Number Arithmetic) lists the properties of real number arithmetic.<fn>
+      You know, the stuff students mess up all of the time like fractions and negative signs.
+      The collection is close to exhaustive and is definitely exhausting!
+      </fn>
+    </p>
+    <p>
+      <xref ref="AppCartesianPlane">Section</xref>
+      (The Cartesian Plane) discusses the basic notions of plotting points in the plane,
+      reflections and symmetry.
+      We then develop the Distance Formula and the Midpoint Formula.
+    </p>
+    <p>
+      <xref ref="AppLinearEqIneq">Section</xref>
+      (Linear Equations and Inequalities) focuses on solving linear equations and linear inequalities from a strictly algebraic perspective.
+      The geometry of graphing lines in the plane is deferred until <xref ref="AppLines">Section</xref> (Graphing Lines).
+    </p>
+    <p>
+      <xref ref="AppLines">Section</xref>
+      (Graphing Lines) starts by defining the slope of a line between two points and then develops the point-slope form and the slope-intercept form of equations for lines.
+      Horizontal and vertical lines are discussed as are parallel and perpendicular lines.
+      This material is required for <xref ref="ConstantandLinearFunctions">Section</xref>
+      (Constant and Linear Functions).
+    </p>
+    <p>
+      <xref ref="AppLinearSystems">Section</xref>
+      (Systems of Two Linear Equations in Two Unknowns) is a review of the basic terminology and techniques related to solving systems of two linear equations that each have the same two variables in them.
+      We start <xref ref="SystemsofEquationsandMatrices">Chapter</xref>
+      (Systems of Equations and Matrices) assuming students know these techniques.
+    </p>
+    <p>
+      <xref ref="AppAbsValEqIneq">Section</xref>
+      (Absolute Value Equations and Inequalities) begins with a definition of absolute value as a distance.
+      Fundamental properties of absolute value are listed and then basic equations and inequalities involving absolute value are solved using the <sq>distance definition</sq> and those properties.
+      Absolute value is revisited in much greater depth in <xref ref="AbsoluteValueFunctions">Section</xref> (Absolute Value Functions).
+    </p>
+    <p>
+      <xref ref="AppPolyArith">Section</xref>
+      (Polynomial Arithmetic) covers the addition, subtraction,
+      multiplication and division of polynomials as well as the vocabulary which is used extensively when the graphs of polynomials are studied in <xref ref="PolynomialFunctions">Chapter</xref> (Polynomials).
+    </p>
+    <p>
+      <xref ref="AppFactoring">Section</xref>
+      (Basic Factoring Techniques) contains pretty much what it says:
+      basic factoring techniques and how to solve equations using those techniques along with the Zero Product Property of Real Numbers.
+    </p>
+    <p>
+      <xref ref="AppQuadEqus">Section</xref>
+      (Quadratic Equations) discusses solving quadratic equations using the technique of <sq>completing the square</sq> and by using the Quadratic Formula.
+      Equations that are <sq>quadratic in form</sq> are also discussed.
+      This material is revisited in <xref ref="QuadraticFunctions">Section</xref> (Quadratic Functions).
+    </p>
+    <p>
+      <xref ref="AppCmpNums">Section</xref>
+      (Complex Numbers) covers the basic arithmetic of complex numbers and the solving of quadratic equations with complex solutions.
+      It's required for <xref ref="ComplexZeros">Section</xref>
+      (Complex Zeros and the Fundamental Theorem of Algebra).
+    </p>
+    <p>
+      <xref ref="AppRatExpEqus">Section</xref>
+      (Rational Expressions and Equations) starts with the basic arithmetic of rational expressions and the simplifying of compound fractions.
+      Solving equations by clearing denominators and the handling of negative integer exponents are presented but the graphing of rational functions is deferred until <xref ref="RationalFunctions">Chapter</xref> (Rational Functions).
+    </p>
+    <p>
+      <xref ref="AppRadEqus">Section</xref>
+      (Radicals and Equations) covers simplifying radicals as well as the solving of basic equations involving radicals.
+      Students should be familiar with this material before starting <xref ref="RootRadicalPowerFunctions">Chapter</xref> (Root and Radical Functions).
+    </p>
+    <p>
+      <xref ref="AppVariation">Section</xref>
+      (Variation) looks at a variety of equations from Science and Engineering.
+      It's a self-contained section that can be covered at any time.
+    </p>
+  </introduction>
+  <xi:include  href="AppSetTheory.ptx"/>
+  <xi:include  href="AppRealNumberArithmetic.ptx"/>
+  <xi:include  href="AppCartesianPlane.ptx"/>
+  <xi:include  href="AppLinearEqIneq.ptx"/>
+  <xi:include  href="AppLines.ptx"/>
+  <xi:include  href="AppLinearSystems.ptx"/>
+  <xi:include  href="AppAbsValEqIneq.ptx"/>
+  <xi:include  href="AppPolyArith.ptx"/>
+  <xi:include  href="AppFactoring.ptx"/>
+  <xi:include  href="AppQuadEqus.ptx"/>
+  <xi:include  href="AppCmpNums.ptx"/>
+  <xi:include  href="AppRatExpEqus.ptx"/>
+  <xi:include  href="AppRadEqus.ptx"/>
+  <xi:include  href="AppVariation.ptx"/>
+</chapter>

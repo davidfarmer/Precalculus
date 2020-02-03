@@ -1,0 +1,1138 @@
+<section xml:id="Determinants">
+  <title>Determinants and Cramer's Rule</title>
+  <introduction>
+  </introduction>
+  <subsection xml:id="determinantdefnandprops">
+    <title>Definition and Properties of the Determinant</title>
+    <p>
+      In this section we assign to each square matrix <m>A</m> a real number,
+      called the <em>determinant</em> of <m>A</m>,
+      which will eventually lead us to yet another technique for solving consistent independent systems of linear equations.
+      The determinant is defined recursively, that is,
+      we define it for <m>1 \times 1</m> matrices and give a rule by which we can reduce determinants of
+      <m>n \times n</m> matrices to a sum of determinants of <m>(n-1) \times (n-1)</m> matrices.<fn>
+      We will talk more about the term <sq>recursively</sq> in <xref ref="Sequences">Section</xref>.
+      </fn> This means we will be able to evaluate the determinant of a
+      <m>2 \times 2</m> matrix as a sum of the determinants of <m>1 \times 1</m> matrices;
+      the determinant of a <m>3 \times 3</m> matrix as a sum of the determinants of
+      <m>2 \times 2</m> matrices, and so forth.
+    </p>
+    <p>
+      To explain how we will take an
+      <m>n \times n</m> matrix and distill an <m>(n-1) \times (n-1)</m> matrix from it,
+      we use introduce the following notation.
+    </p>
+    <definition xml:id="Aijdefn">
+      <statement>
+        <p>
+          Given an <m>n \times n</m> matrix <m>A</m> where <m>n>1</m>,
+          the matrix <m>A_{ij}</m> is the
+          <m>(n-1) \times (n-1)</m> matrix formed by deleting the <m>i</m>th row of <m>A</m> and the <m>j</m>th column of <m>A</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For the matrix <m>A</m> below,
+      we obtain <m>A_{23}</m> by deleting the second row and third column of <m>A</m>:
+      <me>
+        \begin{array}{ccc}  A = \left[ \begin{array}{rr>{\columncolor[gray]{0.7}}r} 3 \amp   1 \amp  2 \\ \rowcolor[gray]{0.7} 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right] \amp \xrightarrow{\text{ Delete \(R2\) and \(C3\) } }  \amp  A_{23} = \left[ \begin{array}{rr} 3 \amp  1 \\ 2 \amp  1 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      We are now in the position to define the determinant of a matrix.
+    </p>
+    <definition xml:id="determinantdefn">
+      <statement>
+        <p>
+              <idx><h>matrix</h><h>determinant ! definition of</h></idx>
+              <idx><h>determinant of a matrix</h><h>definition of</h></idx>
+          Given an <m>n \times n</m> matrix <m>A</m> the <term>determinant of  <m>A</m></term>, denoted <m>\det(A)</m>, is defined as follows
+          <ul>
+            <li>
+              <p>
+                If <m>n=1</m>,
+                then <m>A = \left[ a_{11} \right]</m> and <m>\det(A) = \det\left( \left[ a_{11} \right] \right) = a_{11}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>n>1</m>,
+                then <m>A = \left[ a_{ij} \right]_{n \times n}</m> and
+                <me>
+                  \det(A) = \det\left( \left[ a_{ij} \right]_{n \times n} \right) =  a_{11} \det\left(A_{11}\right)- a_{12} \det\left(A_{12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      There are two commonly used notations for the determinant of a matrix <m>A</m>:
+      <sq><m>\det(A)</m></sq> and <sq><m>|A|</m></sq> We have chosen to use the notation <m>\det(A)</m> as opposed to <m>|A|</m> because we find that the latter is often confused with absolute value,
+      especially in the context of a <m>1 \times 1</m> matrix.
+    </p>
+    <p>
+      In the expansion <m>a_{11} \det\left(A_{11}\right)- a_{12} \det\left(A_{12}\right) + - \ldots + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)</m>,
+      the notation <sq><m>+ - \ldots + (-1)^{1+n} a_{1n}</m></sq> means that the signs alternate and the final sign is dictated by the sign of the quantity <m>(-1)^{1+n}</m>.
+    </p>
+    <p>
+      Since the entries <m>a_{11}</m>,
+      <m>a_{12}</m> and so forth up through <m>a_{1n}</m> comprise the first row of <m>A</m>,
+      we say we are finding the determinant of <m>A</m> by <sq>expanding along the first row</sq>.
+      Later in the section,
+      we will develop a formula for <m>\det(A)</m> which allows us to find it by expanding along any row.
+    </p>
+    <p>
+      Applying <xref ref="determinantdefn">Definition</xref>
+      to the matrix <m>A = \left[ \begin{array}{rr} 4 \amp  -3 \\ 2 \amp  1 \end{array}  \right]</m> we get
+      <me>
+        \begin{array}{rcl}  \det(A) \amp  = \amp  \det \left( \left[ \begin{array}{rr} 4 \amp  -3 \\ 2 \amp  1 \end{array}  \right] \right)\\ \amp  = \amp    4\det\left(A_{11}\right) - (-3)\det\left(A_{12}\right)\\ \amp  = \amp  4 \det([1]) +3\det([2]) \\ \amp  = \amp  4(1) + 3(2) \\ \amp  = \amp  10 \end{array}
+      </me>
+    </p>
+    <p>
+      For a generic <m>2 \times 2</m> matrix <m>A = \left[ \begin{array}{cc} a \amp  b \\ c \amp  d \end{array}  \right]</m> we get
+      <me>
+        \begin{array}{rcl}  \det(A) \amp  = \amp  \det \left( \left[ \begin{array}{cc}  a \amp  b \\ c \amp  d \end{array}  \right] \right)\\ \amp  = \amp   a \det\left(A_{11}\right) - b \det\left(A_{12}\right) \\ \amp  = \amp   a \det\left(\left[ d \right]\right) - b \det\left(\left[c \right]\right) \\ \amp  = \amp  ad-bc \end{array}
+      </me>
+    </p>
+    <p>
+      This formula is worth remembering
+    </p>
+    <proposition xml:id="x2by2determinant">
+      <statement>
+        <p>
+          For a <m>2 \times 2</m> matrix,
+          <me>
+            \det \left( \left[ \begin{array}{cc}  a \amp  b \\ c \amp  d \end{array}  \right] \right) = ad-bc
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Applying <xref ref="determinantdefn">Definition</xref>
+      to the <m>3 \times 3</m> matrix <m>A =  \left[ \begin{array}{rrr} 3 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right]</m> we obtain
+      <me>
+        \begin{array}{rcl}  \det(A) \amp  = \amp  \det \left( \left[ \begin{array}{rrr} 3 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right] \right)\\ \amp  = \amp  3\det\left(A_{11}\right) - 1\det\left(A_{12}\right) + 2\det\left(A_{13}\right) \\ \amp  = \amp  3\det \left( \left[ \begin{array}{rr} -1 \amp  5 \\ 1 \amp  4 \end{array}  \right] \right) - \det \left( \left[ \begin{array}{rr} 0 \amp  5 \\ 2 \amp  4 \end{array}  \right] \right) + 2 \det \left( \left[ \begin{array}{rr} 0 \amp  -1 \\ 2 \amp  1 \end{array}  \right] \right) \\ \amp  = \amp  3((-1)(4) - (5)(1)) - ((0)(4)-(5)(2))+2((0)(1)-(-1)(2)) \\ \amp  = \amp  3(-9)-(-10)+2(2) \\ \amp  = \amp  -13 \end{array}
+      </me>
+    </p>
+    <p>
+      To evaluate the determinant of a <m>4 \times 4</m> matrix,
+      we would have to evaluate the determinants of <em>four</em>
+      <m>3 \times 3</m> matrices,
+      each of which involves the finding the determinants of
+      <em>three</em> <m>2 \times 2</m> matrices.
+      As you can see,
+      our method of evaluating determinants quickly gets out of hand and many of you may be reaching for the calculator.
+      There is some mathematical machinery which can assist us in calculating determinants and we present that here.
+      Before we state the theorem, we need some more terminology.
+    </p>
+    <definition xml:id="minorcofactordefn">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix and <m>A_{ij}</m> be defined as in <xref ref="Aijdefn">Definition</xref>.
+          <ul>
+            <li>
+              <p>
+                The
+                  <idx><h>matrix</h><h>minor</h></idx>
+                  <idx><h>minor</h></idx> <em> <m>ij</m> minor</em> of <m>A</m>, denoted <m>M_{ij}</m> is defined by <m>M_{ij} = \det\left(A_{ij}\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The
+                  <idx><h>matrix</h><h>cofactor</h></idx>
+                  <idx><h>cofactor</h></idx>
+                <em> <m>ij</m> cofactor</em> of <m>A</m>,
+                denoted <m>C_{ij}</m> is defined by <m>C_{ij} = (-1)^{i+j}M_{ij} = (-1)^{i+j}\det\left(A_{ij}\right)</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We note that in <xref ref="determinantdefn">Definition</xref>, the sum
+      <me>
+        a_{11} \det\left(A_{11}\right)- a_{12} \det\left(A_{12}\right) + -  \ldots  + (-1)^{1+n} a_{1n} \det\left(A_{1n}\right)
+      </me>
+      can be rewritten as
+      <me>
+        a_{11} (-1)^{1+1} \det\left(A_{11}\right) + a_{12} (-1)^{1+2} \det\left(A_{12}\right) + \ldots  + a_{1n} (-1)^{1+n} \det\left(A_{1n}\right)
+      </me>
+      which, in the language of cofactors is
+      <me>
+        a_{11} C_{11} + a_{12}C_{12} + \ldots  + a_{1n}C_{1n}
+      </me>
+    </p>
+    <p>
+      We are now ready to state our main theorem concerning determinants.
+    </p>
+    <theorem xml:id="determinantprops">
+      <statement>
+        <p>
+          <em>Properties of the Determinant:</em>
+          Let <m>A = \left[a_{ij}\right]_{n \times n}</m>.
+              <idx><h>determinant of a matrix</h><h>properties of</h></idx>
+              <idx><h>matrix</h><h>determinant ! properties of</h></idx>
+        </p>
+        <ul>
+          <li>
+            <p>
+              We may find the determinant by expanding along any row.
+              That is, for any <m>1 \leq k \leq n</m>,
+              <me>
+                \det(A) = a_{k1}C_{k1} +  a_{k2}C_{k2} + \ldots + a_{kn} C_{kn}
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>A'</m> is the matrix obtained from <m>A</m> by:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  interchanging any two rows, then <m>\det(A')=-\det(A)</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  replacing a row with a nonzero multiple
+                  (say <m>c</m>)
+                  of itself, then <m>\det(A')=c\det(A)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  replacing a row with itself plus a multiple of another row,
+                  then <m>\det(A')=\det(A)</m>
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              If <m>A</m> has two identical rows,
+              or a row consisting of all <m>0</m>'s, then <m>\det(A) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>A</m> is upper or lower triangular,<fn>
+              See <xref ref="triangularmatrices">Exercise</xref>
+              in <xref ref="MatArithmetic"></xref>.
+              </fn> then <m>\det(A)</m> is the product of the entries on the main diagonal.<fn>
+              See <xref ref="maindiagonal">page</xref>
+              in <xref ref="MatArithmetic">Section</xref>.
+              </fn>
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>B</m> is an <m>n \times n</m> matrix,
+              then <m>\det(AB) = \det(A) \det(B)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\det\left(A^{n}\right) = \det(A)^{n}</m> for all natural numbers <m>n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A</m> is invertible if and only if <m>\det(A) \neq 0</m>.
+              In this case,
+              <m>\det\left(A^{-1}\right) = \dfrac{1}{\det(A)}</m>.
+            </p>
+          </li>
+        </ul>
+      </statement>
+    </theorem>
+    <p>
+      Unfortunately, while we can easily <em>demonstrate</em>
+      the results in <xref ref="determinantprops">Theorem</xref>,
+      the proofs of most of these properties are beyond the scope of this text.
+      We could prove these properties for generic <m>2 \times 2</m> or even
+      <m>3 \times 3</m> matrices by brute force computation,
+      but this manner of proof belies the elegance and symmetry of the determinant.
+      We will prove what few properties we can after we have developed some more tools such as the Principle of Mathematical Induction in <xref ref="Induction">Section</xref>.<fn>
+      For a very elegant treatment,
+      take a course in Linear Algebra.
+      There, you will most likely see the treatment of determinants logically reversed than what is presented here.
+      Specifically,
+      the determinant is defined as a function which takes a square matrix to a real number and satisfies some of the properties in <xref ref="determinantprops">Theorem</xref>.
+      From that function, a formula for the determinant is developed.
+      </fn>
+    </p>
+    <p>
+      For the moment,
+      let us demonstrate some of the properties listed in <xref ref="determinantprops">Theorem</xref> on the matrix <m>A</m> below.
+      (Others will be discussed in the Exercises.)
+      <me>
+        A =  \left[ \begin{array}{rrr} 3 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      We found <m>\det(A) = -13</m> by expanding along the first row.
+      To take advantage of the <m>0</m> in the second row,
+      we use <xref ref="determinantprops">Theorem</xref>
+      to find <m>\det(A) = -13</m> by expanding along that row.
+      <me>
+        \begin{array}{rcl}  \det \left( \left[ \begin{array}{rrr} 3 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right] \right)\amp  = \amp  0C_{21} + (-1)C_{22}+5C_{23} \\  \amp  = \amp   (-1) (-1)^{2+2} \det\left(A_{22}\right) + 5 (-1)^{2+3}\det\left(A_{23}\right) \\  \amp  = \amp  - \det \left( \left[ \begin{array}{rr} 3 \amp  2 \\ 2 \amp  4 \end{array}  \right] \right) -5 \det \left( \left[ \begin{array}{rr} 3 \amp  1 \\ 2 \amp  1 \end{array}  \right] \right) \\ \amp  = \amp  -((3)(4)-(2)(2)) - 5((3)(1)-(2)(1)) \\ \amp  = \amp  -8-5 \\ \amp  = \amp  -13 \, \, \checkmark \end{array}
+      </me>
+    </p>
+    <p>
+      In general, the sign of <m>(-1)^{i+j}</m> in front of the minor in the expansion of the determinant follows an alternating pattern.
+      Below is the pattern for <m>2 \times 2</m>,
+      <m>3 \times 3</m> and <m>4 \times 4</m> matrices,
+      and it extends naturally to higher dimensions.
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{cc} + \amp  - \\ - \amp  + \end{array}  \right]  \amp \qquad  \left[ \begin{array}{ccc} + \amp  - \amp  + \\ - \amp  + \amp  - \\ + \amp  - \amp  + \end{array}  \right]   \amp  \qquad  \left[ \begin{array}{cccc} + \amp  - \amp  + \amp  - \\ - \amp  + \amp  - \amp  +\\ + \amp  - \amp  + \amp  - \\ - \amp  + \amp  - \amp  + \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      The reader is cautioned,
+      however, against reading too much into these sign patterns.
+      In the example above, we expanded the
+      <m>3 \times 3</m> matrix <m>A</m> by its second row and the term which corresponds to the second entry ended up being negative even though the sign attached to the minor is <m>(+)</m>.
+      These signs represent only the signs of the <m>(-1)^{i+j}</m> in the formula;
+      the sign of the corresponding entry as well as the minor itself determine the ultimate sign of the term in the expansion of the determinant.
+    </p>
+    <p>
+      To illustrate some of the other properties in <xref ref="determinantprops">Theorem</xref>,
+      we use row operations to transform our
+      <m>3 \times 3</m> matrix <m>A</m> into an upper triangular matrix,
+      keeping track of the row operations,
+      and labeling each successive matrix.
+      In what follows we follow the Gauss Jordan algorithm without worrying about getting leading <m>1</m>'s.
+      <me>
+        \begin{array}{ccccc}  \left[ \begin{array}{rrr} 3 \amp   1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right]  \amp \xrightarrow[\text{with \(-\frac{2}{3}R1+R3\)} ]{\text{ Replace \(R3\) } } \amp  \left[ \begin{array}{rrr} 3 \amp   1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 0 \amp  \frac{1}{3} \amp  \frac{8}{3} \end{array}  \right] \amp \xrightarrow[\text{\(\frac{1}{3}R2+R3\)} ]{\text{ Replace \(R3\) with } } \amp  \left[ \begin{array}{rrr} 3 \amp   1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 0 \amp  0 \amp  \frac{13}{3} \end{array}  \right] \\  A \amp  \amp  B \amp  \amp  C \end{array}
+      </me>
+    </p>
+    <p>
+      <xref ref="determinantprops">Theorem</xref>
+      guarantees us that <m>\det(A) = \det(B) = \det(C)</m> since we are replacing a row with itself plus a multiple of another row moving from one matrix to the next.
+      Furthermore, since <m>C</m> is upper triangular,
+      <m>\det(C)</m> is the product of the entries on the main diagonal,
+      in this case <m>\det(C) = (3)(-1)\left(\frac{13}{3}\right) = -13</m>.
+      This demonstrates the utility of using row operations to assist in calculating determinants.
+    </p>
+    <p>
+      This also sheds some light on the connection between a determinant and invertibility.
+      Recall from <xref ref="MatMethods">Section</xref>
+      that in order to find <m>A^{-1}</m>,
+      we attempt to transform <m>A</m> to <m>I_{n}</m> using row operations
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{c|c} A \amp  I_{n} \end{array}  \right]  \amp \xrightarrow{\text{ Gauss Jordan Elimination } }  \amp  \left[ \begin{array}{c|c} I_{n} \amp  A^{-1} \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      As we apply our allowable row operations on <m>A</m> to put it into reduced row echelon form,
+      the determinant of the intermediate matrices can vary from the determinant of <m>A</m> by at most a
+      <em>nonzero</em> multiple.
+      This means that if <m>\det(A) \neq 0</m>,
+      then the determinant of <m>A</m>'s reduced row echelon form must also be nonzero.
+      Per <xref ref="rowechelonform">Definition</xref>,
+      this means that all the main diagonal entries on <m>A</m>'s reduced row echelon form must be <m>1</m>.
+      Hence, <m>A</m>'s reduced row echelon form is <m>I_{n}</m> so <m>A</m> is invertible.
+    </p>
+    <p>
+      Conversely, if <m>A</m> is invertible,
+      then <m>A</m> can be transformed into <m>I_{n}</m> using row operations.
+      Since <m>\det\left(I_{n}\right) = 1 \neq 0</m>,
+      our same logic implies <m>\det(A) \neq 0</m>.
+      Basically, we have established that the determinant <em>determines</em>
+      whether or not the matrix <m>A</m> is invertible.<fn>
+      In <xref ref="CramersRuleMatrixAdjoints">Section</xref>,
+      we learn determinants
+      (specifically cofactors)
+      are deeply connected with the inverse of a matrix.
+      </fn>
+    </p>
+    <p>
+      It is worth noting that when we first introduced the notion of a matrix inverse,
+      it was in the context of solving a linear matrix equation.
+      In effect, we were trying to <sq>divide</sq> both sides of the matrix equation <m>AX = B</m> by the matrix <m>A</m>.
+      Just like we cannot divide a real number by <m>0</m>,
+      <xref ref="determinantprops">Theorem</xref>
+      tells us we cannot <sq>divide</sq> by a matrix whose
+      <em>determinant</em> is <m>0</m>.
+      We also know that if the coefficient matrix of a system of linear equations is invertible,
+      then system is consistent and independent.
+      It follows, then,
+      that if the determinant of said coefficient is not zero,
+      the system is consistent and independent.
+    </p>
+  </subsection>
+  <subsection xml:id="CramersRuleMatrixAdjoints">
+    <title>Cramer's Rule and Matrix Adjoints</title>
+    <p>
+      In this section,
+      we introduce a theorem which enables us to solve a system of linear equations by means of determinants only.
+      As usual, the theorem is stated in full generality,
+      using numbered unknowns <m>x_{1}</m>, <m>x_{2}</m>,
+      etc., instead of the more familiar letters <m>x</m>, <m>y</m>,
+      <m>z</m>, etc.
+      As with many results in this chapter,
+      the proof of the general case is best left to a course in Linear Algebra.
+    </p>
+    <theorem xml:id="CramersRule">
+      <statement>
+        <p>
+              <idx><h>Cramer's Rule</h></idx> <em>Cramer's Rule:</em> Suppose <m>AX = B</m> is the matrix form of a system of <m>n</m> linear equations in <m>n</m> unknowns where <m>A</m> is the coefficient matrix, <m>X</m> is the unknowns matrix, and <m>B</m> is the constant matrix.
+        </p>
+        <p>
+          If <m>\det(A) \neq 0</m>,
+          then the corresponding system is consistent and independent and the solution for unknowns <m>x_{1}</m>,
+          <m>x_{2}</m>, <ellipsis/> <m>x_{n}</m> is given by:
+          <me>
+            x_{j} = \dfrac{\det\left(A_{j}\right)}{\det(A)}
+          </me>,
+          where <m>A_{j}</m> is the matrix <m>A</m> whose <m>j</m>th column has been replaced by the constants in <m>B</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In words, Cramer's Rule tells us we can solve for each unknown,
+      one at a time,
+      by finding the ratio of the determinant of <m>A_{j}</m> to that of the determinant of the coefficient matrix.
+      The matrix <m>A_{j}</m> is found by replacing the column in the coefficient matrix which holds the coefficients of <m>x_{j}</m> with the constants of the system.
+      The following example fleshes out this method.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Use Cramer's Rule to solve for the indicated unknowns.
+          <ol>
+            <li>
+              <p>
+                Solve <m>\left\{ \begin{array}{rcr} 2x_{1} - 3x_{2} \amp = \amp 4 \\ 5x_{1} + x_{2} \amp = \amp -2 \end{array} \right.</m> for <m>x_{1}</m> and <m>x_{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve <m>\left\{ \begin{array}{rcr} 2x - 3y + z \amp = \amp -1 \\ x-y+z \amp = \amp 1 \\ 3x-4z \amp = \amp 0 \end{array} \right.</m> for <m>z</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Writing this system in matrix form, we find
+                <me>
+                  \begin{array}{ccc}  A = \left[ \begin{array}{rr} 2 \amp  -3 \\ 5 \amp  1 \end{array}  \right] \amp \qquad X = \left[ \begin{array}{r} x_{1} \\ x_{2} \end{array}  \right] \amp \qquad B = \left[ \begin{array}{r} 4 \\ -2 \end{array}  \right] \end{array}
+                </me>
+                To find the matrix <m>A_{1}</m>,
+                we remove the column of the coefficient matrix <m>A</m> which holds the coefficients of <m>x_{1}</m> and replace it with the corresponding entries in <m>B</m>.
+                Likewise, we replace the column of <m>A</m> which corresponds to the coefficients of <m>x_{2}</m> with the constants to form the matrix <m>A_{2}</m>.
+                This yields
+                <me>
+                  \begin{array}{cc}  A_{1} = \left[ \begin{array}{rr} 4 \amp  -3 \\ -2 \amp  1 \end{array}  \right]  \amp  \qquad A_{2} = \left[ \begin{array}{rr} 2 \amp  4 \\ 5 \amp  -2 \end{array}  \right] \end{array}
+                </me>
+                Computing determinants, we get <m>\det(A) = 17</m>,
+                <m>\det\left(A_{1}\right) = -2</m> and  <m>\det\left(A_{2}\right) = -24</m>, so that
+                <me>
+                  \begin{array}{cc}  x_{1} = \dfrac{\det\left(A_{1}\right)}{\det(A)} = -\dfrac{2}{17} \amp \qquad x_{2} = \dfrac{\det\left(A_{2}\right)}{\det(A)} = -\dfrac{24}{17} \end{array}
+                </me>
+                The reader can check that the solution to the system is <m>\left(-\frac{2}{17}, -\frac{24}{17}\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To use Cramer's Rule to find <m>z</m>,
+                we identify <m>x_{3}</m> as <m>z</m>.
+                We have
+                <me>
+                  \begin{array}{cccc}  A = \left[ \begin{array}{rrr} 2 \amp  -3 \amp  1 \\ 1 \amp  -1 \amp  1 \\ 3 \amp  0 \amp  -4 \end{array}  \right] \amp X = \left[ \begin{array}{r} x \\ y \\ z \end{array}  \right] \amp B = \left[ \begin{array}{r} -1 \\ 1 \\ 0 \end{array}  \right]  \amp  A_{3} = A_{z} =  \left[ \begin{array}{rrr} 2 \amp  -3 \amp  -1 \\ 1 \amp  -1 \amp  1 \\ 3 \amp  0 \amp  0 \end{array}  \right] \end{array}
+                </me>
+                Expanding both <m>\det(A)</m> and <m>\det\left(A_{z}\right)</m> along the third rows
+                (to take advantage of the <m>0</m>'s)
+                gives
+                <me>
+                  z = \dfrac{\det\left(A_{z}\right)}{\det(A)} = \dfrac{-12}{-10} = \dfrac{6}{5}
+                </me>
+                The reader is encouraged to solve this system for <m>x</m> and <m>y</m> similarly and check the answer.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      It is worth noting that finding determinants is very <sq>computationally expensive</sq> meaning they take quite a bit of time and effort to compute for humans and machines alike.
+      For that reason, determinants, and,
+      in particular, Cramer's Rule are used mostly in theoretical contexts as convenient ways to describe and discuss solutions to systems of linear equations.<fn>
+      A classic case of this is the
+      <url href="https://en.wikipedia.org/wiki/Wronskian"><em>Wronskian</em></url>
+      from Differential Equations.
+      </fn>
+    </p>
+    <p>
+      Our last application of determinants is to develop an alternative method for finding the inverse of a matrix.
+      As with the discussion in <xref ref="MatMethods">Section</xref>
+      when we developed the first algorithm to find matrix inverses,
+      we ask that you indulge us as we proceed to work to describe a <em>general</em>
+      method here via <em>example</em>.
+    </p>
+    <p>
+      Let us consider the <m>3 \times 3</m> matrix <m>A</m> which we so extensively studied in <xref ref="determinantdefnandprops">Section</xref>
+      <me>
+        A = \left[ \begin{array}{rrr} 3 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      We found through a variety of methods that <m>\det(A) = -13</m>.
+      To our surprise and delight,
+      its inverse below has a remarkable number of <m>13</m>'s in the denominators of its entries.
+      This is no coincidence.
+      <me>
+        A^{-1} = \left[ \begin{array}{rrr} \frac{9}{13} \amp  \frac{2}{13} \amp  -\frac{7}{13} \\ -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      Recall that to find <m>A^{-1}</m>,
+      we are essentially solving the matrix equation <m>AX = I_{3}</m>,
+      where <m>X = \left[ x_{ij} \right]_{3 \times 3}</m> is a <m>3 \times 3</m> matrix.
+      Because of how matrix multiplication is defined,
+      the first column of <m>I_{3}</m> is the product of <m>A</m> with the first column of <m>X</m>,
+      the second column of <m>I_{3}</m> is the product of <m>A</m> with the second column of <m>X</m> and the third column of <m>I_{3}</m> is the product of <m>A</m> with the third column of <m>X</m>.
+      In other words, we are solving three equations<fn>
+      The reader is encouraged to stop and think this through.
+      </fn>
+      <me>
+        \begin{array}{ccc}  A\left[ \begin{array}{r} x_{11} \\ x_{21} \\ x_{31} \end{array}  \right] = \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array}  \right]  \amp \qquad A\left[ \begin{array}{r} x_{12} \\ x_{22} \\ x_{32} \end{array}  \right] = \left[ \begin{array}{r} 0 \\ 1 \\ 0 \end{array}  \right]  \amp  \qquad  A\left[ \begin{array}{r} x_{13} \\ x_{23} \\ x_{33} \end{array}  \right] = \left[ \begin{array}{r} 0 \\ 0 \\ 1 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      We can solve each of these systems using Cramer's Rule.
+      Focusing on the first system, we have
+      <me>
+        \begin{array}{ccc}  A_{1} = \left[ \begin{array}{rrr} 1 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 0 \amp  1 \amp  4 \end{array}  \right]  \amp  A_{2} = \left[ \begin{array}{rrr} 3 \amp   1 \amp  2 \\ 0 \amp  0 \amp  5 \\ 2 \amp  0 \amp  4 \end{array}  \right]  \amp  A_{3} = \left[ \begin{array}{rrr} 3 \amp   1 \amp  1 \\ 0 \amp  -1 \amp  0 \\ 2 \amp  1 \amp  0 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      If we expand <m>\det\left(A_{1}\right)</m> along the first row, we get
+      <me>
+        \begin{array}{rcl}  \det\left(A_{1}\right) \amp  = \amp   \det\left( \left[ \begin{array}{rr} -1 \amp  5 \\ 1 \amp  4 \end{array}  \right] \right) - \det\left( \left[ \begin{array}{rr} 0 \amp  5 \\ 0 \amp  4 \end{array}  \right] \right) + 2 \det\left( \left[ \begin{array}{rr} 0 \amp  -1 \\ 0 \amp  1 \end{array}  \right] \right) \\  \amp  = \amp  \det\left( \left[ \begin{array}{rr} -1 \amp  5 \\ 1 \amp  4 \end{array}  \right] \right) \end{array}
+      </me>
+    </p>
+    <p>
+      Amazingly, this is none other than the <m>C_{11}</m> cofactor of <m>A</m>.
+      The reader is invited to check this,
+      as well as the claims that
+      <m>\det\left(A_{2}\right) = C_{12}</m> and <m>\det\left(A_{3}\right) = C_{13}</m>.<fn>
+      In a solid Linear Algebra course you will learn that the properties in <xref ref="determinantprops">Theorem</xref>
+      hold equally well if the word <sq>row</sq> is replaced by the word <sq>column</sq>.
+      We're not going to get into column operations in this text,
+      but they do make some of what we're trying to say easier to follow.
+      </fn> (To see this,
+      though it seems unnatural to do so,
+      expand along the first row.) Cramer's Rule tells us
+      <me>
+        \begin{array}{ccc}  x_{11} = \dfrac{\det\left(A_{1}\right)}{\det(A)} = \dfrac{C_{11}}{\det(A)}, \amp x_{21} = \dfrac{\det\left(A_{2}\right)}{\det(A)}  = \dfrac{C_{12}}{\det(A)}, \amp x_{31} = \dfrac{\det\left(A_{3}\right)}{\det(A)} = \dfrac{C_{13}}{\det(A)} \end{array}
+      </me>
+    </p>
+    <p>
+      So the first column of the inverse matrix <m>X</m> is:
+      <me>
+        \left[ \begin{array}{r} x_{11} \\ x_{21} \\ x_{31} \end{array}  \right] = \left[ \begin{array}{r} \dfrac{C_{11}}{\det(A)} \\  \dfrac{C_{12}}{\det(A)} \\ \dfrac{C_{13}}{\det(A)} \end{array}  \right] = \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{11} \\ C_{12} \\ C_{13} \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      Notice the reversal of the subscripts going from the unknown to the corresponding cofactor of <m>A</m>.
+      This trend continues and we get
+      <me>
+        \begin{array}{cc}  \left[ \begin{array}{r} x_{12} \\ x_{22} \\ x_{32} \end{array}  \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{21} \\ C_{22} \\ C_{23} \end{array}  \right]  \amp \qquad  \left[ \begin{array}{r} x_{13} \\ x_{23} \\ x_{33} \end{array}  \right] =  \dfrac{1}{\det(A)} \left[ \begin{array}{r} C_{31} \\ C_{32} \\ C_{33} \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Putting all of these together,
+      we have obtained a new and surprising formula for <m>A^{-1}</m>, namely
+      <me>
+        A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_{11} \amp  C_{21} \amp  C_{31} \\ C_{12} \amp  C_{22} \amp  C_{32} \\ C_{13} \amp  C_{23} \amp  C_{33} \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      To see that this does indeed yield <m>A^{-1}</m>,
+      we find all of the cofactors of <m>A</m>
+      <me>
+        \begin{array}{rcrrcrrcr}  C_{11} \amp  = \amp  -9, \amp  C_{21} \amp  = \amp  -2, \amp  C_{31} \amp  = \amp  7\\  C_{12} \amp  = \amp  10, \amp  C_{22} \amp  = \amp  8, \amp  C_{32} \amp  = \amp  -15 \\  C_{13} \amp  = \amp   2,  \amp  C_{23} \amp  = \amp  -1,  \amp  C_{33} \amp  = \amp  -3 \end{array}
+      </me>
+    </p>
+    <p>
+      And, as promised,
+      <me>
+        A^{-1} = \dfrac{1}{\det(A)} \left[ \begin{array}{ccc} C_{11} \amp  C_{21} \amp  C_{31} \\ C_{12} \amp  C_{22} \amp  C_{32} \\ C_{13} \amp  C_{23} \amp  C_{33} \end{array}  \right] = -\dfrac{1}{13} \left[ \begin{array}{rrr} -9 \amp  -2 \amp  7\\ 10 \amp  8 \amp  -15 \\ 2  \amp   -1 \amp   -3 \end{array}  \right]  =  \left[ \begin{array}{rrr} \frac{9}{13} \amp  \frac{2}{13} \amp  -\frac{7}{13} \\ -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      To generalize this to invertible <m>n \times n</m> matrices,
+      we need another definition and a theorem.
+      Our definition gives a special name to the cofactor matrix,
+      and the theorem gives us a recipe for the matrix inverse.
+    </p>
+    <definition xml:id="matrixadjoint">
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> matrix,
+          and <m>C_{ij}</m> denote the <m>ij</m> cofactor of <m>A</m>.
+        </p>
+        <p>
+          The
+              <idx><h>matrix</h><h>adjoint</h></idx>
+              <idx><h>adjoint of a matrix</h></idx>
+          <term>adjoint</term> of <m>A</m>,
+          denoted <m>\text{ adj } (A)</m> is the matrix whose <m>ij</m>-entry is the <m>ji</m> cofactor of <m>A</m>,
+          <m>C_{ji}</m>.
+          That is
+          <me>
+            \text{ adj } (A) = \left[ \begin{array}{cccc} C_{11} \amp  C_{21} \amp  \ldots \amp  C_{n1} \\ C_{12} \amp  C_{22} \amp  \ldots \amp  C_{n2} \\ \vdots  \amp  \vdots \amp  \amp  \vdots \\ C_{1n} \amp  C_{2n} \amp  \ldots \amp  C_{nn} \end{array}  \right]
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      This new notation greatly shortens the statement of the formula for the inverse of a matrix.
+    </p>
+    <theorem xml:id="adjointinverse">
+      <statement>
+        <p>
+          Let <m>A</m> be an invertible <m>n \times n</m> matrix.
+          Then
+          <me>
+            A^{-1} = \dfrac{1}{\det(A)} \text{ adj } (A)
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      For <m>2 \times 2</m> matrices,
+      <xref ref="adjointinverse">Theorem</xref>
+      reduces to a fairly simple formula.
+    </p>
+    <proposition xml:id="x2by2inverse">
+      <statement>
+        <p>
+          For an invertible <m>2 \times 2</m> matrix,
+          <me>
+            \left[ \begin{array}{rr}  a \amp  b \\ c \amp  d \end{array}  \right]^{-1} = \dfrac{1}{ad-bc} \left[ \begin{array}{rr}  d \amp  -b \\ -c \amp  a \end{array}  \right]
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      The proof of <xref ref="adjointinverse">Theorem</xref> is,
+      like so many of the results in this section,
+      best left to a course in Linear Algebra.
+      In such a course,
+      not only do you gain some more sophisticated proof techniques,
+      you also gain a larger perspective.
+      Within the scope of this text,
+      we will prove a few results involving determinants in <xref ref="Induction">Section</xref>
+      using the Principle of Mathematical Induction.
+      Until then, make sure you have a handle on the <em>mechanics</em>
+      of matrices and the theory will come eventually.
+    </p>
+  </subsection>
+  <subsection xml:id="ExercisesforDeterminants">
+    <title>Exercises</title>
+    <p>
+      Exercise ideas:
+      revisit fitting curves to three points - function condition means det not zero (?)
+    </p>
+    <p>
+      Determinant formula for line
+    </p>
+    <p>
+      Geometry of determinant - wait to vectors (?)
+    </p>
+    <p>
+      Follow up in inverse determinant section: What about
+      <m>ax^m + bx^n + cx^p</m> for these three points?
+    </p>
+    <p>
+      In <xref ref="finddetfirst">Exercises</xref>
+      - <xref ref="finddetlast"></xref>,
+      compute the determinant of the given matrix.
+      (Some of these matrices appeared in <xref ref="findmatinversefirst">Exercises</xref>
+      - <xref ref="findmatinverselast"></xref>
+      in <xref ref="MatMethods">Section</xref>.)
+      <ol cols="4">
+        <li xml:id="finddetfirst">
+          <p>
+            <m>B = \left[ \begin{array}{rr} 12 \amp -7 \\ -5 \amp 3 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="matrixC">
+          <p>
+            <m>C = \left[ \begin{array}{rr} 6 \amp 15 \\ 14 \amp 35 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Q = \left[ \begin{array}{rr} x \amp x^{2} \\ 1 \amp 2x \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>L = \left[ \begin{array}{rr} \dfrac{1}{x^{3}} \amp \dfrac{\ln(x)}{x^{3}} \\ -\dfrac{3}{x^{4}} \amp \dfrac{1 - 3\ln(x)}{x^{4}} \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F = \left[ \begin{array}{rrr} 4 \amp 6 \amp -3 \\ 3 \amp 4 \amp -3 \\ 1 \amp 2 \amp 6 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="matrixG">
+          <p>
+            <m>G = \left[ \begin{array}{rrr} 1 \amp 2 \amp 3 \\ 2 \amp 3 \amp 11 \\ 3 \amp 4 \amp 19 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>V = \left[ \begin{array}{rrr} i \amp j \amp k \\ -1 \amp 0 \amp 5 \\ 9 \amp -4 \amp -2 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="finddetlast">
+          <p>
+            <m>H = \left[ \begin{array}{rrrr} 1 \amp 0 \amp -3 \amp 0 \\ 2 \amp -2 \amp 8 \amp 7 \\ -5 \amp 0 \amp 16 \amp 0 \\ 1 \amp 0 \amp 4 \amp 1 \end{array} \right]</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solvecramerfirst">Exercises</xref>
+      - <xref ref="solvecramerlast"></xref>,
+      use Cramer's Rule to solve the system of linear equations.
+      <ol cols="3">
+        <li xml:id="solvecramerfirst">
+          <p>
+            <m>\left\{ \begin{array}{rcr} 3x + 7y \amp = \amp 26 \\ 5x + 12y \amp = \amp 39 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 2x-4y \amp = \amp 5 \\ 10x + 13y \amp = \amp -6 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x + y \amp = \amp 8000 \\ 0.03x + 0.05y \amp = \amp 250 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} \frac{1}{2}x - \frac{1}{5}y \amp = \amp 1 \\ 6x +7y \amp = \amp 3 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x + y + z \amp = \amp 3 \\ 2x - y + z \amp = \amp 0 \\ -3x + 5y + 7z \amp = \amp 7 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="solvecramerlast">
+          <p>
+            <m>\left\{ \begin{array}{rcr} 3x + y - 2z \amp = \amp 10 \\ 4x - y + z \amp = \amp 5 \\ x -3y - 4z \amp = \amp -1 \end{array} \right.</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="cramersinglefirst">Exercises</xref>
+      - <xref ref="cramersinglelast"></xref>,
+      use Cramer's Rule to solve for <m>x_{4}</m>.
+      <ol>
+        <li xml:id="cramersinglefirst">
+          <p>
+            <m>\left\{ \begin{array}{rcr} x_{1} - x_{3} \amp = \amp -2 \\ 2x_{2} - x_{4} \amp = \amp 0 \\ x_{1} - 2x_{2} + x_{3} \amp = \amp 0 \\ -x_{3} + x_{4} \amp = \amp 1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="cramersinglelast">
+          <p>
+            <m>\left\{ \begin{array}{rcr} 4x_{1} + x_{2} \amp = \amp 4 \\ x_{2} - 3x_{3} \amp = \amp 1 \\ 10x_{1} +x_{3} + x_{4} \amp = \amp 0 \\ -x_{2} + x_{3} \amp = \amp -3 \end{array} \right.</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="invadjfirst">Exercises</xref>
+      - <xref ref="invadjlast"></xref>,
+      find the inverse of the given matrix using their determinants and adjoints.
+    </p>
+    <ol cols="2">
+      <li xml:id="invadjfirst">
+        <p>
+          <m>B = \left[ \begin{array}{rr} 12 \amp -7 \\ -5 \amp 3 \end{array} \right]</m>
+        </p>
+      </li>
+      <li xml:id="invadjlast">
+        <p>
+          <m>F = \left[ \begin{array}{rrr} 4 \amp 6 \amp -3 \\ 3 \amp 4 \amp -3 \\ 1 \amp 2 \amp 6 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Carl's Sasquatch Attack!
+          Game Card Collection is a mixture of common and rare cards.
+          Each common card is worth <m>\dollar0.25</m> while each rare card is worth <m>\dollar0.75</m>.
+          If his entire 117 card collection is worth <m>\dollar48.75</m>,
+          how many of each kind of card does he own?
+        </p>
+      </li>
+      <li>
+        <p>
+          How much of a 5 gallon <m>40\%</m> salt solution should be replaced with pure water to obtain 5 gallons of a <m>15 \%</m> solution?
+        </p>
+      </li>
+      <li>
+        <p>
+          How much of a 10 liter <m>30\%</m> acid solution must be replaced with pure acid to obtain 10 liters of a <m>50\%</m> solution?
+        </p>
+      </li>
+      <li>
+        <p>
+          Daniel's Exotic Animal Rescue houses snakes, tarantulas and scorpions.
+          When asked how many animals of each kind he boards, Daniel answered:
+          <sq>We board 49 total animals,
+          and I am responsible for each of their 272 legs and 28 tails.</sq> How many of each animal does the Rescue board? (Recall:
+          tarantulas have 8 legs and no tails,
+          scorpions have 8 legs and one tail,
+          and snakes have no legs and one tail.)
+        </p>
+      </li>
+      <li>
+        <p>
+          This exercise is a continuation of <xref ref="SasquatchDiet">Exercise</xref>
+          in <xref ref="MatMethods">Section</xref>.
+          Just because a system is consistent independent doesn't mean it will admit a solution that makes sense in an applied setting.
+          Using the nutrient values given for Ippizuti Fish, Misty Mushrooms,
+          and Sun Berries,
+          use Cramer's Rule to determine the number of servings of Ippizuti Fish needed to meet the needs of a daily diet which requires 2500 calories, 1000 grams of protein,
+          and 400 milligrams of Vitamin X. Now use Cramer's Rule to find the number of servings of Misty Mushrooms required.
+          Does a solution to this diet problem exist?
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>R = \left[ \begin{array}{rr} -7 \amp 3 \\ 11 \amp 2 \end{array} \right], \;\;\; S = \left[ \begin{array}{rr} 1 \amp -5 \\ 6 \amp 9 \end{array} \right] \;\;\; T = \left[ \begin{array}{rr} 11 \amp 2 \\ -7 \amp 3 \end{array} \right], \mbox{ and } U = \left[ \begin{array}{rr} -3 \amp 15 \\ 6 \amp 9 \end{array} \right]</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Show that <m>\det(RS) = \det(R)\det(S)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>\det(T) = -\det(R)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>\det(U) = -3\det(S)</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          For <m>M</m>,  <m>N</m>, and <m>P</m> below,
+          show that <m>\det(M) = 0</m>,
+          <m>\det(N) = 0</m> and <m>\det(P) = 0</m>.
+          <me>
+            M = \left[ \begin{array}{rrr} 1 \amp  2 \amp  3 \\ 0 \amp  0 \amp  0 \\ 7 \amp  8 \amp  9 \end{array}  \right],  N = \left[ \begin{array}{rrr} 1 \amp  2 \amp  3 \\ 1 \amp  2 \amp  3 \\ 4 \amp  5 \amp  6 \end{array}  \right] ,   P =  \left[ \begin{array}{rrr} 1 \amp  2 \amp  3 \\ -2 \amp  -4 \amp  -6 \\ 7 \amp  8 \amp  9 \end{array}  \right]
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          This exercise is a follow-up to <xref ref="threepointsmatrixfunctionfitex">Exercise</xref>
+          in <xref ref="AugMatrices">Section</xref>.
+          Suppose you wish to determine coefficients <m>a</m>, <m>b</m>,
+          and <m>c</m> so the the graph of
+          <m>f(x) = ax^{m} + bx^{n} + cx^{p}</m> contains the points <m>(-2,1)</m>,
+          <m>(1,4)</m>, <m>(3,-2)</m>.
+          With help from your classmates,
+          discuss if there a unique solution for every selection of <m>m</m>,
+          <m>n</m>,
+          and <m>p</m>?
+          If not, under what conditions is there a unique solution?
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>A</m> be an arbitrary invertible <m>3 \times 3</m> matrix.
+          <ol>
+            <li>
+              <p>
+                Show that <m>\det(I_{3}) = 1</m>. (See footnote<fn>
+                If you think about it for just a moment,
+                you'll see that <m>\det(I_{n}) = 1</m> for any natural number <m>n</m>.
+                The formal proof of this fact requires the Principle of Mathematical Induction
+                (<xref ref="Induction">Section</xref>)
+                so we'll stick with <m>n = 3</m> for the time being.
+                </fn> below.)
+              </p>
+            </li>
+            <li>
+              <p>
+                Using the facts that <m>AA^{-1} = I_{3}</m> and <m>\det(AA^{-1}) = \det(A)\det(A^{-1})</m>,
+                show that
+                <me>
+                  \det(A^{-1}) = \dfrac{1}{\det(A)}
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+    <p>
+      The purpose of <xref ref="eigenfirst">Exercises</xref>
+      - <xref ref="eigenlast"></xref>
+      is to introduce you to the eigenvalues and eigenvectors of a matrix.<fn>
+      This material is usually given its own chapter in a Linear Algebra book so clearly we're not able to tell you everything you need to know about eigenvalues and eigenvectors.
+      They are a nice application of determinants, though,
+      so we're going to give you enough background so that you can start playing around with them.
+      </fn> We begin with an example using a
+      <m>2 \times 2</m> matrix and then guide you through some exercises using a <m>3 \times 3</m> matrix.
+      Consider the matrix
+      <me>
+        C = \left[ \begin{array}{rr} 6 \amp  15 \\ 14 \amp  35 \end{array}  \right]
+      </me>
+      from <xref ref="matrixC">Exercise</xref>.
+      We know that <m>\det(C) = 0</m> which means that
+      <m>CX = 0_{2\times2}</m> does not have a unique solution.
+      So there is a nonzero matrix <m>Y</m> with <m>CY = 0_{2\times2}</m>.
+      In fact, every matrix of the form
+      <me>
+        Y = \left[ \begin{array}{r} -\frac{5}{2}t \\ t \end{array}  \right]
+      </me>
+      is a solution to <m>CX = 0_{2\times2}</m>,
+      so there are infinitely many matrices such that <m>CX = 0_{2\times2}</m>.
+      But consider the matrix
+      <me>
+        X_{41} = \left[ \begin{array}{r} 3 \\ 7 \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      It is NOT a solution to <m>CX = 0_{2\times2}</m>, but rather,
+      <me>
+        CX_{41}= \left[ \begin{array}{rr} 6 \amp  15 \\ 14 \amp  35 \end{array}  \right] \left[ \begin{array}{r} 3 \\ 7 \end{array}  \right] = \left[ \begin{array}{r} 123 \\ 287 \end{array}  \right] = 41\left[ \begin{array}{r} 3 \\ 7 \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      In fact, if <m>Z</m> is of the form
+      <me>
+        Z = \left[ \begin{array}{r} \frac{3}{7}t \\ t \end{array}  \right]
+      </me>
+      then
+      <me>
+        CZ = \left[ \begin{array}{rr} 6 \amp  15 \\ 14 \amp  35 \end{array}  \right] \left[ \begin{array}{r} \frac{3}{7}t \\ t \end{array}  \right] = \left[ \begin{array}{r} \frac{123}{7}t \\ 41t \end{array}  \right] = 41\left[ \begin{array}{r} \frac{3}{7}t \\ t \end{array}  \right] = 41Z
+      </me>
+      for all <m>t</m>.
+      The big question is
+      <q>How did we know to use <m>41</m>?</q>
+    </p>
+    <p>
+      We need a number <m>\lambda</m> such that
+      <m>CX = \lambda X</m> has nonzero solutions.
+      We have demonstrated that <m>\lambda = 0</m> and <m>\lambda = 41</m> both worked.
+      Are there others?
+      If we look at the matrix equation more closely,
+      what we <em>really</em> wanted was a nonzero solution to
+      <m>(C - \lambda I_{2})X = 0_{2\times2}</m> which we know exists if and only if the determinant of <m>C - \lambda I_{2}</m> is zero.<fn>
+      Think about this.
+      </fn> So we computed
+      <me>
+        \det(C - \lambda I_{2}) = \det\left(\left[ \begin{array}{rr} 6 - \lambda \amp  15 \\ 14 \amp  35 - \lambda \end{array}  \right] \right) = (6 - \lambda)(35 - \lambda) - 14 \cdot 15 = \lambda^{2} - 41 \lambda
+      </me>
+    </p>
+    <p>
+      This is called the <em>characteristic polynomial</em>
+          <idx><h>characteristic polynomial</h></idx>
+          <idx><h>matrix</h><h>characteristic polynomial</h></idx>
+      of the matrix <m>C</m> and it has two zeros:
+      <m>\lambda = 0</m> and <m>\lambda = 41</m>.
+      That's how we knew to use <m>41</m> in our work above.
+      The fact that <m>\lambda = 0</m> showed up as one of the zeros of the characteristic polynomial just means that <m>C</m> itself had determinant zero which we already knew.
+      Those two numbers are called the
+      <em>eigenvalues</em> of <m>C</m>.
+      The corresponding matrix solutions to
+      <m>CX = \lambda X</m> are called the <em>eigenvectors</em>
+      of <m>C</m> and the <sq>vector</sq> portion of the name will make more sense after you've studied vectors.
+          <idx><h>eigenvalue</h></idx>
+          <idx><h>eigenvector</h></idx>
+    </p>
+    <p>
+      Now it's your turn.
+      In the following exercises,
+      you'll be using the matrix <m>G</m> from <xref ref="matrixG">Exercise</xref>.
+      <me>
+        G = \left[ \begin{array}{rrr} 1 \amp  2 \amp  3 \\ 2 \amp  3 \amp  11 \\ 3 \amp  4 \amp  19 \end{array}  \right]
+      </me>
+      <ol>
+        <li xml:id="eigenfirst">
+          <p>
+            Show that the characteristic polynomial of <m>G</m> is <m>p(\lambda) = -\lambda(\lambda - 1)(\lambda - 22)</m>.
+            That is, compute <m>\text{ det } \left(G - \lambda I_{3}\right)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>G_{0} = G</m>.
+            Find the parametric description of the solution to the system of linear equations given by <m>GX = 0_{3\times3}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>G_{1} = G - I_{3}</m>.
+            Find the parametric description of the solution to the system of linear equations given by <m>G_{1}X = 0_{3\times3}</m>.
+            Show that any solution to <m>G_{1}X = 0_{3\times3}</m> also has the property that <m>GX = 1X</m>.
+          </p>
+        </li>
+        <li xml:id="eigenlast">
+          <p>
+            Let <m>G_{22} = G - 22 I_{3}</m>.
+            Find the parametric description of the solution to the system of linear equations given by <m>G_{22}X = 0_{3\times3}</m>.
+            Show that any solution to <m>G_{22}X = 0_{3\times3}</m> also has the property that <m>GX = 22X</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\det(B) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(C) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(Q) = x^{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(L) = \dfrac{1}{x^{7}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(F) = -12</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(G) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(V) = 20i + 43j + 4k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(H) = -2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 39, \; y = -13</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{41}{66}, \; y=-\frac{31}{33}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=7500, \; y=500</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{76}{47}, \; y=-\frac{45}{47}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 1, \; y = 2, \; z = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{121}{60}, \; y = \frac{131}{60}, \; z = -\frac{53}{60}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x_{4} = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x_{4} = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>B^{-1} = \left[ \begin{array}{rr} 3 \amp 7 \\ 5 \amp 12 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F^{-1} = \left[ \begin{array}{rrr} -\frac{5}{2} \amp \frac{7}{2} \amp \frac{1}{2} \\ \frac{7}{4} \amp -\frac{9}{4} \amp -\frac{1}{4} \\ -\frac{1}{6} \amp \frac{1}{6} \amp \frac{1}{6} \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Carl owns 78 common cards and 39 rare cards.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3.125</m> gallons.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{20}{7} \approx 2.85</m> liters.
+        </p>
+      </li>
+      <li>
+        <p>
+          The rescue houses 15 snakes, 21 tarantulas and 13 scorpions.
+        </p>
+      </li>
+      <li>
+        <p>
+          Using Cramer's Rule,
+          we find we need 53 servings of Ippizuti Fish to satisfy the dietary requirements.
+          The number of servings of Misty Mushrooms required, however,
+          is <m>-1120</m>.
+          Since it's impossible to have a negative number of servings,
+          there is no solution to the applied problem,
+          despite there being a solution to the mathematical problem.
+          A cautionary tale about using Cramer's Rule:
+          just because you are guaranteed a mathematical answer for each variable doesn't mean the solution will make sense in the <sq>real</sq> world.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

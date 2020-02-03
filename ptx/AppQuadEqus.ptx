@@ -1,0 +1,989 @@
+<section xml:id="AppQuadEqus">
+  <title>Quadratic Equations</title>
+  <introduction>
+    <p>
+      In <xref ref="solveeqnsbyfactoring">Section</xref>,
+      we reviewed how to solve basic non-linear equations by factoring.
+      The astute reader should have noticed that all of the equations in that section were carefully constructed so that the polynomials could be factored using the integers.
+      To demonstrate just how contrived the equations had to be,
+      we can solve <m>2x^2+5x-3=0</m> by factoring, <m>(2x-1)(x+3) = 0</m>,
+      from which we obtain <m>x = \frac{1}{2}</m> and <m>x = -3</m>.
+      If we change the <m>5</m> to a <m>6</m> and try to solve <m>2x^2 + 6x - 3 = 0</m>, however,
+      we find that this polynomial doesn't factor over the integers and we are stuck.
+      It turns out that there are two real number solutions to this equation,
+      but they are <em>irrational</em> numbers,
+      and the goal of this section is to review the techniques which allow us to find these solutions.<fn>
+      While our discussion in this section departs from factoring,
+      we'll see in <xref ref="PolynomialFunctions">Chapter</xref>
+      that the same correspondence between factoring and solving equations holds whether or not the polynomial factors over the integers.
+      </fn> In this section,
+      we focus our attention on <em>quadratic</em><idx><h>equations</h><h>quadratic</h></idx> equations.
+    </p>
+    <definition xml:id="quadeqndefn">
+      <statement>
+        <p>
+              <idx><h>equation</h><h>quadratic</h></idx>
+          An equation is said to be <term>quadratic</term> in a variable <m>x</m> if it can be written in the form <m>ax^2 + bx + c = 0</m> where <m>a</m>, <m>b</m> and <m>c</m> are expressions which do not involve <m>x</m> and <m>a \neq 0</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Think of quadratic equations as equations that are one degree up from linear equations - instead of the highest power of <m>x</m> being just <m>x = x^1</m>,
+      it's <m>x^2</m>.
+      The simplest class of quadratic equations to solve are the ones in which <m>b = 0</m>.
+      In that case, we have the following.
+      <em>Solving Quadratic Equations by Extracting Square Roots</em>
+    </p>
+    <p>
+      If <m>c</m> is a real number with <m>c \geq 0</m>,
+      the solutions to <m>x^2 = c</m> are <m>x = \pm \sqrt{c}</m>.
+    </p>
+    <p>
+      <em>Note:</em> If <m>c \lt 0</m>,
+      <m>x^2 = c</m> has no real number solutions.
+    </p>
+    <p>
+      There are a couple different ways to see why Extracting Square Roots works,
+      both of which are demonstrated by solving the equation <m>x^2 = 3</m>.
+      If we follow the procedure outlined in the previous section,
+      we subtract <m>3</m> from both sides to get
+      <m>x^2 - 3 = 0</m> and we now try to factor <m>x^2 - 3</m>.
+      As mentioned in the remarks following <xref ref="irreduciblepoly">Definition</xref>,
+      we could think of <m>x^2 - 3 = x^2 - (\sqrt{3})^2</m> and apply the Difference of Squares formula to factor <m>x^2 - 3 = (x-\sqrt{3})(x+\sqrt{3})</m>.
+      We solve <m>(x-\sqrt{3})(x+\sqrt{3}) = 0</m> by using the Zero Product Property as before by setting each factor equal to zero:
+      <m>x - \sqrt{3} = 0</m> and <m>x+\sqrt{3} - 0</m>.
+      We get the answers <m>x = \pm \sqrt{3}</m>.
+      In general, if <m>c \geq 0</m>,
+      then <m>\sqrt{c}</m> is a real number,
+      so <m>x^2 - c = x^2 - (\sqrt{c})^2 = (x-\sqrt{c})(x+\sqrt{c})</m>.
+      Replacing the <sq><m>3</m></sq> with <sq><m>c</m></sq> in the above discussion gives the general result.
+    </p>
+    <p>
+      Another way to view this result is to visualize <sq>taking the square root</sq> of both sides:
+      since <m>x^2 = c</m>, <m>\sqrt{x^2} = \sqrt{c}</m>.
+      How do we simplify <m>\sqrt{x^2}</m>?
+      We have to exercise a bit of caution here.
+      Note that <m>\sqrt{(5)^2}</m> and
+      <m>\sqrt{(-5)^2}</m> both simplify to <m>\sqrt{25} = 5</m>.
+      In both cases, <m>\sqrt{x^2}</m> returned a
+      <em>positive</em> number,
+      since the negative in <m>-5</m> was <sq>squared away</sq>
+      <em>before</em> we took the square root.
+      In other words,
+      <m>\sqrt{x^2}</m> is <m>x</m> if <m>x</m> is positive,
+      or, if <m>x</m> is negative,
+      we make <m>x</m> positive - that is,
+      <m>\sqrt{x^2} = |x|</m>, the absolute value of <m>x</m>.
+      So from <m>x^2 = 3</m>,
+      we <sq>take the square root</sq> of both sides of the equation to get <m>\sqrt{x^2} = \sqrt{3}</m>.
+      This simplifies to <m>|x| = \sqrt{3}</m>,
+      which by <xref ref="absvalequality">Theorem</xref>
+      is equivalent to <m>x = \sqrt{3}</m> or <m>x = -\sqrt{3}</m>.
+      Replacing the <sq><m>3</m></sq> in the previous argument with <sq><m>c</m>,</sq> gives the general result.
+    </p>
+    <p>
+      As you might expect, Extracting Square Roots can be applied to more complicated equations.
+      Consider the equation below.
+      We can solve it by Extracting Square Roots provided we first isolate the quantity that is being squared :
+      <me>
+        \begin{array}{rclr}  2\left(x + \dfrac{3}{2}\right)^2 - \dfrac{15}{2} \amp  = \amp  0 \amp  \\ 2\left(x + \dfrac{3}{2}\right)^2 \amp  = \amp  \dfrac{15}{2} \amp  \text{Add \(\dfrac{15}{2}\)}  \\ \left(x + \dfrac{3}{2}\right)^2 \amp  = \amp  \dfrac{15}{4} \amp  \text{ Divide by \(2\) }  \\ x + \dfrac{3}{2} \amp  = \amp  \pm \sqrt{\dfrac{15}{4}} \amp  \text{ Extract Square Roots }  \\ x + \dfrac{3}{2} \amp  = \amp  \pm \dfrac{\sqrt{15}}{2} \amp  \text{ Property of Radicals }  \\ x \amp  = \amp  -\dfrac{3}{2} \pm \dfrac{\sqrt{15}}{2}  \amp  \text{Subtract \(\dfrac{3}{2}\)}  \\ x \amp  = \amp  -\dfrac{3 \pm \sqrt{15}}{2}  \amp  \text{ Add fractions } \end{array}
+      </me>
+    </p>
+    <p>
+      Let's return to the equation
+      <m>2x^2 + 6x - 3 = 0</m> from the beginning of the section.
+      We leave it to the reader to expand the left side and show that
+      <me>
+        2\left(x + \dfrac{3}{2}\right)^2 - \dfrac{15}{2} =  2x^2 + 6x - 3
+      </me>.
+    </p>
+    <p>
+      In other words, we can solve
+      <m>2x^2 + 6x - 3 = 0</m> by <em>transforming</em>
+      into an equivalent equation.
+      This process, you may recall,
+      is called <sq>Completing the Square.</sq>
+          <idx><h>Completing the Square</h></idx>
+      We'll revisit Completing the Square in <xref ref="QuadraticFunctions">Section</xref>
+      in more generality and for a different purpose but for now we revisit the steps needed to complete the square to solve a quadratic equation.
+      <em>Solving Quadratic Equations: Completing the Square</em>
+    </p>
+    <p>
+      To solve a quadratic equation
+      <m>ax^2 + bx + c = 0</m> by Completing the Square:
+      <ol>
+        <li>
+          <p>
+            Subtract the constant <m>c</m> from both sides.
+          </p>
+        </li>
+        <li>
+          <p>
+            Divide both sides by <m>a</m>,
+            the coefficient of <m>x^2</m>.
+            (Remember: <m>a \neq 0</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Add <m>\left(\frac{b}{2a}\right)^2</m> to both sides of the equation.
+            (That's half the coefficient of <m>x</m>, squared.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Factor the left hand side of the equation as <m>\left(x + \frac{b}{2a}\right)^2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Extract Square Roots.
+          </p>
+        </li>
+        <li>
+          <p>
+            Subtract <m>\frac{b}{2a}</m> from both sides.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      To refresh our memories,
+      we apply this method to solve <m>3x^2 - 24x + 5 = 0</m>:
+      <me>
+        \begin{array}{rclr}  3x^2 - 24x + 5 \amp  = \amp  0 \amp  \\  3x^2 - 24x  \amp  = \amp  -5 \amp  \text{ Subtract  \(c = 55\) }  \\  x^2 - 8x \amp  = \amp  -\dfrac{5}{3} \amp  \text{ Divide by \(a = 3\) }  \\  x^2 - 8x + 16 \amp  = \amp  -\dfrac{5}{3} + 16 \amp  \text{Add \(\left(\frac{b}{2a}\right)^2 = (-4)^2 = 16\)}  \\  (x - 4)^2 \amp  = \amp  \dfrac{43}{3} \amp  \text{ Factor: Perfect Square Trinomial }  \\  x - 4 \amp  = \amp  \pm \sqrt{\dfrac{43}{3}} \amp  \text{ Extract Square Roots }  \\  x \amp  = \amp  4 \pm \sqrt{\dfrac{43}{3}} \amp  \text{ Add \(4\) } \end{array}
+      </me>
+    </p>
+    <p>
+      At this point,
+      we use properties of fractions and radicals to <sq>rationalize</sq> the denominator:<fn>
+      Recall that this means we want to get a denominator with rational
+      (more specifically, integer)
+      numbers.
+      </fn>
+      <me>
+        \sqrt{\dfrac{43}{3}} = \sqrt{\dfrac{43 \cdot 3}{3 \cdot 3}} = \dfrac{\sqrt{129}}{\sqrt{9}} = \dfrac{\sqrt{129}}{3}
+      </me>
+    </p>
+    <p>
+      We can now get a common (integer) denominator which yields:
+      <me>
+        x=  4 \pm \sqrt{\dfrac{43}{3}} = 4 \pm \dfrac{\sqrt{129}}{3} = \dfrac{12 \pm \sqrt{129}}{3}
+      </me>
+    </p>
+    <p>
+      The key to Completing the Square is that the procedure always produces a perfect square trinomial.
+      To see why this works <em>every single time</em>,
+      we start with <m>ax^2 + bx + c = 0</m> and follow the procedure:
+      <me>
+        \begin{array}{rclr}  ax^2 + bx + c \amp  = \amp  0 \amp  \\  ax^2 + bx \amp  = \amp  -c \amp  \text{ Subtract \(c\) }  \\  x^2 + \dfrac{bx}{a} \amp  = \amp  -\dfrac{c}{a} \amp  \text{ Divide by \(a \neq 0\) }  \\  x^2 + \dfrac{bx}{a} + \left(\dfrac{b}{2a}\right)^2 \amp  = \amp  -\dfrac{c}{a} + \left(\dfrac{b}{2a}\right)^2 \amp  \text{Add \( \left(\dfrac{b}{2a}\right)^2\)} \end{array}
+      </me>
+    </p>
+    <p>
+      (Hold onto the line above for a moment.) Here's the heart of the method - we need to show that
+      <me>
+        x^2 + \dfrac{bx}{a} + \left(\dfrac{b}{2a}\right)^2 = \left(x + \dfrac{b}{2a}\right)^2
+      </me>
+    </p>
+    <p>
+      To show this,
+      we start with the right side of the equation and apply the Perfect Square Formula from <xref ref="SpecialProducts">Theorem</xref>
+      <me>
+        \left(x + \dfrac{b}{2a}\right)^2 = x^2 + 2\left(\dfrac{b}{2a}\right)x + \left(\dfrac{b}{2a}\right)^2 = x^2 + \dfrac{bx}{a} + \left(\dfrac{b}{2a}\right)^2 \, \checkmark
+      </me>
+    </p>
+    <p>
+      With just a few more steps we can solve the general equation
+      <m>ax^{2} + bx + c = 0</m> so let's pick up the story where we left off.
+      (The line on the previous page we told you to hold on to.)
+      <me>
+        \begin{array}{rclr}  x^2 + \dfrac{bx}{a} + \left(\dfrac{b}{2a}\right)^2 \amp  = \amp  -\dfrac{c}{a} + \left(\dfrac{b}{2a}\right)^2 \amp  \\ \left(x + \dfrac{b}{2a}\right)^2 \amp  = \amp  -\dfrac{c}{a} + \dfrac{b^2}{4a^2} \amp  \text{ Factor: Perfect Square Trinomial }  \\  \left(x + \dfrac{b}{2a}\right)^2 \amp  = \amp  -\dfrac{4ac}{4a^2} + \dfrac{b^2}{4a^2} \amp  \text{ Get a common denominator } \\  \left(x + \dfrac{b}{2a}\right)^2 \amp  = \amp  \dfrac{b^2 - 4ac}{4a^2} \amp  \text{ Add fractions } \\  x + \dfrac{b}{2a} \amp  = \amp  \pm \sqrt{\dfrac{b^2 - 4ac}{4a^2}} \amp  \text{ Extract Square Roots }  \\  x + \dfrac{b}{2a} \amp  = \amp  \pm \dfrac{\sqrt{b^2 - 4ac}}{2a} \amp  \text{ Properties of Radicals }  \\  x  \amp  = \amp  - \dfrac{b}{2a} \pm \dfrac{\sqrt{b^2 - 4ac}}{2a} \amp  \text{Subtract \(\dfrac{b}{2a}\)}  \\  x  \amp  = \amp  \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} \amp  \text{ Add fractions. } \end{array}
+      </me>
+    </p>
+    <p>
+      Lo and behold, we have derived the legendary
+      <em>Quadratic Formula</em>!
+          <idx><h>quadratic formula</h></idx>
+          <idx><h>formula</h><h>quadratic</h></idx>
+    </p>
+    <theorem xml:id="quadraticformula">
+      <statement>
+        <p>
+          <em>Quadratic Formula:</em> The solution(s) to
+          <m>ax^2 + bx + c = 0</m> with <m>a \neq 0</m> is/are:
+          <me>
+            x  = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We can check our earlier solutions to <m>2x^2 + 6x - 3 = 0</m> and
+      <m>3x^2 - 24x + 5 = 0</m> using the Quadratic Formula.
+      For <m>2x^2 + 6x - 3 = 0</m>,
+      we identify <m>a = 2</m>, <m>b = 6</m> and <m>c = -3</m>.
+      The quadratic formula gives:
+      <me>
+        x = \dfrac{-6 \pm \sqrt{6^2 - 4(2)(-3)}}{2(2)} - \dfrac{-6 \pm \sqrt{36 + 24}}{4} = \dfrac{-6 \pm \sqrt{60}}{4}
+      </me>
+    </p>
+    <p>
+      Using properties of radicals (<m>\sqrt{60} = 2 \sqrt{15}</m>),
+      this reduces to <m>\frac{2(-3 \pm \sqrt{15})}{4} =\frac{-3 \pm \sqrt{15}}{2}</m>.
+      We leave it to the reader to show these two answers are the same as <m>-\frac{3 \pm \sqrt{15}}{2}</m>,
+      as required.<fn>
+      Think about what <m>-(3 \pm \sqrt{15})</m> is really telling you.
+      </fn>
+    </p>
+    <p>
+      For <m>3x^2 - 24x + 5 = 0</m>,
+      we identify <m>a = 3</m>, <m>b = -24</m> and <m>c = 5</m>.
+      Here, we get:
+      <me>
+        x = \dfrac{-(-24) \pm \sqrt{(-24)^2 - 4(3)(5)}}{2(3)} = \dfrac{24 \pm \sqrt{516}}{6}
+      </me>
+    </p>
+    <p>
+      Since <m>\sqrt{516} = 2\sqrt{129}</m>,
+      this reduces to <m>x = \frac{12 \pm \sqrt{129}}{3}</m>.
+    </p>
+    <p>
+      It is worth noting that the Quadratic Formula applies to all quadratic equations - even ones we could solve using other techniques.
+      For example,
+      to solve <m>2x^2 + 5x - 3 = 0</m> we identify <m>a = 2</m>,
+      <m>b = 5</m> and <m>c = -3</m>.
+      Plugging those into the Quadratic Formula yields:
+      <me>
+        x = \dfrac{-5 \pm \sqrt{5^2 - 4(2)(-3)}}{2(2)} = \dfrac{-5 \pm \sqrt{49}}{4} = \dfrac{-5 \pm 7}{4}
+      </me>
+    </p>
+    <p>
+      At this point,
+      we have <m>x = \frac{-5+7}{4} = \frac{1}{2}</m> and
+      <m>x = \frac{-5-7}{4} = \frac{-12}{4} = -3</m> - the same two answers we obtained factoring.
+      We can also use it to solve <m>x^2 = 3</m>, if we wanted to.
+      From <m>x^2 -3 = 0</m>, we have <m>a = 1</m>,
+      <m>b = 0</m> and <m>c = -3</m>.
+      The Quadratic Formula produces
+      <me>
+        x = \dfrac{-0 \pm \sqrt{0^2 - 4(1)(3)}}{2(1)} = \dfrac{\pm\sqrt{12}}{2} = \pm \dfrac{2\sqrt{3}}{2} = \pm \sqrt{3}
+      </me>
+    </p>
+    <p>
+      As this last example illustrates,
+      while the Quadratic Formula <em>can</em>
+      be used to solve every quadratic equation,
+      that doesn't mean it <em>should</em> be used.
+      Many times other methods are more efficient.
+      We now provide a more comprehensive approach to solving Quadratic Equations.
+      <em>Strategies for Solving Quadratic Equations</em>
+    </p>
+    <ul>
+      <li>
+        <p>
+          If the variable appears in the squared term only,
+          isolate it and Extract Square Roots.
+        </p>
+      </li>
+      <li>
+        <p>
+          Otherwise, put the nonzero terms on one side of the equation so that the other side is <m>0</m>.
+        </p>
+        <ul>
+          <li>
+            <p>
+              Try factoring.
+            </p>
+          </li>
+          <li>
+            <p>
+              If the expression doesn't factor easily,
+              use the Quadratic Formula.
+            </p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      The reader is encouraged to pause for a moment to think about why <sq>Completing the Square</sq> doesn't appear in our list of strategies despite the fact that we've spent the majority of the section so far talking about it.<fn>
+      Unacceptable answers include
+      <q>Jeff and Carl are mean</q>
+      and
+      <q>It was one of Carl's Pedantic Rants</q>.
+      </fn> Let's get some practice solving quadratic equations,
+      shall we?
+    </p>
+    <example xml:id="reviewquadraticex">
+      <statement>
+        <p>
+          Find all real number solutions to the following equations.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>3 - (2w-1)^2 = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>5x - x(x-3) = 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(y-1)^2 = 2 - \dfrac{y+2}{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>5(25 - 21x) = \dfrac{59}{4} - 25x^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-4.9t^2 + 10t\sqrt{3} + 2 = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2x^2 = 3x^4 - 6</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since <m>3 - (2w-1)^2 = 0</m> contains a perfect square,
+                we isolate it first then extract square roots:
+                <me>
+                  \begin{array}{rclr}  3 - (2w-1)^2 \amp  = \amp  0 \amp  \\  3 \amp  = \amp  (2w-1)^2 \amp  \text{ Add \((2w-1)^2\) }  \\  \pm \sqrt{3} \amp  = \amp  2w - 1 \amp  \text{ Extract Square Roots }  \\  1 \pm \sqrt{3} \amp  = \amp  2w \amp  \text{ Add \(1\) }  \\  \dfrac{1 \pm \sqrt{3}}{2} \amp  = \amp  w \amp  \text{ Divide by \(2\) } \end{array}
+                </me>
+                We find our two answers <m>w = \frac{1 \pm \sqrt{3}}{2}</m>.
+                The reader is encouraged to check both answers by substituting each into the original equation.<fn>
+                It's excellent  practice working with radicals and fractions so we really,
+                <em>really</em> want you to take the time to do it.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>5x - x(x-3) = 7</m>,
+                we perform the indicated operations and set one side equal to <m>0</m>.
+                <me>
+                  \begin{array}{rclr}  5x - x(x-3) \amp  = \amp  7 \amp  \\  5x - x^2 + 3x \amp  = \amp  7 \amp  \text{ Distribute }  \\  -x^2 + 8x \amp  = \amp  7 \amp  \text{ Gather like terms }  \\  -x^2 + 8x - 7 \amp  = \amp  0\amp  \text{ Subtract \(7\) } \end{array}
+                </me>
+                At this point,
+                we attempt to factor and find <m>-x^2 + 8x - 7 = (x-1)(-x+7)</m>.
+                Using the Zero Product Property,
+                we get <m>x-1 = 0</m>  or <m>-x+7 = 0</m>.
+                Our answers are <m>x = 1</m> or <m>x = 7</m>,
+                which are easily verified.
+              </p>
+            </li>
+            <li>
+              <p>
+                Even though we have a perfect square in
+                <m>(y-1)^2 = 2 - \frac{y+2}{3}</m>, Extracting Square Roots won't help matters since we have a <m>y</m> on the other side of the equation.
+                Our strategy here is to perform the indicated operations
+                (and clear the fraction for good measure)
+                and get <m>0</m> on one side of the equation.
+                <me>
+                  \begin{array}{rclr}  (y-1)^2 \amp  = \amp   2 - \dfrac{y+2}{3} \amp  \\  y^2 - 2y + 1 \amp  = \amp  2 - \dfrac{y+2}{3} \amp  \text{ Perfect Square Trinomial } \\  3(y^2 - 2y + 1) \amp  = \amp  3\left(2 - \dfrac{y+2}{3} \right) \amp  \text{ Multiply by \(3\) }  \\ 3y^2 - 6y + 3 \amp  = \amp  6 - 3\left(\dfrac{y+2}{3}\right) \amp  \text{ Distribute }  \\  3y^2 - 6y + 3 \amp  = \amp  6 - (y+2) \amp  \\  3y^2 - 6y + 3 - 6 + (y+2) \amp  = \amp  0 \amp  \text{ Subtract \(6\), Add \((y+2)\) } \\  3y^2 - 5y - 1 \amp  = \amp  0 \amp \end{array}
+                </me>
+                A cursory attempt at factoring bears no fruit,
+                so we run this through the Quadratic Formula with <m>a = 3</m>,
+                <m>b = -5</m> and <m>c = -1</m>.
+                <me>
+                  \begin{array}{rclr}  y \amp  = \amp  \dfrac{-(-5) \pm \sqrt{(-5)^2 - 4(3)(-1)}}{2(3)} \amp  \\  y \amp  = \amp  \dfrac{5 \pm \sqrt{25 + 12}}{6} \amp  \\  y \amp  = \amp  \dfrac{5 \pm \sqrt{37}}{6} \amp \end{array}
+                </me>
+                Since <m>37</m> is prime, we have no way to reduce <m>\sqrt{37}</m>.
+                Thus, our final answers are <m>y = \frac{5 \pm \sqrt{37}}{6}</m>.
+                The reader is encouraged to supply the details of the challenging verification of the answers.
+              </p>
+            </li>
+            <li>
+              <p>
+                We proceed as before;
+                our goal is to gather the nonzero terms on one side of the equation.
+                <me>
+                  \begin{array}{rclr}  5(25 - 21x) \amp  = \amp   \dfrac{59}{4} - 25x^2 \amp  \\  125 - 105x \amp  = \amp  \dfrac{59}{4} - 25x^2 \amp  \text{ Distribute }  \\  4(125 - 105x) \amp  = \amp  4\left(\dfrac{59}{4} - 25x^2 \right) \amp  \text{ Multiply by \(4\) }  \\  500 - 420x \amp  = \amp  59 - 100x^2 \amp  \text{ Distribute }  \\  500 - 420x - 59 + 100x^2 \amp  = \amp  0 \amp  \text{ Subtract \(59\), Add \(100x^2\) }  \\  100x^2 - 420x + 441 \amp  = \amp  0 \amp  \text{ Gather like terms } \end{array}
+                </me>
+                With highly composite numbers like <m>100</m> and <m>441</m>,
+                factoring seems inefficient at best,<fn>
+                This is actually the Perfect Square Trinomial <m>(10x - 21)^2</m>.
+                </fn> so we apply the Quadratic Formula with <m>a = 100</m>,
+                <m>b = -420</m> and <m>c = 441</m>:
+                <me>
+                  \begin{array}{rclr}  x \amp  = \amp  \dfrac{-(-420) \pm \sqrt{(-420)^2 - 4(100)(441)}}{2(100)} \amp  \\  \amp  = \amp  \dfrac{420 \pm \sqrt{176000 - 176400}}{200} \amp  \\  \amp  = \amp  \dfrac{420 \pm \sqrt{0}}{200} \amp  \\  \amp  = \amp  \dfrac{420 \pm 0}{200} \amp  \\ \amp  = \amp  \dfrac{420}{200} \amp  \\  \amp  = \amp  \dfrac{21}{10} \amp \end{array}
+                </me>
+                To our surprise and delight we obtain just one answer,
+                <m>x = \frac{21}{10}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Our next equation <m>-4.9t^2 + 10t\sqrt{3} + 2 = 0</m>,
+                already has <m>0</m> on one side of the equation,
+                but with coefficients like <m>-4.9</m> and <m>10\sqrt{3}</m>,
+                factoring with integers is not an option.
+                We could make things a <em>bit</em>
+                easier by clearing the decimal
+                (by multiplying through by <m>10</m>)
+                to get  <m>-49t^2 + 100t\sqrt{3} + 20 = 0</m> but we simply cannot rid ourselves of the irrational number <m>\sqrt{3}</m>.
+                The Quadratic Formula is our only recourse.
+                With <m>a = -49</m>, <m>b = 100\sqrt{3}</m> and <m>c = 20</m> we get:
+                <me>
+                  \begin{array}{rclr}  t \amp  = \amp   \dfrac{-100\sqrt{3} \pm \sqrt{(100\sqrt{3})^2 - 4(-49)(20)}}{2(-49)} \amp  \\  \amp  = \amp   \dfrac{-100\sqrt{3} \pm \sqrt{30000 +3920}}{-98}  \amp  \\  \amp  = \amp   \dfrac{-100\sqrt{3} \pm \sqrt{33920}}{-98}  \amp  \\  \amp  = \amp   \dfrac{-100\sqrt{3} \pm 8\sqrt{530}}{-98}  \amp  \\  \amp  = \amp   \dfrac{2(-50\sqrt{3} \pm 4\sqrt{530})}{2(-49)}  \amp  \\  \amp  = \amp   \dfrac{-50\sqrt{3} \pm 4\sqrt{530}}{-49}  \amp  \text{ Reduce }  \\  \amp  = \amp   \dfrac{-(-50\sqrt{3} \pm 4\sqrt{530})}{49}  \amp  \text{ Properties of Negatives }  \\  \amp  = \amp  \dfrac{50\sqrt{3} \mp 4\sqrt{530}}{49} \amp  \text{ Distribute } \end{array}
+                </me>
+                You'll note that when we <sq>distributed</sq> the negative in the last step,
+                we changed the <sq><m>\pm</m></sq> to a <sq><m>\mp</m>.</sq>  While this is technically correct,
+                at the end of the day both symbols mean <sq>plus or minus</sq>,<fn>
+                There are instances where we need both symbols, however.
+                For example, the Sum and Difference of Cubes Formulas
+                (<xref ref="CommonFactoringFormulas">page</xref>)
+                can be written as a single formula:
+                <m>a^3 \pm b^3 = (a \pm b) (a^2 \mp ab + b^2)</m>.
+                In this case,
+                all of the <sq>top</sq> symbols are read to give the sum formula;
+                the <sq>bottom</sq> symbols give the difference formula.
+                </fn> so we can write our answers as <m>t =  \frac{50\sqrt{3} \pm 4\sqrt{530}}{49}</m>.
+                Checking these answers are a true test of arithmetic mettle.
+              </p>
+            </li>
+            <li>
+              <p>
+                At first glance,
+                the equation <m>2x^2 = 3x^4 - 6</m> seems misplaced.
+                The highest power of the variable <m>x</m> here is <m>4</m>,
+                not <m>2</m>,
+                so this equation isn't a quadratic equation - at least not in terms of the variable <m>x</m>.
+                It is, however,
+                an example of an equation that is <sq>Quadratic in Disguise</sq>.<fn>
+                More formally,
+                <em>quadratic in form.</em><idx><h>equation</h><h>quadratic ! quadratic in form</h></idx> Carl likes <sq>Quadratics in Disguise</sq> since it reminds him of the tagline of one of his beloved childhood cartoons and toy lines.
+                </fn> We introduce a new variable <m>u</m> to help us see the pattern - specifically we let <m>u = x^2</m>.
+                Thus <m>u^2 = (x^2)^2 = x^4</m>.
+                So in terms of the variable <m>u</m>,
+                the equation <m>2x^2 = 3x^4 - 6</m> is <m>2u = 3u^2 - 6</m>.
+                The latter is a quadratic equation,
+                which we can solve using the usual techniques:
+                <me>
+                  \begin{array}{rclr}  2u \amp  = \amp  3u^2 - 6 \amp  \\  0 \amp  = \amp  3u^2 - 2u - 6 \amp  \text{ Subtract \(2u\) } \end{array}
+                </me>
+                After a few attempts at factoring,
+                we resort to the Quadratic Formula with <m>a = 3</m>,
+                <m>b = -2</m> and <m>c = -6</m> to get the following:
+                <me>
+                  \begin{array}{rclr}  u \amp  = \amp  \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4(3)(-6)}}{2(3)} \amp  \\  \amp  = \amp  \dfrac{2 \pm \sqrt{4 + 72}}{6} \amp  \\  \amp  = \amp  \dfrac{2 \pm \sqrt{76}}{6} \amp  \\  \amp  = \amp  \dfrac{2 \pm \sqrt{4 \cdot 19}}{6} \amp  \\  \amp  = \amp  \dfrac{2 \pm 2\sqrt{19}}{6} \amp  \text{ Properties of Radicals }  \\  \amp  = \amp  \dfrac{2(1 \pm \sqrt{19})}{2(3)} \amp  \text{ Factor }  \\  \amp  = \amp  \dfrac{1 \pm \sqrt{19}}{3} \amp  \text{ Reduce } \end{array}
+                </me>
+                We've solved the equation for <m>u</m>,
+                but what we still need to solve the original equation<fn>
+                Or, you've solved the equation for <sq>you</sq> (<m>u</m>),
+                now you have to solve it for your instructor
+                (<m>x</m>).
+                </fn> - which means we need to find the corresponding values of <m>x</m>.
+                Since <m>u = x^2</m>, we have two equations:
+                <me>
+                  \begin{array}{rclr}  x^2  =\dfrac{1 + \sqrt{19}}{3} \amp  \text{ or }  \amp  x^2  =\dfrac{1 - \sqrt{19}}{3} \amp \end{array}
+                </me>
+                We can solve the first equation by extracting square roots to get  <m>x = \pm \sqrt{\frac{1 + \sqrt{19}}{3}}</m>.
+                The second equation, however,
+                has no real number solutions because
+                <m>\frac{1 - \sqrt{19}}{3}</m> is a negative number.
+                For our final answers we can rationalize the denominator<fn>
+                We'll say more about this technique in <xref ref="AppRadEqus">Section</xref>.
+                </fn> to get:
+                <me>
+                  x = \pm \sqrt{\dfrac{1 + \sqrt{19}}{3}} = \pm \sqrt{\dfrac{1 + \sqrt{19}}{3} \cdot \dfrac{3}{3}} = \pm \dfrac{\sqrt{3 + 3\sqrt{19}}}{3}
+                </me>
+                As with the previous exercise,
+                the very challenging check is left to the reader.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our last example above, the <sq>Quadratic in Disguise</sq>,
+      hints that the Quadratic Formula is applicable to a wider class of equations than those which are strictly quadratic.
+      We give some general guidelines to recognizing these beasts in the wild on the next page.
+      <em>Identifying Quadratics in Disguise</em>
+    </p>
+    <p>
+      An equation is a <sq>Quadratic in Disguise</sq> if it can be written in the form:
+      <m>ax^{2m} + bx^{m} + c = 0</m>.
+    </p>
+    <p>
+      In other words:
+      <ul>
+        <li>
+          <p>
+            There are exactly three terms,
+            two with variables and one constant term.
+          </p>
+        </li>
+        <li>
+          <p>
+            The exponent on the variable in one term is <em>exactly twice</em>
+            the variable on the other term.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      To transform a Quadratic in Disguise to a quadratic equation,
+      let <m>u = x^m</m> so <m>u^2 = (x^m)^2 = x^{2m}</m>.
+      This transforms the equation into <m>au^2 + bu + c = 0</m>.
+    </p>
+    <p>
+      For example,
+      <m>3x^6 - 2x^3 + 1 = 0</m> is a Quadratic in Disguise,
+      since <m>6 = 2 \cdot 3</m>.
+      If we let <m>u = x^3</m>,
+      we get <m>u^2 = (x^3)^2 = x^6</m>,
+      so the equation becomes <m>3u^2 - 2u + 1 = 0</m>.
+      However, <m>3x^6 - 2x^2 + 1 = 0</m> is
+      <em>not</em> a Quadratic in Disguise,
+      since <m>6 \neq 2\cdot 2</m>.
+      The substitution <m>u = x^2</m> yields <m>u^2 = (x^2)^2 = x^4</m>,
+      not <m>x^6</m> as required.
+      We'll see more instances of <sq>Quadratics in Disguise</sq> in later sections.
+    </p>
+    <p>
+      We close this section with a review of the <em>discriminant</em>
+      of a quadratic equation as defined below.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          <term>The Discriminant:</term>
+              <idx><h>discriminant</h></idx>
+              <idx><h>equation</h><h>quadratic ! discriminant</h></idx>
+          Given a quadratic equation <m>ax^2 + bx + c = 0</m>, the quantity <m>b^2 - 4ac</m> is called the <term>discriminant</term> of the equation.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The discriminant is the radicand of the square root in the quadratic formula:
+      <me>
+        x  = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+      </me>
+    </p>
+    <p>
+      It <em>discriminates</em> between the nature and number of solutions we get from a quadratic equation.
+      The results are summarized below.
+    </p>
+    <theorem xml:id="discriminanttheoremrealversion">
+      <statement>
+        <p>
+          <em>Discriminant Theorem:</em> Given a Quadratic Equation <m>ax^2 + bx + c = 0</m>,
+          let <m>D = b^2 - 4ac</m> be the discriminant.
+          <ul>
+            <li>
+              <p>
+                If <m>D > 0</m>,
+                there are two distinct real number solutions to the equation.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>D = 0</m>, there is one repeated real number solution.
+                <em>Note:</em> <sq>Repeated</sq> here comes from the fact that <sq>both</sq> solutions
+                <m>\frac{-b \pm 0}{2a}</m> reduce to <m>-\frac{b}{2a}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>D \lt 0</m>, there are no real solutions.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      For example,
+      the equation <m>x^2 + x - 1 = 0</m> has two real number solutions since the discriminant works out to be <m>(1)^2 - 4(1)(-1) = 5 > 0</m>.
+      This results in a <m>\pm \sqrt{5}</m> in the Quadratic Formula which then generates two different answers.
+      On the other hand,
+      <m>x^2 + x + 1 = 0</m> has no real solutions since here,
+      the discriminant is <m>(1)^2 - 4(1)(1) = -3 \lt  0</m> which generates a
+      <m>\pm \sqrt{-3}</m> in the Quadratic Formula.
+      The equation <m>x^2 + 2x +1 = 0</m> has discriminant
+      <m>(2)^2 - 4(1)(1) = 0</m> so in the Quadratic Formula we get a
+      <m>\pm \sqrt{0} = 0</m> thereby generating just one solution.
+      More can be said as well.
+      For example,
+      the discriminant of <m>6x^2 - x - 40 = 0</m> is <m>961</m>.
+      This is a perfect square,
+      <m>\sqrt{961} = 31</m>, which means our solutions are rational numbers.
+      When our solutions are rational numbers,
+      the quadratic actually factors nicely.
+      In our example <m>6x^2 - x - 40 = (2x+5)(3x-8)</m>.
+      Admittedly, if you've already computed the discriminant,
+      you're most of the way done with the problem and probably wouldn't take the time to experiment with factoring the quadratic at this point <mdash/> but we'll see another use for this analysis of the discriminant in <xref ref="rationalexpressionreviewex">Example</xref>.
+    </p>
+  </introduction>
+  <subsection xml:id="ExercisesforAppQuadEqus">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="solvequadfirst">Exercises</xref>
+      - <xref ref="solvequadlast"></xref>, find all real solutions.
+      Check your answers, as directed by your instructor.
+      <ol cols="2">
+        <li xml:id="solvequadfirst">
+          <p>
+            <m>3\left(x - \dfrac{1}{2}\right)^2 = \dfrac{5}{12}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4 - (5t+3)^2 = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3(y^2-3)^2-2 = 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 + x - 1 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3w^2 = 2-w</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y(y+4) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{z}{2} = 4z^2-1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>0.1v^2 + 0.2v = 0.3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 = x - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3-t = 2(t+1)^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x-3)^2 = x^2+9</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(3y-1)(2y+1) = 5y</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>w^4 + 3w^2 - 1 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2x^4 +x^2 = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(2-y)^4 = 3(2-y)^2 + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3x^4 + 6x^2 = 15x^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>6p + 2 = p^2 + 3p^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>10v = 7v^3 - v^5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y^2 - \sqrt{8} y = \sqrt{18} y - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 \sqrt{3} = x \sqrt{6} + \sqrt{12}</m>
+          </p>
+        </li>
+        <li xml:id="solvequadlast">
+          <p>
+            <m>\dfrac{v^2}{3} = \dfrac{v \sqrt{3}}{2} + 1</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solvequadcalcfirst">Exercises</xref>
+      - <xref ref="solvequadcalclast"></xref>,
+      find all real solutions and use a calculator to approximate your answers,
+      rounded to two decimal places.
+      <ol cols="2">
+        <li xml:id="solvequadcalcfirst">
+          <p>
+            <m>5.54^2 + b^2 = 36</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\pi r^2 = 37</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>54 = 8r\sqrt{2} + \pi r^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-4.9t^2 + 100t = 410</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 = 1.65(3-x)^2</m>
+          </p>
+        </li>
+        <li xml:id="solvequadcalclast">
+          <p>
+            <m>(0.5+2A)^2 = 0.7(0.1-A)^2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="absquadfirst">Exercises</xref>
+      - <xref ref="absquadlast"></xref>,
+      use <xref ref="absvalequality">Theorem</xref>
+      along with the techniques in this section to find all real solutions to the following.
+      <ol cols="2">
+        <li xml:id="absquadfirst">
+          <p>
+            <m>|x^2 - 3x| = 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|2x-x^2| = |2x-1|</m>
+          </p>
+        </li>
+        <li xml:id="absquadlast">
+          <p>
+            <m>|x^2 -x + 3| = |4-x^2|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that for every nonzero number <m>p</m>,
+            <m>x^2 + xp + p^2 = 0</m> has no real solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>t</m>: <m>-\dfrac{1}{2} g t^2 + vt + h = 0</m>.
+            Assume <m>g > 0</m>, <m>v \geq 0</m> and <m>h \geq 0</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>x = \dfrac{3 \pm \sqrt{5}}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\dfrac{4}{5}, -\dfrac{2}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \pm 1</m>, <m>\pm \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{-1 \pm \sqrt{5}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = -1, \dfrac{2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -2 \pm \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = \dfrac{1 \pm \sqrt{65}}{16}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v = -3, 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No real solution.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{-5 \pm \sqrt{33}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{2 \pm \sqrt{10}}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = \pm \sqrt{\dfrac{\sqrt{13} - 3}{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \pm 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{4 \pm \sqrt{6 + 2 \sqrt{13}}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0, \dfrac{5 \pm \sqrt{17}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p = -\dfrac{1}{3}, \pm \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v = 0, \pm \sqrt{2}, \pm \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{5\sqrt{2} \pm \sqrt{46}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\sqrt{2} \pm \sqrt{10}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v = -\dfrac{\sqrt{3}}{2}, 2\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>b = \pm \dfrac{\sqrt{13271}}{50} \approx \pm 2.30</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \pm \sqrt{\dfrac{37}{\pi}} \approx \pm 3.43</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \dfrac{-4\sqrt{2} \pm \sqrt{54\pi + 32}}{\pi}</m>,
+          <m>r \approx -6.32, 2.72</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{500 \pm 10\sqrt{491}}{49}</m>,
+          <m>t \approx 5.68, 14.73</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{99 \pm 6 \sqrt{165}}{13}</m>,
+          <m>x \approx 1.69, 13.54</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A = \dfrac{-107 \pm 7 \sqrt{70}}{330}</m>,
+          <m>A \approx -0.50, -0.15</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 1, 2, \dfrac{3 \pm \sqrt{17}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \pm 1, 2 \pm \sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -\dfrac{1}{2}, 1, 7</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The discriminant is: <m>D = p^2 - 4p^2 = -3p^2 \lt 0</m>.
+          Since <m>D \lt 0</m>, there are no real solutions.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{v \pm \sqrt{v^2 + 2gh}}{g}</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

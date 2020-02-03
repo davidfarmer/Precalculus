@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="AnalyticalTrigonometry">
+  <title>Analytical Trigonometry</title>
+  <xi:include  href="FundamentalTrigonometricIdentities.ptx"/>
+  <xi:include  href="MoreTrigonometricIdentities.ptx"/>
+  <xi:include  href="TheInverseTrigonometricFunctions.ptx"/>
+  <xi:include  href="TrigonometricEquationsandInequalities.ptx"/>
+</chapter>

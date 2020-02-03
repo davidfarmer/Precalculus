@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="PolynomialFunctions">
+  <title>Polynomial Functions</title>
+  <xi:include  href="GraphsofPolynomials.ptx"/>
+  <xi:include  href="Polydivision.ptx"/>
+  <xi:include  href="RealZeros.ptx"/>
+  <xi:include  href="ComplexZeros.ptx"/>
+</chapter>

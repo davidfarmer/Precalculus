@@ -1,0 +1,1288 @@
+<section xml:id="AppLines">
+  <title>Graphing Lines</title>
+  <introduction>
+    <p>
+      In <xref ref="Distance">Section</xref>,
+      we concerned ourselves with the finite line segment between two points <m>P</m> and <m>Q</m>.
+      Specifically, we found its length
+      (the distance between <m>P</m> and <m>Q</m>)
+      and its midpoint.
+      In this section, our focus will be on the <em>entire</em> line,
+      and ways to describe it algebraically.
+      Consider the generic situation below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{0}{4}{0}{4} \point[3pt]{(1,3), (3,1)} \arrow \reverse \arrow \polyline{(0,4),(4,0)} \tlabel(1.5,3){
+      <m>P\left(x_{0}, y_{0}\right)</m>} \tlabel(3.5,1){ <m>Q\left(x_{1}, y_{1}\right)</m>} \end{mfpic}
+    </p>
+    <p>
+      To give a sense of the <sq>steepness</sq> of the line,
+      we recall that we can compute the
+      <em>slope</em> of the line as follows.
+      (Read the character <m>\Delta</m> as <sq>change in</sq>.)
+    </p>
+    <proposition xml:id="slope">
+      <title>slope</title>
+      <statement>
+        <p>
+          [slope] The
+              <idx><h>slope</h><h>definition</h></idx>
+          <em>slope</em> <m>m</m> of the line containing the points
+          <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right)</m> is:
+              <idx><h>line</h><h>slope of</h></idx>
+              <idx><h>slope</h><h>of a line</h></idx>
+          <me>
+            m  = \dfrac{y_{1} - y_{0}}{x_{1} - x_{0}} = \dfrac{\Delta y}{\Delta x}
+          </me>,
+          provided <m>x_{1} \neq x_{0}</m>,
+          that is, <m>\Delta x \neq 0</m>.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      A couple of notes about <xref ref="slope">Equation</xref> are in order.
+      First, don't ask why we use the letter <sq><m>m</m></sq> to represent slope.
+      There are many explanations out there,
+      but apparently no one really knows for sure.<fn>
+      See
+      <url href="http://mathforum.org/dr.math/faq/faq.terms.html"><em>www.mathforum.org</em></url>
+      or
+      <url href="http://mathworld.wolfram.com/Slope.html"><em>www.mathworld.wolfram.com</em></url>
+      for discussions on this topic.
+      </fn> Secondly, the stipulation <m>x_{1} \neq x_{0}</m>
+      (or <m>\Delta x \neq 0</m>)
+      ensures that we aren't trying to divide by zero.
+      The reader is invited to pause to think about what is happening geometrically when the <sq>change in <m>x</m></sq> is <m>0</m>;
+      the anxious reader can skip along to the next example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Find the slope of the line containing the following pairs of points,
+          if it exists.
+          Plot each pair of points and the line containing them.
+          <ol cols="3">
+            <li>
+              <p>
+                <m>P(0,0)</m>, <m>Q(2,4)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(-1,2)</m>, <m>Q(3,4)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(-2,3)</m>, <m>Q(2,-3)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(-3,2)</m>, <m>Q(4,2)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(2,3)</m>, <m>Q(2,-1)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(2,3)</m>, <m>Q(2.1, -1)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution xml:id="slopeex">
+        <p>
+          In each of these examples,
+          we apply the slope formula, <xref ref="slope">Equation</xref>.
+          <ol>
+            <li>
+              <p>
+                <tabular>
+                  {m{2.5in}m{2.5in}} <m>m = \dfrac{4 - 0}{2 - 0} = \dfrac{4}{2} = 2</m> &amp; \begin{mfpic}[15]{-1}{5}{-1}{5} \point[3pt]{(0,0),(2,4)} \arrow \reverse \arrow \polyline{(-0.5,-1), (2.5, 5)} \tlabel(0.25,-0.5){ <m>P</m>} \tlabel(2,3.5){ <m>Q</m>} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                <tabular>
+                  {m{2.5in}m{2.5in}} <m>m = \dfrac{4 - 2}{3 - (-1)} = \dfrac{2}{4} = \dfrac{1}{2}</m> &amp; \begin{mfpic}[15]{-2}{4}{0}{5} \point[3pt]{(-1,2),(3,4)} \arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )} \tlabel(-1,1.5){ <m>P</m>} \tlabel(3,3.5){ <m>Q</m>} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1,1,2,3} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                <tabular>
+                  {m{2.5in}m{2.5in}} <m>m = \dfrac{-3 - 3}{2 - (-2)} = \dfrac{-6}{4} = -\dfrac{3}{2}</m> &amp; \begin{mfpic}[15]{-4}{4}{-5}{5} \point[3pt]{(-2,3),(2,-3)} \arrow \reverse \arrow \polyline{( -3,4.5), (3 ,-4.5 )} \tlabel(-1.5,3){ <m>P</m>} \tlabel(2.5,-3){ <m>Q</m>} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3,{ <m>-2</m>} -2,{ <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                <tabular>
+                  {m{2.5in}m{2.5in}} <m>m = \dfrac{2 - 2}{4 - (-3)} = \dfrac{0}{7} = 0</m> &amp; \begin{mfpic}[15]{-5}{5}{0}{4} \point[3pt]{(-3,2),(4,2)} \arrow \reverse \arrow \polyline{( -5,2), (5,2)} \tlabel[cc](-3,1.5){ <m>P</m>} \tlabel[cc](4,1.5){ <m>Q</m>} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>-4</m>} -4,{ <m>-3</m>} -3,{ <m>-2</m>} -2,{ <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                <tabular>
+                  {m{3in}m{2in}} <m>m = \dfrac{-1 - 3}{2 - 2} = \dfrac{-4}{0}</m>, which is undefined &amp; \begin{mfpic}[15]{0}{3}{-4}{4} \point[3pt]{(2,3),(2,-1)} \arrow \reverse \arrow \polyline{( 2,-4), (2,4)} \tlabel[t](2.25,3){ <m>P</m>} \tlabel[t](2.25,-1){ <m>Q</m>} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{1,2} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                <tabular>
+                  {m{3in}m{2in}} <m>m = \dfrac{-1 - 3}{2.1 - 2} = \dfrac{-4}{0.1}=-40</m> &amp; \begin{mfpic}[15]{0}{3}{-4}{4} \point[3pt]{(2,3),(2.1,-1)} \arrow \reverse \arrow \polyline{( 1.99,3.4), (2.15,-3)} \tlabel[t](2.25,3){ <m>P</m>} \tlabel[t](2.25,-1){ <m>Q</m>} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{1,2} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few comments about <xref ref="slopeex">Example</xref> are in order.
+      First, if the slope is positive then the resulting line is said to be <sq>increasing</sq>,
+      meaning as we move from left to right,<fn>
+      That is, as we increase the <m>x</m>-values <ellipsis/>
+      </fn> the <m>y</m>-values are getting larger.<fn>
+      We'll have more to say about this idea in <xref ref="ConstantandLinearFunctions">Section</xref>.
+      </fn> Similarly,
+      if the slope is negative, we say the line is <sq>decreasing</sq>,
+      since as we move from left to right,
+      the <m>y</m>-values are getting smaller.
+      A slope of <m>0</m> results in a horizontal line which we say is <sq>constant</sq>,
+      since the <m>y</m>-values here remain unchanged as we move from left to right,
+      and an undefined slope results in a vertical line.<fn>
+      Some authors use the unfortunate moniker <sq>no slope</sq> when a slope is undefined.
+      It's easy to confuse the notions of <sq>no slope</sq> with <sq>slope of <m>0</m></sq>.
+      For this reason,
+      we will describe slopes of vertical lines as <sq>undefined</sq>.
+      </fn>
+    </p>
+    <p>
+      Second, the larger the slope is in absolute value, the steeper the line.
+      You may recall from Intermediate Algebra that slope can be described as the ratio <sq><m>\frac{\mbox{ rise} }{\mbox{ run} }</m></sq>.
+      For example, if the slope works out to be <m>\frac{1}{2}</m>,
+      we can interpret this as a <sq>rise</sq> of <m>1</m> unit upward for every <sq>run</sq> of <m>2</m> units to the right:
+    </p>
+    <p>
+      \begin{mfpic}[20]{-2}{4}{0}{5} \point[3pt]{(-1,2),(1,3), (3,4)} \arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )} \dashed \polyline{(-1,2), (1,2), (1,3), (3,3), (3,4)} \tlabel[cc](2,2.5){ <sq>over <m>2</m></sq>} \tlabel[t](3.25,3.5){ <sq>up <m>1</m></sq>} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1,1,2,3} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic}
+    </p>
+    <p>
+      In this way,
+      we may view the slope as <sq>the <em>rate of change</em>
+      of <m>y</m> with respect to <m>x</m></sq>.
+      From the expression
+      <me>
+        m = \dfrac{\Delta y}{\Delta x}
+      </me>
+      we get <m>\Delta y = m \Delta x</m> so that the <m>y</m>-values change <sq><m>m</m></sq> times as fast as the <m>x</m>-values.
+      We'll have more to say about this concept in <xref ref="ConstantandLinearFunctions">Section</xref>
+      when we explore applications of linear functions;
+      presently, we will keep our attention focused on the analytic geometry of lines.
+      To that end,
+      our next task is to find algebraic equations that describe lines and we start with a discussion of vertical and horizontal lines.
+    </p>
+    <p>
+      Consider the two lines shown below:
+      <m>V</m> (for <sq>V</sq>ertical Line) and <m>H</m>
+      (for <sq>H</sq>orizontal Line).
+    </p>
+    <tabular>
+      {m{2in}m{3in}}
+      \begin{mfpic}[18]{-1}{5}{-5}{5}
+      \arrow \reverse \arrow \polyline{(3,-5), (3,5)}
+      \axes
+      \tlabel[cc](5,-0.5){<m>x</m>}
+      \tlabel[cc](0.5,5){<m>y</m>}
+      \xmarks{1,2,3,4}
+      \ymarks{-4,-3,-2,-1,1,2,3,4}
+      \tlpointsep{5pt}
+      \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+      \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+      \tcaption{The line <m>V</m>}
+      \end{mfpic} &amp;
+      \begin{mfpic}[18]{-5}{5}{-5}{1}
+      \arrow \reverse \arrow \polyline{(-5,-2), (5,-2)}
+      \axes
+      \tlabel[cc](5,-0.5){<m>x</m>}
+      \tlabel[cc](0.5,1){<m>y</m>}
+      \xmarks{-4,-3,-2,-1,1,2,3,4}
+      \ymarks{-4,-3,-2,-1}
+      \tlpointsep{5pt}
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+      \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1}
+      \tcaption{The line <m>H</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      All of the points on the line <m>V</m> have an <m>x</m>-coordinate of <m>3</m>.
+      Conversely, any point with an <m>x</m>-coordinate of <m>3</m> lies on the line <m>V</m>.
+      Said differently,
+      the point <m>(x,y)</m> lies on <m>V</m> if and only if <m>x = 3</m>.
+      Because of this, we say the equation <m>x=3</m> <em>describes</em>
+      the line <m>V</m>, or, said differently,
+      the <em>graph</em> of the equation <m>x=3</m> is the line <m>V</m>.
+    </p>
+    <p>
+      In <xref ref="Relations">Section</xref>,
+      we'll spend a great deal of time talking about graphing equations.
+      For now, it suffices to know that a graph of an equation is a plot of all of the points which make the equation true.
+      So to graph <m>x=3</m>,
+      we plot all of the points <m>(x,y)</m> which satisfy <m>x = 3</m> and this gives us our vertical line <m>V</m>.
+    </p>
+    <p>
+      Turning our attention to <m>H</m>,
+      we note that every point on <m>H</m> has a <m>y</m>-coordinate of <m>-2</m>,
+      and vice-versa.
+      Hence the equation <m>y = -2</m> describes the line <m>H</m>,
+      or the graph of the equation <m>y=-2</m> is <m>H</m>.
+      In general:
+    </p>
+    <proposition xml:id="verticalhorizontallines">
+      <title>vertical line</title>
+      <statement>
+        <p>
+          [vertical line] Equations of Vertical and Horizontal Lines
+          <ul>
+            <li>
+              <p>
+                The graph of the equation <m>x = a</m> in the <m>xy</m>-plane is a
+                <em>vertical line</em> through <m>(a, 0)</m>.
+                  <idx><h>line</h><h>vertical</h></idx>
+                  <idx><h>vertical line</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                The graph of the equation <m>y = b</m> in the <m>xy</m>-plane is a
+                <em>horizontal line</em> through <m>(0, b)</m>.
+                  <idx><h>line</h><h>horizontal</h></idx>
+                  <idx><h>horizontal line</h></idx>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Of course, we may be working on axes which aren't labeled with the <sq>usual</sq> <m>x</m>'s and <m>y</m>'s.
+      In this case,
+      we understand <xref ref="verticalhorizontallines">Equation</xref>
+      to say <sq><m>\text{ horizontal axis label } = a</m></sq> describes a <em>vertical</em>
+      line through <m>(a,0)</m> and <sq><m>\text{ vertical axis label } = b</m></sq> describes a <em>horizontal</em>
+      line through <m>(0,b)</m>.
+    </p>
+    <example xml:id="horizontalverticallineex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Graph the following equations in the <m>xy</m>-plane:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>y = 3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>x=-117</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find the equation of each of the given lines.
+              <tabular>
+                {m{2.5in}m{3in}} \begin{mfpic}[18]{-1}{5}{-5}{5} \arrow \reverse \arrow \polyline{(2,-5), (2,5)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{Line <m>L_{1}</m>} \end{mfpic} &amp; \begin{mfpic}[18]{-5}{5}{-1}{5} \arrow \reverse \arrow \polyline{(-5,3), (5,3)} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>s</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>4</m>} 4, {<m>3</m>} 3, {<m>2</m>} 2, {<m>1</m>} 1} \tcaption{Line <m>L_{2}</m>} \end{mfpic}
+              </tabular>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since we're in the familiar <m>xy</m>-plane,
+                the graph of <m>y=3</m> is a horizontal line through <m>(0,3)</m>,
+                shown below on the left and the graph of
+                <m>x = -117</m> is a vertical line through <m>(-117, 0)</m>.
+                We scale the <m>x</m>-axis differently than the <m>y</m>-axis to produce the graph below on the right.
+                <tabular>
+                  {m{3in}m{2.5in}} \begin{mfpic}[18]{-5}{5}{-1}{5} \arrow \reverse \arrow \polyline{(-5,3), (5,3)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \point[3pt]{(0,3)} \tlabel[cc](0.75, 3.5){<m>(0,3)</m>} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>4</m>} 4,{<m>3</m>} 3, {<m>2</m>} 2, {<m>1</m>} 1} \tcaption{The line <m>y = 3</m>} \end{mfpic} &amp; \begin{mfpic}[18]{-5}{1}{-5}{5} \arrow \reverse \arrow \polyline{(-3,-5), (-3,5)} \axes \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[3pt]{(-3,0)} \tlabel[cc](-1.75, 0.5){<m>(-117,0)</m>} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-117</m>} -3} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{The line <m>x=-117</m>} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>L_{1}</m> is a vertical line through <m>(2,0)</m>,
+                and the horizontal axis is labeled with <sq><m>x</m></sq>,
+                the equation of <m>L_{1}</m> is <m>x = 2</m>.
+                Since <m>L_{2}</m> is a horizontal line through <m>(0,3)</m> and the vertical axis is labeled as <sq><m>s</m></sq>,
+                the equation of this line is <m>s = 3</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Using the concept of slope,
+      we can develop equations for the other varieties of lines.
+      Suppose a line has a slope of <m>m</m> and contains the point <m>\left(x_{0}, y_{0}\right)</m>.
+      Suppose <m>(x,y)</m> is another point on the line, as indicated below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-2}{4}{0}{5} \point[3pt]{(-1,2), (3,4)} \arrow \reverse \arrow \polyline{( -2,1.5), (4 ,4.5 )} \dashed \polyline{(-1,2), (3,2), (3,4)} \tlabel[t](-1.5,1.5){<m>\left(x_{0}, y_{0}\right)</m>} \tlabel[t](3.5,4){<m>\left(x, y \right)</m>} \end{mfpic}
+    </p>
+    <p>
+      <xref ref="slope">Equation</xref> yields
+      <me>
+        \begin{array}{rclr} m \amp  = \amp  \dfrac{y - y_{0}}{x-x_{0}} \amp  \\ m\left(x - x_{0}\right) \amp  = \amp  y - y_{0} \amp  \\ y - y_{0} \amp  = \amp  m\left(x - x_{0}\right) \amp \end{array}
+      </me>
+      which is known as the <em>point-slope form</em> of a line.
+    </p>
+    <proposition xml:id="pointslope">
+      <title>point-slope form</title>
+      <statement>
+        <p>
+          [point-slope form] The<idx><h>point-slope form of a line</h></idx>
+              <idx><h>line</h><h>point-slope form</h></idx> <em>point-slope form</em> of the line with slope <m>m</m> containing the point <m>\left(x_{0}, y_{0}\right)</m> is the equation
+          <me>
+            y - y_{0}  =  m\left(x - x_{0}\right)
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      A few remarks about <xref ref="pointslope">Equation</xref> are in order.
+      First, note that if the slope <m>m = 0</m>,
+      then the line is horizontal and <xref ref="pointslope">Equation</xref>
+      reduces to <m>y - y_{0} = 0</m> or <m>y = y_{0}</m>,
+      as prescribed by <xref ref="verticalhorizontallines">Equation</xref>.<fn>
+      Here we have <m>y_{0}</m> as the constant whereas in the Equation we used the letter <m>b</m>.
+      The form <m>y =</m> constant is what matters.
+      </fn> Second,
+      we may need to change the letters in <xref ref="pointslope">Equation</xref>
+      from <sq><m>x</m></sq> and <sq><m>y</m></sq> depending on the context,
+      so while <xref ref="pointslope">Equation</xref>
+      should be committed to memory,
+      it should be understood that <sq><m>x</m></sq> refers to whichever variable is used to label the horizontal axis,
+      and <m>y</m> refers to whichever variable is used to label the vertical axis.
+      Lastly, while <xref ref="pointslope">Equation</xref> is, by far,
+      the easiest way to <em>construct</em>
+      the equation of a line given a point and a slope, more often than not,
+      the equation is solved for <m>y</m> and simplified into the form below.
+    </p>
+    <proposition xml:id="slopeintercept">
+      <title>slope-intercept form</title>
+      <statement>
+        <p>
+          [slope-intercept form] The<idx><h>slope-intercept form of a line</h></idx>
+              <idx><h>line</h><h>slope-intercept form</h></idx> <em>slope-intercept form</em> of the line with slope <m>m</m> and <m>y</m>-intercept <m>(0,b)</m> is the equation
+          <me>
+            y  =  mx + b
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      <xref ref="slopeintercept">Equation</xref> is probably<fn>
+      Hopefully?
+      </fn> a familiar sight from Intermediate Algebra.
+      You may recall from that class that the <sq>intercept</sq> in <sq>slope-intercept</sq> comes from the fact that this line <sq>intercepts</sq> or crosses the <m>y</m>-axis at the point <m>(0,b)</m>.<fn>
+      We can verify this algebraically by setting <m>x=0</m> in the equation <m>y=mx+b</m> and obtaining <m>y = b</m>.
+      </fn> If we set the slope,
+      <m>m = 0</m>, we obtain <m>y=b</m>,
+      the formula for Horizontal Lines first introduced in <xref ref="verticalhorizontallines">Equation</xref>.
+      Hence, any line which has a defined slope <m>m</m> can be represented in both point-slope and slope-intercept forms.
+      The only exceptions are vertical lines.<fn>
+      We'll have more to say about this in <xref ref="ConstantandLinearFunctions">Section</xref>.
+      </fn> There is one equation - the aptly named 'general form' - which describes every type of line and it is presented on the next page.
+    </p>
+    <proposition xml:id="generallineform">
+      <title>general form</title>
+      <statement>
+        <p>
+          [general form] Every line may be represented by an equation of the form <m>Ax + By = C</m>,
+          where <m>A</m>,
+          <m>B</m> and <m>C</m> are real numbers for which <m>A</m> and <m>B</m> aren't both zero.
+          This is called <em>a</em>
+              <idx><h>line</h><h>general form</h></idx>
+          <em>general form</em> of the line.
+              <idx><h>general form of a line</h></idx>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Note the indefinite article <sq>a</sq> in <xref ref="generallineform">Equation</xref>.
+      The line <m>y = 5</m> is a general form for the horizontal line through <m>(0,5)</m>,
+      but so are <m>3y = 15</m> and <m>0.5 y = 2.5</m>.
+      The reader is left to ponder the use of the definite article <sq>the</sq> in <xref ref="pointslope">Equations</xref>
+      and <xref ref="slopeintercept"></xref>.
+      Regardless of <em>which</em> form the equation of a line takes,
+      note that the variables involved are all raised to the first power.<fn>
+      Recall, <m>x = x^{1}</m>, <m>y = y^{1}</m>, etc.
+      </fn> For instance,
+      there are no <m>\sqrt{x}</m> terms,
+      no <m>y^2</m> terms or any variables appearing in denominators.
+      Let's look at a few examples.
+    </p>
+    <example>
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Graph the following equations in the <m>xy</m>-plane:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>y = 3x - 1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>2x + 4y = 3</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find the slope-intercept form of the line containing the points <m>(-1,3)</m> and <m>(2,1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the slope-intercept form of the equation of the line below: \begin{mfpic}[15]{-1}{6}{-1}{6} \arrow \reverse \arrow \polyline{(-1,6), (6,-1)} \point[3pt]{(0,5),(5,0)} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>s</m>} \xmarks{1,2,3,4,5} \ymarks{1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To graph a line, we need just two points on that line.
+                There are several ways to do this,
+                and we showcase two of them here.
+                For the first equation, we recognize that
+                <m>y = 3x-1</m> is in slope-intercept form,
+                <m>y = mx+b</m>, with <m>m = 3</m> and <m>b = -1</m>.
+                This immediately gives us one point on the graph <mdash/> the <m>y</m>-intercept <m>(0,-1)</m>.
+                From here, we use the slope
+                <m>m = 3 = \frac{3}{1}</m> and move one unit to the right and three units up,
+                to obtain a second point on the line, <m>(1,2)</m>.
+                Connecting these points gives us the graph on the left at the top of the next page.
+                The second equation,  <m>2x+4y = 3</m>,
+                is a general form of a line.
+                To get two points here,
+                we choose <sq>convenient</sq> values for one of the variables,
+                and solve for the other variable.
+                Choosing <m>x=0</m>, for example,
+                reduces <m>2x+4y = 3</m> to <m>4y = 3</m>,
+                or <m>y = \frac{3}{4}</m>.
+                This means the point <m>\left(0, \frac{3}{4} \right)</m> is on the graph.
+                Choosing <m>y = 0</m> gives <m>2x = 3</m>,
+                or <m>x = \frac{3}{2}</m>.
+                This gives is a second point on the line,
+                <m>\left(\frac{3}{2}, 0 \right)</m>.<fn>
+                You may recall, that this is the <m>x</m>-intercept of the line.
+                </fn> Our graph of
+                <m>2x+4y = 3</m> is on the right at the top of the next page.
+                <tabular>
+                  {m{2in}m{3in}}  \begin{mfpic}[10]{-3}{3}{-5}{5} \point[3pt]{(0,-1), (1,2)} \arrow \reverse \arrow \polyline{( -1,-4), (2,5)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-4,-3,-2,-1,1,2,3,4} \tcaption{<m>y = 3x-1</m>} \tlpointsep{4pt} \axislabels {x}{ { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic} &amp;  \begin{mfpic}[15]{-4}{4}{-1}{3} \point[3pt]{( 0,0.75), (1.5,0)} \arrow \reverse \arrow \polyline{(-3,2.25),(3,-0.75)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1} \tcaption{<m>2x+4y = 3</m>} \tlpointsep{4pt} \axislabels {x}{ { <m>-3</m>} -3, { <m>-2</m>} -2,{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2 , { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1,{ <m>2</m>} 2} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                We'll assume we're using the familiar <m>(x,y)</m> axis labels and begin by finding the slope of the line using <xref ref="slope">Equation</xref>:
+                <m>m = \frac{\Delta y}{\Delta x} = \frac{1 - 3}{2 - (-1)} = -\frac{2}{3}</m>.
+                Next, we substitute this result,
+                along with one of the given points,
+                into the point-slope equation of the line,
+                <xref ref="pointslope">Equation</xref>.
+                We have two options for the point <m>\left(x_{0}, y_{0}\right)</m>.
+                We'll use <m>(-1,3)</m> and leave it to the reader to check that using <m>(2,1)</m> results in the same equation.
+                Substituting into the point-slope form of the line, we get
+                <me>
+                  \begin{array}{rclr} y - y_{0} \amp  = \amp  m\left(x - x_{0}\right)  \amp  \\ y - 3 \amp  = \amp  -\dfrac{2}{3} \left(x - (-1)\right) \amp  \\ y - 3 \amp  = \amp  -\dfrac{2}{3} \left(x +1 \right) \amp  \\ y - 3\amp  = \amp  -\dfrac{2}{3}x - \dfrac{2}{3}\\ y\amp  = \amp  -\dfrac{2}{3}x - \dfrac{2}{3} + 3\\ y \amp  = \amp  -\dfrac{2}{3} x + \dfrac{7}{3}. \end{array}
+                </me>
+                We can check our answer by showing that both <m>(-1,3)</m> and <m>(2,1)</m> are on the graph of
+                <m>y  =  -\frac{2}{3} x + \frac{7}{3}</m> algebraically by showing that the equation holds true when we substitute <m>x = -1</m> and <m>y=3</m> and when <m>x = 2</m> and <m>y = 1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                From the graph,
+                we see that the points <m>(0,5)</m> and <m>(5,0)</m> are on the line,
+                so we may proceed as we did in the previous problem.
+                Here, however,
+                we use <sq><m>t</m></sq> in place of <sq><m>x</m></sq> and <sq><m>s</m></sq> in place of <sq><m>y</m></sq> in accordance to the axis labels given.
+                We find the slope <m>m = \frac{\Delta s}{\Delta t} = \frac{0 - 5}{5 - 0} = -1</m>.
+                As before, we have two points to choose from to substitute into the point-slope formula, and,
+                as before, we'll select one of them,
+                <m>(0,5)</m> and leave the computations with <m>(5,0)</m> to the reader.
+                <me>
+                  \begin{array}{rclr} s - s_{0} \amp  = \amp  m\left(t - t_{0}\right)  \amp  \\ s - 5 \amp  = \amp  (-1) \left(t -0 \right) \amp  \\ s- 5 \amp  = \amp -t \amp  \\ s\amp  = \amp  -t + 5. \end{array}
+                </me>
+                As before we can check this line contains both points
+                <m>(t,s) = (0,5)</m> and <m>(t,s) = (5,0)</m> algebraically.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      While every point on a line holds value and meaning,<fn>
+      Lines missing points - even one - usually belie some algebraic pathology which we'll discuss in more detail in <xref ref="RationalFunctions">Chapter</xref>.
+      </fn> we've reminded you of certain points,
+      called <sq>intercepts,</sq> which hold special enough significance to be singled out.
+      Formally, we define these as follows.
+    </p>
+    <definition xml:id="interceptsdefn">
+      <statement>
+        <p>
+          Given a graph of an equation in the <m>xy</m>-plane:
+          <ul>
+            <li>
+              <p>
+                A point on a graph which is also on the <m>x</m>-axis is called an
+                  <idx><h><m>x</m>-intercept</h></idx>
+                <em> <m>x</m>-intercept</em> of the graph.
+                To determine the <m>x</m>-intercept(s) of a graph,
+                set <m>y = 0</m> in the equation and solve for <m>x</m>.
+                <em>NOTE:</em> <m>x</m>-intercepts always have the form:
+                <m>(x_{0},0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                A point on a graph which is also on the <m>y</m>-axis is called an
+                  <idx><h><m>y</m>-intercept</h></idx>
+                <em> <m>y</m>-intercept</em> of the graph.
+                To determine the <m>y</m>-intercept(s) of a graph,
+                set <m>x = 0</m> in the equation and solve for <m>y</m>.
+                <em>NOTE:</em> <m>y</m>-intercepts always have the form:
+                <m>(0,y_{0})</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As usual, the labels of the axes in the problem will dictate the labels on the intercepts.
+      If we're working in the <m>vw</m>-plane,
+      for instance, there would be <m>v</m>- and <m>w</m>-intercepts.
+    </p>
+    <p>
+      The last little bit of analytic geometry we need to review about lines are the concepts of <sq>parallel</sq> and <sq>perpendicular</sq> lines.
+      Parallel lines do not intersect,<fn>
+      Well, at least in Euclidean Geometry <ellipsis/>
+      </fn> and hence, parallel lines necessarily have the same slope.
+      Perpendicular lines intersect at a right (<m>90^{\circ}</m>) angle.
+      The relationship between these slopes is somewhat more complicated,
+      and is summarized below.
+    </p>
+    <theorem xml:id="parallelperpendicularslopetheorem">
+      <statement>
+        <p>
+          Suppose line <m>L_{1}</m> has slope <m>m_{1}</m> and line <m>L_{2}</m> has slope <m>m_{2}</m>:
+          <ul>
+            <li>
+              <p>
+                <m>L_{1}</m> and <m>L_{2}</m> are parallel
+                (written <m>L_{1} \parallel L_{2}</m>)
+                if and only if <m>m_{1} = m_{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>m_{1} \neq 0</m> and
+                <m>m_{2} \neq 0</m> then <m>L_{1}</m> and <m>L_{2}</m> are perpendicular
+                (written <m>L_{1} \perp L_{2}</m>)
+                if and only if <m>m_{1} m_{2} = -1</m>.
+                <em>NOTE:</em> <m>m_{1} m_{2} = -1</m> is equivalent to <m>m_{2} = -\dfrac{1}{m_{1}}</m>,
+                so that perpendicular lines have slopes which are <sq>opposite reciprocals</sq> of one another.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-1}{5}{-1}{5}
+          \tlabel[cc](5,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \tlabel[cc](4.5,4){<m>L_{1}</m>}
+          \tlabel[cc](3.5,5){<m>L_{2}</m>}
+          \arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
+          \arrow \reverse \arrow \polyline{(-2,0), (3,5)}
+          \tlpointsep{4pt}
+          \tcaption{<m>L_{1} \parallel L_{2}</m>, <m>m_{1} = m_{2}</m>}
+          \axes
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-1}{5}{-1}{5}
+          \tlabel[cc](5,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \tlabel[cc](4.5,4){<m>L_{1}</m>}
+          \tlabel[cc](5,-1){<m>L_{2}</m>}
+          \arrow \reverse \arrow \polyline{(-1,-1), (4,4)}
+          \arrow \reverse \arrow \polyline{(-1,5), (4.5,-0.5)}
+          \polyline{(2,2), (1.75, 2.25), (2,2.5), (2.25, 2.25)}
+          \point[3pt]{(2,2)}
+          \tlpointsep{4pt}
+          \axes
+          \tcaption{<m>L_{1} \perp L_{2}</m>, <m>m_{1} m_{2} = -1</m>}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      A few remarks about <xref ref="parallelperpendicularslopetheorem">Theorem</xref> are in order.
+      First off, the theorem assumes that the slopes of the lines exist.
+      The reader is encouraged to think about the case when one
+      (or both)
+      of the slopes don't exist.
+      Along those same lines,
+      the reader is encouraged to think about why the stipulations <m>m_{1} \neq 0</m> and
+      <m>m_{2} \neq 0</m> appear in the statement regarding slopes of perpendicular lines,
+      and what happens in this case as well. (Think geometrically!) In <xref ref="perpendicularlineproof">Exercise</xref>,
+      you'll prove the assertion about the slopes of perpendicular lines.
+      For now, we accept it as true and use it in the following example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          For line <m>y = 2x-1</m> and the point <m>(3,4)</m>, find:
+          <ol>
+            <li>
+              <p>
+                the equation of the line parallel to the given line which contains the given point.
+              </p>
+            </li>
+            <li>
+              <p>
+                the equation of the line perpendicular to the given line which contains the given point.
+                Check your answers by graphing them,
+                along with the original line, using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since <m>y = 2x-1</m> is already in slope-intercept form,
+                we have the slope <m>m = 2</m>.
+                To find the line parallel to this line containing <m>(3,4)</m>,
+                we use the point-slope form with <m>m = 2</m> to get:
+                <me>
+                  \begin{array}{rclr} y - y_{0} \amp  = \amp  m\left(x - x_{0}\right)  \amp  \\ y - 4 \amp  = \amp  2 \left(x - 3\right) \amp  \\ y - 4 \amp  = \amp  2x - 6 \amp  \\ y\amp  = \amp  2x-2 \end{array}
+                </me>
+                Algebraically,
+                we can verify that the slope is indeed <m>2</m> and that when <m>x =3</m> we get <m>y = 4</m>.
+                Using a graphing utility with a window centered at the point <m>(3, 4)</m>,
+                we graph both <m>y = 2x-1</m> and
+                <m>y = 2x-2</m> below on the left and observe that they appear to be parallel.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the line perpendicular to
+                <m>y = 2x-1</m> containing <m>(3,4)</m>,
+                we use the slope <m>m = -\frac{1}{2}</m> in the point-slope formula:
+                <me>
+                  \begin{array}{rclr} y - y_{0} \amp  = \amp  m\left(x - x_{0}\right)  \amp  \\ y - 4 \amp  = \amp  -\dfrac{1}{2} \left(x - 3\right) \amp  \\ y - 4 \amp  = \amp  -\dfrac{1}{2} x + \dfrac{3}{2} \amp  \\ y\amp  = \amp  -\dfrac{1}{2} x + \dfrac{11}{2} \end{array}
+                </me>
+                Algebraically, we check that the slope is
+                <m>m = -\frac{1}{2}</m> and when <m>x = 3</m> we get <m>y = 4</m> as required.
+                When checking using our graphing utility,
+                we centered the viewing window at <m>(3, 4)</m> and had to <sq>square</sq> it,
+                removing its default aspect ratio,
+                to truly observe the perpendicular nature of the lines.
+                <tabular>
+                  <row>
+                    <cell><image width="37%" source="./AppLinesGraphics/A5Graph01.jpg"/></cell>
+                    <cell><image width="37%" source="./AppLinesGraphics/A5Graph02.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell><m>y = 2x-1</m> and</cell>
+                    <cell><m>y = 2x-1</m> and</cell>
+                  </row>
+                  <row>
+                    <cell><m>y=2x-2</m></cell>
+                    <cell><m>y= -\frac{1}{2} x + \frac{11}{2}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our last example with lines sets up a fourth kind of symmetry which will be revisited in <xref ref="InverseFunctions">Section</xref>.
+    </p>
+    <example xml:id="inversemidpointex2">
+      <statement>
+        <p>
+          Show that the points <m>(a,b)</m> and <m>(b,a)</m> in the <m>xy</m>-plane are symmetric about the line <m>y = x</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If <m>a = b</m> then <m>(a, b) = (a, a) = (b, a)</m> and this point lies on the line <m>y = x</m>.<fn>
+          Please ask your instructor if lying on the line counts as being <sq>symmetric about the line</sq> or not.
+          </fn> To prove the claim for the case when <m>a \neq b</m>,
+          we will show that the line <m>y = x</m> is a perpendicular bisector of the line segment with endpoints <m>(a,b)</m> and <m>(b,a)</m>,
+          as illustrated below.
+        </p>
+        <p>
+          \begin{mfpic}[15]{-1}{5}{-1}{5} \arrow \reverse \arrow \polyline{(-1,-1), (4,4)} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1,3.5){<m>(a,b)</m>} \tlabel[cc](3,0.5){<m>(b,a)</m>} \dashed \polyline{(1,3), (3,1)} \polyline{(2,2), (1.75, 2.25), (2,2.5), (2.25, 2.25)} \point[3pt]{(1,3),(3,1), (2,2)} \tlpointsep{4pt} \axes
+        </p>
+        <p>
+          \end{mfpic}
+        </p>
+        <p>
+          To show the <sq>perpendicular</sq> part,
+          we first note the slope of the line containing <m>(a,b)</m> and <m>(b,a)</m> is
+          <me>
+            m= \dfrac{a-b}{b-a} = \dfrac{\cancel{(a-b)}}{-\cancel{(b-a)}} = -1
+          </me>
+        </p>
+        <p>
+          Since the slope of <m>y = x = 1x + 0</m> is <m>m = 1</m>,
+          we see that the slopes of these two lines are negative reciprocals.
+          Hence, <m>y=x</m> and the line segment with endpoints <m>(a,b)</m> and <m>(b,a)</m> are perpendicular.
+          For the <sq>bisector</sq> part,
+          we use <xref ref="midpointformula">Equation</xref>
+          to find the midpoint of the line segment with endpoints <m>(a,b)</m> and <m>(b,a)</m>:
+          <me>
+            \begin{array}{rcl}  M \amp  = \amp  \left( \dfrac{a+b}{2},  \dfrac{b+a}{2} \right) \\ \amp  = \amp  \left( \dfrac{a+b}{2},  \dfrac{a+b}{2} \right) \end{array}
+          </me>
+        </p>
+        <p>
+          Since the <m>x</m> and <m>y</m> coordinates of this point are the same,
+          we find that the midpoint lies on the line <m>y=x</m>.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforAppLines">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="pointslopegivenlinefirst">Exercises</xref>
+      - <xref ref="pointslopegivenlinelast"></xref>,
+      find both the point-slope form and the slope-intercept form of the line with the given slope which passes through the given point.
+      <ol cols="5">
+        <li xml:id="pointslopegivenlinefirst">
+          <p>
+            <m>m = 3, \;\; P(3, -1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = -2, \;\; P(-5, 8)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = -1, \;\; P(-7, -1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = \frac{2}{3}, \;\; P(-2, 1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = -\frac{1}{5}, \;\; P(10, 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = \frac{1}{7}, \;\; P(-1, 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = 0, \;\; P(3, 117)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = -\sqrt{2}, \;\; P(0, -3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m = -5, \;\; P(\sqrt{3}, 2\sqrt{3})</m>
+          </p>
+        </li>
+        <li xml:id="pointslopegivenlinelast">
+          <p>
+            <m>m = 678, \;\; P(-1, -12)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="twopointsgivenlinefirst">Exercises</xref>
+      - <xref ref="twopointsgivenlinelast"></xref>,
+      find the slope-intercept form of the line which passes through the given points.
+      <ol cols="5">
+        <li xml:id="twopointsgivenlinefirst">
+          <p>
+            <m>P(0, 0), \; Q(-3, 5)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(-1, -2), \; Q(3, -2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(5, 0), \; Q(0, -8)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(3, -5), \; Q(7, 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(-1,5), \; Q(7, 5)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(4, -8), \; Q(5, -8)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P\left(\frac{1}{2}, \frac{3}{4} \right), \; Q\left(\frac{5}{2}, -\frac{7}{4} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P\left(\frac{2}{3}, \frac{7}{2} \right), \; Q\left(-\frac{1}{3}, \frac{3}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P\left(\sqrt{2}, -\sqrt{2} \right), \; Q\left(-\sqrt{2}, \sqrt{2} \right)</m>
+          </p>
+        </li>
+        <li xml:id="twopointsgivenlinelast">
+          <p>
+            <m>P\left(-\sqrt{3}, -1 \right), \; Q\left(\sqrt{3}, 1 \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphlineexerfirst">Exercises</xref>
+      - <xref ref="graphlineexerlast"></xref>, graph the line.
+      Find the slope,
+      <m>y</m>-intercept and <m>x</m>-intercept, if any exist.
+      <ol cols="4">
+        <li xml:id="graphlineexerfirst">
+          <p>
+            <m>y = 2x - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = 3 - x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \frac{2}{3} x + \frac{1}{3}</m>
+          </p>
+        </li>
+        <li xml:id="graphlineexerlast">
+          <p>
+            <m>y = \dfrac{1-x}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Graph <m>3v + 2w = 6</m> on both the <m>vw</m>- and <m>wv</m>-axes.
+            What characteristics to both graphs share?
+            What's different?
+          </p>
+        </li>
+        <li>
+          <p>
+            Find all of the points on the line <m>y=2x+1</m> which are <m>4</m> units from the point <m>(-1,3)</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="parallelfirst">Exercises</xref>
+      - <xref ref="parallellast"></xref>,
+      you are given a line and a point which is not on that line.
+      Find the line parallel to the given line which passes through the given point.
+      <ol cols="3">
+        <li xml:id="parallelfirst">
+          <p>
+            <m>y = 3x + 2, \; P(0, 0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = -6x + 5, \; P(3, 2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \frac{2}{3} x - 7, \; P(6, 0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \dfrac{4-x}{3}, \; P(1, -1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = 6, \; P(3, -2)</m>
+          </p>
+        </li>
+        <li xml:id="parallellast">
+          <p>
+            <m>x=1, \; P(-5,0)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="perpendlinefirst">Exercises</xref>
+      - <xref ref="perpendlinelast"></xref>,
+      you are given a line and a point which is not on that line.
+      Find the line perpendicular to the given line which passes through the given point.
+      <ol cols="4">
+        <li xml:id="perpendlinefirst">
+          <p>
+            <m>y = \frac{1}{3}x + 2, \; P(0, 0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = -6x + 5, \; P(3, 2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \frac{2}{3} x - 7, \; P(6, 0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \dfrac{4-x}{3}, \; P(1, -1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = 6, \; P(3, -2)</m>
+          </p>
+        </li>
+        <li xml:id="perpendlinelast">
+          <p>
+            <m>x=1, \; P(-5,0)</m>
+          </p>
+        </li>
+        <li xml:id="perpendicularlineproof">
+          <p>
+            We shall now prove that <m>y = m_{1}x + b_{1}</m> is perpendicular to
+            <m>y = m_{2}x + b_{2}</m> if and only if <m>m_{1} \cdot m_{2} = -1</m>.
+            To make our lives easier we shall assume that
+            <m>m_{1} > 0</m> and <m>m_{2} \lt 0</m>.
+            We can also
+            <q>move</q>
+            the lines so that their point of intersection is the origin without messing things up,
+            so we'll assume <m>b_{1} = b_{2} = 0</m>.
+            (Take a moment with your classmates to discuss why this is okay.)
+            Graphing the lines and plotting the points <m>O(0, 0)\;</m>,
+            <m>P(1, m_{1})\;</m> and <m>Q(1, m_{2})</m> gives us the following set up. \begin{mfpic}[18]{-5}{5}{-5}{5} \point[3pt]{(0, 0), (1.5, 0.75), (1.5, -3)} \arrow \reverse \arrow \polyline{( -4, -2), (4, 2)} \arrow \reverse \arrow \polyline{( -2, 4), (2, -4)} \polyline{(1.5, 0.75), (1.5, -3)} \tlabel(1.2, 1){<m>P</m>} \tlabel(-.5,-.6){<m>O</m>} \tlabel(1.2,-3.55){<m>Q</m>} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \end{mfpic} The line
+            <m>y = m_{1}x</m> will be perpendicular to the line
+            <m>y = m_{2}x</m> if and only if <m>\bigtriangleup OPQ</m> is a right triangle.
+            Let <m>d_{1}</m> be the distance from <m>O</m> to <m>P</m>,
+            let <m>d_{2}</m> be the distance from <m>O</m> to <m>Q</m> and let <m>d_{3}</m> be the distance from <m>P</m> to <m>Q</m>.
+            Use the Pythagorean Theorem to show that
+            <m>\bigtriangleup OPQ</m> is a right triangle if and only if <m>m_{1} \cdot m_{2} = -1</m> by showing
+            <m>d_{1}^{2} + d_{2}^{2} = d_{3}^2</m> if and only if <m>m_{1} \cdot m_{2} = -1</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>y+1 = 3(x-3)</m> <m>y = 3x-10</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y-8 = -2(x+5)</m> <m>y = -2x-2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y + 1 = -(x+7)</m> <m>y = -x-8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y - 1 = \frac{2}{3} (x+2)</m> <m>y = \frac{2}{3} x + \frac{7}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y - 4 = -\frac{1}{5} (x-10)</m> <m>y = -\frac{1}{5} x + 6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y - 4 = \frac{1}{7}(x + 1)</m> <m>y = \frac{1}{7}x + \frac{29}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y - 117 = 0</m> <m>y = 117</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y + 3 = -\sqrt{2}(x - 0)</m> <m>y = -\sqrt{2}x - 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y - 2\sqrt{3} = -5(x - \sqrt{3})</m> <m>y = -5x + 7\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y + 12 = 678(x + 1)</m> <m>y = 678x + 666</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -\frac{5}{3}x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \frac{8}{5}x - 8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \frac{9}{4}x - \frac{47}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -\frac{5}{4} x + \frac{11}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 2x + \frac{13}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \frac{\sqrt{3}}{3} x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y =2x-1</m> slope: <m>m = 2</m> <m>y</m>-intercept:
+          <m>(0,-1)</m> <m>x</m>-intercept:
+          <m>\left(\frac{1}{2}, 0 \right)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-4}{4} \point[3pt]{(0,-1), (0.5,0)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \arrow \reverse \arrow \function{-1,2, 0.1}{2*x-1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y =3-x</m> slope: <m>m = -1</m> <m>y</m>-intercept:
+          <m>(0,3)</m> <m>x</m>-intercept:
+          <m>(3, 0)</m> \columnbreak \begin{mfpic}[15]{-2}{5}{-2}{5} \point[3pt]{(0,3), (3,0)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1,1,2,3,4} \ymarks{-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \reverse \arrow \function{-1,4, 0.1}{3-x} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 3</m> slope: <m>m =0</m> <m>y</m>-intercept:
+          <m>(0,3)</m> <m>x</m>-intercept:
+          none \columnbreak \begin{mfpic}[15]{-3}{3}{-1}{5} \point[3pt]{(0,3)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \reverse \arrow \function{-3,3, 0.1}{3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 0</m> slope: <m>m =0</m> <m>y</m>-intercept:
+          <m>(0,0)</m> <m>x</m>-intercept:
+          <m>\{ (x,0) \, | \, \text{ \(x\) is a real number } \}</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-2}{2} \arrow \polyline{(0,-2), (0,2)} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,2){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1} \penwd{1.15pt} \arrow \reverse \arrow \function{-3,3, 0.1}{0} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \frac{2}{3} x + \frac{1}{3}</m> slope:
+          <m>m = \frac{2}{3}</m> <m>y</m>-intercept:
+          <m>\left(0, \frac{1}{3}\right)</m> <m>x</m>-intercept:
+          <m>\left(-\frac{1}{2}, 0\right)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-2}{3} \point[3pt]{(0,0.33333), (-0.5,0)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \arrow \reverse \arrow \function{-3,3, 0.1}{0.66667*x+0.33333} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{1-x}{2}</m> slope:
+          <m>m = -\frac{1}{2}</m> <m>y</m>-intercept:
+          <m>\left(0, \frac{1}{2}\right)</m> <m>x</m>-intercept:
+          <m>\left(1, 0\right)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-2}{3} \point[3pt]{(0,0.5), (1,0)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \arrow \reverse \arrow \function{-3,3, 0.1}{0.5-0.5*x} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = -\frac{3}{2} v + 3</m> slope:
+          <m>m = -\frac{3}{2}</m> <m>w</m>-intercept:
+          <m>\left(0, 3\right)</m> <m>v</m>-intercept:
+          <m>\left(2, 0\right)</m> \columnbreak \begin{mfpic}[15]{-1}{4}{-1}{4} \point[3pt]{(0,3), (2,0)} \axes \tlabel[cc](4,-0.5){<m>v</m>} \tlabel[cc](0.5,4){<m>w</m>} \xmarks{1,2,3} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, , {<m>3</m>} 3} \arrow \reverse \arrow \polyline{(-0.5, 3.75), (2.5, -0.75)} \end{mfpic} <m>v = -\frac{2}{3} w + 2</m> slope:
+          <m>m = -\frac{2}{3}</m> <m>v</m>-intercept:
+          <m>\left(0,2 \right)</m> <m>w</m>-intercept:
+          <m>\left(3,0\right)</m> \columnbreak \begin{mfpic}[15]{-1}{4}{-1}{4} \point[3pt]{(0,2), (3,0)} \axes \tlabel[cc](4,-0.5){<m>w</m>} \tlabel[cc](0.5,4){<m>v</m>} \xmarks{1,2,3} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, , {<m>3</m>} 3} \arrow \reverse \arrow \polyline{(3.75, -0.5), (-0.75, 2.5)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-1,-1)</m> and <m>\left(\frac{11}{5}, \frac{27}{5}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 3x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -6x + 20</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \frac{2}{3} x - 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -\frac{1}{3} x - \frac{2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y=-2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=-5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -3x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \frac{1}{6}x + \frac{3}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -\frac{3}{2} x +9</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 3x-4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y=0</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

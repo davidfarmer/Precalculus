@@ -1,0 +1,1098 @@
+<section xml:id="Parabolas">
+  <title>Parabolas</title>
+  <introduction>
+    <p>
+      We begin our study of the conic sections with parabolas,
+      since we have already seen parabolas described as graphs of quadratic functions,
+      <m>f(x) = ax^2 + bx + c</m>
+      (<m>a \neq 0</m>).
+      It turns out that we can also describe parabolas in terms of distances.
+    </p>
+    <definition xml:id="paraboladefn">
+      <statement>
+        <p>
+          Let <m>F</m> be a point in the plane and <m>D</m> be a line not containing <m>F</m>.
+          A <idx><h>parabola</h><h>definition of</h></idx> <term>parabola</term>
+          is the set of all points equidistant from <m>F</m> and <m>D</m>.
+          The point <m>F</m> is called the <term>focus</term>
+              <idx><h>parabola</h><h>focus</h></idx>
+              <idx><h>focus (foci)</h><h>of a parabola</h></idx>
+          of the parabola and the line <m>D</m> is called the <term>directrix</term>
+              <idx><h>parabola</h><h>directrix</h></idx>
+              <idx><h>directrix</h><h>of a parabola</h></idx>
+          of the parabola.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Schematically, we have the following.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-7}{7}{0}{5} \dashed \polyline{(0,2), (0,0), (0,-2)} \dashed \polyline{(0,2), (2, 0.5), (2, -2)} \dashed \polyline{(0,2), (-2,0.5), (-2, -2)} \dashed \polyline{(0,2), (4,2), (4, -2)} \dashed \polyline{(0,2), (-4,2), (-4, -2)} \dashed \polyline{(0,2), (6,4.5), (6, -2)} \dashed \polyline{(0,2), (-6,4.5), (-6, -2)} \plotsymbol[3pt]{Asterisk}{(0, 2)} \tlabel[cc](6.5, -2.5){<m>D</m>} \tlabel[cc](0, 2.5){<m>F</m>} \arrow \reverse \arrow \function{-6.5, 6.5, 0.1}{-2} \penwd{1.25pt} \arrow \reverse \arrow \function{-6.25,6.25,0.1}{(x**2)/8} \point[4pt]{(0,0)} \point[4pt]{(2,0.5)} \point[4pt]{(-2,0.5)} \point[4pt]{(4,2)} \point[4pt]{(-4,2)} \point[4pt]{(6,4.5)} \point[4pt]{(-6,4.5)} \tlabel[cc](0.5,-0.5){<m>V</m>} \end{mfpic}
+    </p>
+    <p>
+      Each dashed line from the point <m>F</m> to a point on the curve has the same length as the dashed line from the point on the curve to the line <m>D</m>.
+      The point suggestively labeled <m>V</m> is,
+      as you may expect, the <em>vertex</em>.
+      The
+          <idx><h>parabola</h><h>vertex</h></idx>
+          <idx><h>vertex</h><h>of a parabola</h></idx>
+      vertex is the point on the parabola closest to the focus.
+    </p>
+    <p>
+      We want to use only the distance definition of parabola to derive the equation of a parabola and,
+      if all is right with the universe,
+      we should get an expression much like those studied in <xref ref="QuadraticFunctions">Section</xref>.
+    </p>
+    <p>
+      For simplicity,
+      assume that the vertex is <m>(0,0)</m> and that the parabola opens upwards.
+      Let <m>p</m> denote the directed<fn>
+      We'll talk more about what <sq>directed</sq> means later.
+      </fn> distance from the vertex to the focus,
+      which by definition is the same as the distance from the vertex to the directrix.
+      Hence, the focus is <m>(0,p)</m> and the directrix is the line <m>y = -p</m>.
+      Our picture becomes
+    </p>
+    <p>
+      \begin{mfpic}[15]{-7}{7}{0}{5} \axes \plotsymbol[3pt]{Asterisk}{(0, 2)} \tlabel[cc](0.75, 1.5){<m>(0,p)</m>} \tlabel(7,-0.25){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \arrow \reverse \arrow \function{-6.5, 6.5, 0.1}{-2} \tlabel[cc](0, -2.5){<m>y = -p</m>} \tlabel[cc](7, 3.75){<m>(x,y)</m>} \dashed \polyline{(0,2), (6, 4.5), (6, -2)} \tlabel[cc](6, -2.5){<m>(x, -p)</m>} \tlabel[cc](0.5,-0.5){<m>(0,0)</m>} \penwd{1.25pt} \arrow \reverse \arrow \function{-6.25,6.25,0.1}{(x**2)/8} \point[4pt]{(6, -2)} \point[4pt]{(0,0)} \point[4pt]{(6,4.5)} \end{mfpic}
+    </p>
+    <p>
+      From the definition of parabola,
+      we know the distance from <m>(0,p)</m> to <m>(x,y)</m> is the same as the distance from <m>(x,-p)</m> to <m>(x,y)</m>.
+      Using the Distance Formula,
+      <xref ref="distanceformula">Equation</xref>, we get
+      <me>
+        \begin{array}{rclr} \sqrt{(x -0)^2 + (y-p)^2} \amp  = \amp  \sqrt{(x-x)^2 + (y - (-p))^2} \amp  \\ \sqrt{x^2 + (y-p)^2} \amp  = \amp  \sqrt{(y+p)^2} \amp  \\ x^2 + (y-p)^2 \amp  = \amp  (y+p)^2 \amp  \mbox{square both sides}  \\ x^2 + y^2 - 2py + p^2 \amp  = \amp  y^2 + 2py + p^2 \amp  \mbox{expand quantities}  \\ x^2 \amp  = \amp  4py \amp  \mbox{gather like terms} \end{array}
+      </me>
+    </p>
+    <p>
+      Solving for <m>y</m> yields <m>y = \frac{x^2}{4p} = \frac{1}{4p} x^2</m>,
+      which is a quadratic function of the form found in <xref ref="vertexofquadraticfunctions">Equation</xref>
+      with <m>a = \frac{1}{4p}</m> and vertex <m>(0, 0)</m>.
+    </p>
+    <p>
+      We know from previous experience that if the coefficient of <m>x^2</m> is negative,
+      the parabola opens downwards.
+      In the equation <m>y = \frac{1}{4p} x^2</m> this happens when <m>p \lt 0</m>.
+      In our formulation,
+      we say that <m>p</m> is a <sq>directed distance</sq> from the vertex to the focus:
+      if <m>p > 0</m>, the focus is above the vertex;
+      if <m>p \lt 0</m>, the focus is below the vertex.
+      The <idx><h>parabola</h><h>focal length</h></idx> <idx><h>focal length of a parabola</h></idx>
+      <em>focal length</em> of a parabola, that is,
+      the length from the vertex to the focus, is therefore <m>|p|</m>.
+    </p>
+    <p>
+      If we choose to place the vertex at an arbitrary point <m>(h,k)</m>,
+      we arrive at the following formula using either transformations from <xref ref="Transformations">Section</xref>
+      or re-deriving the formula from <xref ref="paraboladefn">Definition</xref>.
+    </p>
+    <proposition xml:id="standardvparabola">
+      <title>The Standard Equation of a Vertical  Parabola in the $xy$-plane:</title>
+      <statement>
+        <p>
+          [The Standard Equation of a Vertical Parabola in the <m>xy</m>-plane:] <idx><h>parabola</h><h>standard equation ! vertical</h></idx>
+          <em>The Standard Equation of a Vertical Parabola in the <m>xy</m>-plane:</em><fn>
+          That is, a parabola which opens either upwards or downwards.
+          </fn>
+        </p>
+        <p>
+          The equation of a (vertical) parabola with vertex <m>(h,k)</m> and focal length <m>|p|</m> is
+          <me>
+            (x-h)^2 = 4p(y-k)
+          </me>
+        </p>
+        <p>
+          If <m>p>0</m>, the parabola opens upwards;
+          if <m>p \lt 0</m>, it opens downwards.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Notice that in the standard equation of the parabola above,
+      only one of the variables, <m>x</m>, is squared.
+      As we'll see in the coming sections,
+      this is a quick way to distinguish the equation of a parabola from equations representing the other conic sections.
+    </p>
+    <p>
+      Before embarking on an example,
+      we take a moment to better illustrate the affect of the focal length <m>|p|</m> on the graph of a parabola.
+      Below we sketch three parabolas with focal length <m>0.5</m>,
+      <m>1</m>,
+      and <m>2</m>.
+      In each case,
+      the focus is denoted by an <sq><m>\ast</m>.</sq> In general,
+      as the focal length <m>|p|</m> increases,
+      the parabola becomes wider.
+    </p>
+    <tabular>
+      {m{1.5in}m{2in}m{3in}}
+      \begin{mfpic}[15]{-3}{3}{0}{5}
+      \plotsymbol[3pt]{Asterisk}{(0, 0.5)}
+      \tcaption{<m>p = 0.5</m>}
+      \tlabel[cc](0, 1.5){<m>F</m>}
+      \dashed \polyline{(-1,0.5), (1,0.5)}
+      \tlabel[cc](0,-0.5){<m>V</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-3,3,0.1}{(x**2)/2}
+      \point[4pt]{(0,0), (-1,0.5), (1,0.5)}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[15]{-5}{5}{0}{5}
+      \plotsymbol[3pt]{Asterisk}{(0, 1)}
+      \tcaption{<m>p = 1</m>}
+      \tlabel[cc](0, 1.5){<m>F</m>}
+      \dashed \polyline{(-2,1), (2,1)}
+      \tlabel[cc](0,-0.5){<m>V</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-4.2,4.2,0.1}{(x**2)/4}
+      \point[4pt]{(0,0), (2,1), (-2,1)}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[15]{-7}{7}{0}{5}
+      \plotsymbol[3pt]{Asterisk}{(0, 2)}
+      \tcaption{<m>p = 2</m>}
+      \tlabel[cc](0, 1.5){<m>F</m>}
+      \dashed \polyline{(-4,2), (4,2)}
+      \tlabel[cc](0,-0.5){<m>V</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-6.2,6.2,0.1}{(x**2)/8}
+      \point[4pt]{(0,0), (4,2), (-4,2)}
+      \end{mfpic}
+    </tabular>
+    <p>
+      The dashed line segment in each of the illustrations above is called the
+      <em>latus rectum</em> of the parabola.
+      More specifically,
+      the <idx><h>parabola</h><h>latus rectum</h></idx> <idx><h>latus rectum of a parabola</h></idx>
+      <em>latus rectum</em> of a parabola is the line segment with endpoints on the parabola which contains the focus and is parallel to the directrix.<fn>
+      Hence, the endpoints of the latus rectum are two points on <sq>opposite</sq> sides of the parabola.
+      </fn>
+    </p>
+    <p>
+      We leave it to the reader to show that the length of the latus rectum,
+      called the <idx><h>parabola</h><h>focal diameter</h></idx> <idx><h>focal diameter of a parabola</h></idx> <em>focal diameter</em>
+      of the parabola is <m>|4p| = 4|p|</m>,
+      which appears ever so conveniently in the standard form as stated in <xref ref="standardvparabola">Equation</xref>.
+    </p>
+    <p>
+      Knowing the focus and focal diameter allows to plot two points on the parabola in addition to the vertex,
+      thus producing a more accurate graph.
+    </p>
+    <example xml:id="verticalparabolaex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Graph <m>(x+1)^2 = -8(y-3)</m> in the <m>xy</m>-plane.
+                Find the vertex, focus, and directrix.
+                State the focal length, focal diameter,
+                and find the endpoints of the latus rectum.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the standard form of the equation of the parabola with focus <m>(2,1)</m> and directrix <m>y = -4</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the standard form of the equation of the parabola sketched below: \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \xmarks{-4, -3, -2, -1, 0, 1, 2, 3, 4} \ymarks{-4,-3,-2,-1,0,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel[cc](-1.5, 2.5){<m>(-1,2)</m>} \tlabel[cc](1.5,0.5){<m>(1,0)</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>3</m>} 3, {<m>4</m>} 4, {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.5,2.5,0.1}{2-(0.5)*((x+1)**2)} \point[4pt]{(-1,2), (1,0)} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Rewriting <m>(x+1)^2 = -8(y-3)</m> as <m>(x-(-1))^2 = -8(y-3)</m>,
+                we identify <m>h = -1</m> and <m>k = 3</m> in <xref ref="standardvparabola">Equation</xref>,
+                so the vertex is <m>(-1,3)</m>.
+                Additionally, we have <m>4p = -8</m> so <m>p = -2</m>.
+                Since <m>p \lt 0</m>, the focus is <em>below</em>
+                the vertex so the parabola opens <em>downwards</em>.
+                The focal length is <m>|p| = 2</m>,
+                which means the focus is <m>2</m> units below the vertex.
+                From <m>(-1,3)</m>,
+                we move down <m>2</m> units and find the focus at <m>(-1,3-2) = (-1,1)</m>.
+                Likewise the directrix is <m>2</m> units above the vertex,
+                or the horizontal line <m>y=3+2 = 5</m>.
+                The focal diameter is <m>|4p| = |-8| = 8</m>,
+                which means the parabola is <m>8</m> units wide at the focus.
+                Hence, the endpoints of the latus rectum are <m>4</m> units to the left and right of the focus.
+                Starting at <m>(-1,1)</m> and moving to the left <m>4</m> units,
+                we arrive at <m>(-1-4,1) = (-5,1)</m>.
+                Starting at <m>(-1,1)</m> and moving to the right <m>4</m> units we arrive at <m>(-1+4,1) = (3,1)</m>.
+                The final graph appears below on the left.
+              </p>
+            </li>
+            <li>
+              <p>
+                We begin by sketching the data given to us below on the right.
+                Since the focus is <m>(2,1)</m>,
+                we know the the vertex lies on the vertical line <m>x=2</m>.
+                Moreover, since the vertex is halfway between the focus and directrix,
+                we know the vertex is exactly <m>\frac{5}{2}</m> units <em>below</em>
+                the focus at <m>\left(2,1-\frac{5}{2} \right) = \left(2, -\frac{3}{2} \right)</m>.
+                This gives <m>h=2</m> and <m>k = -\frac{3}{2}</m>.
+                Since the focus of the parabola is <m>\frac{5}{2}</m> units <em>above</em>
+                the vertex we know <m>p = + \frac{5}{2}</m>.
+                Using <xref ref="standardvparabola">Equation</xref>, we get our final answer:
+                <m>(x-2)^2 = 4 \left(\frac{5}{2}\right) \left(y - \left(- \frac{3}{2}\right) \right)^2</m> or
+                <m>(x-2)^2 = 10 \left(y + \frac{3}{2}\right)^2</m>. \begin{mfpic}[15]{-7}{5}{-1}{6} \axes \xmarks{-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4} \ymarks{0, 1, 2, 3, 4, 5} \dashed \polyline{(-5,1), (3,1)} \plotsymbol[3pt]{Asterisk}{(-1,1)} \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,6){<m>y</m>} \tlabel[cc](-5.5,1.5){<m>(-5,1)</m>} \tlabel[cc](-1.5,3.5){<m>(-1,3)</m>} \tlabel[cc](3.5,1.5){<m>(3,1)</m>} \tlabel[cc](1.5, 4.5){<m>y=5</m>} \tcaption{The graph of
+                <m>(x+1)^2 = -8(y-3)</m>} \arrow \reverse \arrow \function{-7,5,0.1}{5} \tlpointsep{4pt} \axislabels {x}{ {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-6.5,4.5,0.1}{((x+1)**2)/-8+3} \point[4pt]{(-1,3), (3,1), (-5,1)} \end{mfpic} \begin{mfpic}[15]{-2}{4}{-5}{2} \axes \xmarks{-1,0,1,2,3} \ymarks{-4,-3,-2,-1,0,1} \tlabel(4,0.25){<m>x</m>} \tlabel(0.25,2){<m>y</m>} \tcaption \arrow \reverse \arrow \function{-1,4,0.1}{-4} \dashed \polyline{(2,1), (2, -4)} \plotsymbol[4pt]{Asterisk}{(2,1)} \point[4pt]{(2,-1.5)} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                From the graph,
+                we assume the point labeled <m>(-1,2)</m> is the vertex,
+                which means in the context of <xref ref="standardvparabola">Equation</xref>,
+                <m>h = -1</m> and <m>k = 2</m>.
+                Hence, at this point,
+                we know the equation is <m>(x-(-1))^2 = 4p (y-2)</m>, or,
+                more simply <m>(x+1)^2 = 4p(y-2)</m>.
+                To determine the value of <m>p</m>,
+                we see <m>(1,0)</m> is on the graph so when <m>x = 1</m>,
+                <m>y = 0</m>.
+                Substituting these values into our equation gives
+                <m>(1+1)^2 = 4p(0-2)</m> so <m>4=-8p</m> or <m>p = -\frac{1}{2}</m>.
+                (The fact <m>p\lt 0</m> tracks with the parabola opening downwards.)
+                Hence, <m>4p = 4\left( -\frac{1}{2} \right) = -2</m> so the equation of the parabola is <m>(x+1)^2 = -2(y-2)</m>.
+                We leave it to the reader to check our answer analytically and graphically.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We can produce <sq>horizontal</sq> parabolas in the <m>xy</m>-plane by reflecting our so-called <sq>vertical</sq> parabolas about the line <m>y=x</m>.
+      As you may recall from <xref ref="InverseFunctions">Section</xref>,
+      we accomplish this algebraically by interchanging the variables <m>x</m> and <m>y</m>.
+      Such parabolas necessarily open to the left or to the right,
+      which means that unlike the vertical parabolas,
+      these parabolas do not represent <m>y</m> as a function of <m>x</m>.
+      As we shall see, however,
+      they can <em>implicitly</em> describe <m>y</m> as a function of <m>x</m>,
+      provided certain restrictions are in place.
+    </p>
+    <proposition xml:id="standardhparabola">
+      <title>The Standard Equation of a Horizontal Parabola:</title>
+      <statement>
+        <p>
+          [The Standard Equation of a Horizontal Parabola:] <idx><h>parabola</h><h>standard equation ! horizontal</h></idx>
+          <em>The Standard Equation of a Horizontal Parabola:</em>
+        </p>
+        <p>
+          The equation of a (horizontal) parabola with vertex <m>(h,k)</m> and focal length <m>|p|</m> is
+          <me>
+            (y-k)^2 = 4p(x-h)
+          </me>
+        </p>
+        <p>
+          If <m>p>0</m>, the parabola opens to the right;
+          if <m>p \lt 0</m>, it opens to the left.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      As we saw in <xref ref="InverseFunctions">Section</xref>,
+      when we reflect a horizontal line across the line <m>y=x</m>,
+      we obtain a vertical line, and, as a result,
+      the directrix of a <em>horizontal</em>
+      parabola is a <em>vertical</em> line.
+      Moreover, the focus of a horizontal parabola is either to the <em>left</em>
+      or \text{ right } of the directrix.
+      Schematically:
+    </p>
+    <tabular>
+      {m{2.5in}m{2.5in}}
+      \begin{mfpic}[13]{0}{5}{-7}{7}
+      \plotsymbol[3pt]{Asterisk}{(-2, 0)}
+      \tlabel[cc](-2.5, 0){<m>F</m>}
+      \arrow \reverse \arrow \parafcn{-6.5, 6.5, 0.1}{(2,t)}
+      \tlabel[cc](2.5, 6.5){<m>D</m>}
+      \tlabel[cc](0.5,0){<m>V</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \parafcn{-6.25,6.25,0.1}{-((t**2)/8,t)}
+      \point[4pt]{(0,0)}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[13]{0}{5}{-7}{7}
+      \plotsymbol[3pt]{Asterisk}{(2, 0)}
+      \tlabel[cc](2.5, 0){<m>F</m>}
+      \arrow \reverse \arrow \parafcn{-6.5, 6.5, 0.1}{(-2,t)}
+      \tlabel[cc](-2.5, 6.5){<m>D</m>}
+      \tlabel[cc](-0.5,0){<m>V</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \parafcn{-6.25,6.25,0.1}{((t**2)/8,t)}
+      \point[4pt]{(0,0)}
+      \end{mfpic}
+      \\
+      <m>p\lt  0</m>
+      &amp;
+      <m>p>0</m>
+    </tabular>
+    <example xml:id="horizontalparabolaex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li xml:id="hparabolaeqnex1">
+            <p>
+              For each of the equations below:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Graph the equation in the <m>xy</m>-plane.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Find the vertex, focus, and directrix.
+                  State the focal length, focal diameter,
+                  and find the endpoints of the latus rectum.
+                </p>
+              </li>
+            </ul>
+            <ol>
+              <li>
+                <p>
+                  <m>(y-2)^2 = 12(x+1)</m>.
+                </p>
+              </li>
+              <li xml:id="ctsparabolaex">
+                <p>
+                  <m>y^2 + 4y + 8x = 4</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Represent each of the parabolas in <xref ref="hparabolaeqnex1">number</xref>
+              as the graphs of two or more explicit functions of <m>x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the standard form of the parabola satisfying the following characteristics:
+              <ol>
+                <li>
+                  <p>
+                    The focus is <m>(-4,2)</m> and the directrix is the <m>y</m>-axis.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The parabola whose graph is sketched below: \begin{mfpic}[15]{-5}{5}{-2}{8} \axes \xmarks{-4, -3, -2, -1, 0, 1, 2, 3, 4} \ymarks{-1,0,1,2,3,4,5,6,7} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,8){<m>y</m>} \tlabel[cc](-3.5, 3){<m>(-2,3)</m>} \tlabel[cc](-0.75,-0.75){<m>(0,0)</m>} \tlabel[cc](-1, 6){<m>(0,6)</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>7</m>} 7} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2,8,0.1}{( (((t-3)**2)/4.5) - 2, t)} \point[4pt]{(0,0), (-2,3), (0,6)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Rewriting <m>(y-2)^2 = 12(x+1)</m> as <m>(y-2)^2 = 12(x-(-1))</m>,
+                    we identify <m>h=-1</m> and <m>k=2</m> so per <xref ref="standardhparabola">Equation</xref>,
+                    the vertex is <m>(-1,2)</m>.
+                    We also see that <m>4p = 12</m> so <m>p = 3</m>.
+                    Since <m>p>0</m>, this means the focus is to the <em>right</em>
+                    of the vertex so the parabola opens to the <em>right</em>.
+                    The focal length is <m>|p| = 3</m>,
+                    which means the focus is <m>3</m> units to the right of the vertex.
+                    From <m>(-1,2)</m>,
+                    we move <m>3</m> units to the right and find the focus at <m>(-1+3,2) = (2,2)</m>.
+                    Likewise the directrix is <m>3</m> units to the left of the vertex,
+                    the vertical line <m>x=-1-3 = -4</m>.
+                    The focal diameter is <m>|4p| = |12| = 12</m>,
+                    which means the parabola is <m>12</m> units wide at the focus.
+                    Hence, the endpoints of the latus rectum are <m>6</m> units above and below the focus.
+                    Starting at <m>(2,2)</m> and moving down <m>6</m> units,
+                    we arrive at <m>(2,2-6) = (2,-4)</m>.
+                    Starting at <m>(2,2)</m> and moving up <m>6</m> units we arrive at <m>(2,2+6) = (2,8)</m>.
+                    The final graph appears below on the left.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Unlike the previous example,
+                    the equation  <m>y^2 + 4y + 8x = 4</m> is not in the form described  in <xref ref="standardhparabola">Equation</xref>.
+                    In order to get an equivalent equation in the form prescribed by  <xref ref="standardhparabola">Equation</xref>,
+                    we need to complete the square in <m>y</m>  on the left-hand side of the equation.
+                    Once that is done,
+                    we  factor out the coefficient of <m>x</m> on the other side of the equation below.
+                    <me>
+                      \begin{array}{rclr} y^2+4y+8x \amp   = \amp  4 \amp  \\ y^2 + 4y \amp   = \amp  -8x + 4 \amp   \\ y^2+4y+4 \amp  = \amp  -8x+4+4 \amp  \mbox{complete the square in \(y\).}  \\ (y+2)^2 \amp  = \amp -8x+8 \amp  \mbox{factor}   \\ (y+2)^2 \amp  = \amp  -8(x-1) \amp \end{array}
+                    </me>
+                    The equation <m>(y+2)^2 = -8(x-1)</m>,
+                    rewritten as <m>(y-(-2))^2 = -8(x-1)</m> is in the form given in <xref ref="standardhparabola">Equation</xref>.
+                    Identifying  <m>h = 1</m> and <m>k = -2</m>,
+                    we get the vertex is <m>(1,-2)</m>.
+                    Moreover, we see <m>4p = -8</m> so that <m>p = -2</m>.
+                    The fact that <m>p \lt  0</m>,
+                    means the focus will be the <em>left</em>
+                    of the vertex so the parabola will open to the <em>left</em>.
+                    Since the focal length is  <m>|p| = 2</m>,
+                    the focus is <m>2</m> units to the left of the vertex.
+                    From <m>(1,-2)</m> and move left <m>2</m> units and arrive at the focus <m>(1-2,-2) = (-1,-2)</m>.
+                    Similarly, the directrix is <m>2</m> units to the right of the vertex,
+                    the vertical line <m>x=1+2 = 3</m>.
+                    Since the focal diameter is <m>|4p|</m> is <m>8</m>,
+                    the parabola is <m>8</m> units wide at the focus.
+                    Starting at the focus <m>(-1,-2)</m> we move down <m>4</m> units and get <m>(-1,-2-4) = (-1,-6)</m>.
+                    Moving up <m>4</m> units from the focus we get <m>(-1,-2+4) = (-1,2)</m>.
+                    Hence, <m>(-1,-6)</m> and <m>(-1,2)</m> are the endpoints of the latus rectum.
+                    The final graph appears below on the right.    \begin{mfpic}[15][10]{-6}{4}{-5}{9} \axes \arrow\polyline{(-4,-5),(-4,9)} \arrow\polyline{(-4,9),(-4,-5)} \xmarks{-5,-4,-3, -2,-1,0,1,2,3} \ymarks{-4,-3,-2,-1,0,1,2,3,4,5,6,7,8} \tlabel(4,-0.25){<m>x</m>} \tlabel(0.25,9){<m>y</m>} \tcaption{The graph of
+                    <m>(y-2)^2 = 12(x+1)</m>} \plotsymbol[3pt]{Asterisk}{(2,2)} \tlpointsep{4pt}  \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8}  \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-4.5,8.5,.1}{(((t-2)**2)/12-1,t)} \point[4pt]{(2,8), (2,-4), (-1,2)} \end{mfpic}    \begin{mfpic}[15]{-3}{4}{-7}{3} \axes \arrow\polyline{(3,3),(3,-7)} \arrow\polyline{(3,-7),(3,3)} \xmarks{-2,-1,0,1,2,3} \ymarks{-6,-5,-4,-3,-2,-1,0,1,2} \tlabel(4,-0.25){<m>x</m>} \tlabel(0.25,3){ <m>y</m>} \tcaption{The graph of
+                    <m>y^2 + 4y + 8x = 4</m>} \plotsymbol[3pt]{Asterisk}{(-1,-2)} \tlpointsep{4pt}  \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2}  \penwd{1.25pt} \arrow \parafcn{-6.5,2.5,.1}{((4-t**2-4*t)/8,t)} \arrow \parafcn{2.5,-6.5,.1}{((4-t**2-4*t)/8,t)} \point[4pt]{(1,-2), (-1,2), (-1,-6)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                To describe these parabolas as graphs of functions of <m>x</m>,
+                we solve each equation for <m>y</m> in terms of <m>x</m>.
+                <ol>
+                  <li>
+                    <p>
+                      Starting with <m>(y-2)^2 = 12(x+1)</m>,
+                      we extract square roots to get <m>y - 2 = \pm \sqrt{12(x+1)}</m>.
+                      Isolating <m>y</m>, we get
+                      <m>y = 2 \pm \sqrt{12(x+1)}</m> which simplifies to <m>y = 2 \pm 2 \sqrt{3x+3}</m>.
+                      We let <m>f(x) = 2 + \sqrt{3x+3}</m> and <m>g(x) = 2-\sqrt{3x+3}</m>.
+                      Note that since <m>\sqrt{3x+3} \geq 0</m> by definition,
+                      <m>f(x) = 2 + \sqrt{3x+3} \geq 2</m> which means the graph of <m>f</m> describes the
+                      <em>upper</em> half of the parabola.
+                      Similarly, the graph of <m>g(x) = 2 - \sqrt{3x+3}</m> describes the
+                      <em>lower</em> half of the parabola.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      We can solve <m>y^2 + 4y + 8x = 4</m> for <m>y</m> by completing the square or using the quadratic formula.
+                      We leave the former to the reader,<fn>
+                      The standard form of the parabola will make an appearance using this route.
+                      </fn> and proceed with the latter for the sake of practice.
+                      To use the quadratic formula,
+                      we need to set the equation to <m>0</m>:
+                      <m>y^2 + 4y + 8x-4 = 0</m>.
+                      Since we are solving for <m>y</m>,
+                      we identify <m>a = 1</m>, <m>b=4</m> and <m>c = 8x-4</m>.
+                      We find the discriminant <m>b^2-4ac = (4)^2 - 4(1)(8x-4) = 32-32x</m> so
+                      <me>
+                        y = \dfrac{-4 \pm \sqrt{32-32x}}{2} = \dfrac{-4 \pm \sqrt{32(1-x)}}{2}  = \dfrac{-4 \pm 4\sqrt{2(1-x)}}{2} = -2 \pm 2 \sqrt{2-2x}
+                      </me>.
+                      We identify <m>f(x) =  -2 + 2 \sqrt{2-2x}</m> and <m>g(x) =  -2 - 2 \sqrt{2-2x}</m>.
+                      Since <m>\sqrt{2-2x} \geq 0</m>,
+                      we see the graph of <m>f</m> traces out the <em>upper</em>
+                      half of the parabola while the graph of <m>g</m> traces out the
+                      <em>lower</em> half of the parabola.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    We sketch the data below.
+                    Since the focus is <m>(-4,2)</m> and the directrix is a vertical line,
+                    we know the vertex must lie on the horizontal line <m>y = 2</m>.
+                    Moreover, we know the vertex must lie midway between the focus and directrix which in this case is <m>(-2,2)</m>.
+                    This gives <m>h = -2</m> and <m>k = 2</m>.
+                    Since the focus is <m>2</m> units to the <em>left</em>
+                    of the vertex, we know <m>p = -2</m>.
+                    Using <xref ref="standardhparabola">Equation</xref>,
+                    we get our answer as <m>(y-2)^2 = 4(-2)(x-(-2))</m> or
+                    <m>(y-2)^2 = -8(x+2)</m>. \begin{mfpic}[15]{-5}{2}{-1}{4} \axes \xmarks{-4, -3, -2, -1, 0} \ymarks{1,2,3} \dashed \polyline{(-4,2), (0,2)} \plotsymbol[3pt]{Asterisk}{(-4,2)} \tlabel(2,-0.5){<m>x</m>} \tlabel(0.5,4){<m>y</m>} \tlabel[cc](-4, 1.5){<m>(-4,2)</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(0,-1), (0,4)} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    From the graph,
+                    we may infer the vertex of the parabola is <m>(-2,3)</m> so <m>h = -2</m> and <m>k = 3</m>.
+                    Per <xref ref="standardhparabola">Equation</xref>,
+                    we have <m>(y-3)^2 = 4p(x-(-2))</m> or <m>(y-3)^2 = 4p(x+2)</m>.
+                    Since the graph contains <m>(0,6)</m>,
+                    we substitute <m>x=0</m> and <m>y=6</m> to get <m>(6-3)^2 = 4p(0+2)</m>.
+                    We find <m>p = \frac{9}{8}</m> which gives our final answer
+                    <m>(y-3)^2 = 4\left( \frac{9}{8} \right) (x+2)</m> or <m>(y-3)^2 = \frac{9}{2} (x+2)</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As we have seen,
+      not all equations which describe parabolas will immediately match <xref ref="standardvparabola">Equation</xref>
+      or <xref ref="standardhparabola">Equation</xref>.
+      Indeed, completing the square as we did with the equation in <xref ref="ctsparabolaex">number</xref>
+      in <xref ref="horizontalparabolaex">Example</xref>
+      will be a necessary skill not only in this section,
+      but in the rest of this chapter.
+    </p>
+    <p>
+      For parabolas,
+      we summarize the procedure for putting an equation of a parabola into standard form below.
+      Of key importance is that in the equation for a parabola, one,
+      and only one, of the variables are squared.
+    </p>
+    <p>
+      <em>To Write the Equation of a Parabola in Standard Form</em>
+      <ol>
+        <li>
+          <p>
+            Group the variable which is squared on one side of the equation and position the non-squared variable and the constant on the other side.
+          </p>
+        </li>
+        <li>
+          <p>
+            Complete the square if necessary and divide by the coefficient of the perfect square.
+          </p>
+        </li>
+        <li>
+          <p>
+            Factor out the coefficient of the non-squared variable from it and the constant.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In studying quadratic functions,
+      we have seen parabolas used to model physical phenomena such as the trajectories of projectiles.
+      Other applications of the parabola concern its <idx><h>parabola</h><h>reflective property</h></idx>
+      <sq>reflective property</sq> which necessitates knowing about the focus of a parabola.
+      For example,
+      many satellite dishes are formed in the shape of a
+          <idx><h>paraboloid</h></idx>
+      <em>paraboloid of revolution</em> as depicted below.
+    </p>
+    <tabular>
+      <row>
+        <cell><image width="46%" source="./ParabolasGraphics/Paraboloid01.jpg"/></cell>
+        <cell><image width="46%" source="./ParabolasGraphics/Paraboloid02.jpg"/></cell>
+      </row>
+    </tabular>
+    <p>
+      Every cross section through the vertex of the paraboloid is a parabola with the same focus.
+      To see why this is important,
+      imagine the dashed lines below as electromagnetic waves heading towards a parabolic dish.
+      It turns out that the waves reflect off the parabola and concentrate at the focus which then becomes the optimal place for the receiver.
+    </p>
+    <p>
+      If, on the other hand,
+      we imagine the dashed lines as emanating from the focus,
+      we see that the waves are reflected off the parabola in a coherent fashion as in the case in a flashlight.
+      Here, the bulb is placed at the focus and the light rays are reflected off a parabolic mirror to give directional light.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{7}{-1}{10} \arrow \reverse \arrow \rotatepath{(0,0), -45} \function{-6.25,6.25,0.1}{(x**2)/8} \dashed \rotatepath{(0,0), -45} \polyline{(0,2), (2, 0.5), (2, 6)} \dashed \rotatepath{(0,0), -45} \polyline{(0,2), (-2,0.5), (-2, 6)} \dashed \rotatepath{(0,0), -45} \polyline{(0,2), (4,2), (4, 6)} \dashed \rotatepath{(0,0), -45} \polyline{(0,2), (-4,2), (-4, 6)} \dashed \rotatepath{(0,0), -45} \polyline{(0,2), (6,4.5), (6, 6)} \dashed \rotatepath{(0,0), -45} \polyline{(0,2), (-6,4.5), (-6, 6)} \plotsymbol[3pt]{Asterisk}{(1.414, 1.414)} \tlabel[cc](2, 2){<m>F</m>} \gfill \rotatepath{(0,0), -45} \circle{(2,0.5),0.07} \gfill \rotatepath{(0,0), -45} \circle{(-2,0.5),0.07} \gfill \rotatepath{(0,0), -45} \circle{(4,2),0.07} \gfill \rotatepath{(0,0), -45} \circle{(-4,2),0.07} \gfill \rotatepath{(0,0), -45} \circle{(6,4.5),0.07} \gfill \rotatepath{(0,0), -45} \circle{(-6,4.5),0.07} \end{mfpic}
+    </p>
+    <example>
+      <statement>
+        <p>
+          A satellite dish is to be constructed in the shape of a paraboloid of revolution.
+          If the receiver placed at the focus is located 2 ft above the vertex of the dish,
+          and the dish is to be 12 feet wide,
+          how deep will the dish be?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          One way to approach this problem is to determine the equation of the parabola suggested to us by this data.
+          For simplicity,
+          we'll assume the vertex is <m>(0,0)</m> and the parabola opens upwards.
+          Our standard form for such a parabola is <m>x^2 = 4py</m>.
+          Since the focus is <m>2</m> units above the vertex,
+          we know <m>p=2</m>, so we have <m>x^2 = 8y</m>.
+          Visually,
+        </p>
+        <p>
+          \begin{mfpic}[25]{-7}{7}{0}{5} \axes \xmarks{-6, -5, -4, -3, -2, -1, 0,1,2,3,4,5,6} \ymarks{0,1,2,3,4} \arrow \polyline{(-5.5, 4.5),(5.5,4.5)} \arrow \polyline{(5.5,4.5), (-5.5, 4.5)} \arrow \polyline{(6, 0.5),(6,4)} \arrow \polyline{(6,4), (6,0.5)} \plotsymbol[3pt]{Asterisk}{(0, 2)} \tlabel[cc](6.25,2.25){?} \tlabel(6.25, 4.25){<m>(6,y)</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(7, -0.25){<m>x</m>} \gclear \tlabelrect[cc](0,4){<m>12</m> units wide} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>6</m>} 6} \axislabels {y}{{<m>2</m>} 2}
+        </p>
+        <p>
+          \penwd{1.25pt} \arrow \function{-6.25,6.25,0.1}{(x**2)/8} \arrow \function{6.25,-6.25,0.1}{(x**2)/8} \point[4pt]{(0,0), (6,36/8), (-6,36/8)} \end{mfpic}
+        </p>
+        <p>
+          Since the parabola is <m>12</m> feet wide,
+          we know the edge is <m>6</m> feet from the vertex.
+          To find the depth,
+          we are looking for the <m>y</m> value when <m>x=6</m>.
+          Substituting <m>x=6</m> into the equation of the parabola yields
+          <m>6^2 = 8y</m> or <m>y = \frac{36}{8} = \frac{9}{2} = 4.5</m>.
+          Hence, the dish will be <m>4.5</m> feet deep.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforParabolas">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="parabolasketchfirst">Exercises</xref>
+      - <xref ref="parabolasketchlast"></xref>,
+      graph of the given equations in the <m>xy</m>-plane.
+      Find the vertex, focus and directrix.
+      Include the endpoints of the latus rectum in your sketch.
+      <ol cols="4">
+        <li xml:id="parabolasketchfirst">
+          <p>
+            <m>(x - 3)^{2} = -16y</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(x + \frac{7}{3}\right)^{2} = 2\left(y + \frac{5}{2}\right)</m>
+          </p>
+        </li>
+        <li xml:id="paranotfcnone">
+          <p>
+            <m>(y - 2)^{2} = -12(x + 3)</m>
+          </p>
+        </li>
+        <li xml:id="paranotfcntwo">
+          <p>
+            <m>(y + 4)^{2} = 4x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x-1)^2 = 4(y+3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x+2)^2 = -20(y-5)</m>
+          </p>
+        </li>
+        <li xml:id="paranotfcnthree">
+          <p>
+            <m>(y-4)^2 = 18(x-2)</m>
+          </p>
+        </li>
+        <li xml:id="paranotfcnfour">
+          <p>
+            <m>\left(y+ \frac{3}{2}\right)^2 = -7 \left(x+ \frac{9}{2}\right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="stdfrmparabolafirst">Exercises</xref>
+      - <xref ref="stdfrmparabolalast"></xref>,
+      put the equation into standard form.
+      Find the vertex, focus and directrix.<fn>
+      <ellipsis/> assuming the equation were graphed in the <m>xy</m>-plane.
+      </fn>
+      <ol cols="4">
+        <li xml:id="paranotfcnfive">
+          <p>
+            <m>y^{2} - 10y - 27x + 133 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>25x^{2} + 20x + 5y - 1 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 + 2x - 8y + 49 = 0</m>
+          </p>
+        </li>
+        <li xml:id="paranotfcnsix">
+          <p>
+            <m>2y^2 + 4y +x - 8 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2-10x+12y+1=0</m>
+          </p>
+        </li>
+        <li xml:id="stdfrmparabolalast">
+          <p>
+            <m>3y^2-27y+4x+\frac{211}{4} = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            For each of the equations given in <xref ref="parabolasketchfirst">Exercises</xref>
+            - <xref ref="stdfrmparabolalast"></xref> that do <em>not</em>
+            describe <m>y</m> as a function of <m>x</m>,
+            find two or more explicit functions of <m>x</m> represented by each of the equations.
+            (See <xref ref="horizontalparabolaex">Example</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="buildparafromgraphfirst">Exercises</xref>
+      - <xref ref="buildparafromgraphlast"></xref>,
+      find an equation for the parabola whose graph is given.
+      <ol cols="2">
+        <li xml:id="buildparafromgraphfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1, 1){<m>(0,2)</m>} \tlabel[cc](-2.25,-3.75){<m>(-2,-6)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ 1, {<m>4</m>} 2, {<m>6</m>} 3, {<m>8</m>} 4, {<m>-4</m>} -2, {<m>-6</m>} -3} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.8,0.8,0.1}{(x+2)**2-3} \point[4pt]{(-2,-3), (0,1)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-1.25, 4.25){<m>(0,4)</m>} \tlabel[cc](3,0.75){<m>(\sqrt{2},0)</m>} \tlabel[cc](-3.25,0.75){<m>(-\sqrt{2},0)</m>} \xmarks{-3,,-1,1,3} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-2</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 3} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3,0.1}{4-(x**2)} \point[4pt]{(0,4), (-2,0), (2,0)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-6}{5}{-3}{7} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](-5.5, 2){<m>(-4,2)</m>} \tlabel[cc](1, 4.75){<m>(0,4)</m>} \tlabel[cc](1, -1){<m>(0, 0)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-2 step 1 until 6} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>5</m>} 5,{<m>6</m>} 6, {<m>-1</m>} -1, {<m>-2</m>} -2} \penwd{1.25pt} \arrow \function{-4,5,0.1}{2-sqrt(x+4)} \arrow \function{-4,5,0.1}{2+sqrt(x+4)} \point[4pt]{(-4,2), (0,0), (0,4)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="buildparafromgraphlast">
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1.25,2){<m>(0,4)</m>} \tlabel[cc](1.5,-2){<m>(0,-4)</m>} \tlabel[cc](2,-0.75){<m>(1,0)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>4</m>} 4} \axislabels {y}{{<m>2</m>} 1, {<m>4</m>} 2, {<m>6</m>} 3, {<m>8</m>} 4, {<m>-2</m>} -1, {<m>-4</m>} -2, {<m>-6</m>} -3, {<m>-8</m>} -4} \penwd{1.25pt} \arrow \reverse \function{-5,1,0.1}{2*sqrt(1-x)} \arrow \reverse \function{-5,1,0.1}{-2*sqrt(1-x)} \point[4pt]{(1,0), (0,2), (0,-2)} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="buildparafirst">Exercises</xref>
+      - <xref ref="buildparalast"></xref>,
+      find an equation for the parabola which fits the given criteria.
+      <ol cols="3">
+        <li xml:id="buildparafirst">
+          <p>
+            Vertex <m>(7, 0)</m>, focus <m>(0, 0)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Focus <m>(10, 1)</m>, directrix <m>x = 5</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Vertex <m>(-8, -9)</m>; <m>(0, 0)</m> and
+            <m>(-16, 0)</m> are points on the curve.
+          </p>
+        </li>
+        <li xml:id="buildparalast">
+          <p>
+            The endpoints of latus rectum are <m>(-2, -7)</m> and <m>(4, -7)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The mirror in Carl's flashlight is a paraboloid of revolution.
+            If the mirror is 5 centimeters in diameter and 2.5 centimeters deep,
+            where should the light bulb be placed so it is at the focus of the mirror?
+          </p>
+        </li>
+        <li>
+          <p>
+            A parabolic Wi-Fi antenna is constructed by taking a flat sheet of metal and bending it into a parabolic shape.<fn>
+            This shape is called a <sq>parabolic cylinder.</sq>
+            </fn>  If the cross section of the antenna is a parabola which is 45 centimeters wide and 25 centimeters deep,
+            where should the receiver be placed to maximize reception?
+          </p>
+        </li>
+        <li xml:id="parabolaarch">
+          <p>
+            A parabolic arch is constructed which is 6 feet wide at the base and 9 feet tall in the middle.
+            Find the height of the arch exactly 1 foot in from the base of the arch.
+          </p>
+        </li>
+        <li>
+          <p>
+            A popular novelty item is the <sq>mirage bowl.</sq> Follow this
+            <url href="http://spie.org/etop/2007/etop07methodsV.pdf"><em>link</em></url>
+            to see another startling application of the reflective property of the parabola.
+          </p>
+        </li>
+        <li>
+          <p>
+            With the help of your classmates,
+            research spinning liquid mirrors.
+            To get you started,
+            <url href="http://www.astro.ubc.ca/LMT/lzt/"><em>here</em></url>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>(x - 3)^{2} = -16y</m> { Vertex <m>(3, 0)</m>} { Focus <m>(3, -4)</m>} { Directrix <m>y = 4</m>} { Endpoints of latus rectum <m>(-5, -4)</m>,
+          <m>(11, -4)</m>} \columnbreak \begin{mfpic}[10]{-6}{12}{-5}{5} \axes \xmarks{-5 step 1 until 11} \ymarks{-4 step 1 until 4} \arrow \reverse \arrow \polyline{(-6,4),(12,4)} \plotsymbol[4pt]{Asterisk}{(3,-4)} \tlabel(12,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \point[4pt]{(3,0),(-5,-4),(11,-4)} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-5.5,11.5,0.1}{((x - 3)**2)/(-16)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x + \frac{7}{3}\right)^{2} = 2\left(y + \frac{5}{2}\right)</m> { Vertex <m>\left(-\frac{7}{3}, -\frac{5}{2} \right)</m>} { Focus
+          <m>\left(-\frac{7}{3}, -2 \right)</m>} { Directrix <m>y = -3</m>} { Endpoints of latus rectum <m>\left(-\frac{10}{3}, -2 \right)</m>,
+          <m>\left(-\frac{4}{3}, -2 \right)</m>} \columnbreak \begin{mfpic}[15][20]{-6}{1}{-4}{3} \axes \xmarks{-5 step 1 until 0} \ymarks{-3 step 1 until 2} \arrow \reverse \arrow \polyline{(-5,-3),(1,-3)} \plotsymbol[4pt]{Asterisk}{(-2.333,-2)} \tlabel(1,-0.5){<m>x</m>} \tlabel(0.5,3){<m>y</m>} \point[4pt]{(-2.333,-2.5),(-3.333,-2),(-1.333,-2)} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-5.5,0.8,0.1}{((x + (7/3))**2)/2 - (5/2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y - 2)^{2} = -12(x + 3)</m> { Vertex <m>(-3, 2)</m>} { Focus <m>(-6, 2)</m>} { Directrix <m>x = 0</m>} { Endpoints of latus rectum <m>(-6, 8)</m>,
+          <m>(-6, -4)</m>} \columnbreak \begin{mfpic}[10]{-8}{1}{-5}{9} \axes \xmarks{-7 step 1 until 0} \ymarks{-4 step 1 until 8} \plotsymbol[4pt]{Asterisk}{(-6,2)} \tlabel(1,-0.5){<m>x</m>} \tlabel(0.5,9){<m>y</m>} \point[4pt]{(-3,2),(-6,-4),(-6,8)} \tlpointsep{4pt} \axislabels {x}{{<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \function{-6.8,-3,0.1}{2+sqrt((-12*x) - 36)} \arrow \reverse \function{-6.8,-3,0.1}{2-sqrt((-12*x) - 36)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y + 4)^{2} = 4x</m> { Vertex <m>(0,-4)</m>} { Focus <m>(1,-4)</m>} { Directrix <m>x = -1</m>} { Endpoints of latus rectum <m>(1, -2)</m>,
+          <m>(1, -6)</m>} \columnbreak \begin{mfpic}[15]{-2}{5}{-9}{1} \axes \xmarks{-1 step 1 until 4} \ymarks{-8 step 1 until 0} \arrow \reverse \arrow \polyline{(-1,-9),(-1,1)} \plotsymbol[4pt]{Asterisk}{(1,-4)} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,1){<m>y</m>} \point[4pt]{(0,-4),(1,-2),(1,-6)} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \function{0,5,0.1}{-4-(2*sqrt(x))} \arrow \function{0,5,0.1}{-4+(2*sqrt(x))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-1)^2 = 4(y+3)</m> { Vertex <m>\left(1, -3\right)</m>} { Focus
+          <m>\left(1, -2 \right)</m>} { Directrix <m>y = -4</m>} { Endpoints of latus rectum <m>\left(3, -2 \right)</m>,
+          <m>\left(-1, -2 \right)</m>} \columnbreak \begin{mfpic}[15]{-4}{5}{-5}{1} \axes \xmarks{-3 step 1 until 4} \ymarks{-4 step 1 until 0} \arrow \reverse \arrow \polyline{(-5,-4),(5,-4)} \plotsymbol[4pt]{Asterisk}{(1,-2)} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,1){<m>y</m>} \point[4pt]{(3,-2),(1,-3),(-1,-2)} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,5,0.1}{((x -1)**2)/4 - 3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x+2)^2 = -20(y-5)</m> { Vertex <m>\left(-2, 5\right)</m>} { Focus
+          <m>\left(-2, 0 \right)</m>} { Directrix <m>y = 10</m>} { Endpoints of latus rectum <m>\left(-12, 0 \right)</m>,
+          <m>\left(8, 0 \right)</m>} \columnbreak \begin{mfpic}[7.5][10]{-13}{9}{-1}{11} \axes \xmarks{-12 step 1 until 8} \ymarks{1 step 1 until 10} \arrow \reverse \arrow \polyline{(-13,10),(9,10)} \plotsymbol[4pt]{Asterisk}{(-2,0)} \tlabel(9,-0.5){<m>x</m>} \tlabel(0.5,11){<m>y</m>} \point[4pt]{(-12,0),(-2,5),(8,0)} \tlpointsep{4pt} \axislabels {x}{{<m>-12</m>} -12, {<m>-10</m>} -10, {<m>-8</m>} -8, {<m>-6</m>} -6, {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6, {<m>8</m>} 8} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10} \penwd{1.25pt} \arrow \reverse \arrow \function{-13,9,0.1}{((x +2)**2)/(0-20) + 5} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y-4)^2 = 18(x-2)</m> { Vertex
+          <m>\left(2, 4\right)</m>} { Focus <m>\left( \frac{13}{2}, 4 \right)</m>} { Directrix
+          <m>x = -\frac{5}{2}</m>} { Endpoints of latus rectum <m>\left(\frac{13}{2}, -5 \right)</m>,
+          <m>\left(\frac{13}{2}, 13 \right)</m>} \columnbreak \begin{mfpic}[15][7.5]{-3}{8}{-6}{14} \axes \xmarks{-2 step 1 until 7} \ymarks{-5 step 1 until 13} \arrow \reverse \arrow \polyline{(-2.5,-6),(-2.5,14)} \plotsymbol[4pt]{Asterisk}{(6.5,4)} \tlabel(8,-0.5){<m>x</m>} \tlabel(0.5,14){<m>y</m>} \point[4pt]{(6.5,-5),(2,4),(6.5,13)} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \axislabels {y}{{<m>-5</m>} -5, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7, {<m>9</m>} 9, {<m>11</m>} 11, {<m>13</m>} 13} \penwd{1.25pt} \arrow \function{2,8,0.1}{4+(sqrt(18*(x-2)))} \arrow \function{2,8,0.1}{4-(sqrt(18*(x-2)))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(y+ \frac{3}{2}\right)^2 = -7 \left(x+ \frac{9}{2}\right)</m> { Vertex
+          <m>\left(-\frac{9}{2}, -\frac{3}{2}\right)</m>} { Focus <m>\left( -\frac{25}{4}, -\frac{3}{2} \right)</m>} { Directrix
+          <m>x = -\frac{11}{4}</m>} { Endpoints of latus rectum <m>\left(-\frac{25}{4}, 2 \right)</m>,
+          <m>\left(-\frac{25}{4}, -5 \right)</m>} \columnbreak \begin{mfpic}[15]{-7}{1}{-6}{3} \axes \xmarks{-6 step 1 until -1} \ymarks{-5 step 1 until 2} \arrow \reverse \arrow \polyline{(-2.75,-6),(-2.75,3)} \plotsymbol[4pt]{Asterisk}{(-6.25,-1.5)} \tlabel(1,-0.5){<m>x</m>} \tlabel(0.5,3){<m>y</m>} \point[4pt]{(-6.25,-5),(-4.5,-1.5),(-6.25,2)} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \function{-4.5,-7,0.1}{0-1.5+(sqrt((0-7)*(x+4.5)))} \arrow \function{-4.5,-7,0.1}{0-1.5-(sqrt((0-7)*(x+4.5)))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y - 5)^{2} = 27(x - 4)</m> Vertex <m>(4, 5)</m> Focus
+          <m>\left( \frac{43}{4}, 5 \right)</m> Directrix <m>x = -\frac{11}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x + \frac{2}{5} \right)^{2} = -\frac{1}{5}(y - 1)</m> Vertex <m>\left( -\frac{2}{5}, 1 \right)</m> Focus
+          <m>\left( -\frac{2}{5}, \frac{19}{20} \right)</m> Directrix <m>y = \frac{21}{20}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x+1)^2=8(y-6)</m> Vertex <m>(-1,6)</m> Focus <m>(-1,8)</m> Directrix <m>y=4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y+1)^2=-\frac{1}{2}(x-10)</m> Vertex <m>(10,-1)</m> Focus
+          <m>\left(\frac{79}{8}, -1 \right)</m> Directrix <m>x = \frac{81}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-5)^2 = -12(y-2)</m> Vertex <m>(5,2)</m> Focus <m>(5,-1)</m> Directrix <m>y=5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(y-\frac{9}{2}\right)^2 = -\frac{4}{3} (x-2)</m> Vertex <m>\left(2, \frac{9}{2}\right)</m> Focus
+          <m>\left(\frac{5}{3}, \frac{9}{2}\right)</m> Directrix <m>x = \frac{7}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The equations which do not represent <m>y</m> as a function of <m>x</m> are:
+          <xref ref="paranotfcnone"></xref>,
+          <xref ref="paranotfcntwo"></xref>,
+          <xref ref="paranotfcnthree"></xref>,
+          <xref ref="paranotfcnfour"></xref>,
+          <xref ref="paranotfcnfive"></xref>,
+          <xref ref="paranotfcnsix"></xref>,
+          <xref ref="paranotfcnseven"></xref>.
+          For <xref ref="paranotfcnone">number</xref>:
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = 2+2 \sqrt{-3x-9}</m> represents the upper half of the parabola.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(x) = 2 - 2\sqrt{-3x-9}</m> represents the lower half of the parabola.
+              </p>
+            </li>
+          </ul>
+        </p>
+        For <xref ref="paranotfcntwo">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = -4+2\sqrt{x}</m> represents the upper half of the parabola.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = -4 - 2\sqrt{x}</m> represents the lower half of the parabola.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="paranotfcnthree">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) =4+3 \sqrt{2x-4}</m> represents the upper half of the parabola.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = 4-3 \sqrt{2x-4}</m> represents the lower half of the parabola.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="paranotfcnfour">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) =-\frac{3}{2} + \frac{1}{2} \sqrt{-28x - 126}</m> represents the upper half of the parabola.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) =-\frac{3}{2} - \frac{1}{2} \sqrt{-28x - 126}</m> represents the lower half of the parabola.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="paranotfcnfive">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) =5+3 \sqrt{3x-12}</m> represents the upper half of the parabola.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) =5- 3 \sqrt{3x-12}</m> represents the lower half of the parabola.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="paranotfcnsix">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) =-1 + \frac{1}{2} \sqrt{-2x+20}</m> represents the upper half of the parabola.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) =-1 - \frac{1}{2} \sqrt{-2x+20}</m> represents the lower half of the parabola.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="paranotfcnseven">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = \frac{9}{2} + \frac{2}{3} \sqrt{-3x+6}</m> represents the upper half of the parabola.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x) = \frac{9}{2} - \frac{2}{3} \sqrt{-3x+6}</m> represents the lower half of the parabola.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <m>(x+2)^2 = \frac{1}{2} (y+6)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^2 = -\frac{1}{2}(y-4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y-2)^2=x+4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y^2 = -16(x-1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y^{2} = -28(x - 7)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y - 1)^{2} = 10\left(x - \frac{15}{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x + 8)^{2} = \frac{64}{9}(y + 9)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x - 1)^{2} = 6\left(y + \frac{17}{2}\right)</m> or <m>(x - 1)^{2} = -6\left(y + \frac{11}{2}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The bulb should be placed <m>0.625</m> centimeters above the vertex of the mirror.<fn>
+          As verified by Carl himself!
+          </fn>
+        </p>
+      </li>
+      <li>
+        <p>
+          The receiver should be placed <m>5.0625</m> centimeters from the vertex of the cross section of the antenna.
+        </p>
+      </li>
+      <li>
+        <p>
+          The arch can be modeled by <m>x^2=-(y-9)</m> or <m>y=9-x^2</m>.
+          One foot in from the base of the arch corresponds to either <m>x = \pm 2</m>,
+          so the height is <m>y=9-(\pm 2)^2=5</m> feet.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

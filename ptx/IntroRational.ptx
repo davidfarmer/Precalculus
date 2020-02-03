@@ -1,0 +1,2829 @@
+<section xml:id="IntroRational">
+  <title>Introduction to Rational Functions</title>
+  <introduction>
+    <p>
+      If we add, subtract, or multiply polynomial functions,
+      the result is another polynomial function.
+      When we divide polynomial functions, however,
+      we may not get a polynomial function.
+      The result of dividing two polynomials is a
+          <idx><h>rational function</h></idx>
+      <em>rational function</em>,
+      so named because rational functions are
+      <em>ratios</em> of polynomials.
+    </p>
+    <definition xml:id="rationalfunction">
+      <statement>
+        <p>
+          A <term>rational function</term> is a function which is the ratio of polynomial functions.
+          Said differently,
+          <m>r</m> is a rational function if it is of the form
+              <idx><h>function</h><h>rational</h></idx>
+          <me>
+            r(x) = \dfrac{p(x)}{q(x)}
+          </me>,
+          where <m>p</m> and <m>q</m> are polynomial functions.<fn>
+          According to this definition,
+          all polynomial functions are also  rational functions. (Take <m>q(x) = 1</m>).
+          </fn>
+        </p>
+      </statement>
+    </definition>
+  </introduction>
+  <subsection xml:id="LaurentMonomialFunctionsSection">
+    <title>Laurent Monomial Functions</title>
+    <p>
+      As with polynomial functions,
+      we begin our study of rational functions with what are,
+      in some sense,
+      the building blocks of rational functions,
+      <idx><h>monomial function</h><h>Laurent</h></idx>
+          <idx><h>function</h><h>monomial ! Laurent</h></idx>
+      <em>Laurent monomial functions</em>.
+    </p>
+    <definition xml:id="laurentmonomialfunction">
+      <statement>
+        <p>
+          A <term>Laurent monomial function</term>
+          is either a monomial function
+          (see <xref ref="monomialfunction">Definition</xref>)
+          or a function of the form <m>f(x) = \dfrac{a}{x^n} = ax^{-n}</m> for <m>n \in \mathbb{N}</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Laurent monomial functions are named in honor of
+      <url href="https://en.wikipedia.org/wiki/Pierre_Alphonse_Laurent"><em>Pierre Alphonse Laurent</em></url>
+      and generalize the notion of <sq>monomial function</sq> from <xref ref="PolynomialFunctions">Chapter</xref>
+      to terms with negative exponents.
+      Our study of these functions begins with an analysis of
+      <m>r(x) = \frac{1}{x} = x^{-1}</m>, the reciprocal function.
+      The first item worth noting is that <m>r(0)</m> is not defined owing to the presence of <m>x</m> in the denominator.
+      That is, the domain of <m>r</m> is <m>\{ x \in \mathbb{R} \, | \, x \neq 0\}</m> or,
+      using interval notation, <m>(-\infty, 0) \cup (0, \infty)</m>.
+      Of course excluding <m>0</m> from the domain of <m>r</m> serves only to pique our curiosity about the behavior of <m>r(x)</m> when <m>x \approx 0</m>.
+      Thinking from a number sense perspective,
+      the closer the denominator of <m>\frac{1}{x}</m> is to <m>0</m>,
+      the larger the value of the fraction (in absolute value.)<fn>
+      Technically speaking,
+      <m>-1 \times 10^{117}</m> is a <sq>small</sq> number
+      (since it is very far to the left on the number line.)
+      However, it's absolute value,
+      <m>1 \times 10^{117}</m> is very large.
+      </fn> So it stands to reason that as <m>x</m> gets closer and closer to <m>0</m>,
+      the values for <m>r(x) = \frac{1}{x}</m> should grow larger and larger
+      (in absolute value.)
+      This is borne out in the table below on the left where it is apparent that for <m>x \approx 0</m>,
+      <m>r(x)</m> is becoming unbounded.
+    </p>
+    <p>
+      As we investigate the end behavior of <m>r</m>,
+      we find that as <m>x \rightarrow \pm \infty</m>, <m>r(x) \approx 0</m>.
+      Again, number sense agrees here with the data,
+      since as the denominator of <m>\frac{1}{x}</m> becomes unbounded,
+      the value of the fraction should diminish.
+      That being said,
+      we could ask if the graph ever reaches the <m>x</m>-axis.
+      If we attempt to solve <m>y = r(x) = \frac{1}{x} = 0</m>. we arrive at the contradiction <m>1 = 0</m> hence,
+      <m>0</m> is not in the range of <m>r</m>.
+      Every other real number besides <m>0</m> is in the range of <m>r</m>, however.
+      To see this, let <m>c \neq 0</m> be a real number.
+      Then <m>\frac{1}{c}</m> is defined and, moreover,
+      <m>r \left(\frac{1}{c} \right) = \frac{1}{(1/c)} = c</m>.
+      This shows <m>c</m> is in the range of <m>r</m>.
+      Hence, the range of <m>r</m> is <m>\{ y \in \mathbb{R} \, | \, y \neq 0\}</m> or,
+      using interval notation, <m>(-\infty, 0) \cup (0, \infty)</m>.
+    </p>
+    <tabular>
+      {m{2in}m{2in}m{2in}}
+      <m>\begin{array}{|r||c|}  \hline
+      x \amp  r(x) = \frac{1}{x}  \\ \hline
+      -0.01\amp  -100  \\  \hline
+      -0.001 \amp  -1000  \\  \hline
+      -0.0001 \amp  -10000  \\  \hline
+      -0.00001 \amp  -100000 \\  \hline
+      0 \amp  \text{ undefined }  \\  \hline
+      0.00001 \amp  100000 \\  \hline
+      0.0001 \amp  10000  \\  \hline
+      0.001 \amp  1000  \\  \hline
+      0.01 \amp  100  \\  \hline
+      \end{array}</m>
+      &amp;
+      <m>\begin{array}{|r||c|}  \hline
+      x \amp  r(x) = \frac{1}{x}  \\ \hline
+      -100000 \amp  -0.00001  \\  \hline
+      -10000 \amp   -0.0001 \\  \hline
+      -1000 \amp  -0.001  \\  \hline
+      -100 \amp  -0.01  \\  \hline
+      0 \amp  \text{ undefined }  \\  \hline
+      100 \amp  0.01  \\  \hline
+      1000 \amp  0.001  \\  \hline
+      10000 \amp  0.0001 \\  \hline
+      100000 \amp  0.00001  \\  \hline
+      \end{array}</m>
+      &amp;
+      \begin{mfpic}[15]{-5}{5}{-5}{5}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 5){<m>y</m>}
+      \tlabel[cc](-2, -1.5){<m>(-1,-1)</m>}
+      \tlabel[cc](2, 1.5){<m>(1,1)</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-5,-0.2,0.1}{1/x}
+      \arrow \reverse \arrow \function{0.2,5,0.1}{1/x}
+      \point[4pt]{(-1,-1), (1,1)}
+      \tcaption{<m>y=r(x) = \frac{1}{x}</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      In order to more precisely describe the behavior near <m>0</m>,
+      we say <sq>as <m>x</m> approaches <m>0</m>
+      <em>from the left</em>,</sq> written as <m>x \rightarrow 0^{-}</m>,
+      the function values <m>r(x) \rightarrow -\infty</m>.
+      By <sq>from the left</sq> we mean we are considering <m>x</m>-values slightly to the <em>left</em>
+      of <m>0</m> on the number line,
+      such as <m>x = -0.001</m> and <m>x = -0.0001</m> in the table above.
+      If we think of these numbers as all being <m>x</m>-values where <m>x = \text{ `\(0-\) a little bit' }</m>,
+      the the <sq><m>-</m></sq> in the notation <sq><m>x \rightarrow 0^{-}</m></sq> makes better sense.
+      The notation to describe the <m>r(x)</m> values,
+      <m>r(x) \rightarrow -\infty</m>,
+      is used here in the same manner as it was in <xref ref="GraphsofPolynomials">Section</xref>.
+      That is, as <m>x \rightarrow 0^{-}</m>,
+      the values <m>r(x)</m> are becoming unbounded in the negative direction.
+    </p>
+    <p>
+      Similarly, we say <sq>as <m>x</m> approaches <m>0</m>
+      <em>from the right</em>,</sq> that is as <m>x \rightarrow 0^{+}</m>,
+      <m>r(x) \rightarrow \infty</m>.
+      Here <sq>from the right</sq> means we are using <m>x</m> values slightly to the <em>right</em>
+      of <m>0</m> on the number line:
+      numbers such as <m>x =0.001</m> which could be described as <sq><m>0 + \text{ a little bit }</m>.</sq> For these values of <m>x</m>,
+      the values of <m>r(x)</m> become unbounded
+      (in the positive direction)
+      so we write <m>r(x) \rightarrow \infty</m> here.
+    </p>
+    <p>
+      We can also use this notation to describe the end behavior,
+      but here the numerical roles are reversed.
+      We see as <m>x \rightarrow -\infty</m>,
+      <m>r(x) \rightarrow 0^{-}</m> and as <m>x \rightarrow \infty</m>,
+      <m>r(x) \rightarrow 0^{+}</m>.
+    </p>
+    <p>
+      The way we describe what is happening graphically is to say the line <m>x = 0</m> is a <idx><h>asymptote</h><h>vertical ! intuitive definition of</h></idx>
+          <idx><h>vertical asymptote</h><h>intuitive definition of</h></idx>
+      <em>vertical asymptote</em> to the graph of
+      <m>y = r(x)</m> an the line <m>y = 0</m> is a <idx><h>asymptote</h><h>horizontal ! intuitive definition of</h></idx>
+          <idx><h>horizontal asymptote</h><h>intuitive definition of</h></idx>
+      <em>horizontal asymptote</em> to the graph of <m>y = r(x)</m>.
+      Roughly speaking,
+      asymptotes are lines which approximate functions as either the inputs our outputs become unbounded.
+      While defined more precisely using the language of Calculus,
+      we do our best to formally define vertical and horizontal asymptotes below.
+    </p>
+    <definition xml:id="va">
+      <statement>
+        <p>
+          The line <m>x=c</m> is called a <idx><h>asymptote</h><h>vertical ! formal definition of</h></idx>
+              <idx><h>vertical asymptote</h><h>formal definition of</h></idx>
+          <term>vertical asymptote</term> of the graph of a function <m>y=f(x)</m> if as
+          <m>x \rightarrow c^{-}</m> or as <m>x \rightarrow c^{+}</m>,
+          either <m>f(x) \rightarrow \infty</m> or <m>f(x) \rightarrow -\infty</m>.
+        </p>
+      </statement>
+    </definition>
+    <definition xml:id="ha">
+      <statement>
+        <p>
+          The line <m>y=c</m> is called a <idx><h>asymptote</h><h>horizontal ! formal definition of</h></idx>
+              <idx><h>horizontal asymptote</h><h>formal definition of</h></idx>
+          <term>horizontal asymptote</term>
+          of the graph of a function <m>y=f(x)</m> if as
+          <m>x \rightarrow -\infty</m> or as <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow c</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Note that in <xref ref="ha">Definition</xref>,
+      we write <m>f(x) \rightarrow c</m> (not <m>f(x) \rightarrow c^{+}</m> or
+      <m>f(x) \rightarrow c^{-}</m>) because we are unconcerned from which direction the values <m>f(x)</m> approach the value <m>c</m>,
+      just as long as they do so.
+      As we shall see, the graphs of rational functions may,
+      in fact, <em>cross</em> their horizontal asymptotes.
+      If this happens, however, it does so only a
+      <em>finite</em> number of times
+      (at least in this chapter),
+      and so for each choice of <m>x \rightarrow -\infty</m> and <m>x \rightarrow \infty</m>,
+      <m>f(x)</m> will approach <m>c</m> from either below (in the case
+      <m>f(x) \rightarrow c^{-}</m>) or above (in the case <m>f(x) \rightarrow c^{+}</m>.) We leave
+      <m>f(x) \rightarrow c</m> generic in our definition, however,
+      to allow this concept to apply to less tame specimens in the Precalculus zoo,
+      one that cross horizontal asymptotes an infinite number of times.<fn>
+      See <xref ref="exploregraphslast">Exercise</xref>
+      in <xref ref="GraphsofSineandCosine">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      The behaviors illustrated in the graph
+      <m>r(x) = \frac{1}{x}</m> are typical of functions of the form
+      <m>f(x) = \frac{1}{x^n} = x^{-n}</m> for natural numbers,
+      <m>n</m>.
+      As with the monomial functions discussed in <xref ref="GraphsofPolynomials">Section</xref>,
+      the patterns that develop primarily depend on whether <m>n</m> is odd or even.
+      Having thoroughly discussed the graph of <m>y = \frac{1}{x} = x^{-1}</m>,
+      we graph it along with <m>y = \frac{1}{x^3} = x^{-3}</m> and <m>y = \frac{1}{x^5} = x^{-5}</m> below.
+      Note the points <m>(-1,-1)</m> and <m>(1,1)</m> are common to all three graphs as are the asymptotes <m>x = 0</m> and <m>y = 0</m>.
+      As the <m>n</m> increases,
+      the graphs become steeper for
+      <m>|x| \lt 1</m> and flatten out more quickly for <m>|x|>1</m>.
+      Both the domain and range in each case appears to be <m>(-\infty, 0) \cup (0, \infty)</m>.
+      Indeed, owing to the <m>x</m> in the denominator of <m>f(x) = \frac{1}{x^n}</m>,
+      <m>f(0)</m>,
+      and only <m>f(0)</m>, is undefined.
+      Hence the domain is <m>(-\infty, 0) \cup (0, \infty)</m>.
+      When thinking about the range,
+      note the equation <m>f(x)= \frac{1}{x^n} = c</m> has the solution
+      <m>x = \sqrt[n]{\frac{1}{c}}</m> as long as <m>c \neq 0</m>.
+      Thus means <m>f\left( \sqrt[n]{\frac{1}{c}} \right) = c</m> for every nonzero real number <m>c</m>.
+      If <m>c = 0</m>, we are in the same situation as before:
+      <m>\frac{1}{x^n} = 0</m> has no real solution.
+      This establishes the range is <m>(-\infty, 0) \cup (0, \infty)</m>.
+      Finally, each of the graphs appear to be symmetric about the origin.
+      Indeed, since <m>n</m> is odd,
+      <m>f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = -x^{-n} = -f(x)</m>,
+      proving every member of this function family is odd.
+    </p>
+    <tabular>
+      {m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
+      <m>\begin{array}{|r||c|c|c|}  \hline
+      x \amp   \frac{1}{x} = x^{-1} \amp  \frac{1}{x^3} = x^{-3} \amp  \frac{1}{x^5} = x^{-5} \\ \hline
+      -10 \amp  -0.1 \amp -0.001\amp  -0.00001  \\  \hline
+      -1 \amp  -1 \amp  -1\amp   -1\\  \hline
+      -0.1 \amp  -10 \amp  -1000\amp   -100000 \\  \hline
+      0 \amp   \text{ undefined }  \amp   \text{ undefined }   \amp   \text{ undefined }   \\  \hline
+      0.1 \amp  10 \amp  1000\amp   100000 \\  \hline
+      1 \amp  1 \amp  1\amp   1\\  \hline
+      10 \amp  0.1 \amp  0.001\amp  0.00001  \\  \hline
+      \end{array}</m>
+      &amp;
+      \begin{mfpic}[9]{-5}{5}{-5}{5}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](-0.5, 5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-5,-0.2,0.1}{1/x}
+      \arrow \reverse \arrow \function{0.2,5,0.1}{1/x}
+      \point[4pt]{(-1,-1), (1,1)}
+      \tcaption{<m>y=\frac{1}{x} = x^{-1}</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[9]{-5}{5}{-5}{5}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](-0.5, 5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-5,-0.58,0.1}{1/(x**3)}
+      \arrow \reverse \arrow \function{0.58,5,0.1}{1/(x**3)}
+      \point[4pt]{(-1,-1),  (1,1)}
+      \tcaption{<m>y=\frac{1}{x^3} = x^{-3}</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[9]{-5}{5}{-5}{5}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](-0.5, 5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-5,-0.72,0.1}{1/(x**5)}
+      \arrow \reverse \arrow \function{0.725,5,0.1}{1/(x**5)}
+      \point[4pt]{(-1,-1), (1,1)}
+      \tcaption{<m>y=\frac{1}{x^5} = x^{-5}</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      We repeat the same experiment with functions of the form
+      <m>f(x) = \frac{1}{x^{n}} = x^{-n}</m> where <m>n</m> is even.
+      <m>y = \frac{1}{x^2} = x^2</m>,
+      <m>y = \frac{1}{x^4} = x^{-4}</m> and <m>y = \frac{1}{x^6} = x^{-6}</m>.
+      These graphs all share the points <m>(-1,1)</m> and <m>(1,1)</m>,
+      and asymptotes <m>x = 0</m> and <m>y = 0</m>.
+      The same remarks about the steepness for
+      <m>|x|\lt 1</m> and the flattening for <m>|x|>1</m> also apply.
+      For the same reasons as given above,
+      the domain of each of these functions is <m>(-\infty, 0) \cup (0, \infty)</m>.
+      When it comes to the range,
+      the fact <m>n</m> is even tells us tere are solutions to <m>\frac{1}{x^n} = c</m> only if <m>c>0</m>.
+      It follows that the range is
+      <m>(0, \infty)</m> for each of these functions.
+      Concerning symmetry, as <m>n</m> is even,
+      <m>f(-x) = (-x)^{-n} = (-1)^{-n} x^{-n} = x^{-n} = f(x)</m>,
+      proving each member of this function family is even.
+      Hence, all of the graphs of these functions is symmetric about the <m>y</m>-axis.
+    </p>
+    <tabular>
+      {m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
+      <m>\begin{array}{|r||c|c|c|}  \hline
+      x \amp   \frac{1}{x^2} = x^{-2} \amp  \frac{1}{x^4} = x^{-4} \amp  \frac{1}{x^6} = x^{-6} \\ \hline
+      -10 \amp 0.01 \amp 0.0001\amp  1 \times 10^{-6}  \\  \hline
+      -1 \amp  1 \amp  1\amp   1\\  \hline
+      -0.1 \amp  100 \amp  10000 \amp   1 \times 10^{6} \\  \hline
+      0 \amp   \text{ undefined }  \amp   \text{ undefined }   \amp   \text{ undefined }   \\  \hline
+      0.1 \amp  100 \amp  10000 \amp   1 \times 10^{6} \\  \hline
+      1\amp   1 \amp  1\amp   1 \\  \hline
+      10 \amp 0.01 \amp 0.0001\amp  1 \times 10^{-6}  \\  \hline
+      \end{array}</m>
+      &amp;
+      \begin{mfpic}[9]{-5}{5}{-1}{9}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](0, 9.5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-5,-0.3333,0.1}{1/(x**2)}
+      \arrow \reverse \arrow \function{0.3333,5,0.1}{1/(x**2)}
+      \point[4pt]{(-1,1), (1,1)}
+      \tcaption{<m>y=\frac{1}{x^2} = x^{-2}</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[9]{-5}{5}{-1}{9}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](0, 9.5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-5,-0.5774,0.1}{1/(x**4)}
+      \arrow \reverse \arrow \function{0.5773,5,0.1}{1/(x**4)}
+      \point[4pt]{(-1,1), (1,1)}
+      \tcaption{<m>y=\frac{1}{x^3} = x^{-3}</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[9]{-5}{5}{-1}{9}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](0, 9.5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-5,-0.6933,0.1}{1/(x**6)}
+      \arrow \reverse \arrow \function{0.6933,5,0.1}{1/(x**6)}
+      \point[4pt]{(-1,1), (1,1)}
+      \tcaption{<m>y=\frac{1}{x^6} = x^{-6}</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      Not surprisingly,
+      we have an analog to <xref ref="linearmononialgraphs">Theorem</xref>
+      for this family of Laurent monomial functions.
+    </p>
+    <theorem xml:id="linearlaurentlgraphs">
+      <statement>
+        <p>
+          For real numbers <m>a</m>, <m>h</m>,
+          and <m>k</m> with <m>a \neq 0</m>,
+          the graph of <m>F(x) = \frac{a}{(x-h)^n}+k = a(x-h)^{-n}+k</m> can be obtained from the graph of
+          <m>f(x) = \frac{1}{x^n}= x^{-n}</m> by performing the following operations,
+          in sequence:
+          <ol>
+            <li>
+              <p>
+                add <m>h</m> to each of the <m>x</m>-coordinates of the points on the graph of <m>f</m>.
+                This results in a horizontal shift to the right if <m>h > 0</m> or left if <m>h \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = x^{-n}</m> to <m>y = (x-h)^{-n}</m>.
+                The vertical asymptote moves from <m>x=0</m> to <m>x=h</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                multiply the <m>y</m>-coordinates of the points on the graph obtained in Step 1 by <m>a</m>.
+                This results in a vertical scaling,
+                but may also include a reflection about the <m>x</m>-axis if <m>a \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = (x-h)^{-n}</m> to <m>y = a(x-h)^{-n}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                add <m>k</m> to each of the <m>y</m>-coordinates of the points on the graph obtained in Step 2.
+                This results in a vertical shift up if <m>k > 0</m> or down if <m>k\lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = a(x-h)^{-n}</m> to <m>y = a(x-h)^{-n}+k</m>.
+                The horizontal asymptote moves from <m>y=0</m> to <m>y=k</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="linearlaurentlgraphs">Theorem</xref> is <em>identical</em>
+      to the proof of <xref ref="linearmononialgraphs">Theorem</xref>
+      - just replace <m>x^n</m> with <m>x^{-n}</m>.
+      We nevertheless encourage the reader to work through the details<fn>
+      We are, in fact,
+      building to <xref ref="transformationsthm">Theorem</xref>
+      in <xref ref="Transformations">Section</xref>,
+      so the more you see the forest for the trees,
+      the better off you'll be when the time comes to generalize these moves to all functions.
+      </fn> and compare the results of this theorem with <xref ref="linearabsvaluegraphs">Theorems</xref>,
+      <xref ref="standardformgraph"></xref>,
+      and <xref ref="linearmononialgraphs"></xref>.
+    </p>
+    <p>
+      We put <xref ref="linearlaurentlgraphs">Theorem</xref>
+      to good use in the following example.
+    </p>
+    <example xml:id="linearlaurentex">
+      <statement>
+        <p>
+          Use <xref ref="linearlaurentlgraphs">Theorem</xref> to graph the following.
+          Label at least two points and the asymptotes.
+          State the domain and range using interval notation.
+          <ol>
+            <li>
+              <p>
+                <m>f(x) = (2x-3)^{-2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = \dfrac{2t-1}{t+1}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                In order to use <xref ref="linearlaurentlgraphs">Theorem</xref>,
+                we first must put <m>f(x) = (2x-3)^{-2}</m> into the form prescribed by the theorem.
+                To that end, we factor:
+                <me>
+                  f(x) = \left(2 \left[x  - \frac{3}{2} \right] \right)^{-2} = 2^{-2} \left(x - \frac{3}{2} \right)^{-2} = \frac{1}{4}  \left(x - \frac{3}{2} \right)^{-2}
+                </me>
+                We identify <m>n=2</m>, <m>a=\frac{1}{4}</m> and <m>h = \frac{3}{2}</m>
+                (and <m>k =0</m>.)
+                Per the theorem, we begin with the graph of
+                <m>y = x^{-2}</m> and track the two points <m>(-1,1)</m> and <m>(1,1)</m> along with the vertical and horizontal asymptotes <m>x = 0</m> and <m>y=0</m>,
+                respectively through each step.
+                Step 1:   add <m>\frac{3}{2}</m> to each of the <m>x</m>-coordinates of each of the points on the graph of <m>y=x^{-2}</m>.
+                This moves the vertical asymptote from <m>x = 0</m> to
+                <m>x = \frac{3}{2}</m> (which we represent by a dashed line.)
+                <me>
+                  \begin{array}{ccc}   \begin{mfpic}[15]{-5}{5}{-1}{9} \axes  \tlabel[cc](5, -0.5){\(x\)} \tlabel[cc](0, 9.5){\(y\)} \tlabel[cc](-2, 1){\((-1,1)\)} \tlabel[cc](2, 1){\((1,1)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.3333,0.1}{1/(x**2)} \arrow \reverse \arrow \function{0.3333,5,0.1}{1/(x**2)} \point[4pt]{(-1,1), (1,1)} \tcaption{\(y = x^{-2}\)} \end{mfpic}   \amp \stackrel{\text{ add \(\frac{3}{2}\) to each \(x\)-coordinate} }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-3.5}{6.5}{-1}{9} \axes \dashed \polyline{(1.5, -1), (1.5,9)}  \tlabel[cc](6.5, -0.5){\(x\)} \tlabel[cc](0.5, 9){\(y\)} \gclear \tlabelrect[cc](-0.5, 1){\(\left(\frac{1}{2} ,1 \right)\)} \tlabel[cc](3.5, 1){\(\left(\frac{5}{2} ,1 \right)\)} \gclear \tlabelrect[cc](1.5, -0.5){\(x = \frac{3}{2}\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-3.5,1.1667,0.1}{1/((x-1.5)**2)} \arrow \reverse \arrow \function{1.8333,6.5,0.1}{1/((x-1.5)**2)} \point[4pt]{(0.5,1), (2.5,1)} \tcaption{\(y = \left(x - \frac{3}{2} \right)^{-2}\)} \end{mfpic} \\  \text{ \((-1,1)\), VA: \(x=0\) , \((1,1)\) }  \amp  \amp  \text{\(\left(\frac{1}{2} ,1 \right)\), VA: \(x = \frac{3}{2}\),  \(\left(\frac{5}{2} ,1 \right)\)} \end{array}
+                </me>
+                Step 2:   multiply each of the <m>y</m>-coordinates of each of the points on the graph of
+                <m>y = \left(x - \frac{3}{2} \right)^{-2}</m> by <m>\frac{1}{4}</m>.
+                <me>
+                  \begin{array}{ccc}  \begin{mfpic}[15]{-3.5}{6.5}{-1}{9} \axes \dashed \polyline{(1.5, -1), (1.5,9)}  \tlabel[cc](6.5, -0.5){\(x\)} \tlabel[cc](0.5, 9){\(y\)} \gclear \tlabelrect[cc](-0.5, 1){\(\left(\frac{1}{2} ,1 \right)\)} \tlabel[cc](3.5, 1){\(\left(\frac{5}{2} ,1 \right)\)} \gclear \tlabelrect[cc](1.5, -0.5){\(x = \frac{3}{2}\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-3.5,1.1667,0.1}{1/((x-1.5)**2)} \arrow \reverse \arrow \function{1.8333,6.5,0.1}{1/((x-1.5)**2)} \point[4pt]{(0.5,1), (2.5,1)} \tcaption{\(y = \left(x - \frac{3}{2} \right)^{-2}\)} \end{mfpic}  \amp  \stackrel{\text{ multiply each \(y\)-coordinate by \(\frac{1}{4}\) } }{ \xrightarrow{}}  \amp  \begin{mfpic}[15]{-3.5}{6.5}{-1}{9} \axes \dashed \polyline{(1.5, -1), (1.5,9)}  \tlabel[cc](6.5, -0.5){\(x\)} \tlabel[cc](0.5, 9){\(y\)} \gclear \tlabelrect[cc](-0.5, 0.5){\(\left(\frac{1}{2} ,\frac{1}{4} \right)\)} \tlabel[cc](3.5, 0.5){\(\left(\frac{5}{2} ,\frac{1}{4} \right)\)} \gclear \tlabelrect[cc](1.5, -0.5){\(x = \frac{3}{2}\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-3.5,1.3333,0.1}{0.25/((x-1.5)**2)} \arrow \reverse \arrow \function{1.6667,6.5,0.1}{0.25/((x-1.5)**2)} \point[4pt]{(0.5,0.25), (2.5,0.25)} \tcaption{\(y = \frac{1}{4} \left(x - \frac{3}{2} \right)^{-2}\)} \end{mfpic} \\   \text{\(\left(\frac{1}{2} ,1 \right)\),  \(\left(\frac{5}{2} ,1 \right)\)}  \amp  \amp \text{\(\left(\frac{1}{2} ,\frac{1}{4} \right)\),  \(\left(\frac{5}{2} , \frac{1}{4} \right)\)} \end{array}
+                </me>
+                Since we did not shift the graph vertically,
+                the horizontal asymptote remains <m>y = 0</m>.
+                We can determine the domain and range of <m>f</m> by tracking the changes to the domain and range of our progenitor function,
+                <m>y = x^{-2}</m>.
+                We get the domain and range of <m>f</m> is
+                <m>\left(-\infty, \frac{3}{2} \right) \cup \left(\frac{3}{2}, \infty \right)</m> and the range of <m>f</m> is <m>(-\infty, 0) \cup (0, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Using either long or synthetic division, we get
+                <me>
+                  g(t) = \frac{2t-1}{t+1} = - \frac{3}{t+1} + 2 = \frac{-3}{(t-(-1))^{1}} + 2
+                </me>
+                so we identify <m>n = 1</m>, <m>a = -3</m>,
+                <m>h = -1</m>, and <m>k = 2</m>.
+                We start with the graph of
+                <m>y = \frac{1}{t}</m> with points <m>(-1,-1)</m>,
+                <m>(1,1)</m> and asymptotes <m>t = 0</m> and <m>y =0</m> and track these through each of the steps.
+                Step 1:  Add <m>-1</m> to each of the <m>t</m>-coordinates of each of the points on the graph of <m>y = \frac{1}{t}</m>.
+                This moves the vertical asymptote from <m>t=0</m> to <m>t = -1</m>.
+                <me>
+                  \begin{array}{ccc}   \begin{mfpic}[15]{-5}{5}{-5}{5} \axes  \tlabel[cc](5, -0.5){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-2, -1.5){\((-1,-1)\)} \tlabel[cc](2, 1.5){\((1,1)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.2,0.1}{1/x} \arrow \reverse \arrow \function{0.2,5,0.1}{1/x} \point[4pt]{(-1,-1), (1,1)} \tcaption{\(y = \frac{1}{t}\)} \end{mfpic}    \amp \stackrel{\text{ add \(-1\) to each \(t\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-6}{4}{-5}{5} \axes \dashed \polyline{(-1,-5), (-1,5)}  \tlabel[cc](4, -0.5){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-3, -1.5){\((-2,-1)\)} \tlabel[cc](1, 1.5){\((0,1)\)} \tlabel[cc](-2, 4){\(t= -1\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-6,-1.2,0.1}{1/(x+1)} \arrow \reverse \arrow \function{-0.8,4,0.1}{1/(x+1)} \point[4pt]{(-2,-1), (0,1)} \tcaption{\(y= \frac{1}{t+1}\)} \end{mfpic} \\  \text{ \((-1,1)\), VA: \(t=0\) , \((1,1)\) }  \amp  \amp  \text{ \((-2,1)\), VA: \(t=-1\) , \((0,1)\) } \end{array}
+                </me>
+                Step 2:   multiply each of the <m>y</m>-coordinates of each of the points on the graph of <m>y = \frac{1}{t+1}</m> by <m>-3</m>.
+                <me>
+                  \begin{array}{ccc}   \begin{mfpic}[15]{-6}{4}{-5}{5} \axes \dashed \polyline{(-1,-5), (-1,5)}  \tlabel[cc](4, -0.5){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-3, -1.5){\((-2,-1)\)} \tlabel[cc](1, 1.5){\((0,1)\)} \tlabel[cc](-2, 4){\(t= -1\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-6,-1.2,0.1}{1/(x+1)} \arrow \reverse \arrow \function{-0.8,4,0.1}{1/(x+1)} \point[4pt]{(-2,-1), (0,1)} \tcaption{\(y= \frac{1}{t+1}\)} \end{mfpic}    \amp \stackrel{\text{ multiply each \(y\)-coordinate by \(-3\) } }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-6}{4}{-5}{5} \axes \dashed \polyline{(-1,-5), (-1,5)}  \tlabel[cc](4, -0.5){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-3, 3){\((-2,3)\)} \tlabel[cc](1, -3){\((0,-3)\)} \tlabel[cc](-2, -4){\(t= -1\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-6,-1.6,0.1}{0-3/(x+1)} \arrow \reverse \arrow \function{-0.4,4,0.1}{0-3/(x+1)} \point[4pt]{(-2,3), (0,-3)} \tcaption{\(y= \frac{-3}{t+1}\)} \end{mfpic} \\  \text{ \((-2,1)\),  \((0,1)\) }  \amp  \amp  \text{ \((-2,3)\),  \((0,-3)\) } \end{array}
+                </me>
+                Step 3:   add <m>2</m> to each of the  <m>y</m>-coordinates of each of the points on the graph of <m>y = \frac{-3}{t+1}</m>.
+                This moves the horizontal asymptote from <m>y = 0</m> to <m>y = 2</m>.
+                <me>
+                  \begin{array}{ccc}   \begin{mfpic}[15]{-6}{4}{-5}{5} \axes \dashed \polyline{(-1,-5), (-1,5)}  \tlabel[cc](4, -0.5){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-3, 3){\((-2,3)\)} \tlabel[cc](1, -3){\((0,-3)\)} \tlabel[cc](-2, -4){\(t= -1\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-6,-1.6,0.1}{0-3/(x+1)} \arrow \reverse \arrow \function{-0.4,4,0.1}{0-3/(x+1)} \point[4pt]{(-2,3), (0,-3)} \tcaption{\(y= \frac{-3}{t+1}\)} \end{mfpic}    \amp \stackrel{\text{ add \(2\) to each \(y\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-6}{4}{-3}{7} \axes \dashed \polyline{(-1,-3), (-1,7)} \dashed \polyline{(-6,2), (4,2)}  \tlabel[cc](4, -0.5){\(t\)} \tlabel[cc](0.5, 7){\(y\)} \tlabel[cc](-3, 5){\((-2,5)\)} \tlabel[cc](1, -1){\((0,-1)\)} \tlabel[cc](-2, -2){\(t= -1\)} \tlabel[cc](4, 2.5){\(y=2\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-6,-1.6,0.1}{2-3/(x+1)} \arrow \reverse \arrow \function{-0.4,4,0.1}{2-3/(x+1)} \point[4pt]{(-2,5), (0,-1)} \tcaption{\(y= \frac{-3}{t+1} + 2\)} \end{mfpic} \\  \text{ \((-2,3)\),  \((0,-3)\), HA \(y = 0\) }  \amp  \amp  \text{ \((-2,5)\),  \((0,-1)\), HA \(y = 2\) } \end{array}
+                </me>
+                As above, we determine the domain and range of <m>g</m> by tracking the changes in the domain and range of <m>y = \frac{1}{t}</m>.
+                We find the domain of <m>g</m> is
+                <m>(-\infty, -1) \cup (-1, \infty)</m> and the range is <m>(-\infty, 2) \cup (2, \infty)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In <xref ref="linearlaurentex">Example</xref>,
+      we once again see the benefit of changing the form of a function to make use of an important result.
+      A natural question to ask is to what extent general rational functions can be rewritten to use <xref ref="linearlaurentlgraphs">Theorem</xref>.
+      In the same way polynomial functions are sums of monomial functions,
+      it turns out, allowing for non-real number coefficients,
+      that every rational function can be written as a sum of
+      (possibly shifted)
+      Laurent monomial functions.<fn>
+      i.e., Laurent <sq>Polynomials.</sq> This result is a combination of <xref ref="complexfactorization">Theorems</xref>
+      in <xref ref="ComplexZeros">Section</xref>
+      and <xref ref="pfdecomp">Theorem</xref>
+      in <xref ref="ParFrac">Section</xref>.
+      </fn>
+    </p>
+  </subsection>
+  <subsection xml:id="vaorholesection">
+    <title>Local Behavior near Excluded Values</title>
+    <p>
+      We take time now to focus on behaviors of the graphs of rational functions near excluded values.
+      We've already seen examples of one type of behavior: vertical asymptotes.
+      Our next example gives us a physical interpretation of a vertical asymptote.
+      This type of model arises from a family of equations cheerily named <sq>doomsday</sq> equations.<fn>
+      These functions arise in Differential Equations.
+      The unfortunate name will make sense shortly.
+      </fn>
+    </p>
+    <p>
+      \begin{example} A mathematical model for the population <m>P(t)</m>,
+      in thousands,
+      of a certain species of bacteria,
+      <m>t</m> days after it is introduced to an environment is given by
+      <m>P(t) = \frac{100}{(5-t)^{2}}</m>, <m>0 \leq t \lt 5</m>.
+      <ol>
+        <li>
+          <p>
+            Find and interpret <m>P(0)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            When will the population reach <m>100,\!000</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Graph <m>y = P(t)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find and interpret the behavior of <m>P</m> as <m>t \rightarrow 5^{-}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <em>Solution.</em>
+      <ol>
+        <li>
+          <p>
+            Substituting <m>t=0</m> gives <m>P(0) = \frac{100}{(5-0)^2} = 4</m>.
+            Since <m>t</m> represents the number of days <em>after</em>
+            the bacteria are introduced into the environment,
+            <m>t =0</m> corresponds to the day the bacteria are introduced.
+            Since <m>P(t)</m> is measured in <em>thousands</em>,
+            <m>P(t) = 4</m> means <m>4000</m> bacteria are initially introduced into the environment.
+          </p>
+        </li>
+        <li>
+          <p>
+            To find when the population reaches <m>100,\! 000</m>,
+            we first need to remember that <m>P(t)</m> is measured in <em>thousands</em>.
+            In other words,
+            <m>100,\! 000</m> bacteria corresponds to <m>P(t) = 100</m>.
+            Hence, we need to solve <m>P(t) = \frac{100}{(5-t)^2} = 100</m>.
+            Clearing denominators and dividing by <m>100</m> gives <m>(5-t)^2=1</m>, which,
+            after extracting square roots,
+            produces <m>t = 4</m> or <m>t=6</m>.
+            Of these two solutions, only <m>t=4</m> in our domain,
+            so this is the solution we keep.
+            Hence, it takes <m>4</m> days for the population of bacteria to reach <m>100,\! 000</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            After a slight re-write,
+            we have <m>P(t) = \frac{100}{(5-t)^2} = \frac{100}{[(-1)(t-5)]^2} = \frac{100}{(t-5)^2}</m>.
+            Using <xref ref="linearlaurentlgraphs">Theorem</xref>,
+            we start with the graph of <m>y = \frac{1}{t^2}</m> below on the left.
+            After shifting the graph to the right <m>5</m> units and stretching it vertically by a factor of <m>100</m> (note,
+            the graphs are not to scale!), we restrict the domain to
+            <m>0 \leq t \lt  5</m> to arrive at the graph of <m>y = P(t)</m> below on the right.
+            <me>
+              \begin{array}{ccc}   \begin{mfpic}[15]{-5}{5}{-1}{9} \axes  \tlabel[cc](5, -0.5){\(t\)} \tlabel[cc](0, 9.5){\(y\)} \tlabel[cc](-2, 1){\((-1,1)\)} \tlabel[cc](2, 1){\((1,1)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.3333,0.1}{1/(x**2)} \arrow \reverse \arrow \function{0.3333,5,0.1}{1/(x**2)} \point[4pt]{(-1,1), (1,1)} \tcaption{\(y = \frac{1}{t^2}\)} \end{mfpic}   \amp  \stackrel{\text{ <xref ref="linearlaurentlgraphs">Theorem</xref> } }{\xrightarrow{}}  \amp  \begin{mfpic}[15]{-1}{6}{-1}{9} \axes \dashed \polyline{(5, -1), (5,9)}  \tlabel[cc](6, -0.5){\(t\)} \tlabel[cc](0.5, 9){\(y\)} \tlabel[cc](-0.75, 0.5){\((0,4)\)} \tlabel[cc](3, 1.25){\(\left(4 ,100 \right)\)} \gclear \tlabelrect[cc](5, -0.5){\(t = 5\)}  \penwd{1.25pt} \arrow \function{0, 4.666,0.1}{1/((x-5)**2)} \point[4pt]{(0,0.01), (4,1)} \tcaption{\(y =P(t)\)} \end{mfpic} \\  \text{ \((-1,1)\), VA: \(t=0\) , \((1,1)\) }  \amp  \amp  \text{ \(\left(4, 100 \right)\), VA: \(t = 5\)  } \end{array}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            We see that as <m>t \rightarrow 5^{-}</m>,
+            <m>P(t) \rightarrow \infty</m>.
+            This means that the population of bacteria is increasing without bound as we near 5 days,
+            which cannot actually happen.
+            For this reason,
+            <m>t=5</m> is called the <sq>doomsday</sq> for this population.
+            There is no way any environment can support infinitely many bacteria,
+            so shortly before <m>t = 5</m> the environment would collapse.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Will all values excluded from the domain of a rational function produce vertical asymptotes in the graph?
+      The short answer is <sq>no.</sq> There are milder interruptions that can occur - holes in the graph - which we explore in our next example.
+      To this end, we formalize the notion of
+      <em>average velocity</em>
+      - a concept we first encountered in <xref ref="ARCRocketExample">Example</xref>
+      in <xref ref="ConstantandLinearFunctions">Section</xref>.
+      In that example, the function <m>s(t) = -5t^2+100t</m>,
+      <m>0 \leq t \leq 20</m> gives the height of a model rocket above the Moon's surface, in feet,
+      <m>t</m> seconds after liftoff.
+      The function <m>s</m> an example of a
+          <idx><h>position function</h></idx>
+          <idx><h>function</h><h>position</h></idx>
+      <em>position function</em> since it provides information about <em>where</em>
+      the rocket is at time <m>t</m>.
+      In that example,
+      we interpreted the average rate of change of <m>s</m> over an interval as the average velocity of the rocket over that interval.
+      The average velocity provides two pieces of information:
+      the average speed of the rocket along with the rocket's direction.
+      Suppose we have a position function <m>s</m> defined over an interval containing some fixed time <m>t_{0}</m>.
+      We can define the average velocity as a function of any time <m>t</m> other than <m>t_{0}</m>:
+    </p>
+    <definition xml:id="averagevelocitydefn">
+      <statement>
+        <p>
+          Suppose <m>s(t)</m> gives the position of an object at time <m>t</m> and <m>t_{0}</m> is a fixed time in the domain of <m>s</m>.
+          The
+              <idx><h>average velocity</h></idx>
+              <idx><h>velocity</h><h>average</h></idx>
+          <term>average velocity</term> between time <m>t</m> and time <m>t_{0}</m> is given by
+          <me>
+            \overline{v}(t) = \dfrac{\Delta [s(t)]}{\Delta t} = \dfrac{s(t) - s(t_{0})}{t - t_{0}}
+          </me>,
+          provided <m>t \neq t_{0}</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      It is clear why we must exclude <m>t = t_{0}</m> from the domain of
+      <m>\overline{v}</m> in <xref ref="averagevelocitydefn">Definition</xref>
+      since otherwise we would have a <m>0</m> in the denominator.
+      What is interesting in this case however,
+      is that substituting <m>t = t_{0}</m> also produces <m>0</m> in the
+      <em>numerator</em>. (Do you see why?) While <sq><m>\frac{0}{0}</m></sq> is undefined,
+      it is more precisely called an <sq>indeterminate form</sq> and is studied extensively in Calculus.
+      We can nevertheless explore this function in the next example.
+    </p>
+    <example xml:id="averagevelocityrocketex">
+      <statement>
+        <p>
+          Let <m>s(t) = -5t^2+100t</m>,
+          <m>0 \leq t \leq 20</m> give the height of a model rocket above the Moon's surface, in feet,
+          <m>t</m> seconds after liftoff.
+          <ol>
+            <li>
+              <p>
+                Find and simplify an expression for the average velocity of the rocket between times <m>t</m> and <m>15</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret <m>\overline{v}(14)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>y = \overline{v}(t)</m>.
+                Interpret the intercepts.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the behavior of <m>\overline{v}</m> as <m>t \rightarrow 15</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Using <xref ref="averagevelocitydefn">Definition</xref>
+                with <m>t_{0} = 15</m>, we get:
+                <me>
+                  \begin{array}{rclr}  \overline{v}(t) \amp  = \amp  \dfrac{s(t) - s(15)}{t-15} \\ \amp  =  \amp  \dfrac{(-5t^2+100t) - 375}{t - 15}  \\ \amp  =  \amp  \dfrac{-5(t^2-20t+75)}{t - 15}  \\ \amp  = \amp  \dfrac{-5(t-15)(t-5)}{t-15}  \\ \amp  = \amp   \dfrac{-5\cancel{(t-15)} (t-5)}{\cancel{(t-15)}} \\ \amp  = \amp  -5(t-5) = -5t + 25 \amp  \text{ \(t \neq 15\) } \end{array}
+                </me>
+                Since  domain of <m>s</m> is  <m>0 \leq t \leq 20</m>,
+                our final answer is <m>\overline{v}(t) = -5t+25</m>,
+                for <m>t \in [0, 15) \cup (15, 20]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We find <m>\overline{v}(14) = -5(14)+25 = -45</m>.
+                This means between <m>14</m> and <m>15</m> seconds after launch,
+                the rocket was traveling,
+                on average a speed <m>45</m> feet per second <em>downwards</em>,
+                or falling back to the Moon's surface.
+              </p>
+            </li>
+            <li>
+              <p>
+                The graph of <m>\overline{v}(t)</m> is a portion of the line <m>y= -5t+25</m>.
+                Since the domain of <m>s</m> is <m>[0, 20]</m> and
+                <m>\overline{v}(t)</m> is not defined when <m>t = 15</m>,
+                our graph is the line segment starting at <m>(0, 25)</m> and ending at
+                <m>(20, 75)</m> with a hole at <m>(15, 50)</m>.
+                The <m>y</m>-intercept is <m>(0,25)</m> which means on average,
+                the rocket is traveling <m>25</m> feet per second <em>upwards</em>.<fn>
+                Note that the rocket has already started its descent at <m>t = 10</m> seconds
+                (see <xref ref="ARCRocketExample">Example</xref>
+                in <xref ref="ConstantandLinearFunctions">Section</xref>.)
+                However, the rocket is still at a higher altitude at when <m>t =15</m> than <m>t=0</m> which produces a positive
+                <em>average</em> velocity.
+                </fn> To get the <m>t</m>-intercept,
+                we set <m>\overline{v}(t) = -5t+25 = 0</m> and obtain <m>t = 5</m>.
+                Hence, <m>\overline{v}(5) = 0</m> or the average velocity between times <m>t = 5</m> and <m>t = 15</m> is <m>0</m>.
+                As you may recall,
+                this is due to the rocket being at the same altitude (<m>375</m> feet) at both times, hence,
+                <m>\Delta [s(t)]</m> and, hence <m>\overline{v}(t) = 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                From the graph, we see as <m>t \rightarrow 15</m>,
+                <m>\overline{v}(t) \rightarrow -50</m>.
+                (This is also borne out in the numerically in the tables below.)
+                This means as we sample the average velocity between time
+                <m>t_{0} = 15</m> and and times closer and closer to <m>15</m>,
+                the average velocity approaches <m>-50</m>.
+                This value is how we define the <idx><h>velocity</h><h>instantaneous</h></idx>
+                  <idx><h>instantaneous velocity</h></idx> <em>instantaneous velocity</em> - that is, <em>at</em> <m>t=15</m> seconds, the rocket is falling at a rate of <m>50</m> feet per second towards the surface of the Moon.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{5}{-8}{3} \axes \axismarks{x}{1,2,3,4} \axismarks{y}{-7 step 1 until 2} \tlabel[cc](5, -0.5){<m>t</m>} \tlabel[cc](0.5, 3){<m>y</m>} \tlabel[cc](-1, 2.5){<m>(0, 25)</m>} \tlabel[cc](5.25, -7.5){<m>(20,-75)</m>} \tlabel[cc](4.25, -5){<m>(15,-50)</m>} \penwd{1.25pt} \polyline{(0, 2.5), (4, -7.5)} \point[4pt]{(0, 2.5), (4, -7.5)} \pointfillfalse \point[4pt]{(3, -5)} \tcaption{<m>y=\overline{v}(t)</m>} \end{mfpic} &amp; <m>\begin{array}{|r||c|} \hline t \amp \overline{v}(t) \\ \hline 14.9 \amp -49.5 \\ \hline 14.99 \amp -49.95 \\ \hline 14.999 \amp -49.995 \\ \hline 15 \amp \text{ undefined } \\ \hline 15.001 \amp -50.005 \\ \hline 15.01 \amp -50.05 \\ \hline 15.1 \amp -50.5 \\ \hline \end{array}</m>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      If nothing else, <xref ref="averagevelocityrocketex">Example</xref>
+      shows us that just because a value is excluded from the domain of a rational function doesn't mean there will be a vertical asymptote to the graph there.
+      In this case,
+      the factor <m>(t-15)</m> cancelled from the denominator,
+      thereby effectively removing the threat of dividing by <m>0</m>.
+      It turns out, this situation generalizes to the theorem below.
+    </p>
+    <theorem xml:id="vavshole">
+      <statement>
+        <p>
+          <em>Location of Vertical Asymptotes and Holes:</em><fn>
+          Or, <sq>How to tell your asymptote from a hole in the graph.</sq>
+          </fn> Suppose <m>r</m> is a rational function which can be written as
+          <m>r(x) = \frac{p(x)}{q(x)}</m> where <m>p</m> and <m>q</m> have no common zeros.<fn>
+          In other words, <m>r(x)</m> is in lowest terms.
+          </fn> Let <m>c</m> be a real number which is not in the domain of <m>r</m>.
+              <idx><h>hole</h><h>location of</h></idx>
+              <idx><h>asymptote</h><h>vertical ! location of</h></idx>
+              <idx><h>vertical asymptote</h><h>location of</h></idx>
+          <ul>
+            <li>
+              <p>
+                If <m>q(c) \neq 0</m>,
+                then the graph of <m>y=r(x)</m> has a hole at <m>\left(c, \frac{p(c)}{q(c)}\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>q(c) = 0</m>,
+                then the line <m>x=c</m> is a vertical asymptote to the graph of <m>y=r(x)</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In English, <xref ref="vavshole">Theorem</xref>
+      says that if <m>x=c</m> is not in the domain of <m>r</m> but,
+      when we simplify <m>r(x)</m>,
+      it no longer makes the denominator <m>0</m>,
+      then we have a hole at <m>x=c</m>.
+      Otherwise, the line <m>x=c</m> is a vertical asymptote of the graph of <m>y=r(x)</m>.
+      Like many properties of rational functions,
+      we owe <xref ref="vavshole">Theorem</xref> to Calculus,
+      but that won't stop us from putting <xref ref="vavshole">Theorem</xref>
+      to good use in the following example.
+    </p>
+    <example xml:id="vavsholeexample">
+      <statement>
+        <p>
+          For each function below:
+          <ul>
+            <li>
+              <p>
+                determine the values excluded from the domain.
+              </p>
+            </li>
+            <li>
+              <p>
+                determine whether each excluded value corresponds to a vertical asymptote or hole in the graph.
+              </p>
+            </li>
+            <li>
+              <p>
+                verify your answers using a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                describe the behavior of the graph near each excluded value using proper notation.
+              </p>
+            </li>
+            <li>
+              <p>
+                investigate any apparent symmetry of the graph about the <m>y</m>-axis or origin.
+              </p>
+            </li>
+          </ul>
+          <ol cols="2">
+            <li>
+              <p>
+                <m>f(x) = \dfrac{2x}{x^2-3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = \dfrac{t^2-t-6}{t^2-9}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>h(t) = \dfrac{t^2-t-6}{t^2+9}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>r(t) = \dfrac{t^2-t-6}{t^2+6t+9}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                To use <xref ref="vavshole">Theorem</xref>,
+                we first find all of the real numbers which aren't in the domain of <m>f</m>.
+                To do so, we solve <m>x^2 - 3 = 0</m> and get <m>x = \pm \sqrt{3}</m>.
+                Since the expression <m>f(x)</m> is in lowest terms
+                (can you see why?),
+                there is no cancellation possible,
+                and we conclude that the lines <m>x = -\sqrt{3}</m> and
+                <m>x=\sqrt{3}</m> are vertical asymptotes to the graph of <m>y=f(x)</m>.
+                The graphing utility verifies this claim, and from the graph,
+                we see that as <m>x \rightarrow -\sqrt{3}^{\, -}</m>,
+                <m>f(x) \rightarrow -\infty</m>,
+                as <m>x\rightarrow -\sqrt{3}^{\, +}</m>,
+                <m>f(x) \rightarrow \infty</m>,
+                as <m>x \rightarrow \sqrt{3}^{\, -}</m>,
+                <m>f(x) \rightarrow -\infty</m>,
+                and finally as <m>x\rightarrow \sqrt{3}^{\, +}</m>,
+                <m>f(x) \rightarrow \infty</m>.
+                As a side note,
+                the graph of <m>f</m> appears to be symmetric about the origin.
+                Sure enough, we find:
+                <m>f(-x) = \frac{2(-x)}{(-x)^2-3} = -\frac{2x}{x^2-3} = -f(x)</m>,
+                proving <m>f</m> is odd.
+              </p>
+            </li>
+            <li>
+              <p>
+                As above, we find the values excluded from the domain of <m>g</m> by setting the denominator equal to <m>0</m>.
+                Solving <m>t^2 - 9 = 0</m> gives <m>t = \pm 3</m>.
+                In lowest terms <m>g(t) = \frac{t^2-t-6}{t^2-9} = \frac{(t-3)(t+2)}{(t-3)(t+3)} = \frac{t+2}{t+3}</m>.
+                Since <m>t=-3</m> continues to be a zero of the denominator in the reduced formula,
+                we know the line <m>t=-3</m> is a vertical asymptote to the graph of <m>y=g(t)</m>.
+                Since <m>t=3</m> does not produce a <sq><m>0</m></sq> in the denominator of the reduced formula,
+                we have a hole at <m>t=3</m>.
+                To find the <m>y</m>-coordinate of the hole,
+                we substitute <m>t=3</m> into the reduced formula:
+                <m>\frac{t+2}{t+3} = \frac{3+2}{3+3} = \frac{5}{6}</m> so the hole is at <m>\left(3, \frac{5}{6}\right)</m>.
+                Graphing <m>g</m> we can definitely see the vertical asymptote <m>t=-3</m>:
+                as <m>t \rightarrow -3^{-}</m>,
+                <m>g(t) \rightarrow \infty</m> and as <m>t \rightarrow -3^{+}</m>,
+                <m>g(t) \rightarrow -\infty</m>.
+                Near <m>t=3</m>, the graph seems to have no interruptions
+                (but we know <m>g</m> is undefined at <m>t=3</m>.)
+                Since <m>g</m> appears to be increasing on <m>(-3, \infty)</m>,
+                we write as <m>t\rightarrow 3^{-}</m>,
+                <m>g(t) \rightarrow \frac{5}{6}^{-}</m>,
+                and as <m>t \rightarrow 3^{+}</m>,
+                <m>g(t) \rightarrow \frac{5}{6}^{+}</m>.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./IntroRationalGraphics/VAorHoleEx01.jpg"/></cell>
+                    <cell><image width="56%" source="./IntroRationalGraphics/VAorHoleEx02.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=f(x)</m></cell>
+                    <cell>The graph of <m>y=g(t)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Setting the denominator of the expression for <m>h(t)</m> to <m>0</m> gives <m>t^2+9 = 0</m>,
+                which ahs has no real solutions.
+                Accordingly, the graph of <m>y=h(t)</m>
+                (at least as much as we can discern from the technology)
+                is devoid of both vertical asymptotes and holes.
+              </p>
+            </li>
+            <li>
+              <p>
+                Setting the denominator of <m>r(t)</m> to zero gives the equation <m>t^2+6t+4 = 0</m>.
+                We get the (repeated!) solution <m>t=-2</m>.
+                Simplifying,
+                we see <m>r(t) = \frac{t^2-t-6}{t^2+4t+4} = \frac{(t-3)(t+2)}{(t+2)^2} = \frac{t-3}{t+2}</m>.
+                Since <m>t=-2</m> continues to produce a <m>0</m> in the denominator of the reduced function,
+                we know <m>t=-2</m> is a vertical asymptote to the graph.
+                The calculator bears this out, and,
+                moreover, we see that as <m>t \rightarrow -2^{-}</m>,
+                <m>r(t) \rightarrow \infty</m> and as <m>t \rightarrow -2^{+}</m>,
+                <m>r(t) \rightarrow -\infty</m>.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./IntroRationalGraphics/VAorHoleEx03.jpg"/></cell>
+                    <cell><image width="56%" source="./IntroRationalGraphics/VAorHoleEx04.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=h(t)</m></cell>
+                    <cell>The graph of <m>y=r(t)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="ebrationalsection">
+    <title>End Behavior</title>
+    <p>
+      Now that we've thoroughly discussed behavior near values excluded from the domains of rational functions,
+      focus our attention on end behavior.
+      We have already seen one example of this in the form of horizontal asymptotes.
+      Our next example of the section gives us a real-world application of a horizontal asymptote.<fn>
+      Though the population below is more accurately modeled with the functions in <xref ref="ExponentialandLogarithmicFunctions">Chapter</xref>,
+      we approximate it
+      (using Calculus, of course!)
+      using a rational function.
+      </fn>
+    </p>
+    <example xml:id="fluex">
+      <statement>
+        <p>
+          The number of students <m>N(t)</m> at local college who have had the flu <m>t</m> months after the semester begins can be modeled by:
+          <me>
+            N(t) = \dfrac{1500t + 50}{3t+1},   t \geq 0
+          </me>.
+          <ol>
+            <li>
+              <p>
+                Find and interpret <m>N(0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                How long will it take until <m>300</m> students will have had the flu?
+              </p>
+            </li>
+            <li>
+              <p>
+                Use <xref ref="linearlaurentlgraphs">Theorem</xref> to graph <m>y = N(t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the behavior of <m>N</m> as <m>t \rightarrow \infty</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                Substituting <m>t=0</m> gives <m>N(0) = \frac{1500(0) + 50}{1+3(0)} = 50</m>.
+                Since <m>t</m> represents the number of months since the beginning of the semester,
+                <m>t=0</m> describes the state of the flu outbreak at the beginning of the semester.
+                Hence, at the beginning of the semester,
+                <m>50</m> students have had the flu.
+              </p>
+            </li>
+            <li>
+              <p>
+                We set <m>N(t) = \frac{1500t + 50}{3t+1} = 300</m> and solve.
+                Clearing denominators gives
+                <m>1500t + 50 = 300(3t+1)</m> from which we get <m>t = \frac{5}{12}</m>.
+                This means it will take <m>\frac{5}{12}</m> months,
+                or about 13 days, for <m>300</m> students to have had the flu.
+              </p>
+            </li>
+            <li>
+              <p>
+                To graph <m>y = N(t)</m>,
+                we first use long division to rewrite <m>N(t) = \frac{-450}{3t+1} + 500</m>.
+                From there, we get
+                <me>
+                  N(t) =  -\frac{450}{3t+1} + 500  = \frac{-450}{3\left(t + \frac{1}{3}\right)} + 500 = \frac{-150}{t+\frac{1}{3}} + 500
+                </me>
+                Using <xref ref="linearlaurentlgraphs">Theorem</xref>,
+                we start with the graph of
+                <m>y = \frac{1}{t}</m> below on the left and perform the following steps:
+                shift the graph to the left by <m>\frac{1}{3}</m> units,
+                stretch the graph vertically by a factor of <m>150</m>,
+                reflect the graph across the <m>t</m>-axis, and finally,
+                shift the graph up <m>500</m> units.
+                As the domain of <m>N</m> is <m>t \geq 0</m>,
+                we obtain the graph below on the right.
+                <me>
+                  \begin{array}{ccc}   \begin{mfpic}[15]{-5}{5}{-5}{5} \axes  \tlabel[cc](5, -0.5){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-2, -1.5){\((-1,-1)\)} \tlabel[cc](2, 1.5){\((1,1)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.2,0.1}{1/x} \arrow \reverse \arrow \function{0.2,5,0.1}{1/x} \point[4pt]{(-1,-1), (1,1)} \tcaption{\(y =  \frac{1}{t}\)} \end{mfpic}   \amp \stackrel{\text{ <xref ref="linearlaurentlgraphs">Theorem</xref> } }{\xrightarrow{}}  \amp  \begin{mfpic}[15]{-1}{9}{-1}{9} \axes \dashed \polyline{(-1,5), (9,5)}  \tlabel[cc](9, -0.5){\(t\)} \tlabel[cc](0.5, 9){\(y\)} \tlabel[cc](7, 5.5){\(y = 500\)} \tlabel[cc](-1, 0.5){\((0,50)\)} \tlabel[cc](1.75, 3.25){\(\left(\frac{2}{3},350 \right)\)}  \penwd{1.25pt} \arrow \function{0,9,0.1}{5 - (1.5/(x+1/3))} \point[4pt]{(0,0.5), (0.6666,3.5)} \tcaption{\(y=N(t)\)} \end{mfpic} \\  \text{ \((-1,1)\) , \((1,1)\),  HA: \(y=0\) }  \amp  \amp  \text{\(\left(\frac{2}{3},350 \right)\), HA: \(y = 500\)  } \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                From the graph, we see as <m>t \rightarrow \infty</m>,
+                <m>N(t) \rightarrow 500</m>.
+                (More specifically, <m>500^{-}</m>.)
+                This means as time goes by,
+                only a total of 500 students will have ever had the flu.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      We determined the horizontal asymptote to the graph of
+      <m>y = N(t)</m> in <xref ref="fluex">Example</xref>
+      by rewriting <m>N(t)</m> into a form compatible with <xref ref="linearlaurentlgraphs">Theorem</xref>,
+      and while there is nothing wrong with this approach,
+      it will simply not work for general rational functions which cannot be rewritten this way.
+      To that end,
+      we revisit this problem using <xref ref="EBPolynomials">Theorem</xref>
+      from <xref ref="GraphsofPolynomials">Section</xref>.
+      The end behavior of the numerator of
+      <m>N(t) = \frac{1500t + 50}{3t+1}</m> is determined by its leading term,
+      <m>1500t</m>,
+      and the end behavior of the denominator is likewise determined by its leading term,
+      <m>3t</m>.
+      Hence, as <m>t \rightarrow \pm \infty</m>,
+      <me>
+        N(t) = \dfrac{1500t + 50}{3t+1} \approx \dfrac{1500t}{3t} = 500
+      </me>.
+    </p>
+    <p>
+      Hence as <m>t \rightarrow \pm \infty</m>,
+      <m>y = N(t) \rightarrow 500</m>,
+      producing the horizontal asymptote <m>y = 500</m>.
+      This same reasoning can be used in general to argue the following theorem.
+    </p>
+    <theorem xml:id="hathm">
+      <statement>
+        <p>
+              <idx><h>asymptote</h><h>horizontal ! location of</h></idx>
+              <idx><h>horizontal asymptote</h><h>location of</h></idx>
+          <em>Location of Horizontal Asymptotes:</em>
+          Suppose <m>r</m> is a rational function and <m>r(x) = \frac{p(x)}{q(x)}</m>,
+          where <m>p</m> and <m>q</m> are polynomial functions with leading coefficients <m>a</m> and <m>b</m>,
+          respectively.
+          <ul>
+            <li>
+              <p>
+                If the degree of <m>p(x)</m> is the same as the degree of <m>q(x)</m>,
+                then <m>y=\frac{a}{b}</m> is the<fn>
+                The use of the definite article will be justified momentarily.
+                </fn> horizontal asymptote of the graph of <m>y=r(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If the degree of <m>p(x)</m> is less than the degree of <m>q(x)</m>,
+                then <m>y=0</m> is the horizontal asymptote of the graph of <m>y=r(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If the degree of <m>p(x)</m> is greater than the degree of <m>q(x)</m>,
+                then the graph of <m>y=r(x)</m> has no horizontal asymptotes.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      \end{example}
+    </p>
+    <p>
+      So see why <xref ref="hathm">Theorem</xref> works,
+      suppose <m>r(x) = \frac{p(x)}{q(x)}</m> where <m>a</m> is the leading coefficient of <m>p(x)</m> and <m>b</m> is the leading coefficient of <m>q(x)</m>.
+      As <m>x \rightarrow \pm \infty</m>,
+      <xref ref="EBPolynomials">Theorem</xref>
+      gives <m>r(x) \approx \frac{ax^n}{bx^m}</m>,
+      where <m>n</m> and <m>m</m> are the degrees of <m>p(x)</m> and <m>q(x)</m>,
+      respectively.
+    </p>
+    <p>
+      If the degree of <m>p(x)</m> and the degree of <m>q(x)</m> are the same,
+      then <m>n=m</m> so that <m>r(x) \approx \frac{ax^n}{bx^n} = \frac{a}{b}</m>,
+      which means <m>y=\frac{a}{b}</m> is the horizontal asymptote in this case.
+    </p>
+    <p>
+      If the degree of <m>p(x)</m> is less than the degree of <m>q(x)</m>,
+      then <m>n \lt m</m>, so <m>m-n</m> is a positive number,
+      and hence,
+      <m>r(x) \approx \frac{ax^n}{bx^m} = \frac{a}{bx^{m-n}} \rightarrow 0</m>.
+      As <m>x \rightarrow \pm \infty</m>,
+      <m>r(x)</m> is more or less a fraction with a constant numerator,
+      <m>a</m>,
+      but a denominator which is unbounded.
+      Hence, <m>r(x) \rightarrow 0</m> producing the horizontal asymptote <m>y = 0</m>.
+    </p>
+    <p>
+      If the degree of <m>p(x)</m> is greater than the degree of <m>q(x)</m>,
+      then <m>n > m</m>,
+      and hence <m>n-m</m> is a positive number and <m>r(x) \approx \frac{ax^n}{bx^m} = \frac{ax^{n-m}}{ b}</m>,
+      which is a monomial function from <xref ref="GraphsofPolynomials">Section</xref>.
+      As such, <m>r</m> becomes unbounded as <m>x \rightarrow \pm \infty</m>.
+    </p>
+    <p>
+      Note that in the two cases which produce horizontal asymptotes,
+      the behavior of <m>r</m> is identical as
+      <m>x \rightarrow \infty</m> and <m>x \rightarrow -\infty</m>.
+      Hence, if the graph of a rational function has a horizontal asymptote,
+      there is only one.<fn>
+      We will (first) encounter functions with more than one horizontal asymptote in <xref ref="RootRadicalFunctions">Chapter</xref>.
+      </fn>
+    </p>
+    <p>
+      We put <xref ref="hathm">Theorem</xref>
+      to good use in the following example.
+    </p>
+    <example xml:id="haexample">
+      <statement>
+        <p>
+          For each function below:
+          <ul>
+            <li>
+              <p>
+                use <xref ref="EBPolynomials">Theorem</xref>
+                to analytically determine the horizontal asymptotes to the graph, if any.
+              </p>
+            </li>
+            <li>
+              <p>
+                check your answers <xref ref="hathm">Theorem</xref> and a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                describe the end behavior of the graph using proper notation.
+              </p>
+            </li>
+            <li>
+              <p>
+                investigate any apparent symmetry of the graph about the <m>y</m>-axis or origin.
+              </p>
+            </li>
+          </ul>
+          <ol cols="2">
+            <li>
+              <p>
+                <m>F(s) = \dfrac{5s}{s^2+1}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(x) = \dfrac{x^2-4}{x+1}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>h(t) = \dfrac{6t^3-3t+1}{5-2t^3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>r(x) = 2 - \dfrac{3x^2}{1-x^2}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                Using <xref ref="EBPolynomials">Theorem</xref>,
+                we get as <m>s \pm \infty</m>,
+                <m>F(s) = \frac{5s}{s^2+1} \approx \frac{5s}{s^2} = \frac{5}{s}</m>.
+                Hence, as <m>s \rightarrow \infty</m>,
+                <m>F(s) \rightarrow 0</m>,
+                so <m>y = 0</m> is a horizontal asymptote to the graph of <m>y = F(s)</m>.
+                To check, we note that since the degree of the numerator of <m>F(s)</m>,
+                <m>1</m>, is less than the degree of the denominator,
+                <m>2</m> <xref ref="hathm">Theorem</xref>
+                gives <m>y=0</m> is the horizontal asymptote.
+                Graphically, we see as <m>s \rightarrow \pm \infty</m>,
+                <m>F(s) \rightarrow 0</m>.
+                More specifically, as <m>s \rightarrow -\infty</m>,
+                <m>F(s) \rightarrow 0^{-}</m> and as <m>s \rightarrow \infty</m>,
+                <m>F(s) \rightarrow 0^{+}</m>.
+                As a side note,
+                the graph of <m>F</m> appears to be symmetric about the origin.
+                Indeed, <m>F(-s) = \frac{5(-s)}{(-s)^2+1} = -\frac{5s}{s^2+1}</m> proving <m>F</m> is odd.
+              </p>
+            </li>
+            <li>
+              <p>
+                As <m>x \rightarrow \pm \infty</m>,
+                <m>g(x) = \frac{x^2-4}{x+1} \approx \frac{x^2}{x} = x</m>,
+                and while <m>y = x</m> is a line,
+                it is not a horizontal line.
+                Hence, we conclude the graph of
+                <m>y = g(x)</m> has no horizontal asymptotes.
+                Sure enough, <xref ref="hathm">Theorem</xref>
+                supports this since the degree of the numerator of <m>g(x)</m> is <m>2</m> which is greater than the degree of the denominator,
+                <m>1</m>.
+                By, there is no horizontal asymptote.
+                From the graph,
+                we see that the graph of <m>y=g(x)</m> doesn't appear to level off to a constant value,
+                so there is no horizontal asymptote.<fn>
+                Sit tight!
+                We'll revisit this function and its end behavior shortly.
+                </fn>
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./IntroRationalGraphics/HAEx01.jpg"/></cell>
+                    <cell><image width="56%" source="./IntroRationalGraphics/HAEx02.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=F(s)</m></cell>
+                    <cell>The graph of <m>y=g(x)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                We have <m>h(t) = \frac{6t^3-3t+1}{5-2t^3} \approx \frac{6t^3}{-2t^3} = -3</m> as <m>t \rightarrow \pm \infty</m>,
+                indicating a horizontal asymptote <m>y = -3</m>.
+                Sure enough,
+                since the degrees of the numerator and denominator of <m>h(t)</m> are both three,
+                <xref ref="hathm">Theorem</xref> tells us
+                <m>y = \frac{6}{-2} = -3</m> is the horizontal asymptote.
+                We see from the graph of <m>y = h(t)</m> that as <m>t \rightarrow -\infty</m>,
+                <m>h(t) \rightarrow -3^{+}</m>,
+                and as <m>t \rightarrow \infty</m>,
+                <m>h(t) \rightarrow -3^{-}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If we apply <xref ref="EBPolynomials">Theorem</xref>
+                to the term <m>\frac{3x^2}{1-x^2}</m> in the expression for <m>r(x)</m>,
+                we find <m>\frac{3x^2}{1-x^2} \approx \frac{3x^2}{-x^2} = -3</m> as <m>x \rightarrow \pm \infty</m>.
+                It seems reasonable to conclude, then,
+                that <m>r(x) = 2 - \frac{3x^2}{1-x^2} \approx 2 - (-3) = 5</m> so <m>y = 5</m> is our horizontal asymptote.
+                In order to use <xref ref="hathm">Theorem</xref> as stated, however,
+                we need to rewrite the expression <m>r(x)</m> with a single denominator:
+                <m>r(x) = 2 - \frac{3x^2}{1-x^2} = \frac{2(1-x^2) - 3x^2}{1-x^2} = \frac{2-5x^2}{1-x^2}</m>.
+                Now we apply <xref ref="hathm">Theorem</xref>
+                and note since the numerator and denominator have the same degree,
+                we are guaranteed the horizontal asymptote is <m>y = \frac{-5}{-1} = 5</m>.
+                These calculations are borne out graphically below where it appears as if as <m>x \rightarrow \pm \infty</m>,
+                <m>r(x) \rightarrow 5^{+}</m>.
+                As a final note,
+                the graph of <m>r</m> appears to be symmetric about the <m>y</m> axis.
+                We find <m>r(-x) = 2 - \frac{3(-x)^2}{1-(-x)^2} = 2 - \frac{3x^2}{1-x^2} = r(x)</m>,
+                proving <m>r</m> is even.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./IntroRationalGraphics/HAEx03.jpg"/></cell>
+                    <cell><image width="56%" source="./IntroRationalGraphics/HAEx04.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=h(t)</m></cell>
+                    <cell>The graph of <m>y=r(x)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      We close this section with a discussion of the <em>third</em>
+      (and final!)
+      kind of asymptote which can be associated with the graphs of rational functions.
+      Let us return to the function
+      <m>g(x) = \frac{x^2-4}{x+1}</m> in <xref ref="haexample">Example</xref>.
+      Performing long division,<fn>
+      See the remarks following <xref ref="hathm">Theorem</xref>.
+      </fn> we get <m>g(x) = \frac{x^2-4}{x+1} = x-1 - \frac{3}{x+1}</m>.
+      Since the term <m>\frac{3}{x+1} \rightarrow 0</m> as <m>x \rightarrow \pm \infty</m>,
+      it stands to reason that as <m>x</m> becomes unbounded,
+      the function values <m>g(x) = x-1 - \frac{3}{x+1} \approx x-1</m>.
+      Geometrically,
+      this means that the graph of <m>y=g(x)</m> should resemble the line <m>y = x-1</m> as <m>x \rightarrow \pm \infty</m>.
+      We see this play out both numerically and graphically below.
+      (As usual, we the asymptote <m>y = x-1</m> is denoted by a dashed line.)
+    </p>
+    <tabular>
+      <row>
+        <cell><m>\begin{array}{|r||c|c|}  \hline
+          x \amp  g(x) \amp  x-1 \\ \hline
+          -10 \amp  \approx -10.6667 \amp  -11 \\  \hline
+          -100 \amp  \approx -100.9697 \amp  -101 \\  \hline
+          -1000 \amp   \approx -1000.9970\amp    -1001 \\ \hline
+          -10000 \amp   \approx -10000.9997 \amp   -10001 \\ \hline
+          \end{array}</m></cell>
+        <cell><m>\begin{array}{|r||c|c|}  \hline
+          x \amp  g(x) \amp  x-1 \\ \hline
+          10 \amp  \approx 8.7273 \amp     9 \\\hline
+          100 \amp  \approx 98.9703 \amp    99 \\ \hline
+          1000 \amp   \approx 998.9970 \amp   999 \\ \hline
+          10000 \amp   \approx 9998.9997 \amp    9999 \\ \hline
+          \end{array}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      <image width="75%" source="./IntroRationalGraphics/SAEx01.jpg"/>
+    </p>
+    <p>
+      The way we symbolize the relationship between the end behavior of <m>y=g(x)</m> with that of the line <m>y=x-1</m> is to write <sq>as <m>x \rightarrow \pm \infty</m>,
+      <m>g(x) \rightarrow x-1</m></sq> in order to have some notational consistency with what we have done earlier in this section when it comes to end behavior.<fn>
+      Other notations include <m>g(x) \asymp x-1</m> or <m>g(x) \sim x-1</m>.
+      </fn> In this case,
+      we say the line <m>y=x-1</m> is a <idx><h>asymptote</h><h>slant (oblique)</h></idx>
+          <idx><h>slant asymptote</h></idx>
+          <idx><h>oblique asymptote</h></idx> <em>slant asymptote</em><fn>
+      Also called an <sq>oblique</sq> asymptote in some, ostensibly higher class
+      (and more expensive),
+      texts.
+      </fn> to the graph of <m>y=g(x)</m>.
+      Informally, the graph of a rational function has a slant asymptote if,
+      as <m>x \rightarrow \infty</m> or as <m>x \rightarrow -\infty</m>,
+      the graph resembles a non-horizontal, or <sq>slanted</sq> line.
+      Formally, we define a slant asymptote as follows.
+    </p>
+    <definition xml:id="sa">
+      <statement>
+        <p>
+          The line <m>y = mx+b</m> where
+          <m>m \neq 0</m> is called a <idx><h>asymptote</h><h>slant ! formal definition of</h></idx>
+              <idx><h>slant asymptote</h><h>formal definition of</h></idx>
+          <term>slant asymptote</term> of the graph of a function <m>y=f(x)</m> if as
+          <m>x \rightarrow -\infty</m> or as <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow mx+b</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A few remarks are in order.
+      First, note that the stipulation
+      <m>m \neq 0</m> in <xref ref="sa">Definition</xref>
+      is what makes the <sq>slant</sq> asymptote <sq>slanted</sq> as opposed to the case when <m>m=0</m> in which case we'd have a horizontal asymptote.
+      Secondly, while we have motivated what me mean intuitively by the notation <sq><m>f(x) \rightarrow mx+b</m>,</sq> like so many ideas in this section,
+      the formal definition requires Calculus.
+      Another way to express this sentiment, however,
+      is to rephrase <sq><m>f(x) \rightarrow mx+b</m></sq> as <sq><m>[f(x) - (mx+b)] \rightarrow 0</m>.</sq> In other words,
+      the graph of <m>y=f(x)</m> has the <em>slant</em>
+      asymptote <m>y = mx+b</m> if and only if the graph of <m>y = f(x) - (mx+b)</m> has a
+      <em>horizontal</em> asymptote <m>y=0</m>.
+      If we wanted to, we could introduce the notations
+      <m>f(x) \rightarrow (mx+b)^{+}</m> to mean <m>[f(x)-(mx+b)] \rightarrow 0^{+}</m> and
+      <m>f(x) \rightarrow (mx+b)^{-}</m> to mean <m>[f(x)-(mx+b)] \rightarrow 0^{-}</m>,
+      but these non-standard notations.<fn>
+      With the introduction of the symbol <sq>\textinterrobang</sq> in the next section,
+      the authors feel we are in enough trouble already.
+      </fn>
+    </p>
+    <p>
+      Our next task is to determine the conditions under which the graph of a rational function has a slant asymptote,
+      and if it does, how to find it.
+      In the case of <m>g(x) = \frac{x^2-4}{x+1}</m>,
+      the degree of the numerator <m>x^2-4</m> is <m>2</m>,
+      which is <em>exactly one more</em>
+      than the degree if its denominator <m>x+1</m> which is <m>1</m>.
+      This results in a <em>linear</em> quotient polynomial,
+      and it is this quotient polynomial which is the slant asymptote.
+      Generalizing this situation gives us the following theorem.<fn>
+      Once again, this theorem is brought to you courtesy of <xref ref="polydiv">Theorem</xref> and Calculus.
+      </fn>
+    </p>
+    <theorem xml:id="sathm">
+      <statement>
+        <p>
+          <em>Determination of Slant Asymptotes:</em>
+          Suppose <m>r</m> is a rational function and <m>r(x) = \frac{p(x)}{q(x)}</m>,
+          where the degree of <m>p</m> is <em>exactly</em>
+          one more than the degree of <m>q</m>.
+          Then the graph of <m>y=r(x)</m> has <idx><h>asymptote</h><h>slant ! determination of</h></idx>
+              <idx><h>slant asymptote</h><h>determination of</h></idx>
+          the slant asymptote <m>y=L(x)</m> where <m>L(x)</m> is the quotient obtained by dividing <m>p(x)</m> by <m>q(x)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In the same way that <xref ref="hathm">Theorem</xref>
+      gives us an easy way to see if the graph of a rational function
+      <m>r(x) = \frac{p(x)}{q(x)}</m> has a horizontal asymptote by comparing the degrees of the numerator and denominator,
+      <xref ref="sathm">Theorem</xref> gives us an easy way to check for slant asymptotes.
+      Unlike <xref ref="hathm">Theorem</xref>,
+      which gives us a quick way to <em>find</em>
+      the horizontal asymptotes
+      (if any exist),
+      <xref ref="sathm">Theorem</xref> gives us no such <sq>short-cut</sq>.
+      If a slant asymptote exists,
+      we have no recourse but to use long division to find it.<fn>
+      That's OK, though.
+      In the next section,
+      we'll use long division to analyze end behavior and it's worth the effort!
+      </fn>
+    </p>
+    <example xml:id="saexample">
+      <statement>
+        <p>
+          For each of the following functions:
+          <ul>
+            <li>
+              <p>
+                find the slant asymptote, if it exists.
+              </p>
+            </li>
+            <li>
+              <p>
+                verify your answer using a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                investigate any apparent symmetry of the graph about the <m>y</m>-axis or origin.
+              </p>
+            </li>
+          </ul>
+          <ol cols="2">
+            <li>
+              <p>
+                <m>f(x) = \dfrac{x^2-4x+2}{1-x}</m>
+              </p>
+            </li>
+            <li xml:id="sacancel">
+              <p>
+                <m>g(t) = \dfrac{t^2-4}{t-2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>h(x) = \dfrac{x^3+1}{x^2-4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>r(t) = 2t-1+\dfrac{4t^3}{1-t^2}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The degree of the numerator is <m>2</m> and the degree of the denominator is <m>1</m>,
+                so <xref ref="sathm">Theorem</xref>
+                guarantees us a slant asymptote.
+                To find it, we divide <m>1-x = -x+1</m> into
+                <m>x^2-4x+2</m> and get a quotient of <m>-x+3</m>,
+                so our slant asymptote is <m>y=-x+3</m>.
+                We confirm this graphically below.
+              </p>
+            </li>
+            <li>
+              <p>
+                As with the previous example,
+                the degree of the numerator
+                <m>g(t) = \frac{t^2-4}{t-2}</m> is <m>2</m> and the degree of the denominator is <m>1</m>,
+                so <xref ref="sathm">Theorem</xref> applies.
+                In this case,
+                <me>
+                  g(t) = \frac{t^2-4}{t-2} = \frac{(t+2)(t-2)}{(t-2)} = \frac{(t+2) \cancel{(t-2)}}{\cancelto{1}{(t-2)}} = t+2,  t \neq 2
+                </me>
+                so we have that the slant asymptote <m>y=t+2</m> is identical to the graph of <m>y=g(t)</m> except at <m>t=2</m> (where the latter has a <sq>hole</sq> at <m>(2,4)</m>.) While the word <sq>asymptote</sq> has the connotation of <sq>approaching but not equaling,</sq> <xref ref="sa">Definitions</xref> and <xref ref="ha"></xref>
+                allow for these extreme cases.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./IntroRationalGraphics/SAEx02.jpg"/></cell>
+                    <cell><image width="56%" source="./IntroRationalGraphics/SAEx03.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=f(x)</m></cell>
+                    <cell>The graph of <m>y=g(t)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>h(x) = \frac{x^3+1}{x^2-4}</m>,
+                the degree of the numerator is <m>3</m> and the degree of the denominator is <m>2</m> so again,
+                we are guaranteed the existence of a slant asymptote.
+                The long division <m>\left(x^3+1 \right) \div \left(x^2-4\right)</m> gives a quotient of just <m>x</m>,
+                so our slant asymptote is the line <m>y=x</m>.
+                The graphing utility confirms this.
+                Note the graph of <m>h</m> appears to be symmetric about the origin.
+                We check <m>h(-x) = \frac{(-x)^3+1}{(-x)^2-4} = \frac{-x^3+1}{x^2-4} = - \frac{x^3-1}{x^2-4}</m>.
+                However, <m>-h(x) = - \frac{x^3+1}{x^2-4}</m>,
+                so it appears as if <m>h(-x) \neq -h(x)</m> for all <m>x</m>.
+                Checking <m>x=1</m>, we find <m>h(1) = -\frac{2}{3}</m> but
+                <m>h(-1) = 0</m> which shows the graph of <m>h</m>,
+                is in fact, <em>not</em> symmetric about the origin.
+              </p>
+            </li>
+            <li>
+              <p>
+                For our last example,  <m>r(t) = 2t-1+\frac{4t^3}{1-t^2}</m>,
+                the expression <m>r(t)</m> is not in the form to apply <xref ref="sathm">Theorem</xref> directly.
+                We can, nevertheless,
+                appeal to the spirit of the theorem and use long division to rewrite the term <m>\frac{4t^3}{1-t^2} = -4t + \frac{4t}{1-t^2}</m>.
+                We then get:
+                <me>
+                  \begin{array}{rcl}  r(t) \amp  = \amp  2t-1+\dfrac{4t^3}{1-t^2} \\ \amp = \amp   2t-1-4t+\dfrac{4t}{1-t^2} \\ \amp  = \amp  -2t-1 + \dfrac{4t}{1-t^2} \end{array}
+                </me>
+                As <m>t \rightarrow \pm \infty</m>,
+                <xref ref="EBPolynomials">Theorem</xref>
+                gives  <m>\frac{4t}{1-t^2} \approx \frac{4t}{-t^2} = -\frac{4}{t} \rightarrow 0</m>.
+                Hence, as <m>t \rightarrow \pm \infty</m>,
+                <m>r(t) \rightarrow -2t-1</m>,
+                so <m>y = -2t-1</m> is the slant asymptote to the graph as confirmed by the graphing utility below.  from a distance,
+                the graph of <m>r</m> appears to be symmetric about the origin.
+                However, if we look carefully,
+                we see the <m>y</m>-intercept is <m>(0,-1)</m>,
+                as borne out by the computation <m>r(0) = -1</m>.
+                Hence <m>r</m> cannot be odd.  (Do you see why?)
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./IntroRationalGraphics/SAEx04.jpg"/></cell>
+                    <cell><image width="56%" source="./IntroRationalGraphics/SAEx05.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=h(x)</m></cell>
+                    <cell>The graph of <m>y=r(t)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our last example gives a real-world application of a slant asymptote.
+      The problem features the concept of
+      <em>average profit</em>.
+      The average profit, denoted
+      <m>\overline{P}(x)</m>, is the total profit,
+      <m>P(x)</m>, divided by the number of items sold, <m>x</m>.
+      In English, the average profit tells us the profit made per item sold.
+      It, along with average cost, is defined below.
+    </p>
+    <definition xml:id="averagecostprofit">
+      <statement>
+        <p>
+          Let <m>C(x)</m> and <m>P(x)</m> represent the cost and profit to make and sell <m>x</m> items,
+          respectively.
+          <ul>
+            <li>
+              <p>
+                The
+                  <idx><h>average cost</h></idx>
+                  <idx><h>cost</h><h>average</h></idx> <em>average cost</em>, <m>\overline{C}(x) = \dfrac{C(x)}{x}</m>, <m>x > 0</m>.
+                <em>NOTE:</em> The average cost is the cost per item produced.
+              </p>
+            </li>
+            <li>
+              <p>
+                The
+                  <idx><h>average profit</h></idx>
+                  <idx><h>profit</h><h>average</h></idx> <em>average profit</em>, <m>\overline{P}(x) = \dfrac{P(x)}{x}</m>, <m>x > 0</m>.
+                <em>NOTE:</em> The average profit is the profit per item sold.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      You'll explore average cost
+      (and its relation to variable cost)
+      in <xref ref="averagevariablecostexercise">Exercise</xref>.
+      For now, we refer the reader to to <xref ref="PortaBoyProfit">Example</xref>
+      in <xref ref="QuadraticFunctions">Section</xref>.
+    </p>
+    <example xml:id="PortaBoyAverageProfit">
+      <statement>
+        <p>
+          Recall the profit
+          (in dollars)
+          when <m>x</m> PortaBoy game systems are produced and sold is given by
+          <m>P(x) = -1.5x^2+170x-150</m>, <m>0 \leq x \leq 166</m>.
+          <ol>
+            <li>
+              <p>
+                Find and simplify an expression for the average profit,
+                <m>\overline{P}(x)</m>.
+                What is the domain of <m>\overline{P}</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret <m>\overline{P}(50)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Determine the slant asymptote to the graph of <m>y = \overline{P}(x)</m>.
+                Check your answer using a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the slope of the slant asymptote.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We find <m>\overline{P}(x) = \frac{P(x)}{x} = \frac{ -1.5x^2+170x-150}{x} = -1.5x + 170 + \frac{150}{x}</m>.
+                Since the domain of <m>P</m> is <m>[0, 166]</m> but <m>x \neq 0</m>,
+                the domain of <m>\overline{P}</m> is <m>(0, 166]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We find <m>\overline{P}(50) = -1.5(50)+170 + \frac{150}{50} = 98</m>.
+                This means that when <m>50</m> PortaBoy systems are sold,
+                the average profit is <m>$ 98</m> per system.
+              </p>
+            </li>
+            <li>
+              <p>
+                Technically,
+                the graph of <m>y = \overline{P}(x)</m> has no slant asymptote since the domain of the function is restricted to <m>(0, 166]</m>.
+                That being said, if we were to let <m>x \rightarrow \infty</m>,
+                the term <m>\frac{150}{x} \rightarrow 0</m>,
+                so we'd have <m>\overline{P}(x) \rightarrow -1.5x + 170</m>.
+                This means the slant asymptote would be <m>y = -1.5x + 170</m>.
+                We graph <m>y = \overline{P}(x)</m> and <m>y = -1.5x+170</m>.
+                <image width="75%" source="./IntroRationalGraphics/SAEx06.jpg"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                The slope of the slant asymptote <m>y = -1.5x+170</m> is <m>-1.5</m>.
+                Since, ostensibly <m>\overline{P}(x) \approx -1.5 x + 170</m>,
+                this means that, as we sell more systems,
+                the average profit is decreasing at about a rate of <m>$ 1.50</m> per system.
+                If the number <m>1.5</m> sounds familiar to this problem situation,
+                it should.
+                In <xref ref="PortaBoyDemand">Example</xref>
+                in <xref ref="ConstantandLinearFunctions">Section</xref>,
+                we determined the slope of the demand function to be <m>-1.5</m>.
+                In that situation,
+                the <m>-1.5</m> meant that in order to sell an additional system,
+                the price had to drop by <m>$ 1.50</m>.
+                The fact the average profit is decreasing at more or less this same rate means the loss in profit per system can be attributed to the reduction in price needed to sell each additional system.<fn>
+                We generalize this result in <xref ref="slantyintaverageprofitexercise">Exercise</xref>.)
+                </fn>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      (Review of Long Division):<fn>
+      For more review, see <xref ref="polylongdiv">Section</xref>.
+      </fn> In <xref ref="longpolydivreviewfirst">Exercises</xref>
+      - <xref ref="longpolydivreviewlast"></xref>,
+      use polynomial long division to perform the indicated division.
+      Write the polynomial in the form <m>p(x) = d(x)q(x) + r(x)</m>.
+      <ol cols="3">
+        <li xml:id="longpolydivreviewfirst">
+          <p>
+            <m>\left(4x^2+3x-1 \right) \div (x-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(2x^3-x+1 \right) \div \left(x^{2} +x+1 \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(5x^{4} - 3x^{3} + 2x^{2} - 1 \right) \div \left(x^{2} + 4 \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(-x^{5} + 7x^{3} - x \right) \div \left(x^{3} - x^{2} + 1 \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(9x^{3} + 5 \right) \div \left(2x - 3 \right)</m>
+          </p>
+        </li>
+        <li xml:id="longpolydivreviewlast">
+          <p>
+            <m>\left(4x^2 - x - 23 \right) \div \left(x^{2} - 1 \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="rationaltransfirst">Exercises</xref>
+      - <xref ref="rationaltranslast"></xref>,
+      given the pair of functions <m>f</m> and <m>F</m>,
+      sketch the graph of <m>y=F(x)</m> by starting with the graph of
+      <m>y = f(x)</m> and using <xref ref="linearlaurentlgraphs">Theorem</xref>.
+      Track at least two points and the asymptotes.
+      State the domain and range using interval notation.
+      <ol cols="2">
+        <li xml:id="rationaltransfirst">
+          <p>
+            <m>f(x) = \dfrac{1}{x}</m>, <m>F(x) = \dfrac{1}{x-2}+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) =\dfrac{1}{x}</m>, <m>F(x) = \dfrac{2x}{x+1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) =x^{-1}</m>, <m>F(x)=4x(2x+1)^{-1}</m>
+          </p>
+        </li>
+        <li xml:id="rationaltranslast">
+          <p>
+            <m>f(x) = x^{-2}</m>, <m>F(x)=-(x-1)^{-2}+3</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulafor1overxgraphfirst">Exercises</xref>
+      - <xref ref="findformulafor1overxgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = \dfrac{a}{x-h}+k</m>.
+      <ol>
+        <li xml:id="findformulafor1overxgraphfirst">
+          <p>
+            <m>~</m> <m>y=F(x)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \dashed \polyline{(-4.75,-1), (4.75,-1)} \dashed \polyline{(-2,-4.75), (-2,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-2.25,0.1}{1/(x+2)-1} \arrow \reverse \arrow \function{-1.83,5,0.1}{1/(x+2)-1} \point[4pt]{(-1,0), (0,-0.5)} \tcaption{ <m>x</m>-intercept <m>(-1,0)</m>,
+            <m>y</m>-intercept <m>\left(0, -\frac{1}{2}\right)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformulafor1overxgraphlast">
+          <p>
+            <m>~</m> <m>y = F(x)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \dashed \polyline{(-4.75,1), (4.75,1)} \dashed \polyline{(1,-4.75), (1,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,0.45,0.1}{1-2/(x-1)} \arrow \reverse \arrow \function{1.35,5,0.1}{1-2/(x-1)} \point[4pt]{(3,0), (0,3)} \tcaption{ <m>x</m>-intercept <m>(3,0)</m>,
+            <m>y</m>-intercept <m>\left(0, 3 \right)</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulafor1overxsquaredgraphfirst">Exercises</xref>
+      - <xref ref="findformula1overxsquaredgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = \dfrac{a}{(x-h)^2}+k</m>.
+      <ol>
+        <li xml:id="findformulafor1overxsquaredgraphfirst">
+          <p>
+            <m>~</m> <m>y = F(x)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \dashed \polyline{(-4.75,4), (4.75,4)} \dashed \polyline{(-2,-4.75), (-2,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-2.7,0.1}{4-4/((x+2)**2)} \arrow \reverse \arrow \function{-1.3,5,0.1}{4-4/((x+2)**2)} \point[4pt]{(-3,0), (-1,0), (0,3)} \tcaption{<m>x</m>-intercepts <m>(-3,0)</m>,
+            <m>(-1,0)</m>, <m>y</m>-intercept <m>(0,3)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformula1overxsquaredgraphlast">
+          <p>
+            <m>~</m> <m>y = F(x)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-4</m>} -4} \dashed \polyline{(-4.75,-4), (4.75,-4)} \dashed \polyline{(0.5,-4.75), (0.5,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5, 0.16, 0.1}{4/((2*x-1)**2) - 4} \arrow \reverse \arrow \function{0.84, 5, 0.1}{4/((2*x-1)**2) - 4} \point[4pt]{(0,0), (1,0)} \tcaption{<m>x</m>-intercepts <m>(0,0)</m>,
+            <m>(1,0)</m>, Vertical Asymptote:
+            <m>x = \frac{1}{2}</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="alltheasympfirst">Exercises</xref>
+      - <xref ref="alltheasymplast"></xref>,
+      for the given rational function:
+      <ul>
+        <li>
+          <p>
+            State the domain.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identify any vertical asymptotes of the graph.
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            Identify any holes in the graph.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the horizontal asymptote, if it exists.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ul>
+      <li>
+        <p>
+          Find the slant asymptote, if it exists.
+        </p>
+      </li>
+      <li>
+        <p>
+          Graph the function using a graphing utility and describe the behavior near the asymptotes.
+        </p>
+      </li>
+    </ul>
+    <ol cols="2">
+      <li xml:id="alltheasympfirst">
+        <p>
+          <m>f(x) = \dfrac{x}{3x - 6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{3 + 7x}{5 - 2x}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x}{x^{2} + x - 12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t}{t^{2} + 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t + 7}{(t + 3)^{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t^{3} + 1}{t^{2} - 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{4z}{z^2+4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{4z}{z^2-4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{z^2-z-12}{z^2+z-6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{3x^2-5x-2}{x^2-9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x^3+2x^2+x}{x^2-x-2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x^{3} - 3x + 1}{x^{2} + 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{2t^{2} + 5t - 3}{3t + 2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{-t^{3} + 4t}{t^{2} - 9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{-5t^{4} - 3t^{3} + t^{2} - 10}{t^{3} - 3t^{2} + 3t - 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{z^3}{1-z}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{18-2z^2}{z^2-9}</m>
+        </p>
+      </li>
+      <li xml:id="alltheasymplast">
+        <p>
+          <m>r(z) = \dfrac{z^3-4z^2-4z-5}{z^2+z+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The cost <m>C(p)</m> in dollars to remove <m>p</m>% of the invasive  Ippizuti fish species from Sasquatch Pond is:
+          <me>
+            C(p) = \frac{1770p}{100 - p},  0 \leq p \lt  100
+          </me>
+          <ol>
+            <li>
+              <p>
+                Find and interpret <m>C(25)</m> and <m>C(95)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                What does the vertical asymptote at <m>x = 100</m> mean within the context of the problem?
+              </p>
+            </li>
+            <li>
+              <p>
+                What percentage of the Ippizuti fish can you remove for $40000?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          In the scenario of <xref ref="averagevelocityrocketex">Example</xref>,
+          <m>s(t) = -5t^2+100t</m>,
+          <m>0 \leq t \leq 20</m> gives the height of a model rocket above the Moon's surface, in feet,
+          <m>t</m> seconds after liftoff.
+          For each of the times <m>t_{0}</m> listed below,
+          find and simplify a the formula for the average velocity
+          <m>\overline{v}(t)</m> between <m>t</m> and <m>t_{0}</m>
+          (see <xref ref="averagevelocitydefn">Definition</xref>)
+          and use <m>\overline{v}(t)</m> to find and interpret the instantaneous velocity of the rocket at <m>t = t_{0}</m>.
+          <ol>
+            <li>
+              <p>
+                <m>t_{0} = 5</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t_{0} = 9</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t_{0} = 10</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t_{0} = 11</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="squatchpop">
+        <p>
+          The population of Sasquatch in Portage County <m>t</m> years after the year 1803 is modeled by the function
+          <me>
+            P(t) = \frac{150t}{t + 15}
+          </me>.
+          Find and interpret the horizontal asymptote of the graph of
+          <m>y = P(t)</m> and explain what it means.
+        </p>
+      </li>
+      <li>
+        <p>
+          The cost in dollars,
+          <m>C(x)</m> to make <m>x</m> dOpi media players is <m>C(x) = 100x+2000</m>,
+          <m>x \geq 0</m>.
+          You may wish to review the concepts of fixed and variable costs introduced in <xref ref="PortaBoyCost">Example</xref>
+          in <xref ref="LinearFunctions">Section</xref>.
+          <ol>
+            <li>
+              <p>
+                Find a formula for the average cost <m>\overline{C}(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret <m>\overline{C}(1)</m> and <m>\overline{C}(100)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                How many dOpis need to be produced so that the average cost per dOpi is <m>$ 200</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the behavior of <m>\overline{C}(x)</m> as <m>x \rightarrow 0^{+}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the behavior of <m>\overline{C}(x)</m> as <m>x \rightarrow \infty</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="averagevariablecostexercise">
+        <p>
+          This exercise explores the relationships between fixed cost,
+          variable cost, and average cost.
+          The reader is encouraged to revisit <xref ref="PortaBoyCost">Example</xref>
+          in <xref ref="LinearFunctions">Section</xref> as needed.
+          Suppose the cost in dollars <m>C(x)</m> to make <m>x</m> items is given by
+          <m>C(x) = mx + b</m> where <m>m</m> and <m>b</m> are positive real numbers.
+          <ol>
+            <li>
+              <p>
+                Show the fixed cost
+                (the money spent even if no items are made)
+                is <m>b</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Show the variable cost
+                (the increase in cost per item made)
+                is <m>m</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find a formula for the average cost when making <m>x</m> items,
+                <m>\overline{C}(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Show <m>\overline{C}(x) > m</m> for all <m>x>0</m> and,
+                moreover,
+                <m>\overline{C}(x) \rightarrow m^{+}</m> as <m>x \rightarrow \infty</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret <m>\overline{C}(x) \rightarrow m^{+}</m> both geometrically and in terms of fixed,
+                variable, and average costs.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="slantyintaverageprofitexercise">
+        <p>
+          Suppose the price-demand function for a particular product is given by
+          <m>p(x) = mx + b</m> where <m>x</m> is the number of items made and sold for <m>p(x)</m> dollars.
+          Here, <m>m\lt 0</m> and <m>b>0</m>.
+          If the cost
+          (in dollars)
+          to make <m>x</m> of these products is also a linear function <m>C(x)</m>,
+          show that the graph of the average profit function
+          <m>\overline{P}(x)</m> has a slant asymptote with slope <m>m</m> and interpret.
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="circuitexercisepoly">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>,
+          we fit a few polynomial models to the following electric circuit data.
+          The circuit was built with a variable resistor.
+          For each of the following resistance values
+          (measured in kilo-ohms, <m>k \Omega</m>),
+          the corresponding power to the load
+          (measured in milliwatts, <m>mW</m>)
+          is given below.<fn>
+          The authors wish to thank Don Anthan and Ken White of Lakeland Community College for devising this problem and generating the accompanying data set.
+          </fn>
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Resistance: (<m>k \Omega</m>)</cell>
+              <cell>1.012</cell>
+              <cell>2.199</cell>
+              <cell>3.275</cell>
+              <cell>4.676</cell>
+              <cell>6.805</cell>
+              <cell>9.975</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Power: (<m>mW</m>)</cell>
+              <cell>1.063</cell>
+              <cell>1.496</cell>
+              <cell>1.610</cell>
+              <cell>1.613</cell>
+              <cell>1.505</cell>
+              <cell>1.314</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          Using some fundamental laws of circuit analysis mixed with a healthy dose of algebra,
+          we can derive the actual formula relating power <m>P(x)</m> to resistance <m>x</m>:
+          <me>
+            P(x) = \frac{25x}{(x + 3.9)^2},  x \geq 0
+          </me>.
+          <ol>
+            <li>
+              <p>
+                Graph the data along with the function
+                <m>y = P(x)</m> using a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use a graphing utility to approximate the maximum power that can be delivered to the load.
+                What is the corresponding resistance value?
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the end behavior of <m>P(x)</m> as <m>x \rightarrow \infty</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) = \dfrac{ax^2-c}{x+3}</m>.
+          Find values for <m>a</m> and <m>c</m> so the graph of <m>f</m> has a hole at <m>(-3, 12)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) = \dfrac{ax^{n} -4}{2x^2+1}</m>.
+          <ol>
+            <li>
+              <p>
+                Find values for <m>a</m> and <m>n</m> so the graph of
+                <m>y = f(x)</m> has the horizontal asymptote <m>y = 3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find values for <m>a</m> and <m>n</m> so the graph of <m>y=f(x)</m> has the slant asymptote <m>y = 5x</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m>p</m> is a polynomial function and <m>a</m> is a real number.
+          Define <m>r(x)= \dfrac{p(x) - p(a)}{x-a}</m>.
+          Use the Factor Theorem, <xref ref="factorthm">Theorem</xref>,
+          to prove the graph of <m>y = r(x)</m> has a hole at <m>x =a</m>.
+        </p>
+      </li>
+      <li xml:id="laurentarcexercise">
+        <p>
+          For each function <m>f(x)</m> listed below,
+          compute the average rate of change over the indicated interval.<fn>
+          See <xref ref="arc">Definition</xref>
+          in <xref ref="AverageRateofChange">Section</xref>
+          for a review of this concept, as needed.
+          </fn>  What trends do you observe?
+          How do your answers manifest themselves graphically?
+          How do you results compare with those of <xref ref="monomialarcexercise">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>?
+          <me>
+            \begin{array}{|r||c|c|c|c|}  \hline  f(x) \amp   [0.9, 1.1] \amp  [0.99, 1.01] \amp [0.999, 1.001] \amp  [0.9999, 1.0001]  \\ \hline x^{-1} \amp \amp \amp \amp    \\  \hline x^{-2} \amp \amp \amp \amp     \\  \hline x^{-3} \amp \amp \amp \amp    \\  \hline x^{-4} \amp \amp \amp \amp    \\  \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+            <idx><h>Learning Curve Equation</h></idx>
+            <idx><h>Thurstone, Louis Leon</h></idx>
+          In his now famous 1919 dissertation
+          <em>The Learning Curve Equation</em>, Louis Leon Thurstone presents a rational function which models the number of words a person can type in four minutes as a function of the number of pages of practice one has completed.<fn>
+          This paper, which is now in the public domain and can be found
+          <url href="http://bit.ly/2uNaUBa"><em>here</em></url>,
+          is from a bygone era when students at business schools took typing classes on manual typewriters.
+          </fn> Using his original notation and original language,
+          we have <m>Y = \frac{L(X + P)}{(X + P) + R}</m> where <m>L</m> is the predicted practice limit in terms of speed units,
+          <m>X</m> is pages written,
+          <m>Y</m> is writing speed in terms of words in four minutes,
+          <m>P</m> is equivalent previous practice in terms of pages and <m>R</m> is the rate of learning.
+          In Figure 5 of the paper,
+          he graphs a scatter plot and the curve <m>Y = \frac{216(X + 19)}{X + 148}</m>.
+          Discuss this equation with your classmates.
+          How would you update the notation?
+          Explain what the horizontal asymptote of the graph means.
+          You should take some time to look at the original paper.
+          Skip over the computations you don't understand yet and try to get a sense of the time and place in which the study was conducted.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>4x^2+3x-1 = (x-3)(4x+15) + 44</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2x^3-x+1 = \left(x^2+x+1\right)(2x-2)+(-x+3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5x^{4} - 3x^{3} + 2x^{2} - 1 = \left(x^{2} + 4 \right) \left(5x^{2} - 3x - 18 \right) + (12x + 71)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-x^{5} + 7x^{3} - x = \left(x^{3} - x^{2} + 1 \right) \left(-x^{2} - x + 6 \right) + \left(7x^{2} - 6 \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>9x^{3} + 5 =(2x - 3) \left(\frac{9}{2}x^{2} + \frac{27}{4}x + \frac{81}{8} \right) + \frac{283}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4x^2 - x - 23 = \left(x^{2} - 1 \right)(4) + (-x - 19)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \dfrac{1}{x-2}+1</m> Domain:
+          <m>(-\infty, 2) \cup (2, \infty)</m> Range:
+          <m>(-\infty, 1) \cup (1, \infty)</m> Vertical asymptote:
+          <m>x = 2</m> Horizontal asymptote:
+          <m>y = 1</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \dashed \polyline{(-4.75,1), (4.75,1)} \dashed \polyline{(2,-4.75), (2,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,1.8,0.1}{1+1/(x-2)} \arrow \reverse \arrow \function{2.3,5,0.1}{1+1/(x-2)} \point[4pt]{(1,0), (3,2)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \dfrac{2x}{x+1} = \dfrac{-2}{x+1}+2</m> Domain:
+          <m>(-\infty, -1) \cup (-1, \infty)</m> Range:
+          <m>(-\infty, 2) \cup (2, \infty)</m> Vertical asymptote:
+          <m>x = -1</m> Horizontal asymptote:
+          <m>y = 2</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \dashed \polyline{(-4.75,2), (4.75,2)} \dashed \polyline{(-1,-4.75), (-1,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-1.7,0.1}{2x/(x+1)} \arrow \reverse \arrow \function{-0.7,5,0.1}{2x/(x+1)} \point[4pt]{(0,0), (-2,4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x)=4x(2x+1)^{-1} = \dfrac{4x}{2x+1} = \dfrac{-1}{x+\frac{1}{2}}+2</m> Domain:
+          <m>\left(-\infty, -\frac{1}{2} \right) \cup \left(-\frac{1}{2}, \infty \right)</m> Range:
+          <m>(-\infty, 2) \cup (2, \infty)</m> Vertical asymptote:
+          <m>y= 2</m> Horizontal asymptote:
+          <m>x = -\frac{1}{2}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \dashed \polyline{(-4.75,2), (4.75,2)} \dashed \polyline{(-0.5,-4.75), (-0.5,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.84,0.1}{4*x/(2*x+1)} \arrow \reverse \arrow \function{-0.35,5,0.1}{4*x/(2*x+1)} \point[4pt]{(-1.5,3), (0.5,1)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x)=-(x-1)^{-2}+3 = \dfrac{-1}{(x-1)^2} + 3</m> Domain:
+          <m>(-\infty, 1) \cup (1, \infty)</m> Range:
+          <m>(-\infty, 3) \cup (3, \infty)</m> Vertical asymptote:
+          <m>x = 1</m> Horizontal asymptote:
+          <m>y = 3</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \dashed \polyline{(-4.75,3), (4.75,3)} \dashed \polyline{(1,-4.75), (1,4.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,0.64,0.1}{3-1/((x-1)**2)} \arrow \reverse \arrow \function{1.36,5,0.1}{3-1/((x-1)**2)} \point[4pt]{(0,2), (2,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \dfrac{1}{x+2}-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \dfrac{-2}{x-1}+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \dfrac{-4}{(x+2)^2}+4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \dfrac{1}{\left(x-\frac{1}{2}\right)^2}-4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x}{3x - 6}</m> Domain:
+          <m>(-\infty, 2) \cup (2, \infty)</m> Vertical asymptote:
+          <m>x = 2</m> As <m>x \rightarrow 2^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow 2^{+}, f(x) \rightarrow \infty</m> No holes in the graph Horizontal asymptote:
+          <m>y = \frac{1}{3}</m> As <m>x \rightarrow -\infty,
+          f(x) \rightarrow \frac{1}{3}^{-}</m> As <m>x \rightarrow \infty,
+          f(x) \rightarrow \frac{1}{3}^{+}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{3 + 7x}{5 - 2x}</m> Domain:
+          <m>(-\infty, \frac{5}{2}) \cup (\frac{5}{2}, \infty)</m> Vertical asymptote:
+          <m>x = \frac{5}{2}</m> As <m>x \rightarrow \frac{5}{2}^{-}, f(x) \rightarrow \infty</m> As
+          <m>x \rightarrow \frac{5}{2}^{+}, f(x) \rightarrow -\infty</m> No holes in the graph Horizontal asymptote:
+          <m>y = -\frac{7}{2}</m> As
+          <m>x \rightarrow -\infty,
+          f(x) \rightarrow -\frac{7}{2}^{+}</m> As <m>x \rightarrow \infty,
+          f(x) \rightarrow -\frac{7}{2}^{-}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x}{x^{2} + x - 12} = \dfrac{x}{(x + 4)(x - 3)}</m> Domain:
+          <m>(-\infty, -4) \cup (-4, 3) \cup (3, \infty)</m> Vertical asymptotes:
+          <m>x = -4, x = 3</m> As <m>x \rightarrow -4^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow -4^{+}, f(x) \rightarrow \infty</m> As <m>x \rightarrow 3^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow 3^{+}, f(x) \rightarrow \infty</m> No holes in the graph Horizontal asymptote:
+          <m>y = 0</m> As <m>x \rightarrow -\infty,
+          f(x) \rightarrow 0^{-}</m> As <m>x \rightarrow \infty,
+          f(x) \rightarrow 0^{+}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t}{t^{2} + 1}</m> Domain:
+          <m>(-\infty, \infty)</m> No vertical asymptotes No holes in the graph Horizontal asymptote:
+          <m>y = 0</m> As <m>t \rightarrow -\infty,
+          g(t) \rightarrow 0^{-}</m> As <m>t \rightarrow \infty,
+          g(t) \rightarrow 0^{+}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t + 7}{(t + 3)^{2}}</m> Domain:
+          <m>(-\infty, -3) \cup (-3, \infty)</m> Vertical asymptote:
+          <m>t = -3</m> As <m>t \rightarrow -3^{-}, g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow -3^{+}, g(t) \rightarrow \infty</m> No holes in the graph Horizontal asymptote:
+          <m>y = 0</m><fn>
+          This is hard to see on the calculator, but trust me,
+          the graph is below the <m>t</m>-axis to the left of <m>t = -7</m>.
+          </fn>As <m>t \rightarrow -\infty,
+          g(t) \rightarrow 0^{-}</m> As <m>t \rightarrow \infty,
+          g(t) \rightarrow 0^{+}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t^{3} + 1}{t^{2} - 1} = \dfrac{t^{2} - t+ 1}{t-1}</m> Domain:
+          <m>(-\infty, -1) \cup (-1, 1) \cup (1, \infty)</m> Vertical asymptote:
+          <m>t = 1</m> As <m>t \rightarrow 1^{-}, g(t) \rightarrow -\infty</m> As
+          <m>t \rightarrow 1^{+}, g(t) \rightarrow \infty</m> Hole at <m>(-1, -\frac{3}{2})</m> Slant asymptote:
+          <m>y=t</m> As <m>t \rightarrow -\infty</m>,
+          the graph is below <m>y=t</m> As <m>t \rightarrow \infty</m>,
+          the graph is above <m>y=t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{4z}{z^{2} + 4}</m> Domain:
+          <m>(-\infty, \infty)</m> No vertical asymptotes No holes in the graph Horizontal asymptote:
+          <m>y = 0</m> As <m>z \rightarrow -\infty,
+          r(z) \rightarrow 0^{-}</m> As <m>z \rightarrow \infty,
+          r(z) \rightarrow 0^{+}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{4z}{z^{2} -4} = \dfrac{4z}{(z + 2)(z - 2)}</m> Domain:
+          <m>(-\infty, -2) \cup (-2, 2) \cup (2, \infty)</m> Vertical asymptotes:
+          <m>z = -2, z = 2</m> As <m>z \rightarrow -2^{-}, r(z) \rightarrow -\infty</m> As
+          <m>z \rightarrow -2^{+}, r(z) \rightarrow \infty</m> As <m>z \rightarrow 2^{-}, r(z) \rightarrow -\infty</m> As
+          <m>z \rightarrow 2^{+}, r(z) \rightarrow \infty</m> No holes in the graph Horizontal asymptote:
+          <m>y = 0</m> As <m>z \rightarrow -\infty,
+          r(z) \rightarrow 0^{-}</m> As <m>z \rightarrow \infty,
+          r(z) \rightarrow 0^{+}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{z^2-z-12}{z^{2} +z - 6} = \dfrac{z-4}{z - 2}</m> Domain:
+          <m>(-\infty, -3) \cup (-3, 2) \cup (2, \infty)</m> Vertical asymptote:
+          <m>z = 2</m> As <m>z \rightarrow 2^{-}, r(z) \rightarrow \infty</m> As <m>z \rightarrow 2^{+}, r(z) \rightarrow -\infty</m> Hole at
+          <m>\left(-3, \frac{7}{5} \right)</m> Horizontal asymptote:
+          <m>y = 1</m> As <m>z \rightarrow -\infty,
+          r(z) \rightarrow 1^{+}</m> As <m>z \rightarrow \infty,
+          r(z) \rightarrow 1^{-}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{3x^2-5x-2}{x^{2} -9} = \dfrac{(3x+1)(x-2)}{(x + 3)(x - 3)}</m> Domain:
+          <m>(-\infty, -3) \cup (-3, 3) \cup (3, \infty)</m> Vertical asymptotes:
+          <m>x = -3, x = 3</m> As <m>x \rightarrow -3^{-}, f(x) \rightarrow \infty</m> As
+          <m>x \rightarrow -3^{+}, f(x) \rightarrow -\infty</m> As <m>x \rightarrow 3^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow 3^{+}, f(x) \rightarrow \infty</m> No holes in the graph Horizontal asymptote:
+          <m>y = 3</m> As <m>x \rightarrow -\infty,
+          f(x) \rightarrow 3^{+}</m> As <m>x \rightarrow \infty,
+          f(x) \rightarrow 3^{-}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x^3+2x^2+x}{x^{2} -x-2} = \dfrac{x(x+1)}{x - 2}</m> Domain:
+          <m>(-\infty, -1) \cup (-1, 2) \cup (2, \infty)</m> Vertical asymptote:
+          <m>x = 2</m> As <m>x \rightarrow 2^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow 2^{+}, f(x) \rightarrow \infty</m> Hole at <m>(-1,0)</m> Slant asymptote:
+          <m>y=x+3</m> As <m>x \rightarrow -\infty</m>,
+          the graph is below <m>y=x+3</m> As <m>x \rightarrow \infty</m>,
+          the graph is above <m>y=x+3</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x^3-3x+1}{x^2+1}</m> Domain:
+          <m>(-\infty, \infty)</m> No vertical asymptotes No holes in the graph Slant asymptote:
+          <m>y=x</m> As <m>x \rightarrow -\infty</m>,
+          the graph is above <m>y=x</m> As <m>x \rightarrow \infty</m>,
+          the graph is below <m>y=x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{2t^{2} + 5t - 3}{3t + 2}</m> Domain:
+          <m>\left(-\infty, -\frac{2}{3}\right) \cup \left(-\frac{2}{3}, \infty\right)</m> Vertical asymptote:
+          <m>t = -\frac{2}{3}</m> As <m>t \rightarrow -\frac{2}{3}^{-}, g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow -\frac{2}{3}^{+}, g(t) \rightarrow -\infty</m> No holes in the graph Slant asymptote:
+          <m>y = \frac{2}{3}t + \frac{11}{9}</m> As <m>t \rightarrow -\infty</m>,
+          the graph is above <m>y = \frac{2}{3}t + \frac{11}{9}</m> As <m>t \rightarrow \infty</m>,
+          the graph is below <m>y = \frac{2}{3}t + \frac{11}{9}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{-t^{3} + 4t}{t^{2} - 9} = \dfrac{-t^{3} + 4t}{(t-3)(t+3)}</m> Domain:
+          <m>(-\infty, -3) \cup (-3, 3) \cup (3, \infty)</m> Vertical asymptotes:
+          <m>t = -3</m>,
+          <m>t=3</m> As <m>t \rightarrow -3^{-}, g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow -3^{+}, g(t) \rightarrow -\infty</m> As <m>t \rightarrow 3^{-}, g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow 3^{+}, g(t) \rightarrow -\infty</m> No holes in the graph Slant asymptote:
+          <m>y=-t</m> As <m>t \rightarrow -\infty</m>,
+          the graph is above <m>y=-t</m> As <m>t \rightarrow \infty</m>,
+          the graph is below <m>y=-t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{-5t^{4} - 3t^{3} + t^{2} - 10}{t^{3} - 3t^{2} + 3t - 1} \\ = \dfrac{-5t^{4} - 3t^{3} + t^{2} - 10}{(t-1)^3}</m> Domain:
+          <m>(-\infty, 1) \cup (1, \infty)</m> Vertical asymptotes:
+          <m>t = 1</m> As <m>t \rightarrow 1^{-}, g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow 1^{+}, g(t) \rightarrow -\infty</m> No holes in the graph Slant asymptote:
+          <m>y=-5t-18</m> As <m>t \rightarrow -\infty</m>,
+          the graph is above <m>y=-5t-18</m> As <m>t \rightarrow \infty</m>,
+          the graph is below <m>y=-5t-18</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{z^3}{1-z}</m> Domain:
+          <m>(-\infty, 1) \cup (1, \infty)</m> Vertical asymptote:
+          <m>z=1</m> As <m>z \rightarrow 1^{-}, r(z) \rightarrow \infty</m> As
+          <m>z \rightarrow 1^{+}, r(z) \rightarrow -\infty</m> No holes in the graph No horizontal or slant asymptote As <m>z \rightarrow -\infty</m>,
+          <m>r(z) \rightarrow -\infty</m> As <m>z \rightarrow \infty</m>,
+          <m>r(z) \rightarrow -\infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{18-2z^2}{z^2-9} = -2</m> Domain:
+          <m>(-\infty, -3) \cup (-3,3) \cup (3, \infty)</m> No vertical asymptotes Holes in the graph at <m>(-3,-2)</m> and <m>(3,-2)</m> Horizontal asymptote <m>y = -2</m> As <m>z \rightarrow \pm \infty</m>,
+          <m>r(z) = -2</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{z^3-4z^2-4z-5}{z^2+z+1} = z-5</m> Domain:
+          <m>(-\infty, \infty)</m> No vertical asymptotes No holes in the graph Slant asymptote:
+          <m>y = z-5</m> <m>r(z) = z-5</m> everywhere.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>C(25) = 590</m> means it costs $590 to remove 25% of the fish and and
+              <m>C(95)= 33630</m> means it would cost $33630 to remove 95% of the fish from the pond.
+            </p>
+          </li>
+          <li>
+            <p>
+              The vertical asymptote at <m>x = 100</m> means that as we try to remove 100% of the fish from the pond,
+              the cost increases without bound;
+              i.e., it's impossible to remove all of the fish.
+            </p>
+          </li>
+          <li>
+            <p>
+              For $40000 you could remove about 95.76% of the fish.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\overline{v}(t) = \frac{s(t) - s(5)}{t - 5} = \frac{-5t^2+100t-375}{t-5} = -5t+75</m>,
+              <m>t \neq 5</m>.
+              The instantaneous velocity of the rocket when <m>t_{0} = 5</m> is
+              <m>-5(5)+75 = 50</m> meaning it is traveling <m>50</m> feet per second upwards.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\overline{v}(t) = \frac{s(t) - s(9)}{t - 9} = \frac{-5t^2+100t-495}{t-9} = -5t+55</m>,
+              <m>t \neq 9</m>.
+              The instantaneous velocity of the rocket when
+              <m>t_{0} = 9</m> is <m>-5(9)+55 = 10</m>,
+              so the rocket has slowed to <m>10</m> feet per second (but still heading up.)
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\overline{v}(t) = \frac{s(t) - s(10)}{t - 10} = \frac{-5t^2+100t-495}{t-10} = -5t+50</m>,
+              <m>t \neq 10</m>.
+              The instantaneous velocity of the rocket when
+              <m>t_{0} = 10</m> is <m>-5(10)+50 = 0</m>,
+              so the rocket has momentarily stopped!
+              In <xref ref="ARCRocketExample">Example</xref>,
+              we learned the rocket reaches its maximum height when <m>t = 10</m> seconds,
+              which means the rocket must change direction from heading up to coming back down,
+              so it makes sense that for this instant, its velocity is <m>0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\overline{v}(t) = \frac{s(t) - s(11)}{t - 11} = \frac{-5t^2+100t-495}{t-11} = -5t+45</m>,
+              <m>t \neq 11</m>.
+              The instantaneous velocity of the rocket when <m>t_{0} = 11</m> is
+              <m>-5(11)+45 = -10</m> meaning the rocket has, indeed,
+              changed direction and is heading downwards at a rate of <m>10</m> feet per second.
+              (Note the symmetry here between this answer and our answer when <m>t=9</m>.)
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The horizontal asymptote of the graph of
+          <m>P(t) = \frac{150t}{t + 15}</m> is <m>y = 150</m> and it means that the model predicts the population of Sasquatch in Portage County will never exceed 150.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\overline{C}(x) = \frac{100x+2000}{x} = 100 + \frac{2000}{x}</m>,
+              <m>x > 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\overline{C}(1) = 2100</m> and <m>\overline{C}(100) = 120</m>.
+              When just <m>1</m> dOpi is produced,
+              the cost per dOpi is <m>\dollar2100</m>,
+              but when <m>100</m> dOpis are produced,
+              the cost per dOpi is <m>\dollar120</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\overline{C}(x) = 200</m> when <m>x = 20</m>.
+              So to get the cost per dOpi to <m>\dollar200</m>,
+              <m>20</m> dOpis need to be produced.
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>x \rightarrow 0^{+}</m>,
+              <m>\overline{C}(x) \rightarrow \infty</m>.
+              This means that as fewer and fewer dOpis are produced,
+              the cost per dOpi becomes unbounded.
+              In this situation, there is a fixed cost of
+              <m>\dollar2000</m> (<m>C(0) = 2000</m>),
+              we are trying to spread that
+              <m>\dollar2000</m> over fewer and fewer dOpis.
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>x \rightarrow \infty</m>,
+              <m>\overline{C}(x) \rightarrow 100^{+}</m>.
+              This means that as more and more dOpis are produced,
+              the cost per dOpi approaches <m>\dollar100</m>,
+              but is always a little more than <m>\dollar100</m>.
+              Since <m>\dollar100</m> is the variable cost per dOpi (<m>C(x) = \underline{100}x+2000</m>),
+              it means that no matter how many dOpis are produced,
+              the average cost per dOpi will always be a bit higher than the variable cost to produce a dOpi.
+              As before, we can attribute this to the <m>\dollar2000</m> fixed cost,
+              which factors into the average cost per dOpi no matter how many dOpis are produced.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              The cost to make <m>0</m> items is <m>C(0) = m(0)+b = b</m>.
+              Hence, so the fixed costs are <m>b</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>C(x) = mx+b</m> is a linear function with slope <m>m>0</m>.
+              Hence, the cost increases at a rate of <m>m</m> dollars per item made.
+              Hence, the variable cost is <m>m</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\overline{C}(x) = \frac{C(x)}{x} = \frac{mx+b}{x} = m + \frac{b}{x}</m> for <m>x > 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since <m>b>0</m>,
+              <m>\overline{C}(x) = m + \frac{b}{x} > m</m> for <m>x > 0</m>.
+              As <m>x \rightarrow \infty</m>,
+              <m>\frac{b}{x} \rightarrow 0</m> so <m>\overline{C}(x) = m + \frac{b}{x} \rightarrow m</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Geometrically, the graph of
+              <m>y = \overline{C}(x)</m> has a horizontal asymptote <m>y = m</m>,
+              the variable cost.
+              In terms of costs, as more items are produced,
+              the affect of the fixed cost on the average cost,
+              <m>\frac{b}{x}</m> falls away so that the average cost per item approaches the variable cost to make each item.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          If <m>p(x) = mx + b</m> and <m>C(x)</m> is linear,
+          say <m>C(x) = rx+s</m>, then we can compute the the profit function
+          (in general)
+          as:
+          <m>P(x) = xp(x) - C(x) = x(mx+b) - (rx+s)</m> which simplifies to <m>P(x) = mx^2 + (b-r)x -s</m>.
+          Hence, the average profit <m>\overline{P}(x) = \frac{P(x)}{x} = \frac{mx^2 + (b-r)x -s}{x} = mx + (b-r) - \frac{s}{x}</m>.
+          We see that as <m>x \rightarrow \infty</m>,
+          <m>\frac{s}{x} \rightarrow 0</m> so <m>\overline{P}(x) \approx mx + (b-r)</m>.
+          Hence, <m>y = mx + (b-r)</m> is the slant asymptote to <m>y = \overline{P}(x)</m>.
+          This means that as more items are sold,
+          the average profit is decreasing at approximately the same rate as the price function is decreasing,
+          <m>m</m> dollars per item.
+          That is, to sell one additional item,
+          we drop the price <m>p(x)</m> by <m>m</m> dollars which results in a drop in the average profit by approximately <m>m</m> dollars.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>~</m> <image width="73%" source="./IntroRationalGraphics/MaxPowerRegression.jpg"/>
+            </p>
+          </li>
+          <li>
+            <p>
+              The maximum power is approximately
+              <m>1.603 \; mW</m> which corresponds to <m>3.9 \; k\Omega</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>x \rightarrow \infty, \; P(x) \rightarrow 0^{+}</m> which means as the resistance increases without bound,
+              the power diminishes to zero.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>a = -2</m> and <m>c = -18</m> so <m>f(x) = \dfrac{-2x^2+18}{x+3}</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>a=6</m> and <m>n=2</m> so <m>f(x) = \dfrac{6x^{2} -4}{2x^2+1}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>a=10</m> and <m>n = 3</m> so <m>f(x) = \dfrac{10x^{3} -4}{2x^2+1}</m> .
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          If we define <m>f(x) = p(x) - p(a)</m> then <m>f</m> is a polynomial function with <m>f(a) = p(a) - p(a) = 0</m>.
+          The Factor Theorem guarantees <m>(x-a)</m> is a factor of <m>f(x)</m>, that is,
+          <m>f(x) = p(x) - p(a) = (x-a)q(x)</m> for some polynomial <m>q(x)</m>.
+          Hence, <m>r(x) = \frac{p(x)-p(a)}{x-a} = \frac{(x-a)q(x)}{x-a} = q(x)</m> so the graph of
+          <m>y = r(x)</m> is the same as the graph of the polynomial
+          <m>y = q(x)</m> except for a hole when <m>x = a</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The slope of the curves near <m>x=1</m> matches the exponent on <m>x</m>.
+          This exactly what we saw in  <xref ref="monomialarcexercise">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>.
+          <me>
+            \begin{array}{|r||c|c|c|c|}  \hline  f(x) \amp   [0.9, 1.1] \amp  [0.99, 1.01] \amp [0.999, 1.001] \amp  [0.9999, 1.0001]  \\ \hline x^{-1} \amp  -1.0101 \amp  -1.0001 \amp  \approx -1 \amp  \approx -1  \\  \hline x^{-2}\amp  -2.0406\amp  -2.0004 \amp  \approx -2 \amp  \approx -2   \\  \hline x^{-3} \amp -3.1021 \amp  -3.0010 \amp  \approx -3 \amp  \approx -3   \\  \hline x^{-4} \amp -4.2057 \amp  -4.0020 \amp \approx -4 \amp  \approx -4   \\   \hline \end{array}
+          </me>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

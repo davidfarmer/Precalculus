@@ -1,0 +1,1124 @@
+<section xml:id="GraphsofFunctions">
+  <title>Graphs of Functions</title>
+  <introduction>
+    <p>
+      Up until this point in the text,
+      we have primarily focused on studying particular
+      <em>families</em> of functions.
+      These families and their relationships to one another provide useful <em>examples</em>
+      of more abstract function structures and relationships.
+      The notions introduced in this chapter will not only provide us a more formal vocabulary with which to describe the connections between the function families we have already studied, but,
+      more importantly,
+      give us additional lenses through which to view new families of functions that we'll encounter.
+    </p>
+    <p>
+      In this section,
+      we review of the concepts associated with the graphs of functions.
+      We introduced the notion of the graph of a function in <xref ref="FunctionsandtheirRepresentations">Section</xref>,
+      and the vast majority of the graphs we have encountered in this text were generated from an algebraic representation of a function.
+      In this section,
+      we define the functions geometrically from the outset and review the important concepts associated with the graphs of functions.
+    </p>
+    <p>
+      Recall the <em>domain</em> of a function is the set of inputs to the function and the <em>range</em>
+      of a function is the set of outputs from the function.
+      When graphing a function whose domain and range are subsets of real numbers,
+      we plot the ordered pairs <m>(\text{ input } , \text{ output } )</m> on the Cartesian plane.
+      Hence, the domain values are found on the horizontal axis while the range values are found on the vertical axis.
+    </p>
+    <p>
+      Recall from <xref ref="absmaxmindefn">Definition</xref>
+      that the largest output from the function
+      (if there is one)
+      is called the <em>maximum</em> or,
+      when there may be some confusion,
+      the <em>absolute maximum</em> of the function.
+      Likewise, the smallest output from the function (again,
+      if there is one) is called the <em>minimum</em>
+      or <em>absolute minimum</em>.
+    </p>
+    <p>
+      A concept related to <sq>absolute</sq> maximum and minimum is the concept of <sq>local</sq> maximum and minimum as described in <xref ref="localmaxmindefn">Definition</xref>.
+      Here, a point <m>(a,b)</m> on the graph of a function <m>f</m> is a <em>local maximum</em>
+      if <m>b</m> is the maximum function value for some open interval in the domain containing <m>a</m>.
+      The notion of <sq>local</sq> here meaning instead of surveying the entire domain,
+      we instead restrict our attention to inputs <sq>local</sq> or <sq>near</sq> the input <m>a</m>.
+      The concept of <em>local minimum</em> is defined similarly.
+    </p>
+    <p>
+      Next, we review the notions of <em>increasing</em>, <em>decreasing</em>,
+      and <em>constant</em> as described in <xref ref="incdeccnstdefn">Definition</xref>.
+      Recall a function is increasing over an interval if,
+      as the inputs increase, do the outputs.
+      This means that, geometrically,
+      the graph of the function rises as we move left to right.
+      Similarly, a function is decreasing over an interval if the outputs decrease as the inputs increase.
+      Geometrically,
+      a decreasing function falls as we move left to right.
+      Finally, a function is constant over an interval if the output is the same regardless of the input.
+      If a function is constant over an interval,
+      its graph remains <sq>flat</sq> - a horizontal line.
+    </p>
+    <p>
+      Last, and according to some<fn>
+      Jeff
+      </fn> least,
+      we briefly review the notion of symmetry in the graphs of functions.
+      Recall from <xref ref="evenfunctiondefn">Definition</xref>
+      that a function <m>f</m> is called <em>even</em>
+      if <m>f(-x) = f(x)</m> for all <m>x</m> in the domain of <m>f</m>.
+      The graphs of even functions are symmetric about the vertical
+      (usually <m>y</m>-)
+      axis.
+      In a similar manner, <xref ref="oddfunctiondefn">Definition</xref>
+      tells us a function <m>f</m> is <em>odd</em>
+      if <m>f(-x) = -f(x)</m> for all <m>x</m> in the domain of <m>f</m>.
+      Geometrically,
+      the graphs of odd functions are symmetric about the origin.
+    </p>
+    <p>
+      The next example reviews all of the aforementioned concepts as well as many more.
+    </p>
+    <example xml:id="tame">
+      <statement>
+        <p>
+          Given the graph of <m>y = f(x)</m> below,
+          answer all of the following questions.
+          <ol cols="2">
+            <li>
+              <p>
+                Find the domain of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the range of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the maximum, if it exists.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the minimum, if it exists.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the <m>x</m>-intercepts, if any exist.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the <m>y</m>-intercepts, if any exist.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the zeros of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve <m>f(x) \lt 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Determine <m>f(2)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve <m>f(x) = -3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the number of solutions to <m>f(x) = 1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Does <m>f</m> appear to be even, odd, or neither?
+              </p>
+            </li>
+            <li>
+              <p>
+                List the local maximums, if any exist.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the local minimums, if any exist.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the intervals on which <m>f</m> is increasing.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the intervals on which <m>f</m> is decreasing.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          \begin{mfpic}[20]{-5}{5}{-5}{5} \tlabel[cc](-3,0.5){ <m>\left( -2, 0 \right)</m>} \tlabel[cc](2.5,0.5){
+          <m>\left(2, 0 \right)</m>} \tlabel[cc](4,-3.5){
+          <m>\left( 4, -3 \right)</m>} \tlabel[cc](-4,-3.5){ <m>\left(-4, -3 \right)</m>} \tlabel[cc](1,3.5){
+          <m>\left(0, 3 \right)</m>} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+        </p>
+        <p>
+          \point[4pt]{(-2,0), (2,0), (4,-3), (-4,-3), (0,3)} \penwd{1.25pt} \function{-4,4,.1}{3*cos(3.14159265*x/4)} \end{mfpic}
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find the domain of <m>f</m>,
+                we proceed as in <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+                By projecting the graph to the <m>x</m>-axis,
+                we see that the portion of the <m>x</m>-axis which corresponds to a point on the graph is everything from <m>-4</m> to <m>4</m>,
+                inclusive.
+                Hence, the domain is <m>[-4,4]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the range, we project the graph to the <m>y</m>-axis.
+                We see that the <m>y</m> values from <m>-3</m> to <m>3</m>,
+                inclusive,
+                constitute the range of <m>f</m>.
+                Hence, our answer is <m>[-3,3]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The maximum value of <m>f</m> is the largest <m>y</m>-coordinate which is <m>3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The minimum value of <m>f</m> is the smallest <m>y</m>-coordinate which is <m>-3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <m>x</m>-intercepts are the points on the graph with <m>y</m>-coordinate <m>0</m>,
+                namely <m>(-2,0)</m> and <m>(2,0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <m>y</m>-intercept is the point on the graph with <m>x</m>-coordinate <m>0</m>,
+                namely <m>(0,3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The zeros of <m>f</m> are the <m>x</m>-coordinates of the <m>x</m>-intercepts of the graph of <m>y=f(x)</m> which are <m>x=-2, 2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>f(x) \lt 0</m>,
+                we look for the <m>x</m> values of the points on the graph where the <m>y = f(x)</m> is negative.
+                Graphically, we are looking for where the graph is
+                <em>below</em> the <m>x</m>-axis.
+                This happens for the <m>x</m> values from <m>-4</m> to <m>-2</m> and again from <m>2</m> to <m>4</m>.
+                So our answer is <m>[-4,-2) \cup (2,4]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the graph of <m>f</m> is the graph of the equation <m>y=f(x)</m>,
+                <m>f(2)</m> is the <m>y</m>-coordinate of the point which corresponds to <m>x = 2</m>.
+                Since the point <m>(2,0)</m> is on the graph, we have <m>f(2) = 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>f(x) = -3</m>, we look where <m>y = f(x) = -3</m>.
+                We find two points with a <m>y</m>-coordinate of <m>-3</m>,
+                namely <m>(-4,-3)</m> and <m>(4,-3)</m>.
+                Hence, the solutions to <m>f(x) = -3</m> are <m>x = \pm 4</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As in the previous problem, to solve <m>f(x)=1</m>,
+                we look for points on the graph where the <m>y</m>-coordinate is <m>1</m>.
+                If we imagine the horizontal like <m>y=1</m> superimposed over the graph of <m>f</m> as sketched below,
+                we get two intersections.
+                Hence, even though these points aren't specified,
+                we know there are <em>two</em> points on the graph of <m>f</m> whose <m>y</m>-coordinate is <m>1</m>.
+                Hence, there are two solutions to
+                <m>f(x) = 1</m>. \begin{mfpic}[15]{-5}{5}{-5}{5} \dashed \arrow \reverse \arrow \polyline{(-4,1), (4,1)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3,1.5){<m>y=1</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \point[4pt]{(-1.5673,1),(1.5673,1), (-4,-3), (4,-3)} \penwd{1.25pt} \function{-4,4,.1}{3*cos(3.14159265*x/4)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                The graph appears to be symmetric about the <m>y</m>-axis.
+                This suggests<fn>
+                but does not prove
+                </fn> that <m>f</m> is even.
+              </p>
+            </li>
+            <li>
+              <p>
+                The function has its only local maximum at <m>(0,3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                There are no local minimums.
+                Why don't <m>(-4, -3)</m> and <m>(4, -3)</m> count?
+                Let's consider the point <m>(-4, -3)</m> for a moment.
+                Recall that, in the definition of local minimum,
+                there needs to be an open interval containing <m>x = -4</m> which is in the domain of <m>f</m>.
+                In this case,
+                there is no open interval containing <m>x=-4</m> which lies entirely in the domain of <m>f</m>,
+                <m>[-4,4]</m>.
+                Because we are unable to fulfill the requirements of the definition for a local minimum,
+                we cannot claim that <m>f</m> has one at <m>(-4, -3)</m>.
+                The point <m>(4, -3)</m> fails for the same reason <m>-</m> no open interval around <m>x = 4</m> stays within the domain of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As we move from left to right,
+                the graph rises from <m>(-4,-3)</m> to <m>(0,3)</m>.
+                This means <m>f</m> is increasing on the interval <m>[-4,0]</m>.
+                (Remember, the answer here is an interval on the <m>x</m>-axis.)
+              </p>
+            </li>
+            <li>
+              <p>
+                As we move from left to right,
+                the graph falls from <m>(0,3)</m> to <m>(4,-3)</m>.
+                This means <m>f</m> is decreasing on the interval <m>[0,4]</m>.
+                (Again, the answer here is an interval on the <m>x</m>-axis.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our next example involves a more complicated function and asks more complicated questions.
+    </p>
+    <example xml:id="generalfunctionbehaviorex">
+      <statement>
+        <p>
+          Consider the graph of the function <m>g</m> below.
+        </p>
+        <p>
+          \begin{mfpic}[15]{-5}{8}{-10}{8} \tlabel[cc](-4,-3.75){<m>(-4,-3)</m>} \tlabel[cc](-4,0.5){<m>(-3,0)</m>} \tlabel[cc](-2.5,5.25){<m>(-2,4.5)</m>} \tlabel[cc](1,0.5){<m>(0,0)</m>} \tlabel[cc](3,-8.75){<m>(3,-8)</m>} \tlabel[cc](3.5,-5.25){<m>(4,-6)</m>} \tlabel[cc](5.5, -6.75){<m>(5,-6)</m>} \tlabel[cc](6.5,-0.75){<m>(6,0)</m>} \tlabel[cc](7,6.25){<m>(7,5.5)</m>} \tcaption{The graph of <m>y=g(t)</m>} \axes \tlabel[cc](8,-0.5){<m>t</m>} \tlabel[cc](0.5,8){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4,5,6,7} \ymarks{-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7} \tlpointsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-4</m>} -4, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{ {<m>-9</m>} -9,{<m>-8</m>} -8,{<m>-7</m>} -7, {<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3 , {<m>2</m>} 2, {<m>3</m>} 3 ,{<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6 ,{<m>7</m>} 7}
+        </p>
+        <p>
+          \point[4pt]{(-4,-3), (-3,0), (-2, 4.5), (0,0), (3, -8), (4,-6), (5,-6), (6,0), (7, 5.5)} \penwd{1.25pt} \function{-4,-2,0.1}{0.75*(x**2)+8.25*(x)+18} \function{-2, 3, 0.1}{-0.08333*(x**2)-2.41667*(x)} \function{3, 4, 0.1}{-2*(x**2)+16*(x)-38} \function{4, 5, 0.1}{-6} \function{5,7.01,0.1}{-0.25*(x**2)+8.75*(x)-43.5} \pointfillfalse \point[4pt]{(7,5.5), (0,0)} \end{mfpic}
+          <ol cols="4">
+            <li>
+              <p>
+                Find the domain of <m>g</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the range of <m>g</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the maximum, if it exists.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the minimum, if it exists.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the local maximums, if any exist.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the local minimums, if any exist.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve <m>(t^2-25) g(t) = 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve <m>\dfrac{g(t)}{t^2+t-30} \geq 0</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Projecting the graph of <m>g</m> to the <m>t</m>-axis,
+                we see the domain contains values of <m>t</m> from <m>-4</m> up to,
+                but not including <m>t=0</m> and values greater than <m>t=0</m> up to,
+                but not including <m>t=7</m>.
+                Using interval notation, we write the domain as <m>[-4, 0) \cup (0,7)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Projecting the graph of <m>g</m> to the <m>y</m>-axis,
+                we see the range of <m>g</m> contains all real numbers from <m>y=-8</m> up to,
+                but not including, <m>y = 5.5</m>.
+                Note that even though there is a hole in the graph at <m>(0,0)</m>,
+                the points <m>(-3,0)</m> and <m>(6,0)</m> put <m>y=0</m> in the range of <m>g</m>.
+                Hence, the range of <m>g</m> is <m>[-8, 5.5)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Owing to the hole in the graph at <m>(7, 5.5)</m>,
+                <m>g</m> has no maximum.<fn>
+                There is no real number <sq>right before</sq> <m>5.5</m> <ellipsis/>
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                The minimum of <m>g</m> is <m>-8</m> which occurs at the point <m>(3,-8)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The point <m>(-2, 4.5)</m> is clearly a local maximum,
+                but there are actually infinitely many more.
+                Per <xref ref="localmaxmindefn">Definition</xref>,
+                all points of the form <m>(t, -6)</m> for
+                <m>4 \leq t \lt 5</m> are also local maximums.
+                For each of these points,
+                we can find an open interval on the <m>t</m> axis within which we produce no points on the graph higher than <m>(t,-6)</m>. (You may think about <sq>zooming in</sq> on the point
+                <m>(4.5, -6)</m> to see how this works.)
+              </p>
+            </li>
+            <li>
+              <p>
+                The local minimums of the graph are <m>(3,-8)</m> along with points of the form <m>(t,-6)</m> for <m>4\lt t \leq 5</m>.
+                Note the point <m>(-4,-3)</m> is not a local minimum since there is no open interval containing <m>t=-4</m> which lies entirely within the domain of <m>g</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>(t^2-25) g(t) = 0</m>,
+                we use the zero product property of real numbers<fn>
+                see <xref ref="AppRealNumberArithmetic">Section</xref>,
+                <xref ref="propertiesofzero"></xref>
+                </fn> to conclude either <m>t^2-25 = 0</m> or <m>g(t) = 0</m>.
+                From <m>t^2-25 = 0</m>, we get <m>t = \pm 5</m>.
+                However, since <m>t=-5</m> isn't in the domain of <m>g</m>,
+                it cannot be regarded as a solution to the equation
+                <m>(t^2-25)g(t) = 0</m>. (If we substitute <m>t=-5</m> into the equation,
+                we'd get <m>((-5)^2-25)g(-5) = 0 \cdot g(-5)</m>.
+                Since <m>g(-5)</m> is undefined,
+                so is <m>0 \cdot g(-5)</m>.) To solve <m>g(t) = 0</m>,
+                we look for the zeros of <m>g</m> which are <m>t = -3</m> and <m>t = 6</m>. (Again,
+                there is a hole at <m>(0,0)</m>,
+                so <m>t=0</m> doesn't count as a zero.) Our final answer to
+                <m>(t^2-25)g(t) = 0</m> is <m>t = -3</m>, <m>5</m>, or <m>6</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>\frac{g(t)}{t^2+t-30} \geq 0</m>,
+                we employ a sign diagram as we
+                (most recently)
+                have done in <xref ref="PowerEqIneq">Section</xref>.<fn>
+                Note that <m>g</m> is continuous on its domain,
+                and hence, it follows that <m>\frac{g(t)}{t^2+t-30}</m> is,
+                too. (Thank Calculus!) This means the Intermediate Value Theorem applies so a Sign Diagram approach is valid.
+                </fn>  To that end,
+                we define <m>F(t) = \frac{g(t)}{t^2+t-30}</m> and we set about finding the domain of <m>f</m>.
+                First, we note that since <m>F</m> is defined in terms of <m>g</m>,
+                the domain of <m>F</m> is restricted to some subset of the domain of <m>g</m>,
+                namely <m>[-4, 0) \cup (0, 7)</m>.
+                Since <m>t^2+t-30</m> is in the denominator of <m>F(t)</m>,
+                we must also exclude the values where <m>t^2+t-30 = (t+6)(t-5) = 0</m>.
+                Hence, we must exclude <m>t = -6</m>
+                (which isn't in the domain of <m>g</m> in the first place)
+                along with <m>t = 5</m>.
+                Hence, the domain of <m>F</m> is <m>[-4, 0) \cup (0, 5) \cup (5,7)</m>.
+                Next, we find the zeros of <m>F</m>.
+                Setting <m>F(t) = \frac{g(t)}{t^2+t-30} = 0</m> amounts to solving <m>g(t) = 0</m>.
+                Graphically,
+                we see this occurs when <m>t = -3</m> and <m>t = 6</m>.
+                Hence, we need to select test values in each of the following intervals:
+                <m>[-4, -3)</m>, <m>(-3,0)</m>, <m>(0,5)</m>,
+                <m>(5,6)</m> and <m>(6, 7)</m>.
+                For the interval <m>[-4,-3)</m>,
+                we may choose <m>t=-4</m>.
+                <m>F(-4) = \frac{g(-4)}{(-4)^2+(-4)-30} = \frac{-3}{-18}>0</m> so is <m>(+)</m>.
+                For the interval <m>(-3,0)</m> we choose <m>t = -2</m> and get <m>F(-2) = \frac{g(-2)}{(-2)^2+(-2) - 30} = \frac{4.5}{-28} \lt 0</m> so is <m>(-)</m>.
+                For the interval <m>(0,5)</m>,
+                we choose <m>t = 3</m> and find
+                <m>F(3) = \frac{g(3)}{(3)^2+(3) - 30} = \frac{-8}{-18}>0</m> which is <m>(+)</m> again.
+                For the last two intervals,
+                <m>(5,6)</m> and <m>(6,7)</m>,
+                we do not have specific function values for <m>g</m>.
+                However, all we are interested in is the <em>sign</em>
+                of the function over these intervals,
+                and we can get that information about <m>g</m> graphically.
+                For the interval <m>(5,6)</m>,
+                we choose <m>t = 5.5</m> as our test value.
+                Since the graph of <m>y=g(t)</m> is <em>below</em>
+                the <m>t</m>-axis when <m>t = 5.5</m>. we know <m>g(5.5)</m> is <m>(-)</m>.
+                Hence, <m>F(5.5) = \frac{g(5.5)}{(5.5)^2+(5.5)-30} = \frac{(-)}{5.75}\lt 0</m> so is <m>(-)</m>.
+                Similarly, when <m>t = 6.5</m>,
+                the graph of <m>y = g(t)</m> is <em>above</em>
+                the <m>t</m>-axis so <m>F(6.5) = \frac{g(6.5)}{ (6.5)^2+(6.5)-30} = \frac{(+)}{18.75}>0</m> so is <m>(+)</m>.
+                Putting all of this together,
+                we get the sign diagram for
+                <m>F(t) = \frac{g(t)}{t^2+t-30}</m> below: \begin{mfpic}[20]{0}{10}{-1}{1} \polyline{(0,0), (10,0)} \xmarks{0,2,4,6,8,10} \tlabel[cc](0,-0.5){<m>-4</m>} \tlabel[cc](0,0.5){<m>(+)</m>} \tlabel[cc](2,-0.5){<m>-3</m>} \tlabel[cc](2,0.5){<m>0</m>} \tlabel[cc](3,0.5){<m>(-)</m>} \tlabel[cc](4,-0.5){<m>0</m>} \tlabel[cc](4,0.5){\textinterrobang} \tlabel[cc](5,0.5){<m>(+)</m>} \tlabel[cc](6,-0.5){<m>5</m>} \tlabel[cc](6,0.5){\textinterrobang} \tlabel[cc](7,0.5){<m>(-)</m>} \tlabel[cc](8,-0.5){<m>6</m>} \tlabel[cc](8,0.5){<m>0</m>} \tlabel[cc](9,0.5){<m>(+)</m>} \tlabel[cc](10,-0.5){<m>7</m>} \tlabel[cc](10,0.5){\textinterrobang} \end{mfpic} Hence,
+                <m>F(t) \geq 0</m> on <m>[-4,-3] \cup (0,5) \cup [6, 7)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our last example focuses on symmetry.
+      The reader is encouraged to review the notes about symmetry as summarized on <xref ref="reflectionsinabox">page</xref>
+      in <xref ref="AppCartesianPlane">Section</xref>.
+    </p>
+    <example xml:id="evenoddcompleteexample">
+      <statement>
+        <p>
+          Below are the partial graphs of functions <m>f</m> and <m>g</m>.
+          <ol>
+            <li>
+              <p>
+                If possible,
+                complete the graphs of <m>f</m> and <m>g</m> assuming both functions are even.
+              </p>
+            </li>
+            <li>
+              <p>
+                If possible,
+                complete the graphs of <m>f</m> and <m>g</m> assuming both functions are odd.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}
+        </p>
+        <p>
+          \penwd{1.25pt} \function{0, 4, 0.1}{-5*sin(3.1415*x/4)} \point[4pt]{(0,0), (4,0)} \tcaption{Partial graph of <m>y = f(x)</m>} \end{mfpic}
+        </p>
+        <p>
+          \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}
+        </p>
+        <p>
+          \penwd{1.25pt} \function{0, 4, 0.1}{-5*cos(3.1415*x/4)} \point[4pt]{(0,-5), (4,5)} \tcaption{Partial graph of <m>y = g(x)</m>} \end{mfpic}
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                If <m>f</m> and <m>g</m> are even then their graphs are symmetric about the <m>y</m>-axis.
+                Hence, to complete each graph,
+                we reflect each point on the graphs of <m>f</m> and <m>g</m> about the <m>y</m>-axis. \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{0, 4, 0.1}{-5*sin(3.1415*x/4)} \function{-4, 0, 0.1}{5*sin(3.1415*x/4)} \point[4pt]{(0,0), (4,0), (-4,0)} \tcaption{The graph of <m>f</m> assuming <m>f</m> is even.} \end{mfpic} \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{0, 4, 0.1}{-5*cos(3.1415*x/4)} \function{-4, 0, 0.1}{-5*cos(3.1415*x/4)} \point[4pt]{(0,-5), (4,5), (-4,5)} \tcaption{The graph of <m>g</m> assuming <m>g</m> is even.} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>f</m> and <m>g</m> are odd then their graphs are symmetric about the origin.
+                Hence, to complete each graph,
+                we imagine reflecting each of the points on their graphs through the origin.
+                We complete the process on the graph of <m>f</m> with no issues.
+                However, when attempting to do the same with the graph of the function <m>g</m>,
+                we find the point <m>(0,-5)</m> is reflected to the point <m>(0,5)</m>.
+                Hence, this new graph doesn't pass the vertical line test and hence is not a function.
+                Therefore, <m>g</m> cannot be odd.<fn>
+                We leave it as an exercise to show that if a function <m>f</m> is odd and <m>0</m> is in the domain of <m>f</m>,
+                then, necessarily, <m>f(0) = 0</m>.
+                </fn>  \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{-4, 4, 0.1}{-5*sin(3.1415*x/4)} \point[4pt]{(0,0), (4,0), (-4,0)} \tcaption{The graph of <m>f</m> assuming <m>f</m> is odd.} \end{mfpic} \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{0, 4, 0.1}{-5*cos(3.1415*x/4)} \function{-4, 0, 0.1}{5*cos(3.1415*x/4)} \point[4pt]{(0,-5), (0,5), (4,5), (-4,-5)} \tcaption{This graph fails the vertical line test.} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="usefuncgraphfirst">Exercises</xref>
+      - <xref ref="usefuncgraphlast"></xref>,
+      use the graph of <m>y = f(x)</m> given below to answer the question.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-6}{6}{-6}{6} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-5,-5.5){<m>(-5,-5)</m>} \tlabel[cc](-5,0.5){<m>(-4,0)</m>} \tlabel[cc](-3,4.5){<m>(-3,4)</m>} \tlabel[cc](-1,2){<m>(-2,2)</m>} \tlabel[cc](-2,-0.5){<m>(-1,0)</m>} \tlabel[cc](1,-1.5){<m>(0,-1)</m>} \tlabel[cc](1.75,-0.5){<m>(1,0)</m>} \tlabel[cc](2,3.5){<m>(2,3)</m>} \tlabel[cc](4,1){<m>(3,1)</m>} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-5</m>} -5, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}
+    </p>
+    <p>
+      \point[4pt]{(-5, -5), (-4, 0), (-3, 4), (-2,2), (-1,0), (0,-1), (1,0), (2,3), (3,1)} \penwd{1.25pt} \polyline{(-5,-5), (-4,0), (-3,4), (-2,2), (-1,0)} \function{-1, 1, 0.1}{(x**2)-1} \polyline{(1,0), (2,3), (3,1)} \tcaption{<m>y=f(x)</m>} \end{mfpic}
+      <ol cols="2">
+        <li xml:id="usefuncgraphfirst">
+          <p>
+            Find the domain of <m>f</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the range of <m>f</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the maximum, if it exists.
+          </p>
+        </li>
+        <li xml:id="usefuncgraphlast">
+          <p>
+            Find the minimum, if it exists.
+          </p>
+        </li>
+        <li>
+          <p>
+            List the local maximums, if any exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            List the local minimums, if any exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            List the intervals where <m>f</m> is increasing.
+          </p>
+        </li>
+        <li>
+          <p>
+            List the intervals where <m>f</m> is decreasing.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine <m>f(-2)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve <m>f(x) = 4</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            List the <m>x</m>-intercepts, if any exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            List the <m>y</m>-intercepts, if any exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the zeros of <m>f</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve <m>f(x) \geq 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the number of solutions to <m>f(x) = 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the number of solutions to <m>|f(x)| = 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve <m>(x^2-x-2)f(x) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve <m>(x^2-x-2)f(x) > 0</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      With help from your classmates:
+      <ol>
+        <li>
+          <p>
+            Find the domain of <m>R(x) = \dfrac{1}{f(x)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the range of <m>R(x) = \dfrac{1}{f(x)}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="usesecondfuncgraphfirst">Exercises</xref>
+      - <xref ref="usesecondfuncgraphlast"></xref>,
+      use the graph of <m>y =g(t)</m> given below to answer the question.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-4,0.5){<m>(-4,0)</m>} \tlabel[cc](-2,-5.5){<m>(-2,-5)</m>} \tlabel[cc](1,-0.5){<m>(0,0)</m>} \tlabel[cc](2,2.5){<m>(2,3)</m>} \tlabel[cc](2,5.5){<m>(2,5)</m>} \tlabel[cc](4,-0.5){<m>(4,0)</m>} \xmarks{-3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}
+    </p>
+    <p>
+      \penwd{1.25pt} \function{-4, 4, 0.1}{5*sin(x*3.14159/4)} \point[4pt]{ (-2, -5), (0, 0), (4,0), (2,3), (-4,0)} \pointfillfalse \point[4pt]{(2,5)} \tcaption{<m>y=g(t)</m>} \end{mfpic}
+    </p>
+    <ol cols="2">
+      <li xml:id="usesecondfuncgraphfirst">
+        <p>
+          Find the domain of <m>g</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the range of <m>g</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the maximum, if it exists.
+        </p>
+      </li>
+      <li xml:id="usesecondfuncgraphlast">
+        <p>
+          Find the minimum, if it exists.
+        </p>
+      </li>
+      <li>
+        <p>
+          List the local maximums, if any exist.
+        </p>
+      </li>
+      <li>
+        <p>
+          List the local minimums, if any exist.
+        </p>
+      </li>
+      <li>
+        <p>
+          List the intervals where <m>g</m> is increasing.
+        </p>
+      </li>
+      <li>
+        <p>
+          List the intervals where <m>g</m> is decreasing.
+        </p>
+      </li>
+      <li>
+        <p>
+          Determine <m>g(2)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>g(t) = -5</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          List the <m>t</m>-intercepts, if any exist.
+        </p>
+      </li>
+      <li>
+        <p>
+          List the <m>y</m>-intercepts, if any exist.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the zeros of <m>g</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>g(t) \leq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the domain of <m>G(t) = \dfrac{g(t)}{x+2}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>\dfrac{g(t)}{x+2} \leq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          How many solutions are there to <m>[g(t)]^2 = 9</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          Does <m>g</m> appear to be even, odd, or neither?
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that if <m>f</m> is an odd function and <m>0</m> is in the domain of <m>f</m>,
+          then <m>f(0) = 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>R(x)</m> be the function defined as:
+          <m>R(x) = 1</m> if <m>x</m> is a rational number,
+          <m>R(x) = 0</m> if <m>x</m> is an irrational number.
+          With help from your classmates, try to graph <m>R</m>.
+          What difficulties do you encounter?
+          NOTE: Between every pair of real numbers,
+          there is both a rational and an irrational number <ellipsis/>
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the graph of the function <m>f</m> given below. \begin{mfpic}[15]{-3}{3}{-3.5}{4} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3.75){<m>y</m>} \tlabel[cc](2,1){<m>(1,1)</m>} \tlabel[cc](-2.25,1){<m>(-1,1)</m>} \xmarks{-2,-1,1,2} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3} \point[4pt]{(-1, 1), (0, 1), (1, 1)} \penwd{1.25pt} \arrow \reverse \function{-3,-1,0.1}{2*x + 3} \polyline{(-1, 1), (1,1)} \arrow \function{1,3,0.1}{x} \end{mfpic}
+        </p>
+        <ol>
+          <li>
+            <p>
+              Explain why <m>f</m> has a local maximum but not a local minimum at the point <m>(-1, 1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Explain why <m>f</m> has a local minimum but not a local maximum at the point <m>(1, 1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Explain why <m>f</m> has a local maximum AND a local minimum at the point <m>(0, 1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Explain why <m>f</m> is constant on the interval <m>[-1, 1]</m> and thus has both a local maximum AND a local minimum at every point
+              <m>(x, f(x))</m> where <m>-1 \lt x \lt 1</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Explain why the function <m>g</m> whose graph is given below does <em>not</em>
+          have a local maximum at <m>(-3, 5)</m> nor does it have a local minimum at <m>(3, -3)</m>.
+          Find its extrema,
+          both local and absolute and find the intervals on which <m>g</m> is increasing and those on which <m>g</m> is decreasing. \begin{mfpic}[15]{-4}{4}{-4.5}{6} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5.75){<m>y</m>} \tlabel[cc](-3,5.5){<m>(-3,5)</m>} \tlabel[cc](2,0.5){<m>(2,0)</m>} \tlabel[cc](-1.5,-4){<m>(0,-4)</m>} \tlabel[cc](3,-3.5){<m>(3,-3)</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \point[4pt]{(-3,5), (0,-4), (2,0), (3,-3)} \penwd{1.25pt} \function{-3,2,0.1}{x**2 - 4} \polyline{(2,0), (3, -3)} \end{mfpic}
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          For each function below,
+          find the local maximum or local minimum and list the interval over which the function is increasing and the interval over which the function is decreasing.
+          <ol cols="2">
+            <li>
+              <p>
+                \begin{mfpic}[15]{-3}{3}{-2}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1,2,3,4} \tcaption{Function I} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \point[4pt]{(-2,4), (0, 1), (2,4)} \penwd{1.25pt} \function{-2,2,0.1}{x**2} \pointfillfalse \point[4pt]{(0,0)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                \begin{mfpic}[15]{-3}{3}{-2}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1,2,3,4} \tcaption{Function II} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \point[4pt]{(-2,0), (0, 1), (2,0)} \function{-2,2,0.1}{4 - x**2} \pointfillfalse \point[4pt]{(0,4)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                \begin{mfpic}[15]{-3}{3}{-2}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1,2,3,4} \tcaption{Function III} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \point[4pt]{(-2,4), (0, -1), (2,4)} \function{-2,2,0.1}{x**2} \pointfillfalse \point[4pt]{(0,0)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                \begin{mfpic}[15]{-3}{3}{-1}{6} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4,5} \tcaption{Function IV} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \point[4pt]{(-2,0), (0, 5), (2,0)} \function{-2,2,0.1}{4 - x**2} \pointfillfalse \point[4pt]{(0,4)} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>[-5,3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-5,4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(-3) = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(-5) = -5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-3,4)</m>, <m>(2,3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(0,-1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-5,-3]</m>, <m>[0,2]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-3,0]</m>, <m>[2,3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(-2) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=-3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-4,0)</m>, <m>(-1,0)</m>, <m>(1,0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(0,-1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-4</m>, <m>-1</m>, <m>1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-4,-1]</m>, <m>[1,3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=-4, -1,1,2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-4,-1) \cup (-1,1) \cup (2,3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          To find the domain of <m>R(x) = \frac{1}{f(x)}</m>,
+          we start with the domain of <m>f</m> and exclude values where <m>f(x) = 0</m>.
+          Hence, the domain of <m>R</m> is <m>[-5,-4) \cup (-4,-1) \cup (-1,1) \cup (1,3]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          To find the range of <m>R(x) = \frac{1}{f(x)}</m>,
+          we start with the range of <m>f</m>
+          (excluding <m>0</m>)
+          and take reciprocals.
+          If <m>-5 \leq y \lt 0</m>, then <m>\frac{1}{y} \leq -\frac{1}{5}</m>.
+          If <m>0 \lt y \leq 4</m>, then <m>\frac{1}{y} \geq \frac{1}{4}</m>.
+          Hence the range of <m>R</m> is <m>\left(-\infty, -\frac{1}{5} \right] \cup \left[ \frac{1}{4}, \infty \right)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-4,4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-5,5)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          none
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(-2) = -5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          none
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-2,-5)</m>, <m>(2,3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-2,2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-4, -2]</m>, <m>(2,4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(2) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=-2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-4,0)</m>, <m>(0,0)</m>, <m>(4,0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(0,0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-4</m>, <m>0</m>, <m>4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-4,0] \cup \{4\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-4,-2) \cup (-2.4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\{-4\} \cup (-2,0] \cup \{4\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Neither.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              Local maximum: <m>(0,1)</m>, no local minimum.
+              Increasing: <m>(0,2]</m>, decreasing: <m>[-2,0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              No local maximum, local minimum: <m>(0,1)</m>.
+              Increasing: <m>[-2,0)</m>, decreasing: <m>(0,2]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              No local maximum, local minimum: <m>(0,-1)</m>.
+              Increasing: <m>[0,2]</m>, decreasing: <m>[-2,0]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Local maximum: <m>(0,5)</m>, no local minimum.
+              Increasing: <m>[-2,0]</m>, decreasing: <m>[0,2]</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

@@ -1,0 +1,394 @@
+<section xml:id="AppVariation">
+  <title>Variation</title>
+  <introduction>
+    <p>
+      In many instances in the sciences,
+      equations are encountered as a result of fundamental natural laws which are typically a result of assuming certain basic relationships between variables.
+      These basic relationships are summarized in the definition below.
+    </p>
+    <definition xml:id="variation">
+      <statement>
+        <p>
+          Suppose <m>x</m>, <m>y</m> and <m>z</m> are variable quantities.
+          We say
+          <ul>
+            <li>
+              <p>
+                <m>y</m>
+                  <idx><h>variation</h><h>direct</h></idx>
+                  <idx><h>direct variation</h></idx>
+                <em>varies directly with</em>
+                (or is <em>directly proportional to</em>)
+                <m>x</m> if there is a constant <m>k</m> such that
+                <me>
+                  y=kx
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>y</m>
+                  <idx><h>variation</h><h>inverse</h></idx>
+                  <idx><h>inverse variation</h></idx>
+                <em>varies inversely with</em>
+                (or is <em>inversely proportional to</em>)
+                <m>x</m> if there is a constant <m>k</m> such that
+                <me>
+                  y=\frac{k}{x}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z</m>
+                  <idx><h>variation</h><h>joint</h></idx>
+                  <idx><h>joint variation</h></idx>
+                <em>varies jointly with</em>
+                (or is <em>jointly proportional to</em>)
+                <m>x</m> and <m>y</m> if there is a constant <m>k</m> such that
+                <me>
+                  z = kxy
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          The constant <m>k</m> in the above definitions is called the <idx><h>variation</h><h>constant of proportionality</h></idx>
+              <idx><h>constant of proportionality</h></idx>
+          <term>constant of proportionality</term>.
+        </p>
+      </statement>
+    </definition>
+    <example xml:id="variationexample">
+      <statement>
+        <p>
+          Translate the following into mathematical equations using <xref ref="variation">Definition</xref>.
+          <ol>
+            <li>
+              <p>
+                <url href="http://en.wikipedia.org/wiki/Hooke's_law"><em>Hooke's Law</em></url>
+                :
+                  <idx><h>Hooke's Law</h></idx>
+                The force <m>F</m> exerted on a spring is directly proportional the extension <m>x</m> of the spring.
+              </p>
+            </li>
+            <li>
+              <p>
+                <url href="http://en.wikipedia.org/wiki/Boyle's_law"><em>Boyle's Law</em></url>
+                :
+                  <idx><h>Boyle's Law</h></idx>
+                At a constant temperature,
+                the pressure <m>P</m> of an ideal gas is inversely proportional to its volume <m>V</m>. (We explore this one more deeply in <xref ref="BoyleslawRational">Example</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The volume <m>V</m> of a right circular cone varies jointly with the height <m>h</m> of the cone and the square of the radius <m>r</m> of the base.
+              </p>
+            </li>
+            <li>
+              <p>
+                <url href="http://en.wikipedia.org/wiki/Ohm's_law"><em>Ohm's Law</em></url>
+                :
+                  <idx><h>Ohm's Law</h></idx>
+                The current <m>I</m> through a conductor between two points is directly proportional to the voltage <m>V</m> between the points and inversely proportional to the resistance <m>R</m> between the points.
+              </p>
+            </li>
+            <li xml:id="gravitylaw">
+              <p>
+                <url href="http://en.wikipedia.org/wiki/Law_of_universal_gravitation"><em>Newton's Law of Universal Gravitation</em></url>
+                : <idx><h>Newton's Law of Universal Gravitation</h></idx> Suppose two objects,
+                one of mass <m>m</m> and one of mass <m>M</m>,
+                are positioned so that the distance between their centers of mass is <m>r</m>.
+                The gravitational force <m>F</m> exerted on the two objects varies directly with the product of the two masses and inversely with the square of the distance between their centers of mass.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Applying the definition of direct variation,
+                we get <m>F = k x</m> for some constant <m>k</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>P</m> and <m>V</m> are inversely proportional,
+                we write <m>P = \frac{k}{V}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                There is a bit of ambiguity here.
+                It's clear that the volume and the height of the cone are represented by the quantities <m>V</m> and <m>h</m>,
+                respectively,
+                but does <m>r</m> represent the radius of the base or the square of the radius of the base?
+                It is the former.
+                Usually, if an algebraic operation is specified
+                (like squaring),
+                it is meant to be expressed in the formula.
+                We apply <xref ref="variation">Definition</xref> to get <m>V = k h r^{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Even though the problem doesn't use the phrase <sq>varies jointly</sq>,
+                it is implied by the fact that the current <m>I</m> is related to two different quantities.
+                Since <m>I</m> varies directly with <m>V</m> but inversely with <m>R</m>,
+                we write <m>I = \frac{k V}{R}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We write the product of the masses <m>mM</m> and the square of the distance as <m>r^2</m>.
+                We have that <m>F</m> varies directly with <m>mM</m> and inversely with <m>r^2</m>,
+                so <m>F = \frac{kmM}{r^2}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A note about units is in order.
+      The formulas given in <xref ref="variationexample">Example</xref>
+      above all have quantities from the
+      <q>real world</q>
+      and we would disappoint our friends who teach Science if we didn't remind you to pay attention to units when working with these equations.
+      The natural question that arises is
+      <q>What units does <m>k</m> have?</q>
+      The answer is
+      <q>whatever works</q>
+      and by that we mean the units on <m>k</m> will be whatever it takes to make the equation have the same units on both sides.
+    </p>
+    <p>
+      For example, in Hooke's Law we have that <m>F = kx</m>.
+      If <m>F</m> is in newtons and <m>x</m> is in meters then <m>k</m> must be in <m>\frac{\text{ newton } }{\text{ meter } }</m>.
+      This can lead to some odd sounding units,
+      such as the units on the constant <m>R</m> in the Ideal Gas Law <m>PV = nRT</m>
+      (see <xref ref="idealgasexercise">Exercise</xref>)
+      or no units at all
+      (see <xref ref="coneexercisenounits">Exercise</xref>).
+      Unit conversions can mess things up as well - see <xref ref="coneexercisebadunits">Exercise</xref>
+      for a sample of that kind of nonsense!
+    </p>
+    <p>
+      We end this section with an example that first requires us to find the value of <m>k</m> and then use it to solve another problem.
+    </p>
+    <example xml:id="findingkinvariation">
+      <statement>
+        <p>
+          Suppose it takes 11 pounds of force to hold a spring 2 inches beyond its natural length.
+          What force is required to hold it 7 inches beyond natural length?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using Hooke's Law with <m>F = 11</m> pounds and <m>x = 2</m> inches we solve
+          <m>11 = k*2</m> for <m>k</m> and find <m>k = 5.5 \frac{\text{ pound } }{\text{ inch } }</m>.
+          Setting <m>x = 7</m> in Hooke's Law with <m>k = 5.5</m> yields
+          <m>F = 5.5*7 = 38.5</m> pounds of force. (Check the units to convince yourself that this worked!)
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforAppVariation">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="varexercisefirst">Exercises</xref>
+      - <xref ref="varexerciselast"></xref>,
+      translate the following into mathematical equations.
+    </p>
+    <ol cols="2">
+      <li xml:id="varexercisefirst">
+        <p>
+          At a constant pressure,
+          the temperature <m>T</m> of an ideal gas is directly proportional to its volume <m>V</m>. (This is
+          <url href="http://en.wikipedia.org/wiki/Charles's_law"><em>Charles's Law</em></url>
+          )
+    <idx><h>Charles's Law</h></idx>
+        </p>
+      </li>
+      <li>
+        <p>
+          The frequency of a wave <m>f</m> is inversely proportional to the wavelength of the wave <m>\lambda</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The density <m>d</m> of a material is directly proportional to the mass of the object <m>m</m> and inversely proportional to its volume <m>V</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The square of the orbital period of a planet <m>P</m> is directly proportional to the cube of the semi-major axis of its orbit <m>a</m>. (This is
+          <url href="http://en.wikipedia.org/wiki/Kepler"><em>Kepler's Third Law of Planetary Motion </em></url>
+          ) <idx><h>Kepler's Third Law of Planetary Motion</h></idx>
+        </p>
+      </li>
+      <li>
+        <p>
+          The drag of an object traveling through a fluid <m>D</m> varies jointly with the density of the fluid <m>\rho</m> and the square of the velocity of the object <m>\nu</m>.
+        </p>
+      </li>
+      <li xml:id="varexerciselast">
+        <p>
+          Suppose two electric point charges,
+          one with charge <m>q</m> and one with charge <m>Q</m>,
+          are positioned <m>r</m> units apart.
+          The electrostatic force <m>F</m> exerted on the charges varies directly with the product of the two charges and inversely with the square of the distance between the charges. (This is
+          <url href="http://en.wikipedia.org/wiki/Electrostatic#Coulomb.27s_law"><em>Coulomb's Law</em></url>
+          )
+    <idx><h>Coulomb's Law</h></idx>
+        </p>
+      </li>
+      <li>
+        <p>
+          According to
+          <url href="http://en.wikipedia.org/wiki/Vibrating_string"><em>this webpage</em></url>,
+          the frequency <m>f</m> of a vibrating string is given by
+          <m>f = \dfrac{1}{2L} \sqrt{\dfrac{T}{\mu}}</m> where <m>T</m> is the tension,
+          <m>\mu</m> is the linear mass<fn>
+          Also known as the linear density.
+          It is simply a measure of mass per unit length.
+          </fn> of the string and <m>L</m> is the length of the vibrating part of the string.
+          Express this relationship using the language of variation.
+        </p>
+      </li>
+      <li>
+        <p>
+          According to the Centers for Disease Control and Prevention
+          <url href="http://www.cdc.gov"><em>www.cdc.gov</em></url>,
+          a person's Body Mass Index <m>B</m> is directly proportional to his weight <m>W</m> in pounds and inversely proportional to the square of his height <m>h</m> in inches.
+            <idx><h>BMI, body mass index</h></idx>
+        </p>
+        <ol>
+          <li xml:id="BMIfirst">
+            <p>
+              Express this relationship as a mathematical equation.
+            </p>
+          </li>
+          <li xml:id="BMIsecond">
+            <p>
+              If a person who was <m>5</m> feet,
+              <m>10</m> inches tall weighed 235 pounds had a Body Mass Index of 33.7, what is the value of the constant of proportionality?
+            </p>
+          </li>
+          <li>
+            <p>
+              Rewrite the mathematical equation found in <xref ref="BMIfirst">part</xref>
+              to include the value of the constant found in <xref ref="BMIsecond">part</xref>
+              and then find your Body Mass Index.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          This exercise refers back to the volume of a right circular cone formula found in <xref ref="variationexample">Example</xref>.
+          <ol>
+            <li xml:id="coneexercisenounits">
+              <p>
+                First assume that <m>V</m>,
+                <m>h</m> and <m>r</m> are all measured using the same unit of length.
+                Work with your classmates to show that in this case,
+                the <m>k</m> needed for the volume formula <m>V = k h r^{2}</m> has no units on it.
+              </p>
+            </li>
+            <li xml:id="coneexercisebadunits">
+              <p>
+                Now assume that <m>V</m> is measured in milliliters,
+                <m>h</m> is measured in meters and <m>r</m> is measured in yards.
+                Work with your classmates to find the units on <m>k</m> so that the volume formula <m>V = k h r^{2}</m> makes sense.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          We know that the circumference of a circle varies directly with its radius with <m>2\pi</m> as the constant of proportionality.
+          (That is, we know <m>C = 2\pi r</m>.)
+          With the help of your classmates,
+          compile a list of other basic geometric relationships which can be seen as variations.
+        </p>
+      </li>
+      <li xml:id="idealgasexercise">
+        <p>
+          Research the Ideal Gas Law
+          <m>PV = nRT</m> to see what sorts of units are used for the constant <m>R</m>.
+          What other formulations of this law did you find in your research?
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="3">
+      <li>
+        <p>
+          <m>T = k V</m>
+        </p>
+      </li>
+      <li>
+        <p><fn>
+          The character <m>\lambda</m> is the lower case Greek letter <sq>lambda.</sq>
+          </fn> <m>f = \dfrac{k}{\lambda}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>d = \dfrac{k m}{V}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P^2 = k a^3</m>
+        </p>
+      </li>
+      <li>
+        <p><fn>
+          The characters <m>\rho</m> and <m>\nu</m> are the lower case Greek letters <sq>rho</sq> and <sq>nu,</sq> respectively.
+          </fn> <m>D = k \rho \nu^2</m>
+        </p>
+      </li>
+      <li>
+        <p><fn>
+          Note the similarity to this formula and Newton's Law of Universal Gravitation as discussed in <xref ref="gravitylaw">Example</xref>.
+          </fn>  <m>F = \dfrac{kqQ}{r^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Rewriting <m>f = \dfrac{1}{2L} \sqrt{\dfrac{T}{\mu}}</m> as
+          <m>f = \dfrac{\frac{1}{2} \sqrt{T}}{L \sqrt{\mu}}</m> we see that the frequency <m>f</m> varies directly with the square root of the tension and varies inversely with the length and the square root of the linear mass.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>B = \dfrac{kW}{h^{2}}</m>
+            </p>
+          </li>
+          <li>
+            <p><fn>
+              The CDC uses 703.
+              </fn> <m>k = 702.68</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>B = \dfrac{702.68W}{h^{2}}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

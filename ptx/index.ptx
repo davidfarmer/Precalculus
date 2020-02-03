@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  <docinfo>
+<macros>
+\newcommand{\bbm}{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\newcommand{\ebm}{}
+\renewcommand{\sectionmark}[1]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\textinterrobang}{$! \! \! ?$}
+\renewcommand{\chaptername}{Chapter}
+\renewcommand{\familydefault}{\sfdefault}
+\def\originalstyle{\thispagestyle}
+\newcommand{\thispagestyle}[1]{\originalstyle{empty}}
+\def\thispagestyle{\originalstyle}
+</macros>
+<latex-image-preamble>
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+\usepackage{pgfplots}
+</latex-image-preamble>
+  </docinfo>
+  <book>
+    <title>\Huge Precalculus  \\  \large Version \(4 - \epsilon\)  \\  \large by</title>
+    <frontmatter>
+      <titlepage>
+        <author>
+          <personname>Carl Stitz, Ph.D.</personname>
+        </author>
+        <author>
+          <personname>Jeff Zeager, Ph.D.</personname>
+        </author>
+      </titlepage>
+    </frontmatter>
+    <xi:include href="./OldPreface.ptx"/>
+    <xi:include href="./IntroductiontoFunctions.ptx"/>
+    <xi:include href="./PolynomialFunctions.ptx"/>
+    <xi:include href="./RationalFunctions.ptx"/>
+    <xi:include href="./RootRadicalPowerFunctions.ptx"/>
+    <xi:include href="./FurtherTopicsonFunctions.ptx"/>
+    <xi:include href="./ExponentialandLogarithmicFunctions.ptx"/>
+    <xi:include href="./TheConicSections.ptx"/>
+    <xi:include href="./SystemsofEquationsandMatrices.ptx"/>
+    <xi:include href="./SequencesandtheBinomialTheorem.ptx"/>
+    <xi:include href="./FoundationsofTrigonometry.ptx"/>
+    <xi:include href="./AnalyticalTrigonometry.ptx"/>
+    <xi:include href="./GeometricApplicationsofTrigonometry.ptx"/>
+    <xi:include href="./PolarCoordinatesandParametricEquations.ptx"/>
+    <xi:include href="./AlgebraAppendix.ptx"/>
+    <xi:include href="./GeometryAppendix.ptx"/>
+    <xi:include href="./ProofsAppendix.ptx"/>
+    <backmatter>
+      <xi:include href="./bibliography.ptx"/>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
+    </backmatter>
+  </book>
+</pretext>

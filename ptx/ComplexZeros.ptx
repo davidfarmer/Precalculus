@@ -1,0 +1,1237 @@
+<section xml:id="ComplexZeros">
+  <title>Complex Zeros and the Fundamental Theorem of Algebra</title>
+  <introduction>
+    <p>
+      In <xref ref="RealZeros">Section</xref>,
+      we were focused on finding the real zeros of a polynomial function.
+      In this section,
+      we expand our horizons and look for the non-real zeros as well.
+      By <sq>non-real</sq> here we mean we will be discussing <sq>imaginary,</sq> and,
+      more generally, <sq>complex</sq> numbers.
+      Even though the monikers <sq>non-real</sq> and <sq>imaginary</sq> suggests these numbers play no role in <sq>real</sq> world applications,
+      we assure you that electrical engineers live a <sq>complex</sq> life and these numbers are invaluable to them.<fn>
+      Even a cursory web search for <sq>use of imaginary numbers in electrical engineering</sq> provides a wealth of source material - enough to convince anyone of their importance to the field
+      (pun intended.)
+      Most of it, however,
+      requires more electrical background than the authors feel comfortable including in the text.
+      Be aware, however, that in electrical applications,
+      the letter <m>j</m> is used to represent
+      <m>\sqrt{-1}</m> since the letter <m>i</m> is reserved for current.
+      </fn> That being said,
+      our main use of complex numbers in this section is to present some powerful structure theorems for polynomial functions
+      (this is, after all, a math book!)
+      For a detailed review of the Complex Number system,
+      we refer the reader to <xref ref="AppCmpNums">Section</xref>.
+      For us, it suffices to review the basic vocabulary.
+      <ul>
+        <li>
+          <p>
+            The imaginary unit <m>i = \sqrt{-1}</m> satisfies the two following properties
+            <ol>
+              <li>
+                <p>
+                  <m>i^2 = -1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  If <m>c</m> is a real number with
+                  <m>c \geq 0</m> then <m>\sqrt{-c} = i \sqrt{c}</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+        <li>
+          <p>
+            The <em>complex numbers</em> are the set of numbers <m>\mathbb{C} = \{ a + bi \, | \, a, b \in \mathbb{R} \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Given a complex number <m>z = a+bi</m>,
+            the <em>complex conjugate</em> of <m>z</m>,
+            <m>\overline{z} = \overline{a+bi} = a - bi</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Note that every real number is a complex number,
+      that is <m>\mathbb{R} \subseteq \mathbb{C}</m>.
+      To see this, take your favorite real number, say <m>117</m>.
+      We may write <m>117 = 117 + 0 i</m> which puts in the form <m>a + bi</m>.
+      Hence, we we speak of the <sq>complex zeros</sq> of a polynomial function,
+      we are talking about not just the non-real, but also the real zeros.
+    </p>
+    <p>
+      Complex numbers, by their very definition,
+      are two dimensional creatures.
+      To see this, we may identify a complex number
+      <m>z = a+bi</m> with the point in the Cartesian plane <m>(a,b)</m>.
+      The horizontal axis is called the <sq>real</sq> axis since points here have the form <m>(a,0)</m> which corresponds to numbers of the form
+      <m>z = a + 0i = a</m> which are the real numbers.
+      The vertical axis is called the <sq>imaginary</sq> axis since points here are of the form <m>(0,b)</m> which correspond to numbers of the form <m>z = 0+bi = bi</m>,
+      the so-called <sq>purely imaginary</sq> numbers.
+      Below we plot some complex numbers on this so-called <sq>Complex Plane.</sq> Plotting a set of complex numbers this way is called an
+      <url href="https://en.wikipedia.org/wiki/Complex_plane"><em>Argand Diagram</em></url>,
+      and opens up a wealth of opportunities to explore many algebraic properties of complex numbers geometrically.
+      For example,
+      complex conjugation amounts to a reflection about the real axis,
+      and multiplication by <m>i</m> amounts to a <m>90^{\circ}</m> rotation.<fn>
+      See <xref ref="cmpgeoalgexfirst">Exercises</xref>
+      - <xref ref="cmpgeoalgexlast"></xref>.
+      </fn> While we won't have much use for the Complex Plane in this section,
+      it is worth introducing this concept now, if, for no other reason,
+      it gives the reader a sense of the vastness of the complex number system and the role of the real numbers in it.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cl](5,-0.5){Real Axis} \tlabel[cl](0.5,5){Imaginary Axis} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[3pt]{(0,0),(3,0), (-4,2), (0,-3)} \tlabel[cc](-4,2.5){<m>(-4,2) \longleftrightarrow z = -4+2i</m>} \tlabel[cl](0.25,-3){<m>(0,-3) \longleftrightarrow z = -3i</m>} \tlabel[cc](3,0.5){<m>(3,0) \longleftrightarrow z = 3</m>} \tlabel[cc](0.25,-0.35){<m>0</m>} \tlpointsep{5pt}
+    </p>
+    <p>
+      \tcaption{The Complex Plane} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4i</m>} -4, {<m>-3i</m>} -3, {<m>-2i</m>} -2, {<m>-i</m>} -1, {<m>i</m>} 1, {<m>2i</m>} 2, {<m>3i</m>} 3, {<m>4i</m>} 4}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      Returning to zeros of polynomials,
+      suppose we wish to find the zeros of <m>f(x) = x^2-2x+5</m>.
+      To solve the equation <m>x^2-2x+5 = 0</m>,
+      we note that the quadratic doesn't factor nicely,
+      so we resort to the Quadratic Formula,
+      <xref ref="quadraticformulafunction">Equation</xref> and obtain
+      <me>
+        x = \dfrac{-(-2) \pm \sqrt{(-2)^2-4(1)(5)}}{2(1)} = \dfrac{2 \pm \sqrt{-16}}{2} = \dfrac{2 \pm 4i}{2} = 1 \pm 2i
+      </me>.
+    </p>
+    <p>
+      Two things are important to note.
+      First, the zeros <m>1+2i</m> and <m>1-2i</m> are complex conjugates.
+      If ever we obtain non-real zeros to a quadratic function with
+      <em>real number</em> coefficients,
+      the zeros will be a complex conjugate pair. (Do you see why?)
+    </p>
+    <p>
+      We could ask if all of the theory from <xref ref="Polydivision">Section</xref> holds for non-real zeros,
+      in particular the division algorithm and the Remainder and Factor Theorems.
+      The answer is <sq>yes.</sq>
+      <me>
+        \begin{array}{rrrr} 1+2i \, \, \vline \amp  1 \amp  -2 \amp  5 \\  \amp  \downarrow   \amp   1+2i  \amp   -5 \\ \hhline{~---}  \amp  1 \amp  -1+2i \amp   \fbox{\(0\)} \end{array}
+      </me>
+    </p>
+    <p>
+      Indeed, the above shows <m>x^2-2x+5 = (x-[1+2i])(x-1+2i)= (x-[1+2i])(x-[1-2i])</m> which demonstrates both <m>(x-[1+2i])</m> and
+      <m>(x-[1-2i])</m> are factors of <m>x^2-2x+5</m>.<fn>
+      It is a good review of the algebra of complex numbers to start with <m>(x-[1+2i])(x-[1-2i])</m>,
+      perform the indicated operations,
+      and simplify the result to <m>x^2-2x+5</m>.
+      See part 6 of <xref ref="complexzeroex1">Example</xref>
+      in <xref ref="AppCmpNums">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      But how do we know if a general polynomial has any complex zeros at all?
+      We have many examples of polynomials with no real zeros.
+      Can there be polynomials with no zeros whatsoever?
+      The answer to that last question is
+      <q>No.</q>
+      and the theorem which provides that answer is <idx><h>Fundamental Theorem of Algebra</h></idx> The Fundamental Theorem of Algebra.
+    </p>
+    <theorem xml:id="ftoa">
+      <statement>
+        <p>
+          <em>The Fundamental Theorem of Algebra:</em>
+          Suppose <m>f</m> is a polynomial function with complex number coefficients of degree <m>n \geq 1</m>,
+          then <m>f</m> has at least one complex zero.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The Fundamental Theorem of Algebra is an example of an <sq>existence</sq> theorem in Mathematics.
+      Like the Intermediate Value Theorem,
+      <xref ref="IVT">Theorem</xref>,
+      the Fundamental Theorem of Algebra guarantees the existence of at least one zero,
+      but gives us no algorithm to use in finding it.
+      In fact, as we mentioned in <xref ref="RealZeros">Section</xref>,
+      there are polynomials whose real zeros, though they exist,
+      cannot be expressed using the <sq>usual</sq> combinations of arithmetic symbols,
+      and must be approximated.
+      It took mathematicians literally hundreds of years to prove the theorem in its full generality,<fn>
+      So if its profound nature and beautiful subtlety escape you,
+      no worries!
+      </fn> and some of that history is recorded
+      <url href="http://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra"><em>here</em></url>.
+      Note that the Fundamental Theorem of Algebra applies to not only polynomial functions with real coefficients,
+      but to those with complex number coefficients as well.
+    </p>
+    <p>
+      Suppose <m>f</m> is a polynomial function of degree <m>n \geq 1</m>.
+      The Fundamental Theorem of Algebra guarantees us at least one complex zero,
+      <m>z_{1}</m>.
+      The Factor Theorem guarantees that <m>f(x)</m> factors as
+      <m>f(x) = \left(x - z_{1}\right) q_{1}(x)</m> for a polynomial function <m>q_{1}</m>,
+      which has degree <m>n-1</m>.
+      If <m>n-1 \geq 1</m>,
+      then the Fundamental Theorem of Algebra guarantees a complex zero of <m>q_{1}</m> as well,
+      say <m>z_{2}</m>,
+      so then the Factor Theorem gives us <m>q_{1}(x) = \left(x - z_{2}\right) q_{2}(x)</m>,
+      and hence <m>f(x) = \left(x - z_{1}\right) \left(x - z_{2}\right) q_{2}(x)</m>.
+      We can continue this process exactly <m>n</m> times,
+      at which point our quotient polynomial <m>q_{n}</m> has degree <m>0</m> so it's a constant.
+      This constant is none-other than the leading coefficient of <m>f</m> which is carried down line by line each time we divide by factors of the form <m>x-c</m>.
+    </p>
+    <theorem xml:id="complexfactorization">
+      <statement>
+        <p>
+          <em>Complex Factorization Theorem:</em>
+          Suppose <m>f</m> is a polynomial function with complex number coefficients.
+          If the degree of <m>f</m> is <m>n</m> and <m>n \geq 1</m>,
+          then <m>f</m> has exactly <m>n</m> complex zeros, counting multiplicity.
+          If <m>z_{1}</m>, <m>z_{2}</m>,
+          <ellipsis/>, <m>z_{k}</m> are the distinct zeros of <m>f</m>,
+          with multiplicities <m>m_{1}</m>,
+          <m>m_{2}</m>, <ellipsis/>,
+          <m>m_{k}</m>, respectively,
+          then <m>f(x) = a\left(x - z_{1} \right)^{m_{1}}\left(x - z_{2} \right)^{m_{2}} \cdots \left(x - z_{k} \right)^{m_{k}}</m>.
+              <idx><h>Complex Factorization Theorem</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      <xref ref="complexfactorization">Theorem</xref> says two important things:
+      first, every polynomial is a product of linear factors;
+      second, every polynomial function is completely determined by its zeros,
+      their multiplicities, and its leading coefficient.
+      We put this theorem to good use in the next example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>f(x) = 12x^5 - 20x^4+19x^3-6x^2-2x+1</m>.
+          <ol>
+            <li>
+              <p>
+                Find all of the complex zeros of <m>f</m> and state their multiplicities.
+              </p>
+            </li>
+            <li>
+              <p>
+                Factor <m>f(x)</m> using <xref ref="complexfactorization">Theorem</xref>
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                Since <m>f</m> is a fifth degree polynomial,
+                we know that we need to perform at least three successful divisions to get the quotient down to a quadratic function.
+                At that point,
+                we can find the remaining zeros using the Quadratic Formula,
+                if necessary.
+                Using the techniques developed in <xref ref="RealZeros">Section</xref>:
+                <me>
+                  \begin{array}{rrrrrrr} \frac{1}{2} \, \, \vline\amp  12 \amp  -20\amp  19  \amp  -6 \amp  -2 \amp 1 \\  \amp  \downarrow     \amp   6  \amp   -7  \amp  6 \amp  0 \amp  -1\\ \hhline{~------}  \frac{1}{2} \, \, \vline\amp  12 \amp  -14 \amp  12  \amp  0 \amp  -2 \amp  \fbox{\(0\)} \\  \amp  \downarrow     \amp   6 \amp   -4  \amp  4 \amp  2 \amp \\ \hhline{~-----}  -\frac{1}{3} \, \, \vline\amp   12 \amp   -8  \amp  8 \amp  4 \amp   \fbox{\(0\)} \amp  \\  \amp  \downarrow \amp   -4  \amp   4  \amp  -4  \amp  \amp  \\ \hhline{~----}  \amp  12  \amp    -12 \amp  12\amp  \fbox{0} \amp \amp \end{array}
+                </me>
+                Our quotient is <m>12x^2 - 12x + 12</m>,
+                whose zeros we find to be <m>\frac{1 \pm i \sqrt{3}}{2}</m>.
+                From <xref ref="complexfactorization">Theorem</xref>,
+                we know <m>f</m> has exactly <m>5</m> zeros, counting multiplicities,
+                and as such we have the zero
+                <m>\frac{1}{2}</m> with multiplicity <m>2</m>,
+                and the zeros <m>-\frac{1}{3}</m>,
+                <m>\frac{1 + i \sqrt{3}}{2}</m> and <m>\frac{1 - i \sqrt{3}}{2}</m>,
+                each of multiplicity <m>1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Applying <xref ref="complexfactorization">Theorem</xref>,
+                we are guaranteed that <m>f</m> factors as
+                <me>
+                  f(x) = 12 \left(x- \dfrac{1}{2}\right)^2 \left(x + \dfrac{1}{3}\right) \left(x - \left[\dfrac{1 + i \sqrt{3}}{2}\right]\right) \left(x - \left[\dfrac{1 - i \sqrt{3}}{2}\right]\right)
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      A true test of <xref ref="complexfactorization">Theorem</xref>
+      would be to take the factored form of <m>f(x)</m> in the previous example and multiply it out<fn>
+      This is a good chance to test your algebraic mettle and see that all of this does actually work.
+      </fn> to see that it really does reduce to <m>f(x) = 12x^5 - 20x^4+19x^3-6x^2-2x+1</m>.
+      When factoring a polynomial using <xref ref="complexfactorization">Theorem</xref>,
+      we say that it is <idx><h>polynomial function</h><h>completely factored ! over the complex numbers</h></idx>
+      <em>factored completely over the complex numbers</em>,
+      meaning that it is impossible to factor the polynomial any further using complex numbers.
+      If we wanted to <idx><h>polynomial function</h><h>completely factored ! over the real numbers</h></idx> completely factor <m>f(x)</m> over the <em>real numbers</em>
+      then we would have stopped short of finding the nonreal zeros of <m>f</m> and factored <m>f</m> using our work from the synthetic division to write <m>f(x) = \left(x - \frac{1}{2} \right)^2 \left(x + \frac{1}{3} \right)\left(12x^2 - 12x + 12\right)</m>,
+      or <m>f(x) = 12\left(x - \frac{1}{2} \right)^2 \left(x + \frac{1}{3} \right)\left(x^2 - x + 1\right)</m>.
+      Since the zeros of <m>x^2-x+1</m> are nonreal,
+      we call <m>x^2-x+1</m> an <idx><h>quadratic function</h><h>irreducible quadratic</h></idx>
+          <idx><h>irreducible quadratic</h></idx>
+      <em>irreducible quadratic</em> meaning it is impossible to break it down any further using <em>real</em> numbers.
+    </p>
+    <p>
+      The last two results of the section show us that, theoretically,
+      the non-real zeros of polynomial functions with real number coefficients come exclusively from irreducible quadratics.
+    </p>
+    <theorem xml:id="conjugatepairsthm">
+      <statement>
+        <p>
+          <em>Conjugate Pairs Theorem:</em>
+          If <m>f</m> is a polynomial function with real number coefficients and <m>z</m> is a complex zero of <m>f</m>,
+          then so is <m>\overline{z}</m>.
+              <idx><h>Conjugate Pairs Theorem</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      To prove the theorem,
+      let <m>f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_{2} x^{2} + a_{1} x + a_{0}</m> be a polynomial function with real number coefficients.
+      If <m>z</m> is a zero of <m>f</m>, then <m>f(z) = 0</m>,
+      which means <m>a_{n} z^{n} + a_{n-1} z^{n-1} + \ldots + a_{2} z^{2} + a_{1} z + a_{0} = 0</m>.
+      Next, we consider <m>f\left(\overline{z}\right)</m> and apply <xref ref="conjugateprops">Theorem</xref> below.
+      <me>
+        \begin{array}{rclr}  f\left(\overline{z}\right) \amp  = \amp   a_{n} \left(\overline{z}\right)^{n} + a_{n-1} \left(\overline{z}\right)^{n-1} + \ldots + a_{2}\left( \overline{z}\right)^{2} + a_{1} \overline{z} + a_{0} \amp  \\  \amp   = \amp  a_{n}\overline{z^{n}} + a_{n-1}\overline{z^{n-1}} + \ldots + a_{2}\overline{z^{2}} + a_{1} \overline{z} + a_{0} \amp  \mbox{ since \(\left(\overline{z}\right)^n = \overline{z^{n}}\)} \\  \amp  = \amp  \overline{a_{n}}\overline{z^{n}} + \overline{a_{n-1}}\overline{z^{n-1}} + \ldots +  \overline{a_{2}}\overline{z^{2}} + \overline{a_{1}}\, \overline{z} + \overline{a_{0}} \amp  \mbox{since the coefficients are real}  \\  \amp  = \amp  \overline{a_{n} z^{n}} + \overline{a_{n-1} z^{n-1}} + \ldots +  \overline{a_{2} z^{2}} + \overline{a_{1} z} + \overline{a_{0}} \amp   \mbox{ since \(\overline{z} \, \overline{w}=\overline{zw} \)} \\  \amp  = \amp  \overline{a_{n} z^{n} + a_{n-1} z^{n-1} + \ldots + a_{2} z^{2} + a_{1} z + a_{0}} \amp  \mbox{ since \( \overline{z} + \overline{w} = \overline{z+w} \)} \\  \amp  = \amp  \overline{f(z)} \amp  \\  \amp  = \amp  \overline{0} \amp  \\  \amp  = \amp  0 \amp \end{array}
+      </me>
+    </p>
+    <p>
+      This shows that <m>\overline{z}</m> is a zero of <m>f</m>.
+      So, if <m>f</m> is a polynomial function with real number coefficients,
+      <xref ref="conjugatepairsthm">Theorem</xref>
+      tells us that if <m>a+bi</m> is a nonreal zero of <m>f</m>,
+      then so is <m>a-bi</m>.
+      In other words, nonreal zeros of <m>f</m> come in conjugate pairs.
+      The Factor Theorem kicks in to give us both <m>(x-[a+bi])</m> and
+      <m>(x-[a-bi])</m> as factors of <m>f(x)</m> which means
+      <m>(x-[a+bi])(x-[a-bi]) = x^2 + 2a x + \left(a^2+b^2\right)</m> is an irreducible quadratic factor of <m>f</m>.
+      As a result, we have our last theorem of the section.
+    </p>
+    <theorem xml:id="realfactorization">
+      <statement>
+        <p>
+          <em>Real Factorization Theorem:</em>
+          Suppose <m>f</m> is a polynomial function with real number coefficients.
+          Then <m>f(x)</m> can be factored into a product of linear factors corresponding to the real zeros of <m>f</m> and irreducible quadratic factors which give the nonreal zeros of <m>f</m>.
+              <idx><h>Real Factorization Theorem</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We now present an example which pulls together all of the major ideas of this section.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>f(x) = x^4+64</m>.
+          <ol>
+            <li>
+              <p>
+                Use synthetic division to show that <m>x=2+2i</m> is a zero of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the remaining complex zeros of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Completely factor <m>f(x)</m> over the complex numbers.
+              </p>
+            </li>
+            <li>
+              <p>
+                Completely factor <m>f(x)</m> over the real numbers.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                Remembering to insert the <m>0</m>'s in the synthetic division tableau we have
+                <me>
+                  \begin{array}{cccccc} 2+2i \, \, \vline\amp  1 \amp  0 \amp  0  \amp  0 \amp  64 \\  \amp  \downarrow     \amp   2+2i  \amp   8i \amp  -16+16i \amp  -64\\ \hhline{~-----}  \amp  1 \amp   2+2i  \amp  8i \amp  -16+16i \amp   \fbox{\(0\)} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>f</m> is a fourth degree polynomial,
+                we need to make two successful divisions to get a quadratic quotient.
+                Since <m>2+2i</m> is a zero,
+                we know from <xref ref="conjugatepairsthm">Theorem</xref>
+                that <m>2-2i</m> is also a zero.
+                We continue our synthetic division tableau.
+                <me>
+                  \begin{array}{cccccc} 2+2i \, \, \vline\amp  1 \amp  0 \amp  0  \amp  0 \amp  64 \\  \amp  \downarrow     \amp   2+2i  \amp   8i \amp  -16+16i \amp  -64\\ \hhline{~-----}  2-2i \, \, \vline  \amp  1 \amp   2+2i  \amp  8i \amp  -16+16i \amp   \fbox{\(0\)}  \\  \amp  \downarrow \amp   2-2i  \amp   8-8i  \amp  16-16i \amp \\ \hhline{~----}  \amp  1  \amp   4  \amp  8\amp  \fbox{0} \amp \end{array}
+                </me>
+                Our quotient polynomial is <m>x^2+4x+8</m>.
+                Using the quadratic formula,
+                we solve <m>x^2+4x+8 = 0</m> and find the remaining zeros are <m>-2+2i</m> and <m>-2-2i</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Using <xref ref="complexfactorization">Theorem</xref>,
+                we get <m>f(x) = (x-[2-2i])(x-[2+2i])(x-[-2+2i])(x-[-2-2i])</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the irreducible quadratic factors of <m>f(x)</m>,
+                we multiply the factors together which correspond to the conjugate pairs.
+                We find <m>(x-[2-2i])(x-[2+2i]) = x^2-4x+8</m>,
+                and <m>(x-[-2+2i])(x-[-2-2i]) = x^2+4x+8</m>,
+                so <m>f(x) = \left(x^2-4x+8\right) \left(x^2+4x+8\right)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      We close this section with an example where we are asked to manufacture a polynomial function with certain characteristics.
+    </p>
+    <example>
+      <statement>
+        <ol>
+          <li>
+            <p>
+              Find a polynomial function <m>p</m> of lowest degree that has integer coefficients and satisfies all of the following criteria:
+              <ul>
+                <li>
+                  <p>
+                    the graph of <m>y=p(x)</m> touches and rebounds from the <m>x</m>-axis at <m>\left(\frac{1}{3}, 0\right)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>x=3i</m> is a zero of <m>p</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    as <m>x \rightarrow -\infty</m>,
+                    <m>p(x) \rightarrow -\infty</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    as <m>x \rightarrow \infty</m>,
+                    <m>p(x) \rightarrow -\infty</m>
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Find a possible formula for the polynomial function <m>p</m> graphed below.
+              You may leave your answer in factored form. \begin{mfpic}[15]{-5}{5}{-6}{6} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.5pt} \arrow \reverse \arrow \function{-3.6, 2.75, 0.1}{(x**3+x**2-5*x+3)/3} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To solve this problem,
+                we will need a good understanding of the relationship between the <m>x</m>-intercepts of the graph of a function and the zeros of a function,
+                the Factor Theorem, the role of multiplicity, complex conjugates,
+                the Complex Factorization Theorem,
+                and end behavior of polynomial functions.
+                (In short, you'll need most of the major concepts of this chapter.)
+                Since the graph of <m>p</m> touches the <m>x</m>-axis at <m>\left(\frac{1}{3}, 0\right)</m>,
+                we know <m>x=\frac{1}{3}</m> is a zero of even multiplicity.
+                Since we are after a polynomial of lowest degree,
+                we need <m>x=\frac{1}{3}</m> to have multiplicity exactly <m>2</m>.
+                The Factor Theorem now tells us
+                <m>\left(x-\frac{1}{3}\right)^2</m> is a factor of <m>p(x)</m>.
+                Since <m>x=3i</m> is a zero and our final answer is to have integer (hence,
+                real) coefficients, <m>x=-3i</m> is also a zero.
+                The Factor Theorem kicks in again to give us <m>(x-3i)</m> and <m>(x+3i)</m> as factors of <m>p(x)</m>.
+                We are given no further information about zeros or intercepts so we conclude,
+                by the Complex Factorization Theorem that
+                <m>p(x) = a \left(x-\frac{1}{3}\right)^2 (x-3i)(x+3i)</m> for some real number <m>a</m>.
+                Expanding this,
+                we get <m>p(x) = ax^4-\frac{2a}{3} x^3+\frac{82a}{9} x^2-6ax+a</m>.
+                In order to obtain integer coefficients,
+                we know <m>a</m> must be an integer multiple of <m>9</m>.
+                Our last concern is end behavior.
+                Since the leading term of <m>p(x)</m> is <m>ax^4</m>,
+                we need <m>a \lt 0</m> to get
+                <m>p(x) \rightarrow -\infty</m> as <m>x \rightarrow \pm \infty</m>.
+                Hence, if we choose <m>x=-9</m>,
+                we get <m>p(x) = -9x^4+ 6 x^3 - 82 x^2+54x-9</m>.
+                We can verify our handiwork using the techniques developed in this chapter.
+              </p>
+            </li>
+            <li>
+              <p>
+                The first thing to note is the independent variable here is <m>t</m>,
+                not <m>x</m> as evidenced by the labeling on the horizontal axis.
+                Next, the graph appears to cross through the <m>t</m>-axis at <m>(-3,0)</m> in a fairly linear fashion,
+                so <m>t=-3</m> is likely a zero of multiplicity <m>1</m>.
+                Also, the graph touches and rebounds at <m>(1,0)</m>,
+                indicating <m>t=1</m> is a zero of even multiplicity.
+                Since the graph doesn't appear too <sq>flat,</sq> we'll go with multiplicity <m>2</m>
+                (though there is really no way of telling.)
+                Using the Complex Factorization Theorem and assuming we have no non-real zeros,
+                we now have <m>p(t) = a (t-(-3))(t-1)^2 = a(t+3)(t-1)^2</m>.
+                To determine the leading coefficient, <m>a</m>,
+                we note the graph appears to have a <m>y</m>-intercept at <m>(0,1)</m>.
+                Solving <m>p(0) = 1</m> gives <m>a(3)(-1)^2 = 1</m> or <m>3a = 1</m>.
+                Hence, <m>a = \frac{1}{3}</m> so <m>p(t) = \frac{1}{3} (t+3)(t-1)^2</m>.
+                Since we may leave our answer in factored form, we are done.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      This example concludes our study of polynomial functions.<fn>
+      With the exception of the Exercises on the next page, of course.
+      </fn> The last few sections have contained what is considered by many to be <sq>heavy</sq> Mathematics.
+      Like a heavy meal, heavy Mathematics takes time to digest.
+      Don't be overly concerned if it doesn't seem to sink in all at once,
+      and pace yourself in the Exercises or you're liable to get mental cramps.
+      But before we get to the Exercises,
+      we'd like to offer a bit of an epilogue.
+      Our main goal in presenting the material on the complex zeros of a polynomial was to give the chapter a sense of completeness.
+      Given that it can be shown that some polynomials have real zeros which cannot be expressed using the usual algebraic operations,
+      and still others have no real zeros at all,
+      it was nice to discover that every polynomial of degree
+      <m>n \geq 1</m> has <m>n</m> complex zeros.
+      So like we said, it gives us a sense of closure.<fn>
+      This is a very deep math pun.
+      </fn> As mentioned at the top of the section,
+      complex numbers are very useful in many applied fields such as electrical engineering,
+      but most of the applications require science and mathematics well beyond precalculus material to fully understand them.
+      That does not mean you'll never be be able to understand them;
+      in fact, it is the authors' sincere hope that all of you will reach a point in your studies when the glory,
+      awe and splendor of complex numbers are revealed to you.
+      For now, however,
+      the really good stuff is beyond the scope of this text.
+      We invite you and your classmates to find a few examples of complex number applications and see what you can make of them.
+    </p>
+    <p>
+      For the remainder of the text,
+      with the exception of <xref ref="PolarComplex">Section</xref>
+      and a few exploratory exercises scattered about,
+      we will restrict our attention to real numbers.
+      We do this primarily because the first Calculus sequence you will take,
+      ostensibly the one that this text is preparing you for,
+      studies only functions of real variables.
+      Also, lots of really cool scientific things don't require any deep understanding of complex numbers to study them,
+      but they do need more Mathematics like exponential,
+      logarithmic and trigonometric functions.
+      We believe it makes more sense pedagogically for you to learn about those functions now then take a course in Complex Function Theory in your junior or senior year once you've completed the Calculus sequence.
+      It is in that course that the true power of the complex numbers is released.
+      But for now,
+      in order to fully prepare you for life immediately after Precalculus,
+      we will say that functions like <m>f(x) = \frac{1}{x^{2} + 1}</m>,
+      which we'll study in the very next chapter,
+      have a domain of all real numbers,
+      even though we know <m>x^{2} + 1 = 0</m> has two complex solutions,
+      namely <m>x = \pm i</m> which produce a <sq><m>0</m></sq> in the denominator.
+      Since <m>x^{2} + 1 > 0</m> for all
+      <em>real</em> numbers <m>x</m>,
+      the fraction <m>\frac{1}{x^{2} + 1}</m> is never undefined in the real variable setting.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="compfactpolyfirst">Exercises</xref>
+      - <xref ref="compfactpolylast"></xref>,
+      find all of the zeros of the polynomial then completely factor it over the real numbers and completely factor it over the complex numbers.
+      <ol cols="2">
+        <li xml:id="compfactpolyfirst">
+          <p>
+            <m>f(x) = x^{2} - 4x + 13</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^2 - 2x + 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 3z^{2} + 2z + 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = z^3-2z^2+9z-18</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t^{3} + 6t^{2} + 6t + 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 3t^{3} - 13t^{2} + 43t - 13</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^3 + 3x^2 + 4x + 12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 4x^3-6x^2-8x+15</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = z^3 + 7z^2+9z-2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 9z^3+2z+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 4t^{4} - 4t^{3} + 13t^{2} - 12t + 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 2t^4-7t^3+14t^2-15t+6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^4+x^3+7x^2+9x-18</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 6x^4+17x^3-55x^2+16x+12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = -3z^4-8z^3-12z^2-12z-5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 8z^4+50z^3+43z^2+2z-4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t^4+9t^2+20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t^4 + 5t^2 - 24</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^5 - x^4+7x^3-7x^2+12x-12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^6-64</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^{4} - 2x^{3} + 27x^{2} - 2x + 26</m> (Hint:
+            <m>x = i</m> is one of the zeros.)
+          </p>
+        </li>
+        <li xml:id="compfactpolylast">
+          <p>
+            <m>p(z) = 2z^4+5z^3+13z^2+7z+5</m> (Hint:
+            <m>z = -1+2i</m> is a zero.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="buildcomppolyfirst">Exercises</xref>
+      - <xref ref="buildcompolylast"></xref>,
+      use <xref ref="complexfactorization">Theorem</xref>
+      to create a polynomial function with real number coefficients which has all of the desired characteristics.
+      You may leave the polynomial in factored form.
+      <ol>
+        <li xml:id="buildcomppolyfirst">
+          <ul>
+            <li>
+              <p>
+                The zeros of <m>f</m> are <m>c = \pm 2</m> and <m>c = \pm 1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading term of <m>f(x)</m> is <m>117x^4</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                The zeros of <m>p</m> are <m>c=1</m> and <m>c = 3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>c=3</m> is a zero of multiplicity 2.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading term of <m>p(z)</m> is <m>-5z^3</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                The solutions to <m>g(t) = 0</m> are <m>t = \pm 3</m> and <m>t=6</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading term of <m>g(t)</m> is <m>7t^4</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The point <m>(-3,0)</m> is a local minimum on the graph of <m>y=g(t)</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                The solutions to <m>f(x) =0</m> are <m>x = \pm 3</m>,
+                <m>x=-2</m>, and <m>x=4</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading term of <m>f(x)</m> is <m>-x^5</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The point <m>(-2, 0)</m> is a local maximum on the graph of <m>y=f(x)</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <m>p</m> is degree 4.
+              </p>
+            </li>
+            <li>
+              <p>
+                as <m>z \rightarrow \infty</m>,
+                <m>p(z) \rightarrow -\infty</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>p</m> has exactly three <m>z</m>-intercepts:
+                <m>(-6,0)</m>, <m>(1,0)</m> and <m>(117,0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The graph of <m>y=p(z)</m> crosses through the <m>z</m>-axis at <m>(1,0)</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                The zeros of <m>g</m> are <m>c=\pm 1</m> and <m>c = \pm i</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading term of <m>g(t)</m> is <m>42t^4</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <m>c=2i</m> is a zero.
+              </p>
+            </li>
+            <li>
+              <p>
+                the point <m>(-1,0)</m> is a local minimum on the graph of <m>y=f(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                the leading term of <m>f(x)</m> is <m>117x^4</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                The solutions to <m>p(z) = 0</m> are <m>z = \pm 2</m> and <m>z=\pm 7i</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading term of <m>p(z)</m> is <m>-3z^5</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The point <m>(2,0)</m> is a local maximum on the graph of <m>y=p(z)</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <p>
+                <m>g</m> is degree <m>5</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t=6</m>, <m>t = i</m> and
+                <m>t = 1-3i</m> are zeros of <m>g</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                as <m>t \rightarrow -\infty</m>,
+                <m>g(t) \rightarrow \infty</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li xml:id="buildcompolylast">
+          <ul>
+            <li>
+              <p>
+                The leading term of <m>f(x)</m> is <m>-2x^3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>c=2i</m> is a zero.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(0) = -16</m>.
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="polyfromgraphfirst">Exercises</xref>
+      - <xref ref="polyfromgraphlast"></xref>,
+      find a possible formula for the polynomial function given its graph.
+      You may leave the polynomial in factored form.
+      <ol cols="5">
+        <li xml:id="polyfromgraphfirst">
+          <p>
+            <m>y=f(x)</m>. \begin{mfpic}[10]{-7}{7}{-6}{6} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-4.5, 0.75){<m>(-6,0)</m>} \tlabel[cc](5, 0.75){<m>(6,0)</m>} \tlabel[cc](1, 0.75){<m>(0,0)</m>} \tlabel[cc](-3, 5){<m>(-3,81)</m>} \point[4pt]{(-6,0),(0,0),(6,0), (-3,4.05) } \xmarks{-6 step 1 until 6} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \penwd{1.25pt} \arrow \reverse \arrow \function{-7,7,0.1}{((x**3) - 36*x)/20} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y=g(t)</m> \begin{mfpic}[20][20]{-3}{3}{-2}{5} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \tlabel[cc](-1.75, 0.3){<m>(-2,0)</m>} \tlabel[cc](0.5, 0.3){<m>(0,0)</m>} \tlabel[cc](-2, -1){<m>(-1,-1)</m>} \point[4pt]{(-2,0), (0,0), (-1,-1)} \xmarks{-2,-1, 1, 2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,0.3,0.1}{x*((x + 2)**3)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = p(z)</m> \begin{mfpic}[20][10]{-3}{3}{-4}{4} \axes \tlabel[cc](3,-0.5){<m>z</m>} \tlabel[cc](0.25,4){<m>y</m>} \tlabel[cc](-2, 0.75){<m>(-1,0)</m>} \tlabel[cc](2, 0.75){<m>(2,0)</m>} \tlabel[cc](0.75, -2.25){<m>(0, -8)</m>} \point[4pt]{(2,0), (-1,0), (0, -1.6)} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.70,3.45,0.1}{(-0.4)*((x-2)**2)*(x+1)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = f(x)</m> \begin{mfpic}[20][10]{-2}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \tlabel[cc](-0.75, 0.75){<m>\left(-\frac{1}{2},0 \right)</m>} \tlabel[cc](2.5, 0.75){<m>(3,0)</m>} \tlabel[cc](3.25, -3.125){<m>(2,-25)</m>} \point[4pt]{(-0.5,0), (3,0), (2, -3.125)} \xmarks{-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.5,3.3,0.1}{(0.5)*((x+0.5)**2)*(x-3)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = F(s)</m> \begin{mfpic}[20][10]{-3}{3}{-5}{5} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.25,5){<m>y</m>} \tlabel[cc](-2, -0.75){<m>(-2,0)</m>} \tlabel[cc](0.5, 0.75){<m>(0,0)</m>} \tlabel[cc](-1.25, 1.75){<m>(-1,1)</m>} \point[4pt]{(-2,0), (0,0), (-1,1)} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,0.65,0.1}{0-x*((x + 2)**2)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="polyfromgraphlast">
+          <p>
+            <m>y = G(t)</m> \begin{mfpic}[20][10]{-3}{3}{-5}{5} \axes \tlabel[cc](-2, 0.75){<m>(-2,0)</m>} \tlabel[cc](0.5, -0.75){<m>(0,0)</m>} \tlabel[cc](-1, -2){<m>(-1,-1)</m>} \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[4pt]{(-2,0), (0,0), (-1,-1)} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{ {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.45,0.85,0.1}{(x**3)*((x + 2)**2)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="cmpgeoalgexfirst">
+          <p>
+            With help from your classmates,
+            choose several nonzero complex numbers <m>z</m>,
+            find their complex conjugates <m>\overline{z}</m>.
+            Plot each pair <m>z</m> and
+            <m>\overline{z}</m> in the Complex Plane.
+            What appears to be the relationship between these numbers geometrically?
+            State and prove a general result.
+          </p>
+        </li>
+        <li>
+          <p>
+            With help from your classmates,
+            choose several nonzero complex numbers <m>z</m> and find <m>-z</m>.
+            Plot each pair <m>z</m> and <m>-z</m> in the Complex Plane.
+            What appears to be the relationship between these numbers geometrically?
+            State and prove a general result.
+          </p>
+        </li>
+        <li>
+          <p>
+            With help from your classmates,
+            choose several different complex numbers <m>z</m> and find the product of <m>i</m> and <m>z</m>,
+            <m>iz</m>.
+            Plot each pair of <m>z</m> and <m>iz</m> in the Complex Plane.
+            In each case,
+            show the line containing the origin and the point corresponding to <m>z</m> is perpendicular<fn>
+            See <xref ref="parallelperpendicularslopetheorem">Theorem</xref>
+            in <xref ref="AppLines">Section</xref>
+            of you need a refresher on how to do this.
+            </fn> to the line containing the origin and the point corresponding to <m>iz</m>.
+            Show this result holds in general for every nonzero complex number.
+          </p>
+        </li>
+        <li xml:id="cmpgeoalgexlast">
+          <p>
+            Given a complex number <m>z = a+bi</m>,
+            we define the <idx><h>modulus</h><h>of a complex number</h></idx>
+            <em>modulus</em> of <m>z</m>, <m>|z|</m>,
+            by <m>|z| = \sqrt{a^2+b^2}</m>.
+            With help from your classmates,
+            calculate <m>|z|</m> for several different complex numbers,
+            <m>z</m>.
+            What does <m>z</m> measure geometrically?
+            Show that if <m>x</m> is a real number,
+            then the modulus of <m>x</m> is the same as the absolute value of <m>x</m>,
+            and comment how all this relates to <xref ref="absvaldistdefn">Definition</xref>
+            in <xref ref="AppAbsValEqIneq">Section</xref>.
+          </p>
+        </li>
+        <li xml:id="zbarexercise">
+          <p>
+            Let <m>z</m> and <m>w</m> be arbitrary complex numbers.
+            Show that <m>\overline{z} \, \overline{w} = \overline{zw}</m> and <m>\overline{\overline{z}} = z</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="5">
+      <li>
+        <p>
+          <m>f(x) = x^2-4x+13 = (x-(2+3i)) (x-(2-3i))</m> Zeros:
+          <m>x = 2 \pm 3i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^2 - 2x + 5 = (x-(1+2i))(x-(1-2i))</m> Zeros:
+          <m>x = 1 \pm 2i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 3z^2 + 2z +10 = 3\left(z-\left(-\frac{1}{3} + \frac{\sqrt{29}}{3} i\right) \right) \left(z-\left(-\frac{1}{3} - \frac{\sqrt{29}}{3} i\right) \right)</m> Zeros:
+          <m>z = -\frac{1}{3} \pm \frac{\sqrt{29}}{3} i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = z^3-2z^2+9z-18 = (z-2) \left(z^2+9\right) = (z-2)(z-3i)(z+3i)</m> Zeros:
+          <m>z=2, \pm 3i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t^{3} + 6t^{2} + 6t + 5 = (t + 5)(t^{2} + t + 1) = (t + 5) \left( t - \left( -\frac{1}{2} + \frac{\sqrt{3}}{2}i \right) \right) \left( t - \left(-\frac{1}{2} - \frac{\sqrt{3}}{2}i \right) \right)</m> Zeros:
+          <m>t = -5, \; t = -\frac{1}{2} \pm \frac{\sqrt{3}}{2}i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 3t^{3} - 13t^{2} + 43t - 13 = (3t - 1)(t^{2} - 4t + 13) = (3t - 1)(t - (2 + 3i))(t - (2 - 3i))</m> Zeros:
+          <m>t = \frac{1}{3}, \; t = 2 \pm 3i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^3 + 3x^2 + 4x + 12 = (x+3) \left(x^2 + 4 \right) = (x+3)(x+2i)(x-2i)</m> Zeros:
+          <m>x = -3, \; \pm 2i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4x^3-6x^2-8x+15 = \left(x + \frac{3}{2} \right) \left(4x^2-12x+10\right) \\ = 4 \left(x + \frac{3}{2} \right) \left(x - \left( \frac{3}{2} + \frac{1}{2}i \right) \right) \left(x - \left( \frac{3}{2} - \frac{1}{2}i \right) \right)</m> Zeros:
+          <m>x = - \frac{3}{2}, \; x = \frac{3}{2} \pm \frac{1}{2}i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = z^3 + 7z^2+9z-2 = (z+2) \left(z - \left( -\frac{5}{2}+\frac{\sqrt{29}}{2}\right) \right) \left(z - \left( -\frac{5}{2}-\frac{\sqrt{29}}{2}\right) \right)</m> Zeros:
+          <m>z = -2, \; z = -\frac{5}{2} \pm \frac{\sqrt{29}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 9z^3+2z+1 = \left(z + \frac{1}{3}\right) \left(9z^2 - 3z + 3\right) \\ = 9\left(z + \frac{1}{3}\right) \left(z - \left(\frac{1}{6} + \frac{\sqrt{11}}{6} i \right) \right) \left(z - \left(\frac{1}{6} - \frac{\sqrt{11}}{6} i \right) \right)</m> Zeros:
+          <m>z = -\frac{1}{3}, \; z = \frac{1}{6} \pm \frac{\sqrt{11}}{6} i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 4t^{4} - 4t^{3} + 13t^{2} - 12t + 3 = \left(t - \frac{1}{2}\right)^{2}\left(4t^{2} + 12\right) = 4\left(t - \frac{1}{2}\right)^{2}(t + i\sqrt{3})(t - i\sqrt{3})</m> Zeros:
+          <m>t = \frac{1}{2}, \; t = \pm \sqrt{3}i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 2t^4-7t^3+14t^2-15t+6 = (t-1)^2 \left(2t^2 - 3t + 6\right) \\ = 2 (t-1)^2 \left( t - \left( \frac{3}{4} + \frac{\sqrt{39}}{4} i \right) \right) \left( t - \left( \frac{3}{4} - \frac{\sqrt{39}}{4} i \right) \right)</m> Zeros:
+          <m>t = 1, \; t = \frac{3}{4} \pm \frac{\sqrt{39}}{4} i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^4+x^3+7x^2+9x-18 = (x+2)(x-1)\left(x^2+9\right) = (x+2)(x-1)(x+3i)(x-3i)</m> Zeros:
+          <m>x = -2, \; 1, \; \pm 3i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 6x^4+17x^3-55x^2+16x+12 = 6 \left(x + \frac{1}{3} \right) \left(x - \frac{3}{2} \right) \left(x - \left( -2 + 2 \sqrt{2}\right)\right) \left(x - \left( -2 - 2 \sqrt{2}\right)\right)</m> Zeros:
+          <m>x = -\frac{1}{3}, \; x = \frac{3}{2}, \; x = -2 \pm 2 \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = -3z^4-8z^3-12z^2-12z-5 = (z+1)^2 \left(-3z^2-2z-5\right) \\ = -3(z+1)^2\left(z - \left( -\frac{1}{3}+\frac{\sqrt{14}}{3} i\right) \right) \left(z - \left( -\frac{1}{3}-\frac{\sqrt{14}}{3} i\right) \right)</m> Zeros:
+          <m>z = -1, \; z = -\frac{1}{3} \pm \frac{\sqrt{14}}{3} i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 8z^4+50z^3+43z^2+2z-4 = 8\left(z + \frac{1}{2}\right) \left(z - \frac{1}{4}\right)(z - (-3 + \sqrt{5}))(z - (-3 - \sqrt{5}))</m> Zeros:
+          <m>z = -\frac{1}{2}, \; \frac{1}{4}, \; z = -3 \pm \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t^4+9t^2+20 = \left(t^2+4\right) \left(t^2+5\right) = (t-2i)(t+2i)\left(t - i \sqrt{5}\right)\left(t + i \sqrt{5}\right)</m> Zeros:
+          <m>t = \pm 2i, \pm i \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t^4+5t^2-24 = \left(t^2-3 \right) \left(t^2+8\right) = (t-\sqrt{3})(t+\sqrt{3})\left(t - 2i \sqrt{2}\right)\left(t + 2i \sqrt{2}\right)</m> Zeros:
+          <m>t = \pm \sqrt{3}, \pm 2i \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^5 - x^4+7x^3-7x^2+12x-12 = (x-1) \left(x^2 + 3\right) \left(x^2 + 4 \right) \\ = (x-1)(x - i \sqrt{3})(x + i \sqrt{3})(x-2i)(x+2i)</m> Zeros:
+          <m>x = 1, \; \pm \sqrt{3}i, \; \pm 2i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^6 - 64 = (x-2)(x+2)\left(x^2+2x+4\right)\left(x^2-2x+4\right) \\ = (x-2)(x+2)\left( x - \left( -1+i\sqrt{3} \right) \right)\left( x - \left( -1-i\sqrt{3} \right) \right)\left( x - \left( 1+i\sqrt{3} \right) \right)\left( x - \left( 1-i\sqrt{3} \right) \right)</m> Zeros:
+          <m>x = \pm 2</m>, <m>x = -1 \pm i\sqrt{3}</m>,
+          <m>x = 1 \pm i\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{4} - 2x^{3} + 27x^{2} - 2x + 26 = (x^{2} - 2x + 26)(x^{2} + 1) = (x - (1 + 5i))(x - (1 - 5i))(x + i)(x - i)</m> Zeros:
+          <m>x = 1 \pm 5i, \; x = \pm i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 2z^4+5z^3+13z^2+7z+5 = \left(z^2+2z+5\right) \left(2z^2+z+1\right) \\ = 2 (z-(-1+2i))(z-(-1-2i))\left(z - \left(-\frac{1}{4} + i \frac{\sqrt{7}}{4}\right) \right)\left(z - \left(-\frac{1}{4} - i \frac{\sqrt{7}}{4}\right) \right)</m> Zeros:
+          <m>z = -1 \pm 2i, -\frac{1}{4} \pm i \frac{\sqrt{7}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 117(x+2)(x-2)(x+1)(x-1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z)= -5(z-1)(z-3)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 7(t+3)^2(t-3)(t-6)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = -(x + 2)^{2}(x - 3)(x + 3)(x - 4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = a(z+6)^2(z-1)(z-117)</m> where <m>a</m> can be any real number as long as <m>a\lt 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 42(t-1)(t+1)(t-i)(t+i)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 117(x+1)^2(x-2i)(x+2i)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = -3(z-2)^2(z+2)(z-7i)(z+7i)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = a(t-6)(t-i)(t+i)(t-(1-3i))(t-(1+3i))</m> where <m>a</m> is any real number,
+          <m>a \lt 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = -2(x-2i)(x+2i)(x+2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x(x+6)(x-6)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t(t+2)^3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = -2(z+1)(z-2)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4\left(x+ \frac{1}{2}\right)^2 (x-3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(s) =-s(s+2)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) = t^3(t+2)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>z = a+bi</m>,
+          then <m>z</m> corresponds to the point <m>(a,b)</m> in the <m>xy</m>-plane.
+          Hence, <m>\overline{z} = \overline{a+bi} = a-bi</m> corresponds to the point <m>(a,-b)</m>.
+          Hence, the points corresponding to <m>z</m> and
+          <m>\overline{z}</m> are reflections about the <m>x</m>-axis.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>z = a+bi</m>,
+          then <m>z</m> corresponds to the point <m>(a,b)</m> in the <m>xy</m>-plane.
+          Hence, <m>-z =-(a+bi) = -a-bi</m> corresponds to the point <m>(-a,-b)</m>.
+          Hence, the points corresponding to <m>z</m> and <m>-z</m> are reflections through the origin.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>z = a+bi</m>,
+          then <m>z</m> corresponds to the point <m>(a,b)</m> in the <m>xy</m>-plane.
+          Writing out the product <m>iz</m>, we get:
+          <m>iz =i(a+bi) = ia+bi^2 = ia - b = -b+ia</m>.
+          Hence, <m>iz</m> corresponds to the point <m>(-b,a)</m>.
+          If <m>z \neq 0</m>, then neither <m>a</m> nor <m>b</m> is <m>0</m>
+          (do you see why?)
+          Hence, the slope of the line containing <m>(0,0)</m> and <m>(a,b)</m> is
+          <m>\frac{b}{a}</m> and the slope of the line containing <m>(0,0)</m> and <m>(-b,a)</m> is <m>-\frac{a}{b}</m>.
+          Per <xref ref="parallelperpendicularslopetheorem">Theorem</xref>,
+          since the slopes of these lines are negative reciprocals,
+          the lines themselves are perpendicular.<fn>
+          We'll be able to show in <xref ref="PolarComplex">Section</xref> that,
+          more precisely,
+          multiplication by <m>i</m> rotates the complex number counter-clockwise by <m>90^{\circ}</m>.
+          </fn>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>|z| = \sqrt{a^2+b^2}</m> measures the distance from the origin to the point <m>(a,b)</m>.
+          Hence, <m>|z|</m> measures the distance from <m>z</m> to <m>0</m> in the Complex Plane.
+          This is exactly how <m>|x|</m> is defined in <xref ref="absvaldistdefn">Definition</xref>
+          in <xref ref="AppAbsValEqIneq">Section</xref>.
+          In that section, however,
+          the only part of the Complex Plane under discussion is the real number line.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

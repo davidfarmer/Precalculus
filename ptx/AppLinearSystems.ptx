@@ -1,0 +1,602 @@
+<section xml:id="AppLinearSystems">
+  <title>Systems of Two Linear Equations in Two Unknowns</title>
+  <introduction>
+    <p>
+      This section of the Appendix combines ideas from <xref ref="AppLinearEqIneq">Section</xref>
+      and <xref ref="AppLines"></xref>
+      so that we can start to solve systems of linear equations.
+      Before we get ahead of ourselves,
+      let's review a few definitions.
+    </p>
+    <definition xml:id="lineareqntwovariables">
+      <statement>
+        <p>
+          A <idx><h>equation</h><h>linear of two variables</h></idx>
+              <idx><h>linear equation</h><h>two variables</h></idx>
+          <term>linear equation in two variables</term>
+          is an equation of the form <m>a_{1} x + a_{2} y = c</m> where <m>a_{1}</m>,
+          <m>a_{2}</m> and <m>c</m> are real numbers and at least one of <m>a_{1}</m> and <m>a_{2}</m> is nonzero.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For reasons which will become clear when you study <xref ref="SystemsofEquationsandMatrices">Chapter</xref>,
+      we are using subscripts in <xref ref="lineareqntwovariables">Definition</xref>
+      to indicate different, but fixed,
+      real numbers and those subscripts have no mathematical meaning beyond that.
+      For example,
+      <m>3x - \frac{y}{2} = 0.1</m> is a linear equation in two variables with <m>a_{1} = 3</m>,
+      <m>a_{2} = -\frac{1}{2}</m> and <m>c = 0.1</m>.
+      We can also consider <m>x = 5</m> to be a linear equation in two variables<fn>
+      Critics may argue that <m>x=5</m> is clearly an equation in one variable.
+      It can also be considered an equation in <m>117</m> variables with the coefficients of <m>116</m> variables set to <m>0</m>.
+      As with many conventions in Mathematics,
+      the context will clarify the situation.
+      </fn> by identifying <m>a_{1} = 1</m>,
+      <m>a_{2} = 0</m>, and <m>c = 5</m>.
+    </p>
+    <p>
+      If <m>a_{1}</m> and <m>a_{2}</m> are both <m>0</m>,
+      then depending on <m>c</m>,
+      we get either an equation which is
+      <em>always</em> true, called an
+          <idx><h>equation</h><h>identity</h></idx>
+          <idx><h>identity</h><h>statement which is always true</h></idx>
+      <em>identity</em>, or an equation which is <em>never</em> true,
+      called a <idx><h>equation</h><h>contradiction</h></idx>
+          <idx><h>contradiction</h></idx>
+      <em>contradiction</em>.
+      (If <m>c = 0</m>, then we get <m>0 = 0</m>, which is always true.
+      If <m>c \neq 0</m>, then we'd have
+      <m>0 \neq 0</m>, which is never true.)
+      Even though identities and contradictions have a large role to play throughout <xref ref="SystemsofEquationsandMatrices">Chapter</xref>,
+      we do not consider them linear equations.
+      The key to identifying linear equations is to note that the variables involved are to the first power and that the coefficients of the variables are numbers.
+      Some examples of equations which are non-linear are <m>x^2 + y = 1</m>,
+      <m>xy = 5</m> and <m>e^{2x} + \ln(y) = 1</m>.
+      The reader should consider why these do not satisfy <xref ref="lineareqntwovariables">Definition</xref>.
+    </p>
+    <p>
+      We know from our work is <xref ref="AppLines">Sections</xref>
+      that the graphs of linear equations are lines.
+      If we couple two or more linear equations together,
+      in effect to find the points of intersection of two or more lines,
+      we obtain a <em>system of linear equations in two variables</em>.
+          <idx><h>system of equations</h><h>linear ! two variables</h></idx>
+      Our first example explores the basic techniques for solving these systems.
+      Remember - if we are looking for points in the plane,
+      then both the <m>x</m> and <m>y</m> values are important.
+      This is a key distinction between solving one equation and solving a
+      <em>system</em> of equations.
+    </p>
+    <example xml:id="reviewsubelim">
+      <statement>
+        <p>
+          Solve the following systems of equations.
+          Check your answer algebraically and graphically. (Said another way,
+          make sure both <m>x</m> and <m>y</m> are correct!)
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} 2x - y \amp = \amp 1 \\ y \amp = \amp 3 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} 3x+4y \amp = \amp -2 \\ -3x-y \amp = \amp 5 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} \frac{x}{3} -\frac{4y}{5} \amp = \amp \frac{7}{5} \\ \frac{2x}{9} + \frac{y}{3} \amp = \amp \frac{1}{2} \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} 2x - 4y \amp = \amp 6 \\ 3x -6y \amp = \amp 9 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} 6x + 3y \amp = \amp 9 \\ 4x + 2y \amp = \amp 12 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} x - y \amp = \amp 0 \\ x + y \amp = \amp 2 \\ -2x + y \amp = \amp -2 \end{array} \right.</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Our first system is nearly solved for us.
+                The second equation tells us that <m>y=3</m>.
+                To find the corresponding value of <m>x</m>,
+                we <em>substitute</em> this value for <m>y</m> into the the first equation to obtain
+                <m>2x - 3 = 1</m>, so that <m>x = 2</m>.
+                Our solution to the system is <m>(2,3)</m>.
+                To check this algebraically,
+                we substitute <m>x=2</m> and <m>y=3</m> into each equation and see that they are satisfied.
+                We see <m>2(2) - 3 = 1</m>, and <m>3=3</m>, as required.
+                To check our answer graphically,
+                we graph the lines <m>2x-y = 1</m> and <m>y=3</m> and verify that they intersect at <m>(2,3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve the second system,
+                we use the <em>addition</em> method to
+                <em>eliminate</em> the variable <m>x</m>.
+                We take the two equations as given and <sq>add equals to equals</sq> to obtain
+                <me>
+                  \begin{array}{lrcr} \amp  3x+4y \amp  = \amp  -2  \\ + \amp  (-3x-y  \amp  = \amp  5 ) \\ \hline \amp  3y \amp  = \amp  3 \end{array}
+                </me>
+                This gives us <m>y = 1</m>.
+                We now substitute <m>y=1</m> into either of the two equations,
+                say <m>-3x-y = 5</m>, to get
+                <m>-3x-1 = 5</m> so that <m>x = -2</m>.
+                Our solution is <m>(-2,1)</m>.
+                Substituting <m>x=-2</m> and <m>y=1</m> into the first equation gives <m>3(-2) + 4(1) = -2</m>,
+                which is true, and, likewise,
+                when we check <m>(-2, 1)</m> in the second equation,
+                we get <m>-3(-2) - 1 = 5</m>, which is also true.
+                Geometrically,
+                the lines <m>3x+4y = -2</m> and <m>-3x-y=5</m> intersect at <m>(-2,1)</m>.
+                <tabular>
+                  {m{.5in}m{2in}m{.5in}m{2in}}  <m>~</m>  &amp;  \begin{mfpic}[15]{-2}{5}{-2}{5} \arrow \reverse \arrow \polyline{(-0.5,-2), (3,5)} \point[3pt]{(2,3)} \axes \tlabel[cc](2.5,2.5){ <m>(2,3)</m>} \xmarks{-1,1,2,3,4} \ymarks{-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tcaption{<m>2x-y=1</m><m>y=3</m>} \tlpointsep{4pt} \axislabels {x}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>4</m>} 4} \penwd{1.1pt} \arrow \reverse \arrow \polyline{(-2,3), (5,3)} \end{mfpic}  &amp;  <m>~</m>  &amp;  \begin{mfpic}[15]{-5}{1}{-3}{3} \arrow \reverse \arrow \polyline{(-4.666,3), (1,-1.25)} \point[3pt]{(-2,1)} \axes \tlabel[cc](-3,0.5){ <m>(-2,1)</m>} \xmarks{-4,-3,-2,-1} \ymarks{-2,-1,1,2} \tlabel(1,-0.5){<m>x</m>} \tlabel(0.5,3){<m>y</m>} \tcaption{<m>3x+4y=-2</m><m>-3x-y=5</m>} \tlpointsep{4pt} \axislabels {x}{{ <m>-4</m>} -4,{ <m>-3</m>} -3,{ <m>-2</m>} -2,{ <m>-1</m>} -1} \axislabels {y}{{ <m>-2</m>} -2,{ <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2} \penwd{1.1pt} \arrow \reverse \arrow \polyline{(-2.666,3), (-0.666,-3)} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                The equations in the third system are more approachable if we clear denominators.
+                We multiply both sides of the first equation by <m>15</m> and both sides of the second equation by <m>18</m> to obtain the kinder,
+                gentler system
+                <me>
+                  \left\{ \begin{array}{rcr} 5x - 12y \amp  = \amp  21  \\ 4x  + 6y \amp  = \amp  9 \end{array}  \right.
+                </me>
+                Adding these two equations directly fails to eliminate either of the variables,
+                but we note that if we multiply the first equation by <m>4</m> and the second by <m>-5</m>,
+                we will be in a position to eliminate the <m>x</m> term
+                <me>
+                  \begin{array}{lrcr} \amp  20x-48y \amp  = \amp  84  \\ + \amp  (-20x-30y  \amp  = \amp  -45 ) \\ \hline  \amp  -78y \amp  = \amp  39 \end{array}
+                </me>
+                From this we get <m>y = -\frac{1}{2}</m>.
+                We can temporarily avoid too much unpleasantness by choosing to substitute
+                <m>y = -\frac{1}{2}</m> into one of the equivalent equations we found by clearing denominators,
+                say into <m>5x - 12y  =  21</m>.
+                We get <m>5x + 6 = 21</m> which gives <m>x=3</m>.
+                Our answer is <m>\left(3, -\frac{1}{2}\right)</m>.
+                At this point,
+                we have no choice <m>-</m> in order to check an answer algebraically,
+                we must see if the answer satisfies both of the
+                <em>original</em> equations,
+                so we substitute <m>x = 3</m> and <m>y = -\frac{1}{2}</m> into both
+                <m>\frac{x}{3} -\frac{4y}{5} = \frac{7}{5}</m> and <m>\frac{2x}{9} + \frac{y}{3} = \frac{1}{2}</m>.
+                We leave it to the reader to verify that the solution is correct.
+                Graphing both of the lines involved with considerable care yields an intersection point of <m>\left(3, -\frac{1}{2}\right)</m>.
+                (The picture is on the next page.)
+              </p>
+            </li>
+            <li>
+              <p>
+                An eerie calm settles over us as we cautiously approach our fourth system.
+                Do its friendly integer coefficients belie something more sinister?
+                We note that if we multiply both sides of the first equation by <m>3</m> and both sides of the second equation by <m>-2</m>,
+                we are ready to eliminate the <m>x</m>
+                <me>
+                  \begin{array}{lrcr} \amp  6x-12y \amp  = \amp  18  \\ + \amp  (-6x+12y  \amp  = \amp  -18 ) \\ \hline  \amp  0 \amp  = \amp  0 \end{array}
+                </me>
+                We eliminated not only the <m>x</m>,
+                but the <m>y</m> as well and we are left with the identity <m>0=0</m>.
+                This means that these two different linear equations are, in fact,
+                equivalent.
+                In other words,
+                if an ordered pair <m>(x,y)</m> satisfies the equation <m>2x-4y = 6</m>,
+                it <em>automatically</em> satisfies the equation <m>3x-6y = 9</m>.
+                This system has infinitely many solutions and one way to describe the solution set to this system is to use the roster method<fn>
+                See <xref ref="AppSetTheory">Section</xref> for a review of this.
+                </fn> and write <m>\{(x,y) \, | \, 2x-4y = 6\}</m>.
+                While this is correct
+                (and corresponds exactly to what's happening graphically,
+                as we shall see shortly),
+                we take this opportunity to introduce the notion of a
+                  <idx><h>parametric solution</h></idx>
+                  <idx><h>system of equations</h><h>parametric solution</h></idx>
+                <em>parametric solution to a system</em>.
+                Our first step is to solve
+                <m>2x-4y = 6</m> for one of the variables,
+                say <m>y = \frac{1}{2} x - \frac{3}{2}</m>.
+                For each value of <m>x</m>,
+                the formula <m>y = \frac{1}{2} x - \frac{3}{2}</m> determines the corresponding <m>y</m>-value of a solution.
+                Since we have no restriction on <m>x</m>,
+                it is called a <idx><h>system of equations</h><h>free variable</h></idx>
+                  <idx><h>free variable</h></idx>
+                <em>free variable</em>.
+                We let <m>x=t</m>, a so-called <sq>parameter</sq>,
+                and get <m>y = \frac{1}{2} t - \frac{3}{2}</m>.
+                Our set of solutions can then be described as <m>\left\{ \left(t, \frac{1}{2} t - \frac{3}{2}\right) \, | \, -\infty \lt  t \lt  \infty \right\}</m>.<fn>
+                Note that we could have just as easily chosen to solve
+                <m>2x-4y = 6</m> for <m>x</m> to obtain <m>x = 2y + 3</m>.
+                Letting <m>y</m> be the parameter <m>t</m>,
+                we have that for any value of <m>t</m>, <m>x = 2t+3</m>,
+                which gives <m>\{(2t+3, t) \, | \, - \infty \lt  t \lt  \infty\}</m>.
+                There is no one correct way to parameterize the solution set,
+                which is why it is always best to check your answer.
+                </fn>    For specific values of <m>t</m>,
+                we can generate solutions.
+                For example,
+                <m>t=0</m> gives us the solution <m>\left(0,-\frac{3}{2}\right)</m>;
+                <m>t = 117</m> gives us <m>(117,57)</m>,
+                and while we can  check that each of these particular solutions satisfy both equations,
+                the question is how do we check our general answer algebraically?
+                Same as always.
+                We claim that for any real number <m>t</m>,
+                the pair <m>\left(t, \frac{1}{2} t - \frac{3}{2}\right)</m> satisfies both equations.
+                Substituting <m>x = t</m> and <m>y =  \frac{1}{2} t - \frac{3}{2}</m> into
+                <m>2x - 4y = 6</m> gives <m>2t - 4\left(\frac{1}{2} t - \frac{3}{2}\right) = 6</m>.
+                Simplifying,
+                we get <m>2t - 2t + 6 = 6</m>, which is always true.
+                Similarly, when we make these substitutions in the equation <m>3x-6y = 9</m>,
+                we get <m>3t - 6\left(\frac{1}{2} t - \frac{3}{2}\right) = 9</m> which reduces to
+                <m>3t - 3t + 9 = 9</m>, so it checks out, too.
+                Geometrically,
+                <m>2x-4y = 6</m> and <m>3x-6y=9</m> are the same line,
+                which means that they intersect at every point on their graphs.
+                The reader is encouraged to think about how our parametric solution says exactly that.
+                The picture for this system is shown below on the right while the picture for the previous example is shown on the left.
+                <tabular>
+                  {m{.5in}m{2in}m{.5in}m{2in}}  <m>~</m>  &amp;  \begin{mfpic}[10]{-2}{8}{-5}{3} \arrow \reverse \arrow \polyline{(-2,-2.583), (8,1.583)} \point[3pt]{(3,-0.5)} \axes \tlabel[cc](3,-2){ <m>\left(3,-\frac{1}{2}\right)</m>} \xmarks{-1,1,2,3,4,5,6,7} \ymarks{-4,-3,-2,-1,1,2} \tlabel(8,-0.5){<m>x</m>} \tlabel(0.5,3){<m>y</m>} \tcaption{<m>\frac{x}{3} -\frac{4y}{5} = \frac{7}{5}</m><m>\frac{2x}{9} + \frac{y}{3} = \frac{1}{2}</m>} \tlpointsep{4pt} \axislabels {x}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7} \axislabels {y}{{ <m>-4</m>} -4,{ <m>-3</m>} -3,{ <m>-2</m>} -2,{ <m>-1</m>} -1,{ <m>1</m>} 1} \penwd{1.1pt} \arrow \reverse \arrow \polyline{(-2.25,3), (8,-3.833)} \end{mfpic}  &amp;  <m>~</m>  &amp;  \begin{mfpic}[15]{-1}{5}{-3}{3} \axes \xmarks{1,2,3,4} \ymarks{-2,-1,1,2} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,3){<m>y</m>} \tcaption{<m>2x - 4y = 6</m><m>3x-6y = 9</m>(Same line.)} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1,{ <m>2</m>} 2,{ <m>3</m>} 3,{ <m>4</m>} 4} \axislabels {y}{{ <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2} \penwd{1.1pt} \arrow \reverse \arrow \polyline{(-1,-2), (5,1)} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Multiplying both sides of the first equation by <m>2</m> and the both sides of the second equation by <m>-3</m>,
+                we set the stage to eliminate <m>x</m>
+                <me>
+                  \begin{array}{lrcr} \amp  12x + 6y \amp  = \amp  18  \\ + \amp  (-12x-6y  \amp  = \amp  -36 ) \\ \hline  \amp  0 \amp  = \amp  -18 \end{array}
+                </me>
+                As in the previous example,
+                both <m>x</m> and <m>y</m> dropped out of the equation,
+                but we are left with an irrevocable contradiction, <m>0 = -18</m>.
+                This tells us that it is impossible to find a pair <m>(x,y)</m> which satisfies both equations;
+                in other words, the system has no solution.
+                Graphically, the lines  <m>6x + 3y =9</m> and
+                <m>4x + 2y = 12</m> are distinct and parallel, so they do not intersect.
+              </p>
+            </li>
+            <li>
+              <p>
+                We can begin to solve our last system by adding the first two equations
+                <me>
+                  \begin{array}{lrcr} \amp  x - y \amp  = \amp  0  \\ + \amp  (x + y \amp  = \amp  2 ) \\ \hline  \amp  2x \amp  = \amp  2 \end{array}
+                </me>
+                which gives <m>x = 1</m>.
+                Substituting this into the first equation gives
+                <m>1 - y = 0</m> so that <m>y = 1</m>.
+                We seem to have determined a solution to our system, <m>(1,1)</m>.
+                While this checks in the first two equations,
+                when we substitute <m>x=1</m> and <m>y=1</m> into the third equation,
+                we get <m>-2(1) + (1) = -2</m> which simplifies to the contradiction <m>-1 = -2</m>.
+                Graphing the lines <m>x-y=0</m>,
+                <m>x+y = 2</m>, and <m>-2x+y=-2</m>,
+                we see that the first two lines do, in fact,
+                intersect at <m>(1,1)</m>, however,
+                all three lines never intersect at the same point simultaneously,
+                which is what is required if a solution to the system is to be found.
+                <tabular>
+                  {m{.5in}m{2in}m{.5in}m{2in}}  <m>~</m>  &amp;  \begin{mfpic}[15][7]{-1}{4}{-4}{7} \arrow \reverse \arrow \polyline{(-1,5), (3.5,-4)} \axes \xmarks{1,2,3} \ymarks{-3,-2,-1,1,2,3,4,5,6} \tlabel(4,-0.5){<m>x</m>} \tlabel(0.5,7){<m>y</m>} \tcaption{<m>6x + 3y =9</m><m>4x + 2y = 12</m>} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>-3</m>} -3,{ <m>-2</m>} -2,{ <m>-1</m>} -1,{ <m>1</m>} 1,{ <m>2</m>} 2,{ <m>3</m>} 3,{ <m>4</m>} 4,{ <m>5</m>} 5,{ <m>6</m>} 6} \penwd{1.1pt} \arrow \reverse \arrow \polyline{(-0.5,7), (4,-2)} \end{mfpic}  &amp;  <m>~</m>  &amp;  \begin{mfpic}[15]{-1}{3}{-3}{3} \axes \xmarks{1,2} \ymarks{-2,-1,1,2} \tlabel(3,-0.5){<m>x</m>} \tlabel(0.5,3){<m>y</m>} \tcaption{<m>y-x = 0</m><m>y+x = 2</m><m>-2x+y=-2</m>} \tlpointsep{4pt} \axislabels {y}{{ <m>-1</m>} -1,{ <m>1</m>} 1} \arrow \reverse \arrow \polyline{(-1,-1), (3,3)} \arrow \reverse \arrow \polyline{(-1,3), (3,-1)} \arrow \reverse \arrow \polyline{(-0.5,-3), (2.5,3)} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="reviewsubelim">Example</xref> are in order.
+      Notice that some of the systems of linear equations had solutions while others did not.
+      Those which have solutions are called
+          <idx><h>consistent system</h></idx>
+          <idx><h>system of equations</h><h>consistent</h></idx>
+      <em>consistent</em>, those with no solution are called
+          <idx><h>inconsistent system</h></idx>
+          <idx><h>system of equations</h><h>inconsistent</h></idx>
+      <em>inconsistent</em>.
+      We also distinguish between the two different types of behavior among consistent systems.
+      Those which admit free variables are called <idx><h>system of equations</h><h>dependent</h></idx>
+          <idx><h>dependent system</h></idx>
+      <em>dependent</em> and those with no free variables are called <idx><h>system of equations</h><h>independent</h></idx>
+          <idx><h>independent system</h></idx>
+      <em>independent</em>.<fn>
+      In the case of systems of linear equations,
+      regardless of the number of equations or variables,
+      consistent independent systems have exactly one solution.
+      The reader is encouraged to think about why this is the case for linear equations in two variables.
+      Hint: think geometrically.
+      </fn>
+    </p>
+    <p>
+      Using this new vocabulary,
+      we classify numbers 1, 2 and 3 in <xref ref="reviewsubelim">Example</xref>
+      as consistent independent systems,
+      number 4 is consistent dependent,
+      and numbers 5 and 6 are inconsistent.<fn>
+      The adjectives <sq>dependent</sq> and <sq>independent</sq> apply only to <em>consistent</em>
+      systems <mdash/> they describe the
+      <em>type</em> of solutions.
+      Is there a free variable (dependent) or not (independent)?
+      </fn> The system in 6 above is called <idx><h>system of equations</h><h>overdetermined</h></idx>
+          <idx><h>overdetermined system</h></idx>
+      <em>overdetermined</em>, since we have more equations than variables.<fn>
+      If we think if each variable being an unknown quantity,
+      then ostensibly, to recover two unknown quantities,
+      we need two pieces of information - i.e., two equations.
+      Having more than two equations suggests we have more information than necessary to determine the values of the unknowns.
+      While this is not necessarily the case,
+      it does explain the choice of terminology <sq>overdetermined</sq>.
+      </fn> Not surprisingly,
+      a system with more variables than equations is called <idx><h>system of equations</h><h>underdetermined</h></idx>
+          <idx><h>underdetermined system</h></idx>
+      <em>underdetermined</em>.
+      While the system in number 6 above is overdetermined and inconsistent,
+      there exist overdetermined consistent systems
+      (both dependent and independent)
+      and we leave it to the reader to think about what is happening algebraically and geometrically in these cases.
+      Likewise, there are both consistent and inconsistent underdetermined systems,<fn>
+      We need more than two variables to give an example of the latter.
+      </fn> but a consistent underdetermined system of linear equations is necessarily dependent.<fn>
+      Again, experience with systems with more variables helps to see this here,
+      as does a solid course in Linear Algebra.
+      </fn>
+    </p>
+    <p>
+      We end this section with a story problem.
+      It is an example of a classic
+      <q>mixture</q>
+      problem and should be familiar to most readers.
+      The basic goal here is to create two equations: one which represents
+      <me>
+        \text{ stuff }  + \text{ other stuff }  = \text{ total stuff }
+      </me>
+      and the other which represents
+      <me>
+        \text{ value of stuff }  + \text{ value of other stuff }  =  \text{ value of total stuff. }
+      </me>
+    </p>
+    <example xml:id="dudebromixture">
+      <statement>
+        <p>
+          The Dude-Bros want to create a highly caffeinated,
+          yet still drinkable, fruit punch for their annual
+          <q>Disturb the Neighbors BBQ and Dance Competition</q>. They plan to add Sasquatch Sweat<sup>TM</sup> Energy Drink,
+          which has 100 mg.<nbsp/>of caffeine per fluid ounce,
+          to Frooty Giggle Delight<sup>TM</sup>,
+          which has only 3 mg.<nbsp/>of caffeine per fluid ounce.
+          How much of each component is required to make 5 gallons<fn>
+          Warning: unit conversion ahead!
+          </fn> of a fruit punch that has 80 mg.<nbsp/>of caffeine per fluid ounce.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>S</m> stand for the number of fluid ounces of Sasquatch Sweat<sup>TM</sup> Energy Drink and let <m>F</m> be the number of fluid ounces of Frooty Giggle Delight<sup>TM</sup> that will be added together.
+          The goal is to make 5 gallons and there are 128 fluid ounces per gallon so the first equation is
+          <me>
+            S + F = 640
+          </me>.
+        </p>
+        <p>
+          That equation describes
+          <q>stuff + other stuff = total stuff</q>
+          measured in fluid ounces.
+          Now we need to consider the value of the stuff - in this case we need to see how much caffeine is being contributed by each component.
+          Each fluid ounce of Sasquatch Sweat<sup>TM</sup> contains 100 mg.<nbsp/>of caffeine so <m>S</m> fluid ounces would contain <m>100S</m> mg./ of caffeine.
+        </p>
+        <p>
+          Similarly, the <m>F</m> fluid ounces of Frooty Giggle Delight<sup>TM</sup> add <m>3F</m> mg.<nbsp/>of caffeine to the total mixture.
+          Thus when we go to express
+          <q>value of stuff + value of other stuff = value of total stuff</q>
+          we need to figure out how much caffeine is supposed to be in the end product.
+          Well, the goal was 5 gallons of punch that had 80 mg.<nbsp/>of caffeine per fluid ounce so the Dude-Bros need to end up with
+          <m>5*128*80 = 51200</m> mg. of caffeine when they're done.
+          Hence the second is equation is
+          <me>
+            100S + 3F = 51200
+          </me>.
+        </p>
+        <p>
+          By turning the first equation into
+          <m>F = 640 - S</m> and substituting that into the second equation we get
+          <me>
+            100S + 3(640 - S) = 51200
+          </me>
+          which yields <m>S = \frac{49280}{97} \approx 508.04</m> fluid ounces.
+          Back-substituting this value of <m>S</m> into the first equation gives us <m>F = \frac{12800}{97} \approx 131.96</m> fluid ounces.
+        </p>
+        <p>
+          The reader should take the time to verify that <m>S = \frac{49280}{97}</m> and
+          <m>F = \frac{12800}{97}</m> do indeed satisfy both equations and thus are the solution to the problem.
+          Those are fairly unattractive numbers so we end this example by discussing a way to verify an approximate answer which is <em>reasonable</em>
+          without having to fight with fractions.
+          Round <m>S</m> down to 508 and round <m>F</m> up to 132.
+          Clearly <m>508 + 132 = 640</m> so the first equation is still satisfied.
+          Notice that <m>100*508 + 3*132 = 51196</m> which is really close to 51200.
+          Thus the second equation is nearly satisfied which means the values <m>S = 508</m> and <m>F = 132</m>,
+          while not precise, are reasonable.<fn>
+          Just be careful here - sometimes
+          <q>close enough for the Dude-Bros</q>
+          is not good enough for your Professor!
+          </fn>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforAppLinearSystems">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="reviewsystemfirst">Exercises</xref>
+      - <xref ref="reviewsystemlast"></xref>,
+      solve the given system using substitution and/or elimination.
+      Classify each system as consistent independent,
+      consistent dependent, or inconsistent.
+      Check your answers both algebraically and graphically.
+      <ol cols="5">
+        <li xml:id="reviewsystemfirst">
+          <p>
+            <m>\left\{ \begin{array}{rcr} x+2y \amp = \amp 5 \\ x \amp = \amp 6 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 2y-3x \amp = \amp 1 \\ y \amp = \amp -3 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} \frac{x+2y}{4} \amp = \amp -5 \\ \frac{3x-y}{2} \amp = \amp 1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} \frac{2}{3} x-\frac{1}{5}y \amp = \amp 3 \\ \frac{1}{2}x+\frac{3}{4}y\amp = \amp 1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} \frac{1}{2}x-\frac{1}{3}y \amp = \amp -1 \\ 2y-3x \amp = \amp 6 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x+4y \amp = \amp 6 \\ \frac{1}{12}x+\frac{1}{3}y\amp = \amp \frac{1}{2} \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 3y-\frac{3}{2}x \amp = \amp -\frac{15}{2} \\ \frac{1}{2}x-y \amp = \amp \frac{3}{2} \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="reviewsystemlast">
+          <p>
+            <m>\left\{ \begin{array}{rcr} \frac{5}{6}x+\frac{5}{3}y \amp = \amp -\frac{7}{3} \\ -\frac{10}{3}x-\frac{20}{3}y \amp = \amp 10 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            A local buffet charges <m>\dollar7.50</m> per person for the basic buffet and
+            <m>\dollar9.25</m> for the deluxe buffet
+            (which includes crab legs.)
+            If 27 diners went out to eat and the total bill was <m>\dollar227.00</m> before taxes,
+            how many chose the basic buffet and how many chose the deluxe buffet?
+          </p>
+        </li>
+        <li>
+          <p>
+            At The Old Home Fill'er Up and Keep on a-Truckin' Cafe, Mavis mixes two different types of coffee beans to produce a house blend.
+            The first type costs $3 per pound and the second costs $8 per pound.
+            How much of each type does Mavis use to make 50 pounds of a blend which costs $6 per pound?
+          </p>
+        </li>
+        <li>
+          <p>
+            Skippy has a total of <m>$</m>10,000 to split between two investments.
+            One account offers <m>3\%</m> simple interest,
+            and the other account offers <m>8\%</m> simple interest.
+            For tax reasons, he can only earn
+            <m>\dollar500</m> in interest the entire year.
+            How much money should Skippy invest in each account to earn
+            <m>\dollar500</m> in interest for the year?
+          </p>
+        </li>
+        <li>
+          <p>
+            A <m>10 \%</m> salt solution is to be mixed with pure water to produce 75 gallons of a <m>3\%</m> salt solution.
+            How much of each are needed?
+          </p>
+        </li>
+        <li>
+          <p>
+            This exercise is a follow-up to <xref ref="dudebromixture">Example</xref>.
+            Work with your classmates to explain why mixing 4 gallons of Sasquatch Sweat<sup>TM</sup> Energy Drink and 1 gallon of Frooty Giggle Delight<sup>TM</sup> would also produce a mixture that was
+            <q>close enough for the Dude-Bros</q>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="5">
+      <li>
+        <p>
+          Consistent independent Solution <m>\left(6, -\frac{1}{2}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Consistent independent Solution <m>\left(-\frac{7}{3}, -3\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Consistent independent Solution <m>\left(-\frac{16}{7}, -\frac{62}{7}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Consistent independent Solution <m>\left(\frac{49}{12}, -\frac{25}{18}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Consistent dependent Solution
+          <m>\left(t, \frac{3}{2}t+3\right)</m> for all real numbers <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Consistent dependent Solution
+          <m>\left(6-4t,
+          t\right)</m> for all real numbers <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Inconsistent No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          Inconsistent No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>13</m> chose the basic buffet and <m>14</m> chose the deluxe buffet.
+        </p>
+      </li>
+      <li>
+        <p>
+          Mavis needs 20 pounds of $3 per pound coffee and 30 pounds of $8 per pound coffee.
+        </p>
+      </li>
+      <li>
+        <p>
+          Skippy needs to invest <m>$</m>6000 in the <m>3\%</m> account and <m>$</m>4000 in the <m>8 \%</m> account.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>22.5</m> gallons of the <m>10 \%</m> solution and <m>52.5</m> gallons of pure water.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

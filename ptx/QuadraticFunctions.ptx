@@ -1,0 +1,2996 @@
+<section xml:id="QuadraticFunctions">
+  <title>Quadratic Functions</title>
+  <subsection xml:id="GraphsofQuadraticFunctions">
+    <title>Graphs of Quadratic Functions</title>
+    <p>
+      You may recall studying quadratic equations in a previous Algebra course.
+      If not, you may wish to refer to <xref ref="AppQuadEqus">Section</xref> to revisit this topic.
+      In this section,
+      we review those equations in the context of our next family of functions:
+      the quadratic functions.
+    </p>
+    <definition xml:id="quadraticfunction">
+      <statement>
+        <p>
+          A<idx><h>function</h><h>quadratic</h></idx>
+              <idx><h>quadratic function</h><h>definition of</h></idx> <term>quadratic function</term> is a function of the form
+          <me>
+            f(x) = ax^2 + bx + c
+          </me>,
+          where <m>a</m>,
+          <m>b</m> and <m>c</m> are real numbers with <m>a \neq 0</m>.
+          The domain of a quadratic function is <m>(-\infty, \infty)</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As in <xref ref="constantfunction">Definitions</xref>
+      and <xref ref="linearfunction"></xref>,
+      the independent variable in <xref ref="quadraticfunction">Definition</xref>
+      is <m>x</m> while the values <m>a</m>,
+      <m>b</m> and <m>c</m> are parameters.
+      Note that <m>a \neq 0</m> - otherwise we would have a linear function
+      (see <xref ref="linearfunction">Definition</xref>).
+    </p>
+    <p>
+      The most basic quadratic function is
+      <m>f(x) = x^2</m>, the squaring function,
+      whose graph appears below along with a corresponding table of values.
+      Its shape may look familiar from your previous studies in Algebra <mdash/> it is called a <idx><h>parabola</h><h>graph of a quadratic function</h></idx> <em>parabola</em>.
+      The point <m>(0,0)</m> is called the
+          <idx><h>parabola</h><h>vertex</h></idx>
+          <idx><h>vertex</h><h>of a parabola</h></idx> <em>vertex</em> of the parabola because it is the sole point where the function obtains its extreme value, in this case, a minimum of <m>0</m> when <m>x = 0</m>.
+    </p>
+    <p>
+      Indeed, the range of <m>f(x) = x^2</m> appears to be <m>[0, \infty)</m> from the graph.
+      We can substantiate this algebraically since for all <m>x</m>,
+      <m>f(x) = x^2 \geq 0</m>.
+      This tells us that the range of <m>f</m> is a subset of <m>[0, \infty)</m>.
+      To show that the range of <m>f</m> actually \text{ equals } <m>[0, \infty)</m>,
+      we need to show that every real number <m>c</m> in
+      <m>[0, \infty)</m> is in the range of <m>f</m>.
+      That is, for every <m>c \geq 0</m>,
+      we have to show <m>c</m> is an output from <m>f</m>.
+      In other words,
+      we have to show there is a real number <m>x</m> so that <m>f(x) = x^2 = c</m>.
+      Choosing <m>x = \sqrt{c}</m>,
+      we find <m>f(x) = f(\sqrt{c}) = (\sqrt{c})^2 = c</m>, as required.<fn>
+      This assumes, of course,
+      <m>\sqrt{c}</m> is a real number for all real numbers <m>c \geq 0</m> <ellipsis/>
+      </fn>
+    </p>
+    <p>
+      \columnsep{-10pt}
+    </p>
+    <p>
+      <m>\begin{array}{|c||c|} \hline x \amp f(x) = x^2 \\ \hline -2 \amp 4 \\ \hline -\frac{3}{2} \amp \frac{9}{4} \\ \hline -1 \amp 1 \\ \hline 0 \amp 0 \\ \hline 1 \amp 1 \\ \hline \frac{3}{2} \amp \frac{9}{4} \\ \hline 2 \amp 4 \\ \hline \end{array}</m>
+    </p>
+    <p>
+      \columnbreak
+    </p>
+    <p>
+      \begin{mfpic}[20]{-3}{3}{0}{5.5}
+    </p>
+    <p>
+      \axes \tlabel[cc](-3,4){<m>(-2,4)</m>} \tlabel[cc](-2.5,2.25){<m>\left(-\frac{3}{2},\frac{9}{4}\right)</m>} \tlabel[cc](-2,1){<m>(-1,1)</m>} \tlabel[cc](0,-0.5){<m>(0,0)</m>} \tlabel[cc](1.75,1){<m>(1,1)</m>} \tlabel[cc](2.25,2.25){<m>\left(\frac{3}{2},\frac{9}{4}\right)</m>} \tlabel[cc](2.75,4){<m>(2,4)</m>} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5.5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tcaption{<m>f(x) = x^2</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.2,2.2,0.1}{x**2} \point[4pt]{(-2,4), (-1.5,2.25), (-1,1), (0,0), (1,1), (1.5,2.25), (2,4)} \end{mfpic}
+    </p>
+    <p>
+      \columnsep{10pt}
+    </p>
+    <p>
+      The techniques we used to graph many of the absolute value functions in <xref ref="AbsoluteValueFunctions">Section</xref>
+      can be applied to quadratic functions, too.
+      In fact, knowing the graph of <m>f(x) = x^2</m> enables us to graph
+      <em>every</em> quadratic function,
+      but there's some extra work involved.
+      We start with the following theorem:
+    </p>
+    <theorem xml:id="standardformgraph">
+      <statement>
+        <p>
+          For real numbers <m>a</m>, <m>h</m> and <m>k</m> with <m>a\neq 0</m>,
+          the graph of <m>F(x) = a(x-h)^2 + k</m> is a parabola with vertex <m>(h,k)</m>.
+          If <m>a>0</m>,
+          the graph resembles <sq><m>\smile</m>.</sq> If <m>a\lt 0</m>,
+          the graph resembles <sq><m>\frown</m>.</sq> Moreover,
+          the vertical line <m>x=h</m> is the <idx><h>axis of symmetry</h><h>quadratic function</h></idx>
+          <em>axis of symmetry</em>
+          of the graph of <m>y = F(x)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      To prove <xref ref="standardformgraph">Theorem</xref>
+      the reader is encouraged to revisit the discussion following the proof of <xref ref="linearabsvaluegraphs">Theorem</xref>,
+      replacing every occurrence of absolute value notation with the squared exponent.<fn>
+      i.e., replace <m>|x|</m> with <m>x^2</m>,
+      <m>|c|</m> with <m>c^2</m>, <m>|x-h|</m> with <m>(x-h)^2</m>.
+      </fn> Alternatively,
+      the reader can skip ahead and read the statement and proof of <xref ref="linearmononialgraphs">Theorem</xref>
+      in <xref ref="GraphsofPolynomials">Section</xref>.
+      In the meantime we put <xref ref="standardformgraph">Theorem</xref>
+      to good use in the next example.
+    </p>
+    <example xml:id="parabolaex1">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol cols="2">
+          <li>
+            <p>
+              Graph the following functions using <xref ref="standardformgraph">Theorem</xref>.
+              Find the vertex, zeros and axis-intercepts
+              (if any exist).
+              Find the extrema and then list the intervals over which the function is increasing,
+              decreasing or constant.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>f(x) = \dfrac{(x-3)^2}{2}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>g(x) = (x+2)^2 - 3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>h(t) = -2(t-3)^2+1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>i(t) = \dfrac{(3-2t)^2 +1}{2}</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Use <xref ref="standardformgraph">Theorem</xref>
+              to write a possible formula for <m>H(x)</m> whose graph is given below: \begin{mfpic}[20]{-3}{3}{-3}{4} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{2,-1, 1, 2} \ymarks{-2,-1,1,2,3,4} \tcaption{<m>y=H(x)</m>} \tlpointsep{4pt} \tlabel[cc](-1.25, 1){<m>(0,1)</m>} \tlabel[cc](1, 3.5){<m>(1,3)</m>} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.73,2.73,0.1}{(-2)*((x-1)**2)+3} \point[4pt]{(0,1), (1,3)} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    For <m>f(x) = \frac{(x-3)^2}{2} = \frac{1}{2} (x-3)^2+0</m>,
+                    we identify <m>a = \frac{1}{2}</m>,
+                    <m>h = 3</m> and <m>k = 0</m>.
+                    Thus the vertex is <m>(3,0)</m> and the parabola opens upwards.
+                    The only <m>x</m>-intercept is <m>(3,0)</m>.
+                    Since <m>f(0) = \frac{1}{2} (0-3)^2 = \frac{9}{2}</m>,
+                    our <m>y</m>-intercept is <m>\left(0, \frac{9}{2}\right)</m>.
+                    To help us graph the function,
+                    it would be nice to have a third point and we'll use symmetry to find it.
+                    The <m>y</m>-value three units to the <em>left</em>
+                    of the vertex is <m>4.5</m>,
+                    so the <m>y</m>-value must be <m>4.5</m> three units to the
+                    <em>right</em> of the vertex as well.
+                    Hence, we have our third point:
+                    <m>\left(6, \frac{9}{2}\right)</m>.
+                    From the graph, we get that the range is
+                    <m>[0, \infty)</m> and see that <m>f</m> has the minimum value of <m>0</m> at <m>x = 3</m> and no maximum.
+                    Also, <m>f</m> is decreasing on
+                    <m>(-\infty, 3]</m> and increasing on <m>[3, \infty)</m>.
+                    The graph is the one on the left of the two on the next page.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    For <m>g(x) = (x+2)^2 - 3 = (1)(x-(-2))^2+(-3)</m>,
+                    we identify <m>a = 1</m>, <m>h = -2</m> and <m>k = -3</m>.
+                    This means that the vertex is <m>(-2,-3)</m> and the parabola opens upwards.
+                    Thus we have two <m>x</m>-intercepts.
+                    To find them, we set <m>y = g(x) = 0</m> and solve.
+                    Doing so yields the equation
+                    <m>(x+2)^2 - 3 = 0</m>, or <m>(x+2)^2 = 3</m>.
+                    Extracting square roots gives us the two zeros of <m>g</m>:
+                    <m>x + 2 = \pm \sqrt{3}</m>, or <m>x = -2 \pm \sqrt{3}</m>.
+                    Our <m>x</m>-intercepts are
+                    <m>(-2-\sqrt{3}, 0) \approx (-3.73, 0)</m> and <m>(-2+\sqrt{3}, 0) \approx (-0.27, 0)</m>.
+                    We find <m>g(0) = (0+2)^2-3 = 1</m> so our <m>y</m>-intercept is <m>(0,1)</m>.
+                    Using symmetry,
+                    we get <m>(-4,1)</m> as another point to help us graph.
+                    The range of <m>g</m> is <m>[-3, \infty)</m>.
+                    The minimum of <m>g</m> is <m>-3</m> at <m>x = -2</m>,
+                    and <m>g</m> has no maximum.
+                    Moreover, <m>g</m> is decreasing on
+                    <m>(-\infty, -2]</m> and <m>g</m> is increasing on <m>[-2, \infty)</m>.
+                    The graph is below on the right. \begin{mfpic}[15]{-1}{7}{-1}{6} \axes \tlabel[cc](-1,4.5){<m>(0,4.5)</m>} \tlabel[cc](3,-0.5){<m>(3,0)</m>} \tlabel[cc](7,4.5){<m>(6,4.5)</m>} \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{1,2,4,5,6} \ymarks{1,2,3,4,5} \tcaption{<m>f(x) =\frac{(x-3)^2}{2}</m>} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1,{<m>2</m>} 2, {<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.4,6.4,0.1}{((x-3)**2)/2} \point[4pt]{(0, 4.5), (3,0), (6,4.5)} \end{mfpic} \begin{mfpic}[18]{-5}{1}{-3}{2.5} \axes \tlabel[cc](-5,1){<m>(-4,1)</m>} \tlabel[cc](-2,-3.5){<m>(-2,-3)</m>} \tlabel[cc](0.75,1){<m>(0,1)</m>} \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,2.5){<m>y</m>} \xmarks{-4,-3,-2,-1} \ymarks{-3,-1,1} \tcaption{<m>g(x) =(x+2)^2-3</m> } \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-3</m>} -3,{<m>-1</m>} -1,{<m>-2</m>} -2,{<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.2,0.2,0.1}{((x+2)**2)-3} \point[4pt]{(-4,1), (-3.73, 0), (-2,-3), (-0.27, 0), (0,1)} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Given <m>h(t) = -2(t-3)^2+1</m>,
+                    we identify <m>a = -2</m>, <m>h = 3</m> and <m>k = 1</m>.
+                    Hence the vertex of the graph is <m>(3,1)</m> and the parabola opens downwards.
+                    Solving <m>h(t) =-2(t-3)^2+1 = 0</m> gives <m>(t-3)^2 = \frac{1}{2}</m>.
+                    Extracting square roots<fn>
+                    and rationalizing denominators!
+                    </fn> gives <m>t - 3 = \pm \frac{\sqrt{2}}{2}</m>,
+                    so that when we add <m>3</m> to each side,<fn>
+                    and get common denominators!
+                    </fn> we get <m>t = \frac{6 \pm \sqrt{2}}{2}</m>.
+                    Hence, our <m>t</m>-intercepts are
+                    <m>\left(\frac{6 - \sqrt{2}}{2}, 0 \right) \approx (2.29, 0)</m> and <m>\left(\frac{6 + \sqrt{2}}{2}, 0 \right) \approx (3.71, 0)</m>.
+                    To find the <m>y</m>-intercept,
+                    we compute <m>h(0) = -2(0-3)^2+1 = -17</m>.
+                    Thus the <m>y</m>-intercept is <m>(0,-17)</m>.
+                    Using symmetry,
+                    we also have that <m>(6,-17)</m> is on the graph which we show on the left side at the top of the next page.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We have some work ahead of us to put <m>i(t)</m> into a form we can use to exploit <xref ref="standardformgraph">Theorem</xref>:
+                    <me>
+                      \begin{array}{rclcl}  i(t) = \dfrac{(3 - 2t)^2 + 1}{2} \amp  = \amp  \frac{1}{2} (-2t + 3)^2 + \frac{1}{2} \amp  = \amp  \frac{1}{2} \left[ -2 \left(t - \frac{3}{2}\right) \right]^2 + \frac{1}{2} \\ \amp  = \amp  \frac{1}{2} (-2)^2 \left(t - \frac{3}{2}\right)^2 + \frac{1}{2} \amp  = \amp  2\left(t - \frac{3}{2}\right)^2 + \frac{1}{2} \end{array}
+                    </me>
+                    We identify <m>a = 2</m>,
+                    <m>h  = \frac{3}{2}</m> and <m>k = \frac{1}{2}</m>.
+                    Hence our vertex is <m>\left(\frac{3}{2}, \frac{1}{2}\right)</m> and the parabola opens upwards,
+                    meaning there are no <m>t</m>-intercepts.
+                    Since <m>i(0) =  \frac{(3-2(0))^2 +1}{2}  = 5</m>,
+                    we get <m>(0,5)</m> as the <m>y</m>-intercept.
+                    Using symmetry,
+                    this means we also have <m>(3, 5)</m> on the graph.
+                    The range is <m>\left[ \frac{1}{2}, \infty \right)</m> with the minimum of <m>i</m>,
+                    <m>\frac{1}{2}</m>, occurring when <m>t = \frac{3}{2}</m>.
+                    Also, <m>i</m> is decreasing on
+                    <m>\left(-\infty, \frac{3}{2} \right]</m> and increasing on <m>\left[\frac{3}{2}, \infty \right)</m>.
+                    The graph is given on the right at the top of the next page.   \begin{mfpic}[15]{-1}{6}{-7}{2} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,2){<m>y</m>} \tlabel[cc](-1.5,-5.6667){<m>(0, -17)</m>} \tlabel[cc](4.5,-5.6667){<m>(6, -17)</m>} \tlabel[cc](3,0.75){<m>(3, 1)</m>} \xmarks{1,2,3,4,5} \ymarks{-6, -5, -4, -3, -2, -1, 1} \tcaption{<m>h(t)  =-2(t-3)^2+1</m>} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1,  {<m>3</m>} 3, {<m>5</m>} 5} \axislabels {y}{{<m>-15</m>} -5,{<m>-12</m>} -4, {<m>-9</m>} -3,{<m>-6</m>} -2,{<m>-3</m>} -1, {<m>3</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.15,6.15,0.1}{((-2)*((x-3)**2)+1)/3} \point[4pt]{ (2.29, 0),(3.71, 0), (3, 0.3333), (6, -5.6667), (0, -5.6667) } \end{mfpic}  \begin{mfpic}[19]{-1}{4}{-1}{6} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-0.75,5){<m>(0, 5)</m>} \tlabel[cc](3.75,5){<m>(3, 5)</m>} \tlabel[cc](2.5,0.5){<m>\left(\frac{3}{2}, \frac{1}{2} \right)</m>} \xmarks{1,2,3} \ymarks{1,2,3,4,5} \tcaption{<m>i(t) = \frac{(3-2t)^2 +1}{2}</m>} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1,  {<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.15,3.15,0.1}{0.5+2*((x-1.5)**2)} \point[4pt]{ (0,5), (1.5, 0.5), (3,5)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                We are instructed to use <xref ref="standardformgraph">Theorem</xref>,
+                so we know <m>H(x) = a(x-h)^2 + k</m> for some choice of parameters <m>a</m>,
+                <m>h</m> and <m>k</m>.
+                The vertex is <m>(1,3)</m> so we know <m>h = 1</m> and <m>k = 3</m>,
+                and hence <m>H(x) = a(x-1)^2 + 3</m>.
+                To find the value of <m>a</m>,
+                we use the fact that the <m>y</m>-intercept,
+                as labeled, is <m>(0,1)</m>.
+                This means <m>H(0) = 1</m>, or <m>a(0-1)^2+ 3 = 1</m>.
+                This reduces to <m>a+3 = 1</m> or <m>a =-2</m>.
+                Our final answer<fn>
+                The reader is encouraged to compare this example with <xref ref="absfunctionfromgraph">number</xref>
+                of <xref ref="absvaluegraph2">Example</xref>.
+                </fn> is <m>H(x) = -2(x - 1)^2 + 3</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="parabolaex1">Example</xref> are in order.
+      First note that none of the functions are in the form of <xref ref="quadraticfunction">Definition</xref>.
+      However, if we took the time to perform the indicated operations and simplify,
+      we'd find:
+      <ul>
+        <li>
+          <p>
+            <m>f(x) = \frac{(x-3)^2}{2} = \frac{1}{2} x^2 - 3x + \frac{9}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(t) = -2(t-3)^2+1 = -2t^2+12t-17</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(x) = (x+2)^2 - 3 = x^2+4x+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i(t) = \frac{(3-2t)^2 +1}{2} = 2t^2-6t+5</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      While the <m>y</m>-intercepts of the graphs of the each of the functions are easier to see when the formulas for the functions are written in the form of <xref ref="quadraticfunction">Definition</xref>,
+      the vertex is not.
+      For this reason,
+      the form of the functions presented in <xref ref="standardformgraph">Theorem</xref> are given a special name.
+    </p>
+    <definition xml:id="standardgeneralformofparabolas">
+      <statement>
+        <p>
+          <term>Standard and General Form of Quadratic Functions</term>:
+          <ul>
+            <li>
+              <p>
+                The <idx><h>quadratic function</h><h>general form</h></idx> <em>general form</em>
+                of the quadratic function <m>f</m> is <m>f(x) = ax^2+bx+c</m>,
+                where <m>a</m>,
+                <m>b</m> and <m>c</m> are real numbers with <m>a \neq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>quadratic function</h><h>standard form</h></idx> <em>standard form</em>
+                of the quadratic function <m>f</m> is <m>f(x) = a(x-h)^2 + k</m>,
+                where <m>a</m>,
+                <m>h</m> and <m>k</m> are real numbers with <m>a\neq 0</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If we proceed as in the remarks following <xref ref="parabolaex1">Example</xref>,
+      we can convert any quadratic function given to us in standard form and convert to general form by performing the indicated operation and simplifying:
+      <me>
+        \begin{array}{rcl}  f(x) \amp   = \amp  a(x-h)^2 + k  \\ \amp = \amp    a \left(x^2 -2hx + h^2 \right) + k  \\ \amp  =  \amp  ax^2 - 2ahx + ah^2 + k   \\ \amp  =  \amp  a x^2 + (-2ah)x + (ah^2+k). \end{array}
+      </me>
+    </p>
+    <p>
+      With the identifications <m>b = -2ah</m> and <m>c = ah^2+k</m>,
+      we have written <m>f(x)</m> in the form <m>f(x) = ax^2 + bx+c</m>.
+      Likewise, through a process known as
+          <idx><h>completing the square</h></idx>
+      <sq>completing the square</sq>,
+      we can take any quadratic function written in general form and rewrite it in standard form.
+      We briefly review this technique in the following example <mdash/> for a more thorough review the reader should see <xref ref="AppQuadEqus">Section</xref>.
+    </p>
+    <example xml:id="parabolaex2">
+      <statement>
+        <p>
+          Graph the following functions.
+          Find the vertex, zeros and axis-intercepts, if any exist.
+          Find the extrema and then list the intervals over which the function is increasing,
+          decreasing or constant.
+          <ol>
+            <li>
+              <p>
+                <m>f(x) = x^2-4x+3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = 6 - 4t -2t^2</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We follow the procedure for completing the square in <xref ref="AppQuadEqus">Section</xref>.
+                The only difference here is instead of the quadratic equation being set to <m>0</m>,
+                it is equal to <m>f(x)</m>.
+                This means when we are finished completing the square,
+                we need to solve for <m>f(x)</m>.
+                <me>
+                  \begin{array}{rclr}  f(x) \amp  = \amp  x^2 - 4x+3 \amp  \\ f(x) - 3 \amp  = \amp  x^2-4x \amp  \text{ Subtract \(3\) from both sides. }  \\ f(x) - 3 + (-2)^2 \amp  = \amp  x^2-4x+(-2)^2 \amp  \text{Add \(\left(\frac{1}{2}(-4)\right)^2\) to both sides.}  \\  f(x) + 1 \amp  = \amp   (x-2)^2 \amp  \text{ Factor the perfect square trinomial. }  \\  f(x) \amp  = \amp  (x-2)^2 - 1 \amp  \text{ Solve for \(f(x)\). } \end{array}
+                </me>
+                The reader is encouraged to start with <m>f(x) = (x-2)^2-1</m>,
+                perform the indicated operations and simplify the result to <m>f(x) = x^2-4x+3</m>.
+                From the standard form, <m>f(x) = (x-2)^2-1</m>,
+                we see that the vertex is <m>(2,1)</m> and that the parabola opens upwards.
+                To find the zeros of <m>f</m>, we set <m>f(x) = 0</m>.
+                We have two equivalent expressions for <m>f(x)</m> so we could use either the general form or standard form.
+                We solve the former and leave it to the reader to solve the latter to see that we get the same results either way.
+                To solve <m>x^2 - 4x + 3 = 0</m>, we factor:
+                <m>(x-3)(x-1) = 0</m> and obtain <m>x = 1</m> and <m>x =3</m>.
+                We get two <m>x</m>-intercepts,
+                <m>(1,0)</m> and <m>(3,0)</m>.
+                To find the <m>y</m>-intercept, we need <m>f(0)</m>.
+                Again, we could use either form of <m>f(x)</m> for this and we choose the general form and find that the <m>y</m>-intercept is <m>(0,3)</m>.
+                From symmetry,
+                we know the point  <m>(4,3)</m> is also on the graph.
+                We see that the range of <m>f</m> is
+                <m>[-1,\infty)</m>  with the minimum <m>-1</m> at <m>x = 2</m>.
+                Finally, <m>f</m> is decreasing on
+                <m>(-\infty, 2]</m> and increasing from <m>[2, \infty)</m>.
+                The graph is given on the left at the bottom the next page.
+              </p>
+            </li>
+            <li>
+              <p>
+                We first rewrite <m>g(t) = 6 - 4t - 2t^2</m> as <m>g(t)  = -2t^2 - 4t + 6</m>.
+                As with the previous example,
+                once we complete the square, we solve for <m>g(t)</m>:
+                <me>
+                  \begin{array}{rclr}  g(t) \amp  = \amp  -2t^2-4t+6 \amp   \\ g(t) - 6 \amp  = \amp  -2t^2-4t \amp  \text{ Subtract \(6\) from both sides. }  \\ \dfrac{g(t) - 6}{-2} \amp  = \amp  \dfrac{ -2t^2-4t }{-2}  \amp  \text{ Divide both sides by \(-2\). } \\ \dfrac{g(t) - 6}{-2} + (1)^2 \amp  = \amp  t^2+2t +(1)^2  \amp  \text{Add \(\left( \frac{1}{2} (2) \right)^2\) to both sides.}  \\ \dfrac{g(t) - 6}{-2} + 1 \amp  = \amp  (t+1)^2 \amp  \text{ Factor the prefect square trinomial. }  \\ \dfrac{g(t) - 6}{-2}  \amp  = \amp  (t+1)^2 - 1 \amp  \\ g(t) - 6 \amp  = \amp  -2 \left[ (t+1)^2-1 \right] \amp  \\ g(t) \amp  = \amp  -2(t+1)^2 + 2 + 6 \amp  \\ g(t) \amp  = \amp  -2(t+1)^2+8 \end{array}
+                </me>
+                We can check our answer by expanding
+                <m>-2(t+1)^2+8</m> and show that it simplifies to  <m>-2t^2 - 4t+6</m>.
+                From the standard form,
+                we find that the vertex is <m>(-1,8)</m> and that the parabola opens downwards.
+                Setting <m>g(t) = -2t^2 - 4t+6= 0</m>,
+                we factor to get <m>-2(t-1)(t+3) = 0</m> so <m>t = -3</m> and <m>t = 1</m>.
+                Hence, our two <m>t</m>-intercepts are <m>(-3,0)</m> and <m>(1,0)</m>.
+                Since <m>g(0) = 6</m>, we get the <m>y</m>-intercept to be <m>(0,6)</m>.
+                Using symmetry, we also have the point <m>(-2,6)</m> on the graph.
+                The range is <m>(-\infty, 8]</m> with a maximum of <m>8</m> when <m>t = -1</m>.
+                Finally we note that <m>g</m> is increasing on
+                <m>(-\infty, -1]</m> and decreasing on <m>[-1, \infty)</m>.
+                The graph is below on the right.  \begin{mfpic}[15][12]{-2}{6}{-2.5}{9} \axes \tlabel[cc](-1,3){<m>(0,3)</m>} \tlabel[cc](3,3){<m>(4,3)</m>} \gclear \tlabelrect[cc](-0.25,0.5){<m>(1,0)</m>} \gclear \tlabelrect[cc](2,-1.5){<m>(2,-1)</m>} \tlabel[cc](4,0.5){<m>(3,0)</m>} \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \xmarks{-1,1,2,3,4,5} \ymarks{-1,2,3,4,5,6,7,8} \tcaption{<m>f(x) = x^2-4x+3</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-1</m>} -1, {<m>2</m>} 2, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.1,5.1,0.1}{(x-2)**2-1} \point[4pt]{(0,3), (1,0), (2,-1),(3,0), (4,3)}  \end{mfpic}   \begin{mfpic}[15][12]{-4}{3}{-2.5}{9} \axes \tlabel[cc](.75,6){<m>(0,6)</m>} \tlabel[cc](-3,6){<m>(-2,6)</m>} \tlabel[cc](1.75,0.5){<m>(1,0)</m>} \tlabel(-3,8){<m>(-1,8)</m>} \tlabel[cc](-4,0.5){<m>(-3,0)</m>} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \xmarks{-3,-2,-1,1,2} \ymarks{-2,-1,1, 2,3,4,5,6,7,8} \tcaption{<m>g(x) = 6-4t-2t^2</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1,  {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.25,1.25,0.1}{6-4*x-2*(x**2)} \point[4pt]{(-3,0), (1,0), (0, 6), (-1,8), (-2,6)}  \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We now generalize the procedure demonstrated in <xref ref="parabolaex2">Example</xref>.
+      Let <m>f(x) = ax^2 + bx + c</m> for <m>a \neq 0</m>:
+      <me>
+        \begin{array}{rclr}  f(x) \amp  = \amp  ax^2 + bx +c \\ f(x) - c \amp  = \amp   ax^2 + bx \amp  \text{ Subtract \(c\) from both sides. } \\ \dfrac{f(x)-c}{a}    \amp  =  \amp  \dfrac{ax^2 + bx}{a} \amp   \text{ Divide both sides by \(a \neq 0\). }  \\ \dfrac{f(x)-c}{a}    \amp  =  \amp  x^2 + \dfrac{b}{a} x  \amp  \\ \dfrac{f(x)-c}{a} + \left(\dfrac{b}{2a}\right)^2   \amp  = \amp  x^2 + \dfrac{b}{a} x + \left(\dfrac{b}{2a}\right)^2  \amp  \text{Add \( \left(\dfrac{b}{2a}\right)^2  \) to both sides.} \\ \dfrac{f(x)-c}{a}  + \dfrac{b^2}{4a^2}    \amp  = \amp  \left(x + \dfrac{b}{2a}\right)^2  \amp  \text{ Factor the perfect square trinomial. }  \\ \dfrac{f(x)-c}{a}    \amp  =  \amp  \left(x + \dfrac{b}{2a}\right)^2   -  \dfrac{b^2}{4a^2} \amp  \text{ Solve for \(f(x)\). } \\ f(x)-c \amp  = \amp  a \left[ \left(x + \dfrac{b}{2a}\right)^2   -  \dfrac{b^2}{4a^2}\right] \amp  \\ f(x)-c \amp  = \amp  a\left(x + \dfrac{b}{2a}\right)^2   -  a\dfrac{b^2}{4a^2} \amp   \\ f(x) \amp  = \amp  a\left(x + \dfrac{b}{2a}\right)^2 - \dfrac{b^2}{4a} + c  \amp  \\ f(x) \amp  = \amp  a\left(x + \dfrac{b}{2a}\right)^2  + \dfrac{4ac - b^2}{4a}  \amp  \text{ Get a common denominator. } \end{array}
+      </me>
+    </p>
+    <p>
+      By setting <m>h = -\frac{b}{2a}</m> and <m>k = \frac{4ac - b^2}{4a}</m>,
+      we have written the function in the form <m>f(x) = a(x-h)^2 + k</m>.
+      This establishes the fact that every quadratic function can be written in standard form.<fn>
+      To avoid completing the square,
+      we could solve the equations <m>b = -2ah</m> and
+      <m>c = ah^2 + k</m> for <m>h</m> and <m>k</m>.
+      See <xref ref="avoidcompsquare">Exercise</xref>.
+      </fn> Moreover,
+      writing a quadratic function in standard form allows us to identify the vertex rather quickly,
+      and so our work also shows us that the vertex of
+      <m>f(x) = ax^2+bx+c</m> is <m>\left(-\frac{b}{2a}, \frac{4ac - b^2}{4a}\right)</m>.
+      It is not worth memorizing the expression
+      <m>\frac{4ac - b^2}{4a}</m> especially since we can write this as <m>f\left(-\frac{b}{2a}\right)</m>.
+      (This about this last statement for a moment.)
+    </p>
+    <p>
+      We summarize the information detailed above in the following box:
+    </p>
+    <proposition xml:id="vertexofquadraticfunctions">
+      <title>Vertex Formulas for Quadratic Functions</title>
+      <statement>
+        <p>
+          [Vertex Formulas for Quadratic Functions]
+          <em>Vertex Formulas for Quadratic Functions</em>: Suppose <m>a</m>,
+          <m>b</m>,
+          <m>c</m>,
+          <m>h</m> and <m>k</m> are real numbers where <m>a \neq 0</m>.
+              <idx><h>parabola</h><h>vertex formulas</h></idx>
+          <ul>
+            <li>
+              <p>
+                If <m>f(x) = a(x-h)^2 + k</m> then the vertex of the graph of <m>y=f(x)</m> is the point <m>(h,k)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>f(x) = ax^2+bx+c</m> then the vertex of the graph of <m>y=f(x)</m> is the point <m>\left(-\dfrac{b}{2a}, f\left(-\dfrac{b}{2a}\right)\right)</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Completing the square is also the means by which we may derive the celebrated Quadratic Formula,
+      a formula which returns the solutions to <m>ax^2+bx+c = 0</m> for <m>a \neq 0</m>.
+      Before we state it here for reference,
+      we wish to encourage the reader to pause a moment and read the derivation if the Quadratic Formula found in <xref ref="AppQuadEqus">Section</xref>.
+      The work presented in this section transforms the general form of a quadratic <em>function</em>
+      into the standard form whereas the work in <xref ref="AppQuadEqus">Section</xref>
+      finds a formula to solve an <em>equation</em>.
+      There is great value in understanding the similarities and differences between the two approaches.
+    </p>
+    <proposition xml:id="quadraticformulafunction">
+      <title>The Quadratic Formula</title>
+      <statement>
+        <p>
+          [The Quadratic Formula] <em>The Quadratic Formula</em>:
+              <idx><h>quadratic formula</h></idx>
+          The zeros of the quadratic function <m>f(x) = ax^2+bx+c</m> are:
+          <me>
+            x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      It is worth pointing out the symmetry inherent in <xref ref="quadraticformulafunction">Equation</xref>.
+      We may rewrite the zeros as:
+      <me>
+        x = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}  = -\dfrac{b}{2a} \pm \dfrac{\sqrt{b^2-4ac}}{2a}
+      </me>,
+      so that, if there are real zeros, they
+      (like the rest of the parabola)
+      are symmetric about the line <m>x = -\frac{b}{2a}</m>.
+      Another way to view this symmetry is that the <m>x</m>-coordinate of the vertex is the average of the zeros.
+      We encourage the reader to verify this fact in all of the preceding examples,
+      where applicable.
+    </p>
+    <p>
+      Next, recall that if the quantity <m>b^2-4ac</m> is strictly negative then we do not have any real zeros.
+      This quantity is called the
+          <idx><h>discriminant</h></idx>
+      <em>discriminant</em> and is useful in determining the number and nature of solutions to a quadratic equation.
+      We remind the reader of this below.
+    </p>
+    <proposition xml:id="discriminantquadraticfunction">
+      <title>The Discriminant of a Quadratic Function:</title>
+      <statement>
+        <p>
+          [The Discriminant of a Quadratic Function:]
+          <em>The Discriminant of a Quadratic Function:</em>
+          Given a quadratic function in general form <m>f(x) = ax^2 + bx + c</m>,
+          the <em>discriminant</em> is the quantity <m>b^2-4ac</m>.
+              <idx><h>discriminant</h></idx>
+          <ul>
+            <li>
+              <p>
+                If <m>b^2-4ac>0</m> then <m>f</m> has two unequal (distinct) real zeros.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>b^2-4ac=0</m> then <m>f</m> has one (repeated) real zero.
+              </p>
+            </li>
+            <li>
+              <p>
+                If If <m>b^2-4ac\lt 0</m> then <m>f</m> has two unequal (distinct) non-real zeros.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      We'll talk more about what we mean by a <sq>repeated</sq> zero and how to compute <sq>non-real</sq> zeros in <xref ref="PolynomialFunctions">Chapter</xref>.
+      For us, the discriminant has the graphical implication that if
+      <m>b^2-4ac>0</m> then we have two <m>x</m>-intercepts;
+      if <m>b^2-4ac=0</m> then we have just one <m>x</m>-intercept, namely,
+      the vertex;
+      and if <m>b^2-4ac\lt 0</m> then we have no <m>x</m>-intercepts because the parabola lies entirely above or below the <m>x</m>-axis.
+      We sketch each of these scenarios below assuming <m>a>0</m>.
+      (The sketches for <m>a\lt 0</m> are similar - see <xref ref="redrawthezeroscenarios">Exercise</xref>.)
+    </p>
+    <p>
+      \begin{mfpic}[10]{-3}{3}{-3}{3} \arrow \reverse \arrow \polyline{(-3,0), (3,0)} \dashed \polyline{(0,-1.5), (0,5)} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0,-2){<m>x=-\dfrac{b}{2a}</m>} \tcaption{<m>b^2-4ac>0</m>} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.4,2.4,0.1}{x**2-1} \point[4pt]{(-1,0), (1,0)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[10]{-3}{3}{-3}{3} \arrow \reverse \arrow \polyline{(-3,0), (3,0)} \dashed \polyline{(0,-1.5), (0,5)} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0,-2){<m>x=-\dfrac{b}{2a}</m>} \tcaption{<m>b^2-4ac=0</m>} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.2,2.2,0.1}{x**2} \point[4pt]{(0,0)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[10]{-3}{3}{-3}{3} \arrow \reverse \arrow \polyline{(-3,0), (3,0)} \dashed \polyline{(0,-1.5), (0,5)} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0,-2){<m>x=-\dfrac{b}{2a}</m>} \tcaption{<m>b^2-4ac\lt 0</m>} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \function{-2,2,0.1}{x**2+1} \end{mfpic}
+    </p>
+    <p>
+      We now revisit the economic scenario first described in <xref ref="PortaBoyCost">Examples</xref>
+      and <xref ref="PortaBoyDemand"></xref>
+      where we were producing and selling PortaBoy game systems.
+      Recall that the cost to produce <m>x</m> PortaBoys is denoted by <m>C(x)</m> and the price-demand function, that is,
+      the price to charge in order to sell <m>x</m> systems is denoted by <m>p(x)</m>.
+      We introduce two more related functions below:
+      the <em>revenue</em> and <em>profit</em> functions.
+    </p>
+    <definition xml:id="revenueprofitdefns">
+      <statement>
+        <p>
+          <term>Revenue and Profit:</term> Suppose <m>C(x)</m> represents the cost to produce <m>x</m> units and <m>p(x)</m> is the associated price-demand function.
+          Under the assumption that we are producing the same number of units as are being sold:
+          <ul>
+            <li>
+              <p>
+                The
+                  <idx><h>revenue</h></idx>
+                <em>revenue</em> obtained by selling <m>x</m> units is <m>R(x) = x \, p(x)</m>.
+                That is, <m>\text{ revenue } = \text{
+                (number of items sold)
+                } \cdot \text{
+                (price per item)
+                } </m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The
+                  <idx><h>profit</h></idx>
+                <em>profit</em> made by selling <m>x</m> units is <m>P(x) = R(x) - C(x)</m>.
+                That is, <m>\text{ profit } = \text{ (revenue) } - \text{ (cost) } </m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Said differently, the <em>revenue</em> is the amount of money
+      <em>collected</em> by selling <m>x</m> items whereas the <em>profit</em>
+      is how much money is <em>left over</em>
+      after the costs are paid.
+    </p>
+    <example xml:id="PortaBoyProfit">
+      <statement>
+        <p>
+          In <xref ref="PortaBoyCost">Example</xref>
+          the cost to produce <m>x</m> PortaBoy game systems for a local retailer was given by <m>C(x) = 80x + 150</m> for
+          <m>x \geq 0</m> and in <xref ref="PortaBoyDemand">Example</xref>
+          the price-demand function was found to be <m>p(x) = -1.5x+250</m>,
+          for <m>0 \leq x \leq 166</m>.
+          <ol>
+            <li>
+              <p>
+                Find formulas for the associated revenue and profit functions;
+                include the domain of each.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret <m>P(0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the zeros of <m>P</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>y = P(x)</m>.
+                Find the vertex and axis intercepts.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the vertex of the graph of <m>y = P(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                What should the price per system be in order to maximize profit?
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the average rate of change of <m>P</m> over the interval <m>[0, 57]</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The formula for the revenue function is <m>R(x) = x \, p(x) = x(-1.5x+250) = -1.5x^2 + 250x</m>.
+                Since the domain of <m>p</m> is restricted to <m>0 \leq x \leq 166</m>,
+                so is the domain of <m>R</m>.
+                To find the profit function <m>P(x)</m>,
+                we subtract <m>P(x) = R(x) - C(x) = \left(-1.5x^2+250x\right) - \left(80x + 150\right) = -1.5x^2+170x-150</m>.
+                The cost function formula is valid for <m>x \geq 0</m>,
+                but the revenue function is valid when <m>0 \leq x \leq 166</m>.
+                Hence, the domain of <m>P</m> is likewise restricted to <m>[0, 166]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We find <m>P(0) = -1.5(0)^2+170(0) - 150 = -150</m>.
+                This means that if we produce and sell <m>0</m> PortaBoy game systems,
+                we have a profit of <m>- $ 150</m>.
+                Since <m>\text{ profit } = \text{ (revenue) } - \text{ (cost) }</m>,
+                this means our costs exceed our revenue by <m>\dollar150</m>.
+                This makes perfect sense,
+                since if we don't sell any systems,
+                our revenue is <m>\dollar0</m> but our fixed costs
+                (see <xref ref="PortaBoyCost">Example</xref>)
+                are <m>\dollar150</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the zeros of <m>P</m>,
+                we set <m>P(x) = 0</m> and solve  <m>-1.5x^2+170x-150=0</m>.
+                Factoring here would be challenging to say the least,
+                so we use the Quadratic Formula,
+                <xref ref="quadraticformulafunction">Equation</xref>.
+                Identifying <m>a = -1.5</m>, <m>b=170</m> and <m>c=-150</m>,
+                we obtain
+                <me>
+                  \begin{array}{rclr}  x \amp  = \amp  \dfrac{-b \pm \sqrt{b^2-4ac}}{2a} \amp  \\ \amp  = \amp  \dfrac{-170 \pm \sqrt{170^2 - 4(-1.5)(-150)}}{2(-1.5)} \amp  \\ \amp  = \amp  \dfrac{-170 \pm \sqrt{28000}}{-3} \amp  \\ \amp  = \amp  \dfrac{170 \pm 20 \sqrt{70}}{3} \amp  \\ \amp  \approx \amp  0.89, \, 112.44. \end{array}
+                </me>
+                Given that <m>\text{ profit }  = \text{ (revenue) }  - \text{ (cost) }</m>,
+                if <m>\text{ profit }  = 0</m>,
+                then <m>\text{ revenue }  = \text{ cost }</m>.
+                Hence, the zeros of <m>P</m> are called the <sq>break-even</sq> points - where just enough product is sold to recover the cost spent to make the product.
+                Also, <m>x</m> represents a number of game systems, which is a whole number,
+                so instead of using the exact values of the zeros,
+                or even their approximations,
+                we consider <m>x = 0</m> and <m>x = 1</m> along with <m>x = 112</m> and <m>x=113</m>.
+                We find <m>P(0) = -150</m>,
+                <m>P(1) = 18.5</m>, <m>P(112) = 74</m> and <m>P(113)= -93.5</m>.
+                These data suggest that, in order to be profitable,
+                at least <m>1</m> but not more than <m>112</m> systems should be produced and sold,
+                as borne out in the graph below.
+              </p>
+            </li>
+            <li>
+              <p>
+                Knowing the zeros of <m>P</m>,
+                we have two <m>x</m>-intercepts:
+                <m>\left( \frac{170 - 20 \sqrt{70}}{3},0\right) \approx (0.89,0)</m> and <m>\left( \frac{170 + 20 \sqrt{70}}{3},0\right) \approx (112.44,0)</m>.
+                Since <m>P(0)=-150</m>, we get the <m>y</m>-intercept is <m>(0,-150)</m>.
+                To find the vertex,
+                we appeal to <xref ref="vertexofquadraticfunctions">Equation</xref>.
+                Substituting <m>a = -1.5</m> and <m>b=170</m>,
+                we get <m>x = -\frac{170}{2(-1.5)} = \frac{170}{3} = 56.\overline{6}</m>.
+                To find the <m>y</m>-coordinate of the vertex,
+                we compute <m>P\left( \frac{170}{3} \right) = \frac{14000}{3} = 4666.\overline{6}</m>.
+                Hence, the vertex is <m>(56.\overline{6}, 4666.\overline{6})</m>.
+                The domain is restricted <m>0 \leq x \leq 166</m> and we find <m>P(166) = -13264</m>.
+                Attempting to plot all of these points on the same graph to any sort of scale is challenging.
+                Instead, we present a portion of the graph for <m>0 \leq x \leq 113</m>.
+                Even with this,
+                the intercepts near the origin are crowded. \begin{mfpic}[15][20]{-1}{12.5}{-1}{6} \tlabel[cc](13,0){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](5.667,5.333){<m>(56.\overline{6}, 4666.\overline{6})</m>} \tlabel[cc](12, -0.5){<m>\approx (112.44, 0)</m>} \tlabel[cc](-1.25, -0.5){<m>(0, -150)</m>} \tlabel[cc](1.75, 0.25){<m>\approx (0.89, 0)</m>} \tcaption{<m>y = P(x)</m>} \axes \xmarks{1 step 1 until 10} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{ {<m>20</m>} 2, {<m>40</m>} 4,{<m>60</m>} 6, {<m>80</m>} 8, {<m>100</m>} 10} \axislabels {y}{{<m>1000</m>} 1, {<m>2000</m>} 2, {<m>3000</m>} 3, {<m>4000</m>} 4, {<m>5000</m>} 5} \penwd{1.25pt} \function{0,11.3,0.1}{((-1.5)*((10*x)**2)+1700*x-150)/1000} \point[4pt]{(0,-0.150),(5.667,4.667),(0.089,0),(11.244,0)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                From the vertex, we see that the maximum of <m>P</m> is
+                <m>4666.\overline{6}</m> when <m>x = 56.\overline{6}</m>.
+                As before, <m>x</m> represents the number of PortaBoy systems produced and sold,
+                so we cannot produce and sell <m>56.\overline{6}</m> systems.
+                Hence, by comparing <m>P(56) = 4666</m> and <m>P(57)=4666.5</m>,
+                we conclude that we will make a maximum profit of
+                <m>$ 4666.50</m> if we sell <m>57</m> game systems.
+              </p>
+            </li>
+            <li>
+              <p>
+                We've determined that we need to sell <m>57</m> PortaBoys to maximize profit,
+                so we substitute <m>x=57</m> into the price-demand function to get <m>p(57) = -1.5(57)+250 = 164.5</m>.
+                In other words, to sell <m>57</m> systems,
+                and thereby maximize the profit,
+                we should set the price at <m>\dollar164.50</m> per system.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the average rate of change of <m>P</m> over <m>[0, 57]</m>,
+                we compute
+                <me>
+                  \dfrac{\Delta [P(x)]}{\Delta x} = \dfrac{P(57) - P(0)}{57-0} = \dfrac{4666.5 - (-150)}{57} = 84.5
+                </me>.
+                This means that as the number of systems produced and sold ranges from <m>0</m> to <m>57</m>,
+                the average profit per system is increasing at a rate of <m>$ 84.50</m>.
+                In other words, for each additional system produced and sold,
+                the profit increased by <m>\dollar84.50</m> on average.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We hope <xref ref="PortaBoyProfit">Example</xref>
+      shows the value of using a continuous model to describe a discrete situation.
+      True, we could have <sq>run the numbers</sq> and computed <m>P(1)</m>,
+      <m>P(2)</m>, <ellipsis/>,
+      <m>P(166)</m> to eventually determine the maximum profit,
+      but the vertex formula made much quicker work of the problem.
+    </p>
+    <p>
+      Along these same lines,
+      in our next example we revisit Skippy's temperature data from <xref ref="timetempex1">Example</xref>
+      in <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+      We found a piecewise-linear model in <xref ref="ConstantandLinearFunctions">Section</xref>
+      to model the temperature over the course the day and now we seek a quadratic function to do the job.
+      The methodology used here is similar to that of the least squares regression line discussed in <xref ref="LinearRegression">Section</xref>
+      but instead of finding the line closest to the data points,
+      we want the <em>parabola</em> closest to them that comes from a function of the form <m>f(x) = ax^{2} + bx + c</m>.
+      The Mathematics required to find the desired quadratic function is beyond the scope of this text,
+      but most graphing utilities can do these quickly.
+      In the quadratic case,
+      the machine will return a value of <m>R^{2}</m> such that <m>0 \leq R^{2} \leq 1</m>.
+      The closer <m>R^{2}</m> is to <m>1</m>, the better the fit.
+      (Again, how <m>R^{2}</m> is computed is beyond this text.)
+    </p>
+    <example xml:id="TimeTempQRex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Use a graphing utility to fit a quadratic model to the time and temperature data in <xref ref="timetempex1">Example</xref>.
+                Comment on the goodness of fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use your model to predict the temperature at 7 AM and 3 PM. Round your answers to one decimal place.
+                How do your results compare with those from <xref ref="timetempregressionex">Example</xref>?
+              </p>
+            </li>
+            <li>
+              <p>
+                According to the model, what was the warmest temperature of the day?
+                When did that occur?
+                Round your answers to one decimal place.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Entering the data in Desmos we find
+                <m>T = F(t) = -0.1905t^2+ 3.9643t+62.405</m> with an <m>R^2</m> value of <m>0.97</m>,
+                indicating a pretty strong fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>7</m> AM corresponds to <m>t=1</m>,
+                we find <m>T = F(1) \approx 66.18</m>.
+                Hence our quadratic model predicts a temperature of
+                <m>66.2^{\circ}</m> F at 7 AM - identical
+                (when rounded)
+                to the <m>66.2^{\circ}</m> F predicted in <xref ref="timetempregressionex">Example</xref>.
+                Similarly, <m>3</m> PM corresponds to <m>t = 9</m>,
+                so we find <m>T = F(9) \approx 82.65</m>.
+                Thus the model predicts an outdoor temperature of
+                <m>82.6^{\circ}</m> F which is very close to the
+                <m>82.9^{\circ}</m>F prediction from <xref ref="timetempregressionex">Example</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The model is quadratic with <m>a\lt 0</m> so the maximum (warmest) temperature can be determined by finding the vertex.
+                We get
+                <me>
+                  t = -\dfrac{b}{2a} = - \dfrac{3.9643}{2( -0.1905)}  \approx -10.40,  T = F(-10.40) \approx 83.03
+                </me>,
+                or, in other words, the warmest temperature is
+                <m>83.0^{\circ}</m> F at 4:24 PM (<m>10.40</m> hours after 6 AM.)  <image width="93%" source="./QuadraticFunctionsGraphics/TimeTempDataQR.jpg"/>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      It is interesting how close the predictions from <xref ref="timetempregressionex">Examples</xref>
+      and <xref ref="TimeTempQRex"></xref>
+      despite one using linear models and one using a quadratic model.
+      Which model is the <sq>better</sq> model?
+      We leave that discussion to the reader and their classmates.
+    </p>
+    <p>
+      Our next example is classic application of optimizing a quadratic function.
+    </p>
+    <example xml:id="donniealpaca">
+      <statement>
+        <p>
+          Much to Donnie's surprise and delight,
+          he inherits a large parcel of land in Ashtabula County from one of his (e)strange(d) relatives so the time is right for him to pursue his dream of raising alpaca.
+          He wishes to build a rectangular pasture and estimates that he has enough money for 200 linear feet of fencing material.
+          If he makes the pasture adjacent to a river
+          (so that no fencing is required on that side),
+          what are the dimensions of the pasture which maximize the area?
+          What is the maximum area?
+          If an average alpaca needs 25 square feet of grazing area,
+          how many alpaca can Donnie keep in his pasture?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We are asked to find the dimensions of the pasture which would give a maximum area,
+          so we begin by sketching the diagram seen below on the left.
+          We let <m>w</m> denote the width of the pasture and we let <m>\ell</m> denote the length of the pasture.
+          The units given to us in the statement of the problem are feet,
+          so we assume that <m>w</m> and <m>\ell</m> are measured in feet.
+          The area of the pasture, which we'll call <m>A</m>,
+          is related to <m>w</m> and <m>\ell</m> by the equation <m>A = w \ell</m>.
+          Since <m>w</m> and <m>\ell</m> are both measured in feet,
+          <m>A</m> has units of <m>\text{ feet } ^2</m>, or square feet.
+        </p>
+        <p>
+          We are also told that the total amount of fencing available is <m>200</m> feet,
+          which means <m>w + \ell + w = 200</m>, or, <m>\ell+2w = 200</m>.
+          We now have two equations,
+          <m>A = w \ell</m> and <m>\ell+2w = 200</m>.
+          In order to use the tools given to us in this section to
+          <em>maximize</em> <m>A</m>,
+          we need to use the information given to write <m>A</m> as a function of just <em>one</em> variable,
+          either <m>w</m> or <m>\ell</m>.
+          This is where we use the equation <m>\ell+2w = 200</m>.
+          Solving for <m>\ell</m>, we find <m>\ell = 200-2w</m>,
+          and we substitute this into our equation for <m>A</m>.
+          We get <m>A = w \ell = w(200-2w) = 200w-2w^2</m>.
+          We now have <m>A</m> as a function of <m>w</m>,
+          <m>A = f(w) = 200w-2w^2 = -2w^2+200w</m>.
+        </p>
+        <p>
+          \columnsep{0pt}
+        </p>
+        <p>
+          \begin{mfpic}[15]{-4}{4}{0}{4} \fillcolor[gray]{0.8} \gfill \rect{(-4,2), (4,4)}
+        </p>
+        <p>
+          \dashed \polyline{(-3,2), (-3,0.5), (3,0.5), (3,2)} \tlabel[cc](-3.5,1.25){<m>w</m>} \tlabel[cc](0,0){<m>\ell</m>} \tlabel[cc](3.5, 1.25){<m>w</m>} \tlabel[cc](0,1.25){pasture} \tlabel[cc](0,3){river}
+        </p>
+        <p>
+          \penwd{1.25pt} \polyline{(-4,2), (4,2)} \polyline{(-4,4), (4,4)}
+        </p>
+        <p>
+          \end{mfpic}
+        </p>
+        <p>
+          \begin{mfpic}[15]{-1}{10.75}{-1}{6} \axes \tlabel[cc](11,0){<m>w</m>} \tlabel[cc](0.5,6){<m>A</m>} \tlabel[cc](5,5.5){<m>(50, 5000)</m>} \tlabel[cc](-0.75,-0.5){<m>(0, 0)</m>} \tlabel[cc](10,-0.5){<m>(100, 0)</m>} \tlabel[cc](5,5.5){<m>(50, 5000)</m>} \tcaption{<m>A = f(w)</m>} \xmarks{1 step 1 until 10} \ymarks{1 step 1 until 5}
+        </p>
+        <p>
+          \tlpointsep{4pt} \axislabels {x}{ {<m>10</m>} 1, {<m>30</m>} 3, {<m>50</m>} 5,{<m>70</m>} 7} \axislabels {y}{{<m>1000</m>} 1, {<m>2000</m>} 2, {<m>3000</m>} 3, {<m>4000</m>} 4, {<m>5000</m>} 5}
+        </p>
+        <p>
+          \penwd{1.25pt} \function{0,10,0.1}{(0-0.2)*(x**2) + 2*x} \point[4pt]{(5,5)} \pointfillfalse \point[4pt]{(0,0), (10,0)}
+        </p>
+        <p>
+          \end{mfpic}
+        </p>
+        <p>
+          \columnsep{10pt}
+        </p>
+        <p>
+          Before we go any further,
+          we need to find the applied domain of <m>f</m> so that we know what values of <m>w</m> make sense in this situation.<fn>
+          Donnie would be very upset if, for example,
+          we told him the width of the pasture needs to be <m>-50</m> feet.
+          </fn> Given that <m>w</m> represents the width of the pasture we need <m>w > 0</m>.
+          Likewise, <m>\ell</m> represents the length of the pasture,
+          so <m>\ell = 200-2w > 0</m>.
+          Solving this latter inequality yields <m>w \lt 100</m>.
+          Hence, the function we wish to maximize is
+          <m>f(w) = -2w^2 + 200w</m> for <m>0 \lt w \lt 100</m>.
+          We know two things about the quadratic function <m>f</m>:
+          the graph of <m>A = f(w)</m> is a parabola and
+          (since the coefficient of <m>w^2</m> is <m>-2</m>)
+          the parabola opens downwards.
+        </p>
+        <p>
+          This means that there is a maximum value to be found,
+          and we know it occurs at the vertex.
+          Using the vertex formula,
+          we find <m>w = -\frac{200}{2(-2)} = 50</m>,
+          and <m>A = f(50) = -2(50)^2 + 200(50) = 5000</m>.
+          Since <m>w=50</m> lies in the applied domain, <m>0 \lt w \lt 100</m>,
+          we have that the area of the pasture is maximized when the width is <m>50</m> feet.
+          To find the length, we use
+          <m>\ell = 200-2w</m> and find <m>\ell = 200-2(50) = 100</m>,
+          so the length of the pasture is <m>100</m> feet.
+          The maximum area is <m>A =f(50) = 5000</m>,
+          or <m>5000</m> square feet.
+          If an average alpaca requires 25 square feet of pasture, Donnie can raise <m>\frac{5000}{25} = 200</m> average alpaca.
+        </p>
+      </solution>
+    </example>
+    <p>
+      The function <m>f</m> in <xref ref="donniealpaca">Example</xref> is called the
+          <idx><h>objective function</h></idx>
+          <idx><h>optimization</h><h>objective function</h></idx> <em>objective function</em> for this problem - it's the function we're trying to optimize.
+      In the case above, we were trying to maximize <m>f</m>.
+      The equation <m>\ell+2w = 200</m> along with the inequalities <m>w>0</m> and <m>\ell >0</m> are called the
+          <idx><h>constraint</h></idx>
+          <idx><h>optimization</h><h>constraint</h></idx> <em>constraints</em>.
+      As we saw in this example, and as we'll see again and again,
+      the constraint equation is used to rewrite the objective function in terms of just one of the variables where constraint inequalities, if any,
+      help determine the applied domain.
+    </p>
+  </subsection>
+  <subsection xml:id="QuadraticInequalities">
+    <title>Inequalities involving Quadratic Functions</title>
+    <p>
+      We now turn our attention to solving inequalities involving quadratic functions.
+      Consider the inequality <m>x^2 \leq 6</m>.
+      We could use the fact that the square root is increasing<fn>
+      That is, if <m>a \lt  b</m>, then <m>\sqrt{a} \lt  \sqrt{b}</m>.
+      </fn> to get:
+      <m>\sqrt{x^2} \leq \sqrt{6}</m>,
+      or <m>|x| \leq \sqrt{6}</m>.
+      This reduces to <m>-\sqrt{6} \leq x \leq \sqrt{6}</m> or,
+      using interval notation, <m>[-\sqrt{6}, \sqrt{6}]</m>.
+      If, however, we had to solve <m>x^2 \leq x+6</m>,
+      things are more complicated.
+      One approach is to complete the square:
+      <me>
+        \begin{array}{rcl}  x^2 \amp  \leq \amp  x+6 \\ x^2 - x \amp  \leq \amp  6 \\ x^2 - x + \frac{1}{4} \amp  \leq \amp   6 + \frac{1}{4} \\  \left(x - \frac{1}{2} \right)^2 \amp  \leq \amp  \frac{25}{4} \\  \sqrt{\left(x - \frac{1}{2} \right)^2} \amp  \leq \amp  \sqrt{\frac{25}{4}} \\  \left| x - \frac{1}{2} \right| \amp  \leq \amp  \frac{5}{2} \\  -\frac{5}{2}  \leq \amp  x - \frac{1}{2} \amp  \leq  \frac{5}{2} \\  -2  \amp   \leq  x  \leq \amp  3 \end{array}
+      </me>
+    </p>
+    <p>
+      We get the solution <m>[-2,3]</m>.
+      While there is nothing wrong with this approach,
+      we seek methods here that will generalize to higher degree polynomials such as those we'll see in <xref ref="PolynomialFunctions">Chapter</xref>.
+    </p>
+    <p>
+      To that end,
+      we look at the inequality <m>x^2 \leq x+6</m> graphically.
+      Identifying <m>f(x) = x^2</m> and
+      <m>g(x) = x+6</m> , we graph <m>f</m> and <m>g</m> on the same set of axes below on the left and look for where the graph of <m>f</m>
+      (the parabola)
+      meets or is below the graph of <m>g</m>
+      (the line).
+      There are two points of intersection which we determine by solving <m>f(x) = g(x)</m> or <m>x^2=x+6</m>.
+      As usual, we rewrite this equation as
+      <m>x^2-x-6 = 0</m> in order to use the primary tools we've developed to handle these types<fn>
+      Namely ones with a nonzero coefficient of <sq><m>x</m></sq>.
+      </fn> of quadratic equations:
+      factoring, or failing that, the Quadratic Formula.
+      We find <m>x^2-x-6 = (x+2)(x-3)</m> so we get two solutions to <m>(x+2)(x-3) = 0</m>,
+      namely <m>x = -2</m> and <m>x = 3</m>.
+      Putting these together with the graph,
+      we obtain the same solution: <m>[-2,3]</m>.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-1}{10} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,10){<m>y</m>} \xmarks{-3 step 1 until 3} \ymarks{1 step 1 until 9}
+    </p>
+    <p>
+      \tlabel[cc](-3,4){<m>(-2,4)</m>} \tlabel[cc](4,9){<m>(3,9)</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \tcaption{Solving <m>x^2 \leq x+6</m>.}
+    </p>
+    <p>
+      \arrow \reverse \arrow \function{-3.15,3.15,0.1}{x**2} \arrow \reverse \arrow \polyline{(-4,2), (4,10)} \penwd{1.25pt} \function{-2,3,0.1}{x**2} \polyline{(-2,4), (3,9)} \point[4pt]{(-2,0),(3,0), (-2,4), (3,9)} \polyline{(-2,0), (3,0)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[11.78]{-4}{4}{-7}{7} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](-3.5,0.5){<m>(-2,0)</m>} \tlabel[cc](2,0.5){<m>(3,0)</m>} \xmarks{-3 step 1 until 3} \ymarks{-5 step 1 until 6}
+    </p>
+    <p>
+      \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-6</m>} -6, {<m>-4</m>} -4,{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tcaption{Solving <m>x^2-x-6 \leq 0</m>.}
+    </p>
+    <p>
+      \arrow \reverse \arrow \function{-3,4,0.1}{x**2-x-6} \penwd{1.25pt} \function{-2,3,0.1}{x**2-x-6} \polyline{(-2,0), (3,0)} \point[4pt]{(-2,0),(3,0)} \end{mfpic}
+    </p>
+    <p>
+      Yet a third way to attack <m>x^2 \leq x+6</m> is to rewrite the inequality as <m>x^2-x-6 \leq 0</m>.
+      Here, we graph <m>f(x) = x^2-x-6</m> to look for where the graph meets or is below the graph of
+      <m>g(x) = 0</m>, a.k.a. the <m>x</m>-axis.
+      Doing so requires us to find the zeros of <m>f</m>, that is,
+      solve <m>f(x) = x^2-x-6=0</m> from which we obtain <m>x =-2</m> and <m>x = 3</m> as before.
+      We find the same solution,
+      <m>[-2,3]</m> as is showcased in the graph at the bottom of the previous page on the right.
+    </p>
+    <p>
+      One advantage to using this last approach is that we are essentially concerned with \text{ one } function and its <em>zeros</em>.
+      This approach can be generalized to all functions - not just quadratics,
+      so we take the time to develop this method more thoroughly now.
+      Consider the graph of <m>f(x) = x^2-x-6</m> below The zeros of <m>f</m> are <m>x=-2</m> and <m>x=3</m> and they divide the domain
+      (the <m>x</m>-axis)
+      into three intervals:
+      <m>(-\infty, -2)</m>, <m>(-2,3)</m> and <m>(3, \infty)</m>.
+      For every number in <m>(-\infty, -2)</m>,
+      the graph of <m>f</m> is above the <m>x</m>-axis;
+      in other words,
+      <m>f(x) > 0</m> for all <m>x</m> in <m>(-\infty, -2)</m>.
+      Similarly, <m>f(x) \lt 0</m> for all <m>x</m> in <m>(-2,3)</m>,
+      and <m>f(x) > 0</m> for all <m>x</m> in <m>(3, \infty)</m>.
+      We represent this schematically with the
+      <em>sign diagram</em> below.
+          <idx><h>inequality</h><h>sign diagram</h></idx>
+          <idx><h>sign diagram</h><h>for quadratic inequality</h></idx>
+    </p>
+    <p>
+      \begin{mfpic}[12]{-4}{4}{-7}{7} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](-3.5,0.5){<m>(-2,0)</m>} \tlabel[cc](2,0.5){<m>(3,0)</m>} \xmarks{-3 step 1 until 3} \ymarks{-5 step 1 until 6}
+    </p>
+    <p>
+      \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-6</m>} -6, {<m>-4</m>} -4,{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tcaption{ <m>f(x) = x^2-x-6</m>.}
+    </p>
+    <p>
+      \penwd{1.25pt} \arrow \reverse \arrow \function{-3,4,0.1}{x**2-x-6} \point[4pt]{(-2,0),(3,0)} \end{mfpic}
+    </p>
+    <p>
+      \columnbreak
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{6} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{-2,2} \tcaption{A sign diagram for
+      <m>f(x) = x^2-x-6</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>3</m>} 2} \tlabel[cc](-3.5,1){<m>(+)</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \end{mfpic}
+    </p>
+    <p>
+      The <m>(+)</m> above a portion of the number line indicates
+      <m>f(x) > 0</m> for those values of <m>x</m> and the <m>(-)</m> indicates <m>f(x) \lt 0</m> there.
+      The numbers labeled on the number line are the zeros of <m>f</m>,
+      so we place <m>0</m> above them.
+      For the inequality <m>f(x) = x^2-x-6 \leq 0</m>,
+      we read from the sign diagram that the solution is <m>[-2,3]</m>.
+    </p>
+    <p>
+      Our next goal is to establish a procedure by which we can generate the sign diagram without graphing the function.
+      While parabolas aren't that bad to graph knowing what we know,
+      our sights are set on more general functions whose graphs are more complicated.
+    </p>
+    <p>
+      An important property of parabolas is that a parabola can't be above the <m>x</m>-axis at one point and below the <m>x</m>-axis at another point without crossing the <m>x</m>-axis at some point in between.
+      Said differently,
+      if the function is positive at one point and negative at another,
+      the function must have at least one zero in between.
+      This property is a consequence of quadratic functions being<idx><h>function</h><h>continuous</h></idx>
+          <idx><h>continuous</h></idx> <em>continuous</em>.
+      A precise definition of <sq>continuous</sq> requires the language of Calculus,
+      but it suffices for us to know that the graph of a continuous function has no gaps or holes.
+      This allows us to determine the sign of <em>all</em>
+      of the function values on a given interval by testing the function at just
+      <em>one</em> value in the interval.
+    </p>
+    <p>
+      The result below applies to all continuous functions defined on an interval of real numbers,
+      but we restrict our attention to quadratic functions for the time being,
+    </p>
+    <p>
+      <em>Steps for Creating A Sign Diagram for A Quadratic Function</em><idx><h>sign diagram</h><h>creating</h></idx>
+    </p>
+    <p>
+      Suppose <m>f</m> is a quadratic function.
+      <ol>
+        <li>
+          <p>
+            Find the zeros of <m>f</m> and place them on the number line with the number <m>0</m> above them.
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose a real number, called a <em>test value</em>,
+            in each of the intervals determined in step 1.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine and record the sign of <m>f(x)</m> for each test value in step 2.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      To use a sign diagram to solve an inequality,
+      we must always remember to compare the function to <m>0</m>.
+    </p>
+    <p>
+      <em>Solving Inequalities using Sign Diagrams</em><idx><h>inequality</h><h>solution using sign diagram</h></idx>
+    </p>
+    <p>
+      To solve an inequality using a sign diagram:
+      <ol>
+        <li>
+          <p>
+            Rewrite the inequality so some function <m>f(x)</m> is being compared to <sq><m>0</m>.</sq>
+          </p>
+        </li>
+        <li>
+          <p>
+            Make a sign diagram for <m>f</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Record the solution.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      We practice this approach in the following example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Solve the following inequalities analytically<fn>
+          By <sq>solve analytically</sq> we mean <sq>algebraically</sq> using a sign diagram.
+          </fn> and check your solutions graphically.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>2x^2 \leq 3-x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t^2 - 2t > 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>x^2+1 \leq 2x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2t-t^2 \geq |t-1|-1</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To solve <m>2x^2 \leq 3-x</m>,
+                we rewrite it as <m>2x^2+x-3 \leq 0</m>.
+                We find the zeros of <m>f(x) = 2x^2 + x - 3</m> by solving <m>2x^2 + x - 3 = 0</m>.
+                Factoring gives <m>(2x+3)(x-1)=0</m>,
+                so <m>x = -\frac{3}{2}</m> or <m>x = 1</m>.
+                We place these values on the number line with <m>0</m> above them and choose test values in the intervals <m>\left(-\infty, -\frac{3}{2}\right)</m>,
+                <m>\left(-\frac{3}{2},1\right)</m> and <m>(1,\infty)</m>.
+                For the interval <m>\left(-\infty, -\frac{3}{2}\right)</m>,
+                we choose<fn>
+                We have to choose <em>something</em> in each interval.
+                If you don't like our choices,
+                please feel free to choose different numbers.
+                You'll get the same sign chart.
+                </fn> <m>x=-2</m>;
+                for <m>\left(-\frac{3}{2},1\right)</m>, we pick <m>x=0</m>;
+                and for <m>(1,\infty)</m>, <m>x=2</m>.
+                Evaluating the function at the three test values gives us <m>f(-2) = 3 > 0</m>,
+                so we place <m>(+)</m> above <m>\left(-\infty, -\frac{3}{2}\right)</m>;
+                <m>f(0)=-3 \lt 0</m>,
+                so <m>(-)</m> goes above the interval <m>\left(-\frac{3}{2},1\right)</m>;
+                and, <m>f(2) = 7</m>,
+                which means <m>(+)</m> is placed above <m>(1,\infty)</m>.
+                We are solving <m>2x^2+x-3 \leq 0</m> so we need solutions to
+                <m>2x^2+x-3 \lt 0</m> as well as solutions for <m>2x^2+x-3 =0</m>.
+                For <m>2x^2+x-3 \lt 0</m>,
+                we need the intervals which we have a <m>(-)</m> above them.
+                The sign diagram shows only one:
+                <m>\left(-\frac{3}{2},1\right)</m>.
+                Also, we know <m>2x^2+x-3 =0</m> when <m>x=-\frac{3}{2}</m> and <m>x=1</m>,
+                so our final answer is <m>\left[-\frac{3}{2},1\right]</m>.
+                To verify our solution graphically,
+                we refer to the original inequality, <m>2x^2 \leq 3-x</m>.
+                We let <m>g(x) = 2x^2</m> and <m>h(x)=3-x</m>.
+                We are looking for the <m>x</m> values where the graph of <m>g</m> is below that of <m>h</m> (the solution to
+                <m>g(x) \lt h(x)</m>) as well as the points of intersection (the solutions to <m>g(x)=h(x)</m>).
+                The graphs of <m>g</m> and <m>h</m> are given on the right with the sign chart on the left. \begin{mfpic}[15]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{-2,2} \arrow \polyline{(-3.5,-1.5),(-3.5,-0.5)} \arrow \polyline{(0,-1.5),(0,-0.5)} \arrow \polyline{(3.5,-1.5),(3.5,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{3}{2}</m>} -2, {<m>1</m>} 2} \tlabel[cc](-3.5,1){<m>(+)</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \tlabel[cc](-3.75,-2.25){<m>-2</m>} \tlabel[cc](-0.1,-2.25){<m>0</m>} \tlabel[cc](3.4,-2.25){<m>2</m>} \end{mfpic} \columnbreak \begin{mfpic}[20][10]{-3}{3}{-1}{8} \arrow \reverse \arrow \function{-2,2,0.1}{2*(x**2)} \arrow \reverse \arrow \polyline{(-3,6),(2.5,0.5)} \xmarks{-2 step 1 until 2} \ymarks{1 step 1 until 7} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \tlabel[cc](2.75,6){<m>y=2x^2</m>} \tlabel[cc](3,1.75){<m>y=3-x</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \penwd{1.25pt} \function{-1.5,1,0.1}{2*(x**2)} \polyline{(-1.5,4.5),(1,2)} \polyline{(-1.5,0), (1,0)} \point[4pt]{(-1.5,0), (1,0), (-1.5, 4.5), (1,2)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                Once again, we re-write <m>t^2-2t > 1</m> as
+                <m>t^2-2t-1>0</m> and we identify <m>f(t)=t^2-2t-1</m>.
+                When we go to find the zeros of <m>f</m>, we find, to our chagrin,
+                that the quadratic <m>t^2-2t-1</m> doesn't factor nicely.
+                Hence, we resort to the Quadratic Formula and find <m>t=1 \pm \sqrt{2}</m>.
+                As before, these zeros divide the number line into three pieces.
+                To help us decide on test values,
+                we approximate <m>1 - \sqrt{2} \approx -0.4</m> and <m>1 + \sqrt{2} \approx 2.4</m>.
+                We choose <m>t=-1</m>,
+                <m>t=0</m> and <m>t=3</m> as our test values and find
+                <m>f(-1)= 2</m>, which is <m>(+)</m>;
+                <m>f(0)=-1</m> which is <m>(-)</m>;
+                and <m>f(3)=2</m> which is <m>(+)</m> again.
+                Our solution to <m>t^2-2t-1>0</m> is where we have <m>(+)</m>, so,
+                in interval notation <m>\left(-\infty, 1-\sqrt{2}\right) \cup \left(1+\sqrt{2},\infty\right)</m>.
+                To check the inequality <m>t^2 - 2t > 1</m> graphically,
+                we set <m>g(t) = t^2-2t</m> and <m>h(t)=1</m>.
+                We are looking for the <m>t</m> values where the graph of <m>g</m> is above the graph of <m>h</m>.
+                As before we present the graphs on the right and the sign chart on the left. \begin{mfpic}[14]{-8}{8}{-2}{2} \arrow \reverse \arrow \polyline{(-8,0),(8,0)} \xmarks{-3,3} \arrow \polyline{(-6,-1.5),(-6,-0.5)} \arrow \polyline{(0,-1.5),(0,-0.5)} \arrow \polyline{(6,-1.5),(6,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>1-\sqrt{2}</m>} -3, {<m>1+\sqrt{2}</m>} 3} \tlabel[cc](-6,1){<m>(+)</m>} \tlabel[cc](-3,1){<m>0</m>} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](3,1){<m>0</m>} \tlabel[cc](6,1){<m>(+)</m>} \tlabel[cc](-6,-2.25){<m>-1</m>} \tlabel[cc](0,-2.25){<m>0</m>} \tlabel[cc](6,-2.25){<m>3</m>} \end{mfpic} \columnbreak \begin{mfpic}[20]{-4}{4}{-1}{4} \arrow \reverse \arrow \function{-1.23,3.21,0.1}{(x**2)-2*x} \arrow \reverse \arrow \function{-4,4,0.1}{1} \xmarks{-3 step 1 until 3} \ymarks{1 step 1 until 3} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](-2.5,1.25){<m>y=1</m>} \tlabel[cc](2.75,-1){<m>y=t^2-2t</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \function{-1.23,-0.4142,0.1}{(x**2)-2*x} \arrow \function{2.4142,3.21,0.1}{(x**2)-2*x} \arrow \polyline{(-0.4142,0), (-4,0)} \arrow \polyline{(2.4142,0), (4,0)} \arrow \polyline{(-0.4142,1), (-4,1)} \arrow \polyline{(2.4142,1), (4,1)} \pointfillfalse \point[4pt]{(-0.4142,0),(2.4142,0)} \point[4pt]{(-0.4142,1),(2.4142,1)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>x^2+1 \leq 2x</m>, as before,
+                we solve <m>x^2-2x+1 \leq 0</m>.
+                Setting <m>f(x) = x^2-2x+1=0</m>,
+                we find only one zero of <m>f</m>: <m>x = 1</m>.
+                This one <m>x</m> value divides the number line into two intervals,
+                from which we choose <m>x=0</m> and <m>x=2</m> as test values.
+                We find <m>f(0)=1 > 0</m> and <m>f(2) = 1 > 0</m>.
+                Since we are looking for solutions to <m>x^2-2x+1 \leq 0</m>,
+                we are looking for <m>x</m> values where
+                <m>x^2-2x+1 \lt 0</m> as well as where <m>x^2-2x+1 = 0</m>.
+                Looking at our sign diagram,
+                there are no places where <m>x^2-2x+1 \lt 0</m> (there are no <m>(-)</m>),
+                so our solution is only <m>x=1</m>
+                (where <m>x^2-2x+1 = 0</m>).
+                We write this as <m>\left\{1\right\}</m>.
+                Graphically,
+                we solve <m>x^2+1 \leq 2x</m> by graphing <m>g(x) = x^2+1</m> and <m>h(x)=2x</m>.
+                We are looking for the <m>x</m> values where the graph of <m>g</m> is below the graph of <m>h</m>
+                (for <m>x^2+1 \lt 2x</m>)
+                and where the two graphs intersect
+                (<m>x^2+1 = 2x</m>).
+                Notice that the line and the parabola touch at <m>\left(1, 2\right)</m>,
+                but the parabola is always above the line otherwise.<fn>
+                In this case, we say the line <m>y=2x</m> is <em>tangent</em>
+                to <m>y=x^2+1</m> at <m>\left(1, 2\right)</m>.
+                Finding tangent lines to arbitrary functions is a fundamental problem solved,
+                in general, with Calculus.
+                </fn>  \begin{mfpic}[15]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{0} \arrow \polyline{(-2.5,-1.5),(-2.5,-0.5)} \arrow \polyline{(2.5,-1.5),(2.5,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 0} \tlabel[cc](-2.5,1){<m>(+)</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](2.5,1){<m>(+)</m>} \tlabel[cc](-2.6,-2.1){<m>0</m>} \tlabel[cc](2.4,-2.1){<m>2</m>} \end{mfpic} \columnbreak \begin{mfpic}[20]{-2}{2}{-1}{5} \arrow \reverse \arrow \function{-2,2,0.1}{(x**2)+1} \arrow \reverse \arrow \function{-0.5,2.5,0.1}{2*x} \point[4pt]{(1,2), (1,0)} \xmarks{-1 step 1 until 1} \ymarks{1 step 1 until 4} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1,0.5){<m>y=2x</m>} \tlabel[cc](-2.25,2){<m>y=x^2+1</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1,{<m>1</m>} 1} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>2t-t^2 \geq |t-1|-1</m> analytically we first rewrite the absolute value using cases.
+                For <m>t\lt 1</m>, <m>|t-1| = -(t-1) = -t+1</m>,
+                so we get <m>2t-t^2 \geq (-t+1)-1</m> which simplifies to <m>t^2-3t \leq 0</m>.
+                Finding the zeros of <m>f(t) = t^2-3t</m>,
+                we get <m>t=0</m> and <m>t=3</m>.
+                However, we are concerned only with the portion of the number line where <m>t \lt 1</m>,
+                so the only zero that we deal with is <m>t=0</m>.
+                This divides the interval <m>t\lt 1</m> into two intervals:
+                <m>(-\infty, 0)</m> and <m>(0,1)</m>.
+                We choose <m>t=-1</m> and <m>t=\frac{1}{2}</m> as our test values.
+                We find <m>f(-1) = 4</m> and <m>f\left(\frac{1}{2}\right) = -\frac{5}{4}</m>.
+                Hence, our solution to <m>t^2-3t \leq 0</m> for <m>t \lt 1</m> is <m>[0,1)</m>.
+                Next, we turn our attention to the case <m>t \geq 1</m>.
+                Here, <m>|t-1| = t-1</m>,
+                so our original inequality becomes
+                <m>2t-t^2 \geq (t-1)-1</m>, or <m>t^2-t-2 \leq 0</m>.
+                Setting <m>g(t) = t^2-t-2</m>,
+                we find the zeros of <m>g</m> to be <m>t=-1</m> and <m>t=2</m>.
+                Of these, only <m>t=2</m> lies in the region <m>t\geq 1</m>,
+                so we ignore <m>t=-1</m>.
+                Our test intervals are now <m>[1,2)</m> and <m>(2,\infty)</m>.
+                We choose <m>t=1</m> and <m>t=3</m> as our test values and find <m>g(1) = -2</m> and <m>g(3) = 4</m>.
+                Hence, our solution to <m>g(t) = t^2-t-2 \leq 0</m>,
+                in this region is <m>[1,2)</m>. \begin{mfpic}[15]{-5}{5.5}{-2}{2} \arrow \reverse \polyline{(-5,0),(5,0)} \xmarks{0} \arrow \polyline{(-2.5,-1.5),(-2.5,-0.5)} \arrow \polyline{(2.5,-1.25),(2.5,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>0</m>} 0} \tlabel[cc](-2.5,1){<m>(+)</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](2.5,1){<m>(-)</m>} \tlabel[cc](-2.5,-2.25){<m>-1</m>} \tlabel[cc](2.5,-2.25){<m>\frac{1}{2}</m>} \gclear \circle{(5,0),0.2} \circle{(5,0),0.2} \tlabel[cc](5,-0.75){<m>1</m>} \end{mfpic} Solving
+                <m>2t-t^2 \geq |t-1|-1</m> for <m>t \lt 1</m>. \columnbreak \begin{mfpic}[15]{-5}{5.5}{-2}{2} \arrow \polyline{(-5,0),(5,0)} \xmarks{0} \arrow \polyline{(-5,-1.5),(-5,-0.5)} \arrow \polyline{(2.5,-1.5),(2.5,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>2</m>} 0} \tlabel[cc](-2.5,1){<m>(-)</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](2.5,1){<m>(+)</m>} \tlabel[cc](2.5,-2.25){<m>3</m>} \gfill \circle{(-5,0),0.2} \tlabel[cc](-5,-2.25){<m>1</m>} \end{mfpic} Solving <m>2t-t^2 \geq |t-1|-1</m> for <m>t \geq 1</m>.
+                Combining these into one sign diagram,
+                we have that our solution is <m>[0,2]</m>.
+                Graphically, to check <m>2t-t^2 \geq |t-1|-1</m>,
+                we set <m>h(t) = 2t-t^2</m> and
+                <m>i(t) = |t-1|-1</m> and look for the <m>t</m> values where the graph of <m>h</m> intersects or is above the the graph of <m>i</m> The combined sign chart is given on the left and the graphs are on the right. \begin{mfpic}[15]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{-2,2} \arrow \polyline{(-3.5,-1.5),(-3.5,-0.5)} \arrow \polyline{(0,-1.5),(0,-0.5)} \arrow \polyline{(3.75,-1.5),(3.75,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>0</m>} -2, {<m>2</m>} 2} \tlabel[cc](-3.5,1){<m>(+)</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \tlabel[cc](-3.55,-2.25){<m>-1</m>} \tlabel[cc](-0.05,-2.25){<m>0</m>} \tlabel[cc](3.7,-2.25){<m>3</m>} \end{mfpic} \columnbreak \begin{mfpic}[30]{-2}{4}{-1}{2} \arrow \reverse \arrow \function{-0.4,2.4,0.1}{(2*x)-(x**2)} \arrow \reverse \arrow \polyline{(-1,1),(1,-1),(3,1)} \point[4pt]{(0,0),(2,0)} \xmarks{-1 step 1 until 3} \ymarks{1} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,2){<m>y</m>} \tlabel[cc](1,1.25){<m>y=2t-t^2</m>} \tlabel[cc](1,-1.25){<m>y=|t-1|-1</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1} \penwd{1.25pt} \function{0,2,0.1}{(2*x)-(x**2)} \polyline{(0,0),(1,-1),(2,0)} \polyline{(0,0),(2,0)} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We end this section with an example that combines quadratic inequalities with piecewise functions.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Rewrite <m>g(x) = |x^2 - x - 6|</m> as a piecewise function and graph.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using the definition of absolute value,
+          <xref ref="absolutevaluepiecewise">Definition</xref>
+          and the sign diagram we constructed for
+          <m>f(x) = x^2-x-6</m> near the beginning of the subsection, we get:
+          <me>
+            \begin{array}{ccc}  g(x) = |x^2-x-6| = \begin{cases}-(x^2-x-6) \amp   \text{ if \((x^2-x-6) \lt  0\), }  \\ (x^2-x-6)  \amp  \text{ if \((x^2-x-6) \geq 0\). } \end{cases}  \amp  \longrightarrow \amp  g(x) = \begin{cases}-x^2+x+6 \amp   \text{ if \(-2 \lt  x \lt  3\), }  \\ x^2-x-6  \amp  \text{ if \(x \leq -2\) or \(x \geq 3\). } \end{cases} \end{array}
+          </me>
+        </p>
+        <p>
+          Going through the usual machinations results on the graph below on the right.
+          Compare it to the graph below on the left.
+          Notice anything?
+          <me>
+            \begin{array}{cc}  \begin{mfpic}[15][10]{-4}{4}{-7}{8} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,8){\(y\)} \xmarks{-3 step 1 until 3} \ymarks{-5 step 1 until 7} \tcaption{ \(y=f(x) = x^2-x-6\)} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2} \axislabels {y}{{\(-6\)} -6, {\(-5\)} -5, {\(-4\)} -4,{\(-3\)} -3, {\(-2\)} -2, {\(-1\)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(6\)} 6, {\(7\)} 7} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.25,4.25,0.1}{x**2-x-6} \point[4pt]{(-2,0),(3,0)} \end{mfpic} \amp  \begin{mfpic}[15][10]{-4}{4}{-7}{8} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,8){\(y\)}  \tcaption{ \(y=g(x) = |x^2-x-6|\)} \xmarks{-3 step 1 until 3} \ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,7} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{{\(-6\)} -6, {\(-5\)} -5, {\(-4\)} -4,{\(-3\)} -3, {\(-2\)} -2, {\(-1\)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(6\)} 6, {\(7\)} 7} \penwd{1.25pt} \arrow \reverse \function{-3.25,-2,0.1}{x**2-x-6} \function{-2,3,0.1}{6+x-x**2} \arrow \function{3,4.25,0.1}{x**2-x-6} \point[4pt]{(-2,0),(3,0)} \end{mfpic} \end{array}
+          </me>
+        </p>
+        <p>
+          If we take a step back and look at the graphs of <m>f</m> and <m>g</m>,
+          we notice that to obtain the graph of <m>g</m> from the graph of <m>f</m>,
+          we reflect a <em>portion</em> of the graph of <m>f</m> about the <m>x</m>-axis.
+          In general, if <m>g(x) = |f(x)|</m>, then:
+          <me>
+            g(x) = |f(x)| = \begin{cases}-f(x) \amp   \text{ if \(f(x)  \lt  0\), }  \\ f(x)  \amp  \text{ if \(f(x)  \geq 0\). } \end{cases}
+          </me>
+        </p>
+        <p>
+          The function <m>g</m> is defined so that when <m>f(x)</m> is negative (i.e., when its graph is below the <m>x</m>-axis),
+          the graph of <m>g</m> is the refection of the graph of <m>f</m> across the <m>x</m>-axis.
+          This is a general method to graph functions of the form <m>g(x) = |f(x)|</m>.
+          Indeed, the graph of <m>g(x) = |x|</m> can be obtained by reflection the portion of the line <m>f(x) =x</m> which is below the <m>x</m>-axis back above the <m>x</m>-axis creating the characteristic <sq><m>\vee</m></sq> shape.<fn>
+          See <xref ref="makeaveewithabsval">Exercise</xref>
+          in <xref ref="AbsoluteValueFunctions">Section</xref>.
+          </fn>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="graphquadfuncfirst">Exercises</xref>
+      - <xref ref="graphquadfunclast"></xref>,
+      graph the quadratic function.
+      Find the vertex and axis intercepts of each graph, if they exist.
+      State the domain and range, identify the maximum or minimum,
+      and list the intervals over which the function is increasing or decreasing.
+      If the function is given in general form,
+      convert it into standard form;
+      if it is given in standard form,
+      convert it into general form.
+      <ol cols="3">
+        <li xml:id="graphquadfuncfirst">
+          <p>
+            <m>f(x) = x^{2} + 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -(x + 2)^{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^{2} - 2x - 8</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = -2(t + 1)^{2} + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 2t^2 - 4t - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = -3t^{2} + 4t - 7</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(s) = s^2 + s + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(s) = -3s^2+5s+4</m>
+          </p>
+        </li>
+        <li xml:id="graphquadfunclast">
+          <p>
+            <m>h(s) = s^{2} - \dfrac{1}{100} s - 1</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulaforquadgraphfirst">Exercises</xref>
+      - <xref ref="findformulaquadgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = a(x-h)^2+k</m>.
+      <ol cols="2">
+        <li xml:id="findformulaforquadgraphfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1, 1){<m>(0,1)</m>} \tlabel[cc](-2,-3.5){<m>(-2,-3)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.8,0.8,0.1}{(x+2)**2-3} \point[4pt]{(-2,-3), (0,1)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1,1){<m>(0,1)</m>} \tlabel[cc](2,-1.5){<m>(2,-1)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.4,5.4,0.1}{0.5*((x-2)**2)-1} \point[4pt]{(2,-1), (0,1)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-0.75,4.25){<m>(0,4)</m>} \tlabel[cc](2.5,0.5){<m>(2,0)</m>} \tlabel[cc](-3,0.5){<m>(-2,0)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3,0.1}{4-(x**2)} \point[4pt]{(0,4), (-2,0), (2,0)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformulaquadgraphlast">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](0.8,0.5){<m>(0,0)</m>} \tlabel[cc](3.75,0.5){<m>(3,0)</m>} \tlabel[cc](3.75,2.5){<m>(2.5,2.5)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.6,3.6,0.1}{2*x*(3-x)} \point[4pt]{(0,0), (3,0), (2.5, 2.5)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solveineququadfirsta">Exercises</xref>
+      - <xref ref="solveineququadlasta"></xref>, solve the inequality.
+      Write your answer using interval notation.
+      <ol cols="2">
+        <li xml:id="solveineququadfirsta">
+          <p>
+            <m>x^{2} + 2x - 3 \geq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>16x^2+8x+1 > 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t^2+9 \lt 6t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>9t^2 + 16 \geq 24t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>u^2+4 \leq 4u</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>u^{2} + 1 \lt 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3x^{2} \leq 11x + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x > x^{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2t^2-4t-1 > 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>5t+4 \leq 3t^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2 \leq |x^{2} - 9| \lt 9</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^{2} \leq |4x - 3|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t^{2} + t + 1 \geq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t^2 \geq |t|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x |x+5| \geq -6</m>
+          </p>
+        </li>
+        <li xml:id="solveineququadlasta">
+          <p>
+            <m>x |x-3| \lt 2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="maxprofitfirst">Exercises</xref>
+      - <xref ref="maxprofitlast"></xref>,
+      cost and price-demand functions are given.
+      For each scenario,
+      <ul>
+        <li>
+          <p>
+            Find the profit function <m>P(x)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the number of items which need to be sold in order to maximize profit.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the maximum profit.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the price to charge per item in order to maximize profit.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find and interpret break-even points.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ol>
+      <li xml:id="maxprofitfirst">
+        <p>
+          The cost, in dollars, to produce <m>x</m>
+          <q>I'd rather be a Sasquatch</q>
+          T-Shirts is <m>C(x) = 2x+26</m>,
+          <m>x \geq 0</m> and the price-demand function, in dollars per shirt,
+          is <m>p(x) = 30 - 2x</m>, for <m>0 \leq x \leq 15</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The cost, in dollars,
+          to produce <m>x</m> bottles of <m>100 \%</m> All-Natural Certified Free-Trade Organic Sasquatch Tonic is <m>C(x) = 10x+100</m>,
+          <m>x \geq 0</m> and the price-demand function, in dollars per bottle,
+          is <m>p(x) = 35 - x</m>, for <m>0 \leq x \leq 35</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The cost, in cents,
+          to produce <m>x</m> cups of Mountain Thunder Lemonade at Junior's Lemonade Stand is <m>C(x) = 18x + 240</m>,
+          <m>x \geq 0</m> and the price-demand function, in cents per cup,
+          is <m>p(x) = 90-3x</m>, for <m>0 \leq x \leq 30</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The daily cost, in dollars,
+          to produce <m>x</m> Sasquatch Berry Pies is <m>C(x) = 3x + 36</m>,
+          <m>x \geq 0</m> and the price-demand function, in dollars per pie,
+          is <m>p(x) = 12-0.5x</m>, for <m>0 \leq x \leq 24</m>.
+        </p>
+      </li>
+      <li xml:id="maxprofitlast">
+        <p>
+          The monthly cost, in <em>hundreds</em> of dollars,
+          to produce <m>x</m> custom built electric scooters is <m>C(x) = 20x + 1000</m>,
+          <m>x \geq 0</m> and the price-demand function,
+          in <em>hundreds</em> of dollars per scooter,
+          is <m>p(x) = 140-2x</m>, for <m>0 \leq x \leq 70</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The International Silver Strings Submarine Band holds a bake sale each year to fund their trip to the National Sasquatch Convention.
+          It has been determined that the cost in dollars of baking <m>x</m> cookies is
+          <m>C(x) = 0.1x + 25</m> and that the demand function for their cookies is
+          <m>p = 10 - .01x</m> for <m>0 \leq x \leq 1000</m>.
+          How many cookies should they bake in order to maximize their profit?
+        </p>
+      </li>
+      <li>
+        <p>
+          Using data from
+          <url href="http://www.bts.gov/publications/national_transportation_statistics/html/table_04_23.html"><em>Bureau of Transportation Statistics</em></url>,
+          the average fuel economy <m>F(t)</m> in miles per gallon for passenger cars in the US <m>t</m> years after 1980 can be modeled by
+          <m>F(t) = -0.0076t^2+0.45t + 16</m>, <m>0 \leq t \leq 28</m>.
+          Find and interpret the coordinates of the vertex of the graph of <m>y = F(t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The temperature <m>T</m>,
+          in degrees Fahrenheit, <m>t</m> hours after 6 AM is given by:
+          <me>
+            T(t) = -\frac{1}{2} t^2 + 8t+32,  0 \leq t \leq 12
+          </me>
+          What is the warmest temperature of the day?
+          When does this happen?
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m>C(x) = x^2-10x+27</m> represents the costs,
+          in <em>hundreds</em>, to produce <m>x</m> <em>thousand</em> pens.
+          How many pens should be produced to minimize the cost?
+          What is this minimum cost?
+        </p>
+      </li>
+      <li xml:id="fixedperimetermaxareagarden">
+        <p>
+          Skippy wishes to plant a vegetable garden along one side of his house.
+          In his garage, he found 32 linear feet of fencing.
+          Since one side of the garden will border the house, Skippy doesn't need fencing along that side.
+          What are the dimensions of the garden which will maximize the area of the garden?
+          What is the maximum area of the garden?
+        </p>
+      </li>
+      <li>
+        <p>
+          In the situation of <xref ref="donniealpaca">Example</xref>, Donnie has a nightmare that one of his alpaca fell into the river.
+          To avoid this,
+          he wants to move his rectangular pasture <em>away</em>
+          from the river so that all four sides of the pasture require fencing.
+          If the total amount of fencing available is still 200 linear feet,
+          what dimensions maximize the area of the pasture now?
+          What is the maximum area?
+          Assuming an average alpaca requires 25 square feet of pasture,
+          how many alpaca can he raise now?
+        </p>
+      </li>
+      <li>
+        <p>
+          What is the largest rectangular area one can enclose with 14 inches of string?
+        </p>
+      </li>
+      <li>
+        <p>
+          The height of an object dropped from the roof of an eight story building is modeled by by the function
+          <m>h(t) = -16t^2 + 64</m>, <m>0 \leq t \leq 2</m>.
+          Here, <m>h(t)</m> is the height of the object off the ground,
+          in feet, <m>t</m> seconds after the object is dropped.
+          How long before the object hits the ground?
+        </p>
+      </li>
+      <li>
+        <p>
+          The height <m>h(t)</m> in feet of a model rocket above the ground <m>t</m> seconds after lift-off is given by the function <m>h(t) = -5t^2+100t</m>,
+          for <m>0 \leq t \leq 20</m>.
+          When does the rocket reach its maximum height above the ground?
+          What is its maximum height?
+        </p>
+      </li>
+      <li>
+        <p>
+          Carl's friend Jason participates in the Highland Games.
+          In one event, the hammer throw,
+          the height <m>h(t)</m> in feet of the hammer above the ground <m>t</m> seconds after Jason lets it go is modeled by the function <m>h(t) = -16t^2 + 22.08t + 6</m>.
+          What is the hammer's maximum height?
+          What is the hammer's total time in the air?
+          Round your answers to two decimal places.
+        </p>
+      </li>
+      <li xml:id="whatgoesup">
+        <p>
+          Assuming no air resistance or forces other than the Earth's gravity,
+          the height above the ground at time <m>t</m> of a falling object is given by <m>s(t) = -4.9t^{2} + v_{\mbox{<m>0</m>} }t + s_{\mbox{<m>0</m>} }</m> where <m>s</m> is in meters,
+          <m>t</m> is in seconds,
+          <m>v_{\mbox{<m>0</m>} }</m> is the object's initial velocity in meters per second and <m>s_{\mbox{<m>0</m>} }</m> is its initial position in meters.
+          <ol>
+            <li>
+              <p>
+                What is the applied domain of this function?
+              </p>
+            </li>
+            <li>
+              <p>
+                Discuss with your classmates what each of <m>v_{\mbox{<m>0</m>} } > 0, \; v_{\mbox{<m>0</m>} } = 0</m> and <m>v_{\mbox{<m>0</m>} } \lt 0</m> would mean.
+              </p>
+            </li>
+            <li>
+              <p>
+                Come up with a scenario in which <m>s_{\mbox{<m>0</m>} } \lt 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let's say a slingshot is used to shoot a marble straight up from the ground <m>(s_{\mbox{<m>0</m>} } = 0)</m> with an initial velocity of 15 meters per second.
+                What is the marble's maximum height above the ground?
+                At what time will it hit the ground?
+              </p>
+            </li>
+            <li>
+              <p>
+                If the marble is shot from the top of a 25 meter tall tower,
+                when does it hit the ground?
+              </p>
+            </li>
+            <li>
+              <p>
+                What would the height function be if instead of shooting the marble up off of the tower,
+                you were to shoot it straight DOWN from the top of the tower?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="parabolicbridgecable">
+        <p>
+          The two towers of a suspension bridge are 400 feet apart.
+          The parabolic cable<fn>
+          The weight of the bridge deck forces the bridge cable into a parabola and a free hanging cable such as a power line does not form a parabola.
+          We shall see in <xref ref="catenary">Exercise</xref>
+          in <xref ref="ExpLogApplications">Section</xref>
+          what shape a free hanging cable makes.
+          </fn> attached to the tops of the towers is 10 feet above the point on the bridge deck that is midway between the towers.
+          If the towers are 100 feet tall,
+          find the height of the cable directly above a point of the bridge deck that is 50 feet to the right of the left-hand tower.
+        </p>
+      </li>
+      <li>
+        <p>
+          On New Year's Day, Jeff started weighing himself every morning in order to have an interesting data set for this section of the book.
+          (Discuss with your classmates if that makes him a nerd or a geek.
+          Also, the professionals in the field of weight management strongly discourage weighing yourself every day.
+          When you focus on the number and not your overall health,
+          you tend to lose sight of your objectives.
+          Jeff was making a noble sacrifice for science,
+          but you should <em>not</em> try this at home.)
+          The whole chart would be too big to put into the book neatly,
+          so we've decided to give only a small portion of the data to you.
+          This then becomes a Civics lesson in honesty, as you shall soon see.
+          There are two charts given below.
+          One has Jeff's weight for the first eight Thursdays of the year (January 1, 2009 was a Thursday and we'll count it as Day 1.) and the other has Jeff's weight for the first 10 Saturdays of the year.
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Day #</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>(Thursday)</cell>
+              <cell>1</cell>
+              <cell>8</cell>
+              <cell>15</cell>
+              <cell>22</cell>
+              <cell>29</cell>
+              <cell>36</cell>
+              <cell>43</cell>
+              <cell>50</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>My weight</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>in pounds</cell>
+              <cell>238.2</cell>
+              <cell>237.0</cell>
+              <cell>235.6</cell>
+              <cell>234.4</cell>
+              <cell>233.0</cell>
+              <cell>233.8</cell>
+              <cell>232.8</cell>
+              <cell>232.0</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Day #</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>(Saturday)</cell>
+              <cell>3</cell>
+              <cell>10</cell>
+              <cell>17</cell>
+              <cell>24</cell>
+              <cell>31</cell>
+              <cell>38</cell>
+              <cell>45</cell>
+              <cell>52</cell>
+              <cell>59</cell>
+              <cell>66</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>My weight</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>in pounds</cell>
+              <cell>238.4</cell>
+              <cell>235.8</cell>
+              <cell>235.0</cell>
+              <cell>234.2</cell>
+              <cell>236.2</cell>
+              <cell>236.2</cell>
+              <cell>235.2</cell>
+              <cell>233.2</cell>
+              <cell>236.8</cell>
+              <cell>238.2</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ol>
+            <li>
+              <p>
+                Find the least squares line for the Thursday data and comment on its goodness of fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the least squares line for the Saturday data and comment on its goodness of fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use Quadratic Regression to find a parabola which models the Saturday data and comment on its goodness of fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Compare and contrast the predictions the three models make for Jeff's weight on January 1, 2010 (Day #366).
+                Can any of these models be used to make a prediction of Jeff's weight 20 years from now?
+                Explain your answer.
+              </p>
+            </li>
+            <li>
+              <p>
+                Why is this a Civics lesson in honesty?
+                Well, compare the two linear models you obtained above.
+                One was a good fit and the other was not,
+                yet both came from careful selections of real data.
+                In presenting the tables to you,
+                we've not lied about Jeff's weight,
+                nor have you used any bad math to falsify the predictions.
+                The word we're looking for here is <sq>disingenuous</sq>.
+                Look it up and then discuss the implications this type of data manipulation could have in a larger,
+                more complex, politically motivated setting.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          (Data that is neither linear nor quadratic.) We'll close this exercise set with two data sets that,
+          for reasons presented later in the book,
+          cannot be modeled correctly by lines or parabolas.
+          It is a good exercise, though,
+          to see what happens when you attempt to use a linear or quadratic model when it's not appropriate.
+          <ol>
+            <li xml:id="APLcats">
+              <p>
+                This first data set came from a Summer 2003 publication of the Portage County Animal Protective League called
+                <q>Tattle Tails</q>. They make the following statement and then have a chart of data that supports it.
+                <q>It doesn't take long for two cats to turn into 80 million.
+                If two cats and their surviving offspring reproduced for ten years,
+                you'd end up with 80,399,780 cats.</q>
+                We assume <m>N(0) = 2</m>.
+                <tabular>
+                  <row bottom="minor">
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>Year <m>x</m></cell>
+                    <cell>1</cell>
+                    <cell>2</cell>
+                    <cell>3</cell>
+                    <cell>4</cell>
+                    <cell>5</cell>
+                    <cell>6</cell>
+                    <cell>7</cell>
+                    <cell>8</cell>
+                    <cell>9</cell>
+                    <cell>10</cell>
+                  </row>
+                  <row bottom="minor">
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>Number of</cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>Cats <m>N(x)</m></cell>
+                    <cell>12</cell>
+                    <cell>66</cell>
+                    <cell>382</cell>
+                    <cell>2201</cell>
+                    <cell>12680</cell>
+                    <cell>73041</cell>
+                    <cell>420715</cell>
+                    <cell>2423316</cell>
+                    <cell>13968290</cell>
+                    <cell>80399780</cell>
+                  </row>
+                  <row bottom="minor">
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                </tabular>
+                Use Quadratic Regression to find a parabola which models this data and comment on its goodness of fit. (Spoiler Alert: Does anyone know what type of function we need here?)
+              </p>
+            </li>
+            <li xml:id="regsunlight">
+              <p>
+                This next data set comes from the
+                <url href="http://aa.usno.navy.mil/data/docs/RS_OneYear.php"><em>U.S. Naval Observatory</em></url>.
+                That site has loads of awesome stuff on it,
+                but for this exercise I used the sunrise/sunset times in Fairbanks, Alaska for 2009 to give you a chart of the number of hours of daylight they get on the <m>21^{\mbox{st} }</m> of each month.
+                We'll let <m>x = 1</m> represent January 21, 2009,
+                <m>x = 2</m> represent February 21, 2009, and so on.
+                <tabular>
+                  <row bottom="minor">
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>Month</cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>Number</cell>
+                    <cell>1</cell>
+                    <cell>2</cell>
+                    <cell>3</cell>
+                    <cell>4</cell>
+                    <cell>5</cell>
+                    <cell>6</cell>
+                    <cell>7</cell>
+                    <cell>8</cell>
+                    <cell>9</cell>
+                    <cell>10</cell>
+                    <cell>11</cell>
+                    <cell>12</cell>
+                  </row>
+                  <row bottom="minor">
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>Hours of</cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>Daylight</cell>
+                    <cell>5.8</cell>
+                    <cell>9.3</cell>
+                    <cell>12.4</cell>
+                    <cell>15.9</cell>
+                    <cell>19.4</cell>
+                    <cell>21.8</cell>
+                    <cell>19.4</cell>
+                    <cell>15.6</cell>
+                    <cell>12.4</cell>
+                    <cell>9.1</cell>
+                    <cell>5.6</cell>
+                    <cell>3.3</cell>
+                  </row>
+                  <row bottom="minor">
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                </tabular>
+                Use Quadratic Regression to find a parabola which models this data and comment on its goodness of fit. (Spoiler Alert: Does anyone know what type of function we need here?)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="redrawthezeroscenarios">
+        <p>
+          Redraw the three scenarios discussed in the discriminant box for <m>a\lt 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Graph <m>f(x) = |1 - x^{2}|</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Find all of the points on the line <m>y=1-x</m> which are <m>2</m> units from <m>(1,-1)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>L</m> be the line <m>y = 2x+1</m>.
+          Find a function <m>D(x)</m> which measures the distance <em>squared</em>
+          from a point on <m>L</m> to <m>(0,0)</m>.
+          Use this to find the point on <m>L</m> closest to <m>(0,0)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          With the help of your classmates,
+          show that if a quadratic function
+          <m>f(x) = ax^{2} + bx + c</m> has two real zeros then the <m>x</m>-coordinate of the vertex is the midpoint of the zeros.
+        </p>
+      </li>
+      <li xml:id="avoidcompsquare">
+        <p>
+          On <xref ref="standardtogeneraldiscussion">page</xref>,
+          we argued that any quadratic function in standard form
+          <m>f(x) = a(x-h)^2+k</m> can be converted to a quadratic function in general form
+          <m>f(x) = ax^2+bx+c</m> by making the identifications <m>b=-2ah</m> and <m>c = ah^2+k</m>.
+          In this exercise,
+          we use same identifications to show every parabola given in general form can be converted to standard form without completing the square.
+          Solve <m>b=-2ah</m> for <m>h</m> and substitute the result into the equation
+          <m>c = ah^2+k</m> and then solve for <m>k</m>.
+          Show  <m>h = -\frac{b}{2a}</m> and <m>k = \frac{4ac-b^2}{4a}</m> so that
+          <me>
+            f(x) = ax^2+bx+c = a\left(x + \dfrac{b}{2a}\right)^2  + \dfrac{4ac - b^2}{4a}
+          </me>.
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="solvequadvarifirst">Exercises</xref>
+      - <xref ref="solvequadvarilast"></xref>,
+      solve the quadratic equation for the indicated variable.
+    </p>
+    <ol cols="4">
+      <li xml:id="solvequadvarifirst">
+        <p>
+          <m>x^{2} - 10y^{2} = 0</m> for <m>x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y^{2} - 4y = x^{2} - 4</m> for <m>x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{2} - mx = 1</m> for <m>x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y^{2} - 3y = 4x</m> for <m>y</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y^{2} - 4y = x^{2} - 4</m> for <m>y</m>
+        </p>
+      </li>
+      <li xml:id="solvequadvarilast">
+        <p>
+          <m>-gt^{2} + v_{\mbox{<m>0</m>} }t + s_{\mbox{<m>0</m>} } = 0</m> for <m>t</m> (Assume <m>g \neq 0</m>.)
+        </p>
+      </li>
+      <li xml:id="LagrangeQuadExercise">
+        <p>
+          (This is a follow-up to <xref ref="LagrangeLinearExercise">Exercise</xref>
+          in <xref ref="ConstantandLinearFunctions">Section</xref>.) The
+          <url href="https://en.wikipedia.org/wiki/Lagrange_polynomial"><em>Lagrange Interpolate</em></url>
+          function <m>L</m> for three points
+          <m>(x_{0}, y_{0})</m>, <m>(x_{1}, y_{1})</m>,
+          and  <m>(x_{2}, y_{2})</m> where <m>x_{0}</m>,  <m>x_{1}</m>,
+          and <m>x_{2}</m> are three distinct real numbers  is given by:
+          <me>
+            L(x) = y_{0}  \dfrac{(x - x_{1}) (x - x_{2}) }{(x_{0} - x_{1})(x_{0} - x_{2})}+ y_{1}  \dfrac{(x - x_{0}) (x - x_{2}) }{(x_{1} - x_{0})(x_{1} - x_{2})} +  y_{2}  \dfrac{(x - x_{0}) (x - x_{1}) }{(x_{2} - x_{0})(x_{2} - x_{1})}
+          </me>
+        </p>
+        <ol>
+          <li>
+            <p>
+              For each of the following sets of points,
+              find <m>L(x)</m> using the formula above and verify each of the points lies on the graph of <m>y = L(x)</m>.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>(-1,1)</m>, <m>(1,1)</m>, <m>(2,4)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(1,3)</m>, <m>(2,10)</m>, <m>(3,21)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(0,1)</m>, <m>(1,5)</m>, <m>(2,7)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Verify that, in general, <m>L(x_{0}) = y_{0}</m>,
+              <m>L(x_{1}) = y_{1}</m>, and <m>L(x_{2}) = y_{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find <m>L(x)</m> for the points <m>(-1, 6)</m>,
+              <m>(1, 4)</m> and <m>(3,2)</m>.
+              What happens?
+            </p>
+          </li>
+          <li>
+            <p>
+              Under what conditions will <m>L(x)</m> produce a quadratic function?
+              Make a conjecture, test some cases, and prove your answer.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>f(x) = x^{2} + 2</m>
+          (this is both forms!)
+          No <m>x</m>-intercepts <m>y</m>-intercept <m>(0, 2)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>[2, \infty)</m> Decreasing on <m>(-\infty, 0]</m> Increasing on
+          <m>[0, \infty)</m> Vertex <m>(0, 2)</m> is a minimum Axis of symmetry <m>x = 0</m> \begin{mfpic}[15][10]{-3}{3}{-1}{11} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,11){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1 step 1 until 10} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10} \point[4pt]{(0,2)} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3,0.1}{x**2 + 2} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = -(x + 2)^{2} = -x^2-4x-4</m> <m>x</m>-intercept <m>(-2, 0)</m> <m>y</m>-intercept <m>(0, -4)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, 0]</m> Increasing on <m>(-\infty, -2]</m> Decreasing on
+          <m>[-2, \infty)</m> Vertex <m>(-2, 0)</m> is a maximum Axis of symmetry <m>x = -2</m> \begin{mfpic}[15][10]{-5}{1}{-9}{1} \axes \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,1){<m>y</m>} \xmarks{-4,-3,-2,-1} \ymarks{-8 step 1 until -1} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \point[4pt]{(-2,0), (0,-4)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,1,0.1}{-((x + 2)**2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{2} - 2x - 8 = (x - 1)^{2} - 9</m> <m>x</m>-intercepts <m>(-2, 0)</m> and <m>(4, 0)</m> <m>y</m>-intercept <m>(0, -8)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>[-9, \infty)</m> Decreasing on <m>(-\infty, 1]</m> Increasing on
+          <m>[1, \infty)</m> Vertex <m>(1, -9)</m> is a minimum Axis of symmetry <m>x = 1</m> \begin{mfpic}[15][10]{-3}{5}{-10}{3} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2 step 1 until 4} \ymarks{-9 step 1 until 2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \point[4pt]{(-2,0),(0,-8),(1,-9),(4,0)} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.4,4.4,0.1}{x**2 - 2*x - 8} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = -2(t + 1)^{2} + 4 = -2t^2-4t+2</m> <m>t</m>-intercepts { <m>(-1 - \sqrt{2}, 0)</m> and
+          <m>(-1 + \sqrt{2}, 0)</m>} <m>y</m>-intercept <m>(0, 2)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, 4]</m> Increasing on <m>(-\infty, -1]</m> Decreasing on
+          <m>[-1, \infty)</m> Vertex <m>(-1, 4)</m> is a maximum Axis of symmetry <m>t = -1</m> \begin{mfpic}[20][10]{-3.5}{2}{-5}{5} \axes \tlabel[cc](2,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3 step 1 until 1} \ymarks{-4 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \point[4pt]{(-2.4142,0),(0,2),(-1,4),(.4142,0)} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.1,1.1,0.1}{4- 2*((x + 1)**2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 2t^2-tx-1 = 2(t-1)^2-3</m> <m>t</m>-intercepts { <m>\left(\frac{2-\sqrt{6}}{2}, 0\right)</m> and
+          <m>\left(\frac{2+\sqrt{6}}{2}, 0\right)</m>} <m>y</m>-intercept <m>(0, -1)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>[-3, \infty)</m> Increasing on <m>[1,\infty)</m> Decreasing on
+          <m>(-\infty,1]</m> Vertex <m>(1, -3)</m> is a minimum Axis of symmetry <m>t = 1</m> \begin{mfpic}[15]{-2}{4}{-4}{5} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1 step 1 until 3} \ymarks{-3 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \point[4pt]{(-0.2247,0),(0,-1),(1,-3),(2.2247,0)} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.8,2.8,0.1}{2*(x**2)-4*x-1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = -3t^{2} + 4t - 7 = -3\left(t - \frac{2}{3} \right)^{2} - \frac{17}{3}</m> No <m>t</m>-intercepts <m>y</m>-intercept <m>(0, -7)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>\left(-\infty, -\frac{17}{3}\right]</m> Increasing on
+          <m>\left(-\infty, \frac{2}{3}\right]</m> Decreasing on <m>\left[\frac{2}{3}, \infty\right)</m> Vertex
+          <m>\left(\frac{2}{3}, -\frac{17}{3}\right)</m> is a maximum Axis of symmetry
+          <m>t = \frac{2}{3}</m> \begin{mfpic}[20][10]{-1}{3}{-15}{1} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.25,1){<m>y</m>} \xmarks{1,2} \ymarks{-14 step 1 until -1} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-14</m>} -14, {<m>-13</m>} -13, {<m>-12</m>} -12, {<m>-11</m>} -11, {<m>-10</m>} -10, {<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \point[4pt]{(0,-7),(.66667,-5.66667)} \penwd{1.25pt} \arrow \reverse \arrow \function{-1,2.33,0.1}{-3*(x**2) + 4*x - 7} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = s^2+s+1 = \left(s + \frac{1}{2}\right)^{2} + \frac{3}{4}</m> No <m>s</m>-intercepts <m>y</m>-intercept <m>(0, 1)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>\left[ \frac{3}{4}, \infty\right)</m> Increasing on
+          <m>\left[-\frac{1}{2}, \infty\right)</m> Decreasing on <m>\left(-\infty, -\frac{1}{2}\right]</m> Vertex
+          <m>\left(-\frac{1}{2}, \frac{3}{4}\right)</m> is a minimum Axis of symmetry
+          <m>s = -\frac{1}{2}</m> \begin{mfpic}[18]{-3}{2}{-1}{5} \axes \tlabel[cc](2,-0.5){<m>s</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \point[4pt]{(0,1),(-0.5,0.75)} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.5,1.5,0.1}{(x**2)+x+1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = -3s^2+5s+4 = -3\left(s-\frac{5}{6}\right)^2 + \frac{73}{12}</m> <m>s</m>-intercepts { <m>\left(\frac{5 - \sqrt{73}}{6}, 0\right)</m> and
+          <m>\left(\frac{5+\sqrt{73}}{6}, 0\right)</m>} <m>y</m>-intercept <m>(0, 4)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>\left(-\infty, \frac{73}{12} \right]</m> Increasing on
+          <m>\left(-\infty, \frac{5}{6}\right]</m> Decreasing on <m>\left[ \frac{5}{6}, \infty\right)</m> Vertex
+          <m>\left(\frac{5}{6}, \frac{73}{12} \right)</m> is a maximum Axis of symmetry
+          <m>s = \frac{5}{6}</m> \begin{mfpic}[15]{-2}{4}{-4}{7} \axes \tlabel[cc](4,-0.5){<m>s</m>} \tlabel[cc](0.5,7){<m>y</m>} \xmarks{-1 step 1 until 3} \ymarks{-3 step 1 until 6} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \point[4pt]{(-0.5907,0),(0,4),(0.8333,6.0833),(2.2573,0)} \penwd{1.25pt} \arrow \reverse \arrow \function{-1,2.62,0.1}{0-3*(x**2)+5*x+4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = s^{2} - \frac{1}{100} s - 1 = \left(s - \frac{1}{200}\right)^{2} - \frac{40001}{40000}</m> <m>s</m>-intercepts <m>\left(\frac{1 + \sqrt{40001}}{200}\right)</m> and
+          <m>\left(\frac{1 - \sqrt{40001}}{200}\right)</m> <m>y</m>-intercept <m>(0, -1)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>\left[-\frac{40001}{40000}, \infty \right)</m> Decreasing on <m>\left(-\infty, \frac{1}{200}\right]</m> Increasing on
+          <m>\left[\frac{1}{200}, \infty \right)</m> Vertex <m>\left(\frac{1}{200}, -\frac{40001}{40000}\right)</m> is a minimum<fn>
+          You'll need to use your calculator to zoom in far enough to see that the vertex is not the <m>y</m>-intercept.
+          </fn>  Axis of symmetry
+          <m>s = \frac{1}{200}</m> \begin{mfpic}[15][10]{-3}{3}{-2}{9} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,9){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1 step 1 until 8} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \point[4pt]{(0,-1), (0.005, -1.000025)} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3,0.1}{x**2 - (x/100) - 1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = (x+2)^2-3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \frac{1}{2}(x-2)^2-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -x^2+4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) =-2(x-1.5)^2+4.5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -3] \cup [1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, -\frac{1}{4}\right) \cup \left(-\frac{1}{4}, \infty \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{2 \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[-\frac{1}{3}, 4 \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(0, 1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, 1-\frac{\sqrt{6}}{2} \right) \cup \left(1+\frac{\sqrt{6}}{2}, \infty \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, \frac{5 - \sqrt{73}}{6} \right] \cup \left[\frac{5 + \sqrt{73}}{6}, \infty \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-3\sqrt{2}, -\sqrt{11} \right] \cup \left[-\sqrt{7}, 0 \right) \cup \left(0, \sqrt{7} \right] \cup \left[\sqrt{11}, 3\sqrt{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[-2-\sqrt{7}, -2+\sqrt{7} \right] \cup [1, 3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -1] \cup \left\{ 0 \right\} \cup [1,\infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-6,-3] \cup [-2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, 1) \cup \left(2, \frac{3+\sqrt{17}}{2}\right)</m>
+        </p>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>P(x) = -2x^2+28x-26</m>, for <m>0 \leq x \leq 15</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>7</m> T-shirts should be made and sold to maximize profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The maximum profit is <m>\dollar72</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The price per T-shirt should be set at <m>\dollar16</m> to maximize profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The break even points are <m>x=1</m> and <m>x=13</m>, so to make a profit,
+              between 1 and 13 T-shirts need to be made and sold.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>P(x) = -x^2+25x-100</m>, for <m>0 \leq x \leq 35</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Since the vertex occurs at <m>x=12.5</m>,
+              and it is impossible to make or sell <m>12.5</m> bottles of tonic,
+              maximum profit occurs when either <m>12</m> or <m>13</m> bottles of tonic are made and sold.
+            </p>
+          </li>
+          <li>
+            <p>
+              The maximum profit is <m>\dollar56</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The price per bottle can be either <m>\dollar23</m>
+              (to sell 12 bottles)
+              or <m>\dollar22</m>
+              (to sell 13 bottles.)
+              Both will result in the maximum profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The break even points are <m>x=5</m> and <m>x=20</m>, so to make a profit,
+              between 5 and 20 bottles of tonic need to be made and sold.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>P(x) = -3x^2+72x-240</m>, for <m>0 \leq x \leq 30</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>12</m> cups of lemonade need to be made and sold to maximize profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The maximum profit is <m>192</m>\textcent or <m>\dollar1.92</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The price per cup should be set at <m>54</m>\textcent per cup to maximize profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The break even points are <m>x=4</m> and <m>x=20</m>, so to make a profit,
+              between 4 and 20 cups of lemonade need to be made and sold.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>P(x) = -0.5 x^2+9x-36</m>,
+              for <m>0 \leq x \leq 24</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>9</m> pies should be made and sold to maximize the daily profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The maximum daily profit is <m>\dollar4.50</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The price per pie should be set at <m>\dollar7.50</m> to maximize profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The break even points are <m>x=6</m> and <m>x=12</m>, so to make a profit,
+              between 6 and 12 pies need to be made and sold daily.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>P(x) = -2x^2+120x-1000</m>,
+              for <m>0 \leq x \leq 70</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>30</m> scooters need to be made and sold to maximize profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The maximum monthly profit is <m>800</m> hundred dollars,
+              or <m>\dollar80,\!000</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The price per scooter should be set at <m>80</m> hundred dollars,
+              or <m>\dollar8000</m> per scooter.
+            </p>
+          </li>
+          <li>
+            <p>
+              The break even points are <m>x=10</m> and <m>x=50</m>,
+              so to make a profit,
+              between 10 and 50 scooters need to be made and sold monthly.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          495 cookies
+        </p>
+      </li>
+      <li>
+        <p>
+          The vertex is (approximately) <m>(29.60, 22.66)</m>,
+          which corresponds to a maximum fuel economy of 22.66 miles per gallon,
+          reached sometime between 2009 and 2010 (29 <mdash/> 30 years after 1980.)  Unfortunately,
+          the model is only valid up until 2008 (28 years after 1908.)  So, at this point,
+          we are using the model to <em>predict</em>
+          the maximum fuel economy.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>64^{\circ}</m> at 2 PM (8 hours after 6 AM.)
+        </p>
+      </li>
+      <li>
+        <p>
+          5000 pens should be produced for a cost of <m>\dollar200</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          8 feet by 16 feet; maximum area is 128 square feet.
+        </p>
+      </li>
+      <li>
+        <p>
+          50 feet by 50 feet; maximum area is 2500 feet;
+          he can raise 100 average alpacas.
+        </p>
+      </li>
+      <li>
+        <p>
+          The largest rectangle has area <m>12.25</m> square inches.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2</m> seconds.
+        </p>
+      </li>
+      <li>
+        <p>
+          The rocket reaches its maximum height of <m>500</m> feet <m>10</m> seconds after lift-off.
+        </p>
+      </li>
+      <li>
+        <p>
+          The hammer reaches a maximum height of approximately <m>13.62</m> feet.
+          The hammer is in the air approximately <m>1.61</m> seconds.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              The applied domain is <m>[0, \infty)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The height function is this case is <m>s(t) = -4.9t^{2} + 15t</m>.
+              The vertex of this parabola is approximately
+              <m>(1.53, 11.48)</m> so the maximum height reached by the marble is <m>11.48</m> meters.
+              It hits the ground again when <m>t \approx 3.06</m> seconds.
+            </p>
+          </li>
+          <li>
+            <p>
+              The revised height function is <m>s(t) = -4.9t^{2} + 15t + 25</m> which has zeros at
+              <m>t \approx -1.20</m> and <m>t \approx 4.26</m>.
+              We ignore the negative value and claim that the marble will hit the ground after <m>4.26</m> seconds.
+            </p>
+          </li>
+          <li>
+            <p>
+              Shooting down means the initial velocity is negative so the height functions becomes <m>s(t) = -4.9t^{2} - 15t + 25</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Make the vertex of the parabola <m>(0, 10)</m> so that the point on the top of the left-hand tower where the cable connects is
+          <m>(-200, 100)</m> and the point on the top of the right-hand tower is <m>(200, 100)</m>.
+          Then the parabola is given by <m>p(x) = \frac{9}{4000}x^{2} + 10</m>.
+          Standing <m>50</m> feet to the right of the left-hand tower means you're standing at <m>x= -150</m> and <m>p(-150) = 60.625</m>.
+          So the cable is 60.625 feet above the bridge deck there.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <ol>
+          <li>
+            <p>
+              The line for the Thursday data is <m>y = -.12x + 237.69</m>.
+              We have <m>r = -.9568</m> and
+              <m>r^{2} = .9155</m> so this is a really good fit.
+            </p>
+          </li>
+          <li>
+            <p>
+              The line for the Saturday data is <m>y = -0.000693x + 235.94</m>.
+              We have <m>r = -0.008986</m> and <m>r^{2} = 0.0000807</m> which is horrible.
+              This data is not even close to linear.
+            </p>
+          </li>
+          <li>
+            <p>
+              The parabola for the Saturday data is <m>y = 0.003x^{2} - 0.21x + 238.30</m>.
+              We have <m>R^{2} = .47497</m> which isn't good.
+              Thus the data isn't modeled well by a quadratic function, either.
+            </p>
+          </li>
+          <li>
+            <p>
+              The Thursday linear model had my weight on January 1, 2010 at 193.77 pounds.
+              The Saturday models give 235.69 and 563.31 pounds, respectively.
+              The Thursday line has my weight going below 0 pounds in about five and a half years,
+              so that's no good.
+              The quadratic has a positive leading coefficient which would mean unbounded weight gain for the rest of my life.
+              The Saturday line, which mathematically does not fit the data at all,
+              yields a plausible weight prediction in the end.
+              I think this is why grown-ups talk about
+              <q>Lies, Damned Lies and Statistics.</q>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              The quadratic model for the cats in Portage county is <m>y = 1917803.54x^{2} - 16036408.29x + 24094857.7</m>.
+              Although <m>R^{2} = .70888</m> this is not a good model because it's so far off for small values of <m>x</m>.
+              The model gives us 24,094,858 cats when <m>x = 0</m> but we know <m>N(0) = 2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The quadratic model for the hours of daylight in Fairbanks, Alaska is <m>y = .51x^{2} + 6.23x - .36</m>.
+              Even with <m>R^{2} = .92295</m> we should be wary of making predictions beyond the data.
+              Case in point,
+              the model gives <m>-4.84</m> hours of daylight when <m>x = 13</m>.
+              So January 21, 2010 will be
+              <q>extra dark</q>? Obviously a parabola pointing down isn't telling us the whole story.
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>y = |1 -x^{2}|</m> \begin{mfpic}[12]{-3}{3}{-1}{8} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \penwd{1.25pt} \arrow \reverse \function{-3,-1,0.1}{x**2 - 1} \function{-1,1,0.1}{1-x**2} \arrow \function{1,3,0.1}{x**2-1} \point[4pt]{(-1,0),(1,0),(0,1)} \xmarks{-2 step 1 until 2} \ymarks{1,2,3,4,5,6,7} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\dfrac{3 - \sqrt{7}}{2}, \dfrac{-1 + \sqrt{7}}{2} \right)</m>,
+          <m>\left(\dfrac{3 + \sqrt{7}}{2}, \dfrac{-1 - \sqrt{7}}{2} \right)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>D(x) = x^2 + (2x+1)^2 = 5x^2+4x+1</m> is minimized when <m>x=-\frac{2}{5}</m>.
+          Hence to find the point on <m>y=2x+1</m> closest to <m>(0,0)</m> we substitute
+          <m>x = -\frac{2}{5}</m> into <m>y=2x+1</m> to get <m>\left(-\frac{2}{5}, \frac{1}{5}\right)</m>.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>x = \pm y\sqrt{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \pm (y - 2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{m \pm \sqrt{m^{2} + 4}}{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>y = \dfrac{3 \pm \sqrt{16x + 9}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 2 \pm x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{v_{\mbox{<m>0</m>} } \pm \sqrt{v_{\mbox{<m>0</m>} }^{2} + 4gs_{\mbox{<m>0</m>} }}}{2g}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  <m>L(x) = x^2</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>L(x) = 2x^2+x</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>L(x) = -x^2+5x+1</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              The three points lie on the same line and we get <m>L(x) = -x+5</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              To obtain a quadratic function,
+              we require that the points are not collinear (i.e., they do not all lie on the same line.)
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

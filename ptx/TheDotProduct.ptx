@@ -1,0 +1,1414 @@
+<section xml:id="TheDotProduct">
+  <title>The Dot Product</title>
+  <introduction>
+    <p>
+      In <xref ref="Vectors">Section</xref>,
+      we learned how add and subtract vectors and how to multiply vectors by scalars.
+      In this section, we define a product of vectors.
+      We begin with the following definition.
+    </p>
+    <definition xml:id="dotproductdefn">
+      <statement>
+        <p>
+          Given vectors <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> and <m>\vec{w} = \left\lt w_{1},w_{2}\right></m>,
+          the <term>dot product</term><idx><h>vector</h><h>dot product ! definition of</h></idx>
+              <idx><h>vector</h><h>scalar product ! definition of</h></idx>
+              <idx><h>dot product</h><h>definition of</h></idx>
+          of <m>\vec{v}</m> and <m>\vec{w}</m> is given by
+          <me>
+            \vec{v} \cdot \vec{w} = \left\lt v_{1},v_{2}\right> \cdot \left\lt w_{1},w_{2}\right> = v_{1}w_{1} + v_{2}w_{2}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For example, if <m>\vec{v} = \left\lt 3,4\right></m> and
+      <m>\vec{w} = \left\lt 1,-2\right></m>,then <m>\vec{v} \cdot \vec{w} = \left\lt 3,4\right> \cdot \left\lt 1,-2\right> = (3)(1) + (4)(-2) = -5</m>.
+    </p>
+    <p>
+      Note that the dot product takes two <em>vectors</em>
+      and produces a <em>scalar</em>.
+      For that reason, the quantity
+      <m>\vec{v} \cdot \vec{w}</m> is often called the <em>scalar product</em>
+      of <m>\vec{v}</m> and <m>\vec{w}</m>.
+      The dot product enjoys the following properties.
+    </p>
+    <theorem xml:id="dotprodprops">
+      <statement>
+        <p>
+          <em>Properties of the Dot Product</em>
+          <idx><h>vector</h><h>dot product ! properties of</h></idx>
+          <idx><h>vector</h><h>scalar product ! properties of</h></idx>
+          <idx><h>dot product</h><h>properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Commutative Property:</em> For all vectors <m>\vec{v}</m> and <m>\vec{w}</m>,
+                <m>\vec{v} \cdot \vec{w} = \vec{w} \cdot \vec{v}</m>.
+                  <idx><h>vector</h><h>dot product ! commutative property of</h></idx>
+                  <idx><h>commutative property</h><h>vector ! dot product</h></idx>
+                  <idx><h>dot product</h><h>commutative property of</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Property:</em>
+                For all vectors <m>\vec{u}</m>,
+                <m>\vec{v}</m> and <m>\vec{w}</m>,
+                <m>\vec{u} \cdot \left(\vec{v} + \vec{w}\right) = \vec{u} \cdot \vec{v} + \vec{u} \cdot \vec{w}</m>.
+                  <idx><h>vector</h><h>dot product ! distributive property of</h></idx>
+                  <idx><h>distributive property</h><h>vector ! dot product</h></idx>
+                  <idx><h>dot product</h><h>distributive property of</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Scalar Property:</em> For all vectors <m>\vec{v}</m> and <m>\vec{w}</m> and scalars <m>k</m>,
+                <m>(k \vec{v}) \cdot \vec{w} = k(\vec{v} \cdot \vec{w}) = \vec{v} \cdot (k \vec{w})</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Relation to Magnitude:</em>
+                For all vectors <m>\vec{v}</m>,
+                <m>\vec{v} \cdot \vec{v} = \| \vec{v} \|^2</m>.
+                  <idx><h>vector</h><h>magnitude ! relation to dot product</h></idx>
+                  <idx><h>vector</h><h>dot product ! relation to magnitude</h></idx>
+                  <idx><h>dot product</h><h>relation to vector magnitude</h></idx>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Like most of the theorems involving vectors,
+      the proof of <xref ref="dotprodprops">Theorem</xref>
+      amounts to using the definition of the dot product and properties of real number arithmetic.
+    </p>
+    <p>
+      For example, to show the commutative property,
+      let <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> and <m>\vec{w} = \left\lt w_{1},w_{2}\right></m>.
+      Then
+      <me>
+        \begin{array}{rcll}  \vec{v} \cdot \vec{w} \amp  = \amp  \left\lt v_{1},v_{2}\right>  \cdot \left\lt w_{1},w_{2}\right>  \amp  \\ \amp  = \amp  v_{1}w_{1} + v_{2}w_{2} \amp  \text{ Definition of Dot Product }  \\ \amp  = \amp  w_{1}v_{1} + w_{2}v_{2} \amp  \text{ Commutativity of Real Number Multiplication }  \\ \amp  = \amp  \left\lt w_{1},w_{2}\right>  \cdot  \left\lt v_{1},v_{2}\right>  \amp  \text{ Definition of Dot Product }  \\ \amp  = \amp  \vec{w} \cdot \vec{v} \amp \end{array}
+      </me>
+    </p>
+    <p>
+      The distributive property is proved similarly and is left as an exercise.
+    </p>
+    <p>
+      For the scalar property,
+      assume that <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> and
+      <m>\vec{w} = \left\lt w_{1},w_{2}\right></m> and <m>k</m> is a scalar.
+      Then
+      <me>
+        \begin{array}{rcll}  (k\vec{v}) \cdot \vec{w} \amp  = \amp  \left(k \left\lt v_{1},v_{2}\right> \right) \cdot \left\lt w_{1},w_{2}\right> \amp  \\ \amp  = \amp   \left\lt kv_{1},kv_{2}\right>  \cdot \left\lt w_{1},w_{2}\right> \amp  \text{ Definition of Scalar Multiplication }  \\ \amp  = \amp  (kv_{1})(w_{1}) + (kv_{2})(w_{2}) \amp  \text{ Definition of Dot Product }  \\ \amp  = \amp  k(v_{1}w_{1}) + k(v_{2}w_{2}) \amp  \text{ Associativity of Real Number Multiplication }  \\ \amp  = \amp  k(v_{1}w_{1} + v_{2}w_{2}) \amp  \text{ Distributive Law of Real Numbers }  \\ \amp  = \amp  k \left\lt v_{1},v_{2}\right>  \cdot \left\lt w_{1},w_{2}\right> \amp  \text{ Definition of Dot Product }  \\ \amp  = \amp  k (\vec{v} \cdot \vec{w}) \amp \end{array}
+      </me>
+    </p>
+    <p>
+      We leave the proof of <m>k(\vec{v} \cdot \vec{w}) = \vec{v} \cdot (k \vec{w})</m> as an exercise.
+    </p>
+    <p>
+      For the last property,
+      we note that if <m>\vec{v} = \left\lt v_{1},v_{2}\right></m>,
+      then <m>\vec{v} \cdot \vec{v} = \left\lt v_{1},v_{2}\right> \cdot \left\lt v_{1},v_{2}\right> = v_{1}^2 + v_{2}^2 = \|\vec{v}\|^2</m>,
+      where the last equality comes courtesy of <xref ref="polarformvector">Definition</xref>.
+    </p>
+    <p>
+      The following example puts <xref ref="dotprodprops">Theorem</xref> to good use.
+      As in <xref ref="vectoreqnex">Example</xref>,
+      we work out the problem in great detail and encourage the reader to supply the justification for each step.
+    </p>
+    <example xml:id="dotprodpropex">
+      <statement>
+        <p>
+          Prove the identity:
+          <m>\| \vec{v} - \vec{w} \|^2 = \|\vec{v}\|^2 -2 (\vec{v}\cdot\vec{w}) + \|\vec{w}\|^2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We begin by rewriting <m>\| \vec{v} - \vec{w} \|^2</m> in terms of the dot product using <xref ref="dotprodprops">Theorem</xref>.
+          <me>
+            \begin{array}{rcl}  \| \vec{v} - \vec{w} \|^2 \amp  = \amp  (\vec{v} - \vec{w}) \cdot (\vec{v} - \vec{w})  \\ \amp  = \amp  (\vec{v} + [-\vec{w}]) \cdot (\vec{v} + [-\vec{w}]) \\ \amp  = \amp   (\vec{v} + [-\vec{w}]) \cdot \vec{v}  +(\vec{v} + [-\vec{w}]) \cdot [-\vec{w}]  \\ \amp  = \amp  \vec{v} \cdot (\vec{v} + [-\vec{w}])  + [-\vec{w}] \cdot (\vec{v} + [-\vec{w}]) \\ \amp  = \amp  \vec{v} \cdot \vec{v} + \vec{v} \cdot [-\vec{w}] + [-\vec{w}]\cdot \vec{v} + [-\vec{w}]\cdot[-\vec{w}] \\ \amp  = \amp  \vec{v} \cdot \vec{v} + \vec{v} \cdot [(-1)\vec{w}] + [(-1)\vec{w}]\cdot \vec{v} + [(-1)\vec{w}]\cdot[(-1)\vec{w}] \\ \amp  = \amp  \vec{v} \cdot \vec{v} + (-1)(\vec{v} \cdot \vec{w}) + (-1)(\vec{w} \cdot \vec{v}) + [(-1)(-1)](\vec{w}\cdot\vec{w}) \\ \amp  = \amp  \vec{v} \cdot \vec{v} + (-1)(\vec{v} \cdot \vec{w}) + (-1)(\vec{v} \cdot \vec{w}) + \vec{w}\cdot\vec{w} \\ \amp  = \amp  \vec{v} \cdot \vec{v} -2(\vec{v} \cdot \vec{w}) + \vec{w}\cdot\vec{w} \\ \amp  = \amp  \|\vec{v}\|^2-2(\vec{v} \cdot \vec{w}) + \|\vec{w}\|^2 \end{array}
+          </me>
+        </p>
+        <p>
+          Hence, <m>\| \vec{v} - \vec{w} \|^2 = \|\vec{v}\|^2 -2 (\vec{v}\cdot\vec{w}) + \|\vec{w}\|^2</m> as required.
+        </p>
+      </solution>
+    </example>
+    <p>
+      If we take a step back from the pedantry in <xref ref="dotprodpropex">Example</xref>,
+      we see that the bulk of the work is needed to show that <m>(\vec{v} - \vec{w}) \cdot (\vec{v} - \vec{w}) = \vec{v} \cdot \vec{v} -2(\vec{v} \cdot \vec{w}) + \vec{w}\cdot\vec{w}</m>.
+      If this looks familiar, it should.
+    </p>
+    <p>
+      Since the dot product enjoys many of the same properties enjoyed by real numbers,
+      the machinations required to expand
+      <m>(\vec{v} - \vec{w}) \cdot (\vec{v} - \vec{w})</m> for vectors <m>\vec{v}</m> and <m>\vec{w}</m> match those required to expand
+      <m>(v-w)(v-w)</m> for real numbers <m>v</m> and <m>w</m>,
+      and hence we get similar looking results.
+    </p>
+    <p>
+      The identity verified in <xref ref="dotprodpropex">Example</xref>
+      plays a large role in the development of the geometric properties of the dot product,
+      which we now explore.
+    </p>
+    <p>
+      Suppose <m>\vec{v}</m> and <m>\vec{w}</m> are two nonzero vectors.
+      If we draw <m>\vec{v}</m> and <m>\vec{w}</m> with the same initial point,
+      we define the <em>angle between</em><idx><h>vector</h><h>angle between two</h></idx>
+          <idx><h>angle</h><h>between two vectors</h></idx> <m>\vec{v}</m> and <m>\vec{w}</m> to be the angle <m>\theta</m> determined by the rays containing the vectors <m>\vec{v}</m> and <m>\vec{w}</m>, as illustrated below.
+      We require <m>0 \leq \theta \leq \pi</m>.
+      (Think about why this is needed in the definition.)
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \tlabel[cc](4,3.54){<m>\vec{v}</m>}
+          \tlabel[cc](3.25, 2.5){<m>\vec{w}</m>}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow \polyline{(0,0),\plr{(5,45)}}
+          \arrow \polyline{(0,0),\plr{(4,45)}}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \arrow \reverse \arrow \parafcn{35,115,5}{1.25*dir(t)}
+          \tlabel[cc](0.5,1.75){<m>\theta</m>}
+          \tlabel[cc](4.75,2.5){<m>\vec{v}</m>}
+          \tlabel[cc](-2.5, 3.5){<m>\vec{w}</m>}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow \polyline{(0,0),(-2,3.46)}
+          \arrow \polyline{(0,0),(4.33,2.5)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-5}{5}{-5}{-5}
+          \point[4pt]{(0,0)}
+          \arrow \reverse \arrow \parafcn{55,215,5}{0.75*dir(t)}
+          \tlabel[cc](2.5,2){<m>\vec{v}</m>}
+          \tlabel[cc](-1.85, -1.45){<m>\vec{w}</m>}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow \polyline{(0,0),\plr{(3,45)}}
+          \arrow \polyline{(0,0), \plr{(-2,45)}}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>\theta = 0</m></cell>
+        <cell><m>0 \lt  \theta \lt  \pi</m></cell>
+        <cell><m>\theta = \pi</m></cell>
+      </row>
+    </tabular>
+    <p>
+      The following theorem gives us some insight into the geometric role the dot product plays.
+    </p>
+    <theorem xml:id="dotproductgeo">
+      <statement>
+        <p>
+          <em>Geometric Interpretation of Dot Product:</em>
+          If <m>\vec{v}</m> and <m>\vec{w}</m> are nonzero vectors then
+          <me>
+            \vec{v} \cdot \vec{w} = \|\vec{v}\| \|\vec{w}\| \cos(\theta)
+          </me>,
+          where <m>\theta</m> is the angle between <m>\vec{v}</m> and <m>\vec{w}</m>.
+              <idx><h>vector</h><h>dot product ! geometric interpretation</h></idx>
+              <idx><h>dot product</h><h>geometric interpretation</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We prove <xref ref="dotproductgeo">Theorem</xref> in cases.
+      If <m>\theta = 0</m>,
+      then <m>\vec{v}</m> and <m>\vec{w}</m> have the same direction.
+      It follows<fn>
+      Since <m>\vec{v} = \| \vec{v} \| \bm\hat{v}</m> and <m>\vec{w} = \| \vec{w} \| \bm\hat{w}</m>,
+      if <m>\bm\hat{v} = \bm\hat{w}</m> then <m>\vec{w} = \|\vec{w}\| \bm\hat{v} = \frac{\| \vec{w} \|}{\| \vec{v} \|} (\| \vec{v} \| \bm\hat{v}) = \frac{\| \vec{w} \|}{\| \vec{v} \|} \vec{v}</m>.
+      In this case,
+      <m>k = \frac{\| \vec{w} \|}{\| \vec{v} \|} > 0</m>.
+      </fn> that there is a real number <m>k > 0</m> so that <m>\vec{w} = k \vec{v}</m>.
+      Hence, <m>\vec{v} \cdot \vec{w} = \vec{v} \cdot (k \vec{v}) = k (\vec{v} \cdot \vec{v}) = k \| \vec{v} \|^2</m>.
+    </p>
+    <p>
+      Working from the other end of the equation,
+      <m>\| \vec{v} \| \| \vec{w} \| \cos(\theta) = \| \vec{v} \| \|k \vec{v} \| \cos(0) = \| \vec{v} \| (|k| \| \vec{v} \|) (1) = k \| \vec{v} \|^2</m>,
+      where <m>\|k \vec{v} \| = |k| \| \vec{v} \|</m> courtesy of <xref ref="magdirprops">Theorem</xref>,
+      and <m>|k| = k</m> since <m>k > 0</m>.
+    </p>
+    <p>
+      Hence, in the case <m>\theta = 0</m>,
+      we have shown <m>\vec{v} \cdot \vec{w} = k \| \vec{v} \|^2</m> and <m>\| \vec{v} \| \| \vec{w} \| \cos(\theta)= k \| \vec{v} \|^2</m>.
+      Putting these two equations together shows that <m>\vec{v} \cdot \vec{w} = \|\vec{v}\| \|\vec{w}\| \cos(\theta)</m> holds in this case.
+    </p>
+    <p>
+      If <m>\theta = \pi</m>,
+      <m>\vec{v}</m> and <m>\vec{w}</m> have the exact opposite directions,
+      so there is a real number <m>k\lt 0</m> with <m>\vec{w} = k \vec{v}</m>.
+    </p>
+    <p>
+      As before, we compute <m>\vec{v} \cdot \vec{w} = \vec{v} \cdot (k \vec{v}) = k (\vec{v} \cdot \vec{v}) = k \| \vec{v} \|^2</m>.
+      Since <m>k\lt 0</m> here, we have <m>|k| = -k</m>.
+      Hence, we find <m>\| \vec{v} \| \| \vec{w} \| \cos(\theta) = \| \vec{v} \| \| k \vec{v} \| \cos(\pi) = \| \vec{v} \| (|k| \| \vec{v} \|) (-1) = \| \vec{v} \| (-k) \| \vec{v} \| (-1) = k \| \vec{v} \|^2</m>.
+    </p>
+    <p>
+      Once again, both <m>\vec{v} \cdot \vec{w} = k \| \vec{v} \|^2</m> and <m>\| \vec{v} \| \| \vec{w} \| \cos(\theta)= k \| \vec{v} \|^2</m>,
+      so <m>\vec{v} \cdot \vec{w} = \|\vec{v}\| \|\vec{w}\| \cos(\theta)</m> in this case.
+    </p>
+    <p>
+      Next, if <m>0 \lt \theta \lt \pi</m>,
+      the vectors <m>\vec{v}</m>,
+      <m>\vec{w}</m> and <m>\vec{v} - \vec{w}</m> determine a triangle with side lengths <m>\| \vec{v} \|</m>,
+      <m>\| \vec{w} \|</m> and <m>\| \vec{v} - \vec{w} \|</m>,
+      respectively, as seen in the diagram below.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{0}{5}{0}{5}
+          \point[4pt]{(0,0),(-2,3.46), (4.33, 2.5)}
+          \arrow \reverse \arrow \parafcn{35,115,5}{1.25*dir(t)}
+          \tlabel[cc](0.5,1.75){<m>\theta</m>}
+          \tlabel[cc](4.75,2.5){<m>\vec{v}</m>}
+          \tlabel[cc](-2.5, 3.5){<m>\vec{w}</m>}
+          \tlabel[cc](1.75, 4){<m>\vec{v} - \vec{w}</m>}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow \polyline{(0,0),(-2,3.46)}
+          \arrow \polyline{(0,0),(4.33,2.5)}
+          \arrow \polyline{(-2,3.46), (4.33, 2.5)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{0}{5}{0}{5}
+          \point[4pt]{(0,0),(-2,3.46), (4.33, 2.5)}
+          \arrow \reverse \arrow \parafcn{35,115,5}{1.25*dir(t)}
+          \tlabel[cc](0.5,1.75){<m>\theta</m>}
+          \tlabel[cc](2.25,0.5){<m>\|\vec{v}\|</m>}
+          \tlabel[cc](-2, 1.5){<m>\|\vec{w}\|</m>}
+          \tlabel[cc](1.75, 4){<m>\|\vec{v} - \vec{w}\|</m>}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \polyline{(0,0),(-2,3.46),(4.33,2.5), (0,0)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      The Law of Cosines yields <m>\| \vec{v} - \vec{w} \|^2 = \|\vec{v}\|^2 + \|\vec{w}\|^2 - 2\|\vec{v}\| \|\vec{w}\| \cos(\theta)</m>.
+      From <xref ref="dotprodpropex">Example</xref>,
+      we also have that <m>\|\vec{v} - \vec{w}\|^2 = \|\vec{v}\|^2 -2 (\vec{v} \cdot \vec{w}) + \|\vec{w}\|^2</m>.
+    </p>
+    <p>
+      Equating these two expressions for <m>\| \vec{v} - \vec{w} \|^2</m> gives
+      <m>\|\vec{v}\|^2 + \|\vec{w}\|^2 - 2\|\vec{v}\| \|\vec{w}\| \cos(\theta) = \|\vec{v}\|^2 -2 (\vec{v} \cdot \vec{w}) + \|\vec{w}\|^2</m> which reduces to <m>- 2\|\vec{v}\| \|\vec{w}\| \cos(\theta) = -2 (\vec{v} \cdot \vec{w})</m>.
+      Hence, <m>\vec{v} \cdot \vec{w} = \|\vec{v}\| \|\vec{w}\| \cos(\theta)</m>,
+      as required.
+    </p>
+    <p>
+      An immediate consequence of <xref ref="dotproductgeo">Theorem</xref> is the following.
+    </p>
+    <theorem xml:id="anglebetweenvectorthm">
+      <statement>
+        <p>
+          Let <m>\vec{v}</m> and <m>\vec{w}</m> be nonzero vectors and let <m>\theta</m> the angle between <m>\vec{v}</m> and <m>\vec{w}</m>.
+          Then <idx><h>vector</h><h>angle between two</h></idx> <idx><h>angle</h><h>between two vectors</h></idx>
+          <me>
+            \theta = \arccos\left( \dfrac{\vec{v} \cdot \vec{w}}{\| \vec{v} \| \|\vec{w} \|}\right) = \arccos(\bm\hat{v} \cdot \bm\hat{w})
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We obtain the formula in <xref ref="anglebetweenvectorthm">Theorem</xref>
+      by solving the equation given in <xref ref="dotproductgeo">Theorem</xref> for <m>\theta</m>.
+    </p>
+    <p>
+      Since <m>\vec{v}</m> and <m>\vec{w}</m> are nonzero,
+      so are <m>\| \vec{v} \|</m> and <m>\|\vec{w}\|</m>.
+      Hence, we may divide both sides of
+      <m>\vec{v} \cdot \vec{w} = \| \vec{v} \| \|\vec{w} \| \cos(\theta)</m> by <m>\| \vec{v} \| \|\vec{w} \|</m>.
+      Since <m>0 \leq \theta \leq \pi</m> by definition,
+      the values of <m>\theta</m> exactly match the range of the arccosine function.
+      Hence,
+      <me>
+        \cos(\theta) = \frac{\vec{v} \cdot \vec{w}}{\| \vec{v} \| \|\vec{w} \|} \, \Rightarrow \,  \theta = \arccos\left( \frac{\vec{v} \cdot \vec{w}}{\| \vec{v} \| \|\vec{w} \|}\right)
+      </me>.
+    </p>
+    <p>
+      Using <xref ref="dotprodprops">Theorem</xref>, we can rewrite
+      <me>
+        \frac{\vec{v} \cdot \vec{w}}{\| \vec{v} \| \|\vec{w} \|} = \left(\frac{1}{\|\vec{v}\|} \vec{v}\right) \cdot \left(\frac{1}{\|\vec{w}\|} \vec{w}\right) = \bm\hat{v} \cdot \bm\hat{w}
+      </me>,
+      giving us the alternative formula listed in <xref ref="anglebetweenvectorthm">Theorem</xref>:
+      <m>\theta = \arccos(\bm\hat{v} \cdot \bm\hat{w})</m>.
+      We are overdue for an example.
+    </p>
+    <example xml:id="anglebetweenvectorex">
+      <statement>
+        <p>
+          Find the angle between the following pairs of vectors.
+          Graph each pair of vectors in standard position to check the reasonableness of your answer.
+          <ol>
+            <li xml:id="anglebetweenvectorexone">
+              <p>
+                <m>\vec{v} = \left\lt 3, -3\sqrt{3} \right></m>,
+                and <m>\vec{w} = \left\lt -\sqrt{3}, 1 \right></m>
+              </p>
+            </li>
+            <li xml:id="anglebetweenvectorextwo">
+              <p>
+                <m>\vec{v} = \left\lt 2, 2 \right></m>,
+                and <m>\vec{w} = \left\lt 5, -5\right></m>
+              </p>
+            </li>
+            <li xml:id="anglebetweenvectorexthree">
+              <p>
+                <m>\vec{v} = \left\lt 3, -4 \right></m>,
+                and <m>\vec{w} = \left\lt 2, 1\right></m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use the formula <m>\theta = \arccos\left( \frac{\vec{v} \cdot \vec{w}}{\| \vec{v} \| \|\vec{w} \|}\right)</m> from <xref ref="anglebetweenvectorthm">Theorem</xref> in each case below.
+          <ol>
+            <li>
+              <p>
+                We have <m>\vec{v} \cdot \vec{w} = \left\lt 3, -3\sqrt{3} \right> \cdot \left\lt -\sqrt{3}, 1 \right> = -3\sqrt{3} - 3\sqrt{3} = -6\sqrt{3}</m>.
+                Computing lengths of vectors,
+                we find <m>\| \vec{v} \| = \sqrt{3^2+(-3\sqrt{3})^2} = \sqrt{36} =6</m> and <m>\| \vec{w}\| = \sqrt{(-\sqrt{3})^2+1^2} = \sqrt{4} =2</m>.
+                Hence, we find <m>\theta = \arccos\left(\frac{-6\sqrt{3}}{12}\right) = \arccos\left(-\frac{\sqrt{3}}{2}\right) = \frac{5\pi}{6}</m>.
+                We check our answer geometrically by graphing this pair of vectors below on the left.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>\vec{v} = \left\lt 2, 2 \right></m> and <m>\vec{w} = \left\lt 5, -5\right></m>,
+                we find <m>\vec{v} \cdot \vec{w} = \left\lt 2, 2 \right> \cdot \left\lt 5, -5\right> = 10-10 = 0</m>.
+                Hence, it doesn't matter what
+                <m>\| \vec{v} \|</m> and <m>\| \vec{w} \|</m> are,
+                <m>\theta = \arccos\left( \frac{\vec{v} \cdot \vec{w}}{\| \vec{v} \| \|\vec{w} \|}\right) = \arccos(0) = \frac{\pi}{2}</m>.
+                We check our answer geometrically by graphing this pair of vectors below on the right. \begin{mfpic}[15]{-3}{5}{-5}{3} \axes \tlabel[cc](5, -0.25){<m>x</m>} \tlabel[cc](0.25, 3){<m>y</m>} \point[4pt]{(0,0)} \tlabel[cc](4,-4.5){<m>\vec{v}</m>} \tlabel[cc](-2, 1.5){<m>\vec{w}</m>} \arrow \reverse \arrow \parafcn{157, 293,5}{dir(t)} \tlabel[cc](-2,-1){<m>\theta = \frac{5\pi}{6}</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0), (3,-5.196)} \arrow \polyline{(0,0), (-1.732,1)} \end{mfpic} \begin{mfpic}[15]{-3}{5}{-5}{3} \axes \tlabel[cc](5, -0.25){<m>x</m>} \tlabel[cc](0.25, 3){<m>y</m>} \point[4pt]{(0,0)} \tlabel[cc](2.5, 2){<m>\vec{v}</m>} \tlabel[cc](5.5, -5){<m>\vec{w}</m>} \polyline{(0.3, 0.3), (0.6,0), (0.3, -0.3)} \tlabel[cc](2, -0.75){<m>\theta = \frac{\pi}{2}</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0), (2,2)} \arrow \polyline{(0,0), (5,-5)} \end{mfpic} <m>\vec{v}</m> and <m>\vec{w}</m> from <xref ref="anglebetweenvectorexone">number</xref>
+                <m>\vec{v}</m> and <m>\vec{w}</m> from <xref ref="anglebetweenvectorextwo">number</xref>
+              </p>
+            </li>
+            <li>
+              <p>
+                We find <m>\vec{v} \cdot \vec{w} = \left\lt 3, -4 \right> \cdot \left\lt 2, 1\right> = 6 - 4 = 2</m>.
+                Computing lengths, we find
+                <m>\| \vec{v} \| = \sqrt{3^2+(-4)^2} = \sqrt{25} = 5</m> and <m>\vec{w} = \sqrt{2^2+1^2} = \sqrt{5}</m>,
+                so <m>\theta = \arccos\left(\frac{2}{5\sqrt{5}}\right) = \arccos\left(\frac{2\sqrt{5}}{25} \right)</m>.
+                Since <m>\frac{2\sqrt{5}}{25}</m> isn't the cosine of one of the <sq>common angles,</sq> we leave our <em>exact</em>
+                answer in terms of the arccosine function.
+                For the purposes of checking our answer, however,
+                we <em>approximate</em> <m>\theta \approx 79.7^{\circ}</m>. \begin{mfpic}[15]{-3}{5}{-5}{3} \axes \tlabel[cc](5, -0.25){<m>x</m>} \tlabel[cc](0.25, 3){<m>y</m>} \arrow \reverse \arrow \parafcn{-45, 19,5}{dir(t)} \tlabel[cc](6, -2){<m>\theta = \arccos\left(\frac{2\sqrt{5}}{25}\right) \approx 79.7^{\circ}</m>} \point[4pt]{(0,0)} \tlabel[cc](3.5, -4){<m>\vec{v}</m>} \tlabel[cc](2.5, 1){<m>\vec{w}</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0), (3,-4)} \arrow \polyline{(0,0), (2,1)} \end{mfpic} <m>\vec{v}</m> and <m>\vec{w}</m> from <xref ref="anglebetweenvectorexthree">number</xref>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="anglebetweenvectorex">Example</xref> are in order.
+      Note that for nonzero vectors <m>\vec{v}</m> and <m>\vec{w}</m>,
+      the lengths <m>\| \vec{v} \|</m> and <m>\| \vec{w} \|</m> are always positive.
+      Since <xref ref="dotproductgeo">Theorem</xref>
+      tells us that <m>\vec{v} \cdot \vec{w} = \| \vec{v} \| \| \vec{w} \| \cos(\theta)</m>,
+      we know the sign of <m>\vec{v} \cdot \vec{w}</m> is the same as the sign of <m>\cos(\theta)</m>.
+    </p>
+    <p>
+      Geometrically, if <m>\vec{v} \cdot \vec{w} \lt 0</m>,
+      then <m>\cos(\theta) \lt 0</m> so <m>\theta</m> is an obtuse angle,
+      demonstrated <xref ref="anglebetweenvectorexone">number</xref> above.
+    </p>
+    <p>
+      If <m>\vec{v} \cdot \vec{w} = 0</m>,
+      then <m>\cos(\theta) = 0</m> so
+      <m>\theta = \frac{\pi}{2}</m> as in <xref ref="anglebetweenvectorextwo">number</xref>.
+      In this case,
+      the vectors <m>\vec{v}</m> and <m>\vec{w}</m> are called
+      <em>orthogonal</em><idx><h>vector</h><h>orthogonal vectors</h></idx>.
+          <idx><h>orthogonal vectors</h></idx>
+      Geometrically,
+      when orthogonal vectors are sketched with the same initial point,
+      the lines containing the vectors are perpendicular.
+      Hence, if <m>\vec{v}</m> and <m>\vec{w}</m> are orthogonal,
+      we write <m>\vec{v} \perp \vec{w}</m>.
+    </p>
+    <p>
+      Note there is no <sq>zero product property</sq> for the dot product.
+      As with the vectors in <xref ref="anglebetweenvectorextwo">number</xref> above,
+      it is quite possible to have
+      <m>\vec{v} \cdot \vec{w} = 0</m> but neither <m>\vec{v}</m> nor <m>\vec{w}</m> be <m>\vec{0}</m>.
+    </p>
+    <p>
+      Finally, if <m>\vec{v} \cdot \vec{w} > 0</m>,
+      then <m>\cos(\theta) > 0</m> so <m>\theta</m> is an acute angle,
+      as in the case of <xref ref="anglebetweenvectorexthree">number</xref> above.
+    </p>
+    <p>
+      We summarize all of our observations in the schematic below.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \tlabel[cc](5, 0.5){<m>\vec{w}</m>}
+          \tlabel[cc](-2.25, 5.5){<m>\vec{v}</m>}
+          \tlabel[cc](0.75,1.5){<m>\theta</m>}
+          \arrow \reverse \arrow \parafcn{7,113,5}{dir(t)}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow  \polyline{(0,0),(5,0)}
+          \arrow\rotatepath{(0,0),60}  \polyline{(0,0),\plr{(6,60)}}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \tlabel[cc](0.5, 6){<m>\vec{v}</m>}
+          \tlabel[cc](5, 0.5){<m>\vec{w}</m>}
+          \tlabel[cc](0.75,1.25){<m>\theta</m>}
+          \polyline{(0,0.5), (0.5, 0.5), (0.5,0)}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow \polyline{(0,0),(5,0)}
+          \arrow\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \tlabel[cc](5, 0.5){<m>\vec{w}</m>}
+          \tlabel[cc](3.5, 5){<m>\vec{v}</m>}
+          \tlabel[cc](1.5,0.8){<m>\theta</m>}
+          \arrow \reverse \arrow \parafcn{7,53,5}{dir(t)}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow  \polyline{(0,0),(5,0)}
+          \arrow  \polyline{(0,0),\plr{(6,60)}}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>\vec{v} \cdot \vec{w} \lt  0</m></cell>
+        <cell><m>\vec{v} \cdot \vec{w} = 0</m></cell>
+        <cell><m>\vec{v} \cdot \vec{w} > 0</m></cell>
+      </row>
+      <row>
+        <cell><m>\theta</m> is obtuse</cell>
+        <cell><m>\theta = \frac{\pi}{2} = 90^{\circ}</m></cell>
+        <cell><m>\theta</m> is acute</cell>
+      </row>
+    </tabular>
+    <p>
+      Of the three cases diagrammed above,
+      the one which has the most mathematical significance moving forward is the orthogonal case.
+      Hence, we state the corresponding theorem below.
+    </p>
+    <theorem xml:id="dotprodorththm">
+      <statement>
+        <p>
+          For nonzero vectors <m>\vec{v}</m> and <m>\vec{w}</m>,
+          <m>\vec{v} \perp \vec{w}</m> if and only if <m>\vec{v} \cdot \vec{w} = 0</m>.
+              <idx><h>vector</h><h>dot product ! relation to orthogonality</h></idx>
+              <idx><h>dot product</h><h>relation to orthogonality</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Basically, <xref ref="dotprodorththm">Theorem</xref>
+      tells us that <sq>the dot product detects orthogonality.</sq> This is a helpful interpretation to keep in mind as you continue your study of vectors in later courses.
+    </p>
+    <p>
+      We have already argued one direction of <xref ref="dotprodorththm">Theorem</xref>,
+      namely if <m>\vec{v} \cdot \vec{w} = 0</m> then
+      <m>\vec{v} \perp \vec{w}</m> in the comments following <xref ref="anglebetweenvectorex">Example</xref>.
+    </p>
+    <p>
+      To show the converse, we note if <m>\vec{v} \perp \vec{w}</m>,
+      then the angle between <m>\vec{v}</m> and <m>\vec{w}</m>,
+      <m>\theta = \frac{\pi}{2}</m>.
+      From <xref ref="dotproductgeo">Theorem</xref>,
+      we have that <m>\vec{v} \cdot \vec{w} = \| \vec{v} \| \| \vec{w} \| \cos \left( \frac{\pi}{2} \right) = \| \vec{v} \| \| \vec{w} \| \cdot (0) = 0</m>,
+      as required.
+    </p>
+    <p>
+      We can use <xref ref="dotprodorththm">Theorem</xref>
+      in the following example to provide a different proof about the relationship between the slopes of perpendicular lines.<fn>
+      See <xref ref="perpendicularlineproof">Exercise</xref>
+      in <xref ref="AppLines">Section</xref>.
+      </fn>
+    </p>
+    <example xml:id="perpendicularlines2">
+      <statement>
+        <p>
+          Let <m>L_{1}</m> be the line
+          <m>y = m_{1}x + b_{1}</m> and let <m>L_{2}</m> be the line <m>y = m_{2}x + b_{2}</m>.
+          Prove that <m>L_{1}</m> is perpendicular to <m>L_{2}</m> if and only if <m>m_{1} \cdot m_{2} = -1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Our strategy is to find two vectors:
+          <m>\vec{v_{1}}</m>,
+          which has the same direction as <m>L_{1}</m>, and <m>\vec{v_{2}}</m>,
+          which has the same direction as <m>L_{2}</m> and show
+          <m>\vec{v_{1}} \perp \vec{v_{2}}</m> if and only if <m>m_{1} m_{2} = -1</m>.
+        </p>
+        <p>
+          To that end, we substitute <m>x=0</m> and <m>x=1</m> into
+          <m>y = m_{1}x + b_{1}</m> to find two points which lie on <m>L_{1}</m>,
+          namely <m>P(0, b_{1})</m> and <m>Q(1, m_{1} + b_{1})</m>.
+          We let <m>\vec{v_{1}} = \overrightarrow{PQ} = \left\lt 1-0,(m_{1}+b_{1}) - b_{1}\right>=\left\lt 1,m_{1}\right></m>.
+          Since <m>\vec{v_{1}}</m> is determined by two points on <m>L_{1}</m>,
+          it may be viewed as lying on <m>L_{1}</m>,
+          so <m>\vec{v_{1}}</m> has the same direction as <m>L_{1}</m>.
+        </p>
+        <p>
+          Similarly, we get the vector
+          <m>\vec{v_{2}} = \left\lt 1,m_{2}\right></m> which has the same direction as the line <m>L_{2}</m>.
+          Hence, <m>L_{1}</m> and <m>L_{2}</m> are perpendicular if and only if <m>\vec{v_{1}} \perp \vec{v_{2}}</m>.
+          According to <xref ref="dotprodorththm">Theorem</xref>,
+          <m>\vec{v_{1}} \perp \vec{v_{2}}</m> if and only if <m>\vec{v_{1}} \cdot \vec{v_{2}} = 0</m>.
+        </p>
+        <p>
+          Notice that <m>\vec{v_{1}} \cdot \vec{v_{2}} = \left\lt 1,m_{1}\right> \cdot \left\lt 1,m_{2}\right> = 1 + m_{1}m_{2}</m>.
+          Hence, <m>\vec{v_{1}} \cdot \vec{v_{2}} = 0</m> if and only if <m>1 + m_{1}m_{2} =0</m>,
+          which is true if and only if <m>m_{1} m_{2} = -1</m>, as required.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="projections">
+    <title>Vector Projections</title>
+    <p>
+      While <xref ref="dotprodorththm">Theorem</xref>
+      certainly gives us some insight into what the dot product means geometrically,
+      there is more to the story of the dot product.
+      Consider the two nonzero vectors <m>\vec{v}</m> and <m>\vec{w}</m> drawn with a common initial point <m>O</m> below.
+      For the moment,
+      assume that the angle between <m>\vec{v}</m> and <m>\vec{w}</m>,
+      <m>\theta</m>,
+      is acute.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \tlabel[cc](-0.5,-0.5){<m>O</m>}
+          \tlabel[cc](4.75,2.5){<m>\vec{w}</m>}
+          \tlabel[cc](-0.5, 6){<m>\vec{v}</m>}
+          \tlabel[cc](0.75,1.5){<m>\theta</m>}
+          \arrow \reverse \arrow \parafcn{40,80,5}{dir(t)}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow\rotatepath{(0,0),30}  \polyline{(0,0),(5,0)}
+          \arrow\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \tlabel[cc](-0.5,-0.5){<m>O</m>}
+          \point[4pt]{(0,0), \plr{(3,30)}, (0,6)}
+          \tlabel[cc](4.75,2.5){<m>\vec{w}</m>}
+          \tlabel[cc](-0.5, 6){<m>\vec{v}</m>}
+          \tlabel[cc](3,1.25){<m>R</m>}
+          \tlabel[cc](0.5,6){<m>T</m>}
+          \tlabel[cc](1.75,0.25){<m>\vec{p} = \overrightarrow{OR}</m>}
+          \tlabel[cc](0.75,1.5){<m>\theta</m>}
+          \arrow \reverse \arrow \parafcn{40,80,5}{dir(t)}
+          \headshape{1}{1}{true}
+          \arrow\rotatepath{(0,0),30}  \polyline{(0,0),(5,0)}
+          \arrow\rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
+          \dashed\rotatepath{(0,0),30}  \polyline{\plr{(6,60)},(3,0)}
+          \rotatepath{(0,0),30} \polyline{(2.75,0), (2.75,0.25), (3,0.25)}
+          \penwd{1.25pt}
+          \arrow\rotatepath{(0,0),30}  \polyline{(0,0),(3,0)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0), \plr{(3,30)}, (0,6)}
+          \tlabel[cc](-0.5,-0.5){<m>O</m>}
+          \tlabel[cc](3,1.25){<m>R</m>}
+          \tlabel[cc](0.5,6){<m>T</m>}
+          \tlabel[cc](-0.75, 3){<m>\|\vec{v}\|</m>}
+          \tlabel[cc](1.5,0){<m>\|\vec{p}\|</m>}
+          \tlabel[cc](0.75,1.5){<m>\theta</m>}
+          \arrow \reverse \arrow \parafcn{40,80,5}{dir(t)}
+          \headshape{1}{1}{true}
+          \rotatepath{(0,0),30} \polyline{(2.75,0), (2.75,0.25), (3,0.25)}
+          \penwd{1.25pt}
+          \rotatepath{(0,0),30}  \polyline{(0,0),\plr{(6,60)}}
+          \rotatepath{(0,0),30}  \polyline{\plr{(6,60)},(3,0)}
+          \rotatepath{(0,0),30}  \polyline{(0,0),(3,0)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      We wish to develop a formula for the vector <m>\vec{p}</m>,
+      indicated below,
+      which is called the <em>orthogonal projection of <m>\vec{v}</m> onto <m>\vec{w}</m></em>.
+          <idx><h>vector</h><h>orthogonal projection</h></idx>
+          <idx><h>projection</h><h>orthogonal</h></idx>
+          <idx><h>orthogonal projection</h></idx>
+      The vector <m>\vec{p}</m> is obtained geometrically as follows: drop a perpendicular from the terminal point <m>T</m> of <m>\vec{v}</m> to the vector <m>\vec{w}</m> and call the point of intersection <m>R</m>.
+      The vector <m>\vec{p}</m> is then defined as <m>\vec{p} = \overrightarrow{OR}</m>.
+    </p>
+    <p>
+      Like any vector,
+      <m>\vec{p}</m> is determined by its magnitude <m>\| \vec{p} \|</m> and its direction
+      <m>\bm\hat{p}</m> according to the formula <m>\vec{p} = \| \vec{p} \| \bm\hat{p}</m>.
+      Since we want <m>\bm\hat{p}</m> to have the same direction as <m>\vec{w}</m>,
+      we have <m>\bm\hat{p} = \bm\hat{w}</m>.
+    </p>
+    <p>
+      To determine <m>\| \vec{p} \|</m>,
+      we apply <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      to the right triangle <m>\triangle ORT</m>.
+      We find <m>\cos(\theta) = \frac{\| \vec{p} \|}{\| \vec{v} \|}</m>, or,
+      equivalently, <m>\| \vec{p} \| = \| \vec{v} \| \cos(\theta)</m>.
+      Using <xref ref="dotproductgeo">Theorems</xref>
+      and <xref ref="dotprodprops"></xref>, we get:
+      <me>
+        \| \vec{p} \| = \| \vec{v} \| \cos(\theta) = \frac{ \| \vec{v} \| \| \vec{w} \| \cos(\theta)}{\| \vec{w} \|} = \frac{\vec{v} \cdot \vec{w}}{\|\vec{w}\|} =  \vec{v} \cdot \left(\frac{1}{\|\vec{w}\|} \vec{w}\right) = \vec{v} \cdot \bm\hat{w}
+      </me>.
+    </p>
+    <p>
+      Hence, <m>\| \vec{p} \| = \vec{v} \cdot \bm\hat{w}</m>,
+      and since <m>\bm\hat{p} = \bm\hat{w}</m>,
+      we have <m>\vec{p} = \| \vec{p} \| \bm\hat{p} = (\vec{v} \cdot \bm\hat{w}) \bm\hat{w}</m>.
+    </p>
+    <p>
+      Now suppose that the angle <m>\theta</m> between <m>\vec{v}</m> and <m>\vec{w}</m> is obtuse,
+      and consider the diagram below.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-5}{5}{-5}{5} \tlabel[cc](0,-0.5){<m>O</m>} \point[3pt]{(0,0), \plr{(-3,30)}, \plr{(6,150)}} \tlabel[cc](4.75,2.5){<m>\vec{w}</m>} \tlabel[cc](-4.5, 3){<m>\vec{v}</m>} \tlabel[cc](-2.75,-2){<m>R</m>} \tlabel[cc](-6,3){<m>T</m>} \tlabel[cc](-0.75,-1.75){<m>\vec{p} = \overrightarrow{OR}</m>} \tlabel[cc](0,1.5){<m>\theta</m>} \tlabel[cc](-1.5,0){<m>\theta'</m>} \arrow \reverse \arrow \parafcn{40,140,5}{dir(t)} \arrow \reverse \arrow \parafcn{160,200,5}{dir(t)}
+    </p>
+    <p>
+      \headshape{1}{1}{true} \arrow\rotatepath{(0,0),30} \polyline{(0,0),(5,0)} \arrow\rotatepath{(0,0),30} \polyline{(0,0),\plr{(6,120)}} \dotted\rotatepath{(0,0),30} \polyline{(-5,0),(0,0)} \dashed\rotatepath{(0,0),30} \polyline{\plr{(6,120)},(-3,0)} \rotatepath{(0,0),30} \polyline{(-2.75,0), (-2.75,0.25), (-3,0.25)} \penwd{1.25pt} \arrow\rotatepath{(0,0),30} \polyline{(0,0),(-3,0)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      In this case,
+      we see that <m>\bm\hat{p} = - \bm\hat{w}</m> and using the triangle <m>\triangle ORT</m>,
+      we find <m>\| \vec{p} \| = \| \vec{v} \| \cos(\theta')</m>.
+      Since <m>\theta + \theta' = \pi</m>,
+      it follows that <m>\cos(\theta') = -\cos(\theta)</m>,
+      which means <m>\| \vec{p} \| = \| \vec{v} \| \cos(\theta') = - \| \vec{v} \| \cos(\theta)</m>.
+    </p>
+    <p>
+      Rewriting this last equation in terms of <m>\vec{v}</m> and <m>\vec{w}</m> as before,
+      we get <m>\|\vec{p} \| = -(\vec{v} \cdot \bm\hat{w})</m>.
+      Putting this together with <m>\bm\hat{p} = - \bm\hat{w}</m>,
+      we get <m>\vec{p} = \| \vec{p} \| \bm\hat{p} = -(\vec{v} \cdot \bm\hat{w}) (-\bm\hat{w}) = (\vec{v} \cdot \bm\hat{w}) \bm\hat{w}</m> in this case as well.
+    </p>
+    <p>
+      If the angle between <m>\vec{v}</m> and <m>\vec{w}</m> is
+      <m>\frac{\pi}{2}</m> then it is easy to show<fn>
+      In this case,
+      the point <m>R</m> coincides with the point <m>O</m>,
+      so <m>\vec{p} = \overrightarrow{OR} = \overrightarrow{OO} = \vec{0}</m>.
+      </fn> that <m>\vec{p} = \vec{0}</m>.
+      Since <m>\vec{v} \perp \vec{w}</m> in this case,
+      <m>\vec{v} \cdot \vec{w} = 0</m>.
+      It follows that <m>\vec{v} \cdot \bm\hat{w} = 0</m> and <m>\vec{p} = \vec{0} = 0 \bm\hat{w} = (\vec{v} \cdot \bm\hat{w}) \bm\hat{w}</m> in this case, too.
+      We have motivated the following.
+    </p>
+    <definition xml:id="vectorproj">
+      <statement>
+        <p>
+          Let <m>\vec{v}</m> and <m>\vec{w}</m> be nonzero vectors.
+        </p>
+        <p>
+          The <term>orthogonal projection of <m>\vec{v}</m> onto <m>\vec{w}</m></term>,
+          denoted <m>\text{ proj } _{\vec{w}}(\vec{v})</m> is given by <m>\text{ proj } _{\vec{w}}(\vec{v}) = (\vec{v} \cdot \bm\hat{w}) \bm\hat{w}</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      <xref ref="vectorproj">Definition</xref>
+      gives us a good idea what the dot product does.
+      The scalar <m>\vec{v} \cdot \bm\hat{w}</m> is a measure of how much of the vector <m>\vec{v}</m> is in the direction of the vector <m>\vec{w}</m> and is thus called the
+      <em>scalar projection</em>
+          <idx><h>scalar projection</h></idx>
+          <idx><h>vector</h><h>scalar projection</h></idx>
+      of <m>\vec{v}</m> onto <m>\vec{w}</m>.
+    </p>
+    <p>
+      While the formula given in <xref ref="vectorproj">Definition</xref> is theoretically appealing,
+      because of the presence of the normalized unit vector <m>\bm\hat{w}</m>,
+      computing the projection using the formula <m>\text{ proj } _{\vec{w}}(\vec{v}) = (\vec{v} \cdot \bm\hat{w}) \bm\hat{w}</m> can be messy.
+      We present two other formulas that are often used in practice.
+    </p>
+    <theorem xml:id="altprojformulas">
+      <statement>
+        <p>
+          <em>Alternate Formulas for Vector Projections:</em>
+          If <m>\vec{v}</m> and <m>\vec{w}</m> are nonzero vectors then
+          <me>
+            \text{ proj } _{\vec{w}}(\vec{v}) = (\vec{v} \cdot \bm\hat{w}) \bm\hat{w} = \left(\dfrac{\vec{v} \cdot \vec{w}}{\| \vec{w}\|^2}\right) \vec{w} = \left(\dfrac{\vec{v} \cdot \vec{w}}{\vec{w} \cdot \vec{w}}\right) \vec{w}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="altprojformulas">Theorem</xref>,
+      which we leave to the reader as an exercise,
+      amounts to using the formula
+      <m>\bm\hat{w} = \left(\frac{1}{\| \vec{w} \|}\right) \vec{w}</m> and properties of the dot product.
+      It is time for an example.
+    </p>
+    <example xml:id="projex">
+      <statement>
+        <p>
+          Let <m>\vec{v} = \left\lt 1,8\right></m> and <m>\vec{w} = \left\lt -1,2\right></m>.
+          Find <m>\vec{p} = \text{ proj } _{\vec{w}}(\vec{v})</m>.
+          Check your answer geometrically.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We find <m>\vec{v} \cdot \vec{w} = \left\lt 1,8\right> \cdot \left\lt -1,2\right> = (-1) + 16 = 15</m> and <m>\vec{w} \cdot \vec{w} = \left\lt -1,2\right> \cdot \left\lt -1,2\right> = 1 + 4 = 5</m>.
+          Hence,
+          <me>
+            \vec{p} = \frac{\vec{v} \cdot \vec{w}}{\vec{w} \cdot \vec{w}} \vec{w} = \frac{15}{5} \left\lt -1,2\right> = \left\lt -3,6\right>
+          </me>.
+        </p>
+        <p>
+          We plot <m>\vec{v}</m>,
+          <m>\vec{w}</m> and <m>\vec{p}</m> in standard position below on the left.
+          We see <m>\vec{p}</m> has the same direction as <m>\vec{w}</m>,
+          but we need to do more to show <m>\vec{p}</m> in is indeed the <em>orthogonal</em>
+          projection of <m>\vec{v}</m> onto <m>\vec{w}</m>.
+        </p>
+        <p>
+          Consider the vector <m>\vec{q}</m> whose initial point is the terminal point of <m>\vec{p}</m> and whose terminal point is the terminal point of <m>\vec{v}</m>.
+          From the definition of vector arithmetic,
+          <m>\vec{p} + \vec{q} = \vec{v}</m>,
+          so that <m>\vec{q} = \vec{v} - \vec{p}</m>.
+        </p>
+        <p>
+          Since <m>\vec{v} = \left\lt 1,8\right></m> and <m>\vec{p} = \left\lt -3,6\right></m>,
+          <m>\vec{q} = \left\lt 1,8\right> - \left\lt -3,6\right> = \left\lt 4,2\right></m>.
+          To prove <m>\vec{q} \perp \vec{w}</m>,
+          we compute the dot product:
+          <m>\vec{q} \cdot \vec{w} = \left\lt 4,2\right> \cdot \left\lt -1,2\right> = (-4)+4 = 0</m>.
+          Hence, per <xref ref="dotprodorththm">Theorem</xref>,
+          we know <m>\vec{q} \perp \vec{w}</m> which completes our check.<fn>
+          Note that, necessarily, <m>\vec{q} \perp \vec{p}</m> as well!
+          </fn>
+        </p>
+        <p>
+          \begin{mfpic}[18]{-4}{2}{-0.25}{9} \axes \xmarks{-3,-2,-1,1} \ymarks{1,2,3,4,5,6,7,8} \point[4pt]{(0,0)} \tlabel[cc](1.5,8){ <m>\vec{v}</m>} \tlabel[cc](-1.75,1.75){<m>\vec{w}</m>} \tlabel[cc](-3.5,6){<m>\vec{p}</m>} \tlabelsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1} \axislabels {y}{{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8}
+        </p>
+        <p>
+          \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0), (1,8)} \arrow \polyline{(0,0), (-1,2)} \arrow \polyline{(0,0), (-3,6)} \end{mfpic}
+        </p>
+        <p>
+          \begin{mfpic}[18]{-4}{2}{-0.25}{9} \axes \xmarks{-3,-2,-1,1} \ymarks{1,2,3,4,5,6,7,8} \point[4pt]{(0,0), (-3,6), (1,8)} \tlabel[cc](1.5,8){<m>\vec{v}</m>} \tlabel[cc](-1.75,1.75){ <m>\vec{w}</m>} \tlabel[cc](-3.5,6){<m>\vec{p}</m>} \tlabel[cc](-1.25,7.5){<m>\vec{q}</m>} \rotatepath{(0,0),116} \polyline{(6.3,0), (6.3,-0.4), (6.7,-0.4)} \tlabelsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1} \axislabels {y}{{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8}
+        </p>
+        <p>
+          \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0), (1,8)} \arrow \polyline{(0,0), (-1,2)} \arrow \polyline{(0,0), (-3,6)} \arrow \polyline{(-3,6), (1,8)} \end{mfpic}
+        </p>
+      </solution>
+    </example>
+    <p>
+      In <xref ref="projex">Example</xref> above,
+      writing <m>\vec{v} = \vec{p} + \vec{q}</m> is an example of what is called a <idx><h>decomposition</h><h>vector</h></idx>
+          <idx><h>vector decomposition</h></idx>
+      <em>vector decomposition</em> of <m>\vec{v}</m>.
+      We generalize this result in the following theorem.
+    </p>
+    <theorem xml:id="generalizeddecompthm">
+      <statement>
+        <p>
+          <em>Generalized Decomposition Theorem:</em>
+          <idx><h>vector</h><h>Decomposition Theorem ! Generalized</h></idx>
+      Let <m>\vec{v}</m> and <m>\vec{w}</m> be nonzero vectors.
+          There are unique vectors <m>\vec{p}</m> and <m>\vec{q}</m> such that <m>\vec{v} = \vec{p} + \vec{q}</m> where
+          <m>\vec{p} = k \vec{w}</m> for some scalar <m>k</m>,
+          and <m>\vec{q} \cdot \vec{w} = 0</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      If the vectors <m>\vec{p}</m> and <m>\vec{q}</m> in <xref ref="generalizeddecompthm">Theorem</xref> are nonzero,
+      then we can say <m>\vec{p}</m> is <sq>parallel</sq><fn>
+      See <xref ref="parallelvectorexercise">Exercise</xref>
+      in <xref ref="Vectors">Section</xref>.
+      </fn> to <m>\vec{w}</m> and <m>\vec{q}</m> is <sq>orthogonal</sq> to <m>\vec{w}</m>.
+      In this case,
+      the vector <m>\vec{p}</m> is sometimes called the <sq>vector component of <m>\vec{v}</m> <em>parallel</em>
+      to <m>\vec{w}</m></sq> and <m>\vec{q}</m> is called the <sq>vector component of <m>\vec{v}</m>
+      <em>orthogonal</em> to <m>\vec{w}</m>.</sq>
+    </p>
+    <p>
+      To prove <xref ref="generalizeddecompthm">Theorem</xref>,
+      we take <m>\vec{p} = \text{ proj } _{\vec{w}}(\vec{v})</m> and <m>\vec{q} = \vec{v} - \vec{p}</m>.
+      Then <m>\vec{p}</m> is, by definition,
+      a scalar multiple of <m>\vec{w}</m>.
+      Next, we compute <m>\vec{q} \cdot \vec{w}</m>.
+      <me>
+        \begin{array}{rcll}  \vec{q} \cdot \vec{w} \amp  = \amp  (\vec{v} - \vec{p}) \cdot \vec{w}\amp  \text{Definition of \(\vec{q}\).}  \\ \amp  = \amp  \vec{v} \cdot \vec{w} - \vec{p} \cdot \vec{w} \amp  \text{ Properties of Dot Product }  \\ \amp  = \amp  \vec{v} \cdot \vec{w} - \left(\dfrac{\vec{v} \cdot \vec{w}}{\vec{w} \cdot \vec{w}} \vec{w}\right) \cdot \vec{w} \amp  \text{Since \(\vec{p} = \text{ proj }_{\vec{w}}(\vec{v})\).}  \\ \amp  = \amp  \vec{v} \cdot \vec{w} - \left(\dfrac{\vec{v} \cdot \vec{w}}{\vec{w} \cdot \vec{w}}\right) (\vec{w} \cdot \vec{w}) \amp  \text{ Properties of Dot Product. }  \\ \amp  = \amp  \vec{v} \cdot \vec{w} - \vec{v}\cdot \vec{w} \amp  \\ \amp  = \amp  0. \amp \end{array}
+      </me>
+    </p>
+    <p>
+      Hence, <m>\vec{q} \cdot \vec{w} = 0</m>, as required.
+      At this point,
+      we have shown that the vectors <m>\vec{p}</m> and <m>\vec{q}</m> guaranteed by <xref ref="generalizeddecompthm">Theorem</xref> <em>exist</em>.
+      Now we need to show that they are
+      <em>unique</em> - that is,
+      there is only <em>one</em> such way to decompose <m>\vec{v}</m> in the manner described in <xref ref="generalizeddecompthm">Theorem</xref>.
+    </p>
+    <p>
+      Suppose <m>\vec{v} = \vec{p} + \vec{q} = \vec{p} \,' + \vec{q} \,'</m> where the vectors <m>\vec{p} \,'</m> and
+      <m>\vec{q} \,'</m> satisfy the same properties described in <xref ref="generalizeddecompthm">Theorem</xref>
+      as <m>\vec{p}</m> and <m>\vec{q}</m>.
+      Then <m>\vec{p} - \vec{p} \,' = \vec{q} \,' - \vec{q}</m>,
+      so <m>\vec{w} \cdot (\vec{p} - \vec{p} \,') = \vec{w} \cdot (\vec{q} \,' - \vec{q}) = \vec{w} \cdot \vec{q} \,' - \vec{w} \cdot \vec{q} = 0 - 0 = 0</m>.
+      The long and short of this computation is that <m>\vec{w} \cdot (\vec{p} - \vec{p} \,') = 0</m>.
+    </p>
+    <p>
+      Now there are scalars <m>k</m> and <m>k \,'</m> so that
+      <m>\vec{p} = k \vec{w}</m> and <m>\vec{p} \,' = k\,'\vec{w}</m>.
+      This means <m>\vec{w} \cdot (\vec{p} - \vec{p} \,') = \vec{w} \cdot ( k \vec{w} - k \,' \vec{w}) = \vec{w} \cdot ([k - k \,'] \vec{w}) = (k - k \,') (\vec{w} \cdot \vec{w}) = (k - k \,') \| \vec{w} \|^2</m>.
+    </p>
+    <p>
+      Since <m>\vec{w} \neq \vec{0}</m>,
+      <m>\| \vec{w} \|^2 \neq 0</m>,
+      which means the only way <m>\vec{w} \cdot (\vec{p} - \vec{p} \,') = (k - k \,') \| \vec{w} \|^2 = 0</m> is for
+      <m>k - k \,' = 0</m>, or <m>k = k \,'</m>.
+      This means <m>\vec{p} = k \vec{w} = k \,' \vec{w} = \vec{p} \,'</m>.
+      Since <m>\vec{q} \,' - \vec{q} = \vec{p} - \vec{p} \,' = \vec{p} - \vec{p} = \vec{0}</m>,
+      it must be that <m>\vec{q} \,' = \vec{q}</m> as well.
+    </p>
+    <p>
+      Hence, we have shown there is only one way to write <m>\vec{v}</m> as a sum of vectors as described in <xref ref="generalizeddecompthm">Theorem</xref>,
+      so the decomposition listed there is unique.
+    </p>
+    <p>
+      We close this section with an application of the dot product.
+      In Physics, if a constant force <m>F</m> is exerted over a distance <m>d</m>, the
+          <idx><h>work</h></idx>
+      <em>work</em> <m>W</m> done by the force is given by <m>W = Fd</m>.
+      Here, the assumption is that the force is being applied in the direction of the motion.
+      If the force applied is not in the direction of the motion,
+      we can use the dot product to find the work done.
+    </p>
+    <p>
+      Consider the scenario sketched below in which the constant force <m>\vec{F}</m> is applied to move an object from the point <m>P</m> to the point <m>Q</m>.
+      Here the force is being applied at an angle <m>\theta</m> as opposed to being applied directly in the direction of the motion.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{0}{5} \dashed \polyline{(0,0), (5,0)} \point[4pt]{(-5,0), (0,0)} \tlabel[cc](-5,-0.5){<m>P</m>} \tlabel[cc](0,-0.5){<m>Q</m>} \tlabel[cc](6,3){<m>\vec{F}</m>} \tlabel[cc](1,3){<m>\vec{F}</m>} \tlabel[cc](2.5,0.75){<m>\theta</m>} \tlabel[cc](-2.5,0.75){<m>\theta</m>} \arrow \reverse \arrow \parafcn{5,25,5}{2*dir(t)} \arrow \reverse \arrow \shiftpath{(-5,0)} \parafcn{5,25,5}{2*dir(t)} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(-5,0), (0,0)} \arrow \polyline{(0,0), (5.2, 3)} \arrow \polyline{(-5,0), (0.2, 3)} \end{mfpic}
+    </p>
+    <p>
+      To find the work <m>W</m> done in this scenario,
+      we need to find how much of the force <m>\vec{F}</m> is in the \text{ direction } of the motion <m>\overrightarrow{PQ}</m>.
+      This is precisely what the dot product <m>\vec{F} \cdot \widehat{PQ}</m> represents.
+    </p>
+    <p>
+      Since the distance the object travels is <m>\| \overrightarrow{PQ} \|</m>,
+      we get <m>W = (\vec{F} \cdot \widehat{PQ}) \| \overrightarrow{PQ} \|</m>.
+      Since <m>\overrightarrow{PQ} = \|\overrightarrow{PQ}\| \widehat{PQ}</m>,
+      we can simplify this formula as follows:
+      <m>W = (\vec{F} \cdot \widehat{PQ}) \| \overrightarrow{PQ} \| = \vec{F} \cdot ( \| \overrightarrow{PQ} \|\widehat{PQ} ) = \vec{F} \cdot \overrightarrow{PQ}</m>.
+    </p>
+    <p>
+      Using <xref ref="dotproductgeo">Theorem</xref>,
+      we can rewrite <m>W = \vec{F} \cdot \overrightarrow{PQ} = \| \vec{F} \| \| \overrightarrow{PQ} \| \cos(\theta)</m>,
+      where <m>\theta</m> is the angle between the applied force <m>\vec{F}</m> and the trajectory of the motion <m>\overrightarrow{PQ}</m>.
+      We have proved the following.
+    </p>
+    <theorem xml:id="workthm">
+      <statement>
+        <p>
+              <idx><h>dot product</h><h>work</h></idx>
+              <idx><h>vector</h><h>dot product ! work</h></idx> <em>Work as a Dot Product:</em> Suppose a constant force <m>\vec{F}</m> is applied along the vector <m>\overrightarrow{PQ}</m>.
+          The work <m>W</m> done by <m>\vec{F}</m> is given by
+          <me>
+            W = \vec{F} \cdot \overrightarrow{PQ}  = \| \vec{F} \| \| \overrightarrow{PQ} \| \cos(\theta)
+          </me>,
+          where <m>\theta</m> is the angle between <m>\vec{F}</m> and <m>\overrightarrow{PQ}</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We test out our formula for work in the following example.
+    </p>
+    <example xml:id="vectorworkex">
+      <statement>
+        <p>
+          Taylor exerts a force of <m>10</m> pounds to pull her wagon a distance of <m>50</m> feet over level ground.
+          If the handle of the wagon makes a
+          <m>30^{\circ}</m> angle with the horizontal,
+          how much work did Taylor do pulling the wagon?
+          Assume the force of <m>10</m> pounds is exerted at a
+          <m>30^{\circ}</m> angle for the duration of the <m>50</m> feet.
+        </p>
+        <p>
+          \begin{mfpic}[15]{-5}{5}{-5}{5} \dashed \polyline{(0,0), (5,0)} \tlabel[cc](2.75,0.5){<m>30^{\circ}</m>} \arrow \reverse \arrow \parafcn{5,25,5}{2*dir(t)} \penwd{1.025} \polyline{(0,0), \plr{(4,30)}} \rect{(3.5, 2), (3.75,2.25)} \rect{(-4,0), (0,2)} \gclear \circle{(-3,-0.5),0.75} \circle{(-3,-0.5),0.75} \gclear \circle{(-1,-0.5),0.75} \circle{(-1,-0.5),0.75} \point[5pt]{(-1,-0.5), (-3,-0.5)} \end{mfpic}
+        </p>
+      </statement>
+      <solution>
+        <p>
+          There are (at least) two ways to attack this problem.
+          One way is to find the vectors <m>\vec{F}</m> and
+          <m>\overrightarrow{PQ}</m> mentioned in <xref ref="workthm">Theorem</xref>
+          and compute <m>W = \vec{F} \cdot \overrightarrow{PQ}</m>.
+        </p>
+        <p>
+          To do this, we assume the origin is at the point where the handle of the wagon meets the wagon and the positive <m>x</m>-axis lies along the dashed line in the figure above.
+        </p>
+        <p>
+          To find the force vector <m>\vec{F}</m>,
+          we note the force in this situation is a constant 10 pounds,
+          so <m>\|\vec{F}\| = 10</m>.
+          Moreover, the force is being applied at a constant angle of
+          <m>\theta = 30^{\circ}</m> with respect to the positive <m>x</m>-axis.
+          <xref ref="polarformvector">Definition</xref>
+          gives us <m>\vec{F} = \| \vec{F} \| \left\lt \cos(\theta), \sin(\theta) \right> = 10 \left\lt \cos(30^{\circ}, \sin(30^{\circ})\right> = \left\lt 5\sqrt{3}, 5\right></m>.
+        </p>
+        <p>
+          Since the wagon is being pulled along 50 feet in the positive <m>x</m>-direction,
+          we find the displacement vector is <m>\overrightarrow{PQ} = 50 \bm\hat{\text{i} } = 50\left\lt 1,0\right> = \left\lt 50,0\right></m>.
+        </p>
+        <p>
+          Per <xref ref="workthm">Theorem</xref>,
+          <m>W = \vec{F} \cdot \overrightarrow{PQ} = \left\lt 5\sqrt{3}, 5\right> \cdot \left\lt 50,0\right> = 250\sqrt{3}</m>.
+          Since force is measured in pounds and distance is measured in feet,
+          we get <m>W = 250\sqrt{3}</m> foot-pounds.
+        </p>
+        <p>
+          Alternatively,
+          we can use the formula <m>W = \| \vec{F} \| \| \overrightarrow{PQ} \| \cos(\theta)</m>.
+          With <m>\| \vec{F} \| = 10</m> pounds,
+          <m>\| \overrightarrow{PQ} \| = 50</m> feet and <m>\theta = 30^{\circ}</m>,
+          we get <m>W = (10 \, \text{ pounds } )(50 \, \text{ feet } ) \cos\left(30^{\circ}\right) = 250 \sqrt{3}</m> foot-pounds of work.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="dotprodbasicfirst">Exercises</xref>
+      - <xref ref="dotprodbasiclast"></xref>,
+      use the pair of vectors <m>\vec{v}</m> and <m>\vec{w}</m> to find the following quantities.
+      <ul>
+        <li>
+          <p>
+            <m>\vec{v} \cdot \vec{w}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            The angle <m>\theta</m>
+            (in degrees)
+            between <m>\vec{v}</m> and <m>\vec{w}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\text{ proj } _{\vec{w}}(\vec{v})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{q} = \vec{v} - \text{ proj } _{\vec{w}}(\vec{v})</m> (Show that <m>\vec{q} \cdot \vec{w} = 0</m>.)
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ol cols="2">
+      <li xml:id="dotprodbasicfirst">
+        <p>
+          <m>\vec{v} = \left\langle -2, -7 \right\rangle</m> and <m>\vec{w} = \left\langle 5, -9 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -6, -5 \right\rangle</m> and <m>\vec{w} = \left\langle 10, -12 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 1, \sqrt{3} \right\rangle</m> and <m>\vec{w} = \left\langle 1, -\sqrt{3} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 3, 4 \right\rangle</m> and <m>\vec{w} = \left\langle -6, -8 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -2,1 \right\rangle</m> and <m>\vec{w} = \left\langle 3,6 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -3\sqrt{3}, 3\right\rangle</m> and <m>\vec{w} = \left\langle -\sqrt{3}, -1 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 1, 17 \right\rangle</m> and <m>\vec{w} = \left\langle -1, 0 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 3, 4 \right\rangle</m> and <m>\vec{w} = \left\langle 5, 12 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -4, -2 \right\rangle</m> and <m>\vec{w} = \left\langle 1, -5 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -5, 6 \right\rangle</m> and <m>\vec{w} = \left\langle 4, -7 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -8, 3 \right\rangle</m> and <m>\vec{w} = \left\langle 2, 6 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 34, -91 \right\rangle</m> and <m>\vec{w} = \left\langle 0, 1 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} =3 \bm\hat{\text{i} }- \bm\hat{\text{j} }</m> and <m>\vec{w} = 4 \bm\hat{\text{j} }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = -24 \bm\hat{\text{i} }+ 7 \bm\hat{\text{j} }</m> and <m>\vec{w} = 2 \bm\hat{\text{i} }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} =\frac{3}{2} \bm\hat{\text{i} }+ \frac{3}{2} \bm\hat{\text{j} }</m> and <m>\vec{w} = \bm\hat{\text{i} }- \bm\hat{\text{j} }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = 5 \bm\hat{\text{i} }+12 \bm\hat{\text{j} }</m> and <m>\vec{w} = -3 \bm\hat{\text{i} }+ 4 \bm\hat{\text{j} }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle \frac{1}{2}, \frac{\sqrt{3}}{2} \right\rangle</m> and <m>\vec{w} = \left\langle -\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right\rangle</m> and <m>\vec{w} = \left\langle \frac{1}{2}, -\frac{\sqrt{3}}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle \frac{\sqrt{3}}{2}, \frac{1}{2} \right\rangle</m> and <m>\vec{w} = \left\langle -\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li xml:id="dotprodbasiclast">
+        <p>
+          <m>\vec{v} = \left\langle \frac{1}{2}, -\frac{\sqrt{3}}{2} \right\rangle</m> and <m>\vec{w} = \left\langle \frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          A force of <m>1500</m> pounds is required to tow a trailer.
+          Find the work done towing the trailer along a flat stretch of road <m>300</m> feet.
+          Assume the force is applied in the direction of the motion.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the work done lifting a <m>10</m> pound book <m>3</m> feet straight up into the air.
+          Assume the force of gravity is acting straight downwards.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose Taylor fills her wagon with rocks and must exert a force of 13 pounds to pull her wagon across the yard.
+          If she maintains a <m>15^{\circ}</m> angle between the handle of the wagon and the horizontal,
+          compute how much work Taylor does pulling her wagon 25 feet.
+          Round your answer to two decimal places.
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="kegpull">Exercise</xref>
+          in <xref ref="Vectors">Section</xref>,
+          two drunken college students have filled an empty beer keg with rocks which they drag down the street by pulling on two attached ropes.
+          The stronger of the two students pulls with a force of 100 pounds on a rope which makes a
+          <m>13^{\circ}</m> angle with the direction of motion.
+          (In this case,
+          the keg was being pulled due east and the student's heading was N<m>77^{\circ}</m>E.)
+          Find the work done by this student if the keg is dragged 42 feet.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the work done pushing a 200 pound barrel 10 feet up a <m>12.5^{\circ}</m> incline.
+          Ignore all forces acting on the barrel except gravity,
+          which acts downwards.
+          Round your answer to two decimal places.
+          <em>HINT:</em> Since you are working to overcome gravity only,
+          the force being applied acts directly upwards.
+          This means that the angle between the applied force in this case and the motion of the object is <em>not</em>
+          the <m>12.5^{\circ}</m> of the incline!
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove the distributive property of the dot product in <xref ref="dotprodprops">Theorem</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Finish the proof of the scalar property of the dot product in <xref ref="dotprodprops">Theorem</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Show <xref ref="generalizeddecompthm">Theorem</xref>
+          reduces to <xref ref="ijdecomp">Theorem</xref>
+          in the case <m>\vec{w} = \bm\hat{\text{i} }</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the identity in <xref ref="dotprodpropex">Example</xref> to prove the
+          <url href="http://en.wikipedia.org/wiki/Parallelogram_law"><em><em>Parallelogram Law</em></em></url>
+          <me>
+            \|\vec{v}\|^2 + \|\vec{w}\|^2 = \dfrac{1}{2}\left[ \| \vec{v} + \vec{w}\|^2 + \|\vec{v} - \vec{w}\|^2\right]
+          </me>
+        </p>
+      </li>
+      <li xml:id="triangleineqforvectorsexercise">
+        <p>
+          We know that <m>|x + y| \leq |x| + |y|</m> for all real numbers <m>x</m> and <m>y</m> by the Triangle Inequality established in <xref ref="triangleinequalityreals">Exercise</xref>
+          in <xref ref="AbsoluteValueFunctions">Section</xref>.
+          We can now establish a Triangle Inequality for vectors.
+          In this exercise, we prove that
+          <m>\| \vec{u} + \vec{v} \| \leq \| \vec{u} \| + \| \vec{v} \|</m> for all pairs of vectors <m>\vec{u}</m> and <m>\vec{v}</m>.
+    <idx><h>vector</h><h>triangle inequality</h></idx>
+<ol>
+            <li>
+              <p>
+                (Step 1) Show that <m>\| \vec{u} + \vec{v} \|^{2} = \| \vec{u} \|^{2} + 2\vec{u} \cdot \vec{v} + \| \vec{v} \|^{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                (Step 2) Show that <m>|\vec{u} \cdot \vec{v}| \leq \| \vec{u} \| \| \vec{v} \|</m>.
+                This is the celebrated Cauchy-Schwarz Inequality.<fn>
+                It is also known by other names.
+                Check out this
+                <url href="http://en.wikipedia.org/wiki/Cauchy-Schwarz_inequality"><em>site</em></url>
+                for details.
+                </fn>  HINT: Start with
+                <m>|\vec{u} \cdot \vec{v}| = |\; \| \vec{u} \| \| \vec{v} \|\cos(\theta) \;|</m> and use the fact that
+                <m>|\cos(\theta)| \leq 1</m> for all <m>\theta</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                (Step 3) Show:
+                <me>
+                  \| \vec{u} + \vec{v} \|^{2} = \| \vec{u} \|^{2} + 2\vec{u} \cdot \vec{v} + \| \vec{v} \|^{2} \leq \| \vec{u} \|^{2} + 2|\vec{u} \cdot \vec{v}| + \| \vec{v} \|^{2} \leq \| \vec{u} \|^{2} + 2\| \vec{u} \| \| \vec{v} \| + \| \vec{v} \|^{2} = (\| \vec{u} \| + \| \vec{v} \|)^{2}
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                (Step 4) Use Step 3 to show that
+                <m>\| \vec{u} + \vec{v} \| \leq \| \vec{u} \| + \| \vec{v} \|</m> for all pairs of vectors <m>\vec{u}</m> and <m>\vec{v}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -2, -7 \right\rangle</m> and <m>\vec{w} = \left\langle 5, -9 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = 53</m> <m>\theta = 45^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{5}{2}, -\frac{9}{2} \right\rangle</m> <m>\vec{q} = \left\langle -\frac{9}{2}, -\frac{5}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -6, -5 \right\rangle</m> and <m>\vec{w} = \left\langle 10, -12 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = 0</m> <m>\theta = 90^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle 0, 0 \right\rangle</m> <m>\vec{q} = \left\langle -6, -5 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 1, \sqrt{3} \right\rangle</m> and <m>\vec{w} = \left\langle 1, -\sqrt{3} \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = -2</m> <m>\theta = 120^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle -\frac{1}{2}, \frac{\sqrt{3}}{2} \right\rangle</m> <m>\vec{q} = \left\langle \frac{3}{2}, \frac{\sqrt{3}}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 3,4 \right\rangle</m> and <m>\vec{w} = \left\langle -6, -8 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = -50</m> <m>\theta = 180^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle 3, 4 \right\rangle</m> <m>\vec{q} = \left\langle0, 0\right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -2,1 \right\rangle</m> and <m>\vec{w} = \left\langle 3,6 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = 0</m> <m>\theta = 90^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle 0, 0 \right\rangle</m> <m>\vec{q} = \left\langle -2, 1 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -3\sqrt{3}, 3\right\rangle</m> and <m>\vec{w} = \left\langle -\sqrt{3}, -1 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = 6</m> <m>\theta = 60^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle -\frac{3\sqrt{3}}{2}, -\frac{3}{2} \right\rangle</m> <m>\vec{q} = \left\langle -\frac{3\sqrt{3}}{2}, \frac{9}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 1, 17 \right\rangle</m> and <m>\vec{w} = \left\langle -1, 0 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = -1</m> <m>\theta \approx 93.37^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle 1, 0 \right\rangle</m> <m>\vec{q} = \left\langle 0, 17 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 3, 4 \right\rangle</m> and <m>\vec{w} = \left\langle 5, 12 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = 63</m> <m>\theta \approx 14.25^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{315}{169}, \frac{756}{169} \right\rangle</m> <m>\vec{q} = \left\langle \frac{192}{169}, -\frac{80}{169} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -4, -2 \right\rangle</m> and <m>\vec{w} = \left\langle 1, -5 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = 6</m> <m>\theta \approx 74.74^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{3}{13}, -\frac{15}{13} \right\rangle</m> <m>\vec{q} = \left\langle -\frac{55}{13}, -\frac{11}{13} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -5, 6 \right\rangle</m> and <m>\vec{w} = \left\langle 4, -7 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = -62</m> <m>\theta \approx 169.94^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle -\frac{248}{65}, \frac{434}{65} \right\rangle</m> <m>\vec{q} = \left\langle -\frac{77}{65}, -\frac{44}{65} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle -8, 3 \right\rangle</m> and <m>\vec{w} = \left\langle 2, 6 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = 2</m> <m>\theta \approx 87.88^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{1}{10}, \frac{3}{10} \right\rangle</m> <m>\vec{q} = \left\langle -\frac{81}{10}, \frac{27}{10} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle 34, -91 \right\rangle</m> and <m>\vec{w} = \left\langle 0, 1 \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = -91</m> <m>\theta \approx 159.51^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle 0, -91 \right\rangle</m> <m>\vec{q} = \left\langle 34, 0 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} =3 \bm\hat{\text{i} }- \bm\hat{\text{j} }</m> and <m>\vec{w} = 4 \bm\hat{\text{j} }</m>
+          <m>\vec{v} \cdot \vec{w} = -4</m> <m>\theta \approx 108.43^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle 0,-1 \right\rangle</m> <m>\vec{q} = \left\langle 3,0 \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = -24 \bm\hat{\text{i} }+ 7 \bm\hat{\text{j} }</m> and <m>\vec{w} = 2 \bm\hat{\text{i} }</m>
+          <m>\vec{v} \cdot \vec{w} = -48</m> <m>\theta \approx 163.74^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle -24,0 \right\rangle</m> <m>\vec{q} = \left\langle 0,7\right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} =\frac{3}{2} \bm\hat{\text{i} }+ \frac{3}{2} \bm\hat{\text{j} }</m> and <m>\vec{w} = \bm\hat{\text{i} }- \bm\hat{\text{j} }</m>
+          <m>\vec{v} \cdot \vec{w} = 0</m> <m>\theta = 90^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle 0,0 \right\rangle</m> <m>\vec{q} = \left\langle \frac{3}{2},\frac{3}{2} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = 5 \bm\hat{\text{i} }+ 12 \bm\hat{\text{j} }</m> and <m>\vec{w} = -3 \bm\hat{\text{i} }+ 4 \bm\hat{\text{j} }</m>
+          <m>\vec{v} \cdot \vec{w} = 33</m> <m>\theta \approx 59.49^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle -\frac{99}{25}, \frac{132}{25} \right\rangle</m> <m>\vec{q} = \left\langle \frac{224}{25},\frac{168}{25} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle \frac{1}{2}, \frac{\sqrt{3}}{2} \right\rangle</m> and <m>\vec{w} = \left\langle -\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = \frac{\sqrt{6} - \sqrt{2}}{4}</m> <m>\theta = 75^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{1-\sqrt{3}}{4}, \frac{\sqrt{3} - 1}{4} \right\rangle</m> <m>\vec{q} = \left\langle \frac{1+\sqrt{3}}{4}, \frac{1 +\sqrt{3}}{4} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right\rangle</m> and <m>\vec{w} = \left\langle \frac{1}{2}, -\frac{\sqrt{3}}{2} \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = \frac{\sqrt{2} - \sqrt{6}}{4}</m> <m>\theta = 105^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{\sqrt{2}-\sqrt{6}}{8}, \frac{3\sqrt{2} - \sqrt{6}}{8} \right\rangle</m> <m>\vec{q} = \left\langle \frac{3\sqrt{2}+\sqrt{6}}{8}, \frac{\sqrt{2} + \sqrt{6}}{8} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle \frac{\sqrt{3}}{2}, \frac{1}{2} \right\rangle</m> and <m>\vec{w} = \left\langle -\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2} \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = -\frac{\sqrt{6} + \sqrt{2}}{4}</m> <m>\theta = 165^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{\sqrt{3} + 1}{4}, \frac{\sqrt{3} + 1}{4} \right\rangle</m> <m>\vec{q} = \left\langle \frac{\sqrt{3} - 1}{4}, \frac{1 - \sqrt{3}}{4} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\langle \frac{1}{2}, -\frac{\sqrt{3}}{2} \right\rangle</m> and <m>\vec{w} = \left\langle \frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2} \right\rangle</m>
+          <m>\vec{v} \cdot \vec{w} = \frac{\sqrt{6} + \sqrt{2}}{4}</m> <m>\theta = 15^{\circ}</m>
+          <m>\text{ proj } _{\vec{w}}(\vec{v}) = \left\langle \frac{\sqrt{3} + 1}{4}, -\frac{\sqrt{3} + 1}{4} \right\rangle</m> <m>\vec{q} = \left\langle \frac{1 - \sqrt{3}}{4}, \frac{1 - \sqrt{3}}{4} \right\rangle</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(1500 \, \text{ pounds } )(300 \, \text{ feet } )\cos\left(0^{\circ}\right) = 450,000</m> foot-pounds
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(10 \, \text{ pounds } )(3 \, \text{ feet } )\cos\left(0^{\circ}\right) = 30</m> foot-pounds
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(13 \, \text{ pounds } )(25 \, \text{ feet } ) \cos\left(15^{\circ}\right) \approx 313.92</m> foot-pounds
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(100 \, \text{ pounds } )(42 \, \text{ feet } ) \cos\left(13^{\circ}\right) \approx 4092.35</m> foot-pounds
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(200 \, \text{ pounds } )(10 \, \text{ feet } ) \cos\left(77.5^{\circ}\right) \approx 432.88</m> foot-pounds
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

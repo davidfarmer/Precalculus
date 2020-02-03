@@ -1,0 +1,1640 @@
+<section xml:id="TheOtherCircularFunctions">
+  <title>The Circular Functions: Tangent, Secant, Cosecant, and Cotangent</title>
+  <introduction>
+    <p>
+      In <xref ref="TheCircularFunctionsSineandCosine">section</xref>,
+      we extended the notion of <m>\sin(\theta)</m> and
+      <m>\cos(\theta)</m> from acute angles to any angles using the coordinate values of points on the Unit Circle.
+      In total, there are six circular functions, as listed below.
+    </p>
+    <definition xml:id="circularfunctions">
+      <statement>
+        <p>
+          <term>The Circular Functions:</term>
+          Suppose an angle <m>\theta</m> is graphed in standard position.
+        </p>
+        <p>
+          Let <m>P(x,y)</m> be the point of intersection of the terminal side of <m>P</m> and the Unit Circle.
+          <ul>
+            <li>
+              <p>
+                The
+                  <idx><h>sine</h><h>of an angle</h></idx>
+                <em>sine</em> of <m>\theta</m>,
+                denoted <m>\sin(\theta)</m>, is defined by <m>\sin(\theta) = y</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>cosine</h><h>of an angle</h></idx>
+                <em>cosine</em> of <m>\theta</m>,
+                denoted <m>\cos(\theta)</m>, is defined by <m>\cos(\theta) = x</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>tangent</h><h>of an angle</h></idx>
+                <em>tangent</em> of <m>\theta</m>,
+                denoted <m>\tan(\theta)</m>,
+                is defined by <m>\tan(\theta) = \dfrac{y}{x}</m>, provided <m>x \neq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>secant</h><h>of an angle</h></idx>
+                <em>secant</em> of <m>\theta</m>,
+                denoted <m>\sec(\theta)</m>,
+                is defined by <m>\sec(\theta) = \dfrac{1}{x}</m>, provided <m>x \neq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>cosecant</h><h>of an angle</h></idx>
+                <em>cosecant</em> of <m>\theta</m>,
+                denoted <m>\csc(\theta)</m>,
+                is defined by <m>\csc(\theta) = \dfrac{1}{y}</m>, provided <m>y \neq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>cotangent</h><h>of an angle</h></idx>
+                <em>cotangent</em> of <m>\theta</m>,
+                denoted <m>\cot(\theta)</m>,
+                is defined by <m>\cot(\theta) = \dfrac{x}{y}</m>, provided <m>y \neq 0</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      While we left the history of the name <sq>sine</sq> as an interesting research project in <xref ref="TheCircularFunctionsSineandCosine">Section</xref>,we take a slight detour here to explain the origin of the names <sq>tangent</sq> and <sq>secant.</sq>
+    </p>
+    <p>
+      Consider the acute angle <m>\theta</m> in standard position sketched in the diagram below.
+    </p>
+    <p>
+      \begin{mfpic}[25]{-1}{7}{-1}{7} \axes \drawcolor[gray]{0.7} \parafcn{0,90,5}{3*dir(t)} \drawcolor{black} \arrow \parafcn{5, 55, 5}{0.75*dir(t)} \tlabel[cc](0.75,0.5){<m>\theta</m>} \point[4pt]{(0,0), (1.5, 2.5981), (3,5.196), (3,0), (1.5,0)} \tlabel(6.75,-0.5){<m>x</m>} \tlabel(0.25,6.75){<m>y</m>} \tlabel(0.25,3.1){<m>1</m>} \tlabel(-0.5,-0.5){<m>O</m>} \tlabel(2.75,-0.5){<m>B(1,0)</m>} \tlabel(1.25, -0.5){<m>A(x, 0)</m>} \xmarks{0 step 3 until 3} \ymarks{0 step 3 until 3} \polyline{(3,0), (3,5.196)} \polyline{(2.75,0), (2.75, 0.25), (3,0.25)} \polyline{(1.5,0), (1.5, 2.5981)} \polyline{(1.25,0), (1.25,0.25), (1.5,0.25)} \tlabel(1.75,2.6){<m>P(x,y)</m>} \tlabel(3.25,5.25){<m>Q(1,y') = (1, \tan(\theta))</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(7,0), (0,0), (4,6.9282)} \end{mfpic}
+    </p>
+    <p>
+      As usual, <m>P(x,y)</m> denotes the point on the terminal side of <m>\theta</m> which lies on the Unit Circle,
+      but we also consider the point <m>Q(1,y')</m>,
+      the point on the terminal side of <m>\theta</m> which lies on the vertical line <m>x=1</m>.
+    </p>
+    <p>
+      The word <sq>tangent</sq> comes from the Latin meaning <sq>to touch,</sq> and for this reason,
+      the line <m>x=1</m> is called a <em>tangent</em>
+      line to the Unit Circle since it intersects,
+      or <sq>touches</sq>, the circle at only one point, namely <m>(1,0)</m>.
+    </p>
+    <p>
+      Dropping perpendiculars from <m>P</m> and <m>Q</m> creates a pair of similar triangles
+      <m>\Delta OPA</m> and <m>\Delta OQB</m>.
+      Hence the corresponding sides are proportional.
+      We get <m>\frac{y'}{y} = \frac{1}{x}</m> which gives <m>y' = \frac{y}{x} = \tan(\theta)</m>.
+    </p>
+    <p>
+      We have just shown that for acute angles <m>\theta</m>,
+      <m>\tan(\theta)</m> is the <m>y</m>-coordinate of the point on the terminal side of <m>\theta</m> which lies on the line <m>x = 1</m> which is
+      <em>tangent</em> to the Unit Circle.
+    </p>
+    <p>
+      The word <sq>secant</sq> means <sq>to cut</sq>,
+      so a secant line is any line that <sq>cuts through</sq> a circle at two points.<fn>
+      Compare this with the definition given in <xref ref="AverageRateofChange">Section</xref>.
+      </fn> The line containing the terminal side of <m>\theta</m>
+      (not just the terminal side itself)
+      is one such secant line since it intersects the Unit Circle in Quadrants I and III.
+    </p>
+    <p>
+      With the point <m>P</m> lying on the Unit Circle,
+      the length of the hypotenuse of <m>\Delta OPA</m> is <m>1</m>.
+      If we let <m>h</m> denote the length of the hypotenuse of <m>\Delta OQB</m>,
+      we have from similar triangles that <m>\frac{h}{1} = \frac{1}{x}</m>,
+      or <m>h = \frac{1}{x} = \sec(\theta)</m>.
+    </p>
+    <p>
+      Hence for an acute angle <m>\theta</m>,
+      <m>\sec(\theta)</m> is the length of the line segment which lies on the secant line determined by the terminal side of <m>\theta</m> and <sq>cuts off</sq> the tangent line <m>x=1</m>.
+    </p>
+    <p>
+      As we mentioned in <xref ref="sinecosineunitcircledefn">Definition</xref>,
+      the <sq>co</sq> in <sq>cosecant</sq> and <sq>cotangent</sq> tie back to the concept of <sq>co</sq>mplementary angles and is explained in detail in <xref ref="MoreTrigonometricIdentities">Section</xref>.
+    </p>
+    <p>
+      Not only do these observations help explain the names of these functions,
+      they serve as the basis for a fundamental inequality needed for Calculus which we'll explore in the Exercises.
+    </p>
+    <p>
+      Of the six circular functions,
+      only sine and cosine are defined for all angles <m>\theta</m>.
+      Since <m>x = \cos(\theta)</m> and
+      <m>y = \sin(\theta)</m> in <xref ref="circularfunctions">Definition</xref>,
+      it is customary to rephrase the remaining four circular functions <xref ref="circularfunctions">Definition</xref> in terms of sine and cosine.
+    </p>
+    <theorem xml:id="recipquotid">
+      <statement>
+        <p>
+          <em>Reciprocal and Quotient Identities:</em>
+              <idx><h>Reciprocal Identities</h></idx>
+              <idx><h>Quotient Identities</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\sec(\theta) = \dfrac{1}{\cos(\theta)}</m>,
+                provided <m>\cos(\theta) \neq 0</m>;
+                if <m>\cos(\theta) = 0</m>, <m>\sec(\theta)</m> is undefined.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\csc(\theta) = \dfrac{1}{\sin(\theta)}</m>,
+                provided <m>\sin(\theta) \neq 0</m>;
+                if <m>\sin(\theta) = 0</m>, <m>\csc(\theta)</m> is undefined.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(\theta) = \dfrac{\sin(\theta)}{\cos(\theta)}</m>,
+                provided <m>\cos(\theta) \neq 0</m>;
+                if <m>\cos(\theta) = 0</m>, <m>\tan(\theta)</m> is undefined.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot(\theta) = \dfrac{\cos(\theta)}{\sin(\theta)}</m>,
+                provided <m>\sin(\theta) \neq 0</m>;
+                if <m>\sin(\theta) = 0</m>, <m>\cot(\theta)</m> is undefined.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We call the equations listed in <xref ref="recipquotid">Theorem</xref>
+          <idx><h>identity</h><h>equation</h></idx>
+          <idx><h>equation</h><h>identity</h></idx>
+      <em>identities</em> since they are relationships which are true regardless of the values of <m>\theta</m>.
+      This is in contrast to
+          <idx><h>conditional equation</h></idx>
+          <idx><h>equation</h><h>conditional</h></idx>
+      <em>conditional equations</em> such as
+      <m>\sin(\theta) = 1</m> which are true for only
+      <em>some</em> values of <m>\theta</m>.
+      We will study identities more extensively in <xref ref="FundamentalTrigonometricIdentities">Sections</xref>
+      and <xref ref="MoreTrigonometricIdentities"></xref>.
+    </p>
+    <p>
+      While the Reciprocal and Quotient Identities presented in <xref ref="recipquotid">Theorem</xref>
+      allow us to always reduce problems involving secant, cosecant,
+      tangent and cotangent to problems involving sine and cosine,
+      it is not always convenient to do so.<fn>
+      As we shall see shortly,
+      when solving equations involving secant and cosecant,
+      we usually convert back to cosines and sines.
+      However, when solving for tangent or cotangent,
+      we usually stick with what we're dealt.
+      </fn> It is worth taking the time to memorize the tangent and cotangent values of the common angles summarized below.
+    </p>
+    <p>
+      <em>Tangent and Cotangent Values of Common Angles</em>
+      <me>
+        \begin{array}{|c|c||c|c|} \hline \theta (\mbox{degrees} ) \amp   \theta (\mbox{radians} ) \amp  \tan(\theta) \amp  \cot(\theta) \\ \hline 0^{\circ} \amp  0 \amp  0 \amp  \text{ undefined }  \\ \hline 30^{\circ} \amp  \frac{\pi}{6} \amp  \frac{\sqrt{3}}{3} \amp  \sqrt{3} \\ \hline 45^{\circ} \amp  \frac{\pi}{4} \amp  1 \amp  1 \\ \hline 60^{\circ} \amp  \frac{\pi}{3} \amp  \sqrt{3} \amp  \frac{\sqrt{3}}{3} \\ \hline 90^{\circ} \amp  \frac{\pi}{2} \amp  \text{ undefined }  \amp  0 \\ \hline \end{array}
+      </me>
+    </p>
+    <p>
+      Coupling <xref ref="recipquotid">Theorem</xref>
+      with the Reference Angle Theorem,
+      <xref ref="refanglethm">Theorem</xref>, we get the following.
+    </p>
+    <theorem xml:id="genrefanglethm">
+      <statement>
+        <p>
+          <em>Generalized Reference Angle Theorem.</em>
+          The values of the circular functions of an angle,
+          if they exist, are the same, up to a sign,
+          of the corresponding circular functions of its reference angle.
+        </p>
+        <p>
+          More specifically,
+          if <m>\alpha</m> is the reference angle for <m>\theta</m>, then:
+        </p>
+        <p>
+          <m>\sin(\theta) = \pm \sin(\alpha)</m>,
+          <m>\cos(\theta) = \pm \cos(\alpha)</m>,
+          <m>\tan(\theta) = \pm \tan(\alpha)</m>
+        </p>
+        <p>
+          and
+        </p>
+        <p>
+          <m>\sec(\theta) = \pm \sec(\alpha)</m>,
+          <m>\csc(\theta) = \pm \csc(\alpha)</m>,
+          <m>\cot(\theta) = \pm \cot(\alpha)</m>
+        </p>
+        <p>
+          where the choice of the (<m>\pm</m>) depends on the quadrant in which the terminal side of <m>\theta</m> lies.<idx><h>Reference Angle Theorem</h><h>for the circular functions</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      It is high time for an example.
+    </p>
+    <example xml:id="circularfunctionsex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the exact value of the following, if it exists:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\sec\left(60^{\circ}\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\csc\left(\frac{7 \pi}{4} \right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\tan(225^{\circ})</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\cot\left(-\frac{7 \pi}{6} \right)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find all angles which satisfy the given equation.
+              <ol>
+                <li>
+                  <p>
+                    <m>\sec(\theta) =2</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\csc(\theta) = -\sqrt{2}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\tan(\theta) = \sqrt{3}</m>
+                  </p>
+                </li>
+                <li xml:id="cotangentisnegativeone">
+                  <p>
+                    <m>\cot(\theta) = -1</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    According to <xref ref="recipquotid">Theorem</xref>,
+                    <m>\sec\left(60^{\circ}\right) = \frac{1}{\cos\left(60^{\circ}\right)}</m>.
+                    Hence, <m>\sec\left(60^{\circ}\right) = \frac{1}{(1/2)} = 2</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since <m>\sin\left( \frac{7\pi}{4}\right) = - \frac{\sqrt{2}}{2}</m>,
+                    <m>\csc\left( \frac{7\pi}{4}\right) = \frac{1}{\sin\left( \frac{7\pi}{4}\right)} = \frac{1}{- \sqrt{2}/2} = - \frac{2}{\sqrt{2}} = - \sqrt{2}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We have two ways to proceed to determine <m>\tan(225^{\circ})</m>.
+                    First, we can use <xref ref="recipquotid">Theorem</xref>
+                    and note that <m>\tan(225^{\circ}) = \frac{\sin(225^{\circ})}{\cos(225^{\circ})}</m>.
+                    Since <m>\sin(225^{\circ}) = \cos(225^{\circ}) = -\frac{\sqrt{2}}{2}</m>,
+                    <m>\tan(225^{\circ}) = 1</m>.
+                    Another way to proceed is to note that
+                    <m>225^{\circ}</m> has a reference angle of <m>45^{\circ}</m>.
+                    Per <xref ref="genrefanglethm">Theorem</xref>,
+                    <m>\tan(225^{\circ}) = \pm \tan(45^{\circ}) = \pm 1</m>.
+                    Since <m>225^{\circ}</m> is a Quadrant III angle,
+                    where both the <m>x</m> and <m>y</m> coordinates of points are both negative,
+                    and tangent is defined as the <em>ratio</em>
+                    of coordinates <m>\frac{y}{x}</m>,
+                    we know <m>\tan(225^{\circ}) > 0</m>.
+                    Hence, <m>\tan(225^{\circ}) = 1</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    As with the previous example,
+                    we have two ways to proceed.
+                    Using <xref ref="recipquotid">Theorem</xref>,
+                    we have <m>\cot\left(-\frac{7 \pi}{6} \right) = \frac{\cos\left(-\frac{7 \pi}{6} \right)}{\sin\left(-\frac{7 \pi}{6} \right)}</m>.
+                    Since <m>\cos\left(-\frac{7 \pi}{6} \right) = -\frac{\sqrt{3}}{2}</m> and <m>\sin\left(-\frac{7 \pi}{6} \right) = \frac{1}{2}</m>,
+                    we get <m>\cot\left(-\frac{7 \pi}{6} \right) = - \sqrt{3}</m>.
+                    Alternatively,
+                    we note <m>-\frac{7 \pi}{6}</m> is a Quadrant II angle with reference angle <m>\frac{\pi}{6}</m>.
+                    Hence, <xref ref="genrefanglethm">Theorem</xref>
+                    tells us <m>\cot\left(-\frac{7 \pi}{6} \right) = \pm \cot\left(\frac{\pi}{6} \right) = \pm \sqrt{3}</m>.
+                    Since <m>-\frac{7 \pi}{6}</m> is a Quadrant II angle,
+                    where the <m>x</m> and <m>y</m> coordinates have different signs,
+                    and cotangent is defined as the ratio of coordinates <m>\frac{x}{y}</m>,
+                    we know <m>\cot\left(-\frac{7 \pi}{6} \right)\lt 0</m>.
+                    Hence, <m>\cot\left(-\frac{7 \pi}{6} \right) = -\sqrt{3}</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To solve <m>\sec(\theta) = 2</m>,
+                    we convert to cosines and get
+                    <m>\frac{1}{\cos(\theta)} = 2</m> or <m>\cos(\theta) = \frac{1}{2}</m>.
+                    This is the exact same equation we solved in <xref ref="solveforangle">Example</xref>,
+                    <xref ref="cosineishalf">number</xref>, so we know the answer is:
+                    <m>\theta = \frac{\pi}{3} + 2\pi k</m> or
+                    <m>\theta = \frac{5\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    From the table of common values,
+                    we see <m>\tan\left(\frac{\pi}{3}\right) = \sqrt{3}</m>.
+                    According to <xref ref="genrefanglethm">Theorem</xref>,
+                    we know the solutions to <m>\tan(\theta) = \sqrt{3}</m> must,
+                    therefore, have a reference angle of <m>\frac{\pi}{3}</m>.
+                    To find the quadrants in which our solutions lie,
+                    we note that tangent is defined as the ratio
+                    <m>\frac{y}{x}</m> of points <m>(x,y)</m> on the Unit Circle.
+                    Hence, tangent is positive when <m>x</m> and <m>y</m> have the same sign (i.e., when they are both positive or both negative.) This happens in Quadrants I and III. In Quadrant I, we get the solutions:
+                    <m>\theta = \frac{\pi}{3} + 2\pi k</m> for integers <m>k</m>,
+                    and for Quadrant III, we get
+                    <m>\theta = \frac{4\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                    While these descriptions of the solutions are correct,
+                    they can be combined into one list as
+                    <m>\theta = \frac{\pi}{3} + \pi k</m> for integers <m>k</m>.
+                    The latter form of the solution is best understood looking at the geometry of the situation in the diagram below.<fn>
+                    See <xref ref="solveforangle">Example</xref>
+                    <xref ref="cosineiszero">number</xref>
+                    in <xref ref="TheCircularFunctionsSineandCosine">Section</xref>
+                    for another example of this kind of simplification of the solution.
+                    </fn>
+                    <tabular>
+                      <row>
+                        <cell>\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.25){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5 step 4.5 until 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)} \tlabel(1.5, 1){<m>\frac{\pi}{3}</m>} \point[4pt]{(0,0), (2.25, 3.8971)} \penwd{1.25pt} \arrow \polyline{(5.25, 0), (0,0), (2.5, 4.330)} \end{mfpic}</cell>
+                        <cell>\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.25){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5 step 4.5 until 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{185, 235, 5}{2*dir(t)} \tlabel(-2.6, -1.5){<m>\frac{\pi}{3}</m>} \point[4pt]{(0,0), (-2.25, -3.8971)} \arrow \dashed \polyline{(0,0), (2.5, 4.330)} \arrow \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)} \tlabel(1.5, 1){<m>\frac{\pi}{3}</m>} \tlabel(-1.5, 2){<m>\pi</m>} \point[4pt]{(2.25, 3.8971)} \arrow \reverse \arrow \parafcn{65, 235, 5}{1.5*dir(t)} \penwd{1.25pt} \arrow \polyline{(5.25, 0), (0,0), (-2.5, -4.330)} \end{mfpic}</cell>
+                      </row>
+                    </tabular>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    From the table of common values,
+                    we see that <m>\frac{\pi}{4}</m> has a cotangent of <m>1</m>,
+                    which means the solutions to
+                    <m>\cot(\theta) = -1</m> have a reference angle of <m>\frac{\pi}{4}</m>.
+                    To find the quadrants in which our solutions lie,
+                    we note that <m>\cot(\theta) = \frac{x}{y}</m> for a point <m>(x,y)</m> on the Unit Circle where <m>y \neq 0</m>.
+                    If <m>\cot(\theta)</m> is negative,
+                    then <m>x</m> and <m>y</m> must have different signs (i.e., one positive and one negative.) Hence,
+                    our solutions lie in Quadrants II and IV. Our Quadrant II solution is <m>\theta = \frac{3\pi}{4} + 2\pi k</m>,
+                    and for Quadrant IV, we get
+                    <m>\theta = \frac{7\pi}{4} + 2\pi k</m> for integers <m>k</m>.
+                    As in the previous problem, we can combine these solutions as:
+                    <m>\theta = \frac{3\pi}{4} + \pi k</m> for integers <m>k</m>.
+                    <tabular>
+                      <row>
+                        <cell>\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.25){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5 step 4.5 until 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{140, 175, 5}{1.5*dir(t)} \tlabel[cc](-2, 1){<m>\frac{\pi}{4}</m>} \point[4pt]{(0,0), (-3.1820, 3.1820)} \penwd{1.25pt} \arrow \polyline{(5.25,0), (0,0), (-3.5355, 3.5355)} \end{mfpic}</cell>
+                        <cell>\begin{mfpic}[15]{-5.25}{5.25}{-5.25}{5.5} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.25){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5 step 4.5 until 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{320, 355, 5}{1.5*dir(t)} \tlabel[cc](2, -1){<m>\frac{\pi}{4}</m>} \tlabel[cc](-1.77, -1.77){<m>\pi</m>} \point[4pt]{(0,0), (3.1820, -3.1820), (-3.1820, 3.1820)} \arrow \dashed \polyline{(0,0), (-3.5355, 3.5355)} \arrow \reverse \arrow \parafcn{140, 175, 5}{2*dir(t)} \arrow \reverse \arrow \parafcn{140, 310, 5}{1.5*dir(t)} \tlabel[cc](-2.31, 0.96){<m>\frac{\pi}{4}</m>} \penwd{1.25pt} \arrow \polyline{(5.25,0), (0,0), (3.5355, -3.5355)} \end{mfpic}</cell>
+                      </row>
+                    </tabular>
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="circularfunctionsex">Example</xref> are in order.
+      First note that the signs (<m>\pm</m>) of secant and cosecant are the same as the signs of cosine and sine,
+      respectively.
+    </p>
+    <p>
+      On the other hand,
+      since tangent and cotangent are defined in terms of the <em>ratios</em>
+      of coordinates <m>x</m> and <m>y</m>,
+      tangent and cotangent are positive in Quadrants I and III
+      (where both <m>x</m> and <m>y</m> have the same sign)
+      and negative in Quadrants II and IV (where <m>x</m> and <m>y</m> have opposite signs.)
+    </p>
+    <p>
+      The diagram below on the left summarizes which circular functions are positive in which quadrants.
+    </p>
+    <p>
+      \begin{mfpic}[18]{-4}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>(1,0)</m>} \tlabel(-4.5,-0.75){<m>(-1,0)</m>} \tlabel(0.25,3.1){ <m>(0,1)</m>} \tlabel(0.25,-3.4){<m>(0,-1)</m>} \tlabel[cc](1,0.75){All} \tlabel[cc](-1.5,0.75){<m>\sin(\theta)</m>,
+      <m>\csc(\theta)</m>} \tlabel[cc](-1.5,-0.75){<m>\tan(\theta)</m>,
+      <m>\cot(\theta)</m>} \tlabel[cc](1.5,-0.75){<m>\cos(\theta)</m>,
+      <m>\sec(\theta)</m>} \tcaption{Postive Circular Functions} \tlabel[cc](-2.83,-2.83){<m>(-,-)</m>} \tlabel[cc](2.83,2.83){<m>(+, +)</m>} \tlabel[cc](-2.83,2.83){<m>(-,+)</m>} \tlabel[cc](2.83,-2.83){<m>(+,-)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \point[4pt]{(-2.1213, -2.1213),(2.1213, 2.1213), (2.1213, -2.1213),(-2.1213, 2.1213), (0,3), (3,0), (0,-3), (-3,0) } \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[18]{-4}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>(1,0)</m>} \tlabel(-4.5,-0.75){<m>(-1,0)</m>} \tlabel(0.25,3.1){ <m>(0,1)</m>} \tlabel(0.25,-3.4){<m>(0,-1)</m>} \tcaption{The period of <m>\tan(\theta)</m> and
+      <m>\cot(\theta)</m> is <m>\pi</m>} \dashed \polyline{(-2.25, -3.9), (2.25, 3.9)} \arrow \reverse \arrow \parafcn{65, 235, 5}{2.25*dir(t)} \arrow \reverse \arrow \parafcn{245, 415, 5}{2.25*dir(t)} \arrow \reverse \arrow \parafcn{5, 55, 5}{1.25*dir(t)} \arrow \reverse \arrow \parafcn{185, 235, 5}{1.25*dir(t)} \tlabel[cc](-1.8, 1.8){<m>\pi</m>} \tlabel[cc](1.8, -1.8){<m>\pi</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \point[4pt]{(-1.5, -2.6),(1.5, 2.6) } \end{mfpic}
+    </p>
+    <p>
+      Also note it is no coincidence that both of our solutions to the equations involving tangent and cotangent in <xref ref="circularfunctionsex">Example</xref>
+      could be simplified to just one list of angles differing by multiples of <m>\pi</m>.
+    </p>
+    <p>
+      Indeed, any two angles that are <m>\pi</m> units apart will not only have the same reference angle,
+      but points on their terminal sides on the Unit Circle will be reflections through the origin,
+      as illustrated above on the right.
+    </p>
+    <p>
+      It follows that the tangent and cotangent of such angles
+      (if defined)
+      will be the same, which means the period of these function is
+      (at most)
+      <m>\pi</m>.
+    </p>
+    <p>
+      Using an argument similar to the one we used to establish the period of sine and cosine in <xref ref="GraphsofSineandCosine">Section</xref>,
+      we note that if <m>\tan(x+p) = \tan(x)</m> for all real numbers <m>x</m>, then,
+      in particular, <m>\tan(p) = \tan(0+p) = \tan(0) = 0</m>.
+      Hence, <m>p</m> is a multiple of <m>\pi</m>,
+      and the smallest multiple of <m>\pi</m> is <m>\pi</m> itself.
+    </p>
+    <p>
+      Hence, the period of tangent
+      (and cotangent)
+      is <m>\pi</m>,
+      and we will see the consequences of this both when solving equations in this section and when graphing these functions in <xref ref="GraphsofOtherCircularFunctions">Section</xref>.
+    </p>
+    <p>
+      As with sine and cosine,
+      the circular functions defined in <xref ref="circularfunctions">Definition</xref> agree with those put forth in <xref ref="righttrianglesinecosinetangent">Definitions</xref>
+      and <xref ref="righttriangletherest"></xref>
+      in <xref ref="AppRightTrig">Section</xref>
+      for acute angles situated in right triangles.
+      The argument is identical to the one given in <xref ref="TheCircularFunctionsSineandCosine">Section</xref> and is left to the reader.
+    </p>
+    <p>
+      Moreover, <xref ref="circularfunctions">Definition</xref>
+      can be extended to circles of arbitrary radius <m>r>0</m> using the same similarity arguments in <xref ref="cosinesinebeyond">Section</xref>
+      to generalize <xref ref="sinecosineunitcircledefn">Definition</xref>
+      to <xref ref="cosinesinecircle">Theorem</xref> as summarized below.
+    </p>
+    <theorem xml:id="circularfunctionscircle">
+      <statement>
+        <p>
+          Suppose <m>Q(x,y)</m> is the point on the terminal side of an angle <m>\theta</m>
+          (plotted in standard position)
+          which lies on the circle of radius <m>r</m>, <m>x^2+y^2 = r^2</m>.
+          Then:
+          <ul>
+            <li>
+              <p>
+                <m>\sin(\theta) = \dfrac{y}{r} = \dfrac{y}{\sqrt{x^2+y^2}}</m>
+                  <idx><h>sine</h><h>of an angle</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(\theta)= \dfrac{x}{r} = \dfrac{x}{\sqrt{x^2+y^2}}</m> <idx><h>cosine</h><h>of an angle</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(\theta) = \dfrac{y}{x}</m>, provided <m>x \neq 0</m>.
+                  <idx><h>tangent</h><h>of an angle</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sec(\theta) = \dfrac{r}{x} = \dfrac{\sqrt{x^2+y^2}}{x}</m>,
+                provided <m>x \neq 0</m>.
+                  <idx><h>secant</h><h>of an angle</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\csc(\theta) = \dfrac{r}{y} = \dfrac{\sqrt{x^2+y^2}}{y}</m>,
+                provided <m>y \neq 0</m>.
+                  <idx><h>cosecant</h><h>of an angle</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot(\theta) = \dfrac{x}{y}</m>, provided <m>y \neq 0</m>.
+                  <idx><h>cotangent</h><h>of an angle</h></idx>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We make good use of <xref ref="circularfunctionscircle">Theorem</xref> in the following example.
+    </p>
+    <example xml:id="circularfunctionscircleex">
+      <statement>
+        <p>
+          Use <xref ref="circularfunctionscircle">Theorem</xref> to solve the following.
+          <ol>
+            <li>
+              <p>
+                Suppose the terminal side of <m>\theta</m>,
+                when plotted in standard position,
+                contains the point <m>Q(3,4)</m>.
+                Find the values of the six circular functions of <m>\theta</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>\theta</m> is a Quadrant IV angle with <m>\cot(\theta) = -4</m>.
+                Find the values of the five remaining circular functions of <m>\theta</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>\sin\left(\theta\right)</m>,
+                where <m>\sec(\theta) = -\sqrt{5}</m> and <m>\theta</m> is a Quadrant II angle.
+              </p>
+            </li>
+            <li xml:id="commontanmistake">
+              <p>
+                Find <m>\cos\left(\theta\right)</m>,
+                where <m>\tan(\theta) = 3</m> and <m>\pi \lt \theta \lt \frac{3\pi}{2}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since <m>x = 3</m> and <m>y=4</m>,
+                from <m>x^2+y^2 = r^2</m>,
+                <m>(3)^2+(4)^2 = r^2</m> so <m>r^2 = 25</m>, or <m>r = 5</m>.
+                <xref ref="circularfunctionscircle">Theorem</xref>
+                tells us <m>\sin(\theta) = \frac{4}{5}</m>,
+                <m>\cos(\theta) = \frac{3}{5}</m>,
+                <m>\tan(\theta) = \frac{4}{3}</m>,
+                <m>\sec(\theta) = \frac{5}{3}</m>,
+                <m>\csc(\theta) = \frac{5}{4}</m>,
+                and <m>\cot(\theta) = \frac{3}{4}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                In order to use <xref ref="circularfunctionscircle">Theorem</xref>,
+                we need to find a point <m>Q(x,y)</m> which lies on the terminal side of <m>\theta</m>,
+                when <m>\theta</m> is plotted in standard position.
+                We have that <m>\cot(\theta) = -4 = \frac{x}{y}</m>.
+                Since <m>\theta</m> is a Quadrant IV angle,
+                we also know <m>x>0</m> and <m>y\lt 0</m>.
+                Rewriting <m>-4 = \frac{4}{-1}</m>, we choose<fn>
+                We could have just as easily chosen <m>x=8</m> and <m>y=-2</m> - just so long as <m>x>0</m>,
+                <m>y\lt 0</m> and <m>\frac{x}{y} = -4</m>.
+                </fn>  <m>x = 4</m> and <m>y = -1</m> so that <m>r = \sqrt{x^2+y^2} = \sqrt{(4)^2 + (-1)^2} = \sqrt{17}</m>.
+                Applying <xref ref="circularfunctionscircle">Theorem</xref>,
+                we find <m>\sin(\theta) =- \frac{1}{\sqrt{17}} = -\frac{\sqrt{17}}{17}</m>,
+                <m>\cos(\theta) = \frac{4}{\sqrt{17}} = \frac{4 \sqrt{17}}{17}</m>,
+                <m>\tan(\theta) = -\frac{1}{4}</m>,
+                <m>\sec(\theta) = \frac{\sqrt{17}}{4}</m>,
+                and <m>\csc(\theta) = - \sqrt{17}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel(2.75,3){<m>Q(3,4)</m>} \tlabel[cc](2,1.5){<m>r=5</m>} \tcaption{<m>Q(3,4)</m> lies on a circle of radius <m>5</m> units,} \xmarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \ymarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (3, 4)} \point[4pt]{(0,0), (2.012, 2.683)} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -2, {<m>-1</m>} -0.67, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>2</m>} 1.34, {<m>4</m>} 2.68} \axislabels {y}{ {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>2</m>} 1.34, {<m>4</m>} 2.68, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-1</m>} -0.67, {<m>-3</m>} -2 } \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel[cc](1.4, -1.25){<m>r = \sqrt{17}</m>} \tlabel[cc](4, -1.5){<m>(4, -1)</m>} \tcaption{<m>\theta</m> is Quadrant IV with <m>\cot(\theta) = -4</m>.} \xmarks{-3.24, -1.62, 1.62, 3.24, 0.81, -0.81, 2.43, -2.43} \ymarks{-3.24, -1.62, 1.62, 3.24, 0.81, -0.81, 2.43, -2.43} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (4.92, -1.23)} \point[4pt]{(0,0), (3.24, -0.81)} \tlpointsep{4pt} \axislabels {x}{ {<m>4</m>} 3.24, {<m>3</m>} 2.43, {<m>-4</m>} -3.24, {<m>-2</m> } -1.62, {<m>-1</m>} -0.81, {<m>-3</m>} -2.43} \axislabels {y}{ {<m>4</m>} 3.24, {<m>2</m>} 1.62, {<m>1</m>} 0.81, {<m>3</m>} 2.43, {<m>-4</m>} -3.24, {<m>-2</m>} -1.62, {<m>-1</m>} -0.81, {<m>-3</m>} -2.43} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                To find <m>\sin(\theta)</m> using <xref ref="circularfunctionscircle">Theorem</xref>,
+                we need to determine the <m>y</m>-coordinate of a point <m>Q(x,y)</m> on the terminal side of <m>\theta</m>,
+                when <m>\theta</m> is plotted in standard position,
+                and the corresponding radius <m>r</m>.
+                Since <m>\sec(\theta) = \frac{r}{x}</m> and <m>r > 0</m>,
+                we rewrite <m>\sec(\theta) = \frac{r}{x} = -\sqrt{5} = \frac{\sqrt{5}}{-1}</m> and take <m>r = \sqrt{5}</m> and <m>x = -1</m>.
+                To find <m>y</m>,
+                we substitute <m>x=-1</m> and <m>r=\sqrt{5}</m> into
+                <m>x^2+y^2 = r^2</m> to get <m>(-1)^2+y^2=(\sqrt{5})^2</m>.
+                We find <m>y^2 = 4</m> or <m>y = \pm 2</m>.
+                Since <m>\theta</m> is a Quadrant II angle, we select <m>y = 2</m>.
+                Hence, <m>\sin(\theta) = \frac{y}{r} = \frac{2}{\sqrt{5}} = \frac{2 \sqrt{5}}{5}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We are told <m>\tan(\theta) = 3</m> and <m>\pi \lt \theta \lt \frac{3\pi}{2}</m>,
+                so we know <m>\theta</m> is a Quadrant III angle.
+                To find <m>\cos(\theta)</m> using <xref ref="circularfunctionscircle">Theorem</xref>,
+                we need to find the <m>x</m>-coordinate of a point <m>Q(x,y)</m> on the terminal side of <m>\theta</m>,
+                when <m>\theta</m> is plotted in standard position,
+                and the corresponding radius, <m>r</m>.
+                Since <m>\tan(\theta) = \frac{y}{x}</m> and <m>\theta</m> is a Quadrant III angle,
+                we rewrite <m>\tan(\theta) = 3 = \frac{-3}{-1} = \frac{y}{x}</m> and choose <m>x = -1</m> and <m>y = -3</m>.
+                From <m>x^2+y^2 = r^2</m>, we get <m>r = \sqrt{10}</m>.
+                Hence, <m>\cos(\theta) = \frac{x}{r} = \frac{-1}{\sqrt{10}} = -\frac{\sqrt{10}}{10}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel[cc](-3, 3){<m>Q(-2, 1)</m>} \tlabel[cc](-1.75,1.5){<m>r=\sqrt{5}</m>} \tcaption{<m>\theta</m> is Quadrant II with <m>\sec(\theta) = -\sqrt{5}</m>} \xmarks{-1.5, -3, -4.5, 1.5, 3, 4.5} \ymarks{-1.5, -3,1.5, 3, 4.5} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-2.25, 4.5)} \point[4pt]{(0,0), (-1.5,3)} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1.5, {<m>-2</m>} -3, {<m>-3</m>} -4.5, {<m>1</m>} 1.5, {<m>2</m>} 3, {<m>3</m>} 4.5} \axislabels {y}{ {<m>-2</m>} -3, {<m>-1</m>} -1.5, {<m>1</m>} 1.5, {<m>2</m>} 3} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel[cc](-2, -1.25){<m>r = \sqrt{10}</m>} \tlabel[cc](-2.5, -3.18){<m>(-1, -3)</m>} \tcaption{<m>\theta</m> is Quadrant III with <m>\tan(\theta) = 3</m>.} \xmarks{1.06, 2.12, 3.18, 4.24, -1.06, -2.12, -3.18, -4.24 } \ymarks{1.06, 2.12, 3.18, -1.06, -2.12, -3.18 } \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-1.58, -4.74)} \point[4pt]{(0,0), (-1.06, -3.18)} \tlpointsep{4pt} \axislabels {x}{ {<m>4</m>} 4.24, {<m>3</m>} 3.18, {<m>2</m>} 2.12, {<m>1</m>} 1.06, {<m>-4</m>} -4.24, {<m>-3</m>} -3.18, {<m>-2</m>} -2.12, {<m>-1</m>} -1.06} \axislabels {y}{ {<m>3</m>} 3.18, {<m>2</m>} 2.12, {<m>1</m>} 1.06, {<m>-3</m>} -3.18, {<m>-2</m>} -2.12} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As we did in <xref ref="cosinesinebeyond">Section</xref>,
+      we may consider <m>\tan(t)</m>,
+      <m>\sec(t)</m>, <m>\csc(t)</m>,
+      and <m>\cot(t)</m> as functions <em>real numbers</em>
+      by associating each real number <m>t</m> with an angle <m>\theta</m> measuring <m>t</m> radians as discussed on <xref ref="cosinesineequationsrealnumbers">page</xref>
+      and using <xref ref="circularfunctions">Definition</xref>, or,
+      more generally,
+      <xref ref="circularfunctionscircle">Theorem</xref>.
+    </p>
+    <p>
+      Alternatively,
+      we could define each of these four functions in terms of <m>f(t) = \sin(t)</m> and
+      <m>g(t) = \cos(t)</m> as demonstrated in <xref ref="recipquotid">Theorem</xref>.
+      For example, we could simply <em>define</em>
+      <m>\sec(t) = \frac{1}{\cos(t)}</m> so long as <m>\cos(t) \neq 0</m>.
+    </p>
+    <p>
+      Either way, we have the means to explore these functions in greater detail.
+      Before doing so,
+      we'll need practice with these additional four circular functions courtesy of the Exercises.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="circvaluefirst">Exercises</xref>
+      - <xref ref="circvaluelast"></xref>,
+      find the exact value or state that it is undefined.
+      <ol cols="5">
+        <li xml:id="circvaluefirst">
+          <p>
+            <m>\tan \left( \dfrac{\pi}{4} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec \left( \dfrac{\pi}{6} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc \left( \dfrac{5\pi}{6} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot \left( \dfrac{4\pi}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan \left( -\dfrac{11\pi}{6} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec \left( -\dfrac{3\pi}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc \left( -\dfrac{\pi}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot \left( \dfrac{13\pi}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan \left( 117\pi \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec \left( -\dfrac{5\pi}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc \left( 3\pi \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot \left( -5\pi \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan \left( \dfrac{31\pi}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec \left( \dfrac{\pi}{4} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc \left( -\dfrac{7\pi}{4} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot \left( \dfrac{7\pi}{6} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan \left( \dfrac{2\pi}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec \left( -7\pi \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc \left( \dfrac{\pi}{2} \right)</m>
+          </p>
+        </li>
+        <li xml:id="circvaluelast">
+          <p>
+            <m>\cot \left( \dfrac{3\pi}{4} \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="whereisanglefirst">Exercises</xref>
+      - <xref ref="whereisanglelast"></xref>,
+      use the given the information to determine the quadrant in which the terminal side of the angle lies when plotted in standard position.
+      <ol cols="2">
+        <li xml:id="whereisanglefirst">
+          <p>
+            <m>\sin(\theta) > 0</m> but <m>\tan(\theta) \lt 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\alpha) > 0</m> but <m>\cos(\alpha) \lt 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\beta) > 0</m> and <m>\tan(\beta) > 0</m>.
+          </p>
+        </li>
+        <li xml:id="whereisanglelast">
+          <p>
+            <m>\cos(\gamma) > 0</m> but <m>\cot(\gamma) \lt 0</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findothercircfirst">Exercises</xref>
+      - <xref ref="findothercirclast"></xref>,
+      use the given the information to find the exact values of the circular functions of <m>\theta</m>.
+      <ol cols="2">
+        <li xml:id="findothercircfirst">
+          <p>
+            <m>\sin(\theta) = \dfrac{3}{5}</m> with <m>\theta</m> in Quadrant II
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = \dfrac{12}{5}</m> with <m>\theta</m> in Quadrant III
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = \dfrac{25}{24}</m> with <m>\theta</m> in Quadrant I
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = 7</m> with <m>\theta</m> in Quadrant IV
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = -\dfrac{10\sqrt{91}}{91}</m> with <m>\theta</m> in Quadrant III
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\theta) = -23</m> with <m>\theta</m> in Quadrant II
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = -2</m> with <m>\theta</m> in Quadrant IV.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = -4</m> with <m>\theta</m> in Quadrant II.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\theta) = \sqrt{5}</m> with <m>\theta</m> in Quadrant III.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = \dfrac{1}{3}</m> with <m>\theta</m> in Quadrant I.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\theta) = 2</m> with <m>0 \lt \theta \lt \dfrac{\pi}{2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = 5</m> with <m>\dfrac{\pi}{2} \lt \theta \lt \pi</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = \sqrt{10}</m> with <m>\pi \lt \theta \lt \dfrac{3\pi}{2}</m>.
+          </p>
+        </li>
+        <li xml:id="findothercirclast">
+          <p>
+            <m>\sec(\theta) = 2\sqrt{5}</m> with <m>\dfrac{3\pi}{2} \lt \theta \lt 2\pi</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="circcalcfirst">Exercises</xref>
+      - <xref ref="circcalclast"></xref>,
+      use your calculator to approximate the given value to three decimal places.
+      Make sure your calculator is in the proper angle measurement mode!
+      <ol cols="2">
+        <li xml:id="circcalcfirst">
+          <p>
+            <m>\csc(78.95^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(-2.01)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(392.994)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(207^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(5.902)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(39.672^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(3^{\circ})</m>
+          </p>
+        </li>
+        <li xml:id="circcalclast">
+          <p>
+            <m>\sec(0.45)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="circequanglefirst">Exercises</xref>
+      - <xref ref="circequanglelast"></xref>,
+      find all of the angles which satisfy the equation.
+      <ol cols="4">
+        <li xml:id="circequanglefirst">
+          <p>
+            <m>\tan(\theta) = \sqrt{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = -1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\theta) = \dfrac{\sqrt{3}}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(\theta) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = -1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = -\dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = -1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = -\sqrt{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = -2</m>
+          </p>
+        </li>
+        <li xml:id="circequanglelast">
+          <p>
+            <m>\cot(\theta) = -1</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="circequtfirst">Exercises</xref>
+      - <xref ref="circequtlast"></xref>,
+      solve the equation for <m>t</m>.
+      Give exact values.
+      <ol cols="2">
+        <li xml:id="circequtfirst">
+          <p>
+            <m>\cot(t) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(t) = \dfrac{\sqrt{3}}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(t) = -\dfrac{2\sqrt{3}}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(t) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(t) = -\sqrt{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(t) = -\dfrac{\sqrt{3}}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(t) = \dfrac{2\sqrt{3}}{3}</m>
+          </p>
+        </li>
+        <li xml:id="circequtlast">
+          <p>
+            <m>\csc(t) = \dfrac{2\sqrt{3}}{3}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="decomposebasicothercircularfirst">Exercises</xref>
+      - <xref ref="decomposebasicothercircularlast"></xref>,
+      write the given function as a nontrivial decomposition of functions as directed.
+    </p>
+    <ol cols="3">
+      <li xml:id="decomposebasicothercircularfirst">
+        <p>
+          For <m>f(t) = 3t^2 + 2 \tan(3t)</m>,
+          find functions <m>g</m> and <m>h</m> so that <m>f=g+h</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(\theta) = \sec(\theta) - \tan(\theta)</m>,
+          find functions <m>g</m> and <m>h</m> so that <m>f=g-h</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(t) = -\csc(t) \cot(t)</m>,
+          find functions <m>g</m> and <m>h</m> so that <m>f=gh</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>r(t) = \dfrac{\tan(3t)}{t}</m>,
+          find functions <m>f</m> and <m>g</m> so <m>r = \dfrac{f}{g}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>T(\theta) =\tan(4 \theta)</m>,
+          find functions <m>f</m> and <m>g</m> so <m>T = g \circ f</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>s(\theta) = \sec^{2}(\theta)</m>,
+          find functions <m>f</m> and <m>g</m> so <m>s = g \circ f</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>L(x) = \ln (\sin(x) )</m>,
+          find functions <m>f</m> and <m>g</m> so <m>L = g \circ f</m>.
+        </p>
+      </li>
+      <li xml:id="decomposebasicothercircularlast">
+        <p>
+          For <m>\ell(\theta) = \ln | \sec(\theta) - \tan(\theta)|</m>,
+          find find functions <m>f</m>,
+          <m>g</m>, and <m>h</m> so <m>\ell = h \circ (f-g)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>S(t) = \sin(t)</m> and <m>C(t) = \cos(t)</m>,
+          <m>F(t) = \tan(t)</m>, and <m>G(t) = \cot(t)</m>.
+          Explain why <m>F = \dfrac{S}{C}</m> but <m>F \neq \dfrac{1}{G}</m>.
+          HINT: Think about domains <ellipsis/>
+        </p>
+      </li>
+      <li xml:id="tangentarcexercise">
+        <p>
+          For each function <m>T(t)</m> listed below,
+          compute the average rate of change over the indicated interval.<fn>
+          See <xref ref="arc">Definition</xref>
+          in <xref ref="AverageRateofChange">Section</xref>
+          for a review of this concept, as needed.
+          </fn>  What trends do you notice?
+          Compare your answer with what you discovered in <xref ref="TheCircularFunctionsSineandCosine">Section</xref>
+          <xref ref="sinearcexercise">number</xref>.
+          Be sure your calculator is in radian mode!
+          <me>
+            \begin{array}{|r||c|c|c|}  \hline  T(t) \amp   [-0.1, 0.1] \amp  [-0.01, 0.01] \amp [-0.001, 0.001] \\ \hline \tan(t)     \amp \amp \amp   \\  \hline \tan(2t)   \amp \amp \amp   \\ \hline \tan(3t)   \amp \amp \amp    \\  \hline \tan(4t)   \amp \amp \amp    \\  \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          We wish to establish the inequality
+          <m>\cos(\theta) \lt \frac{\sin(\theta)}{\theta} \lt 1</m> for <m>0 \lt \theta \lt \frac{\pi}{2}</m>.
+          Use the diagram from the beginning of the section,
+          partially reproduced below,
+          to answer the following. \begin{mfpic}[20]{-1}{4}{-1}{6} \axes \drawcolor[gray]{0.7} \parafcn{0,90,5}{3*dir(t)} \drawcolor{black} \arrow \parafcn{5, 55, 5}{0.75*dir(t)} \tlabel[cc](0.75,0.5){<m>\theta</m>} \point[3pt]{(0,0), (3,5.196), (3,0)} \tlabel(3.75,-0.5){<m>x</m>} \tlabel(0.25,5.75){<m>y</m>} \tlabel(0.25,3.1){<m>1</m>} \tlabel(-0.5,-0.5){<m>O</m>} \tlabel(2,-0.5){<m>B(1,0)</m>} \xmarks{0 step 3 until 3} \ymarks{0 step 3 until 3} \polyline{(0,0), (3,5.196)} \polyline{(3,0), (3,5.196)} \polyline{(2.75,0), (2.75, 0.25), (3,0.25)} \polyline{(3,0), (1.5, 2.5981)} \tlabel(1.75,2.6){<m>P</m>} \tlabel(3.25,5.25){<m>Q</m>} \end{mfpic}
+        </p>
+        <ol>
+          <li>
+            <p>
+              Show that triangle <m>OPB</m> has area
+              <m>\frac{1}{2} \sin(\theta)</m> and triangle <m>OQB</m> has area <m>\frac{1}{2} \tan(\theta)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that the circular sector <m>OPB</m> with central angle <m>\theta</m> has area <m>\frac{1}{2} \theta</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Comparing areas, show that
+              <m>\sin(\theta) \lt \theta \lt \tan(\theta)</m> for <m>0 \lt \theta \lt \frac{\pi}{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the inequality <m>\sin(\theta) \lt \theta</m> to show that
+              <m>\frac{\sin(\theta)}{\theta} \lt 1</m> for <m>0 \lt \theta \lt \frac{\pi}{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the inequality <m>\theta \lt \tan(\theta)</m> to show that
+              <m>\cos(\theta) \lt \frac{\sin(\theta)}{\theta}</m> for <m>0 \lt \theta \lt \frac{\pi}{2}</m>.
+              Combine this with the previous part to complete the proof.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Show that <m>\cos(\theta) \lt \frac{\sin(\theta)}{\theta} \lt 1</m> also holds for <m>-\frac{\pi}{2}\lt \theta \lt 0</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\tan \left( \dfrac{\pi}{4} \right) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec \left( \dfrac{\pi}{6} \right) = \dfrac{2\sqrt{3}}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc \left( \dfrac{5\pi}{6} \right) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot \left( \dfrac{4\pi}{3} \right) = \dfrac{\sqrt{3}}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan \left( -\dfrac{11\pi}{6} \right) = \dfrac{\sqrt{3}}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec \left( -\dfrac{3\pi}{2} \right)</m> is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc \left( -\dfrac{\pi}{3} \right) = -\dfrac{2\sqrt{3}}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot \left( \dfrac{13\pi}{2} \right) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan \left( 117\pi \right) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec \left( -\dfrac{5\pi}{3} \right) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc \left( 3\pi \right)</m> is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot \left( -5\pi \right)</m> is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan \left( \dfrac{31\pi}{2} \right)</m> is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec \left( \dfrac{\pi}{4} \right) = \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc \left( -\dfrac{7\pi}{4} \right) = \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot \left( \dfrac{7\pi}{6} \right) = \sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan \left( \dfrac{2\pi}{3} \right) = -\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec \left( -7\pi \right) = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc \left( \dfrac{\pi}{2} \right) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot \left( \dfrac{3\pi}{4} \right) = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Quadrant II.
+        </p>
+      </li>
+      <li>
+        <p>
+          Quadrant III.
+        </p>
+      </li>
+      <li>
+        <p>
+          Quadrant I.
+        </p>
+      </li>
+      <li>
+        <p>
+          Quadrant IV.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{3}{5}, \cos(\theta) = -\frac{4}{5}, \tan(\theta) = -\frac{3}{4}, \csc(\theta) = \frac{5}{3}, \sec(\theta) = -\frac{5}{4}, \cot(\theta) = -\frac{4}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{12}{13}, \cos(\theta) = -\frac{5}{13}, \tan(\theta) = \frac{12}{5}, \csc(\theta) = -\frac{13}{12}, \sec(\theta) = -\frac{13}{5}, \cot(\theta) = \frac{5}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{24}{25}, \cos(\theta) = \frac{7}{25}, \tan(\theta) = \frac{24}{7}, \csc(\theta) = \frac{25}{24}, \sec(\theta) = \frac{25}{7}, \cot(\theta) = \frac{7}{24}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{-4\sqrt{3}}{7}, \cos(\theta) = \frac{1}{7}, \tan(\theta) = -4\sqrt{3}, \csc(\theta) = -\frac{7\sqrt{3}}{12}, \sec(\theta) = 7, \cot(\theta) = -\frac{\sqrt{3}}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{\sqrt{91}}{10}, \cos(\theta) = -\frac{3}{10}, \tan(\theta) = \frac{\sqrt{91}}{3}, \csc(\theta) = -\frac{10\sqrt{91}}{91}, \sec(\theta) = -\frac{10}{3}, \cot(\theta) = \frac{3\sqrt{91}}{91}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{530}}{530}, \cos(\theta) = -\frac{23\sqrt{530}}{530}, \tan(\theta) = -\frac{1}{23}, \csc(\theta) = \sqrt{530}, \sec(\theta) = -\frac{\sqrt{530}}{23}, \cot(\theta) = -23</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{2\sqrt{5}}{5}, \cos(\theta) = \frac{\sqrt{5}}{5}, \tan(\theta) = -2, \csc(\theta) = -\frac{\sqrt{5}}{2}, \sec(\theta) = \sqrt{5}, \cot(\theta) = -\frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{15}}{4}, \cos(\theta) = -\frac{1}{4}, \tan(\theta) = -\sqrt{15}, \csc(\theta) = \frac{4\sqrt{15}}{15}, \sec(\theta) = -4, \cot(\theta) = -\frac{\sqrt{15}}{15}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{\sqrt{6}}{6}, \cos(\theta) = -\frac{\sqrt{30}}{6}, \tan(\theta) = \frac{\sqrt{5}}{5}, \csc(\theta) = -\sqrt{6}, \sec(\theta) = -\frac{\sqrt{30}}{5}, \cot(\theta) = \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{2\sqrt{2}}{3}, \cos(\theta) = \frac{1}{3}, \tan(\theta) = 2\sqrt{2}, \csc(\theta) = \frac{3\sqrt{2}}{4}, \sec(\theta) = 3, \cot(\theta) = \frac{\sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{5}}{5}, \cos(\theta) = \frac{2\sqrt{5}}{5}, \tan(\theta) = \frac{1}{2}, \csc(\theta) = \sqrt{5}, \sec(\theta) = \frac{\sqrt{5}}{2}, \cot(\theta) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{1}{5}, \cos(\theta) = -\frac{2\sqrt{6}}{5}, \tan(\theta) = -\frac{\sqrt{6}}{12}, \csc(\theta) = 5, \sec(\theta) = -\frac{5\sqrt{6}}{12}, \cot(\theta) = -2\sqrt{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{\sqrt{110}}{11}, \cos(\theta) = -\frac{\sqrt{11}}{11}, \tan(\theta) = \sqrt{10}, \csc(\theta) = -\frac{\sqrt{110}}{10}, \sec(\theta) = -\sqrt{11}, \cot(\theta) = \frac{\sqrt{10}}{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -\frac{\sqrt{95}}{10}, \cos(\theta) = \frac{\sqrt{5}}{10}, \tan(\theta) = -\sqrt{19}, \csc(\theta) = -\frac{2\sqrt{95}}{19}, \sec(\theta) = 2\sqrt{5}, \cot(\theta) = -\frac{\sqrt{19}}{19}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(78.95^{\circ}) \approx 1.019</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(-2.01) \approx 2.129</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(392.994) \approx 3.292</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(207^{\circ}) \approx -1.122</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(5.902) \approx -2.688</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(39.672^{\circ}) \approx 0.829</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(3^{\circ}) \approx 19.081</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(0.45) \approx 1.111</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = \sqrt{3}</m> when
+          <m>\theta = \dfrac{\pi}{3} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = 2</m> when <m>\theta = \dfrac{\pi}{3} + 2\pi k</m> or
+          <m>\theta = \dfrac{5\pi}{3} + 2\pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(\theta) = -1</m> when
+          <m>\theta = \dfrac{3\pi}{2} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(\theta) = \dfrac{\sqrt{3}}{3}</m> when
+          <m>\theta = \dfrac{\pi}{3} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = 0</m> when
+          <m>\theta = \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = 1</m> when
+          <m>\theta = 2\pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(\theta) = 2</m> when <m>\theta = \dfrac{\pi}{6} + 2\pi k</m> or
+          <m>\theta = \dfrac{5\pi}{6} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(\theta) = 0</m> when
+          <m>\theta = \dfrac{\pi}{2} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = -1</m> when
+          <m>\theta = \dfrac{3\pi}{4} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = 0</m> never happens
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(\theta) = -\dfrac{1}{2}</m> never happens
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = -1</m> when
+          <m>\theta = \pi + 2\pi k = (2k+1)\pi</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = -\sqrt{3}</m> when
+          <m>\theta = \dfrac{2\pi}{3} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(\theta) = -2</m> when <m>\theta = \dfrac{7\pi}{6} + 2\pi k</m> or
+          <m>\theta = \dfrac{11\pi}{6} + 2\pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(\theta) = -1</m> when
+          <m>\theta = \dfrac{3\pi}{4} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(t) = 1</m> when <m>t = \dfrac{\pi}{4} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(t) = \dfrac{\sqrt{3}}{3}</m> when
+          <m>t = \dfrac{\pi}{6} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(t) = -\dfrac{2\sqrt{3}}{3}</m> when <m>t = \dfrac{5\pi}{6} + 2\pi k</m> or
+          <m>t = \dfrac{7\pi}{6} + 2\pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(t) = 0</m> never happens
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(t) = -\sqrt{3}</m> when
+          <m>t = \dfrac{5\pi}{6} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(t) = -\dfrac{\sqrt{3}}{3}</m> when
+          <m>t = \dfrac{5\pi}{6} + \pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(t) = \dfrac{2\sqrt{3}}{3}</m> when <m>t = \dfrac{\pi}{6} + 2\pi k</m> or
+          <m>t = \dfrac{11\pi}{6} + 2\pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(t) = \dfrac{2\sqrt{3}}{3}</m> when <m>t = \dfrac{\pi}{3} + 2\pi k</m> or
+          <m>t = \dfrac{2\pi}{3} + 2\pi k</m> for any integer <m>k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(t) = 3t^2</m> and <m>h(t) = 2\tan(3t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(\theta) = \sec(\theta)</m> and <m>h(\theta) = \tan(\theta)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(t) = -\csc(t)</m> and <m>h(t) = \cot(t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(t) = \tan(3t)</m> and <m>g(t) = t</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(\theta) = 4 \theta</m> and <m>g(\theta) = \tan(\theta)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Since <m>\sec^{2}(\theta) = (\sec(\theta))^2</m>,
+          one solution is <m>f(\theta) = \sec(\theta)</m> and <m>g(\theta) = \theta^2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(x) = \sin(x)</m> and <m>g(x) = \ln(x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(\theta) = \sec(\theta)</m>,
+          <m>g(\theta) = \tan(\theta)</m>,
+          and <m>h(\theta) = \ln| \theta|</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          As we zoom in towards <m>0</m>,
+          the average rate of change of <m>\tan(k t)</m> approaches <m>k</m>.
+          This is the same trend we observed for
+          <m>\sin(k t)</m> in <xref ref="TheCircularFunctionsSineandCosine">Section</xref>
+          <xref ref="sinearcexercise">number</xref>.
+          <me>
+            \begin{array}{|r||c|c|c|}  \hline  T(t) \amp   [-0.1, 0.1] \amp  [-0.01, 0.01] \amp [-0.001, 0.001] \\ \hline \tan(t)     \amp  \approx 1.0033 \amp  \approx 1 \amp  \approx 1 \\  \hline \tan(2t)   \amp  \approx 2.0271 \amp  \approx 2.0003 \amp  \approx 2 \\ \hline \tan(3t)   \amp  \approx 3.0933 \amp  \approx 3.0009 \amp  \approx 3  \\  \hline \tan(4t)   \amp  \approx 4.2279 \amp  \approx 4.0021 \amp  \approx 4  \\  \hline \end{array}
+          </me>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

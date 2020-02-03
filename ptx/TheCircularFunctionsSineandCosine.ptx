@@ -1,0 +1,2159 @@
+<section xml:id="TheCircularFunctionsSineandCosine">
+  <title>The Circular Functions: Sine and Cosine</title>
+  <introduction>
+    <p>
+      In <xref ref="circularmotion">Section</xref>,
+      we introduced circular motion and derived a formula which describes the linear velocity of an object moving on a circular path at a constant angular velocity.
+      One of the goals of this section is describe the
+      <em>position</em> of such an object.
+      To that end,
+      consider an angle <m>\theta</m> in standard position and let <m>P</m> denote the point where the terminal side of <m>\theta</m> intersects the Unit Circle,
+      as diagrammed below.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \point[4pt]{(0,0)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \tlabel[cc](1.9, 1){<m>\theta</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \tlabel(2,2.6){<m>P(\cos(\theta), \sin(\theta))</m>}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \tlabel[cc](1.9, 1){<m>\theta</m>}
+          \point[4pt]{(0,0), (1.5, 2.5981)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      By associating the point <m>P</m> with the angle <m>\theta</m>,
+      we are assigning a <em>position</em>
+      on the Unit Circle to the angle <m>\theta</m>.
+      Since for each angle <m>\theta</m>,
+      the terminal side of <m>\theta</m>,
+      when graphed in standard position,
+      intersects The Unit Circle only once,
+      the mapping of <m>\theta</m> to <m>P</m> is a function.<fn>
+      See <xref ref="functiondefn">Definition</xref>
+      in <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+      </fn> Since there is only <em>one</em>
+      way to describe a point using rectangular coordinates,<fn>
+      See <xref ref="importantfactscartesianplane">page</xref>
+      in <xref ref="AppCartesianPlane">Section</xref>.
+      </fn> the mappings of <m>\theta</m> to each of the <m>x</m> and <m>y</m> coordinates of <m>P</m> are also functions.
+      We give these functions names in the following definition.
+    </p>
+    <definition xml:id="sinecosineunitcircledefn">
+      <statement>
+        <p>
+          Suppose an angle <m>\theta</m> is graphed in standard position.
+          Let <m>P(x,y)</m> be the point of intersection of the terminal side of <m>P</m> and the Unit Circle.
+          <ul>
+            <li>
+              <p>
+                The <m>x</m>-coordinate of <m>P</m> is called the <idx><h>cosine</h><h>of an angle</h></idx>
+                <em>cosine</em> of <m>\theta</m>,
+                written <m>\cos(\theta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <m>y</m>-coordinate of <m>P</m> is called the
+                  <idx><h>sine</h><h>of an angle</h></idx>
+                <em>sine</em> of <m>\theta</m>,
+                written <m>\sin(\theta)</m>.<fn>
+                The etymology of the name <sq>sine</sq> is quite colorful,
+                and the interested reader is invited to research it;
+                the <sq>co</sq> in <sq>cosine</sq> is related to the concept of <sq>co</sq>mplementary angles
+                (see <xref ref="AppAngles">Sections</xref>
+                and <xref ref="AppRightTrig"></xref>)
+                and is explained in detail in <xref ref="MoreTrigonometricIdentities">Section</xref>.
+                </fn>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      You may have already seen definitions for the sine and cosine of an (acute) angle in terms of ratios of sides of a right triangle.<fn>
+      For instance,
+      <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      in <xref ref="AppRightTrig">Section</xref>.
+      </fn> While not incorrect,
+      defining sine and cosine using right triangles limits the angles we can study to acute angles only.
+      <xref ref="sinecosineunitcircledefn">Definition</xref>,
+      on the other hand,
+      applies to <em>all</em> angles.
+      Since these functions are defined in terms of points on the Unit
+      <em>Circle</em>, they are called
+          <idx><h>circular functions</h></idx>
+          <idx><h>functions</h><h>circular</h></idx> <em>circular</em> functions.
+      Rest assured,
+      <xref ref="sinecosineunitcircledefn">Definition</xref>
+      specializes to <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      when <m>\theta</m> is an acute angle.
+      We will see instances of this fact in the next example.
+    </p>
+    <example xml:id="cosinesineviaunitcircle">
+      <statement>
+        <p>
+          Find the sine and cosine of the following angles.
+          <ol>
+            <li>
+              <p>
+                <m>\theta = 270^{\circ}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\theta = - \pi</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\theta = 45^{\circ}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\theta = \frac{\pi}{6}</m>
+              </p>
+            </li>
+            <li xml:id="refangleintro">
+              <p>
+                <m>\theta = \frac{5\pi}{6}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find <m>\cos\left(270^{\circ}\right)</m> and <m>\sin\left(270^{\circ}\right)</m>,
+                we plot the angle <m>\theta =270^{\circ}</m> in standard position and find the point on the terminal side of <m>\theta</m> which lies on the Unit Circle.
+                Since <m>270^{\circ}</m> represents
+                <m>\frac{3}{4}</m> of a counter-clockwise revolution,
+                the terminal side of <m>\theta</m> lies along the negative <m>y</m>-axis.
+                Hence, the point we seek is <m>(0,-1)</m> so that
+                <m>\cos\left(270^{\circ}\right) = 0</m> and <m>\sin\left(270^{\circ}\right) = -1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The angle <m>\theta=-\pi</m> represents one half of a clockwise revolution so its terminal side lies on the negative <m>x</m>-axis.
+                The point on the Unit Circle that lies on the negative <m>x</m>-axis is <m>(-1,0)</m> which means
+                <m>\cos(-\pi) = -1</m> and <m>\sin(-\pi) = 0</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Finding <m>\cos\left(270^{\circ}\right)</m> and <m>\sin\left(270^{\circ}\right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \tlabel(0.25,-3.75){<m>P(0, -1)</m>} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 265, 5}{1.5*dir(t)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (0,-5)} \tlabel(-2, 1.75){<m>\theta = 270^{\circ}</m>} \point[4pt]{(0,0), (0, -3)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Finding <m>\cos\left(-\pi\right)</m> and <m>\sin\left( -\pi \right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \tlabel(-5.5,0.5){<m>P(-1, 0)</m>} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{-5, -175, -5}{1.5*dir(t)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \tlabel[cc](1, -2){<m>\theta=-\pi</m>} \point[4pt]{(0,0), (-3, 0)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                In <xref ref="AppRightTrig">Section</xref>,
+                we derived values for <m>\cos\left(45^{\circ}\right)</m> and
+                <m>\sin\left(45^{\circ}\right)</m> using <xref ref="righttrianglesinecosinetangent">Definition</xref>.
+                In order to connect what we know from <xref ref="AppRightTrig">Section</xref>
+                with what we are asked to find per <xref ref="sinecosineunitcircledefn">Definition</xref>,
+                we sketch <m>\theta = 45^{\circ}</m> in standard position and let <m>P(x,y)</m> denote the point on the terminal side of <m>\theta</m> which lies on the Unit Circle.
+                If we drop a perpendicular line segment from <m>P</m> to the <m>x</m>-axis as shown below on the left,
+                we obtain a <m>45^{\circ} - 45^{\circ} - 90^{\circ}</m> right triangle whose legs have lengths <m>x</m> and <m>y</m> units with hypotenuse <m>1</m>.
+                From our work in <xref ref="AppRightTrig">Section</xref>,
+                we obtain the (familiar) values
+                <m>x = \cos\left(45^{\circ}\right) = \frac{\sqrt{2}}{2}</m> and <m>y = \sin\left(45^{\circ}\right) = \frac{\sqrt{2}}{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As before, the terminal side of
+                <m>\theta = \frac{\pi}{6}</m> does not lie on any of the coordinate axes,
+                so we proceed using a triangle approach.
+                Letting <m>P(x,y)</m> denote the point on the terminal side of <m>\theta</m> which lies on the Unit Circle,
+                we drop a perpendicular line segment from <m>P</m> to the <m>x</m>-axis to form a <m>30^{\circ} - 60^{\circ} - 90^{\circ}</m> right triangle.
+                Re-using some of our work from <xref ref="AppRightTrig">Section</xref>,
+                we get <m>x = \cos\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}</m> and <m>y=\sin\left(\frac{\pi}{6}\right) = \frac{1}{2}</m>.
+                <tabular>
+                  {m{2.5in}m{1in}m{2.5in}} \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(1.4,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3,1.4){<m>y</m>} \tlabel(4.1,-1){<m>1</m>} \tlabel(0.25,4.1){<m>1</m>} \tlabel(1.4,2){<m>1</m>} \xmarks{-4 step 4 until 4} \ymarks{-4 step 4 until 4} \tlabel(3.5,2.5){<m>P(x,y)</m>} \drawcolor[gray]{0.7} \circle{(0,0),4} \drawcolor{black} \arrow \parafcn{5, 35, 5}{dir(t)} \tlabel(1.15, .5){<m>\theta = 45^{\circ}</m>} \point[4pt]{(0,0), (2.8284, 2.8284)} \dashed \polyline{(2.8284, 2.8284), (2.8284, 0)} \polyline{(2.5284, 0), (2.5284, 0.3), (2.8284, 0.3)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (3.5355, 3.5355)} \end{mfpic} &amp; &amp; \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(1.7,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.6,0.8){<m>y</m>} \tlabel(4.1,-1){<m>1</m>} \tlabel(0.25,4.1){<m>1</m>} \tlabel(1.7,1.25){<m>1</m>} \xmarks{-4 step 4 until 4} \ymarks{-4 step 4 until 4} \tlabel(3.75,1.70){<m>P(x,y)</m>} \drawcolor[gray]{0.7} \circle{(0,0),4} \drawcolor{black} \arrow \parafcn{5, 25, 5}{1.5*dir(t)} \point[4pt]{(0,0), (3.4641, 2)} \dashed \polyline{(3.4641,2), (3.4641, 0)} \polyline{(3.1641, 0), (3.1641, 0.3), (3.4641, 0.3)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (4.330,2.5)} \tlabel(1.75, .25){<m>\theta = \frac{\pi}{6}</m>} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                We plot <m>\theta = \frac{5\pi}{6}</m> in standard position below on the left and,
+                as usual,
+                let <m>P(x,y)</m> denote the point on the terminal side of <m>\theta</m> which lies on the Unit Circle.
+                In plotting <m>\theta</m>,
+                we find it lies <m>\frac{\pi}{6}</m> radians short of one half revolution.
+                Since we've just determined that
+                <m>\cos\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}</m> and <m>\sin\left( \frac{\pi}{6} \right) = \frac{1}{2}</m>,
+                we know the coordinates of the point <m>Q</m> below on the right are <m>\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>.
+                Using symmetry,
+                the coordinates of <m>P</m> are <m>\left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>,
+                so <m>\cos\left(\frac{5\pi}{6}\right) = -\frac{\sqrt{3}}{2}</m> and <m>\sin\left( \frac{5\pi}{6} \right) = \frac{1}{2}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(4.1,-1){<m>1</m>} \tlabel(0.25,4.1){<m>1</m>} \xmarks{-4 step 4 until 4} \ymarks{-4 step 4 until 4} \tlabel(-5.25,1.70){<m>P(x,y)</m>} \drawcolor[gray]{0.7} \circle{(0,0),4} \drawcolor{black} \arrow \parafcn{5, 145, 5}{1.5*dir(t)} \arrow \reverse \arrow \parafcn{155, 175, 5}{1.5*dir(t)} \tlabel(1, 1.75){<m>\theta = \frac{5\pi}{6}</m>} \tlabel(-2.5, .25){<m>\frac{\pi}{6}</m>} \point[4pt]{(0,0), (-3.4641, 2)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-4.330,2.5)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(4.1,-1){<m>1</m>} \tlabel(0.25,4.1){<m>1</m>} \xmarks{-4 step 4 until 4} \ymarks{-4 step 4 until 4} \tlabel(3.75,1.70){<m>Q\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>} \tlabel(-6.25,1.70){<m>P\left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>} \drawcolor[gray]{0.7} \circle{(0,0),4} \drawcolor{black} \dotted \polyline{(0,0), (4.330,2.5)} \dotted \polyline{(-3.4641, 2), (3.4641, 2)} \arrow \parafcn{5, 25, 5}{2*dir(t)} \arrow \reverse \arrow \parafcn{155, 175, 5}{1.5*dir(t)} \tlabel(2.25, .25){<m>\frac{\pi}{6}</m>} \tlabel(-2.5, .25){<m>\frac{\pi}{6}</m>} \arrow \parafcn{5, 145, 5}{1.5*dir(t)} \tlabel(.75, 1.3){<m>\theta = \frac{5 \pi}{6}</m>} \point[4pt]{(0,0), (3.4641, 2), (-3.4641, 2) } \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-4.330,2.5)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks are in order.
+      First, after having re-used some of our work from <xref ref="AppRightTrig">Section</xref> in a few specific instances,
+      we can reconcile <xref ref="sinecosineunitcircledefn">Definition</xref>
+      with <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      in the case <m>\theta</m> is an acute angle.
+      We situate <m>\theta</m> in a right triangle with hypotenuse length <m>1</m>,
+      adjacent side length <sq><m>x</m>,</sq> and the opposite side length <sq><m>y</m></sq> as seen below on the left.
+      Placing the vertex of <m>\theta</m> at the origin and the adjacent side of <m>\theta</m> along the <m>x</m>-axis as seen below on the right effectively puts <m>\theta</m> in standard position with <m>\theta</m>'s adjacent side as the initial side of <m>\theta</m> and the hypotenuse as the terminal side of <m>\theta</m>.
+      Since the hypotenuse of the triangle has length <m>1</m>,
+      we know the point <m>P(x,y)</m> is on the Unit Circle.<fn>
+      Do you see why?
+      </fn>
+    </p>
+    <tabular>
+      {m{2.5in}m{0.5in}m{2.5in}}
+      \begin{mfpic}[15]{-5}{5}{-5}{5}
+      \arrow \reverse \arrow \shiftpath{(-4.330,0)} \parafcn{5, 25, 5}{3*dir(t)}
+      \polyline{(3.93, 0), (3.93, 0.4), (4.33, 0.4)}
+      \penwd{1.25pt}
+      \polyline{(-4.330,0), (4.330,0), (4.330,5), (-4.330,0)}
+      \tlabel(-1, 0.6){<m>\theta</m>}
+      \tlabel(0,-0.75){<m>x</m>}
+      \tlabel(4.75,2.25){<m>y</m>}
+      \tlabel(0,3){<m>1</m>}
+      \end{mfpic}
+      &amp;
+      &amp;
+      \begin{mfpic}[15]{-5}{5}{-5}{5}
+      \axes
+      \tlabel(4.75,-0.5){<m>x</m>}
+      \tlabel(0.25,4.75){<m>y</m>}
+      \tlabel(1.7,-0.5){<m>x</m>}
+      \tlabel(3.6,0.65){<m>y</m>}
+      \tlabel(4.1,-1){<m>1</m>}
+      \tlabel(0.25,4.1){<m>1</m>}
+      \xmarks{-4 step 4 until 4}
+      \ymarks{-4 step 4 until 4}
+      \tlabel(3.75,1.60){<m>P(x,y)</m>}
+      \drawcolor[gray]{0.7}
+      \circle{(0,0),4}
+      \drawcolor{black}
+      \arrow \parafcn{5, 25, 5}{1.5*dir(t)}
+      \tlabel(1.75, .25){<m>\theta</m>}
+      \point[4pt]{(0,0), (3.4641, 2)}
+      \polyline{(3.4641,2), (3.4641, 0)}
+      \polyline{(3.1641, 0), (3.1641, 0.3), (3.4641, 0.3)}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \polyline{(5,0),(0,0), (4.330,2.5)}
+      \end{mfpic}
+    </tabular>
+    <p>
+      <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      gives <m>\cos(\theta) = \frac{x}{1} = x</m> and
+      <m>\sin(\theta) = \frac{y}{1} = y</m> which exactly matches <xref ref="sinecosineunitcircledefn">Definition</xref>.
+      Hence, in the case of acute angles,
+      the two definitions agree.
+      In other words, the values of the
+      <em>trigonometric ratios</em>
+      of acute angles are the same as the corresponding
+      <em>circular function</em> values.
+    </p>
+    <p>
+      A second important take-away from <xref ref="cosinesineviaunitcircle">Example</xref>
+      is use of symmetry in <xref ref="refangleintro">number</xref>.
+      Indeed, we found the sine and cosine of
+      <m>\frac{5\pi}{6}</m> using the (acute) angle
+      <m>\frac{\pi}{6}</m> <sq>for reference.</sq> Since the Unit Circle is rife with symmetry,
+      we would like to generalize this concept and exploit symmetry whenever possible.
+      To that end, we introduce the notion of
+          <idx><h>angle</h><h>reference</h></idx>
+          <idx><h>reference angle</h></idx>
+      <em>reference angle</em>.
+    </p>
+    <p>
+      In general, for a non-quadrantal angle <m>\theta</m>,
+      the reference angle for <m>\theta</m>
+      (which we'll usually denote <m>\alpha</m>)
+      is the <em>acute</em> angle made between the terminal side of <m>\theta</m> and the <m>x</m>-axis.
+      If <m>\theta</m> is a Quadrant I or IV angle,
+      <m>\alpha</m> is the angle between the terminal side of <m>\theta</m> and the
+      <em>positive</em> <m>x</m>-axis:
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.75){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \tlabel(2,2.5){<m>P = Q</m>}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \penwd{1.25pt}
+          \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](2, 1){<m>\alpha</m>}
+          \point[4pt]{(0,0),(1.5, 2.598)}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \tlabel(1.75,-3){<m>P</m>}
+          \tlabel(1.75,2.5){<m>Q</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \point[4pt]{(0,0), (1.5, -2.598)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \dotted \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \arrow \reverse \arrow \parafcn{305, 355, 5}{1.5*dir(t)}
+          \tlabel[cc](2, -1){<m>\alpha</m>}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](2, 1){<m>\alpha</m>}
+          \point[4pt]{(0,0), (1.5, -2.598), (1.5, 2.598)}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, -4.3301)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell>Reference angle <m>\alpha</m> for a Quadrant I angle</cell>
+        <cell>Reference angle <m>\alpha</m> for a Quadrant IV angle</cell>
+      </row>
+    </tabular>
+    <p>
+      If <m>\theta</m> is a Quadrant II or III angle,
+      <m>\alpha</m> is the angle between the terminal side of <m>\theta</m> and the
+      <em>negative</em> <m>x</m>-axis:
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.75){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \tlabel(-2.5,2.5){<m>P</m>}
+          \tlabel(1.75,2.5){<m>Q</m>}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \dotted \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \arrow \reverse \arrow \parafcn{125, 175, 5}{1.5*dir(t)}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](2, 1){<m>\alpha</m>}
+          \tlabel[cc](-2, 1){<m>\alpha</m>}
+          \point[4pt]{(0,0), (-1.5, 2.598), (1.5, 2.598)}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (-2.5, 4.3301)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \tlabel(-2.5,-3){<m>P</m>}
+          \tlabel(1.75,2.5){<m>Q</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \dotted \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \arrow \reverse \arrow \parafcn{185, 235, 5}{1.5*dir(t)}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](2, 1){<m>\alpha</m>}
+          \tlabel[cc](-2, -1){<m>\alpha</m>}
+          \point[4pt]{(0,0), (-1.5, -2.598),(1.5, 2.598)}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (-2.5, -4.3301)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell>Reference angle <m>\alpha</m> for a Quadrant II angle</cell>
+        <cell>Reference angle <m>\alpha</m> for a Quadrant III angle</cell>
+      </row>
+    </tabular>
+    <p>
+      If we let <m>P</m> denote the point <m>(\cos(\theta), \sin(\theta))</m>,
+      then <m>P</m> lies on the Unit Circle.
+      Since the Unit Circle possesses symmetry with respect to the <m>x</m>-axis,
+      <m>y</m>-axis and origin,
+      regardless of where the terminal side of <m>\theta</m> lies,
+      there is a point <m>Q</m> symmetric with <m>P</m> which determines <m>\theta</m>'s reference angle,
+      <m>\alpha</m>.
+      The only difference between the points <m>P</m> and <m>Q</m> are the signs of their coordinates,
+      <m>\pm</m>.
+      Hence, we have the following:
+    </p>
+    <theorem xml:id="refanglethm">
+      <statement>
+        <p>
+          <em>Reference Angle Theorem.</em>
+          Suppose <m>\alpha</m> is the reference angle for <m>\theta</m>.
+          Then:
+        </p>
+        <p>
+          <m>\cos(\theta) = \pm \cos(\alpha)</m> and <m>\sin(\theta) = \pm \sin(\alpha)</m>,
+        </p>
+        <p>
+          where the choice of the (<m>\pm</m>) depends on the quadrant in which the terminal side of <m>\theta</m> lies.
+              <idx><h>Reference Angle Theorem</h><h>for sine and cosine</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In light of <xref ref="refanglethm">Theorem</xref>,
+      it pays to know the sine and cosine values for certain common Quadrant I angles as well as to keep in mind the signs of the coordinates of points in the given quadrants.
+      <me>
+        \begin{array}{|c|c||c|c|} \hline \theta (\mbox{degrees} ) \amp   \theta (\mbox{radians} ) \amp  \cos(\theta) \amp  \sin(\theta) \\ \hline 0^{\circ} \amp  0 \amp  1 \amp  0 \\ \hline 30^{\circ} \amp  \frac{\pi}{6} \amp  \frac{\sqrt{3}}{2} \amp  \frac{1}{2} \\ \hline 45^{\circ} \amp  \frac{\pi}{4} \amp  \frac{\sqrt{2}}{2} \amp  \frac{\sqrt{2}}{2} \\ \hline 60^{\circ} \amp  \frac{\pi}{3} \amp  \frac{1}{2} \amp  \frac{\sqrt{3}}{2} \\ \hline 90^{\circ} \amp  \frac{\pi}{2} \amp  0 \amp  1 \\ \hline \end{array}
+      </me>
+    </p>
+    <p>
+      \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>(1,0)</m>} \tlabel(-4.5,-0.75){<m>(-1,0)</m>} \tlabel(0.25,3.1){ <m>(0,1)</m>} \tlabel(0.25,-3.4){<m>(0,-1)</m>} \tlabel[cc](-2.83,-2.83){<m>(-,-)</m>} \tlabel[cc](2.83,2.83){<m>(+, +)</m>} \tlabel[cc](-2.83,2.83){<m>(-,+)</m>} \tlabel[cc](2.83,-2.83){<m>(+,-)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \point[4pt]{(-2.1213, -2.1213),(2.1213, 2.1213), (2.1213, -2.1213),(-2.1213, 2.1213), (0,3), (3,0), (0,-3), (-3,0) }
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <example xml:id="refangleex">
+      <statement>
+        <p>
+          Find the sine and cosine of the following angles.
+          <ol>
+            <li>
+              <p>
+                <m>\theta = 225^{\circ}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\theta = \frac{11 \pi}{6}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\theta = -\frac{5 \pi}{4}</m>
+              </p>
+            </li>
+            <li xml:id="coterminalsamesinecosineexample">
+              <p>
+                <m>\theta = \frac{7 \pi}{3}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin by plotting <m>\theta = 225^{\circ}</m> in standard position and find its terminal side overshoots the negative <m>x</m>-axis to land in Quadrant III. Hence,
+                we obtain <m>\theta</m>'s reference angle <m>\alpha</m> by subtracting:
+                <m>\alpha = \theta - 180^{\circ} = 225^{\circ} - 180^{\circ} = 45^{\circ}</m>.
+                Since <m>\theta</m> is a Quadrant III angle,
+                both <m>\cos(\theta) \lt 0</m> and <m>\sin(\theta) \lt 0</m>.
+                The Reference Angle Theorem yields:
+                <m>\cos\left(225^{\circ}\right) = -\cos\left(45^{\circ}\right) = -\frac{\sqrt{2}}{2}</m> and <m>\sin\left(225^{\circ}\right) = - \sin\left(45^{\circ}\right) = -\frac{\sqrt{2}}{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The terminal side of <m>\theta = \frac{11\pi}{6}</m>,
+                when plotted in standard position,
+                lies in Quadrant IV, just shy of the positive <m>x</m>-axis.
+                To find <m>\theta</m>'s reference angle <m>\alpha</m>,
+                we subtract:
+                <m>\alpha = 2\pi - \theta = 2\pi - \frac{11 \pi}{6} = \frac{\pi}{6}</m>.
+                Since <m>\theta</m> is a Quadrant IV angle,
+                <m>\cos(\theta) > 0</m> and <m>\sin(\theta) \lt 0</m>,
+                so the Reference Angle Theorem gives:
+                <m>\cos\left(\frac{11 \pi}{6} \right) = \cos\left(\frac{\pi}{6} \right) = \frac{\sqrt{3}}{2}</m> and <m>\sin\left(\frac{11\pi}{6}\right) = -\sin\left(\frac{\pi}{6}\right) = -\frac{1}{2}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4.25}{4.25} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Finding <m>\cos\left(225^{\circ}\right)</m> and <m>\sin\left(225^{\circ}\right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{185, 220, 5}{2*dir(t)} \arrow \parafcn{5, 220, 5}{1.5*dir(t)} \tlabel[cc](-1.5, 1.5){<m>\theta = 225^{\circ}</m>} \tlabel[cc](-2.25, -1){<m>45^{\circ}</m>} \point[4pt]{(0,0)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-3.5355, -3.5355)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4.25}{4.25} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Finding <m>\cos\left(\frac{11 \pi}{6}\right)</m> and <m>\sin\left(\frac{11 \pi}{6}\right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{335, 355, 5}{2*dir(t)} \arrow \parafcn{5, 325, 5}{1.5*dir(t)} \tlabel[cc](-1.5, -1.75){<m>\theta = \frac{11 \pi}{6}</m>} \tlabel[cc](2.25, -.5){<m>\frac{\pi}{6}</m>} \point[4pt]{(0,0)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (4.330,-2.5)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                To plot <m>\theta = -\frac{5\pi}{4}</m>,
+                we rotate <em>clockwise</em> an angle of
+                <m>\frac{5 \pi}{4}</m> from the positive <m>x</m>-axis.
+                The terminal side of <m>\theta</m>, therefore,
+                lies in Quadrant II making an angle of
+                <m>\alpha = \frac{5 \pi}{4} - \pi = \frac{\pi}{4}</m> radians with respect to the negative <m>x</m>-axis.
+                Since <m>\theta</m> is a Quadrant II angle,
+                <m>\cos(\theta) \lt 0</m> and
+                <m>\sin(\theta) > 0</m> so the Reference Angle Theorem gives:
+                <m>\cos\left(-\frac{5 \pi}{4}\right) = -\cos\left(\frac{\pi}{4}\right) = -\frac{\sqrt{2}}{2}</m> and <m>\sin\left(-\frac{5 \pi}{4}\right) = \sin\left(\frac{\pi}{4}\right) = \frac{\sqrt{2}}{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the angle <m>\theta = \frac{7 \pi}{3}</m> measures more than <m>2 \pi = \frac{6 \pi}{3}</m>,
+                we find the terminal side of <m>\theta</m> by rotating one full revolution followed by an additional <m>\alpha = \frac{7 \pi}{3} - 2\pi = \frac{\pi}{3}</m> radians.
+                Hence, <m>\theta</m> and <m>\alpha</m> have the same terminal side,<fn>
+                Recall we say they are <sq>coterminal.</sq>
+                </fn> and so <m>\cos\left(\frac{7\pi}{3}\right) = \cos\left(\frac{\pi}{3}\right) = \frac{1}{2}</m> and <m>\sin\left(\frac{7\pi}{3}\right) = \sin\left(\frac{\pi}{3}\right) = \frac{\sqrt{3}}{2}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4.25}{4.25} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Finding <m>\cos\left(-\frac{5 \pi}{4}\right)</m> and <m>\sin\left(-\frac{5 \pi}{4}\right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{175, 140, 5}{2*dir(t)} \arrow \parafcn{-5, -220, -5}{1.5*dir(t)} \tlabel[cc](1.25, -1.75){<m>\theta = -\frac{5 \pi}{4}</m>} \tlabel[cc](-2.25, 1){<m>\frac{\pi}{4}</m>} \point[4pt]{(0,0)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-3.5355, 3.5355)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-4.25}{4.25} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Finding <m>\cos\left(\frac{7 \pi}{3}\right)</m> and <m>\sin\left(\frac{7 \pi}{3}\right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{0,415,5}{(t+400)*dir(t)/800} \arrow \reverse \arrow \parafcn{5, 55, 5}{2*dir(t)} \tlabel[cc](-1.25, 1.25){<m>\theta = \frac{7 \pi}{3}</m>} \tlabel[cc](2.15, 1.35){<m>\frac{\pi}{3}</m>} \point[4pt]{(0,0)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.330)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A couple of remarks are in order.
+      First off, the reader may have noticed that when expressed in radian measure,
+      the reference angle for a non-quadrantal angle is easy to spot.
+      Reduced fraction multiples of <m>\pi</m> with a denominator of <m>6</m> have
+      <m>\frac{\pi}{6}</m> as a reference angle,
+      those with a denominator of <m>4</m> have
+      <m>\frac{\pi}{4}</m> as their reference angle,
+      and those with a denominator of <m>3</m> have
+      <m>\frac{\pi}{3}</m> as their reference angle.<fn>
+      For once, we have something convenient about using radian measure in contrast to the abstract theoretical nonsense about using them as a <sq>natural</sq> way to match oriented angles with real numbers!
+      </fn>
+    </p>
+    <p>
+      Also note in <xref ref="coterminalsamesinecosineexample">number</xref> above,
+      the angles <m>\frac{\pi}{3}</m> and <m>\frac{7\pi}{3}</m> are coterminal.
+      As a result, have the same values for sine and cosine.
+      It turns out that we can characterize coterminal angles in this manner,
+      as stated below.
+    </p>
+    <theorem xml:id="coterminalsamcosinesinethm">
+      <statement>
+        <p>
+          Two angles <m>\alpha</m> and <m>\beta</m> are coterminal if and only if:
+        </p>
+        <p>
+          <m>\cos(\alpha) = \cos(\beta)</m> and <m>\sin(\alpha) = \sin(\beta)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Recall the phraseology <sq>if and only if</sq> means there are two things to argue in <xref ref="coterminalsamcosinesinethm">Theorem</xref>:
+      first, if <m>\alpha</m> and <m>\beta</m> are co-terminal,
+      then <m>\cos(\alpha) = \cos(\beta)</m> and <m>\sin(\alpha) = \sin(\beta)</m>.
+      This is immediate since coterminal share terminal sides, and,
+      in particular,
+      the (unique) point on the Unit Circle shared by said terminal side.
+      Second, we need to argue that if
+      <m>\cos(\alpha) = \cos(\beta)</m> and <m>\sin(\alpha) = \sin(\beta)</m>,
+      then <m>\alpha</m> and <m>\beta</m> are coterminal.
+    </p>
+    <p>
+      To prove this second claim,
+      note that when an angle is drawn in standard position,
+      the terminal side of the angle is the ray that starts at the origin and is completely determined by <em>any</em>
+      other point on the terminal side.
+      If <m>\cos(\alpha) = \cos(\beta)</m> and <m>\sin(\alpha) = \sin(\beta)</m>,
+      then their terminal sides share a point on the Unit Circle,
+      namely <m>(\cos(\alpha), \sin(\alpha)) = (\cos(\beta), \sin(\beta))</m>.
+      Hence, <m>\alpha</m> and <m>\beta</m> are coterminal.
+    </p>
+    <p>
+      The Reference Angle Theorem in conjunction with the table of sine and cosine values on <xref ref="CosineSineFacts">Page</xref>
+      can be used to generate the figure on the next page.
+      We recommend committing it to memory.
+    </p>
+    <p>
+          <idx><h>Unit Circle</h><h>important points</h></idx> \begin{mfpic}[180]{-1.25}{1.25}{-1.2}{1.2} \point[4pt]{(1,0),(0,1),(-1,0),(0,-1)} \point[4pt]{(0.707107, 0.7071707), (-0.707107, 0.7071707), (0.707107, -0.7071707), (-0.707107, -0.7071707)} \point[4pt]{(0.866025, 0.5), (-0.866025, 0.5), (0.866025, -0.5), (-0.866025, -0.5)} \point[4pt]{(0.5, 0.866025), (0.5, -0.866025), (-0.5, 0.866025), (-0.5, -0.866025)} \axes \dotted[1pt, 3pt] \polyline{(-0.707107, -0.7071707), (0.707107, 0.7071707)} \dotted[1pt, 3pt] \polyline{(-0.707107, 0.7071707), (0.707107, -0.7071707)} \dotted[1pt, 3pt] \polyline{(0.866025, 0.5), (-0.866025, -0.5)} \dotted[1pt, 3pt] \polyline{(-0.866025, 0.5), (0.866025, -0.5)} \dotted[1pt, 3pt] \polyline{(0.5, 0.866025), (-0.5, -0.866025)} \dotted[1pt, 3pt] \polyline{(0.5, -0.866025), (-0.5, 0.866025)} \tlabel[cc](1.25,-0.05){<m>x</m>} \tlabel[cc](0.05,1.2){<m>y</m>} \circle{(0,0),1} \tlabel[cc](0.1,1.05){<m>(0,1)</m>} \tlabel[cc](1.09,-0.06){<m>(1,0)</m>} \tlabel[cc](0.12,-1.055){<m>(0,-1)</m>} \tlabel[cc](-1.13,-0.06){<m>(-1,0)</m>} \tlabel[cc](0.85, 0.75){<m>\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)</m>} \tlabel[cc](1, 0.5){<m>\left(\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>} \tlabel[cc](0.62, 0.93){<m>\left(\frac{1}{2}, \frac{\sqrt{3}}{2}\right)</m>} \tlabel[cc](-0.88, 0.75){<m>\left(-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)</m>} \tlabel[cc](-1.03, 0.5){<m>\left(-\frac{\sqrt{3}}{2}, \frac{1}{2}\right)</m>} \tlabel[cc](-0.65, 0.93){<m>\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)</m>} \tlabel[cc](0.88, -0.75){<m>\left(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right)</m>} \tlabel[cc](1.03, -0.5){<m>\left(\frac{\sqrt{3}}{2}, -\frac{1}{2}\right)</m>} \tlabel[cc](0.65, -0.93){<m>\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)</m>} \tlabel[cc](-0.91, -0.75){<m>\left(-\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right)</m>} \tlabel[cc](-1.06, -0.5){<m>\left(-\frac{\sqrt{3}}{2}, -\frac{1}{2}\right)</m>} \tlabel[cc](-0.68, -0.93){<m>\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)</m>} \gclear \tlabelrect[cc](0.8,0){<m>0,\; 2\pi</m>} \gclear \tlabelrect[cc](0,0.85){<m>\dfrac{\pi}{2}</m>} \gclear \tlabelrect[cc](-0.85,0){<m>\pi</m>} \gclear \tlabelrect[cc](0,-0.85){<m>\dfrac{3\pi}{2}</m>} \gclear \tlabelrect[cc](0.61,0.61){<m>\dfrac{\pi}{4}</m>} \gclear \tlabelrect[cc](0.78,0.43){<m>\dfrac{\pi}{6}</m>} \gclear \tlabelrect[cc](0.43,0.75){<m>\dfrac{\pi}{3}</m>} \gclear \tlabelrect[cc](-0.61,0.61){<m>\dfrac{3\pi}{4}</m>} \gclear \tlabelrect[cc](-0.76,0.43){<m>\dfrac{5\pi}{6}</m>} \gclear \tlabelrect[cc](-0.43,0.75){<m>\dfrac{2\pi}{3}</m>} \gclear \tlabelrect[cc](-0.61,-0.61){<m>\dfrac{5\pi}{4}</m>} \gclear \tlabelrect[cc](-0.76,-0.43){<m>\dfrac{7\pi}{6}</m>} \gclear \tlabelrect[cc](-0.43,-0.75){<m>\dfrac{4\pi}{3}</m>} \gclear \tlabelrect[cc](0.61,-0.61){<m>\dfrac{7\pi}{4}</m>} \gclear \tlabelrect[cc](0.76,-0.43){<m>\dfrac{11\pi}{6}</m>} \gclear \tlabelrect[cc](0.43,-0.75){<m>\dfrac{5\pi}{3}</m>} \tcaption{Important Points on the Unit Circle} \end{mfpic}
+    </p>
+    <p>
+      Our next example uses The Reference Angle Theorem in a slightly more sophisticated context.
+    </p>
+    <example xml:id="advancedrefangleex">
+      <statement>
+        <p>
+          Suppose <m>\alpha</m> is an acute angle with <m>\cos(\alpha) = \frac{5}{13}</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find <m>\sin(\alpha)</m> and use this to plot <m>\alpha</m> in standard position.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the sine and cosine of the following angles:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\theta = \pi + \alpha</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\theta = 2\pi - \alpha</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\theta = 3\pi - \alpha</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\theta = \frac{\pi}{2} + \alpha</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since <m>\alpha</m> is an acute angle,
+                we know <m>0 \lt \alpha \lt \frac{\pi}{2}</m> so the terminal side of <m>\alpha</m> lies in Quadrant I. Moreover,
+                since <m>\cos(\alpha) = \frac{5}{13}</m>,
+                we know the <m>x</m>-coordinate of the intersection point of the terminal side of <m>\alpha</m> and the Unit Circle is <m>\frac{5}{13}</m>.
+                To find <m>\sin(\alpha)</m>, we need the <m>y</m>-coordinate.
+                Taking a cue from <xref ref="cosinesineviaunitcircle">Example</xref>,
+                we drop a perpendicular from the terminal side of <m>\alpha</m> to the <m>x</m>-axis as seen below on the right to form a right triangle with one leg measuring
+                <m>\frac{5}{13}</m> units and hypotenuse with a length of <m>1</m> unit.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tlabel(2.25, 2.75){<m>\left(\frac{5}{13}, y \right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 60, 5}{1.5*dir(t)} \tlabel[cc](2, 1){<m>\alpha</m>} \point[4pt]{(0,0), (1.1538, 2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (1.9231, 4.6154)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tlabel[cc](0.6,-0.5){<m>\frac{5}{13}</m>} \tlabel[cc](0.75, 0.5){<m>\alpha</m>} \tlabel[cc](1.9, 1.35){<m>y = \frac{12}{13}</m>} \tlabel[cc](0.3, 1.5){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 60, 5}{0.5*dir(t)} \dashed \polyline{ (1.1538, 2.7692), (1.1538, 0)} \polyline{(0.9538, 0), (0.9538,0.2), (1.1538, 0.2)} \point[4pt]{(0,0), (1.1538, 2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (1.9231, 4.6154)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                The Pythagorean Theorem gives
+                <m>\left(\frac{5}{13}\right)^2 + y^2 = 1^2</m> or <m>y = \frac{12}{13}</m>.
+                Hence, <m>\sin(\alpha) = \frac{12}{13}</m>.
+              </p>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To find the cosine and sine of <m>\theta = \pi + \alpha</m>,
+                    we first plot <m>\theta</m> in standard position.
+                    We can imagine the sum of the angles
+                    <m>\pi + \alpha</m> as a sequence of two rotations:
+                    a rotation of <m>\pi</m> radians followed by a rotation of <m>\alpha</m> radians.<fn>
+                    Since <m>\pi + \alpha = \alpha + \pi</m>,
+                    <m>\theta</m> may be plotted by reversing the order of rotations given here.
+                    You should do this.
+                    </fn>  We see that <m>\alpha</m> is the reference angle for <m>\theta</m>.
+                    By The Reference Angle Theorem,
+                    <m>\cos(\theta) = \pm \cos(\alpha) = \pm \frac{5}{13}</m> and <m>\sin(\theta) = \pm \sin(\alpha) = \pm \frac{12}{13}</m>.
+                    Since the terminal side of <m>\theta</m> falls in Quadrant III, both
+                    <m>\cos(\theta)</m> and <m>\sin(\theta)</m> are negative,
+                    so <m>\cos(\theta) = - \frac{5}{13}</m> and <m>\sin(\theta) = - \frac{12}{13}</m>.
+                    <tabular>
+                      <row>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Visualizing <m>\theta = \pi + \alpha</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 175, 5}{1.5*dir(t)} \arrow \parafcn{185, 240, 5}{1.5*dir(t)} \tlabel[cc](-2.75, 2.5){\mbox{\boldmath <m>\theta</m>} } \tlabel[cc](-1.25, 1.5){<m>\pi</m>} \tlabel[cc](-1.7, -1){<m>\alpha</m>} \point[4pt]{(0,0),(-1.1538, -2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (-1.9231, -4.6154)} \penwd{1.5pt} \arrow \parafcn{5, 240, 5}{2.75*dir(t)} \end{mfpic}</cell>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{\mbox{\boldmath <m>\theta</m>} has reference angle <m>\alpha</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \dashed \polyline{(0,0), (1.9231, 4.6154)} \tlabel[cc](2.25, 2.9){<m>\left( \frac{5}{13}, \frac{12}{13}\right)</m>} \point[4pt]{(1.1538, 2.7692)} \arrow \reverse \arrow \parafcn{5, 60, 5}{1.5*dir(t)} \tlabel[cc](2, 1){<m>\alpha</m>} \tlabel[cc](-2.7, -2.9){<m>\left( -\frac{5}{13}, -\frac{12}{13}\right)</m>} \arrow \reverse \arrow \parafcn{185, 240, 5}{1.5*dir(t)} \tlabel[cc](-2.75, 2.5){\mbox{\boldmath <m>\theta</m>} } \tlabel[cc](-1.7, -1){<m>\alpha</m>} \point[4pt]{(0,0),(-1.1538, -2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (-1.9231, -4.6154)} \penwd{1.5pt} \arrow \parafcn{5, 240, 5}{2.75*dir(t)} \end{mfpic}</cell>
+                      </row>
+                    </tabular>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Rewriting <m>\theta = 2\pi - \alpha</m> as <m>\theta = 2\pi + (-\alpha)</m>,
+                    we can plot <m>\theta</m> by visualizing one complete revolution counter-clockwise followed by a
+                    <em>clockwise</em> revolution,
+                    or <sq>backing up,</sq> of <m>\alpha</m> radians.
+                    Once again, we see that <m>\alpha</m> is <m>\theta</m>'s reference angle.
+                    Since <m>\theta</m> is a Quadrant IV angle,
+                    we choose the appropriate signs and get:
+                    <m>\cos(\theta) = \frac{5}{13}</m> and <m>\sin(\theta) = -\frac{12}{13}</m>.
+                    <tabular>
+                      <row>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \tcaption{Visualizing <m>\theta = 2\pi - \alpha</m>} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 355, 5}{1.5*dir(t)} \arrow \parafcn{355, 300, -5}{2*dir(t)} \tlabel[cc](-2.75, 2.5){\mbox{\boldmath <m>\theta</m>} } \tlabel[cc](-1.65, -1){<m>2\pi</m>} \tlabel[cc](2., -1.5){<m>-\alpha</m>} \point[4pt]{(0,0), (1.1538, -2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (1.9231, -4.6154)} \penwd{1.5pt} \arrow \parafcn{5, 285, 5}{2.75*dir(t)} \end{mfpic}</cell>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \tcaption{\mbox{\boldmath <m>\theta</m>} has reference angle <m>\alpha</m>} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \dashed \polyline{(0,0), (1.9231, 4.6154)} \tlabel[cc](2.25, 2.9){<m>\left( \frac{5}{13}, \frac{12}{13}\right)</m>} \point[4pt]{(1.1538, 2.7692)} \arrow \reverse \arrow \parafcn{5, 60, 5}{1.5*dir(t)} \tlabel[cc](2, 1){<m>\alpha</m>} \tlabel[cc](2.5, -2.9){<m>\left( -\frac{5}{13}, -\frac{12}{13}\right)</m>} \arrow \reverse \arrow \parafcn{355, 300, -5}{1.5*dir(t)} \tlabel[cc](-2.75, 2.5){\mbox{\boldmath <m>\theta</m>} } \tlabel[cc](2., -1){<m>\alpha</m>} \point[4pt]{(0,0), (1.1538, -2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (1.9231, -4.6154)} \penwd{1.5pt} \arrow \parafcn{5, 285, 5}{2.75*dir(t)} \end{mfpic}</cell>
+                      </row>
+                    </tabular>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Taking a cue from the previous problem,
+                    we rewrite <m>\theta = 3\pi - \alpha</m> as <m>\theta = 3\pi + (-\alpha)</m>.
+                    The angle <m>3\pi</m> represents one and a half revolutions counter-clockwise,
+                    so that when we <sq>back up</sq> <m>\alpha</m> radians,
+                    we end up in Quadrant II. Since <m>\alpha</m> is the reference angle for <m>\theta</m>, The Reference Angle Theorem gives
+                    <m>\cos(\theta) = -\frac{5}{13}</m> and <m>\sin(\theta) = \frac{12}{13}</m>.
+                    <tabular>
+                      <row>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \tcaption{Visualizing <m>3\pi - \alpha</m>} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{0,535,5}{(t+400)*dir(t)/800} \arrow \parafcn{175, 120, -5}{1.75*dir(t)} \tlabel[cc](1.5, 1){<m>3\pi</m>} \tlabel[cc](-2, 1.25){<m>-\alpha</m>} \point[4pt]{(0,0), (-1.1538, 2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (-1.9231, 4.6154)} \end{mfpic}</cell>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \tcaption{\mbox{\boldmath <m>\theta</m>} has reference angle <m>\alpha</m>} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \dashed \polyline{(0,0), (1.9231, 4.6154)} \tlabel[cc](2.25, 2.9){<m>\left( \frac{5}{13}, \frac{12}{13}\right)</m>} \point[4pt]{(1.1538, 2.7692)} \arrow \reverse \arrow \parafcn{5, 60, 5}{2.4*dir(t)} \tlabel[cc](2.25, 1.5){<m>\alpha</m>} \tlabel[cc](-2.7, 2.9){<m>\left( -\frac{5}{13}, \frac{12}{13}\right)</m>} \arrow \reverse \arrow \parafcn{175, 120, -5}{2.4*dir(t)} \tlabel[cc](1.75, -1.75){\mbox{\boldmath <m>\theta</m>} } \tlabel[cc](-2.25, 1.5){<m>\alpha</m>} \point[4pt]{(0,0), (-1.1538, 2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (-1.9231, 4.6154)} \penwd{1.5pt} \arrow \parafcn{0,470,5}{(t+400)*dir(t)/400} \end{mfpic}</cell>
+                      </row>
+                    </tabular>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To plot <m>\theta = \frac{\pi}{2} + \alpha</m>,
+                    we first rotate <m>\frac{\pi}{2}</m> radians and follow up with <m>\alpha</m> radians.
+                    The reference angle here is <em>not</em> <m>\alpha</m>,
+                    so The Reference Angle Theorem is not immediately applicable.
+                    (It's important that you see why this is the case.
+                    Take a moment to think about this before reading on.)
+                    Let <m>Q(x,y)</m> be the point on the terminal side of <m>\theta</m> which lies on the Unit Circle so that
+                    <m>x = \cos(\theta)</m> and <m>y = \sin(\theta)</m>.
+                    Once we graph <m>\alpha</m> in standard position,
+                    we use the fact from Geometry that equal angles subtend equal chords to show that the dotted lines in the figure below are equal.
+                    Hence, <m>x = \cos(\theta) = -\frac{12}{13}</m>.
+                    Similarly, we find <m>y = \sin(\theta) = \frac{5}{13}</m>.
+                    <tabular>
+                      <row>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tcaption{Visualizing <m>\theta = \frac{\pi}{2} + \alpha</m>} \tlabel(-5, .75){<m>Q\left(x,y\right)</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 85, 5}{1.5*dir(t)} \arrow \parafcn{95, 150, 5}{1.5*dir(t)} \tlabel[cc](-2.5, 2.75){\mbox{\boldmath <m>\theta</m>} } \tlabel[cc](1.25, 1.5){<m>\frac{\pi}{2}</m>} \tlabel[cc](-1, 1.7){<m>\alpha</m>} \point[4pt]{(0,0),(-2.7692, 1.1538)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)} \penwd{1.5pt} \arrow \parafcn{5, 150, 5}{2.75*dir(t)} \end{mfpic}</cell>
+                        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \tlabel(1.5, 2.75){<m>\left(\frac{5}{13}, \frac{12}{13}\right)</m>} \tlabel(-5, .75){<m>\left(-\frac{12}{13}, \frac{5}{13}\right)</m>} \tcaption \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \dotted \polyline{(1.1538, 0), (1.1538, 2.7692)} \dotted \polyline{(-2.7692, 1.1538), (0, 1.1538)} \arrow \polyline{(0,0), (-4.6154, 1.9231)} \arrow \polyline{(0,0), (1.9231, 4.6154)} \arrow \reverse \arrow \parafcn{5, 60, 5}{dir(t)} \arrow \reverse \arrow \parafcn{95, 150, 5}{dir(t)} \tcaption{Using symmetry to determine <m>Q(x,y)</m>} \tlabel[cc](1.5, 0.75){<m>\alpha</m>} \tlabel[cc](-1, 1.5){<m>\alpha</m>} \point[4pt]{(0,0),(-2.7692, 1.1538), (1.1538, 2.7692)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)} \end{mfpic}</cell>
+                      </row>
+                    </tabular>
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A couple of remarks about <xref ref="advancedrefangleex">Example</xref> are in order.
+      First, we note the right triangle we used to find
+      <m>\sin(\alpha)</m> is a scaled 5-12-13 triangle.
+      Recognizing this Pythagorean Triple<fn>
+      See <xref ref="AppRightTrig">Section</xref>
+      for more examples of Pythagorean Triples.
+      </fn> may have simplified our workflow.
+      Along the same lines, since, the Unit Circle,
+      by definition, is described by the equation <m>x^2+y^2 = 1</m>,
+      we could substitute <m>x = \frac{5}{13}</m> in order to find <m>y</m>.
+      We leave it to the reader to show we get the exact same answer regardless of the approach used.
+    </p>
+    <p>
+      Our next example turns the tables and makes good use of the Unit Circle values given <xref ref="commonanglesunitcircle">on</xref>
+      as well as <xref ref="coterminalsamcosinesinethm">Theorem</xref> in a different way:
+      instead of giving information about the angle and asking for sine or cosine values,
+      we are given sine or cosine values and asked to produce the corresponding angles.
+      In other words,
+      we solve some rudimentary equations involving sine and cosine.<fn>
+      We will study equations in more detail in <xref ref="TrigonometricEquationsandInequalities">Section</xref>.
+      </fn>
+    </p>
+    <example xml:id="solveforangle">
+      <statement>
+        <p>
+          Find all angles that satisfy the following equations.
+          Express your answers in radians.<fn>
+          This ensures we keep building the <sq>fluency with radians</sq> which is so necessary for later work.
+          </fn>
+          <ol>
+            <li xml:id="cosineishalf">
+              <p>
+                <m>\cos(\theta) = \dfrac{1}{2}</m>
+              </p>
+            </li>
+            <li xml:id="sineisnegativehalf">
+              <p>
+                <m>\sin(\alpha) = -\dfrac{1}{2}</m>
+              </p>
+            </li>
+            <li xml:id="cosineiszero">
+              <p>
+                <m>\cos(\beta) = 0</m>.
+              </p>
+            </li>
+            <li xml:id="sineisover1">
+              <p>
+                <m>\sin(\gamma) = \dfrac{3}{2}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                If <m>\cos(\theta) = \frac{1}{2}</m>,
+                then we know the terminal side of <m>\theta</m>,
+                when plotted in standard position,
+                intersects the Unit Circle at <m>x = \frac{1}{2}</m>.
+                This means <m>\theta</m> is a Quadrant I or IV angle.
+                Since <m>\cos(\theta) = \frac{1}{2}</m>,
+                we know from the values on <xref ref="commonanglesunitcircle">page</xref>
+                that the reference angle is <m>\frac{\pi}{3}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75} \axes \tlabel(5.5,-0.5){<m>x</m>} \tlabel(0.25,5.5){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(2,-1){ <m>\frac{1}{2}</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 2.25, 4.5} \ymarks{-4.5 step 4.5 until 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)} \tlabel(1.5, 1){<m>\frac{\pi}{3}</m>} \point[4pt]{(0,0), (2.25, 3.8971)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.330)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75} \axes \tlabel(5.5,-0.5){<m>x</m>} \tlabel(0.25,5.5){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(2,0.5){\small<m>\frac{1}{2}</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 2.25, 4.5} \ymarks{-4.5 step 4.5 until 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{-55, -5, 5}{1.5*dir(t)} \tlabel(1.5, -1.5){<m>\frac{\pi}{3}</m>} \point[4pt]{(0,0), (2.25, -3.8971)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, -4.330)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                One solution in Quadrant I is <m>\theta = \frac{\pi}{3}</m>.
+                Per <xref ref="coterminalsamcosinesinethm">Theorem</xref>,
+                all other Quadrant I solutions must be coterminal with <m>\frac{\pi}{3}</m>.
+                Recall from <xref ref="RadianMeasure">Section</xref>,
+                two angles in radian measure are coterminal if and only if they differ by an integer multiple of <m>2\pi</m>.
+                Hence to describe all angles coterminal with a given angle,
+                we add <m>2\pi k</m> for integers <m>k = 0</m>,
+                <m>\pm 1</m>, <m>\pm 2</m>, <ellipsis/>.
+                Hence, we record our final answer as
+                <m>\theta = \frac{\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                Proceeding similarly for the Quadrant IV case,
+                we find the solution to <m>\cos(\theta) = \frac{1}{2}</m> here is <m>\frac{5 \pi}{3}</m>,
+                so our answer in this Quadrant is
+                <m>\theta = \frac{5\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\sin(\alpha) = -\frac{1}{2}</m>,
+                then when <m>\alpha</m> is plotted in standard position,
+                its terminal side intersects the Unit Circle at <m>y=-\frac{1}{2}</m>.
+                From this, we determine <m>\alpha</m> is a Quadrant III or Quadrant IV angle with reference angle <m>\frac{\pi}{6}</m>.
+                In Quadrant III, one solution is <m>\frac{7\pi}{6}</m>,
+                so we capture all Quadrant III solutions by adding integer multiples of <m>2\pi</m>:
+                <m>\alpha = \frac{7\pi}{6} + 2\pi k</m>.
+                In Quadrant IV, one solution is
+                <m>\frac{11\pi}{6}</m> so all the solutions here are of the form
+                <m>\alpha = \frac{11\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.5){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(0.25,-2.5){ <m>-\frac{1}{2}</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5, -2.25, 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{185, 205, 5}{2.5*dir(t)} \tlabel(-3.25, -1){<m>\frac{\pi}{6}</m>} \point[4pt]{(0,0), (-3.8971, -2.25)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-4.330,-2.5)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.5){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(-1,-2.5){ <m>-\frac{1}{2}</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5, -2.25, 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{335, 355, 5}{2.5*dir(t)} \tlabel(2.75, -1){<m>\frac{\pi}{6}</m>} \point[4pt]{(0,0), (3.8971, -2.25)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (4.330,-2.5)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\cos(\beta) = 0</m>,
+                then the terminal side of <m>\beta</m> must lie on the line <m>x=0</m>,
+                also known as the <m>y</m>-axis.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.5){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5, 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{5, 85, 5}{1.5*dir(t)} \tlabel[cc](2, 2){<m>\frac{\pi}{2}</m>} \point[4pt]{(0,0), (0, 4.5)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0),(0,5)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5.25}{5.75}{-5.25}{5.75} \axes \tlabel(5.25,-0.5){<m>x</m>} \tlabel(0.25,5.5){<m>y</m>} \tlabel(4.6,-1){<m>1</m>} \tlabel(0.25,4.6){<m>1</m>} \xmarks{-4.5, 4.5} \ymarks{-4.5, 4.5} \drawcolor[gray]{0.7} \circle{(0,0),4.5} \drawcolor{black} \arrow \reverse \arrow \parafcn{275, 355, 5}{1.5*dir(t)} \tlabel[cc](2, -2){<m>\frac{\pi}{2}</m>} \point[4pt]{(0,0), (0, -4.5)} \arrow \reverse \arrow \parafcn{5, 85, 5}{1.5*dir(t)} \arrow \reverse \arrow \parafcn{95, 265, 5}{1.5*dir(t)} \tlabel[cc](2, 2){<m>\frac{\pi}{2}</m>} \tlabel[cc](-2, 0.5){<m>\pi</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0),(0,-5)}\end{mfpic}</cell>
+                  </row>
+                </tabular>
+                While, technically speaking,
+                <m>\frac{\pi}{2}</m> isn't a reference angle (it's not acute),
+                we can nonetheless use it to find our answers.
+                If we follow the procedure set forth in the previous examples,
+                we find <m>\beta = \frac{\pi}{2} + 2\pi k</m> and
+                <m>\beta = \frac{3\pi}{2} + 2\pi k</m> for integers, <m>k</m>.
+                While this solution is correct,
+                it can be shortened to <m>\beta = \frac{\pi}{2} + \pi k</m> for integers <m>k</m>.
+                The reader is encouraged to see the geometry using the diagram above on the left.
+              </p>
+            </li>
+            <li>
+              <p>
+                We are asked to solve <m>\sin(\gamma) = \frac{3}{2}</m>.
+                Since sine values are <m>y</m>-coordinates on the Unit Circle,
+                <m>\sin(\gamma)</m> can't be any larger than <m>1</m>.
+                Hence, <m>\sin(t) = \frac{3}{2}</m> has no solutions.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      One of the key items to take from <xref ref="solveforangle">Example</xref> is that,
+      in general,
+      solutions to trigonometric equations consist of infinitely many answers.
+      To get a feel for these answers,
+      the reader is encouraged to follow our mantra from <xref ref="SequencesandtheBinomialTheorem">Chapter</xref> - that is,
+      <sq>When in doubt,
+      write it out!</sq> This is especially important when checking answers to the exercises.
+    </p>
+    <p>
+      For example, another Quadrant IV solution to
+      <m>\sin(\theta) = -\frac{1}{2}</m> is <m>\theta = -\frac{\pi}{6}</m>.
+      Hence, the family of Quadrant IV answers to <xref ref="sineisnegativehalf">number</xref>
+      above could just have easily been written
+      <m>\theta = -\frac{\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+      While on the surface,
+      this family may look different than the stated solution of
+      <m>\theta = \frac{11\pi}{6} + 2\pi k</m> for integers <m>k</m>,
+      we leave it to the reader to show they represent the same list of angles.
+      It is also worth noting that when asked to solve equations in algebra,
+      we are usually looking for <em>real number</em> solutions.
+      Thanks to the identifications made on <xref ref="wrappingfunction">page</xref>,
+      we are able to regard the inputs to the sine and cosine functions as real numbers by identifying any real number <m>t</m> with an oriented angle <m>\theta</m> measuring <m>\theta = t</m> radians.
+      That is, for each real number <m>t</m>,
+      we associate an oriented arc <m>t</m> units in length with initial point <m>(1,0)</m> and endpoint <m>P(\cos(t), \sin(t))</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.25){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \point[4pt]{(0,0)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \polyline{(0,0), (2.5, 4.3301)}
+          \arrow \polyline{(3,-4), (3,4.5)}
+          \polyline{(2.8,3.1416), (3.2,3.1416)}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.9, 1){<m>\theta = t</m>}
+          \penwd{1.5pt}
+          \arrow \polyline{(3,0), (3, 3.1416)}
+          \arrow \parafcn{0,60,5}{3*dir(t)}
+          \tlabel[cc](3.5,1.75){<m>t</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.25){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \arrow \reverse \arrow \polyline{(0,0), (2.5, 4.3301)}
+          \tlabel(2,2.6){<m>P(\cos(t), \sin(t))</m>}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.9, 1){<m>\theta = t</m>}
+          \point[4pt]{(0,0), (1.5, 2.5981)}
+          \penwd{1.5pt}
+          \arrow \parafcn{0,60,5}{3*dir(t)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      In practice this means in expressions like <sq><m>\cos(\pi)</m></sq> and <sq><m>\sin(2)</m>,</sq> the inputs can be thought of as either angles in radian measure or real numbers,
+      whichever is more convenient.
+    </p>
+    <p>
+      Suppose, as in the Exercises,
+      we are asked to find all <em>real number</em>
+      solutions to the equation such as <m>\sin(t) = -\frac{1}{2}</m>.
+      The discussion above allows us to find the <em>real number</em>
+      solutions to this equation by <em>thinking</em> in angles.
+      Indeed, we would solve this equation in the exact way we solved
+      <m>\sin(\theta) = -\frac{1}{2}</m> in <xref ref="solveforangle">Example</xref>
+      <xref ref="sineisnegativehalf">number</xref>.
+      Our solution is only cosmetically different in that the variable used is <m>t</m> rather than <m>\theta</m>:
+      <m>t = \frac{7\pi}{6} + 2\pi k</m> or
+      <m>t = \frac{11\pi}{6} + 2\pi k</m> for integers, <m>k</m>.
+    </p>
+    <p>
+      We will study the sine and cosine functions in greater detail in <xref ref="GraphsofSineandCosine">Section</xref>.
+      Until then, keep in mind that any properties of the sine and cosine functions developed in the following sections which regard them as functions of
+      <em>angles</em> in <em>radian</em>
+      measure apply equally well if the inputs are regarded as <em>real numbers</em>.
+    </p>
+  </introduction>
+  <subsection xml:id="cosinesinebeyond">
+    <title>Beyond the Unit Circle</title>
+    <p>
+      In <xref ref="sinecosineunitcircledefn">Definition</xref>,
+      we define the sine and cosine functions using the <em>Unit</em>
+      Circle, <m>x^2+y^2=1</m>.
+      It turns out that we can use <em>any</em>
+      circle centered at the origin to determine the sine and cosine values of angles.
+      To show this,
+      we essentially recycle the same similarity arguments used in <xref ref="AppRightTrig">Section</xref>
+      to show the trigonometric ratios described in <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      are independent of the choice of right triangle used.<fn>
+      Another approach uses transformations.
+      See <xref ref="circleofradiusrsinecosinetrans">Exercise</xref>.
+      </fn>
+    </p>
+    <p>
+      Consider for the moment the <em>acute</em>
+      angle <m>\theta</m> drawn below in standard position.
+      Let <m>Q(x,y)</m> be the point on the terminal side of <m>\theta</m> which lies on the circle <m>x^2+y^2 = r^2</m>,
+      and let <m>P(x',y')</m> be the point on the terminal side of <m>\theta</m> which lies on the Unit Circle.
+      Now consider dropping perpendiculars from <m>P</m> and <m>Q</m> to create two right triangles,
+      <m>\Delta OPA</m> and <m>\Delta OQB</m>.
+      These triangles are similar,<fn>
+      Do you remember why?
+      </fn> thus it follows that <m>\frac{x}{x'} = \frac{r}{1} = r</m>,
+      so <m>x = r x'</m> and, similarly, we find <m>y = r y'</m>.
+      Since, by definition,
+      <m>x' = \cos(\theta)</m> and <m>y' = \sin(\theta)</m>,
+      we get the coordinates of <m>Q</m> to be
+      <m>x = r \cos(\theta)</m> and <m>y = r \sin(\theta)</m>.
+      By reflecting these points through the <m>x</m>-axis, <m>y</m>-axis and origin,
+      we obtain the result for all non-quadrantal angles <m>\theta</m>,
+      and we leave it to the reader to verify these formulas hold for the quadrantal angles as well.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.75){<m>y</m>}
+          \tlabel(2.1,-0.75){<m>1</m>}
+          \tlabel(0.25,2.1){<m>1</m>}
+          \tlabel(4.1,-0.75){<m>r</m>}
+          \tlabel(0.25,4.1){<m>r</m>}
+          \tlabel(2.25, 3.5){ <m>Q\left(x,y\right)</m>}
+          \tlabel(1.3, 1.5){ <m>P\left(x',y'\right)</m>}
+          \xmarks{-4 step 2 until 4}
+          \ymarks{-4 step 2 until 4}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),2}
+          \circle{(0,0),4}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{dir(t)}
+          \tlabel[cc](1.25, .75){ <m>\theta</m>}
+          \point[4pt]{(0,0), (1, 1.7321), (2, 3.4641)}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[25]{-1}{7}{-1}{7}
+          \axes
+          \drawcolor[gray]{0.7}
+          \parafcn{0,90,5}{3*dir(t)}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{0.75*dir(t)}
+          \tlabel[cc](0.75,0.5){<m>\theta</m>}
+          \point[4pt]{(0,0), (1.5, 2.5981), (3,5.196), (3,0), (1.5,0)}
+          \tlabel(6.75,-0.5){<m>x</m>}
+          \tlabel(0.25,6.75){<m>y</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \tlabel(-0.5,-0.5){<m>O</m>}
+          \tlabel(2.5,-0.5){<m>B(x,0)</m>}
+          \tlabel(1, -0.5){<m>A(x', 0)</m>}
+          \xmarks{0 step 3 until 3}
+          \ymarks{0 step 3 until 3}
+          \polyline{(5,0),(3,0), (3,5.196)}
+          \polyline{(5,0),(2.75,0), (2.75, 0.25), (3,0.25)}
+          \polyline{(5,0),(1.5,0), (1.5, 2.5981)}
+          \polyline{(5,0),(1.25,0), (1.25,0.25), (1.5,0.25)}
+          \tlabel(1.7,2.6){<m>P(x',y')</m>}
+          \tlabel(3.25,5.25){<m>Q(x,y) = (r\cos(\theta), r\sin(\theta))</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0),(0,0), (4,6.9282)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      Not only can we describe the coordinates of <m>Q</m> in terms of <m>\cos(\theta)</m> and
+      <m>\sin(\theta)</m> but since the radius of the circle is <m>r = \sqrt{x^2 + y^2}</m>,
+      we can also express <m>\cos(\theta)</m> and
+      <m>\sin(\theta)</m> in terms of the coordinates of <m>Q</m>.
+      These results are summarized in the following theorem.
+    </p>
+    <theorem xml:id="cosinesinecircle">
+      <statement>
+        <p>
+          If <m>Q(x,y)</m> is the point on the terminal side of an angle <m>\theta</m>,
+          plotted in standard position,
+          which lies on the circle <m>x^2+y^2 = r^2</m> then
+          <m>x = r \cos(\theta)</m> and <m>y = r \sin(\theta)</m>.
+          Moreover, <idx><h>cosine</h><h>of an angle</h></idx>
+              <idx><h>sine</h><h>of an angle</h></idx>
+          <me>
+            \begin{array}{ccc} \cos(\theta)= \dfrac{x}{r}  = \dfrac{x}{\sqrt{x^2+y^2}} \amp  \text{ and }  \amp   \sin(\theta) = \dfrac{y}{r} = \dfrac{y}{\sqrt{x^2+y^2}} \end{array}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Note that in the case of the Unit Circle we have <m>r = \sqrt{x^2+y^2} = 1</m>,
+      so <xref ref="cosinesinecircle">Theorem</xref>
+      reduces to our definitions of <m>\cos(\theta)</m> and
+      <m>\sin(\theta)</m> in <xref ref="sinecosineunitcircledefn">Definition</xref>.
+      Our next example makes good use of <xref ref="cosinesinecircle">Theorem</xref>.
+    </p>
+    <example xml:id="cosinesinecircleex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Suppose that the terminal side of an angle <m>\theta</m>,
+                when plotted in standard position,
+                contains the point <m>Q(4,-2)</m>.
+                Find <m>\sin(\theta)</m> and <m>\cos(\theta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>\frac{\pi}{2} \lt \theta \lt \pi</m> with <m>\sin(\theta) = \frac{8}{17}</m>.
+                Find <m>\cos(\theta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                In <xref ref="EarthRotationEx">Example</xref>
+                in <xref ref="RadianMeasure">Section</xref>,
+                we approximated the radius of the earth at
+                <m>41.628^{\circ}</m> north latitude to be <m>2960</m> miles.
+                Justify this approximation if the spherical radius of the Earth is <m>3960</m> miles.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <ol>
+          <li>
+            <p>
+              Since we are given both the <m>x</m> and <m>y</m> coordinates of a point on the terminal side of this angle,
+              we can use <xref ref="cosinesinecircle">Theorem</xref> directly.
+              First, we find <m>r = \sqrt{x^2+y^2} = \sqrt{(-2)^2+4^2} = \sqrt{20} = 2\sqrt{5}</m>.
+              This means the point <m>Q</m> lies on a circle of radius
+              <m>2\sqrt{5}</m> units as seen below on the left.
+              Hence, <m>\cos(\theta) = \frac{x}{r} = \frac{4}{2 \sqrt{5}} = \frac{2 \sqrt{5}}{5}</m> and <m>\sin(\theta) = \frac{y}{r} = \frac{-2}{2 \sqrt{5}} = -\frac{\sqrt{5}}{5}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We are told <m>\frac{\pi}{2} \lt \theta \lt \pi</m>, so,
+              in particular, <m>\theta</m> is a Quadrant II angle.
+              Per <xref ref="cosinesinecircle">Theorem</xref>,
+              <m>\sin(\theta) = \frac{8}{17} = \frac{y}{r}</m> where <m>y</m> is the <m>y</m>-coordinate of the intersection point of the circle
+              <m>x^2+y^2 = r^2</m> and the terminal side of <m>\theta</m>
+              (when plotted in standard position, of course!)
+              For convenience, we choose <m>r=17</m> so that <m>y = 8</m>,
+              and we get the diagram below on the right.
+              Since <m>x^2+y^2 = r^2</m>, we get <m>x^2 + 8^2 = 17^2</m>.
+              We find <m>x = \pm 15</m>,
+              and since <m>\theta</m> is a Quadrant II angle, we get <m>x = -15</m>.
+              Hence, <m>\cos(\theta) = -\frac{15}{17}</m>.
+              <tabular>
+                <row>
+                  <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel(3.25,-1.5){<m>Q(4,-2)</m>} \tlabel[cc](1.25,-1.5){<m>r=2\sqrt{5}</m>} \tcaption{<m>Q(4,-2)</m> lies on a circle of radius <m>2\sqrt{5}</m> units } \xmarks{-3 step 0.75 until 3} \ymarks{-3 step 0.75 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (4.472, -2.236)} \point[4pt]{(0,0), (3,-1.5)} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -3, {<m>-2</m>} -1.5, {<m>2</m>} 1.5, {<m>4</m>} 3} \axislabels {y}{ {<m>-2</m>} -1.5, {<m>-4</m>} -3, {<m>2</m>} 1.5, {<m>4</m>} 3} \end{mfpic}</cell>
+                  <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel[cc](-1.5, 1.75){<m>r = 17</m>} \tlabel[cc](-3.8, 1.25){<m>(x, 8)</m>} \tlabel[cc](1, 1.25){<m>\theta</m>} \tcaption{<m>0\lt \theta \lt \frac{\pi}{2}</m> with <m>\sin(\theta) = \frac{8}{17}</m>} \xmarks{-3.354, -1.578, 1.578, 3.354} \ymarks{-3.354, -1.578, 1.578, 3.354} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \arrow \parafcn{5, 145, 5}{dir(t)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-4.412, 2.353)} \point[4pt]{(0,0), (-2.959, 1.578)} \tlpointsep{4pt} \axislabels {x}{ {<m>17</m>} 3.354, {<m>8</m>} 1.578} \axislabels {y}{ {<m>17</m>} 3.354, {<m>8</m>} 1.578} \end{mfpic}</cell>
+                </row>
+              </tabular>
+            </p>
+          </li>
+          <li>
+            <p>
+              Recall the diagram below on the left indicating the circles which are the parallels of latitude.<fn>
+              Diagram credit:
+              <url href="https://commons.wikimedia.org/wiki/File:Latitude_(PSF).png"><em>Pearson Scott Foresman [Public domain], via Wikimedia Commons</em></url>.
+              </fn>
+              <tabular>
+                <row>
+                  <cell><image width="37%" source="./RadianMeasureGraphics/Latitude_(PSF).png"/></cell>
+                  <cell>\begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel(3.1,-0.75){<m>3960</m>} \tlabel(0.25,3.1){<m>3960</m>} \tlabel(2.5, 1.75){<m>Q\left(x,y\right)</m>} \tlabel(1.2, 0.15){<m>41.628^{\circ}</m>} \tcaption \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \dotted \polyline{(0, 1.993), (2.242, 1.993)} \arrow \parafcn{5, 35, 5}{dir(t)} \tcaption{A point on the Earth at <m>41.628^{\circ}</m>N} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (3.737, 3.321)} \point[4pt]{(0,0),(2.242, 1.993)} \end{mfpic}</cell>
+                </row>
+              </tabular>
+            </p>
+          </li>
+        </ol>
+        <p>
+          Assuming the Earth is a sphere of radius <m>3960</m> miles,
+          a cross-section through the poles produces a circle of radius <m>3960</m> miles.
+          Viewing the Equator as the <m>x</m>-axis,
+          the value we seek is the <m>x</m>-coordinate of the point <m>Q(x,y)</m> indicated in the figure above on the right.
+          Using <xref ref="cosinesinecircle">Theorem</xref>,
+          we get <m>x = 3960 \cos\left(41.628^{\circ}\right) \approx 2960</m>.
+          Hence, the radius of the Earth at North Latitude
+          <m>41.628^{\circ}</m> is approximately <m>2960</m> miles.
+        </p>
+      </solution>
+    </example>
+    <p>
+      <xref ref="cosinesinecircle">Theorem</xref>
+      gives us what we need to <sq>circle back</sq> to the question posed at the the beginning of the section:
+      how to describe the position of an object traveling in a circular path of radius <m>r</m> with constant angular velocity <m>\omega</m>.
+      Suppose that at time <m>t</m>,
+      the object has swept out an angle measuring <m>\theta</m> radians.
+      If we assume that the object is at the point <m>(r,0)</m> when <m>t=0</m>,
+      the angle <m>\theta</m> is in standard position.
+      By definition,
+      <m>\omega = \frac{\theta}{t}</m> which we rewrite as <m>\theta = \omega t</m>.
+      According to <xref ref="cosinesinecircle">Theorem</xref>,
+      the location of the object <m>Q(x,y)</m> on the circle is found using the equations
+      <m>x = r \cos(\theta) = r \cos(\omega t)</m> and <m>y = r \sin(\theta) = r \sin(\omega t)</m>.
+      Hence, at time <m>t</m>,
+      the object is at the point
+      <m>(r \cos(\omega t),
+      r \sin(\omega t))</m>, as seen in the diagram below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(2.1,-0.75){<m>1</m>} \tlabel(0.25,2.1){<m>1</m>} \tlabel(4.1,-0.75){<m>r</m>} \tlabel(0.25,4.1){<m>r</m>} \tlabel(2.35, 3.5){
+      <m>Q\left(x,y\right) = (r \cos(\omega t),
+      r \sin(\omega t))</m>} \xmarks{-4 step 2 until 4} \ymarks{-4 step 2 until 4} \drawcolor[gray]{0.7} \circle{(0,0),4} \drawcolor{black} \arrow \reverse \arrow \polyline{(5,0),(0,0), (2.5, 4.3301)} \arrow \parafcn{5, 55, 5}{dir(t)} \tlabel[cc](1.95, .5){
+      <m>\theta = \omega t</m>} \point[4pt]{(0,0), (2, 3.4641)} \penwd{1.5pt} \arrow \parafcn{0, 60, 5}{4*dir(t)} \end{mfpic}
+    </p>
+    <p>
+      Equations for Circular Motion
+    </p>
+    <p>
+      We have just argued the following.
+    </p>
+    <proposition xml:id="equationsforcircularmotion">
+      <statement>
+        <p>
+          Suppose an object is traveling in a circular path of radius <m>r</m> centered at the origin with constant angular velocity <m>\omega</m>.
+          If <m>t=0</m> corresponds to the point <m>(r,0)</m>,
+          then the <m>x</m> and <m>y</m> coordinates of the object are functions of <m>t</m> and are given by
+          <m>x = r \cos(\omega t)</m> and <m>y = r \sin(\omega t)</m>.
+          Here, <m>\omega > 0</m> indicates a counter-clockwise direction and
+          <m>\omega \lt 0</m> indicates a clockwise direction.
+        </p>
+      </statement>
+    </proposition>
+    <example xml:id="Lakelandrotates">
+      <statement>
+        <p>
+          Suppose we are in the situation of <xref ref="EarthRotationEx">Example</xref>.
+          Find the equations of motion of Lakeland Community College as the earth rotates.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From <xref ref="EarthRotationEx">Example</xref>,
+          we take <m>r = 2960</m> miles and and <m>\omega = \frac{\pi}{12 \, \text{ hours } }</m>.
+          Hence, the equations of motion are
+          <m>x = r \cos(\omega t) = 2960 \cos\left(\frac{\pi}{12} t\right)</m> and <m>y = r \sin(\omega t) = 2960 \sin\left(\frac{\pi}{12} t\right)</m>,
+          where <m>x</m> and <m>y</m> are measured in miles and <m>t</m> is measured in hours.<fn>
+          We will revisit this concept of associating points with times in <xref ref="ParametricEquations">Section</xref>.
+          </fn>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="valuefirst">Exercises</xref>
+      - <xref ref="valuelast"></xref>,
+      find the exact value of the cosine and sine of the given angle.
+      <ol cols="5">
+        <li xml:id="valuefirst">
+          <p>
+            <m>\theta = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{2\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{3\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{7\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{5\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{4\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{3\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{5\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{7\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{23\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = -\dfrac{13\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = -\dfrac{43\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = -\dfrac{3\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = -\dfrac{\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{10\pi}{3}</m>
+          </p>
+        </li>
+        <li xml:id="valuelast">
+          <p>
+            <m>\theta = 117\pi</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solveforanglefirst">Exercises</xref>
+      - <xref ref="solveforanglelast"></xref>,
+      find all of the angles which satisfy the given equation.
+      <ol cols="3">
+        <li xml:id="solveforanglefirst">
+          <p>
+            <m>\sin(\theta) = \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = -\dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\theta) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = \dfrac{\sqrt{2}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\theta) = \dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = -1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\theta) = -1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = \dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li xml:id="solveforanglelast">
+          <p>
+            <m>\cos(\theta) = -1.001</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solvefortfirst">Exercises</xref>
+      - <xref ref="solvefortlast"></xref>,
+      solve the equation for <m>t</m>.
+      (See the remarks on <xref ref="cosinesineequationsrealnumbers">page</xref>.)
+      <ol cols="3">
+        <li xml:id="solvefortfirst">
+          <p>
+            <m>\cos(t) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t) = -\dfrac{\sqrt{2}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(t) = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t) = -\dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(t) = \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t) = -2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(t) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t) = 1</m>
+          </p>
+        </li>
+        <li xml:id="solvefortlast">
+          <p>
+            <m>\cos(t) = -\dfrac{\sqrt{2}}{2}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="pointsfirst">Exercises</xref>
+      - <xref ref="pointslast"></xref>,
+      let <m>\theta</m> be the angle in standard position whose terminal side contains the given point then compute
+      <m>\cos(\theta)</m> and <m>\sin(\theta)</m>.
+      <ol>
+        <li xml:id="pointsfirst">
+          <p>
+            <m>P(-7, 24)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Q(3, 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>R(5, -9)</m>
+          </p>
+        </li>
+        <li xml:id="pointslast">
+          <p>
+            <m>T(-2, -11)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findthevaluefirst">Exercises</xref>
+      - <xref ref="findthevaluelast"></xref>,
+      use the results developed throughout the section to find the requested value.
+      <ol>
+        <li xml:id="findthevaluefirst">
+          <p>
+            If <m>\sin(\theta) = -\dfrac{7}{25}</m> with <m>\theta</m> in Quadrant IV, what is <m>\cos(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\cos(\theta) = \dfrac{4}{9}</m> with <m>\theta</m> in Quadrant I, what is <m>\sin(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\sin(\theta) = \dfrac{5}{13}</m> with <m>\theta</m> in Quadrant II, what is <m>\cos(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\cos(\theta) = -\dfrac{2}{11}</m> with <m>\theta</m> in Quadrant III, what is <m>\sin(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\sin(\theta) = -\dfrac{2}{3}</m> with <m>\theta</m> in Quadrant III, what is <m>\cos(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\cos(\theta) = \dfrac{28}{53}</m> with <m>\theta</m> in Quadrant IV, what is <m>\sin(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\sin(\theta) = \dfrac{2\sqrt{5}}{5}</m> and <m>\dfrac{\pi}{2} \lt \theta \lt \pi</m>,
+            what is <m>\cos(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\cos(\theta) = \dfrac{\sqrt{10}}{10}</m> and <m>2\pi \lt \theta \lt \dfrac{5\pi}{2}</m>,
+            what is <m>\sin(\theta)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\sin(\theta) = -0.42</m> and <m>\pi \lt \theta \lt \dfrac{3\pi}{2}</m>,
+            what is <m>\cos(\theta)</m>?
+          </p>
+        </li>
+        <li xml:id="findthevaluelast">
+          <p>
+            If <m>\cos(\theta) = -0.98</m> and <m>\dfrac{\pi}{2} \lt \theta \lt \pi</m>,
+            what is <m>\sin(\theta)</m>?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="calculatorfirst">Exercises</xref>
+      - <xref ref="calculatorlast"></xref>,
+      use your calculator to approximate the given value to three decimal places.
+      Make sure your calculator is in the proper angle measurement mode!
+      <ol cols="2">
+        <li xml:id="calculatorfirst">
+          <p>
+            <m>\sin(78.95^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(-2.01)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(392.994)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(207^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin\left( \pi^{\circ} \right)</m>
+          </p>
+        </li>
+        <li xml:id="calculatorlast">
+          <p>
+            <m>\cos(e)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="decomposebasicsinecosinefirst">Exercises</xref>
+      - <xref ref="decomposebasicsinecosinelast"></xref>,
+      write the given function as a nontrivial decomposition of functions as directed.
+      <ol cols="2">
+        <li xml:id="decomposebasicsinecosinefirst">
+          <p>
+            For <m>f(t) = 3t + \sin(2t)</m>,
+            find functions <m>g</m> and <m>h</m> so that <m>f=g+h</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>f(\theta) = 3\cos(\theta) - \sin(4\theta)</m>,
+            find functions <m>g</m> and <m>h</m> so that <m>f=g-h</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>f(t) = e^{-0.1t} \sin(3t)</m>,
+            find functions <m>g</m> and <m>h</m> so that <m>f=gh</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>r(t) = \dfrac{\sin(t)}{t}</m>,
+            find functions <m>f</m> and <m>g</m> so <m>r = \dfrac{f}{g}</m>.
+          </p>
+        </li>
+        <li xml:id="decomposebasicsinecosinelast">
+          <p>
+            For <m>r(\theta) =\sqrt{3 \cos(\theta)}</m>,
+            find functions <m>f</m> and <m>g</m> so <m>r = g \circ f</m>.
+          </p>
+        </li>
+        <li xml:id="sinearcexercise">
+          <p>
+            For each function <m>S(t)</m> listed below,
+            compute the average rate of change over the indicated interval.<fn>
+            See <xref ref="arc">Definition</xref>
+            in <xref ref="AverageRateofChange">Section</xref>
+            for a review of this concept, as needed.
+            </fn>  What trends do you notice?
+            Be sure your calculator is in radian mode!
+            <me>
+              \begin{array}{|r||c|c|c|}  \hline  S(t) \amp   [-0.1, 0.1] \amp  [-0.01, 0.01] \amp [-0.001, 0.001] \\ \hline \sin(t)     \amp \amp \amp   \\  \hline \sin(2t)   \amp \amp \amp   \\ \hline \sin(3t)   \amp \amp \amp    \\  \hline \sin(4t)   \amp \amp \amp    \\  \hline \end{array}
+            </me>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="motionfirst">Exercises</xref>
+      - <xref ref="motionlast"></xref>,
+      find the equations of motion for the given scenario.
+      Assume that the center of the motion is the origin,
+      the motion is counter-clockwise and that <m>t = 0</m> corresponds to a position along the positive <m>x</m>-axis.
+      (See <xref ref="equationsforcircularmotion">Equation</xref>
+      and <xref ref="EarthRotationEx">Example</xref>.)
+      <ol cols="2">
+        <li xml:id="motionfirst">
+          <p>
+            A point on the edge of the spinning yo-yo in <xref ref="spinningyoyo">Exercise</xref>
+            from <xref ref="RadianMeasure">Section</xref>.
+            Recall: The diameter of the yo-yo is 2.25 inches and it spins at 4500 revolutions per minute.
+          </p>
+        </li>
+        <li>
+          <p>
+            The yo-yo in <xref ref="yoyotrick">exercise</xref>
+            from <xref ref="RadianMeasure">Section</xref>.
+            Recall: The radius of the circle is 28 inches and it completes one revolution in 3 seconds.
+          </p>
+        </li>
+        <li>
+          <p>
+            A point on the edge of the hard drive in <xref ref="harddrive">Exercise</xref>
+            from <xref ref="RadianMeasure">Section</xref>.
+            Recall: The diameter of the hard disk is 2.5 inches and it spins at 7200 revolutions per minute.
+          </p>
+        </li>
+        <li xml:id="motionlast">
+          <p>
+            A passenger on the Big Wheel in <xref ref="giantwheelmotion">Exercise</xref>
+            from <xref ref="RadianMeasure">Section</xref>.
+            Recall: The diameter is 128 feet and completes 2 revolutions in 2 minutes, 7 seconds.
+          </p>
+        </li>
+        <li>
+          <p>
+            Consider the numbers: <m>0</m>,
+            <m>1</m>, <m>2</m>, <m>3</m>, <m>4</m>.
+            Take the square root of each of these numbers,
+            then divide each by <m>2</m>.
+            The resulting numbers should look hauntingly familiar.
+            (See the values in the table <xref ref="CosineSineFacts">on</xref>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            On <xref ref="cosinesineequationsrealnumbers">page</xref>,
+            we see that the sine and cosine functions of <em>angles</em>
+            can be considered functions of <em>real numbers</em>.
+            With help from your classmates,
+            discuss the domains and ranges of
+            <m>f(t) = \sin(t)</m> and <m>g(t) = \cos(t)</m>.
+            Write your answers using interval notation.
+          </p>
+        </li>
+        <li xml:id="circleofradiusrsinecosinetrans">
+          <p>
+            Another way to establish <xref ref="cosinesinecircle">Theorem</xref> is to use transformations.
+            Re-read the discussion following <xref ref="standardcirclealternate">Theorem</xref>
+            in <xref ref="TheConicSections">Chapter</xref>
+            and transform the Unit Circle, <m>x^2+y^2 = 1</m>,
+            to <m>x^2 + y^2 = r^2</m> using horizontal and vertical stretches.
+            Show if the coordinates on the Unit Circle are <m>(\cos(\theta), \sin(\theta))</m>,
+            then the corresponding coordinates on
+            <m>x^2+y^2 = r^2</m> are <m>(r \cos(\theta), r \sin(\theta))</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            In the scenario of <xref ref="equationsforcircularmotion">Equation</xref>,
+            we assumed that at <m>t=0</m>,
+            the object was at the point <m>(r,0)</m>.
+            If this is not the case,
+            we can adjust the equations of motion by introducing a <sq>time delay.</sq> If
+            <m>t_{0} > 0</m> is the first time the object passes through the point <m>(r,0)</m>, show,
+            with the help of your classmates,
+            the equations of motion are
+            <m>x = r \cos(\omega (t - t_{0}))</m> and <m>y = r \sin(\omega (t-t_{0}))</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\cos(0) = 1</m>, <m>\; \sin(0) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(\dfrac{\pi}{4} \right) = \dfrac{\sqrt{2}}{2}</m>,
+          <m>\; \sin \left(\dfrac{\pi}{4} \right) = \dfrac{\sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(\dfrac{\pi}{3}\right) = \dfrac{1}{2}</m>,
+          <m>\; \sin \left(\dfrac{\pi}{3}\right) = \dfrac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(\dfrac{\pi}{2}\right) = 0</m>,
+          <m>\; \sin \left(\dfrac{\pi}{2}\right) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\dfrac{2\pi}{3}\right) = -\dfrac{1}{2}</m>,
+          <m>\; \sin \left(\dfrac{2\pi}{3}\right) = \dfrac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(\dfrac{3\pi}{4} \right) = -\dfrac{\sqrt{2}}{2}</m>,
+          <m>\; \sin \left(\dfrac{3\pi}{4} \right) = \dfrac{\sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\pi) = -1</m>, <m>\; \sin(\pi) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\dfrac{7\pi}{6}\right) = -\dfrac{\sqrt{3}}{2}</m>,
+          <m>\; \sin\left(\dfrac{7\pi}{6}\right) = -\dfrac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(\dfrac{5\pi}{4} \right) = -\dfrac{\sqrt{2}}{2}</m>,
+          <m>\; \sin \left(\dfrac{5\pi}{4} \right) = -\dfrac{\sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\dfrac{4\pi}{3}\right) = -\dfrac{1}{2}</m>,
+          <m>\; \sin \left(\dfrac{4\pi}{3}\right) = -\dfrac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(\dfrac{3\pi}{2}\right) = 0</m>,
+          <m>\; \sin \left(\dfrac{3\pi}{2}\right) = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\dfrac{5\pi}{3}\right) = \dfrac{1}{2}</m>,
+          <m>\; \sin \left(\dfrac{5\pi}{3}\right) = -\dfrac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(\dfrac{7\pi}{4} \right) = \dfrac{\sqrt{2}}{2}</m>,
+          <m>\; \sin \left(\dfrac{7\pi}{4} \right) = -\dfrac{\sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\dfrac{23\pi}{6}\right) = \dfrac{\sqrt{3}}{2}</m>,
+          <m>\; \sin\left(\dfrac{23\pi}{6}\right) = -\dfrac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(-\dfrac{13\pi}{2}\right) = 0</m>,
+          <m>\; \sin \left(-\dfrac{13\pi}{2}\right) = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(-\dfrac{43\pi}{6}\right) = -\dfrac{\sqrt{3}}{2}</m>,
+          <m>\; \sin\left(-\dfrac{43\pi}{6}\right) = \dfrac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left(-\dfrac{3\pi}{4} \right) = -\dfrac{\sqrt{2}}{2}</m>,
+          <m>\; \sin \left(-\dfrac{3\pi}{4} \right) = -\dfrac{\sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(-\dfrac{\pi}{6}\right) = \dfrac{\sqrt{3}}{2}</m>,
+          <m>\; \sin\left(-\dfrac{\pi}{6}\right) = -\dfrac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\dfrac{10\pi}{3}\right) = -\dfrac{1}{2}</m>,
+          <m>\; \sin \left(\dfrac{10\pi}{3}\right) = -\dfrac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(117\pi) = -1</m>, <m>\; \sin(117\pi) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \dfrac{1}{2}</m> when <m>\theta = \dfrac{\pi}{6} + 2\pi k</m> or
+          <m>\theta = \dfrac{5\pi}{6} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = -\dfrac{\sqrt{3}}{2}</m> when <m>\theta = \dfrac{5\pi}{6} + 2\pi k</m> or
+          <m>\theta = \dfrac{7\pi}{6} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = 0</m> when
+          <m>\theta = \pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = \dfrac{\sqrt{2}}{2}</m> when <m>\theta = \dfrac{\pi}{4} + 2\pi k</m> or
+          <m>\theta = \dfrac{7\pi}{4} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \dfrac{\sqrt{3}}{2}</m> when <m>\theta = \dfrac{\pi}{3} + 2\pi k</m> or
+          <m>\theta = \dfrac{2\pi}{3} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = -1</m> when
+          <m>\theta = (2k + 1)\pi</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = -1</m> when
+          <m>\theta = \dfrac{3\pi}{2} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = \dfrac{\sqrt{3}}{2}</m> when <m>\theta = \dfrac{\pi}{6} + 2\pi k</m> or
+          <m>\theta = \dfrac{11\pi}{6} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = -1.001</m> never happens
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(t) = 0</m> when <m>t = \dfrac{\pi}{2} + \pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = -\dfrac{\sqrt{2}}{2}</m> when <m>t = \dfrac{5\pi}{4} + 2\pi k</m> or
+          <m>t = \dfrac{7\pi}{4} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(t) = 3</m> never happens.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = -\dfrac{1}{2}</m> when <m>t = \dfrac{7\pi}{6} + 2\pi k</m> or
+          <m>t = \dfrac{11\pi}{6} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(t) = \dfrac{1}{2}</m> when <m>t = \dfrac{\pi}{3} + 2\pi k</m> or
+          <m>t = \dfrac{5\pi}{3} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = -2</m> never happens
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(t) = 1</m> when <m>t = 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(t) = 1</m> when <m>t = \dfrac{\pi}{2} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(t) = -\dfrac{\sqrt{2}}{2}</m> when <m>t = \dfrac{3\pi}{4} + 2\pi k</m> or
+          <m>t = \dfrac{5\pi}{4} + 2\pi k</m> for any integer <m>k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = -\dfrac{7}{25}, \; \sin(\theta) = \dfrac{24}{25}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = \dfrac{3}{5}, \; \sin(\theta) = \dfrac{4}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = \dfrac{5\sqrt{106}}{106}, \; \sin(\theta) = -\dfrac{9\sqrt{106}}{106}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = -\dfrac{2\sqrt{5}}{25}, \; \sin(\theta) = -\dfrac{11\sqrt{5}}{25}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(\theta) = -\dfrac{7}{25}</m> with <m>\theta</m> in Quadrant IV, then <m>\cos(\theta) = \dfrac{24}{25}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\cos(\theta) = \dfrac{4}{9}</m> with <m>\theta</m> in Quadrant I, then <m>\sin(\theta) = \dfrac{\sqrt{65}}{9}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(\theta) = \dfrac{5}{13}</m> with <m>\theta</m> in Quadrant II, then <m>\cos(\theta) = -\dfrac{12}{13}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\cos(\theta) = -\dfrac{2}{11}</m> with <m>\theta</m> in Quadrant III, then <m>\sin(\theta) = -\dfrac{\sqrt{117}}{11}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(\theta) = -\dfrac{2}{3}</m> with <m>\theta</m> in Quadrant III, then <m>\cos(\theta) = -\dfrac{\sqrt{5}}{3}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\cos(\theta) = \dfrac{28}{53}</m> with <m>\theta</m> in Quadrant IV, then <m>\sin(\theta) = -\dfrac{45}{53}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(\theta) = \dfrac{2\sqrt{5}}{5}</m> and <m>\dfrac{\pi}{2} \lt \theta \lt \pi</m>,
+          then <m>\cos(\theta) = -\dfrac{\sqrt{5}}{5}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\cos(\theta) = \dfrac{\sqrt{10}}{10}</m> and <m>2\pi \lt \theta \lt \dfrac{5\pi}{2}</m>,
+          then <m>\sin(\theta) = \dfrac{3 \sqrt{10}}{10}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(\theta) = -0.42</m> and <m>\pi \lt \theta \lt \dfrac{3\pi}{2}</m>,
+          then <m>\cos(\theta) = -\sqrt{0.8236} \approx -0.9075</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\cos(\theta) = -0.98</m> and <m>\dfrac{\pi}{2} \lt \theta \lt \pi</m>,
+          then <m>\sin(\theta) = \sqrt{0.0396} \approx 0.1990</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(78.95^{\circ}) \approx 0.981</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(-2.01) \approx -0.425</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(392.994) \approx -0.291</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(207^{\circ}) \approx -0.891</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin\left( \pi^{\circ} \right) \approx 0.055</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(e) \approx -0.912</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(t) = 3t</m> and <m>h(t) = \sin(2t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(\theta) = 3 \cos(\theta)</m> and <m>h(\theta) = \sin(4 \theta)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(t) = e^{-0.1t}</m> and <m>h(t) = \sin(3t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(t) = \sin(t)</m> and <m>g(t) = t</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(\theta) = 3 \cos(\theta)</m> and <m>g(\theta) = \sqrt{\theta}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          As we zoom in towards <m>0</m>,
+          the average rate of change of <m>\sin(k t)</m> approaches <m>k</m>.
+          <me>
+            \begin{array}{|r||c|c|c|}  \hline  S(t) \amp   [-0.1, 0.1] \amp  [-0.01, 0.01] \amp [-0.001, 0.001] \\ \hline \sin(t)     \amp  \approx 0.9983  \amp   \approx 1  \amp   \approx 1 \\  \hline \sin(2t)   \amp  \approx 1.9867 \amp  \approx  1.9999 \amp  \approx 2 \\ \hline \sin(3t)   \amp  \approx 2.9552 \amp  \approx 2.9995 \amp   \approx 3  \\  \hline \sin(4t)  \amp  \approx 3.8942 \amp  \approx 3.9989 \amp   \approx 4 \\  \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 1.125</m> inches,
+          <m>\omega = 9000 \pi \, \frac{\text{ radians } }{\text{ minute } }</m>,
+          <m>x = 1.125 \cos(9000 \pi \, t)</m>,
+          <m>y = 1.125 \sin(9000 \pi \, t)</m>.
+          Here <m>x</m> and <m>y</m> are measured in inches and <m>t</m> is measured in minutes.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 28</m> inches,
+          <m>\omega = \frac{2\pi}{3} \, \frac{\text{ radians } }{\text{ second } }</m>,
+          <m>x = 28 \cos\left(\frac{2\pi}{3} \, t \right)</m>,
+          <m>y = 28 \sin\left(\frac{2\pi}{3} \, t \right)</m>.
+          Here <m>x</m> and <m>y</m> are measured in inches and <m>t</m> is measured in seconds.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 1.25</m> inches,
+          <m>\omega = 14400 \pi \, \frac{\text{ radians } }{\text{ minute } }</m>,
+          <m>x = 1.25 \cos(14400 \pi \, t)</m>,
+          <m>y = 1.25 \sin(14400 \pi \, t)</m>.
+          Here <m>x</m> and <m>y</m> are measured in inches and <m>t</m> is measured in minutes.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 64</m> feet,
+          <m>\omega = \frac{4\pi}{127} \, \frac{\text{ radians } }{\text{ second } }</m>,
+          <m>x = 64 \cos\left(\frac{4\pi}{127} \, t \right)</m>,
+          <m>y = 64 \sin\left(\frac{4\pi}{127} \, t \right)</m>.
+          Here <m>x</m> and <m>y</m> are measured in feet and <m>t</m> is measured in seconds
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

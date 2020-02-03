@@ -1,0 +1,1267 @@
+<section xml:id="RadianMeasure">
+  <title>The Radian Measure of Angles</title>
+  <introduction>
+    <p>
+      In <xref ref="AppAngles">Section</xref>,
+      we review the concept of (oriented) angles and degree measure.
+      While degrees are the unit of choice for many applications of trigonometry,
+      we introduce here the concept of the <idx><h>angle</h><h>radian measure</h></idx>
+          <idx><h>radian measure</h></idx>
+      <em>radian measure</em> of an angle.
+      As we will see,
+      this concept naturally ties angles to real numbers.
+      While the concept may seem foreign at first,
+      we assure the reader that the utility of radian measure in modeling real-world phenomena is well worth the effort.
+      We begin our development with a definition from Geometry.
+    </p>
+    <definition xml:id="pidefn">
+      <statement>
+        <p>
+              <idx><h>pi, <m>\pi</m></h></idx>
+          The real number <m>\pi</m> is defined to be the ratio of a circle's circumference to its diameter.
+          In symbols, given a circle of circumference <m>C</m> and diameter <m>d</m>,
+          <me>
+            \pi = \dfrac{C}{d}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      While <xref ref="pidefn">Definition</xref>
+      is quite possibly the <sq>standard</sq> definition of <m>\pi</m>,
+      the authors would be remiss if we didn't mention that buried in this definition is actually a theorem.
+      As the reader is probably aware,
+      the number <m>\pi</m> is a mathematical constant - that is,
+      it doesn't matter <em>which</em> circle is selected,
+      the ratio of its circumference to its diameter will have the same value as any other circle.
+      While this is indeed true,
+      it is far from obvious and leads to a counterintuitive scenario which is explored in the Exercises.
+      Since the diameter of a circle is twice its radius,
+      we can quickly rearrange the equation in <xref ref="pidefn">Definition</xref>
+      to get a formula more useful for our purposes, namely:
+      <m>2 \pi = \frac{C}{r}</m>.
+      Hence, for any circle,
+      the ratio of its circumference to its radius is <m>2\pi</m>.
+    </p>
+    <p>
+      Suppose we take a <em>portion</em>
+      of the circle as depicted below,
+      and we compare some arc measuring <m>s</m> units in length to the radius.
+      Let <m>\theta</m> be the <em>central angle</em><idx><h>angle</h><h>central angle</h></idx>
+          <idx><h>central angle</h></idx>
+      subtended by this arc, that is,
+      an angle whose vertex is the center of the circle and whose determining rays pass through the endpoints of the arc.
+      Using proportionality (similarity) arguments,
+      it stands to reason that the ratio
+      <m>\frac{s}{r}</m> should also be a constant among all circles.
+      It is this ratio, <m>\frac{s}{r}</m>,
+      which defines the <em>radian measure</em> of an angle.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{5, 115, 5}{1.5*dir(t)} \tlabel[cc](0.75, 1.75){<m>\theta</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5, 0), (0,0), (-2.5, 4.3301)} \penwd{1.5pt} \parafcn{0,120,5}{3*dir(t)} \tlabel[cc](1.75,3.1){<m>s</m>} \tlabel[cc](1.5,-0.5){<m>r</m>} \tlabel[cc](-1.5,1){<m>r</m>} \point[4pt]{(0,0)} \end{mfpic}
+    </p>
+    <p>
+      The radian measure of <m>\theta</m> is <m>\dfrac{s}{r}</m>.
+    </p>
+    <p>
+      To get a better feel for radian measure,
+      we note that an angle with radian measure <m>1</m> means the corresponding arc length <m>s</m> equals the radius of the circle <m>r</m>, that is,
+      <m>s = r</m>.
+      When the radian measure is <m>2</m>, we have <m>s = 2r</m>;
+      when the radian measure is <m>3</m>,
+      <m>s = 3r</m>, and so forth.
+      Thus the radian measure of an angle <m>\theta</m> tells us how many <sq>radius lengths</sq> we need to sweep out along the circle to subtend the angle <m>\theta</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \reverse \arrow \parafcn{5, 52, 5}{1.5*dir(t)}
+          \tlabel[cc](1.755, 0.9588){<m>\alpha</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5, 0), (0,0), (2.70, 4.21)}
+          \penwd{1.5pt}
+          \parafcn{0,57.30,5}{3*dir(t)}
+          \point[4pt]{(3,0), (1.62, 2.52)}
+          \tlabel[cc](3.12,1.71){<m>r</m>}
+          \tlabel[cc](1.5,-0.5){<m>r</m>}
+          \tlabel[cc](0.5,1.5){<m>r</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{-5}{5}{-5}{5}
+          \point[4pt]{(0,0)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \reverse \arrow \parafcn{5, 225, 5}{1.5*dir(t)}
+          \tlabel[cc](-0.83, 1.82){<m>\beta</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5, 0), (0,0), (-3.268, -3.784)}
+          \penwd{1.5pt}
+          \parafcn{0,229.18,5}{3*dir(t)}
+          \point[4pt]{(3,0), (1.62, 2.52), (-1.25, 2.73), (-2.97, 0.42), (-1.96, -2.27)}
+          \tlabel[cc](3.12,1.71){<m>r</m>}
+          \tlabel[cc](0.25,3.55){<m>r</m>}
+          \tlabel[cc](-2.84,2.12){<m>r</m>}
+          \tlabel[cc](-3.74,-1.24){<m>r</m>}
+          \tlabel[cc](1.5,-0.5){<m>r</m>}
+          \tlabel[cc](-.5,-1.23){<m>r</m>}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>\alpha</m> has radian measure <m>1</m></cell>
+        <cell><m>\beta</m> has radian measure <m>4</m></cell>
+      </row>
+    </tabular>
+    <p>
+      Since one revolution sweeps out the circumference <m>2\pi r</m>,
+      one revolution has radian measure <m>\frac{2 \pi r}{r} = 2 \pi</m>.
+      From this we can find the radian measure of other central angles using proportions,
+      just like we did with degrees.
+      For instance,
+      half of a revolution has radian measure <m>\frac{1}{2} (2 \pi) = \pi</m>,
+      a quarter revolution has radian measure <m>\frac{1}{4} (2 \pi) = \frac{\pi}{2}</m>,
+      and so forth.
+      Note that, by definition,
+      the radian measure of an angle is a length divided by another length so that these measurements are actually dimensionless and are considered <sq>pure</sq> numbers.
+      For this reason,
+      we do not use any symbols to denote radian measure,
+      but we use the word <sq>radians</sq> to denote these dimensionless units as needed.
+      For instance,
+      we say one revolution measures <sq><m>2\pi</m> radians,</sq> half of a revolution measures <sq><m>\pi</m> radians,</sq> and so forth.
+    </p>
+    <p>
+      As with degree measure,
+      the distinction between the angle itself and its measure is often blurred in practice,
+      so when we write <sq><m>\theta = \frac{\pi}{2}</m></sq>,
+      we mean <m>\theta</m> is an angle which measures <m>\frac{\pi}{2}</m> radians.<fn>
+      The authors are well aware that we are now identifying radians with real numbers.
+      We will justify this shortly.
+      </fn> We extend radian measure to oriented angles,
+      just as we did with degrees beforehand,
+      so that a positive measure indicates counter-clockwise rotation and a negative measure indicates clockwise rotation.<fn>
+      This, in turn,
+      endows the subtended arcs with an orientation as well.
+      We address this in short order.
+      </fn> Much like before,
+      two positive angles <m>\alpha</m> and <m>\beta</m> are supplementary if
+      <m>\alpha + \beta = \pi</m> and complementary if <m>\alpha + \beta = \frac{\pi}{2}</m>.
+      Finally, we leave it to the reader to show that when using radian measure,
+      two angles <m>\alpha</m> and <m>\beta</m> are coterminal if and only if
+      <m>\beta = \alpha + 2\pi k</m> for some integer <m>k</m>.
+    </p>
+    <example xml:id="orientedcoterminalradian">
+      <statement>
+        <p>
+          Graph each of the (oriented) angles below in standard position and classify them according to where their terminal side lies.
+          Find three coterminal angles,
+          at least one of which is positive and one of which is negative.
+          <ol>
+            <li>
+              <p>
+                <m>\alpha = \dfrac{\pi}{6}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\beta = -\dfrac{4\pi}{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\gamma = \dfrac{9 \pi}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\phi = - \dfrac{5 \pi}{2}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The angle <m>\alpha = \frac{\pi}{6}</m> is positive,
+                so we draw an angle with its initial side on the positive <m>x</m>-axis and rotate counter-clockwise <m>\frac{\left( \pi / 6\right)}{2 \pi} = \frac{1}{12}</m> of a revolution.
+                Thus <m>\alpha</m> is a Quadrant I angle.
+                Coterminal angles <m>\theta</m> are of the form <m>\theta = \alpha + 2\pi \cdot k</m>,
+                for some integer <m>k</m>.
+                To make the arithmetic a bit easier,
+                we note that <m>2\pi = \frac{12 \pi}{6}</m>, thus when <m>k = 1</m>,
+                we get <m>\theta = \frac{\pi}{6} + \frac{12 \pi}{6} = \frac{13 \pi}{6}</m>.
+                Substituting <m>k = -1</m> gives
+                <m>\theta = \frac{\pi}{6} - \frac{12 \pi}{6} = -\frac{11 \pi}{6}</m> and when we let <m>k = 2</m>,
+                we get <m>\theta = \frac{\pi}{6} + \frac{24 \pi}{6} = \frac{25 \pi}{6}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>\beta = - \frac{4\pi}{3}</m> is negative,
+                we start at the positive <m>x</m>-axis and rotate clockwise <m>\frac{\left(4 \pi / 3\right)}{2\pi} = \frac{2}{3}</m> of a revolution.
+                We find <m>\beta</m> to be a Quadrant II angle.
+                To find coterminal angles,
+                we proceed as before using <m>2\pi = \frac{6 \pi}{3}</m>,
+                and compute <m>\theta = -\frac{4 \pi}{3} + \frac{6 \pi}{3} \cdot k</m> for integer values of <m>k</m>.
+                We obtain <m>\frac{2\pi}{3}</m>,
+                <m>-\frac{10 \pi}{3}</m> and
+                <m>\frac{8 \pi}{3}</m> as coterminal angles.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(2.75,0.5){<m>\alpha = \frac{\pi}{6}</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 25} \penwd{1.25pt} \arrow \reverse \polyline{(4.3301, 2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(-4.5,-2.5){<m>\beta = -\frac{4 \pi}{3}</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,-0.1), - 235} \penwd{1.25pt} \arrow \reverse \polyline{ (-2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>\alpha = \frac{\pi}{6}</m> in standard position.</cell>
+                    <cell><m>\beta = - \frac{4 \pi}{3}</m> in standard position.</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>\gamma = \frac{9 \pi}{4}</m> is positive,
+                we rotate counter-clockwise from the positive <m>x</m>-axis.
+                One full revolution accounts for
+                <m>2 \pi = \frac{8 \pi}{4}</m> of the radian measure with <m>\frac{\pi}{4}</m> or
+                <m>\frac{1}{8}</m> of a revolution remaining.
+                We have <m>\gamma</m> as a Quadrant I angle.
+                All angles coterminal with <m>\gamma</m> are of the form <m>\theta = \frac{9 \pi}{4} + \frac{8\pi}{4} \cdot k</m>,
+                where <m>k</m> is an integer.
+                Working through the arithmetic, we find:
+                <m>\frac{\pi}{4}</m>,
+                <m>-\frac{7 \pi}{4}</m> and <m>\frac{17 \pi}{4}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To graph <m>\phi = -\frac{5 \pi}{2}</m>,
+                we begin our rotation clockwise from the positive <m>x</m>-axis.
+                As <m>2 \pi = \frac{4 \pi}{2}</m>,
+                after one full revolution clockwise,
+                we have <m>\frac{\pi}{2}</m> or
+                <m>\frac{1}{4}</m> of a revolution remaining.
+                Since the terminal side of <m>\phi</m> lies on the negative <m>y</m>-axis,
+                <m>\phi</m> is a quadrantal angle.
+                To find coterminal angles,
+                we compute <m>\theta = -\frac{5 \pi}{2} + \frac{4 \pi}{2} \cdot k</m> for a few integers <m>k</m> and obtain <m>-\frac{\pi}{2}</m>,
+                <m>\frac{3 \pi}{2}</m> and <m>\frac{7 \pi}{2}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(3,-2.5){<m>\gamma = \frac{9\pi}{4}</m>} \drawcolor{black} \arrow \parafcn{0,400,5}{(t+200)*dir(t)/200} \penwd{1.25pt} \arrow \reverse \polyline{(3.5355, 3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(2.5,2.5){<m>\phi = -\frac{5 \pi}{2}</m>} \drawcolor{black} \arrow \parafcn{0,445,5}{(t+200)*dir(0-t)/200} \penwd{1.25pt} \arrow \reverse \polyline{(0, -5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>\gamma = \frac{9 \pi}{4}</m> in standard position.</cell>
+                    <cell><m>\phi = -\frac{5 \pi}{2}</m> in standard position.</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      It is worth mentioning that we could have plotted the angles in <xref ref="orientedcoterminalradian">Example</xref>
+      by first converting them to degree measure and following the procedure set forth in <xref ref="orientedcoterminaldegree">Example</xref>.
+      While converting back and forth from degrees and radians is certainly a good skill to have,
+      it is best that you learn to <sq>think in radians</sq> as well as you can <sq>think in degrees</sq>.
+      The authors would, however,
+      be derelict in our duties if we ignored the basic conversion between these systems altogether.
+      Since one revolution counter-clockwise measures
+      <m>360^{\circ}</m> and the same angle measures <m>2 \pi</m> radians,
+      we can use the proportion <m>\frac{2 \pi \, \text{ radians } }{360^{\circ}}</m>,
+      or its reduced equivalent,
+      <m>\frac{\pi \, \text{ radians } }{180^{\circ}}</m>,
+      as the conversion factor between the two systems.
+      For example,
+      to convert <m>60^{\circ}</m> to radians we find <m>60^{\circ} \left( \frac{\pi \, \text{ radians } }{180^{\circ}}\right) = \frac{\pi}{3} \, \text{ radians }</m>,
+      or simply <m>\frac{\pi}{3}</m>.
+      To convert from radian measure back to degrees,
+      we multiply by the ratio <m>\frac{180^{\circ}}{\pi \, \text{ radian } }</m>.
+      For example,
+      <m>-\frac{5 \pi}{6} \, \text{ radians }</m> is equal to <m>\left(-\frac{5 \pi}{6} \, \text{ radians } \right) \left( \frac{180^{\circ}}{\pi \, \text{ radians } }\right) = -150^{\circ}</m>.<fn>
+      Note that the negative sign indicates clockwise rotation in both systems,
+      and so it is carried along accordingly.
+      </fn> Hence,
+      an angle which measures <m>1</m> in radian measure is equal to <m>\frac{180^{\circ}}{\pi} \approx 57.2958^{\circ}</m>.
+      To summarize:
+    </p>
+    <proposition xml:id="degreenradianconversion">
+      <title>Degree  - Radian Conversion:</title>
+      <statement>
+        <p>
+          [Degree - Radian Conversion:] <em>Degree - Radian Conversion:</em>
+          <ul>
+            <li>
+              <p>
+                To convert degree measure to radian measure,
+                multiply by <m>\dfrac{\pi \, \text{ radians } }{180^{\circ}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                To convert radian measure to degree measure,
+                multiply by <m>\dfrac{180^{\circ}}{\pi \, \text{ radians } }</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      In light of <xref ref="orientedcoterminalradian">Example</xref>
+      and <xref ref="degreenradianconversion">Equation</xref>,
+      the reader may well wonder what the allure of radian measure is.
+      The numbers involved are,
+      admittedly, much more complicated than degree measure.
+      The answer lies in how easily angles in radian measure can be identified with real numbers.
+      Consider the Unit Circle, <m>x^2 + y^2 = 1</m>, as drawn below,
+      the angle <m>\theta</m> in standard position and the corresponding arc measuring <m>s</m> units in length.
+      By definition,
+      and the fact that the Unit Circle has radius 1, the radian measure of <m>\theta</m> is <m>\frac{s}{r}=\frac{s}{1} = s</m> so that,
+      once again blurring the distinction between an angle and its measure,
+      we have <m>\theta = s</m>.
+      In order to identify real numbers with oriented angles,
+      we essentially <sq>wrap</sq>
+          <idx><h>wrapping function</h></idx>
+      the real number line around the Unit Circle and associating to each real number <m>t</m> an <em>oriented</em> arc
+          <idx><h>oriented arc</h></idx>
+      on the Unit Circle with initial point <m>(1,0)</m>.
+    </p>
+    <p>
+      Viewing the vertical line <m>x=1</m> as another real number line demarcated like the <m>y</m>-axis,
+      given a real number <m>t>0</m>,
+      we <sq>wrap</sq> the (vertical) interval <m>[0,t]</m> around the Unit Circle in a counter-clockwise fashion.
+      The resulting arc has a length of <m>t</m> units and therefore the corresponding angle has radian measure equal to <m>t</m>.
+      If <m>t\lt 0</m>, we wrap the interval <m>[t,0]</m>
+      <em>clockwise</em> around the Unit Circle.
+      Since we have defined clockwise rotation as having negative radian measure,
+      the angle determined by this arc has radian measure equal to <m>t</m>.
+      If <m>t=0</m>,
+      we are at the point <m>(1,0)</m> on the <m>x</m>-axis which corresponds to an angle with radian measure <m>0</m>.
+      In this way,
+      we identify each real number <m>t</m> with the corresponding angle with radian measure <m>t</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[14]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \point[4pt]{(0,0)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \polyline{(5, 0), (0,0), (2.5, 4.3301)}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \penwd{1.5pt}
+          \parafcn{0,60,5}{3*dir(t)}
+          \tlabel[cc](3.0311,1.75){<m>s</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[14]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \point[4pt]{(0,0)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \polyline{(0,0), (2.5, 4.3301)}
+          \arrow \reverse \arrow \polyline{(3,-5), (3,5)}
+          \polyline{(2.8,3.1416), (3.2,3.1416)}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>t</m>}
+          \penwd{1.5pt}
+          \arrow \polyline{(3,0), (3, 3.1416)}
+          \arrow \parafcn{0,60,5}{3*dir(t)}
+          \tlabel[cc](3.5,1.75){<m>t</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[14]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \point[4pt]{(0,0)}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \polyline{(0,0), (2.5, -4.3301)}
+          \arrow \reverse \arrow \polyline{(3,-5), (3,5)}
+          \polyline{(2.8,-3.1416), (3.2,-3.1416)}
+          \arrow \parafcn{-5, -55, -5}{1.5*dir(t)}
+          \tlabel[cc](1.732, -1){<m>t</m>}
+          \penwd{1.5pt}
+          \arrow \polyline{(3,0), (3, -3.1416)}
+          \arrow \parafcn{0,-60,-5}{3*dir(t)}
+          \tlabel[cc](3.5,-1.75){<m>t</m>}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell>On the Unit Circle, <m>\theta = s</m>.</cell>
+        <cell>Identifying <m>t > 0</m> with an angle.</cell>
+        <cell>Identifying <m>t \lt  0</m> with an angle.</cell>
+      </row>
+    </tabular>
+    <example xml:id="realwrap">
+      <statement>
+        <p>
+          Sketch the oriented arc on the Unit Circle corresponding to each of the following real numbers.
+          <ol>
+            <li>
+              <p>
+                <m>t=\dfrac{3 \pi}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t = - 2 \pi</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t = -2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t = 117</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The arc associated with <m>t = \frac{3 \pi}{4}</m> is the arc on the Unit Circle which subtends the angle <m>\frac{3 \pi}{4}</m> in radian measure.
+                Since <m>\frac{3 \pi}{4}</m> is <m>\frac{3}{8}</m> of a revolution,
+                we have an arc which begins at the point <m>(1,0)</m> proceeds counter-clockwise up to midway through Quadrant II.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since one revolution is <m>2\pi</m> radians,
+                and <m>t=-2\pi</m> is negative,
+                we graph the arc which begins at <m>(1,0)</m> and proceeds
+                <em>clockwise</em> for one full revolution.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[12.5]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \dotted \polyline{(0,0), (-3.5355,3.5355)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, 135, 5}{3*dir(t)} \tcaption{<m>t = \frac{3\pi}{4}</m>} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[12.5]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, -358, -5}{3*dir(t)} \tcaption{<m>t = -2\pi</m>} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Like <m>t=-2\pi</m>, <m>t=-2</m> is negative,
+                so we begin our arc at <m>(1,0)</m> and proceed clockwise around the unit circle.
+                Since <m>\pi \approx 3.14</m> and <m>\frac{\pi}{2} \approx 1.57</m>,
+                we find that rotating <m>2</m> radians clockwise from the point <m>(1,0)</m> lands us in Quadrant III. To more accurately place the endpoint,
+                we proceed as we did in <xref ref="degreeex">Example</xref>,
+                successively halving the angle measure until we find
+                <m>\frac{5 \pi}{8} \approx 1.96</m> which tells us our arc extends just a bit beyond the quarter mark into Quadrant III.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>117</m> is positive,
+                the arc corresponding to <m>t=117</m> begins at <m>(1,0)</m> and proceeds counter-clockwise.
+                As <m>117</m> is much greater than <m>2\pi</m>,
+                we wrap around the Unit Circle several times before finally reaching our endpoint.
+                We approximate <m>\frac{117}{2\pi}</m> as <m>18.62</m> which tells us we complete <m>18</m> revolutions counter-clockwise with <m>0.62</m>,
+                or just shy of <m>\frac{5}{8}</m> of a revolution to spare.
+                In other words,
+                the terminal side of the angle which measures <m>117</m> radians in standard position is just short of being midway through Quadrant III.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[12.5]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \dotted \polyline{(0,0), (-3.5355,-3.5355)} \dotted \polyline{(0,0), (-1.9135,-4.6194)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, -114, -5}{3*dir(t)} \tcaption{<m>t = -2</m>} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[12.5]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \dotted \polyline{(0,0), (-3.5355,-3.5355)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, 583, 5}{3*dir(t)} \tcaption{<m>t = 117</m>} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="circularmotion">
+    <title>Applications of Radian Measure:  Circular Motion</title>
+    <p>
+      Now that we have paired angles with real numbers via radian measure,
+      a whole world of applications awaits us.
+      Our first excursion into this realm comes by way of circular motion.
+      Suppose an object is moving as pictured below along a circular path of radius <m>r</m> from the point <m>P</m> to the point <m>Q</m> in an amount of time <m>t</m>.
+    </p>
+    <p>
+      \begin{mfpic}[14]{-5}{5}{-5}{5} \tlabel[cc](3.25,-0.5){ <m>P</m>} \tlabel[cc](1.25,3.25){ <m>Q</m>} \tlabel[cc](1.5,-0.5){ <m>r</m>} \point[4pt]{(0,0), (3,0)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \polyline{(5, 0), (0,0), (2.5, 4.3301)} \arrow \parafcn{5, 55, 5}{1.5*dir(t)} \tlabel[cc](1.732, 1){<m>\theta</m>} \penwd{1.5pt} \arrow \parafcn{0,60,5}{3*dir(t)} \tlabel[cc](3.0311,1.75){<m>s</m>} \end{mfpic}
+    </p>
+    <p>
+      Here <m>s</m> represents a <em>displacement</em>
+      so that <m>s > 0</m> means the object is traveling in a counter-clockwise direction and <m>s\lt 0</m> indicates movement in a clockwise direction.
+      Note that with this convention the formula we used to define radian measure,
+      namely <m>\theta = \frac{s}{r}</m>,
+      still holds since a negative value of <m>s</m> incurred from a clockwise displacement matches the negative we assign to <m>\theta</m> for a clockwise rotation.
+      In Physics, the <em>average velocity</em>
+          <idx><h>average velocity</h></idx>
+      of the object,
+      denoted <m>\overline{v}</m> and read as <sq><m>v</m>-bar</sq>,
+      is defined as the average rate of change of the position of the object with respect to time.<fn>
+      See <xref ref="averagevelocitydefn">Definition</xref>
+      in <xref ref="IntroRational">Section</xref> for a review of this concept.
+      </fn> As a result,
+      we have <m>\overline{v} = \frac{\text{ displacement } }{\text{ time } } = \frac{s}{t}</m>.
+      The quantity <m>\overline{v}</m> has units of
+      <m>\frac{\text{ length } }{\text{ time } }</m> and conveys two ideas:
+      the direction in which the object is moving and how fast the position of the object is changing.
+      The contribution of direction in the quantity
+      <m>\overline{v}</m> is either to make it positive
+      (in the case of counter-clockwise motion)
+      or negative
+      (in the case of clockwise motion),
+      so that the quantity <m>\left| \overline{v} \right|</m> quantifies how fast the object is moving - it is the
+      <em>speed</em> of the object.
+      Measuring <m>\theta</m> in radians we have
+      <m>\theta = \frac{s}{r}</m> thus <m>s = r \theta</m> and
+      <me>
+        \overline{v} = \frac{s}{t} = \frac{r \theta}{t} = r \cdot \frac{\theta}{t}
+      </me>
+    </p>
+    <p>
+      The quantity <m>\frac{\theta}{t}</m> is called the <idx><h>velocity</h><h>average angular</h></idx>
+          <idx><h>average angular velocity</h></idx>
+      <em>average angular velocity</em> of the object.
+      It is denoted by <m>\overline{\omega}</m> and is read <sq>omega-bar</sq>.
+      The quantity <m>\overline{\omega}</m> is the average rate of change of the angle <m>\theta</m> with respect to time and thus has units <m>\frac{\text{ radians } }{\text{ time } }</m>.
+      If <m>\overline{\omega}</m> is constant throughout the duration of the motion,
+      then it can be shown<fn>
+      You guessed it, using Calculus <ellipsis/>
+      </fn> that the average velocities involved,
+      namely <m>\overline{v}</m> and <m>\overline{\omega}</m>,
+      are the same as their instantaneous counterparts,
+      <m>v</m> and <m>\omega</m>, respectively.
+      In this case,
+      <m>v</m> is simply called the <idx><h>velocity</h><h>instantaneous</h></idx>
+      <sq>velocity</sq> of the object and <m>\omega</m> is called the <idx><h>velocity</h><h>instantaneous angular</h></idx>
+      <sq>angular velocity.</sq><fn>
+      See <xref ref="averagevelocityrocketex">Example</xref>
+      in <xref ref="IntroRational">Section</xref>
+      for more of a discussion on instantaneous velocity.
+      </fn>
+    </p>
+    <p>
+      If the path of the object were <sq>uncurled</sq> from a circle to form a line segment,
+      then the velocity of the object on that line segment would be the same as the velocity on the circle.
+      For this reason,
+      the quantity <m>v</m> is often called the <em>linear</em>
+      velocity of the object in order to distinguish it from the
+      <em>angular</em> velocity, <m>\omega</m>.
+      Putting together the ideas of the previous paragraph, we get the following.
+    </p>
+    <proposition xml:id="circularmotionvelocity">
+      <title>Velocity for Circular Motion:</title>
+      <statement>
+        <p>
+          [Velocity for Circular Motion:]
+          <em>Velocity for Circular Motion:</em>
+          For an object moving on a circular path of radius <m>r</m> with constant angular velocity <m>\omega</m>,
+          the (linear) velocity of the object is given by <m>v = r \omega</m>.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      We need to talk about units here.
+      The units of <m>v</m> are <m>\frac{\text{ length } }{\text{ time } }</m>,
+      the units of <m>r</m> are length only,
+      and the units of <m>\omega</m> are <m>\frac{\text{ radians } }{\text{ time } }</m>.
+      Thus the left hand side of the equation
+      <m>v = r \omega</m> has units <m>\frac{\text{ length } }{\text{ time } }</m>,
+      whereas the right hand side has units <m>\text{ length } \cdot \frac{\text{ radians } }{\text{ time } } = \frac{\text{ length } \cdot \text{ radians } }{\text{ time } }</m>.
+      The supposed contradiction in units is resolved by remembering that radians are a dimensionless quantity and angles in radian measure are identified with real numbers so that the units
+      <m>\frac{\text{ length } \cdot \text{ radians } }{\text{ time } }</m> reduce to the units <m>\frac{\text{ length } }{\text{ time } }</m>.
+      We are long overdue for an example.
+    </p>
+    <example xml:id="EarthRotationEx">
+      <statement>
+        <p>
+          Assuming that the surface of the Earth is a sphere,
+          any point on the Earth can be thought of as an object traveling on a circle
+          (this is the <em>parallel of latitude</em> of the point)
+          as seen in the figure below.<fn>
+          Diagram credit:
+          <url href="https://commons.wikimedia.org/wiki/File:Latitude_(PSF).png"><em>Pearson Scott Foresman [Public domain], via Wikimedia Commons</em></url>.
+          </fn> Since it takes the Earth (approximately) 24 hours to rotate,
+          the object takes 24 hours to complete one revolution along this circle.
+          Lakeland Community College is at
+          <m>41.628^{\circ}</m> north latitude, and it can be shown<fn>
+          We will discuss how we arrived at this approximation in <xref ref="cosinesinecircleex">Example</xref>.
+          </fn> that the radius of the earth at this Latitude is approximately <m>2960</m> miles.
+          Find the linear velocity,
+          in miles per hour, of Lakeland Community College as the world turns.
+        </p>
+        <p>
+          <image width="37%" source="./RadianMeasureGraphics/Latitude_(PSF).png"/>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To use the formula <m>v = r \omega</m>,
+          we first need to compute the angular velocity <m>\omega</m>.
+          The earth makes one revolution in 24 hours,
+          and one revolution is <m>2 \pi</m> radians,
+          so <m>\omega = \frac{2 \pi \, \text{ radians } }{24 \, \text{ hours } } = \frac{\pi}{12 \, \text{ hours } }</m>.
+          Note that once again,
+          we are identifying angles in radian measure as real numbers so we can drop the <sq>radian</sq> units as they are dimensionless.
+          Also note that for simplicity's sake,
+          we assume that we are viewing the rotation of the earth as counter-clockwise so <m>\omega > 0</m>.
+          Hence, the linear velocity is
+          <me>
+            v = 2960 \, \text{ miles }  \cdot \frac{\pi}{12 \, \text{ hours } } \approx 775 \, \frac{\text{ miles } }{\text{ hour } }
+          </me>
+        </p>
+      </solution>
+    </example>
+    <p>
+      It is worth noting that the quantity
+      <m>\frac{1 \, \text{ revolution } }{24 \, \text{ hours } }</m> in <xref ref="EarthRotationEx">Example</xref>
+      is called the <idx><h>frequency</h><h>ordinary</h></idx>
+          <idx><h>ordinary frequency</h></idx>
+      <em>ordinary frequency</em> of the motion and is usually denoted by the variable <m>f</m>.
+      The ordinary frequency is a measure of how often an object makes a complete cycle of the motion.
+      The fact that <m>\omega = 2\pi f</m> suggests that <m>\omega</m> is also a frequency.
+      Indeed, it is called the
+          <idx><h>frequency</h><h>angular</h></idx>
+          <idx><h>angular frequency</h></idx> <em>angular frequency</em> of the motion.
+      On a related note, the quantity
+      <m>T = \frac{1}{f}</m> is called the <idx><h>period</h><h>circular motion</h></idx>
+      <em>period</em> of the motion and is the amount of time it takes for the object to complete one cycle of the motion.
+      In the scenario of <xref ref="EarthRotationEx">Example</xref>,
+      the period of the motion is 24 hours, or one day.
+    </p>
+    <p>
+      The concepts of frequency and period help frame the equation <m>v = r \omega</m> in a new light.
+      That is, if <m>\omega</m> is fixed,
+      points which are farther from the center of rotation need to travel faster to maintain the same angular frequency since they have farther to travel to make one revolution in one period's time.
+      The distance of the object to the center of rotation is the radius of the circle,
+      <m>r</m>,
+      and is the <sq>magnification factor</sq> which relates <m>\omega</m> and <m>v</m>.
+      We will have more to say about frequencies and periods in <xref ref="GraphsofSineandCosine">Section</xref>.
+      While we have exhaustively discussed velocities associated with circular motion,
+      we have yet to discuss a more natural question:
+      if an object is moving on a circular path of radius <m>r</m> with a fixed angular velocity (frequency) <m>\omega</m>,
+      what is the position of the object at time <m>t</m>?
+      The answer to this question is the very heart of Trigonometry and is answered in the next section.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="orientedanglefirst">Exercises</xref>
+      - <xref ref="orientedanglelast"></xref>,
+      graph the oriented angle in standard position.
+      Classify each angle according to where its terminal side lies and then give two coterminal angles,
+      one of which is positive and the other negative.
+      <ol cols="4">
+        <li>
+          <p>
+            <m>\dfrac{\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{5\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{11\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{5\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{3\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{7\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{7\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{5\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-2\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{\pi}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{15\pi}{4}</m>
+          </p>
+        </li>
+        <li xml:id="orientedanglelast">
+          <p>
+            <m>-\dfrac{13\pi}{6}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="degreetoradianfirst">Exercises</xref>
+      - <xref ref="degreetoradianlast"></xref>,
+      convert the angle from degree measure into radian measure,
+      giving the exact value in terms of <m>\pi</m>.
+      <ol cols="2">
+        <li xml:id="degreetoradianfirst">
+          <p>
+            <m>0^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>240^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>135^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-270^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-315^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>150^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>45^{\circ}</m>
+          </p>
+        </li>
+        <li xml:id="degreetoradianlast">
+          <p>
+            <m>-225^{\circ}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="radiantodegreefirst">Exercises</xref>
+      - <xref ref="radiantodegreelast"></xref>,
+      convert the angle from radian measure into degree measure.
+      <ol cols="2">
+        <li xml:id="radiantodegreefirst">
+          <p>
+            <m>\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{2\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{7\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{11\pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{5\pi}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{\pi}{6}</m>
+          </p>
+        </li>
+        <li xml:id="radiantodegreelast">
+          <p>
+            <m>\dfrac{\pi}{2}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="orientedarcfirst">Exercises</xref>
+      - <xref ref="orientedarclast"></xref>,
+      sketch the oriented arc on the Unit Circle which corresponds to the given real number.
+      <ol cols="2">
+        <li xml:id="orientedarcfirst">
+          <p>
+            <m>t=\frac{5 \pi}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t=-\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t = 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t = -2</m>
+          </p>
+        </li>
+        <li xml:id="orientedarclast">
+          <p>
+            <m>t = 12</m>
+          </p>
+        </li>
+        <li xml:id="spinningyoyo">
+          <p>
+            A yo-yo which is 2.25 inches in diameter spins at a rate of 4500 revolutions per minute.
+            How fast is the edge of the yo-yo spinning in miles per hour?
+            Round your answer to two decimal places.
+          </p>
+        </li>
+        <li>
+          <p>
+            How many revolutions per minute would the yo-yo in <xref ref="spinningyoyo">exercise</xref>
+            have to complete if the edge of the yo-yo is to be spinning at a rate of 42 miles per hour?
+            Round your answer to two decimal places.
+          </p>
+        </li>
+        <li xml:id="yoyotrick">
+          <p>
+            In the yo-yo trick <sq>Around the World,</sq> the performer throws the yo-yo so it sweeps out a vertical circle whose radius is the yo-yo string.
+            If the yo-yo string is 28 inches long and the yo-yo takes 3 seconds to complete one revolution of the circle,
+            compute the speed of the yo-yo in miles per hour.
+            Round your answer to two decimal places.
+          </p>
+        </li>
+        <li xml:id="harddrive">
+          <p>
+            A computer hard drive contains a circular disk with diameter 2.5 inches and spins at a rate of 7200 revolutions per minute.
+            Find the linear speed of a point on the edge of the disk in miles per hour.
+          </p>
+        </li>
+        <li>
+          <p>
+            A rock got stuck in the tread of my tire and when I was driving 70 miles per hour,
+            the rock came loose and hit the inside of the wheel well of the car.
+            How fast, in miles per hour,
+            was the rock traveling when it came out of the tread? (The tire has a diameter of 23 inches.)
+          </p>
+        </li>
+        <li xml:id="giantwheelmotion">
+          <p>
+            The Giant Wheel at Cedar Point is a circle with diameter 128 feet which sits on an 8 foot tall platform making its overall height is 136 feet. (Remember this from <xref ref="giantwheelcircle">Exercise</xref>
+            in <xref ref="Circles">Section</xref>?) It completes two revolutions in 2 minutes and 7 seconds.<fn>
+            Source:
+            <url href="http://www.cedarpoint.com/public/park/rides/tranquil/giant_wheel.cfm"><em>Cedar Point's webpage</em></url>.
+            </fn>  Assuming the riders are at the edge of the circle,
+            how fast are they traveling in miles per hour?
+          </p>
+        </li>
+        <li xml:id="circularsectorarea">
+          <p>
+            Consider the circle of radius <m>r</m> pictured below with central angle <m>\theta</m>,
+            measured in radians, and subtended arc of length <m>s</m>.
+            Prove that the area of the shaded sector is <m>A = \frac{1}{2} r^{2} \theta</m>.
+            (Hint: Use the proportion <m>\frac{A}{\text{ area of the circle } } = \frac{s}{\text{ circumference of the circle } }</m>.)
+            \begin{mfpic}[20]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \circle{(0,0),3} \fillcolor[gray]{0.7} \gfill \plrregion{0,60,5}{3} \drawcolor{black} \polyline{(3, 0), (0,0), (1.5, 2.598)} \arrow \reverse \arrow \parafcn{5, 55, 5}{1.5*dir(t)} \point[4pt]{(0,0)} \tlabel[cc](1.732, 1){<m>\theta</m>} \penwd{1.5pt} \parafcn{0,60,5}{3*dir(t)} \tlabel[cc](3.0311,1.75){<m>s</m>} \tlabel[cc](1.5,-0.5){<m>r</m>} \tlabel[cc](0.5,1.5){<m>r</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="sectorfirst">Exercises</xref>
+      - <xref ref="sectorlast"></xref>,
+      use the result of <xref ref="circularsectorarea">Exercise</xref>
+      to compute the areas of the circular sectors with the given central angles and radii.
+      <ol cols="3">
+        <li xml:id="sectorfirst">
+          <p>
+            <m>\theta = \dfrac{\pi}{6}, \; r = 12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = \dfrac{5\pi}{4}, \; r = 100</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = 330^{\circ}, \; r = 9.3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta =\pi, \; r = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\theta = 240^{\circ}, \; r = 5</m>
+          </p>
+        </li>
+        <li xml:id="sectorlast">
+          <p>
+            <m>\theta = 1^{\circ}, \; r = 117</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Imagine a rope tied around the Earth at the equator.
+            Show that you need to add only <m>2\pi</m> feet of length to the rope in order to lift it one foot above the ground around the entire equator.
+            (You do NOT need to know the radius of the Earth to show this.)
+          </p>
+        </li>
+        <li>
+          <p>
+            With the help of your classmates,
+            look for a proof that <m>\pi</m> is indeed a constant.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\dfrac{\pi}{3}</m> is a Quadrant I angle coterminal with <m>\dfrac{7\pi}{3}</m> and
+          <m>-\dfrac{5\pi}{3}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,-0.1), 55} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{5\pi}{6}</m> is a Quadrant II angle coterminal with <m>\dfrac{17\pi}{6}</m> and
+          <m>-\dfrac{7\pi}{6}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 145} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4.3301, 2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{11\pi}{3}</m> is a Quadrant I angle coterminal with <m>\dfrac{\pi}{3}</m> and
+          <m>-\dfrac{5\pi}{3}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,655,5}{(t+100)*dir(0-t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{5\pi}{4}</m> is a Quadrant III angle coterminal with <m>\dfrac{13\pi}{4}</m> and
+          <m>-\dfrac{3\pi}{4}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 220} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-3.5355, -3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{3\pi}{4}</m> is a Quadrant II angle coterminal with <m>\dfrac{11\pi}{4}</m> and
+          <m>-\dfrac{5\pi}{4}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 130} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-3.5355, 3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{\pi}{3}</m> is a Quadrant IV angle coterminal with <m>\dfrac{5\pi}{3}</m> and
+          <m>-\dfrac{7\pi}{3}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,-0.1), -55} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(2.5, -4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{7\pi}{2}</m> lies on the negative <m>y</m>-axis coterminal with <m>\dfrac{3\pi}{2}</m> and
+          <m>-\dfrac{\pi}{2}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,625,5}{(t+100)*dir(t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(0, -5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\pi}{4}</m> is a Quadrant I angle coterminal with <m>\dfrac{9 \pi}{4}</m> and
+          <m>-\dfrac{7\pi}{4}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, 0.1), 40} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(3.5355, 3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{\pi}{2}</m> lies on the negative <m>y</m>-axis coterminal with <m>\dfrac{3\pi}{2}</m> and
+          <m>-\dfrac{5\pi}{2}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, -0.1), -85} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(0, -5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{7\pi}{6}</m> is a Quadrant III angle coterminal with <m>\dfrac{19 \pi}{6}</m> and
+          <m>-\dfrac{5\pi}{6}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, 0.1), 205} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4.3301,-2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{5\pi}{3}</m> is a Quadrant I angle coterminal with <m>\dfrac{\pi}{3}</m> and
+          <m>-\dfrac{11\pi}{3}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, -0.1), -295} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3\pi</m> lies on the negative <m>x</m>-axis coterminal with <m>\pi</m> and <m>-\pi</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,535,5}{(t+100)*dir(t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5,0), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-2\pi</m> lies on the positive <m>x</m>-axis coterminal with <m>2\pi</m> and <m>-4\pi</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,355,5}{(t+100)*dir(0-t)/300} \penwd{1.25pt} \point[4pt]{(0,0)} \arrow \polyline{(0,0), (5,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{\pi}{4}</m> is a Quadrant IV angle coterminal with <m>\dfrac{7 \pi}{4}</m> and
+          <m>-\dfrac{9\pi}{4}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, -0.1), -40} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(3.5355,-3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{15\pi}{4}</m> is a Quadrant IV angle coterminal with <m>\dfrac{7\pi}{4}</m> and
+          <m>-\dfrac{\pi}{4}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,670,5}{(t+100)*dir(t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(3.5355,-3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{13\pi}{6}</m> is a Quadrant IV angle coterminal with <m>\dfrac{11\pi}{6}</m> and
+          <m>-\dfrac{\pi}{6}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,385,5}{(t+100)*dir(0-t)/300} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(4.3301,-2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{4\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{3\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{3\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{7\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{5\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{5\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>180^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-120^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>210^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>330^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>60^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>300^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-30^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>90^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{5\pi}{6}</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \dotted \polyline{(0,0), (-4.3301,2.5)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, 150, 5}{3*dir(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\pi</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, 180, 5}{3*dir(-t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 6</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \dotted \polyline{(0,0), (4.801,-1.397)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, 343, 5}{3*dir(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -2</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \axes \tlabel(4.5,-0.5){<m>x</m>} \tlabel(0.5,4.5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \dotted \polyline{(0,0), (-2.081,-4.546)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, 114, 5}{3*dir(-t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 12</m> (between 1 and 2 revolutions) \begin{mfpic}[10]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \dotted \polyline{(0,0), (4.219,-2.683)} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \penwd{1.5pt} \arrow \parafcn{0, 687, 5}{3*dir(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          About 30.12 miles per hour
+        </p>
+      </li>
+      <li>
+        <p>
+          About 6274.52 revolutions per minute
+        </p>
+      </li>
+      <li>
+        <p>
+          About 3.33 miles per hour
+        </p>
+      </li>
+      <li>
+        <p>
+          About 53.55 miles per hour
+        </p>
+      </li>
+      <li>
+        <p>
+          70 miles per hour
+        </p>
+      </li>
+      <li>
+        <p>
+          About 4.32 miles per hour
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>12\pi</m> square units
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>6250\pi</m> square units
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>79.2825\pi \approx 249.07</m> square units
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\pi}{2}</m> square units
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{50\pi}{3}</m> square units
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>38.025 \pi \approx 119.46</m> square units
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

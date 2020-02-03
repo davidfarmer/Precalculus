@@ -1,0 +1,1542 @@
+<section xml:id="ExponentialFunctions">
+  <title>Exponential Functions</title>
+  <introduction>
+    <p>
+      Of all of the functions we study in this text,
+      exponential functions are possibly the ones which impact everyday life the most.
+      This section introduces us to these functions while the rest of the chapter will more thoroughly explore their properties.
+    </p>
+    <p>
+      Up to this point,
+      we have dealt with functions which involve terms like <m>x^3</m>,
+      <m>x^{\frac{3}{2}}</m>, or <m>x^{\pi}</m> - in other words,
+      terms of the form <m>x^{p}</m> where the base of the term,
+      <m>x</m>,
+      varies but the exponent of each term,
+      <m>p</m>, remains constant.
+    </p>
+    <p>
+      In this chapter, we study functions of the form
+      <m>f(x) = b^{x}</m> where the base <m>b</m> is a constant and the exponent <m>x</m> is the variable.
+      We start our exploration of these functions with the time-honored classic,
+      <m>f(x) = 2^{x}</m>.
+    </p>
+    <p>
+      We make a table of function values,
+      plot enough points until we are more or less confident with the shape of the curve,
+      and connect the dots in a pleasing fashion.
+    </p>
+    <tabular>
+      {m{2.7in}m{3in}}
+      <me>
+        \begin{array}{|r||r|r|}
+        \hline
+        x \amp  f(x) \amp  (x,f(x)) \\ \hline
+        -3 \amp  2^{-3} = \frac{1}{8} \amp  \left(-3, \frac{1}{8} \right) \\ \hline
+        -2 \amp  2^{-2} = \frac{1}{4} \amp   \left(-2, \frac{1}{4} \right) \\ \hline
+        -1 \amp  2^{-1} = \frac{1}{2} \amp   \left(-1, \frac{1}{2} \right) \\  \hline
+        0  \amp  2^{0} = 1 \amp  ( 0 ,1) \\  \hline
+        1  \amp  2^{1} = 2 \amp  ( 1, 2) \\  \hline
+        2  \amp  2^{2} = 4 \amp  (2,4) \\  \hline
+        3  \amp  2^{3} = 8 \amp  (3, 8) \\  \hline
+        \end{array}
+      </me>
+      &amp;
+      \begin{mfpic}[13]{-4}{4}{-1}{9}
+      \axes
+      \tlabel[cc](4,-0.5){<m>x</m>}
+      \tlabel[cc](0.5,9){<m>y</m>}
+      \tcaption{<m>y = f(x) = 2^{x}</m>}
+      \xmarks{-3,-2,-1,1,2,3}
+      \ymarks{1,2,3,4,5,6,7,8}
+      \tlpointsep{4pt}
+      \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3}
+      \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-3.5, 3.1, 0.1}{2**x}
+      \point[3pt]{(-3,0.125), (-2,0.25), (-1,0.5), (0,1), (1,2), (2,4), (3,8)}
+      \end{mfpic}
+    </tabular>
+    <p>
+      A few remarks about the graph of <m>f(x) = 2^{x}</m> are in order.
+      As <m>x \rightarrow -\infty</m> and takes on values like <m>x = -100</m> or <m>x=-1000</m>,
+      the function <m>f(x) = 2^{x}</m> takes on values like
+      <m>f(-100) = 2^{-100} = \frac{1}{2^{100}}</m> or <m>f(-1000) = 2^{-1000} = \frac{1}{2^{1000}}</m>.
+    </p>
+    <p>
+      In other words, as <m>x \rightarrow -\infty</m>,
+      <m>2^{x} \approx \frac{1}{\text{ very big \((+)\) } } \approx \text{ very small \((+)\) }</m> That is,
+      as <m>x \rightarrow -\infty</m>,
+      <m>2^{x} \rightarrow 0^{+}</m>.
+      This produces the <m>x</m>-axis,
+      <m>y = 0</m> as a horizontal asymptote to the graph as <m>x \rightarrow -\infty</m>.
+    </p>
+    <p>
+      On the flip side, as <m>x \rightarrow \infty</m>,
+      we find <m>f(100) = 2^{100}</m>,
+      <m>f(1000) = 2^{1000}</m>, and so on,
+      thus <m>2^{x} \rightarrow \infty</m>.
+    </p>
+    <p>
+      We note that by <sq>connecting the dots in a pleasing fashion,</sq> we are implicitly using the fact that
+      <m>f(x) = 2^{x}</m> is not only defined for all real numbers,<fn>
+      See the discussion of real number exponents in <xref ref="PowerFunctions">Section</xref>.
+      </fn> but is also <em>continuous</em>.
+      Moreover, we are assuming <m>f(x) = 2^{x}</m> is increasing:
+      that is, if <m>a\lt b</m>, then <m>2^{a} \lt 2^{b}</m>.
+      While these facts are true,
+      the proofs of these properties are best left to Calculus.
+      For us, we assume these properties in order to state the domain of <m>f</m> is <m>(-\infty, \infty)</m>,
+      the range of <m>f</m> is <m>(0, \infty)</m> and,
+      since <m>f</m> is increasing,
+      <m>f</m> is one-to-one, hence invertible.
+    </p>
+    <p>
+      Suppose we wish to study the family of functions <m>f(x) = b^{x}</m>.
+      Which bases <m>b</m> make sense to study?
+      We find that we run into difficulty if <m>b \lt 0</m>.
+      For example, if <m>b = -2</m>,
+      then the function <m>f(x) = (-2)^{x}</m> has trouble, for instance,
+      at <m>x = \frac{1}{2}</m> since
+      <m>(-2)^{1/2} = \sqrt{-2}</m> is not a real number.
+      In general, if <m>x</m> is any rational number with an even denominator,<fn>
+      or, as we defined real number exponents in <xref ref="PowerFunctions">Section</xref>,
+      if <m>x</m> is an irrational number <ellipsis/>
+      </fn> then <m>(-2)^{x}</m> is not defined,
+      so we must restrict our attention to bases <m>b \geq 0</m>.
+    </p>
+    <p>
+      What about <m>b = 0</m>?
+      The function <m>f(x) = 0^{x}</m> is undefined for
+      <m>x \leq 0</m> because we cannot divide by <m>0</m> and <m>0^{0}</m> is an indeterminant form.
+      For <m>x > 0</m>, <m>0^{x} = 0</m> so the function
+      <m>f(x) = 0^{x}</m> is the same as the function <m>f(x) = 0</m>,
+      <m>x > 0</m>.
+      Since we know everything about this function, we ignore this case.
+    </p>
+    <p>
+      The only other base we exclude is <m>b=1</m>,
+      since the function <m>f(x) = 1^{x} = 1</m> for all real numbers <m>x</m>,
+      since, once again, a function we have already studied.
+      We are now ready for our definition of exponential functions.
+    </p>
+    <definition xml:id="expfcndefn">
+      <statement>
+        <p>
+          An <idx><h>function</h><h>exponential</h></idx>
+              <idx><h>exponential function</h><h>definition of</h></idx>
+          <term>exponential function</term>
+          is the function of the form
+          <me>
+            f(x) = b^{x}
+          </me>
+          where <m>b</m> is a real number,
+          <m>b > 0</m>, <m>b \neq 1</m>.
+          The domain of an exponential function <m>(-\infty, \infty)</m>.
+        </p>
+        <p>
+          <term>NOTE:</term> More specifically,
+          <m>f(x) = b^{x}</m> is called the <sq><term>base <m>b</m> exponential function</term>.</sq>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We leave it to the reader to verify<fn>
+      Meaning, graph some more examples on your own.
+      </fn> that if <m>b > 1</m>,
+      then the exponential function
+      <m>f(x) = b^{x}</m> will share the same basic shape and characteristics as <m>f(x) = 2^{x}</m>.
+    </p>
+    <p>
+      What if <m>0 \lt  b \lt  1</m>?
+      Consider <m>g(x) = \left(\frac{1}{2}\right)^{x}</m>.
+      We could certainly build a table of values and connect the points,
+      or we could take a step back and note that <m>g(x) = \left(\frac{1}{2}\right)^{x} = \left(2^{-1}\right)^{x} = 2^{-x} = f(-x)</m>,
+      where <m>f(x) = 2^{x}</m>.
+      Per <xref ref="Transformations">Section</xref>,
+      the graph of <m>f(-x)</m> is obtained from the graph of <m>f(x)</m> by reflecting it across the <m>y</m>-axis.
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[10]{-4}{4}{-1}{9} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,9){\(y\)} \tcaption{\(y = f(x) = 2^{x}\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{{\(1\)} 1, {\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(6\)} 6, {\(7\)} 7, {\(8\)} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.5, 3.1, 0.1}{2**x} \point[3pt]{(-3,0.125), (-2,0.25), (-1,0.5), (0,1), (1,2), (2,4), (3,8)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y\)-axis} }{\xrightarrow{}}}{\mbox{ multiply each \(x\)-coordinate by \(-1\)} }  \amp  \begin{mfpic}[10]{-4}{4}{-1}{9} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,9){\(y\)} \tcaption{\(y = g(x) = 2^{-x} = \left(\frac{1}{2}\right)^{x}\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{{\(1\)} 1, {\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(6\)} 6, {\(7\)} 7, {\(8\)} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.1, 3.5, 0.1}{(0.5)**x} \point[3pt]{(3,0.125), (2,0.25), (1,0.5), (0,1), (-1,2), (-2,4), (-3,8)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      We see that the domain and range of <m>g</m> match that of <m>f</m>,
+      namely <m>(-\infty, \infty)</m> and <m>(0,\infty)</m>,
+      respectively.
+      Like <m>f</m>, <m>g</m> is also one-to-one.
+      Whereas <m>f</m> is always increasing,
+      <m>g</m> is always decreasing.
+      As a result, as <m>x \rightarrow -\infty</m>,
+      <m>g(x) \rightarrow \infty</m>, and on the flip side,
+      as <m>x \rightarrow \infty</m>,
+      <m>g(x) \rightarrow 0^{+}</m>.
+      It shouldn't be too surprising that for all choices of the base <m>0 \lt b \lt 1</m>,
+      the graph of <m>y=b^{x}</m> behaves similarly to the graph of <m>g</m>.
+    </p>
+    <p>
+      We summarize the basic properties of exponential functions in the following theorem.
+    </p>
+    <theorem xml:id="expfcnprops">
+      <statement>
+        <p>
+          <em>Properties of Exponential Functions:</em>
+          Suppose <m>f(x) = b^{x}</m>.
+              <idx><h>exponential function</h><h>graphical properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                The domain of <m>f</m> is <m>(-\infty, \infty)</m> and the range of <m>f</m> is <m>(0, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(0,1)</m> is on the graph of <m>f</m> and <m>y=0</m> is a horizontal asymptote to the graph of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f</m> is one-to-one, continuous and smooth<fn>
+                Recall that this means the graph of <m>f</m> has no sharp turns or corners.
+                </fn>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <tabular>
+          {m{2.5in}m{2.5in}}
+          <ul>
+            <li>
+              <p>
+                If <m>b > 1</m>:
+                <ul>
+                  <li>
+                    <p>
+                      <m>f</m> is always increasing
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      As <m>x \rightarrow -\infty</m>,
+                      <m>f(x) \rightarrow 0^{+}</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      As <m>x \rightarrow \infty</m>,
+                      <m>f(x) \rightarrow \infty</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      The graph of <m>f</m> resembles: \begin{mfpic}[10]{-4}{4}{-1}{5} \axes \ymarks{1} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.3,2.3,0.1}{2**x} \point[4pt]{(0,1)} \tlabel[cc](1.5,1){<m>(0,1)</m>} \tcaption{<m>y = b^{x}</m>,
+                      <m>b > 1</m>} \end{mfpic}
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </li>
+          </ul>
+          &amp;
+          <ul>
+            <li>
+              <p>
+                If <m>0\lt b\lt 1</m>:
+                <ul>
+                  <li>
+                    <p>
+                      <m>f</m> is always decreasing
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      As <m>x \rightarrow -\infty</m>,
+                      <m>f(x) \rightarrow \infty</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      As <m>x \rightarrow \infty</m>,
+                      <m>f(x) \rightarrow 0^{+}</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      The graph of <m>f</m> resembles: \begin{mfpic}[10]{-4}{4}{-1}{5} \axes \ymarks{1} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.3,2.3,0.1}{(0.5)**x} \point[4pt]{(0,1)} \tlabel[cc](-1.5,1){<m>(0,1)</m>} \tcaption{<m>y = b^{x}</m>,
+                      <m>0 \lt b \lt 1</m>} \end{mfpic}
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </li>
+          </ul>
+        </tabular>
+      </statement>
+    </theorem>
+    <p>
+      Exponential functions also inherit the basic properties of exponents from <xref ref="exponentprops">Theorem</xref>.
+      We formalize these below and use them as needed in the coming examples.
+    </p>
+    <theorem xml:id="algpropexpfcns">
+      <statement>
+        <p>
+          <em>(Algebraic Properties of Exponential Functions)</em>
+          Let <m>f(x) = b^{x}</m> be an exponential function (<m>b > 0</m>,
+          <m>b\neq 1</m>) and let <m>u</m> and <m>w</m> be real numbers.
+              <idx><h>exponential function</h><h>algebraic properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Product Rule:</em> <idx><h>product rule</h><h>for exponential functions</h></idx> <m>f(u+w) = f(u) f(w)</m>.
+                In other words, <m>b^{u+w} = b^{u} b^{w}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Quotient Rule:</em> <idx><h>quotient rule</h><h>for exponential functions</h></idx> <m>f(u-w) = \dfrac{f(u)}{f(w)}</m>.
+                In other words, <m>b^{u-w} = \dfrac{b^{u}}{b^{w}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Power Rule:</em> <idx><h>power rule</h><h>for exponential functions</h></idx> <m>\left(f(u)\right)^w = f(uw)</m>.
+                In other words, <m>\left(b^{u}\right)^{w} = b^{uw}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In addition to base <m>2</m> which is important to computer scientists,<fn>
+      The digital world is comprised of bytes which take on one of <em>two</em> values:
+      <m>0</m> or <sq>off</sq> and <m>1</m> or <sq>on.</sq>
+      </fn> two other bases are used more often than not in scientific and economic circles.
+      The first is base <m>10</m>.
+      Base <m>10</m> is called the <idx><h>exponential function</h><h>common base</h></idx>
+          <idx><h>common base</h></idx>
+      <sq><em>common base</em></sq> and is important in the study of intensity (sound intensity,
+      earthquake intensity, acidity, etc.)
+    </p>
+    <p>
+      The second base is an irrational number, <m>e</m>.
+      Like <m>\sqrt{2}</m> or <m>\pi</m>,
+      the decimal expansion of <m>e</m> neither terminates nor repeats,
+      so we represent this number by the letter <sq><m>e</m>.</sq> A decimal approximation of <m>e</m> is <m>e \approx 2.718</m>,
+      so the function <m>f(x) = e^{x}</m> is an increasing exponential function.
+    </p>
+    <p>
+      The number <m>e</m> is called the
+          <idx><h>natural base</h></idx>
+          <idx><h>exponential function</h><h>natural base</h></idx>
+      <sq><em>natural base</em></sq> for lots of reasons,
+      one of which is that it <sq>naturally</sq> arises in the study of growth functions in Calculus.
+      We will more formally discuss the origins of <m>e</m> in <xref ref="ExpLogApplications">Section</xref>.
+    </p>
+    <p>
+      It is time for an example.
+    </p>
+    <example xml:id="expfcngraphsex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Graph the following functions by starting with a basic exponential function and using transformations,
+              <xref ref="transformationsthm">Theorem</xref>.
+              Track at least three points and the horizontal asymptote through the transformations.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>F(x) = 2 \left( \frac{1}{3} \right)^{x-1}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>G(t) =2 - e^{-t}</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li xml:id="findformulaforexpexample">
+            <p>
+              Find a formula for the graph of the function below.
+              Assume the base of the exponential is <m>2</m>. \begin{mfpic}[15][10]{-7}{3}{-5}{5} \axes \dashed \polyline{(-7, 4), (3,4)} \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-2.5,0.75){<m>(-1,0)</m>} \tlabel[cc](1,-4){<m>(0,-4)</m>} \tlabel[cc](2,3.5){<m>y=4</m>} \tcaption{<m>y = F(x)</m>} \xmarks{-6, -5, -4, -3,-2,-1,1,2} \ymarks{-4, -3, -2, -1, 1, 2, 3, 4} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6,{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-1</m>} -1, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \function{-6, 0.17, 0.1}{4-2**(x+3)} \point[4pt]{(0, -4), (-1,0)} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Since the base of the exponent in
+                    <m>F(x) = 2 \left( \frac{1}{3} \right)^{x-1}</m> is <m>\frac{1}{3}</m>,
+                    we start with the graph of  <m>f(x) = \left(\frac{1}{3}\right)^{x}</m>.
+                    To use <xref ref="transformationsthm">Theorem</xref>,
+                    we first need to choose some <sq>control points</sq> on the graph of <m>f(x) = \left(\frac{1}{3}\right)^{x}</m>.
+                    Since we are instructed to track three points
+                    (and the horizontal asymptote, <m>y = 0</m>)
+                    through the transformations,
+                    we choose the points corresponding  to <m>x = -1</m>,
+                    <m>x = 0</m>, and <m>x = 1</m>:
+                    <m>(-1, 3)</m>, <m>(0,1)</m>,
+                    and <m>\left( 1, \frac{1}{3} \right)</m>, respectively.
+                    Next, we need determine how to modify
+                    <m>f(x) =  \left(\frac{1}{3}\right)^{x}</m>  to obtain <m>F(x) = 2 \left( \frac{1}{3} \right)^{x-1}</m>.
+                    The key is to recognize the argument,
+                    or <sq>inside</sq> of the function is the exponent and the <sq>outside</sq> is anything outside the base of <m>\frac{1}{3}</m>.
+                    Using these principles as a guide,
+                    we find  <m>F(x) = 2 f(x-1)</m>.
+                    Per <xref ref="transformationsthm">Theorem</xref>,
+                    we first add <m>1</m> to the <m>x</m>-coordinates of the points on the graph of <m>y = f(x)</m>,
+                    shifting the graph to the right <m>1</m> unit.
+                    Next, multiply the <m>y</m>-coordinates of each point on this new graph by <m>2</m>,
+                    vertically stretching the graph by a factor of <m>2</m>.
+                    Looking point by point,
+                    we have <m>(-1,3) \rightarrow (0, 3) \rightarrow (0,6)</m>,
+                    <m>(0,1) \rightarrow (1,1) \rightarrow (1,2)</m>,
+                    and <m>\left( 1, \frac{1}{3} \right) \rightarrow \left( 2,  \frac{1}{3} \right) \rightarrow  \left( 2,  \frac{2}{3} \right)</m>.
+                    The horizontal asymptote,
+                    <m>y = 0</m> remains unchanged under the horizontal shift and the vertical stretch since <m>2 \cdot 0 = 0</m>.
+                    Below we graph <m>y = f(x) = \left(\frac{1}{3}\right)^{x}</m> on the left  <m>y = F(x) = 2 \left( \frac{1}{3} \right)^{x-1}</m> on the right.
+                    <me>
+                      \begin{array}{ccc}  \begin{mfpic}[15]{-4}{4}{-1}{9} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,9){\(y\)} \tlabel[cc](-2,3){\((-1,3)\)} \tlabel[cc](-1,1){\((0,1)\)} \tlabel[cc](1.5,1){\(\left(1,\frac{1}{3} \right)\)} \tcaption{\(y = f(x) = \left( \frac{1}{3} \right)^{x}\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{{\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(6\)} 6, {\(7\)} 7, {\(8\)} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.9, 3, 0.1}{(1/3)**x} \point[4pt]{(-1,3), (0,1), (1,0.3333)} \end{mfpic}  \amp  \stackrel{\xrightarrow{}}{\text{ <xref ref="transformationsthm">Theorem</xref> } }  \amp  \begin{mfpic}[15]{-3}{5}{-1}{9} \axes \tlabel[cc](5,-0.5){\(x\)} \tlabel[cc](0.5,9){\(y\)} \tlabel[cc](-1,6){\((0, 6)\)} \tlabel[cc](1.75,2){\((1,2)\)} \tlabel[cc](3,1){\(\left(2,\frac{2}{3} \right)\)} \tcaption{\(y = F(x) = 2 \left( \frac{1}{3} \right)^{x-1}\)} \xmarks{-2,-1,1,2,3,4} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3, {\(4\)} 4} \axislabels {y}{{\(1\)} 1, {\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(7\)} 7} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.3, 4, 0.1}{2*((1/3)**(x-1))} \point[4pt]{(0,6), (1,2), (2,0.6666)} \end{mfpic} \end{array}
+                    </me>
+                    As always we can check our answer by verifying each of the points <m>(0,6)</m>,
+                    <m>(1,2)</m>,
+                    <m>\left( 2, \frac{2}{3} \right)</m> is on the graph of
+                    <m>F(x) = 2 \left(\frac{1}{3}\right)^{x-1}</m> by checking <m>F(0) = 6</m>,
+                    <m>F(1) = 2</m>, and <m>F(2) = \frac{2}{3}</m>.
+                    We can check the end behavior as well, that is,
+                    as <m>x \rightarrow -\infty</m>,
+                    <m>F(x) \rightarrow \infty</m> and as <m>x \rightarrow \infty</m>,
+                    <m>F(x) \rightarrow 0</m>.
+                    We leave these calculations to the reader.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since the  base of the exponential in <m>G(t) =2 - e^{-t}</m>  is <m>e</m>,
+                    we start with the graph of <m>g(t) = e^{t}</m>.
+                    Note that since <m>e</m> is an irrational number,
+                    we will use the approximation <m>e \approx 2.718</m> when
+                    <em>plotting</em> points.
+                    However, when it comes to tracking and labeling said points,
+                    we do so with  <em>exact</em> coordinates,
+                    that is,  in terms of <m>e</m>.
+                    We choose points corresponding to <m>t = -1</m>,
+                    <m>t = 0</m>, and <m>t = 1</m>:
+                    <m>(-1, e^{-1}) \approx (-1, 0.368)</m>, <m>(0,1)</m>,
+                    and <m>(1, e) \approx (1, 2.718)</m>, respectively.
+                    Next, we need to determine how the formula for
+                    <m>G(t) = 2-e^{-t}</m> can be obtained from the formula <m>g(t) = e^{t}</m>.
+                    Rewriting <m>G(t) = -e^{-t} + 2</m>,
+                    we find <m>G(t) = -g(-t) + 2</m>.
+                    Following <xref ref="transformationsthm">Theorem</xref>,
+                    we first multiply the <m>t</m>-coordinates of the graph of <m>y = g(t)</m> by <m>-1</m>,
+                    effecting a reflection across the <m>y</m>-axis.
+                    Next, we multiply each of the <m>y</m>-coordinates by <m>-1</m> which reflects the graph about the <m>t</m>-axis.
+                    Finally, we add <m>2</m> to each of the <m>y</m>-coordinates of the graph from the second step which shifts the graph up <m>2</m>  units.
+                    Tracking points,
+                    we have <m>(-1, e^{-1}) \rightarrow (1, e^{-1}) \rightarrow (1, -e^{-1}) \rightarrow (1, -e^{-1} + 2) \approx (1, 1.632)</m>,
+                    <m>(0,1) \rightarrow (0,1) \rightarrow (0,-1) \rightarrow (0,1)</m>,
+                    and <m>(1, e) \rightarrow (-1,e) \rightarrow (-1,-e) \rightarrow (-1, -e+2) \approx (-1, -0.718)</m>.
+                    The horizontal asymptote is unchanged by the reflections,
+                    but is shifted up <m>2</m> units <m>y = 0 \rightarrow y = 2</m>.
+                    We graph <m>g(t) = e^{t}</m> below on the left and the transformed function <m>G(t) = -e^{-t} +2</m> below on the left.
+                    As usual, we can check our answer by verifying the indicated points do, in fact,
+                    lie on the graph of <m>y = G(t)</m> along with checking end behavior.
+                    We leave these details to the reader.
+                    <me>
+                      \begin{array}{ccc}  \begin{mfpic}[15]{-4}{4}{-1}{9} \axes \tlabel[cc](4,-0.5){\(t\)} \tlabel[cc](0.5,9){\(y\)} \tlabel[cc](-2.25,0.75){\((-1,e^{-1})\)} \tlabel[cc](1,1){\((0,1)\)} \tlabel[cc](1.75,2.7){\((1,e)\)} \tcaption{\(y = g(t)  =e^{t}\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{{\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(6\)} 6, {\(7\)} 7, {\(8\)} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-2, 2.15, 0.1}{(2.718)**x} \point[4pt]{(-1,0.368), (0,1), (1,2.718)} \end{mfpic}  \amp  \stackrel{\xrightarrow{}}{\text{ <xref ref="transformationsthm">Theorem</xref> } }  \amp  \begin{mfpic}[15]{-4}{4}{-7}{3} \axes \dashed \polyline{(-3.5, 2), (3.5, 2)} \tlabel[cc](4,-0.5){\(t\)} \tlabel[cc](0.5,3){\(y\)} \tlabel[cc](2,1){\((1,2-e^{-1})\)} \tlabel[cc](-1,1){\((0,1)\)} \tlabel[cc](-3,1.5){\(y=2\)} \tlabel[cc](-2.75,-0.75){\((-1,-e+2)\)} \tcaption{\(y = G(t)  =-e^{-t}+2\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-6,-5,-4,-3,-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{ {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{ {\(-1\)} -1,{\(-2\)} -2, {\(-3\)} -3, {\(-4\)} -4, {\(-5\)} -5, {\(-6\)} -6, {\(2\)} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-2, 2.15, 0.1}{2 - ((2.718)**(-x))} \point[4pt]{ (1, 1.632), (0,1), (-1, -0.718)} \end{mfpic} \end{array}
+                    </me>
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                Since we are told to assume the base of the exponential function is <m>2</m>,
+                we assume the function <m>F(x)</m> is the result of the transforming the graph of
+                <m>f(x) = 2^{x}</m> using <xref ref="transformationsthm">Theorem</xref>.
+                This means we are tasked with finding values for <m>a</m>,
+                <m>b</m>,
+                <m>h</m>,
+                and <m>k</m> so that <m>F(x) = af(bx-h)+k = a \cdot 2^{bx-h} + k</m>.
+                Since the horizontal asymptote to the graph of
+                <m>y=f(x) = 2^{x}</m> is <m>y=0</m> and the horizontal asymptote to the graph <m>y = F(x)</m> is <m>y=4</m>,
+                we know the vertical shift is <m>4</m> units up, so <m>k = 4</m>.
+                Next, looking at how the graph of <m>F</m> approaches the vertical asymptote,
+                it stands to reason the graph of
+                <m>f(x) = 2^{x}</m> undergoes a reflection across <m>x</m>-axis,
+                meaning <m>a\lt 0</m>.
+                For simplicity,
+                we assume <m>a = -1</m> and set see if we can find values for <m>b</m> and <m>h</m> that go along with this choice.
+                Since <m>(-1,0)</m> and <m>(0,-4)</m> on the graph of <m>F(x) = - 2^{bx-h} + 4</m>,
+                we know <m>F(-1) = 0</m> and <m>F(0) = -4</m>.
+                From <m>F(-1)=0</m>, we have
+                <m>-2^{-b-h} +4= 0</m> or <m>2^{-b-h} = 4 = 2^2</m>.
+                Hence, <m>-b-h = 2</m> is one solution.<fn>
+                This is the <em>only</em> solution.
+                Since <m>f(x) = 2^{x}</m>,
+                the equation <m>2^{-b-h} = 2^2</m> is equivalent to the functional equation <m>f(-b-h) = f(2)</m>.
+                Since <m>f</m> is one-to-one,
+                we know this is true <em>only</em> when <m>-b-h = 2</m>.
+                </fn>  Next, using <m>F(0) = -4</m>,
+                we get <m>-2^{-h} +4 = -4</m> or <m>2^{-h} = 8 = 2^{3}</m>.
+                From this, we have <m>-h = 3</m> so <m>h = -3</m>.
+                Putting this together with <m>-b-h = 2</m>,
+                we get <m>-b+3 = 2</m> so <m>b = 1</m>.
+                Hence, one solution to the problem is <m>F(x) = -2^{x+3} + 4</m>.
+                To check our answer,
+                we leave it to the reader verify <m>F(-1) = 0</m>, <m>F(0) = -4</m>,
+                as <m>x \rightarrow -\infty</m>,
+                <m>F(x) \rightarrow 4</m> and as <m>x \rightarrow \infty</m>,
+                <m>F(x) \rightarrow -\infty</m>.
+                Since we made a simplifying assumption (<m>a = -1</m>),
+                we may well wonder if our solution is the <em>only</em> solution.
+                Indeed, we started with what amounts to three pieces of information and set out to determine the value of four constants.
+                We leave this for a thoughtful discussion in <xref ref="morethanoneforexpexercise">Exercise</xref>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our next example showcases an important application of exponential functions:
+      economic depreciation.
+    </p>
+    <example xml:id="cardepreciationex">
+      <statement>
+        <p>
+          The value of a car can be modeled by <m>V(t) = 25(0.8)^{t}</m>,
+          where <m>t \geq 0</m> is number of years the car is owned and <m>V(t)</m> is the value in thousands of dollars.
+              <idx><h>depreciation</h></idx>
+          <ol>
+            <li>
+              <p>
+                Find and interpret <m>V(0)</m>,
+                <m>V(1)</m>, and <m>V(2)</m>.
+              </p>
+            </li>
+            <li xml:id="cararcex">
+              <p>
+                Find and interpret the average rate of change of <m>V</m> over the intervals <m>[0,1]</m> and <m>[0,2]</m> and <m>[1,2]</m>.
+              </p>
+            </li>
+            <li xml:id="georatio1">
+              <p>
+                Find and interpret <m>\dfrac{V(1)}{V(0)}</m>,
+                <m>\dfrac{V(2)}{V(1)}</m> and <m>\dfrac{V(2)}{V(0)}</m>.
+              </p>
+            </li>
+            <li xml:id="georatio2">
+              <p>
+                For <m>t \geq 0</m>, find and interpret
+                <m>\dfrac{V(t+1)}{V(t)}</m> and <m>\dfrac{V(t+k)}{V(t)}</m>.
+              </p>
+            </li>
+            <li xml:id="carrelarcex1">
+              <p>
+                Find and interpret <m>\dfrac{V(1) - V(0)}{V(0)}</m>,
+                <m>\dfrac{V(2) - V(1)}{V(1)}</m>,
+                and <m>\dfrac{V(2) - V(0)}{V(0)}</m>.
+              </p>
+            </li>
+            <li xml:id="carrelarcex2">
+              <p>
+                For <m>t \geq 0</m>, find and interpret
+                <m>\dfrac{V(t+1) - V(t)}{V(t)}</m> and <m>\dfrac{V(t+k) - V(t)}{V(t)}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>y=V(t)</m> starting with the graph of
+                <m>y = V(t)</m> and using transformations.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the horizontal asymptote of the graph of <m>y = V(t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Using a graphing utility,
+                determine how long it takes for the car to depreciate to (a) one half its original value and (b) one quarter of its original value.
+                Round your answers to the nearest hundredth.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We find <m>V(0) = 25(0.8)^{0} = 25 \cdot 1 = 25</m>,
+                <m>V(1) = 25(0.8)^1 = 25 \cdot 0.8 = 20</m> and <m>V(2) = 25(0.8)^2 = 25 \cdot 0.64 = 16</m>.
+                Since <m>t</m> represents the number of years the car has been owned,
+                <m>t=0</m> corresponds to the purchase price of the car.
+                Since <m>V(t)</m> returns the value of the car in
+                <em>thousands</em> of dollars,
+                <m>V(0) = 25</m> means the car is worth
+                <m>$ 25, \! 000</m> when first purchased.
+                Likewise, <m>V(1) = 20</m> and <m>V(2) =16</m> means the car is worth
+                <m>\dollar20, \! 000</m> after one year of ownership and
+                <m>\dollar16, \! 000</m> after two years, respectively.
+              </p>
+            </li>
+            <li>
+              <p>
+                Recall to find the average rate of change of <m>V</m> over an interval <m>[a,b]</m>,
+                we compute:
+                <m>\frac{V(b) - V(a)}{b-a}</m>.
+                For the interval <m>[0,1]</m>,
+                we find <m>\frac{V(1) - V(0)}{1-0} = \frac{20-25}{1} = -5</m>,
+                which means over the course of the first year of ownership,
+                the value of the car depreciated, on average,
+                at a rate of <m>$ 5000</m> per year.
+                For the interval <m>[0,1]</m>,
+                we compute <m>\frac{V(2) - V(0)}{2-0} = \frac{16-25}{2} = -4.5</m>,
+                which means over the course of the first two years of ownership,
+                the car lost, on average, <m>\dollar4500</m> per year in value.
+                Finally, we find for the interval <m>[1,2]</m>,
+                <m>\frac{V(2) - V(1)}{2-1} = \frac{16-20}{1} = -4</m>,
+                meaning the car lost, on average,
+                <m>\dollar4000</m> in value per year between the first and second years.
+                Notice that the car lost more value over the first year (<m>\dollar5000</m>) than it did the second year (<m>\dollar4000</m>),
+                and these losses average out to the average yearly loss over the first two years (<m>\dollar4500</m> per year.)<fn>
+                It turns out for any function <m>f</m>,
+                the average rate of change over the interval
+                <m>[x, x+2]</m> is the average of the average rates of change of <m>f</m> over
+                <m>[x, x+1]</m> and <m>[x+1, x+2]</m>.
+                See <xref ref="averageofarc">Exercise</xref>.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                We compute: <m>\frac{V(1)}{V(0)} = \frac{20}{25} = 0.8</m>,
+                <m>\frac{V(2)}{V(1)} = \frac{16}{20} = 0.8</m>,
+                and <m>\frac{V(2)}{V(0)} = \frac{16}{25} =0.64</m>.
+                The ratio <m>\frac{V(1)}{V(0)} = 0.8</m> can be rewritten as
+                <m>V(1) = 0.8 V(0)</m> which means that the value of the car after <m>1</m> year,
+                <m>V(1)</m> is <m>0.8</m> times,
+                or <m>80 \%</m> the initial value of the car, <m>V(0)</m>.
+                Similarly, the ratio <m>\frac{V(2)}{V(1)} = 0.8</m> rewritten as
+                <m>V(2) = 0.8 V(1)</m> means the value of the car after <m>2</m> years,
+                <m>V(2)</m> is <m>0.8</m> times,
+                or <m>80 \%</m> the value of the car after one year, <m>V(1)</m>.
+                Finally, the ratio <m>\frac{V(2)}{V(0)} = 0.64</m>,
+                or <m>V(2) = 0.64 V(0)</m> means the value of the car after <m>2</m> years,
+                <m>V(2)</m> is <m>0.64</m> times,
+                or <m>64 \%</m> of the initial value of the car, <m>V(0)</m>.
+                Note that this last result tracks with the previous answers.
+                Since <m>V(1) = 0.8 V(0)</m> and <m>V(2) = 0.8 V(1)</m>,
+                we get <m>V(2) = 0.8 V(1) = 0.8 (0.8 V(0)) = 0.64 V(0)</m>.
+                Also note it is no coincidence that the base of the exponential,
+                <m>0.8</m> has shown up in these calculations,
+                as we'll see in the next problem.
+              </p>
+            </li>
+            <li>
+              <p>
+                Using properties of exponents, we find
+                <me>
+                  \dfrac{V(t+1)}{V(t)} = \dfrac{25 (0.8)^{t+1}}{25 (0.8)^{t}} = (0.8)^{t+1-t} = 0.8
+                </me>
+                Rewriting, we have  <m>V(t+1) = 0.8 V(t)</m>.
+                This means after one year,
+                the value of the car <m>V(t+1)</m> is only <m>80 \%</m> of the value it was a year ago,
+                <m>V(t)</m>.
+                Similarly, we find
+                <me>
+                  \dfrac{V(t+k)}{V(t)} = \dfrac{25 (0.8)^{t+k}}{25 (0.8)^{t}} = (0.8)^{t+k-t} = (0.8)^{k}
+                </me>
+                which, rewritten, says <m>V(t+k) = V(t) (0.8)^{k}</m>.
+                This means in <m>k</m> years' time,
+                the value of the car <m>V(t+k)</m> is only
+                <m>(0.8)^{k}</m> times what it was worth <m>k</m> years ago,
+                <m>V(t)</m>.
+                These results shouldn't be too surprising.
+                Verbally, the function <m>V(t) = 25 (0.8)^{t}</m> says to multiply <m>25</m> by <m>0.8</m> multiplied by itself <m>t</m> times.
+                Therefore, for each additional year,
+                we are multiplying the value of the car by an additional factor of <m>0.8</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We compute  <m>\frac{V(1) - V(0)}{V(0)} = \frac{20-25}{25} = -0.2</m>,
+                <m>\frac{V(2) - V(1)}{V(1)} = \frac{16-20}{20} = -0.2</m>,
+                and <m>\frac{V(2) - V(0)}{V(0)} = \frac{16 - 25}{25} = -0.36</m>.
+                The ratio  <m>\frac{V(1) - V(0)}{V(0)}</m> computes  the ratio of  <em>difference</em>
+                in the value of the car after the first year of ownership,
+                <m>V(1) - V(0)</m>, to the initial value, <m>V(0)</m>.
+                We find this to be <m>-0.2</m> or a <m>20 \%</m> decrease in value.
+                This makes sense since we know from our answer to <xref ref="georatio1">number</xref>,
+                the value of the car after <m>1</m> year,
+                <m>V(1)</m> is <m>80 \%</m> of the initial value, <m>V(0)</m>.
+                Indeed:
+                <me>
+                  \dfrac{V(1) - V(0)}{V(0)} = \dfrac{V(1)}{V(0)} - \dfrac{V(0)}{V(0)} = \dfrac{V(1)}{V(0)} - 1
+                </me>,
+                and since <m>\frac{V(1)}{V(0)} = 0.8</m>,
+                we get  <m>\frac{V(1) - V(0)}{V(0)} = 1 - 0.8 = -0.2</m>.
+                Likewise, the ratio <m>\frac{V(2) - V(1)}{V(1)} = -0.2</m> means the value of the car has lost <m>20 \%</m>  of its value over the course of the second year of ownership.
+                Finally,  the ratio <m>\frac{V(2) - V(0)}{V(0)}  = -0.36</m> means that over the first two years of ownership,
+                the car value has depreciated <m>36 \%</m> of its initial purchase price.
+                Again, this tracks with the result of <xref ref="georatio1">number</xref>
+                which tells us that after two years,
+                the car is only worth <m>64 \%</m> of its initial purchase price.
+              </p>
+            </li>
+            <li>
+              <p>
+                Using properties of fractions and exponents, we get:
+                <me>
+                  \dfrac{V(t+1) - V(t)}{V(t)} = \dfrac{25(0.8)^{t+1} - 25(0.8)^{t}}{25 (0.8)^{t}} = \dfrac{25(0.8)^{t+1}}{25 (0.8)^{t}} - \dfrac{25 (0.8)^{t}}{25 (0.8)^{t}} = 0.8 - 1 = -0.2
+                </me>,
+                so  after one year,
+                the value of the car <m>V(t+1)</m> has lost <m>20 \%</m> of the value it was a year ago,
+                <m>V(t)</m>.
+                Similarly, we find:
+                <me>
+                  \dfrac{V(t+k) - V(t)}{V(t)} = \dfrac{25(0.8)^{t+k} - 25(0.8)^{t}}{25 (0.8)^{t}} = \dfrac{25(0.8)^{t+1}}{25 (0.8)^{t}} - \dfrac{25 (0.8)^{t}}{25 (0.8)^{t}} = (0.8)^{k} - 1
+                </me>,
+                so  after <m>k</m> years' time,
+                the value of the car <m>V(t)</m> has decreased by
+                <m>((0.8)^{k} - 1) \cdot 100 \%</m> of the value <m>k</m> years ago,
+                <m>V(t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To graph <m>y=25(0.8)^{t}</m>,
+                we start with the basic exponential function <m>f(t)=(0.8)^{t}</m>.
+                Since the base <m>b = 0.8</m>  satisfies <m>0 \lt  b \lt 1</m>,
+                the graph of <m>y=f(t)</m> is decreasing.
+                We plot the <m>y</m>-intercept <m>(0,1)</m> and two other points,
+                <m>(-1, 1.25 )</m> and <m>(1,0.8)</m>,
+                and label the horizontal asymptote <m>y=0</m>.
+                To obtain the graph of  <m>y = 25(0.8)^t = 25 f(t)</m>,
+                we multiply all of the <m>y</m> values in the graph by <m>25</m>
+                (including the <m>y</m> value of the horizontal asymptote)
+                in accordance with <xref ref="vscalings">Theorem</xref>
+                to obtain the points <m>(-1, 31.25)</m>,
+                <m>(0, 25)</m> and <m>(1,20)</m>.
+                The horizontal asymptote remains the same,
+                since <m>25 \cdot 0 = 0</m>.
+                Finally, we restrict the domain to
+                <m>[0,\infty)</m> to fit with the applied domain given to us.
+                <me>
+                  \begin{array}{ccc}  \begin{mfpic}[15]{-4}{4}{-1}{3}  \axes \tlabel[cc](1,1.25){\((0,1)\)} \tlabel[cc](0,-1.5){H.A. \(y=0\)} \tlabel[cc](4,-0.5){\(t\)} \tlabel[cc](0.5,3){\(y\)} \tcaption{\(y = f(t)=(0.8)^{t}\)} \ymarks{1,2} \xmarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{{\(2\)} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-4, 4, 0.1}{(0.8)**x} \point[4pt]{(0,1),(1,0.8), (-1,1.25)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{vertical scale by a factor of \(25\) } }{\xrightarrow{}}}{\mbox{ multiply each \(y\)-coordinate by \(25\)} }  \amp  \begin{mfpic}[10]{-1}{7}{-1}{7}  \axes \tlabel[cc](-1.5,5){\((0,25)\)} \tlabel[cc](4,-1.5){H.A. \(y=0\)} \tlabel[cc](7,-0.5){\(t\)} \tlabel[cc](0.5,7){\(y\)} \tcaption{\(y = V(t)=25 f(t)\), \(t \geq 0\)} \ymarks{1,2,3,4,5,6} \xmarks{1,2,3,4,5,6} \tlpointsep{4pt} \axislabels {x}{{\(1\)} 1, {\(2\)} 2, {\(3\)} 3, {\(4\)} 4, {\(5\)} 5, {\(6\)} 6} \axislabels {y}{{\(5\)} 1, {\(10\)} 2, {\(15\)} 3, {\(20\)} 4, {\(30\)} 6} \penwd{1.25pt} \point[4pt]{(0,5),(1,4)} \arrow \function{0, 7, 0.1}{5*((0.8)**x)} \end{mfpic} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                We see from the graph of <m>V</m> that its horizontal asymptote is <m>y=0</m>.
+                This means as the car gets older,
+                its value diminishes to <m>0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We know the value of the car,
+                brand new, is <m>$ 25, \! 000</m>,
+                so when we are asked to find when the car depreciates to one half and one quarter of this value,
+                we are trying to find when the value of the car dips to
+                <m>$ 12, \! 500</m> and <m>\dollar6, \! 125</m>, respectively.
+                Since <m>V(t)</m> is measured in
+                <em>thousands</em> of dollars,
+                we this translates to solving the equations
+                <m>V(t) = 12.5</m> and <m>V(t) = 6.125</m>.
+                Since we have yet to develop any analytic means to solve equations like <m>25(0.8)^t = 12.5</m>
+                (since <m>t</m> is in the exponent here),
+                we are forced to approximate solutions to this equation numerically<fn>
+                Since exponential functions are continuous we could use the Bisection Method to solve <m>f(t) = 25(0.8)^t - 12.5=0</m>.
+                See the discussion on <xref ref="bisectionmethod">page</xref>
+                in <xref ref="RealZeros">Section</xref> for more details.
+                </fn> or use a graphing utility.
+                Choosing the latter, we graph
+                <m>y = V(t)</m> along with the lines <m>y = 12.5</m> and
+                <m>y = 6.125</m> and look for intersection points.
+                We find <m>y = V(t)</m> and
+                <m>y = 12.5</m> intersect at (approximately)
+                <m>(3.106 12.5)</m> which means the car depreciates to half its initial value in (approximately) <m>3.11</m> years.
+                Similarly, we find the car depreciates to one-quarter its initial value after (approximately) <m>6.23</m> years.<fn>
+                It turns out that it takes exactly twice as long for the car to depreciate to one-quarter of its initial value as it takes to depreciate to half its initial value.
+                Can you see why?
+                </fn>  <image width="92.5%" source="./ExponentialFunctionsGraphics/ExponentialFunctionsEx01.jpg"/>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Some remarks about <xref ref="cardepreciationex">Example</xref> are in order.
+      First the function in the previous example is called a <sq>decay curve</sq>.
+      Increasing exponential functions are used to model <sq>growth curves</sq> and we shall see several different examples of those in <xref ref="ExpLogApplications">Section</xref>.
+    </p>
+    <p>
+      Second, as seen in <xref ref="georatio1">numbers</xref>
+      and <xref ref="georatio2"></xref>, <m>V(t+1) = 0.8 V(t)</m>.
+      That is to say, the function <m>V</m> has a
+      <em>constant unit multiplier</em>, in this case,
+      <m>0.8</m> because to obtain the function value <m>V(t+1)</m>,
+      we <em>multiply</em> the function value <m>V(t)</m> by <m>b</m>.
+      It is not coincidence that the multiplier here is the base of the exponential,
+      <m>0.8</m>.
+    </p>
+    <p>
+      Indeed, exponential functions of the form
+      <m>f(x) = a \cdot b^{x}</m> have a constant unit multiplier,
+      <m>b</m>.
+      To see this, note
+      <me>
+        \dfrac{f(x+1)}{f(x)} = \dfrac{a \cdot b^{x+1}}{ a \cdot b^{x}} = b^{1} = b
+      </me>.
+    </p>
+    <p>
+      Hence <m>f(x+1) = f(x) \cdot b</m>.
+      This will prove useful to us in <xref ref="ExpLogApplications">Section</xref>
+      when making decisions about whether or not a data set represents exponential growth or decay.
+    </p>
+    <p>
+      More generally, one can show
+      (see <xref ref="exponentialchangeexercise">Exercise</xref>)
+      for any real number <m>x_{0}</m> that <m>f(x_{0}+\Delta x) = f(x_{0}) b^{\Delta x}</m>.
+      That is, to obtain <m>f(x_{0} + \Delta x)</m> from <m>f(x_{0})</m>,
+      we <em>multiply</em> by <m>\Delta x</m> factors of the constant unit multiplier,
+      <m>b</m>.
+      This is at the heart of what it means to be an exponential function.
+    </p>
+    <p>
+      If this discussion seems familiar, it should.
+      For linear functions, <m>f(x) = mx +b</m>,
+      we can obtain the slope <m>m</m> by computing <m>f(x+1) - f(x)</m>.
+      To see this,
+      note <m>f(x+1) - f(x) = (m(x+1) +b) - (mx+b) = m</m> so that <m>f(x+1) = f(x) + m</m>.
+      In this way,
+      we see that the slope <m>m</m> is the constant unit <em>addend</em>
+      in that in order to obtain <m>f(x+1)</m>,
+      we <em>add</em> <m>m</m> to the function value <m>f(x)</m>.
+    </p>
+    <p>
+      This notion is solidified in the point-slope form of a linear function,
+      <xref ref="linearfunctionpointslope">Equation</xref>.
+      For for any real numbers <m>x</m> and <m>x_{0}</m>,
+      we have <m>f(x) = f(x_{0}) + m(x-x_{0})</m>.
+      If we let <m>x = x_{0}+ \Delta x</m>,
+      we get <m>f(x_{0}+ \Delta x) = f(x_{0}) + m \Delta x</m>.
+      In other words,
+      to obtain <m>f(x_{0}+\Delta x)</m> from <m>f(x_{0})</m>,
+      we <em>add</em> <m>m</m> times <m>\Delta x</m>.
+    </p>
+    <p>
+      Taking inspiration from linear functions,
+      we define the <sq>point-base</sq> form of an exponential function below.
+    </p>
+    <definition xml:id="expfcnpointbaseform">
+      <statement>
+        <p>
+          The <idx><h>exponential function</h><h>point-base form</h></idx> <idx><h>point-base form</h><h>of an exponential function</h></idx>
+          <term>point-base form</term>
+          of the exponential function <m>f(x) = a \cdot b^{x}</m> is
+          <me>
+            f(x) = f(x_{0}) b^{x - x_{0}}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Just as the point-slope form of a linear function is helpful in building linear models,
+      the point-base form of an exponential function will prove useful in building exponential models.
+    </p>
+    <p>
+      Next, while we saw in <xref ref="cardepreciationex">Example</xref>
+      <xref ref="cararcex">number</xref>, exponential functions,
+      unlike linear functions, do not have a constant rate of change.
+      However, in <xref ref="carrelarcex1">numbers</xref>
+      and <xref ref="carrelarcex2"></xref>,
+      we see that in some cases,
+      they do have a constant <em>relative</em> rate of change.
+      We define this notion below.
+    </p>
+    <definition xml:id="rrc">
+      <statement>
+        <p>
+          Let <m>f</m> be a function defined on the interval <m>[a,b]</m> where <m>f(a) \neq 0</m>.
+        </p>
+        <p>
+          The
+              <idx><h>relative rate of change</h></idx>
+              <idx><h>rate of change</h><h>relative</h></idx>
+          <term>relative rate of change</term>
+          of <m>f</m> over <m>[a,b]</m> is defined as:
+          <me>
+            \dfrac{\Delta [f(x)] }{f(a)} = \dfrac{f(b) - f(a)}{f(a)}
+          </me>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For exponential functions of the form <m>f(x) = a \cdot b^{x}</m>,
+      we compute the relative rate of change over the interval
+      <m>[x, x+1]</m> and find it is constant:
+      <me>
+        \dfrac{f(x+1) - f(x)}{f(x)} = \dfrac{f(x+1)}{f(x)} - \dfrac{f(x)}{f(x)} = b -1
+      </me>,
+      where we are using the fact that <m>\frac{f(x+1)}{f(x)} = b</m>.
+    </p>
+    <p>
+      One way to interpret this result is when comparing <m>f(x)</m> to <m>f(x+1)</m>,
+      the exponential function grows
+      (if <m>b>1</m>)
+      or decays
+      (if <m>b\lt 1</m>)
+      by <m>(b-1) \cdot 100 \%</m>.
+      In our example,
+      <m>V(t) = 25 (0.8)^{t}</m> so <m>b = 0.8</m> and, as we saw,
+      the relative rate of change from <m>V(t)</m> to <m>V(t+1)</m> was <m>0.8 - 1= -0.2</m>,
+      meaning the value of the car over the course of one year depreciates by <m>20 \%</m>.
+    </p>
+    <p>
+      We close this section with another important application of exponential functions, Newton's Law of Cooling.
+    </p>
+    <example xml:id="exptempex">
+      <statement>
+        <p>
+          According to
+          <url href="http://en.wikipedia.org/wiki/Heat_transfer#Newton.27s_law_of_cooling"><em>Newton's Law of Cooling</em></url><fn>
+          We will discuss this in greater detail in <xref ref="ExpLogApplications">Section</xref>.
+          </fn> the temperature of coffee <m>T(t)</m>
+          (in degrees Fahrenheit)
+          <m>t</m> minutes after it is served can be modeled by <m>T(t) = 70 + 90 e^{-0.1 t}</m>.
+              <idx><h>Newton's Law of Cooling</h></idx>
+          <ol>
+            <li>
+              <p>
+                Find and interpret <m>T(0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Sketch the graph of <m>y = T(t)</m> using transformations.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the behavior of <m>T(t)</m> as <m>t \rightarrow \infty</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since <m>T(0) =70 + 90 e^{-0.1 (0)} = 160</m>,
+                the temperature of the coffee when it is served is <m>160^{\circ}\mbox{F}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To graph <m>y = T(t)</m> using transformations,
+                we start with the basic function, <m>f(t)=e^{t}</m>.
+                As in <xref ref="expfcngraphsex">Example</xref>,
+                we track the points <m>(-1, e^{-1}) \approx (-1, 0.368)</m>,
+                <m>(0,1)</m>, and <m>(1, e) \approx (1, 2.718)</m>,
+                along wth the horizontal asymptote <m>y = 0</m> through each of transformations.
+                To use <xref ref="transformationsthm">Theorem</xref>,
+                we rewrite   <m>T(t) = 70 + 90e^{-0.1t} = 90e^{-0.1t}+70 = 90 f(-0.1t)+70</m>.
+                Following <xref ref="transformationsthm">Theorem</xref>,
+                we first  divide the <m>t</m>-coordinates of each point on the graph of <m>y=f(t)</m> by <m>-0.1</m> which results in a horizontal expansion by a factor of <m>10</m> as well as a reflection about the <m>y</m>-axis.
+                Next, we multiply the <m>y</m>-values of the points on this new graph by <m>90</m> which effects a vertical stretch by a factor of <m>90</m>.
+                Last but not least,
+                we  add <m>70</m> to all of the <m>y</m>-coordinates of the points on this second graph,
+                which shifts the graph upwards <m>70</m> units.
+                Tracking points, we have <m>(-1, e^{-1})  \rightarrow (10,
+                e^{-1}) \rightarrow (10, 90e^{-1}) \rightarrow (10, 90e^{-1}+70) \approx (10, 103.112)</m>,
+                <m>(0,1) \rightarrow (0,1) \rightarrow (0,90) \rightarrow (0, 160)</m>,
+                and <m>(1,e) \rightarrow (-10,
+                e) \rightarrow (-10, 90e) \rightarrow (-10, 90e+70) \approx (-10, 314.62)</m>.
+                The horizontal asymptote <m>y=0</m> is unaffected by the horizontal expansion,
+                reflection about the <m>y</m>-axis, and the vertical stretch.
+                The vertical shift moves the horizontal asymptote up <m>70</m> units,
+                <m>y = 0 \rightarrow y = 70</m>.
+                After restricting the domain to <m>t \geq 0</m>,
+                we get the graph below on the right.
+                <me>
+                  \begin{array}{ccc}  \begin{mfpic}[15]{-4}{4}{-1}{8} \axes \tlabel[cc](-1,1){\((0,1)\)} \tlabel[cc](0,-1.5){H.A. \(y=0\)} \tlabel[cc](4,-0.5){\(t\)} \tlabel[cc](0.5,8){\(y\)} \tcaption{\(y = f(t)=e^{t}\)} \ymarks{1,2,3,4,5,6,7} \xmarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \axislabels {y}{{\(2\)} 2,{\(3\)} 3,{\(4\)} 4,{\(5\)} 5,{\(6\)} 6,{\(7\)} 7} \penwd{1.25pt} \arrow \reverse \arrow \function{-3, 2, 0.1}{exp(x)} \point[4pt]{(0,1),(1,2.718), (-1,0.368)} \end{mfpic}  \amp  \stackrel{\xrightarrow{}}{\text{ <xref ref="transformationsthm">Theorem</xref> } }  \amp  \begin{mfpic}[15]{-1}{11}{-1}{10} \dashed \polyline{(-1,3.5),(11,3.5)} \axes \tlabel[cc](9,2.5){H.A. \(y=70\)} \tlabel[cc](11,-0.5){\(t\)} \tlabel[cc](0.5,10){\(y\)} \tlabel[cc](-1, 8){\((0, 160)\)} \tcaption{\(y = T(t)\)} \ymarks{1,2,3,4,5,6,7,8,9} \xmarks{1,2,3,4,5,6,7,8,9,10} \tlpointsep{4pt} \axislabels {x}{{\(2\)} 1, {\(4\)} 2, {\(6\)} 3, {\(8\)} 4,{\(10\)} 5, {\(12\)} 6, {\(14\)} 7, {\(16\)} 8, {\(18\)} 9, {\(20\)} 10} \axislabels {y}{{\(20\)} 1, {\(40\)} 2, {\(60\)} 3,{\(80\)} 4, {\(100\)} 5, {\(120\)} 6,{\(140\)} 7, {\(180\)} 9} \penwd{1.25pt} \arrow \function{0, 10, 0.1}{(90*exp(0-0.2*x)+70)/20} \point[4pt]{(0,8),(5,5.15)} \end{mfpic} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                We can determine the behavior of <m>T(t)</m> as <m>t \rightarrow \infty</m> two ways.
+                First, we can employ the <sq>number sense</sq> developed in <xref ref="RationalFunctions">Chapter</xref>.
+                That is, as <m>t \rightarrow \infty</m>, We get <m>T(t) = 70+90e^{-0.1t} \approx 70 +90e^{\mbox{very big <m>(-)</m>} }</m>.
+                Since <m>e > 1</m>,
+                <m>e^{\mbox{very big <m>(-)</m>} } \approx \mbox{very small <m>(+)</m>}</m> The larger <m>t</m> becomes,
+                the smaller <m>e^{-0.1t}</m> becomes,
+                so the term <m>90 e^{-0.1t} \approx \mbox{very small <m>(+)</m>}</m>.
+                Hence, <m>T(t) = 70+90e^{-0.1t} \approx 70 + \mbox{very small <m>(+)</m>} \approx 70</m>.
+                Alternatively, we can look to the graph of <m>y = T(t)</m>.
+                We know the horizontal asymptote is <m>y=70</m> which means as
+                <m>t \rightarrow \infty</m>, <m>T(t) \approx 70</m>.
+                In either case, we find that as time goes by,
+                the temperature of the coffee is cooling to <m>70^{\circ}</m> Fahrenheit,
+                ostensibly room temperature.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforExponentialFunctions">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="graphexpfirsta">Exercises</xref>
+      - <xref ref="graphexplasta"></xref>,
+      sketch the graph of <m>g</m> by starting with the graph of <m>f</m> and using transformations.
+      Track at least three points of your choice and the horizontal asymptote through the transformations.
+      State the domain and range of <m>g</m>.
+      <ol cols="4">
+        <li xml:id="graphexpfirsta">
+          <p>
+            <m>f(x) = 2^{x}</m>, <m>g(x) = 2^{x} - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \left(\frac{1}{3}\right)^{x}</m>,
+            <m>g(x) = \left(\frac{1}{3}\right)^{x-1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 3^{x}</m>, <m>g(x) = 3^{-x}+2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 10^{x}</m>, <m>g(x) = 10^{\frac{x+1}{2}} - 20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = (0.5)^{t}</m>, <m>g(t) = 100(0.5)^{0.1t}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = (1.25)^{t}</m>, <m>g(t) = 1 - (1.25)^{t-2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = e^{t}</m>, <m>g(x) = 8 - e^{-t}</m>
+          </p>
+        </li>
+        <li xml:id="graphexplasta">
+          <p>
+            <m>f(x) = e^{t}</m>, <m>g(x) = 10e^{-0.1t}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In Exercises, <xref ref="expformfirsta"></xref>
+      - <xref ref="expformlasta"></xref>,
+      the graph of an exponential function is given.
+      Find a formula for the function in the form <m>F(x) = a \cdot 2^{bx-h}+k</m>.
+    </p>
+    <ol cols="3">
+      <li xml:id="expformfirsta">
+        <p>
+          Points: <m>\left(-2, -\frac{5}{2} \right)</m>,
+          <m>\left(-1, -2 \right)</m>, <m>\left(0, -1 \right)</m>, Asymptote:
+          <m>y = -3</m>. \begin{mfpic}[13]{-5}{3}{-4}{6} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-4, -3,-2,-1,1,2} \ymarks{-3, -2, -1, 1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3} \dashed \polyline{(-5,-3), (3,-3)} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.5, 2.1, 0.1}{(2**(x+1))-3} \point[4pt]{(-2, -2.5), (-1,-2),(0,-1)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Points: <m>\left(-1, 1 \right)</m>,
+          <m>\left(0, 2 \right)</m>, <m>\left(1, \frac{5}{2} \right)</m>, Asymptote:
+          <m>y = 3</m>. \begin{mfpic}[13]{-4}{4}{-6}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-5 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>-5</m>} -5} \dashed \polyline{(-4,3), (4,3)} \penwd{1.25pt} \arrow \reverse \arrow \function{-3, 3.1, 0.1}{3-(2**(-x))} \point[4pt]{(-1,1), (0,2), (1, 2.5)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Points: <m>\left(\frac{5}{2}, \frac{1}{2} \right)</m>,
+          <m>\left(3,1 \right)</m>, <m>\left(\frac{7}{2}, 2 \right)</m>, Asymptote:
+          <m>y = 0</m>. \begin{mfpic}[13]{-1}{5}{-1}{9} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \xmarks{1 step 1 until 4} \ymarks{1 step 1 until 8} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{1.25, 4.55, 0.1}{2**(2*x-6)} \point[4pt]{(2.5, 0.5), (3,1), (3.5,2) } \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li xml:id="expformlasta">
+        <p>
+          Points: <m>\left(-\frac{1}{2}, 6 \right)</m>, <m>\left(0,3 \right)</m>,
+          <m>\left(\frac{1}{2}, \frac{3}{2} \right)</m>, Asymptote:
+          <m>y = 0</m>. \begin{mfpic}[13]{-4}{4}{-1}{9} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.79, 2, 0.1}{3*(2**(-2*x))} \point[4pt]{(-0.5, 6), (0,3), (0.5, 1.5)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Find a formula for each graph in <xref ref="expformfirsta">Exercises</xref>
+          - <xref ref="expformlasta"></xref>
+          of the form <m>G(x) = a \cdot 4^{bx-h} + k</m>.
+          Did you change your solution methodology?
+          What is the relationship between your answers for <m>F(x)</m> and <m>G(x)</m> for each graph?
+        </p>
+      </li>
+      <li xml:id="morethanoneforexpexercise">
+        <p>
+          In <xref ref="expfcngraphsex">Example</xref>
+          <xref ref="findformulaforexpexample">number</xref>,
+          we obtained the solution <m>F(x) = -2^{x+3} + 4</m> as one formula for the given graph by making a simplifying assumption that <m>a = -1</m>.
+          This exercises explores if there are any other solutions for different choices of <m>a</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Show <m>G(x) = -4 \cdot 2^{x+1} + 4</m> also fits the data for the given graph,
+              and use properties of exponents to show
+              <m>G(x) = F(x)</m>. (Use the fact that <m>4 = 2^2</m> <ellipsis/>)
+            </p>
+          </li>
+          <li>
+            <p>
+              With help from your classmates,
+              find solutions to <xref ref="expfcngraphsex">Example</xref>
+              <xref ref="findformulaforexpexample">number</xref> using <m>a = -8</m>,
+              <m>a = -16</m> and <m>a = -\frac{1}{2}</m>.
+              Show all your solutions can be rewritten as:
+              <m>F(x) = -2^{x+3} + 4</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using properties of exponents and the fact that the range of <m>2^{x}</m> is <m>(0, \infty)</m>,
+              show that any function of the form
+              <m>f(x) = -a \cdot 2^{bx-h} + k</m> for <m>a> 0</m> can be rewritten as <m>f(x) = - 2^{c} \, 2^{bx-h} + k = -2^{bx-h+c} + k</m>.
+              Relabeling, this means every function of the form
+              <m>f(x) = -a \cdot 2^{bx-h} + k</m> with four parameters (<m>a</m>,
+              <m>b</m>,
+              <m>h</m>,
+              and <m>k</m>) can be rewritten as <m>f(x) = - 2^{bx - H} + k</m>,
+              a formula with just three parameters:
+              <m>b</m>, <m>H</m>, and <m>k</m>.
+              Conclude that <em>every</em> solution to <xref ref="expfcngraphsex">Example</xref>
+              <xref ref="findformulaforexpexample">number</xref>
+              reduces to <m>F(x) = -2^{x+3} + 4</m> .
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="decomposebasicexpfirst">Exercises</xref>
+      - <xref ref="decomposebasicexplast"></xref>,
+      write the given function as a nontrivial decomposition of functions as directed.
+    </p>
+    <ol>
+      <li xml:id="decomposebasicexpfirst">
+        <p>
+          For <m>f(x) = e^{-x} +1</m>,
+          find functions <m>g</m> and <m>h</m> so that <m>f=g+h</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = e^{2x} - x</m>,
+          find functions <m>g</m> and <m>h</m> so that <m>f=g-h</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(t) = t^2 e^{-t}</m>,
+          find functions <m>g</m> and <m>h</m> so that <m>f=gh</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>r(x) = \dfrac{e^{x} - e^{-x}}{e^{x}+e^{-x}}</m>,
+          find functions <m>f</m> and <m>g</m> so <m>r = \dfrac{f}{g}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>k(x) = e^{-x^2}</m>,
+          find functions <m>f</m> and <m>g</m> so that <m>k = g \circ f</m>.
+        </p>
+      </li>
+      <li xml:id="decomposebasicexplast">
+        <p>
+          For <m>s(x) =\sqrt{e^{2x} - 1}</m>,
+          find functions <m>f</m> and <m>g</m> so <m>s = g \circ f</m>.
+        </p>
+      </li>
+      <li xml:id="preludetocompoundingexercise">
+        <p>
+          The amount of money in a savings account, <m>A(t)</m>,
+          in dollars,
+          <m>t</m> years after an initial investment is made is given by:
+          <m>A(t) = 500(1.05)^{t}</m>, for <m>t \geq 0</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find and interpret <m>A(0)</m>,
+              <m>A(1)</m>, and <m>A(2)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find and interpret the relative rate of change of <m>A</m> over the intervals <m>[0,1]</m>,
+              <m>[1,2]</m>, <m>[0,2]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find, simplify,
+              and interpret the relative rate of change of <m>A</m> over the <m>[t, t+1]</m>.
+              Assume <m>t \geq 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use a graphing utility to estimate how long until the savings account is worth <m>\dollar1500</m>.
+              Round your answer to the nearest year.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Based on census data,<fn>
+          See
+          <url href="http://www.towncharts.com/Ohio/Demographics/Lake-County-OH-Demographics-data.html"><em>here</em></url>.
+          </fn> the population of Lake County, Ohio,
+          in 2010 was 230,041 and in 2015, the population was 229,437.
+          <ol>
+            <li>
+              <p>
+                Show the percentage change in the population from 2010 to 2015 is approximately <m>-0.263 \%</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If this percentage change remains constant,
+                predict the population of Lake County in 2020.
+              </p>
+            </li>
+            <li xml:id="populationfiveyear">
+              <p>
+                Assuming this percentage change per five years remains constant,
+                find an expression for the population <m>P(t)</m> of Lake County where <m>t</m> is the number of five year intervals after 2010. (So <m>t = 0</m> corresponds to 2010,
+                <m>t = 1</m> corresponds to <m>2015</m>,
+                <m>t = 2</m> corresponds to <m>2020</m>,
+                etc.) HINT: <xref ref="expfcnpointbaseform">Definitions</xref> and <xref ref="rrc"></xref>
+                and ensuing discussion on that page is useful here.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use your answer to <xref ref="populationfiveyear"></xref>
+                to predict the population of Lake County in the year 2017.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>A(t)</m> represent the population of Lake County <m>t</m> years after 2010 where the we approximate the percentage change in population per year as <m>-\frac{0.263 \%}{5} = -0.0526 \%</m>.
+                Find a formula for <m>A(t)</m> and compare your predictions with <m>A(t)</m> to those given by <m>P(t)</m>.
+                In particular,
+                what population does each model give for the year 2050?
+                Discuss any discrepancies with your classmates.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="averageofarc">
+        <p>
+          Show that the average rate of change of a function over the interval
+          <m>[x, x+2]</m> is average of the average rates of change of the function over the intervals <m>[x,x+1]</m> and <m>[x+1, x+2]</m>.
+          Can the same be said for the average rate of change of the function over
+          <m>[x, x+3]</m> and the average of the average rates of change over <m>[x, x+1]</m>,
+          <m>[x+1, x+2]</m>, and <m>[x+2, x+3]</m>?
+          Generalize.
+        </p>
+      </li>
+      <li xml:id="exponentialchangeexercise">
+        <p>
+          If <m>f(x) = b^{x}</m> where <m>b>0</m>, <m>b \neq 1</m>,
+          show <m>f(x_{0}+\Delta x) = f(x_{0}) b^{\Delta x}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Which is larger: <m>e^{\pi}</m> or <m>\pi^{e}</m>?
+          How do you know?
+          Can you find a proof that doesn't use technology?
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="6">
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(-1, \infty)</m> Points:
+          <m>\left(-1, -\frac{1}{2} \right)</m>,
+          <m>(0,0)</m>, <m>(1,1)</m> Asymptote:
+          <m>y = -1</m> \begin{mfpic}[15]{-4}{4}{-2}{9} \point[4pt]{(-1,-0.5), (0,0), (1,1)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \tcaption{<m>y = g(x) = 2^{x}-1</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-1,1,2,3,4,5,6,7,8} \tlabel[cc](-3,0.5){ <m>-3</m>} \tlabel[cc](-2,0.5){ <m>-2</m>} \tlabel[cc](-1,0.5){ <m>-1</m>} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8} \dashed \polyline{(-4,-1),(4,-1)} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.5, 3.1, 0.1}{(2**(x))-1} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(0, \infty)</m> Points:
+          <m>(0,3)</m>,
+          <m>(1,1)</m>, <m>\left(2, \frac{1}{3} \right)</m> Asymptote:
+          <m>y = 0</m> \begin{mfpic}[15]{-4}{4}{-1}{10} \point[4pt]{(0,3), (1,1), (2,0.3333)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,10){<m>y</m>} \tcaption{<m>y = g(x) = \left(\frac{1}{3}\right)^{x-1}</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8,9} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8, { <m>9</m>} 9} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.05, 3.5, 0.1}{3**(1-x)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(2, \infty)</m> Points:
+          <m>\left(1, \frac{7}{3} \right)</m>,
+          <m>(0,3)</m>, <m>(-1,5)</m> Asymptote:
+          <m>y = 2</m> \begin{mfpic}[15]{-4}{4}{-1}{12} \point[4pt]{(1,2.3333), (0,3), (-1,5)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,12){<m>y</m>} \tcaption{<m>y = g(x) = 3^{-x}+2</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8,9,10,11} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8, { <m>9</m>} 9, { <m>10</m>} 10, { <m>11</m>} 11} \dashed \polyline{(-4,2),(4,2)} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.05, 2.5, 0.1}{2+3**(0-x)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(-20, \infty)</m> Points:
+          <m>\left(-1,-19 \right)</m>, <m>(1,-10)</m>, <m>(3,80)</m> Asymptote:
+          <m>y = -20</m> \begin{mfpic}[15]{-3}{4}{-2}{9} \point[4pt]{(-1,-1.9), (1,-1), (3,8)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \tcaption{<m>y = g(x) = 10^{\frac{x+1}{2}}-20</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2,-1,1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-10</m>} -1,{ <m>10</m>} 1, { <m>20</m>} 2, { <m>30</m>} 3, { <m>40</m>} 4, { <m>50</m>} 5, { <m>60</m>} 6, { <m>70</m>} 7, { <m>80</m>} 8} \dashed \polyline{(-4,-2), (4,-2)} \penwd{1.25pt} \arrow \reverse \arrow \function{-3, 3.06, 0.1}{((10**((x+1)/2))-20)/10} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(0, \infty)</m> Points:
+          <m>(-10, 200)</m>, <m>(0, 100)</m>,
+          <m>(10, 50)</m> Asymptote:
+          <m>y = 0</m> \begin{mfpic}[15]{-4}{4}{-1}{9} \point[4pt]{(-1,2), (0,1), (1, 0.5)} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,9){<m>y</m>} \tcaption{
+          <m>y = g(t) = 100(0.5)^{0.1t}</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{ <m>-30</m>} -3, { <m>-20</m>} -2, { <m>-10</m>} -1, { <m>10</m>} 1, { <m>20</m>} 2, { <m>30</m>} 3} \axislabels {y}{{ <m>100</m>} 1, { <m>200</m>} 2, { <m>300</m>} 3, { <m>400</m>} 4, { <m>500</m>} 5, { <m>600</m>} 6, { <m>700</m>} 7, { <m>800</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-3, 3, 0.1}{0.5**x} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(-\infty, 1)</m> Points:
+          <m>(1, 0.2)</m>, <m>(2,0)</m>,
+          <m>(3,-0.25)</m> Asymptote:
+          <m>y = 1</m> \begin{mfpic}[10][8]{-8}{5}{-11}{11} \point[4pt]{(1,2), (2,0), (3, -2.5)} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,11){<m>y</m>} \tcaption{
+          <m>y = g(t) = 1-(1.25)^{t-2}</m>} \xmarks{-8 step 1 until 4} \ymarks{-10 step 1 until 10} \tlpointsep{4pt} \axislabels {x}{{ <m>-8</m>} -8,{ <m>-6</m>} -6,{ <m>-4</m>} -4,{ <m>-2</m>} -2, { <m>2</m>} 2, { <m>4</m>} 4} \axislabels {y}{ { <m>0.2</m>} 2, { <m>0.4</m>} 4, { <m>0.6</m>} 6, { <m>0.8</m>} 8, { <m>1</m>} 10, { <m>-0.2</m>} -2, { <m>-0.4</m>} -4, { <m>-0.6</m>} -6, { <m>-0.8</m>} -8, { <m>-1</m>} -10} \dashed \polyline{(-8, 10), (5, 10)} \penwd{1.25pt} \arrow \reverse \arrow \function{-8, 5, 0.1}{(1- (1.25**(x-2)))*10} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(-\infty, 8)</m> Points:
+          <m>\left(1, 8-e^{-1} \right) \approx (1, 7.63)</m>, <m>(0,7)</m>,
+          <m>\left(-1, 8-e \right) \approx (1,5.28)</m> Asymptote:
+          <m>y = 8</m> \begin{mfpic}[15]{-4}{4}{-1}{9} \point[4pt]{(1,7.6321), (0,7), (-1,5.282)} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,9){<m>y</m>} \tcaption{
+          <m>y = g(t) = 8-e^{-t}</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8} \dashed \polyline{(-4,8), (4,8)} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.25, 2, 0.1}{8-exp(0-x)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain of <m>g</m>: <m>(-\infty, \infty)</m> Range of <m>g</m>:
+          <m>(0, \infty)</m> Points:
+          <m>\left(10, 10e^{-1} \right) \approx (10, 3.68)</m> <m>(0,10)</m>,
+          <m>\left(-10, 10e \right) \approx (-10, 27.18)</m> Asymptote:
+          <m>y = 0</m> \begin{mfpic}[15]{-4}{4}{-1}{9} \point[4pt]{(1,0.3679), (0,1), (-1,2.718)} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,9){<m>y</m>} \tcaption{<m>y = g(t) = 10e^{-0.1t}</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{ <m>-10</m>} -1, { <m>10</m>} 1, { <m>20</m>} 2, { <m>30</m>} 3} \axislabels {y}{{ <m>10</m>} 1, { <m>20</m>} 2, { <m>30</m>} 3, { <m>40</m>} 4, { <m>50</m>} 5, { <m>60</m>} 6, { <m>70</m>} 7, { <m>80</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.15, 2, 0.1}{exp(0-x)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 2^{x+1}-3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -2^{-x} + 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 2^{2x-6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) =3 \cdot 2^{-2x}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Since <m>2 = 4^{\frac{1}{2}}</m>,
+          one way to obtain the formulas for <m>G(x)</m> is to use properties of exponents.
+          For example,
+          <m>F(x) = 2^{x+1}-3 = \left(4^{\frac{1}{2}}\right)^{x+1} -3 = 4^{\frac{1}{2}(x+1)} - 3 = 4^{\frac{1}{2} x + \frac{1}{2}} - 3</m>.
+          In order, the formulas for <m>G(x)</m> are:
+          <ul>
+            <li>
+              <p>
+                <m>G(x) = 4^{\frac{1}{2}x+\frac{1}{2}}-3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>G(x) = -4^{-\frac{1}{2} x} + 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>G(x) = 4^{x-3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>G(x) =3 \cdot 4^{-x}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(x) = e^{-x}</m> and <m>h(x) = 1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(x) = e^{2x}</m> and <m>h(x) = x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>g(t) = t^2</m> and <m>h(t) = e^{-t}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(x) = e^{x} - e^{-x}</m> and <m>g(x) = e^{x}+e^{-x}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(x) = -x^2</m> and <m>g(x) = e^{x}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(x) = e^{2x} -1</m> and <m>g(x) = \sqrt{x}</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>A(0) = 500</m>,
+              so the initial balance in the savings account is <m>\dollar500</m>.
+              <m>A(1) = 525</m>, so after <m>1</m> year,
+              there is <m>\dollar525</m> in the savings account.
+              <m>A(2) =551.25</m>, so after <m>2</m> years,
+              there is <m>\dollar551.25</m> in the savings account.
+            </p>
+          </li>
+          <li>
+            <p>
+              The relative rate of change of <m>A</m> over the intervals <m>[0,1]</m> and <m>[1,2]</m> is <m>0.05</m> which means the savings account is growing by <m>5 \%</m> each year for those two years.
+              Over the interval <m>[0,2]</m>,
+              the relative rate of change is <m>0.1025</m> meaning the account has grown by
+              <m>10.25 \%</m> over the course of the first two years.
+              Note this is greater than the sum of the two rates <m>5 \% + 5 \% = 10 \%</m>.
+              This is due to the <sq>compounding effect</sq> and will be discussed in greater detail in <xref ref="ExpLogApplications">Section</xref>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The relative rate of change of <m>A</m> over the <m>[t, t+1]</m> is <m>0.05</m>.
+              This means over the course of one year,
+              the savings account grows by <m>5 \%</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Graphing <m>y= A(t)</m> and <m>y = 1500</m>,
+              we find they intersect when
+              <m>t \approx 22.5</m> so it takes approximately <m>22-23</m> years for the savings account to grow to <m>\dollar1500</m> in value.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\dfrac{229437-230041}{230041} \approx 0.263 \%</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since 2020 is five years after 2015,
+              we expect the population to decrease by
+              <m>0.263 \%</m> of 229437, or approximately 603 people.
+              Hence, we approximate the population in 2020 as 228834.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>P(t) = 230041(1-0.00263)^t = 230041(0.99737)^{t}</m>,
+              <m>t \geq 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since 2017 is 7 years after 2010,
+              we set <m>t = \frac{7}{5} = 1.4</m> and find <m>P(1.4) \approx 229194</m>.
+              So the population is approximately 229, 194 in 2017.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A(t) = 230041(1 - 0.0005626)^{t} = 230041 (0.999474)^{t}</m>,
+              <m>t \geq 0</m>.
+              Since 2050 is 40 years after 2010, using the model <m>P(t)</m>,
+              we divide <m>\frac{40}{5} = 8</m> and find <m>P(8) \approx 225,245</m>.
+              On the other hand, <m>A(40) \approx 225,250</m>.
+              This is more than roundoff error.
+              There is a compounding effect which makes the functions <m>A(t)</m> and <m>P(t)</m> different.<fn>
+              See <xref ref="preludetocompoundingexercise">number</xref> above or,
+              for more, see <xref ref="ExpLogApplications">Section</xref>.
+              </fn>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

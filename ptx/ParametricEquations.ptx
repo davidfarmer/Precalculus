@@ -1,0 +1,1673 @@
+<section xml:id="ParametricEquations">
+  <title>Parametric Equations</title>
+  <introduction>
+    <p>
+      As we have seen in <xref ref="listofcurvesfirst">Exercises</xref>
+      - <xref ref="listofcurveslast"></xref>
+      in <xref ref="Relations">Section</xref>,
+      <xref ref="TheConicSections">Chapter</xref>
+      and most recently in <xref ref="PolarGraphs">Section</xref>,
+      there are scores of interesting curves which,
+      when plotted in the <m>xy</m>-plane,
+      neither represent <m>y</m> as a function of <m>x</m> nor <m>x</m> as a function of <m>y</m>.
+    </p>
+    <p>
+      In this section,
+      we present a new concept which allows us to use functions to study these kinds of curves.
+      To motivate the idea,
+      we imagine a bug crawling across a table top starting at the point <m>O</m> and tracing out a curve <m>C</m> in the plane,
+      as shown below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-1}{6}{-1}{6}
+    </p>
+    <p>
+      \axes \tlabel[cc](6,-0.25){<m>x</m>} \tlabel[cc](0.25,6){<m>y</m>} \tlabel[cc](5.5,1){<m>O</m>} \tlabel[cc](4.5,3){<m>Q</m>} \tlabel[cc](5,5.5){<m>P(x,y) = (f(t),g(t))</m>} \xmarks{1,2,3,4,5} \ymarks{1,2,3,4,5} \point[4pt]{(5,1),(4,3),(2.5,4.83)} \tlabelsep{5pt}
+    </p>
+    <p>
+      \axislabels{x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels{y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4,, {<m>5</m>} 5}
+    </p>
+    <p>
+      \penwd{1.25pt} \arrow \parafcn{-2,-1.5,0.1}{(t**2+1,t**3-3*t+3)} \arrow \parafcn{-1.5,-1,0.1}{(t**2+1,t**3-3*t+3)} \arrow \parafcn{-1,0,0.1}{(t**2+1,t**3-3*t+3)} \arrow \parafcn{0,1,0.1}{(t**2+1,t**3-3*t+3)} \arrow \parafcn{1,1.5,0.1}{(t**2+1,t**3-3*t+3)} \arrow \parafcn{1.5,2,0.1}{(t**2+1,t**3-3*t+3)} \end{mfpic}
+    </p>
+    <p>
+      The curve <m>C</m> does not represent <m>y</m> as a function of <m>x</m> because it fails the Vertical Line Test and it does not represent <m>x</m> as a function of <m>y</m> because it fails the Horizontal Line Test.
+    </p>
+    <p>
+      However, since the bug can be in only one <em>place</em>
+      <m>P(x,y)</m> at any given time <m>t</m>,
+      we can define the <m>x</m>-coordinate of <m>P</m> as a function of <m>t</m> and the <m>y</m>-coordinate of <m>P</m> as a (usually,
+      but not necessarily) different function of <m>t</m>.
+      Traditionally,
+      <m>f(t)</m> is used for <m>x</m> and <m>g(t)</m> is used for <m>y</m>.
+    </p>
+    <p>
+      The independent variable <m>t</m> in this case is called a
+          <idx><h>parameter</h></idx>
+      <em>parameter</em> and the system of equations
+      <me>
+        \left\{ \begin{array}{rcl} x \amp  = \amp  f(t) \\ y \amp  = \amp  g(t) \end{array}  \right.
+      </me>
+      is called a
+          <idx><h>parametric equations</h></idx>
+      <em>system of parametric equations</em> or a
+          <idx><h>parametrization</h></idx>
+      <em>parametrization</em> of the curve <m>C</m>.<fn>
+      Note the use of the indefinite article <sq>a</sq>.
+      As we shall see,
+      there are infinitely many different parametric representations for any given curve.
+      </fn>
+    </p>
+    <p>
+      The parametrization of <m>C</m> endows it with an
+          <idx><h>curve</h><h>orientated</h></idx>
+          <idx><h>orientation</h></idx>
+      <em>orientation</em> and the arrows on <m>C</m> indicate motion in the direction of increasing values of <m>t</m>.
+    </p>
+    <p>
+      In this case, our bug starts at the point <m>O</m>,
+      travels upwards to the left, then loops back around to cross its path<fn>
+      Here, the bug reaches the point <m>Q</m> at two different times.
+      While this does not contradict our claim that <m>f(t)</m> and <m>g(t)</m> are
+      <em>functions</em> of <m>t</m>,
+      it shows that neither <m>f</m> nor <m>g</m> can be one-to-one.
+      (Think about this before reading on.)
+      </fn> at the point <m>Q</m> and finally heads off into the first quadrant.
+    </p>
+    <p>
+      It is important to note that the curve itself is a set of points and as such is devoid of any orientation.
+      The parametrization determines the orientation and as we shall see,
+      different parametrizations can determine different orientations.
+    </p>
+    <p>
+      If all of this seems hauntingly familiar, it should.
+      By definition, the system of equations
+      <m>\left\{ x = \cos(t), \, y = \sin(t) \right.</m> parametrizes the Unit Circle,
+      giving it a counter-clockwise orientation.
+    </p>
+    <p>
+      More generally, the equations of circular motion
+      <m>\left\{ x = r\cos(\omega t), \, y = r\sin(\omega t) \right.</m> developed on <xref ref="equationsforcircularmotion">page</xref>
+      in <xref ref="cosinesinebeyond">Section</xref>
+      are parametric equations which trace out a circle of radius <m>r</m> centered at the origin.
+    </p>
+    <p>
+      If <m>\omega > 0</m>, the orientation is counter-clockwise;
+      if <m>\omega \lt 0</m>, the orientation is clockwise.
+      The angular frequency <m>\omega</m> determines <sq>how fast</sq> the object moves around the circle.
+    </p>
+    <p>
+      In particular, the equations
+      <m>\left\{ x = 2960 \cos\left(\frac{\pi}{12} t\right), \, y = 2960 \sin\left(\frac{\pi}{12} t\right) \right.</m> that model the motion of Lakeland Community College as the earth rotates
+      (see <xref ref="Lakelandrotates">Example</xref>
+      in <xref ref="cosinesinebeyond">Section</xref>)
+      parameterize a circle of radius 2960 with a counter-clockwise rotation which completes one revolution as <m>t</m> runs through the interval <m>[0,24)</m>.
+      It is time for another example.
+    </p>
+    <example xml:id="parametricparabola">
+      <statement>
+        <p>
+          Sketch the curve described by
+          <m>{\displaystyle \left\{ \begin{array}{rcl} x \amp = \amp t^2 - 3 \\ y \amp = \amp 2t-1 \end{array} \right.}</m> for <m>t \geq -2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We follow the same procedure here as we have time and time again when asked to graph anything new <mdash/> choose values for <m>t</m>,
+          then plot and connect the corresponding points.
+        </p>
+        <p>
+          Since we are told <m>t \geq -2</m>,
+          we start there and as we plot successive points,
+          we draw an arrow to indicate the direction of the path for increasing values of <m>t</m>.
+        </p>
+        <tabular>
+          {m{2.5in}m{3in}}
+          <m>\begin{array}{|r||r|r|r|}
+          \hline
+          t \amp  x(t) \amp  y(t) \amp  (x(t), y(t)) \\ \hline
+          -2  \amp  1 \amp  -5 \amp  (1,-5) \\  \hline
+          -1  \amp  -2 \amp   -3 \amp  (-2,-3) \\  \hline
+          0 \amp  -3 \amp  -1 \amp   ( -3, -1) \\  \hline
+          1  \amp  -2 \amp  1 \amp  ( -2 ,1) \\  \hline
+          2 \amp  1 \amp  3 \amp  ( 1, 3) \\  \hline
+          3  \amp  6 \amp  5 \amp  (6,5) \\  \hline
+          \end{array}</m> &amp;
+          \begin{mfpic}[10]{-4}{7}{-6}{6}
+          \axes
+          \tlabel[cc](7,-0.25){<m>x</m>}
+          \tlabel[cc](0.25,6){<m>y</m>}
+          \xmarks{-3,-2,-1,1,2,3,4,5,6}
+          \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5}
+          \point[4pt]{(1,-5), (-2,-3), (-3,-1), (-2,1), (1,3), (6,5)}
+          \tlabelsep{5pt}
+          \axislabels{x}{{<m>-2</m>} -2,{<m>-1</m>} -1,  {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6}
+          \axislabels{y}{{<m>-5</m>} -5, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4,, {<m>5</m>} 5}
+          \penwd{1.25pt}
+          \arrow \parafcn{-2,-1.5,0.1}{(t**2-3,2*t-1)}
+          \arrow \parafcn{-1.5,-0.5,0.1}{(t**2-3,2*t-1)}
+          \arrow \parafcn{-0.5,0.5,0.1}{(t**2-3,2*t-1)}
+          \arrow \parafcn{0.5,1.5,0.1}{(t**2-3,2*t-1)}
+          \arrow \parafcn{1.5,2.5,0.1}{(t**2-3,2*t-1)}
+          \arrow \parafcn{2.5,3.15,0.1}{(t**2-3,2*t-1)}
+          \end{mfpic}
+        </tabular>
+      </solution>
+    </example>
+    <p>
+      The curve sketched out in <xref ref="parametricparabola">Example</xref>
+      certainly looks like a parabola,
+      and the presence of the <m>t^2</m> term in the equation <m>x=t^2-3</m> reinforces this hunch.
+    </p>
+    <p>
+      Since the parametric equations
+      <m>\left\{ x = t^2 - 3, \, y = 2t-1 \right.</m> given to describe this curve are a
+      <em>system</em> of equations,
+      we can use the technique of substitution as described in <xref ref="NonLinearEquations">Section</xref>
+      to eliminate the parameter <m>t</m> and get an equation involving just <m>x</m> and <m>y</m>.
+    </p>
+    <p>
+      To do so, we choose to solve the equation
+      <m>y = 2t-1</m> for <m>t</m> to get <m>t = \frac{y+1}{2}</m>.
+      Substituting this into the equation
+      <m>x = t^2 -3</m> yields <m>x = \left(\frac{y+1}{2}\right)^2 - 3</m> or,
+      after some rearrangement, <m>(y+1)^2 = 4(x+3)</m>.
+    </p>
+    <p>
+      Thinking back to <xref ref="Parabolas">Section</xref>,
+      we see that the graph of this equation is a parabola with vertex <m>(-3,-1)</m> which opens to the right,
+      as required.
+    </p>
+    <p>
+      Technically speaking, the equation <m>(y+1)^2 = 4(x+3)</m> describes the
+      <em>entire</em> parabola,
+      while the parametric equations <m>\left\{ x = t^2 - 3, \, y = 2t-1 \right.</m> for
+      <m>t \geq -2</m> describe only a
+      <em>portion</em> of the parabola.
+    </p>
+    <p>
+      In this case,<fn>
+      We will have an example shortly where no matter how we restrict <m>x</m> and <m>y</m>,
+      we can never accurately describe the curve once we've eliminated the parameter.
+      </fn> we can remedy this situation by restricting the bounds on <m>y</m>.
+      Since the portion of the parabola we want is exactly the part where <m>y \geq -5</m>,
+      the equation <m>(y+1)^2 = 4(x+3)</m> coupled with the restriction
+      <m>y \geq -5</m> describes the same curve as the given parametric equations.
+      The one piece of information we can never recover after eliminating the parameter, however,
+      is the orientation of the curve.
+    </p>
+    <p>
+      Eliminating the parameter and obtaining an equation in terms of <m>x</m> and <m>y</m>,
+      whenever possible,
+      can be a great help in graphing curves determined by parametric equations.
+    </p>
+    <p>
+      If the system of parametric equations contains algebraic functions,
+      as was the case in <xref ref="parametricparabola">Example</xref>,
+      then the usual techniques of substitution and elimination as learned in <xref ref="NonLinearEquations">Section</xref>
+      can be applied to the system
+      <m>\left\{ x = f(t), \, y = g(t) \right.</m> to eliminate the parameter.
+    </p>
+    <p>
+      If, on the other hand,
+      the parametrization involves the trigonometric functions,
+      the strategy changes slightly.
+      In this case,
+      it is often best to solve for the trigonometric functions and relate them using an identity.
+    </p>
+    <p>
+      We demonstrate these techniques in the following example.
+    </p>
+    <example xml:id="parametrictorect">
+      <statement>
+        <p>
+          Sketch the curves described by the following parametric equations.
+          <ol>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcl} x \amp = \amp t^3 \\ y \amp = \amp 2t^2 \end{array} \right.</m> for <m>-1 \leq t \leq 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcl} x \amp = \amp e^{-t} \\ y \amp = \amp e^{-2t} \end{array} \right.</m> for <m>t \geq 0</m>
+              </p>
+            </li>
+            <li xml:id="parametric1overx">
+              <p>
+                <m>\left\{ \begin{array}{rcl} x \amp = \amp \sin(t) \\ y \amp = \amp \csc(t) \end{array} \right.</m> for <m>0 \lt t \lt \pi</m>
+              </p>
+            </li>
+            <li xml:id="parametricellipse">
+              <p>
+                <m>\left\{ \begin{array}{rcl} x \amp = \amp 1 + 3\cos(t) \\ y \amp = \amp 2\sin(t) \end{array} \right.</m> for <m>0 \leq t \leq \frac{3\pi}{2}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To get a feel for the curve described by the system
+                <m>\left\{ x = t^3, \, y = 2t^2 \right.</m> we first sketch the graphs of <m>x = t^3</m> and
+                <m>y = 2t^2</m> over the interval <m>[-1,1]</m> below on the left in the middle,
+                respectively.
+                We note that as <m>t</m> takes on values in the interval <m>[-1,1]</m>,
+                <m>x = t^3</m> ranges between <m>-1</m> and <m>1</m>,
+                and <m>y = 2t^2</m> ranges between <m>0</m> and <m>2</m>.
+                This means that all of the action is happening on a portion of the plane,
+                namely <m>\left\{ (x,y) \, | \, -1 \leq x \leq 1, \; 0 \leq y \leq 2 \right\}</m>.
+                Next, we plot a few points to get a sense of the position and orientation of the curve.
+                Certainly, <m>t=-1</m> and <m>t=1</m> are good values to pick since these are the extreme values of <m>t</m>.
+                We also choose <m>t=0</m>, since that corresponds to a (local) minimum<fn>
+                You should review <xref ref="incdeccnstdefn">Definitions</xref>
+                and <xref ref="localmaxmindefn"></xref>
+                if you've forgotten what <sq>increasing</sq>,
+                <sq>decreasing</sq> and <sq>local minimum</sq> mean.
+                </fn> on the graph of <m>y = 2t^2</m>.
+                Plugging in <m>t = -1</m> gives the point <m>(-1,2)</m>,
+                <m>t = 0</m> gives <m>(0,0)</m> and <m>t=1</m> gives <m>(1,2)</m>.
+                More generally, we see that <m>x = t^3</m> is <em>increasing</em>
+                over the entire interval <m>[-1,1]</m> whereas
+                <m>y = 2t^2</m> is <em>decreasing</em>
+                over the interval <m>[-1,0]</m> and then
+                <em>increasing</em> over <m>[0,1]</m>.
+                Geometrically,
+                this means that in order to trace out the path described by the parametric equations,
+                we start at <m>(-1,2)</m>
+                (where <m>t=-1</m>),
+                then move to the right
+                (since <m>x</m> is increasing)
+                and down
+                (since <m>y</m> is decreasing)
+                to <m>(0,0)</m>
+                (where <m>t = 0</m>).
+                We continue to move to the right
+                (since <m>x</m> is still increasing)
+                but now move upwards
+                (since <m>y</m> is now increasing)
+                until we reach <m>(1,2)</m>
+                (where <m>t=1</m>).
+                Finally, to get a good sense of the shape of the curve,
+                we eliminate the parameter.
+                Solving <m>x = t^3</m> for <m>t</m>,
+                we get <m>t = \sqrt[3]{x}</m>.
+                Substituting this into <m>y = 2t^2</m> gives <m>y = 2(\sqrt[3]{x})^2 = 2x^{2/3}</m>.
+                Our experience in <xref ref="PowerFunctions">Section</xref>
+                yields the graph of our final answer below on the right.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[30]{-2}{2}{-1.75}{2} \axes \tlabel[cc](2,-0.25){<m>t</m>} \tlabel[cc](0.25,1.85){<m>x</m>} \xmarks{-1,1} \ymarks{-1,1} \point[4pt]{(-1,-1), (1,1)} \tlabelsep{5pt} \axislabels{x}{{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels{y}{{<m>-1</m>} -1,{<m>1</m>} 1} \penwd{1.25pt} \function{-1,1,0.1}{x**3} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[30]{-2}{2}{-0.75}{3} \axes \tlabel[cc](2,-0.25){<m>t</m>} \tlabel[cc](0.25,2.85){<m>y</m>} \xmarks{-1,1} \ymarks{1,2} \point[4pt]{(-1,2), (1,2)} \tlabelsep{5pt} \axislabels{x}{{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels{y}{{<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \function{-1,1,0.1}{2*(x**2)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[30]{-2}{2}{-0.75}{3} \axes \tlabel[cc](2,-0.25){<m>x</m>} \tlabel[cc](0.25,2.85){<m>y</m>} \point[4pt]{(-1,2), (0,0), (1,2)} \xmarks{-1,1} \ymarks{1,2} \tlabelsep{5pt} \axislabels{x}{{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels{y}{{<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \parafcn{-1,-0.75,0.1}{(t**3,2*(t**2))} \arrow \parafcn{-0.75,0.75,0.1}{(t**3,2*(t**2))} \parafcn{0.75,1,0.1}{(t**3,2*(t**2))}\end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>{ <m>x = t^3</m>, <m>-1 \leq t \leq 1</m>}</cell>
+                    <cell>{<m>y = 2t^2</m>, <m>-1 \leq t \leq 1</m>}</cell>
+                    <cell>{<m>\left\{ x = t^3, \, y = 2t^2 \right.</m>, <m>-1 \leq t \leq 1</m>}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                For the system <m>\left\{ x = 2e^{-t}, \, y=e^{-2t} \right.</m> for <m>t \geq 0</m>,
+                we proceed as in the previous example and graph
+                <m>x = 2e^{-t}</m> and <m>y = e^{-2t}</m> over the interval
+                <m>[0, \infty)</m> below on the left and in the middle,
+                respectively.
+                We find that the range of <m>x</m> in this case is <m>(0,2]</m> and the range of <m>y</m> is <m>(0,1]</m>,
+                so our graph will reside in a portion of Quadrant I: <m>\left\{ (x,y) \, | \, 0 \lt x \leq 2, \; 0 \lt y \leq 1 \right\}</m>.
+                Next, we plug in some friendly values of <m>t</m> to get a sense of the orientation of the curve.
+                Since <m>t</m> lies in the exponent here,
+                <sq>friendly</sq> values of <m>t</m> involve natural logarithms.
+                Starting with <m>t=\ln(1) = 0</m> we get<fn>
+                The reader is encouraged to review <xref ref="LogarithmicFunctions">Sections</xref>
+                and <xref ref="PropertiesofLogarithms"></xref> as needed.
+                </fn> <m>(2,1)</m>,
+                for <m>t = \ln(2)</m> we get <m>\left(1,\frac{1}{4}\right)</m> and for
+                <m>t = \ln(3)</m> we get <m>\left(\frac{2}{3}, \frac{1}{9}\right)</m>.
+                Since <m>t</m> is ranging over the unbounded interval <m>[0, \infty)</m>,
+                we take the time to analyze the end behavior of both <m>x</m> and <m>y</m>.
+                As <m>t \rightarrow \infty</m>,
+                <m>x =2 e^{-t} \rightarrow 0^{+}</m> and <m>y = e^{-2t} \rightarrow 0^{+}</m> as well.
+                This means the graph of <m>\left\{ x = 2e^{-t}, \, y=e^{-2t} \right.</m> approaches the point <m>(0,0)</m>.
+                Since both <m>x = 2e^{-t}</m> and
+                <m>y = e^{-2t}</m> are always decreasing for <m>t \geq 0</m>,
+                we know that our final graph will start at <m>(2,1)</m>
+                (where <m>t=0</m>),
+                and move consistently to the left
+                (since <m>x</m> is decreasing)
+                and down
+                (since <m>y</m> is decreasing)
+                to approach the origin.
+                To eliminate the parameter,
+                one way to proceed is to solve
+                <m>x = 2e^{-t}</m> for <m>t</m> to get <m>t = -\ln\left(\frac{x}{2}\right)</m>.
+                Substituting this for <m>t</m> in
+                <m>y = e^{-2t}</m> gives <m>y = e^{-2(-\ln(x/2))} = e^{2\ln(x/2)} = e^{\ln(x/2)^2} = \left(\frac{x}{2}\right)^2 = \frac{x^2}{4}</m>.
+                Alternatively,
+                we could recognize that <m>y = e^{-2t} = \left(e^{-t}\right)^2</m>,
+                and since <m>x = 2e^{-t}</m> means <m>e^{-t} = \frac{x}{2}</m>,
+                we get <m>y = \left(\frac{x}{2}\right)^2 = \frac{x^2}{4}</m> this way as well.
+                Either way, the graph of <m>\left\{ x = 2e^{-t}, \, y=e^{-2t} \right.</m> for
+                <m>t \geq 0</m> is a portion of the parabola
+                <m>y = \frac{x^2}{4}</m> which starts at the point <m>(2,1)</m> and heads towards,
+                but never reaches,<fn>
+                Note the open circle at the origin.
+                See our discussion about holes in graphs in <xref ref="volumeex1">Example</xref>
+                in <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+                </fn>  <m>(0,0)</m> as seen below on the right.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[28]{-1}{3}{-0.5}{3} \axes \tlabel[cc](3,-0.25){<m>t</m>} \tlabel[cc](0.25,3){<m>x</m>} \xmarks{1,2} \ymarks{1,2} \point[4pt]{(0,2)} \tlabelsep{5pt} \axislabels{x}{{<m>1</m>} 1, {<m>2</m>} 2} \axislabels{y}{{<m>1</m>} 1,{<m>2</m>} 2} \penwd{1.25pt} \arrow \function{0,2.75,0.1}{2*exp(0-x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[28]{-1}{3}{-0.5}{2} \axes \tlabel[cc](3,-0.25){<m>t</m>} \tlabel[cc](0.25,2){<m>y</m>} \xmarks{1,2} \ymarks{1} \point[4pt]{(0,1)} \tlabelsep{5pt} \axislabels{x}{{<m>1</m>} 1, {<m>2</m>} 2} \axislabels{y}{{<m>1</m>} 1} \penwd{1.25pt} \arrow \function{0,2.75,0.1}{exp(0-2*x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[28]{-1}{3}{-0.5}{2} \axes \tlabel[cc](3,-0.25){<m>x</m>} \tlabel[cc](0.25,2){<m>y</m>} \point[4pt]{(2,1), (1,0.25), (0.6666,0.1111)} \xmarks{1,2} \ymarks{1} \tlabelsep{5pt} \axislabels{x}{{<m>1</m>} 1,{<m>2</m>} 2} \axislabels{y}{{<m>1</m>} 1} \penwd{1.25pt} \arrow \parafcn{0,0.25,0.1}{(2*exp(0-t),exp(0-2*t))} \arrow \parafcn{0.25,1,0.1}{(2*exp(0-t),exp(0-2*t))} \arrow \parafcn{1,2,0.1}{(2*exp(0-t),exp(0-2*t))} \parafcn{2,10,0.1}{(2*exp(0-t),exp(0-2*t))} \pointfillfalse \point[4pt]{(0,0)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>{<m>x =2e^{-t}</m>, <m>t \geq 0</m>}</cell>
+                    <cell>{<m>y = e^{-2t}</m>, <m>t \geq 0</m>}</cell>
+                    <cell>{<m>\left\{ x = 2e^{-t}, \, y=e^{-2t} \right.</m>, <m>t \geq 0</m>}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                For the system <m>\left\{ x = \sin(t), \, y = \csc(t) \right.</m> for <m>0 \lt  t \lt  \pi</m>,
+                we start by graphing <m>x = \sin(t)</m> and
+                <m>y = \csc(t)</m> over the interval <m>(0,\pi)</m> below on the left and in the middle,
+                respectively.
+                We find that the range of <m>x</m> is <m>(0,1]</m> while the range of <m>y</m> is
+                <m>[1,\infty)</m> which means our graph will lie in the first quadrant.
+                Plotting a few friendly points,
+                we see that <m>t = \frac{\pi}{6}</m> gives the point <m>\left(\frac{1}{2}, 2\right)</m>,
+                <m>t = \frac{\pi}{2}</m> gives <m>(1,1)</m> and
+                <m>t = \frac{5\pi}{6}</m> returns us to <m>\left( \frac{1}{2}, 2\right)</m>.
+                Since <m>t=0</m> and <m>t=\pi</m> aren't included in the domain for <m>t</m>, (because
+                <m>y = \csc(t)</m> is undefined at these <m>t</m>-values),
+                we analyze the behavior of the system as <m>t</m> approaches  <m>0</m> and <m>\pi</m>.
+                We find that as <m>t \rightarrow 0^{+}</m> as well as when <m>t \rightarrow \pi^{-}</m>,
+                we get <m>x = \sin(t) \rightarrow 0^{+}</m> and <m>y = \csc(t) \rightarrow \infty</m>.
+                Piecing all of this information together,
+                we get that for <m>t</m> near <m>0</m>,
+                we have points with very small positive <m>x</m>-values,
+                but very large positive <m>y</m>-values.
+                As <m>t</m> ranges through the interval <m>\left(0, \frac{\pi}{2}\right]</m>,
+                <m>x = \sin(t)</m> is increasing and <m>y = \csc(t)</m> is decreasing.
+                This means that we are moving to the right and downwards,
+                through <m>\left( \frac{1}{2}, 2\right)</m> when
+                <m>t = \frac{\pi}{6}</m> to <m>(1,1)</m> when <m>t = \frac{\pi}{2}</m>.
+                Once <m>t = \frac{\pi}{2}</m>, the orientation reverses,
+                and we start to head to the left,
+                since <m>x = \sin(t)</m> is now decreasing,
+                and up, since <m>y = \csc(t)</m> is now increasing.
+                We pass back through <m>\left( \frac{1}{2}, 2\right)</m> when
+                <m>t = \frac{5\pi}{6}</m> back to the points with small positive <m>x</m>-coordinates and large positive <m>y</m>-coordinates.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[20]{-1}{4}{-1}{2} \axes \tlabel[cc](4,-0.25){<m>t</m>} \tlabel[cc](0.25,2){<m>x</m>} \xmarks{1.57, 3.14} \ymarks{1} \point[4pt]{(1.57,1)} \tlabelsep{5pt}  \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14} \axislabels{y}{{<m>1</m>} 1}  \penwd{1.25pt} \function{0,3.14,0.1}{sin(x)} \pointfillfalse \point[4pt]{(0,0), (3.14,0)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[20]{-1}{4}{-1}{3} \axes \tlabel[cc](4,-0.25){<m>t</m>} \tlabel[cc](0.2,3){<m>y</m>} \xmarks{1.57, 3.14} \ymarks{1} \point[4pt]{(1.57,1)} \tlabelsep{5pt}  \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14} \axislabels{y}{{<m>1</m>} 1}  \dashed \polyline{(3.14,-1), (3.14, 3)} \penwd{1.25pt} \arrow \reverse \arrow \function{0.34,2.8,0.1}{1/sin(x)}  \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[40][20]{-1}{2}{-1}{4} \axes \tlabel[cc](2,-0.25){<m>x</m>} \tlabel[cc](0.15,3.8){<m>y</m>} \point[4pt]{(0.5,2), (1,1)} \xmarks{1} \ymarks{1,2,3} \tlabelsep{5pt}  \axislabels{x}{{<m>1</m>} 1} \axislabels{y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3}  \penwd{1.25pt} \arrow \function{0.3, 0.4,0.1}{1/x} \arrow \function{0.4, 0.9,0.1}{1/x} \function{0.75, 1,0.1}{1/x} \arrow \reverse  \function{0.3, 0.4,0.1}{1/x} \arrow \reverse   \function{0.6, 0.75,0.1}{1/x} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>{<m>x = \sin(t)</m>, <m>0 \lt  t \lt  \pi</m>}</cell>
+                    <cell>{<m>y = \csc(t)</m>, <m>0 \lt  t \lt  \pi</m>}</cell>
+                    <cell>{<m>\left\{ x = \sin(t), \, y = \csc(t) \right.</m>,  <m>0 \lt  t \lt  \pi</m>}</cell>
+                  </row>
+                </tabular>
+                To better explain this behavior,
+                we eliminate the parameter.
+                Using a reciprocal identity, we  write <m>y = \csc(t) = \frac{1}{\sin(t)}</m>.
+                Since <m>x =\sin(t)</m>,
+                the curve traced out by this parametrization is a portion of the graph of <m>y = \frac{1}{x}</m>.
+                We now can explain the unusual behavior as <m>t \rightarrow 0^{+}</m> and
+                <m>t \rightarrow \pi^{-}</m> <mdash/> for these values of <m>t</m>,
+                we are hugging the vertical asymptote <m>x=0</m> of the graph of <m>y = \frac{1}{x}</m>.
+                We see that the parametrization given above traces out the portion of
+                <m>y = \frac{1}{x}</m> for <m>0\lt  x \leq 1</m> <em>twice</em>
+                as <m>t</m> runs through the interval <m>(0,\pi)</m> as indicated above on the right.
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as above, we set about graphing
+                <m>\left\{ x = 1 + 3\cos(t), \, y =2\sin(t) \right.</m> for <m>0 \leq t \leq \frac{3\pi}{2}</m> by first graphing
+                <m>x = 1 + 3\cos(t)</m> and <m>y = 2\sin(t)</m> on the interval
+                <m>\left[0, \frac{3\pi}{2}\right]</m> below on the left and middle,
+                respectivelt.
+                We see that <m>x</m> ranges from <m>-2</m> to <m>4</m> and <m>y</m> ranges from <m>-2</m> to <m>2</m>.
+                Hence our graph will reside in the region <m>\left\{ (x,y) \, | \, -2 \leq x \leq 4, \; -2 \leq y \leq 2 \right\}</m>.
+                Plugging in <m>t = 0</m>, <m>\frac{\pi}{2}</m>,
+                <m>\pi</m> and <m>\frac{3\pi}{2}</m> gives the points <m>(4,0)</m>,
+                <m>(1,2)</m>, <m>(-2,0)</m> and <m>(1,-2)</m>, respectively.
+                As <m>t</m> ranges from <m>0</m> to <m>\frac{\pi}{2}</m>,
+                <m>x = 1 + 3\cos(t)</m> is decreasing,
+                while <m>y = 2\sin(t)</m> is increasing.
+                This means that we start tracing out our answer at <m>(4,0)</m> and continue moving to the left and upwards towards <m>(1,2)</m>.
+                For <m>\frac{\pi}{2} \leq t \leq \pi</m>,
+                <m>x</m> is decreasing, as is <m>y</m>,
+                so the motion is still right to left,
+                but now is downwards from <m>(1,2)</m> to <m>(-2,0)</m>.
+                On the interval <m>\left[\pi, \frac{3\pi}{2}\right]</m>,
+                <m>x</m> begins to increase, while <m>y</m> continues to decrease.
+                Hence, the motion becomes left to right but continues downwards,
+                connecting <m>(-2,0)</m> to <m>(1,-2)</m>.
+                To eliminate the parameter here,
+                we note that the trigonometric functions involved,
+                namely <m>\cos(t)</m> and <m>\sin(t)</m>,
+                are related by the Pythagorean Identity <m>\cos^{2}(t) + \sin^{2}(t) = 1</m>.
+                Hence, we solve <m>x = 1+3\cos(t)</m> for <m>\cos(t)</m> to get <m>\cos(t) = \frac{x-1}{3}</m>,
+                and we solve <m>y = 2\sin(t)</m> for <m>\sin(t)</m> to get <m>\sin(t) = \frac{y}{2}</m>.
+                Substituting these expressions into
+                <m>\cos^{2}(t) + \sin^{2}(t) = 1</m> gives <m>\left(\frac{x-1}{3}\right)^2 + \left(\frac{y}{2}\right)^2 = 1</m>,
+                or <m>\frac{(x-1)^2}{9} + \frac{y^2}{4} = 1</m>.
+                From <xref ref="Ellipses">Section</xref>,
+                we know that the graph of this equation is an ellipse centered at <m>(1,0)</m> with vertices at <m>(-2,0)</m> and <m>(4,0)</m> with a minor axis of length <m>4</m>.
+                Our parametric equations here are tracing out three-quarters of this ellipse,
+                in a counter-clockwise direction.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-1}{5.25}{-2}{4.5} \axes \tlabel[cc](5.25,-0.25){<m>t</m>} \tlabel[cc](0.25,4.5){<m>x</m>} \xmarks{1.57, 3.14, 4.71} \ymarks{-2,-1,1,2,3,4} \point[4pt]{(0,4), (1.57,1), (3.14, -2), (4.71,1)} \tlabelsep{5pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71} \axislabels{y}{{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \function{0,4.71,0.1}{1+3*cos(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-1}{5.25}{-2}{2.5} \axes \tlabel[cc](5.25,-0.25){<m>t</m>} \tlabel[cc](0.2,2.5){<m>y</m>} \xmarks{1.57, 3.14, 4.71} \ymarks{-2,-1,1,2} \point[4pt]{(0,0), (1.57,2), (3.14, 0), (4.71,-2)} \tlabelsep{5pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71} \axislabels{y}{{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2} \penwd{1.25pt} \function{0,4.71,0.1}{2*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-2.5}{4.5}{-2.5}{2.5} \axes \tlabel[cc](4.5,-0.25){<m>x</m>} \tlabel[cc](0.25,2.5){<m>y</m>} \point[4pt]{(4,0), (1,2), (-2,0), (1,-2)} \xmarks{-2,-1,1,2,3,4} \ymarks{-2,-1,1,2} \tlabelsep{5pt} \axislabels{x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels{y}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2} \penwd{1.25pt} \arrow \parafcn{0, 0.78,0.1}{(1+3*cos(t),2*sin(t))} \arrow \parafcn{0.78, 2.36,0.1}{(1+3*cos(t),2*sin(t))} \arrow \parafcn{2.36, 3.93,0.1}{(1+3*cos(t),2*sin(t))} \parafcn{3.93, 4.71,0.1}{(1+3*cos(t),2*sin(t))} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>{<m>x =1+3\cos(t)</m>, <m>0 \leq t \leq \frac{3\pi}{2}</m>}</cell>
+                    <cell>{<m>y = 2\sin(t)</m>, <m>0 \leq t \leq \frac{3\pi}{2}</m>}</cell>
+                    <cell>{<m>\left\{ x = 1 + 3\cos(t), \, y = 2\sin(t) \right.</m>, <m>0 \leq t \leq \frac{3\pi}{2}</m>}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Now that we have had some good practice sketching the graphs of parametric equations,
+      we turn to the problem of finding parametric representations of curves.
+      We start with the following.
+      <em>Parametrizations of Common Curves</em>
+      <ul>
+        <li>
+          <p>
+            The graph of <m>y=f(x)</m> as <m>x</m> runs through some interval <m>I</m> is parametrized by:
+            <m>\left\{ x = t, \, y = f(t) \right.</m> as <m>t</m> runs through <m>I</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The graph of <m>x=g(y)</m> as <m>y</m> runs through some interval <m>I</m> is parametrized by:
+            <m>\left\{ x = g(t), \, y = t \right.</m> as <m>t</m> runs through <m>I</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The graph of a directed line segment from
+            <m>(x_{\text{ \tiny\(0\) } }, y_{\text{ \tiny\(0\) } })</m> to <m>(x_{\text{ \tiny\(1\) } }, y_{\text{ \tiny\(1\) } })</m> is parametrized by:
+            <m>\left\{ x = x_{\text{ \tiny\(0\) } } + (x_{\text{ \tiny\(1\) } } - x_{\text{ \tiny\(0\) } }) t, \, y = y_{\text{ \tiny\(0\) } } + (y_{\text{ \tiny\(1\) } } - y_{\text{ \tiny\(0\) } }) t \right.</m> for <m>0 \leq t \leq 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The graph of a circle or ellipse
+            <m>\dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1</m> where <m>a,b > 0</m> is parametrized by:
+            <m>\left\{ x = h+a\cos(t), \, y = k+b\sin(t) \right.</m> for <m>0 \leq t \lt 2\pi</m>.
+            NOTE: This will impart a <em>counter-clockwise</em> orientation.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The reader is encouraged to verify the above formulas by eliminating the parameter and,
+      when indicated, checking the orientation.
+      We put these formulas to good use in the following example.
+    </p>
+    <example xml:id="recttoparametric">
+      <statement>
+        <p>
+          Find a parametrization for each of the following curves and check your answers.
+          <ol>
+            <li>
+              <p>
+                <m>y = x^2</m> from <m>x = -3</m> to <m>x = 2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>y = f^{-1}(x)</m> where <m>f(x) = x^5 + 2x + 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The line segment which starts at <m>(2,-3)</m> and ends at <m>(1,5)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The circle <m>x^2 + 2x + y^2 - 4y = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The left half of the ellipse <m>\frac{x^2}{4} + \frac{y^2}{9} = 1</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since <m>y = x^2</m> is written in the form <m>y = f(x)</m>,
+                we let <m>x = t</m> and <m>y = f(t) = t^2</m>.
+                Since <m>x=t</m>,
+                the bounds on <m>t</m> match precisely the bounds on <m>x</m> we get
+                <m>\left\{ x = t, \, y = t^2 \right.</m> for <m>-3 \leq t \leq 2</m>.
+                The check is almost trivial;
+                with <m>x=t</m> we have <m>y = t^2 = x^2</m> as <m>t = x</m> runs from <m>-3</m> to <m>2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We are told to parametrize <m>y = f^{-1}(x)</m> for
+                <m>f(x) = x^5 + 2x + 1</m> so it is safe to assume that <m>f</m> is one-to-one.
+                (Otherwise, <m>f^{-1}</m> would not exist.)
+                To find a formula <m>y = f^{-1}(x)</m>,
+                we  follow the procedure outlined on <xref ref="inverseprocedure">page</xref>
+                <mdash/> we start with the equation <m>y = f(x)</m>,
+                interchange <m>x</m> and <m>y</m> and solve for <m>y</m>.
+                Doing so gives us the equation <m>x = y^5+2y+1</m>.
+                While we could attempt to solve this equation for <m>y</m> to get an <em>explicit</em>
+                formula for <m>f^{-1}(x)</m>, we don't need to.
+                We can parametrize the <em>implicit</em> function<fn>
+                See the discussion preceding <xref ref="implicitfcnex">Example</xref>
+                in <xref ref="Relations">Section</xref> for a review of this concept.
+                </fn>  <m>x = f(y) = y^5+2y+1</m> by setting <m>y = t</m> so that <m>x = t^5 + 2t + 1</m>.
+                We know from  <xref ref="GraphsofPolynomials">Section</xref>
+                that since <m>f(x) = x^5 + 2x + 1</m> is an odd-degree polynomial,
+                the range of <m>y = f(x) = x^5 + 2x + 1</m> is <m>(-\infty, \infty)</m>.
+                Hence, in order to trace out the entire graph of  <m>x = f(y) = y^5+2y+1</m>,
+                we need to let <m>y</m> run through all real numbers.
+                Hence, our final answer to this problem is
+                <m>\left\{ x = t^5+2t+1, \, y = t \right.</m> for <m>-\infty \lt  t \lt  \infty</m>.
+                As in the previous problem, our solution is trivial to check.<fn>
+                Provided you followed the inverse function theory, of course.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                To parametrize line segment which starts at <m>(2,-3)</m> and ends at <m>(1,5)</m>,
+                we make use of the formulas <m>x = x_{\text{ \tiny\(0\) } } + (x_{\text{ \tiny\(1\) } } - x_{\text{ \tiny\(0\) } }) t</m> and
+                <m>y = y_{\text{ \tiny\(0\) } } + (y_{\text{ \tiny\(1\) } } - y_{\text{ \tiny\(0\) } }) t</m> for <m>0 \leq t \leq 1</m>.
+                While these equations at first glance are quite a handful,<fn>
+                Compare and contrast this with <xref ref="x2dvectorsgiveuslines">Exercise</xref>
+                in <xref ref="Vectors">Section</xref>.
+                </fn> they can be summarized as <sq><m>\text{ starting point } + (\text{ displacement } )t</m></sq>.
+                To find the equation for <m>x</m>,
+                we have that the line segment <em>starts</em>
+                at <m>x= 2</m> and <em>ends</em> at <m>x = 1</m>.
+                This means the <em>displacement</em>
+                in the <m>x</m>-direction is <m>\Delta x = (1-2) = -1</m>.
+                Hence, the equation for <m>x</m> is <m>x = 2 + (-1)t = 2-t</m>.
+                Similarly for <m>y</m>,
+                we note that the line segment starts at <m>y=-3</m> and ends at <m>y=5</m>.
+                Hence, the displacement in the <m>y</m>-direction is <m>\Delta y = (5-(-3)) = 8</m>,
+                so we get <m>y = -3+8t</m>.
+                Putting together our answers for <m>x</m> and <m>y</m>,
+                we get <m>\left\{ x = 2-t, \, y = -3+8t \right.</m> for <m>0 \leq t \leq 1</m>.
+                To check, we can solve <m>x = 2-t</m> for <m>t</m> to get <m>t = 2-x</m>.
+                Substituting this into <m>y = -3+8t</m> gives
+                <m>y = -3+8t = -3+8(2-x)</m>, or <m>y = -8x+13</m>.
+                We know this is the graph of a line,
+                so all we need to check is that it starts and stops at the correct points.
+                When <m>t=0</m>, <m>x= 2-t = 2</m>,
+                and when <m>t=1</m>, <m>x = 2-t = 1</m>.
+                Plugging in <m>x=2</m> gives <m>y = -8(2)+13 = -3</m>,
+                for an initial point of <m>(2,-3)</m>.
+                When <m>x = 1</m>,
+                <m>y = -8(1)+13 = 5</m> for an ending point of <m>(1,5)</m>,
+                as required.
+              </p>
+            </li>
+            <li>
+              <p>
+                In order to use the formulas above to parametrize the circle <m>x^2 + 2x + y^2 - 4y = 4</m>,
+                we first need to put the equation into the correct form.
+                After completing the squares,
+                we get <m>(x+1)^2+(y-2)^2 = 9</m>,
+                or <m>\frac{(x+1)^2}{9} + \frac{(y-2)^2}{9} = 1</m>.
+                Once again, the formulas <m>x = h+a\cos(t)</m> and
+                <m>y=k+b\sin(t)</m> can be a challenge to memorize,
+                but they come from the Pythagorean Identity <m>\cos^{2}(t) + \sin^{2}(t) = 1</m>,
+                so we can always use the identity to get our parametrization instead of relying on memorizing a formula.
+                In the equation <m>\frac{(x+1)^2}{9} + \frac{(y-2)^2}{9} = 1</m>,
+                we identify <m>\cos(t) = \frac{x+1}{3}</m> and <m>\sin(t) = \frac{y-2}{3}</m>.
+                Rearranging these last two equations,
+                we get <m>x = -1+3 \cos(t)</m> and <m>y = 2 +3 \sin(t)</m>.
+                In order to complete one revolution around the circle,
+                we let <m>t</m> range through the interval <m>[0,2\pi)</m>,
+                so   our final answer <m>\left\{ x = -1+3 \cos(t), \, y = 2 +3 \sin(t) \right.</m> for <m>0 \leq t \lt  2\pi</m>.
+                To check our answer, we could eliminate the parameter by solving
+                <m>x = -1+3\cos(t)</m> for <m>\cos(t)</m> and <m>y = 2+3\sin(t)</m> for <m>\sin(t)</m>,
+                invoking a Pythagorean Identity,
+                and then manipulating the resulting equation in <m>x</m> and <m>y</m> into the original equation  <m>x^2+2x+y^2-4y = 4</m>.
+                Instead, we opt for a more direct approach.
+                We substitute <m>x = -1+3\cos(t)</m> and <m>y = 2+3\sin(t)</m> into the equation
+                <m>x^2 + 2x + y^2 - 4y = 4</m> and show that the latter is satisfied for all <m>t</m> such that <m>0 \leq t \lt  2\pi</m>.
+                <me>
+                  \begin{array}{rcl}  x^2 + 2x + y^2 - 4y \amp  = \amp  4  \\ (-1+3\cos(t))^2 + 2(-1+3\cos(t)) + (2+3\sin(t))^2 - 4(2+3\sin(t)) \amp  \stackrel{\text{?} }{=} \amp  4  \\ 1  - 6\cos(t) + 9\cos^{2}(t) - 2 + 6\cos(t) + 4 + 12\sin(t) + 9\sin^{2}(t) - 8 - 12\sin(t) \amp  \stackrel{\text{?} }{=} \amp  4  \\ 9\cos^{2}(t) + 9\sin^{2}(t) -5 \amp  \stackrel{\text{?} }{=} \amp  4 \\ 9\left(\cos^{2}(t) + \sin^{2}(t)\right) -5 \amp  \stackrel{\text{?} }{=} \amp  4  \\ 9\left(1\right) -5 \amp  \stackrel{\text{?} }{=} \amp  4 \\ 4 \amp  \stackrel{\text{ \checkmark } }{=} \amp  4 \end{array}
+                </me>
+                Now that we know the parametric equations give us points on the circle,
+                we can go through the usual analysis as demonstrated in <xref ref="parametrictorect">Example</xref>
+                to show that the entire circle is covered as <m>t</m> ranges through the interval <m>[0,2\pi)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                In the equation <m>\frac{x^2}{4} + \frac{y^2}{9} = 1</m>,
+                we can either use the formulas above or think back to the Pythagorean Identity to get
+                <m>x = 2\cos(t)</m> and <m>y = 3\sin(t)</m>.
+                The normal range on the parameter in this case is <m>0 \leq t \lt 2\pi</m>,
+                but since we are interested in only the left half of the ellipse,
+                we restrict <m>t</m> to the values which correspond to Quadrant II and Quadrant III angles,
+                namely <m>\frac{\pi}{2} \leq t \leq \frac{3\pi}{2}</m>.
+                Hence, our final answer is
+                <m>\left\{ x = 2\cos(t), \, y = 3\sin(t) \right.</m> for <m>\frac{\pi}{2} \leq t \leq \frac{3\pi}{2}</m>.
+                Substituting <m>x = 2\cos(t)</m> and <m>y = 3\sin(t)</m> into
+                <m>\frac{x^2}{4} + \frac{y^2}{9} = 1</m> gives <m>\frac{4\cos^{2}(t)}{4} + \frac{9 \sin^{2}(t)}{9} = 1</m>,
+                which reduces to the Pythagorean Identity <m>\cos^{2}(t) + \sin^{2}(t) = 1</m>.
+                This proves the points generated by the parametric equations
+                <m>\left\{ x = 2\cos(t), \, y = 3\sin(t) \right.</m> lie on the ellipse <m>\frac{x^2}{4} + \frac{y^2}{9} = 1</m>.
+                Employing the techniques demonstrated in <xref ref="parametrictorect">Example</xref>,
+                we find that the restriction
+                <m>\frac{\pi}{2} \leq t \leq \frac{3\pi}{2}</m> generates the left half of the ellipse,
+                as required.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We note that the formulas given on <xref ref="commonparametrizations">page</xref> offer only <em>one</em>
+      of literally <em>infinitely</em>
+      many ways to parametrize the common curves listed there.
+      At times, the formulas offered there need to be altered to suit the situation.
+    </p>
+    <p>
+      <em>Adjusting Parametric Equations</em>
+      <ul>
+        <li>
+          <p>
+            <em>Reversing Orientation:</em>
+            <m>~</m> Replacing every occurrence of <m>t</m> with <m>-t</m> in a parametric description for a curve
+            (including any inequalities which describe the bounds on <m>t</m>)
+            reverses the orientation of the curve.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Shift of Parameter:</em> <m>~</m> Replacing every occurrence of <m>t</m> with <m>(t-c)</m> in a parametric description for a curve
+            (including any inequalities which describe the bounds on <m>t</m>)
+            shifts the start of the parameter <m>t</m> ahead by <m>c</m> units.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      We demonstrate these techniques in the following example.
+    </p>
+    <example xml:id="adjustparametricex">
+      <statement>
+        <p>
+          Find a parametrization for the following curves.
+          <ol>
+            <li>
+              <p>
+                The curve which starts at <m>(2,4)</m> and follows the parabola <m>y = x^2</m> to end at <m>(-1,1)</m>.
+                Shift the parameter so that the path starts at <m>t=0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The two part path which starts at <m>(0,0)</m>,
+                travels along a line to <m>(3,4)</m>,
+                then travels along a line to <m>(5,0)</m>.
+              </p>
+            </li>
+            <li xml:id="adjustcircleex">
+              <p>
+                The Unit Circle, oriented clockwise,
+                with <m>t=0</m> corresponding to <m>(0,-1)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                We can parametrize <m>y = x^2</m> from <m>x=-1</m> to <m>x=2</m> using the formula given on <xref ref="commonparametrizations">Page</xref>
+                as <m>\left\{x = t, \, y = t^2 \right.</m> for <m>-1 \leq t \leq 2</m>.
+                This parametrization, however,
+                starts at <m>(-1,1)</m> and ends at <m>(2,4)</m>.
+                Hence, we need to reverse the orientation.
+                To this end,
+                we replace every occurrence of <m>t</m> with <m>-t</m>:
+                <m>\left\{x = -t, \, y = (-t)^2 \right.</m> for <m>-1 \leq -t \leq 2</m>.
+                After simplifying,
+                we get <m>\left\{x = -t, \, y = t^2 \right.</m> for <m>-2 \leq t \leq 1</m>.
+                We would like <m>t</m> to begin at <m>t=0</m> instead of <m>t=-2</m>.
+                The problem here is that the parametrization we have starts <m>2</m> units <sq>too soon</sq>,
+                so we need to introduce a <sq>time delay</sq> of <m>2</m>.
+                Replacing every occurrence of <m>t</m> with <m>(t-2)</m> gives
+                <m>\left\{x = -(t-2), \, y =(t-2) ^2 \right.</m> for <m>-2 \leq t -2 \leq 1</m>.
+                Simplifying yields <m>\left\{x = 2-t, \, y =t^2-4t+4\right.</m> for <m>0 \leq t \leq 3</m>.
+                We leave it to the reader to verify this system traces <m>y = x^2</m> starting with <m>(2,4)</m> and ending at <m>(-1,1)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Again, when parameterizing line segments, we think:
+                <sq><m>\text{ starting point }  + (\text{ displacement } )t</m></sq>.
+                For the first part of the path,
+                we get <m>\left\{ x = 3t, \, y = 4t \right.</m> for <m>0 \leq t \leq 1</m>,
+                and for the second part we get
+                <m>\left\{ x = 3 + 2t, \, y = 4 - 4t \right.</m> for <m>0 \leq t \leq 1</m>.
+                Since the first parametrization leaves off at <m>t=1</m>,
+                we shift the parameter in the second part so it starts at <m>t=1</m>.
+                Our current description of the second part starts at <m>t=0</m>,
+                so we need to introduce a <sq>time delay</sq> of <m>1</m> unit to the second set of parametric equations.
+                Replacing <m>t</m> with <m>(t-1)</m> in the second set of  equations gives
+                <m>\left\{ x = 3 + 2(t-1), \, y = 4 - 4(t-1) \right.</m> for <m>0 \leq t-1 \leq 1</m>.
+                Simplifying yields <m>\left\{ x = 1+2t, \, y = 8  -4t \right.</m> for <m>1 \leq t \leq 2</m>.
+                Hence, we may parametrize the path as
+                <m>\left\{ x = f(t), \, y = g(t) \right.</m> for <m>0 \leq t \leq 2</m> where
+                <me>
+                  \begin{array}{ccc}  f(t) = \left\{ \begin{array}{rl} 3t, \amp  \text{ for \(0 \leq t \leq 1\) }  \\ 1+2t, \amp  \text{ for \(1 \leq t \leq 2\) } \end{array}  \right. \amp  \text{ and }  \amp   g(t) = \left\{ \begin{array}{rl} 4t, \amp  \text{ for \(0 \leq t \leq 1\) }  \\ 8-4t, \amp  \text{ for \(1 \leq t \leq 2\) } \end{array}  \right. \end{array}
+                </me>
+                Again, we encourage the reader to check our solution.
+              </p>
+            </li>
+            <li>
+              <p>
+                We know that <m>\left\{ x = \cos(t), \, y = \sin(t) \right.</m> for <m>0 \leq t \lt 2\pi</m> gives a
+                <em>counter-clockwise</em>
+                parametrization of the Unit Circle with <m>t = 0</m> corresponding to <m>(1,0)</m>,
+                so our first task is to reverse orientation.
+                Replacing <m>t</m> with <m>-t</m> gives
+                <m>\left\{ x = \cos(-t), \, y = \sin(-t) \right.</m> for <m>0 \leq -t \lt 2\pi</m>.
+                Using the Even/Odd Identities, we simplify:
+                <m>\left\{ x = \cos(t), \, y = -\sin(t) \right.</m> for <m>-2\pi \lt t \leq 0</m>.
+                This parametrization gives a clockwise orientation,
+                but <m>t=0</m> still corresponds to the point <m>(1,0)</m>;
+                the point <m>(0, -1)</m> is reached when <m>t = -\frac{3\pi}{2}</m>.
+                Our strategy is to first get the parametrization to <sq>start</sq> at the point <m>(0,-1)</m> and then shift the parameter accordingly so the <sq>start</sq> coincides with <m>t = 0</m>.
+                We know that any interval of length <m>2\pi</m> will parametrize the entire circle,
+                so we keep the equations <m>\left\{ x = \cos(t), \, y = -\sin(t) \right.</m>,
+                but start the parameter <m>t</m> at <m>-\frac{3\pi}{2}</m>,
+                and find the upper bound by adding <m>2\pi</m> so <m>-\frac{3\pi}{2} \leq t \lt \frac{\pi}{2}</m>.
+                We leave it to the reader to verify that <m>\left\{ x = \cos(t), \, y = -\sin(t) \right.</m> for
+                <m>-\frac{3\pi}{2} \leq t \lt \frac{\pi}{2}</m> traces out the Unit Circle clockwise starting at the point <m>(0, -1)</m>.
+                We now shift the parameter by introducing a <sq>time delay</sq> of
+                <m>\frac{3\pi}{2}</m> units by replacing every occurrence of <m>t</m> with <m>\left(t - \frac{3\pi}{2}\right)</m>.
+                We get <m>\left\{ x = \cos\left(t - \frac{3\pi}{2}\right), \, y = -\sin\left(t - \frac{3\pi}{2}\right) \right.</m> for <m>-\frac{3\pi}{2} \leq t - \frac{3\pi}{2} \lt \frac{\pi}{2}</m>.
+                This simplifies courtesy of the Sum/Difference Formulas to
+                <m>\left\{ x = -\sin(t), \, y = -\cos(t) \right.</m> for <m>0 \leq t \lt 2\pi</m>.
+                We leave the check of our solution to the reader.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We put our answer to <xref ref="adjustparametricex">Example</xref>
+      <xref ref="adjustcircleex">number</xref>
+      to good use to derive the equation of a
+          <idx><h>cycloid</h></idx>
+      <url href="http://en.wikipedia.org/wiki/Cycloid"><em>cycloid</em></url>.
+    </p>
+    <p>
+      Suppose a circle of radius <m>r</m> rolls along the positive <m>x</m>-axis at a constant velocity <m>v</m> as pictured below.
+      Let <m>\theta</m> be the angle in radians which measures the amount of clockwise rotation experienced by the radius highlighted in the figure.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-2}{17}{0}{4.75} \tlabel[cc](17.2,0){<m>x</m>} \tlabel[cc](0.25,4.5){<m>y</m>} \axes \ymarks{2} \arrow \parafcn{0, 135,5}{(2*cosd(t), 2-2*sind(t))} \parafcn{135, 360,5}{(2*cosd(t), 2-2*sind(t))} \arrow \parafcn{0, 270,5}{(4.71+2*cosd(t), 2-2*sind(t))} \parafcn{270, 360,5}{(4.71+2*cosd(t), 2-2*sind(t))} \arrow \parafcn{0, 45,5}{(9.42+2*cosd(t), 2-2*sind(t))} \parafcn{45, 360,5}{(9.42+2*cosd(t), 2-2*sind(t))} \arrow \parafcn{0, 180,5}{(14.14+2*cosd(t), 2-2*sind(t))} \parafcn{180, 360,5}{(14.14+2*cosd(t), 2-2*sind(t))} \tlabel[cc](3,4){<m>P(x,y)</m>} \dotted \parafcn{0,7.07,0.1}{(2t-2*sin(t),2-2*cos(t))} \plotsymbol[3pt]{Asterisk}{(0,2), (4.71,2), (9.42,2), (14.14,2)} \point[3pt]{(0,0), (3.30,3.41), (11.42, 2), (12.72,0.58)} \arrow \shiftpath{(4.71,2)} \parafcn{260, 145, -5}{0.75*dir(t)} \tlabel[cc](3.75,1.75){<m>\theta</m>} \tlabelsep{5pt}
+    </p>
+    <p>
+      \axislabels{y}{{<m>r</m>} 2}
+    </p>
+    <p>
+      \dashed \polyline{(4.71,2), (4.71,0)} \penwd{1.025} \arrow \polyline{(0,2), (0,0)} \arrow \polyline{(4.71,2), (3.30,3.41)} \arrow \polyline{(9.42,2), (11.42,2)} \arrow \polyline{(14.14,2), (12.72, 0.58)} \end{mfpic}
+    </p>
+    <p>
+      Our goal is to find parametric equations for the coordinates of the point <m>P(x,y)</m> in terms of <m>\theta</m>.
+      From our work in <xref ref="adjustparametricex">Example</xref>
+      <xref ref="adjustcircleex">number</xref>,
+      we know that clockwise motion along the Unit Circle starting at the point <m>(0,-1)</m> can be modeled by the equations
+      <m>\left\{ x = -\sin(\theta), \, y = -\cos(\theta) \right.</m> for <m>0 \leq \theta \lt 2\pi</m>.
+      (We have renamed the parameter <sq><m>\theta</m></sq> to match the context of this problem.)
+    </p>
+    <p>
+      To model this motion on a circle of radius <m>r</m>, all we need to do<fn>
+      If we replace <m>x</m> with <m>\frac{x}{r}</m> and <m>y</m> with
+      <m>\frac{y}{r}</m> in the equation for the Unit Circle <m>x^2+y^2 = 1</m>,
+      we obtain <m>\left(\frac{x}{r}\right)^2 + \left(\frac{y}{r}\right)^2 = 1</m> which reduces to <m>x^2 + y^2 = r^2</m>.
+      In the language of <xref ref="Transformations">Section</xref>,
+      we are stretching the graph by a factor of <m>r</m> in both the <m>x</m>- and <m>y</m>-directions.
+      Hence, we multiply both the <m>x</m>- and <m>y</m>-coordinates of points on the graph by <m>r</m>.
+      </fn> is multiply both <m>x</m> and <m>y</m> by the factor <m>r</m> which yields <m>\left\{ x = -r\sin(\theta), \, y = -r\cos(\theta) \right.</m>.
+    </p>
+    <p>
+      Next, we adjust for the fact that the circle isn't stationary with center <m>(0,0)</m>,
+      but rather, is rolling along the positive <m>x</m>-axis.
+      Since the velocity <m>v</m> is constant,
+      we know that at time <m>t</m>,
+      the center of the circle has traveled a distance <m>vt</m> down the positive <m>x</m>-axis.
+      Furthermore,
+      since the radius of the circle is <m>r</m> and the circle isn't moving vertically,
+      we know that the center of the circle is always <m>r</m> units above the <m>x</m>-axis.
+      Putting these two facts together,
+      we have that at time <m>t</m>,
+      the center of the circle is at the point <m>(vt,r)</m>.
+    </p>
+    <p>
+      From <xref ref="circularmotion">Section</xref>,
+      we know <m>v = \frac{r \theta}{t}</m>, or <m>vt = r\theta</m>.
+      Hence, the center of the circle,
+      in terms of the parameter <m>\theta</m>, is <m>(r\theta,r)</m>.
+      As a result, we need to modify the equations
+      <m>\left\{ x = -r\sin(\theta), \, y = -r\cos(\theta) \right.</m> by shifting the <m>x</m>-coordinate to the right <m>r\theta</m> units
+      (by adding <m>r\theta</m> to the expression for <m>x</m>)
+      and the <m>y</m>-coordinate up <m>r</m> units<fn>
+      Does this seem familiar?
+      See <xref ref="ycoordonwheel">Example</xref>
+      in <xref ref="Sinusoid">Section</xref>.
+      </fn> (by adding <m>r</m> to the expression for <m>y</m>).
+    </p>
+    <p>
+      We get <m>\left\{ x = -r\sin(\theta)+ r\theta, \, y = -r\cos(\theta) + r \right.</m>,
+      which can be written as <m>\left\{ x = r(\theta -\sin(\theta)), \, y = r(1-\cos(\theta)) \right.</m>.
+      Since the motion starts at
+      <m>\theta = 0</m> and proceeds indefinitely,
+      we set <m>\theta \geq 0</m>.
+    </p>
+    <p>
+      We end the section by using technology to graph a cycloid.
+    </p>
+    <example xml:id="cycloidex">
+      <statement>
+        <p>
+          Find the parametric equations of a cycloid which results from a circle of radius <m>3</m> rolling down the positive <m>x</m>-axis as described above.
+          Graph your answer using a graphing utility.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have <m>r = 3</m> which gives the equations <m>\left\{ x = 3(t -\sin(t)), \, y = 3(1-\cos(t)) \right.</m> for <m>t \geq 0</m>.
+          (Here we have returned to the convention of using <m>t</m> as the parameter.)
+        </p>
+        <p>
+          Sketching the cycloid by hand is a wonderful exercise in Calculus,
+          but for the purposes of this book,
+          we use a graphing utility.
+          Below is the graph of this cycloid created by
+          <url href="https://www.desmos.com/calculator"><em>desmos</em></url>.
+        </p>
+        <p>
+          <image width="75%" source="./ParametricEquationsGraphics/cycloid.jpg"/>
+        </p>
+        <p>
+          We see the equations create a series of <sq>arches</sq> and can (partially) verify the reasonableness the graph by finding the <m>x</m>-intercepts.
+          To do this, we set <m>y = 3(1-\cos(t)) = 0</m>,
+          which amounts to solving <m>\cos(t) = 1</m>.
+        </p>
+        <p>
+          We get <m>t = 2 \pi k</m> and since <m>t \geq 0</m>,
+          <m>k</m> can be any <em>nonnegative</em> integer.
+          Substituting a few of these values for <m>t</m>, <m>t = 0</m>,
+          <m>t = 2\pi</m>, <m>t = 4\pi</m>,
+          and <m>t=6\pi</m> into the equations <m>x = 3(t -\sin(t))</m> and
+          <m>y = 3(1-\cos(t))</m> we obtain the points <m>(0,0)</m>,
+          <m>(6\pi, 0) \approx (18.85, 0)</m>,
+          <m>(12 \pi,0) \approx (37.70, 0)</m> and
+          <m>(18\pi, 0) \approx ( 56.55 , 0)</m>, which match the graph.
+          In general, the <m>x</m>-intercepts are
+          <m>(6\pi k, 0)</m> for nonnegative integers <m>k</m>.
+          We leave the details to the reader.
+        </p>
+        <p>
+          We note it is also possible to analytically determine the (local) maximums of the graph using the techniques demonstrated in <xref ref="parametrictorect">Example</xref>
+          by analyzing <m>y = 3(1-\cos(t))</m> . The maximums occur when
+          <m>t = (2k +1) \pi k</m> where <m>k</m> is a nonnegative integer,
+          which isn't too surprising just looking at the problem from a symmetry perspective.
+          Substituting these values for <m>t</m> into our equations for <m>x</m> and <m>y</m> produce points of the form <m>(3(2k+1) \pi, 6)</m>.
+          We leave the details to the reader.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="projectoilemotion">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="paraplotfirst">Exercises</xref>
+      - <xref ref="paraplotlast"></xref>,
+      plot the set of parametric equations by hand.
+      Be sure to indicate the orientation imparted on the curve by the parametrization.
+      <ol cols="2">
+        <li xml:id="paraplotfirst">
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 4t-3 \\ y = 6t-2 \end{array} \right. \mbox{for } 0 \leq t \leq 1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 4t-1 \\ y = 3-4t \end{array} \right. \mbox{for } 0 \leq t \leq 1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 2t \\ y = t^2 \end{array} \right. \mbox{for } -1 \leq t \leq 2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = t-1 \\ y = 3+2t-t^2 \end{array} \right. \mbox{for } 0 \leq t \leq 3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = t^2+2t+1 \\ y = t+1 \end{array} \right. \mbox{for } t \leq 1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \frac{1}{9}\left(18-t^2\right) \\ y = \frac{1}{3} t \end{array} \right. \mbox{for } t \geq -3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = t \\ y = t^3 \end{array} \right. \mbox{for } -\infty \lt t \lt \infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = t^3 \\ y = t \end{array} \right. \mbox{for } -\infty \lt t \lt \infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \cos(t) \\ y = \sin(t) \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \leq t \leq \dfrac{\pi}{2}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 3\sin(t) \end{array} \right. \mbox{for } 0 \leq t \leq \pi}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = -1+ 3\cos(t) \\ y = 4\sin(t) \end{array} \right. \mbox{for } 0 \leq t \leq 2\pi}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 2\sin(t)+1 \end{array} \right. \mbox{for } \dfrac{\pi}{2} \leq t \leq 2\pi}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 2\cos(t) \\ y = \sec(t) \end{array} \right. \mbox{for } 0 \leq t \lt \dfrac{\pi}{2}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 2\tan(t) \\ y = \cot(t) \end{array} \right. \mbox{for } 0 \lt t \lt \dfrac{\pi}{2}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \sec(t) \\ y = \tan(t) \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \lt t \lt \dfrac{\pi}{2}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \sec(t) \\ y = \tan(t) \end{array} \right. \mbox{for } \dfrac{\pi}{2} \lt t \lt \dfrac{3\pi}{2}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \tan(t) \\ y = 2\sec(t) \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \lt t \lt \dfrac{\pi}{2}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \tan(t) \\ y = 2\sec(t) \end{array} \right. \mbox{for } \dfrac{\pi}{2} \lt t \lt \dfrac{3\pi}{2}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \cos(t) \\ y = t \end{array} \right. \mbox{for } 0 \leq t \leq \pi}</m>
+          </p>
+        </li>
+        <li xml:id="paraplotlast">
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \sin(t) \\ y = t \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \leq t \leq \dfrac{\pi}{2}}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In the same way
+      (and for the same reason)
+      we took the time on <xref ref="polargraphscalculator">page</xref>
+      in <xref ref="PolarGraphs">Section</xref>
+      to show how to graph polar equations using a graphing calculator,
+      we take a few moments here to explain how to graph a system of parametric equations using a calculator.
+      Our task is to graph the cycloid from <xref ref="cycloidex">Example</xref>,
+      <m>\left\{ x = 3(t -\sin(t)), \, y = 3(1-\cos(t)) \right.</m> for
+      <m>t \geq 0</m> using a graphing calculator.
+    </p>
+    <p>
+      We first must ensure that the calculator is in <sq>Parametric Mode</sq> and <sq>radian mode</sq> when we enter the equations and advance to the <sq>Window</sq> screen.
+    </p>
+    <tabular>
+      <row>
+        <cell><image width="37%" source="./ParametricEquationsGraphics/Parametric01.jpg"/></cell>
+        <cell><image width="37%" source="./ParametricEquationsGraphics/Parametric02.jpg"/></cell>
+      </row>
+    </tabular>
+    <p>
+      Our next step is to find appropriate bounds on the parameter,
+      <m>t</m>,
+      as well as for <m>x</m> and <m>y</m>.
+      We know that one full revolution of the circle occurs over the interval <m>0 \leq t \lt  2\pi</m>,
+      so it seems reasonable to keep these as our bounds on <m>t</m>.
+      The <sq>Tstep</sq> seems reasonably small <mdash/> too large a value here can lead to incorrect graphs.<fn>
+      Again, see <xref ref="polargraphscalculator">page</xref>
+      in <xref ref="PolarGraphs">Section</xref>.
+      </fn> We know from our derivation of the equations of the cycloid that the center of the generating circle has coordinates <m>(r\theta,r)  = (3t,3)</m>.
+      Since <m>t</m> ranges between <m>0</m> and <m>2\pi</m>,
+      we set <m>x</m> to range between <m>0</m> and <m>6\pi</m>.
+      The values of <m>y</m> go from the bottom of the circle to the top,
+      so <m>y</m> ranges between <m>0</m> and <m>6</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell><image width="37%" source="./ParametricEquationsGraphics/Parametric03.jpg"/></cell>
+        <cell><image width="37%" source="./ParametricEquationsGraphics/Parametric04.jpg"/></cell>
+      </row>
+    </tabular>
+    <p>
+      Below we graph the cycloid with these settings,
+      and then extend <m>t</m> to range from <m>0</m> to <m>6\pi</m> which forces <m>x</m> to range from <m>0</m> to <m>18\pi</m> yielding three arches of the cycloid.<fn>
+      It is instructive to note that keeping the <m>y</m> settings between 0 and 6 skews the aspect ratio of the cycloid.
+      Using the <sq>Zoom Square</sq> feature on the graphing calculator gives a true geometric perspective of the three arches.
+      </fn>
+    </p>
+    <tabular>
+      <row>
+        <cell><image width="37%" source="./ParametricEquationsGraphics/Parametric05.jpg"/></cell>
+        <cell><image width="37%" source="./ParametricEquationsGraphics/Parametric06.jpg"/></cell>
+      </row>
+    </tabular>
+    <p>
+      In <xref ref="paracalcfirst">Exercises</xref>
+      - <xref ref="paracalclast"></xref>,
+      plot the set of parametric equations with the help of a graphing utility.
+      Be sure to indicate the orientation imparted on the curve by the parametrization.
+      <ol cols="2">
+        <li xml:id="paracalcfirst">
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = t^{3} - 3t \\ y = t^{2} - 4 \end{array} \right. \mbox{for } -2 \leq t \leq 2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = 4\cos^{3}(t) \\ y = 4\sin^{3}(t) \end{array} \right. \mbox{for } 0 \leq t \leq 2\pi}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = e^{t} + e^{-t} \\ y = e^{t} - e^{-t} \end{array} \right. \mbox{for } -2 \leq t \leq 2}</m>
+          </p>
+        </li>
+        <li xml:id="paracalclast">
+          <p>
+            <m>{\displaystyle \left\{ \begin{array}{l} x = \cos(3t) \\ y = \sin(4t) \end{array} \right. \mbox{for } 0 \leq t \leq 2\pi}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findparamfirst">Exercises</xref>
+      - <xref ref="findparamlast"></xref>,
+      find a parametric description for the given oriented curve.
+      <ol cols="2">
+        <li xml:id="findparamfirst">
+          <p>
+            the directed line segment from <m>(3,-5)</m> to <m>(-2,2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            the directed line segment from <m>(-2,-1)</m> to <m>(3, -4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            the curve <m>y = 4-x^2</m> from <m>(-2,0)</m> to <m>(2,0)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            the curve <m>y = 4-x^2</m> from <m>(-2,0)</m> to <m>(2,0)</m> (Shift the parameter so <m>t=0</m> corresponds to <m>(-2,0)</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            the curve <m>x = y^2 - 9</m> from <m>(-5,-2)</m> to <m>(0,3)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            the curve <m>x = y^2 - 9</m> from <m>(0,3)</m> to <m>(-5,-2)</m>. (Shift the parameter so <m>t=0</m> corresponds to <m>(0,3)</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            the circle <m>x^2 + y^2 = 25</m>,
+            oriented counter-clockwise
+          </p>
+        </li>
+        <li>
+          <p>
+            the circle <m>(x-1)^2 + y^2 = 4</m>,
+            oriented counter-clockwise
+          </p>
+        </li>
+        <li>
+          <p>
+            the circle <m>x^2 + y^2 - 6y = 0</m>,
+            oriented counter-clockwise
+          </p>
+        </li>
+        <li>
+          <p>
+            the circle <m>x^2 + y^2 - 6y = 0</m>,
+            oriented <em>clockwise</em> (Shift the parameter so <m>t</m> begins at <m>0</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            the circle <m>(x-3)^2 + (y+1)^2 = 117</m>,
+            oriented counter-clockwise
+          </p>
+        </li>
+        <li>
+          <p>
+            the ellipse <m>(x-1)^2 + 9y^2 = 9</m>,
+            oriented counter-clockwise
+          </p>
+        </li>
+        <li>
+          <p>
+            the ellipse <m>9x^2 + 4y^2 + 24y =0</m>,
+            oriented counter-clockwise
+          </p>
+        </li>
+        <li>
+          <p>
+            the ellipse <m>9x^2 + 4y^2 + 24y =0</m>,
+            oriented clockwise (Shift the parameter so <m>t=0</m> corresponds to <m>(0,0)</m>.)
+          </p>
+        </li>
+        <li xml:id="findparamlast">
+          <p>
+            the triangle with vertices <m>(0,0)</m>,
+            <m>(3,0)</m>, <m>(0,4)</m>,
+            oriented counter-clockwise (Shift the parameter so <m>t=0</m> corresponds to <m>(0,0)</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Use parametric equations and a graphing utility to graph the inverse of <m>f(x) = x^{3} + 3x - 4</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Every polar curve <m>r = f(\theta)</m> can be translated to a system of parametric equations with parameter <m>\theta</m> by <m>\left\{ x = r\cos(\theta) = f(\theta) \cos(\theta), \, y = r \sin(\theta) = f(\theta) \sin(\theta) \right.</m>.
+            Convert <m>r = 6\cos(2\theta)</m> to a system of parametric equations.
+            Check your answer by graphing
+            <m>r = 6\cos(2\theta)</m> by hand using the techniques presented in <xref ref="PolarGraphs">Section</xref>
+            and then graphing the parametric equations you found using a graphing utility.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use your results from <xref ref="heightlondoneye">Exercises</xref>
+            and <xref ref="leftrightlondoneye"></xref>
+            in <xref ref="Sinusoid">Section</xref>
+            to find the parametric equations which model a passenger's position as they ride the
+            <url href="http://en.wikipedia.org/wiki/London_Eye"><em>London Eye</em></url>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Suppose an object, called a projectile, is launched into the air.
+      Ignoring everything except the force gravity,
+      the path of the projectile is given by<fn>
+      A nice mix of vectors and Calculus are needed to derive this.
+      </fn>
+      <me>
+        \left\{ \begin{array}{l} x =   v_{\text{ \tiny \(0\) } } \cos(\theta) \, t \\ y = -\dfrac{1}{2} g t^2 +  v_{\text{ \tiny \(0\) } } \sin(\theta) \, t + s_{\text{ \tiny \(0\) } } \end{array}  \right. \; \text{ for }  \; 0 \leq t \leq T
+      </me>
+      where <m>v_{\text{ \tiny \(0\) } }</m> is the initial speed of the object,
+      <m>\theta</m> is the angle from the horizontal at which the projectile is launched,<fn>
+      We've seen this before.
+      It's the angle of elevation which was defined on <xref ref="angleofelevation">page</xref>.
+      </fn> <m>g</m> is the acceleration due to gravity,
+      <m>s_{\text{ \tiny \(0\) } }</m> is the initial height of the projectile above the ground and <m>T</m> is the time when the object returns to the ground.
+      (See the figure below.)
+    </p>
+    <p>
+      \begin{mfpic}[20]{-1}{9}{-1}{7} \axes \tlabel[cc](9,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \dashed \polyline{(0,4), (1.5,4)} \tlabelsep{5pt} \axislabels{y}{{<m>s_{\text{ \tiny \(0\) } }</m>} 4} \point[4pt]{(0,4), (5.98,0)} \arrow \shiftpath{(0,4)} \parafcn{5, 55, 5}{0.75*dir(t)} \tlabel[cc](1,4.5){<m>\theta</m>} \tlabel[cc](5.98,-0.5){<m>(x(T), 0)</m>} \penwd{1.25pt} \arrow \parafcn{0,0.75,0.1}{(3.5*t, 6.062*t+4-(4.9*(t**2)))} \parafcn{0.75,1.71,0.1}{(3.5*t, 6.062*t+4-(4.9*(t**2)))}
+    </p>
+    <p>
+      \end{mfpic}
+      <ol>
+        <li>
+          <p>
+            Carl's friend Jason competes in Highland Games Competitions across the country.
+            In one event, the <sq>hammer throw</sq>,
+            he throws a 56 pound weight for distance.
+            If the weight is released <m>6</m> feet above the ground at an angle of
+            <m>42^{\circ}</m> with respect to the horizontal with an initial speed of <m>33</m> feet per second,
+            find the parametric equations for the flight of the hammer.
+            (Here, use <m>g = 32 \frac{\text{ ft. } }{s^2}</m>.)
+            When will the hammer hit the ground?
+            How far away will it hit the ground?
+            Check your answer using a graphing utility.
+          </p>
+        </li>
+        <li xml:id="projectileeliminate">
+          <p>
+            Eliminate the parameter in the equations for projectile motion to show that the path of the projectile follows the curve
+            <me>
+              y = -\dfrac{g \sec^{2}(\theta)}{2 v_{\text{ \tiny\(0\) } }^2} x^2 + \tan(\theta) x + s_{\text{ \tiny \(0\) } }
+            </me>
+            Use the vertex formula
+            (<xref ref="vertexofquadraticfunctions">Equation</xref>)
+            to show the maximum height of the projectile is
+            <me>
+              y = \dfrac{v_{\text{ \tiny\(0\) } }^2 \sin^{2}(\theta)}{2g} + s_{\text{ \tiny \(0\) } }  \text{ when }   x = \dfrac{v_{\text{ \tiny\(0\) } }^2 \sin(2\theta) }{2g}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            In another event,
+            the <sq>sheaf toss</sq>, Jason throws a 20 pound weight for height.
+            If the weight is released 5 feet above the ground at an angle of
+            <m>85^{\circ}</m> with respect to the horizontal and the sheaf reaches a maximum height of 31.5 feet,
+            use your results from <xref ref="projectileeliminate">part</xref>
+            to determine how fast the sheaf was launched into the air.
+            (Once again, use <m>g = 32 \frac{\text{ ft. } }{s^2}</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>\theta = \frac{\pi}{2}</m>.
+            (The projectile was launched vertically.)
+            Simplify the general parametric formula given for <m>y(t)</m> above using
+            <m>g = 9.8 \, \frac{m}{s^2}</m> and compare that to the formula for <m>s(t)</m> given in <xref ref="whatgoesup">Exercise</xref>
+            in <xref ref="QuadraticFunctions">Section</xref>.
+            What is <m>x(t)</m> in this case?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>f</m> and <m>g</m> are functions,
+            explain why the function <m>\vec{r}(t) = \left\lt f(t),
+            g(t) \right></m> is a function.
+            The function <m>\vec{r}</m> is called a <idx><h>function</h><h>vector-valued</h></idx>
+              <idx><h>vector-valued function</h></idx>
+            <em>vector-valued function</em>
+            since it matches real number inputs, <m>t</m>,
+            with vector outputs, <m>\vec{r}(t)</m>.
+            Explain why when the vectors
+            <m>\vec{r}(t)</m> are plotted in standard position,
+            their terminal points trace out the curve described parametrically by the system of equations:
+            <m>\left\{ x = f(t) \, y = g(t) \right.</m> (In Calculus,
+            you will see systems of parametric equations <sq>packaged</sq> together using vectors.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="hyperbolicfirst">Exercises</xref>
+      - <xref ref="hyperboliclast"></xref>,
+      we explore the <em>hyperbolic cosine</em>
+          <idx><h>hyperbolic cosine</h></idx>
+      function, denoted <m>\cosh(t)</m>,
+      and the <em>hyperbolic sine</em>
+          <idx><h>hyperbolic sine</h></idx>
+      function, denoted <m>\sinh(t)</m>, defined below:
+      <me>
+        \begin{array}{ccc}  \cosh(t) = \dfrac{e^{t} + e^{-t}}{2} \amp \text{ and }  \amp  \sinh(t) = \dfrac{e^{t} - e^{-t}}{2} \end{array}
+      </me>
+    </p>
+    <ol>
+      <li xml:id="hyperbolicfirst">
+        <p>
+          Using a graphing utility as needed, verify the following:
+        </p>
+        <ol>
+          <li>
+            <p>
+              the domain of <m>\cosh(t)</m> is <m>(-\infty, \infty)</m> and the range of
+              <m>\cosh(t)</m> is <m>[1,\infty)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              the domain and range of <m>\sinh(t)</m> are both <m>(-\infty, \infty)</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Show that <m>\left\{ x(t) = \cosh(t), \, y(t) = \sinh(t) \right.</m> parametrize the right half of the <sq>unit</sq> hyperbola
+          <m>x^2 - y^2 = 1</m>. (Hence the use of the adjective <sq>hyperbolic.</sq>)
+        </p>
+      </li>
+      <li>
+        <p>
+          Compare and contrast the definitions of <m>\cosh(t)</m> and
+          <m>\sinh(t)</m> to the formulas for <m>\cos(t)</m> and <m>\sin(t)</m> given in <xref ref="expformcosandsin">Exercise</xref>
+          in <xref ref="PolarComplex">Section</xref>.
+        </p>
+      </li>
+      <li xml:id="andtheresthyperbolic">
+        <p>
+          Four other hyperbolic functions are waiting to be defined:
+          the hyperbolic secant <m>\text{ sech } (t)</m>,
+          the hyperbolic cosecant <m>\text{ csch } (t)</m>,
+          the hyperbolic tangent <m>\tanh(t)</m> and the hyperbolic cotangent <m>\coth(t)</m>.
+          Define these functions in terms of <m>\cosh(t)</m> and <m>\sinh(t)</m>,
+          then convert them to formulas involving <m>e^{t}</m> and <m>e^{-t}</m>.
+          Consult a suitable reference (a Calculus book, or this entry on the
+          <url href="http://en.wikipedia.org/wiki/Hyperbolic_function"><em>hyperbolic functions</em></url>
+          ) and spend some time reliving the thrills of trigonometry with these <sq>hyperbolic</sq> functions.
+        </p>
+      </li>
+      <li xml:id="hyperboliclast">
+        <p>
+          If these functions look familiar, they should.
+          Enjoy some nostalgia and revisit <xref ref="catenary">Exercise</xref>
+          in <xref ref="ExpLogApplications">Section</xref>,
+          <xref ref="hyperbolicsine">Exercise</xref> in <xref ref="ExponentialEquationsandInequalities">Section</xref>
+          and the answer to <xref ref="inversehyptangent">Exercise</xref>
+          in <xref ref="LogarithmicEquationsandInequalities">Section</xref>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 4t-3 \\ y = 6t-2 \end{array} \right. \mbox{for } 0 \leq t \leq 1}</m> \begin{mfpic}[15]{-4}{2}{-3}{5} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1} \ymarks{-2,-1,1,2,3,4} \point[4pt]{(-3,-2), (1,4)} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-1</m>} -1,{<m>-2</m>} -2, {<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{0,0.5,0.1}{(4*t-3,6*t-2)} \parafcn{0.5,1,0.1}{(4*t-3,6*t-2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 4t-1 \\ y = 3-4t \end{array} \right. \mbox{for } 0 \leq t \leq 1}</m> \begin{mfpic}[15]{-2}{4}{-2}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-1,1,2,3} \ymarks{-1,1,2,3} \point[4pt]{(-1,3), (3,-1)} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \penwd{1.25pt} \arrow \parafcn{0,0.5,0.1}{(4*t-1,3-4*t)} \parafcn{0.5,1,0.1}{(4*t-1,3-4*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 2t \\ y = t^2 \end{array} \right. \mbox{for } -1 \leq t \leq 2}</m> \begin{mfpic}[15]{-3}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2,3,4} \ymarks{1,2,3,4} \point[4pt]{(-2,1), (0,0), (4,4)} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{-1,-0.5,0.1}{(2*t,(t**2))} \arrow \parafcn{-0.5,1,0.1}{(2*t,(t**2))} \parafcn{1,2,0.1}{(2t,t**2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t-1 \\ y = 3+2t-t^2 \end{array} \right. \mbox{for } 0 \leq t \leq 3}</m> \begin{mfpic}[15]{-2}{3}{-1}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1,1,2} \ymarks{1,2,3,4} \point[4pt]{(-1,3), (0,4), (2,0)} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{0,0.5,0.1}{(t-1,3+2*t-(t**2))} \arrow \parafcn{0.5,2,0.1}{(t-1,3+2*t-(t**2))} \parafcn{2,3,0.1}{(t-1,3+2*t-(t**2))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t^2+2t+1 \\ y = t+1 \end{array} \right. \mbox{for } t \leq 1}</m> \begin{mfpic}[15]{-1}{6}{-3}{3} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{1,2,3,4,5} \ymarks{-2,-1,1,2} \point[4pt]{(4,2), (0,0), (4,-2)} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5} \axislabels {y}{{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>}} \penwd{1.25pt} \parafcn{0,1,0.1}{((t**2)+(2*t)+1,t+1)} \arrow \parafcn{-2,0,0.1}{((t**2)+(2*t)+1,t+1)} \arrow \parafcn{-3.25,-2,0.1}{((t**2)+(2*t)+1,t+1)} \arrow \parafcn{-3.44,-3.25,0.1}{((t**2)+(2*t)+1,t+1)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \frac{1}{9}\left(18-t^2\right) \\ y = \frac{1}{3} t \end{array} \right. \mbox{for } t \geq -3}</m> \begin{mfpic}[15]{-4}{3}{-2}{3} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-3,-2,-1,1,2} \ymarks{-1,1,2} \point[4pt]{(1,-1), (2,0), (-2,2)} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2} \penwd{1.25pt} \arrow \parafcn{-3,-1.5,0.1}{((18-(t**2))/9,t/3)} \arrow \parafcn{-1.5,3,0.1}{((18-(t**2))/9,t/3)} \arrow \parafcn{3,6.5,0.1}{((18-(t**2))/9,t/3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t \\ y = t^3 \end{array} \right. \mbox{for } -\infty \lt t \lt \infty}</m> \begin{mfpic}[15]{-2}{2}{-5}{5} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1,1} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{(-1,-1), (0,0), (1,1)} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{-1.7,-1.25,0.1}{(t, t**3)} \arrow \parafcn{-1.25,1.25,0.1}{(t, t**3)} \arrow \parafcn{1.25,1.7,0.1}{(t, t**3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t^3 \\ y = t \end{array} \right. \mbox{for } -\infty \lt t \lt \infty}</m> \begin{mfpic}[15]{-5}{5}{-2}{2} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,2){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-1,1} \point[4pt]{(-1,-1), (0,0), (1,1)} \tlpointsep{4pt} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{-1.7,-1.25,0.1}{(t**3, t)} \arrow \parafcn{-1.25,1.25,0.1}{(t**3, t)} \arrow \parafcn{1.25,1.7,0.1}{(t**3, t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \cos(t) \\ y = \sin(t) \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \leq t \leq \dfrac{\pi}{2}}</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(0,-4), (4,0), (0,4)} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -4, {<m>1</m>} 4} \axislabels {y}{{<m>-1</m>} -4, {<m>1</m>} 4} \penwd{1.25pt} \arrow \parafcn{-1.57,-0.78,0.1}{(4*cos(t),4*sin(t))} \arrow \parafcn{-0.78,0.78,0.1}{(4*cos(t),4*sin(t))} \parafcn{0.78,1.57,0.1}{(4*cos(t),4*sin(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 3\sin(t) \end{array} \right. \mbox{for } 0 \leq t \leq \pi}</m> \begin{mfpic}[15]{-4}{4}{-1}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \point[4pt]{(-3,0), (3,0), (0,3)} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \penwd{1.25pt} \arrow \parafcn{0,0.78,0.1}{(3*cos(t),3*sin(t))} \arrow \parafcn{0.78,2.36,0.1}{(3*cos(t),3*sin(t))} \parafcn{2.36,3.14,0.1}{(3*cos(t),3*sin(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = -1+3\cos(t) \\ y = 4\sin(t) \end{array} \right. \mbox{for } 0 \leq t \leq 2\pi}</m> \begin{mfpic}[15]{-5}{3}{-5}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(2,0), (-1,4), (-4,0), (-1,-4)} \xmarks{-4,-3,-2,-1,1,2} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{0,0.78,0.1}{(3*cos(t)-1,4*sin(t))} \arrow \parafcn{0.78,2.36, 0.1}{(3*cos(t)-1,4*sin(t))} \arrow \parafcn{2.36,3.93, 0.1}{(3*cos(t)-1,4*sin(t))} \arrow \parafcn{3.93,5.5, 0.1}{(3*cos(t)-1,4*sin(t))} \parafcn{5.5,6.28, 0.1}{(3*cos(t)-1,4*sin(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 2\sin(t)+1 \end{array} \right. \mbox{for } \dfrac{\pi}{2} \leq t \leq 2\pi}</m> \begin{mfpic}[15]{-4}{4}{-2}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \point[4pt]{(0,3), (-3,1), (0,-1), (3,1)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-1</m>} -1,{<m>1</m>} 1,{<m>3</m>} 3} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \penwd{1.25pt} \arrow \parafcn{1.57,2.36,0.1}{(3*cos(t),1+2*sin(t))} \arrow \parafcn{2.36,3.93,0.1}{(3*cos(t),1+2*sin(t))} \arrow \parafcn{3.93,5.50,0.1}{(3*cos(t),1+2*sin(t))} \parafcn{5.50,6.28,0.1}{(3*cos(t),1+2*sin(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 2\cos(t) \\ y = \sec(t) \end{array} \right. \mbox{for } 0 \leq t \lt \dfrac{\pi}{2}}</m> \begin{mfpic}[25]{-1}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(2,1)} \xmarks{1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{0,1,0.1}{(2*cos(t),sec(t))} \arrow \parafcn{1,1.31,0.1}{(2*cos(t),sec(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 2\tan(t) \\ y = \cot(t) \end{array} \right. \mbox{for } 0 \lt t \lt \dfrac{\pi}{2}}</m> \begin{mfpic}[25]{-1}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{0.25,0.4,0.1}{(2*tan(t),cot(t))} \arrow \parafcn{0.4,0.7,0.1}{(2*tan(t),cot(t))} \arrow \parafcn{0.7,1.1,0.1}{(2*tan(t),cot(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \sec(t) \\ y = \tan(t) \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \lt t \lt \dfrac{\pi}{2}}</m> \begin{mfpic}[15]{-1}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(1,0)} \xmarks{1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \dashed \polyline{(4,4),(-1,-1)} \dashed \polyline{(4,-4),(-1,1)} \penwd{1.25pt} \arrow \parafcn{1.85,2,0.1}{(0-sec(t),tan(t))} \arrow \parafcn{2,4.25,0.1}{(0-sec(t),tan(t))} \arrow \parafcn{4.25,4.4,0.1}{(0-sec(t),tan(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \sec(t) \\ y = \tan(t) \end{array} \right. \mbox{for } \dfrac{\pi}{2} \lt t \lt \dfrac{3\pi}{2}}</m> \begin{mfpic}[15]{-5}{1}{-5}{5} \axes \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(-1,0)} \xmarks{-4,-3,-2,-1} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \dashed \polyline{(-4,4),(1,-1)} \dashed \polyline{(-4,-4),(1,1)} \penwd{1.25pt} \arrow \parafcn{1.85,2,0.1}{(sec(t),tan(t))} \arrow \parafcn{2,4.25,0.1}{(sec(t),tan(t))} \arrow \parafcn{4.25,4.4,0.1}{(sec(t),tan(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \tan(t) \\ y = 2\sec(t) \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \lt t \lt \dfrac{\pi}{2}}</m> \begin{mfpic}[25]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(0,2)} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \dashed \polyline{(-0.5,-1),(2,4)} \dashed \polyline{(0.5,-1),(-2,4)} \penwd{1.25pt} \arrow \parafcn{-1,-0.75,0.1}{(tan(t),2*sec(t))} \arrow \parafcn{-0.75,1,0.1}{(tan(t),2*sec(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \tan(t) \\ y = 2\sec(t) \end{array} \right. \mbox{for } \dfrac{\pi}{2} \lt t \lt \dfrac{3\pi}{2}}</m> \begin{mfpic}[25]{-3}{3}{-5}{1} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,1){<m>y</m>} \point[4pt]{(0,-2)} \xmarks{-2,-1,1,2} \ymarks{-1,-2,-3,-4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1,{<m>-2</m>} -2,{<m>-3</m>} -3,{<m>-4</m>} -4} \dashed \polyline{(-0.5,1),(2,-4)} \dashed \polyline{(0.5,1),(-2,-4)} \penwd{1.25pt} \arrow \parafcn{-1,-0.75,0.1}{(tan(t),0-2*sec(t))} \arrow \parafcn{-0.75,1,0.1}{(tan(t),0-2*sec(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \cos(t) \\ y = t \end{array} \right. \mbox{for } 0 \lt t \lt \pi}</m> \begin{mfpic}[25]{-2.25}{2.25}{-0.5}{4} \point[4pt]{(1,0), (0,1.5708), (-1,3.1416)} \axes \tlabel[cc](2.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \xmarks{-1,1} \ymarks{1.5708, 3.1416} \tlpointsep{4pt} \axislabels {y}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \parafcn{0, 0.78, 0.1}{(cos(t),
+          t)} \arrow \parafcn{0.78, 2.36, 0.1}{(cos(t),
+          t)} \parafcn{2.36, 3.14, 0.1}{(cos(t), t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \sin(t) \\ y = t \end{array} \right. \mbox{for } -\dfrac{\pi}{2} \lt t \lt \dfrac{\pi}{2}}</m> \begin{mfpic}[25]{-2}{2}{-2}{2} \point[4pt]{(-1,-1.5708), (0,0), (1,1.5708)} \axes \tlabel[cc](2,-0.25){<m>x</m>} \tlabel[cc](0.25,2){<m>y</m>} \ymarks{-1.5708, 1.5708} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{<m>-\frac{\pi}{2}</m>} -1.5708, {<m>\frac{\pi}{2}</m>} 1.5708} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \parafcn{-1.57, -0.78, 0.1}{(sin(t),t)} \arrow \parafcn{-0.78,0.78, 0.1}{(sin(t),t)} \arrow \parafcn{0.78, 1.57, 0.1}{(sin(t),t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t^{3} - 3t \\ y = t^{2} - 4 \end{array} \right. \mbox{for } -2 \leq t \leq 2}</m> \begin{mfpic}[15]{-3}{3}{-5}{1} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,1){<m>y</m>} \point[4pt]{(-2,0), (2,0), (0,-1), (0,-4)} \xmarks{-2,-1,1,2} \ymarks{-4,-3,-2,-1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1} \penwd{1.25pt} \arrow \parafcn{-2,-1,0.1}{(t**3 - 3*t,t**2 - 4)} \arrow \parafcn{-1,1,0.1}{(t**3 - 3*t,t**2 - 4)} \parafcn{1,2,0.1}{(t**3 - 3*t,t**2 - 4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 4\cos^{3}(t) \\ y = 4\sin^{3}(t) \end{array} \right. \mbox{for } 0 \leq t \leq 2\pi}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(-4,0), (0,4), (4,0), (0,-4)} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{0,0.78,0.1}{(4*((cos(t))**3),4*((sin(t))**3))} \arrow \parafcn{0.78, 2.36,0.1}{(4*((cos(t))**3),4*((sin(t))**3))} \arrow \parafcn{2.36, 3.93 ,0.1}{(4*((cos(t))**3),4*((sin(t))**3))} \arrow \parafcn{3.93, 5.5 ,0.1}{(4*((cos(t))**3),4*((sin(t))**3))} \parafcn{5.5, 6.28 ,0.1}{(4*((cos(t))**3),4*((sin(t))**3))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = e^{t} + e^{-t} \\ y = e^{t} - e^{-t} \end{array} \right. \mbox{for } -2 \leq t \leq 2}</m> \begin{mfpic}[15][8.5]{-1}{8}{-8}{8} \axes \tlabel[cc](8,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \point{(2,0), (7.52, 7.25), (7.52, -7.25)} \xmarks{1,2,3,4,5,6,7} \ymarks{-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6, {<m>7</m>} 7} \axislabels {y}{{<m>-7</m>} -7,{<m>-5</m>} -5,{<m>-3</m>} -3,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7} \penwd{1.25pt} \arrow \parafcn{-2,-1.5,0.1}{(exp(t) + exp(-t),exp(t) - exp(-t))} \arrow \parafcn{-1.5,1.5,0.1}{(exp(t) + exp(-t),exp(t) - exp(-t))} \parafcn{1.5,2,0.1}{(exp(t) + exp(-t),exp(t) - exp(-t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = \cos(3t) \\ y = \sin(4t) \end{array} \right. \mbox{for } 0 \leq t \leq 2\pi}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -4, {<m>1</m>} 4} \axislabels {y}{{<m>-1</m>} -4, {<m>1</m>} 4} \penwd{1.25pt} \arrow \parafcn{0,22.5,5}{(4*cosd(3*t),4*sind(4*t))} \arrow \parafcn{22.5,67.5,5}{(4*cosd(3*t),4*sind(4*t))} \arrow \parafcn{67.5,112.5,5}{(4*cosd(3*t),4*sind(4*t))} \arrow \parafcn{112.5,157.5,5}{(4*cosd(3*t),4*sind(4*t))} \arrow \parafcn{157.5,202.5,5}{(4*cosd(3*t),4*sind(4*t))} \arrow \parafcn{202.5,247.5,5}{(4*cosd(3*t),4*sind(4*t))} \arrow \parafcn{247.5,292.5,5}{(4*cosd(3*t),4*sind(4*t))} \arrow \parafcn{292.5,337.5,5}{(4*cosd(3*t),4*sind(4*t))} \parafcn{337.5, 360,5}{(4*cosd(3*t),4*sind(4*t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 3-5t \\ y =-5+7t \end{array} \right. \mbox{for } 0 \leq t \leq 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 5t-2 \\ y =-1-3t \end{array} \right. \mbox{for } 0 \leq t \leq 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t \\ y = 4-t^2 \end{array} \right. \mbox{for } -2 \leq t \leq 2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t-2 \\ y = 4t-t^2 \end{array} \right. \mbox{for } 0 \leq t \leq 4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t^2-9 \\ y = t \end{array} \right. \mbox{for } -2 \leq t \leq 3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = t^2-6t \\ y = 3-t \end{array} \right. \mbox{for } 0 \leq t \leq 5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 5\cos(t) \\ y = 5\sin(t) \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 1+2\cos(t) \\ y = 2\sin(t) \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 3 + 3\sin(t) \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 3\cos(t) \\ y = 3 - 3\sin(t) \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 3+\sqrt{117} \, \cos(t) \\ y = -1 + \sqrt{117} \, \sin(t) \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 1+3\cos(t) \\ y = \sin(t) \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 2\cos(t) \\ y = 3\sin(t)-3 \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle \left\{ \begin{array}{l} x = 2\cos\left(t-\dfrac{\pi}{2}\right) = 2\sin(t) \\ y = -3 - 3\sin\left(t-\dfrac{\pi}{2}\right) = -3+3\cos(t) \end{array} \right. \mbox{for } 0 \leq t \lt 2\pi}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ x(t), \, y(t) \right.</m> where:
+          <me>
+            \begin{array}{cc}  x(t) = \left\{ \begin{array}{rr}  3t,\amp  0 \leq t \leq 1 \\ 6-3t, \amp  1 \leq t \leq 2 \\ 0, \amp  2 \leq t \leq 3 \end{array}  \right. \amp  y(t) = \left\{ \begin{array}{rr}  0,\amp  0 \leq t \leq 1 \\ 4t-4, \amp  1 \leq t \leq 2 \\ 12-4t, \amp  2 \leq t \leq 3 \end{array}  \right. \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          The parametric equations for the inverse are <m>{\displaystyle \left\{ \begin{array}{l} x = t^3+3t-4 \\ y = t \end{array} \right. \mbox{for } -\infty \lt t \lt \infty}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 6\cos(2\theta)</m> translates to <m>{\displaystyle \left\{ \begin{array}{l} x = 6\cos(2\theta)\cos(\theta) \\ y = 6\cos(2\theta)\sin(\theta) \end{array} \right. \mbox{for } 0 \leq \theta \lt 2\pi}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The parametric equations which describe the locations of passengers on the London Eye are
+          <me>
+            \left\{ \begin{array}{l} x = 67.5 \cos\left(\frac{\pi}{15} t - \frac{\pi}{2} \right) = 67.5 \sin\left(\frac{\pi}{15} t \right) \\ y = 67.5 \sin\left(\frac{\pi}{15} t - \frac{\pi}{2} \right) + 67.5 = 67.5 - 67.5 \cos\left(\frac{\pi}{15} t \right) \end{array}  \right.  \mbox{for }  -\infty \lt  t \lt  \infty
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          The parametric equations for the hammer throw are <m>{\displaystyle \left\{ \begin{array}{l} x = 33 \cos(42^{\circ}) t \\ y =-16t^2 + 33 \sin(42^{\circ}) t + 6 \end{array} \right.}</m> for <m>t \geq 0</m>.
+          To find when the hammer hits the ground,
+          we solve <m>y(t) = 0</m> and get <m>t \approx -0.23</m> or <m>1.61</m>.
+          Since <m>t \geq 0</m>, the hammer hits the ground after approximately
+          <m>t = 1.61</m> seconds after it was launched into the air.
+          To find how far away the hammer hits the ground,
+          we find <m>x(1.61) \approx 39.48</m> feet from where it was thrown into the air.
+        </p>
+      </li>
+      <li>
+        <p>
+          We solve <m>y = \dfrac{v_{\text{ \tiny\(0\) } }^2 \sin^{2}(\theta)}{2g} + s_{\text{ \tiny \(0\) } } = \dfrac{v_{\text{ \tiny\(0\) } }^2 \sin^{2}(85^{\circ})}{2(32)} + 5 = 31.5</m> to get <m>v_{\text{ \tiny\(0\) } } = \pm 41.34</m>.
+          The initial speed of the sheaf was approximately <m>41.34</m> feet per second.
+        </p>
+      </li>
+    </ol>
+    <p>
+      \appendix
+    </p>
+  </subsection>
+</section>

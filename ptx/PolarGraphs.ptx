@@ -1,0 +1,2097 @@
+<section xml:id="PolarGraphs">
+  <title>The Graphs of Polar Equations</title>
+  <introduction>
+    <p>
+      In this section, we discuss how to graph equations relating the
+      <em>polar coordinate</em>
+      variables <m>r</m> and <m>\theta</m> on the
+      <em>rectangular coordinate</em> plane.
+      Since every point in the plane has infinitely many different representations in polar coordinates,
+      in order for a point <m>P</m> to be on the graph of a given equation,
+      there must be <em>at least one</em>
+      representation of <m>P(r, \theta)</m> that satisfies that equation.
+    </p>
+    <p>
+      In our first example,
+      only one of the variables <m>r</m> and <m>\theta</m> is present making the other variable free.<fn>
+      See the discussion in <xref ref="eqnconversionex">Example</xref>
+      <xref ref="risneg3">number</xref>
+      in <xref ref="PolarCoordinates">Section</xref>.
+      </fn> This makes these graphs easier to visualize than others.
+    </p>
+    <example xml:id="rthetaconstant">
+      <statement>
+        <p>
+          Graph the following polar equations in the <m>xy</m>-plane.
+          <ol>
+            <li>
+              <p>
+                <m>r = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>r = -3\sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\theta = \frac{5\pi}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\theta = -\frac{3\pi}{2}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                In the equation <m>r=4</m>, <m>\theta</m> is free.
+                The graph of this equation is, therefore,
+                all points which have a polar coordinate representation <m>(4,\theta)</m>,
+                for any choice of <m>\theta</m>.
+                In other words,
+                we trace out all of the points <m>4</m> units away from the origin.
+                This is exactly the definition of circle,
+                centered at the origin, with a radius of <m>4</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \dashed\rotatepath{(0,0),45} \polyline{(0,0),(4,0)} \rotatepath{(0,0), 45} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 45} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)} \dashed\rotatepath{(0,0), 135} \polyline{(0,0),(4,0)} \rotatepath{(0,0), 135} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 135} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0), 135} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0), 135} \polyline{(4,-0.15),(4,0.15)} \dashed\rotatepath{(0,0), 225} \polyline{(0,0),(4,0)} \rotatepath{(0,0), 225} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 225} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0), 225} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0), 225} \polyline{(4,-0.15),(4,0.15)} \dashed\rotatepath{(0,0), 315} \polyline{(0,0),(4,0)} \rotatepath{(0,0), 315} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 315} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0), 315} \polyline{(4,-0.15),(4,0.15)} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[3pt]{(0,0)} \point[3pt]{(4,0), (2.83,2.83), (0,4), (-2.83,2.83), (-4,0), (-2.83, -2.83), (0,-4), (2.83, -2.83)} \arrow \parafcn{5, 40, 5}{3.75*dir(t)} \arrow \parafcn{-5, -40, 5}{3.75*dir(t)} \tlabel[cc](2.5,0.75){<m>\theta > 0</m>} \tlabel[cc](2.5,-0.75){<m>\theta \lt 0</m>} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4.25, {<m>4</m>} 4.25} \axislabels {y}{{<m>-4</m>} -4.25, {<m>4</m>} 4.25} \penwd{1.25pt} \circle{(0,0),4} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>In <m>r=4</m>, <m>\theta</m> is free</cell>
+                    <cell>The graph of <m>r=4</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Once again we have <m>\theta</m> being free in the equation <m>r = -3\sqrt{2}</m>.
+                Plotting all of the points of the form
+                <m>(-3\sqrt{2}, \theta)</m> gives us a circle of radius
+                <m>3\sqrt{2}</m> centered at the origin.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \dashed\rotatepath{(0,0),45} \polyline{(0,0),(4.24,0)} \rotatepath{(0,0), 45} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 45} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)} \dashed\rotatepath{(0,0), 135} \polyline{(0,0),(4,0)} \rotatepath{(0,0), 135} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 135} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0), 135} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0), 135} \polyline{(4,-0.15),(4,0.15)} \dashed\rotatepath{(0,0), 225} \polyline{(0,0),(4,0)} \rotatepath{(0,0), 225} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 225} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0), 225} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0), 225} \polyline{(4,-0.15),(4,0.15)} \dashed\rotatepath{(0,0), 315} \polyline{(0,0),(4,0)} \rotatepath{(0,0), 315} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0), 315} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0), 315} \polyline{(4,-0.15),(4,0.15)} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[3pt]{(0,0)} \point[3pt]{(4.24,0), (3,3), (0,4.24), (-3,3), (-4.24,0), (-3, -3), (0,-4.24), (3, -3)} \arrow \parafcn{175, 140, -5}{3.75*dir(t)} \arrow \parafcn{185, 220, 5}{3.75*dir(t)} \tlabel[cc](-2.5,0.75){<m>\theta \lt 0</m>} \tlabel[cc](-2.5,-0.75){<m>\theta > 0</m>} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \penwd{1.25pt} \circle{(0,0),4.24} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>In <m>r=-3\sqrt{2}</m>, <m>\theta</m> is free</cell>
+                    <cell>The graph of <m>r=-3\sqrt{2}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                In the equation <m>\theta = \frac{5\pi}{4}</m>, <m>r</m> is free,
+                so we plot all of the points with polar representation <m>\left(r, \frac{5\pi}{4}\right)</m>.
+                The result is the line containing the terminal side of <m>\theta = \frac{5\pi}{4}</m>,
+                when plotted in standard position.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \dashed\rotatepath{(0,0), 225} \polyline{(-7,0),(7,0)} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[3pt]{(0,0)} \arrow \reverse \arrow \polyline{(-1.41,-1.41), (1.41, 1.41)} \arrow \reverse \arrow \polyline{(-1.41,-1.41), (1.41, 1.41)} \arrow \reverse \arrow \polyline{(-2.82,-2.82), (2.82, 2.82)} \arrow \reverse \arrow \polyline{(-4.24,-4.24), (4.24, 4.24)} \tlabel[cc](3.5,2.5){<m>r \lt 0</m>} \tlabel[cc](-3.5,-2.5){<m>r > 0</m>} \tlabel[cc](1,-0.5){<m>r=0</m>} \arrow \parafcn{5, 220, 5}{0.75*dir(t)} \tlabel[cc](-1.5,1.5){<m>\theta = \frac{5\pi}{4}</m>} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5,-5), (5,5)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>In <m>\theta = \frac{5\pi}{4}</m>, <m>r</m> is free</cell>
+                    <cell>The graph of <m>\theta = \frac{5\pi}{4}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                As in the previous example,
+                the variable <m>r</m> is free in the equation <m>\theta = -\frac{3\pi}{2}</m>.
+                Plotting <m>\left(r, -\frac{3\pi}{2}\right)</m> for various values of <m>r</m> shows us that we are tracing out the <m>y</m>-axis.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[3pt]{(0,0)} \tlabel[cc](1.5,4){<m>r > 0</m>} \tlabel[cc](1.5,-4){<m>r \lt 0</m>} \tlabel[cc](1,0.5){<m>r=0</m>} \arrow \parafcn{-5, -265, -5}{0.75*dir(t)} \tlabel[cc](-1.5,-1.5){<m>\theta = -\frac{3\pi}{2}</m>} \penwd{1.05} \arrow \reverse \arrow \polyline{(0,-1.5), (0,1.5)} \arrow \reverse \arrow \polyline{(0,-2.5), (0,2.5)} \arrow \reverse \arrow \polyline{(0,-3.5), (0,3.5)} \arrow \reverse \arrow \polyline{(0,-4.5), (0,4.5)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \penwd{1.25} \arrow \reverse \arrow \polyline{(0,-5), (0,5)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>In <m>\theta = -\frac{3\pi}{2}</m>, <m>r</m> is free</cell>
+                    <cell>The graph of <m>\theta = -\frac{3\pi}{2}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Hopefully, our experience in <xref ref="rthetaconstant">Example</xref>
+      makes the following result clear.
+    </p>
+    <theorem xml:id="graphsofconstantrtheta">
+      <statement>
+        <p>
+          <em>Graphs of Constant <m>r</m> and <m>\theta</m>:</em>
+          Suppose <m>a</m> and <m>\alpha</m> are constants, <m>a \neq 0</m>.
+          <ul>
+            <li>
+              <p>
+                The graph of the polar equation <m>r = a</m> on the Cartesian plane is a circle centered at the origin of radius <m>|a|</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The graph of the polar equation
+                <m>\theta = \alpha</m> on the Cartesian plane is the line containing the terminal side of <m>\alpha</m> when plotted in standard position.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Suppose we wish to graph <m>r = 6\cos(\theta)</m>.
+      A reasonable way to start is to treat <m>\theta</m> as the independent variable,
+      <m>r</m> as the dependent variable,
+      evaluate <m>r = f(\theta)</m> at some <sq>friendly</sq> values of <m>\theta</m> and plot the resulting points.<fn>
+      For a review of these concepts and this process,
+      see <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+      </fn>
+    </p>
+    <tabular>
+      {m{2.7in}m{4in}}
+      <me>
+        \begin{array}{|r||r|r|}
+        \hline
+        \theta \amp  r = 6\cos(\theta) \amp  (r,\theta) \\ \hline
+        0  \amp  6 \amp  (6,0) \\   \hline
+        \frac{\pi}{4}  \amp  3\sqrt{2} \amp  \left(3\sqrt{2}, \frac{\pi}{4}\right) \\ \hline
+        \frac{\pi}{2}  \amp  0 \amp  \left(0,\frac{\pi}{2}\right) \\ \hline
+        \frac{3\pi}{4}  \amp  -3\sqrt{2} \amp  \left(-3\sqrt{2}, \frac{3\pi}{4}\right) \\ \hline
+        \pi \amp  -6 \amp  (-6,\pi) \\ \hline
+        \frac{5\pi}{4}  \amp  -3\sqrt{2} \amp  \left(-3\sqrt{2}, \frac{5\pi}{4}\right) \\ \hline
+        \frac{3\pi}{2}  \amp  0 \amp  \left(0, \frac{3\pi}{2} \right) \\ \hline
+        \frac{7\pi}{4}  \amp  3\sqrt{2} \amp  \left(3\sqrt{2}, \frac{7\pi}{4}\right) \\ \hline
+        2\pi  \amp  6 \amp  (6,2\pi) \\ \hline
+        \end{array}
+      </me>
+      &amp;
+      \begin{mfpic}[15]{-3}{7}{-5}{5}
+      \axes
+      \xmarks{-2,-1,1,2,3,4,5,6}
+      \ymarks{-4,-3,-2,-1,1,2,3,4}
+      \tlabel[cc](7,-0.25){<m>x</m>}
+      \tlabel[cc](0.25,5){<m>y</m>}
+      \point[3pt]{(6,0), (3,3), (0,0), (3,-3)}
+      \tlpointsep{4pt}
+      \axislabels {x}{{<m>3</m>} 3, {<m>6</m>} 6}
+      \axislabels {y}{{<m>-3</m>} -3, {<m>3</m>} 3}
+      \end{mfpic}
+    </tabular>
+    <p>
+      Despite having nine ordered pairs,
+      we get only four distinct points on the graph.
+      For this reason, we employ a slightly different strategy.
+      We graph one cycle of <m>r = 6\cos(\theta)</m> on the <m>\theta r</m>-plane<fn>
+      The graph looks exactly like
+      <m>y = 6\cos(x)</m> in the <m>xy</m>-plane, and for good reason.
+      At this stage,
+      we are just graphing the relationship between <m>r</m> and <m>\theta</m> before we interpret them as polar coordinates
+      <m>(r,\theta)</m> on the <m>xy</m>-plane.
+      </fn> below on the left and use it to help graph the equation on the <m>xy</m>-plane below on the right.
+    </p>
+    <p>
+      We see that as <m>\theta</m> ranges from <m>0</m> to <m>\frac{\pi}{2}</m>,
+      <m>r</m> ranges from <m>6</m> to <m>0</m>.
+      In the <m>xy</m>-plane,
+      this means that the curve starts <m>6</m> units from the origin on the positive <m>x</m>-axis (<m>\theta = 0</m>) and gradually returns to the origin by the time the curve reaches the <m>y</m>-axis
+      (<m>\theta = \frac{\pi}{2}</m>).
+    </p>
+    <p>
+      The arrows drawn in the figure below are meant to help you visualize this process.
+      In the <m>\theta r</m>-plane,
+      the arrows are drawn from the <m>\theta</m>-axis to the curve <m>r = 6\cos(\theta)</m>.
+      In the <m>xy</m>-plane,
+      each of these arrows starts at the origin and is rotated through the corresponding angle <m>\theta</m>,
+      in accordance with how we plot polar coordinates.
+      This method is less precise than plotting actual function values,
+      but much faster.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20][10]{-1}{7}{-7}{7}
+          \axes
+          \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+          \ymarks{-6,-3,3,6}
+          \tlpointsep{4pt}
+          \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.35, {<m>\pi</m>} 3.1416,  {<m>\frac{3\pi}{2}</m>} 4.9,  {<m>2\pi</m>} 6.2832}
+          \axislabels{y}{{<m>-6</m>} -6, {<m>-3</m>} -3,{<m>3</m>} 3,{<m>6</m>} 6}
+          \tlabel[cc](7.1,-0.75){<m>\theta</m>}
+          \tlabel[cc](0.25,6.75){<m>r</m>}
+          \function{0,6.28,0.1}{6*cos(x)}
+          \arrow \polyline{(0,0), (0,6)}
+          \arrow \polyline{(0.39,0), (0.39,5.25)}
+          \arrow \polyline{(0.785,0), (0.785,3.9)}
+          \arrow \polyline{(1.14,0), (1.14,2)}
+          \point[3pt]{(0,6), (1.57,0)}
+          \penwd{1.025}
+          \arrow \function{0,1.1,0.1}{6*cos(x)}
+          \function{1.1,1.57,0.1}{6*cos(x)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[10]{-7}{7}{-7}{7}
+          \axes
+          \xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+          \ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+          \tlabel[cc](7.25,-0.25){<m>x</m>}
+          \tlabel[cc](0.5,6.75){<m>y</m>}
+          \arrow \polyline{(0,0), (6,0)}
+          \arrow \polyline{(0,0), (5, 2)}
+          \arrow \polyline{(0,0), (2.9,2.9)}
+          \arrow \polyline{(0,0), (0.8, 1.9)}
+          \arrow \parafcn{5, 85, 5}{6.5*dir(t)}
+          \point[3pt]{(6,0),(0,0)}
+          \gclear \tlabelrect[cc](5,5){<m>\theta</m> runs from <m>0</m> to <m>\frac{\pi}{2}</m>}
+          \penwd{1.025}
+          \arrow \plrfcn{0,63,5}{6*cosd(t)}
+          \plrfcn{63,90,5}{6*cosd(t)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>r = 6 \cos(\theta)</m> in the <m>\theta r</m>-plane</cell>
+        <cell><m>r = 6 \cos(\theta)</m> in the <m>xy</m>-plane</cell>
+      </row>
+    </tabular>
+    <p>
+      Next, we repeat the process as <m>\theta</m> ranges from <m>\frac{\pi}{2}</m> to <m>\pi</m>.
+      Here, the <m>r</m> values are all negative.
+      This means that in the <m>xy</m>-plane,
+      instead of graphing in Quadrant II, we graph in Quadrant IV, with all of the angle rotations starting from the negative <m>x</m>-axis.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20][10]{-1}{7}{-7}{7}
+          \axes
+          \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+          \ymarks{-6,-3,3,6}
+          \tlpointsep{4pt}
+          \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.35, {<m>\pi</m>} 3.25,  {<m>\frac{3\pi}{2}</m>} 4.9,  {<m>2\pi</m>} 6.2832}
+          \axislabels{y}{{<m>-6</m>} -6, {<m>-3</m>} -3,{<m>3</m>} 3,{<m>6</m>} 6}
+          \tlabel[cc](7.1,-0.75){<m>\theta</m>}
+          \tlabel[cc](0.25,7){<m>r</m>}
+          \function{0,6.28,0.1}{6*cos(x)}
+          \arrow \polyline{(1.96,0), (1.96,-2)}
+          \arrow \polyline{(2.36,0), (2.36,-3.9)}
+          \arrow \polyline{(2.75,0), (2.75,-5.25)}
+          \point[3pt]{(1.57,0), (3.14,-6)}
+          \arrow \polyline{(3.14,0), (3.14,-6)}
+          \penwd{1.025}
+          \arrow \function{1.57,2.55,0.1}{6*cos(x)}
+          \function{2.55,3.14,0.1}{6*cos(x)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[10]{-7}{7}{-7}{7}
+          \axes
+          \xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+          \ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+          \tlabel[cc](7.25,-0.25){<m>x</m>}
+          \tlabel[cc](0.5,7){<m>y</m>}
+          \arrow \polyline{(0,0), (6,0)}
+          \arrow \polyline{(0,0), (5, -2)}
+          \arrow \polyline{(0,0), (2.9,-2.9)}
+          \arrow \polyline{(0,0), (0.8, -1.9)}
+          \point[3pt]{(6,0),(0,0)}
+          \plrfcn{0,90,5}{6*cosd(t)}
+          \arrow \parafcn{95, 175, 5}{6.5*dir(t)}
+          \gclear \tlabelrect[cc](-5,5){<m>\theta</m> runs from <m>\frac{\pi}{2}</m> to <m>\pi</m>}
+          \arrow \parafcn{275, 355, 5}{6.5*dir(t)}
+          \gclear \tlabelrect[cc](5,-5){<m>r\lt 0</m> so we plot here}
+          \penwd{1.025}
+          \arrow \plrfcn{90,145,5}{6*cosd(t)}
+          \plrfcn{145,180,5}{6*cosd(t)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>r = 6 \cos(\theta)</m> in the <m>\theta r</m>-plane</cell>
+        <cell><m>r = 6 \cos(\theta)</m> in the <m>xy</m>-plane</cell>
+      </row>
+    </tabular>
+    <p>
+      As <m>\theta</m> ranges from <m>\pi</m> to <m>\frac{3\pi}{2}</m>,
+      the <m>r</m> values are still negative,
+      which means the graph is traced out in Quadrant I instead of Quadrant III. Since the <m>|r|</m> for these values of <m>\theta</m> match the <m>r</m> values for <m>\theta</m> in <m>\left[0, \frac{\pi}{2} \right]</m>,
+      we have that the curve begins to retrace itself at this point.
+    </p>
+    <p>
+      Proceeding further,
+      we find that when <m>\frac{3\pi}{2} \leq \theta \leq 2\pi</m>,
+      we retrace the portion of the curve in Quadrant IV that we first traced out as <m>\frac{\pi}{2} \leq \theta \leq \pi</m>.
+      The reader is invited to verify that plotting any range of <m>\theta</m> outside the interval
+      <m>\left[ 0, \pi \right]</m> results in retracting some portion of the curve.<fn>
+      The graph of <m>r=6\cos(\theta)</m> looks suspiciously like a circle,
+      for good reason.
+      See <xref ref="ris6costheta">number</xref>
+      in <xref ref="eqnconversionex">Example</xref>.
+      </fn> We present the final graph below.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20][10]{-1}{4}{-7}{7}
+          \axes
+          \xmarks{0.7854, 1.5708, 2.3562, 3.1416}
+          \ymarks{-6,-3,3,6}
+          \tlpointsep{4pt}
+          \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.35, {<m>\pi</m>} 3.14}
+          \axislabels{y}{{<m>-6</m>} -6, {<m>-3</m>} -3,{<m>3</m>} 3,{<m>6</m>} 6}
+          \point[4pt]{(0,6), (1.57,0), (3.14,-6)}
+          \tlabel[cc](4.1,-0.75){<m>\theta</m>}
+          \tlabel[cc](0.25,7){<m>r</m>}
+          \penwd{1.25pt}
+          \function{0,3.14156,0.1}{6*cos(x)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[10]{-7}{7}{-7}{7}
+          \axes
+          \xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+          \ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+          \tlabel[cc](7.25,-0.25){<m>x</m>}
+          \tlabel[cc](0.5,7){<m>y</m>}
+          \point[4pt]{(0,0), (6,0)}
+          \penwd{1.25pt}
+          \plrfcn{0,180,5}{6*cosd(t)}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>3</m>} 3, {<m>6</m>} 6.25}
+          \axislabels {y}{{<m>-3</m>} -3, {<m>3</m>} 3}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>r = 6\cos(\theta)</m> in the <m>\theta r</m>-plane</cell>
+        <cell><m>r = 6\cos(\theta)</m> in the <m>xy</m>-plane</cell>
+      </row>
+    </tabular>
+    <example xml:id="polargraphex">
+      <statement>
+        <p>
+          Graph the following polar equations in the <m>xy</m>-plane.
+          <ol>
+            <li xml:id="limacon01">
+              <p>
+                <m>r = 4 - 2\sin(\theta)</m>
+              </p>
+            </li>
+            <li xml:id="limacon02">
+              <p>
+                <m>r = 2 + 4 \cos(\theta)</m>
+              </p>
+            </li>
+            <li xml:id="rose">
+              <p>
+                <m>r = 5\sin(2\theta)</m>
+              </p>
+            </li>
+            <li xml:id="lemniscate">
+              <p>
+                <m>r^2 = 16 \cos(2\theta)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We first plot the fundamental cycle of
+                <m>r = 4 - 2\sin(\theta)</m> on the <m>\theta r</m>-axes.
+                To help us visualize what is going on graphically,
+                we divide up <m>[0,2\pi]</m> into the usual four subintervals <m>\left[0, \frac{\pi}{2}\right]</m>,
+                <m>\left[\frac{\pi}{2}, \pi\right]</m>,
+                <m>\left[\pi, \frac{3\pi}{2}\right]</m> and <m>\left[\frac{3\pi}{2}, 2\pi \right]</m>,
+                and proceed as we did above.
+                As <m>\theta</m> ranges from <m>0</m> to <m>\frac{\pi}{2}</m>,
+                <m>r</m> decreases from <m>4</m> to <m>2</m>.
+                This means that the curve in the <m>xy</m>-plane starts <m>4</m> units from the origin on the positive <m>x</m>-axis and gradually pulls in towards the origin as it moves towards the positive <m>y</m>-axis.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{7}{-1}{7} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](7.25,-0.5){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{4-2*sin(x)} \arrow \polyline{(0,0), (0,3.9)} \arrow \polyline{(0.39,0), (0.39,3.13)} \arrow \polyline{(1.18,0), (1.18,2.05)} \arrow \polyline{(1.57,0), (1.57,1.9)} \point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)} \penwd{1.025} \arrow \function{0,1,0.1}{4-2*sin(x)} \function{1, 1.57,0.1}{4-2*sin(x)} \end{mfpic} &amp; \begin{mfpic}[12]{-5}{5}{-7}{3} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-6,-5,-4,-3,-2,-1,1,2} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,3){<m>y</m>} \arrow \polyline{\plr{(0,0), (3.9,0)}} \arrow \polyline{\plr{(0,0), (3.13,22.5)}} \arrow \polyline{\plr{(0,0), (2.05,67.5)}} \arrow \polyline{\plr{(0,0), (1.9,90)}} \point[2pt]{\plr{(4,0),(2,90)}} \arrow \plrfcn{10,80,5}{1.25*(4-2*sind(t))} \gclear \tlabelrect(6,2){<m>\theta</m> runs from <m>0</m> to <m>\frac{\pi}{2}</m>} \penwd{1.025} \arrow \plrfcn{0,45,5}{4-2*sind(t)} \plrfcn{45,90,5}{4-2*sind(t)} \end{mfpic}
+                </tabular>
+                Next, as <m>\theta</m> runs from <m>\frac{\pi}{2}</m> to <m>\pi</m>,
+                we see that <m>r</m> increases from <m>2</m> to <m>4</m>.
+                Picking up where we left off,
+                we gradually pull the graph away from the origin until we reach the negative <m>x</m>-axis.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-1}{7} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](7.25,-0.5){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{4-2*sin(x)} \arrow \polyline{(1.57,0), (1.57,1.9)} \arrow \polyline{(1.96,0), (1.96,2.05)} \arrow \polyline{(2.75,0), (2.75,3.13)} \arrow \polyline{(3.14,0), (3.14,3.9)} \point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)} \penwd{1.025} \arrow \function{1.57,2.35,0.1}{4-2*sin(x)} \function{2.35, 3.14,0.1}{4-2*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[12]{-5}{5}{-7}{3} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-6,-5,-4,-3,-2,-1,1,2} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,3){<m>y</m>} \arrow \polyline{\plr{(0,0), (1.9,90)}} \arrow \polyline{\plr{(0,0), (2.05,112.5)}} \arrow \polyline{\plr{(0,0), (3.13,157.5)}} \arrow \polyline{\plr{(0,0), (3.9,180)}} \point[2pt]{\plr{(4,0),(2,90), (4,180)}} \arrow \plrfcn{100,170,5}{1.25*(4-2*sind(t))} \gclear \tlabelrect(-6,2){<m>\theta</m> runs from <m>\frac{\pi}{2}</m> to <m>\pi</m>} \plrfcn{0,90,5}{4-2*sind(t)} \penwd{1.025} \arrow \plrfcn{90,135,5}{4-2*sind(t)} \plrfcn{135,180,5}{4-2*sind(t)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                Over the interval <m>\left[\pi, \frac{3\pi}{2}\right]</m>,
+                we see that <m>r</m> increases from <m>4</m> to <m>6</m>.
+                On the <m>xy</m>-plane,
+                the curve sweeps out away from the origin as it travels from the negative <m>x</m>-axis to the negative <m>y</m>-axis.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-1}{7} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](7.25,-0.5){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{4-2*sin(x)} \arrow \polyline{(3.14,0), (3.14,3.9)} \arrow \polyline{(3.53,0), (3.53,4.66)} \arrow \polyline{(4.32,0), (4.32,5.75)} \arrow \polyline{(4.71,0), (4.71,5.9)} \point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)} \penwd{1.025} \arrow \function{3.14,3.93,0.1}{4-2*sin(x)} \function{3.93, 4.71,0.1}{4-2*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[12]{-5}{5}{-7}{3} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-6,-5,-4,-3,-2,-1,1,2} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,3){<m>y</m>} \arrow \polyline{\plr{(0,0), (3.9,180)}} \arrow \polyline{\plr{(0,0), (4.66,202.5)}} \arrow \polyline{\plr{(0,0), (5.75,247.5)}} \arrow \polyline{\plr{(0,0), (5.9,270)}} \point[2pt]{\plr{(4,0),(2,90), (4,180), (6,270)}} \arrow \plrfcn{190,260,5}{1.15*(4-2*sind(t))} \gclear \tlabelrect(-6,-6){ <m>\theta</m> runs from <m>\pi</m> to <m>\frac{3\pi}{2}</m>} \plrfcn{0,180,5}{4-2*sind(t)} \penwd{1.025} \arrow \plrfcn{180,225,5}{4-2*sind(t)} \plrfcn{225,270,5}{4-2*sind(t)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                Finally, as <m>\theta</m> takes on values from <m>\frac{3\pi}{2}</m> to <m>2\pi</m>,
+                <m>r</m> decreases from <m>6</m> back to <m>4</m>.
+                The graph on the <m>xy</m>-plane pulls in from the negative <m>y</m>-axis to finish where we started.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-1}{7} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{4-2*sin(x)} \arrow \polyline{(4.71,0), (4.71,5.9)} \arrow \polyline{(5.1,0), (5.1,5.75)} \arrow \polyline{(5.9,0), (5.9,4.66)} \arrow \polyline{(6.28,0), (6.28,3.9)} \point[2pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)} \penwd{1.025} \arrow \function{4.71,5.75,0.1}{4-2*sin(x)} \function{5.75, 6.28,0.1}{4-2*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[12]{-5}{5}{-7}{3} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-6,-5,-4,-3,-2,-1,1,2} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,3){<m>y</m>} \arrow \polyline{\plr{(0,0), (5.9,270)}} \arrow \polyline{\plr{(0,0), (5.75,292.5)}} \arrow \polyline{\plr{(0,0), (4.66,337.5)}} \arrow \polyline{\plr{(0,0), (4,360)}} \point[2pt]{\plr{(4,0),(2,90), (4,180), (6,270)}} \arrow \plrfcn{280,350,5}{1.15*(4-2*sind(t))} \gclear \tlabelrect(6,-6){<m>\theta</m> runs from <m>\frac{3\pi}{2}</m> to <m>2\pi</m>} \plrfcn{0,270,5}{4-2*sind(t)} \penwd{1.025} \arrow \plrfcn{270,315,5}{4-2*sind(t)} \plrfcn{315,360,5}{4-2*sind(t)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                We leave it to the reader to verify that plotting points corresponding to values of <m>\theta</m> outside the interval
+                <m>[0,2\pi]</m> results in retracing portions of the curve,
+                so we are finished.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-1}{7} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \point[4pt]{(0,4), (1.57,2), (3.14,4), (4.71,6), (6.28,4)} \penwd{1.25pt} \function{0,6.28,0.1}{4-2*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[12]{-5}{5}{-7}{3} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-6,-5,-4,-3,-2,-1,1,2} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,3){<m>y</m>} \point[4pt]{(4,0), (0,2), (-4,0), (0,-6)} \penwd{1.25pt} \plrfcn{0,360,5}{4-2*sind(t)} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -3.75, {<m>4</m>} 3.75} \axislabels {y}{{<m>-6</m>} -5.7, {<m>2</m>} 1.7} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 4 - 2\sin(\theta)</m> in the <m>\theta r</m>-plane</cell>
+                    <cell><m>r = 4 - 2\sin(\theta)</m> in the <m>xy</m>-plane.</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                The first thing to note when graphing <m>r = 2 + 4\cos(\theta)</m> on the
+                <m>\theta r</m>-plane over the interval
+                <m>[0,2\pi]</m> is that the graph crosses through the <m>\theta</m>-axis.
+                This corresponds to the graph of the curve passing through the origin in the <m>xy</m>-plane,
+                so our first task is to determine when this happens.
+                Setting <m>r=0</m> we get <m>2 + 4\cos(\theta) = 0</m>,
+                or <m>\cos(\theta) = -\frac{1}{2}</m>.
+                Solving for <m>\theta</m> in <m>[0,2\pi]</m> gives
+                <m>\theta = \frac{2\pi}{3}</m> and <m>\theta = \frac{4\pi}{3}</m>.
+                Since these values of <m>\theta</m> are important geometrically,
+                we break the interval <m>[0,2\pi]</m> into six subintervals:
+                <m>\left[0,\frac{\pi}{2}\right]</m>,
+                <m>\left[\frac{\pi}{2},\frac{2\pi}{3}\right]</m>,
+                <m>\left[\frac{2\pi}{3},\pi\right]</m>,
+                <m>\left[\pi,\frac{4\pi}{3}\right]</m>,
+                <m>\left[\frac{4\pi}{3}, \frac{3\pi}{2}\right]</m> and <m>\left[\frac{3\pi}{2}, 2\pi\right]</m>.
+                As <m>\theta</m> ranges from <m>0</m> to <m>\frac{\pi}{2}</m>,
+                <m>r</m> decreases from <m>6</m> to <m>2</m>.
+                Plotting this on the <m>xy</m>-plane,
+                we start <m>6</m> units out from the origin on the positive <m>x</m>-axis and slowly pull in towards the positive <m>y</m>-axis.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{2+4*cos(x)} \arrow \polyline{(0,0), (0,5.9)} \arrow \polyline{(0.39,0), (0.39,5.60)} \arrow \polyline{(1.18,0), (1.18,3.30)} \arrow \polyline{(1.57,0), (1.57,1.9)} \point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \penwd{1.025} \arrow \function{0,1,0.1}{2+4*cos(x)} \function{1, 1.57,0.1}{2+4*cos(x)} \end{mfpic} &amp; \begin{mfpic}[17]{-2}{7}{-4}{4} \axes \xmarks{-1,1,2,3,4,5,6} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \arrow \polyline{\plr{(0,0), (5.9,0)}} \arrow \polyline{\plr{(0,0), (5.6,22.5)}} \arrow \polyline{\plr{(0,0), (3.43,67.5)}} \arrow \polyline{\plr{(0,0), (1.9,90)}} \point[2pt]{\plr{(6,0),(2,90)}} \arrow \plrfcn{10,60,5}{1.15*(2+4*cosd(t))} \gclear \tlabelrect(7,3){<m>\theta</m> runs from <m>0</m> to <m>\frac{\pi}{2}</m>} \penwd{1.025} \arrow \plrfcn{0,45,5}{2+4*cosd(t)} \plrfcn{45,90,5}{2+4*cosd(t)} \end{mfpic}
+                </tabular>
+                On the interval <m>\left[\frac{\pi}{2}, \frac{2\pi}{3}\right]</m>,
+                <m>r</m> decreases from <m>2</m> to <m>0</m>,
+                which means the graph is heading into
+                (and will eventually cross through)
+                the origin.
+                Not only do we reach the origin when <m>\theta = \frac{2\pi}{3}</m>,
+                a theorem from Calculus<fn>
+                The <sq>tangents at the pole</sq> theorem from second semester Calculus.
+                </fn> states that the curve hugs the line
+                <m>\theta = \frac{2\pi}{3}</m> as it approaches the origin.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{2+4*cos(x)} \arrow \polyline{(1.57,0), (1.57,1.7)} \arrow \polyline{(1.83,0), (1.83,0.6)} \point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \penwd{1.025} \arrow \function{1.57,1.83,0.1}{2+4*cos(x)} \function{1.83, 2.09,0.1}{2+4*cos(x)} \end{mfpic} &amp; \begin{mfpic}[17]{-2}{7}{-4}{4} \axes \xmarks{-1,1,2,3,4,5,6} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \point[2pt]{\plr{(6,0),(2,90), (0,120)}} \dashed \polyline{(-2, 3.46), (2,-3.46)} \gclear \tlabelrect(-1.5,3){<m>\theta = \frac{2\pi}{3}</m>} \plrfcn{0,90,5}{2+4*cosd(t)} \penwd{1.025} \arrow \plrfcn{90,105,5}{2+4*cosd(t)} \plrfcn{105,120,5}{2+4*cosd(t)} \end{mfpic}
+                </tabular>
+                On the interval <m>\left[\frac{2\pi}{3}, \pi\right]</m>,
+                <m>r</m> ranges from <m>0</m> to <m>-2</m>.
+                Since <m>r \leq 0</m>,
+                the curve passes through the origin in the <m>xy</m>-plane,<fn>
+                Recall that one way to visualize plotting polar coordinates
+                <m>(r,\theta)</m> with <m>r\lt 0</m> is to start the rotation from the left side of the pole,
+                in this case, the negative <m>x</m>-axis.
+                Rotating between <m>\frac{2\pi}{3}</m> and <m>\pi</m> radians from the negative <m>x</m>-axis in this case determines the region between the line
+                <m>\theta = \frac{2\pi}{3}</m> and the <m>x</m>-axis in Quadrant IV.
+                </fn>  following the line <m>\theta = \frac{2\pi}{3}</m>.
+                Since <m>|r|</m> is increasing from <m>0</m> to <m>2</m>,
+                the curve pulls away from the origin and continues upwards through Quadrant IV to finish at a point on the positive <m>x</m>-axis.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{2+4*cos(x)} \arrow \polyline{(2.35,0), (2.35,-0.6)} \arrow \polyline{(2.75,0), (2.75,-1.5)} \arrow \polyline{(3.14,0), (3.14,-1.9)} \point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \penwd{1.025} \arrow \function{2.09, 2.5,0.1}{2+4*cos(x)} \function{2.5, 3.14,0.1}{2+4*cos(x)} \end{mfpic} &amp; \begin{mfpic}[17]{-2}{7}{-4}{4} \axes \xmarks{-1,1,2,3,4,5,6} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \arrow \polyline{\plr{(0,0), (-1.6,157.5)}} \arrow \polyline{\plr{(0,0), (-1.9,180)}} \point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180)}} \dashed \polyline{(-2, 3.46), (2,-3.46)} \gclear \tlabelrect(-1.5,3.5){<m>\theta = \frac{2\pi}{3}</m>} \plrfcn{0,120,5}{2+4*cosd(t)} \penwd{1.025} \arrow \plrfcn{120,140,5}{2+4*cosd(t)} \plrfcn{140,180,5}{2+4*cosd(t)} \end{mfpic}
+                </tabular>
+                Next, as <m>\theta</m> progresses from <m>\pi</m> to <m>\frac{4\pi}{3}</m>,
+                <m>r</m> ranges from <m>-2</m> to <m>0</m>.
+                Since <m>r \leq 0</m>, we continue our graph in the first quadrant,
+                heading into the origin along the line <m>\theta = \frac{4\pi}{3}</m>.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{2+4*cos(x)} \arrow \polyline{(3.14,0), (3.14,-1.9)} \arrow \polyline{(3.53,0), (3.53,-1.5)} \arrow \polyline{(3.93,0), (3.93,-0.6)} \point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \penwd{1.025} \arrow \function{3.14, 3.9,0.1}{2+4*cos(x)} \function{3.9, 4.19,0.1}{2+4*cos(x)} \end{mfpic} &amp; \begin{mfpic}[17]{-2}{7}{-4}{4} \axes \xmarks{-1,1,2,3,4,5,6} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \arrow \polyline{\plr{(0,0), (-1.9,180)}} \arrow \polyline{\plr{(0,0), (-1.6,202.5)}} \point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180)}} \dashed \polyline{(1.5, 2.6), (-2, -3.46)} \gclear \tlabelrect(1.5,2){<m>\theta = \frac{4\pi}{3}</m>} \plrfcn{0,180,5}{2+4*cosd(t)} \penwd{1.025} \arrow \plrfcn{180,220,5}{2+4*cosd(t)} \plrfcn{220,240,5}{2+4*cosd(t)} \end{mfpic}
+                </tabular>
+                On the interval <m>\left[\frac{4\pi}{3}, \frac{3\pi}{2}\right]</m>,
+                <m>r</m> returns to positive values and increases from <m>0</m> to <m>2</m>.
+                We hug the line <m>\theta = \frac{4\pi}{3}</m> as we move through the origin and head towards the negative <m>y</m>-axis.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{2+4*cos(x)} \arrow \polyline{(4.45,0), (4.45,0.65)} \arrow \polyline{(4.71,0), (4.71,1.75)} \point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \penwd{1.025} \arrow \function{4.19, 4.6,0.1}{2+4*cos(x)} \function{4.6, 4.71,0.1}{2+4*cos(x)} \end{mfpic} &amp; \begin{mfpic}[17]{-2}{7}{-4}{4} \axes \xmarks{-1,1,2,3,4,5,6} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180), (2,270)}} \dashed \polyline{(1.5, 2.6), (-2, -3.46)} \gclear \tlabelrect(1.5,2){<m>\theta = \frac{4\pi}{3}</m>} \plrfcn{0,240,5}{2+4*cosd(t)} \penwd{1.025} \arrow \plrfcn{240,255,5}{2+4*cosd(t)} \plrfcn{255,270,5}{2+4*cosd(t)} \end{mfpic}
+                </tabular>
+                As we round out the interval,
+                we find that as <m>\theta</m> runs through <m>\frac{3\pi}{2}</m> to <m>2\pi</m>,
+                <m>r</m> increases from <m>2</m> out to <m>6</m>,
+                and we end up back where we started,
+                <m>6</m> units from the origin on the positive <m>x</m>-axis.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \function{0,6.28,0.1}{2+4*cos(x)} \arrow \polyline{(4.71,0), (4.71,1.75)} \arrow \polyline{(5.1,0), (5.1,3.30)} \arrow \polyline{(5.9,0), (5.9,5.6)} \arrow \polyline{(6.28,0), (6.28,5.9)} \point[2pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \penwd{1.025} \arrow \function{4.71, 5.5,0.1}{2+4*cos(x)} \function{5.5, 6.28,0.1}{2+4*cos(x)} \end{mfpic} &amp; \begin{mfpic}[17]{-2}{7}{-4}{4} \axes \xmarks{-1,1,2,3,4,5,6} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \arrow \polyline{\plr{(0,0), (1.9,270)}} \arrow \polyline{\plr{(0,0), (3.43,292.5)}} \arrow \polyline{\plr{(0,0), (5.6,337.5)}} \arrow \polyline{\plr{(0,0), (5.9,360)}} \point[2pt]{\plr{(6,0),(2,90), (0,120), (-2,180), (2,270)}} \arrow \plrfcn{280,350,5}{1.15*(2+4*cosd(t))} \gclear \tlabelrect(7.5,-3){<m>\theta</m> runs from <m>\frac{3\pi}{2}</m> to <m>2\pi</m>} \plrfcn{0,270,5}{2+4*cosd(t)} \penwd{1.025} \arrow \plrfcn{270,315,5}{2+4*cosd(t)} \plrfcn{315,360,5}{2+4*cosd(t)} \end{mfpic}
+                </tabular>
+                Again, we invite the reader to show that plotting the curve for values of <m>\theta</m> outside
+                <m>[0,2\pi]</m> results in retracing a portion of the curve already traced.
+                Our final graph is below.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \point[4pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \penwd{1.25pt} \function{0,6.28,0.1}{2+4*cos(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[17]{-2}{7}{-4}{4} \axes \xmarks{-1,1,2,3,4,5,6} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>2</m>} 2, {<m>6</m>} 6.25} \axislabels {y}{{<m>-2</m>} -2, {<m>2</m>} 2} \dashed \polyline{(1.5, 2.6), (-2, -3.46)} \gclear \tlabelrect(-1.5,-2){<m>\theta = \frac{4\pi}{3}</m>} \dashed \polyline{(1.5, -2.6), (-2, 3.46)} \gclear \tlabelrect(-1.5,2){<m>\theta = \frac{2\pi}{3}</m>} \point[4pt]{(6,0), (2,0), (0,2), (0,-2), (0,0)} \penwd{1.25pt} \plrfcn{0,360,5}{2+4*cosd(t)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 2+4\cos(\theta)</m> in the <m>\theta r</m>-plane</cell>
+                    <cell><m>r = 2+4\cos(\theta)</m> in the <m>xy</m>-plane</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                As usual, we start by graphing a fundamental cycle of <m>r = 5\sin(2\theta)</m> in the
+                <m>\theta r</m>-plane, which in this case,
+                occurs as <m>\theta</m> ranges from <m>0</m> to <m>\pi</m>.
+                We partition our interval into subintervals to help us with the graphing,
+                namely <m>\left[0, \frac{\pi}{4}\right]</m>,
+                <m>\left[\frac{\pi}{4}, \frac{\pi}{2}\right]</m>,
+                <m>\left[\frac{\pi}{2},\frac{3\pi}{4}\right]</m> and <m>\left[\frac{3\pi}{4}, \pi \right]</m>.
+                As <m>\theta</m> ranges from <m>0</m> to <m>\frac{\pi}{4}</m>,
+                <m>r</m> increases from <m>0</m> to <m>5</m>.
+                Hence the graph of <m>r = 5\sin(2\theta)</m> in the <m>xy</m>-plane starts at the origin and gradually sweeps out so it is <m>5</m> units away from the origin on the line <m>\theta = \frac{\pi}{4}</m>.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[13]{-1}{7}{-6}{6} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-5,5} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28} \axislabels{y}{{<m>-5</m>} -5, {<m>5</m>} 5} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,6){<m>r</m>} \function{0,6.28,0.1}{5*sin(x)} \arrow \polyline{(0.39,0), (0.39,1.4)} \arrow \polyline{(1.18,0), (1.18,4.42)} \arrow \polyline{(1.57,0), (1.57,4.9)} \point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)} \penwd{1.025} \arrow \function{0,0.8,0.1}{5*sin(x)} \function{0.8, 1.57,0.1}{5*sin(x)} \end{mfpic} &amp; \begin{mfpic}[13]{-5}{5}{-5}{5} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \arrow \polyline{\plr{(0,0), (1.4,11.25)}} \arrow \polyline{\plr{(0,0), (4.52,33.75)}} \arrow \polyline{\plr{(0,0), (4.9,45)}} \point[2pt]{\plr{(0,0),(5,45)}} \penwd{1.025} \arrow \plrfcn{0,22,5}{5*sind(2*t)} \plrfcn{22,45,5}{5*sind(2*t)} \end{mfpic}
+                </tabular>
+                Next, we see that <m>r</m> decreases from <m>5</m> to <m>0</m> as <m>\theta</m> runs through <m>\left[\frac{\pi}{4}, \frac{\pi}{2}\right]</m>.
+                Moreover, <m>r</m> is becomes negative as <m>\theta</m> crosses <m>\frac{\pi}{2}</m>.
+                Hence, we draw the curve hugging the line <m>\theta = \frac{\pi}{2}</m>
+                (the <m>y</m>-axis)
+                as the curve heads to the origin.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[13]{-1}{7}{-6}{6} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-5,5} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28} \axislabels{y}{{<m>-5</m>} -5, {<m>5</m>} 5} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,6){<m>r</m>} \function{0,6.28,0.1}{5*sin(x)} \arrow \polyline{(1.57,0), (1.57,4.9)} \arrow \polyline{(1.96,0), (1.96,4.4)} \arrow \polyline{(2.75,0), (2.75,1.4)} \point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)} \penwd{1.025} \arrow \function{1.57,2.35,0.1}{5*sin(x)} \function{2.35, 3.14,0.1}{5*sin(x)} \end{mfpic} &amp; \begin{mfpic}[13]{-5}{5}{-5}{5} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \arrow \polyline{\plr{(0,0), (4.9,45)}} \arrow \polyline{\plr{(0,0), (4.52,56.25)}} \arrow \polyline{\plr{(0,0), (1.4,78.75)}} \point[2pt]{\plr{(0,0),(5,45)}} \plrfcn{0,45,5}{5*sind(2*t)} \penwd{1.025} \arrow \plrfcn{45,67,5}{5*sind(2*t)} \plrfcn{67,90,5}{5*sind(2*t)} \end{mfpic}
+                </tabular>
+                As <m>\theta</m> runs from
+                <m>\frac{\pi}{2}</m> to <m>\frac{3\pi}{4}</m>,
+                <m>r</m> becomes negative and ranges from <m>0</m> to <m>-5</m>.
+                Since <m>r \leq 0</m>,
+                the curve pulls away from the negative <m>y</m>-axis into Quadrant IV.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[13]{-1}{7}{-6}{6} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-5,5} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28} \axislabels{y}{{<m>-5</m>} -5, {<m>5</m>} 5} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,6){<m>r</m>} \function{0,6.28,0.1}{5*sin(x)} \arrow \polyline{(3.53,0), (3.53,-1.4)} \arrow \polyline{(4.32,0), (4.32,-4.52)} \arrow \polyline{(4.71,0), (4.71,-4.9)} \point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)} \penwd{1.025} \arrow \function{3.14,3.93,0.1}{5*sin(x)} \function{3.93, 4.71,0.1}{5*sin(x)} \end{mfpic} &amp; \begin{mfpic}[13]{-5}{5}{-5}{5} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \arrow \polyline{\plr{(0,0), (-1.4,101.25)}} \arrow \polyline{\plr{(0,0), (-4.52,123.75)}} \arrow \polyline{\plr{(0,0), (-4.9,135)}} \point[2pt]{\plr{(0,0),(5,45),(-5,135)}} \plrfcn{0,90,5}{5*sind(2*t)} \penwd{1.025} \arrow \plrfcn{90,112,5}{5*sind(2*t)} \plrfcn{112,135,5}{5*sind(2*t)} \end{mfpic}
+                </tabular>
+                For <m>\frac{3\pi}{4} \leq \theta \leq \pi</m>,
+                <m>r</m> increases from <m>-5</m> to <m>0</m>,
+                so the curve pulls back to the origin.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[13]{-1}{7}{-6}{6} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-5,5} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28} \axislabels{y}{{<m>-5</m>} -5, {<m>5</m>} 5} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,6){<m>r</m>} \function{0,6.28,0.1}{5*sin(x)} \arrow \polyline{(4.71,0), (4.71,-4.9)} \arrow \polyline{(5.1,0), (5.1,-4.52)} \arrow \polyline{(5.9,0), (5.9,-1.4)} \point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)} \penwd{1.025} \arrow \function{4.71,5.5,0.1}{5*sin(x)} \function{5.5, 6.28,0.1}{5*sin(x)} \end{mfpic} &amp; \begin{mfpic}[13]{-5}{5}{-5}{5} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \arrow \polyline{\plr{(0,0), (-4.9,135)}} \arrow \polyline{\plr{(0,0), (-4.52,146.25)}} \arrow \polyline{\plr{(0,0), (-1.4,168.75)}} \point[2pt]{\plr{(0,0),(5,45),(-5,135)}} \plrfcn{0,135,5}{5*sind(2*t)} \penwd{1.025} \arrow \plrfcn{135,157.5,5}{5*sind(2*t)} \plrfcn{157.5,180,5}{5*sind(2*t)} \end{mfpic}
+                </tabular>
+                Even though we have finished with one complete cycle of <m>r = 5\sin(2\theta)</m>,
+                if we continue plotting beyond <m>\theta = \pi</m>,
+                we find to our surprise and delight that the curve continues into the third quadrant!
+                Below we present a graph of a second cycle of
+                <m>r = 5\sin(2\theta)</m> as continued from the first.
+                The boxed labels on the <m>\theta</m>-axis correspond to the portions with matching labels on the curve in the <m>xy</m>-plane.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[13]{-1}{7}{-6}{6} \arrow \reverse \arrow \polyline{(-1,0), (7,0)} \dashed \arrow \reverse \arrow \polyline{(0,-6), (0,6)} \xmarks{0, 0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-5,5} \tlpointsep{4pt} \axislabels{x}{{<m>\pi</m>} 0, {<m>\frac{5\pi}{4}</m>} 1.57, {<m>\frac{3\pi}{2}</m>} 3.14, {<m>\frac{7\pi}{4}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-5</m>} -5, {<m>5</m>} 5} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,6){<m>r</m>} \point[2pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)} \tlabelsep{1pt} \tlabelrect[0pt](0.78,-0.5){<m>1</m>} \tlabelrect[0pt](2.35,-0.5){<m>2</m>} \tlabelrect[0pt](3.93,-0.5){<m>3</m>} \tlabelrect[0pt](5.5,-0.5){<m>4</m>} \penwd{1.025} \arrow \function{0,0.78,0.1}{5*sin(x)} \function{0.78,1.57,0.1}{5*sin(x)} \arrow \function{1.57, 2.36,0.1}{5*sin(x)} \function{2.36,3.14,0.1}{5*sin(x)} \arrow \function{3.14, 3.93,0.1}{5*sin(x)} \function{3.93,4.71,0.1}{5*sin(x)} \arrow \function{4.71, 5.5,0.1}{5*sin(x)} \function{5.5,6.28,0.1}{5*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[13]{-6}{6}{-6}{6} \axes \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlabel[cc](6.25,-0.25){<m>x</m>} \tlabel[cc](0.25,6){<m>y</m>} \point[2pt]{\plr{(0,0),(5,45),(5,135), (5,225), (5,315)}} \plrfcn{0,180,5}{5*sind(2*t)} \tlabelsep{1pt} \tlabelrect[0pt](-4,-1){<m>1</m>} \tlabelrect[0pt](-1,-4){<m>2</m>} \tlabelrect[0pt](-1,4){<m>3</m>} \tlabelrect[0pt](-4,1){<m>4</m>} \penwd{1.025} \arrow \plrfcn{180,202,5}{5*sind(2*t)} \plrfcn{202,225,5}{5*sind(2*t)} \arrow \plrfcn{225,247,5}{5*sind(2*t)} \plrfcn{247,270,5}{5*sind(2*t)} \arrow \plrfcn{270,292,5}{5*sind(2*t)} \plrfcn{292,315,5}{5*sind(2*t)} \arrow \plrfcn{315,337,5}{5*sind(2*t)} \plrfcn{337,360,5}{5*sind(2*t)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                We have the final graph below.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[13]{-1}{13.5}{-6}{6} \axes \xmarks{0, 1.5708, 3.1416, 4.7124, 6.2832, 7.8540, 9.4248, 10.9956, 12.5664} \ymarks{-5,5} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28, {<m>\frac{5\pi}{4}</m>} 7.85, {<m>\frac{3\pi}{2}</m>} 9.42, {<m>\frac{7\pi}{4}</m>} 11.00, {<m>2\pi</m>} 12.57} \axislabels{y}{{<m>-5</m>} -5, {<m>5</m>} 5} \tlabel[cc](13.75,-0.75){<m>\theta</m>} \tlabel[cc](0.25,6){<m>r</m>} \point[4pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0), (7.85, 5), (9.42, 0), (11.00,-5), (12.57,0)} \penwd{1.25pt} \function{0,12.57,0.1}{5*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[13]{-6}{6}{-6}{6} \axes \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlabel[cc](6.25,-0.25){<m>x</m>} \tlabel[cc](0.25,6){<m>y</m>} \point[4pt]{\plr{(0,0),(5,45),(5,135), (5,225), (5,315)}} \penwd{1.25pt} \plrfcn{0,360,5}{5*sind(2*t)} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5, {<m>5</m>} 5} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 5\sin(2\theta)</m> in the <m>\theta r</m>-plane</cell>
+                    <cell><m>r = 5\sin(2\theta)</m> in the <m>xy</m>-plane</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Graphing <m>r^2 = 16 \cos(2\theta)</m> is complicated by the <m>r^2</m>,
+                so we solve for <m>r</m> by extracting square roots and get <m>r = \pm \sqrt{16 \cos(2\theta)} = \pm 4 \sqrt{\cos(2\theta)}</m>.
+                How do we sketch such a curve?
+                First off, we sketch a fundamental period of
+                <m>r = \cos(2\theta)</m> which we have dotted in the figure below.
+                When <m>\cos(2\theta) \lt 0</m>,
+                <m>\sqrt{\cos(2\theta)}</m> is undefined,
+                so we don't have any values on the interval <m>\left(\frac{\pi}{4}, \frac{3\pi}{4}\right)</m>.
+                On the intervals which remain,
+                <m>\cos(2\theta)</m> ranges from <m>0</m> to <m>1</m>,
+                inclusive.
+                Hence, <m>\sqrt{\cos(2\theta)}</m> ranges from <m>0</m> to <m>1</m> as well.<fn>
+                Owing to the relationship between <m>y = x</m> and <m>y = \sqrt{x}</m> over <m>[0,1]</m>,
+                we know <m>\sqrt{\cos(2\theta)} \geq \cos(2\theta)</m> wherever the former is defined.
+                </fn>  From this,
+                we know <m>r = \pm 4 \sqrt{\cos(2\theta)}</m> ranges continuously from <m>0</m> to <m>\pm 4</m>,
+                respectively.
+                Below we graph both <m>r = 4\sqrt{\cos(2\theta)}</m> and <m>r = -4\sqrt{\cos(2\theta)}</m> on the
+                <m>\theta r</m> plane and use them to sketch the corresponding pieces of the curve
+                <m>r^2 = 16\cos(2\theta)</m> in the <m>xy</m>-plane.
+                As we have seen in earlier examples,
+                the lines <m>\theta = \frac{\pi}{4}</m> and <m>\theta = \frac{3\pi}{4}</m>,
+                which are the zeros of the functions <m>r = \pm 4 \sqrt{\cos(2\theta)}</m>,
+                serve as guides for us to draw the curve as is passes through the origin.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[13]{-1}{7}{-5}{5} \axes \xmarks{1.5708, 3.1416, 4.7124, 6.2832} \ymarks{-4,4} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28} \axislabels{y}{{<m>-4</m>} -4, {<m>4</m>} 4} \tlabel[cc](7.25,-0.5){<m>\theta</m>} \tlabel[cc](0.25,5){<m>r</m>} \tlabelsep{1pt} \tlabelrect[0pt](0.78,2){<m>1</m>} \tlabelrect[0pt](0.78,-2){<m>2</m>} \tlabelrect[0pt](5.5,-2){<m>3</m>} \tlabelrect[0pt](5.5,2){<m>4</m>} \dotted \function{0, 6.2832, 0.1}{cos(x)} \arrow \function{0,0.78,0.1}{4*sqrt(cos(x))} \function{0.78,1.57,0.1}{4*sqrt(cos(x))} \arrow \function{4.713,5.5,0.1}{4*sqrt(cos(x))} \function{5.5,6.28,0.1}{4*sqrt(cos(x))} \point[2pt]{(0,4), (0,-4), (1.57,0), (4.71,0), (6.28,4), (6.28,-4)} \penwd{1.025} \arrow \function{0,0.78,0.1}{0-4*sqrt(cos(x))} \function{0.78,1.5,0.1}{0-4*sqrt(cos(x))} \arrow \function{4.8,5.5,0.1}{0-4*sqrt(cos(x))} \function{5.5,6.28,0.1}{0-4*sqrt(cos(x))} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[13]{-5}{5}{-5}{5} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \tlabelsep{1pt} \tlabelrect[0pt](3,2){<m>1</m>} \tlabelrect[0pt](-3,-2){<m>2</m>} \tlabelrect[0pt](-3,2){<m>4</m>} \tlabelrect[0pt](3,-2){<m>3</m>} \point[2pt]{\plr{(0,0),(4,0), (-4,0)}} \dashed \polyline{(-4,-4), (4,4)} \dashed \polyline{(-4,4), (4,-4)} \gclear \tlabelrect[cc](4,4){<m>\theta = \frac{\pi}{4}</m>} \gclear \tlabelrect[cc](-4,4){<m>\theta = \frac{3\pi}{4}</m>} \arrow \plrfcn{0,22,5}{4*sqrt(cosd(2*t))} \plrfcn{22,45,5}{4*sqrt(cosd(2*t))} \arrow \plrfcn{135,157,5}{4*sqrt(cosd(2*t))} \plrfcn{157,180,5}{4*sqrt(cosd(2*t))} \penwd{1.025} \arrow \plrfcn{0,22,5}{0-4*sqrt(cosd(2*t))} \plrfcn{22,45,5}{0-4*sqrt(cosd(2*t))} \arrow \plrfcn{135,157,5}{0-4*sqrt(cosd(2*t))} \plrfcn{157,180,5}{0-4*sqrt(cosd(2*t))} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 4\sqrt{\cos(2\theta)}</m> and</cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell><m>r = -4\sqrt{\cos(2\theta)}</m></cell>
+                    <cell></cell>
+                  </row>
+                </tabular>
+                As we plot points corresponding to values of <m>\theta</m> outside of the interval <m>[0,\pi]</m>,
+                we find ourselves retracing parts of the curve,<fn>
+                In this case,
+                we could have generated the entire graph by using just the plot <m>r = 4\sqrt{\cos(2\theta)}</m>,
+                but graphed over the interval
+                <m>[0,2\pi]</m> in the <m>\theta r</m>-plane.
+                We leave the details to the reader.
+                </fn> so our final answer is below.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[13]{-1}{7}{-5}{5} \axes \xmarks{1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{-4,4} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28} \axislabels{y}{{<m>-4</m>} -4, {<m>4</m>} 4} \tlabel[cc](7.25,-0.5){<m>\theta</m>} \tlabel[cc](0.25,5){<m>r</m>} \point[4pt]{(0,4), (0,-4), (1.57,0), (4.71,0), (6.28,4), (6.28,-4)} \penwd{1.25pt} \function{0,1.5,0.1}{0-4*sqrt(cos(x))} \function{4.8,6.28,0.1}{0-4*sqrt(cos(x))} \function{0,1.57,0.1}{4*sqrt(cos(x))} \function{4.713,6.28,0.1}{4*sqrt(cos(x))} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[13]{-5}{5}{-5}{5} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4.5, {<m>4</m>} 4.5} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \point[4pt]{\plr{(0,0),(4,0), (-4,0)}} \dashed \polyline{(-4,-4), (4,4)} \dashed \polyline{(-4,4), (4,-4)} \gclear \tlabelrect[cc](4,4){<m>\theta = \frac{\pi}{4}</m>} \gclear \tlabelrect[cc](-4,4){<m>\theta = \frac{3\pi}{4}</m>} \penwd{1.25pt} \plrfcn{0,45,5}{4*sqrt(cosd(2*t))} \plrfcn{135, 225,5}{4*sqrt(cosd(2*t))} \plrfcn{315, 360,5}{4*sqrt(cosd(2*t))} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = \pm 4\sqrt{\cos(2\theta)}</m></cell>
+                    <cell><m>r^2 = 16\cos(2\theta)</m></cell>
+                  </row>
+                  <row>
+                    <cell>in the <m>\theta r</m>-plane</cell>
+                    <cell>in the <m>xy</m>-plane</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks are in order.
+      First, there is no relation, in general,
+      between the period of the function
+      <m>f(\theta)</m> and the length of the interval required to sketch the complete graph of
+      <m>r = f(\theta)</m> in the <m>xy</m>-plane.
+    </p>
+    <p>
+      As we saw on <xref ref="circletangenttoyaxis">page</xref>,
+      despite the fact that the period of <m>f(\theta) = 6\cos(\theta)</m> is <m>2\pi</m>,
+      we sketched the complete graph of
+      <m>r = 6\cos(\theta)</m> in the <m>xy</m>-plane just using the values of <m>\theta</m> as <m>\theta</m> ranged from <m>0</m> to <m>\pi</m>.
+    </p>
+    <p>
+      On the other hand, in <xref ref="polargraphex">Example</xref>,
+      <xref ref="rose">number</xref>,
+      the period of <m>f(\theta) = 5\sin(2\theta)</m> is <m>\pi</m>,
+      but in order to obtain the complete graph of <m>r = 5\sin(2\theta)</m>,
+      we needed to run <m>\theta</m> from <m>0</m> to <m>2\pi</m>.
+    </p>
+    <p>
+      Second, the symmetry seen in the examples is also a common occurrence when graphing polar equations.
+    </p>
+    <p>
+      In addition symmetry about each axis and the origin,
+      it is possible to talk about <em>rotational</em>
+      symmetry with these curves.
+      We leave the exploration of symmetry to <xref ref="sympolarfirst">Exercises</xref>
+      - <xref ref="sympolarlast"></xref>.
+    </p>
+    <p>
+      Last we note that while many of the
+          <idx><h>lima&#xe7;on</h></idx>
+          <idx><h>polar rose</h></idx>
+          <idx><h>lemniscate</h></idx>
+      <sq>common</sq> polar graphs can be grouped into families,<fn>
+      <xref ref="limacon01">Numbers</xref>
+      and <xref ref="limacon02"></xref>
+      in <xref ref="polargraphex">Example</xref> are examples of <sq>
+      <url href="http://en.wikipedia.org/wiki/Limacon"><em>lima&#xe7;ons</em></url>
+      ,</sq> <xref ref="rose">number</xref> is an example of a <sq>
+      <url href="http://en.wikipedia.org/wiki/Rose_(mathematics)"><em>polar rose</em></url>
+      ,</sq> and <xref ref="lemniscate">number</xref> is the famous <sq>
+      <url href="http://en.wikipedia.org/wiki/Lemniscate_of_Bernoulli"><em>Lemniscate of Bernoulli</em></url>
+      .</sq>
+      </fn> the authors truly feel that taking the time to work through each graph in the manner presented here is the best way to not only understand the polar coordinate system,
+      but also prepare you for what is needed in Calculus.
+    </p>
+    <p>
+      Next we turn our attention to finding the intersection points of polar curves.
+      What complicates matters in polar coordinates is that any given point has infinitely many representations.
+      As a result,
+      if a point <m>P</m> is on the graph of two different polar equations,
+      it is entirely possible that the representation
+      <m>P(r,\theta)</m> which satisfies one of the equations does not satisfy the other equation.
+    </p>
+    <p>
+      In our next example,
+      we see the need to rely on Geometry as much as Algebra to solve each problem.
+    </p>
+    <example xml:id="polargraphintex">
+      <statement>
+        <p>
+          Find the points of intersection of the graphs of the following polar equations.
+          <ol cols="2">
+            <li xml:id="circcardint">
+              <p>
+                <m>r =2\sin(\theta)</m> and <m>r = 2 - 2\sin(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>r = 2</m> and <m>r = 3\cos(\theta)</m>
+              </p>
+            </li>
+            <li xml:id="circroseint">
+              <p>
+                <m>r=3</m> and <m>r = 6\cos(2\theta)</m>
+              </p>
+            </li>
+            <li xml:id="samepolarcurveex">
+              <p>
+                <m>r = 3\sin\left(\frac{\theta}{2}\right)</m> and <m>r = 3\cos\left(\frac{\theta}{2}\right)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Following the procedure in <xref ref="polargraphex">Example</xref>,
+                we graph <m>r = 2\sin(\theta)</m> and find it to be a circle centered at the point with rectangular coordinates <m>(0,1)</m> with a radius of <m>1</m>.
+                The graph of <m>r = 2-2\sin(\theta)</m> is a special kind of lima&#xe7;on called a
+                  <idx><h>cardioid</h></idx>
+                <sq>
+                <url href="http://en.wikipedia.org/wiki/Cardioid"><em>cardioid</em></url>
+                .</sq><fn>
+                Presumably, the name is derived from its resemblance to a stylized human heart.
+                </fn>  \begin{mfpic}[20]{-3.5}{3.5}{-5}{3} \axes \xmarks{-3,-2,-1,1,2,3} \ymarks{-4,-3,-2,-1,1,2} \tlabel[cc](3.75,-0.25){<m>x</m>} \tlabel[cc](0.25,3.25){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -1.75, {<m>2</m>} 1.9} \axislabels {y}{{<m>-4</m>} -3.75, {<m>2</m>} 1.7} \point[3pt]{\plr{(1,30),(1,150),(0,0)}} \plrfcn{0,360,5}{2-2*sind(t)} \penwd{1.05} \plrfcn{0,180,5}{2*sind(t)} \end{mfpic} <m>r = 2-2\sin(\theta)</m> and
+                <m>r=2\sin(\theta)</m> It appears as if there are three intersection points:
+                one in the first quadrant, one in the second quadrant,
+                and the origin.
+                Our next task is to find polar representations of these points.
+                In order for a point <m>P</m> to be on the graph of <m>r = 2\sin(\theta)</m>,
+                it must have a representation
+                <m>P(r,\theta)</m> which satisfies <m>r = 2\sin(\theta)</m>.
+                If <m>P</m> is also on the graph of <m>r = 2 - 2\sin(\theta)</m>,
+                then <m>P</m> has a
+                (possibly different)
+                representation <m>P(r',\theta')</m> which satisfies <m>r'=2\sin(\theta')</m>.
+                We first try to see if we can find any points which have a single representation <m>P(r,\theta)</m> that satisfies both
+                <m>r = 2\sin(\theta)</m> and <m>r = 2-2\sin(\theta)</m>.
+                Assuming such a pair <m>(r,\theta)</m> exists, then equating<fn>
+                We are really using the technique of substitution to solve the system of equations <m>\left\{ \begin{array}{rcl} r \amp = \amp 2\sin(\theta) \\ r \amp = \amp 2-2\sin(\theta) \end{array} \right.</m>
+                </fn> the expressions for <m>r</m> gives
+                <m>2\sin(\theta) = 2-2\sin(\theta)</m> or <m>\sin(\theta) = \frac{1}{2}</m>.
+                From this, we get <m>\theta = \frac{\pi}{6} + 2\pi k</m> or
+                <m>\theta = \frac{5\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+                Plugging <m>\theta = \frac{\pi}{6}</m> into <m>r = 2\sin(\theta)</m>,
+                we get <m>r = 2\sin\left(\frac{\pi}{6}\right) = 2\left(\frac{1}{2}\right) = 1</m>,
+                which is also the value we obtain when we substitute it into <m>r = 2-2\sin(\theta)</m>.
+                Hence, <m>\left(1, \frac{\pi}{6}\right)</m> is one representation for the point of intersection in the first quadrant.
+                For the point of intersection in the second quadrant,
+                we try <m>\theta = \frac{5\pi}{6}</m>.
+                Both equations give us the point <m>\left(1, \frac{5\pi}{6}\right)</m>,
+                so this is our answer here.
+                We now turn our attention to the origin.
+                We know from <xref ref="PolarCoordinates">Section</xref>
+                that the pole may be represented as
+                <m>(0,\theta)</m> for any angle <m>\theta</m>.
+                On the graph of <m>r = 2\sin(\theta)</m>,
+                we start at the origin when
+                <m>\theta =0</m> and return to it at <m>\theta = \pi</m>,
+                and as the reader can verify,
+                we are at the origin exactly when
+                <m>\theta = \pi k</m> for integers <m>k</m>.
+                On the curve <m>r = 2 - 2\sin(\theta)</m>, however,
+                we reach the origin when <m>\theta = \frac{\pi}{2}</m>,
+                and more generally,
+                when <m>\theta = \frac{\pi}{2} + 2\pi k</m> for integers <m>k</m>.
+                There is no integer value of <m>k</m> for which
+                <m>\pi k = \frac{\pi}{2} + 2\pi k</m> which means while the origin is on both graphs,
+                the point is never reached simultaneously.
+                In any case,
+                we have determined the three points of intersection to be <m>\left(1, \frac{\pi}{6}\right)</m>,
+                <m>\left(1,\frac{5\pi}{6}\right)</m> and the origin.
+              </p>
+            </li>
+            <li>
+              <p>
+                As before, we make a quick sketch of <m>r = 2</m> and
+                <m>r =3\cos(\theta)</m> to get feel for the number and location of the intersection points.
+                The graph of <m>r=2</m> is a circle,
+                centered at the origin, with a radius of <m>2</m>.
+                The graph of <m>r = 3\cos(\theta)</m> is also a circle - but this one is centered at the point with rectangular coordinates <m>\left(\frac{3}{2}, 0\right)</m> and has a radius of
+                <m>\frac{3}{2}</m>. \begin{mfpic}[20]{-3.5}{3.5}{-3}{3} \axes \xmarks{-3,-2,-1,1,2,3} \ymarks{-2,-1,1,2} \tlabel[cc](3.75,-0.25){<m>x</m>} \tlabel[cc](0.25,3.25){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2.25, {<m>2</m>} 2.15, {<m>3</m>} 3.15} \axislabels {y}{{<m>-2</m>} -2.25, {<m>2</m>} 2.25} \point[3pt]{\plr{(2,48.19),(2,311.81)}} \plrfcn{0,360,5}{2} \penwd{1.025} \plrfcn{0,180,5}{3*cosd(t)} \end{mfpic} <m>r = 2</m> and
+                <m>r=3\cos(\theta)</m> We have two intersection points to find,
+                one in Quadrant I and one in Quadrant IV. Proceeding as above,
+                we first determine if any of the intersection points <m>P</m> have a representation
+                <m>(r,\theta)</m> which satisfies both <m>r=2</m> and <m>r=3\cos(\theta)</m>.
+                Equating <m>r=2</m> and <m>r=3\cos(\theta)</m>,
+                we get <m>2 = 3 \cos(\theta)</m>,
+                or <m>\cos(\theta) = \frac{2}{3}</m>.
+                To solve this equation, we need the arccosine function:
+                <m>\theta = \arccos\left(\frac{2}{3}\right) + 2\pi k</m> or
+                <m>\theta = 2\pi - \arccos\left(\frac{2}{3}\right) + 2\pi k</m> for integers <m>k</m>.
+                From these solutions, we get
+                <m>\left(2, \arccos\left(\frac{2}{3}\right)\right)</m> as one representation for our answer in Quadrant I, and
+                <m>\left(2, 2\pi - \arccos\left(\frac{2}{3}\right)\right)</m> as one representation for our answer in Quadrant IV. The reader is encouraged to check these results algebraically and geometrically.
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as above, we first graph <m>r = 3</m> and
+                <m>r = 6\cos(2\theta)</m> to get an idea of how many intersection points to expect and where they lie.
+                The graph of <m>r=3</m> is a circle centered at the origin with a radius of <m>3</m> and the graph of
+                <m>r = 6\cos(2\theta)</m> is another four-leafed rose.<fn>
+                See <xref ref="polargraphex">Example</xref>
+                <xref ref="rose">number</xref>.
+                </fn>  \begin{mfpic}[10]{-7}{7}{-7}{7} \axes \xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \ymarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,7){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6.3, {<m>-3</m>} -3.25, {<m>3</m>} 3.25, {<m>6</m>} 6.25} \axislabels {y}{{<m>-6</m>} -6.4, {<m>-3</m>} -3.4, {<m>3</m>} 3.25, {<m>6</m>} 6.25} \point[3pt]{\plr{(3,30),(3,60),(3,120), (3,150), (3,210), (3, 240), (3,300), (3, 330)}} \plrfcn{0,360,5}{3} \penwd{1.05} \plrfcn{0,360,5}{6*cosd(2*t)} \end{mfpic} <m>r = 3</m> and
+                <m>r = 6\cos(2\theta)</m> It appears as if there are eight points of intersection - two in each quadrant.
+                We first look to see if there any points
+                <m>P(r,\theta)</m> with a representation that satisfies both <m>r=3</m> and <m>r = 6\cos(2\theta)</m>.
+                Solving <m>6\cos(2\theta) = 3</m>,
+                we get <m>\cos(2\theta) = \frac{1}{2}</m>,
+                so <m>\theta = \frac{\pi}{6} + \pi k</m> or
+                <m>\theta = \frac{5\pi}{6} + \pi k</m> for integers <m>k</m>.
+                From these, we obtain four distinct points represented by <m>\left(3, \frac{\pi}{6}\right)</m>,
+                <m>\left(3, \frac{5\pi}{6} \right)</m>,
+                <m>\left(3, \frac{7\pi}{6}\right)</m> and <m>\left(3, \frac{11\pi}{6} \right)</m>.
+                To determine the coordinates of the remaining four points,
+                we have to consider how the representations of the points of intersection can differ.
+                We know from <xref ref="PolarCoordinates">Section</xref>
+                that if <m>(r,\theta)</m> and
+                <m>(r', \theta')</m> represent the same point and <m>r \neq 0</m>,
+                then either <m>r = r'</m> or <m>r = -r'</m>.
+                If <m>r = r'</m>, then <m>\theta' = \theta + 2\pi k</m>,
+                so one possibility is that an intersection point <m>P</m> has a representation
+                <m>(r,\theta)</m> which satisfies <m>r=3</m> and another representation <m>(r, \theta + 2\pi k)</m> for some integer,
+                <m>k</m> which satisfies <m>r = 6\cos(2\theta)</m>.
+                At this point,<fn>
+                The authors have chosen to replace <m>\theta</m> with <m>\theta + 2\pi k</m> in the equation
+                <m>r = 6\cos(2\theta)</m> for illustration purposes only.
+                We could have just as easily chosen to do this substitution in the equation <m>r = 3</m>.
+                Since there is no <m>\theta</m> in <m>r=3</m>, however,
+                this case would reduce to the previous case instantly.
+                The reader is encouraged to follow this latter procedure in the interests of efficiency.
+                </fn> we replace every occurrence of <m>\theta</m> in the equation
+                <m>r=6\cos(2\theta)</m> with <m>(\theta + 2\pi k)</m> to see if,
+                by equating the resulting expressions for <m>r</m>,
+                we get any more solutions for <m>\theta</m>.
+                Doing so, we get <m>\cos(2(\theta + 2\pi k)) = \cos(2\theta + 4\pi k) = \cos(2\theta)</m> for every integer <m>k</m>.
+                Hence, the equation <m>r = 6\cos(2(\theta + 2\pi k))</m> reduces to the same equation we had before,
+                <m>r = 6\cos(2\theta)</m>, which means we get no additional solutions.
+                Moving on to the case where <m>r = -r'</m>,
+                we have that <m>\theta' = \theta + (2k+1)\pi</m> for integers <m>k</m>.
+                We look to see if we can find points <m>P</m> which have a representation
+                <m>(r,\theta)</m> that satisfies <m>r=3</m> and another,
+                <m>(-r, \theta + (2k+1)\pi)</m>,
+                that satisfies <m>r = 6\cos(2\theta)</m>.
+                Substituting<fn>
+                Again, we could have easily chosen to substitute these into <m>r=3</m> which would give <m>-r=3</m>,
+                or <m>r=-3</m>.
+                </fn>  <m>(-r)</m> for <m>r</m> and <m>(\theta + (2k+1)\pi)</m> for <m>\theta</m> in
+                <m>r = 6\cos(2\theta)</m> gives <m>-r = 6\cos(2(\theta + (2k+1)\pi))</m>.
+                Since <m>\cos(2(\theta + (2k+1)\pi)) = \cos(2\theta + (2k+1)(2\pi)) = \cos(2\theta)</m> for all integers <m>k</m>,
+                the equation <m>-r = 6\cos(2(\theta + (2k+1)\pi))</m> reduces to <m>-r = 6\cos(2\theta)</m>,
+                or <m>r = -6\cos(2\theta)</m>.
+                Coupling <m>r = -6\cos(2\theta)</m> with <m>r=3</m> gives
+                <m>-6\cos(2\theta) = 3</m> or <m>\cos(2\theta) = -\frac{1}{2}</m>.
+                Solving, we get <m>\theta = \frac{\pi}{3} + \pi k</m> or <m>\theta = \frac{2\pi}{3} + \pi k</m>.
+                From these solutions, we obtain<fn>
+                We obtain these representations by substituting the values for <m>\theta</m> into <m>r = 6\cos(2\theta)</m>,
+                once again, for illustration purposes.
+                Again, we could <sq>plug</sq> these values for <m>\theta</m> into <m>r=3</m>
+                (where there is no <m>\theta</m>)
+                and get the list of points:
+                <m>\left(3, \frac{\pi}{3}\right)</m>,
+                <m>\left(3, \frac{2\pi}{3}\right)</m>,
+                <m>\left(3, \frac{4\pi}{3}\right)</m> and <m>\left(3, \frac{5\pi}{3}\right)</m>.
+                While it is not true that <m>\left(3, \frac{\pi}{3}\right)</m> represents the same point as <m>\left(-3, \frac{\pi}{3}\right)</m>,
+                we still get the same <em>set</em> of solutions.
+                </fn> the remaining four intersection points with representations <m>\left(-3, \frac{\pi}{3}\right)</m>,
+                <m>\left(-3, \frac{2\pi}{3}\right)</m>,
+                <m>\left(-3, \frac{4\pi}{3}\right)</m> and
+                <m>\left(-3, \frac{5\pi}{3}\right)</m>, which check graphically.
+              </p>
+            </li>
+            <li>
+              <p>
+                As usual, we begin by graphing
+                <m>r = 3\sin\left(\frac{\theta}{2}\right)</m> and <m>r = 3\cos\left(\frac{\theta}{2}\right)</m>.
+                Using the techniques presented in <xref ref="polargraphex">Example</xref>,
+                we  plot both functions as <m>\theta</m> ranges from <m>0</m> to <m>4\pi</m> to obtain the complete graph.
+                To our surprise and/or delight,
+                it appears as if these two equations describe the <em>same</em>
+                curve!   \begin{mfpic}[20]{-4}{4}{-3.5}{3.5} \axes \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](4.25,-0.25){<m>x</m>} \tlabel[cc](0.25,3.5){<m>y</m>} \tlpointsep{4pt}  \axislabels {x}{{<m>-3</m>} -3, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>3</m>} 3}  \plrfcn{0,720,5}{3*cosd(t/2)} \penwd{1.025} \plrfcn{0,720,5}{3*sind(t/2)} \end{mfpic}  <m>r = 3\sin\left(\frac{\theta}{2}\right)</m> and {
+                <m>r = 3\cos\left(\frac{\theta}{2}\right)</m>}   appear to determine the same curve in the <m>xy</m>-plane  To verify this incredible claim,<fn>
+                Graphing <m>r =  3\sin\left(\frac{\theta}{2}\right)</m> and <m>r= 3\cos\left(\frac{\theta}{2}\right)</m> in the
+                <m>\theta r</m>-plane show that viewed as functions of <m>r</m>,
+                these are two different animals.
+                </fn> we need to show that, in fact,
+                the graphs of these two equations intersect at all points on the plane.
+                Suppose <m>P</m> has a representation <m>(r,\theta)</m> which satisfies both
+                <m>r = 3\sin\left(\frac{\theta}{2}\right)</m> and <m>r = 3\cos\left(\frac{\theta}{2}\right)</m>.
+                Equating these two expressions for <m>r</m> gives the equation <m>3\sin\left(\frac{\theta}{2}\right) =  3\cos\left(\frac{\theta}{2}\right)</m>.
+                While normally we discourage dividing by a variable expression
+                (in case it could be <m>0</m>),
+                we use the same logic here as we did in the solution to <xref ref="eqnconversionex">Example</xref>
+                <xref ref="yisxsquared">number</xref>
+                in <xref ref="PolarCoordinates">Section</xref>.
+                If <m>3\cos\left(\frac{\theta}{2}\right) = 0</m>,
+                then <m>\cos\left(\frac{\theta}{2}\right) = 0</m> and for the equation <m>3\sin\left(\frac{\theta}{2}\right) =  3\cos\left(\frac{\theta}{2}\right)</m> to hold,
+                <m>\sin\left(\frac{\theta}{2}\right) = 0</m> as well.
+                Since no angles have both cosine and sine equal to zero,
+                we are safe to divide both sides of the equation  <m>3\sin\left(\frac{\theta}{2}\right) =  3\cos\left(\frac{\theta}{2}\right)</m> by
+                <m>3\cos\left(\frac{\theta}{2}\right)</m> to get <m>\tan\left(\frac{\theta}{2}\right) = 1</m>.
+                Solving this equation gives
+                <m>\theta =  \frac{\pi}{2} + 2\pi k</m> for integers <m>k</m> which corresponds to just
+                <em>one</em> intersection point:
+                <m>\left( \frac{3\sqrt{2}}{2}, \frac{\pi}{2}\right)</m>.
+                We now investigate other representations for the intersection points.
+                Suppose <m>P</m> is an intersection point with a representation <m>(r,\theta)</m> which satisfies
+                <m>r =  3\sin\left(\frac{\theta}{2}\right)</m> and  a  different representation
+                <m>(r, \theta + 2\pi k)</m> for some integer <m>k</m> which satisfies <m>r =  3\cos\left(\frac{\theta}{2}\right)</m>.
+                Substituting <m>(r, \theta + 2\pi k)</m>  into <m>r =  3\cos\left(\frac{\theta}{2}\right)</m>,
+                we get <m>r = 3\cos\left(\frac{1}{2} \left[ \theta + 2\pi k\right]\right) = 3\cos\left(\frac{\theta}{2} + \pi k\right)</m>.
+                Using the sum formula for cosine,
+                we expand  <m>3\cos\left(\frac{\theta}{2} + \pi k\right) = 3\cos\left(\frac{\theta}{2}\right) \cos(\pi k) - 3\sin\left(\frac{\theta}{2}\right)\sin\left(\pi k\right)</m>.
+                Since <m>\sin(\pi k) = 0</m>  for all integers <m>k</m>,
+                <m>r=3\cos\left(\frac{\theta}{2} + \pi k\right)</m> reduces to  <m>r=3\cos\left(\frac{\theta}{2}\right)\cos\left(\pi k\right)</m>.
+                If <m>k</m> is an even integer,
+                <m>\cos\left(\pi k \right)  = 1</m>,
+                so we get the same equation <m>r = 3\cos\left(\frac{\theta}{2}\right)</m> as before,
+                and hence any new solutions come from the case when <m>k</m> is odd.
+                If <m>k</m> is odd,
+                <m>r=3\cos\left(\frac{\theta}{2}\right)\cos\left(\pi k\right)</m> reduces to <m>r = -3\cos\left(\frac{\theta}{2}\right)</m>.
+                Coupling <m>r = -3\cos\left(\frac{\theta}{2}\right)</m> with the equation
+                <m>r = 3\sin\left(\frac{\theta}{2}\right)</m> gives  <m>3\sin\left(\frac{\theta}{2}\right) = -3\cos\left(\frac{\theta}{2}\right)</m>,
+                or <m>\tan\left(\frac{\theta}{2}\right) = -1</m>.
+                Solving, we get <m>\theta = -\frac{\pi}{2} + 2\pi k</m> for integers <m>k</m>,
+                which again produces just one intersection point:
+                <m>\left(\frac{3\sqrt{2}}{2},-\frac{\pi}{2}\right)</m>.
+                Next, we assume <m>P</m> has a representation <m>(r,\theta)</m> which satisfies
+                <m>r=3\sin\left(\frac{\theta}{2}\right)</m> and  a representation <m>(-r, \theta + (2k+1)\pi)</m> which satisfies
+                <m>r = 3\cos\left(\frac{\theta}{2}\right)</m> for some integer <m>k</m>.
+                Substituting <m>(-r)</m> for <m>r</m> and
+                <m>(\theta + (2k+1)\pi)</m> in for <m>\theta</m> into <m>r = 3\cos\left(\frac{\theta}{2}\right)</m> gives
+                <m>-r = 3\cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)</m> or <m>r = -3\cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)</m>.
+                Once again, we use the sum formula for cosine to get
+                <me>
+                  \begin{array}{rcl}  r \amp   = \amp  -3 \cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)  \\ \amp   = \amp  -3  \cos\left(\frac{\theta}{2} + \frac{(2k+1)\pi}{2} \right) \\ \amp  =  \amp  -3 \left[\cos\left(\frac{\theta}{2}\right) \cos\left(\frac{(2k+1)\pi}{2}\right) - \sin\left(\frac{\theta}{2}\right) \sin\left(\frac{(2k+1)\pi}{2}\right) \right] \\ \amp  = \amp   3 \sin\left(\frac{\theta}{2}\right)  \sin\left(\frac{(2k+1)\pi}{2}\right) \end{array}
+                </me>
+                where the last equality is true  since <m>\cos\left(\frac{(2k+1)\pi}{2}\right) = 0</m>.
+                Note when <m>k = 0</m>,
+                <m>\sin\left(\frac{(2k+1)\pi}{2}\right) = \sin\left(\frac{\pi}{2}\right)= 1</m>,
+                and the equation  <m>r = -3\cos\left(\frac{1}{2}\left[ \theta + (2k+1)\pi\right]\right)</m>  reduces to <m>r = 3\sin\left(\frac{\theta}{2}\right)</m>,
+                which is the other equation under consideration!
+                What this means is that if a polar representation
+                <m>(r,\theta)</m> for the point <m>P</m> satisfies <m>r = 3\sin\left(\frac{\theta}{2}\right)</m>,
+                then the representation  <m>(-r, \theta + \pi)</m> for <m>P</m> automatically satisfies <m>r = 3\cos\left(\frac{\theta}{2}\right)</m>.
+                Hence the equations <m>r = 3\sin\left(\frac{\theta}{2}\right)</m> and
+                <m>r = 3\cos\left(\frac{\theta}{2}\right)</m> determine the same set of points in the plane.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our work in <xref ref="polargraphintex">Example</xref> justifies the following.
+    </p>
+    <p>
+      <em>Guidelines for Finding Points of Intersection of Graphs of Polar Equations:</em>
+    </p>
+    <p>
+      To find the points of intersection of the graphs of two polar equations <m>E_{1}</m> and <m>E_{2}</m>:
+      <ul>
+        <li>
+          <p>
+            Sketch the graphs of <m>E_{1}</m> and <m>E_{2}</m>.
+            Check to see if the curves intersect at the origin
+            (pole).
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for pairs <m>(r,\theta)</m> which satisfy both <m>E_{1}</m> and <m>E_{2}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Substitute <m>(\theta + 2\pi k)</m> for <m>\theta</m> in either one of <m>E_{1}</m> or <m>E_{2}</m>
+            (but not both)
+            and solve for pairs <m>(r,\theta)</m> which satisfy both equations.
+            Keep in mind that <m>k</m> is an integer.
+          </p>
+        </li>
+        <li>
+          <p>
+            Substitute <m>(-r)</m> for <m>r</m> and
+            <m>(\theta + (2k+1)\pi)</m> for <m>\theta</m> in either one of <m>E_{1}</m> or <m>E_{2}</m>
+            (but not both)
+            and solve for pairs <m>(r,\theta)</m> which satisfy both equations.
+            Keep in mind that <m>k</m> is an integer.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Our last example ties together graphing and points of intersection to describe regions in the plane.
+    </p>
+    <example xml:id="polarregionex">
+      <statement>
+        <p>
+          Sketch the region in the <m>xy</m>-plane described by the following sets.
+          <ol>
+            <li>
+              <p>
+                <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 5\sin(2\theta), \, 0 \leq \theta \leq \frac{\pi}{2} \right\}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ (r,\theta) \, | \, 3 \leq r \leq 6 \cos(2\theta), \, 0 \leq \theta \leq \frac{\pi}{6} \right\}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ (r,\theta) \, | \, 2+4\cos(\theta) \leq r \leq 0, \, \frac{2\pi}{3} \leq \theta \leq \frac{4\pi}{3} \right\}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ (r,\theta) \, | \, 0\leq r \leq 2\sin(\theta), \, 0 \leq \theta \leq \frac{\pi}{6} \right\} \cup \left\{ (r,\theta) \, | \, 0\leq r \leq 2-2\sin(\theta), \, \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Our first step in these problems is to sketch the graphs of the polar equations involved to get a sense of the geometric situation.
+          Since all of the equations in this example are found in either <xref ref="polargraphex">Example</xref>
+          or <xref ref="polargraphintex">Example</xref>,
+          most of the work is done for us.
+          <ol>
+            <li>
+              <p>
+                We know from <xref ref="polargraphex">Example</xref>
+                <xref ref="rose">number</xref>
+                that the graph of <m>r = 5\sin(2\theta)</m> is a rose.
+                Moreover, we know as <m>0 \leq \theta \leq \frac{\pi}{2}</m>,
+                we trace out the <sq>leaf</sq> of the rose which lies in the first quadrant.
+                The inequality <m>0 \leq r \leq 5\sin(2\theta)</m> means we want all of the points between the origin (<m>r=0</m>) and the curve
+                <m>r = 5\sin(2\theta)</m> as <m>\theta</m> runs through <m>\left[0, \frac{\pi}{2}\right]</m>.
+                Hence, the region we seek is the leaf itself.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[13][7.5]{-1}{7}{-6}{6} \axes \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-5,5} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 1.57, {<m>\frac{\pi}{2}</m>} 3.14, {<m>\frac{3\pi}{4}</m>} 4.71, {<m>\pi</m>} 6.28} \axislabels{y}{{<m>-5</m>} -5, {<m>5</m>} 5} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,6){<m>r</m>} \arrow \polyline{(0.39,0), (0.39,1.4)} \arrow \polyline{(0.78,0), (0.78,3.43)} \arrow \polyline{(1.18,0), (1.18,4.42)} \arrow \polyline{(1.57,0), (1.57,4.9)} \arrow \polyline{(1.96,0), (1.96,4.52)} \arrow \polyline{(2.35,0), (2.35,3.43)} \arrow \polyline{(2.75,0), (2.75,1.8)} \point[3pt]{(0,0), (1.57,5), (3.14,0), (4.71,-5), (6.28,0)} \penwd{1.15pt} \function{0,6.28,0.1}{5*sin(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-1}{5}{-1}{5} \axes \xmarks{1,2,3,4} \ymarks{1,2,3,4} \tlabel[cc](5.25,-0.25){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \fillcolor[gray]{0.7} \gfill \plrregion{0,90,1}{5*sind(2*t)} \point[3pt]{\plr{(0,0),(5,45)}} \penwd{1.025} \plrfcn{0,90,5}{5*sind(2*t)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 5\sin(2\theta)</m></cell>
+                    <cell><m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 5\sin(2\theta), 0 \leq \theta \leq \frac{\pi}{2} \right\}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                We know from <xref ref="polargraphintex">Example</xref>
+                <xref ref="circroseint">number</xref>
+                that <m>r=3</m> and <m>r = 6\cos(2\theta)</m> intersect at <m>\theta = \frac{\pi}{6}</m>,
+                so the region that is being described here is the set of points whose directed distance <m>r</m> from the origin is at least <m>3</m> but no more than
+                <m>6\cos(2\theta)</m> as <m>\theta</m> runs from <m>0</m> to <m>\frac{\pi}{6}</m>.
+                In other words,
+                we are looking at the points outside or on the circle
+                (since <m>r \geq 3</m>)
+                but inside or on the rose (since <m>r \leq 6\cos(2\theta)</m>).
+                We shade the region below.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-3}{4} \axes \xmarks{1,2,3,4,5,6} \ymarks{-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \point[3pt]{\plr{(3,30)}} \plrfcn{0,90,5}{3} \dotted \polyline{(-1,-0.58), (5.2, 3)} \tlabel[cc](6,3){<m>\theta = \frac{\pi}{6}</m>} \penwd{1.025} \plrfcn{0,45,5}{6*cosd(2*t)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-3}{4} \fillcolor[gray]{0.7} \gfill \plrregion{0,45,1}{6*cosd(2*t)} \gclear \plrregion{0,45,1}{3} \axes \xmarks{1,2,3,4,5,6} \ymarks{-2,-1,1,2,3} \tlabel[cc](7.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \point[3pt]{\plr{(3,30)}, (3,0), (6,0)} \penwd{1.025} \plrfcn{0,30,5}{3} \plrfcn{0,30,5}{6*cosd(2*t)} \polyline{(3,0), (6,0)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 3</m> and <m>r = 6\cos(2\theta)</m></cell>
+                    <cell><m>\left\{ (r,\theta) \, | \, 3 \leq r \leq 6 \cos(2\theta), 0 \leq \theta \leq \frac{\pi}{6} \right\}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                From <xref ref="polargraphex">Example</xref>
+                <xref ref="limacon02">number</xref>,
+                we know that the graph of <m>r = 2+4\cos(\theta)</m> is a lima&#xe7;on whose <sq>inner loop</sq> is traced out as <m>\theta</m> runs through the given values
+                <m>\frac{2\pi}{3}</m> to <m>\frac{4\pi}{3}</m>.
+                Since the values <m>r</m> takes on in this interval are non-positive,
+                the inequality <m>2+4\cos(\theta) \leq r \leq 0</m> makes sense,
+                and we are looking for all of the points between the pole <m>r = 0</m> and the lima&#xe7;on as <m>\theta</m> ranges over the interval <m>\left[\frac{2\pi}{3}, \frac{4\pi}{3}\right]</m>.
+                In other words, we shade in the inner loop of the lima&#xe7;on.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{7}{-3}{7} \axes \xmarks{0.7854, 1.5708, 2.0944, 3.1416, 4.1888, 4.7124,5.4978,6.2832 } \ymarks{-2, 2,4,6} \tlpointsep{4pt} \axislabels{x}{{<m>\frac{\pi}{2}</m>} 1.57, {<m>\pi</m>} 3.14, {<m>\frac{3\pi}{2}</m>} 4.71, {<m>2\pi</m>} 6.28} \axislabels{y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6} \tlabel[cc](2.2,0.5){<m>\frac{2\pi}{3}</m>} \tlabel[cc](3.9,0.5){<m>\frac{4\pi}{3}</m>} \tlabel[cc](7.25,-0.75){<m>\theta</m>} \tlabel[cc](0.25,7){<m>r</m>} \arrow \polyline{(2.35,0), (2.35,-0.6)} \arrow \polyline{(2.75,0), (2.75,-1.5)} \arrow \polyline{(3.14,0), (3.14,-1.9)} \arrow \polyline{(3.53,0), (3.53,-1.6)} \arrow \polyline{(3.93,0), (3.93,-0.6)} \point[3pt]{(0,6), (1.57,2), (2.09,0), (3.14,-2), (4.19,0), (4.71,2), (6.28,6)} \penwd{1.15pt} \function{0,6.28,0.1}{2+4*cos(x)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[17]{-2}{3}{-4}{4} \fillcolor[gray]{0.7} \gfill \plrregion{120,240,1}{2+4*cosd(t)} \axes \xmarks{-1,1,2} \ymarks{-3,-2,-1,1,2,3} \tlabel[cc](3.25,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \point[3pt]{\plr{(0,0),(-2,180)}} \dashed \polyline{(1.5, 2.6), (-2, -3.46)} \gclear \tlabelrect(-1.5,-2){<m>\theta = \frac{4\pi}{3}</m>} \dashed \polyline{(1.5, -2.6), (-2, 3.46)} \gclear \tlabelrect(-1.5,2){<m>\theta = \frac{2\pi}{3}</m>} \penwd{1.025} \plrfcn{120,240,5}{2+4*cosd(t)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 2+4\cos(\theta)</m></cell>
+                    <cell><m>\left\{ (r,\theta) \, | \, 2+4\cos(\theta) \leq r \leq 0, \frac{2\pi}{3} \leq \theta \leq \frac{4\pi}{3} \right\}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                We have two regions described here connected with the union symbol <sq><m>\cup</m>.</sq> We shade each in turn and find our final answer by combining the two.
+                In <xref ref="polargraphintex">Example</xref>,
+                <xref ref="circcardint">number</xref>,
+                we found that the curves <m>r = 2\sin(\theta)</m> and
+                <m>r = 2-2\sin(\theta)</m> intersect when <m>\theta = \frac{\pi}{6}</m>.
+                Hence, for the first region,
+                <m>\left\{ (r,\theta) \, | \, 0\leq r \leq 2\sin(\theta), 0 \leq \theta \leq \frac{\pi}{6} \right\}</m>,
+                we are shading the region between the origin (<m>r=0</m>) out to the circle (<m>r = 2\sin(\theta)</m>) as <m>\theta</m> ranges from <m>0</m> to <m>\frac{\pi}{6}</m>,
+                which is the angle of intersection of the two curves.
+                For the second region,
+                <m>\left\{ (r,\theta) \, | \, 0\leq r \leq 2-2\sin(\theta), \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}</m>,
+                <m>\theta</m> picks up where it left off at
+                <m>\frac{\pi}{6}</m> and continues to <m>\frac{\pi}{2}</m>.
+                In this case, however,
+                we are shading from the origin (<m>r=0</m>) out to the cardioid
+                <m>r = 2-2\sin(\theta)</m> which pulls into the origin at <m>\theta = \frac{\pi}{2}</m>.
+                We combine these two regions to obtain our final answer.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[50]{-0.5}{2.5}{-0.5}{1.5} \axes \xmarks{1} \ymarks{1} \tlabel[cc](2.5,-0.15){<m>x</m>} \tlabel[cc](0.15,1.5){<m>y</m>} \point[3pt]{\plr{(1,30),(0,0)}} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1} \axislabels {y}{{<m>1</m>} 1} \dashed \polyline{(0,0), (1.5, 0.87)} \tlabel[cc](1.9,0.87){<m>\theta = \frac{\pi}{6}</m>} \plrfcn{0,90,5}{2-2*sind(t)} \penwd{1.025} \plrfcn{0,60,5}{2*sind(t)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[50]{-0.5}{1.5}{-0.5}{1.5} \axes \xmarks{1} \ymarks{1} \tlabel[cc](1.5,-0.15){<m>x</m>} \tlabel[cc](0.15,1.5){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1} \axislabels {y}{{<m>1</m>} 1} \fillcolor[gray]{0.7} \gfill \plrregion{0,31,1}{2*sind(t)} \gfill \plrregion{30,90,1}{2-2*sind(t)} \penwd{1.025} \plrfcn{30,90,1}{2-2*sind(t)} \plrfcn{0,30,1}{2*sind(t)} \point[3pt]{\plr{(1,30),(0,0)}} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>r = 2-2\sin(\theta)</m> and <m>r=2\sin(\theta)</m></cell>
+                    <cell><m>\left\{ (r,\theta) \, | \, 0\leq r \leq 2\sin(\theta), \, 0 \leq \theta \leq \frac{\pi}{6} \right\} \cup</m></cell>
+                  </row>
+                  <row>
+                    <cell></cell>
+                    <cell><m>\left\{ (r,\theta) \, | \, 0\leq r \leq 2-2\sin(\theta), \, \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="polargraphscalculator">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="polarplotfirst">Exercises</xref>
+      - <xref ref="polarplotlast"></xref>,
+      plot the graph of the polar equation by hand.
+      Carefully label your graphs.
+      <ol cols="2">
+        <li xml:id="polarplotfirst">
+          <p>
+            Circle: <m>r = 6\sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Circle: <m>r = 2\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Rose: <m>r = 2\sin(2\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Rose: <m>r = 4\cos(2\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Rose: <m>r = 5\sin(3\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Rose: <m>r = \cos(5\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Rose: <m>r = \sin(4\theta)</m>
+          </p>
+        </li>
+        <li xml:id="roseexercise8petal">
+          <p>
+            Rose: <m>r = 3\cos(4\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Cardioid: <m>r = 3 - 3\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Cardioid: <m>r = 5 + 5\sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Cardioid: <m>r = 2 + 2\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Cardioid: <m>r = 1 - \sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Lima&#xe7;on: <m>r = 1 - 2\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Lima&#xe7;on: <m>r = 1 - 2\sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Lima&#xe7;on: <m>r = 2\sqrt{3} + 4\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Lima&#xe7;on: <m>r = 3-5\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Lima&#xe7;on: <m>r = 3-5\sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Lima&#xe7;on: <m>r = 2 + 7\sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Lemniscate: <m>r^{2} = \sin(2\theta)</m>
+          </p>
+        </li>
+        <li xml:id="polarplotlast">
+          <p>
+            Lemniscate: <m>r^{2} = 4\cos(2\theta)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findpolarintfirst">Exercises</xref>
+      - <xref ref="findpolarintlast"></xref>,
+      find the exact polar coordinates of the points of intersection of graphs of the polar equations.
+      Remember to check for intersection at the pole
+      (origin).
+      <ol cols="5">
+        <li xml:id="findpolarintfirst">
+          <p>
+            <m>r = 3\cos(\theta)</m> and <m>r = 1 + \cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = 1 + \sin(\theta)</m> and <m>r = 1 - \cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = 1-2\sin(\theta)</m> and <m>r=2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = 1 - 2\cos(\theta)</m> and <m>r = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = 2\cos(\theta)</m> and <m>r = 2\sqrt{3} \sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = 3\cos(\theta)</m> and <m>r = \sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r^2 = 4\cos(2\theta)</m> and <m>r = \sqrt{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r^{2} = 2\sin(2\theta)</m> and <m>r = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = 4\cos(2\theta)</m> and <m>r=2</m>
+          </p>
+        </li>
+        <li xml:id="findpolarintlast">
+          <p>
+            <m>r = 2\sin(2\theta)</m> and <m>r = 1</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="regionsketchfirst">Exercises</xref>
+      - <xref ref="regionsketchlast"></xref>,
+      sketch the region in the <m>xy</m>-plane described by the given set.
+      <ol cols="4">
+        <li xml:id="regionsketchfirst">
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3, \,0 \leq \theta \leq 2\pi \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 4\sin(\theta), \,0 \leq \theta \leq \pi \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(\theta), \, -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2} \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2\sin(2\theta), \,0 \leq \theta \leq \frac{\pi}{2} \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 4\cos(2\theta), \, -\frac{\pi}{4} \leq \theta \leq \frac{\pi}{4} \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 1 \leq r \leq 1-2\cos(\theta), \, \frac{\pi}{2} \leq \theta \leq \frac{3\pi}{2} \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 1 + \cos(\theta) \leq r \leq 3\cos(\theta), \, -\frac{\pi}{3} \leq \theta \leq \frac{\pi}{3} \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 1 \leq r \leq \sqrt{2\sin(2\theta)}, \, \frac{13\pi}{12} \leq \theta \leq \frac{17\pi}{12} \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2\sqrt{3} \sin(\theta), \, 0 \leq \theta \leq \frac{\pi}{6} \right\} \cup \left\{ (r,\theta) \, | \, 0 \leq r \leq 2\cos(\theta), \, \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}</m>
+          </p>
+        </li>
+        <li xml:id="regionsketchlast">
+          <p>
+            <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2 \sin(2\theta), \, 0 \leq \theta \leq \frac{\pi}{12} \right\} \cup \left\{ (r,\theta) \, | \, 0 \leq r \leq 1, \, \frac{\pi}{12} \leq \theta \leq \frac{\pi}{4} \right\}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="setbuildpolarfirst">Exercises</xref>
+      - <xref ref="setbuildpolarlast"></xref>,
+      use set-builder notation to describe the polar region.
+      Assume that the region contains its bounding curves.
+      <ol>
+        <li xml:id="setbuildpolarfirst">
+          <p>
+            The region inside the circle <m>r = 5</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The region inside the circle <m>r=5</m> which lies in Quadrant III.
+          </p>
+        </li>
+        <li>
+          <p>
+            The region inside the left half of the circle <m>r = 6\sin(\theta)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The region inside the circle
+            <m>r = 4\cos(\theta)</m> which lies in Quadrant IV.
+          </p>
+        </li>
+        <li>
+          <p>
+            The region inside the top half of the cardioid <m>r = 3 - 3\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            The region inside the cardioid
+            <m>r = 2-2\sin(\theta)</m> which lies in Quadrants I and IV.
+          </p>
+        </li>
+        <li>
+          <p>
+            The inside of the petal of the rose
+            <m>r = 3\cos(4\theta)</m> which lies on the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            The region inside the circle <m>r=5</m> but outside the circle <m>r=3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The region which lies inside of the circle
+            <m>r = 3\cos(\theta)</m> but outside of the circle <m>r = \sin(\theta)</m>
+          </p>
+        </li>
+        <li xml:id="setbuildpolarlast">
+          <p>
+            The region in Quadrant I which lies inside both the circle <m>r=3</m> as well as the rose <m>r = 6\sin(2\theta)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      While the authors truly believe that graphing polar curves by hand is fundamental to your understanding of the polar coordinate system,
+      we would be derelict in our duties if we totally ignored the graphing utility.<fn>
+      As of this writing, while free online websites and apps like
+      <url href="https://www.desmos.com/"><em>desmos</em></url>
+      are gaining popularity,
+      the TI-83/84 series calculators are still in wide circulation.
+      </fn> Indeed,
+      there are some important polar curves which are simply too difficult to graph by hand and that makes the calculator an important tool for your further studies in Mathematics, Science and Engineering.
+      We now give a brief demonstration of how to use the graphing utility to plot polar curves.
+      The first thing you must do is switch the MODE of your calculator to POL, which stands for
+      <q>polar</q>.
+    </p>
+    <tabular>
+      <row>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar01.jpg"/></cell>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar02.jpg"/></cell>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar03.jpg"/></cell>
+      </row>
+    </tabular>
+    <p>
+      This changes the
+      <q>Y=</q>
+      menu as seen above in the middle.
+      Let's plot the polar rose given by
+      <m>r = 3\cos(4\theta)</m> from <xref ref="roseexercise8petal">Exercise</xref> above.
+      We type the function into the
+      <q>r=</q>
+      menu as seen above on the right.
+      We need to set the viewing window so that the curve displays properly,
+      but when we look at the WINDOW menu,
+      we find three extra lines.
+    </p>
+    <tabular>
+      <row>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar04.jpg"/></cell>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar05.jpg"/></cell>
+      </row>
+    </tabular>
+    <p>
+      In order for the calculator to be able to plot
+      <m>r = 3\cos(4\theta)</m> in the <m>xy</m>-plane,
+      we need to tell it not only the dimensions which <m>x</m> and <m>y</m> will assume,
+      but we also what values of <m>\theta</m> to use.
+      From our previous work,
+      we know that we need <m>0 \leq \theta \leq 2\pi</m>,
+      so we enter the data you see above. (I'll say more about the <m>\theta</m>-step in just a moment.) Hitting GRAPH yields the curve below on the left which doesn't look quite right.
+      The issue here is that the calculator screen is 96 pixels wide but only 64 pixels tall.
+      To get a true geometric perspective,
+      we need to hit ZOOM SQUARE
+      (seen below in the middle)
+      to produce a more accurate graph which we present below on the right.
+    </p>
+    <tabular>
+      <row>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar06.jpg"/></cell>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar07.jpg"/></cell>
+        <cell><image width="33%" source="./PolarGraphsGraphics/Polar08.jpg"/></cell>
+      </row>
+    </tabular>
+    <p>
+      In function mode,
+      the calculator automatically divided the interval [Xmin, Xmax] into 96 equal subintervals.
+      In polar mode, however,
+      we must specify how to split up the interval [<m>\theta</m>min,
+      <m>\theta</m>max] using the <m>\theta</m>step.
+      For most graphs, a <m>\theta</m>step of 0.1 is fine.
+      If you make it too small then the calculator takes a long time to graph.
+      It you make it too big, you get chunky garbage like this.
+    </p>
+    <p>
+      <image width="33%" source="./PolarGraphsGraphics/Polar09.jpg"/>
+    </p>
+    <p>
+      You will need to experiment with the settings in order to get a nice graph.
+      <xref ref="polarcalcfirst">Exercises</xref>
+      - <xref ref="polarcalclast"></xref>
+      give you some curves to graph using your calculator.
+      Note some of them have explicit bounds on <m>\theta</m> and others do not.
+      <ol cols="6">
+        <li xml:id="polarcalcfirst">
+          <p>
+            <m>r = \theta, \, 0 \leq \theta \leq 12\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \ln(\theta), \, 1 \leq \theta \leq 12\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = e^{.1\theta}, \, 0 \leq \theta \leq 12\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \theta^{3} - \theta, \, -1.2 \leq \theta \leq 1.2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \sin(5\theta) - 3\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \sin^{3}\left(\frac{\theta}{2}\right) + \cos^{2}\left(\frac{\theta}{3}\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \arctan(\theta), \, -\pi \leq \theta \leq \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{1}{1 - \cos(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{1}{2 - \cos(\theta)}</m>
+          </p>
+        </li>
+        <li xml:id="polarcalclast">
+          <p>
+            <m>r = \dfrac{1}{2 - 3\cos(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Use a graphing utility to graph
+            <m>r = a - b \sin(\theta)</m> for various (positive) values of <m>a</m> and <m>b</m>.
+            Describe the shape of the curve when <m>a = b</m>,
+            <m>a \lt b</m>, and when <m>a > b</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            How many petals does the polar rose <m>r = \sin(2\theta)</m> have?
+            What about <m>r = \sin(3\theta)</m>,
+            <m>r = \sin(4\theta)</m> and <m>r = \sin(5\theta)</m>?
+            With the help of your classmates,
+            make a conjecture as to how many petals the polar rose
+            <m>r = \sin(n\theta)</m> has for any natural number <m>n</m>.
+            Replace sine with cosine and repeat the investigation.
+            How many petals does <m>r = \cos(n\theta)</m> have for each natural number <m>n</m>?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Looking back through the graphs in the section,
+      it's clear that many polar curves enjoy various forms of symmetry.
+      However, classifying symmetry for polar curves is not as straight-forward as it was for equations back in <xref ref="Relations">Section</xref>.
+      In <xref ref="sympolarfirst">Exercises</xref>
+      - <xref ref="sympolarlast"></xref>,
+      we have you and your classmates explore some of the more basic forms of symmetry seen in common polar curves.
+    </p>
+    <ol>
+      <li xml:id="sympolarfirst">
+        <p>
+          Show that if <m>f</m> is even<fn>
+          Recall that this means <m>f(-\theta) = f(\theta)</m> for <m>\theta</m> in the domain of <m>f</m>.
+          </fn> then the graph of
+          <m>r = f(\theta)</m> is symmetric about the <m>x</m>-axis.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Show that <m>f(\theta) = 2 + 4\cos(\theta)</m> is even and verify that the graph of
+              <m>r = 2+4\cos(\theta)</m> is indeed symmetric about the <m>x</m>-axis.
+              (See <xref ref="polargraphex">Example</xref>
+              <xref ref="limacon02">number</xref>.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that <m>f(\theta) = 3\sin\left(\frac{\theta}{2}\right)</m> is <em>not</em> even,
+              yet the graph of <m>r = 3\sin\left(\frac{\theta}{2}\right)</m> <em>is</em>
+              symmetric about the <m>x</m>-axis.
+              (See <xref ref="polargraphintex">Example</xref>
+              <xref ref="samepolarcurveex">number</xref>.)
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Show that if <m>f</m> is odd<fn>
+          Recall that this means <m>f(-\theta) = -f(\theta)</m> for <m>\theta</m> in the domain of <m>f</m>.
+          </fn> then the graph of
+          <m>r = f(\theta)</m> is symmetric about the origin.
+          <ol>
+            <li>
+              <p>
+                Show that <m>f(\theta) = 5\sin(2\theta)</m> is odd and verify that the graph of
+                <m>r = 5\sin(2\theta)</m> is indeed symmetric about the origin.
+                (See <xref ref="polargraphex">Example</xref>
+                <xref ref="rose">number</xref>.)
+              </p>
+            </li>
+            <li>
+              <p>
+                Show that <m>f(\theta) = 3\cos\left(\frac{\theta}{2}\right)</m> is <em>not</em> odd,
+                yet the graph of <m>r = 3\cos\left(\frac{\theta}{2}\right)</m> <em>is</em>
+                symmetric about the origin.
+                (See <xref ref="polargraphintex">Example</xref>
+                <xref ref="samepolarcurveex">number</xref>.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="sympolarlast">
+        <p>
+          Show that if <m>f(\pi-\theta)=f(\theta)</m> for all <m>\theta</m> in the domain of <m>f</m> then the graph of
+          <m>r = f(\theta)</m> is symmetric about the <m>y</m>-axis.
+          <ol>
+            <li>
+              <p>
+                For <m>f(\theta) = 4-2\sin(\theta)</m>,
+                show that <m>f(\pi - \theta) = f(\theta)</m> and the graph of
+                <m>r = 4-2\sin(\theta)</m> is symmetric about the <m>y</m>-axis,
+                as required.
+                (See <xref ref="polargraphex">Example</xref>
+                <xref ref="limacon01">number</xref>.)
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>f(\theta) = 5\sin(2\theta)</m>,
+                show that <m>f\left(\pi - \frac{\pi}{4} \right) \neq f\left( \frac{\pi}{4} \right)</m>,
+                yet the graph of <m>r = 5\sin(2\theta)</m> <em>is</em>
+                symmetric about the <m>y</m>-axis.
+                (See <xref ref="polargraphex">Example</xref>
+                <xref ref="rose">number</xref>.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="Transformations">Section</xref>,
+      we discussed transformations of graphs.
+      In <xref ref="polargraphtransformations">Exercise</xref>
+      we have you and your classmates explore transformations of polar graphs.
+    </p>
+    <ol>
+      <li xml:id="polargraphtransformations">
+        <p>
+          For <xref ref="polargraphexercise1">Exercises</xref>
+          and <xref ref="polargraphexercise2"></xref> below,
+          let <m>f(\theta) = \cos(\theta)</m> and <m>g(\theta) = 2-\sin(\theta)</m>.
+        </p>
+        <ol>
+          <li xml:id="polargraphexercise1">
+            <p>
+              Using a graphing utility,
+              compare the graph of <m>r = f(\theta)</m> to each of the graphs of <m>r = f\left(\theta + \frac{\pi}{4}\right)</m>,
+              <m>r = f\left(\theta + \frac{3\pi}{4}\right)</m>,
+              <m>r = f\left(\theta - \frac{\pi}{4}\right)</m> and <m>r = f\left(\theta - \frac{3\pi}{4}\right)</m>.
+              Repeat this process for <m>g(\theta)</m>.
+              In general, how do you think the graph of
+              <m>r = f(\theta + \alpha)</m> compares with the graph of <m>r = f(\theta)</m>?
+            </p>
+          </li>
+          <li xml:id="polargraphexercise2">
+            <p>
+              Using a graphing utility,
+              compare the graph of <m>r = f(\theta)</m> to each of the graphs of <m>r = 2f\left(\theta\right)</m>,
+              <m>r = \frac{1}{2} f\left(\theta\right)</m>,
+              <m>r = -f\left(\theta\right)</m> and <m>r = -3 f(\theta)</m>.
+              Repeat this process for <m>g(\theta)</m>.
+              In general, how do you think the graph of
+              <m>r = k \cdot f(\theta)</m> compares with the graph of <m>r = f(\theta)</m>?
+              Follow up question: does it matter if <m>k>0</m> or <m>k\lt 0</m>?
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          In light of <xref ref="sympolarfirst">Exercises</xref>
+          - <xref ref="sympolarlast"></xref>,
+          how would the graph of <m>r = f(-\theta)</m> compare with the graph of
+          <m>r = f(\theta)</m> for a generic function <m>f</m>?
+          What about the graphs of <m>r = -f(\theta)</m> and <m>r = f(\theta)</m>?
+          What about <m>r = f(\theta)</m> and <m>r = f(\pi - \theta)</m>?
+          Test out your conjectures using a variety of polar functions found in this section with the help of a graphing utility.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          With the help of your classmates,
+          research cardioid microphones.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          Circle: <m>r = 6\sin(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -4, {<m>6</m>} 4} \axislabels {y}{{<m>-6</m>} -4, {<m>6</m>} 4} \penwd{1.25pt} \plrfcn{0,180,5}{4*sind t} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Circle: <m>r = 2\cos(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>2</m>} 4} \penwd{1.25pt} \plrfcn{0,180,5}{4*cosd t} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Rose: <m>r = 2\sin(2\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>2</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{4*sind(2*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Rose: <m>r = 4\cos(2\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \dashed \polyline{(3,3), (-3,-3)} \gclear \tlabelrect(3,3){<m>\theta = \frac{\pi}{4}</m>} \dashed \polyline{(3,-3), (-3,3)} \gclear \tlabelrect(-3,3){<m>\theta = \frac{3\pi}{4}</m>} \penwd{1.25pt} \plrfcn{0,360,5}{4*cosd(2*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Rose: <m>r = 5\sin(3\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -4, {<m>5</m>} 4} \axislabels {y}{{<m>-5</m>} -4, {<m>5</m>} 4} \dashed \polyline{(2,3.464), (-2,-3.464)} \gclear \tlabelrect(2,3.464){<m>\theta = \frac{\pi}{3}</m>} \dashed \polyline{(-2,3.464), (2,-3.464)} \gclear \tlabelrect(-2,3.464){<m>\theta = \frac{2\pi}{3}</m>} \penwd{1.25pt} \plrfcn{0,180,5}{4*sind(3*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Rose: <m>r = \cos(5\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -4, {<m>1</m>} 4} \axislabels {y}{{<m>-1</m>} -4, {<m>1</m>} 4} \dashed \polyline{(3.804,1.236), (-3.804,-1.236)} \gclear \tlabelrect(3.804,1.236){<m>\theta = \frac{\pi}{10}</m>} \dashed \polyline{(2.351,3.236), (-2.351,-3.236)} \gclear \tlabelrect(2.351,3.236){<m>\theta = \frac{3\pi}{10}</m>} \dashed \polyline{(-2.351,3.236), (2.351,-3.236)} \gclear \tlabelrect(-2.351,3.236){<m>\theta = \frac{7\pi}{10}</m>} \dashed \polyline{(-3.804,1.236), (3.804,-1.236)} \gclear \tlabelrect(-3.804,1.236){<m>\theta = \frac{9\pi}{10}</m>} \penwd{1.25pt} \plrfcn{0,180,5}{4*cosd(5*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Rose: <m>r = \sin(4\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -4, {<m>1</m>} 4} \axislabels {y}{{<m>-1</m>} -4, {<m>1</m>} 4} \dashed \polyline{(3,3), (-3,-3)} \gclear \tlabelrect(3,3){<m>\theta = \frac{\pi}{4}</m>} \dashed \polyline{(3,-3), (-3,3)} \gclear \tlabelrect(-3,3){<m>\theta = \frac{3\pi}{4}</m>} \penwd{1.25pt} \plrfcn{0,360,5}{4*sind(4*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Rose: <m>r = 3\cos(4\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -4, {<m>3</m>} 4} \axislabels {y}{{<m>-3</m>} -4, {<m>3</m>} 4} \dashed \polyline{(3.696,1.531), (-3.696,-1.531)} \gclear \tlabelrect(3.696,1.531){<m>\theta = \frac{\pi}{8}</m>} \dashed \polyline{(1.531,3.696), (-1.531,-3.696)} \gclear \tlabelrect(1.531,3.696){<m>\theta = \frac{3\pi}{8}</m>} \dashed \polyline{(-1.531,3.696), (1.531,-3.696)} \gclear \tlabelrect(-1.531,3.696){<m>\theta = \frac{5\pi}{8}</m>} \dashed \polyline{(-3.696,1.531), (3.696,-1.531)} \gclear \tlabelrect(-3.696,1.531){<m>\theta = \frac{7\pi}{8}</m>} \penwd{1.25pt} \plrfcn{0,360,5}{4*cosd(4*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Cardioid: <m>r = 3 - 3\cos(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-2,2,4} \ymarks{-4,-2,2,4} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -4, {<m>-3</m>} -2, {<m>3</m>} 2, {<m>6</m>} 4} \axislabels {y}{{<m>-6</m>} -4, {<m>-3</m>} -2, {<m>3</m>} 2, {<m>6</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{2 - 2*cosd(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Cardioid: <m>r = 5 + 5\sin(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-2,2,4} \ymarks{-4,-2,2,4} \tlpointsep{4pt} \axislabels {x}{{<m>-10</m>} -4, {<m>-5</m>} -2, {<m>5</m>} 2, {<m>10</m>} 4} \axislabels {y}{{<m>-10</m>} -4, {<m>-5</m>} -2, {<m>5</m>} 2, {<m>10</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{2 + 2*sind(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Cardioid: <m>r = 2 + 2\cos(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-2,2,4} \ymarks{-4,-2,2,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{2 + 2*cosd(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Cardioid: <m>r = 1 - \sin(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-2,2,4} \ymarks{-4,-2,2,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>-1</m>} -2, {<m>1</m>} 2, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>-1</m>} -2, {<m>1</m>} 2, {<m>2</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{2 - 2*sind(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lima&#xe7;on:
+          <m>r = 1 - 2\cos(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1.3333,1.3333,4} \ymarks{-4,-1.3333,1.3333,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \axislabels {y}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \dashed \polyline{(0,0), (2,3.464)} \gclear \tlabelrect(2,3.464){<m>\theta = \frac{\pi}{3}</m>} \dashed \polyline{(0,0), (2,-3.464)} \gclear \tlabelrect(2,-3.464){<m>\theta = \frac{5\pi}{3}</m>} \penwd{1.25pt} \plrfcn{0,360,5}{1.3333*(1 - 2*cosd(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lima&#xe7;on:
+          <m>r = 1 - 2\sin(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1.3333,1.3333,4} \ymarks{-4,-1.3333,1.3333,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \axislabels {y}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \dashed \polyline{(0,0), (3.464,2)} \gclear \tlabelrect(3.464,2){<m>\theta = \frac{\pi}{6}</m>} \dashed \polyline{(0,0), (-3.464,2)} \gclear \tlabelrect(-3.464,2){<m>\theta = \frac{5\pi}{6}</m>} \penwd{1.25pt} \plrfcn{0,360,5}{1.3333*(1 - 2*sind(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lima&#xe7;on:
+          <m>r = 2\sqrt{3} + 4\cos(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1.856,1.856,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2\sqrt{3} - 4</m>} -4, {<m>2\sqrt{3} + 4</m>} 4} \axislabels {y}{{<m>-2\sqrt{3} - 4</m>} -4, {<m>-2\sqrt{3}</m>} -1.856, {<m>2\sqrt{3}</m>} 1.856, {<m>2\sqrt{3} + 4</m>} 4} \dashed \polyline{(0,0), (-3.464,-2)} \gclear \tlabelrect(-3.464,-2){<m>\theta = \frac{7\pi}{6}</m>} \dashed \polyline{(0,0), (-3.464,2)} \gclear \tlabelrect(-3.464,2){<m>\theta = \frac{5\pi}{6}</m>} \penwd{1.25pt} \plrfcn{0,360,5}{1.0718*(1.73205 + 2*cosd(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lima&#xe7;on:
+          <m>r = 3-5\cos(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1,4} \ymarks{-4,-1.5,1.5,4} \tlpointsep{4pt} \axislabels {y}{{<m>-8</m>} -4, {<m>-3</m>} -1.5, {<m>3</m>} 1.5, {<m>8</m>} 4} \axislabels {x}{{<m>-8</m>} -4, {<m>-2</m>} -1, {<m>8</m>} 4} \dashed \polyline{(0,0), (2.41,3.19)} \gclear \tlabelrect(2.9,3.3){
+          <m>\theta = \arccos\left(\frac{3}{5}\right)</m>} \dashed \polyline{(0,0), (2.41,-3.19)} \gclear \tlabelrect(2.9,-3.3){
+          <m>\theta = 2\pi - \arccos\left(\frac{3}{5}\right)</m>} \penwd{1.25pt} \plrfcn{0,360,5}{0.5*(3 - 5*cosd(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lima&#xe7;on:
+          <m>r = 3-5\sin(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1.5,1.5,4} \ymarks{-4,-1,4} \tlpointsep{4pt} \axislabels {x}{{<m>-8</m>} -4, {<m>-3</m>} -1.5, {<m>3</m>} 1.5, {<m>8</m>} 4} \axislabels {y}{{<m>-8</m>} -4, {<m>-2</m>} -1, {<m>8</m>} 4} \dashed \polyline{(0,0), (3.2,2.4)} \gclear \tlabelrect(2.9,3){
+          <m>\theta = \arcsin\left(\frac{3}{5}\right)</m>} \dashed \polyline{(0,0), (-3.2,2.4)} \gclear \tlabelrect(-2.9,3){
+          <m>\theta = \pi - \arcsin\left(\frac{3}{5}\right)</m>} \penwd{1.25pt} \plrfcn{0,360,5}{0.5*(3 - 5*sind(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lima&#xe7;on:
+          <m>r = 2 + 7\sin(\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-0.8888,0.8888,4} \ymarks{-4,2.2222,4} \tlpointsep{4pt} \axislabels {x}{{<m>-9</m>} -4, {<m>-2</m>} -0.8888, {<m>2</m>} 0.8888, {<m>9</m>} 4} \axislabels {y}{{<m>-9</m>} -4, {<m>5</m>} 2.2222, {<m>9</m>} 4} \dashed \polyline{(0,0), (-3.842,-1.113)} \gclear \tlabelrect(-2.9,-1.3){
+          <m>\theta = \pi + \arcsin\left(\frac{2}{7}\right)</m>} \dashed \polyline{(0,0), (3.842,-1.113)} \gclear \tlabelrect(2.9,-1.3){
+          <m>\theta = 2\pi - \arcsin\left(\frac{2}{7}\right)</m>} \penwd{1.25pt} \plrfcn{0,360,5}{0.4444*(2 + 7*sind(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lemniscate: <m>r^{2} = \sin(2\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -4, {<m>1</m>} 4} \axislabels {y}{{<m>-1</m>} -4, {<m>1</m>} 4} \penwd{1.25pt} \plrfcn{0,90,5}{4*sqrt(sind(2*t))} \plrfcn{180,270,5}{4*sqrt(sind(2*t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Lemniscate: <m>r^{2} = 4\cos(2\theta)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>2</m>} 4} \dashed \polyline{(3,3), (-3,-3)} \gclear \tlabelrect(3,3){<m>\theta = \frac{\pi}{4}</m>} \dashed \polyline{(3,-3), (-3,3)} \gclear \tlabelrect(-3,3){<m>\theta = \frac{3\pi}{4}</m>} \penwd{1.25pt} \plrfcn{-45,45,5}{4*sqrt(cosd(2*t))} \plrfcn{135,225,5}{4*sqrt(cosd(2*t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 3\cos(\theta)</m> and
+          <m>r = 1 + \cos(\theta)</m> \begin{mfpic}[17]{-4}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \plrfcn{0,360,5}{1 + cosd(t)} \plrfcn{0,360,5}{3*cosd(t)} \end{mfpic} <m>\left( \dfrac{3}{2}, \dfrac{\pi}{3} \right)</m>,
+          <m>\left( \dfrac{3}{2}, \dfrac{5\pi}{3} \right)</m>, pole
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 1 + \sin(\theta)</m> and
+          <m>r = 1 - \cos(\theta)</m> \begin{mfpic}[23]{-2.9}{3}{-3}{3} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \plrfcn{0,360,5}{1 - cosd(t)} \plrfcn{0,360,5}{1 + sind(t)} \end{mfpic} <m>\left( \dfrac{2 + \sqrt{2}}{2}, \dfrac{3\pi}{4} \right)</m>,
+          <m>\left( \dfrac{2 - \sqrt{2}}{2}, \dfrac{7\pi}{4} \right)</m>, pole
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 1 - 2\sin(\theta)</m> and <m>r = 2</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1.3333,1.3333,4} \ymarks{-4,-1.3333,1.3333,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \axislabels {y}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{1.3333*(1 - 2*sind(t))} \circle{(0,0),2} \end{mfpic} <m>\left( 2, \dfrac{7\pi}{6} \right)</m>,
+          <m>\left( 2, \dfrac{11\pi}{6} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 1 - 2\cos(\theta)</m> and <m>r = 1</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1.3333,1.3333,4} \ymarks{-4,-1.3333,1.3333,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \axislabels {y}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{1.3333*(1 - 2*cosd(t))} \plrfcn{0,360,5}{1.3333} \end{mfpic} <m>\left( 1, \dfrac{\pi}{2} \right)</m>,
+          <m>\left( 1, \dfrac{3\pi}{2} \right)</m>, <m>(-1, 0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 2\cos(\theta)</m> and
+          <m>r = 2\sqrt{3} \sin(\theta)</m> \begin{mfpic}[19]{-4}{4}{-5}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{3.46*sind(t)} \plrfcn{0,360,5}{2*cosd(t)} \end{mfpic} <m>\left(\sqrt{3}, \dfrac{\pi}{6} \right)</m>, pole
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 3\cos(\theta)</m> and
+          <m>r = \sin(\theta)</m> \begin{mfpic}[19]{-4}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \plrfcn{0,360,5}{sind(t)} \plrfcn{0,360,5}{3*cosd(t)} \end{mfpic} <m>\left(\dfrac{3\sqrt{10}}{10}, \arctan(3)\right)</m>, pole
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r^2 = 4\cos(2\theta)</m> and
+          <m>r = \sqrt{2}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>2</m>} 4} \penwd{1.25pt} \plrfcn{-45,45,5}{4*sqrt(cosd(2*t))} \plrfcn{135,225,5}{4*sqrt(cosd(2*t))} \circle{(0,0), 1.414} \end{mfpic} <m>\left(\sqrt{2}, \dfrac{\pi}{6}\right)</m>,
+          <m>\left(\sqrt{2}, \dfrac{5\pi}{6}\right)</m>,
+          <m>\left(\sqrt{2}, \dfrac{7\pi}{6}\right)</m>,
+          <m>\left(\sqrt{2}, \dfrac{11\pi}{6}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r^{2} = 2\sin(2\theta)</m> and <m>r = 1</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-\sqrt{2}</m>} -4, {<m>-1</m>} -2.828, {<m>1</m>} 2.828, {
+          <m>\sqrt{2}</m>} 4} \axislabels {y}{{
+          <m>-\sqrt{2}</m>} -4, {<m>-1</m>} -2.828, {<m>1</m>} 2.828, {
+          <m>\sqrt{2}</m>} 4} \penwd{1.25pt} \plrfcn{0,90,5}{4*sqrt(sind(2*t))} \plrfcn{180,270,5}{4*sqrt(sind(2*t))} \plrfcn{0,360,5}{2.828} \end{mfpic} <m>\left(1, \dfrac{\pi}{12}\right)</m>,
+          <m>\left(1, \dfrac{5\pi}{12}\right)</m>,
+          <m>\left(1, \dfrac{13\pi}{12}\right)</m>,
+          <m>\left(1, \dfrac{17\pi}{12}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 4\cos(2\theta)</m> and <m>r = 2</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{4*cosd(2*t)} \circle{(0,0),2} \end{mfpic} <m>\left( 2, \dfrac{\pi}{6} \right)</m>,
+          <m>\left( 2, \dfrac{5\pi}{6} \right)</m>,
+          <m>\left( 2, \dfrac{7\pi}{6} \right)</m>,
+          <m>\left( 2, \dfrac{11\pi}{6} \right)</m>,
+          <m>\left( -2, \dfrac{\pi}{3} \right)</m>,
+          <m>\left( -2, \dfrac{2\pi}{3} \right)</m>,
+          <m>\left( -2, \dfrac{4\pi}{3} \right)</m>,
+          <m>\left( -2, \dfrac{5\pi}{3} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = 2\sin(2\theta)</m> and <m>r = 1</m> \begin{mfpic}[15]{-4.5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>2</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{4*sind(2*t)} \plrfcn{0,360,5}{2} \end{mfpic} <m>\left( 1, \dfrac{\pi}{12} \right)</m>,
+          <m>\left( 1, \dfrac{5\pi}{12} \right)</m>,
+          <m>\left( 1, \dfrac{13\pi}{12} \right)</m>,
+          <m>\left( 1, \dfrac{17\pi}{12} \right)</m>,
+          <m>\left( -1, \dfrac{7\pi}{12} \right)</m>,
+          <m>\left( -1, \dfrac{11\pi}{12} \right)</m>,
+          <m>\left( -1, \dfrac{19\pi}{12} \right)</m>,
+          <m>\left( -1, \dfrac{23\pi}{12} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3, \,0 \leq \theta \leq 2\pi \right\}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{0.7} \gfill \circle{(0,0),3} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \circle{(0,0),3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 4\sin(\theta), \,0 \leq \theta \leq \pi \right\}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{0.7} \gfill \plrregion{0,180,1}{4*sind(t)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \plrfcn{0,180,5}{4*sind(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(\theta), \, -\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2} \right\}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{0.7} \gfill \plrregion{-90,90,1}{3*cosd(t)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \plrfcn{-90,90,5}{3*cosd(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2\sin(2\theta), \,0 \leq \theta \leq \frac{\pi}{2} \right\}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{0.7} \gfill \plrregion{0,90,5}{4*sind(2*t)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>2</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{4*sind(2*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 4\cos(2\theta), \, -\frac{\pi}{4} \leq \theta \leq \frac{\pi}{4} \right\}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{0.7} \gfill \plrregion{-45,45,5}{4*cosd(2*t)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{4*cosd(2*t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 1 \leq r \leq 1-2\cos(\theta), \, \frac{\pi}{2} \leq \theta \leq \frac{3\pi}{2} \right\}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{0.7} \gfill \plrregion{90,270,5}{1.3333*(1 - 2*cosd(t))} \gclear \plrregion{90,270,5}{1.3333} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-1.3333,1.3333,4} \ymarks{-4,-1.3333,1.3333,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \axislabels {y}{{<m>-3</m>} -4, {<m>-1</m>} -1.3333, {<m>1</m>} 1.3333, {<m>3</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{1.3333*(1 - 2*cosd(t))} \plrfcn{0,360,5}{1.3333} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 1 + \cos(\theta) \leq r \leq 3\cos(\theta), \, -\frac{\pi}{3} \leq \theta \leq \frac{\pi}{3} \right\}</m> \begin{mfpic}[17]{-4}{4}{-4}{4} \fillcolor[gray]{0.7} \gfill \plrregion{-60,60,1}{3*cosd(t)} \gclear \plrregion{-60,60,1}{1 + cosd(t)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \plrfcn{0,360,5}{1 + cosd(t)} \plrfcn{0,360,5}{3*cosd(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 1 \leq r \leq \sqrt{2\sin(2\theta)}, \, \frac{13\pi}{12} \leq \theta \leq \frac{17\pi}{12} \right\}</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{0.7} \gfill \plrregion{195,255,1}{4*sqrt(sind(2*t))} \gclear \plrregion{195,255,1}{2.828} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-\sqrt{2}</m>} -4, {<m>-1</m>} -2.828, {<m>1</m>} 2.828, {
+          <m>\sqrt{2}</m>} 4} \axislabels {y}{{
+          <m>-\sqrt{2}</m>} -4, {<m>-1</m>} -2.828, {<m>1</m>} 2.828, {
+          <m>\sqrt{2}</m>} 4} \penwd{1.25pt} \plrfcn{0,90,5}{4*sqrt(sind(2*t))} \plrfcn{180,270,5}{4*sqrt(sind(2*t))} \plrfcn{0,360,5}{2.828} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2\sqrt{3} \sin(\theta), \, 0 \leq \theta \leq \frac{\pi}{6} \right\} \cup \left\{ (r,\theta) \, | \, 0 \leq r \leq 2\cos(\theta), \, \frac{\pi}{6} \leq \theta \leq \frac{\pi}{2} \right\}</m> \begin{mfpic}[19]{-4}{4}{-5}{5} \fillcolor[gray]{0.7} \gfill \plrregion{0,31,1}{3.46*sind(t)} \gfill \plrregion{30,90,5}{2*cosd(t)} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{3.46*sind(t)} \plrfcn{0,360,5}{2*cosd(t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2 \sin(2\theta), \, 0 \leq \theta \leq \frac{\pi}{12} \right\} \cup \left\{ (r,\theta) \, | \, 0 \leq r \leq 1, \, \frac{\pi}{12} \leq \theta \leq \frac{\pi}{4} \right\}</m> \begin{mfpic}[15]{-4.5}{5}{-5}{5} \axes \fillcolor[gray]{0.7} \gfill \plrregion{0,15,5}{4*sind(2*t)} \gfill \plrregion{15,45,5}{2} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,4} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -4, {<m>2</m>} 4} \axislabels {y}{{<m>-2</m>} -4, {<m>2</m>} 4} \penwd{1.25pt} \plrfcn{0,360,5}{4*sind(2*t)} \plrfcn{0,360,5}{2} \polyline{(0,0), (1.414, 1.414)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 5, \, 0\leq \theta \leq 2\pi \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 5, \, \pi \leq \theta \leq \frac{3\pi}{2} \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 6\sin(\theta), \, \frac{\pi}{2} \leq \theta \leq \pi \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 4\cos(\theta) \leq r \leq 0, \, \frac{\pi}{2} \leq \theta \leq \pi \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3 - 3\cos(\theta), \, 0 \leq \theta \leq \pi \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2-2\sin(\theta), \, 0 \leq \theta \leq \frac{\pi}{2} \right\} \cup</m>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2-2\sin(\theta), \, \frac{3\pi}{2} \leq \theta \leq 2\pi \right\}</m> or <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 2-2\sin(\theta), \, \frac{3\pi}{2} \leq \theta \leq \frac{5\pi}{2} \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(4\theta), \,0 \leq \theta \leq \frac{\pi}{8} \right\} \cup</m>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(4\theta), \,\frac{15\pi}{8} \leq \theta \leq 2\pi \right\}</m> or <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(4\theta), \, -\frac{\pi}{8} \leq \theta \leq \frac{\pi}{8} \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 3 \leq r \leq 5, \, 0 \leq \theta \leq 2\pi \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3\cos(\theta), \, -\frac{\pi}{2} \leq \theta \leq 0 \right\} \cup</m> <m>\left\{ (r,\theta) \, | \, \sin(\theta) \leq r \leq 3\cos(\theta), \, 0 \leq \theta \leq \arctan(3) \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 6\sin(2\theta), \,0 \leq \theta \leq \frac{\pi}{12} \right\} \cup</m>
+          <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 3, \,\frac{\pi}{12} \leq \theta \leq \frac{5\pi}{12} \right\} \cup</m> <m>\left\{ (r,\theta) \, | \, 0 \leq r \leq 6\sin(2\theta), \, \frac{5\pi}{12} \leq \theta \leq \frac{\pi}{2} \right\}</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

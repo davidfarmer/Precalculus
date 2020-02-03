@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="SequencesandtheBinomialTheorem">
+  <title>Sequences and the Binomial Theorem</title>
+  <xi:include  href="Sequences.ptx"/>
+  <xi:include  href="Summation.ptx"/>
+  <xi:include  href="Induction.ptx"/>
+  <xi:include  href="Binomial.ptx"/>
+</chapter>

@@ -1,0 +1,1442 @@
+<section xml:id="RationalGraphs">
+  <title>Graphs of Rational Functions</title>
+  <introduction>
+    <p>
+      In <xref ref="IntroRational">Section</xref>,
+      we learned about the types of behaviors to expect from graphs of rational functions:
+      vertical asymptotes, holes in graph,
+      horizontal and slant asymptotes.
+      Moreover, <xref ref="vavshole">Theorems</xref>,
+      <xref ref="hathm"></xref> and <xref ref="sathm"></xref>
+      tell us exactly when and where these behaviors will occur.
+      We used graphing technology extensively in the last section to help us verify results.
+      In this section,
+      we delve more deeply into graphing rational functions with the goal of sketching relatively accurate graphs without the aid of a graphing utility.
+      Your instructor will ultimately communicate the level of detail expected out of you when it comes to producing graphs of rational functions;
+      what we provide here is an attempt to glean as much information about the graph as possible given the analytical tools at our disposal.
+    </p>
+    <p>
+      One of the standard tools we will use is the sign diagram which was first introduced in <xref ref="QuadraticFunctions">Section</xref>,
+      and then revisited in <xref ref="RealZeros">Section</xref>.
+      In these sections,
+      to construct a sign diagram for a function <m>f</m>,
+      we first found the zeros of <m>f</m>.
+      The zeros broke the domain of <m>f</m> into a series of intervals.
+      We determined the sign of <m>f(x)</m> over the <em>entire</em>
+      interval by finding the sign of <m>f(x)</m> for just
+      <em>one</em> test value per interval.
+      The theorem that justified this approach was the Intermediate Value Theorem,
+      <xref ref="IVT">Theorem</xref>,
+      which says that <em>continuous</em>
+      functions cannot change their sign between two values unless there is a zero between those two values.
+    </p>
+    <p>
+      This strategy fails in general with rational functions.
+      Indeed, the very first function we studied in <xref ref="IntroRational">Section</xref>,
+      <m>r(x) = \frac{1}{x}</m> changes sign between <m>x=-1</m> and <m>x=1</m>,
+      but there is no zero between these two values - instead,
+      the graph changes sign across a vertical asymptote.
+      We could also well imagine the graph of a rational function having a hole where an <m>x</m>-intercept should be<fn>
+      Take <m>f(x) = \frac{x^2}{x}</m>, for instance.
+      </fn> It turns out that with Calculus we can show rational functions are continuous on their domains.
+      What this means for us is when we construct sign diagrams,
+      we need to choose test values on either side of values excluded from the domain in addition to checking around zeros.<fn>
+      Since excluded values are zeros of the denominator,
+      we can think of this as really just generalizing what we already do.
+      </fn> <em>Steps for Constructing a Sign Diagram for a Rational Function</em>
+    </p>
+    <p>
+      Suppose <m>f</m> is a rational function.
+          <idx><h>sign diagram</h><h>rational function</h></idx>
+      <ol>
+        <li>
+          <p>
+            Place any values excluded from the domain of <m>f</m> on the number line with an <sq>\textinterrobang</sq> above them.<fn>
+            <sq>\textinterrobang</sq> is a nonstandard symbol called the
+            <url href="http://en.wikipedia.org/wiki/Interrobang"><em>interrobang</em></url>.
+              <idx><h>interrobang</h></idx>
+          We use this symbol to convey a sense of surprise,
+            caution and wonderment - an appropriate attitude to take when approaching these points.
+            </fn>
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the zeros of <m>f</m> and place them on the number line with the number <m>0</m> above them.
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose a test value in each of the intervals determined in steps 1 and 2.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine and record the sign of <m>f(x)</m> for each test value in step 3.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      We now present our procedure for graphing rational functions and apply it to a few exhaustive examples.
+      Please note that we decrease the amount of detail given in the explanations as we move through the examples.
+      The reader should be able to fill in any details in those steps which we have abbreviated.
+    </p>
+    <p>
+      <em>Steps for Graphing Rational Functions</em>
+    </p>
+    <p>
+      Suppose <m>r</m> is a rational function.
+          <idx><h>graph</h><h>rational function</h></idx>
+      <ol>
+        <li>
+          <p>
+            Find the domain of <m>r</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Reduce <m>r(x)</m> to lowest terms, if applicable.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine the location of any vertical asymptotes or holes in the graph,
+            if they exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the axis intercepts, if they exist.
+          </p>
+        </li>
+        <li>
+          <p>
+            Analyze the end behavior of <m>r</m>.
+            Find the horizontal or slant asymptote, if one exists.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use a sign diagram and plot additional points,
+            as needed, to sketch the graph.<fn>
+            It doesn't hurt to check for symmetry at this point, if convenient.
+            </fn>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <example>
+      <statement>
+        <p>
+          Sketch a detailed graph of <m>f(x) = \dfrac{3x}{x^2-4}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We follow the six step procedure outlined above.
+          <ol>
+            <li>
+              <p>
+                To find the domain, we first find the excluded values.
+                To that end,
+                we solve <m>x^2 - 4 = 0</m> and find <m>x = \pm 2</m>.
+                Our domain is <m>\{ x \in \mathbb{R} \, | \, x \neq \pm 2\}</m>, or,
+                using interval notation, <m>(-\infty, -2) \cup (-2,2) \cup (2,\infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We check if <m>f(x)</m> is in lowest terms by factoring:
+                <m>f(x) = \frac{3x}{(x-2)(x+2)}</m>.
+                There are no common factors which means <m>f(x)</m> is already in lowest terms.
+              </p>
+            </li>
+            <li>
+              <p>
+                Per <xref ref="vavshole">Theorem</xref>,
+                vertical asymptotes and holes in the graph come from values excluded from the domain of <m>f</m>.
+                The two numbers excluded from the domain of <m>f</m> are <m>x = -2</m> and <m>x=2</m> and since  <m>f(x)</m> didn't reduce,
+                <xref ref="vavshole">Theorem</xref>
+                tells us <m>x=-2</m> and <m>x=2</m> are vertical asymptotes of the graph.
+                We can actually go a step further at this point and determine exactly how the graph approaches the asymptote near each of these values.
+                Though not absolutely necessary,<fn>
+                The sign diagram in step 6 will also determine the behavior near the vertical asymptotes.
+                </fn> it is good practice for those heading off to Calculus.
+                For the discussion that follows,
+                we use the factored form of <m>f(x) = \frac{3x}{(x-2)(x+2)}</m>.
+                <ul>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=f(x)</m> as <m>x \rightarrow -2</m>:</em>
+                      Suppose <m>x \rightarrow -2^{-}</m>.
+                      If we were to build a table of values,
+                      we'd use <m>x</m>-values a little less than <m>-2</m>,
+                      say <m>-2.1</m>,
+                      <m>-2.01</m> and <m>-2.001</m>.
+                      While there is no harm in actually building a table like we did in <xref ref="IntroRational">Section</xref>,
+                      we want to develop a <sq>number sense</sq> here.
+                      Let's think about each factor in the formula of <m>f(x)</m> as we imagine substituting a number like <m>x=-2.000001</m> into <m>f(x)</m>.
+                      The quantity <m>3x</m> would be very close to <m>-6</m>,
+                      the quantity <m>(x-2)</m> would be very close to <m>-4</m>,
+                      and the factor <m>(x+2)</m> would be very close to <m>0</m>.
+                      More specifically, <m>(x+2)</m> would be a little less than <m>0</m>,
+                      in this case, <m>-0.000001</m>.
+                      We will call such a number a <sq>very small <m>(-)</m></sq>,
+                      <sq>very small</sq> meaning close to zero in absolute value.
+                      So, mentally, as <m>x \rightarrow -2^{-}</m>,
+                      <me>
+                        f(x)   = \dfrac{3x}{(x-2)(x+2)} \approx \dfrac{-6}{(-4)\left( \text{ very small \((-)\) } \right)} = \dfrac{3}{2 \left( \text{ very small \((-)\) } \right)}
+                      </me>
+                      Now, the closer <m>x</m> gets to <m>-2</m>,
+                      the smaller <m>(x+2)</m> will become,
+                      so even though we are multiplying our <sq>very small <m>(-)</m></sq> by <m>2</m>,
+                      the denominator will continue to get smaller and smaller,
+                      and remain negative.
+                      The result is a fraction whose numerator is positive,
+                      but whose denominator is very small and negative.
+                      Mentally,
+                      <me>
+                        f(x) \approx \dfrac{3}{2 \left( \text{ very small \((-)\) } \right)} \approx \dfrac{3}{\text{ very small \((-)\) } } \approx \text{ very big \((-)\) }
+                      </me>
+                      The term <sq>very big <m>(-)</m></sq> means a number with a large absolute value which is negative.<fn>
+                      The actual retail value of
+                      <m>f(-2.000001)</m> is approximately <m>-1,\!500,\!000</m>.
+                      </fn>  What all of this means is that as <m>x \rightarrow -2^{-}</m>,
+                      <m>f(x) \rightarrow -\infty</m>.
+                      Now suppose we wanted to determine the behavior of <m>f(x)</m> as <m>x \rightarrow -2^{+}</m>.
+                      If we imagine substituting something a little larger than <m>-2</m> in for <m>x</m>,
+                      say <m>-1.999999</m>, we mentally estimate
+                      <me>
+                        f(x) \approx \dfrac{-6}{(-4)\left( \text{ very small \((+)\) } \right)} = \dfrac{3}{2 \left( \text{ very small \((+)\) } \right)}  \approx \dfrac{3}{\text{ very small \((+)\) } } \approx \text{ very big \((+)\) }
+                      </me>
+                      We conclude that as <m>x \rightarrow -2^{+}</m>,
+                      <m>f(x) \rightarrow \infty</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=f(x)</m> as <m>x \rightarrow 2</m>:</em>
+                      Consider <m>x \rightarrow 2^{-}</m>.
+                      We imagine substituting <m>x = 1.999999</m>.
+                      Approximating <m>f(x)</m> as we did above, we get
+                      <me>
+                        f(x) \approx \dfrac{6}{\left( \text{ very small \((-)\) } \right)(4)} = \dfrac{3}{2 \left( \text{ very small \((-)\) } \right)}  \approx \dfrac{3}{\text{ very small \((-)\) } } \approx \text{ very big \((-)\) }
+                      </me>
+                      We conclude that as <m>x \rightarrow 2^{-}</m>,
+                      <m>f(x) \rightarrow -\infty</m>.
+                      Similarly, as <m>x \rightarrow 2^{+}</m>,
+                      we imagine substituting <m>x = 2.000001</m> to get <m>f(x) \approx \frac{3}{\text{ very small \((+)\) } } \approx \text{ very big (+) }</m>.
+                      So as <m>x \rightarrow 2^{+}, f(x) \rightarrow \infty</m>.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+              We interpret this graphically below on the left.
+            </li>
+            <li>
+              <p>
+                To find the <m>x</m>-intercepts of the graph, we set <m>y=f(x) = 0</m>.
+                Solving <m>\frac{3x}{(x-2)(x+2)} = 0</m> results in <m>x=0</m>.
+                Since <m>x=0</m> is in our domain,
+                <m>(0,0)</m> is the <m>x</m>-intercept.
+                This is also the <m>y</m>-intercept,<fn>
+                Per <xref ref="onlyoneyintexercise">Exercise</xref>,
+                functions can have at most one <m>y</m>-intercept.
+                Since <m>(0,0)</m> is on the graph,
+                it is <em>the</em> <m>y</m>-intercept.
+                </fn> as we can quickly verify since <m>f(0) = \frac{3(0)}{0^2-4} = 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Next, we determine the end behavior of the graph of <m>y=f(x)</m>.
+                Since the degree of the numerator is <m>1</m>,
+                and the degree of the denominator is <m>2</m>,
+                <xref ref="hathm">Theorem</xref> tells us that <m>y=0</m> is the horizontal asymptote.
+                As with the vertical asymptotes,
+                we can glean more detailed information using <sq>number sense</sq>.
+                For the discussion below, we use the formula <m>f(x) = \frac{3x}{x^2-4}</m>.
+                <ul>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=f(x)</m> as <m>x \rightarrow -\infty</m>:</em>
+                      If we were to make a table of values to discuss the behavior of <m>f</m> as <m>x \rightarrow -\infty</m>,
+                      we would substitute very <sq>large</sq> negative numbers in for <m>x</m>,
+                      say for example, <m>x = \text{ \(-1\) billion }</m>.
+                      The numerator <m>3x</m> would then be <m>-3 \, \text{ billion }</m>,
+                      whereas the denominator <m>x^2-4</m> would be <m>(\text{ \(-1\) billion } )^2 - 4</m>,
+                      which is pretty much the same as  <m>1(\text{ billion } )^2</m>.
+                      Hence,
+                      <me>
+                        f\left(\text{ \(-1\) billion } \right) \approx \dfrac{-3 \, \text{ billion } }{1(\text{ billion } )^2} \approx - \dfrac{3}{\text{ billion } } \approx \text{ very small \((-)\) }
+                      </me>
+                      Notice that if we substituted in <m>x = \text{ \(-1\) trillion }</m>,
+                      essentially the same kind of cancellation would happen,
+                      and we would be left with an even <sq>smaller</sq> negative number.
+                      This not only confirms the fact that as <m>x \rightarrow -\infty</m>,
+                      <m>f(x) \rightarrow 0</m>, it tells us that <m>f(x) \rightarrow 0^{-}</m>.
+                      In other words,
+                      the graph of <m>y=f(x)</m> is a little bit <em>below</em>
+                      the <m>x</m>-axis as we move to the far left.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=f(x)</m> as
+                      <m>x \rightarrow \infty</m>:</em>  On the flip side,
+                      we can imagine substituting very large positive numbers in for <m>x</m> and looking at the behavior of <m>f(x)</m>.
+                      For example, let <m>x = \text{ \(1\) billion }</m>.
+                      Proceeding as before, we get
+                      <me>
+                        f\left(\text{ \(1\) billion } \right) \approx \dfrac{3 \, \text{ billion } }{1(\text{ billion } )^2} \approx \dfrac{3}{\text{ billion } } \approx \text{ very small \((+)\) }
+                      </me>
+                      The larger the number we put in,
+                      the smaller the positive number we would get out.
+                      In other words, as <m>x \rightarrow \infty</m>,
+                      <m>f(x) \rightarrow 0^{+}</m>,
+                      so the graph of <m>y=f(x)</m> is a little bit <em>above</em>
+                      the <m>x</m>-axis as we look toward the far right.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+              We interpret these findings graphically below on the right.
+              <tabular>
+                <row>
+                  <cell>\begin{mfpic}[15]{-4}{4}{-5}{5}  \dashed \polyline{(-2,-4.5), (-2,4.5)} \dashed \polyline{(2,-4.5), (2,4.5)} \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \axes \xmarks{-3 step 1 until 3}  \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-1</m>} -1,  {<m>1</m>} 1, {<m>3</m>} 3}  \penwd{1.25pt} \arrow \curve{(-2.75,-3),(-2.5,-3.25), (-2.25,-4)} \arrow \reverse \curve{(-1.75,4),(-1.5,3.25), (-1.25,3)} \arrow \curve{(1.25,-3), (1.5,-3.25) , (1.75,-4)} \arrow \curve{(2.75,3),(2.5,3.25), (2.25,4)} \end{mfpic}</cell>
+                  <cell>\begin{mfpic}[15]{-4.75}{4.75}{-2}{2} \tlabel[cc](4.75,-0.5){<m>x</m>} \tlabel[cc](0.5,2){<m>y</m>} \axes \ymarks{-1 step 1 until 1}  \tlpointsep{4pt} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1}  \penwd{1.25pt} \arrow \curve{(2.5,0.85), (3,0.35), (4.25, 0.15)} \arrow \curve{(-2.5,-0.85), (-3,-0.35), (-4.25, -0.15)} \end{mfpic}</cell>
+                </row>
+                <row>
+                  <cell>behavior near <m>x = \pm 2</m></cell>
+                  <cell>end behavior</cell>
+                </row>
+              </tabular>
+            </li>
+            <li>
+              <p>
+                Lastly, we construct a sign diagram for <m>f(x)</m>.
+                The <m>x</m>-values excluded from the domain of <m>f</m> are <m>x = \pm 2</m>,
+                and the only zero of <m>f</m> is <m>x=0</m>.
+                Displaying these appropriately on the number line gives us four test intervals,
+                and we choose the test values<fn>
+                In this particular case,
+                we don't need test values since our analysis of the behavior of <m>f</m> near the vertical asymptotes and our end behavior analysis have given us the signs on each of the test intervals.
+                In general, however, this won't always be the case,
+                so for demonstration purposes,
+                we continue with our usual construction.
+                </fn> <m>x=-3</m>, <m>x=-1</m>,
+                <m>x=1</m> and <m>x=3</m>.
+                We find <m>f(-3)</m> is <m>(-)</m>,
+                <m>f(-1)</m> is <m>(+)</m>,
+                <m>f(1)</m> is <m>(-)</m> and <m>f(3)</m> is <m>(+)</m>.
+                As we begin our sketch,
+                it certainly appears as if the graph could be symmetric about the origin.
+                Taking a moment to check for symmetry,
+                we find <m>f(-x) = \frac{3(-x)}{(-x)^2-4} = -\frac{3x}{x^2-4} = -f(x)</m>.
+                Hence, <m>f</m> is odd and the graph of
+                <m>y = f(x)</m> is symmetric about the origin.
+                Putting all of our work together, we get the graph below.
+                <tabular>
+                  {m{0.5in}m{2in}m{2.5in}} &amp; \begin{mfpic}[10]{-6}{6}{-2}{2} \arrow \reverse \arrow \polyline{(-6,0),(6,0)} \xmarks{-3,0,3} \arrow \polyline{(-4.5,-1.5),(-4.5,-0.5)} \arrow \polyline{(-1.5,-1.5),(-1.5,-0.5)} \arrow \polyline{(1.5,-1.5),(1.5,-0.5)} \arrow \polyline{(4.5,-1.5),(4.5,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -3, {<m>0</m>} 0, {<m>2</m>} 3 } \tlabel[cc](-4.5,1){<m>(-)</m>} \tlabel[cc](-4.5,-2.25){<m>-3</m>} \tlabel[cc](-3,1){\textinterrobang} \tlabel[cc](-1.5,1){<m>(+)</m>} \tlabel[cc](-1.75,-2.25){<m>-1</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](1.5,1){<m>(-)</m>} \tlabel[cc](1.5,-2.25){<m>1</m>} \tlabel[cc](3,1){\textinterrobang} \tlabel[cc](4.5,1){<m>(+)</m>} \tlabel[cc](4.5,-2.25){<m>3</m>} \end{mfpic} &amp; \begin{mfpic}[16]{-6}{6}{-4}{4} \dashed \polyline{(-2,-4), (-2,4)} \dashed \polyline{(2,-4), (2,4)} \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \axes \xmarks{-5 step 1 until 5} \ymarks{-3 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>-5</m>} -5, {<m>-4</m>} -4 ,{<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{ {<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-6, -2.5, 0.1}{(3*x)/((x**2)-4)} \arrow \reverse \arrow \function{-1.5, 1.5, 0.1}{(3*x)/((x**2)-4)} \arrow \reverse \arrow \function{2.5, 6, 0.1}{(3*x)/((x**2)-4)} \point[4pt]{(0,0)} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Something important to note about the above example is that while <m>y=0</m> is the horizontal asymptote,
+      the graph of <m>f</m> actually crosses the <m>x</m>-axis at <m>(0,0)</m>.
+      The myth that graphs of rational functions can't cross their horizontal asymptotes is completely false,<fn>
+      That's why we called it a MYTH!
+      </fn> as we shall see again in our next example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Sketch a detailed graph of <m>g(t) = \dfrac{2t^2-3t-5}{t^2-t-6}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find the values excluded from the domain of <m>g</m>,
+                we solve <m>t^2-t-6 = 0</m> and find <m>t = -2</m> and <m>t=3</m>.
+                Hence, our domain is <m>\{ t \in \mathbb{R} \, | \, t \neq -2 3 \}</m>,
+                or using interval notation:
+                <m>(-\infty, -2) \cup (-2,3) \cup (3,\infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To check if <m>g(t)</m> is in lowest terms, we factor:
+                <m>g(t) = \frac{(2t-5)(t+1)}{(t-3)(t+2)}</m>.
+                There is no cancellation, so <m>g(t)</m> is in lowest terms.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>g(t)</m> was given to us in lowest terms, we have,
+                once again by <xref ref="vavshole">Theorem</xref>
+                vertical asymptotes <m>t=-2</m> and <m>t=3</m>.
+                Keeping in mind <m>g(t) = \frac{(2t-5)(t+1)}{(t-3)(t+2)}</m>,
+                we proceed to our analysis near each of these values.
+                <ul>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=g(t)</m> as <m>t \rightarrow -2</m>:</em>
+                      As <m>t \rightarrow -2^{-}</m>,
+                      we imagine substituting a number a little bit less than <m>-2</m>.
+                      We have
+                      <me>
+                        g(t) \approx \frac{(-9)(-1)}{(-5)(\text{ very small \((-)\) } )} \approx \frac{9}{\text{ very small \((+)\) } } \approx \text{ very big (+) }
+                      </me>
+                      so as <m>t \rightarrow -2^{-}</m>,
+                      <m>g(t) \rightarrow \infty</m>.
+                      On the flip side, as <m>t \rightarrow -2^{+}</m>, we get
+                      <me>
+                        g(t) \approx \frac{9}{\text{ very small \((-)\) } } \approx \text{ very big \((-)\) }
+                      </me>
+                      so <m>g(t) \rightarrow -\infty</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=g(t)</m> as <m>x \rightarrow 3</m>:</em>
+                      As <m>t \rightarrow 3^{-}</m>,
+                      we imagine plugging in a number just shy  of <m>3</m>.
+                      We have
+                      <me>
+                        g(t) \approx \frac{(1)(4)}{(\text{ very small \((-)\) } ) (5)} \approx \frac{4}{\text{ very small \((-)\) } } \approx \text{ very big \((-)\) }
+                      </me>
+                      Hence, as <m>t \rightarrow 3^{-}</m>,
+                      <m>g(t) \rightarrow -\infty</m>.
+                      As <m>t \rightarrow 3^{+}</m>, we get
+                      <me>
+                        g(t) \approx \frac{4}{\text{ very small \((+)\) } } \approx \text{ very big \((+)\) }
+                      </me>
+                      so <m>g(x) \rightarrow \infty</m>.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+              We interpret this analysis graphically below on the left.
+            </li>
+            <li>
+              <p>
+                To find the <m>t</m>-intercepts we set <m>y = g(t) = 0</m>.
+                Using the factored form of <m>g(t)</m> above,
+                we find the zeros to be the solutions of <m>(2t-5)(t+1)=0</m>.
+                We obtain <m>t = \frac{5}{2}</m> and <m>t=-1</m>.
+                Since both of these numbers are in the domain of <m>g</m>,
+                we have two <m>t</m>-intercepts,
+                <m>\left( \frac{5}{2},0\right)</m> and <m>(-1,0)</m>.
+                To find the <m>y</m>-intercept,
+                we find <m>y = g(0) = \frac{5}{6}</m>,
+                so our <m>y</m>-intercept is <m>\left(0, \frac{5}{6}\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the degrees of the numerator and denominator of <m>g(t)</m> are the same,
+                we know from <xref ref="hathm">Theorem</xref>
+                that we can find the horizontal asymptote of the graph of <m>g</m> by taking the ratio of the leading terms coefficients,
+                <m>y = \frac{2}{1} = 2</m>.
+                However, if we take the time to do a more detailed analysis,
+                we will be able to reveal some <sq>hidden</sq> behavior which would be lost otherwise.
+                Using long division,
+                we may rewrite <m>g(t)</m> as <m>g(t) = 2 - \frac{t-7}{t^2-t-6}</m>.
+                We focus our attention on the term <m>\frac{t-7}{t^2-t-6}</m>.
+                <ul>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=g(t)</m> as <m>t \rightarrow -\infty</m>:</em>
+                      If imagine substituting <m>t = \text{ \(-1\) billion }</m> into <m>\frac{t-7}{t^2-t-6}</m>,
+                      we estimate <m>\frac{t-7}{t^2-t-6} \approx \frac{\text{ \(-1\) billion } }{1 \text{ billion } ^2}  = \frac{-1}{\text{ billion } } \approx \text{ very small \((-)\) }</m>.<fn>
+                      We are once again using the fact that for polynomials,
+                      end behavior is determined by the leading term, so in the denominator,
+                      the <m>t^2</m> term dominates the <m>t</m> and constant terms.
+                      </fn>  Hence,
+                      <me>
+                        g(t) =  2 - \frac{t-7}{t^2-t-6} \approx 2 - \text{ very small \((-)\) }  = 2 + \text{ very small \((+)\) }
+                      </me>
+                      Hence, as <m>t \rightarrow -\infty</m>,
+                      the graph is a little bit <em>above</em> the line <m>y=2</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=g(t)</m> as <m>t \rightarrow \infty</m>.</em>
+                      To consider <m>\frac{t-7}{t^2-t-6}</m> as <m>t \rightarrow \infty</m>,
+                      we imagine substituting <m>t= \text{ \(1\) billion }</m> and,
+                      going through the usual mental routine, find
+                      <me>
+                        \frac{t-7}{t^2-t-6} \approx \text{ very small \((+)\) }
+                      </me>
+                      Hence, <m>g(t) \approx 2 - \ \text{ very small \((+)\) }</m>,
+                      so the graph is just <em>below</em>
+                      the line <m>y=2</m> as <m>t \rightarrow \infty</m>.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+              We sketch the end behavior below on the right.
+              <tabular>
+                <row>
+                  <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \dashed \polyline{(-2,-4.5), (-2,4.5)} \dashed \polyline{(3,-4.5), (3,4.5)} \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \axes \xmarks{-4 step 1 until 4}  \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-1</m>} -1,  {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4}  \penwd{1.25pt} \arrow \curve{(-2.75,3),(-2.5,3.25), (-2.25,4)} \arrow \reverse \curve{(-1.75,-4),(-1.5,-3.25), (-1.25,-3)} \arrow \curve{(2.25,-3), (2.5,-3.25) , (2.75,-4)} \arrow \curve{(3.75,3),(3.5,3.25), (3.25,4)} \end{mfpic}</cell>
+                  <cell>\begin{mfpic}[15]{-4.75}{4.75}{-1}{3} \dashed \polyline{(-4.75,2), (4.75,2)} \tlabel[cc](4.75,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>y</m>} \axes \ymarks{-1 step 1 until 1}  \tlpointsep{4pt} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1}  \penwd{1.25pt} \arrow \curve{(2.5,1.15), (3,1.65), (4.25, 1.85)} \arrow \curve{(-2.5,2.85), (-3,2.35), (-4.25, 2.15)} \end{mfpic}</cell>
+                </row>
+                <row>
+                  <cell>behavior near <m>t = -2</m> and <m>t = 3</m></cell>
+                  <cell>end behavior</cell>
+                </row>
+              </tabular>
+            </li>
+            <li>
+              <p>
+                Finally we construct our sign diagram.
+                We place an <sq>\textinterrobang</sq> above <m>t=-2</m> and <m>t=3</m>,
+                and a <sq><m>0</m></sq> above <m>t = \frac{5}{2}</m> and <m>t=-1</m>.
+                Choosing test values in the test intervals gives us <m>g(t)</m> is <m>(+)</m> on the intervals <m>(-\infty, -2)</m>,
+                <m>\left(-1, \frac{5}{2}\right)</m> and <m>(3, \infty)</m>,
+                and <m>(-)</m> on the intervals <m>(-2,-1)</m> and <m>\left(\frac{5}{2}, 3\right)</m>.
+                As we piece together all of the information,
+                it stands to reason the graph must cross the horizontal asymptote at some point after <m>t=3</m> in order for it to approach <m>y=2</m> from underneath.<fn>
+                This subtlety would have been missed had we skipped the long division and subsequent end behavior analysis.
+                </fn>  To find where
+                <m>y = g(t)</m> intersects <m>y = 2</m>,
+                we solve <m>g(t) = 2 - \frac{t-7}{t^2-t-6} = 2</m> and get <m>t-7= 0</m>,
+                or <m>t=7</m>.
+                Note that <m>t-7</m> is the remainder when
+                <m>2t^2-3t-5</m> is divided by <m>t^2-t-6</m>,
+                so it makes sense that for <m>g(t)</m> to equal the quotient <m>2</m>,
+                the remainder from the division must be <m>0</m>.
+                Sure enough, we find <m>g(7)=2</m>.
+                The location of the <m>t</m>-intercepts alone dashes all hope of the function being even or odd
+                (do you see why?)
+                so we skip the symmetry check in this case.
+                <tabular>
+                  {m{0.05in}m{2.5in}m{2.5in}} &amp; \begin{mfpic}[10]{-8}{7}{-2}{2} \arrow \reverse \arrow \polyline{(-8,0),(7,0)} \xmarks{-5,-2,1,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -5, {<m>-1</m>} -2, {<m>\frac{5}{2}</m>} 1, {<m>3</m>} 4} \tlabel[cc](-6.5,1){<m>(+)</m>} \tlabel[cc](-5,1){\textinterrobang} \tlabel[cc](-3.5,1){<m>(-)</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](-0.5,1){<m>(+)</m>} \tlabel[cc](1,1){<m>0</m>} \tlabel[cc](2.5,1){<m>(-)</m>} \tlabel[cc](4,1){\textinterrobang} \tlabel[cc](5.5,1){<m>(+)</m>} \end{mfpic} &amp; \begin{mfpic}[10]{-10}{10}{-5}{9} \dashed \polyline{(-2,-5), (-2,9)} \dashed \polyline{(3,-5), (3,9)} \dashed \polyline{(-10,2), (10,2)} \tlabel[cc](10,-0.5){<m>t</m>} \tlabel[cc](0.5,9){<m>y</m>} \axes \xmarks{-9 step 1 until 9} \ymarks{-4 step 1 until 8} \tlpointsep{4pt} \axislabels {x}{ {<m>-9</m>} -9, {<m>-8</m>} -8 ,{<m>-7</m>} -7, {<m>-6</m>} -6,{<m>-5</m>} -5, {<m>-4</m>} -4 ,{<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \axislabels {y}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-9, -2.29, 0.1}{(2*(x**2)-3*x-5)/((x**2)-x-6)} \arrow \reverse \arrow \function{-1.69, 2.86, 0.1}{(2*(x**2)-3*x-5)/((x**2)-x-6)} \arrow \reverse \arrow \function{3.12, 9, 0.1}{(2*(x**2)-3*x-5)/((x**2)-x-6)} \point[4pt]{(-1,0), (2.5,0), (0, 0.83333)} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      More can be said about the graph of <m>y = g(t)</m> above.
+      It stands to reason that <m>g</m> must attain a local minimum at some point past <m>t=7</m> since the graph of <m>g</m> crosses through <m>y=2</m> at <m>(2,7)</m> but approaches <m>y=2</m> from below as <m>t \rightarrow \infty</m>.
+      Calculus verifies a local minimum at <m>(13, 1.96)</m>.
+      We invite the reader to verify this claim using a graphing utility.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Sketch a detailed graph of <m>h(x) = \dfrac{2x^3+5x^2+4x+1}{x^2+3x+2}</m>.
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                Solving <m>x^2+3x+2 = 0</m> gives <m>x = -2</m> and <m>x=-1</m> as our excluded values.
+                Hence, the domain is <m>\{ x \in \mathbb{R} \, | \, x \neq -1, -2 \}</m> or,
+                using interval notation,
+                <m>(-\infty, -2) \cup (-2, -1) \cup (-1, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To reduce <m>h(x)</m>, we need to factor the numerator and denominator.
+                To factor the numerator, we use the techniques<fn>
+                Bet you never thought you'd never see <em>that</em>
+                stuff again before the Final Exam!
+                </fn> set forth in <xref ref="RealZeros">Section</xref> and get
+                <me>
+                  h(x) =  \dfrac{2x^3+5x^2+4x+1}{x^2+3x+2} = \dfrac{(2x+1)(x+1)^2}{(x+2)(x+1)} = \dfrac{ (2x+1) (x+1)^{\cancelto{1}{2}}  }{(x+2)\cancel{(x+1)}} = \dfrac{(2x+1)(x+1)}{x+2}
+                </me>
+                Note we can use this formula for <m>h(x)</m> in our analysis of the graph of <m>h</m> as long as we are not substituting <m>x=-1</m>.
+                To make this exclusion specific,
+                we write <m>h(x) = \frac{(2x+1)(x+1)}{x+2}</m>, <m>x \neq -1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                From <xref ref="vavshole">Theorem</xref>,
+                we know that since <m>x=-2</m> is a zero of the denominator of the reduced form of <m>h(x)</m>,
+                we have a vertical asymptote there.
+                As for <m>x=-1</m>,
+                the factor <m>(x+1)</m> was canceled from the denominator when we reduced <m>h(x)</m>,
+                so there will be a hole when <m>x=-1</m>.
+                To find the <m>y</m>-coordinate of the hole,
+                we substitute <m>x=-1</m> into <m>\frac{(2x+1)(x+1)}{x+2}</m>,
+                per <xref ref="vavshole">Theorem</xref> and get <m>0</m>.
+                Hence, we have a hole on the <m>x</m>-axis at <m>(-1,0)</m>.
+                It should make you uncomfortable plugging <m>x=-1</m> into the reduced formula for <m>h(x)</m>,
+                especially since we've made such a big deal about the stipulation <sq><m>x \neq -1</m></sq> that goes along with that formula.
+                What we are really doing is taking a Calculus short-cut to the more detailed kind of analysis near <m>x=-1</m> which we will show below.
+                <ul>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=h(x)</m> as <m>x \rightarrow -2</m>:</em>
+                      As <m>x \rightarrow -2^{-}</m>,
+                      we imagine substituting a number a little bit less than <m>-2</m>.
+                      We have <m>h(x) \approx \frac{(-3)(-1)}{(\text{ very small \((-)\) } )} \approx \frac{3}{(\text{ very small \((-)\) } )}\approx \text{ very big \((-)\) }</m> thus as <m>x \rightarrow -2^{-}</m>,
+                      <m>h(x) \rightarrow -\infty</m>.
+                      On the other side of <m>-2</m>,
+                      as <m>x \rightarrow -2^{+}</m>,
+                      we find that <m>h(x) \approx \frac{3}{\text{ very small \((+)\) } } \approx \text{ very big \((+)\) }</m>,
+                      so <m>h(x) \rightarrow \infty</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=h(x)</m> as <m>x \rightarrow -1</m>.</em>
+                      As <m>x \rightarrow -1^{-}</m>,
+                      we imagine plugging in a number a bit less than <m>x=-1</m>.
+                      We have <m>h(x) \approx \frac{(-1)(\text{ very small \((-)\) } )}{1} = \text{ very small \((+)\) }</m> Hence,
+                      as <m>x \rightarrow -1^{-}</m>,
+                      <m>h(x) \rightarrow 0^{+}</m>.
+                      This means that as <m>x \rightarrow -1^{-}</m>,
+                      the graph is a bit above the point <m>(-1,0)</m>.
+                      As <m>x \rightarrow -1^{+}</m>,
+                      we get <m>h(x) \approx \frac{(-1)(\text{ very small \((+)\) } )}{1} = \text{ very small \((-)\) }</m>.
+                      This gives us that as <m>x \rightarrow -1^{+}</m>,
+                      <m>h(x) \rightarrow 0^{-}</m>,
+                      so the graph is a little bit lower than <m>(-1,0)</m> here.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+              We interpret this graphically below on the left.
+            </li>
+            <li>
+              <p>
+                To find the <m>x</m>-intercepts, as usual,
+                we set <m>h(x) = 0</m> and solve.
+                Solving <m>\frac{(2x+1)(x+1)}{x+2}=0</m> yields <m>x=-\frac{1}{2}</m> and <m>x=-1</m>.
+                The latter isn't in the domain of <m>h</m>, in fact,
+                we know there is a hole at <m>(-1,0)</m>, so we exclude it.
+                Our only <m>x</m>-intercept is <m>\left(-\frac{1}{2}, 0\right)</m>.
+                To find the <m>y</m>-intercept, we set <m>x=0</m>.
+                Since <m>0 \neq -1</m>,
+                we can use the reduced formula for <m>h(x)</m> and we get
+                <m>h(0) = \frac{1}{2}</m> for a <m>y</m>-intercept of <m>\left(0,\frac{1}{2}\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For end behavior,
+                we note that the degree of the numerator of <m>h(x)</m>,
+                <m>2x^3+5x^2+4x+1</m>, is <m>3</m> and the degree of the denominator,
+                <m>x^2+3x+2</m>,
+                is <m>2</m> so by <xref ref="sathm">Theorem</xref>,
+                the graph of <m>y = h(x)</m> has a slant asymptote.
+                For <m>x\rightarrow \pm \infty</m>,
+                we are far enough away from <m>x=-1</m> to use the reduced formula,
+                <m>h(x) = \frac{(2x+1)(x+1)}{x+2}</m>, <m>x \neq -1</m>.
+                To perform long division,
+                we multiply out the numerator and get <m>h(x) = \frac{2x^2+3x+1}{x+2}</m>,
+                <m>x \neq -1</m>,
+                and rewrite <m>h(x) = 2x-1+\frac{3}{x+2}</m>, <m>x \neq -1</m>.
+                By <xref ref="sathm">Theorem</xref>,
+                the slant asymptote is <m>y = 2x-1</m>,
+                and to better see <em>how</em> the graph approaches the asymptote,
+                we focus our attention on the term generated from the remainder,
+                <m>\frac{3}{x+2}</m>.
+                <ul>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=h(x)</m> as <m>x \rightarrow -\infty</m>:</em>
+                      Substituting <m>x = \text{ \(-1\) billion }</m> into <m>\frac{3}{x+2}</m>,
+                      we get the estimate <m>\frac{3}{\text{ \(-1\) billion } } \approx \text{ very small \((-)\) }</m>.
+                      Hence, <m>h(x) = 2x-1+\frac{3}{x+2} \approx 2x-1 + \text{ very small \((-)\) }</m>.
+                      This means the graph of <m>y=h(x)</m> is a little bit <em>below</em>
+                      the line <m>y=2x-1</m> as <m>x \rightarrow -\infty</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <em>The behavior of <m>y=h(x)</m> as <m>x \rightarrow \infty</m>:</em>
+                      If <m>x \rightarrow \infty</m>,
+                      then <m>\frac{3}{x+2} \approx \text{ very small \((+)\) }</m>.
+                      This means <m>h(x) \approx 2x-1 + \text{ very small \((+)\) }</m>,
+                      or that the graph of <m>y=h(x)</m> is a little bit <em>above</em>
+                      the line <m>y=2x-1</m> as <m>x \rightarrow \infty</m>.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+              We sketch the end behavior below on the right.
+              <tabular>
+                <row>
+                  <cell>\begin{mfpic}[15]{-4}{1}{-5}{5} \dashed \polyline{(-2,-4.5), (-2,4.5)} \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \axes \xmarks{-2,-1} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3} \penwd{1.25pt} \arrow \curve{(-2.75,-3),(-2.5,-3.25), (-2.25,-4)} \arrow \reverse \curve{(-1.75,4),(-1.5,3.25), (-1.25,3)} \curve{(-1.25,0.5), (-1,0), (-0.75,-0.5)} \pointfillfalse \point[4pt]{(-1,0)} \end{mfpic}</cell>
+                  <cell>\begin{mfpic}[15]{-4.75}{4.75}{-4.75}{4.75} \dashed \function{-1.7,2.7,0.1}{2*x-1} \tlabel[cc](4.75,-0.5){<m>x</m>} \tlabel[cc](0.5,4.75){<m>y</m>} \axes \ymarks{-4 step 4 until 1} \tlpointsep{4pt} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \curve{(-1.25,-4), (-1.5,-4.2), (-1.7, -4.75)} \arrow \curve{(2.25,4), (2.5,4.2), (2.75, 4.75)} \end{mfpic}</cell>
+                </row>
+                <row>
+                  <cell>behavior near <m>x = -2</m> and <m>x=-1</m></cell>
+                  <cell>end behavior</cell>
+                </row>
+              </tabular>
+            </li>
+            <li>
+              <p>
+                To make our sign diagram,
+                we place an <sq>\textinterrobang</sq> above <m>x=-2</m> and <m>x=-1</m> and a <sq><m>0</m></sq> above <m>x=-\frac{1}{2}</m>.
+                On our four test intervals,
+                we find <m>h(x)</m> is <m>(+)</m> on <m>(-2,-1)</m> and
+                <m>\left(-\frac{1}{2}, \infty\right)</m> and <m>h(x)</m> is <m>(-)</m> on
+                <m>(-\infty, -2)</m> and <m>\left(-1,-\frac{1}{2}\right)</m>.
+                Putting all of our work together yields the graph below.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <tabular>
+          {m{0.5in}m{2in}m{2.5in}}
+          &amp;
+          \begin{mfpic}[10]{-8}{8}{-2}{2}
+          \arrow \reverse \arrow \polyline{(-8,0),(8,0)}
+          \xmarks{-4,0,4}
+          \tlpointsep{6pt}
+          \axislabels {x}{{<m>-2</m>} -4, {<m>-1</m>} 0, {<m>-\frac{1}{2}</m>} 4}
+          \tlabel[cc](-6,1){<m>(-)</m>}
+          \tlabel[cc](-4,1){\textinterrobang}
+          \tlabel[cc](-2.25,1){<m>(+)</m>}
+          \tlabel[cc](0,1){\textinterrobang}
+          \tlabel[cc](2.25,1){<m>(-)</m>}
+          \tlabel[cc](4,1){<m>0</m>}
+          \tlabel[cc](6,1){<m>(+)</m>}
+          \end{mfpic}
+          &amp;
+          \begin{mfpic}[16][8]{-5}{5}{-15}{10}
+          \dashed \polyline{(-2,-15), (-2,10)}
+          \dashed \function{-7,5.5,0.1}{2*x-1}
+          \tlabel[cc](5,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,10){<m>y</m>}
+          \axes
+          \xmarks{-4 step 1 until 4}
+          \ymarks{-14 step 1 until 9}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>-4</m>} -4 ,{<m>-3</m>} -3, {<m>-1</m>} -1,  {<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3,  {<m>4</m>} 4}
+          \axislabels {y}{ {<m>-14</m>} -14, {<m>-13</m>} -13,{<m>-12</m>} -12,{<m>-11</m>} -11, {<m>-10</m>} -10,{<m>-9</m>} -9,{<m>-8</m>} -8, {<m>-7</m>} -7,{<m>-6</m>} -6,{<m>-5</m>} -5, {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3, {<m>4</m>} 4,{<m>5</m>} 5, {<m>6</m>} 6,{<m>7</m>} 7, {<m>8</m>} 8,{<m>9</m>} 9}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \function{-6.67, -2.32, 0.1}{(2*(x**2)+3*x+1)/(x+2)}
+          \arrow \reverse \arrow \function{-1.79, 5.29, 0.1}{(2*(x**2)+3*x+1)/(x+2)}
+          \point[4pt]{(-0.5,0)}
+          \pointfillfalse
+          \point[4pt]{(-1,0)}
+          \end{mfpic}
+        </tabular>
+        <p>
+          To find if the graph of <m>h</m> ever crosses the slant asymptote,
+          we solve <m>h(x) = 2x-1+\frac{3}{x+2}= 2x-1</m>.
+          This results in <m>\frac{3}{x+2} = 0</m>,
+          which has no solution.<fn>
+          Alternatively,
+          the remainder after the long division was <m>r=3</m> which is never <m>0</m>.
+          </fn> Hence,
+          the graph of <m>h</m> never crosses its slant asymptote.<fn>
+          But rest assured, some graphs do!
+          </fn>
+        </p>
+      </statement>
+    </example>
+    <p>
+      Our last graphing example is challenging in that our six step process provides us little information to work with.
+    </p>
+    <example xml:id="carefulanalysisneeded">
+      <statement>
+        <p>
+          Sketch the graph of <m>r(x) = \dfrac{x^4+1}{x^2+1}</m>.
+        </p>
+      </statement>
+      <solution>
+        <ol>
+          <li>
+            <p>
+              The denominator <m>x^2+1</m> is never zero which means there are no excluded values.
+              The domain is <m>\mathbb{R}</m>,
+              or using interval notation, <m>(-\infty, \infty)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              With no real zeros in the denominator,
+              <m>x^2+1</m> is an irreducible quadratic.
+              Our only hope of reducing <m>r(x)</m> is if <m>x^2+1</m> is a factor of <m>x^4+1</m>.
+              Performing long division gives us
+              <me>
+                \frac{x^4+1}{x^2+1} = x^2-1+\frac{2}{x^2+1}
+              </me>
+              The remainder is not zero so <m>r(x)</m> is already reduced.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since there are no numbers excluded from the domain of <m>r</m>,
+              there are no vertical asymptotes or holes in the graph of <m>r</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              To find the <m>x</m>-intercept, we'd set <m>r(x) = 0</m>.
+              Since there are no real solutions to <m>x^4+1=0</m>,
+              we have no <m>x</m>-intercepts.
+              Since <m>r(0) = 1</m>, we do get <m>(0,1)</m> as the <m>y</m>-intercept.
+            </p>
+          </li>
+          <li>
+            <p>
+              For end behavior,
+              we note that since the degree of the numerator is exactly <em>two</em>
+              more than the degree of the denominator,
+              neither <xref ref="hathm">Theorems</xref>
+              <xref ref="sathm">nor</xref> apply.<fn>
+              This won't stop us from giving it the old community college try, however!
+              </fn> We know from our attempt to reduce <m>r(x)</m> that we can rewrite <m>r(x) = x^2-1+\frac{2}{x^2+1}</m>,
+              so we focus our attention on the term corresponding to the remainder,
+              <m>\frac{2}{x^2+1}</m> It should be clear that as <m>x \rightarrow \pm \infty</m>,
+              <m>\frac{2}{x^2+1} \approx \text{ very small \((+)\) }</m>,
+              which means <m>r(x) \approx x^2-1 + \text{ very small \((+)\) }</m>.
+              So the graph <m>y=r(x)</m> is a little bit <em>above</em>
+              the graph of the parabola <m>y=x^2-1</m> as <m>x \rightarrow \pm \infty</m>.
+              Graphically,
+            </p>
+          </li>
+          <li>
+            <p>
+              There isn't much work to do for a sign diagram for <m>r(x)</m>,
+              since its domain is all real numbers and it has no zeros.
+              Our sole test interval is <m>(-\infty, \infty)</m>,
+              and since we know <m>r(0) = 1</m>,
+              we conclude <m>r(x)</m> is <m>(+)</m> for all real numbers.
+              We check for symmetry, and find
+              <m>r(-x) = \frac{(-x)^4+1}{(-x)^2+1} = \frac{x^4+1}{x^2+1} = r(x)</m>,
+              so <m>r</m> is even and,
+              hence, the graph is symmetric about the <m>y</m>-axis.
+              It may be tempting at this point to call it quits,
+              reach for a graphing utility,
+              or ask someone who knows Calculus.<fn>
+              This is exactly what the authors did in the Third Edition.
+              Special thanks go to Erik Boczko from Ohio University for showing us that,
+              in fact, we could do more with this example algeraically.
+              </fn>  It turns out,
+              we can do a little bit better.
+              Recall from <xref ref="MonomialFunctions">Section</xref>,
+              that when <m>|x| \lt 1</m> but <m>x \neq 0</m>,
+              <m>x^4 \lt x^2</m>, hence <m>x^4+1 \lt x^2+1</m>.
+              This means for <m>-1\lt x\lt 0</m> and <m>0\lt x\lt 1</m>,
+              <m>r(x) = \frac{x^4+1}{x^2+1} \lt 1</m>.
+              Since we know <m>r(0) = 1</m>,
+              this means the graph of <m>y = r(x)</m> must fall to either side before heading off to <m>\infty</m>.
+              This means <m>(0,1)</m> is a local maximum and, moreover,
+              there are at least two local minimums,
+              one on either side of <m>(0,1)</m>.
+              We invite the reader to confirm this using a graphing utility.
+            </p>
+          </li>
+        </ol>
+        <tabular>
+          <row>
+            <cell>\begin{mfpic}[15]{-3}{3}{-2}{6}
+              \dashed \function{-2.5,2.5,0.1}{x**2-1}
+              \axes
+              \ymarks{-1,1,2,3,4,5}
+              \tlpointsep{4pt}
+              \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3, {<m>4</m>} 4,{<m>5</m>} 5}
+              \penwd{1.25pt}
+              \arrow \curve{(-2,4), (-2.25,4.5), (-2.5,6)}
+              \arrow \curve{(2,4), (2.25,4.5), (2.5,6)}
+              \tlabel[cc](3,-0.5){<m>x</m>}
+              \tlabel[cc](0.5,6){<m>y</m>}
+              \end{mfpic}</cell>
+            <cell>\begin{mfpic}[15]{-4}{4}{-2}{6}
+              \tlabel[cc](4,-0.5){<m>x</m>}
+              \tlabel[cc](0.5,6){<m>y</m>}
+              \axes
+              \xmarks{-3 step 1 until 3}
+              \ymarks{-1 step 1 until 5}
+              \tlpointsep{4pt}
+              \axislabels {x}{{<m>-3</m>} -3, {<m>-1</m>} -1,  {<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3}
+              \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3, {<m>4</m>} 4,{<m>5</m>} 5}
+              \penwd{1.25pt}
+              \arrow \reverse \arrow \function{-2.5, 2.5, 0.1}{(x**4+1)/(x**2+1)}
+              \point[4pt]{(0,1)}
+              \end{mfpic}</cell>
+          </row>
+          <row>
+            <cell>end behavior</cell>
+            <cell>sketch of <m>y = r(x)</m></cell>
+          </row>
+        </tabular>
+      </solution>
+    </example>
+    <p>
+      Our last example turns the tables and invites us to write formulas for rational function given their graphs.
+    </p>
+    <example xml:id="rationalfromgraph">
+      <statement>
+        <p>
+          Write formulas for rational functions <m>r(x)</m> and <m>F(x)</m> given their graphs below:
+        </p>
+        <tabular>
+          <row>
+            <cell>\begin{mfpic}[15][10]{-4}{6}{-5}{10}
+              \axes
+              \dashed \polyline{(-4,3), (6,3)}
+              \dashed \polyline{(1, -5), (1,10)}
+              \xmarks{-3 step 1 until 5}
+              \ymarks{-4 step 1 until 9}
+              \tlabel[cc](6, -0.5){<m>x</m>}
+              \tlabel[cc](0.5, 10){<m>y</m>}
+              \tlabel[cc](-1.25, 5){<m>(0,5)</m>}
+              \tlabel[cc](2.5, -1){<m>\left(\frac{5}{3}, 0 \right)</m>}
+              \gclear \tlabelrect(0, -4){<m>x=1</m>}
+              \tlabel[cc](4,3.5){<m>y=3</m>}
+              \penwd{1.25pt}
+              \arrow \reverse \arrow \function{-4,0.7,0.1}{3-2/(x-1)}
+              \arrow \reverse \arrow \function{1.25,6,0.1}{3-2/(x-1)}
+              \point[4pt]{(0,5), (1.667,0)}
+              \tcaption{<m>y=r(x)</m>}
+              \end{mfpic}
+              \begin{mfpic}[15][10]{-4}{6}{-5}{10}
+              \axes
+              \dashed \polyline{(-4,3), (6,3)}
+              \dashed \polyline{(1, -5), (1,10)}
+              \xmarks{-3 step 1 until 5}
+              \ymarks{-4 step 1 until 9}
+              \tlabel[cc](6, -0.5){<m>x</m>}
+              \tlabel[cc](0.5, 10){<m>y</m>}
+              \tlabel[cc](-1.25, 5){<m>(0,5)</m>}
+              \tlabel[cc](2.5, -1){<m>\left(\frac{5}{3}, 0 \right)</m>}
+              \gclear \tlabelrect(0, -4){<m>x=1</m>}
+              \tlabel[cc](4,3.5){<m>y=3</m>}
+              \penwd{1.25pt}
+              \arrow \reverse \arrow \function{-4,0.7,0.1}{3-2/(x-1)}
+              \arrow \reverse \arrow \function{1.25,6,0.1}{3-2/(x-1)}
+              \point[4pt]{(0,5)}
+              \pointfillfalse
+              \point[4pt]{(1.667,0)}
+              \tcaption{<m>y=F(x)</m>}
+              \end{mfpic}</cell>
+          </row>
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          The good news is the graph of <m>r</m> closely resembles the graph of <m>F</m>,
+          so once we know an expression for <m>r(x)</m>,
+          we should be able to modify it to obtain <m>F(x)</m>.
+          We are told <m>r</m> is a rational function,
+          so we know there are polynomial functions <m>p</m> and <m>q</m> so that <m>r(x) = \frac{p(x)}{q(x)}</m>.
+          We know from <xref ref="complexfactorization">Theorem</xref>
+          that we can factor <m>p(x)</m> and <m>q(x)</m> completely in terms of their leading coefficients and their zeros.
+          For simplicity's sake,
+          we assume neither <m>p</m> nor <m>q</m> has any non-real zeros.
+        </p>
+        <p>
+          We focus our attention first on finding an expression for <m>p(x)</m>.
+          When finding the <m>x</m>-intercepts,
+          we look for the zeros of <m>r</m> by solving <m>r(x) = \frac{p(x)}{q(x)} = 0</m>.
+          This equation quickly reduces to solving <m>p(x) =0</m>.
+          Since <m>\left(\frac{5}{3}, 0 \right)</m> is an <m>x</m>-intercept of the graph,
+          we know <m>x = \frac{5}{3}</m> is a zero of <m>r</m>,
+          and, hence, a zero of <m>p</m>.
+          Since we are shown no other <m>x</m>-intercepts,
+          we assume <m>r</m>, hence <m>p</m> have no other real zeros
+          (and no non-real zeros by our assumption.)
+          <xref ref="complexfactorization">Theorem</xref>
+          gives <m>p(x) = a\left(x - \frac{5}{3}\right)^m</m> where <m>a</m> is the leading coefficient of <m>p(x)</m> and <m>m</m> is the multiplicity of the zero <m>x = \frac{5}{3}</m>.
+          Since the graph of <m>y = r(x)</m> crosses through the <m>x</m>-axis in what appears to be a fairly linear fashion at <m>\left(\frac{5}{3}, 0 \right)</m>,
+          it seems reasonable to set <m>m=1</m>.
+          Hence, <m>p(x) = a \left(x - \frac{5}{3}\right)</m>.
+        </p>
+        <p>
+          Next, we focus our attention on finding <m>q(x)</m>.
+          <xref ref="vavshole">Theorem</xref>
+          <m>x=1</m> comes from a factor of <m>(x-1)</m> in the denominator of <m>r(x)</m>.
+          This means <m>(x-1)</m> is a factor of <m>q(x)</m>.
+          Since there are no other vertical asymptotes or holes in the graph,
+          <m>x=1</m> is the only real zero, hence
+          (per our assumption)
+          only zero of <m>q</m>.
+          At this point,
+          we have <m>q(x) = b(x-1)^m</m> where <m>b</m> is the leading coefficient of <m>q(x)</m> and <m>m</m> is the multiplicity of the zero <m>x=1</m>.
+          Since the graph of <m>r</m> has the <em>horizontal</em>
+          asymptote <m>y = 3</m>,<xref ref="ha">Theorem</xref> tells us two things:
+          first, degree of <m>q</m> must match the degree of <m>p</m>;
+          second, the ratio <m>\frac{a}{b} = 3</m>.
+          Hence, the degree of <m>q</m> is <m>1</m> so that:
+          <me>
+            \begin{array}{rcl}  r(x) \amp  = \amp  \dfrac{a \left(x - \frac{5}{3}\right)}{b(x-1)} \\ \amp  = \amp  \dfrac{a}{b} \left(\dfrac{x - \frac{5}{3}}{x-1}\right) \\ \amp  = \amp  3  \left(\dfrac{x - \frac{5}{3}}{x-1}\right) \\ \amp  = \amp  \dfrac{3x-5}{x-1}. \end{array}
+          </me>
+        </p>
+        <p>
+          We have yet to use the <m>y</m>-intercept, <m>(0,5)</m>.
+          In this case, we use it as a partial check:
+          <m>r(0) = \frac{3(0)-5}{0-1} = 5</m>, as required.
+          We can sketch <m>y=r(x)</m> by hand,
+          or with a graphing utility, to give a better check of our work.
+        </p>
+        <p>
+          Now it is time to find a formula for <m>F(x)</m>.
+          The graphs of <m>r</m> and <m>F</m> look identical except the graph has a hole in the graph at
+          <m>\left(\frac{5}{3}, 0 \right)</m> instead of an <m>x</m>-intercept.
+          <xref ref="vavshole">Theorem</xref>
+          tells us this happens because a factor of
+          <m>\left(x - \frac{5}{3} \right)</m> cancels from the denominator when the formula for <m>F(x)</m> is reduced.
+          Hence, we reverse this process and multiply the numerator and denominator of our expression for <m>r(x)</m> by <m>\left(x - \frac{5}{3} \right)</m>:
+          <me>
+            \begin{array}{rclr}  F(x) \amp  = \amp   r(x) \cdot \dfrac{\left(x - \frac{5}{3} \right)}{\left(x - \frac{5}{3} \right)} \amp  \\ \amp  = \amp   \dfrac{3x-5}{x-1} \cdot \dfrac{\left(x - \frac{5}{3} \right)}{\left(x - \frac{5}{3} \right)} \amp  \\ \amp  = \amp  \dfrac{3x^2-10x+\frac{25}{3}}{x^2 - \frac{8}{3} x + \frac{5}{3}} \amp  \text{ expand } \\ \amp  = \amp  \dfrac{9x^2-30x+25}{3x^2-8x+5} \amp  \text{multiply by \(1 = \frac{3}{3}\) to reduce complex fractions.} \end{array}
+          </me>
+        </p>
+        <p>
+          Again, we can check our answer by applying the six step method to this function or,
+          for a quick verification, we can use a graphing utility.<fn>
+          Be warned, however,
+          a graphing utility may not show the hole at <m>\left(\frac{5}{3}, 0 \right)</m>.
+          </fn>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Another way to approach <xref ref="rationalfromgraph">Example</xref>
+      is to take a cue from <xref ref="linearlaurentlgraphs">Theorem</xref>.
+      The graph of <m>y=r(x)</m> certainly <em>appears</em>
+      to be the result of moving around the graph of <m>f(x) = \frac{1}{x}</m>.
+      To that end, suppose <m>r(x) = \frac{a}{x-k} + k</m>.
+      Since the vertical asymptote is <m>x=1</m> and the horizontal asymptote is <m>y=3</m>,
+      we get <m>h=1</m> and <m>k=3</m>.
+      At this point, we have <m>r(x) = \frac{a}{x-1}+3</m>.
+      We can determine <m>a</m> by using the <m>y</m>-intercept,
+      <m>(0,5)</m>:
+      <m>r(0) =5</m> gives us <m>-a+3 = 5</m> so <m>a = -2</m>.
+      Hence, <m>r(x) = \frac{-2}{x-1}+3</m>.
+      At this point we could check the <m>x</m>-intercept <m>\left(\frac{5}{3}, 0 \right)</m> is on the graph,
+      check our answer using a graphing utility, or even better,
+      get common denominators and write <m>r(x)</m> as a single rational expression to compare with our answer in the above example.
+    </p>
+    <p>
+      As usual, the authors offer no apologies for what may be construed as <sq>pedantry</sq> in this section.
+      We feel that the detail presented in this section is necessary to obtain a firm grasp of the concepts presented here and it also serves as an introduction to the methods employed in Calculus.
+      In the end, your instructor will decide how much, if any,
+      of the kinds of details presented here are <sq>mission critical</sq> to your understanding of Precalculus.
+      Without further delay, we present you with this section's Exercises.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="sixstepfirst">Exercises</xref>
+      - <xref ref="sixsteplast"></xref>,
+      use the six-step procedure to graph the rational function.
+      Be sure to draw any asymptotes as dashed lines.
+      <ol cols="2">
+        <li xml:id="sixstepfirst">
+          <p>
+            <m>f(x) = \dfrac{4}{x + 2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 5x(6-2x)^{-1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t^{-2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = \dfrac{1}{t^{2} + t - 12}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r(z) = \dfrac{2z - 1}{-2z^{2} - 5z + 3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r(z) = \dfrac{z}{z^{2} + z - 12}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 4x(x^2+4)^{-1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 4x(x^2-4)^{-1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = \dfrac{t^2-t-12}{t^2+t-6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 3- \dfrac{5t-25}{t^2-9}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r(z) = \dfrac{z^2-z-6}{z+1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r(z) =-z-2+\dfrac{6}{3-z}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{x^3+2x^2+x}{x^2-x-2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{5x}{9-x^2} - x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) =\dfrac{1}{2}t-1 + \dfrac{t+1}{t^2+1}</m>
+          </p>
+        </li>
+        <li xml:id="sixsteplast">
+          <p><fn>
+            Once you've done the six-step procedure, use a graphing utility to graph this function on the window <m>[0, 12] \times [0, 0.25]</m> <ellipsis/>
+            </fn> <m>g(t) = \dfrac{t^{2} - 2t + 1}{t^{3} + t^{2} - 2t}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="rationalfromgraphfirst">Exercises</xref>
+      - <xref ref="rationalfromgraphlast"></xref>,
+      find a possible formula for the function whose graph is given.
+      <ol cols="3">
+        <li xml:id="rationalfromgraphfirst">
+          <p>
+            <m>y = f(x)</m> \begin{mfpic}[18]{-2}{6}{-4}{4} \axes \point[4pt]{(1,-1), (3,1)} \dashed \polyline{(2,-4), (2,4)} \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](3.75,1.25){<m>(3,1)</m>} \gclear \tlabelrect[cc](0.5,-1.5){<m>(1,-1)</m>} \xmarks{-1 step 1 until 5} \ymarks{-3 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-2,1.75,0.1}{1/(x-2)} \arrow \reverse \arrow \function{2.25,6,0.1}{1/(x-2)} \tcaption{Vertical asymptote:
+            <m>x = 2</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> <m>y = F(x)</m> \begin{mfpic}[18]{-2}{6}{-4}{4} \axes \point[4pt]{(1,-1)} \dashed \polyline{(2,-4), (2,4)} \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](4.25,1.25){hole at <m>(3,1)</m>} \gclear \tlabelrect[cc](0.5,-1.5){<m>(1,-1)</m>} \xmarks{-1 step 1 until 5} \ymarks{-3 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-2,1.75,0.1}{1/(x-2)} \arrow \reverse \arrow \function{2.25,6,0.1}{1/(x-2)} \pointfillfalse \point[4pt]{(3,1)} \tcaption{Vertical asymptote:
+            <m>x = 2</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = g(t)</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \point[4pt]{(-1,0), (1,0)} \dashed \polyline{(-5,-5), (5,5)} \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](-2,0.5){<m>(-1,0)</m>} \tlabel[cc](1.5,-0.5){<m>(1,0)</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{-4 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{ {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4 } \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.2,0.1}{x-1/x} \arrow \reverse \arrow \function{0.2,5,0.1}{x-1/x} \tcaption{Slant asymptote:
+            <m>y=t</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="rationalfromgraphlast">
+          <p>
+            <m>y = G(t)</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \point[4pt]{(-1,0), (1,0)} \dashed \polyline{(-5,-5), (5,5)} \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](-2.5,0.5){hole at <m>(-1,0)</m>} \tlabel[cc](1.5,-0.5){<m>(1,0)</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{-4 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{ {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4 } \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.2,0.1}{x-1/x} \arrow \reverse \arrow \function{0.2,5,0.1}{x-1/x} \pointfillfalse \point[4pt]{(-1,0)} \tcaption{Slant asymptote:
+            <m>y=t</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>g(x) = \displaystyle \frac{x^{4} - 8x^{3} + 24x^{2} - 72x + 135}{x^{3} - 9x^{2} + 15x - 7}.\;</m> With the help of your classmates:
+            <ul>
+              <li>
+                <p>
+                  find the <m>x</m>- and <m>y</m>- intercepts of the graph of <m>g</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  find all of the asymptotes of the graph of <m>g</m> and any holes in the graph,
+                  if they exist.
+                </p>
+              </li>
+              <li>
+                <p>
+                  find the intervals on which the function is increasing,
+                  the intervals on which it is decreasing and the local maximums and minimums,
+                  if any exist.
+                </p>
+              </li>
+              <li>
+                <p>
+                  sketch the graph of <m>g</m>,
+                  using more than one picture if necessary to show all of the important features of the graph.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <xref ref="carefulanalysisneeded">Example</xref>
+      showed us that the six-step procedure cannot tell us everything of importance about the graph of a rational function and that sometimes there are things that are easy to miss.
+      Without Calculus,
+      we may need to use graphing utilities to reveal the hidden behavior of rational functions.
+      Working with your classmates,
+      use a graphing utility to examine the graphs of the rational functions given in <xref ref="rationalneedcalcfirst">Exercises</xref>
+      - <xref ref="rationalneedcalclast"></xref>.
+      Compare and contrast their features.
+      Which features can the six-step process reveal and which features cannot be detected by it?
+      <ol>
+        <li xml:id="rationalneedcalcfirst">
+          <p>
+            <m>f(x) = \dfrac{1}{x^{2} + 1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{x}{x^{2} + 1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{x^{2}}{x^{2} + 1}</m>
+          </p>
+        </li>
+        <li xml:id="rationalneedcalclast">
+          <p>
+            <m>f(x) = \dfrac{x^{3}}{x^{2} + 1}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="3">
+      <li>
+        <p>
+          <m>f(x) = \dfrac{4}{x + 2}</m> Domain:
+          <m>(-\infty, -2) \cup (-2, \infty)</m> No <m>x</m>-intercepts <m>y</m>-intercept:
+          <m>(0, 2)</m> Vertical asymptote:
+          <m>x = -2</m> As <m>x \rightarrow -2^{-}, \; f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow -2^{+}, \; f(x) \rightarrow \infty</m> Horizontal asymptote:
+          <m>y = 0</m> As <m>x \rightarrow -\infty, \; f(x) \rightarrow 0^{-}</m> As
+          <m>x \rightarrow \infty, \; f(x) \rightarrow 0^{+}</m> \begin{mfpic}[10]{-8}{6}{-6}{6} \point[4pt]{(0,2)} \dashed \polyline{(-2,-6), (-2,6)} \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \axes \xmarks{-7 step 1 until 5} \ymarks{-5 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-8,-2.7,0.1}{4/(x+2)} \arrow \reverse \arrow \function{-1.3,6,0.1}{4/(x+2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 5x(6-2x)^{-1} = \dfrac{5x}{6 - 2x}</m> Domain:
+          <m>(-\infty, 3) \cup (3, \infty)</m> <m>x</m>-intercept:
+          <m>(0, 0)</m> <m>y</m>-intercept:
+          <m>(0, 0)</m> Vertical asymptote:
+          <m>x = 3</m> As <m>x \rightarrow 3^{-}, \; f(x) \rightarrow \infty</m> As
+          <m>x \rightarrow 3^{+}, \; f(x) \rightarrow -\infty</m> Horizontal asymptote:
+          <m>y = -\frac{5}{2}</m> As <m>x \rightarrow -\infty, \; f(x) \rightarrow -\frac{5}{2}^{+}</m> As
+          <m>x \rightarrow \infty, \; f(x) \rightarrow -\frac{5}{2}^{-}</m> \begin{mfpic}[10]{-4}{10}{-8}{4} \point[4pt]{(0,0)} \dashed \polyline{(3,-8), (3,4)} \dashed \polyline{(-4,-2.5), (10,-2.5)} \tlabel[cc](10,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \axes \xmarks{-3 step 1 until 9} \ymarks{-7 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \axislabels {y}{{<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-4,1.8,0.1}{(5*x)/(6 - (2*x))} \arrow \reverse \arrow \function{4.4,10,0.1}{(5*x)/(6 - (2*x))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t^{-2} = \dfrac{1}{t^{2}}</m> Domain:
+          <m>(-\infty, 0) \cup (0, \infty)</m> No <m>t</m>-intercepts No <m>y</m>-intercepts Vertical asymptote:
+          <m>t = 0</m> As <m>t \rightarrow 0^{-}, \; g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow 0^{+}, \; g(t) \rightarrow \infty</m> Horizontal asymptote:
+          <m>y = 0</m> As <m>t \rightarrow -\infty, \; g(t) \rightarrow 0^{+}</m> As
+          <m>t \rightarrow \infty, \; g(t) \rightarrow 0^{+}</m> \begin{mfpic}[15][20]{-5}{5}{-1}{6} \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>y</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.42,0.1}{1/(x**2)} \arrow \reverse \arrow \function{0.42,5,0.1}{1/(x**2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{1}{t^{2} + t - 12} = \dfrac{1}{(t - 3)(t + 4)}</m> Domain:
+          <m>(-\infty, -4) \cup (-4, 3) \cup (3, \infty)</m> No <m>t</m>-intercepts <m>y</m>-intercept:
+          <m>(0, -\frac{1}{12})</m> Vertical asymptotes:
+          <m>t = -4</m> and <m>t = 3</m> As <m>t \rightarrow -4^{-}, \; g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow -4^{+}, \; g(t) \rightarrow -\infty</m> As <m>t \rightarrow 3^{-}, \; g(t) \rightarrow -\infty</m> As
+          <m>t \rightarrow 3^{+}, \; g(t) \rightarrow \infty</m> Horizontal asymptote:
+          <m>y = 0</m> As <m>t \rightarrow -\infty, \; g(t) \rightarrow 0^{+}</m> As
+          <m>t \rightarrow \infty, \; g(t) \rightarrow 0^{+}</m> \begin{mfpic}[13][50]{-7}{5}{-1.5}{1.5} \point[4pt]{(0,-0.08333)} \dashed \polyline{(3,-1.5), (3,1.5)} \dashed \polyline{(-4,-1.5), (-4,1.5)} \tlabel[cc](5,-0.1){<m>t</m>} \tlabel[cc](0.5,1.5){<m>y</m>} \axes \xmarks{-6 step 1 until 4} \ymarks{-1 step 1 until 1} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-6.5,-4.15,0.1}{1/((x**2) + x - 12)} \arrow \reverse \arrow \function{-3.85, 2.85,0.1}{1/((x**2) + x - 12)} \arrow \reverse \arrow \function{3.15,4.5,0.1}{1/((x**2) + x - 12)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{2z - 1}{-2z^{2} - 5z + 3} = -\dfrac{2z - 1}{(2z - 1)(z + 3)}</m> Domain:
+          <m>(-\infty, -3) \cup (-3, \frac{1}{2}) \cup (\frac{1}{2}, \infty)</m> No <m>z</m>-intercepts <m>y</m>-intercept:
+          <m>(0, -\frac{1}{3})</m> <m>r(z) = \dfrac{-1}{z + 3}, \; z \neq \frac{1}{2}</m> Hole in the graph at <m>(\frac{1}{2}, -\frac{2}{7})</m> Vertical asymptote:
+          <m>z = -3</m> As <m>z \rightarrow -3^{-}, \; r(z) \rightarrow \infty</m> As
+          <m>z \rightarrow -3^{+}, \; r(z) \rightarrow -\infty</m> Horizontal asymptote:
+          <m>y = 0</m> As <m>z \rightarrow -\infty, \; r(z) \rightarrow 0^{+}</m> As
+          <m>z \rightarrow \infty, \; r(z) \rightarrow 0^{-}</m> \begin{mfpic}[15][45]{-8}{3}{-2}{2} \dashed \polyline{(-3,-2), (-3,2)} \point[4pt]{(0,-0.333)} \tlabel[cc](3,0.1){<m>z</m>} \tlabel[cc](0.5,2){<m>y</m>} \axes \xmarks{-7 step 1 until 2} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-8,-3.5,0.1}{-1/(x+3)} \arrow \reverse \arrow \function{-2.5,3,0.1}{-1/(x+3)} \pointfillfalse \point[4pt]{(0.5, -0.2857)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{z}{z^{2} + z - 12} = \dfrac{z}{(z - 3)(z + 4)}</m> Domain:
+          <m>(-\infty, -4) \cup (-4, 3) \cup (3, \infty)</m> <m>z</m>-intercept:
+          <m>(0, 0)</m> <m>y</m>-intercept:
+          <m>(0, 0)</m> Vertical asymptotes:
+          <m>z = -4</m> and <m>z = 3</m> As <m>z \rightarrow -4^{-}, \; r(z) \rightarrow -\infty</m> As
+          <m>z \rightarrow -4^{+}, \; r(z) \rightarrow \infty</m> As <m>z \rightarrow 3^{-}, \; r(z) \rightarrow -\infty</m> As
+          <m>z \rightarrow 3^{+}, \; r(z) \rightarrow \infty</m> Horizontal asymptote:
+          <m>y = 0</m> As <m>z \rightarrow -\infty, \; r(z) \rightarrow 0^{-}</m> As
+          <m>z \rightarrow \infty, \; r(z) \rightarrow 0^{+}</m> \begin{mfpic}[13][50]{-7}{6}{-1.5}{1.5} \point[4pt]{(0,0)} \dashed \polyline{(3,-1.5), (3,1.5)} \dashed \polyline{(-4,-1.5), (-4,1.5)} \tlabel[cc](6,-0.1){<m>z</m>} \tlabel[cc](0.5,1.5){<m>y</m>} \axes \xmarks{-6 step 1 until 5} \ymarks{-1 step 1 until 1} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-6.5,-4.4,0.1}{x/((x**2) + x - 12)} \arrow \reverse \arrow \function{-3.6, 2.72,0.1}{x/((x**2) + x - 12)} \arrow \reverse \arrow \function{3.35,5.5,0.1}{x/((x**2) + x - 12)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4x(x^2+4)^{-1} = \dfrac{4x}{x^{2} + 4}</m> Domain:
+          <m>(-\infty, \infty)</m> <m>x</m>-intercept:
+          <m>(0,0)</m> <m>y</m>-intercept:
+          <m>(0,0)</m> No vertical asymptotes No holes in the graph Horizontal asymptote:
+          <m>y = 0</m> As <m>x \rightarrow -\infty,
+          f(x) \rightarrow 0^{-}</m> As
+          <m>x \rightarrow \infty,
+          f(x) \rightarrow 0^{+}</m> \begin{mfpic}[10][25]{-8}{8}{-2}{2} \point[4pt]{(0,0)} \tlabel[cc](8,-0.5){<m>x</m>} \tlabel[cc](0.5,2){<m>y</m>} \axes \xmarks{-7 step 1 until 7} \ymarks{-1 step 1 until 1} \tlpointsep{4pt} \axislabels {x}{{<m>-7</m>} -7,{<m>-6</m>} -6,{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-8,8,0.1}{(4*x)/((x**2)+4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4x(x^2-4)^{-1} = \dfrac{4x}{x^{2} -4} = \dfrac{4x}{(x + 2)(x - 2)}</m> Domain:
+          <m>(-\infty, -2) \cup (-2, 2) \cup (2, \infty)</m> <m>x</m>-intercept:
+          <m>(0,0)</m> <m>y</m>-intercept:
+          <m>(0,0)</m> Vertical asymptotes:
+          <m>x = -2, x = 2</m> As <m>x \rightarrow -2^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow -2^{+}, f(x) \rightarrow \infty</m> As <m>x \rightarrow 2^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow 2^{+}, f(x) \rightarrow \infty</m> No holes in the graph Horizontal asymptote:
+          <m>y = 0</m> As <m>x \rightarrow -\infty,
+          f(x) \rightarrow 0^{-}</m> As
+          <m>x \rightarrow \infty,
+          f(x) \rightarrow 0^{+}</m> \begin{mfpic}[15]{-6}{6}{-6}{6} \point[4pt]{(0,0)} \dashed \polyline{(-2,-6), (-2,6)} \dashed \polyline{(2,-6), (2,6)} \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \axes \xmarks{-5 step 1 until 5} \ymarks{-5 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-6,-2.4,0.1}{(4*x)/((x**2)-4)} \arrow \reverse \arrow \function{-1.64,1.64,0.1}{(4*x)/((x**2)-4)} \arrow \reverse \arrow \function{-6,-2.4,0.1}{(4*x)/((x**2)-4)} \arrow \reverse \arrow \function{2.4,6,0.1}{(4*x)/((x**2)-4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t^2-t-12}{t^{2} +t - 6} = \dfrac{t-4}{t - 2}, \, t \neq -3</m> Domain:
+          <m>(-\infty, -3) \cup (-3, 2) \cup (2, \infty)</m> <m>t</m>-intercept:
+          <m>(4,0)</m> <m>y</m>-intercept:
+          <m>(0,2)</m> Vertical asymptote:
+          <m>t = 2</m> As <m>t \rightarrow 2^{-}, g(t) \rightarrow \infty</m> As <m>t \rightarrow 2^{+}, g(t) \rightarrow -\infty</m> Hole at
+          <m>\left(-3, \frac{7}{5} \right)</m> Horizontal asymptote:
+          <m>y = 1</m> As <m>t \rightarrow -\infty,
+          g(t) \rightarrow 1^{+}</m> As
+          <m>t \rightarrow \infty,
+          g(t) \rightarrow 1^{-}</m> \begin{mfpic}[15]{-6}{6}{-6}{6} \point[4pt]{(4,0), (0,2)} \dashed \polyline{(2,-6), (2,6)} \dashed \polyline{(-6,1), (6,1)} \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>y</m>} \axes \xmarks{-5 step 1 until 5} \ymarks{-5 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-6,1.5,0.1}{(x-4)/(x-2)} \arrow \reverse \arrow \function{2.333,6,0.1}{(x-4)/(x-2)} \pointfillfalse \point[4pt]{(-3, 1.4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 3- \dfrac{5t-25}{t^2-9} = \dfrac{3t^2-5t-2}{t^{2} -9}</m> <m>= \dfrac{(3t+1)(t-2)}{(t + 3)(t - 3)}</m> Domain:
+          <m>(-\infty, -3) \cup (-3, 3) \cup (3, \infty)</m> <m>t</m>-intercepts:
+          <m>\left(-\frac{1}{3}, 0 \right)</m>,
+          <m>(2,0)</m> <m>y</m>-intercept:
+          <m>\left(0, \frac{2}{9} \right)</m> Vertical asymptotes:
+          <m>t = -3, t = 3</m> As <m>t \rightarrow -3^{-}, g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow -3^{+}, g(t) \rightarrow -\infty</m> As <m>t \rightarrow 3^{-}, g(t) \rightarrow -\infty</m> As
+          <m>t \rightarrow 3^{+}, g(t) \rightarrow \infty</m> Horizontal asymptote:
+          <m>y = 3</m> As <m>t \rightarrow -\infty,
+          g(t) \rightarrow 3^{+}</m> As
+          <m>t \rightarrow \infty,
+          g(t) \rightarrow 3^{-}</m> \begin{mfpic}[9]{-10}{10}{-10}{10} \point[4pt]{(-0.3333,0), (2,0), (0,0.2222)} \dashed \polyline{(3,-10), (3,10)} \dashed \polyline{(-3,-10), (-3,10)} \dashed \polyline{(-10,3), (10,3)} \tlabel[cc](10,-0.5){<m>t</m>} \tlabel[cc](0.5,10){<m>y</m>} \axes \xmarks{-9 step 1 until 9} \ymarks{-9 step 1 until 9} \tlpointsep{4pt} \axislabels {x}{{<m>-9</m>} -9,{<m>-8</m>} -8,{<m>-7</m>} -7,{<m>-7</m>} -7,{<m>-6</m>} -6,{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \axislabels {y}{{<m>-9</m>} -9,{<m>-8</m>} -8,{<m>-7</m>} -7,{<m>-6</m>} -6,{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \penwd{1.25pt} \arrow \reverse \arrow \function{-10,-3.9,0.1}{(3*(x**2)-5*x-2)/((x**2)-9)} \arrow \reverse \arrow \function{-2.4,2.8,0.1}{(3*(x**2)-5*x-2)/((x**2)-9)} \arrow \reverse \arrow \function{3.2,10,0.1}{(3*(x**2)-5*x-2)/((x**2)-9)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = \dfrac{z^2-z-6}{z+1} = \dfrac{(z-3)(z+2)}{z+1}</m> Domain:
+          <m>(-\infty, -1) \cup (-1, \infty)</m> <m>z</m>-intercepts:
+          <m>(-2,0)</m>, <m>(3,0)</m> <m>y</m>-intercept:
+          <m>(0,-6)</m> Vertical asymptote:
+          <m>z = -1</m> As <m>z \rightarrow -1^{-}, r(z) \rightarrow \infty</m> As <m>z \rightarrow -1^{+}, r(z) \rightarrow -\infty</m> Slant asymptote:
+          <m>y = z-2</m> As <m>z \rightarrow -\infty</m>,
+          the graph is above <m>y=z-2</m> As <m>z \rightarrow \infty</m>,
+          the graph is below <m>y=z-2</m> \begin{mfpic}[10][8]{-5}{5}{-10}{10} \dashed \function{-5,5,0.1}{x-2} \point[4pt]{(0,-6), (3,0), (-2,0)} \dashed \polyline{(-1,-10), (-1,10)} \tlabel[cc](5,-0.5){<m>z</m>} \tlabel[cc](0.5,10){<m>y</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{-9 step 1 until 9} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-6</m>} -6, {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6, {<m>8</m>} 8, {<m>9</m>} 9, {<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-1.3,0.1}{((x-3)*(x+2))/(x+1)} \arrow \reverse \arrow \function{-0.45,5,0.1}{((x-3)*(x+2))/(x+1)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) = -z-2+\dfrac{6}{3-z} = \dfrac{z^2-z}{3-z}</m> Domain:
+          <m>(-\infty, 3) \cup (3, \infty)</m> <m>z</m>-intercepts:
+          <m>(1,0)</m> <m>y</m>-intercept: None Vertical asymptote:
+          <m>z = 3</m> As <m>z \rightarrow 3^{-}, r(z) \rightarrow \infty</m> As <m>z \rightarrow 3^{+}, r(z) \rightarrow -\infty</m> Slant asymptote:
+          <m>y = -z-2</m> As <m>z \rightarrow -\infty</m>,
+          the graph is above <m>y=-z-2</m> As <m>z \rightarrow \infty</m>,
+          the graph is below <m>y=-z-2</m> \begin{mfpic}[8][6]{-9}{11}{-20}{11} \dashed \function{-9,11,0.1}{-x-2} \point[4pt]{(0,0),(1,0)} \dashed \polyline{(3,-20), (3,11)} \tlabel[cc](11,-0.5){<m>z</m>} \tlabel[cc](0.5,11){<m>y</m>} \axes \xmarks{-8 step 1 until 9} \ymarks{-19 step 1 until 10} \tlpointsep{4pt} \axislabels {x}{{<m>-8</m>} -8,{<m>-7</m>} -7,{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10} \axislabels {y}{{<m>-12</m>} -12,{<m>-14</m>} -14,{<m>-16</m>} -16,{<m>-18</m>} -18,{<m>-10</m>} -10, {<m>-8</m>} -8, {<m>-6</m>} -6, {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \function{-9,2.6,0.1}{(x*(x-1))/(3-x)} \arrow \reverse \arrow \function{3.4,11,0.1}{(x*(x-1))/(3-x)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x^3+2x^2+x}{x^{2} -x-2} = \dfrac{x(x+1)}{x - 2}, \, x \neq -1</m> Domain:
+          <m>(-\infty, -1) \cup (-1, 2) \cup (2, \infty)</m> <m>x</m>-intercept:
+          <m>(0,0)</m> <m>y</m>-intercept:
+          <m>(0,0)</m> Vertical asymptote:
+          <m>x = 2</m> As <m>x \rightarrow 2^{-}, f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow 2^{+}, f(x) \rightarrow \infty</m> Hole at <m>(-1,0)</m> Slant asymptote:
+          <m>y = x+3</m> As <m>x \rightarrow -\infty</m>,
+          the graph is below <m>y=x+3</m> As <m>x \rightarrow \infty</m>,
+          the graph is above <m>y=x+3</m> \begin{mfpic}[8][6]{-10}{10}{-11}{20} \dashed \function{-10,10,0.1}{x+3} \point[4pt]{(0,0)} \dashed \polyline{(2,-11), (2,20)} \tlabel[cc](10,-0.5){<m>x</m>} \tlabel[cc](0.5,20){<m>y</m>} \axes \xmarks{-9 step 1 until 9} \ymarks{-11 step 1 until 19} \tlpointsep{4pt} \axislabels {x}{{<m>-9</m>} -9,{<m>-8</m>} -8,{<m>-7</m>} -7,{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \axislabels {y}{{<m>-10</m>} -10, {<m>-8</m>} -8, {<m>-6</m>} -6, {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6, {<m>8</m>} 8, {<m>10</m>} 10, {<m>12</m>} 12, {<m>14</m>} 14, {<m>16</m>} 16, {<m>18</m>} 18} \penwd{1.25pt} \arrow \reverse \arrow \function{-10,1.6,0.1}{(x*(x+1))/(x-2)} \arrow \reverse \arrow \function{2.4,10,0.1}{(x*(x+1))/(x-2)} \pointfillfalse \point[4pt]{(-1,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{5x}{9-x^2} - x = \dfrac{x^{3} - 4x}{9-x^{2}}</m> <m>= \dfrac{x(x-2)(x+2)}{-(x-3)(x+3)}</m> Domain:
+          <m>(-\infty, -3) \cup (-3, 3) \cup (3, \infty)</m> <m>x</m>-intercepts:
+          <m>(-2, 0), (0, 0), (2, 0)</m> <m>y</m>-intercept:
+          <m>(0, 0)</m> Vertical asymptotes:
+          <m>x = -3, x = 3</m> As <m>x \rightarrow -3^{-}, \; f(x) \rightarrow \infty</m> As <m>x \rightarrow -3^{+}, \; f(x) \rightarrow -\infty</m> As
+          <m>x \rightarrow 3^{-}, \; f(x) \rightarrow \infty</m> As <m>x \rightarrow 3^{+}, \; f(x) \rightarrow -\infty</m> Slant asymptote:
+          <m>y = -x</m> As <m>x \rightarrow -\infty</m>,
+          the graph is above <m>y=-x</m> As <m>x \rightarrow \infty</m>,
+          the graph is below <m>y=-x</m> \begin{mfpic}[10]{-7}{7}{-8}{8} \point[4pt]{(-2,0), (0,0), (2, 0)} \dashed \polyline{(-3,-8), (-3,8)} \dashed \polyline{(3,-8), (3,8)} \dashed \function{-7,7,0.1}{-x} \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \axes \xmarks{-6 step 1 until 6} \ymarks{-7 step 1 until 7} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \penwd{1.25pt} \arrow \reverse \arrow \function{-7,-3.7,0.1}{((4*x) - (x**3))/((x**2) - 9)} \arrow \reverse \arrow \function{-2.76,2.76,0.1}{((4*x) - (x**3))/((x**2) - 9)} \arrow \reverse \arrow \function{3.7,7,0.1}{((4*x) - (x**3))/((x**2) - 9)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{1}{2}t-1 + \dfrac{t+1}{t^2+1} = \dfrac{t(t^2-2t+3)}{2t^2+2}</m> Domain:
+          <m>(-\infty,\infty)</m> <m>t</m>-intercept:
+          <m>(0,0)</m> <m>y</m>-intercept:
+          <m>(0,0)</m> Slant asymptote:
+          <m>y = \frac{1}{2}t-1</m> As <m>t \rightarrow -\infty</m>,
+          the graph is below <m>y = \frac{1}{2}t-1</m> As <m>t \rightarrow \infty</m>,
+          the graph is above <m>y = \frac{1}{2}t-1</m> \begin{mfpic}[15]{-5}{5}{-3}{3} \dashed \polyline{(-5,-3.5), (5,1.5)} \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>y</m>} \axes \xmarks{-4,-3,-2,-1,2,3,4} \ymarks{-2 step 1 until 2} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,5,0.1}{(x*((x**2)-2*x+3))/(2*(x**2)+2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t^{2} - 2t + 1}{t^{3} + t^{2} - 2t}=\dfrac{t - 1}{t(t + 2)}, \; t \neq 1</m> Domain:
+          <m>(-\infty, -2) \cup (-2, 0) \cup (0, 1) \cup (1, \infty)</m> No <m>t</m>-intercepts No <m>y</m>-intercepts Vertical asymptotes:
+          <m>t = -2</m> and <m>t = 0</m> As <m>t \rightarrow -2^{-}, \; g(t) \rightarrow -\infty</m> As
+          <m>t \rightarrow -2^{+}, \; g(t) \rightarrow \infty</m> As <m>t \rightarrow 0^{-}, \; g(t) \rightarrow \infty</m> As
+          <m>t \rightarrow 0^{+}, \; g(t) \rightarrow -\infty</m> Hole in the graph at <m>(1, 0)</m> Horizontal asymptote:
+          <m>y = 0</m> As <m>t \rightarrow -\infty, \; g(t) \rightarrow 0^{-}</m> As
+          <m>t \rightarrow \infty, \; g(t) \rightarrow 0^{+}</m> \begin{mfpic}[15]{-6}{6}{-6}{6} \dashed \polyline{(-2,-6), (-2,6)} \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>y</m>} \axes \xmarks{-5,-4,-3,-2,-1,2,3,4,5} \ymarks{-5 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-6,-2.25,0.1}{(x-1)/((x**2) + (2*x))} \arrow \reverse \arrow \function{-1.73,-0.1,0.1}{(x-1)/((x**2) + (2*x))} \arrow \reverse \arrow \function{0.08,6,0.1}{(x-1)/((x**2) + (2*x))} \pointfillfalse \point[4pt]{(1,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{1}{x - 2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \dfrac{x-3}{(x-2)(x-3)} = \dfrac{x-3}{x^2-5x+6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) =\dfrac{t^2-1}{t}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) = \dfrac{(t^2-1)(t+1)}{t(t+1)} = \dfrac{t^3+t^2-t-1}{t^2+t}</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

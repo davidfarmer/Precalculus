@@ -1,0 +1,1242 @@
+<section xml:id="PolarConics">
+  <title>The Polar Form of the Conic Sections</title>
+  <introduction>
+    <p>
+      In this section,
+      we revisit our friends the Conic Sections which we began studying in <xref ref="TheConicSections">Chapter</xref>.
+      Our first task is to formalize the notion of rotating axes so this subsection is actually a follow-up to <xref ref="rotationmatrixex">Example</xref>
+      in <xref ref="MatArithmetic">Section</xref>.
+      In that example, we saw that the graph of
+      <m>y = \frac{2}{x}</m> is actually a hyperbola.
+    </p>
+    <p>
+      More specifically, the graph of
+      <m>y = \frac{1}{x}</m> is the hyperbola obtained by rotating the graph of
+      <m>x^2-y^2=4</m> counter-clockwise through a <m>45^{\circ}</m> angle.
+      Armed with polar coordinates,
+      we can generalize the process of rotating axes as shown below.
+    </p>
+  </introduction>
+  <subsection xml:id="rotationaxes">
+    <title>Rotation of Axes</title>
+    <p>
+      Consider the <m>x</m>- and <m>y</m>-axes below along with the dashed <m>x'</m>- and <m>y'</m>-axes obtained by rotating the <m>x</m>- and <m>y</m>-axes counter-clockwise through an angle <m>\theta</m> and consider the point <m>P(x,y)</m>.
+      The coordinates <m>(x,y)</m> are rectangular coordinates and are based on the <m>x</m>- and <m>y</m>-axes.
+    </p>
+    <p>
+      Suppose we wished to find rectangular coordinates based on the <m>x'</m>- and <m>y'</m>-axes.
+      That is, we wish to determine <m>P(x',y')</m>.
+      While this seems like a formidable challenge,
+      it is nearly trivial if we use polar coordinates.
+    </p>
+    <p>
+      Consider the angle <m>\phi</m> whose initial side is the positive <m>x'</m>-axis and whose terminal side contains the point <m>P</m>.
+      We relate <m>P(x,y)</m> and
+      <m>P(x',y')</m> by converting them to polar coordinates.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3.75,3.5){<m>x'</m>} \tlabel[cc](-3.5,3.75){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[3pt]{(1,3)} \gclear \tlabelrect[cc](1,3.5){<m>P(x,y) = P(x',y')</m>} \dotted \polyline{(0,0), (1,3)} \dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),45} \polyline{(2.83,-0.15),(2.83,0.15)} \rotatepath{(0,0),135} \polyline{(1.41,-0.15),(1.41,0.15)} \dotted \rotatepath{(0,0),45} \polyline{(2.83,0),(2.83,1.41)} \dotted \rotatepath{(0,0),45} \polyline{(0,1.41),(2.83,1.41)} \arrow \parafcn{5,40,5}{1.5*dir(t)} \arrow \parafcn{95,130,5}{2*dir(t)} \arrow \parafcn{50,69,5}{1.5*dir(t)} \tlabel[cc](1.75,0.75){<m>\theta</m>} \tlabel[cc](-.75,2.25){<m>\theta</m>} \tlabel[cc](1,1.5){<m>\phi</m>} \end{mfpic}
+    </p>
+    <p>
+      Converting <m>P(x,y)</m> to polar coordinates with <m>r > 0</m> yields
+      <m>x = r\cos(\theta + \phi)</m> and <m>y = r\sin(\theta + \phi)</m>.
+      To convert the point <m>P(x',y')</m> into polar coordinates,
+      we first match the polar axis with the positive <m>x'</m>-axis,
+      choose the same <m>r>0</m>
+      (since the origin is the same in both systems)
+      and get <m>x' = r\cos(\phi)</m> and <m>y' = r\sin(\phi)</m>.
+    </p>
+    <p>
+      Using the sum formulas for sine and cosine, we have
+      <me>
+        \begin{array}{rcll}  x \amp  = \amp  r\cos(\theta + \phi) \amp  \\ \amp  = \amp  r\cos(\theta)\cos(\phi) - r\sin(\theta) \sin(\phi) \amp  \text{ Sum formula for cosine }  \\ \amp  = \amp  (r\cos(\phi))\cos(\theta) - (r\sin(\phi))\sin(\theta) \amp  \\ \amp  = \amp  x' \cos(\theta) - y' \sin(\theta) \amp  \text{ Since \(x' = r\cos(\phi)\) and \(y' = r\sin(\phi)\) } \end{array}
+      </me>
+    </p>
+    <p>
+      Similarly, using the sum formula for sine we get <m>y = x'\sin(\theta) + y'\cos(\theta)</m>.
+      These equations enable us to easily convert points with <m>x'y'</m>-coordinates back into <m>xy</m>-coordinates.
+      They also enable us to easily convert equations in the variables <m>x</m> and <m>y</m> into equations in the variables in terms of <m>x'</m> and <m>y'</m>.<fn>
+      Just like in <xref ref="PolarCoordinates">Section</xref>,
+      the equations <m>x = r\cos(\theta)</m> and
+      <m>y = r\sin(\theta)</m> make it easy to convert <em>points</em>
+      from polar coordinates into rectangular coordinates,
+      and they make it easy to convert <em>equations</em>
+      from rectangular coordinates into polar coordinates.
+      </fn>
+    </p>
+    <p>
+      If we want equations which enable us to convert points with <m>xy</m>-coordinates into <m>x'y'</m>-coordinates,
+      we need to solve the system
+      <me>
+        \left\{ \begin{array}{rcl} x' \cos(\theta) - y' \sin(\theta) \amp  = \amp  x \\ x'\sin(\theta) + y'\cos(\theta) \amp  = \amp  y \end{array}  \right.
+      </me>
+      for <m>x'</m> and <m>y'</m>.
+      Perhaps the cleanest way<fn>
+      We could, of course, interchange the roles of <m>x</m> and <m>x'</m>,
+      <m>y</m> and <m>y'</m> and replace <m>\phi</m> with <m>-\phi</m> to get <m>x'</m> and <m>y'</m> in terms of <m>x</m> and <m>y</m>,
+      but that seems like cheating.
+      The matrix <m>A</m> introduced here is revisited in the Exercises.
+      </fn> to solve this system is to write it as a matrix equation.
+      Using the machinery developed in <xref ref="MatMethods">Section</xref>,
+      we write the above system as the matrix equation <m>AX' = X</m> where
+      <me>
+        \begin{array}{ccc}  A = \left[ \begin{array}{rr} \cos(\theta) \amp  -\sin(\theta) \\ \sin(\theta) \amp  \cos(\theta) \end{array}  \right],  \amp  X'= \left[ \begin{array}{c}x' \\ y' \end{array}  \right],  \amp  X= \left[ \begin{array}{c}x \\ y \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Since <m>\det(A) = (\cos(\theta))(\cos(\theta)) - (-\sin(\theta))(\sin(\theta)) = \cos^{2}(\theta) + \sin^{2}(\theta) = 1</m>,
+      the determinant of <m>A</m> is not zero so <m>A</m> is invertible and <m>X' = A^{-1}X</m>.
+      Using the formula given in <xref ref="x2by2inverse">Equation</xref>
+      with <m>\det(A) = 1</m>, we find
+      <me>
+        A^{-1} = \left[ \begin{array}{rr} \cos(\theta) \amp  \sin(\theta) \\ -\sin(\theta) \amp  \cos(\theta) \end{array}  \right]
+      </me>
+      so that
+      <me>
+        \begin{array}{rcl}  X'\amp  = \amp  A^{-1} X \\ \left[ \begin{array}{c}x' \\ y' \end{array}  \right] \amp  = \amp  \left[ \begin{array}{rr} \cos(\theta) \amp  \sin(\theta) \\ -\sin(\theta) \amp  \cos(\theta) \end{array}  \right]\left[ \begin{array}{c}x \\ y \end{array}  \right] \\  \left[ \begin{array}{c}x' \\ y' \end{array}  \right] \amp  = \amp  \left[ \begin{array}{c}x \cos(\theta) + y\sin(\theta) \\- x \sin(\theta) + y\cos(\theta) \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      From which we get <m>x' = x \cos(\theta) + y\sin(\theta)</m> and <m>y'=- x \sin(\theta) + y\cos(\theta)</m>.
+      To summarize,
+    </p>
+    <theorem xml:id="rotatecoordinatesthm">
+      <statement>
+        <p>
+          <em>Rotation of Axes:</em>
+              <idx><h>rotation of axes</h></idx>
+          Suppose the positive <m>x</m> and <m>y</m> axes are rotated counter-clockwise through an angle <m>\theta</m> to produce the axes <m>x'</m> and <m>y'</m>,
+          respectively.
+          Then the coordinates <m>P(x,y)</m> and
+          <m>P(x',y')</m> are related by the following systems of equations
+          <me>
+            \begin{array}{ccc}  \left\{  \begin{array}{rcl}x \amp  = \amp  x' \cos(\theta) - y' \sin(\theta) \\ y\amp  = \amp   x'\sin(\theta) + y'\cos(\theta) \end{array}  \right. \amp  \text{ and }  \amp  \left\{ \begin{array}{rcl} x' \amp  = \amp  x \cos(\theta) + y \sin(\theta) \\ y' \amp  = \amp   -x\sin(\theta) +y\cos(\theta) \end{array}  \right. \end{array}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We put the formulas in <xref ref="rotatecoordinatesthm">Theorem</xref>
+      to good use in the following example.
+    </p>
+    <example xml:id="rotatedaxesex1">
+      <statement>
+        <p>
+          Suppose the <m>x</m>- and <m>y</m>- axes are both rotated counter-clockwise through the angle
+          <m>\theta = \frac{\pi}{3}</m> to produce the <m>x'</m>- and <m>y'</m>- axes,
+          respectively.
+          <ol>
+            <li>
+              <p>
+                Let <m>P(x,y) = (2,-4)</m> and find <m>P(x',y')</m>.
+                Check your answer algebraically and graphically.
+              </p>
+            </li>
+            <li xml:id="rotatedellipseex">
+              <p>
+                Convert the equation <m>21x^2+10xy\sqrt{3}+31y^2=144</m> to an equation in <m>x'</m> and <m>y'</m> and graph.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                If <m>P(x,y) = (2,-4)</m> then <m>x=2</m> and <m>y=-4</m>.
+                Using these values for <m>x</m> and <m>y</m> along with  <m>\theta = \frac{\pi}{3}</m>,
+                <xref ref="rotatecoordinatesthm">Theorem</xref>
+                gives <m>x' = x \cos(\theta) + y \sin(\theta) = 2 \cos\left(\frac{\pi}{3}\right) + (-4)\sin\left(\frac{\pi}{3}\right)</m> which simplifies to <m>x' = 1-2\sqrt{3}</m>.
+                Similarly,  <m>y' = -x\sin(\theta) + y\cos(\theta) = (-2)\sin\left(\frac{\pi}{3}\right) + (-4)\cos\left(\frac{\pi}{3}\right)</m> which gives <m>y' = -\sqrt{3}-2 = -2-\sqrt{3}</m>.
+                Hence <m>P(x',y') = \left(1-2\sqrt{3}, -2-\sqrt{3}\right)</m>.
+                To check our answer algebraically,
+                we convert <m>P(x',y') = \left(1-2\sqrt{3},-2-\sqrt{3}\right)</m> back into <m>x</m> and <m>y</m> coordinates using the formulas in   <xref ref="rotatecoordinatesthm">Theorem</xref>.
+                We get
+                <me>
+                  \begin{array}{rcl} x  \amp  = \amp   x' \cos(\theta) - y' \sin(\theta) \\ \amp  = \amp  (1-2\sqrt{3}) \cos\left(\frac{\pi}{3}\right) - (-2-\sqrt{3})\sin\left(\frac{\pi}{3}\right) \\ \amp  = \amp  \left(\frac{1}{2} - \sqrt{3} \right) -\left(-\sqrt{3} - \frac{3}{2}\right)\\ \amp  = \amp  2 \end{array}
+                </me>
+                Similarly, using  <m>y =  x'\sin(\theta) + y'\cos(\theta)</m>,
+                we obtain <m>y = -4</m> as required.
+                To check our answer graphically,
+                we sketch in the <m>x'</m>-axis and <m>y'</m>-axis to see if the new coordinates   <m>P(x',y') = \left(1-2\sqrt{3},-2-\sqrt{3}\right) \approx (-2.46,-3.73)</m> seem reasonable.
+                Our graph is below.   \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](2.75,4){<m>x'</m>} \tlabel[cc](-4,2.75){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[3pt]{(2,-4)} \gclear \tlabelrect[cc](2,-4.5){<m>P(x,y) = (2,-4)</m>} \gclear \tlabelrect[cc](2,-5){<m>P(x',y') \approx (-2.46,-3.73)</m>} \dashed \arrow \rotatepath{(0,0),60} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)} \dotted \rotatepath{(0,0),60} \polyline{(-2.46,0), (-2.46,-3.73)} \dotted \rotatepath{(0,0),60} \polyline{(0,-3.73), (-2.46,-3.73)} \rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),240} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)} \arrow \parafcn{5,55,5}{1.5*dir(t)} \arrow \parafcn{95,145,5}{1.5*dir(t)} \tlabel[cc](1.75,0.75){<m>\frac{\pi}{3}</m>} \tlabel[cc](-.75,1.75){<m>\frac{\pi}{3}</m>} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                To convert the equation <m>21x^2+10xy\sqrt{3}+31y^2=144</m> to an equation in the variables <m>x'</m> and <m>y'</m>,
+                we substitute  <m>x = x' \cos\left(\frac{\pi}{3}\right) - y' \sin\left(\frac{\pi}{3}\right) = \frac{x'}{2} - \frac{y'\sqrt{3}}{2}</m> and  <m>y =  x'\sin\left(\frac{\pi}{3}\right) + y'\cos\left(\frac{\pi}{3}\right) = \frac{x'\sqrt{3}}{2} + \frac{y'}{2}</m>.
+                While this is by no means a trivial task,
+                it is nothing more than a hefty dose of Intermediate Algebra.
+                While we leave most of the details to the reader,
+                a good starting point is to verify:
+                <me>
+                  x^2 = \frac{(x')^2}{4} -\frac{x'y' \sqrt{3}}{2} +\frac{3(y')^2}{4},  xy = \frac{(x')^2 \sqrt{3}}{4} -\frac{x'y'}{2} -\frac{(y')^2 \sqrt{3}}{4},  y^2 = \frac{3(x')^2}{4} +\frac{x'y'\sqrt{3}}{2} + \frac{(y')^2}{4}
+                </me>
+                To our surprise and delight,
+                the equation <m>21x^2+10xy\sqrt{3}+31y^2=144</m> in <m>xy</m>-coordinates reduces to <m>36(x')^2 + 16(y')^2 = 144</m>,
+                or <m>\frac{(x')^2}{4} + \frac{(y')^2}{9} = 1</m> in <m>x'y'</m>-coordinates.
+                That is, the curve is an ellipse centered at <m>(0,0)</m> with vertices along the <m>y'</m>-axis with (<m>x'y'</m>-coordinates)
+                <m>(0, \pm 3)</m> and whose minor axis has endpoints with (<m>x'y'</m>-coordinates)
+                <m>(\pm 2, 0)</m> as seen below.   \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](2.75,4){<m>x'</m>} \tlabel[cc](-4,2.75){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(2,60)}, \plr{(-2,60)}, \plr{(3,150)}, \plr{(-3,150)}} \dashed \arrow \rotatepath{(0,0),60} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),60} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),60} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),60} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),60} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),240} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)} \arrow \parafcn{5,55,5}{4*dir(t)} \arrow \parafcn{95,145,5}{4*dir(t)} \penwd{1.25pt} \rotatepath{(0,0),60} \ellipse{(0,0), 2, 3} \tlabel[cc](4,1.75){<m>\frac{\pi}{3}</m>} \tlabel[cc](-1.75,4){<m>\frac{\pi}{3}</m>} \tcaption{<m>21x^2+10xy\sqrt{3}+31y^2=144</m>} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Thanks to the elimination of the <m>xy</m>' term from the equation
+      <m>21x^2+10xy\sqrt{3}+31y^2=144</m> in <xref ref="rotatedaxesex1">Example</xref>
+      <xref ref="rotatedellipseex">number</xref>,
+      we were able to graph the equation on the <m>x'y'</m>-plane using what we know from <xref ref="TheConicSections">Chapter</xref>.
+    </p>
+    <p>
+      It is natural to wonder if,
+      given an equation of the form
+      <m>Ax^2 + Bxy +Cy^2 + Dx + Ey + F = 0</m>, with <m>B \neq 0</m>,
+      is there an angle <m>\theta</m> so that if we rotate the <m>x</m> and <m>y</m>-axes counter-clockwise through that angle <m>\theta</m>,
+      the equation in the rotated variables <m>x'</m> and <m>y'</m> contains no <m>x'y'</m> term.
+    </p>
+    <p>
+      To find out, we make the usual substitutions
+      <m>x = x' \cos(\theta) - y' \sin(\theta)</m> and <m>y = x'\sin(\theta) + y'\cos(\theta)</m> into the equation
+      <m>Ax^2 + Bxy +Cy^2 + Dx + Ey + F = 0</m> and set the coefficient of the <m>x'y'</m> term equal to <m>0</m>.
+    </p>
+    <p>
+      Terms containing <m>x'y'</m> in this expression will come from the first three terms of the equation:
+      <m>Ax^2</m>, <m>Bxy</m> and <m>Cy^2</m>.
+      We leave it to the reader to verify that
+      <me>
+        \begin{array}{rcl}    x^2 \amp  = \amp (x')^2 \cos^{2}(\theta) - 2x'y'\cos(\theta) \sin(\theta) + (y')^2 \sin(\theta) \\   xy \amp  = \amp   (x')^2\cos(\theta) \sin(\theta)+ x'y' \left(\cos^{2}(\theta)-\sin^2(\theta)\right)-(y')^2\cos(\theta)\sin(\theta) \\   y^2 \amp  = \amp  (x')^2 \sin^{2}(\theta) +2x'y' \cos(\theta) \sin(\theta) +(y')^2 \cos^{2}(\theta) \end{array}
+      </me>
+    </p>
+    <p>
+      The contribution to the <m>x'y'</m>-term from <m>Ax^2</m> is <m>-2A\cos(\theta) \sin(\theta)</m>,
+      from <m>Bxy</m> it is <m>B \left(\cos^{2}(\theta)-\sin^2(\theta)\right)</m>,
+      and from <m>Cy^2</m> it is <m>2C \cos(\theta) \sin(\theta)</m>.
+      Equating the <m>x'y'</m>-term to <m>0</m>, we get
+      <me>
+        \begin{array}{rcll}  -2A\cos(\theta) \sin(\theta) + B \left(\cos^{2}(\theta)-\sin^2(\theta)\right) + 2C \cos(\theta) \sin(\theta) \amp  = \amp  0 \amp  \\ -A \sin(2\theta) + B \cos(2\theta) + C \sin(2\theta) \amp  = \amp  0 \amp  \text{ Double Angle Identities } \end{array}
+      </me>
+    </p>
+    <p>
+      From this, we get <m>B \cos(2\theta) = (A-C)\sin(2\theta)</m>.
+      Our goal is to solve for <m>\theta</m> in terms of <m>A</m>,
+      <m>B</m> and <m>C</m>.
+    </p>
+    <p>
+      Since we are assuming <m>B \neq 0</m>,
+      we can divide both sides of this equation by <m>B</m>.
+      To solve for <m>\theta</m> we would like to divide both sides of the equation by <m>\sin(2\theta)</m>,
+      provided of course that we have assurances that <m>\sin(2\theta) \neq 0</m>.
+    </p>
+    <p>
+      If <m>\sin(2\theta) = 0</m>, then we would have <m>B \cos(2\theta) = 0</m>,
+      and since <m>B \neq 0</m>, this would force <m>\cos(2\theta) = 0</m>.
+      Since no angle <m>\theta</m> can have both <m>\sin(2\theta) = 0</m> and
+      <m>\cos(2\theta) = 0</m>, we can safely assume<fn>
+      The reader is invited to think about the case <m>\sin(2\theta) = 0</m> geometrically.
+      What happens to the axes in this case?
+      </fn> <m>\sin(2\theta) \neq 0</m>.
+    </p>
+    <p>
+      Hence, we get <m>\frac{\cos(2\theta)}{\sin(2\theta)} = \frac{A-C}{B}</m>,
+      or <m>\cot(2\theta) = \frac{A-C}{B}</m>.
+      We have just proved the following theorem.
+    </p>
+    <theorem xml:id="rotatedconicthm">
+      <statement>
+        <p>
+          The equation <m>Ax^2 + Bxy +Cy^2 + Dx + Ey + F = 0</m> with
+          <m>B \neq 0</m> can be transformed into an equation in variables <m>x'</m> and <m>y'</m> without any <m>x'y'</m> terms by rotating the <m>x</m>- and <m>y</m>- axes counter-clockwise through an angle <m>\theta</m> which satisfies <m>\cot(2\theta) = \frac{A-C}{B}</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We put <xref ref="rotatedconicthm">Theorem</xref>
+      to good use in the following example.
+    </p>
+    <example xml:id="graphrotatedconicex">
+      <statement>
+        <p>
+          Graph the following equations.
+          <ol>
+            <li xml:id="rotatedhyperbolaex">
+              <p>
+                <m>5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0</m>
+              </p>
+            </li>
+            <li xml:id="rotatedparabolaex">
+              <p>
+                <m>16x^2+24xy+9y^2 +15x-20y = 0</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <ol>
+          <li>
+            <p>
+              Since the equation <m>5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0</m> is already given to us in the form required by <xref ref="rotatedconicthm">Theorem</xref>,
+              we identify <m>A = 5</m>,
+              <m>B = 26</m> and <m>C = 5</m> so that <m>\cot(2\theta) = \frac{A-C}{B} = \frac{5-5}{26} = 0</m>.
+              This means <m>\cot(2\theta) = 0</m> which gives
+              <m>\theta = \frac{\pi}{4} + \frac{\pi}{2} k</m> for integers <m>k</m>.
+              We choose <m>\theta = \frac{\pi}{4}</m> so that our rotation equations are
+              <m>x = \frac{x' \sqrt{2}}{2} -\frac{y' \sqrt{2}}{2}</m> and <m>y = \frac{x' \sqrt{2}}{2} + \frac{y' \sqrt{2}}{2}</m>.
+              The reader should verify that
+              <me>
+                x^2 = \frac{(x')^2}{2} - x'y' +\frac{(y')^2}{2},  xy = \frac{(x')^2}{2} -\frac{(y')^2}{2},  y^2 = \frac{(x')^2}{2} + x'y' +\frac{(y')^2}{2}
+              </me>
+              Making the other substitutions,
+              we get that <m>5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0</m> reduces to <m>18(x')^2-8(y')^2+32y'-104 = 0</m>,
+              or <m>\frac{(x')^2}{4} -\frac{(y'-2)^2}{9} = 1</m>.
+              Hence, we have a hyperbola centered at the <m>x'y'</m>-coordinates <m>(0,2)</m> opening in the <m>x'</m> direction with vertices <m>(\pm 2,2)</m>
+              (in <m>x'y'</m>-coordinates)
+              and asymptotes <m>y' = \pm \frac{3}{2} x' + 2</m>.
+              We graph this equation below.  \begin{mfpic}[18]{-5}{5}{-4}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3.75,3.25){<m>x'</m>} \tlabel[cc](-3.25,3.75){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-3,-2,-1,1,2,3,4} \dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)} \dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{1.5*x+2} \dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{2-1.5*x} \dotted \rotatepath{(0,0),45} \function{-2,2,0.1}{2} \rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,2.83), (-2.83,0)} \arrow \parafcn{5,40,5}{1.25*dir(t)} \tlabel[cc](2.35,0.4){<m>\theta = \frac{\pi}{4}</m>} \tcaption{<m>5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0</m>} \penwd{1.25pt} \arrow \reverse \arrow \rotatepath{(0,0),45} \parafcn{-0.78,0.78,0.1}{(2*sec(t), 2+3*tan(t))} \arrow \reverse \arrow \rotatepath{(0,0),45} \parafcn{-0.78,0.78,0.1}{(0-2*sec(t), 2+3*tan(t))} \end{mfpic}
+            </p>
+          </li>
+          <li>
+            <p>
+              From <m>16x^2+24xy+9y^2 +15x-20y = 0</m>, we get <m>A = 16</m>,
+              <m>B=24</m> and <m>C = 9</m> so that <m>\cot(2\theta) = \frac{7}{24}</m>.
+              Since this isn't one of the values of the common angles,
+              we will need to use inverse functions.
+              Ultimately, we need to find
+              <m>\cos(\theta)</m> and <m>\sin(\theta)</m>,
+              which means we have two options.
+              If we use the arccotangent function immediately,
+              after the usual calculations we get <m>\theta = \frac{1}{2} \text{ arccot } \left(\frac{7}{24}\right)</m>.
+              To get <m>\cos(\theta)</m> and <m>\sin(\theta)</m> from this,
+              we would need to use half angle identities.
+              Alternatively,
+              we can start with <m>\cot(2\theta) = \frac{7}{24}</m>,
+              use a double angle identity,
+              and then go after <m>\cos(\theta)</m> and <m>\sin(\theta)</m>.
+              We adopt the second approach.
+              From <m>\cot(2\theta) = \frac{7}{24}</m>,
+              we have <m>\tan(2\theta) = \frac{24}{7}</m>.
+              Using the double angle identity for tangent,
+              we have <m>\frac{2\tan(\theta)}{1-\tan^{2}(\theta)} = \frac{24}{7}</m>,
+              which gives <m>24 \tan^{2}(\theta) + 14 \tan(\theta) - 24=0</m>.
+              Factoring, we get <m>2(3\tan(\theta)+4)(4\tan(\theta)-3) = 0</m> which gives
+              <m>\tan(\theta) = -\frac{4}{3}</m> or <m>\tan(\theta) = \frac{3}{4}</m>.
+              While either of these values of
+              <m>\tan(\theta)</m> satisfies the equation <m>\cot(2\theta) = \frac{7}{24}</m>,
+              we choose <m>\tan(\theta) = \frac{3}{4}</m>,
+              since this produces an acute angle,<fn>
+              As usual, there are infinitely many solutions to <m>\tan(\theta) = \frac{3}{4}</m>.
+              We choose the acute angle  <m>\theta=\arctan\left(\frac{3}{4}\right)</m>.
+              The reader is encouraged to think about why there is always at least one acute answer to
+              <m>\cot(2\theta) = \frac{A-C}{B}</m> and what this means geometrically in terms of what we are trying to accomplish by rotating the axes.
+              The reader is also encouraged to keep a sharp lookout for the angles which satisfy
+              <m>\tan(\theta) = -\frac{4}{3}</m> in our final graph.  (Hint:
+              <m>\left(\frac{3}{4}\right) \left(-\frac{4}{3}\right) = -1</m>.)
+              </fn>  <m>\theta = \arctan\left(\frac{3}{4}\right)</m>.
+              To find the rotation equations,
+              we need <m>\cos(\theta) = \cos\left(\arctan\left(\frac{3}{4}\right)\right)</m> and <m>\sin(\theta) = \sin\left(\arctan\left(\frac{3}{4}\right)\right)</m>.
+              Using the techniques developed in <xref ref="TheInverseTrigonometricFunctions">Section</xref>
+              we get <m>\cos(\theta) = \frac{4}{5}</m> and <m>\sin(\theta) = \frac{3}{5}</m>.
+              Our rotation equations are
+              <m>x = x' \cos(\theta) - y' \sin(\theta) = \frac{4x'}{5} - \frac{3y'}{5}</m> and <m>y = x' \sin(\theta) + y'\cos(\theta) = \frac{3x'}{5} + \frac{4y'}{5}</m>.
+              As usual, we now substitute these quantities into <m>16x^2+24xy+9y^2 +15x-20y = 0</m> and simplify.
+              As a first step, the reader can verify
+              <me>
+                x^2 = \frac{16(x')^2}{25} - \frac{24 x'y'}{25} +\frac{9(y')^2}{25},  xy = \frac{12(x')^2}{25} +\frac{7 x'y'}{25} - \frac{12(y')^2}{25},  y^2 = \frac{9(x')^2}{25} + \frac{24x'y'}{25} +\frac{16(y')^2}{25}
+              </me>
+              Once the dust settles, we get
+              <m>25(x')^2 - 25y' = 0</m>, or <m>y' = (x')^2</m>,
+              whose graph is a parabola opening along the positive <m>y'</m>-axis with vertex <m>(0,0)</m>.
+              We graph this equation below.
+            </p>
+          </li>
+        </ol>
+        <p>
+          \begin{mfpic}[18]{-4}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](4.25,2.35){<m>x'</m>} \tlabel[cc](-2.5,4.5){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-3,-2,-1,1,2,3,4} \dashed \arrow \rotatepath{(0,0),36.87} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),36.87} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),36.87} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),36.87} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),36.87} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),36.87} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),126.87} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),126.87} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),126.87} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),126.87} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),216.87} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),216.87} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),216.87} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),216.87} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),306.87} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),306.87} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),306.87} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),306.87} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,30,5}{2*dir(t)} \tlabel[cc](3.75,0.5){<m>\theta = \arctan\left(\frac{3}{4}\right)</m>} \tcaption{<m>16x^2+24xy+9y^2 +15x-20y = 0</m>} \penwd{1.25pt} \arrow \reverse \arrow \rotatepath{(0,0),36.87} \function{-2,2,0.1}{x**2} \end{mfpic}
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that even though the coefficients of <m>x^2</m> and <m>y^2</m> were both positive numbers in <xref ref="rotatedhyperbolaex">parts</xref>
+      and <xref ref="rotatedparabolaex"></xref>
+      of <xref ref="graphrotatedconicex">Example</xref>,
+      the graph in <xref ref="rotatedhyperbolaex">part</xref>
+      turned out to be a hyperbola and the graph in <xref ref="rotatedparabolaex">part</xref> worked out to be a parabola.
+    </p>
+    <p>
+      Whereas in <xref ref="TheConicSections">Chapter</xref>,
+      we could easily pick out which conic section we were dealing with based on the presence
+      (or absence)
+      of quadratic terms and their coefficients,
+      <xref ref="graphrotatedconicex">Example</xref>
+      demonstrates the situation is much more complicated when an <m>xy</m> term is present.
+    </p>
+    <p>
+      Nevertheless,
+      it is possible to determine which conic section we have by looking at a special,
+      familiar <em>combination</em> of the coefficients of the quadratic terms.
+      We have the following theorem.
+    </p>
+    <theorem xml:id="conicclassification">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <p>
+          Suppose the equation <m>Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0</m> describes a non-degenerate conic section.<fn>
+          Recall that this means its graph is either a circle,
+          parabola, ellipse or hyperbola.
+          See <xref ref="degenerateconics">page</xref>.
+          </fn>
+          <ul>
+            <li>
+              <p>
+                If <m>B^2 - 4AC > 0</m> then the graph of the equation is a hyperbola.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>B^2 - 4AC =0</m> then the graph of the equation is a parabola.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>B^2 - 4AC \lt 0</m> then the graph of the equation is an ellipse or circle.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      As you may expect, the quantity
+      <m>B^2 - 4AC</m> mentioned in <xref ref="conicclassification">Theorem</xref>
+      is called the <em>discriminant</em><idx><h>discriminant</h><h>of a conic</h></idx> of the conic section.
+      While we will not attempt to explain the deep Mathematics which produces this <sq>coincidence</sq>,
+      we will at least work through the proof of <xref ref="conicclassification">Theorem</xref>
+      mechanically to show that it is true.<fn>
+      We hope that someday you get to see <em>why</em>
+      this works the way it does.
+      </fn>
+    </p>
+    <p>
+      First note that if the coefficient <m>B=0</m> in the equation <m>Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0</m>,
+      <xref ref="conicclassification">Theorem</xref>
+      reduces to the result presented in <xref ref="conicsclassificationnoxytermex">Exercise</xref>
+      in <xref ref="Hyperbolas">Section</xref>.
+    </p>
+    <p>
+      Hence, we proceed under the assumption that <m>B \neq 0</m>.
+      We rotate the <m>xy</m>-axes counter-clockwise through an angle <m>\theta</m> which satisfies
+      <m>\cot(2\theta) = \frac{A-C}{B}</m> to produce an equation with no <m>x'y'</m>-term in accordance with <xref ref="rotatedconicthm">Theorem</xref>:
+      <m>A'(x')^2 +C(y')^2 + Dx' + Ey' + F'= 0</m>.
+    </p>
+    <p>
+      In this form,
+      we can invoke <xref ref="conicsclassificationnoxytermex">Exercise</xref>
+      in <xref ref="Hyperbolas">Section</xref>
+      once more using the product <m>A'C'</m>.
+      Our goal is to find the product <m>A'C'</m> in terms of the coefficients <m>A</m>,
+      <m>B</m> and <m>C</m> in the original equation.
+    </p>
+    <p>
+      We substitute <m>x = x' \cos(\theta) - y' \sin(\theta)</m>
+      <m>y =  x'\sin(\theta) + y'\cos(\theta)</m> into <m>Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0</m>.
+      After gathering like terms,
+      the coefficient <m>A'</m> on <m>(x')^2</m> and the coefficient <m>C'</m> on <m>(y')^2</m> are
+      <me>
+        \begin{array}{rcll}  A' \amp  = \amp  A \cos^{2}(\theta) + B \cos(\theta) \sin(\theta) + C \sin^{2}(\theta) \\ C' \amp  = \amp  A \sin^{2}(\theta) - B \cos(\theta) \sin(\theta) + C \cos^{2}(\theta) \end{array}
+      </me>
+    </p>
+    <p>
+      In order to make use of the condition <m>\cot(2\theta) = \frac{A-C}{B}</m>,
+      we rewrite our formulas for <m>A'</m> and <m>C'</m> using the power reduction formulas.
+      After some regrouping, we get
+      <me>
+        \begin{array}{rcll}  2A' \amp  = \amp   \left[ (A+C) + (A-C)\cos(2\theta)\right]  + B\sin(2\theta)  \\ 2C' \amp  = \amp   \left[ (A+C)-(A-C)\cos(2\theta)\right] - B\sin(2\theta) \end{array}
+      </me>
+    </p>
+    <p>
+      Next, we try to make sense of the product
+      <me>
+        (2A')(2C') = \left\{ \left[ (A+C) + (A-C)\cos(2\theta)\right]  + B\sin(2\theta)\right\} \left\{\left[ (A+C)-(A-C)\cos(2\theta)\right] - B\sin(2\theta)\right\}
+      </me>
+    </p>
+    <p>
+      We break this product into pieces.
+      First, we use the difference of squares to multiply the <sq>first</sq> quantities in each factor to get
+      <me>
+        \begin{array}{rcl} \left[ (A+C) + (A-C)\cos(2\theta)\right] \left[ (A+C)-(A-C)\cos(2\theta)\right] \amp  = \amp   (A+C)^2 - (A-C)^2 \cos^{2}(2\theta) \end{array}
+      </me>
+    </p>
+    <p>
+      Next, we add the product of the <sq>outer</sq> and <sq>inner</sq> quantities in each factor to get
+      <me>
+        \begin{array}{rcl}  - B\sin(2\theta)\left[ (A+C) + (A-C)\cos(2\theta)\right] \amp \amp \\ + B\sin(2\theta)\left[ (A+C)-(A-C)\cos(2\theta)\right] \amp  = \amp  -2B(A-C)\cos(2\theta)\sin(2\theta) \end{array}
+      </me>
+    </p>
+    <p>
+      The product of the <sq>last</sq> quantity in each factor is <m>(B\sin(2\theta))(- B\sin(2\theta)) = -B^2\sin^2(2\theta)</m>.
+    </p>
+    <p>
+      Putting all of this together yields
+      <me>
+        \begin{array}{rcl}  4A'C' \amp  = \amp  (A+C)^2 - (A-C)^2 \cos^{2}(2\theta) -2B(A-C)\cos(2\theta)\sin(2\theta) -B^2\sin^2(2\theta) \end{array}
+      </me>
+    </p>
+    <p>
+      From <m>\cot(2\theta) = \frac{A-C}{B}</m>,
+      we get <m>\frac{\cos(2\theta)}{\sin(2\theta)} = \frac{A-C}{B}</m>,
+      or <m>(A-C)\sin(2\theta)=B\cos(2\theta)</m>.
+    </p>
+    <p>
+      Using this substitution twice along with the Pythagorean Identity <m>\cos^{2}(2\theta) = 1 - \sin^{2}(2\theta)</m> we get:
+      <me>
+        \begin{array}{rcl}  4A'C' \amp  = \amp  (A+C)^2 - (A-C)^2 \cos^{2}(2\theta) -2B(A-C)\cos(2\theta)\sin(2\theta) -B^2\sin^2(2\theta) \\ \amp  = \amp  (A+C)^2 - (A-C)^2 \left[ 1-\sin^{2}(2\theta)\right] -2B\cos(2\theta) B \cos(2\theta) -B^2\sin^2(2\theta) \\ \amp  = \amp  (A+C)^2 - (A-C)^2  + (A-C)^2 \sin^{2}(2\theta) -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta) \\ \amp  = \amp  (A+C)^2 - (A-C)^2  +\left[(A-C) \sin(2\theta)\right]^2 -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ \amp  = \amp  (A+C)^2 - (A-C)^2  +\left[B \cos(2\theta)\right]^2 -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ \amp  = \amp  (A+C)^2 - (A-C)^2  +B^2\cos^{2}(2\theta) -2B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ \amp  = \amp  (A+C)^2 - (A-C)^2  -B^2\cos^{2}(2\theta) -B^2\sin^2(2\theta)  \\ \amp  = \amp  (A+C)^2 - (A-C)^2  -B^2\left[\cos^{2}(2\theta)+ \sin^2(2\theta)\right]  \\ \amp  = \amp  (A+C)^2 - (A-C)^2  -B^2 (1) \\ \amp  = \amp  \left(A^2 + 2AC+C^2\right) - \left(A^2 - 2AC+C^2\right)  -B^2  \\ \amp  = \amp  4AC  -B^2 \end{array}
+      </me>
+    </p>
+    <p>
+      Hence, <m>B^2 - 4AC = -4 A'C'</m>,
+      so the quantity <m>B^2 - 4AC</m> has the opposite sign of <m>A'C'</m>.
+      The result now follows by applying <xref ref="conicsclassificationnoxytermex">Exercise</xref>
+      in <xref ref="Hyperbolas">Section</xref>.
+    </p>
+    <example xml:id="conicdiscex">
+      <statement>
+        <p>
+          Use <xref ref="conicclassification">Theorem</xref>
+          to classify the graphs of the following non-degenerate conics.
+          <ol>
+            <li>
+              <p>
+                <m>21x^2+10xy\sqrt{3}+31y^2=144</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>5x^2+26xy+5y^2-16x\sqrt{2}+16y\sqrt{2}-104 = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>16x^2+24xy+9y^2 +15x-20y = 0</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is a straightforward application of <xref ref="conicclassification">Theorem</xref>.
+          <ol>
+            <li>
+              <p>
+                We have <m>A = 21</m>,
+                <m>B = 10\sqrt{3}</m> and <m>C = 31</m> so <m>B^2 - 4AC = (10\sqrt{3})^2 - 4(21)(31) = -2304 \lt 0</m>.
+                <xref ref="conicclassification">Theorem</xref>
+                predicts the graph is an ellipse,
+                which checks with our work from <xref ref="rotatedaxesex1">Example</xref>
+                <xref ref="rotatedellipseex">number</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Here, <m>A = 5</m>, <m>B = 26</m> and <m>C = 5</m>,
+                so <m>B^2 - 4AC = 26^2 - 4(5)(5) = 576 > 0</m>.
+                <xref ref="conicclassification">Theorem</xref>
+                classifies the graph as a hyperbola,
+                which matches our answer to <xref ref="graphrotatedconicex">Example</xref>
+                <xref ref="rotatedhyperbolaex">number</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Finally, we have <m>A = 16</m>,
+                <m>B = 24</m> and <m>C = 9</m> which gives <m>24^2 - 4(16)(9) = 0</m>.
+                <xref ref="conicclassification">Theorem</xref>
+                tells us that the graph is a parabola,
+                matching our result from <xref ref="graphrotatedconicex">Example</xref>
+                <xref ref="rotatedparabolaex">number</xref>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="polarformofconics">
+    <title>The Polar Form of Conics</title>
+    <p>
+      Here, we revisit the conic sections from a more unified perspective starting with a <sq>new</sq> definition below.
+    </p>
+    <definition xml:id="focusdirectrixeccentrityconic">
+      <statement>
+        <p>
+          Given a fixed line <m>L</m>,
+          a point <m>F</m> not on <m>L</m>,
+          and a positive number <m>e</m>,
+          a conic section is the set of all points <m>P</m> such that
+          <me>
+            \dfrac{\text{ the distance from \(P\) to \(F\) } }{\text{ the distance from \(P\) to \(L\) } } = e
+          </me>
+        </p>
+        <p>
+          The line <m>L</m> is called the
+          <term>directrix</term><idx><h>directrix</h><h>of a conic section in polar form</h></idx> of the conic section,
+          the point <m>F</m> is called a <term>focus</term><idx><h>focus</h><h>of a conic section in polar form</h></idx> of the conic section,
+          and the constant <m>e</m> is called the <term>eccentricity</term>
+              <idx><h>eccentricity</h></idx>
+          of the conic section.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We have seen the notions of focus and directrix before in the definition of a parabola,
+      <xref ref="paraboladefn">Definition</xref>.
+      There, a parabola is defined as the set of points equidistant from the focus and directrix,
+      giving an eccentricity <m>e = 1</m> according to <xref ref="focusdirectrixeccentrityconic">Definition</xref>.
+    </p>
+    <p>
+      We have also seen the concept of eccentricity before.
+      It was introduced for ellipses in <xref ref="ellipseeccentricity">Definition</xref>
+      in <xref ref="Ellipses">Section</xref>,
+      and later extended to hyperbolas in <xref ref="hyperbolaeccentricity">Exercise</xref>
+      in <xref ref="Hyperbolas">Section</xref>.
+      There, <m>e</m> was also defined as a ratio of distances,
+      though in these cases the distances involved were measurements from the center to a focus and from the center to a vertex.
+    </p>
+    <p>
+      One way to reconcile the <sq>old</sq> ideas of focus,
+      directrix and eccentricity with the <sq>new</sq> ones presented in <xref ref="focusdirectrixeccentrityconic">Definition</xref>
+      is to derive equations for the conic sections using <xref ref="focusdirectrixeccentrityconic">Definition</xref>
+      and compare these parameters with what we know from <xref ref="TheConicSections">Chapter</xref>.
+    </p>
+    <p>
+      We begin by assuming the conic section has eccentricity <m>e</m>,
+      a focus <m>F</m> at the origin and that the directrix is the vertical line <m>x = -d</m> as in the figure below.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-5}{5}{-1}{6} \axes \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](3.75,4){<m>P(r,\theta)</m>} \dashed \polyline{(3,4), (-4,4)} \dashed \polyline{(0,0), (3,4)} \plotsymbol[3pt]{Asterisk}{(0, 0)} \point[3pt]{(3,4)} \arrow \reverse \arrow \polyline{(-4,-0.5), (-4,6)} \tlabel[cc](-4,-1){<m>x = -d</m>} \arrow \reverse \arrow \polyline{(0.25,4.5), (2.75,4.5)} \gclear \tlabelrect[cc](1.5,4.5){<m>r\cos(\theta)</m>} \arrow \reverse \arrow \polyline{(-3.75,4.5), (-0.25,4.5)} \gclear \tlabelrect[cc](-2,4.5){<m>d</m>} \tlabel[cc](0.75,-0.5){<m>O = F</m>} \arrow \parafcn{5,48,5}{1.5*dir(t)} \tlabel[cc](1.75,0.75){<m>\theta</m>} \tlabel[cc](1.5,2.5){<m>r</m>} \end{mfpic}
+    </p>
+    <p>
+      Using a polar coordinate representation
+      <m>P(r,\theta)</m> for a point on the conic with <m>r > 0</m>, we get
+      <me>
+        e =  \dfrac{\text{ the distance from \(P\) to \(F\) } }{\text{ the distance from \(P\) to \(L\) } } = \dfrac{r}{d+r\cos(\theta)}
+      </me>
+      so that <m>r = e(d+r\cos(\theta))</m>.
+      Solving this equation for <m>r</m>, yields
+      <me>
+        r = \dfrac{ed}{1-e\cos(\theta)}
+      </me>
+    </p>
+    <p>
+      At this point, we convert the equation
+      <m>r = e(d+r\cos(\theta))</m> back into a rectangular equation in the variables <m>x</m> and <m>y</m>.
+      If <m>e > 0</m>, but <m>e\neq 1</m>,
+      the usual conversion process outlined in <xref ref="PolarCoordinates">Section</xref> gives<fn>
+      Turn <m>r = e(d+r\cos(\theta))</m> into
+      <m>r = e(d + x)</m> and square both sides to get <m>r^{2} = e^{2}(d + x)^{2}</m>.
+      Replace <m>r^{2}</m> with <m>x^{2} + y^{2}</m>,
+      expand <m>(d + x)^{2}</m>, combine like terms,
+      complete the square on <m>x</m> and clean things up.
+      </fn>
+      <me>
+        \left( \frac{\left(1-e^2\right)^2}{e^2d^2}\right) \left(x - \dfrac{e^2 d}{1-e^2}\right)^2 + \left(\frac{1-e^2}{e^2d^2}\right) y^2 = 1
+      </me>
+    </p>
+    <p>
+      If <m>0 \lt e \lt 1</m>,
+      then <m>0\lt 1-e^2 \lt 1</m> and,
+      hence, <m>(1-e^2)^2 \lt 1-e^2</m>.
+      We leave it to the reader to show that this means we have the equation of an ellipse centered at
+      <m>\left(\frac{e^2 d}{1-e^2}, 0\right)</m> with major axis along the <m>x</m>-axis.
+    </p>
+    <p>
+      Using the notation from <xref ref="Ellipses">Section</xref>,
+      we have <m>a^2 = \frac{e^2 d^2}{\left(1-e^2\right)^2}</m> and <m>b^2 = \frac{e^2 d^2}{1-e^2}</m>,
+      so the major axis has length
+      <m>\frac{2ed}{1-e^2}</m> and the minor axis has length <m>\frac{2ed}{\sqrt{1-e^2}}</m>.
+    </p>
+    <p>
+      Moreover, we find that one focus is <m>(0,0)</m> and working through the formula given in <xref ref="ellipseeccentricity">Definition</xref>
+      gives the eccentricity to be <m>e</m>, as required.
+    </p>
+    <p>
+      If <m>e > 1</m>, then <m>1 - e^2 \lt 0</m> but
+      <m>(1-e^2)^2 > 0</m> so the equation generates a hyperbola with center
+      <m>\left(\frac{e^2 d}{1-e^2}, 0\right)</m> whose transverse axis lies along the <m>x</m>-axis.
+    </p>
+    <p>
+      Since such hyperbolas have the form <m>\frac{(x-h)^2}{a^2} -\frac{y^2}{b^2} = 1</m>,
+      we need to take the <em>opposite</em>
+      reciprocal of the coefficient of <m>y^2</m> to find <m>b^2</m>.
+    </p>
+    <p>
+      Doing this, we obtain<fn>
+      Since <m>1 - e^2 \lt 0</m> here,
+      we rewrite <m>\left(1-e^2\right)^2 = \left(e^2-1\right)^2</m> to help simplify things later on.
+      </fn> <m>a^2 = \frac{e^2 d^2}{\left(1-e^2\right)^2} = \frac{e^2d^2}{\left(e^2-1\right)^2}</m> and <m>b^2 = -\frac{e^2 d^2}{1-e^2} = \frac{e^2d^2}{e^2-1}</m>,
+      so the transverse axis has length
+      <m>\frac{2ed}{e^2-1}</m> and the conjugate axis has length <m>\frac{2ed}{\sqrt{e^2-1}}</m>.
+    </p>
+    <p>
+      Additionally, we verify that one focus is at <m>(0,0)</m>,
+      and the formula given in <xref ref="hyperbolaeccentricity">Exercise</xref>
+      in <xref ref="Hyperbolas">Section</xref>
+      gives the eccentricity is <m>e</m> in this case as well.
+    </p>
+    <p>
+      If <m>e=1</m>,
+      the equation <m>r = \frac{ed}{1-e\cos(\theta)}</m> reduces to
+      <m>r = \frac{d}{1-\cos(\theta)}</m> which translates to <m>y^2 = 2d\left(x + \frac{d}{2}\right)</m>.
+    </p>
+    <p>
+      The equation <m>y^2 = 2d\left(x + \frac{d}{2}\right)</m> describes a parabola with vertex
+      <m>\left(-\frac{d}{2}, 0\right)</m> opening to the right.
+    </p>
+    <p>
+      In the language of <xref ref="Parabolas">Section</xref>,
+      <m>4p = 2d</m> so <m>p = \frac{d}{2}</m>,
+      the focus is <m>(0,0)</m>,
+      the focal diameter is <m>2d</m> and the directrix is <m>x = -d</m>,
+      as required.
+    </p>
+    <p>
+      Hence, we have shown that in all cases,
+      our <sq>new</sq> understanding of <sq>conic section</sq>,
+      <sq>focus</sq>,
+      <sq>eccentricity</sq> and <sq>directrix</sq> as presented in <xref ref="focusdirectrixeccentrityconic">Definition</xref>
+      correspond with the <sq>old</sq> definitions given in <xref ref="TheConicSections">Chapter</xref>.
+    </p>
+    <p>
+      Before we summarize our findings,
+      we note that in order to arrive at our general equation of a conic <m>r = \frac{ed}{1-e\cos(\theta)}</m>,
+      we assumed that the directrix was the line <m>x = -d</m> for <m>d > 0</m>.
+    </p>
+    <p>
+      We could have just as easily chosen the directrix to be <m>x = d</m>,
+      <m>y = -d</m> or <m>y = d</m>.
+      As the reader can verify,
+      in these cases we obtain the forms <m>r = \frac{ed}{1+e\cos(\theta)}</m>,
+      <m>r = \frac{ed}{1-e\sin(\theta)}</m> and <m>r = \frac{ed}{1+e\sin(\theta)}</m>,
+      respectively.
+    </p>
+    <p>
+      The key thing to remember is that in any of these cases,
+      the directrix is always perpendicular to the major axis of an ellipse and it is always perpendicular to the transverse axis of the hyperbola.
+    </p>
+    <p>
+      For parabolas,
+      knowing the focus is <m>(0,0)</m> and the directrix also tells us which way the parabola opens.
+    </p>
+    <p>
+      We have established the following theorem.
+    </p>
+    <theorem xml:id="polarformofconicsthm">
+      <statement>
+        <p>
+          Suppose <m>e</m> and <m>d</m> are positive numbers.
+          Then
+          <ul>
+            <li>
+              <p>
+                the graph of <m>r = \dfrac{ed}{1 - e\cos(\theta)}</m> is the graph of a conic section with directrix <m>x = -d</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                the graph of <m>r = \dfrac{ed}{1 + e\cos(\theta)}</m> is the graph of a conic section with directrix <m>x = d</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                the graph of <m>r = \dfrac{ed}{1 - e\sin(\theta)}</m> is the graph of a conic section with directrix <m>y = -d</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                the graph of <m>r = \dfrac{ed}{1 + e\sin(\theta)}</m> is the graph of a conic section with directrix <m>y = d</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          In each case above,
+          <m>(0,0)</m> is a focus of the conic and the number <m>e</m> is the eccentricity of the conic.
+          <ul>
+            <li>
+              <p>
+                If <m>0 \lt e \lt 1</m>, the graph is an ellipse.
+                The quantities <m>\dfrac{2ed}{1-e^2}</m> and
+                <m>\dfrac{2ed}{\sqrt{1-e^2}}</m> are the lengths of the major and minor axes,
+                respectively.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>e = 1</m>,
+                the graph is a parabola whose focal diameter is <m>2d</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>e > 1</m>, the graph is a hyperbola.
+                The quantities <m>\dfrac{2ed}{e^2-1}</m> and
+                <m>\dfrac{2ed}{\sqrt{e^2-1}}</m> are the lengths of the transverse and conjugate axes,
+                respectively.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We test out <xref ref="polarformofconicsthm">Theorem</xref> in the next example.
+    </p>
+    <example xml:id="polarconicgraphex">
+      <statement>
+        <p>
+          Sketch the graphs of the following equations.
+          <ol>
+            <li xml:id="polarparabola">
+              <p>
+                <m>r = \dfrac{4}{1-\sin(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>r = \dfrac{12}{3 - \cos(\theta)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>r = \dfrac{6}{1 + 2\sin(\theta)}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                From <m>r = \frac{4}{1-\sin(\theta)}</m>,
+                we first note <m>e =1</m> which means we have a parabola on our hands.
+                Since <m>ed = 4</m>,
+                we have <m>d=4</m> and given the form of the equation,
+                the directrix at <m>y = -4</m>.
+                Since the focus is at <m>(0,0)</m>,
+                we know that the vertex is located at the point
+                (in rectangular coordinates)
+                <m>(0,-2)</m> and must open upwards.
+                With <m>d=4</m>, we have a focal diameter of <m>2d = 8</m>,
+                so the parabola contains the points <m>(\pm 4, 0)</m>.
+                Putting all this together,
+                we graph <m>r = \frac{4}{1-\sin(\theta)}</m> below on the left.
+              </p>
+            </li>
+            <li>
+              <p>
+                We first rewrite <m>r = \frac{12}{3 - \cos(\theta)}</m> in the form found in <xref ref="polarformofconicsthm">Theorem</xref>,
+                namely <m>r = \frac{4}{1 - (1/3) \cos(\theta)}</m>.
+                Since <m>e = \frac{1}{3}</m> satisfies <m>0 \lt e \lt 1</m>,
+                we know that the graph of this equation is an ellipse.
+                Since <m>ed= 4</m>, we have <m>d = 12</m> and,
+                based on the form of the equation,
+                the directrix is <m>x = -12</m>.
+                Hence, the ellipse has its major axis along the <m>x</m>-axis,
+                which means we can find the vertices of the ellipse by finding where the ellipse intersects the <m>x</m>-axis.
+                Since <m>r(0) = 6</m> and <m>r(\pi) = 3</m>,
+                our vertices are the rectangular points <m>(-3,0)</m> and <m>(6,0)</m>.
+                The center of the ellipse is the midpoint of the vertices,
+                which in this case is <m>\left(\frac{3}{2}, 0\right)</m>.<fn>
+                As a quick check,
+                we have from <xref ref="polarformofconicsthm">Theorem</xref>
+                the major axis should have length <m>\frac{2ed}{1-e^2} = \frac{(2)(4)}{1-(1/3)^2} = 9</m>.
+                </fn>  We know one focus is <m>(0,0)</m>,
+                which is <m>\frac{3}{2}</m> from the center
+                <m>\left(\frac{3}{2}, 0\right)</m> and this allows us to find the other focus <m>(3, 0)</m>,
+                even though we are not asked to do so.
+                Finally, we know from <xref ref="polarformofconicsthm">Theorem</xref>
+                that the length of the minor axis is
+                <m>\frac{2ed}{\sqrt{1-e^2}} =</m> {<m>\frac{4}{\sqrt{1-(1/3)^2}}</m>}
+                <m>= 6\sqrt{3}</m> which means the endpoints of the minor axis are <m>\left(\frac{3}{2}, \pm 3\sqrt{2}\right)</m>.
+                We now have everything we need to graph <m>r = \frac{12}{3 - \cos(\theta)}</m> below on the right.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[13]{-5}{5}{-5}{4} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3} \point[4pt]{(-4,0), (4,0), (0,-2)} \plotsymbol[3pt]{Asterisk}{(0, 0)} \arrow \reverse \arrow \polyline{(-5,-4), (5,-4)} \gclear \tlabelrect(0,-5){<m>y = -4</m>} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \tcaption{<m>r = \frac{4}{1-\sin(\theta)}</m>} \penwd{1.25pt} \arrow \reverse \arrow \plrfcn{-200,20,5}{4/(1-sind(t))} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[13]{-4}{7}{-6}{6} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \dashed \polyline{(-6,0), (-4,0)} \xmarks{-3,-2,-1,1,2,3,4,5,6} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \point[4pt]{(-3,0), (6,0), (1.5, 4.25), (1.5,-4.25)} \plotsymbol[3pt]{Asterisk}{(0, 0), (3,0)} \plotsymbol[3pt]{Cross}{(1.5,0)} \arrow \reverse \arrow \polyline{(-6,-6), (-6,6)} \gclear \tlabelrect(-6,-4){<m>x = -12</m>} \tlabelsep{5pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{<m>r = \frac{12}{3-\cos(\theta)}</m>} \penwd{1.25pt} \ellipse{(1.5,0),4.5,4.25} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                From <m>r = \frac{6}{1 + 2\sin(\theta)}</m> we get
+                <m>e = 2 > 1</m> so the graph is a hyperbola.
+                Since <m>ed = 6</m>, we get <m>d=3</m>,
+                and from the form of the equation,
+                we know the directrix is <m>y = 3</m>.
+                Hence, the transverse axis of the hyperbola lies along the <m>y</m>-axis,
+                so we can find the vertices by looking where the hyperbola intersects the <m>y</m>-axis.
+                We find <m>r\left( \frac{\pi}{2} \right) = 2</m> and <m>r\left(\frac{3\pi}{2}\right) = -6</m>.
+                These two points correspond to the rectangular points <m>(0,2)</m> and <m>(0,6)</m> which puts the center of the hyperbola at <m>(0,4)</m>.
+                Since one focus is at <m>(0,0)</m>,
+                <m>4</m> units away from the center,
+                we know the other focus is at <m>(0,8)</m>.
+                According to <xref ref="polarformofconicsthm">Theorem</xref>,
+                the conjugate axis has a length of <m>\frac{2ed}{\sqrt{e^2-1}} = \frac{(2)(6)}{\sqrt{2^2-1}} = 4 \sqrt{3}</m>.
+                This together with the location of the vertices give the slopes of the asymptotes as:
+                <m>\pm \frac{2}{2\sqrt{3}} = \pm \frac{\sqrt{3}}{3}</m>.
+                Since the center of the hyperbola is <m>(0,4)</m>,
+                the asymptotes are <m>y = \pm \frac{\sqrt{3}}{3} x + 4</m>.
+                Using all of our work,
+                we graph the hyperbola below. \begin{mfpic}[13]{-6}{6}{-1}{9} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \dashed \function{-5,5,0.1}{0.577*x+4} \dashed \function{-5,5,0.1}{4-0.577*x} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{1,2,3,5,6,7,8} \point[4pt]{(0,2), (0,6)} \plotsymbol[3pt]{Asterisk}{(0, 0), (0,8)} \plotsymbol[3pt]{Cross}{(0,4)} \arrow \reverse \arrow \polyline{(-6,3), (6,3)} \gclear \tlabelrect(0,3){<m>y = 3</m>} \tlabelsep{5pt} \axislabels {x}{ {<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \tcaption{<m>r = \frac{6}{1 + 2\sin(\theta)}</m>} \penwd{1.25pt} \arrow \reverse \arrow \plrfcn{5,175,5}{6/(1+2*sind(t))} \arrow \reverse \arrow \plrfcn{-125,-55,5}{6/(1+2*sind(t))} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In light of <xref ref="rotationaxes">Section</xref>,
+      the reader may wonder what the rotated form of the conic sections would look like in polar form.
+    </p>
+    <p>
+      We know from <xref ref="polargraphtransformations">Exercise</xref>
+      in <xref ref="PolarGraphs">Section</xref>
+      that replacing <m>\theta</m> with
+      <m>(\theta - \phi)</m> in an expression <m>r = f(\theta)</m> rotates the graph of
+      <m>r = f(\theta)</m> counter-clockwise by an angle <m>\phi</m>.
+    </p>
+    <p>
+      For instance,
+      to graph <m>r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}</m> all we need to do is rotate the graph of <m>r = \frac{4}{1-\sin\left(\theta\right)}</m>,
+      which we obtained in <xref ref="polarconicgraphex">Example</xref>
+      <xref ref="polarparabola">number</xref>,
+      counter-clockwise by <m>\frac{\pi}{4}</m> radians, as shown below.
+    </p>
+    <p>
+      \begin{mfpic}[12]{-5}{5}{-5}{4} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3} \point[4pt]{\plr{(4,225)}, \plr{(4,45)}, \plr{(2,315)}} \plotsymbol[3pt]{Asterisk}{(0, 0)} \tlabelsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3}
+    </p>
+    <p>
+      \dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)}
+    </p>
+    <p>
+      \tcaption{<m>r = \frac{4}{1-\sin\left(\theta - \frac{\pi}{4}\right)}</m>} \penwd{1.25pt} \arrow \reverse \arrow \plrfcn{85,185,5}{0-4/sind(t-45)} \arrow \reverse \arrow \plrfcn{-155,65,5}{4/(1-sind(t-45))} \end{mfpic}
+    </p>
+    <p>
+      Using rotations,
+      we can greatly simplify the form of the conic sections presented in <xref ref="polarformofconicsthm">Theorem</xref>,
+      since any three of the forms given there can be obtained from the fourth by rotating through some multiple of <m>\frac{\pi}{2}</m>.
+    </p>
+    <p>
+      Moreover, since rotations do not affect lengths,
+      all of the formulas for lengths <xref ref="polarformofconicsthm">Theorem</xref> remain intact.
+    </p>
+    <p>
+      The formula in <xref ref="mostgeneralpolarformconic">Theorem</xref>
+      below captures all the conic sections that have a focus at <m>(0,0)</m>.
+      It also includes circles centered at the origin by extending the concept of eccentricity to include <m>e=0</m>.
+    </p>
+    <p>
+      While substituting <m>e=0</m> into the equation given in <xref ref="mostgeneralpolarformconic">Theorem</xref>
+      quickly reduces to a circle centered at the origin,
+      the reader is best advised to think about this idea in light of <xref ref="ellipseeccentricity">Definition</xref>
+      in <xref ref="Ellipses">Section</xref>.
+    </p>
+    <theorem xml:id="mostgeneralpolarformconic">
+      <statement>
+        <p>
+          Given constants <m>\ell > 0</m>,
+          <m>e \geq 0</m> and <m>\phi</m>, the graph of the equation
+          <me>
+            r = \dfrac{\ell}{1 - e\cos(\theta - \phi)}
+          </me>
+          is a conic section with eccentricity <m>e</m> and one focus at <m>(0,0)</m>.
+          <ul>
+            <li>
+              <p>
+                If <m>e = 0</m>,
+                the graph is a circle centered at <m>(0,0)</m> with radius <m>\ell</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>e \neq 0</m>, then the conic has a focus at <m>(0,0)</m>.
+                Defining <m>d = \dfrac{\ell}{e}</m>,
+                the directrix contains the point with polar coordinates
+                <m>(-d,\phi)</m>. \text{ \tiny \(\bullet\) } If
+                <m>0 \lt e \lt 1</m>, the graph is an ellipse.
+                The quantities <m>\dfrac{2ed}{1-e^2}</m> and
+                <m>\dfrac{2ed}{\sqrt{1-e^2}}</m> are the lengths of the major and minor axes,
+                respectively. \text{ \tiny \(\bullet\) } If <m>e = 1</m>,
+                the graph is a parabola whose focal diameter is <m>2d</m>. \text{ \tiny \(\bullet\) } If <m>e > 1</m>,
+                the graph is a hyperbola.
+                The quantities <m>\dfrac{2ed}{e^2-1}</m> and
+                <m>\dfrac{2ed}{\sqrt{e^2-1}}</m> are the lengths of the transverse and conjugate axes,
+                respectively.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      Graph the following equations.
+      <ol cols="4">
+        <li>
+          <p>
+            <m>x^2+2xy+y^2 -x\sqrt{2}+y\sqrt{2} -6= 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>7x^2-4xy\sqrt{3}+3y^2-2x-2y\sqrt{3}-5= 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>5x^2+6xy+5y^2 - 4\sqrt{2}x+4\sqrt{2}y = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2+ 2\sqrt{3}xy+3y^2+ 2\sqrt{3}x-2y-16 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>13x^2-34xy\sqrt{3}+47y^2 - 64=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2-2\sqrt{3} xy-y^2+8=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2-4xy+4y^2-2x\sqrt{5}-y\sqrt{5}=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>8x^2+12xy+17y^2 - 20 = 0</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Graph the following equations.
+      <ol cols="4">
+        <li>
+          <p>
+            <m>r = \dfrac{2}{1-\cos(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{3}{2 + \sin(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{3}{2-\cos(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{2}{1 + \sin(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{4}{1+3\cos(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{2}{1-2\sin(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{2}{1 + \sin(\theta - \frac{\pi}{3})}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r = \dfrac{6}{3 - \cos\left(\theta + \frac{\pi}{4}\right)}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      The matrix <m>A(\theta) = \left[ \begin{array}{rr} \cos(\theta) \amp -\sin(\theta) \\ \sin(\theta) \amp \cos(\theta) \end{array} \right]</m> is called a
+      <em>rotation matrix</em>
+          <idx><h>matrix</h><h>rotation</h></idx>.
+          <idx><h>rotation matrix</h></idx>
+    </p>
+    <p>
+      We've seen this matrix most recently used in the proof of <xref ref="rotatecoordinatesthm">Theorem</xref>.
+      <ol>
+        <li>
+          <p>
+            Show the matrix from <xref ref="rotationmatrixex">Example</xref>
+            in <xref ref="MatArithmetic">Section</xref>
+            is none other than <m>A\left(\frac{\pi}{4}\right)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Discuss with your classmates how to use
+            <m>A(\theta)</m> to rotate points in the plane.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using the even / odd identities for cosine and sine,
+            show <m>A(\theta)^{-1} = A(-\theta)</m>.
+            Interpret this geometrically.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>x^2+2xy+y^2 -x\sqrt{2}+y\sqrt{2} -6= 0</m> becomes
+          <m>(x')^2 = -(y'-3)</m> after rotating counter-clockwise through
+          <m>\theta = \frac{\pi}{4}</m>. \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](4,3.5){<m>x'</m>} \tlabel[cc](-3,4){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(3,135)}, \plr{(1.73,45)}, \plr{(-1.73,45)}} \dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,40,5}{4*dir(t)} \gclear \tlabelrect[cc](4,1.5){<m>\theta = \frac{\pi}{4}</m>} \tcaption{
+          <m>x^2+2xy+y^2 -x\sqrt{2}+y\sqrt{2} -6= 0</m>} \penwd{1.25pt} \arrow \reverse \arrow \rotatepath{(0,0),45} \function{-2.75,2.75,0.1}{3-(x**2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>7x^2-4xy\sqrt{3}+3y^2-2x-2y\sqrt{3}-5= 0</m> becomes
+          <m>\frac{(x'-2)^2}{9}+(y')^2 = 1</m> after rotating counter-clockwise through
+          <m>\theta = \frac{\pi}{3}</m> \begin{mfpic}[18]{-4}{6}{-5}{5} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3.5,5){<m>x'</m>} \tlabel[cc](-4,3){<m>y'</m>} \xmarks{-3,-2,-1,1,2,3,4,5} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(-1,60)}, \plr{(5,60)}, (1.87,1.23), (0.13,2.23)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(-4,0), (6,0)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),60} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),60} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),60} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),60} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),60} \polyline{(5,-0.15),(5,0.15)} \rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,55,5}{5.5*dir(t)} \gclear \tlabelrect[cc](4.5,3){<m>\theta = \frac{\pi}{3}</m>} \tcaption{<m>7x^2-4xy\sqrt{3}+3y^2-2x-2y\sqrt{3}-5= 0</m>} \penwd{1.25pt} \rotatepath{(0,0),60} \ellipse{(2,0),3,1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5x^2+6xy+5y^2 - 4\sqrt{2}x+4\sqrt{2}y = 0</m> becomes
+          <m>(x')^2+\frac{(y'+2)^2}{4} = 1</m> after rotating counter-clockwise through
+          <m>\theta = \frac{\pi}{4}</m>. \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](4,3.5){<m>x'</m>} \tlabel[cc](-3,4){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(0,0)}, \plr{(-2,135)}, \plr{(-4,135)}, \plr{(2.24,288)}, \plr{(2.24,341)}} \dashed \arrow \rotatepath{(0,0),45} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),45} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),45} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),45} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),45} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),45} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),135} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),135} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),135} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),135} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),225} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),225} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),225} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),225} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),315} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),315} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),315} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),315} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,40,5}{4*dir(t)} \gclear \tlabelrect[cc](4,1.5){<m>\theta = \frac{\pi}{4}</m>} \tcaption{
+          <m>5x^2+6xy+5y^2 - 4\sqrt{2}x+4\sqrt{2}y = 0</m>} \penwd{1.25pt} \rotatepath{(0,0),45} \ellipse{(0,-2),1,2} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^2+ 2\sqrt{3}xy+3y^2+ 2\sqrt{3}x-2y-16 = 0</m> becomes<m>(x')^2 = y'+4</m> after rotating counter-clockwise through
+          <m>\theta = \frac{\pi}{3}</m> \begin{mfpic}[18]{-4}{6}{-5}{5} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3.5,5){<m>x'</m>} \tlabel[cc](-4,3){<m>y'</m>} \xmarks{-3,-2,-1,1,2,3,4,5} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(-4,150)}, \plr{(-2,60)}, \plr{(2,60)}} \dashed \arrow \rotatepath{(0,0),60} \polyline{(-4,0), (6,0)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),60} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),60} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),60} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),60} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),60} \polyline{(5,-0.15),(5,0.15)} \rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,55,5}{5.5*dir(t)} \gclear \tlabelrect[cc](4.5,3){<m>\theta = \frac{\pi}{3}</m>} \tcaption{<m>x^2+ 2\sqrt{3}xy+3y^2+ 2\sqrt{3}x-2y-16 = 0</m>} \penwd{1.25pt} \arrow \reverse \arrow \rotatepath{(0,0),60} \function{-3,3,0.1}{0-4+(x**2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>13x^2-34xy\sqrt{3}+47y^2 - 64=0</m> becomes
+          <m>(y')^2 - \frac{(x')^2}{16} =1</m> after rotating counter-clockwise through
+          <m>\theta = \frac{\pi}{6}</m>. \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](4.75,2.25){<m>x'</m>} \tlabel[cc](-2.25,4.5){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(1,120)}, \plr{(1,300)}} \dashed \arrow \rotatepath{(0,0),30} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),30} \polyline{(0,-5), (0,5)} \dotted \rotatepath{(0,0),30} \function{-4,4,0.1}{0.25*x} \dotted \rotatepath{(0,0),30} \function{-4,4,0.1}{0-0.25*x} \rotatepath{(0,0),30} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),30} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),30} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),30} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),120} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),120} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),120} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),120} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),210} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),210} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),210} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),210} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),300} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),300} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),300} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),300} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{95,115,5}{4*dir(t)} \gclear \tlabelrect[cc](-1,4.5){<m>\theta = \frac{\pi}{6}</m>} \tcaption{<m>13x^2-34xy\sqrt{3}+47y^2 - 64=0</m>} \penwd{1.25pt} \arrow \reverse \arrow \rotatepath{(0,0),30} \parafcn{-45,45,5}{(4*tand(t), 1/cosd(t))} \arrow \reverse \arrow \rotatepath{(0,0),30} \parafcn{-45,45,5}{(4*tand(t), 0-1/cosd(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^2-2\sqrt{3} xy-y^2+8=0</m> becomes
+          <m>\frac{(x')^2}{4} - \frac{(y')^2}{4} = 1</m> after rotating counter-clockwise through
+          <m>\theta = \frac{\pi}{3}</m> \begin{mfpic}[18]{-4}{6}{-5}{5} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3.5,5){<m>x'</m>} \tlabel[cc](-4,3){<m>y'</m>} \xmarks{-3,-2,-1,1,2,3,4,5} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(-4,150)}, \plr{(-2,60)}, \plr{(2,60)}} \dashed \arrow \rotatepath{(0,0),60} \polyline{(-4,0), (6,0)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)} \dotted \rotatepath{(0,0),60} \function{-3,3,0.1}{x} \dotted \rotatepath{(0,0),60} \function{-3,3,0.1}{-x} \rotatepath{(0,0),60} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),60} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),60} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),60} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),60} \polyline{(5,-0.15),(5,0.15)} \rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,55,5}{5.5*dir(t)} \gclear \tlabelrect[cc](4.5,3){<m>\theta = \frac{\pi}{3}</m>} \tcaption{<m>x^2-2\sqrt{3} xy-y^2+8=0</m>} \penwd{1.25pt} \arrow \reverse \arrow \rotatepath{(0,0),60} \parafcn{-55,55,5}{(2/cosd(t), 2*tand(t))} \arrow \reverse \arrow \rotatepath{(0,0),60} \parafcn{-55,55,5}{(-2/cosd(t), 2*tand(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^2-4xy+4y^2-2x\sqrt{5}-y\sqrt{5}=0</m> becomes
+          <m>(y')^2=x</m> after rotating counter-clockwise through
+          <m>\theta = \arctan\left(\frac{1}{2}\right)</m>. \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](4.75,2.25){<m>x'</m>} \tlabel[cc](-2.25,4.5){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(4.47,53.12)}, \plr{(4.47,0)}} \dashed \arrow \rotatepath{(0,0),26.56} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),26.56} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),26.56} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),26.56} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),26.56} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),26.56} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),116.56} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),116.56} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),116.56} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),116.56} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),206.56} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),206.56} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),206.56} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),206.56} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),296.56} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),296.56} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),296.56} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),296.56} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,20,5}{4*dir(t)} \tlabel(4,.75){<m>\theta = \arctan\left(\frac{1}{2}\right)</m>} \tcaption{<m>x^2-4xy+4y^2-2x\sqrt{5}-y\sqrt{5}=0</m>} \penwd{1.25pt} \arrow \reverse \arrow \rotatepath{(0,0),26.56} \parafcn{-2.25,2.25,0.1}{(t**2,t)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>8x^2+12xy+17y^2 - 20 = 0</m> becomes
+          <m>(x')^2 + \frac{(y')^2}{4} = 1</m> after rotating counter-clockwise through
+          <m>\theta = \arctan(2)</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](2.75,4.25){<m>x'</m>} \tlabel[cc](-4.25,2.75){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(2,153)}, \plr{(-2,153)},\plr{(1,63)}, \plr{(-1,63)} } \dashed \arrow \rotatepath{(0,0),63} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),63} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),63} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),63} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),63} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),63} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),153} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),153} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),153} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),153} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),243} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),243} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),243} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),243} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),333} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),333} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),333} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),333} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,58,5}{2.5*dir(t)} \gclear \tlabelrect[cc](2.5,1){<m>\theta = \arctan(2)</m>} \tcaption{<m>8x^2+12xy+17y^2 - 20 = 0</m>} \penwd{1.25pt} \rotatepath{(0,0),63} \ellipse{(0,0),1,2} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{2}{1-\cos(\theta)}</m> is a parabola directrix <m>x = -2</m> , vertex <m>(-1,0)</m> focus <m>(0,0)</m>,
+          focal diameter <m>4</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \plotsymbol[3pt]{Asterisk}{(0, 0)} \point[4pt]{(0,2), (0,-2), (-1,0)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2,-5), (-2,5)} \arrow \reverse \arrow \plrfcn{60,300,5}{2/(1-cosd(t))} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{3}{2 + \sin(\theta)} = \frac{\frac{3}{2}}{1 + \frac{1}{2} \sin(\theta)}</m> is an ellipse directrix <m>y = 3</m> , vertices <m>(0,1)</m>,
+          <m>(0,-3)</m> center <m>(0,-2)</m> , foci <m>(0,0)</m>,
+          <m>(0,-2)</m> minor axis length
+          <m>2\sqrt{3}</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,1,2,3,4} \plotsymbol[3pt]{Asterisk}{(0, 0), (0,-2)} \plotsymbol[3pt]{Cross}{(0,-1)} \point[4pt]{(0,1), (0,-3), (1.73,-1), (-1.73,-1)} \arrow \reverse \arrow \polyline{(-5,3), (5,3)} \penwd{1.25pt} \plrfcn{0,360,5}{3/(2+sind(t))} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{3}{2 - \cos(\theta)} = \frac{\frac{3}{2}}{1 - \frac{1}{2} \cos(\theta)}</m> is an ellipse directrix <m>x = -3</m> , vertices <m>(-1,0)</m>,
+          <m>(3,0)</m> center <m>(1,0)</m> , foci <m>(0,0)</m>,
+          <m>(2,0)</m> minor axis length
+          <m>2\sqrt{3}</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \plotsymbol[3pt]{Asterisk}{(0, 0), (2,0)} \plotsymbol[3pt]{Cross}{(1,0)} \point[4pt]{(-1,0), (3,0), (1,1.73), (1,-1.73)} \arrow \reverse \arrow \polyline{(-3,-5), (-3,5)} \penwd{1.25pt} \plrfcn{0,360,5}{3/(2-cosd(t))} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{2}{1+\sin(\theta)}</m> is a parabola directrix <m>y=2</m> , vertex <m>(0,1)</m> focus <m>(0,0)</m>,
+          focal diameter <m>4</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \plotsymbol[3pt]{Asterisk}{(0, 0)} \point[4pt]{(-2,0), (2,0), (0,1)} \arrow \reverse \arrow \polyline{(-5,2), (5,2)} \penwd{1.25pt} \arrow \reverse \arrow \plrfcn{-30,210,5}{2/(1+sind(t))} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{4}{1+3\cos(\theta)}</m> is a hyperbola directrix
+          <m>x = \frac{4}{3}</m>, vertices <m>(1,0)</m>,
+          <m>(2,0)</m> center <m>\left(\frac{3}{2}, 0\right)</m>,
+          foci <m>(0,0)</m>,
+          <m>(3,0)</m> conjugate axis length
+          <m>2\sqrt{2}</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \plotsymbol[3pt]{Asterisk}{(0, 0), (3,0)} \plotsymbol[3pt]{Cross}{(1.5,0)} \point[4pt]{(1,0), (2,0)} \arrow \reverse \arrow \polyline{(1.33,-5), (1.33,5)} \dotted \function{0,3,0.1}{2.828*(x-1.5)} \dotted \function{0,3,0.1}{0-2.828*(x-1.5)} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \plrfcn{-88,88,5}{4/(1+3*cosd(t))} \arrow \reverse \arrow \plrfcn{129,231.5,5}{4/(1+3*cosd(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{2}{1-2\sin(\theta)}</m> is a hyperbola directrix <m>y = -1</m>,
+          vertices <m>\left(0,-\frac{2}{3}\right)</m>,
+          <m>(0,-2)</m> center <m>\left(0, -\frac{4}{3} \right)</m>,
+          foci <m>(0,0)</m>,
+          <m>\left(0, -\frac{8}{3}\right)</m> conjugate axis length
+          <m>\frac{2\sqrt{3}}{3}</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \plotsymbol[3pt]{Asterisk}{(0, 0), (0,-2.67)} \plotsymbol[3pt]{Cross}{(0, -1.33)} \point[4pt]{(0, -0.67), (0,-2)} \arrow \reverse \arrow \polyline{(-5,-1), (5,-1)} \dotted \function{-3,3,0.1}{0.577*x-1.33} \dotted \function{-3,3,0.1}{-1.33-0.577x} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \plrfcn{45,135,5}{2/(1-2*sind(t))} \arrow \reverse \arrow \plrfcn{168,372,5}{2/(1-2*sind(t))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{2}{1 + \sin(\theta - \frac{\pi}{3})}</m> is the parabola <m>r = \frac{2}{1 + \sin(\theta)}</m> rotated through
+          <m>\phi = \frac{\pi}{3}</m> \begin{mfpic}[18]{-4}{6}{-5}{5} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3.5,5){<m>x'</m>} \tlabel[cc](-4,3){<m>y'</m>} \xmarks{-3,-2,-1,1,2,3,4,5} \ymarks{-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(-2,60)}, \plr{(2,60)}} \plotsymbol[3pt]{Asterisk}{(0, 0)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(-4,0), (6,0)} \dashed \arrow \rotatepath{(0,0),60} \polyline{(0,-5), (0,5)} \arrow \reverse \arrow \rotatepath{(0,0),60} \polyline{(-4,2), (4,2)} \rotatepath{(0,0),60} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),60} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),60} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),60} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),60} \polyline{(5,-0.15),(5,0.15)} \rotatepath{(0,0),150} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),150} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),150} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),150} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),240} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),240} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),240} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),330} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),330} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),330} \polyline{(4,-0.15),(4,0.15)} \point[3pt]{(0,0)} \arrow \parafcn{5,55,5}{5.5*dir(t)} \gclear \tlabelrect[cc](4.5,3){<m>\phi = \frac{\pi}{3}</m>} \penwd{1.25pt} \arrow \reverse \arrow \plrfcn{25,275,5}{2/(1+sind(t-60))} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r = \frac{6}{3 - \cos\left(\theta + \frac{\pi}{4}\right)}</m> is the ellipse <m>r = \frac{6}{3 - \cos\left(\theta \right)} = \frac{2}{1 - \frac{1}{3} \cos\left(\theta \right)}</m> rotated through
+          <m>\phi = -\frac{\pi}{4}</m> \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](4,-3.5){<m>x'</m>} \tlabel[cc](4,3){<m>y'</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4} \point[4pt]{\plr{(-1.5,-45)}, \plr{(3,-45)}, (-0.97, -2.03), (2.03, 0.97) } \plotsymbol[3pt]{Asterisk}{(0, 0), \plr{(1.5,-45)}} \tlabelsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \dashed \arrow \rotatepath{(0,0),-45} \polyline{(-5,0), (5,0)} \dashed \arrow \rotatepath{(0,0),-45} \polyline{(0,-5), (0,5)} \rotatepath{(0,0),-45} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),-45} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),-45} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),-45} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),-135} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),-135} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),-135} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),-135} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),-225} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),-225} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),-225} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),-225} \polyline{(4,-0.15),(4,0.15)} \rotatepath{(0,0),-315} \polyline{(1,-0.15),(1,0.15)} \rotatepath{(0,0),-315} \polyline{(2,-0.15),(2,0.15)} \rotatepath{(0,0),-315} \polyline{(3,-0.15),(3,0.15)} \rotatepath{(0,0),-315} \polyline{(4,-0.15),(4,0.15)} \arrow \parafcn{-5,-40,-5}{4*dir(t)} \gclear \tlabelrect[cc](4.5,-1.75){<m>\phi = -\frac{\pi}{4}</m>} \penwd{1.25pt} \plrfcn{0,360,5}{6/(3-cosd(t+45))} \end{mfpic}
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

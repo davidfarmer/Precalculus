@@ -1,0 +1,899 @@
+<section xml:id="NonLinearEquations">
+  <title>Systems of Non-Linear Equations</title>
+  <introduction>
+    <p>
+      In this section, we study systems of non-linear equations.
+          <idx><h>system of equations</h><h>non-linear</h></idx>
+      In non-linear equations,
+      we can have variables to powers other than <m>1</m>,
+      we can have different variables multiplied together,
+      or variable can occur as arguments of exponential and logarithmic functions.
+    </p>
+    <p>
+      Unlike the systems of linear equations for which we have developed several algorithmic solution techniques,
+      there is no general algorithm to solve systems of non-linear equations.
+      Moreover, all of the usual hazards of non-linear equations like extraneous solutions and domain restrictions are once again present.
+    </p>
+    <p>
+      Along with the tried and true techniques of substitution and elimination,
+      we shall often need equal parts tenacity and ingenuity to see a problem through to the end.
+      You may find it necessary to review topics throughout the text which pertain to solving equations involving the various functions we have studied thus far.
+      To get the section rolling we begin with a fairly routine example.
+    </p>
+    <example xml:id="nonlinearex1">
+      <statement>
+        <p>
+          Solve the following systems of equations.
+          Verify answers algebraically and graphically.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\left\{\begin{array}{rcr} x^2 +y^2 \amp = \amp 4 \\ 4x^2+9y^2 \amp = \amp 36 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{\begin{array}{rcr} x^2 +y^2 \amp = \amp 4 \\ 4x^2-9y^2 \amp = \amp 36 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{\begin{array}{rcr} x^2 +y^2 \amp = \amp 4 \\ y - 2x \amp = \amp 0 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{\begin{array}{rcr} x^2 +y^2 \amp = \amp 4 \\ y - x^2 \amp = \amp 0 \end{array} \right.</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <sc>Solution:</sc>
+          <ol>
+            <li>
+              <p>
+                Since both equations contain <m>x^2</m> and <m>y^2</m> only,
+                we can use elimination as seen in <xref ref="AppLinearSystems">Section</xref>:
+                <me>
+                  \begin{array}{ccc}  \left\{\begin{array}{lrcr} (E1) \amp  x^2 +y^2 \amp  = \amp  4 \\ (E2) \amp  4x^2+9y^2 \amp  = \amp  36 \end{array}  \right.  \amp  \xrightarrow[\text{ \(-4E1 + E2\) } ]{\text{ Replace \(E2\) with } }   \amp  \left\{\begin{array}{lrcr} (E1) \amp   x^2 +y^2 \amp  = \amp  4 \\ (E2) \amp  5y^2 \amp  = \amp  20 \end{array}  \right. \end{array}
+                </me>
+                From <m>5y^2 = 20</m>, we get <m>y^2 = 4</m> or <m>y = \pm 2</m>.
+                To find the associated <m>x</m> values,
+                we substitute each value of <m>y</m> into one of the equations to find the resulting value of <m>x</m>.
+                Choosing <m>x^2 + y^2 = 4</m>,
+                we find that for both <m>y=-2</m> and <m>y=2</m>, we get <m>x=0</m>.
+                Our solution is thus <m>\{(0,2),(0,-2)\}</m>.
+                To verify these answers algebraically,
+                we would need to show that the pair
+                <m>(x,y) = (0,2)</m> and <m>(x,y) = (0,-2)</m> each satisfy
+                <em>both</em> equations.
+                We leave this to the reader.
+                To check our answer graphically,
+                we sketch both equations and look for their points of intersection.
+                The graph of <m>x^2 + y^2 = 4</m> is a circle centered at <m>(0,0)</m> with a radius of <m>2</m>.
+                To graph <m>4x^2+9y^2 = 36</m>,
+                we convert to standard form
+                <m>\frac{x^2}{9} + \frac{y^2}{4} = 1</m> and recognize it as an ellipse centered at <m>(0,0)</m> with a major axis along the <m>x</m>-axis of length <m>6</m> and a minor axis along the <m>y</m>-axis of length <m>4</m>.
+                We see from the graph that the two curves intersect at their <m>y</m>-intercepts only,
+                <m>(0, \pm 2)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We proceed as before to eliminate one of the variables
+                <me>
+                  \begin{array}{ccc}  \left\{\begin{array}{lrcr} (E1) \amp   x^2 +y^2 \amp  = \amp  4 \\ (E2) \amp  4x^2-9y^2 \amp  = \amp  36 \end{array}  \right.  \amp  \xrightarrow[\text{ \(-4E1 + E2\) } ]{\text{ Replace \(E2\) with } }   \amp  \left\{\begin{array}{lrcr} (E1) \amp   x^2 +y^2 \amp  = \amp  4 \\ (E2) \amp  -13y^2 \amp  = \amp  20 \end{array}  \right. \end{array}
+                </me>
+                Since the equation <m>-13y^2=20</m> admits no real solution,
+                the system is inconsistent.
+                To verify this graphically,
+                we note that <m>x^2+y^2=4</m> is the same circle as before,
+                but when writing the second equation in standard form,
+                <m>\frac{x^2}{9} - \frac{y^2}{4} = 1</m>,
+                we find a hyperbola centered at <m>(0,0)</m> opening to the left and right with a transverse axis of length <m>6</m> and a conjugate axis of length <m>4</m>.
+                We see that the circle and the hyperbola have no points in common,
+                hence, there are no solutions.
+                <me>
+                  \begin{array}{cc}  \begin{mfpic}[15]{-4}{4}{-3}{3} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,3){\(y\)} \tlabel[cc](1, 2.5){\((0,2)\)} \tlabel[cc](1, -2.5){\((0,-2)\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\( 2\)} 2, {\(  3\)} 3} \axislabels {y}{{\(-1\)} -1, {\(1\)} 1} \penwd{1.25pt} \point[4pt]{(0,2), (0,-2)} \circle{(0,0),2} \ellipse{(0,0),3,2} \end{mfpic}  \amp    \begin{mfpic}[15]{-4}{4}{-3}{3} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,3){\(y\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\( 2\)} 2, {\(  3\)} 3} \axislabels {y}{{\(-1\)} -1, {\(1\)} 1} \penwd{1.25pt} \circle{(0,0),2} \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(3*cosh(t),2*sinh(t))} \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-3*cosh(t),2*sinh(t))} \end{mfpic}  \\  \text{ Graphs for }   \left\{\begin{array}{rcr}  x^2 +y^2 \amp  = \amp  4 \\ 4x^2+9y^2 \amp  = \amp  36 \end{array}  \right.  \amp    \text{ Graphs for }   \left\{\begin{array}{rcr}  x^2 +y^2 \amp  = \amp  4 \\ 4x^2-9y^2 \amp  = \amp  36 \end{array}  \right. \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since there are no like terms among the two equations,
+                elimination won't work here.
+                Instead, we proceed using substitution.
+                From the equation <m>y - 2x =0</m>, we get <m>y=2x</m>.
+                Substituting this into <m>x^2+y^2=4</m> gives <m>x^2+(2x)^2 = 4</m>.
+                Solving, we find <m>5x^2 = 4</m> or <m>x = \pm \frac{2 \sqrt{5}}{5}</m>.
+                Returning to the equation we used for the substitution,
+                <m>y = 2x</m>,
+                we find <m>y = \frac{4 \sqrt{5}}{5}</m> when <m>x = \frac{2 \sqrt{5}}{5}</m>,
+                so one solution is <m>\left( \frac{2 \sqrt{5}}{5} , \frac{4 \sqrt{5}}{5} \right)</m> and the other is <m>\left( -\frac{2 \sqrt{5}}{5} , -\frac{4 \sqrt{5}}{5} \right)</m>.
+                Hence, our final answer is <m>\left\{\left( \frac{2 \sqrt{5}}{5} , \frac{4 \sqrt{5}}{5} \right), \left( -\frac{2 \sqrt{5}}{5} , -\frac{4 \sqrt{5}}{5} \right) \right\}</m>.
+                As before, we leave the algebraic check to the reader.
+                The graph of <m>x^2+y^2=4</m> is our circle from before and the graph of <m>y - 2x =0</m>,
+                or <m>y = 2x</m> is a line through the origin with slope <m>2</m>.
+                Even though we cannot easily verify the numerical values of the points of intersection from our sketch,
+                we can be sure there are just two solutions:
+                one in Quadrant I and one in Quadrant III. This observation,
+                combined with our (your) algebraic check gives us confidence our solution is correct.<fn>
+                Of course, we could check our answers more accurately using a graphing utility.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                While it may be tempting to solve <m>y-x^2=0</m> as <m>y=x^2</m> and substitute,
+                we note that this system is set up for elimination.<fn>
+                We encourage the reader to solve the system using substitution to see that you get the same solution.
+                </fn>
+                <me>
+                  \begin{array}{ccc}  \left\{\begin{array}{lrcr} (E1) \amp   x^2 +y^2 \amp  = \amp  4 \\ (E2) \amp  y - x^2 \amp  = \amp  0 \end{array}  \right.  \amp  \xrightarrow[\text{ \(E1 + E2\) } ]{\text{ Replace \(E2\) with } }  \amp  \left\{\begin{array}{lrcr} (E1) \amp   x^2 +y^2 \amp  = \amp  4 \\ (E2) \amp  y^2 +y  \amp  = \amp  4 \end{array}  \right. \end{array}
+                </me>
+                From <m>y^2 + y = 4</m> we get
+                <m>y^2+y-4 = 0</m> which gives <m>y = \frac{-1 \pm \sqrt{17}}{2}</m>.
+                Due to the complicated nature of these answers,
+                it is worth our time to make a quick sketch of both equations first to head off any extraneous solutions we may encounter.
+                We see that the circle <m>x^2+y^2=4</m> intersects the parabola <m>y=x^2</m> exactly <em>twice</em>,
+                and both of these points have a positive <m>y</m> value.
+                Of the two solutions for <m>y</m>,
+                only <m>y = \frac{-1 + \sqrt{17}}{2}</m> is positive, so to get our solution,
+                we substitute this into <m>y - x^2 = 0</m> and solve for <m>x</m>.
+                We get <m>x = \pm \sqrt{\frac{-1 + \sqrt{17}}{2}} = \pm \frac{\sqrt{-2 + 2\sqrt{17}}}{2}</m>.
+                Our final answer is <m>\left\{ \left(\frac{\sqrt{-2 + 2\sqrt{17}}}{2},\frac{-1 + \sqrt{17}}{2}\right),\left(-\frac{\sqrt{-2 + 2\sqrt{17}}}{2},\frac{-1 + \sqrt{17}}{2}\right) \right\}</m>.
+                Checking these answers algebraically amounts to a true test of anyone's algebraic mettle and as such is left to the reader.
+                <me>
+                  \begin{array}{cc}  \begin{mfpic}[15]{-4}{4}{-3}{3}  \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,3){\(y\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\( 2\)} 2,  {\(3\)} 3} \axislabels {y}{ {\(1\)} 1} \penwd{1.25pt} \point[4pt]{(0.8944, 1.7889),(-0.8944, -1.7889) } \circle{(0,0),2} \arrow \reverse \arrow \function{-1.5,1.5,0.1}{2*x} \end{mfpic}  \amp    \begin{mfpic}[15]{-4}{4}{-3}{3} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,3){\(y\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3, {\(-2 \)} -2, {\(-1 \)} -1, {\(1\)} 1, {\( 2\)} 2, {\(3\)} 3} \axislabels {y}{ {\(-1\)} -1, {\(1\)} 1} \penwd{1.25pt} \point[4pt]{(1.2496, 1.5616),(-1.2496, 1.5616) } \circle{(0,0),2} \arrow \reverse \arrow \function{-1.6,1.6,0.1}{x**2} \end{mfpic} \\  \text{ Graphs for }   \left\{\begin{array}{rcr}  x^2 +y^2 \amp  = \amp  4 \\ y-2x \amp  = \amp  0 \end{array}  \right.  \amp    \text{ Graphs for }   \left\{\begin{array}{rcr}  x^2 +y^2 \amp  = \amp  4 \\ y-x^2 \amp  = \amp  36 \end{array}  \right. \end{array}
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      A couple of remarks about <xref ref="nonlinearex1">Example</xref> are in order.
+      First note that, unlike systems of linear equations,
+      it is possible for a system of non-linear equations to have more than one solution without having infinitely many solutions.
+      In fact, while we characterize systems of nonlinear equations as being <sq>consistent</sq> or <sq>inconsistent,</sq> we generally don't use the labels <sq>dependent</sq> or <sq>independent</sq>.
+    </p>
+    <p>
+      Secondly, as we saw with the last problem,
+      sometimes making a quick sketch of the problem situation can save a lot of time and effort.
+      While in general the curves in a system of non-linear equations may not be easily visualized,
+      it pays to take advantage when they are.
+      Our next example provides some considerable review of many of the topics introduced in this text.
+    </p>
+    <example xml:id="nonlinearex2">
+      <statement>
+        <p>
+          Solve the following systems of equations.
+          Verify answers algebraically and graphically.
+          <ol>
+            <li>
+              <p>
+                <m>\left\{\begin{array}{rcl} x^2 +2xy -16 \amp = \amp 0 \\ y^2 +2xy -16 \amp = \amp 0 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{\begin{array}{rcl} y+4e^{2x} \amp = \amp 1 \\y^2 + 2e^{x} \amp = \amp 1 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{\begin{array}{rcl} z(x-2) \amp = \amp x \\ yz \amp = \amp y \\ (x-2)^2+y^2 \amp = \amp 1 \end{array} \right.</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                At first glance,
+                it doesn't appear as though elimination will do us any good since it's clear that we cannot  completely eliminate one of the variables.
+                The alternative, however,
+                namely solving one of the equations for one variable and substituting it into the other,
+                is very intimidating.
+                Returning to elimination,
+                we note that it is possible to eliminate the troublesome <m>xy</m> term,
+                and the constant term as well.
+                Doing so we get a more tractable relationship between <m>x</m> and <m>y</m>:
+                <me>
+                  \begin{array}{ccc}  \left\{\begin{array}{lrcr} (E1) \amp  x^2 +2xy -16 \amp  = \amp  0 \\ (E2) \amp  y^2 +2xy -16 \amp  = \amp  0 \end{array}  \right.  \amp  \xrightarrow[\text{ \(-E1 + E2\) } ]{\text{ Replace \(E2\) with } }   \amp  \left\{\begin{array}{lrcr} (E1) \amp   x^2 +2xy -16 \amp  = \amp  0 \\ (E2) \amp  y^2 - x^2 \amp  = \amp  0 \end{array}  \right. \end{array}
+                </me>
+                We get <m>y^2 - x^2 = 0</m> or <m>y = \pm x</m>.
+                Substituting <m>y=x</m>  into <m>E1</m> we get <m>x^2+2x^2-16 = 0</m> so that
+                <m>x^2 = \frac{16}{3}</m> or <m>x = \pm \frac{4 \sqrt{3}}{3}</m>.
+                On the other hand, when we substitute <m>y = -x</m> into <m>E1</m>,
+                we get <m>x^2 - 2x^2 - 16 = 0</m> or
+                <m>x^2 = -16</m> which gives no real solutions.
+                Substituting each of <m>x = \pm \frac{4 \sqrt{3}}{3}</m> into <m>y=x</m> yields the solution <m>\left\{\left(\frac{4 \sqrt{3}}{3},\frac{4 \sqrt{3}}{3}\right), \left(-\frac{4 \sqrt{3}}{3},-\frac{4 \sqrt{3}}{3}\right)\right\}</m>.
+                As usual, we leave it to the reader to verifying this solution algebraically.
+                To verify this equation graphically,
+                we solve <m>x^2 +2xy -16 = 0</m> for <m>y</m> to obtain <m>y = \frac{16 - x^2}{2x}</m>.
+                We produce the graph of this equation using the techniques described in  <xref ref="RationalGraphs">Section</xref>.
+                Solving the second equation,
+                <m>y^2 +2xy -16 = 0</m>, for <m>y</m>,
+                however, is more complicated.
+                The quadratic formula  gives
+                <m>y = -x \pm \sqrt{x^2+16}</m> which requires Calculus or a graphing utility to graph.
+                As it happens, however, we don't need either because the equation
+                <m>y^2+2xy-16 = 0</m> can be obtained from the equation
+                <m>x^2+2xy-16=0</m> by interchanging <sq><m>y</m></sq> and <sq><m>x</m>.</sq>  Thinking back to <xref ref="InverseFunctions">Section</xref>,
+                this means we can obtain the graph of
+                <m>y^2+2xy-16 = 0</m> by reflecting the graph of
+                <m>x^2+2xy-16 = 0</m> across the line <m>y=x</m>.
+                Doing so confirms that the two graphs intersect twice:
+                once in Quadrant I, and once in Quadrant III as required.<fn>
+                An amazing coincidence.
+                Of course, we could use a graphing utility to verify our solutions if this didn't happen to be the case.
+                </fn>  \begin{mfpic}[15]{-5}{5}{-5}{5} \point[2pt]{(2.3094, 2.3094),(-2.3094, -2.3094) } \arrow \reverse \arrow \parafcn{-5,-1.5,0.1}{(t,(16-t**2)/(2*t))} \arrow \reverse \arrow \parafcn{1.5,5,0.1}{(t,(16-t**2)/(2*t))} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.5pt} \arrow \reverse \arrow \parafcn{-5,-1.5,0.1}{((16-t**2)/(2*t),t)} \arrow \reverse \arrow \parafcn{1.5,5,0.1}{((16-t**2)/(2*t),t)} \end{mfpic}  The graphs of
+                <m>x^2 + 2xy - 16 = 0</m> and  <m>y^2 +2xy - 16 = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Unlike the previous problem,
+                there seems to be no avoiding substitution and a bit of algebraic unpleasantness.
+                Solving <m>y+4e^{2x}=1</m> for <m>y</m>,
+                we get <m>y = 1 - 4e^{2x}</m> which,
+                when substituted into the second equation,
+                yields <m>\left(1 - 4e^{2x}\right)^2 + 2e^{x} = 1</m>.
+                After expanding and gathering like terms,
+                we get <m>16e^{4x}-8e^{2x} + 2e^{x} = 0</m>.
+                Factoring gives us <m>2e^{x} \left(8e^{3x}-4e^{x} + 1\right) = 0</m>,
+                and since <m>2e^{x} \neq 0</m> for any real <m>x</m>,
+                we are left with solving <m>8e^{3x}-4e^{x} + 1=0</m>.
+                We have three terms,
+                and even though this is not a <sq>quadratic in disguise</sq>,
+                we can benefit from the substitution <m>u = e^{x}</m>.
+                The equation becomes <m>8u^3-4u+1=0</m>.
+                Using the techniques set forth in <xref ref="RealZeros">Section</xref>,
+                we find <m>u = \frac{1}{2}</m> is a zero and factor <m>8u^3-4u+1</m>.
+                We find <m>8u^3-4u+1=0</m> is equivalent to <m>\left(u - \frac{1}{2}\right) \left(8u^2+4u-2\right) =0</m>.
+                So in addition to <m>u = \frac{1}{2}</m>,
+                we need to solve <m>8u^2+4u-2=0</m>.
+                We use the quadratic formula to solve
+                <m>8u^2+4u-2=0</m> and find <m>u = \frac{-1 \pm \sqrt{5}}{4}</m>.
+                Since <m>u = e^{x}</m>, we now must solve
+                <m>e^{x} = \frac{1}{2}</m> and <m>e^{x} = \frac{-1 \pm \sqrt{5}}{4}</m>.
+                From <m>e^{x} = \frac{1}{2}</m>,
+                we get <m>x = \ln\left(\frac{1}{2}\right) = -\ln(2)</m>.
+                As for <m>e^{x} = \frac{-1 \pm \sqrt{5}}{4}</m>,
+                we first note that <m>\frac{-1 - \sqrt{5}}{4} \lt 0</m>,
+                so <m>e^{x} = \frac{-1 - \sqrt{5}}{4}</m> has no real solutions.
+                We are left with <m>e^{x} = \frac{-1 + \sqrt{5}}{4}</m>,
+                so that <m>x = \ln\left(\frac{-1 + \sqrt{5}}{4}\right)</m>.
+                We now return to <m>y = 1 - 4e^{2x}</m> to find the accompanying <m>y</m> values for each of our solutions for <m>x</m>:
+                <m>\begin{array}{rcl} x \amp = \amp -\ln(2): \\ y \amp = \amp 1 - 4e^{2x}\\ \amp = \amp 1 - 4e^{-2\ln(2)} \\ \amp = \amp 1 - 4e^{\ln\left(\frac{1}{4}\right)} \\ \amp = \amp 1 - 4\left(\frac{1}{4}\right) \\ \amp = \amp 0 \end{array}</m>
+                <m>\begin{array}{rcl} x \amp = \amp \ln\left(\frac{-1 + \sqrt{5}}{4}\right): \\ y \amp = \amp 1 - 4e^{2x} \\ \amp = \amp 1 - 4e^{2\ln\left(\frac{-1 + \sqrt{5}}{4}\right)} \\ \amp = \amp 1 - 4e^{\ln\left(\frac{-1 + \sqrt{5}}{4}\right)^2} \\ \amp = \amp 1 - 4\left( \frac{-1 + \sqrt{5}}{4} \right)^2 \\ \amp = \amp 1 - 4\left(\frac{3-\sqrt{5}}{8}\right) \\ \amp = \amp \frac{-1+\sqrt{5}}{2} \end{array}</m> We get two solutions,
+                <m>\left\{ (-\ln(2),0), \left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right) \right\}</m>.
+                It is a good review of the properties of logarithms to verify both solutions algebrically,
+                so we leave that to the reader.
+                While we are able to sketch
+                <m>y = 1 - 4e^{2x}</m> using the techniques in <xref ref="ExponentialFunctions">Section</xref>,
+                the second equation is more difficult and we resort to using a graphing utility.
+                We see the two graphs intersect at
+                <m>(-0.6931,0) \approx (-\ln(2), 0)</m> and <m>(-1.1744, 0.618) \approx \left(\ln\left(\frac{-1 + \sqrt{5}}{4}\right),\frac{-1+\sqrt{5}}{2}\right)</m>.
+                <image width="75%" source="./NonLinearEquationsGraphics/NonLinear01.jpg"/> Graphs for <m>\left\{\begin{array}{rcl} y+4e^{2x} \amp = \amp 1 \\y^2 + 2e^{x} \amp = \amp 1 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Our last system involves three variables and provides an opportunity to gain some insight on how to keep such systems organized.
+                Labeling the equations as before, we have
+                <me>
+                  \left\{\begin{array}{lrcl}   E1 \amp  z(x-2) \amp  = \amp  x \\ E2 \amp  yz \amp  = \amp  y \\ E3 \amp  (x-2)^2+y^2 \amp  = \amp  1 \end{array}  \right.
+                </me>
+                The easiest equation to start with appears to be <m>E2</m>.
+                While it may be tempting to divide both sides of <m>E2</m> by <m>y</m>,
+                we caution against this practice because it presupposes <m>y \neq 0</m>.
+                Instead, we take <m>E2</m> and rewrite it as
+                <m>yz-y = 0</m> so <m>y(z-1) = 0</m>.
+                From this, we get two cases:
+                <m>y = 0</m> or <m>z = 1</m>.
+                <sc>Case 1: <m>y = 0</m>. </sc>  Substituting <m>y=0</m> into <m>E1</m> and <m>E3</m>, we get
+                <me>
+                  \left\{\begin{array}{lrcl}   E1 \amp  z(x-2) \amp  = \amp  x \\ E3 \amp  (x-2)^2 \amp  = \amp  1 \end{array}  \right.
+                </me>
+                Solving <m>E3</m> for <m>x</m> gives <m>x = 1</m> or <m>x=3</m>.
+                Substituting these values into <m>E1</m> gives <m>z=-1</m> when <m>x=1</m> and <m>z = 3</m> when <m>x=3</m>.
+                We obtain two solutions, <m>(1,0,-1)</m> and <m>(3,0,3)</m>.
+                <sc>Case 2:  <m>z = 1</m>. </sc>  Substituting <m>z=1</m> into <m>E1</m> and <m>E3</m> gives us
+                <me>
+                  \left\{\begin{array}{lrcl}   E1 \amp  (1)(x-2) \amp  = \amp  x  \\ E3 \amp  (x-2)^2+y^2 \amp  = \amp  1 \end{array}  \right.
+                </me>
+                Equation <m>E1</m> gives us <m>x-2 = x</m> or <m>-2 = 0</m>,
+                which is a contradiction.
+                This means we have no solution to the system in this case,
+                even though <m>E3</m> is satisfied by infinitely many pairs of points <m>(x,y)</m>.
+                Hence, our final answer is <m>\left\{ (1,0,-1), (3,0,3) \right\}</m>.
+                These points are easy enough to check algebraically in our three original equations,
+                so that is left to the reader.
+                As for verifying these solutions graphically,
+                they require plotting surfaces in three dimensions and looking for intersection points.
+                While this is beyond the scope of this book,
+                we provide a snapshot of the graphs of our three equations near one of the solution points,
+                <m>(1,0,-1)</m> and <m>(3,0,3)</m>.
+                <tabular>
+                  <row>
+                    <cell><image width="73%" source="./NonLinearEquationsGraphics/NonLinear03a.jpg"/></cell>
+                    <cell><image width="73%" source="./NonLinearEquationsGraphics/NonLinear03b.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>Near <m>(-1,0,1)</m></cell>
+                    <cell>Near <m>(3,0,3)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      <xref ref="nonlinearex2">Example</xref>
+      showcases some of the ingenuity and tenacity mentioned at the beginning of the section.
+      Sometimes you just have to look at a system the right way to find the most efficient method to solve it.
+      Sometimes you just have to try something.
+    </p>
+    <p>
+      Next we explore some common application problems which give rise to systems of nonlinear equations.
+    </p>
+    <example xml:id="upstreamdownstreamex">
+      <statement>
+        <p>
+          Carl decides to explore the Meander River,
+          the location of several recent Sasquatch sightings.
+          From camp, he canoes downstream five miles to check out a purported Sasquatch nest.
+          Finding nothing, he immediately turns around, retraces his route
+          (this time traveling upstream),
+          and returns to camp 3 hours after he left.
+          If Carl canoes at a rate of 6 miles per hour in still water,
+          how fast was the Meander River flowing on that day?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We are given information about distances, rates (speeds) and times.
+          The basic principle relating these quantities is:
+          <me>
+            \text{ distance }  = \text{ rate }  \cdot \text{ time }
+          </me>
+        </p>
+        <p>
+          The first observation to make,
+          however, is that the distance,
+          rate and time given to us aren't <sq>compatible</sq>:
+          the distance given is the distance for only
+          <em>part</em> of the trip,
+          the rate given is the speed Carl can canoe in still water,
+          not in a flowing river,
+          and the time given is the duration of the <em>entire</em> trip.
+          Ultimately, we are after the speed of the river,
+          so let's call that <m>R</m> measured in miles per hour to be consistent with the other rate given to us.
+          To get started, let's divide the trip into its two parts:
+          the initial trip downstream and the return trip upstream.
+          For the downstream trip,
+          all we know is that the distance traveled is <m>5</m> miles.
+          <me>
+            \begin{array}{rcl}  \text{ distance downstream }  \amp  = \amp  \text{ rate traveling downstream }  \cdot \text{ time traveling downstream }  \\  5 \, \text{ miles }  \amp  = \amp  \text{ rate traveling downstream }  \cdot \text{ time traveling downstream } \end{array}
+          </me>
+        </p>
+        <p>
+          Since the return trip upstream followed the same route as the trip downstream,
+          we know that the distance traveled upstream is also 5 miles.
+          <me>
+            \begin{array}{rcl}  \text{ distance upstream }  \amp  = \amp  \text{ rate traveling upstream }  \cdot \text{ time traveling upstream }  \\  5 \, \text{ miles }  \amp  = \amp  \text{ rate traveling upstream }  \cdot \text{ time traveling upstream } \end{array}
+          </me>
+        </p>
+        <p>
+          We are told Carl can canoe at a rate of <m>6</m> miles per hour in still water.
+          How does this figure into the rates traveling upstream and downstream?
+          The speed the canoe travels in the river is a combination of the speed at which Carl can propel the canoe in still water, 6 miles per hour,
+          and the speed of the river, which we're calling <m>R</m>.
+          When traveling downstream,
+          the river is helping Carl along,
+          so we <em>add</em> these two speeds:
+          <me>
+            \begin{array}{rcl}  \text{ rate traveling downstream }  \amp  = \amp  \text{ rate Carl propels the canoe }  + \text{ speed of the river }  \\  \amp  = \amp  6 \frac{\text{ miles } }{\text{ hour } } + R \frac{\text{ miles } }{\text{ hour } } \end{array}
+          </me>
+        </p>
+        <p>
+          So our downstream speed is <m>(6+R) \frac{\text{ miles } }{\text{ hour } }</m>.
+          Substituting this into our <sq>distance-rate-time</sq> equation for the downstream part of the trip, we get:
+          <me>
+            \begin{array}{rcl}  5 \, \text{ miles }  \amp  = \amp  \text{ rate traveling downstream }  \cdot \text{ time traveling downstream }  \\  5 \, \text{ miles }  \amp  = \amp  (6+R) \frac{\text{ miles } }{\text{ hour } } \cdot \text{ time traveling downstream } \end{array}
+          </me>
+        </p>
+        <p>
+          When traveling upstream, Carl works
+          <em>against</em> the current.
+          Since Carl must move the canoe faster than the river's speed to move upstream,
+          we <em>subtract</em> the river's speed <em>from</em>
+          Carl's canoing speed to get:
+          <me>
+            \begin{array}{rcl}  \text{ rate traveling upstream }  \amp  = \amp  \text{ rate Carl propels the canoe }  - \text{ river speed }  \\  \amp  = \amp  6 \frac{\text{ miles } }{\text{ hour } } - R \frac{\text{ miles } }{\text{ hour } } \end{array}
+          </me>
+        </p>
+        <p>
+          Proceeding as before, we get
+          <me>
+            \begin{array}{rcl}  5 \, \text{ miles }  \amp  = \amp  \text{ rate traveling upstream }  \cdot \text{ time traveling upstream }  \\  5 \, \text{ miles }  \amp  = \amp  (6 - R) \frac{\text{ miles } }{\text{ hour } } \cdot \text{ time traveling upstream } \end{array}
+          </me>
+        </p>
+        <p>
+          The last piece of information given to us is that the total trip lasted <m>3</m> hours.
+          If we let <m>t_{\text{ down } }</m> denote the time of the downstream trip and
+          <m>t_{\text{ up } }</m> the time of the upstream trip, we have:
+          <m>t_{\text{ down } } + t_{\text{ up } } = 3 \, \text{ hours }</m>.
+          Substituting <m>t_{\text{ down } }</m> and
+          <m>t_{\text{ up } }</m> into the <sq>distance-rate-time</sq> equations,
+          we get a system of three equations in three unknowns below.
+          Note that since the variables in equations <m>E1</m> and <m>E2</m> are multiplied together,
+          these two equations are nonlinear.
+          <me>
+            \left\{\begin{array}{lrcl}   E1 \amp  (6+R) \, t_{\text{ down } } \amp  = \amp  5 \\ E2 \amp  (6-R) \, t_{\text{ up } } \amp  = \amp  5 \\ E3 \amp  t_{\text{ down } } + t_{\text{ up } } \amp  = \amp  3 \end{array}  \right.
+          </me>
+        </p>
+        <p>
+          Since we are ultimately after <m>R</m>,
+          we need to use these three equations to get at least one equation involving <em>only</em> <m>R</m>.
+          We start with equation <m>E1</m>.
+          We know that both <m>(6+R) \neq 0</m> and
+          <m>t_{\text{ down } } \neq 0</m> since the product of these two quantities is <m>5</m> and is nonzero.<fn>
+          This is a restatement of the Zero Product Property from <xref ref="AppRealNumberArithmetic">Section</xref>.
+          </fn> Hence, we may solve <m>E1</m> for
+          <m>t_{\text{ down } }</m> by dividing both sides by the quantity <m>(6+R)</m> to get <m>t_{\text{ down } } = \frac{5}{6+R}</m>.
+          Similarly, we use <m>E2</m> to get <m>t_{\text{ up } } = \frac{5}{6-R}</m>.
+          Substituting these into <m>E3</m>, we get:<fn>
+          The reader is encouraged to verify that the units in this equation are consistent.
+          For starters, the units on the <sq>3</sq> is <sq>hours.</sq>
+          </fn>
+          <me>
+            \dfrac{5}{6+R} + \dfrac{5}{6 - R} = 3
+          </me>.
+        </p>
+        <p>
+          Clearing denominators, we get
+          <m>5(6-R) + 5(6+R) = 3(6+R)(6-R)</m> which reduces to <m>R^2 = 16</m>.
+          We find <m>R = \pm 4</m>,
+          and since <m>R</m> represents the speed of the river, we choose <m>R = 4</m>.
+          On the day in question,
+          the Meander River is flowing at a rate of <m>4</m> miles per hour.
+        </p>
+      </solution>
+    </example>
+    <p>
+      One of the important lessons to learn from <xref ref="upstreamdownstreamex">Example</xref> is that speeds,
+      and more generally, rates, are additive.
+      As we see in our next example,
+      the concept of rate and its associated principles can be applied to a wide variety of problems - not just <sq>distance-rate-time</sq> scenarios.
+    </p>
+    <example xml:id="workex">
+      <statement>
+        <p>
+          Working alone, Taylor can weed the garden in 4 hours.
+          If Carl helps, they can weed the garden in 3 hours.
+          How long would it take for Carl to weed the garden on his own?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The key relationship between work and time which we use in this problem is:
+          <me>
+            \text{ amount of work done }  = \text{ rate of work }  \cdot \text{ time spent working }
+          </me>
+        </p>
+        <p>
+          We are told that,
+          working alone, Taylor can weed the garden in 4 hours.
+          In Taylor's case then:
+          <me>
+            \begin{array}{rcl}  \text{ amount of work Taylor does }  \amp  = \amp  \text{ rate of Taylor working }  \cdot \text{ time Taylor spent working }  \\  1 \, \text{ garden }  \amp  = \amp  (\text{ rate of Taylor working } ) \cdot (4 \, \text{ hours } ) \end{array}
+          </me>
+        </p>
+        <p>
+          So we have that the rate Taylor works is <m>\frac{1 \, \text{ garden } }{ 4 \, \text{ hours } } = \frac{1}{4} \frac{\text{ garden } }{\text{ hour } }</m>.
+          We are also told that when working together, Taylor and Carl can weed the garden in just 3 hours.
+          We have:
+          <me>
+            \begin{array}{rcl}  \text{ amount of work done together }  \amp  = \amp  \text{ rate of working together }  \cdot \text{ time spent working together }  \\  1 \, \text{ garden }  \amp  = \amp  (\text{ rate of working together } ) \cdot (3 \, \text{ hours } ) \end{array}
+          </me>
+        </p>
+        <p>
+          From this, we find that the rate of Taylor and Carl working together is <m>\frac{1 \, \text{ garden } }{3 \, \text{ hours } } = \frac{1}{3} \frac{\text{ garden } }{\text{ hour } }</m>.
+          We are asked to find out how long it would take for Carl to weed the garden on his own.
+          Let us call this unknown <m>t</m>,
+          measured in hours to be consistent with the other times given to us in the problem.
+          Then:
+          <me>
+            \begin{array}{rcl}  \text{ amount of work Carl does }  \amp  = \amp  \text{ rate of Carl working }  \cdot \text{ time Carl spent working }  \\  1 \, \text{ garden }  \amp  = \amp  (\text{ rate of Carl working } ) \cdot (t \, \text{ hours } ) \end{array}
+          </me>
+        </p>
+        <p>
+          In order to find <m>t</m>,
+          we need to find the rate of Carl working,
+          so let's call this quantity <m>R</m>,
+          with units <m>\frac{\text{ garden } }{\text{ hour } }</m>.
+          Using the fact that rates are additive, we have:
+          <me>
+            \begin{array}{rcl}  \text{ rate working together }  \amp  = \amp  \text{ rate of Taylor working }  + \text{ rate of Carl working }  \\  \frac{1}{3} \frac{\text{ garden } }{\text{ hour } } \amp  = \amp  \frac{1}{4} \frac{\text{ garden } }{\text{ hour } } + R \frac{\text{ garden } }{\text{ hour } } \end{array}
+          </me>
+          so that <m>R = \frac{1}{12} \frac{\text{ garden } }{\text{ hour } }</m>.
+          Substituting this into our <sq>work-rate-time</sq> equation for Carl, we get:
+          <me>
+            \begin{array}{rcl}  1 \, \text{ garden }  \amp  = \amp  (\text{ rate of Carl working } ) \cdot (t \, \text{ hours } ) \\  1 \, \text{ garden }  \amp  = \amp  \left(\frac{1}{12} \frac{\text{ garden } }{\text{ hour } } \right) \cdot (t \, \text{ hours } ) \end{array}
+          </me>
+        </p>
+        <p>
+          Solving <m>1 = \frac{1}{12} t</m>, we get <m>t = 12</m>,
+          so it takes Carl 12 hours to weed the garden on his own.<fn>
+          Carl would much rather spend his time writing open-source Mathematics texts than gardening anyway.
+          </fn>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As is common with <sq>word problems</sq> like <xref ref="upstreamdownstreamex">Examples</xref>
+      and <xref ref="workex"></xref>,
+      there is no short-cut to the answer.
+      Note that in <xref ref="upstreamdownstreamex">Examples</xref>,
+      we formalized the system of non-linear equations before solving whereas in <xref ref="workex">Example</xref>,
+      the system remained much in the background.
+      We encourage the reader to carefully think through and apply the basic principles of rate to each
+      (potentially different!)
+      situation.
+      It is time well spent.
+      We also encourage the tracking of units,
+      especially in the early stages of the problem.
+      Not only does this promote uniformity in the units,
+      it also serves as a quick means to check if an equation makes sense.<fn>
+      In other words, make sure you don't try to add apples to oranges!
+      </fn>
+    </p>
+  </introduction>
+  <subsection xml:id="ExercisesforNonLinearEquations">
+    <title>Exercises</title>
+    <p>
+      Exercise idea:
+      follow up on last example and have students formalize the system there using given variables.
+    </p>
+    <p>
+      In <xref ref="solvenonlin1first">Exercises</xref>
+      - <xref ref="solvenonlin1last"></xref>,
+      solve the given system of nonlinear equations.
+      Sketch the graph of both equations on the same set of axes to verify the solution set.
+      <ol cols="2">
+        <li xml:id="solvenonlin1first">
+          <p>
+            <m>\left\{\begin{array}{rcr} x^2 - y \amp = \amp 4 \\ x^{2} + y^{2} \amp = \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp = \amp 4 \\ x^2 - y \amp = \amp 5 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^2+y^2 \amp = \amp 16 \\ 16x^{2} + 4y^{2} \amp = \amp 64 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^2+y^2 \amp = \amp 16 \\ 9x^{2} - 16y^{2} \amp = \amp 144 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^2+y^2 \amp = \amp 16 \\ \frac{1}{9} y^2 - \frac{1}{16} x^2\amp = \amp 1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="solvenonlin1last">
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp = \amp 16 \\ x-y \amp = \amp 2 \end{array} \right.</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solvenonlin2first">Exercises</xref>
+      - <xref ref="solveninlin2last"></xref>,
+      solve the given system of nonlinear equations.
+      Use a graph to help you avoid any potential extraneous solutions.
+      <ol cols="4">
+        <li xml:id="solvenonlin2first">
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} - y^{2} \amp = \amp 1 \\ x^{2} + 4y^{2} \amp = \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} \sqrt{x + 1} - y \amp = \amp 0 \\ x^{2} + 4y^{2} \amp = \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x + 2y^{2} \amp = \amp 2 \\ x^{2} + 4y^{2} \amp = \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} (x - 2)^{2} + y^{2} \amp = \amp 1 \\ x^{2} + 4y^{2} \amp = \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp = \amp 25 \\ y - x \amp = \amp 1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp = \amp 25 \\ x^{2} + (y - 3)^{2} \amp = \amp 10 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} y \amp = \amp x^{3} + 8 \\ y \amp = \amp 10x - x^{2} \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^2 - xy \amp = \amp 8 \\ y^2 - xy \amp = \amp 8 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="solveninlin2last">
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp = \amp 25 \\ 4x^{2} - 9y \amp = \amp 0 \\ 3y^{2} - 16x \amp = \amp 0 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            A certain bacteria culture follows the Law of Uninbited Growth,
+            <xref ref="lawofuninhibitedgrowth">Equation</xref>.
+            After 10 minutes, there are 10,000 bacteria.
+            Five minutes later, there are 14,000 bacteria.
+            How many bacteria were present initially?
+            How long before there are 50,000 bacteria?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Consider the system of nonlinear equations below
+      <me>
+        \left\{\begin{array}{rcr}  \dfrac{4}{x} + \dfrac{3}{y} \amp  = \amp  1 \\ \dfrac{3}{x} + \dfrac{2}{y} \amp  = \amp  -1 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      If we let <m>u = \frac{1}{x}</m> and
+      <m>v = \frac{1}{y}</m> then the system becomes
+      <me>
+        \left\{\begin{array}{rcr}  4u + 3v \amp  = \amp  1 \\ 3u + 2v \amp  = \amp  -1 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      This associated system of linear equations can then be solved using any of the techniques presented earlier in the chapter to find that <m>u = -5</m> and <m>v = 7</m>.
+      Thus <m>x = \frac{1}{u} = -\frac{1}{5}</m> and <m>y = \frac{1}{v} = \frac{1}{7}</m>.
+    </p>
+    <p>
+      We say that the original system is <em>linear in form</em>
+          <idx><h>system of equations</h><h>linear in form</h></idx>
+      because its equations are not linear but a few substitutions reveal a structure that we can treat like a system of linear equations.
+      Each system in <xref ref="linearformfirst">Exercises</xref>
+      - <xref ref="linearformlast"></xref> is linear in form.
+      Make the appropriate substitutions and solve for <m>x</m> and <m>y</m>.
+    </p>
+    <ol cols="3">
+      <li xml:id="linearformfirst">
+        <p>
+          <m>\left\{\begin{array}{rcr} 4x^{3} + 3\sqrt{y} \amp = \amp 1 \\ 3x^{3} + 2\sqrt{y} \amp = \amp -1 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{\begin{array}{rcr} 4e^{x} + 3e^{-y} \amp = \amp 1 \\ 3e^{x} + 2e^{-y} \amp = \amp -1 \end{array} \right.</m>
+        </p>
+      </li>
+      <li xml:id="linearformlast">
+        <p>
+          <m>\left\{\begin{array}{rcr} 4\ln(x) + 3y^{2} \amp = \amp 1 \\ 3\ln(x) + 2y^{2} \amp = \amp -1 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve the following system
+          <me>
+            \left\{\begin{array}{rcr}  x^{2} + \sqrt{y} + \log_{2}(z) \amp  = \amp  6 \\ 3x^{2} - 2\sqrt{y} + 2\log_{2}(z) \amp  = \amp  5 \\ -5x^{2} + 3\sqrt{y} + 4\log_{2}(z) \amp  = \amp  13 \end{array}  \right.
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Systems of nonlinear equations show up in third semester Calculus in the midst of some really cool problems.
+          The system below came from a problem in which we were asked to find the dimensions of a rectangular box with a volume of 1000 cubic inches that has minimal surface area.
+          The variables <m>x</m>,
+          <m>y</m> and <m>z</m> are the dimensions of the box and <m>\lambda</m> is called a Lagrange multiplier.
+          With the help of your classmates, solve the system.<fn>
+          If using <m>\lambda</m> bothers you,
+          change it to <m>w</m> when you solve the system.
+          </fn>
+          <me>
+            \left\{\begin{array}{rcr}  2y + 2z \amp  = \amp  \lambda yz  \\ 2x + 2z \amp  = \amp  \lambda xz \\ 2y + 2x \amp  = \amp  \lambda xy \\ xyz \amp  = \amp  1000 \end{array}  \right.
+          </me>
+        </p>
+      </li>
+      <li xml:id="factorpolywithnonlinear">
+        <p>
+          According to <xref ref="realfactorization">Theorem</xref>
+          in <xref ref="ComplexZeros">Section</xref>,
+          the polynomial <m>p(x) = x^{4} + 4</m> can be factored into the product linear and irreducible quadratic factors.
+          In this exercise,
+          we present a method for obtaining that factorization.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Show that <m>p</m> has no real zeros.
+            </p>
+          </li>
+          <li>
+            <p>
+              Because <m>p</m> has no real zeros,
+              its factorization must be of the form
+              <m>(x^{2} + ax + b)(x^{2} + cx + d)</m> where each factor is an irreducible quadratic.
+              Expand this quantity and gather like terms together.
+            </p>
+          </li>
+          <li>
+            <p>
+              Create and solve the system of nonlinear equations which results from equating the coefficients of the expansion found above with those of <m>x^{4} + 4</m>.
+              You should get four equations in the four unknowns <m>a</m>,
+              <m>b</m>, <m>c</m> and <m>d</m>.
+              Write <m>p(x)</m> in factored form.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Factor <m>q(x) = x^{4} + 6x^{2} - 5x + 6</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>(\pm 2, 0)</m>,
+          <m>\left(\pm \sqrt{3}, -1\right)</m> \begin{mfpic}[15]{-3}{3}{-5}{3} \arrow \reverse \arrow \function{-2.5,2.5,0.1}{x**2 - 4} \circle{(0,0),2} \point[3pt]{(2,0), (-2,0), (1.7320,-1), (-1.7320,-1)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-4,-3,-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution \begin{mfpic}[15]{-3}{3}{-6}{3} \arrow \reverse \arrow \function{-2.75,2.75,0.1}{x**2 - 5} \circle{(0,0),2} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-4,-3,-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(0, \pm 4)</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \ellipse{(0,0), 2, 4} \circle{(0,0),4} \point[3pt]{(0,4), (0,-4)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(\pm 4,0)</m> \begin{mfpic}[10]{-7}{7}{-5}{5} \arrow \reverse \arrow \parafcn{-1, 1,0.1}{(4*cosh(t), 3*sinh(t))} \arrow \reverse \arrow \parafcn{-1, 1,0.1}{(0-4*cosh(t), 3*sinh(t))} \circle{(0,0),4} \point[3pt]{(4,0), (-4,0)} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-6,-5,-4,-3,-2,-1,1,2,3,4,5,6} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\pm \frac{4 \sqrt{7}}{5}, \pm \frac{12 \sqrt{2}}{5} \right)</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \arrow \reverse \arrow \parafcn{-1, 1,0.1}{(4*sinh(t), 3*cosh(t))} \arrow \reverse \arrow \parafcn{-1, 1,0.1}{(4*sinh(t), 0-3*cosh(t))} \circle{(0,0),4} \point[3pt]{(2.1166,3.3941), (2.1166, -3.3941), (-2.1166,3.3941), (-2.1166,-3.3941) } \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( 1 + \sqrt{7}, -1 + \sqrt{7} \right)</m>,
+          <m>\left( 1 - \sqrt{7}, -1 - \sqrt{7} \right)</m> \begin{mfpic}[10]{-5}{5}{-5}{5} \arrow \reverse \arrow \function{-3,5,0.1}{x-2} \circle{(0,0),4} \point[3pt]{(3.6458,1.6458), (-1.6458, -3.6458) } \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( \pm \frac{2 \sqrt{10}}{5}, \pm \frac{\sqrt{15}}{5} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(0, 1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(0, \pm 1), \; (2, 0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( \frac{4}{3}, \pm \frac{\sqrt{5}}{3} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(3, 4), \; (-4, -3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(\pm 3, 4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-4, -56), \; (1, 9), \; (2, 16)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-2,2)</m>, <m>(2,-2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(3, 4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Initially, there are <m>\frac{250000}{49} \approx 5102</m> bacteria.
+          It will take <m>\frac{5\ln(49/5)}{\ln(7/5)} \approx 33.92</m> minutes for the colony to grow to 50,000 bacteria.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( -\sqrt[3]{5}, 49 \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( e^{-5}, \pm \sqrt{7} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(1, 4, 8), \; (-1, 4, 8)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 10, \; y = 10, \; z = 10, \lambda = \frac{2}{5}</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>x^{4} + 4 = (x^{2} - 2x + 2)(x^{2} + 2x + 2)</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>x^{4} + 6x^{2} - 5x + 6 = (x^{2} - x + 1)(x^{2} + x + 6)</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

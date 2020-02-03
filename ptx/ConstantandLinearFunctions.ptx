@@ -1,0 +1,3178 @@
+<section xml:id="ConstantandLinearFunctions">
+  <title>Constant and Linear Functions</title>
+  <subsection xml:id="ConstantFunctions">
+    <title>Constant Functions</title>
+    <p>
+      Now that we have defined the concept of a function,
+      we'll spend the rest of <xref ref="IntroductiontoFunctions">Chapter</xref>
+      revisiting families of curves from prior courses in Algebra by viewing them through a <sq>function lens</sq>.
+      We start with lines and refer the reader to <xref ref="AppLines">Section</xref>
+      for a review of the basic properties of lines.
+      The simplest lines are vertical and horizontal lines.
+      We leave it to the reader
+      (see <xref ref="whynoverticallineshere">Exercise</xref>)
+      to think about why we eschew vertical lines in our discussion here,
+      and begin with a functional description of horizontal lines.
+    </p>
+    <p>
+      Consider the horizontal lines graphed in the <m>xy</m>-plane as shown below.
+      The Vertical Line Test, <xref ref="VLT">Theorem</xref>,
+      tells us that each describes <m>y</m> as a function of <m>x</m> so the question becomes how to represent these functions algebraically.
+      The key here is to remember that the equation relating the independent variable <m>x</m>,
+      the dependent variable <m>y</m>,
+      and the function <m>f</m> is given by <m>y = f(x)</m>.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-3}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2, -1, 1,2,3,4} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -4,3), (4,3)} \point[3pt]{(0,3)} \tcaption{ <m>y = 3</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-3}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2, -1, 1,2,3,4} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -4,-2), (4,-2)} \point[3pt]{(0,-2)} \tcaption{ <m>y = -2</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-3}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2, -1, 1,2,3,4} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -4,0), (4,0)} \tcaption{ <m>y = 0</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      In the graph on the left,
+      <m>y</m> always equals <m>3</m> so we have <m>f(x) = 3</m>.
+      Procedurally,
+      <sq><m>f(x) = 3</m></sq> says that the rule <m>f</m> takes the input <m>x</m>, and,
+      regardless of that input, gives the output <m>3</m>.
+      This is an example of what is called a <em>constant</em>
+      function - a function which returns the <em>same</em>
+      value regardless of the input.
+      Likewise, the function represented by the graph in the middle is <m>f(x) = -2</m>,
+      and the graph on the right
+      (the <m>x</m>-axis)
+      is the graph of <m>f(x) = 0</m>.
+      In general, we have the following definition:
+    </p>
+    <definition xml:id="constantfunction">
+      <statement>
+        <p>
+          A
+              <idx><h>function</h><h>constant</h></idx>
+              <idx><h>constant function</h><h>as a horizontal line</h></idx>
+          <term>constant function</term> is a function of the form
+          <me>
+            f(x) =  b
+          </me>
+          where <m>b</m> is real number.
+          The domain of a constant function is <m>(-\infty, \infty)</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Some remarks about <xref ref="constantfunction">Definition</xref> are in order.
+      First, note that we are using <sq><m>x</m></sq> as the independent variable,
+      <sq><m>f</m></sq> as the function name,
+      and the letter <sq><m>b</m></sq> as a <idx><h>parameter</h><h>of a function</h></idx> <em>parameter</em>.
+      In this context, a parameter is a fixed,
+      but arbitrary, constant used to describe a
+      <em>family</em> of functions.
+      Different values of <m>b</m> determine different constant functions.
+      For example, <m>b = 3</m> gives <m>f(x) = 3</m>,
+      <m>b = -2</m> gives <m>f(x) = -2</m>, and so on.
+      Once <m>b</m> is chosen, however,
+      it does not change as the independent variable, <m>x</m>, changes.
+    </p>
+    <p>
+      Also note that we are using the generic defaults for function names and independent variables,
+      namely <m>f</m> and <m>x</m>, respectively.
+      The functions <m>G(t) = \sqrt{\pi}</m> and
+      <m>Z(\rho) = 0</m> are also fine examples of constant functions.
+      Recall that inherent in the definition of a function is the notion of domain,
+      so we record
+      (as part of the definition)
+      that a constant function has domain <m>(-\infty, \infty)</m>.
+      The range of a constant function is the set <m>\{b \}</m>.
+      The value <m>b</m> in this case is both the maximum and minimum of <m>f</m>,
+      attained at each value in its domain.<fn>
+      It gets much weirder than that as we explore other more complicated functions.
+      The key is to pay attention to the precision in the definitions of the terms involved in the discussion.
+      Stay tuned!
+      </fn> The next example showcases an application of constant functions and introduces the notion of a
+      <em>piecewise-defined</em> function.
+    </p>
+    <example xml:id="piecewiseconstantex">
+      <statement>
+        <p>
+          The price of admission to see a matinee showing at a local movie theater is a function of the age of the ticket holder.
+          If a person is aged <m>A</m> years,
+          the price per ticket is <m>p(A)</m> dollars and is given by:
+          <me>
+            p(A) = \begin{cases}5.75 \amp   \text{ if \(0 \leq A \lt  6\) or \(A \geq 50\) }  \\ 7.25  \amp  \text{ if \(6 \leq A \lt  50\) } \end{cases}
+          </me>
+          <ol>
+            <li>
+              <p>
+                Find and interpret <m>p(3)</m>,
+                <m>p(6)</m> and <m>p(62)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Explain the pricing structure verbally.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>p</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The function <m>p</m> described above is an example of a <idx><h>function</h><h>piecewise-defined</h></idx>
+          <em>piecewise-defined</em>
+          function because the <em>rule</em> to determine outputs,
+          not just the value of the output,
+          changes depending on the inputs.
+          <ol>
+            <li>
+              <p>
+                To find <m>p(3)</m>,
+                we note that the value <m>A = 3</m> satisfies the inequality
+                <m>0 \leq A \lt 6</m> so we use the rule <m>p(A) = 5.75</m>.
+                Hence, <m>p(3) = 5.75</m> which means a ticket for a <m>3</m> year old is <m>$ 5.75</m>.
+                The next age, <m>A = 6</m>,
+                just barely satisfies the inequality
+                <m>6 \leq A \lt 50</m> so we use the rule <m>p(A) = 7.25</m>, This yields
+                <m>p(6) = 7.25</m> which means a ticket for a <m>6</m> year old is <m>$ 7.25</m>.
+                Lastly, <m>A = 62</m> satisfies the inequality <m>A \geq 50</m>,
+                so we are back to the rule <m>p(A) = 5.75</m>.
+                Thus <m>p(62) = 5.75</m> which means someone <m>62</m> years young gets in for <m>$ 5.75</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Now that we've had some practice interpreting function values,
+                we can begin to verbalize what the function is really saying.
+                In the first <sq>piece</sq> of the function,
+                the inequality <m>0 \leq A \lt 6</m> describes ticket holders under the age of 6 years and the inequality
+                <m>A \geq 50</m> describes ticket holders fifty years old or or older.
+                For folks in these two age demographics,
+                <m>p(A) = 5.75</m> so the price per ticket is <m>$ 5.75</m>.
+                For everyone else,
+                that is for folks at least <m>6</m> but younger than <m>50</m>,
+                the price is <m>\dollar7.25</m> per ticket.
+              </p>
+            </li>
+            <li>
+              <p>
+                The independent variable here is specified as <m>A</m>,
+                so we'll label our horizontal axis that way.
+                The dependent variable remains unspecified so we can use the default <m>y</m>.
+                The graph of <m>y = p(A)</m> consists of three horizontal line pieces:
+                the first is <m>y = 5.75</m> for <m>0 \leq A \lt 6</m>,
+                the second piece is <m>y = 7.25</m> for <m>6 \leq A \lt 50</m>,
+                and the last piece is <m>y = 5.75</m> for <m>A \geq 50</m>.
+                For the first piece,
+                note that <m>A = 0</m> is included in the inequality
+                <m>0 \leq A \lt 6</m> but <m>A = 6</m> is not.
+                For this reason,
+                we have a point indicated at <m>(0, 5.75)</m> but leave a hole<fn>
+                See our discussion about holes in graphs in <xref ref="volumeex1">Example</xref>
+                in <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+                </fn> at <m>(6, 5.75)</m>.
+                Similarly, to graph the second piece,
+                we begin with a point at <m>(6, 7.25)</m> and continue the horizontal line to a hole at <m>(50, 7.25)</m>.
+                Lastly, we finish the graph with a point at
+                <m>(50, 5.75)</m> and continue to the right indefinitely.<fn>
+                The domain of <m>p</m> is <m>[0, \infty)</m> by definition,
+                even though few 327 year olds are out and about these days.
+                </fn> Note the scaling on the horizontal axis compared to the vertical axis. \begin{mfpic}[20]{-1}{6}{-1}{5} \axes \tlabel[cc](6,-0.5){<m>A</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{1,2,3,4,5} \ymarks{1,2,3,4} \tlabel[cc](-1, 2.875){<m>(0, 5.75)</m>} \tlabel[cc](0.8, 4){<m>(6, 7.25)</m>} \tlabel[cc](5, 2.5){<m>(50, 5.75)</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>10</m>} 1, {<m>20</m>} 2, {<m>30</m>} 3, {<m>40</m>} 4, {<m>50</m>} 5} \axislabels {y}{{<m>2</m>} 1, {<m>4</m>} 2, {<m>8</m>} 4} \penwd{1.25pt} \polyline{( 0,2.875), (0.6,2.875)} \polyline{( 0.6,3.625), (5,3.625)} \arrow \polyline{(5,2.875), (6, 2.875)} \point[3pt]{(0,2.875), (5, 2.875),( 0.6,3.625) } \pointfillfalse \point[3pt]{(0.6,2.875), (5,3.625)} \tcaption{ <m>y = p(A) = \begin{cases}5.75 \amp \text{ if \(0 \leq A \lt 6\) or \(A \geq 50\) } \\ 7.25 \amp \text{ if \(6 \leq A \lt 50\) } \end{cases}</m>} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      One of the favorite piecewise-defined functions in mathematical circles is the <idx><h>integer</h><h>greatest integer function</h></idx> <idx><h>greatest integer function</h></idx>
+      <em>greatest integer of {<m>x</m>}</em>,
+      denoted by <m>\lfloor x \rfloor</m>.
+      In <xref ref="setsofnumbersboxonthispage">Section</xref>
+      we defined the set of <em>integers</em>
+      as <m>\mathbb{Z} = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}</m>.<fn>
+      The use of the letter <m>\mathbb{Z}</m> for the integers is ostensibly because the German word
+      <em>zahlen</em> means <sq>to count</sq>.
+      </fn> The value
+      <m>\lfloor x \rfloor</m> is defined to be the largest integer <m>k</m> with <m>k \leq x</m>.
+      That is, <m>\lfloor x \rfloor</m> is the unique integer <m>k</m> such that <m>k \leq x \lt k+1</m>.
+      Said differently, given any real number <m>x</m>,
+      if <m>x</m> is an integer, then <m>\lfloor x \rfloor = x</m>.
+      If not, then <m>x</m> lies in an interval between two integers,
+      <m>k</m> and <m>k+1</m> and we choose <m>\lfloor x \rfloor = k</m>,
+      the left endpoint.
+    </p>
+    <example xml:id="greatestintegerdefn">
+      <statement>
+        <p>
+          Let <m>\lfloor x \rfloor</m> denote the greatest integer function.
+          <ol>
+            <li>
+              <p>
+                Find <m>\lfloor 0.785 \rfloor</m>,
+                <m>\lfloor 117 \rfloor</m>,
+                <m>\lfloor -2.001 \rfloor</m> and <m>\lfloor \pi + 6 \rfloor</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Explain how we can view <m>\lfloor x \rfloor</m> as a piecewise-defined function and use this to graph <m>y = \lfloor x \rfloor</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find <m>\lfloor 0.785 \rfloor</m>,
+                we note that <m>0 \leq 0.785 \lt 1</m> so <m>\lfloor 0.785 \rfloor = 0</m>.
+                Given that <m>117</m> is an integer,
+                we have <m>\lfloor 117 \rfloor = 117</m>.
+                To find <m>\lfloor -2.001 \rfloor</m>,
+                we note that <m>-3 \leq -2.001 \lt -2</m>,
+                so <m>\lfloor -2.001 \rfloor = -3</m>.
+                Finally, with <m>\pi \approx 3.14</m>,
+                we get <m>\pi + 6 \approx 9.14</m> and
+                <m>9 \leq \pi+6 \lt 10</m> so <m>\lfloor \pi + 6 \rfloor = 9</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The first step in evaluating
+                <m>\lfloor x \rfloor</m> is to determine the interval
+                <m>[k, k+1)</m> containing <m>x</m> so it seems reasonable that these are the intervals which produce the <sq>pieces</sq>.
+                In this case, there happen to be infinitely many pieces.
+                The inequality <sq><m>k \leq x \lt k+1</m></sq> includes the left endpoint but excludes the right endpoint,
+                so we have points at the left endpoints of our horizontal line segments while we have holes at the right endpoints.
+                A partial description of <m>\lfloor x \rfloor</m> is given alongside a partial graph at the top of the next page. (A full description or a complete graph would require infinitely large paper!) We use the vertical dots
+                <m>\, \smash{\vdots} </m> to indicate that both the rule and the graph continue indefinitely following the established pattern.<fn>
+                It is always dangerous to leave the rest of the pattern to the reader.
+                See, for instance,
+                <url href="http://www.math.kent.edu/~white/papers/pattern.pdf"><em>this paper</em>.</url>
+                </fn>  <m>\lfloor x \rfloor = \begin{cases}\vdots \amp \\ -5 \amp \text{ if \(\,-5 \leq x \lt -4\) } \\ -4 \amp \text{ if \(\,-4 \leq x \lt -3\) } \\ -3 \amp \text{ if \(\,-3 \leq x \lt -2\) } \\ -2 \amp \text{ if \(\,-2 \leq x \lt -1\) } \\ -1 \amp \text{ if \(\,-1 \leq x \lt 0\) } \\ 0 \amp \text{ if \(\,0 \leq x \lt 1\) } \\ 1 \amp \text{ if \(\,1 \leq x \lt 2\) } \\ 2 \amp \text{ if \(\,2 \leq x \lt 3\) } \\ 3 \amp \text{ if \(\,3 \leq x \lt 4\) } \\ 4 \amp \text{ if \(\,4 \leq x \lt 5\) } \\ 5 \amp \text{ if \(\,5 \leq x \lt 6\) } \\ \smash{\vdots} \amp \end{cases}</m> \columnbreak \begin{mfpic}[15]{-7}{7}{-7}{7} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](7,7){<m>\vdots</m>} \tlabel[cc](-6,-6.5){<m>\vdots</m>} \xmarks{-6,-5,-4,-3,-2,-1,2,3,4,5,6} \ymarks{-6,-5,-4,-3,-2,1,2,3,4,5,6} \tlpointsep{5pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>-6</m>} -6, {<m>-5</m>} -5,{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \penwd{1.25pt} \point[3pt]{(-6,-6), (-5,-5), (-4,-4), (-3,-3), (-2,-2), (-1,-1), (0,0), (1,1), (2,2), (3,3), (4,4), (5,5), (6,6) } \polyline{(-6,-6), (-5,-6)} \polyline{(-5,-5), (-4,-5)} \polyline{(-4,-4), (-3,-4)} \polyline{(-3,-3), (-2,-3)} \polyline{(-2,-2), (-1,-2)} \polyline{(-1,-1), (0,-1)} \polyline{(0,0), (1,0)} \polyline{(1,1), (2,1)} \polyline{(2,2), (3,2)} \polyline{(3,3), (4,3)} \polyline{(4,4), (5,4)} \polyline{(5,5), (6,5)} \polyline{(6,6), (7,6)} \pointfillfalse \point[3pt]{(-5, -6), (-4, -5), (-3, -4), (-2, -3), (-1, -2), (0, -1), (1,0), (2,1), (3,2), (4,3), (5,4), (6, 5), (7, 6)} \tcaption{The graph of <m>y= \lfloor x \rfloor</m>.} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="LinearFunctions">
+    <title>Linear Functions</title>
+    <p>
+      Now that we've discussed the functions which correspond to horizontal lines,
+      <m>y = b</m>,
+      we move to discussing the functions which can be represented by lines of the form
+      <m>y = mx + b</m> where <m>m \neq 0</m>.
+      These functions are called <em>linear</em>
+      functions and are described below.
+    </p>
+    <definition xml:id="linearfunction">
+      <statement>
+        <p>
+          A
+              <idx><h>function</h><h>linear</h></idx>
+              <idx><h>line</h><h>linear function</h></idx>
+              <idx><h>linear function</h></idx>
+          <term>linear function</term> is a function of the form
+          <me>
+            f(x) = mx + b
+          </me>,
+          where <m>m</m> and <m>b</m> are real numbers with <m>m \neq 0</m>.
+          The domain of a linear function is <m>(-\infty, \infty)</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As with <xref ref="constantfunction">Definition</xref>,
+      in <xref ref="linearfunction">Definition</xref>,
+      <m>x</m> is the independent variable,
+      <m>f</m> is the function name,
+      and both <m>m</m> and <m>b</m> are parameters.
+      Notice that <m>m</m> is restricted by
+      <m>m \neq 0</m> for if <m>m = 0</m> then the function
+      <m>f(x) = mx + b</m> would reduce to the constant function <m>f(x) = b</m>.
+      The domain of linear functions,
+      like that of constant functions,
+      is specified as <m>(-\infty, \infty)</m>
+    </p>
+    <p>
+      Recall<fn>
+      or see <xref ref="AppLines">Section</xref>
+      </fn> that the form of the line
+      <m>y = mx + b</m> is called the slope-intercept form of the line and the slope,
+      <m>m</m>, and the <m>y</m>-intercept <m>(0, b)</m>,
+      are easily determined when the line is written this way.
+      Likewise, the form of the function in <xref ref="linearfunction">Definition</xref>,
+      <m>f(x) = mx + b</m>,
+      is often called the <idx><h>linear function</h><h>slope-intercept</h></idx>
+      <em>slope-intercept form</em> of a linear function.
+    </p>
+    <p>
+      The graph of a linear function is the graph of the line <m>y = mx + b</m>.
+      Lines are uniquely determined by two points,
+      and two points of geometric interest are the axis intercepts.
+      We've already reminded you of the <m>y</m>-intercept,
+      <m>(0,b)</m>, which is obtained by setting <m>x = 0</m>.
+      Similarly, to find the <m>x</m>-intercept,
+      we set <m>y = 0</m> and solve <m>mx + b = 0</m> for <m>x</m>.
+      We leave this to the reader in <xref ref="xinterceptoflinear">Exercise</xref>.
+      In addition to having special graphical significance,
+      axis intercepts quite often play important roles in applications involving both linear and non-linear functions.
+      For that reason,
+      we take the time to define them here using function notation.
+    </p>
+    <definition xml:id="interceptdefns">
+      <statement>
+        <p>
+          Suppose <m>f</m> is a function represented by the graph of <m>y = f(x)</m>.
+          <ul>
+            <li>
+              <p>
+                If <m>0</m> is in the domain of <m>f</m> then the point
+                <m>(0, f(0))</m> is the <idx><h>intercept</h><h><m>y</m>-intercept</h></idx>
+                <em><m>y</m>-intercept</em>
+                of the graph of <m>y = f(x)</m>.
+                That is, <m>(0,f(0))</m> is where the graph meets the <m>y</m>-axis.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>0</m> is in the range of <m>f</m> then the solutions to <m>f(x) = 0</m> are called the
+                  <idx><h>zeros</h></idx>
+                <em>zeros</em> of <m>f</m>.
+                If <m>c</m> is a zero of <m>f</m> then the point <m>(c,0)</m> is an <idx><h>intercept</h><h><m>x</m>-intercept</h></idx>
+                <em><m>x</m>-intercept</em>
+                of the graph of <m>y = f(x)</m>.
+                That is, <m>(c,0)</m> is where the graph meets the <m>x</m>-axis.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As is customary in this text,
+      <xref ref="interceptdefns">Definition</xref>
+      uses the default independent variable <m>x</m>,
+      function name <m>f</m>, and dependent variable <m>y</m>,
+      so these letters will change depending on the context.
+      Also note that the <sq>zeros</sq> of a function are the solutions to
+      <m>f(x) = 0</m> - so they are <em>real numbers</em>.
+      The <m>x</m>-intercepts are, on the other hand,
+      <em>points</em> on the graph.
+      As a quick example, consider <m>f(x) = x-3</m>.
+      The zeros of <m>f</m> are found by solving <m>f(x) = 0</m>,
+      or <m>x-3=0</m>.
+      We get one solution, <m>x = 3</m>.
+      Therefore, <m>x=3</m> is the <em>zero</em>
+      of <m>f</m> that corresponds graphically to the <m>x</m>-<em>intercept</em> <m>(3,0)</m>.
+    </p>
+    <p>
+      We now turn our attention to slope.
+      The role of slope, or more generally a <sq>rate of change</sq>,
+      in Science and Mathematics cannot be overstated.<fn>
+      The first half of any introductory Calculus course is about slope.
+      </fn> As you may recall,
+      or quickly read about on <xref ref="slope">page</xref>,
+      the slope of a line that has been graphed in the <m>xy</m>-plane is defined geometrically as follows:
+      <me>
+        m = \dfrac{\text{ rise } }{\text{ run } } = \dfrac{\Delta y}{\Delta x}
+      </me>,
+      where the capital Greek letter <sq><m>\Delta</m></sq> denotes <sq>change in.</sq><fn>
+      More specifically, if <m>(x_{0}, y_{0})</m> and
+      <m>(x_{1}, y_{1})</m> are two distinct points in the plane,
+      then <m>\Delta x = x_{1} - x_{0}</m> and <m>\Delta y = y_{1} - y_{0}</m>.
+      </fn> In this course,
+      it is vital that we regard the slope of a linear function as a rate of change of
+      <em>function outputs</em>
+      to <em>function inputs</em>.
+      That is, given the graph of a linear function <m>y = f(x) = mx + b</m>:
+      <me>
+        m = \dfrac{\text{ rise } }{\text{ run } } = \dfrac{\Delta y}{\Delta x} = \dfrac{\Delta [f(x)]}{\Delta x} = \dfrac{\Delta \text{ outputs } }{\Delta \text{ inputs } }
+      </me>.
+    </p>
+    <p>
+      What is important to note here is that for linear functions,
+      the rate of change <m>m</m> is constant for all values in the domain.<fn>
+      See <xref ref="lineshaveconstantratesofchange">Exercise</xref> for more details.
+      </fn> We'll see the importance of this statement in the upcoming examples.
+    </p>
+    <p>
+      Geometrically,
+      the sign of the slope has a profound impact on the graph of the line.
+      Recall that if the slope <m>m > 0</m>,
+      the line rises as we read from left to right;
+      if <m>m\lt 0</m>, the line falls as we read from left to right;
+      if <m>m=0</m>, we have a horizontal line and the graph plateaus.
+      We define these notions more precisely for general functions in the following definition.
+    </p>
+    <definition xml:id="incdeccnstdefn">
+      <statement>
+        <p>
+          Let <m>f</m> be a function defined on an interval <m>I</m>.
+          Then <m>f</m> is said to be:
+          <ul>
+            <li>
+              <p>
+                <em>increasing</em> on <m>I</m> if,
+                whenever <m>a \lt b</m>,
+                then <m>f(a) \lt f(b)</m>. (i.e., as inputs increase,
+                outputs <em>increase</em>.) <em>NOTE:</em>
+                The graph of an increasing function <em>rises</em>
+                as one moves from left to right.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>decreasing</em> on <m>I</m> if,
+                whenever <m>a \lt b</m>,
+                then <m>f(a) > f(b)</m>. (i.e., as inputs increase,
+                outputs <em>decrease</em>.) <em>NOTE:</em>
+                The graph of a decreasing function <em>falls</em>
+                as one moves from left to right.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>constant</em> on <m>I</m> if <m>f(a) = f(b)</m> for all <m>a</m>,
+                <m>b</m> in <m>I</m>. (i.e., outputs don't change with inputs.) <em>NOTE:</em>
+                The graph of a function that is constant over an interval is a horizontal line.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Again, as with <xref ref="interceptdefns">Definition</xref>,
+      <xref ref="incdeccnstdefn">Definition</xref> applies to any function,
+      not just linear and constant functions.
+      Also, note that, like <xref ref="absmaxmindefn">Definition</xref>,
+      <xref ref="incdeccnstdefn">Definition</xref>
+      blurs the line between the function,
+      <m>f</m>, and its outputs, <m>f(x)</m>,
+      because the verbiage <sq><m>f</m> is increasing</sq> is really a statement about the outputs,
+      <m>f(x)</m>.
+      Finally, when we ask <sq>where</sq> a function is increasing,
+      decreasing or constant, we are looking for an interval of <em>inputs</em>.
+      We'll have more to say about this in later sections,
+      but for now, we summarize these ideas graphically below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-3}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2, -1, 1,2,3,4} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -3,-2.5), (2,4)} \tcaption{ <sq>increasing</sq>,
+      <m>m > 0</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-3}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2, -1, 1,2,3,4} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -3.5,3), (2,-3)} \tcaption{ <sq>decreasing</sq>,
+      <m>m \lt 0</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-3}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2, -1, 1,2,3,4} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -4,3), (4,3)} \tcaption{ <sq>constant</sq>,
+      <m>m = 0</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      From the graphs above,
+      we see that regardless if <m>m>0</m> or <m>m\lt 0</m>,
+      the range of linear functions is <m>(-\infty, \infty)</m>.
+      Therefore, linear functions have no maximum or minimum.<fn>
+      This is one of the more pedantic reasons why we distinguish between constant and linear functions.
+      See the discussion concerning the range of a constant function on <xref ref="rangeofconstantismaxandmin">page</xref>.
+      </fn>
+    </p>
+    <example xml:id="PortaBoyCost">
+      <statement>
+        <p>
+          The cost, in dollars, to produce <m>x</m> PortaBoy<fn>
+          The similarity of this name to
+          <url href="http://www.toilets.com"><em>PortaJohn</em></url>
+          is deliberate.
+          </fn> game systems for a local retailer is given by <m>C(x) = 80x + 150</m> for <m>x \geq 0</m>.
+          <ol>
+            <li>
+              <p>
+                Find and interpret <m>C(0)</m> and <m>C(5)</m> and use these to graph <m>y = C(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Explain the significance of the restriction on the domain,
+                <m>x \geq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the slope of <m>y = C(x)</m> geometrically and as a rate of change.
+              </p>
+            </li>
+            <li>
+              <p>
+                How many PortaBoys can be produced for <m>\dollar15,\! 000</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find <m>C(0)</m>,
+                we substitute <m>0</m> for <m>x</m> in the formula <m>C(x)</m> and obtain:
+                <m>C(0) = 80(0) + 150 = 150</m>.
+                Given that <m>x</m> represents the number of PortaBoys produced and <m>C(x)</m> represents the cost to produce said PortaBoys,
+                <m>C(0) = 150</m> means it costs
+                <m>\dollar150</m> even if we don't produce any PortaBoys at all.
+                At first, this may not seem realistic,
+                but that <m>\dollar150</m> is often called the
+                  <idx><h>cost</h><h>fixed</h></idx>
+                  <idx><h>cost</h><h>start-up</h></idx> <em>fixed</em> or <em>start-up</em> cost of the venture.
+                Things like re-tooling equipment, leasing space,
+                or any other <sq>up front</sq> costs get lumped into the fixed cost.
+                To find <m>C(5)</m>,
+                we substitute <m>5</m> for <m>x</m> in the formula <m>C(x)</m>:
+                <m>C(5) = 80(5)+150 = 550</m>.
+                This means it costs <m>\dollar550</m> to produce <m>5</m> PortaBoys for the local retailer.
+                These two computations give us two points on the graph:
+                <m>(0, C(0))</m> and <m>(5, C(5))</m>.
+                Along with the domain restriction <m>x \geq 0</m>,
+                we get: \begin{mfpic}[15]{-1}{7}{-1}{7} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](1,1.25){<m>(0, 150)</m>} \tlabel[cc](5.5,4.75){<m>(5, 550)</m>} \xmarks{1,2,3,4,5,6} \ymarks{1,2,3,4,5,6} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>100</m>} 1, {<m>200</m>} 2, {<m>300</m>} 3, {<m>400</m>} 4, {<m>500</m>} 5, {<m>600</m>} 6} \penwd{1.25pt} \arrow \polyline{(0,1.5), (6,6.3)} \point[4pt]{(0,1.5), (5,5.5)} \tcaption{ <m>y = C(x)</m>} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                In this context,
+                <m>x</m> represents the number of PortaBoys produced.
+                It makes no sense to produce a negative quantity of game systems,<fn>
+                Actually, it makes no sense to produce a fractional part of a game system, either,
+                which we'll discuss later in this example.
+                </fn>  so <m>x \geq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The cost function <m>C(x)= 80x + 150</m> is in slope-intercept form so we recognize the slope as the coefficient of <m>x</m>,
+                <m>m = 80</m>.
+                With <m>m > 0</m>, the function <m>C</m> is always increasing.
+                This means that it costs more money to make more game systems.
+                To interpret the slope as a rate of change,
+                we note that the output, <m>C(x)</m>, is the cost in dollars,
+                while the input, <m>x</m>,  is the number of PortaBoys produced:
+                <me>
+                  m = 80 = \dfrac{80}{1} =  \dfrac{\Delta [C(x)]}{\Delta x} = \dfrac{$ 80}{1 \, \mbox{PortaBoy produced} }
+                </me>.
+                Hence, the cost to produce PortaBoys is increasing at a rate of
+                <m>\dollar80</m> per PortaBoy produced.
+                This is often called the
+                  <idx><h>cost</h><h>variable</h></idx>
+                  <idx><h>variable cost</h></idx>
+                <em>variable cost</em> for the venture.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find how many PortaBoys can be produced for <m>\dollar15, \! 000</m>,
+                we solve <m>C(x) = 15000</m>,
+                which means <m>80x+150 = 15000</m>.
+                This yields <m>x = 185.625</m>.
+                We can produce only a whole number amount of PortaBoys so we are left with two options:
+                produce <m>185</m> or <m>186</m> PortaBoys.
+                Given that <m>C(185) = 14950</m> and <m>C(186) = 15030</m>,
+                we would be over budget if we produced <m>186</m> PortaBoys.
+                Hence, we can produce <m>185</m> PortaBoys for <m>\dollar15, \! 000</m>
+                (with <m>\dollar50</m> to spare).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A couple of remarks about <xref ref="PortaBoyCost">Example</xref> are in order.
+      First, if <m>x</m> represents the number of PortaBoy game systems being produced,
+      then <m>x</m> can really only take on whole number values.
+      We will revisit this scenario in <xref ref="QuadraticFunctions">Section</xref>
+      where we will see how the approach presented here allows us to use more elegant techniques when analyzing the situation than a discrete data set would allow.<fn>
+      This is an example of using a <sq>continuous</sq> variable to model a <sq>discrete</sq> scenario.
+      Contrast this with the discussion following <xref ref="timetempex1">Example</xref>
+      in <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      Second, once we know that the variable cost is <m>\dollar80</m> per PortaBoy,
+      we can revisit a computation we did earlier in the example.
+      We computed <m>C(185) = 14950</m> and needed to compute <m>C(186)</m>.
+      With <m>186</m> being just one more PortaBoy than <m>185</m>,
+      we can use the variable cost to get
+      <me>
+        C(186) = C(185) + 80(1) =  14950 + 80 = 15030
+      </me>,
+      which agrees with our earlier computation.<fn>
+      The cost to produce <sq>just one more item</sq> is called the
+          <idx><h>cost</h><h>marginal</h></idx>
+          <idx><h>marginal cost</h></idx> <em>marginal cost</em>.
+      The difference between variable and marginal costs in this case are the units used:
+      the variable cost is <m>$ 80</m> per Portaboy whereas the marginal cost is simply <m>\dollar80</m>.
+      </fn> If we wanted to find <m>C(300)</m>,
+      we could do something similar.
+      Using <m>300 - 185 = 115</m>,
+      we can find <m>C(300)</m> as follows:
+      <me>
+        C(300) = C(185) + 80(115) = 14950 + 9200 = 24150
+      </me>.
+    </p>
+    <p>
+      In general, we could rewrite <m>C(x) = C(185) + 80(x - 115)</m>.
+      This same reasoning shows that for any <m>x_{0}</m> in the domain of <m>C</m>,
+      we have <m>C(x) = C(x_{0}) + 80(x - x_{0})</m> - a fact we invite the reader to verify.<fn>
+      In the case <m>x_{0} = 0</m>,
+      this formula reduces to <m>C(x) = C(0) + 80(x - 0) = 150 + 80x = 80x + 150</m>.
+      To show the formula in general,
+      consider <m>C(x_{0}) = 80x_{0} + 150</m> <ellipsis/>
+      </fn>
+    </p>
+    <p>
+      Indeed, the computations above are at the heart of what it means to be a linear function:
+      linear functions change at a constant rate known as the slope.
+      To better see this algebraically,
+      recall that given a point <m>(x_{0}, y_{0})</m> on a line along with the slope,
+      <m>m</m>, the <em>point-slope form of the line</em> is:
+      <m>y - y_{0} = m(x - x_{0})</m>.<fn>
+      See <xref ref="AppLines">Section</xref> for a review of this form.
+      </fn> Rewriting,
+      we get <m>y = y_{0} + m (x - x_{0})</m> and setting
+      <m>y = f(x)</m> and <m>y_{0} = f(x_{0})</m> yields:
+    </p>
+    <proposition xml:id="linearfunctionpointslope">
+      <title>point-slope form</title>
+      <statement>
+        <p>
+          [point-slope form] The <idx><h>linear function</h><h>point-slope form</h></idx> <idx><h>point-slope form</h><h>of a linear function</h></idx>
+          <em>point-slope form</em> of a linear function is
+          <me>
+            f(x) = f(x_{0}) + m (x - x_{0})
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      A few remarks are in order.
+      First note that if the point
+      <m>(x_{0}, f(x_{0}))</m> is the <m>y</m>-intercept <m>(0, b)</m>,
+      <xref ref="linearfunctionpointslope">Equation</xref>
+      immediately reduces to the slope-intercept form of the line:
+      <m>f(x) = f(x_{0}) + m (x - x_{0}) = b + m(x - 0) = mx + b</m>,
+      so you can use <xref ref="linearfunctionpointslope">Equation</xref>
+      exclusively from this point forward.<fn>
+      In other words,
+      the slope intercept form of a line is just a special case of the point-slope form.
+      </fn>
+    </p>
+    <p>
+      Second, if we write <m>\Delta x = x - x_{0}</m>,
+      then <m>x = x_{0} + \Delta x</m> so we can rewrite <xref ref="linearfunctionpointslope">Equation</xref> as follows:
+      <me>
+        \begin{array}{ccccc} f(x_{0} + \Delta x) \amp  = \amp  f(x_{0}) \amp  + \amp  m \Delta x \\ (\text{ new output } ) \amp  = \amp  (\text{ known output } ) \amp  +\amp   (\text{ change in outputs } ) \end{array}
+      </me>
+    </p>
+    <p>
+      In other words, changing the <em>input</em>
+      by <m>\Delta x</m> results in changing the
+      <em>output</em> by <m>m \Delta x</m>.
+      This tracks since
+      <me>
+        m \Delta x  = \dfrac{\Delta [f(x)]}{\Delta x} \Delta x =  \Delta[f(x)]  = \Delta \text{ outputs }
+      </me>.
+    </p>
+    <p>
+      The fact that we can write
+      <m>\Delta \text{ outputs } = m \Delta x</m> for any choice of <m>x_{0}</m> is another way to see that for linear functions,
+      the rate of change is constant.
+      That is, the rate of change, <m>m</m>,
+      is the same for all values <m>x_{0}</m> in the domain.
+      We'll put <xref ref="linearfunctionpointslope">Equation</xref>
+      to good use in the next example.
+    </p>
+    <example xml:id="PortaBoyDemand">
+      <statement>
+        <p>
+          The local retailer in <xref ref="PortaBoyCost">Example</xref>
+          is trying to mathematically model the relationship between the number of PortaBoy systems sold and the price per system.
+          Suppose <m>20</m> systems were sold when the price was
+          <m>\dollar220</m> per system but when the systems went on sale for <m>\dollar190</m> each,
+          sales doubled.
+          <ol>
+            <li>
+              <p>
+                Find a formula for a linear function <m>p</m> which represents the price <m>p(x)</m> as a function of the number of systems sold,
+                <m>x</m>.
+                Graph <m>y = p(x)</m>, find and interpret the intercepts,
+                and determine a reasonable domain for <m>p</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret the slope of <m>p(x)</m> in terms of price and game system sales.
+              </p>
+            </li>
+            <li>
+              <p>
+                If the retailer wants to sell <m>150</m> PortaBoys next week,
+                what should the price be?
+              </p>
+            </li>
+            <li>
+              <p>
+                How many systems would sell if the price per system were set at <m>\dollar150</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We are asked to find a linear function <m>p(x)</m> ostensibly because the retailer has only two data points and two points are all that is needed to determine a unique line.
+                We know that <m>20</m> PortaBoys were sold  when the price was <m>220</m> dollars and double that,
+                so <m>40</m> units, were sold when the price was <m>190</m> dollars.
+                Using the language of function notation,
+                these statements translate to
+                <m>p(20)=220</m> and <m>p(40)=190</m>, respectively.
+                We first find the slope
+                <me>
+                  m = \dfrac{\Delta [p(x)]}{\Delta x} = \dfrac{190 - 220}{40 - 20} = \dfrac{-30}{20} = -1.5
+                </me>
+                and then substitute it and a pair
+                <m>(x_{0}, p(x_{0}))</m> into the point-slope formula.
+                We have two choices:  <m>x_{0} = 20</m> and <m>p(x_{0}) = 220</m> or
+                <m>x_{0} = 40</m> and <m>p(x_{0}) = 190</m>.
+                We'll choose the former and invite the reader to use the latter - both will result in the same simplified expression.
+                The point-slope formula yields
+                <me>
+                  p(x) = p(x_{0}) + m (x - x_{0}) = 220 + (-1.5)(x - 40)
+                </me>
+                which simplifies to <m>p(x) = -1.5x + 250</m>.  (To check this algebraically,
+                we can verify that <m>p(20) = 220</m> and
+                <m>p(40) = 190</m>.) To find the <m>y</m>-intercept of the graph,
+                we substitute <m>x = 0</m> and find <m>p(0) = 250</m>.
+                Hence our <m>y</m>-intercept is <m>(0, 250)</m>.
+                To find the <m>x</m>-intercept, we set <m>p(x) = 0</m>.
+                Solving <m>-1.5x + 250 = 0</m> gives <m>x = 166.\overline{6}</m>,
+                so our <m>x</m>-intercept is <m>(166.\overline{6}, 0)</m>.<fn>
+                The exact value is <m>x = \frac{500}{3}</m>.
+                Recall that the bar over the <m>6</m> indicates that the decimal repeats.
+                See <xref ref="repeatingdecimalnote">page</xref> for details.
+                </fn> The graph on the left is that of the line <m>y = -1.5x + 250</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-1}{9}{-1}{7} \axes \tlabel[cc](9.5,0){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](1,5.5){<m>(0, 250)</m>} \tlabel[cc](8.5,0.75){<m>(166.\overline{6}, 0)</m>} \xmarks{1,2,3,4,5,6,7,8} \ymarks{1,2,3,4,5,6} \tlpointsep{4pt}  \axislabels {x}{  {<m>20</m>} 1, {<m>40</m>} 2, {<m>60</m>} 3, {<m>80</m>} 4, {<m>100</m>} 5, {<m>120</m>} 6, {<m>140</m>} 7, {<m>160</m>} 8} \axislabels {y}{{<m>50</m>} 1, {<m>100</m>} 2, {<m>150</m>} 3, {<m>200</m>} 4,   {<m>300</m>} 6} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(-1,5.6), (9,-0.4)} \point[4pt]{(0,5), (8.33,0)} \tcaption{ <m>y = -1.5x + 250</m>}  \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-1}{9}{-1}{7} \axes \tlabel[cc](9.5,0){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](1,5.5){<m>(0, 250)</m>} \tlabel[cc](8.5,0.75){<m>(166, 1)</m>} \xmarks{1,2,3,4,5,6,7,8} \ymarks{1,2,3,4,5,6} \tlpointsep{4pt}  \axislabels {x}{  {<m>20</m>} 1, {<m>40</m>} 2, {<m>60</m>} 3, {<m>80</m>} 4, {<m>100</m>} 5, {<m>120</m>} 6, {<m>140</m>} 7, {<m>160</m>} 8} \axislabels {y}{{<m>50</m>} 1, {<m>100</m>} 2, {<m>150</m>} 3, {<m>200</m>} 4,  {<m>250</m>} 5, {<m>300</m>} 6} \tlpointsep{4pt}  \axislabels {x}{  {<m>20</m>} 1, {<m>40</m>} 2, {<m>60</m>} 3, {<m>80</m>} 4, {<m>100</m>} 5, {<m>120</m>} 6, {<m>140</m>} 7, {<m>160</m>} 8} \axislabels {y}{{<m>50</m>} 1, {<m>100</m>} 2, {<m>150</m>} 3, {<m>200</m>} 4,   {<m>300</m>} 6} \penwd{1.25pt} \polyline{(0,5), (8,0.02)} \point[4pt]{(0,5), (8,0.02)} \tcaption{ <m>y = p(x)</m>}  \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                To determine a reasonable domain for <m>p</m>,
+                we certainly require <m>x \geq 0</m>,
+                because we can't sell a negative number of game systems.<fn>
+                ignoring returns, that is.
+                </fn>  Next, we require <m>p(x) \geq 0</m>,
+                otherwise we'd be <em>paying</em>
+                customers to <sq>buy</sq>  PortaBoys.
+                Solving <m>-1.5 x + 250 \geq 0</m> results in <m>x \leq 166.\overline{6}</m>.
+                This shouldn't be too surprising since our graph passes through the <m>x</m>-axis at <m>(166.\overline{6}, 0)</m>,
+                going from positive <m>y</m>-values (hence,
+                positive <m>p(x)</m> values) to  negative <m>y</m> (hence negative <m>p(x)</m> values).<fn>
+                We'll discuss these sorts of connections in greater depth in <xref ref="AbsoluteValueFunctions">Section</xref>.
+                </fn>    Given that <m>x</m> represents the number of PortaBoys sold,
+                we need to choose to end the domain at either <m>x = 166</m> or <m>x = 167</m>.
+                We have that <m>p(166) = 1 > 0</m> but
+                <m>p(167) = -0.5 \lt  0</m> so we settle on the domain <m>[0,166]</m>.
+                Our final answer is <m>p(x) = -1.5x + 250</m> restricted to
+                <m>0 \leq x \leq 166</m> which is graphed above on the right.
+              </p>
+            </li>
+            <li>
+              <p>
+                The slope <m>m = -1.5</m> represents the rate of change of the price of a system with respect to sales of PortaBoys.
+                The slope is negative so we have that the price is <em>decreasing</em>
+                at a rate of <m>\dollar1.50</m> per PortaBoy sold.
+                (Said differently,
+                you can sell one more PortaBoy for every <m>\dollar1.50</m> drop in price.)
+              </p>
+            </li>
+            <li>
+              <p>
+                To determine the price which will move <m>150</m> PortaBoys,
+                we find <m>p(150) = -1.5(150) + 250 = 25</m>.
+                That is, the price would have to be <m>\dollar25</m> per system.
+              </p>
+            </li>
+            <li>
+              <p>
+                If the price of a PortaBoy were set at <m>\dollar150</m>,
+                we'd have <m>p(x) = 150</m>, or <m>-1.5x + 250 = 150</m>.
+                This yields <m>-1.5x = -100</m> or <m>x = 66.\overline{6}</m>.
+                Again our algebraic solution lies between two whole numbers,
+                so we find <m>p(66) = 151</m> and <m>p(67) = 149.5</m>.
+                If the price were set at <m>$ 150</m>,
+                we'd sell <m>66</m> systems,
+                since to sell <m>67</m> systems,
+                we'd have to drop the price just under <m>\dollar150</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The function <m>p</m> in <xref ref="PortaBoyDemand">Example</xref> is called the
+          <idx><h>price-demand function</h></idx>
+          <idx><h>function</h><h>price-demand</h></idx> <em>price-demand</em> function (or, sometimes called more simply a <sq>demand function</sq>) because it returns the price <m>p(x)</m> associated with a certain demand <m>x</m> - that is, how many products will sell.<fn>
+      It may seem counter-intuitive to express price as a function of demand.
+      Shouldn't the price determine how many systems people will buy?
+      We will address this issue later.
+      </fn> These functions,
+      along with cost functions like the one in <xref ref="PortaBoyCost">Example</xref>,
+      will be revisited in <xref ref="PortaBoyProfit">Example</xref>.
+    </p>
+    <p>
+      Our next two examples focus on writing formulas for piecewise-defined functions,
+      the second of which models a real-world situation.
+    </p>
+    <example xml:id="piecewisefromgraphex">
+      <statement>
+        <p>
+          Find a formula for the function <m>L</m> graphed below.
+        </p>
+        <p>
+          \begin{mfpic}[15]{-5}{5}{-3}{6}
+        </p>
+        <p>
+          \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>W</m>} \xmarks{-4, -3,-2,-1,1,2,3,4} \ymarks{-2,-1,1,2,3,4,5} \tlpointsep{5pt}
+        </p>
+        <p>
+          \tlabel[cc](1,4.5){<m>(1,4)</m>} \tlabel[cc](1,2.5){<m>(1,2)</m>} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}
+        </p>
+        <p>
+          \penwd{1.5pt} \arrow \reverse \function{-5, 1, 0.1}{4} \arrow \function{1, 5, 0.1}{3-x} \point[3.5pt]{(1,4)} \pointfillfalse \point[3.5pt]{(1,2)} \tcaption{<m>W = L(t)</m>} \end{mfpic}
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From the graph of <m>W = L(t)</m> we see that there are two distinct pieces.
+          Taking note of the point at <m>(1, 4)</m>,
+          we get <m>L(t) = 4</m> for <m>t \leq 1</m>.
+          To represent <m>L</m> for <m>t>1</m>,
+          we use the point-slope form of a linear function:
+          <m>L(t) = L(t_{\,0}) + m(t - t_{\mbox{\,\tiny <m>0</m>} })</m>.
+          The only <sq>point</sq> labeled with this part of the graph is the hole at <m>(1, 2)</m> and it isn't technically part of the graph,
+          so we will avoid using it.<fn>
+          We actually could use the point <m>(1, 2)</m> to find the equation of the <em>line</em>
+          containing <m>(1, 2)</m> and,
+          say <m>(3, 0)</m>, which is <m>y = -t + 3</m>.
+          It's just that the graph of <m>L(t)</m> and the line
+          <m>y = -t + 3</m> only agree for <m>t > 1</m>,
+          so it would be incorrect to write <m>L(1) = 2</m>.
+          </fn> Instead, we infer from the graph two other points:
+          <m>(2, 1)</m> and <m>(3, 0)</m>.
+          We get the slope to be
+          <me>
+            m = \dfrac{\Delta W}{\Delta t} = \dfrac{\Delta [L(t)]}{\Delta t} = \dfrac{3 - 2}{0 - 1} = -1
+          </me>.
+        </p>
+        <p>
+          Next, we choose a point to plug into <m>L(t) = L(t_{\,0}) + m(t - t_{\,0})</m>.
+          We have two options: <m>t_{\,0} = 2</m> and <m>L(t_{\,0}) = 1</m> or
+          <m>t_{\,0} = 3</m> and <m>L(t_{\,0}) = 0</m>.
+          Using the latter,
+          we get <m>L(t) = 0 + (-1)(t - 3)</m>, or <m>L(t) = -t + 3</m>.
+          Putting this together with the first part, we get:
+          <me>
+            L(t) = \begin{cases}4 \amp   \text{ if \(t \leq 1\) }  \\ -t+3   \amp  \text{ if \(t>1\) } \end{cases}
+          </me>
+        </p>
+        <p>
+          Note that when <m>t = 1</m> is substituted into the expression <m>-t + 3</m>,
+          we get <m>2</m>, so the hole at <m>(1, 2)</m> checks.<fn>
+          Alternatively,
+          for <m>t</m> values larger than <m>1</m> but getting closer and closer to <m>1</m>,
+          <m>L(t) \approx 2</m>.
+          </fn>
+        </p>
+      </solution>
+    </example>
+    <example xml:id="dataplanex">
+      <statement>
+        <p>
+          A popular F\={o}n-i smartphone carrier offers the following smartphone data plan:
+          use any amount of data up to and including 4 gigabytes for <m>$ 60</m> per month with an <sq>overage</sq> charge of <m>\dollar5</m> per gigabyte.
+          Determine a formula that computes the cost in dollars as a function of using <m>g</m> gigabytes of data per month.
+          Graph your answer.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It is clear from context that we are to use the variable <m>g</m>
+          (for <sq>g</sq>igabytes)
+          as the independent variable.
+          We are asked to compute the cost so it seems natural to name the function <m>C</m>.
+          Hence, we are after a formula for <m>C(g)</m>.
+          Knowing that <m>g</m> represents the amount of data used each month,
+          we must have <m>g \geq 0</m>.
+          In order to get a feel for the formula for <m>C(g)</m>,
+          we can choose some specific values for <m>g</m> and determine the cost,
+          <m>C(g)</m>.
+          For example, if we use no data at all,
+          <m>1</m> gigabyte of data,
+          or <m>3.796</m> gigabytes of data,
+          the cost is the same: <m>\dollar60</m>.
+          Indeed, per the plan,
+          for any amount of data up to and including <m>4</m> gigabytes,
+          the cost is <m>\dollar60</m>.
+        </p>
+        <p>
+          Translating this to function notation means <m>C(0) = 60</m>,
+          <m>C(1) = 60</m>, <m>C(3.796) = 60</m>, and,
+          in general, <m>C(g) = 60</m> for <m>0 \leq g \leq 4</m>.
+          What happens if we use more than <m>4</m> gigabytes?
+          Let's say we use <m>6</m> gigabytes.
+          Per the plan, we are charged
+          <m>\dollar60</m> for the first <m>4</m> and then
+          <m>\dollar5</m> for each gigabyte over <m>4</m>.
+          Using <m>6</m> gigabytes means that we are <m>2</m> gigabytes over and our overage charge is <m>($ 5)(2) = $ 10</m>.
+          The total cost is the base plus the overages or <m>\dollar60 + \dollar10 = \dollar70</m>.
+          In general, if <m>g>4</m>,
+          the expression <m>(g-4)</m> computes the amount of data used over <m>4</m> gigabytes.
+          Our base plus overage then comes to:
+          <m>60 + 5(g-4) = 5g+40</m>.
+          Putting this together with our previous work, we get
+          <me>
+            C(g)  = \begin{cases}60 \amp   \text{ if \(0 \leq g \leq 4\) }  \\ 5g+40   \amp  \text{ if \(g > 4\) } \end{cases}
+          </me>
+        </p>
+        <p>
+          To graph <m>C</m>, we graph <m>y = C(g)</m>.
+          For <m>0 \leq g \leq 4</m>,
+          we have the horizontal line <m>y = 60</m> from <m>(0,60)</m> to <m>(4,60)</m>.
+          For <m>g>4</m>, we have the line <m>y = 5g+ 40</m>.
+          Even though the inequality <m>g > 4</m> is strict,
+          we nevertheless substitute <m>g = 4</m> into the formula
+          <m>y = 5g + 40</m> and get <m>y = 60</m>.
+          Normally, this would produce a hole at <m>(4, 60)</m>,
+          but in this case,
+          the point <m>(4, 60)</m> is already on the graph from the first piece of the function.
+          Essentially, the point <m>(4,60)</m> from <m>C(g) = 60</m> for
+          <m>0 \leq g \leq 4</m> <sq>plugs</sq> the hole from <m>C(g) = 5g + 40</m> when <m>g> 4</m>.
+        </p>
+        <p>
+          We are graphing a line so we need to plot just one more point to determine the graph.
+          From our work above, we know <m>C(6) = 70</m>,
+          so we use <m>(6,70)</m> as our second point.
+          Our graph is below.
+          As with the graphs shown on <xref ref="firsttimewebreaktheaxis">page</xref>
+          from <xref ref="timetempex1">Example</xref>,
+          we use <sq><m>\asymp</m></sq> to denote a break in the vertical axis in order to better display the graph.
+        </p>
+        <p>
+          \begin{mfpic}[20]{-1}{7}{-1}{5} \axes \gclear \tlabelrect(-0.05,0.5){<m>\asymp</m>} \tlabel[cc](7,-0.5){<m>g</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{1,2,3,4,5,6} \ymarks{1,2,3,4}
+        </p>
+        <p>
+          \tlabel[cc](-0.75, 1){<m>(0, 60)</m>} \tlabel[cc](4, 0.5){<m>(4, 60)</m>} \tlabel[cc](6.5, 2.5){<m>(6, 70)</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6 } \axislabels {y}{{<m>65</m>} 2, {<m>70</m>} 3, {<m>75</m>} 4} \penwd{1.25pt} \arrow \polyline{(0, 1), (4, 1), (7, 4)} \point[3pt]{(0,1), (4, 1), (6,3) } \tcaption{ <m>y =C(g)</m>}
+        </p>
+        <p>
+          \end{mfpic}
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="LinearRegression">
+    <title>Linear Regression</title>
+    <p>
+      We have demonstrated in this section that constant, linear,
+      and piecewise combinations of these two function types can be used to model a variety of phenomena inspired by real-world situations.
+      What happens, as if often the case in real-world situations,
+      when we are given data sets that are not precisely linear,
+      but still have a definite linear trend?
+      An example of this is Skippy's time and temperature data from <xref ref="timetempex1">Example</xref>
+      in <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+    </p>
+    <p>
+      In that example, <m>t</m> represented the time
+      (number of hours after 6 a.m.)
+      and <m>T</m> represented the outdoor temperature in degrees Fahrenheit.
+      The data Skippy collected along with a plot of the function <m>T = f(t)</m> are given below.
+      Even though the data points as <m>t</m> varies from <m>t = 0</m> to <m>t = 8</m> do not all lie on the same line - a fact we could prove analytically by checking slopes - there does appear to be a linear <em>trend</em> evident.
+      The same can be said for the data as <m>t</m> varies from <m>t =8</m> to <m>t = 12</m>.
+      As we'll see,
+      there are statistical methods which can produce linear functions that are in some sense <sq>closest</sq> to all of the data,
+      and they are represented below by the dashed lines below on the right.
+    </p>
+    <p>
+      <m>\begin{array}{|c||c|} \hline \text{ \(t\):
+      hours after 6 a.m. } \amp \text{<m>T</m>:
+      temperature <m>^{\circ}</m>F} \\ \hline 0 \amp 64 \\ \hline 2 \amp 67 \\ \hline 4 \amp 75 \\ \hline 6 \amp 80 \\ \hline 8 \amp 83 \\ \hline 10 \amp 83 \\ \hline 12 \amp 82 \\ \hline \end{array}</m>
+    </p>
+    <p>
+      \begin{mfpic}[15]{-1}{13}{-1}{10} \axes \tlabel[cc](13,-0.5){<m>t</m>} \tlabel[cc](0.5,10){<m>T</m>} \gclear \tlabelrect(-0.05,0.5){<m>\asymp</m>} \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12} \ymarks{1,2,3,4,5,6,7,8,9} \point[3pt]{(0, 1), (2, 2.5), (4, 5.5), (6, 8), (8, 9.5), (10, 9.5), (12, 9)} \tlpointsep{4pt}
+    </p>
+    <p>
+      \dashed \polyline{(0, 0.75), (8, 10)} \dashed \polyline{(8, 9.5), (12, 9)} \axislabels {x} {{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11, {<m>12</m>} 12} \axislabels {y}{{<m>64</m>} 1, {<m>66</m>} 2, {<m>68</m>} 3, {<m>72</m>} 4, {<m>74</m>} 5, {<m>76</m>} 6, {<m>78</m>} 7, {<m>80</m>} 8, {<m>82</m>} 9}
+    </p>
+    <p>
+      \tcaption{The graph of <m>T = f(t)</m>.} \end{mfpic}
+    </p>
+    <p>
+      How do we measure how <sq>close</sq> a set of points is to a given line?
+      Let's leave Skippy's data for the moment and focus on a smaller data set.
+      Suppose we collected three data points:
+      <m>\{(1, 0.5), (3, 2), (4, 3)\}</m>.
+      At the top of the next page
+      (on the left)
+      we plot these points along with the line <m>y = 0.5 x + 0.5</m>.
+      The way we measure how close the line is to these points is by computing the <idx><h>regression</h><h>total squared error</h></idx>
+          <idx><h>total squared error</h></idx>
+      <em>total squared (vertical) error</em>
+      between the data points and the line as follows.
+      For each of our data points,
+      we find the vertical distance between the point and the line.
+      To accomplish this,
+      we need to find a point on the line directly above or below each data point.
+      In other words,
+      we need a point on the line with the same <m>x</m>-coordinate as our data point.
+    </p>
+    <p>
+      For example,
+      to find the point on the line directly above <m>(1,0.5)</m>,
+      we plug <m>x=1</m> into <m>y=0.5x + 0.5</m> and we get the point <m>(1,1)</m>.
+      Similarly, we find <m>(3,2)</m> is on the line already and <m>(4,2.5)</m> is the point on the line directly beneath <m>(4,3)</m>.
+      We find the total squared error <m>E</m> by taking the sum of the squares of the differences of the <m>y</m>-coordinates of each data point and its corresponding point on the line.
+      For the data and line in this discussion <m>E = (0.5-1)^2+(2-2)^2+\left(3-2.5\right)^2 = 0.5</m>.
+    </p>
+    <p>
+      Using advanced mathematical machinery,<fn>
+      like Calculus or Linear Algebra <ellipsis/>
+      </fn> it is possible to find the line which results in the lowest value of <m>E</m>.
+      This line is called the <idx><h>regression</h><h>least squares line</h></idx>
+          <idx><h>least squares regression line</h></idx>
+          <idx><h>line</h><h>least squares regression</h></idx>
+      <em>least squares regression line</em>,
+      or sometimes the <sq>line of best fit</sq>.
+          <idx><h>line</h><h>of best fit</h></idx>
+      The formula for the line of best fit requires notation we won't present until <xref ref="SequencesandtheBinomialTheorem">Chapter</xref>,
+      so we will revisit it then.
+      Most graphing utilities have a built-in regression feature,
+      so at this point we turn the computations over to the technology.
+      A screenshot from
+      <url href="www.desmos.com"><em>desmos</em></url>
+      is given on the right at the top of the next page.
+    </p>
+    <tabular>
+      {m{2in}m{4in}}
+      \begin{mfpic}[20]{-1}{5}{-1}{5}
+      \dotted \polyline{(1,0.5),(1,1)}
+      \dotted  \polyline{(4,3),(4,2.5)}
+      \axes
+      \tlabel[cc](5,-0.5){<m>x</m>}
+      \tlabel[cc](0.5,5){<m>y</m>}
+      \xmarks{1 step 1 until 4}
+      \ymarks{1 step 1 until 4}
+      \tlpointsep{4pt}
+      \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+      \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow  \function{-1,5,0.1}{0.5*x+0.5}
+      \point[4pt]{(1,0.5), (1,1), (3,2), (4,3), (4,2.5)}
+      \end{mfpic}
+      &amp;
+      <image width="75%" source="./ConstantandLinearFunctionsGraphics/ThreePointRegression.jpg"/>
+    </tabular>
+    <p>
+      Our graphing utility produces the model<fn>
+      We chose to use three decimal places for the approximations in this demonstration.
+      How many you get to use in reality varies from one application to another.
+      </fn> <m>y=mx+b</m> where the slope is
+      <m>m \approx 0.821</m> and the <m>y</m>-coordinate of the <m>y</m>-intercept is <m>b \approx -0.357</m>.
+      The value <m>r</m> is the <idx><h>regression</h><h>correlation coefficient</h></idx>
+          <idx><h>correlation coefficient</h></idx>
+      <em>correlation coefficient</em>
+      and is a measure of how close the data is to being on the same line.
+      The closer <m>|r|</m> is to <m>1</m>,
+      the better the linear fit.<fn>
+      The value <m>r^2</m> is called the <idx><h>regression</h><h>coefficient of determination</h></idx>
+          <idx><h>coefficient of determination</h></idx>
+      <em>coefficient of determination</em>
+      and is also a measure of the goodness of fit.
+      We refer the interested reader to a course in Statistics to explore the significance of <m>r</m> and <m>r^2</m>.
+      </fn> Having <m>r \approx 0.997</m> tells us that the points have a strong,
+      positive correlation - that is,
+      they are very close to being on a line with a positive slope,
+      namely <m>y = 0.821x - 0.357</m>.
+      Indeed, the total squared error between our data set and this line is <m>E \approx 0.018</m>.
+      The mathematics tells us that this is the smallest we can get <m>E</m> by modifying the parameters <m>m</m> and <m>b</m>,
+      even though none of the data points actually lie on the line.
+    </p>
+    <p>
+      Now that we have this new mathematical machinery,
+      let's revisit Skippy's time and temperature data.
+    </p>
+    <example xml:id="timetempregressionex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Use a graphing utility to find best fit linear models for each of the data sets below.
+                Comment on the fit and interpret the slope of each.
+                <m>\begin{array}{|c||c|} \hline \text{ \(t\):
+                hours after 6 a.m. } \amp \text{<m>T</m>:
+                temperature <m>^{\circ}</m>F} \\ \hline 0 \amp 64 \\ \hline 2 \amp 67 \\ \hline 4 \amp 75 \\ \hline 6 \amp 80 \\ \hline 8 \amp 83 \\ \hline \end{array}</m> <m>\begin{array}{|c||c|} \hline \text{ \(t\):
+                hours after 6 a.m. } \amp \text{<m>T</m>:
+                temperature <m>^{\circ}</m>F} \\ \hline 8 \amp 83 \\ \hline 10 \amp 83 \\ \hline 12 \amp 82 \\ \hline \end{array}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Use your models to predict the temperature at <m>7</m> a.m. and <m>3</m> p.m., rounded to one decimal place.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                For our first set of data, we get the line <m>T = F(t) = 2.55t + 63.6</m>.
+                The value <m>r = 0.987</m> tells us that it is a fairly good fit and we see this graphically, too.<fn>
+                We use <m>F</m> as the name of the function here to distinguish it from <m>f</m> - the function determined solely by the given set of data.
+                </fn>  Thus we can be confident in using this model to predict the temperature during between the hours of 6 a.m. and 2 p.m. with reasonable accuracy.
+                To interpret the slope,
+                we recognize <m>t</m> as the independent variable (input) and <m>T</m> as the dependent variable (output),
+                so the slope <m>m = \frac{\Delta T}{\Delta t}</m> is the rate of change of temperature with respect to time.
+                In this case,
+                <m>m = 2.55</m> means that the temperature is increasing
+                (getting warmer)
+                at a rate of <m>2.55^{\circ}</m>F per hour.
+                A screenshot from Desmos is given below.
+                <image width="92.5%" source="./ConstantandLinearFunctionsGraphics/TimeTempRegression01.jpg"/> For the second set of data,
+                we get <m>T = G(t) = -0.25t + 85.167</m> and we have <m>r = -0.866</m>.
+                Here, the negative sign on <m>r</m> indicates a negative correlation which means our line has a negative slope.<fn>
+                We use <m>G</m> as the function name here to distinguish it from the given function <m>f</m> and the regression for the first data set,
+                <m>F</m>.
+                </fn> While the fit looks OK, it certainly isn't as strong as with the first data set,
+                so using this model to predict the temperature between <m>2</m> p.m. and <m>6</m> p.m.
+                (let alone beyond)
+                is a bit risky.
+                The slope in this case is <m>m = -0.25</m> which corresponds to the temperature decreasing
+                (getting cooler)
+                at a rate of <m>0.25^{\circ}</m>F per hour.
+                That's what a negative correlation means - an increase in input
+                (more time passes)
+                yields a decrease in output
+                (cooler temperatures).
+                As screenshot from Desmos is given at the top of the next page.
+                <image width="92.5%" source="./ConstantandLinearFunctionsGraphics/TimeTempRegression02.jpg"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                The time <m>7</m> a.m. corresponds to <m>t = 1</m>.
+                This falls between <m>t = 0</m> and <m>t = 8</m> so we use our first model.
+                Substituting <m>t = 1</m> gives <m>T = F(1) = 2.55(1) + 63.6 \approx 66.2</m>.
+                Therefore, the model predicts the temperature to be
+                <m>66.2^{\circ}</m>F at 7 a.m.. Likewise,
+                <m>3</m> p.m. corresponds to <m>t = 9</m>.
+                This is greater than <m>8</m>,
+                so we use the second model:
+                <m>T = G(9) = -0.25(9) + 85.167 \approx 82.9</m>.
+                The model predicts the temperature at <m>3</m> p.m. to be
+                <m>82.9^{\circ}</m>F. Based on the goodness of fit of each model,
+                we have more confidence in the former prediction than in the latter.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      <xref ref="PortaBoyCost">Examples</xref>,
+      <xref ref="PortaBoyDemand"></xref>
+      and <xref ref="timetempregressionex"></xref>
+      (among others)
+      represent three different levels of mathematical modeling.
+      In <xref ref="PortaBoyCost">Example</xref>, the mathematical model
+      (the cost function)
+      was provided and our task was to use the model to <em>interpret</em>
+      the mathematics in that context.
+      In <xref ref="PortaBoyDemand">Example</xref>,
+      we were given a minimal amount of information, namely,
+      two data points,
+      and then asked to <em>construct</em>
+      a model which fit those data exactly.
+      Lastly, in <xref ref="timetempregressionex">Example</xref>,
+      we were given several data points and we used statistical methods to construct a
+      <em>best fit</em> model to the data.
+    </p>
+    <p>
+      The validity of the models rests on the validity of the underlying assumptions used to create the models.
+      For instance,
+      is there any reason to assume a price-demand function would be linear?
+      Is it reasonable to assume that the temperature changes at a constant rate?
+      These are questions for economists and scientists.
+      Mathematicians often take on a role of equal parts translator and prophet:
+      they codify ideas into formulas and then use them to make predictions about yet-to-be observed phenomena.
+    </p>
+  </subsection>
+  <subsection xml:id="AverageRateofChange">
+    <title>The Average Rate of Change of a Function</title>
+    <p>
+      As mentioned earlier in the section,
+      the concepts of slope and the more general rates of change are important concepts not just in Mathematics,
+      but also in other fields.
+      Many important phenomena are modeled using non-linear functions,
+      and while the rates of change of these functions are not constant,
+      we can sample the function at two points and compute what is known as an
+      <em>average rate of change</em>
+      between them to give some sense as to the function's behavior over that interval.<fn>
+      We are basically pretending that the function is linear on a short interval to see what we can say about its behavior.
+      </fn>
+    </p>
+    <definition xml:id="arc">
+      <statement>
+        <p>
+          Let <m>f</m> be a function defined on the interval <m>[a,b]</m>.
+          The
+              <idx><h>average rate of change</h></idx>
+              <idx><h>rate of change</h><h>average</h></idx>
+          <term>average rate of change</term>
+          of <m>f</m> over <m>[a,b]</m> is defined as:
+          <me>
+            \dfrac{\Delta [f(x)]}{\Delta x} = \dfrac{f(b) - f(a)}{b-a}
+          </me>
+        </p>
+        <p>
+          Geometrically,
+          the average rate of change is the slope of the line<fn>
+          This line is called a <em>secant</em> line.
+          </fn> containing
+          <m>(a, f(a))</m> and <m>(b, f(b))</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As with <xref ref="absmaxmindefn">Definitions</xref>
+      and <xref ref="incdeccnstdefn"></xref>,
+      the wording in <xref ref="arc">Definition</xref>,
+      while referring to the function <m>f</m>,
+      is really making a statement about its outputs <m>f(x)</m>.
+    </p>
+    <p>
+      If <m>f</m> is increasing over <m>[a,b]</m>,
+      then the average rate of change will be positive.
+      Likewise, if <m>f</m> is decreasing or constant,
+      the average rate of change will be negative or <m>0</m>,
+      respectively.
+      (Think about this for a moment.)
+      However, as the next example demonstrates,
+      the converses of these statements aren't always true.<fn>
+      For example,
+      the average rate of change over an interval could be positive yet the function could decrease over part of that interval and then increase on a different part.
+      </fn>
+    </p>
+    <example xml:id="ARCRocketExample">
+      <statement>
+        <p>
+          The formula <m>s(t) = -5t^{\,2} + 100t</m> for <m>0 \leq t \leq 20</m> gives the height,
+          <m>s(t)</m>, measured in feet,
+          of a model rocket above the Moon's surface as a function of the time <m>t</m>,
+          in seconds after lift-off.
+          <ol>
+            <li>
+              <p>
+                Find <m>s(0)</m>, <m>s(5)</m>, <m>s(10)</m>,
+                <m>s(15)</m> and <m>s(20)</m> and use these along with a graphing utility to graph <m>y = s(t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                State the range of <m>s</m> and interpret the extrema,
+                if any exist.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the <m>t</m>- and <m>y</m>-intercepts.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the interval(s) over which <m>s</m> is increasing,
+                decreasing or constant.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the average rate of change of <m>s</m> over the intervals <m>[0,5]</m>,
+                <m>[5,10]</m>,
+                <m>[10, 20]</m> and <m>[5, 15]</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find <m>s(0)</m>,
+                we substitute <m>t=0</m> into the formula for <m>s(t)</m>:
+                <m>s(0) = -5(0)^2+100(0) = 0</m>.
+                Similarly, <m>s(5) = -5(5)^2+100(5) = -5(25)+500 = -125+500 = 375</m>.
+                Continuing, we obtain: <m>s(10) = 500</m>,
+                <m>s(15) = 375</m> and <m>s(20) = 0</m>.
+                Using these,
+                we construct a table of values and with the help of a graphing utility we obtain:
+                <image width="92.5%" source="./ConstantandLinearFunctionsGraphics/ARCRocketExample01.jpg"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                Projecting the graph to the <m>y</m>-axis,
+                we see that the range of <m>s</m> is
+                <m>[0, 500]</m> so the minimum of <m>s</m> is <m>0</m> and the maximum is <m>500</m>.
+                This means that the rocket at some point is on the surface of the Moon and reaches its highest altitude of <m>500</m> feet above the lunar surface.
+              </p>
+            </li>
+            <li>
+              <p>
+                The first intercept we see is <m>(0, 0)</m> which is both a <m>t</m>- and a <m>y</m>-intercept.
+                Given that <m>t</m> represents the time after lift-off and
+                <m>y = s(t)</m> represents the height above the Moon's surface,
+                the point <m>(0, 0)</m> means that the model rocket was launched (<m>t=0</m>) from the Moon's surface (<m>s(t) = 0</m>).
+                The remaining intercept, <m>(20, 0)</m>,
+                is another <m>t</m>-intercept.
+                This means that <m>20</m> seconds after lift-off (<m>t=20</m>),
+                the model rocket returns to the Moon's surface (<m>s(t) = 0</m>).
+                Said differently,
+                <m>20</m> seconds is the <sq>time of flight</sq> of the model rocket.
+              </p>
+            </li>
+            <li>
+              <p>
+                Referring to <xref ref="incdeccnstdefn">Definition</xref>,
+                <m>s</m> increases over the interval <m>[0, 10]</m>,
+                since for those values of <m>t</m>,
+                as we read from left to right,
+                the graph of the function is rising meaning the <m>y</m> values (hence <m>s(t)</m> values) are getting larger.
+                Thus the model rocket is heading upwards for the first <m>10</m> seconds of its flight.
+                We find that <m>s</m> decreases over the interval <m>[10, 20]</m>,
+                indicating once it has reached its highest altitude of <m>500</m> feet <m>10</m> seconds into the flight,
+                the rocket begins to fall back to the surface of the Moon,
+                landing <m>20</m> seconds after lift-off.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the average rate of change of <m>s</m> over the interval <m>[0, 5]</m> we compute
+                <me>
+                  \dfrac{\Delta[s(t)]}{\Delta t} = \dfrac{s(5) - s(0)}{5 - 0} = \dfrac{\text{ \(375\) feet } }{\text{ \(5\) seconds } } = \text{ \(75\) feet per second }
+                </me>.
+                In other words, the height is <em>increasing</em>
+                at an <em>average rate</em>
+                of <m>75</m> feet per second during the first 5 seconds of flight.
+                The rate here is called the
+                  <idx><h>average velocity</h></idx>
+                  <idx><h>velocity</h><h>average</h></idx> <em>average velocity</em> of the rocket over this interval.
+                Velocity differs from speed in that velocity comes with a direction.
+                In this case,
+                a positive velocity indicates that the rocket is traveling <em>upwards</em>,
+                since when <m>s</m> is increasing,
+                the model rocket is climbing higher.
+                Similarly, the average rate of change of <m>s</m> over the interval <m>[5, 10]</m> works out to be <m>25</m>.
+                This means that the average velocity over the next <m>5</m> seconds of the flight has slowed to <m>25</m> feet per second.
+                The model rocket is still,
+                on average, traveling upwards,
+                albeit more slowly than before.
+                Over the interval <m>[10, 20]</m>,
+                the average rate of change of <m>s</m> works out to be <m>-50</m>.
+                This means that, on average,
+                the rocket is <em>falling</em> at a rate of <m>50</m> feet per second.
+                The rocket has managed to fall from its highest point <m>500</m> feet above the surface of the Moon back to the Moon's surface in <m>10</m> seconds so this makes sense.
+                Last, but not least,
+                the average rate of change of <m>s</m> over <m>[5, 15]</m> turns out to be <m>0</m>.
+                This means that the model is the same height above the ground after <m>5</m> seconds (<m>375</m> feet) as it is after <m>15</m> seconds.
+                Geometrically,
+                the average rate of change of a function over an interval can be interpreted as the slope of a secant line.
+                Below on the left is a dotted line containing <m>(0, 0)</m> and <m>(5, 375)</m>
+                (which has slope <m>75</m>)
+                along with a dotted line containing the points <m>(5, 375)</m> and <m>(10, 500)</m>
+                (which has slope <m>25</m>).
+                Visually, the lines help demonstrate that,
+                while <m>s</m> is increasing over <m>[0, 10]</m>,
+                the rate of increase is slowing down as <m>t</m> nears <m>10</m>.
+                The graph below on the right depicts a dotted line through
+                <m>(10, 500)</m> and <m>(20,0)</m> indicating a net decrease over that interval.
+                We also have a horizontal line (<m>0</m> slope) containing the points
+                <m>(5, 375)</m> and <m>(15, 375)</m>,
+                which shows no net change between those two points,
+                despite the fact that the rocket rose to its maximum height then began its descent during the interval <m>[5, 15]</m>.
+                <image width="56%" source="./ConstantandLinearFunctionsGraphics/ARCRocketExample02.jpg"/>  <image width="56%" source="./ConstantandLinearFunctionsGraphics/ARCRocketExample03.jpg"/>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      An important lesson from the last example is that average rates of change give us a snapshot of what is happening
+      <em>at the endpoints</em> of an interval,
+      but not necessarily what happens
+      <em>over the course</em> of the interval.
+      Calculus gives us tools to compute slopes <em>at</em>
+      points which correspond to <em>instantaneous</em> rates of changes.
+      While we don't quite have the machinery to properly express these ideas,
+      we can hint at them in the Exercises.
+      Speaking of exercises <ellipsis/>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="graphlinearfunctionfirsta">Exercises</xref>
+      - <xref ref="graphlinearfunctionlasta"></xref>, graph the function.
+      Find the slope and axis intercepts, if any.
+      <ol cols="3">
+        <li xml:id="graphlinearfunctionfirsta">
+          <p>
+            <m>f(x) = 2x - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 3 - t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F(w) = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>G(s) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(t) = \frac{2}{3} t + \frac{1}{3}</m>
+          </p>
+        </li>
+        <li xml:id="graphlinearfunctionlasta">
+          <p>
+            <m>j(w) = \dfrac{1-w}{2}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphpwiseexerfirst">Exercises</xref>
+      - <xref ref="graphpwiseexerlast"></xref>, graph the function.
+      Find the domain, range, and axis intercepts, if any.
+    </p>
+    <ol cols="3">
+      <li xml:id="graphpwiseexerfirst">
+        <p>
+          <m>{\displaystyle f(x) = \left\{ \begin{array}{rcl} 4-x \amp \mbox{ if } \amp x \leq 3 \\ 2 \amp \mbox{ if } \amp x > 3 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle g(x) = \left\{ \begin{array}{rcl} 2-x \amp \mbox{ if } \amp x \lt 2 \\ x-2 \amp \mbox{ if } \amp x \geq 2 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle F(t) = \left\{ \begin{array}{rcl} -2t - 4 \amp \mbox{ if } \amp t \lt 0 \\ 3t \amp \mbox{ if } \amp t \geq 0 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li xml:id="graphpwiseexerlast">
+        <p>
+          <m>{\displaystyle G(t) = \left\{ \begin{array}{rcl} -3 \amp \mbox{ if } \amp t \lt 0 \\ 2t-3 \amp \mbox{ if } \amp 0 \lt t \lt 3 \\ 3 \amp \mbox{ if } \amp t > 3 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li xml:id="unitstepexercise">
+        <p>
+          The
+    <idx><h>unit step function</h></idx>
+          <em>unit step function</em> is defined as <m>U(t) = \begin{cases}0 \amp \text{ if \(t\lt 0\), } \\ 1 \amp \text{ if \(t \geq 1\). } \end{cases}</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Graph <m>y = U(t)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              State the domain and range of <m>U</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              List the interval(s) over which <m>U</m> is increasing,
+              decreasing, and/or constant.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write <m>U(t-2)</m> as a piecewise defined function and graph.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="findformulalinearfirstex">Exercises</xref>
+      - <xref ref="findformulalinearlastex"></xref>,
+      find a formula for the function.
+    </p>
+    <ol cols="3">
+      <li xml:id="findformulalinearfirstex">
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1, -2.75){<m>(0,-3)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -5,-3), (5,-3)} \point[4pt]{(0,-3)} \tcaption{ <m>y = f(x)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>s</m>} \tlabel[cc](1, 1.5){<m>(1,2)</m>} \tlabel[cc](1, -3.5){<m>(1,-3)</m>} \tlabel[cc](3, -2.5){<m>(3,-3)</m>} \tlabel[cc](3, 3.5){<m>(3,4)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \polyline{(1,2), (-5,2)} \polyline{(1,-3), (3,-3)} \arrow \polyline{(3,4), (5,4)} \tcaption{
+          <m>s = F(t)</m>} \point[4pt]{(1,2), (3,-3)} \pointfillfalse \point[4pt]{(1,-3), (3,4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-1, 0.75){<m>(0,1)</m>} \tlabel[cc](1.25, -0.75){<m>\left( \frac{5}{3}, 0 \right)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -5,4), (5,-2)} \point[4pt]{(0,1), (1.66,0)} \tcaption{ <m>y = L(x)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li xml:id="findformulalinearlastex">
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](-3.25, -4.5){<m>(-3,-4)</m>} \tlabel[cc](3, 2.5){<m>(3,2)</m>} \tlabel[cc](-1.5, 2.5){<m>(-1,2)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \polyline{( -3,-4), (-1, 2), (3,2)} \point[4pt]{(-3,-4), (3,2)} \pointfillfalse \point[4pt]{(-1,2)} \tcaption{ <m>w = g(v)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li xml:id="piecewiseordering">
+        <p>
+          For <m>n</m> copies of the book
+          <em>Me and my Sasquatch</em>,
+          a print on-demand company charges <m>C(n)</m> dollars,
+          where <m>C(n)</m> is determined by the formula
+          <me>
+            {\displaystyle C(n) = \left\{ \begin{array}{rcl}  15n \amp  \mbox{ if }  \amp  1 \leq n \leq 25  \\ 13.50n  \amp  \mbox{ if }  \amp  25 \lt  n \leq 50 \\ 12n \amp  \mbox{ if }  \amp  n > 50 \end{array}  \right. }
+          </me>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find and interpret <m>C(20)</m>.
+            </p>
+          </li>
+          <li xml:id="x50vs51">
+            <p>
+              How much does it cost to order 50 copies of the book?
+              What about 51 copies?
+            </p>
+          </li>
+          <li>
+            <p>
+              Your answer to <xref ref="x50vs51"></xref> should get you thinking.
+              Suppose a bookstore estimates it will sell 50 copies of the book.
+              How many books can, in fact,
+              be ordered for the same price as those 50 copies? (Round your answer to a whole number of books.)
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li xml:id="piecewiseshipping">
+        <p>
+          An on-line comic book retailer charges shipping costs according to the following formula
+          <me>
+            {\displaystyle S(n) = \left\{ \begin{array}{rcl}  1.5 n + 2.5 \amp  \mbox{ if }  \amp  1 \leq n \leq 14  \\ 0  \amp  \mbox{ if }  \amp  n \geq 15 \end{array}  \right. }
+          </me>
+          where <m>n</m> is the number of  comic books purchased and <m>S(n)</m> is the shipping cost in dollars.
+          <ol>
+            <li>
+              <p>
+                What is the cost to ship 10 comic books?
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the significance of the formula
+                <m>S(n) = 0</m> for <m>n \geq 15</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="piecewisemobile">
+        <p>
+          The cost in dollars <m>C(m)</m>  to talk <m>m</m> minutes a month on a mobile phone plan is modeled by
+          <me>
+            {\displaystyle C(m) = \left\{ \begin{array}{rcl} 25 \amp  \mbox{ if }  \amp  0 \leq m \leq 1000 \\ 25+0.1(m-1000) \amp  \mbox{ if }  \amp  m > 1000 \end{array}  \right. }
+          </me>
+          <ol>
+            <li>
+              <p>
+                How much does it cost to talk <m>750</m> minutes per month with this plan?
+              </p>
+            </li>
+            <li>
+              <p>
+                How much does it cost to talk <m>20</m> hours a month with this plan?
+              </p>
+            </li>
+            <li>
+              <p>
+                Explain the terms of the plan verbally.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          Jeff can walk comfortably at <m>3</m> miles per hour.
+          Find an expression for a linear function <m>d(t)</m> that represents the total distance Jeff can walk in <m>t</m> hours,
+          assuming he doesn't take any breaks.
+        </p>
+      </li>
+      <li>
+        <p>
+          Carl can stuff <m>6</m> envelopes per <em>minute</em>.
+          Find an expression for a linear function <m>E(t)</m> that represents the total number of envelopes Carl can stuff after <m>t</m> <em>hours</em>,
+          assuming he doesn't take any breaks.
+        </p>
+      </li>
+      <li>
+        <p>
+          A landscaping company charges
+          <m>\dollar45</m> per cubic yard of mulch plus a delivery charge of <m>\dollar20</m>.
+          Find an expression for a linear function <m>C(x)</m> which computes the total cost in dollars to deliver <m>x</m> cubic yards of mulch.
+        </p>
+      </li>
+      <li>
+        <p>
+          A plumber charges <m>\dollar50</m> for a service call plus <m>\dollar80</m> per hour.
+          If she spends no longer than 8 hours a day at any one site,
+          find an expression for a linear function <m>C(t)</m> that computes her total daily charges in dollars as a function of the amount of time spent in hours,
+          <m>t</m> at any one given location.
+        </p>
+      </li>
+      <li>
+        <p>
+          A salesperson is paid $200 per week plus 5% commission on her weekly sales of <m>x</m> dollars.
+          Find an expression for a linear function <m>W(x)</m> which computes her total weekly pay in dollars as a function of <m>x</m>.
+          What must her weekly sales be in order for her to earn $475.00 for the week?
+        </p>
+      </li>
+      <li>
+        <p>
+          An on-demand publisher charges
+          <m>\dollar22.50</m> to print a 600 page book and
+          <m>\dollar15.50</m> to print a 400 page book.
+          Find an expression for a linear function which models the cost of a book in dollars <m>C(p)</m> as a function of the number of pages <m>p</m>.
+          Find and interpret both the slope of the linear function and <m>C(0)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The Topology Taxi Company charges
+          <m>\dollar2.50</m> for the first fifth of a mile and
+          <m>\dollar0.45</m> for each additional fifth of a mile.
+          Find an expression for a linear function which models the taxi fare <m>F(m)</m> as a function of the number of miles driven,
+          <m>m</m>.
+          Find and interpret both the slope of the linear function and <m>F(0)</m>.
+        </p>
+      </li>
+      <li xml:id="celsiustofahr">
+        <p>
+          Water freezes at <m>0^{\circ}</m> Celsius and
+          <m>32^{\circ}</m> Fahrenheit and it boils at
+          <m>100^{\circ}</m>C and <m>212^{\circ}</m>F.
+          <ol>
+            <li>
+              <p>
+                Find an expression for a linear function <m>F(T)</m> that computes temperature in the Fahrenheit scale as a function of the temperature <m>T</m> given in degrees Celsius.
+                Use this function to convert <m>20^{\circ}</m>C into Fahrenheit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find an expression for a linear function <m>C(T)</m> that computes temperature in the Celsius scale as a function of the temperature <m>T</m> given in degrees Fahrenheit.
+                Use this function to convert <m>110^{\circ}</m>F into Celsius.
+              </p>
+            </li>
+            <li>
+              <p>
+                Is there a temperature <m>T</m> such that <m>F(T) = C(T)</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Legend has it that a bull Sasquatch in rut will howl approximately 9 times per hour when it is
+          <m>40^{\circ}F</m> outside and only 5 times per hour if it's <m>70^{\circ}F</m>.
+          Assuming that the number of howls per hour, <m>N</m>,
+          can be represented by a linear function of temperature Fahrenheit,
+          find the number of howls per hour he'll make when it's only <m>20^{\circ}F</m> outside.
+          What troubles do you encounter when trying to determine a reasonable applied domain?
+        </p>
+      </li>
+      <li xml:id="exerredoportaboy">
+        <p>
+          Economic forces have changed the cost function for PortaBoys to <m>C(x) = 105x + 175</m>.
+          Rework <xref ref="PortaBoyCost">Example</xref> with this new cost function.
+        </p>
+      </li>
+      <li>
+        <p>
+          In response to the economic forces in <xref ref="exerredoportaboy">Exercise</xref> above,
+          the local retailer sets the selling price of a PortaBoy at $250.
+          Remarkably, 30 units were sold each week.
+          When the systems went on sale for $220, 40 units per week were sold.
+          Rework <xref ref="PortaBoyDemand">Example</xref> with this new data.
+        </p>
+      </li>
+      <li>
+        <p>
+          A local pizza store offers medium two-topping pizzas delivered for <m>\dollar6.00</m> per pizza plus a
+          <m>\dollar1.50</m> delivery charge per order.
+          On weekends, the store runs a <sq>game day</sq> special:
+          if six or more medium two-topping pizzas are ordered,
+          they are <m>\dollar5.50</m> each with no delivery charge.
+          Write a piecewise-defined linear function which calculates the cost in dollars <m>C(p)</m> of <m>p</m> medium two-topping pizzas delivered during a weekend.
+        </p>
+      </li>
+      <li>
+        <p>
+          A restaurant offers a buffet which costs <m>\dollar15</m> per person.
+          For parties of <m>10</m> or more people,
+          a group discount applies, and the cost is <m>\dollar12.50</m> per person.
+          Write a piecewise-defined linear function which calculates the total bill <m>T(n)</m> of a party of <m>n</m> people who all choose the buffet.
+        </p>
+      </li>
+      <li>
+        <p>
+          A mobile plan charges a base monthly rate of
+          <m>\dollar10</m> for the first <m>500</m> minutes of air time plus a charge of <m>15</m>\textcent for each additional minute.
+          Write a piecewise-defined linear function which calculates the monthly cost in dollars <m>C(m)</m> for using <m>m</m> minutes of air time.
+          <em>HINT:</em> You may wish to refer to <xref ref="piecewisemobile">number</xref> for inspiration.
+        </p>
+      </li>
+      <li>
+        <p>
+          The local pet shop charges <m>12</m>\textcent per cricket up to 100 crickets,
+          and <m>10</m>\textcent per cricket thereafter.
+          Write a piecewise-defined linear function which calculates the price in dollars <m>P(c)</m> of purchasing <m>c</m> crickets.
+        </p>
+      </li>
+      <li>
+        <p>
+          The cross-section of a swimming pool is below.
+          Write a piecewise-defined linear function which describes the depth of the pool, <m>D</m>
+          (in feet)
+          as a function of:
+          <ol>
+            <li>
+              <p>
+                the distance
+                (in feet)
+                from the edge of the shallow end of the pool, <m>d</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                the distance
+                (in feet)
+                from the edge of the deep end of the pool, <m>s</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph each of the functions in (a) and (b).
+                Discuss with your classmates how to transform one into the other and how they relate to the diagram of the pool.
+              </p>
+            </li>
+          </ol>
+        </p>
+        \begin{mfpic}[25]{-1}{13}{-1}{4} \point[2pt]{(0,4), (12,4)} \arrow \polyline{(0,4), (4,4)} \arrow \polyline{(12,4), (8,4)} \arrow \reverse \arrow \polyline{(-0.25,0), (-0.25,3)} \arrow \reverse \arrow \polyline{(0,-0.35), (5,-0.35)} \arrow \reverse \arrow \polyline{(0,3.35), (12,3.35)} \arrow \reverse \arrow \polyline{(9,1.65), (12,1.65)} \arrow \reverse \arrow \polyline{(12.25,2), (12.25,3)} \gclear \tlabelrect(2, 4){ <m>d</m> ft.} \gclear \tlabelrect(10, 4){ <m>s</m> ft.} \gclear \tlabelrect(6, 3.35){37 ft.} \gclear \tlabelrect(2.5, -0.35){15 ft.} \gclear \tlabelrect(10.5, 1.65){10 ft.} \gclear \tlabelrect(-1, 1.5){8 ft.} \gclear \tlabelrect(13, 2.5){2 ft.} \penwd{1.5pt} \polyline{(0,0), (5,0), (9, 2), (12, 2), (12,3), (0,3), (0,0)} \end{mfpic}
+      </li>
+      SQUASHEDLIST
+      <li xml:id="identityexercise">
+        <p>
+          The function defined by <m>I(x) = x</m> is called the
+    <idx><h>function</h><h>identity</h></idx>
+          Identity Function.
+          Thinking from a procedural perspective,
+          explain a possible origin of this name.
+        </p>
+      </li>
+      <li xml:id="onlyoneyintexercise">
+        <p>
+          Why must the graph of a function
+          <m>y = f(x)</m> have at most one <m>y</m>-intercept?
+          <em>HINT:</em> Consider what would happen graphically if there were more than one <ellipsis/>
+        </p>
+      </li>
+      <li>
+        <p>
+          Why is a discussion of vertical lines omitted when discussing functions?
+        </p>
+      </li>
+      <li xml:id="xinterceptoflinear">
+        <p>
+          Find a formula for the <m>x</m>-intercept of the graph of <m>f(x) = mx + b</m>.
+          Assume <m>m \neq 0</m>.
+        </p>
+      </li>
+      <li xml:id="xinterceptformoflinear">
+        <p>
+          Suppose <m>(c,0)</m> is the <m>x</m>-intercept of a linear function <m>f</m>.
+          Use the point-slope form of a liner function,
+          <xref ref="linearfunctionpointslope">Equation</xref> to show <m>f(x) = m(x-c)</m>.
+          This is the <sq>slope <m>x</m>-intercept</sq> form of the linear function.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that for all linear functions <m>L</m> with with slope <m>3</m>,
+          <m>L(120) = L(100) + 60</m>.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          Find the slopes between the following points from the data set given in <xref ref="timetempregressionex">Example</xref>
+          and compare them with the slope of the corresponding regression line:
+          <ol>
+            <li>
+              <p>
+                <m>(0, 64)</m>, <m>(4, 75)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(4, 75)</m>, <m>(8, 83)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(8, 83)</m>, <m>(10, 83)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(10, 83)</m>, <m>(12, 82)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          According to this
+          <url href="http://www.ohiobiz.com/census/Lake.pdf"><em>website</em></url><fn>
+          <url href="http://www.ohiobiz.com/census/Lake.pdf"><em>http://www.ohiobiz.com/census/Lake.pdf</em></url>
+          </fn>,
+          the census data for Lake County, Ohio is:
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Year</cell>
+              <cell>1970</cell>
+              <cell>1980</cell>
+              <cell>1990</cell>
+              <cell>2000</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Population</cell>
+              <cell>197200</cell>
+              <cell>212801</cell>
+              <cell>215499</cell>
+              <cell>227511</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ol>
+            <li>
+              <p>
+                Find the least squares regression line for these data and comment on the goodness of fit.<fn>
+                We'll develop more sophisticated models for the growth of populations in <xref ref="ExponentialandLogarithmicFunctions">Chapter</xref>.
+                For the moment,
+                we use a theorem from Calculus to approximate those functions with lines.
+                </fn> Interpret the slope of the line of best fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the regression line to predict the population of Lake County in 2010. (The recorded figure from the 2010 census is <m>230,\!041</m>)
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the regression line to predict when the population of Lake County will reach <m>250,\!000</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          According to this
+          <url href="http://www.ohiobiz.com/census/Lorain.pdf"><em>website</em></url><fn>
+          <url href="http://www.ohiobiz.com/census/Lorain.pdf"><em>http://www.ohiobiz.com/census/Lorain.pdf</em></url>
+          </fn>,
+          the census data for Lorain County, Ohio is:
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Year</cell>
+              <cell>1970</cell>
+              <cell>1980</cell>
+              <cell>1990</cell>
+              <cell>2000</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Population</cell>
+              <cell>256843</cell>
+              <cell>274909</cell>
+              <cell>271126</cell>
+              <cell>284664</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ol>
+            <li>
+              <p>
+                Find the least squares regression line for these data and comment on the goodness of fit.
+                Interpret the slope of the line of best fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the regression line to predict the population of Lorain County in 2010. (The recorded figure from the 2010 census is <m>301,\!356</m>)
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the regression line to predict when the population of Lake County will reach <m>325,\!000</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          The chart below contains a portion of the fuel consumption information for a 2002 Toyota Echo that Jeffrey used to own.
+          The first row is the cumulative number of gallons of gasoline that I had used and the second row is the odometer reading when I refilled the gas tank.
+          So, for example,
+          the fourth entry is the point (28.25, 1051) which says that I had used a total of 28.25 gallons of gasoline when the odometer read 1051 miles.
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Gasoline Used</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>(Gallons)</cell>
+              <cell>0</cell>
+              <cell>9.26</cell>
+              <cell>19.03</cell>
+              <cell>28.25</cell>
+              <cell>36.45</cell>
+              <cell>44.64</cell>
+              <cell>53.57</cell>
+              <cell>62.62</cell>
+              <cell>71.93</cell>
+              <cell>81.69</cell>
+              <cell>90.43</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Odometer</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>(Miles)</cell>
+              <cell>41</cell>
+              <cell>356</cell>
+              <cell>731</cell>
+              <cell>1051</cell>
+              <cell>1347</cell>
+              <cell>1631</cell>
+              <cell>1966</cell>
+              <cell>2310</cell>
+              <cell>2670</cell>
+              <cell>3030</cell>
+              <cell>3371</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          Find the least squares line for this data.
+          Is it a good fit?
+          What does the slope of the line represent?
+          Do you and your classmates believe this model would have held for ten years had I not crashed the car on the Turnpike a few years ago?
+        </p>
+      </li>
+      <li>
+        <p>
+          Using the energy production data given below
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Year</cell>
+              <cell>1950</cell>
+              <cell>1960</cell>
+              <cell>1970</cell>
+              <cell>1980</cell>
+              <cell>1990</cell>
+              <cell>2000</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Production</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>(in Quads)</cell>
+              <cell>35.6</cell>
+              <cell>42.8</cell>
+              <cell>63.5</cell>
+              <cell>67.2</cell>
+              <cell>70.7</cell>
+              <cell>71.2</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ol>
+            <li>
+              <p>
+                Plot the data using a graphing utility and explain why it does not appear to be linear.
+              </p>
+            </li>
+            <li>
+              <p>
+                Discuss with your classmates why ignoring the first two data points may be justified from a historical perspective.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the least squares regression line for the last four data points and comment on the goodness of fit.
+                Interpret the slope of the line of best fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the regression line to predict the annual US energy production in the year <m>2010</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the regression line to predict when the annual US energy production will reach <m>100</m> Quads.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="averagerateexerfirst">Exercises</xref>
+      - <xref ref="averagerateexerlast"></xref>,
+      compute the average rate of change of the function over the specified interval.
+    </p>
+    <ol cols="4">
+      <li xml:id="averagerateexerfirst">
+        <p>
+          <m>f(x) = x^{3}, \; [-1, 2]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = \dfrac{1}{x}, \; [1, 5]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \sqrt{t}, \; [0, 16]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = x^{2}, \; [-3, 3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(s) = \dfrac{s + 4}{s - 3}, \; [5, 7]</m>
+        </p>
+      </li>
+      <li xml:id="averagerateexerlast">
+        <p>
+          <m>G(s) = 3s^{2} + 2s - 7, \; [-4, 2]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The height of an object dropped from the roof of a building is modeled by:
+          <m>h(t) = -16t^2 + 64</m>, for <m>0 \leq t \leq 2</m>.
+          Here, <m>h(t)</m> is the height of the object off the ground in feet <m>t</m> seconds after the object is dropped.
+          Find and interpret the average rate of change of <m>h</m> over the interval <m>[0,2]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Using data from
+          <url href="http://www.bts.gov/publications/national_transportation_statistics/html/table_04_23.html"><em>Bureau of Transportation Statistics</em></url>,
+          the average fuel economy <m>F(t)</m> in miles per gallon for passenger cars in the US can be modeled by
+          <m>F(t) = -0.0076t^2+0.45t + 16</m>, <m>0 \leq t \leq 28</m>,
+          where <m>t</m> is the number of years since <m>1980</m>.
+          Find and interpret the average rate of change of <m>F</m> over the interval <m>[0,28]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The temperature <m>T(t)</m> in degrees Fahrenheit <m>t</m> hours after 6 AM is given by:
+          <me>
+            T(t) = -\frac{1}{2} t^2 + 8t+32,  0 \leq t \leq 12
+          </me>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find and interpret <m>T(4)</m>,
+              <m>T(8)</m> and <m>T(12)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find and interpret the average rate of change of <m>T</m> over the interval <m>[4,8]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find and interpret the average rate of change of <m>T</m> from <m>t=8</m> to <m>t=12</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find and interpret the average rate of temperature change between 10 AM and 6 PM.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Suppose <m>C(x) = x^2-10x+27</m> represents the costs,
+          in <em>hundreds</em>, to produce <m>x</m> <em>thousand</em> pens.
+          Find and interpret the average rate of change as production is increased from making 3000 to 5000 pens.
+        </p>
+      </li>
+      <li>
+        <p>
+          Recall from <xref ref="ARCRocketExample">Example</xref>
+          The formula <m>s(t) = -5t^2+100t</m> for <m>0 \leq t \leq 20</m> gives the height,
+          <m>s(t)</m>, measured in feet,
+          of a model rocket above the Moon's surface as a function of the time after lift-off,
+          <m>t</m>,
+          in seconds.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find and interpret the average rate of change of <m>s</m> over the following intervals:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>[14.9, 15]</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>[15, 15.1]</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>[14.99, 15]</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>[15, 15.01]</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              What value does the average rate of change appear to be approaching as the interval shrinks closer to the value <m>t=15</m>?
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the equation of the line containing
+              <m>(15, 375)</m> with slope <m>m = -50</m> and graph it along with <m>s</m> on the same set of axes using a graphing utility.
+              What happens as you zoom in near <m>(15, 375)</m>?
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li xml:id="lineshaveconstantratesofchange">
+        <p>
+          Show the average rate of change of a function of the form <m>f(x) = mx+b</m> over
+          <em>any</em> interval is <m>m</m>.
+        </p>
+      </li>
+      <li xml:id="whynoverticallineshere">
+        <p>
+          Why doesn't the graph of the vertical line <m>x = b</m> in the <m>xy</m>-plane represent <m>y</m> as a function of <m>x</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          With help from a graphing utility,
+          graph the following pairs of functions on the same set of axes:<fn>
+          See <xref ref="greatestintegerdefn">Example</xref>
+          for the definition of <m>\lfloor x \rfloor</m>.
+          </fn>
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = 2-x</m> and <m>g(x) = \lfloor 2-x \rfloor</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(x) = x^2-4</m> and <m>g(x) = \lfloor x^2 -4\rfloor</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = x^3</m> and <m>g(x) = \lfloor x^3 \rfloor</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(x) = \sqrt{x}-4</m> and <m>g(x) = \lfloor \sqrt{x} -4 \rfloor</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        Choose more functions <m>f(x)</m> and graph <m>y = f(x)</m> alongside
+        <m>y = \lfloor f(x) \rfloor</m> until you can explain how,
+        in general,
+        one would obtain the graph of
+        <m>y = \lfloor f(x) \rfloor</m> given the graph of <m>y = f(x)</m>.
+      </li>
+      <li xml:id="LagrangeLinearExercise">
+        <p>
+          The
+          <url href="https://en.wikipedia.org/wiki/Lagrange_polynomial"><em>Lagrange Interpolate</em></url>
+          function <m>L</m> for two points <m>(x_{0}, y_{0})</m> and
+          <m>(x_{1}, y_{1})</m> where <m>x_{0} \neq x_{1}</m>  is given by:
+          <me>
+            L(x) = y_{0}  \dfrac{x - x_{1}}{x_{0} - x_{1}}+ y_{1}\dfrac{x - x_{0}}{x_{1} - x_{0}}
+          </me>
+        </p>
+        <ol>
+          <li>
+            <p>
+              For each of the following pairs of points,
+              find <m>L(x)</m> using the formula above and verify each of the points lies on the graph of <m>y = L(x)</m>.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>(-1,3)</m>, <m>(2,3)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(-3,-2)</m>, <m>(5,-2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(-3,-2)</m>, <m>(0,1)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(-1,5)</m>, <m>(2,-1)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Verify that, in general,
+              <m>L(x_{0}) = y_{0}</m> and <m>L(x_{1}) = y_{1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show the point-slope form of a linear function,
+              <xref ref="linearfunctionpointslope">Equation</xref>
+              is equivalent to the formula given for <m>L(x)</m> after making the identifications:
+              <m>f(x_{0}) = y_{0}</m> and <m>m = \dfrac{y_{1} - y_{0}}{x_{1} - x_{0}}</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="3">
+      <li>
+        <p>
+          <m>f(x) =2x-1</m> slope: <m>m = 2</m> <m>y</m>-intercept:
+          <m>(0,-1)</m> <m>x</m>-intercept:
+          <m>\left(\frac{1}{2}, 0 \right)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-4}{4} \point[4pt]{(0,-1), (0.5,0)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-1,2, 0.1}{2*x-1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) =3-t</m> slope: <m>m = -1</m> <m>y</m>-intercept:
+          <m>(0,3)</m> <m>t</m>-intercept:
+          <m>(3, 0)</m> \columnbreak \begin{mfpic}[15]{-2}{5}{-2}{5} \point[4pt]{(0,3), (3,0)} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-1,1,2,3,4} \ymarks{-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-1,4, 0.1}{3-x} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(w) = 3</m> slope: <m>m =0</m> <m>y</m>-intercept:
+          <m>(0,3)</m> <m>w</m>-intercept:
+          none \columnbreak \begin{mfpic}[15]{-3}{3}{-1}{5} \point[4pt]{(0,3)} \axes \tlabel[cc](3,-0.5){<m>w</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3, 0.1}{3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(s) = 0</m> slope: <m>m =0</m> <m>y</m>-intercept:
+          <m>(0,0)</m> <m>s</m>-intercept:
+          <m>\{ (s,0) \, | \, \text{ \(s\) is a real number } \}</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-2}{2} \arrow \polyline{(0,-2), (0,2)} \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,2){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3, 0.1}{0} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = \frac{2}{3} x + \frac{1}{3}</m> slope:
+          <m>m = \frac{2}{3}</m> <m>y</m>-intercept:
+          <m>\left(0, \frac{1}{3}\right)</m> <m>t</m>-intercept:
+          <m>\left(-\frac{1}{2}, 0\right)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-2}{3} \point[4pt]{(0,0.33333), (-0.5,0)} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3, 0.1}{0.66667*x+0.33333} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>j(w)= \dfrac{1-w}{2}</m> slope:
+          <m>m = -\frac{1}{2}</m> <m>y</m>-intercept:
+          <m>\left(0, \frac{1}{2}\right)</m> <m>w</m>-intercept:
+          <m>\left(1, 0\right)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-2}{3} \point[4pt]{(0,0.5), (1,0)} \axes \tlabel[cc](3,-0.5){<m>w</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3, 0.1}{0.5-0.5*x} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> domain: <m>(-\infty, \infty)</m> range:
+          <m>[1, \infty)</m> <m>y</m>-intercept:
+          <m>(0,4)</m> <m>x</m>-intercept:
+          none \begin{mfpic}[10]{-2}{8}{-1}{6} \axes \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](8,-0.5){<m>x</m>} \ymarks{1, 2, 3, 4, 5} \xmarks{-1,1,2,3,4,5,6,7} \tlpointsep{4pt} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \axislabels {x}{{ <m>-1</m> } -1, { <m>1</m>} 1,{ <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7} \penwd{1.25pt} \arrow \polyline{(3,1), (-2,6)} \arrow \polyline{(3,2), (8,2)} \point[4pt]{(3,1), (0,4)} \pointfillfalse \point[4pt]{(3,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> domain: <m>(-\infty, \infty)</m> range:
+          <m>[0, \infty)</m> <m>y</m>-intercept:
+          <m>(0,2)</m> <m>x</m>-intercept:
+          <m>(2,0)</m> \begin{mfpic}[10]{-2}{8}{-1}{6} \axes \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](8,-0.5){<m>x</m>} \ymarks{1, 2, 3, 4, 5} \xmarks{-1,1,2,3,4,5,6,7} \tlpointsep{4pt} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \axislabels {x}{{ <m>-1</m> } -1, { <m>1</m>} 1,{ <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2,4), (2,0), (6,4)} \point[4pt]{(2,0), (0,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> domain: <m>(-\infty, \infty)</m> range:
+          <m>(-4, \infty)</m> <m>y</m>-intercept:
+          <m>(0,0)</m> <m>t</m>-intercepts:
+          <m>(-2,0)</m>,
+          <m>(0,0)</m> \begin{mfpic}[15]{-3}{2}{-4.3}{4} \axes \tlabel[cc](2,-0.5){<m>t</m>} \tlabel[cc](0.5,3.75){<m>y</m>} \xmarks{-2,-1,1} \ymarks{-4,-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \function{-2.5, 0, 0.1}{-2*x - 4} \arrow \function{0, 1.2, 0.1}{3*x} \point[4pt]{(0,0), (-2,0)} \pointfillfalse \point[4pt]{(0,-4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> domain: <m>(-\infty, \infty)</m> range:
+          <m>[-3, 3]</m> <m>y</m>-intercept:
+          <m>(0,-3)</m> <m>t</m>-intercept:
+          <m>\left(\frac{3}{2}, 0 \right) = (1.5,0)</m> \begin{mfpic}[10]{-5}{5}{-4}{4} \axes \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](5,-0.5){<m>t</m>} \ymarks{-3,-2,-1,1, 2, 3} \xmarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {y}{{ <m>-2</m>} -2,{ <m>-1</m>} -1,{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {x}{{ <m>-4</m> } -4, { <m>-3</m> } -3, { <m>-2</m> } -2,{ <m>-1</m> } -1,{ <m>1</m>} 1,{ <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \polyline{(0,-3), (-5,-3)} \arrow \polyline{(3,3), (5,3)} \polyline{(0,-3), (3,3)} \point[4pt]{(3,3), (0,-3), (1.5,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>~</m> \begin{mfpic}[15]{-5}{5}{-1}{2} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,2){<m>y</m>} \tlabel[cc](-1, 1){<m>(0,1)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \polyline{( -5,0), (0,0)} \arrow \polyline{( 0,1), (5,1)} \point[4pt]{(0,1)} \pointfillfalse \point[4pt]{(0,0)} \tcaption{ <m>y = U(t)</m>} \end{mfpic}
+            </p>
+          </li>
+          <li>
+            <p>
+              domain: <m>(-\infty, \infty)</m>, range: <m>\{ 0, 1\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U</m> is constant on <m>(-\infty, 0)</m> and <m>[0, \infty)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>U(t-2) = \begin{cases}0 \amp \text{ if \(t\lt 2\), } \\ 1 \amp \text{ if \(t \geq 2\). } \end{cases}</m> \begin{mfpic}[15]{-5}{5}{-1}{2} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,2){<m>y</m>} \tlabel[cc](-1, 1){<m>(0,1)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \polyline{( -5,0), (2,0)} \arrow \polyline{(2,1), (5,1)} \point[4pt]{(2,1)} \pointfillfalse \point[4pt]{(2,0)} \tcaption{ <m>y = U(t-2)</m>} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>f(x) = -3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(t) = \begin{cases}2 \amp \text{ if \(t \leq 1\), } \\ -3 \amp \text{ if \(1 \lt t \leq 3\), } \\ 4 \amp \text{ if \(t>3\). } \end{cases}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>L(x) = -\frac{3}{5} x + 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(v) = \begin{cases}3v+5 \amp \text{ if \(v \leq -1\), } \\ 2 \amp \text{ if \(-1 \lt v \leq 3\), } \end{cases}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>C(20) = 300</m>.
+              It costs <m>\dollar300</m> for 20 copies of the book.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>C(50) = 675</m>, <m>$ 675</m>.
+              <m>C(51) = 612</m>, <m>$ 612</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              56 books.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>S(10) = 17.5</m>, <m>$ 17.50</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              There is free shipping on orders of <m>15</m> or more comic books.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>C(750) = 25</m>, <m>$ 25</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>C(1200) = 45</m>, <m>$ 45</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              It costs <m>\dollar25</m> for up to <m>1000</m> minutes and <m>10</m> cents per minute for each minute over <m>1000</m> minutes.
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>d(t) = 3t</m>, <m>t \geq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>E(t) = 360t</m>, <m>t \geq 0</m>.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>C(x) = 45x+20</m>, <m>x \geq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>C(t) = 80t + 50</m>, <m>0 \leq t \leq 8</m>.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>W(x) = 200 + .05x,\, x \geq 0\;\;</m> She must make $5500 in weekly sales.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>C(p) = 0.035p + 1.5 \;</m> The slope <m>0.035</m> means it costs <m>3.5</m>\textcent per page.
+          <m>C(0) = 1.5</m> means there is a fixed,
+          or start-up, cost of <m>\dollar1.50</m> to make each book.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(m) = 2.25m + 2.05 \;</m> The slope <m>2.25</m> means it costs an additional
+          <m>\dollar2.25</m> for each mile beyond the first 0.2 miles.
+          <m>F(0) = 2.05</m>, so according to the model,
+          it would cost <m>\dollar2.05</m> for a trip of <m>0</m> miles.
+          Would this ever really happen?
+          Depends on the driver and the passenger, we suppose.
+        </p>
+      </li>
+      <li>
+        <ol cols="2">
+          <li>
+            <p>
+              <m>F(T) = \frac{9}{5}T + 32</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>C(T) = \frac{5}{9}(T - 32) = \frac{5}{9}T - \frac{160}{9}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>F(-40) = -40 = C(-40)</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>N(T) = -\frac{2}{15}T + \frac{43}{3}</m> and <m>N(20) = \frac{35}{3} \approx 12</m> howls per hour.
+          Having a negative number of howls makes no sense and since
+          <m>N(107.5) = 0</m> we can put an upper bound of <m>107.5^{\circ}F</m> on the domain.
+          The lower bound is trickier because there's nothing other than common sense to go on.
+          As it gets colder, he howls more often.
+          At some point it will either be so cold that he freezes to death or he's howling non-stop.
+          So we're going to say that he can withstand temperatures no lower than
+          <m>-42^{\circ}F</m> so that the applied domain is <m>[-42, 107.5]</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>C(0) = 175</m>, so our start-up costs are <m>$ 175</m>.
+              <m>C(5) = 700</m>, so to produce <m>5</m> systems,
+              it costs <m>$ 700</m>. \begin{mfpic}[15]{-1}{7}{-1}{8.5} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,8.5){<m>y</m>} \tlabel[cc](1,1.25){<m>(0, 175)</m>} \tlabel[cc](5.5,6.25){<m>(5, 700)</m>} \xmarks{1,2,3,4,5,6} \ymarks{1,2,3,4,5,6} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>100</m>} 1, {<m>200</m>} 2, {<m>300</m>} 3, {<m>400</m>} 4, {<m>500</m>} 5, {<m>600</m>} 6, {<m>700</m>} 7, {<m>800</m>} 8} \penwd{1.25pt} \arrow \polyline{(0,1.75), (6,8.05)} \point[4pt]{(0,1.75), (5,7)} \tcaption{ <m>y = C(x)</m>} \end{mfpic}
+            </p>
+          </li>
+          <li>
+            <p>
+              Since we can't make a negative number of game systems,
+              <m>x \geq 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The slope is <m>m = 105</m> so for each additional system produced,
+              it costs an additional <m>\dollar105</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Solving <m>C(x) = 15000</m> gives
+              <m>x \approx 141.19</m> so <m>141</m> can be produced for <m>$ 15, \! 000</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>p(x) = -3x+340</m>,
+              <m>0 \leq x \leq 113</m>. \begin{mfpic}[15]{-1}{7}{-1}{8} \axes \tlabel[cc](7.5,0){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \tlabel[cc](1,6.75){<m>(0, 340)</m>} \tlabel[cc](6,0.75){<m>(113, 1)</m>} \xmarks{1,2,3,4,5,6} \ymarks{1,2,3,4,5,6} \tlpointsep{4pt} \axislabels {x}{ {<m>20</m>} 1, {<m>40</m>} 2, {<m>60</m>} 3, {<m>80</m>} 4, {<m>100</m>} 5, {<m>120</m>} 6} \axislabels {y}{{<m>50</m>} 1, {<m>100</m>} 2, {<m>150</m>} 3, {<m>200</m>} 4, {<m>250</m>} 5, {<m>300</m>} 6} \penwd{1.25pt} \polyline{(0,6.8), (5.65,0.02)} \point[4pt]{(0,6.8), (5.65,0.02)} \tcaption{ <m>y = p(x)</m>} \end{mfpic}
+            </p>
+          </li>
+          <li>
+            <p>
+              The slope is <m>m = -3</m> so for each <m>\dollar3</m> drop in price,
+              we sell one additional game system.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since <m>x = 150</m> is not in the domain of <m>p</m>,
+              <m>p(150)</m> is not defined.
+              (In other words, under these conditions,
+              it is impossible to sell 150 game systems.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Solving <m>p(x) = 150</m> gives
+              <m>x \approx 63.33</m> so if the price <m>\dollar150</m> per system,
+              we would sell <m>63</m> systems.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle C(p) = \left\{ \begin{array}{rcl} 6p + 1.5 \amp \mbox{ if } \amp 1 \leq p \leq 5 \\ 5.5p \amp \mbox{ if } \amp p\geq 6 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle T(n) = \left\{ \begin{array}{rcl} 15n \amp \mbox{ if } \amp 1 \leq n \leq 9 \\ 12.5n \amp \mbox{ if } \amp n \geq 10 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle C(m) = \left\{ \begin{array}{rcl} 10 \amp \mbox{ if } \amp 0 \leq m \leq 500 \\ 10+0.15(m-500) \amp \mbox{ if } \amp m > 500 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>{\displaystyle P(c) = \left\{ \begin{array}{rcl} 0.12c \amp \mbox{ if } \amp 1 \leq c \leq 100 \\ 12 + 0.1(c-100) \amp \mbox{ if } \amp c > 100 \end{array} \right. }</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <me>
+                {\displaystyle D(d) = \left\{ \begin{array}{rcl} 8 \amp  \mbox{ if }  \amp  0 \leq d \leq 15 \\ -\frac{1}{2} \, d + \frac{31}{2} \amp  \mbox{ if }  \amp  15 \leq d \leq 27 \\ 2 \amp  \mbox{ if }  \amp  27 \leq d \leq 37 \end{array}  \right. }
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>
+                {\displaystyle D(s) = \left\{ \begin{array}{rcl} 2 \amp  \mbox{ if }  \amp  0 \leq s \leq 10 \\ \frac{1}{2} \, s -3 \amp  \mbox{ if }  \amp  10 \leq s \leq 22 \\ 8 \amp  \mbox{ if }  \amp  22 \leq s \leq 37 \end{array}  \right. }
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>~</m>
+              <tabular>
+                <row>
+                  <cell>\begin{mfpic}[10][15]{-1}{13}{-1}{4} \axes \point[4pt]{(0,3), (5,3), (9,1), (12,1)} \xmarks{5,9,12} \ymarks{0,1,3} \tlpointsep{5pt} \axislabels{x}{ {<m>15</m>} 5, {<m>27</m>} 9, {<m>37</m>} 12} \axislabels{y}{ {<m>2</m>} 1, {<m>8</m>} 3} \tcaption{<m>y = D(d)</m>} \penwd{1.25pt} \polyline{(0,3), (5,3), (9,1), (12,1)} \end{mfpic}</cell>
+                  <cell>\begin{mfpic}[10][15]{-1}{13}{-1}{4} \axes \point[4pt]{(12,3), (7,3), (3,1), (0,1)} \xmarks{3,7,12} \ymarks{0,1,3} \tlpointsep{5pt} \axislabels{x}{ {<m>10</m>} 3, {<m>22</m>} 7, {<m>37</m>} 12} \axislabels{y}{ {<m>2</m>} 1, {<m>8</m>} 3} \tcaption{<m>y = D(s)</m>} \penwd{1.25pt} \polyline{(12,3), (7,3), (3,1), (0,1)} \end{mfpic}</cell>
+                </row>
+              </tabular>
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          Since <m>I(x) = x</m> for all real numbers <m>x</m>,
+          the function <m>I</m> doesn't change the <sq>identity</sq> of the input at all.
+        </p>
+      </li>
+      <li>
+        <p>
+          If a graph contains more than one <m>y</m>-intercept,
+          it would violate the Vertical Line Test since <m>x=0</m> would be matched with
+          (at least)
+          two different <m>y</m>-values.
+        </p>
+      </li>
+      <li>
+        <p>
+          Vertical Lines fail the Vertical Line Test.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(- \frac{b}{m}, 0 \right)</m>.
+          (Note the importance here of <m>m \neq 0</m>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Plugging in <m>(c,0)</m> for <m>(x_{0}, f(x_{0}))</m>,
+          we get <m>f(x) = f(x_{0}) + m (x - x_{0}) = 0 + m(x-c)</m> or <m>f(x) = m(x-c)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Since <m>L</m> is linear with slope <m>3</m>,
+          <m>L(x) = L(x_{0}) + m \Delta x = L(100) + (3)(120-100) = L(100)+60</m>.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <ol cols="2">
+          <li>
+            <p>
+              <m>m = \frac{75-64}{4-0} = 2.75</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>m = \frac{83-75}{8-4} = 2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>m = \frac{83-83}{10-8} = 0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>m = \frac{82-83}{12-10} = -0.5</m>
+            </p>
+          </li>
+        </ol>
+        The first two points contributed to a regression line slope of <m>m = 2.55</m>;
+        the last two points contributed to a regression line slope of <m>m=-0.25</m>.
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>y = 936.31x - 1645322.6</m> with
+              <m>r=0.9696</m> which indicates a good fit.
+              The slope <m>936.31</m> indicates Lake County's population is increasing at a rate of (approximately) 936 people per year.
+            </p>
+          </li>
+          <li>
+            <p>
+              According to the model, the population in 2010 will be <m>236, \!660</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              According to the model, the population of Lake County will reach
+              <m>250,\!000</m> sometime between 2024 and 2025.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>y = 796.8x - 1309762.5</m> with
+              <m>r=0.8916</m> which indicates a reasonable fit.
+              The slope <m>796.8</m> indicates Lorain County's population is increasing at a rate of (approximately) 797 people per year.
+            </p>
+          </li>
+          <li>
+            <p>
+              According to the model, the population in 2010 will be <m>291, \! 805</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              According to the model, the population of Lake County will reach
+              <m>325,\!000</m> sometime between 2051 and 2052.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The regression line is <m>y = 36.8x + 16.39</m> with <m>r = .99987</m>,
+          so this is an excellent fit.
+          The slope <m>36.8</m> represents mileage in miles per gallon.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>y = 0.266x - 459.86</m> with
+              <m>r = 0.9607</m> which indicates a good fit.
+              The slope <m>0.266</m> indicates the country's energy production is increasing at a rate of <m>0.266</m> Quad per year.
+            </p>
+          </li>
+          <li>
+            <p>
+              According to the model, the production in 2010 will be <m>74.8</m> Quad.
+            </p>
+          </li>
+          <li>
+            <p>
+              According to the model,
+              the production will reach <m>100</m> Quad in the year 2105.
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\frac{2^{3} - (-1)^{3}}{2 - (-1)} = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{\frac{1}{5} - \frac{1}{1}}{5 - 1} = -\frac{1}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{\sqrt{16} - \sqrt{0}}{16 - 0} = \frac{1}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{3^{2} - (-3)^{2}}{3 - (-3)} = 0</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\dfrac{\frac{7 + 4}{7 - 3} - \frac{5 + 4}{5 - 3}}{7 - 5} = -\frac{7}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(3(2)^{2}+2(2)-7)-(3(-4)^{2}+2(-4)-7)}{2-(-4)}=-4</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          The average rate of change is <m>\frac{h(2) - h(0)}{2-0}=-32</m>.
+          During the first two seconds after it is dropped,
+          the object has fallen at an average rate of <m>32</m> feet per second.
+        </p>
+      </li>
+      <li>
+        <p>
+          The average rate of change is <m>\frac{F(28) - F(0)}{28-0}=0.2372</m>.
+          From 1980 to 2008, the average fuel economy of passenger cars in the US increased,
+          on average,
+          at a rate of <m>0.2372</m> miles per gallon per year.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>T(4) = 56</m>,
+              so at 10 AM (4 hours after 6 AM), it is <m>56^{\circ}</m>F. <m>T(8) = 64</m>,
+              so at 2 PM (8 hours after 6 AM), it is <m>64^{\circ}</m>F. <m>T(12) = 56</m>,
+              so at 6 PM (12 hours after 6 AM), it is <m>56^{\circ}</m>F.
+            </p>
+          </li>
+          <li>
+            <p>
+              The average rate of change is <m>\frac{T(8)-T(4)}{8-4}=2</m>.
+              Between 10 AM and 2 PM, the temperature increases,
+              on average, at a rate of <m>2^{\circ}</m>F per hour.
+            </p>
+          </li>
+          <li>
+            <p>
+              The average rate of change is <m>\frac{T(12)-T(8)}{12-8}=-2</m>.
+              Between 2 PM and 6 PM, the temperature decreases,
+              on average, at a rate of <m>2^{\circ}</m>F per hour.
+            </p>
+          </li>
+          <li>
+            <p>
+              The average rate of change is <m>\frac{T(12)-T(4)}{12-4}=0</m>.
+              Between 10 AM and 6 PM, the temperature,
+              on average, remains constant.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The average rate of change is <m>\frac{C(5)-C(3)}{5-3}=-2</m>.
+          As production is increased from 3000 to 5000 pens,
+          the cost decreases at an average rate of
+          <m>\dollar200</m> per 1000 pens produced (20\textcent per pen.)
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  <m>-49.5</m> so the average velocity of the rocket between <m>14.9</m> and <m>15</m> seconds after lift off is <m>-49.5</m> feet per second (<m>49.5</m> feet per second directed <em>downwards</em>.)
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>-50.5</m> so the average velocity of the rocket between <m>14</m> and <m>15.1</m> seconds after lift off is <m>-50.5</m> feet per second.
+                  (<m>50.5</m> feet per second directed <em>downwards</em>.)
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>-49.95</m> so the average velocity of the rocket between <m>14.99</m> and <m>15</m> seconds after lift off is <m>-49.95</m> feet per second.
+                  (<m>49.95</m> feet per second directed <em>downwards</em>.)
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>-50.05</m> so the average velocity of the rocket between <m>15.01</m> and <m>15</m> seconds after lift off is <m>-50.05</m> feet per second.
+                  (<m>50.05</m> feet per second directed <em>downwards</em>.)
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              The average rate of change seem to be approaching <m>-50</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Line: <m>y = -50(t-15) + 375</m> or <m>y = -50t + 1125</m>.
+              Graphing this line along with the <m>s</m> on a graphing utility we find the two graphs become indistinguishable as we zoom in near <m>(15, 375)</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  <m>L(x) = 3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>L(x) = -2</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>L(x) = x+1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>L(x) = -2x+3</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

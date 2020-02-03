@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="RootRadicalPowerFunctions">
+  <title>Root, Radical and Power Functions</title>
+  <xi:include  href="RootRadicalFunctions.ptx"/>
+  <xi:include  href="PowerFunctions.ptx"/>
+  <xi:include  href="PowerEqIneq.ptx"/>
+</chapter>

@@ -1,0 +1,1006 @@
+<section xml:id="RationalIneq">
+  <title>Inequalities involving Rational Functions and Applications</title>
+  <introduction>
+    <p>
+      In this section,
+      we solve equations and inequalities involving rational functions and explore associated application problems.
+      Our first example showcases the critical difference in procedure between solving equations and inequalities.
+    </p>
+    <example xml:id="rationalinequalityex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol cols="2">
+            <li>
+              <p>
+                Solve <m>\dfrac{x^3-2x+1}{x-1} = \dfrac{1}{2}x-1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve <m>\dfrac{x^3-2x+1}{x-1} \geq \dfrac{1}{2}x-1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Verify your solutions using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                To solve the equation, we clear denominators
+                <me>
+                  \begin{array}{rclr}  \dfrac{x^3-2x+1}{x-1} \amp  = \amp  \dfrac{1}{2}x-1 \amp  \\  \left(\dfrac{x^3-2x+1}{x-1}\right) \cdot 2(x-1) \amp  = \amp  \left( \dfrac{1}{2}x-1 \right) \cdot 2(x-1) \amp  \\  2x^3 - 4x + 2 \amp  = \amp  x^2-3x+2 \amp  \text{ expand }  \\  2x^3 -x^2 - x \amp  = \amp  0 \amp  \\  x(2x+1)(x-1) \amp  = \amp  0 \amp  \text{ factor } \\  x \amp  = \amp  -\frac{1}{2}, \, 0, \, 1 \amp \end{array}
+                </me>
+                Since we cleared denominators,
+                we need to check for extraneous solutions.
+                Sure enough,
+                we see that <m>x=1</m> does not satisfy the original equation,
+                so  our only solutions are <m>x=-\frac{1}{2}</m> and <m>x=0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve the inequality,
+                it may be tempting to begin as we did with the equation <m>-</m> namely by multiplying both sides by the quantity <m>(x-1)</m>.
+                The problem is that, depending on <m>x</m>,
+                <m>(x-1)</m> may be positive
+                (which doesn't affect the inequality)
+                or <m>(x-1)</m> could be negative
+                (which would reverse the inequality).
+                Instead of working by cases,
+                we collect all of the terms on one side of the inequality with <m>0</m> on the other and make a sign diagram using the technique given on <xref ref="rationalsigndiagram">page</xref>
+                in <xref ref="RationalGraphs">Section</xref>.
+                <me>
+                  \begin{array}{rclr}  \dfrac{x^3-2x+1}{x-1} \amp  \geq \amp  \dfrac{1}{2}x-1 \amp  \\  \dfrac{x^3-2x+1}{x-1}  - \dfrac{1}{2} x + 1\amp  \geq \amp  0\amp  \\  \dfrac{2 \left(x^3-2x+1\right)}{2(x-1)}  - \dfrac{x(x-1)}{2(x-1)} + \dfrac{2(x-1)}{2(x-1)}\amp  \geq \amp  0\amp \text{ get a common denominator }  \\  \dfrac{2\left(x^3-2x+1\right)-x(x-1)+2(x-1)}{2(x-1)} \amp  \geq \amp  0 \amp  \\  \dfrac{2x^3-x^2-x}{2x-2} \amp  \geq \amp  0 \amp  \text{ expand } \end{array}
+                </me>
+                Viewing the left hand side as a rational function <m>r(x)</m> we make a sign diagram.
+                The only value excluded from the domain of <m>r</m> is <m>x=1</m> which is the solution to <m>2x-2=0</m>.
+                The zeros of <m>r</m> are the solutions to <m>2x^3-x^2-x=0</m>,
+                which we have already found to be <m>x=0</m>,
+                <m>x=-\frac{1}{2}</m> and <m>x=1</m>,
+                the latter was discounted as a zero because it is not in the domain.
+                Choosing test values in each test interval,
+                we construct the sign diagram below.  \begin{mfpic}[10]{-6}{6}{-2}{2} \arrow \reverse \arrow \polyline{(-6,0),(6,0)} \xmarks{-3,0,3} \tlpointsep{6pt} \axislabels {x}{{<m>-\frac{1}{2}</m> } -3, {<m>0</m>} 0, {<m>1</m>} 3 } \tlabel[cc](-4.5,1){<m>(+)</m>} \tlabel[cc](-3,1){<m>0</m>} \tlabel[cc](-1.5,1){<m>(-)</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](1.5,1){<m>(+)</m>} \tlabel[cc](3,1){\textinterrobang} \tlabel[cc](4.5,1){<m>(+)</m>} \end{mfpic}  We are interested in where <m>r(x) \geq 0</m>.
+                We see  <m>r(x) > 0</m>, or <m>(+)</m>,
+                on the intervals <m>\left(-\infty, -\frac{1}{2}\right)</m>,
+                <m>(0,1)</m> and <m>(1, \infty)</m>.
+                We know <m>r(x) = 0</m> when  <m>x = -\frac{1}{2}</m> and <m>x = 0</m>.
+                Hence, <m>r(x) \geq 0</m> on  <m>\left( - \infty, -\frac{1}{2} \right] \cup [0,1) \cup (1, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To check our answers graphically,
+                let <m>f(x) = \frac{x^3-2x+1}{x-1}</m> and <m>g(x) = \frac{1}{2} x -1</m>.
+                The solutions to <m>f(x)=g(x)</m> are the <m>x</m>-coordinates of the points where the graphs of <m>y=f(x)</m> and <m>y=g(x)</m> intersect.
+                We graph both <m>f</m> and <m>g</m> below
+                (the graph of <m>g</m> is the line and is slightly lighter in color.)
+                We find only two intersection points,
+                <m>(-0.5, -1.25)</m> and <m>(0,-1)</m> which correspond to our solutions <m>x = -\frac{1}{2}</m> and <m>x = 0</m>.
+                The solution to <m>f(x) \geq g(x)</m> represents not only where the graphs meet,
+                but the intervals over which the graph of <m>y=f(x)</m> is above (<m>></m>) the graph of <m>g(x)</m>.
+                From the graph, this <em>appears</em>
+                to happen on on <m>\left( - \infty, -\frac{1}{2} \right] \cup [0, \infty)</m> which <em>almost</em>
+                matches the answer we found analytically.
+                We have to remember that <m>f</m> is not defined at <m>x=1</m>,
+                so it cannot be included in our solution.<fn>
+                We invite the reader to show there is a hole in the graph of <m>y = f(x)</m> at <m>(1,1)</m>.
+                </fn>
+                <tabular>
+                  <row>
+                    <cell><image width="51%" source="./RationalIneqGraphics/RatIneqEx01.jpg"/></cell>
+                    <cell><image width="51%" source="./RationalIneqGraphics/RatIneqEx02.jpg"/></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      The important take-away from <xref ref="rationalinequalityex">Example</xref>
+      is not to clear fractions when working with an inequality unless you know for certain the sign of the denominators.
+      We offer another example.
+    </p>
+    <example xml:id="morerationalineq">
+      <statement>
+        <p>
+          Solve: <m>2t (3t-2)^{-1} \leq 3t^2 (3t-2)^{-2}</m>.
+          Check your answer using a graphing utility.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We begin by rewriting the terns with negative exponents as fractions and gathering all nonzero terms to one side of the inequality:
+          <me>
+            \begin{array}{rclr}  2t (3t-2)^{-1} \amp   \leq \amp  3t^2 (3t-2)^{-2} \amp  \\  \dfrac{2t}{3t-2} \amp  \leq \amp  \dfrac{3t^2}{(3t-2)^2} \amp  \\   \dfrac{2t}{3t-2}  - \dfrac{3t^2}{(3t-2)^2}  \amp  \leq \amp  0 \amp   \\  \dfrac{2t(3t-2)}{(3t-2)^2}  - \dfrac{3t^2}{(3t-2)^2}  \amp  \leq \amp  0  \amp  \text{ get a common denominator }  \\  \dfrac{2t(3t-2) - 3t^2}{(3t-2)^2}  \amp  \leq \amp  0  \amp \\  \dfrac{3t^2-4t}{(3t-2)^2}  \amp  \leq \amp  0  \amp  \text{ expand } \end{array}
+          </me>
+        </p>
+        <p>
+          We define <m>r(t) = \frac{3t^2-4t}{(3t-2)^2}</m> and set about constructing a sign diagram for <m>r</m>.
+          Solving <m>(3t-2)^2 = 0</m> gives
+          <m>t = \frac{2}{3}</m>, our sole excluded value.
+          To find the zeros of <m>r</m>,
+          we set <m>r(t) = \frac{3t^2-4t}{(3t-2)^2} = 0</m> and solve <m>3t^2-4t = 0</m>.
+          Factoring gives <m>t(3t-4) = 0</m> so our solutions are <m>t = 0</m> and <m>t = \frac{4}{3}</m>.
+          After choosing test values, we get the sign diagram below on the left.
+          Since we are looking for where <m>r(t) \leq 0</m>,
+          we are looking for where <m>r(t)</m> is <m>(-)</m> or <m>r(t) = 0</m>.
+          Hence, our final answer is <m>\left[0, \frac{2}{3} \right) \cup \left(\frac{2}{3}, \frac{4}{3} \right]</m>.
+          Below on the right, we graph <m>f(t) = 2t(3t-1)^{-1}</m>
+          (the darker curve),
+          <m>g(t) = 3t^2(3t-2)^{-2}</m>,
+          and vertical asymptote <m>x = \frac{2}{3}</m>, the dashed line.
+          Sure enough,
+          the graph of <m>f</m> intersects the graph of <m>g</m> when <m>t = 0</m> and <m>t = \frac{4}{3}</m>.
+          Moreover, the graph of <m>f</m> is below the graph of <m>g</m> everywhere they are defined between these values,
+          in accordance with our algebraic solution.
+        </p>
+        <tabular>
+          {m{2.5in}m{2.5in}}
+          \begin{mfpic}[10]{-6}{6}{-2}{2}
+          \arrow \reverse \arrow \polyline{(-6,0),(6,0)}
+          \xmarks{-3,0,3}
+          \tlpointsep{6pt}
+          \axislabels {x}{{<m>0</m> } -3, {<m>\frac{2}{3}</m>} 0, {<m>\frac{4}{3}</m>} 3 }
+          \tlabel[cc](-4.5,1){<m>(+)</m>}
+          \tlabel[cc](-3,1){<m>0</m>}
+          \tlabel[cc](-1.5,1){<m>(-)</m>}
+          \tlabel[cc](0,1){\textinterrobang}
+          \tlabel[cc](1.5,1){<m>(-)</m>}
+          \tlabel[cc](3,1){<m>0</m>}
+          \tlabel[cc](4.5,1){<m>(+)</m>}
+          \end{mfpic}
+          &amp;
+          <image width="51%" source="./RationalIneqGraphics/RatIneqEx03.jpg"/>
+        </tabular>
+      </solution>
+    </example>
+    <p>
+      One thing to note about <xref ref="morerationalineq">Example</xref>
+      is that the quantity <m>(3t-2)^2 \geq 0</m> for all values of <m>t</m>.
+      Hence, as long as we remember
+      <m>t = \frac{2}{3}</m> is excluded from consideration,
+      we could actually multiply both sides of the inequality in <xref ref="morerationalineq">Example</xref>
+      by <m>(3t-2)^2</m> to obtain <m>2t(3t-2) \leq 3t^2</m>.
+      We could then solve this
+      (slightly easier)
+      inequality using the methods of <xref ref="QuadraticFunctions">Section</xref>
+      as long as we remember to exclude <m>t = \frac{2}{3}</m> from our solution.
+      Once again, the more you <em>understand</em>,
+      the less you have to <em>memorize</em>.
+      If you know the <sq><em>why</em></sq> behind an algorithm instead of just the <sq><em>how</em>,</sq> you will know when you can short-cut it.
+    </p>
+    <p>
+      Our next example is an application of average cost.
+      Recall from <xref ref="averagecostprofit">Definition</xref>
+      if <m>C(x)</m> represents the cost to make <m>x</m> items then the average cost per item is given by <m>\overline{C}(x) = \frac{C(x)}{x}</m>,
+      for <m>x>0</m>.
+    </p>
+    <example xml:id="averagecostapp">
+      <statement>
+        <p>
+          Recall from <xref ref="PortaBoyCost">Example</xref>
+          that the cost, <m>C(x)</m>, in dollars,
+          to produce <m>x</m> PortaBoy game systems for a local retailer is <m>C(x) = 80x + 150</m>,
+          <m>x \geq 0</m>.
+          <ol>
+            <li>
+              <p>
+                Find an expression for the average cost function, <m>\overline{C}(x)</m>.
+              </p>
+            </li>
+            <li xml:id="costlessthan">
+              <p>
+                Solve <m>\overline{C}(x) \lt 100</m> and interpret.
+              </p>
+            </li>
+            <li>
+              <p>
+                Determine the behavior of <m>\overline{C}(x)</m> as <m>x \rightarrow \infty</m> and interpret.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                From <m>\overline{C}(x) = \frac{C(x)}{x}</m>,
+                we obtain <m>\overline{C}(x) = \frac{80x+150}{x}</m>.
+                The domain of <m>C</m> is <m>x \geq 0</m>,
+                but since <m>x=0</m> causes problems for <m>\overline{C}(x)</m>,
+                we get our domain to be <m>x>0</m>, or <m>(0, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solving <m>\overline{C}(x) \lt  100</m> means we solve <m>\frac{80x+150}{x} \lt  100</m>.
+                We proceed as in the previous example.
+                <me>
+                  \begin{array}{rclr}  \dfrac{80x+150}{x} \amp  \lt  \amp  100 \amp  \\  \dfrac{80x+150}{x} - 100 \amp  \lt  \amp  0 \amp  \\  \dfrac{80x + 150 - 100x}{x} \amp  \lt  \amp  0 \amp  \text{ common denominator }  \\  \dfrac{150 - 20x}{x} \amp  \lt  \amp  0 \amp \end{array}
+                </me>
+                If we take the left hand side to be a rational function <m>r(x)</m>,
+                we need to keep in mind that the applied domain of the problem is <m>x > 0</m>.
+                This means we consider only the positive half of the number line for our sign diagram.
+                On <m>(0, \infty)</m>,
+                <m>r</m> is defined everywhere so we need only look for zeros of <m>r</m>.
+                Setting <m>r(x)=0</m> gives <m>150-20x =0</m>,
+                so that <m>x = \frac{15}{2}= 7.5</m>.
+                The test intervals on our domain are
+                <m>(0, 7.5)</m> and <m>(7.5, \infty)</m>.
+                We find <m>r(x) \lt  0</m> on
+                <m>(7.5, \infty)</m>.  \begin{mfpic}[10]{0}{8}{-2}{2} \arrow \polyline{(0,0), (8,0)} \xmarks{0,4} \tlabel[cc](0,-1){<m>0</m>} \tlabel[cc](0,1){\textinterrobang} \tlabel[cc](4,-1){<m>7.5</m>} \tlabel[cc](2,1){<m>(+)</m>} \tlabel[cc](4,1){<m>0</m>} \tlabel[cc](6,1){<m>(-)</m>} \end{mfpic}  In the context of the problem,
+                <m>x</m> represents the number of PortaBoy games systems produced and
+                <m>\overline{C}(x)</m> is the average cost to produce each system.
+                Solving <m>\overline{C}(x) \lt  100</m> means we are trying to find how many systems we need to produce so that the average cost is less than <m>\dollar100</m> per system.
+                Our solution,
+                <m>(7.5, \infty)</m> tells us that we need to produce more than <m>7.5</m> systems to achieve this.
+                Since it doesn't make sense to produce half a system,
+                our final answer is <m>[8, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                When we apply <xref ref="hathm">Theorem</xref>
+                to <m>\overline{C}(x)</m> we find that <m>y=80</m> is a horizontal asymptote to the graph of <m>y=\overline{C}(x)</m>.
+                To more precisely determine the behavior of
+                <m>\overline{C}(x)</m> as <m>x \rightarrow \infty</m>,
+                we first use long division<fn>
+                In this case, long division amounts to term-by-term division.
+                </fn> and rewrite <m>\overline{C}(x) = 80+\frac{150}{x}</m>.
+                As <m>x \rightarrow \infty</m>,
+                <m>\frac{150}{x} \rightarrow 0^{+}</m>,
+                which means <m>\overline{C}(x) \approx 80 + \text{ very small \((+)\) }</m>.
+                Thus the average cost per system is getting closer to <m>$ 80</m> per system.
+                If we set <m>\overline{C}(x) = 80</m>,
+                we get <m>\frac{150}{x} = 0</m>, which is impossible,
+                so we conclude that <m>\overline{C}(x) > 80</m> for all <m>x > 0</m>.
+                This means that the average cost per system is always greater than <m>$ 80</m> per system,
+                but the average cost is approaching this amount as more and more systems are produced.
+                Looking back at <xref ref="PortaBoyCost">Example</xref>,
+                we realize <m>$ 80</m> is the variable cost per system <m>-</m> the cost per system above and beyond the fixed initial cost of <m>\dollar150</m>.
+                Another way to interpret our answer is that <sq>infinitely</sq> many systems would need to be produced to effectively <sq>zero out</sq> the fixed cost.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that <xref ref="costlessthan">number</xref>
+      in <xref ref="averagecostapp">Example</xref>
+      is another opportunity to short-cut the standard algorithm and obtain the solution more quickly if we take stock of the situation.
+      Since the applied domain is <m>x>0</m>,
+      we can multiply through the inequality
+      <m>\frac{80x+150}{x} \lt 100</m> by <m>x</m> without worrying about changing the sense of the inequality.
+      This reduces the problem to <m>80x+150 \lt 100x</m>,
+      a basic linear inequality whose solution is readily seen to be <m>x > 7.5</m>.
+      It is absolutely critical here that <m>x>0</m>.
+      Indeed, any time you decide to multiply an inequality by a variable expression,
+      it is necessary to justify why the inequality is preserved.
+      Our next example is another classic <sq>box with no top</sq> problem.
+      The reader is encouraged to compare and contrast this problem with <xref ref="boxnotopex">Example</xref>
+      in <xref ref="GraphsofPolynomials">Section</xref>.
+    </p>
+    <example xml:id="boxnotopfixedvolume">
+      <statement>
+        <p>
+          A box with a square base and no top is to be constructed so that it has a volume of <m>1000</m> cubic centimeters.
+          Let <m>x</m> denote the width of the box,
+          in centimeters as seen below.
+        </p>
+        <p>
+          \begin{mfpic}[15]{-2}{8}{-2}{4} \polyline{(0,0),(0,1)} \polyline{(4,0), (4,1)} \polyline{(0,1),(2,3)} \polyline{(4,1),(6,3)} \polyline{(0,0),(4,0)} \polyline{(0,1),(4,1)} \polyline{(2,3),(6,3)} \polyline{(4,0),(6,2)} \polyline{(6,3),(6,2)} \polyline{(2,3),(2,2)} \polyline{(2,2),(5,2)} \dotted \polyline{(5,2),(6,2)} \polyline{(2,2),(1,1)} \dotted \polyline{(1,1),(0,0)} \arrow \reverse \arrow \polyline{(0,-0.5),(4,-0.5)} \tlabel[cc](2,-1.5){width,
+          <m>x</m>} \arrow \reverse \arrow \polyline{(-0.5,0), (-0.5,1)} \tlabel[cc](-1.5,0.5){height} \arrow \reverse \arrow \polyline{(4.5, -0.25), (6.5,1.75)} \tlabel[cc](6,0.25){depth} \end{mfpic}
+          <ol>
+            <li>
+              <p>
+                Explain why the height of the box
+                (in centimeters)
+                is a function of the width <m>x</m>.
+                Call this function <m>h</m> and find an expression for <m>h(x)</m>,
+                complete with an appropriate applied domain.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve <m>h(x) \geq x</m> and interpret.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret the behavior of <m>h(x)</m> as
+                <m>x \rightarrow 0^{+}</m> and as <m>x \rightarrow \infty</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Express the surface area of the box as a function of <m>x</m>,
+                <m>S(x)</m> and state the applied domain.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use a graphing utility to approximate
+                (to two decimal places)
+                the dimensions of the box which minimize the surface area.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                We are told that the volume of the box is <m>1000</m> cubic centimeters and that <m>x</m> represents the width,
+                in centimeters.
+                Since <m>x</m> represents a physical dimension of a box,
+                we have that <m>x>0</m>.
+                From geometry,
+                we know <m>\text{ volume } = \text{ width } \times \text{ height } \times \text{ depth }</m>.
+                Since the base of the box is a square,
+                the width and the depth are both <m>x</m> centimeters.
+                Hence, <m>1000 = x^2 (\text{ height } )</m>.
+                Solving for the height, we get <m>\text{ height } = \frac{1000}{x^2}</m>.
+                In other words, for each width <m>x>0</m>,
+                we are able to compute <em>the</em><fn>
+                that is, the one and only one
+                </fn> corresponding height using the formula <m>\frac{1000}{x^2}</m>.
+                Hence, the height is a function of <m>x</m>.
+                Using function notation, we write <m>h(x) = \frac{1000}{x^2}</m>.
+                As mentioned before,
+                our only restriction is <m>x>0</m> so the domain of <m>h</m> is <m>(0, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>h(x) \geq x</m>,
+                we proceed as before and collect all nonzero terms on one side of the inequality in order to use a sign diagram.
+                <me>
+                  \begin{array}{rclr}  h(x) \amp  \geq \amp  x \amp  \\  \dfrac{1000}{x^2} \amp  \geq \amp  x \amp  \\  \dfrac{1000}{x^2} - x \amp  \geq \amp  0 \\  \dfrac{1000-x^3}{x^2} \amp  \geq \amp  0 \amp  \text{ common denominator } \end{array}
+                </me>
+                We consider the left hand side of the inequality as our rational function <m>r(x)</m>.
+                We see immediately the only value excluded from the domain of <m>r</m> is <m>0</m>,
+                but since our applied domain is <m>x>0</m>,
+                we restrict our attention to the interval  <m>(0, \infty)</m>.
+                The sole zero of <m>r</m> comes when
+                <m>1000-x^3 = 0</m>,  or when <m>x=10</m>.
+                Choosing test values in the intervals <m>(0,10)</m> and
+                <m>(10, \infty)</m> gives the following:  \begin{mfpic}[10]{0}{8}{-2}{2}  \arrow \polyline{(0,0), (8,0)}  \xmarks{0,4}  \tlabel[cc](0,-1){<m>0</m>}  \tlabel[cc](0,1){\textinterrobang}  \tlabel[cc](2,1){<m>(+)</m>}  \tlabel[cc](4,-1){<m>10</m>}  \tlabel[cc](4,1){<m>0</m>}  \tlabel[cc](6,1){<m>(-)</m>}  \end{mfpic}  We see <m>r(x) > 0</m> on <m>(0,10)</m>,
+                and since <m>r(x) = 0</m> at <m>x=10</m>,
+                our solution is <m>(0,10]</m>.
+                In the context of the problem,
+                <m>h(x)</m> represents the height of the box while <m>x</m> represents the width
+                (and depth)
+                of the box.
+                Solving <m>h(x) \geq x</m> is tantamount to finding the values of <m>x</m> which result in a box where the height is at least as big as the width (and,
+                in this case,
+                depth.)  Our answer tells us the width of the box can be at most <m>10</m> centimeters for this to happen.<fn>
+                As with the previous example,
+                knowing <m>x>0</m> means  <m>x^2>0</m> so we can clear denominators right away and solve
+                <m>x^3 \leq 1000</m>, or <m>x \leq 10</m>.
+                Coupled with our applied domain, <m>x>0</m>,
+                we would arrive at the same solution, <m>(0, 10]</m>.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                As <m>x \rightarrow 0^{+}</m>,
+                <m>h(x) = \frac{1000}{x^2} \rightarrow \infty</m>.
+                This means that the smaller the width <m>x</m> (and, in this case, depth),
+                the larger the height <m>h</m> has to be in order to maintain a volume of <m>1000</m> cubic centimeters.
+                As <m>x \rightarrow \infty</m>,
+                we find <m>h(x) \rightarrow 0^{+}</m>,
+                which means that in order to maintain a volume of <m>1000</m> cubic centimeters,
+                the width and depth must get bigger as the height becomes smaller.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the box has no top,
+                the surface area can be found by adding the area of each of the sides to the area of the base.
+                The base is a square of dimensions <m>x</m> by <m>x</m>,
+                and each side has dimensions <m>x</m> by <m>h(x)</m>.
+                We get the surface area, <m>S(x) = x^2+4xh(x)</m>.
+                Since <m>h(x) = \frac{1000}{x^2}</m>,
+                we have <m>S(x) = x^2+4x \left( \frac{1000}{x^2}\right)= x^2 + \frac{4000}{x}</m>.
+                The domain of <m>S</m> is the same as <m>h</m>,
+                namely <m>(0, \infty)</m>, for the same reasons as above.
+              </p>
+            </li>
+            <li>
+              <p>
+                To graph <m>y = S(x)</m>,
+                we create a table of values to help us define a good viewing window.
+                Doing so, we find a local minim when <m>x \approx 12.60</m>.
+                As far as we can tell,<fn>
+                without Calculus, that is...
+                </fn> this is the only local extremum,
+                so it is the (absolute) minimum as well.
+                This means that the width and depth of the box should each measure approximately <m>12.60</m> centimeters.
+                To determine the height, we find <m>h(12.60) \approx 6.30</m>,
+                so the height of the box should be approximately <m>6.30</m> centimeters.<fn>
+                The <m>y</m>-coordinate here,
+                <m>476.22</m> means the minimum surface area possible is <m>476.22</m> square centimeters.
+                Minimizing the surface area minimizes the material required to make the box,
+                therein helping to reduce the cost of the box.
+                </fn>  <image width="75%" source="./RationalIneqGraphics/RatIneqEx04.jpg"/>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      Our last example uses regression to verify a very famous scientific law.
+    </p>
+    <example xml:id="BoyleslawRational">
+      <statement>
+        <p>
+          Boyle's Law states that when temperature is held constant,
+          the pressure of a gas is inversely proportional to the volume of the gas.<fn>
+          For a review of what this means,
+          see <xref ref="AppVariation">Section</xref>.
+          </fn> According to this
+          <url href="http://web.lemoyne.edu/~giunta/classicalcs/boyleverify.html"><em>website</em></url>
+          the actual data relating the volume <m>V</m> of a gas and its pressure <m>P</m> used by Boyle and his assistant in 1662 to formulate this law is given below. (NOTE: both pressure and volume here are given in <sq>arbitrary units.</sq>)
+          <me>
+            \begin{array}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|}  \hline  V \amp  48 \amp  46 \amp  44 \amp  42 \amp  40 \amp  38 \amp  36 \amp  34 \amp  32 \amp  30 \amp  28 \amp  26 \amp  24  \\ \hline  P \amp  29.13 \amp  30.56 \amp  31.94 \amp  33.5 \amp  35.31 \amp  37 \amp  39.31 \amp  41.63 \amp  44.19 \amp  47.06 \amp  50.31 \amp  54.31 \amp  58.81  \\ \hline \end{array}
+          </me>
+          <me>
+            \begin{array}{|c||c||c|c|c|c|c|c|c|c|c|c|c|c|} \hline  V \amp  23 \amp  22 \amp  21 \amp  20 \amp  19 \amp  18 \amp  17 \amp  16 \amp  15 \amp  14 \amp  13 \amp  12  \\ \hline  P \amp  61.31 \amp  64.06 \amp  67.06 \amp  70.69 \amp  74.13 \amp  77.88 \amp  82.75 \amp  87.88 \amp  93.06 \amp  100.44 \amp  107.81 \amp  117.56   \\ \hline \end{array}
+          </me>
+          <ol>
+            <li>
+              <p>
+                Assuming <m>P</m> and <m>V</m> are inversely proportional,
+                estimate the constant of proportionality, <m>k</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use a graphing utility to fit a curve of the form <m>P = \dfrac{k}{V}</m> to these data.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Recall if <m>P</m> and <m>V</m> are inversely proportional,
+                there is a real number <m>k</m> so <m>PV = k</m> for all values of <m>P</m> and <m>V</m>.
+                Multiplying the corresponding <m>P</m> and <m>V</m> values from the data together result in numbers which are consistently approximately <m>1400</m>.
+                This gives us confidence in the claim <m>P</m> and <m>V</m> are inversely proportional and suggests <m>k \approx 1400</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We plot the pairs <m>(V, P)</m> and run a regression,
+                the results of which are below.
+                To our amazement, the graphing utility reports
+                <m>k \approx 1406.9</m> with <m>R^2 \approx 1</m>.
+                This means the data are a very good fit to the model <m>P = \frac{k}{V}</m>,
+                or <m>PV = k</m>, hence verifying Boyle's Law for this set of data.
+                <image width="92.5%" source="./RationalIneqGraphics/BoylesLawEx.jpg"/>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      (Review of Solving Equations):<fn>
+      For more review, see <xref ref="AppRatExpEqus">Section</xref>.
+      </fn> In <xref ref="ratleqnexercisefirst">Exercises</xref>
+      - <xref ref="ratleqnexerciselast"></xref>,
+      solve the rational equation.
+      Be sure to check for extraneous solutions.
+      <ol cols="3">
+        <li xml:id="ratleqnexercisefirst">
+          <p>
+            <m>\dfrac{x}{5x + 4} = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{3x - 1}{x^{2} + 1} = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{t + 3} + \dfrac{1}{t - 3} = \dfrac{t^{2} - 3}{t^{2} - 9}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{2t + 17}{t + 1} = t + 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{z^{2} - 2z + 1}{z^{3} + z^{2} - 2z} = 1</m>
+          </p>
+        </li>
+        <li xml:id="ratleqnexerciselast">
+          <p>
+            <m>\dfrac{4z- z^3}{z^{2} - 9} = 4z</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="ratlineqexercisefirst">Exercises</xref>
+      - <xref ref="ratlineqexerciselast"></xref>,
+      solve the rational inequality.
+      Express your answer using interval notation.
+      <ol cols="6">
+        <li xml:id="ratlineqexercisefirst">
+          <p>
+            <m>\dfrac{1}{x + 2} \geq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{5}{x + 2} \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{x}{x^{2} - 1} \lt 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{4t}{t^2+4} \geq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{2t+6}{t^2+t-6} \lt 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{5}{t-3} + 9 \lt \dfrac{20}{t+3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{6z+6}{2+z-z^2} \leq z+3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{6}{z-1} + 1 > \dfrac{1}{z+1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{3z - 1}{z^{2} + 1} \leq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(2x+17)(x+1)^{-1} > x + 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(4x-x^3)(x^{2} - 9)^{-1} \geq 4x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x^{2} + 1)^{-1} \lt 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(2t-8)(t+1)^{-1} \leq (t^2-8t)(t+1)^{-2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(t-3)(2t+7)(t^2+7t+6)^{-2} \geq (t^2+7t+6)^{-1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>60z^{-2}+23z^{-1} \geq 7(z-4)^{-1}</m>
+          </p>
+        </li>
+        <li xml:id="ratlineqexerciselast">
+          <p>
+            <m>2z+6(z-1)^{-1} \geq 11 - 8(z+1)^{-1}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solverationalineqfromgraphfirst">Exercises</xref>
+      - <xref ref="solverationalineqfromgraphlast"></xref>,
+      use the the graph of the given rational function to solve the stated inequality.
+    </p>
+    <ol cols="4">
+      <li xml:id="solverationalineqfromgraphfirst">
+        <p>
+          Solve <m>f(x) \geq 0</m>. \begin{mfpic}[10]{-7}{7}{-6}{8} \point[4pt]{(3,0)} \dashed \polyline{(-7,1), (7,1)} \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \tlabel[cc](3.5,-1){<m>(3,0)</m>} \axes \xmarks{-6 step 1 until 6} \ymarks{-5 step 1 until 7} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-7,-0.45,0.1}{1 - (3/x)} \arrow \reverse \arrow \function{0.45,7,0.1}{1 - (3/x)} \tcaption{<m>y=f(x)</m>,
+          asymptotes:
+          <m>x = 0</m>, <m>y=1</m>.} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>f(x) \lt 1</m>. \begin{mfpic}[10]{-7}{7}{-6}{8} \point[4pt]{(3,0)} \dashed \polyline{(-7,1), (7,1)} \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \tlabel[cc](3.5,-1){<m>(3,0)</m>} \axes \xmarks{-6 step 1 until 6} \ymarks{-5 step 1 until 7} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-7,-0.45,0.1}{1 - (3/x)} \arrow \reverse \arrow \function{0.45,7,0.1}{1 - (3/x)} \tcaption{<m>y=f(x)</m>,
+          asymptotes:
+          <m>x = 0</m>, <m>y=1</m>.} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>g(t) \geq -1</m>. \begin{mfpic}[18]{-2}{6}{-4}{4} \axes \xmarks{-1 step 1 until 5} \ymarks{-3,-2,1,2,3} \point[4pt]{(1,-1), (3,1)} \dashed \polyline{(2,-4), (2,4)} \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](3.75,1.25){<m>(3,1)</m>} \gclear \tlabelrect(0, -1.25){<m>(1,-1)</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-2,1.75,0.1}{1/(x-2)} \arrow \reverse \arrow \function{2.25,6,0.1}{1/(x-2)} \tcaption{<m>y=g(t)</m>,
+          asymptotes:
+          <m>t = 2</m>, <m>y=0</m>.} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>-1 \leq g(t) \lt 1</m>. \begin{mfpic}[18]{-2}{6}{-4}{4} \axes \xmarks{-1 step 1 until 5} \ymarks{-3,-2,1,2,3} \point[4pt]{(1,-1), (3,1)} \dashed \polyline{(2,-4), (2,4)} \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](3.75,1.25){<m>(3,1)</m>} \gclear \tlabelrect(0, -1.25){<m>(1,-1)</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-2,1.75,0.1}{1/(x-2)} \arrow \reverse \arrow \function{2.25,6,0.1}{1/(x-2)} \tcaption{<m>y=g(t)</m>,
+          asymptotes:
+          <m>t = 2</m>, <m>y=0</m>.} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>r(z) \leq 1</m> \begin{mfpic}[15][20]{-5}{5}{-1}{6} \tlabel[cc](5,-0.5){<m>z</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-2.5,1){<m>(-1,1)</m>} \tlabel[cc](3,1){hole at <m>(1,1)</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.42,0.1}{1/(x**2)} \arrow \reverse \arrow \function{0.42,5,0.1}{1/(x**2)} \point[4pt]{(-1,1)} \pointfillfalse \point[4pt]{(1,1)} \tcaption{<m>y = r(z)</m>,
+          asymptotes:
+          <m>z=0</m>, <m>y=0</m>.} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li xml:id="solverationalineqfromgraphlast">
+        <p>
+          Solve <m>r(z) > 0</m>. \begin{mfpic}[15][20]{-5}{5}{-1}{6} \tlabel[cc](5,-0.5){<m>z</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-2.5,1){<m>(-1,1)</m>} \tlabel[cc](3,1){hole at <m>(1,1)</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-0.42,0.1}{1/(x**2)} \arrow \reverse \arrow \function{0.42,5,0.1}{1/(x**2)} \point[4pt]{(-1,1)} \pointfillfalse \point[4pt]{(1,1)} \tcaption{<m>y = r(z)</m>,
+          asymptotes:
+          <m>z=0</m>, <m>y=0</m>.} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="newportaboycost">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>,
+          the function <m>C(x) = .03x^{3} - 4.5x^{2} + 225x + 250</m>,
+          for <m>x \geq 0</m> was used to model the cost
+          (in dollars)
+          to produce <m>x</m> PortaBoy game systems.
+          Using this cost function,
+          find the number of PortaBoys which should be produced to minimize the average cost <m>\overline{C}</m>.
+          Round your answer to the nearest number of systems.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose we are in the same situation as <xref ref="boxnotopfixedvolume">Example</xref>.
+          If the volume of the box is to be <m>500</m> cubic centimeters,
+          use a graphing utility to find the dimensions of the box which minimize the surface area.
+          What is the minimum surface area?
+          Round your answers to two decimal places.
+        </p>
+      </li>
+      <li>
+        <p>
+          The box for the new Sasquatch-themed cereal,
+          <sq>Crypt-Os</sq>, is to have a volume of <m>140</m> cubic inches.
+          For aesthetic reasons,
+          the height of the box needs to be <m>1.62</m> times the width of the base of the box.<fn>
+          1.62 is a crude approximation of the so-called <sq>Golden Ratio</sq> <m>\phi = \frac{1 + \sqrt{5}}{2}</m>.
+          </fn>  Find the dimensions of the box which will minimize the surface area of the box.
+          What is the minimum surface area?
+          Round your answers to two decimal places.
+        </p>
+      </li>
+      <li xml:id="fixedareaminperimetergarden">
+        <p>
+          Sally is Skippy's neighbor from <xref ref="fixedperimetermaxareagarden">Exercise</xref>
+          in <xref ref="QuadraticFunctions">Section</xref>.
+          Sally also wants to plant a vegetable garden along the side of her home.
+          She doesn't have any fencing,
+          but wants to keep the size of the garden to 100 square feet.
+          What are the dimensions of the garden which will minimize the amount of fencing she needs to buy?
+          What is the minimum amount of fencing she needs to buy?
+          Round your answers to the nearest foot.
+          (Note: Since one side of the garden will border the house, Sally doesn't need fencing along that side.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Another Classic Problem: A can is made in the shape of a right circular cylinder and is to hold one pint. (For dry goods,
+          one pint is equal to <m>33.6</m> cubic inches.)<fn>
+          According to
+          <url href="http://dictionary.reference.com/browse/pint"><em>www.dictionary.com</em></url>,
+          there are different values given for this conversion.
+          We use <m>33.6 \text{ in } ^{3}</m> for this problem.
+          </fn>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find an expression for the volume <m>V</m> of the can in terms of the height <m>h</m> and the base radius <m>r</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find an expression for the surface area <m>S</m> of the can in terms of the height <m>h</m> and the base radius <m>r</m>.
+              (Hint: The top and bottom of the can are circles of radius <m>r</m> and the side of the can is really just a rectangle that has been bent into a cylinder.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Using the fact that <m>V = 33.6</m>,
+              write <m>S</m> as a function of <m>r</m> and state its applied domain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your graphing calculator to find the dimensions of the can which has minimal surface area.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          A right cylindrical drum is to hold 7.35 cubic feet of liquid.
+          Find the dimensions
+          (radius of the base and height)
+          of the drum which would minimize the surface area.
+          What is the minimum surface area?
+          Round your answers to two decimal places.
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="squatchpop">Exercise</xref>
+          in <xref ref="IntroRational">Section</xref>,
+          the population of Sasquatch in Portage County is modeled by
+          <me>
+            P(t) = \frac{150t}{t + 15},  t \geq 0
+          </me>,
+          where <m>t = 0</m> corresponds to the year 1803.
+          According to this model,
+          when were there fewer than 100 Sasquatch in Portage County?
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>x = -\frac{6}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 1, \; x = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -6, \; x = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = 0, \; z = \pm 2\sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-2, 3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -1) \cup (0, 1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[0, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -3) \cup (-3,2) \cup (4, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-3, -\frac{1}{3} \right) \cup (2,3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-1,0] \cup (2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -3) \cup (-2, -1) \cup (1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, 1] \cup [2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -6) \cup (-1, 2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -3) \cup \left[-2\sqrt{2}, 0\right] \cup \left[2\sqrt{2}, 3\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-4, -1) \cup (-1,2]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -6) \cup (-6, -3] \cup [9, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-3,0) \cup (0,4) \cup [5, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-1,-\frac{1}{2}\right] \cup (1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) \geq 0</m> on <m>(-\infty, 0) \cup [3, \infty)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) \lt 1</m> on <m>(0, \infty)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) \geq -1</m> on <m>(-\infty, 1] \cup (2, \infty)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-1 \leq g(t) \lt 1</m> on <m>(-\infty, 1] \cup (3, \infty)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) \leq 1</m> on <m>(-\infty, -1] \cup (1, \infty)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(z) > 0</m> on <m>(-\infty, 0) \cup (0,1) \cup (1, \infty)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The absolute minimum of <m>y=\overline{C}(x)</m> occurs at <m>\approx (75.73, 59.57)</m>.
+          Since <m>x</m> represents the number of game systems,
+          we check <m>\overline{C}(75) \approx 59.58</m> and <m>\overline{C}(76) \approx 59.57</m>.
+          Hence, to minimize the average cost,
+          <m>76</m> systems should be produced at an average cost of <m>\dollar59.57</m> per system.
+        </p>
+      </li>
+      <li>
+        <p>
+          The width (and depth) should be <m>10.00</m> centimeters,
+          the height should be <m>5.00</m> centimeters.
+          The minimum surface area is <m>300.00</m> square centimeters.
+        </p>
+      </li>
+      <li>
+        <p>
+          The width of the base of the box should be approximately <m>4.12</m> inches,
+          the height of the box should be approximately <m>6.67</m> inches,
+          and the depth of the base of the box should be approximately <m>5.09</m> inches.
+          The minimum surface area is approximately <m>164.91</m> square inches.
+        </p>
+      </li>
+      <li>
+        <p>
+          The dimensions are approximately <m>7</m> feet by <m>14</m> feet.
+          Hence, the minimum amount of fencing required is approximately <m>28</m> feet.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>V = \pi r^{2}h</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S = 2 \pi r^{2} + 2\pi r h</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S(r) = 2\pi r^{2} + \frac{67.2}{r}, \;</m> Domain <m>r > 0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r \approx 1.749</m>in. and <m>h \approx 3.498</m>in.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The radius of the drum should be approximately <m>1.05</m> feet and the height of the drum should be approximately <m>2.12</m> feet.
+          The minimum surface area of the drum is approximately <m>20.93</m> cubic feet.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P(t) \lt 100</m> on <m>(-15, 30)</m>,
+          and the portion of this which lies in the applied domain is <m>[0,30)</m>.
+          Since <m>t=0</m> corresponds to the year 1803,
+          from 1803 through the end of 1832,
+          there were fewer than 100 Sasquatch in Portage County.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

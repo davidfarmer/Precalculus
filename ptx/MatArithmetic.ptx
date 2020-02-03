@@ -1,0 +1,1618 @@
+<section xml:id="MatArithmetic">
+  <title>Matrix Arithmetic</title>
+  <introduction>
+    <p>
+      In <xref ref="AugMatrices">Section</xref>,
+      we used a special class of matrices, the augmented matrices,
+      to assist us in solving systems of linear equations.
+      In this section,
+      we study matrices as mathematical objects of their own accord,
+      temporarily divorced from systems of linear equations.
+      To do so conveniently requires some more notation.
+      When we write <m>A = \left[ a_{ij}  \right]_{m \times n}</m>,
+      we mean <m>A</m> is an <m>m</m> by <m>n</m> matrix<fn>
+      Recall that means <m>A</m> has <m>m</m> rows and <m>n</m> columns.
+      </fn> and <m>a_{ij}</m> is the entry found in the <m>i</m>th row and <m>j</m>th column.
+      Schematically, we have
+      <me>
+        \begin{array}{ccccc} \amp   \amp   \text{
+        <tabular>
+          <row>
+            <cell>{\(j\)} counts columns</cell>
+          </row>
+          <row>
+            <cell>from left to right</cell>
+          </row>
+        </tabular>
+        }  \amp   \amp  \\  \amp   \amp  \xrightarrow{} \amp  \amp  \\ A \amp  = \amp  \left. \left[ \begin{array}{rrrr} a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \\ a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \\ \vdots \amp  \vdots  \amp  \amp  \vdots \\ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{m n} \end{array}   \right] \right\downarrow \amp  \text{
+        <tabular>
+          <row>
+            <cell>{\(i\)} counts rows</cell>
+          </row>
+          <row>
+            <cell>from top to bottom</cell>
+          </row>
+        </tabular>
+        } \end{array}
+      </me>
+    </p>
+    <p>
+      With this new notation we can define what it means for two matrices to be equal.
+    </p>
+    <definition xml:id="matrixequality">
+      <statement>
+        <p>
+          <term>Matrix Equality:</term> Two matrices are said to be
+              <idx><h>matrix</h><h>equality</h></idx>
+          <term>equal</term> if they are the same size and their corresponding entries are equal.
+          More specifically,
+          if <m>A =\left[a_{ij}\right]_{m \times n}</m> and <m>B =\left[b_{ij}\right]_{p \times r}</m>,
+          we write <m>A=B</m> provided
+          <ol>
+            <li>
+              <p>
+                <m>m=p</m> and <m>n=r</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>a_{ij} = b_{ij}</m> for all
+                <m>1 \leq i \leq m</m> and all <m>1 \leq j \leq n</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Essentially,
+      two matrices are equal if they are the same size and they have the same numbers in the same spots.
+      For example, the two <m>2 \times 3</m> matrices below are,
+      despite appearances, equal.
+      <me>
+        \left[ \begin{array}{rrr} 0 \amp  -2 \amp  9 \\ 25 \amp  117 \amp  -3 \end{array}  \right] =  \left[ \begin{array}{rrr} \ln(1) \amp  \sqrt[3]{-8} \amp  e^{2\ln(3)} \\ 125^{2/3} \amp   3^{2} \cdot 13 \amp  \log(0.001) \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      Now that we have an agreed upon understanding of what it means for two matrices to equal each other,
+      we may begin defining arithmetic operations on matrices.
+      Our first operation is addition.
+    </p>
+    <definition xml:id="matrixaddition">
+      <statement>
+        <p>
+              <idx><h>matrix</h><h>addition ! definition of</h></idx> <term>Matrix Addition:</term> Given two matrices of the same size, the matrix obtained by adding the corresponding entries of the two matrices is called the
+              <idx><h>matrix</h><h>sum</h></idx>
+          <term>sum</term> of the two matrices.
+          More specifically,
+          if <m>A =\left[a_{ij}\right]_{m \times n}</m> and <m>B =\left[b_{ij}\right]_{m \times n}</m>,
+          we define
+          <me>
+            A + B = \left[a_{ij}\right]_{m \times n} + \left[b_{ij}\right]_{m \times n} = \left[ a_{ij} + b_{ij} \right]_{m \times n}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As an example, consider the sum below.
+      <me>
+        \left[ \begin{array}{rr}2 \amp  3 \\ 4 \amp  -1 \\ 0 \amp  -7 \end{array}  \right] + \left[ \begin{array}{rr} -1 \amp  4 \\ -5 \amp  -3 \\ 8 \amp  1 \end{array}  \right] = \left[ \begin{array}{rr} 2 + (-1) \amp  3+4 \\ 4+(-5) \amp  (-1)+(-3) \\ 0+8 \amp  (-7)+ 1 \end{array}  \right]  = \left[ \begin{array}{rr} 1 \amp  7 \\ -1 \amp  -4 \\ 8 \amp  -6 \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      It is worth the reader's time to think what would have happened had we reversed the order of the summands above.
+      As we would expect, we arrive at the same answer.
+      In general, <m>A+B = B+A</m> for matrices <m>A</m> and <m>B</m>,
+      provided they are the same size so that the sum is defined in the first place.
+      This is the <idx><h>matrix</h><h>addition ! commutative property</h></idx>
+          <idx><h>commutative property</h><h>matrix ! addition</h></idx>
+      <em>commutative property</em> of matrix addition.
+      To see why this is true in general,
+      we appeal to the definition of matrix addition.
+      Given <m>A =\left[a_{ij}\right]_{m \times n}</m> and <m>B =\left[b_{ij}\right]_{m \times n}</m>,
+      <me>
+        A + B = \left[a_{ij}\right]_{m \times n} + \left[b_{ij}\right]_{m \times n} = \left[ a_{ij} + b_{ij} \right]_{m \times n} = \left[ b_{ij} + a_{ij} \right]_{m \times n} = \left[b_{ij}\right]_{m \times n} + \left[a_{ij}\right]_{m \times n} =B+A
+      </me>
+      where the second equality is the definition of <m>A+B</m>,
+      the third equality holds by the commutative law of real number addition,
+      and the fourth equality is the definition of <m>B+A</m>.
+      In other words,
+      matrix addition is commutative because real number addition is.
+    </p>
+    <p>
+      A similar argument shows the <idx><h>matrix</h><h>addition ! associative property</h></idx>
+          <idx><h>associative property</h><h>matrix ! addition</h></idx>
+      <em>associative property</em> of matrix addition also holds,
+      inherited in turn from the associative law of real number addition.
+      Specifically, for matrices <m>A</m>,
+      <m>B</m>, and <m>C</m> of the same size, <m>(A+B)+C = A+(B+C)</m>.
+      In other words, when adding more than two matrices,
+      it doesn't matter how they are grouped.
+      This means that we can write <m>A+B+C</m> without parentheses and there is no ambiguity as to what this means.<fn>
+      We have seen this idea before in <xref ref="FunctionArithmetic">Sections</xref>
+      and <xref ref="FunctionComposition"></xref>.
+      </fn> These properties and more are summarized in the following theorem.
+    </p>
+    <theorem xml:id="matrixadditionprops">
+      <statement>
+        <p>
+          <em>Properties of Matrix Addition</em>
+          <idx><h>matrix</h><h>addition ! properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Commutative Property:</em> For all
+                <m>m \times n</m> matrices, <m>A + B = B + A</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Associative Property:</em> For all <m>m \times n</m> matrices,
+                <m>(A + B) + C = A + (B + C)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Additive Identity:</em><idx><h>matrix</h><h>additive identity</h></idx>
+                  <idx><h>identity</h><h>matrix, additive</h></idx>
+              If <m>0_{m \times n}</m> is the <m>m \times n</m> matrix whose entries are all <m>0</m>,  for all <m>m \times n</m> matrices <m>A</m>
+                <me>
+                  A + 0_{m \times n} = 0_{m \times n} + A = A
+                </me>
+                That is, the additive identity for a matrix  is the matrix of the additive identity for each of its entries.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Additive Inverse:</em><idx><h>matrix</h><h>additive inverse</h></idx>  For every given
+                <m>m \times n</m> matrix <m>A=\left[a_{ij}\right]_{m \times n}</m>,
+                the matrix <m>B = \left[-a_{ij}\right]_{m \times n}</m> satisfies
+                <me>
+                  A + B = B+ A = 0_{m \times n}
+                </me>
+                That is, the additive inverse of a matrix is the matrix of the additive inverses of each of its entries.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The identity property is easily verified by resorting to the definition of matrix addition;
+      just as the number <m>0</m> is the additive identity for real numbers,
+      the matrix comprised of all <m>0</m>'s does the same job for matrices.
+    </p>
+    <p>
+      To establish the inverse property,
+      we note that per the definition of matrix addition,
+      <me>
+        A + B = \left[a_{ij}\right]_{m \times n} + \left[-a_{ij}\right]_{m \times n}  = \left[a_{ij} -a_{ij} \right]_{m \times n} =  \left[ 0  \right]_{m \times n} = 0_{m \times n}
+      </me>.
+    </p>
+    <p>
+      The fact that <m>B+A =0_{m \times n}</m> as well comes from the commutative property of matrix addition.
+    </p>
+    <p>
+      More about the additive inverse is true.
+      If a matrix <m>C = \left[c_{ij}\right]_{m \times n}</m> satisfies <m>A + C = 0_{m \times n}</m>,
+      then once again by the definition of matrix addition,
+      we must have <m>a_{ij} + c_{ij} = 0</m> , or
+      <m>c_{ij} = -a_{ij}</m> for all <m>i</m> and <m>j</m>.
+      This shows the matrix <m>C</m> must be the matrix <m>B</m> as described in <xref ref="matrixadditionprops">Theorem</xref>
+      which shows the additive inverse of a matrix is <em>unique</em>.
+      In general, we denote the additive inverse of a matrix <m>A</m> using the (suggestive) symbol <m>-A</m>.
+    </p>
+    <p>
+      With the concept of additive inverse well in hand,
+      we may now discuss what is meant by subtracting matrices.
+      You may remember from arithmetic that <m>a - b = a+(-b)</m>;
+      that is, subtraction is defined as <sq>adding the opposite (inverse).</sq> We extend this concept to matrices.
+      For two matrices <m>A</m> and <m>B</m> of the same size,
+      we define <m>A-B = A + (-B)</m>.
+      At the level of entries, this amounts to
+      <me>
+        A-B = A + (-B) = \left[a_{ij}\right]_{m \times n} + \left[-b_{ij}\right]_{m \times n} = \left[a_{ij} + \left(-b_{ij}\right) \right]_{m \times n} = \left[a_{ij} - b_{ij} \right]_{m \times n}
+      </me>
+    </p>
+    <p>
+      Thus to subtract two matrices of equal size,
+      we subtract their corresponding entries.
+      Surprised?
+    </p>
+    <p>
+      Our next task is to define what it means to multiply a matrix by a real number.
+      Thinking back to arithmetic,
+      you may recall that multiplication,
+      at least by a natural number,
+      can be thought of as <sq>rapid addition.</sq> For example,
+      <m>2+2+2 = 3 \cdot 2</m>.
+      We know from algebra<fn>
+      The Distributive Property, in particular.
+      </fn> that <m>3x = x + x + x</m>,
+      so it seems natural that given a matrix <m>A</m>,
+      we define <m>3A = A + A + A</m>.
+      If <m>A =\left[a_{ij}\right]_{m \times n}</m>, we have
+      <me>
+        3A = A + A + A = \left[a_{ij}\right]_{m \times n} + \left[a_{ij}\right]_{m \times n} + \left[a_{ij}\right]_{m \times n} = \left[a_{ij} + a_{ij} + a_{ij} \right]_{m \times n} = \left[ 3a_{ij}\right]_{m \times n}
+      </me>
+    </p>
+    <p>
+      In other words, multiplying the <em>matrix</em>
+      in this fashion by <m>3</m> is the same as multiplying
+      <em>each entry</em> by <m>3</m>.
+      This leads us to the following definition.
+    </p>
+    <definition xml:id="scalarmultmatrix">
+      <statement>
+        <p>
+              <idx><h>scalar multiplication</h><h>matrix ! definition of</h></idx>
+              <idx><h>matrix</h><h>scalar multiplication ! definition of</h></idx>
+          <term>Scalar Multiplication:</term><fn>
+          The word <sq>scalar</sq> here refers to real numbers.
+          <sq>Scalar multiplication</sq> in this context means we are multiplying a matrix by a real number (a scalar).
+          We will discuss this term momentarily.
+          </fn> We define the product of a real number and a matrix to be the matrix obtained by multiplying each of its entries by said real number.
+          More specifically,
+          if <m>k</m> is a real number and <m>A = \left[a_{ij}\right]_{m \times n}</m>,
+          we define
+          <me>
+            kA = k\left[a_{ij}\right]_{m \times n} = \left[ka_{ij}\right]_{m \times n}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The word <sq>scalar</sq> means <sq>scaling factor</sq> as we explain below.
+      Every point <m>P(x,y)</m> in the plane can be represented by its position matrix,
+      <m>P</m>:
+      <me>
+        (x,y) \leftrightarrow P = \left[ \begin{array}{r} x \\ y \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      Suppose we take the point <m>(-2,1)</m> and multiply its position matrix by <m>3</m>.
+      We have
+      <me>
+        3P = 3 \left[ \begin{array}{r} -2 \\ 1 \end{array}  \right] = \left[ \begin{array}{r} 3(-2) \\ 3(1) \end{array}  \right] = \left[ \begin{array}{r} -6 \\ 3 \end{array}  \right]
+      </me>.
+    </p>
+    <p>
+      This new matrix corresponds to the point <m>(-6,3)</m> which is the result of scaling both the horizontal and vertical directions by a factor of <m>3</m>.
+    </p>
+    <p>
+      As did matrix addition,
+      scalar multiplication inherits many properties from real number arithmetic.
+      Below we summarize these properties.
+    </p>
+    <theorem xml:id="matrixscalarmultprops">
+      <statement>
+        <p>
+          <em>Properties of Scalar Multiplication</em>
+          <idx><h>matrix</h><h>scalar multiplication ! properties of</h></idx>
+          <idx><h>scalar multiplication</h><h>matrix ! properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Associative Property:</em> <idx><h>matrix</h><h>scalar multiplication ! associative property of</h></idx> <idx><h>associative property</h><h>matrix ! scalar multiplication</h></idx> <idx><h>scalar multiplication</h><h>matrix ! associative property of</h></idx> For every
+                <m>m \times n</m> matrix <m>A</m> and scalars <m>k</m> and <m>r</m>,
+                <m>(kr)A = k(rA)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Identity Property:</em> <idx><h>matrix</h><h>scalar multiplication ! identity for</h></idx> For all
+                <m>m \times n</m> matrices <m>A</m>, <m>1A = A</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Additive Inverse Property:</em>
+                For all <m>m \times n</m> matrices <m>A</m>, <m>-A = (-1)A</m>.
+                  <idx><h>inverse</h><h>matrix, additive</h></idx>
+                  <idx><h>inverse</h><h>matrix, additive</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Property of Scalar Multiplication over Scalar Addition:</em>
+                  <idx><h>matrix</h><h>scalar multiplication ! distributive properties</h></idx>
+                  <idx><h>distributive property</h><h>matrix ! scalar multiplication</h></idx>
+                  <idx><h>scalar multiplication</h><h>matrix ! distributive properties of</h></idx>
+              For every
+                <m>m \times n</m> matrix <m>A</m> and scalars  <m>k</m> and <m>r</m>,
+                <me>
+                  (k+r)A = kA + rA
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Property of Scalar Multiplication over Matrix Addition:</em>
+                For all <m>m \times n</m> matrices <m>A</m> and <m>B</m> scalars <m>k</m>,
+                <me>
+                  k(A+B) = kA + kB
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Zero Product Property:</em>
+                  <idx><h>matrix</h><h>scalar multiplication ! zero product property</h></idx>
+              If <m>A</m> is an
+                <m>m \times n</m> matrix and <m>k</m> is a scalar, then
+                <me>
+                  kA = 0_{m \times n}  \text{ if and only if }   k=0  \text{ or }   A = 0_{m \times n}
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      As with the other results in this section,
+      <xref ref="matrixscalarmultprops">Theorem</xref>
+      can be proved using the definitions of scalar multiplication and matrix addition.
+      For example, to prove that
+      <m>k(A+B) = kA + kB</m> for a scalar <m>k</m> and
+      <m>m \times n</m> matrices <m>A</m> and <m>B</m>,
+      we start by adding <m>A</m> and <m>B</m>,
+      then multiplying by <m>k</m> and seeing how that compares with the sum of <m>kA</m> and <m>kB</m>.
+      <me>
+        k(A+B) = k \left(\left[a_{ij}\right]_{m \times n} + \left[b_{ij}\right]_{m \times n}\right) = k \left[a_{ij} + b_{ij} \right]_{m \times n} = \left[k \left(a_{ij}+b_{ij}\right)\right]_{m \times n} = \left[ka_{ij} + kb_{ij}\right]_{m \times n}
+      </me>
+    </p>
+    <p>
+      As for <m>kA + kB</m>, we have
+      <me>
+        kA + kB = k\left[a_{ij}\right]_{m \times n}+k\left[b_{ij}\right]_{m \times n} =  \left[ka_{ij}\right]_{m \times n}+\left[kb_{ij}\right]_{m \times n} = \left[ka_{ij} + kb_{ij}\right]_{m \times n} \, \, \checkmark
+      </me>
+      which establishes the property.
+      The remaining proofs are similar and are left to the reader.
+    </p>
+    <p>
+      The properties in <xref ref="matrixadditionprops">Theorems</xref>
+      and <xref ref="matrixscalarmultprops"></xref>
+      establish an algebraic system that lets us treat matrices and scalars more or less as we would real numbers and variables.
+      In the following example,
+      we challenge the reader to justify each and every step of the calculations using either properties of matrix arithmetic.
+    </p>
+    <example xml:id="matrixaddscalarex">
+      <statement>
+        <p>
+          Solve for the matrix <m>A</m>:
+          <me>
+            3A - \left(\left[ \begin{array}{rr} 2 \amp  -1 \\ 3 \amp  5 \end{array} \right] + 5A\right) = \left[ \begin{array}{rr} -4 \amp  2 \\ 6 \amp  -2 \end{array} \right] + \dfrac{1}{3} \left[ \begin{array}{rr} 9 \amp  12 \\ -3 \amp  39 \end{array} \right]
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \begin{array}{rcl}
+          3A - \left(\left[ \begin{array}{rr} 2 \amp  -1 \\ 3 \amp  5
+          \end{array} \right] + 5A\right) \amp  = \amp  \left[ \begin{array}{rr} -4 \amp  2 \\ 6 \amp  -2
+          \end{array} \right] + \dfrac{1}{3} \left[ \begin{array}{rr} 9 \amp  12 \\ -3 \amp  39
+          \end{array} \right]  \\
+          3A + \left\{-\left(\left[ \begin{array}{rr} 2 \amp  -1 \\ 3 \amp  5
+          \end{array} \right] + 5A \right)\right\} \amp  = \amp  \left[ \begin{array}{rr} -4 \amp  2 \\ 6 \amp  -2
+          \end{array} \right] +  \left[ \begin{array}{rr} \left(\frac{1}{3}\right)(9) \amp  \left(\frac{1}{3}\right)(12) \\ \left(\frac{1}{3}\right)(-3) \amp  \left(\frac{1}{3}\right)(39)
+          \end{array} \right]  \\
+          3A + (-1)\left(\left[ \begin{array}{rr} 2 \amp  -1 \\ 3 \amp  5
+          \end{array} \right] + 5A \right) \amp  = \amp  \left[ \begin{array}{rr} -4 \amp  2 \\ 6 \amp  -2
+          \end{array} \right] + \left[ \begin{array}{rr} 3 \amp  4 \\ -1 \amp  13
+          \end{array} \right] \\
+          3A + \left\{ (-1)\left[ \begin{array}{rr} 2 \amp  -1 \\ 3 \amp  5
+          \end{array} \right] + (-1)(5A)\right \}  \amp  = \amp  \left[ \begin{array}{rr} -1 \amp  6 \\ 5 \amp  11
+          \end{array} \right]  \\
+          3A +  (-1)\left[ \begin{array}{rr} 2 \amp  -1 \\ 3 \amp  5
+          \end{array} \right] + (-1)(5A)  \amp  = \amp  \left[ \begin{array}{rr} -1 \amp  6 \\ 5 \amp  11
+          \end{array} \right]  \\
+          3A + \left[ \begin{array}{rr} (-1)(2) \amp  (-1)(-1) \\ (-1)(3) \amp  (-1)(5)
+          \end{array} \right] + ((-1)(5))A  \amp  = \amp  \left[ \begin{array}{rr} -1 \amp  6 \\ 5 \amp  11
+          \end{array} \right]  \\
+          3A + \left[ \begin{array}{rr} -2 \amp  1 \\ -3 \amp  -5
+          \end{array} \right] + (-5)A \amp  = \amp  \left[ \begin{array}{rr} -1 \amp  6 \\ 5 \amp  11
+          \end{array} \right]  \\
+          3A + (-5)A+ \left[ \begin{array}{rr} -2 \amp  1 \\ -3 \amp  -5
+          \end{array} \right]\amp  = \amp  \left[ \begin{array}{rr} -1 \amp  6 \\ 5 \amp  11
+          \end{array} \right] \\
+          (3+ (-5))A+ \left[ \begin{array}{rr} -2 \amp  1 \\ -3 \amp  -5
+          \end{array} \right] + \left(-\left[ \begin{array}{rr} -2 \amp  1 \\ -3 \amp  -5
+          \end{array} \right] \right)\amp  = \amp  \left[ \begin{array}{rr} -1 \amp  6 \\ 5 \amp  11
+          \end{array} \right] + \left(-\left[ \begin{array}{rr} -2 \amp  1 \\ -3 \amp  -5
+          \end{array} \right] \right) \\
+          (-2)A+ 0_{2 \times 2} \amp  = \amp  \left[ \begin{array}{rr} -1 \amp  6 \\ 5 \amp  11
+          \end{array} \right] -\left[ \begin{array}{rr} -2 \amp  1 \\ -3 \amp  -5
+          \end{array} \right] \\
+          (-2)A \amp  = \amp  \left[ \begin{array}{rr} -1 - (-2) \amp  6 - 1 \\ 5 - (-3) \amp  11 - (-5)
+          \end{array} \right] \\
+          (-2)A \amp  = \amp  \left[ \begin{array}{rr} 1 \amp  5 \\ 8 \amp  16
+          \end{array} \right] \\
+          \left(-\frac{1}{2}\right)\left((-2)A\right) \amp  = \amp  -\frac{1}{2} \left[ \begin{array}{rr} 1 \amp  5 \\ 8 \amp  16
+          \end{array} \right] \\
+          \left(\left(-\frac{1}{2}\right)(-2)\right)A \amp  =  \amp   \left[ \begin{array}{rr} \left(-\frac{1}{2}\right)(1) \amp  \left(-\frac{1}{2}\right)(5) \\ \left(-\frac{1}{2}\right)(8) \amp  \left(-\frac{1}{2}\right)(16)
+          \end{array} \right] \\
+          1 A \amp  =  \amp   \left[ \begin{array}{rr} -\frac{1}{2} \amp  -\frac{5}{2} \\ -4 \amp  -\frac{16}{2}
+          \end{array} \right] \\
+          A \amp  =  \amp   \left[ \begin{array}{rr} -\frac{1}{2} \amp  -\frac{5}{2} \\ -4 \amp  -8
+          \end{array} \right]
+          \end{array}
+        </me>
+        <p>
+          The reader is encouraged to check our answer in the original equation.
+        </p>
+      </solution>
+    </example>
+    <p>
+      While the solution to the previous example is written in excruciating detail,
+      in practice many of the steps above are omitted.
+      The reader is encouraged to solve the equation in <xref ref="matrixaddscalarex">Example</xref>
+      as they would any other linear equation, for example:
+      <m>3a-(2+5a)=-4+\frac{1}{3}(9)</m>.
+    </p>
+    <p>
+      We now turn our attention to <em>matrix multiplication</em> - that is,
+      multiplying a matrix by another matrix.
+      Based on the <sq>no surprises</sq> trend so far in the section,
+      you may expect that in order to multiply two matrices,
+      they must be of the same size and you find the product by multiplying the corresponding entries.
+      While this kind of product is used in other areas of mathematics,<fn>
+      See this article on the
+      <url href="http://en.wikipedia.org/wiki/Matrix_multiplication"><em>Hadamard Product</em></url>.
+      </fn> we define matrix multiplication to serve us in solving systems of linear equations.
+    </p>
+    <p>
+      To that end,
+      we begin by defining the product of a row and a column.
+      We motivate the general definition with an example.
+      Consider the two matrices <m>A</m> and <m>B</m> below.
+      <me>
+        \begin{array}{cc}  A = \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right]  \amp  B = \left[\begin{array}{rrrr} 3 \amp  1 \amp  2 \amp  -8 \\ 4 \amp  8 \amp  -5 \amp  9  \\ 5 \amp  0 \amp  -2 \amp  -12 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Let <m>R1</m> denote the first row of <m>A</m> and <m>C1</m> denote the first column of <m>B</m>.
+      To find the <sq>product</sq> of <m>R1</m> with <m>C1</m>,
+      denoted <m>R1 \cdot C1</m>,
+      we first find the product of the first entry in <m>R1</m> and the first entry in <m>C1</m>.
+      Next, we add to that the product of the second entry in <m>R1</m> and the second entry in <m>C1</m>,
+      and so on until we reach the last entry in <m>R1</m> and the last entry in <m>C1</m>.
+    </p>
+    <p>
+      Using entry notation,
+      <m>R1 \cdot C1 = a_{11}b_{11} + a_{12}b_{21}+a_{13}b_{31} = (2)(3) + (0)(4) + (-1)(5) = 6 + 0 + (-5) = 1</m>.
+      We can visualize this schematically as follows
+      <me>
+        \left[\begin{array}{rrr} \rowcolor[gray]{0.9} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right] \left[\begin{array}{>{\columncolor[gray]{0.9}}rrrr}  3 \amp  1 \amp  2 \amp  -8 \\ 4 \amp  8 \amp  -5 \amp  9  \\ 5 \amp  0 \amp  -2 \amp  -12 \end{array}  \right]
+      </me>
+      <me>
+        \begin{array}{ccccc}  \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{}}{\begin{array}{ccc} \fbox{2} \amp   0 \amp  -1 \end{array} } \amp  \left. \begin{array}{c} \fbox{3}  \\ 4   \\ 5 \end{array}  \right\downarrow \end{array} }  \amp  \amp  \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{}}{\begin{array}{ccc} 2 \amp  \fbox{0} \amp  -1 \end{array} } \amp   \left.  \begin{array}{c} 3 \\ \fbox{4}    \\ 5 \end{array}  \right\downarrow \end{array} }  \amp   \amp   \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{}}{\begin{array}{ccc} 2 \amp  0 \amp  \fbox{\(-1\)} \end{array} } \amp   \left. \begin{array}{c} 3 \\ 4 \\ \fbox{5} \end{array}  \right\downarrow \end{array} }  \\  a_{11}b_{11} \amp  + \amp  a_{12}b_{21} \amp  + \amp  a_{13}b_{31}  \\  (2)(3) \amp  + \amp (0)(4)\amp  + \amp  (-1)(5) \end{array}
+      </me>
+    </p>
+    <p>
+      To find <m>R2 \cdot C3</m> where <m>R2</m> denotes the second row of <m>A</m> and <m>C3</m> denotes the third column of <m>B</m>,
+      we proceed similarly.
+      We start with finding the product of the first entry of <m>R2</m> with the first entry in <m>C3</m> then add to it the product of the second entry in <m>R2</m> with the second entry in <m>C3</m>,
+      and so forth.
+      Using entry notation,
+      we have <m>R2 \cdot C3 = a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} = (-10)(2) + (3)(-5) + (5)(-2) = -45</m>.
+      Schematically,
+      <me>
+        \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ \rowcolor[gray]{0.9} -10 \amp  3 \amp  5 \end{array}  \right] \left[\begin{array}{rr>{\columncolor[gray]{0.9}}rr}  3 \amp  1 \amp  2 \amp  -8 \\ 4 \amp  8 \amp  -5 \amp  9  \\ 5 \amp  0 \amp  -2 \amp  -12 \end{array}  \right]
+      </me>
+      <me>
+        \begin{array}{ccccc}  \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{}}{\begin{array}{ccc} \fbox{\(-10\)} \amp   3 \amp  5 \end{array} } \amp  \left. \begin{array}{c} \fbox{2}  \\ -5   \\ -2 \end{array}  \right\downarrow \end{array} }  \amp  \amp  \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{}}{\begin{array}{ccc} -10 \amp  \fbox{3} \amp  5 \end{array} } \amp   \left.  \begin{array}{c} 2 \\ \fbox{\(-5\)}    \\ -2 \end{array}  \right\downarrow \end{array} }  \amp   \amp   \underbrace{\begin{array}{rl} \stackrel{\xrightarrow{}}{\begin{array}{ccc} -10 \amp  3 \amp  \fbox{\(5\)} \end{array} } \amp   \left. \begin{array}{c} 2 \\ -5 \\ \fbox{\(-2\)} \end{array}  \right\downarrow \end{array} }   \\  a_{21}b_{13}= (-10)(2) = -20 \amp  + \amp  a_{22}b_{23} = (3)(-5)  = -15 \amp  + \amp  a_{23}b_{33} = (5)(-2)  = -10 \end{array}
+      </me>
+    </p>
+    <p>
+      Generalizing this process, we have the following definition.
+    </p>
+    <definition xml:id="rowcolumnproduct">
+      <statement>
+        <p>
+          <term>Product of a Row and a Column:</term>
+          Suppose <m>A = [a_{ij}]_{m \times n}</m> and <m>B = [b_{ij}]_{n \times r}</m>.
+          Let <m>Ri</m> denote the <m>i</m>th row of <m>A</m> and let <m>Cj</m> denote the <m>j</m>th column of <m>B</m>.
+          The <idx><h>matrix</h><h>product of row and column</h></idx>
+          <term>product of  <m>R_{i}</m> and  <m>C_{j}</m>,
+          denoted <m>R_{i} \cdot C_{j}</m></term>
+          is the real number defined by
+          <me>
+            Ri \cdot Cj = a_{i1}b_{1j} + a_{i2}b_{2j} + \ldots a_{in}b_{nj}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Note that in order to multiply a row by a column,
+      the number of entries in the row must match the number of entries in the column.
+      We are now in the position to define matrix multiplication.
+    </p>
+    <definition xml:id="matrixproduct">
+      <statement>
+        <p>
+          <term>Matrix Multiplication:</term>
+          Suppose <m>A = [a_{ij}]_{m \times n}</m> and <m>B = [b_{ij}]_{n \times r}</m>.
+          Let <m>Ri</m> denote the <m>i</m>th row of <m>A</m> and let <m>Cj</m> denote the <m>j</m>th column of <m>B</m>.
+          The <idx><h>matrix</h><h>matrix multiplication ! definition of</h></idx>
+          <term>product of  <m>A</m> and  <m>B</m></term>,
+          denoted <m>AB</m>, is the matrix
+          <me>
+            AB = \left[ Ri \cdot Cj \right]_{m \times r}
+          </me>
+          that is
+          <me>
+            AB = \left[ \begin{array}{cccc} R1 \cdot C1 \amp  R1 \cdot C2 \amp  \ldots \amp  R1 \cdot Cr \\ R2 \cdot C1 \amp  R2 \cdot C2 \amp  \ldots \amp  R2 \cdot Cr \\ \vdots  \amp  \vdots \amp  \amp  \vdots \\ Rm \cdot C1 \amp  Rm \cdot C2 \amp  \ldots \amp  Rm \cdot Cr \end{array}  \right]
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      There are a number of subtleties in <xref ref="matrixproduct">Definition</xref>
+      which warrant closer inspection.
+      First and foremost, <xref ref="matrixproduct">Definition</xref>
+      tells us that the <m>ij</m>-entry of a matrix product <m>AB</m> is the <m>i</m>th row of <m>A</m> times the <m>j</m>th column of <m>B</m>.
+      In order for this to be defined,
+      the number of entries in the rows of <m>A</m> must match the number of entries in the columns of <m>B</m>.
+      This means that the number of columns of <m>A</m> must match<fn>
+      The reader is encouraged to think this through carefully.
+      </fn> the number of rows of <m>B</m>.
+      In other words, to multiply <m>A</m> times <m>B</m>,
+      the second dimension of <m>A</m> must match the first dimension of <m>B</m>,
+      which is why in <xref ref="matrixproduct">Definition</xref>,
+      <m>A_{m \times \underline{n}}</m> is being multiplied by a matrix <m>B_{\underline{n} \times r}</m>.
+    </p>
+    <p>
+      Furthermore,
+      the product matrix <m>AB</m> has as many rows as <m>A</m> and as many columns of <m>B</m>.
+      As a result, when multiplying a matrix
+      <m>A_{\underline{m} \times n}</m> by a matrix <m>B_{n \times \underline{r}}</m>,
+      the result is the matrix <m>AB_{\underline{m} \times \underline{r}}</m>.
+    </p>
+    <p>
+      Returning to our example matrices below,
+      we see that <m>A</m> is a <m>2 \times \underline{3}</m> matrix and <m>B</m> is a <m>\underline{3} \times 4</m> matrix.
+      This means that the product matrix <m>AB</m> is defined and will be a <m>2 \times 4</m> matrix.
+      <me>
+        \begin{array}{cc}  A = \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right]  \amp  B = \left[\begin{array}{rrrr} 3 \amp  1 \amp  2 \amp  -8 \\ 4 \amp  8 \amp  -5 \amp  9  \\ 5 \amp  0 \amp  -2 \amp  -12 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Using <m>Ri</m> to denote the <m>i</m>th row of <m>A</m> and <m>Cj</m> to denote the <m>j</m>th column of <m>B</m>,
+      we form <m>AB</m> per to <xref ref="matrixproduct">Definition</xref>:
+      <me>
+        \begin{array}{rclcl}  AB \amp  = \amp  \left[\begin{array}{rrrr} R1 \cdot C1 \amp    R1 \cdot C2 \amp  R1 \cdot C3 \amp  R1 \cdot C4 \\ R2 \cdot C1 \amp    R2 \cdot C2 \amp  R2 \cdot C3 \amp  R2 \cdot C4 \end{array}  \right] \amp  = \amp  \left[\begin{array}{rrrr} 1 \amp   2 \amp  6 \amp  -4 \\ 7 \amp   14 \amp  -45 \amp  47 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Note that the product <m>BA</m> is not defined,
+      since <m>B</m> is a <m>3 \times \underline{4}</m> matrix while <m>A</m> is a <m>\underline{2} \times 3</m> matrix;
+      <m>B</m> has more columns than <m>A</m> has rows,
+      and so it is not possible to multiply a row of <m>B</m> by a column of <m>A</m>.
+    </p>
+    <p>
+      Even when the dimensions of <m>A</m> and <m>B</m> are compatible such that <m>AB</m> and <m>BA</m> are both defined,
+      the product <m>AB</m> and <m>BA</m> aren't necessarily equal.<fn>
+      And may not even have the same dimensions.
+      For example, if <m>A</m> is a
+      <m>2 \times 3</m> matrix and <m>B</m> is a <m>3 \times 2</m> matrix,
+      then <m>AB</m> is defined and is a
+      <m>2 \times 2</m> matrix while <m>BA</m> is also defined... but is a <m>3 \times 3</m> matrix!
+      </fn> In other words,
+      <m>AB</m> may not equal <m>BA</m> which means matrix multiplication is not,
+      in general,
+      commutative.
+      That being said,
+      several other real number properties are inherited by matrix multiplication,
+      as illustrated in our next theorem.
+    </p>
+    <theorem xml:id="matrixmultprops">
+      <statement>
+        <p>
+          <em>Properties of Matrix Multiplication</em>
+          <idx><h>matrix</h><h>matrix multiplication ! properties of</h></idx>
+      Let <m>A</m>,
+          <m>B</m> and <m>C</m> be matrices such that all of the matrix products below are defined and let <m>k</m> be a real number.
+          <ul>
+            <li>
+              <p>
+                <em>Associative Property of Matrix Multiplication:</em>
+                  <idx><h>matrix</h><h>matrix multiplication ! associative property of</h></idx>
+                <m>(AB)C = A(BC)</m> <idx><h>associative property</h><h>matrix ! matrix multiplication</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Associative Property with Scalar Multiplication:</em>
+                <m>k(AB) = (kA)B = A(kB)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Identity Property:</em>  <idx><h>matrix</h><h>matrix multiplication ! identity for</h></idx>  For a natural number <m>k</m>,
+                the <em> <m>k \times k</m> identity matrix</em>, denoted <m>I_{k}</m>,
+                is defined by <m>I_{k} = \left[d_{ij} \right]_{k \times k}</m> where
+                <me>
+                  d_{ij} = \left\{ \begin{array}{rl} 1, \amp  \text{ if \(i=j\) }  \\ 0, \amp  \text{ otherwise } \end{array}  \right.
+                </me>
+                For all <m>m \times n</m> matrices,
+                <m>I_{m}A = AI_{n} = A</m>.
+                  <idx><h>identity</h><h>matrix, multiplicative</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Property of Matrix Multiplication over Matrix Addition:</em>
+                  <idx><h>matrix</h><h>matrix multiplication ! distributive property</h></idx>
+                  <idx><h>distributive property</h><h>matrix ! matrix multiplication</h></idx>
+                <me>
+                  A(B \pm C) = AB \pm AC \mbox{ and }  (A \pm B)C = AC \pm BC
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The one property in <xref ref="matrixmultprops">Theorem</xref>
+      which begs further investigation is,
+      without doubt, the multiplicative identity.
+      The entries in a matrix where <m>i=j</m> comprise what is called the <idx><h>matrix</h><h>main diagonal</h></idx>
+          <idx><h>main diagonal</h></idx>
+      <em>main diagonal</em> of the matrix.
+      The identity matrix has <m>1</m>'s along its main diagonal and <m>0</m>'s everywhere else.
+      A few examples of the matrix <m>I_{k}</m> mentioned in <xref ref="matrixmultprops">Theorem</xref> are given below.
+      The reader is encouraged to see how they match the definition of the identity matrix presented there.
+      <me>
+        \begin{array}{ccccc}  [1] \amp  \left[ \begin{array}{rr} 1 \amp  0 \\ 0 \amp  1 \end{array}  \right] \amp  \left[ \begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1 \end{array}  \right] \amp  \left[ \begin{array}{rrrr} 1 \amp  0 \amp  0 \amp  0 \\ 0 \amp  1 \amp  0 \amp  0 \\ 0 \amp  0 \amp  1 \amp  0 \\  0 \amp  0 \amp  0 \amp  1 \end{array}  \right] \\ I_{1} \amp  I_{2} \amp  I_{3} \amp  I_{4} \end{array}
+      </me>
+    </p>
+    <p>
+      The identity matrix is an example of what is called a <idx><h>matrix</h><h>square matrix</h></idx>
+          <idx><h>square matrix</h></idx>
+      <em>square matrix</em> as it has the same number of rows as columns.
+      Note that to in order to verify that the identity matrix acts as a multiplicative identity,
+      some care must be taken depending on the order of the multiplication.
+      For example, take the matrix <m>2 \times 3</m> matrix <m>A</m>:
+      <me>
+        A = \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      In order for the product <m>I_{k}A</m> to be defined, <m>k = 2</m>;
+      similarly, for <m>AI_{k}</m> to be defined, <m>k = 3</m>.
+      We leave it to the reader to show
+      <m>I_{2}A = A</m> and <m>AI_{3} = A</m>.
+      In other words,
+      <me>
+        \begin{array}{rcl} \left[ \begin{array}{rr} 1 \amp  0 \\ 0 \amp  1 \end{array}  \right] \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right] \amp  = \amp  \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right] \end{array}
+      </me>
+      and
+      <me>
+        \begin{array}{rcl} \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right]\left[ \begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1 \end{array}  \right] \amp  = \amp  \left[\begin{array}{rrr} 2 \amp  0 \amp  -1 \\ -10 \amp  3 \amp  5 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      While the proofs of the properties in <xref ref="matrixmultprops">Theorem</xref> are computational in nature,
+      the notation becomes quite involved very quickly,
+      so they are left to a course in Linear Algebra.
+      The following example provides some practice with matrix multiplication and its properties.
+      As usual, some valuable lessons are to be learned.
+    </p>
+    <example xml:id="matrixmultex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Find <m>AB</m> for <m>A = \left[ \begin{array}{rrr} -23 \amp -1 \amp 17 \\ 46 \amp 2 \amp -34 \end{array} \right]</m> and <m>B = \left[ \begin{array}{rr} -3 \amp 2 \\ 1 \amp 5 \\ -4 \amp 3 \end{array} \right]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>C^2 -5C + 10I_{2}</m> for <m>C = \left[ \begin{array}{rr} 1 \amp -2 \\ 3 \amp 4 \end{array} \right]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>M</m> is a <m>4 \times 4</m> matrix.
+                Use <xref ref="matrixmultprops">Theorem</xref>
+                to expand <m>\left(M - 2I_{4}\right)\left(M + 3I_{4}\right)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We have <m>AB = \left[ \begin{array}{rrr} -23 \amp -1 \amp 17 \\ 46 \amp 2 \amp -34 \end{array} \right] \left[ \begin{array}{rr} -3 \amp 2 \\ 1 \amp 5 \\ -4 \amp 3 \end{array} \right] = \left[ \begin{array}{rr} 0 \amp 0 \\ 0 \amp 0 \end{array} \right]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Just as <m>x^2</m> means <m>x</m> times itself,
+                <m>C^2</m> denotes the matrix <m>C</m> times itself.
+                We get
+                <me>
+                  \begin{array}{rcl}  C^2 -5C + 10I_{2} \amp  = \amp  \left[ \begin{array}{rr} 1 \amp  -2 \\ 3 \amp  4 \end{array}  \right]^2 - 5 \left[ \begin{array}{rr} 1 \amp  -2 \\ 3 \amp  4 \end{array}  \right] + 10 \left[ \begin{array}{rr} 1 \amp  0 \\ 0 \amp  1 \end{array}  \right] \\  \amp  = \amp  \left[ \begin{array}{rr} 1 \amp  -2 \\ 3 \amp  4 \end{array}  \right]\left[ \begin{array}{rr} 1 \amp  -2 \\ 3 \amp  4 \end{array}  \right] + \left[ \begin{array}{rr} -5 \amp  10 \\ -15 \amp  -20 \end{array}  \right] + \left[ \begin{array}{rr} 10 \amp  0 \\ 0 \amp  10 \end{array}  \right] \\  \amp  = \amp  \left[ \begin{array}{rr} -5 \amp  -10 \\ 15 \amp  10 \end{array}  \right] + \left[ \begin{array}{rr} 5 \amp  10 \\ -15 \amp  -10 \end{array}  \right]  \\  \amp  = \amp   \left[ \begin{array}{rr} 0 \amp  0 \\ 0 \amp  0 \end{array}  \right]. \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                We expand <m>\left(M - 2I_{4}\right)\left(M + 3I_{4}\right)</m> with the same pedantic zeal we showed in <xref ref="matrixaddscalarex">Example</xref>.
+                The reader is encouraged to determine which property of matrix arithmetic justifies each step.
+                <me>
+                  \begin{array}{rcl}  \left(M - 2I_{4}\right)\left(M + 3I_{4}\right) \amp  = \amp  \left(M - 2I_{4}\right) M + \left(M - 2I_{4}\right)\left( 3I_{4}\right) \\ \amp  = \amp  MM - \left(2I_{4}\right)M + M\left( 3I_{4}\right) - \left( 2I_{4}\right)\left( 3I_{4}\right) \\ \amp  = \amp  M^2 -2 \left(I_{4}M\right) +3\left( M I_{4}\right) - 2\left( I_{4}\left( 3I_{4}\right)\right) \\ \amp  = \amp  M^2 - 2M  + 3M - 2\left(3\left( I_{4}I_{4}\right)\right) \\ \amp  = \amp  M^2 +M  - 6I_{4} \end{array}
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      <xref ref="matrixmultex">Example</xref>
+      illustrates some interesting features of matrix multiplication.
+      First note that in the first problem,
+      neither <m>A</m> nor <m>B</m> is the zero matrix,
+      yet the product <m>AB</m> is the zero matrix.
+      Hence, the the zero product property enjoyed by real numbers and scalar multiplication does not hold for matrix multiplication.
+    </p>
+    <p>
+      The second and third problems introduce us to polynomials involving matrices.
+      The reader is encouraged to step back and compare our expansion of the matrix product
+      <m>\left(M - 2I_{4}\right)\left(M + 3I_{4}\right)</m> in third probem with the product
+      <m>(x-2)(x+3)</m> from real number algebra.
+      The exercises explore this kind of parallel further.
+    </p>
+    <p>
+      As we mentioned earlier,
+      a point <m>P(x,y)</m> in the <m>xy</m>-plane can be represented as a <m>2 \times 1</m> position matrix.
+      We now show that matrix multiplication can be used to rotate these points,
+      and hence graphs of equations.
+    </p>
+    <example xml:id="rotationmatrixex">
+      <statement>
+        <p>
+          Let <m>R = \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} \amp -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \amp \frac{\sqrt{2}}{2} \end{array} \right]</m>.
+          <ol>
+            <li>
+              <p>
+                Plot <m>P(2,-2)</m>, <m>Q(4,0)</m>, <m>S(0,3)</m>,
+                and <m>T(-3,-3)</m> in the plane as well as the points <m>RP</m>,
+                <m>RQ</m>, <m>RS</m>, and <m>RT</m>.
+                Plot the lines <m>y=x</m> and <m>y=-x</m> as guides.
+                What does <m>R</m> appear to be doing to these points?
+              </p>
+            </li>
+            <li>
+              <p>
+                If a point <m>P</m> is on the hyperbola <m>x^2-y^2=4</m>,
+                show that the point <m>RP</m> is on the curve <m>y = \frac{2}{x}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                For <m>P(2,-2)</m>,
+                the position matrix is  <m>P = \left[ \begin{array}{r} 2 \\ -2 \end{array}  \right]</m>, and
+                <me>
+                  \begin{array}{rcl}  RP \amp  = \amp   \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} \amp  -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \amp  \frac{\sqrt{2}}{2} \end{array}  \right]\left[ \begin{array}{r} 2 \\ -2 \end{array}  \right] \\  \amp  = \amp  \left[ \begin{array}{r} 2\sqrt{2} \\ 0 \end{array}  \right] \end{array}
+                </me>
+                We have that <m>R</m> takes <m>(2,-2)</m> to <m>(2 \sqrt{2}, 0)</m>.
+                Similarly, we find <m>(4,0)</m> is moved to <m>(2\sqrt{2}, 2\sqrt{2})</m>,
+                <m>(0,3)</m> is moved to <m>\left(-\frac{3 \sqrt{2}}{2},  \frac{3 \sqrt{2}}{2} \right)</m>,
+                and <m>(-3,-3)</m> is moved to <m>(0,-3\sqrt{2})</m>.
+                We plot these points below on the left along with the lines <m>y=x</m> and <m>y=-x</m>.
+                We see that the matrix <m>R</m> is rotating these points counterclockwise by <m>45^{\circ}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For a generic point <m>P(x,y)</m> on the hyperbola <m>x^2-y^2=4</m>, we have
+                <me>
+                  \begin{array}{rcl}  RP \amp  = \amp   \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} \amp  -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \amp  \frac{\sqrt{2}}{2} \end{array}  \right]\left[ \begin{array}{r} x \\ y \end{array}  \right] \\  \amp  = \amp  \left[ \begin{array}{r} \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \\ \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \end{array}  \right] \end{array}
+                </me>
+                which means <m>R</m> takes <m>(x,y)</m> to <m>\left(\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y, \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y\right)</m>.
+                To show that this point is on the curve <m>y = \frac{2}{x}</m>,
+                we replace <m>x</m> with <m>\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y</m> and <m>y</m> with <m>\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y</m> and simplify.
+                <me>
+                  \begin{array}{rcl}  y \amp  = \amp  \frac{2}{x} \\  \frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \amp  \stackrel{?}{=} \amp  \frac{2}{\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y} \\  \left(\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y \right) \left(\frac{\sqrt{2}}{2} x + \frac{\sqrt{2}}{2} y \right)\amp  \stackrel{?}{=} \amp  \left(\dfrac{2}{\frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y}\right) \left(  \frac{\sqrt{2}}{2} x - \frac{\sqrt{2}}{2} y  \right)\\  \left(\frac{\sqrt{2}}{2} x \right)^2 - \left( \frac{\sqrt{2}}{2} y\right)^2 \amp  \stackrel{?}{=} \amp  2 \\  \frac{x^2}{2} - \frac{y^2}{2} \amp  \stackrel{?}{=} \amp  2 \\  x^2 - y^2 \amp  \stackrel{\checkmark }{=}\amp  4 \end{array}
+                </me>
+                Since <m>(x,y)</m> is on the hyperbola <m>x^2 - y^2 = 4</m>,
+                we know that this last equation is true.
+                Since all of our steps are reversible,
+                this last equation is equivalent to our original equation,
+                showing the graph of <m>y=\frac{2}{x}</m> is none other than the hyperbola
+                <m>x^2-y^2=4</m> when rotated counterclockwise by <m>45^{\circ}</m>.
+                Below on the right are the graphs of <m>x^2-y^2=4</m>
+                (thicker line)
+                and <m>y = \frac{2}{x}</m>  for comparison.  \begin{mfpic}[15]{-5}{5}{-5}{5} \point[4pt]{(2,-2), (2.828,0), (4,0), (2.828, 2.828), (0,3), (-2.121, 2.121), (-3,-3), (0, -4.243)} \dashed \polyline{(-4.5, 4.5), (4.5, -4.5)} \dashed \polyline{(-4.5, -4.5), (4.5, 4.5)} \arrow \dotted \arc[s]{(2,-2), (2.828,0),45} \arrow \dotted \arc[s]{(4,0), (2.828, 2.828),45} \arrow \dotted \arc[s]{(0,3), (-2.121, 2.121),45} \arrow \dotted \arc[s]{ (-3,-3), (0, -4.243),45} \axes \tlabel[cc](1.8, -2.5){<m>P</m>} \tlabel[cc](2.828, 0.5){<m>RP</m>} \tlabel[cc](4, -0.5){<m>Q</m>} \tlabel[cc](2.6, 3.3){<m>RQ</m>} \tlabel[cc](0.5, 3){<m>S</m>} \tlabel[cc](-2.5, 1.5){<m>RS</m>} \tlabel[cc](-3, -2.5){<m>T</m>} \tlabel[cc](0.7, -4.243){<m>RT</m>} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tcaption{Plotting <m>P</m> and <m>RP</m>.} \tlpointsep{5pt}  \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4}  \end{mfpic}   \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \dashed \polyline{(-4.5, 4.5), (4.5, -4.5)} \dashed \polyline{(-4.5, -4.5), (4.5, 4.5)} \arrow \reverse \arrow \rotatepath{(0,0), 45} \parafcn{-1.15,1.15,0.1}{(2*cosh(t),2*sinh(t))} \arrow \reverse \arrow \rotatepath{(0,0), 45}  \parafcn{-1.15,1.15,0.1}{(-2*cosh(t),2*sinh(t))} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt}  \axislabels {x}{{<m>-3</m>} -3,  {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3,{<m>4</m>} 4} \tcaption{Graphing <m>x^2-y^2=4</m> and
+                <m>y = \frac{2}{x}</m>.}  \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(2*cosh(t),2*sinh(t))} \arrow \reverse \arrow \parafcn{-1.15,1.15,0.1}{(-2*cosh(t),2*sinh(t))} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      When we started this section,
+      we mentioned that we would temporarily consider matrices as their own entities,
+      but that the algebra developed here would ultimately allow us to solve systems of linear equations.
+      To that end, consider the system
+      <me>
+        \left\{ \begin{array}{rcl} 3x  - y  + z \amp  = \amp  8 \\ x +  2y  -  z \amp  = \amp  4 \\  2x+ 3y - 4z \amp  = \amp  10 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      In <xref ref="AugMatrices">Section</xref>,
+      we encoded this system into the augmented matrix
+      <me>
+        \left[ \begin{array}{rrr|r} 3 \amp  -1 \amp  1 \amp  8 \\ 1 \amp  2 \amp  -1 \amp  4 \\ 2 \amp  3 \amp  -4 \amp  10 \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      Recall that the entries to the left of the vertical line come from the coefficients of the variables in the system,
+      while those on the right comprise the associated constants.
+      For that reason,
+      we may form the <idx><h>system of equations</h><h>coefficient matrix</h></idx>
+      <em>coefficient matrix</em> <m>A</m>,
+      the <idx><h>system of equations</h><h>unknowns matrix</h></idx>
+      <em>unknowns matrix</em>
+      <m>X</m> and the <idx><h>system of equations</h><h>constant matrix</h></idx>
+      <em>constant matrix</em> <m>B</m> as below
+      <me>
+        \begin{array}{ccc}  A = \left[ \begin{array}{rrr} 3 \amp  -1 \amp  1  \\ 1 \amp  2 \amp  -1  \\ 2 \amp  3 \amp  -4 \end{array}  \right]  \amp  X = \left[ \begin{array}{r}  x \\  y \\  z \end{array}  \right]  \amp  B = \left[ \begin{array}{r}  8 \\  4 \\  10 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      We now consider the matrix equation <m>AX = B</m>.
+      <me>
+        \begin{array}{rcl}  AX \amp  = \amp  B \\ \left[ \begin{array}{rrr} 3 \amp  -1 \amp  1  \\ 1 \amp  2 \amp  -1  \\ 2 \amp  3 \amp  -4 \end{array}  \right] \left[ \begin{array}{r}  x \\  y \\  z \end{array}  \right] \amp  = \amp  \left[ \begin{array}{r}  8 \\  4 \\  10 \end{array}  \right] \\  \left[ \begin{array}{rrr} 3x -y +z  \\ x + 2y  -z  \\ 2x + 3y  -4 z \end{array}  \right] \amp  = \amp  \left[ \begin{array}{r}  8 \\  4 \\  10 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      We see that finding a solution <m>(x,y,z)</m> to the original system corresponds to finding a solution <m>X</m> for the matrix equation <m>AX = B</m>.
+      If we think about solving the real number equation <m>ax = b</m>,
+      we would simply <sq>divide</sq> both sides by <m>a</m>.
+      Is it possible to <sq>divide</sq> both sides of the matrix equation <m>AX = B</m> by the matrix <m>A</m>?
+      This is the central topic of <xref ref="MatMethods">Section</xref>.
+    </p>
+  </introduction>
+  <subsection xml:id="ExercisesforMatArithmetic">
+    <title>Exercises</title>
+    <p>
+      For each pair of matrices <m>A</m> and <m>B</m> in <xref ref="easymatarithfirst">Exercises</xref>
+      - <xref ref="easymatarithlast"></xref>,
+      find the following, if defined
+      <ul>
+        <li>
+          <p>
+            <m>3A</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-B</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^2</m>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            <m>A-2B</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>AB</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>BA</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ol cols="4">
+      <li xml:id="easymatarithfirst">
+        <p>
+          <m>A = \left[ \begin{array}{rr} 2 \amp -3 \\ 1 \amp 4 \end{array} \right]</m>,
+          <m>B=\left[ \begin{array}{rr} 5 \amp -2 \\ 4 \amp 8 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A = \left[ \begin{array}{rr} -1 \amp 5 \\ -3 \amp 6 \end{array} \right]</m>,
+          <m>B=\left[ \begin{array}{rr} 2 \amp 10 \\ -7 \amp 1 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A = \left[ \begin{array}{rr} -1 \amp 3 \\ 5 \amp 2 \end{array} \right]</m>,
+          <m>B=\left[ \begin{array}{rrr} 7 \amp 0 \amp 8 \\ -3 \amp 1 \amp 4 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A = \left[ \begin{array}{rr} 2 \amp 4 \\ 6 \amp 8 \end{array} \right]</m>,
+          <m>B=\left[ \begin{array}{rrr} -1 \amp 3 \amp -5 \\ 7 \amp -9 \amp 11 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A = \left[ \begin{array}{r} 7 \\ 8 \\ 9 \end{array} \right]</m>,
+          <m>B=\left[ \begin{array}{rrr} 1 \amp 2 \amp 3 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A = \left[ \begin{array}{rr} 1 \amp -2 \\ -3 \amp 4 \\ 5 \amp -6 \end{array} \right]</m>,
+          <m>B=\left[ \begin{array}{rrr} -5 \amp 1 \amp 8 \end{array} \right]</m>
+        </p>
+      </li>
+      <li xml:id="easymatarithlast">
+        <p>
+          <m>A = \left[ \begin{array}{rrr} 2 \amp -3 \amp 5 \\ 3 \amp 1 \amp -2 \\ -7 \amp 1 \amp -1 \end{array} \right]</m>,
+          <m>B= \left[ \begin{array}{rrr} 1 \amp 2 \amp 1 \\ 17 \amp 33 \amp 19 \\ 10 \amp 19 \amp 11 \end{array} \right]</m>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="matarithfirst">Exercises</xref>
+      - <xref ref="matarithlast"></xref>, use the matrices
+      <me>
+        A = \left[ \begin{array}{rr} 1 \amp  2 \\ 3 \amp  4 \end{array}  \right] \;\;\; B = \left[ \begin{array}{rr} 0 \amp  -3 \\ -5 \amp  2 \end{array}  \right] \;\;\; C = \left[ \begin{array}{rrr} 10 \amp  -\frac{11}{2} \amp  0 \\ \frac{3}{5} \amp  5 \amp  9 \end{array}  \right]
+      </me>
+      <me>
+        D = \left[ \begin{array}{rr} 7 \amp  -13 \\ -\frac{4}{3} \amp  0 \\ 6 \amp  8 \end{array}  \right] \;\;\; E = \left[ \begin{array}{rrr} 1 \amp  2 \amp  3 \\ 0 \amp  4 \amp  -9 \\ 0 \amp  0 \amp  -5 \end{array}  \right]
+      </me>
+      to compute the following or state that the indicated operation is undefined.
+      <ol cols="6">
+        <li xml:id="matarithfirst">
+          <p>
+            <m>7B - 4A</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>AB</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>BA</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>E + D</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>ED</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>CD + 2I_{2}A</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A - 4I_{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^2 - B^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A+B)(A-B)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^2-5A-2I_{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>E^2 + 5E-36I_{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>EDC</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>CDE</m>
+          </p>
+        </li>
+        <li xml:id="matarithlast">
+          <p>
+            <m>ABCEDI_{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>A = \left[ \begin{array}{rrr} a \amp b \amp c \\ d \amp e \amp f \end{array} \right] \;\;\; E_{1} = \left[ \begin{array}{rr} 0 \amp 1 \\ 1 \amp 0 \end{array} \right] \;\;\; E_{2} = \left[ \begin{array}{rr} 5 \amp 0 \\ 0 \amp 1 \end{array} \right] \;\;\; E_{3} = \left[ \begin{array}{rr} 1 \amp -2 \\ 0 \amp 1 \end{array} \right]</m> Compute <m>E_{1}A</m>,
+            <m>\; E_{2}A</m> and <m>E_{3}A</m>.
+            What effect did each of the <m>E_{i}</m> matrices have on the rows of <m>A</m>?
+            Create <m>E_{4}</m> so that its effect on <m>A</m> is to multiply the bottom row by <m>-6</m>.
+            How would you extend this idea to matrices with more than two rows?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="MCfirst">Exercises</xref> - <xref ref="MClast"></xref>,
+      consider the following scenario.
+      In the small village of Pedimaxus in the country of Sasquatchia,
+      all 150 residents get one of the two local newspapers.
+      Market research has shown that in any given week, 90% of those who subscribe to the Pedimaxus Tribune want to keep getting it,
+      but 10% want to switch to the Sasquatchia Picayune.
+      Of those who receive the Picayune, 80% want to continue with it and 20% want switch to the Tribune.
+      We can express this situation using matrices.
+      Specifically, let <m>X</m> be the <sq>state matrix</sq> given by
+      <me>
+        X = \left[ \begin{array}{r} T \\ P \end{array}  \right]
+      </me>
+      where <m>T</m> is the number of people who get the Tribune and <m>P</m> is the number of people who get the Picayune in a given week.
+      Let <m>Q</m> be the <sq>transition matrix</sq> given by
+      <me>
+        Q = \left[ \begin{array}{rr} 0.90 \amp  0.20 \\ 0.10 \amp  0.80 \end{array}  \right]
+      </me>
+      such that <m>QX</m> will be the state matrix for the next week.
+      <ol cols="3">
+        <li xml:id="MCfirst">
+          <p>
+            Let's assume that when Pedimaxus was founded,
+            all 150 residents got the Tribune.
+            (Let's call this Week 0.)
+            This would mean
+            <me>
+              X = \left[ \begin{array}{r} 150 \\ 0 \end{array}  \right]
+            </me>
+            Since 10% of that 150 want to switch to the Picayune,
+            we should have that for Week 1, 135 people get the Tribune and 15 people get the Picayune.
+            Show that <m>QX</m> in this situation is indeed
+            <me>
+              QX = \left[ \begin{array}{r} 135 \\ 15 \end{array}  \right]
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Assuming that the percentages stay the same,
+            we can get to the subscription numbers for Week 2 by computing <m>Q^{2}X</m>.
+            How many people get each paper in Week 2?
+          </p>
+        </li>
+        <li>
+          <p>
+            Explain why the transition matrix does what we want it to do.
+          </p>
+        </li>
+        <li>
+          <p>
+            If the conditions do not change from week to week,
+            then <m>Q</m> remains the same and we have what's known as a
+              <idx><h>stochastic process</h></idx>
+              <idx><h>Markov Chain</h></idx> <em>Stochastic Process</em><fn>
+            More specifically, we have a Markov Chain,
+            which is a special type of stochastic process.
+            </fn> because Week <m>n</m>'s numbers are found by computing <m>Q^{n}X</m>.
+            Choose a few values of <m>n</m> and,
+            with the help of your classmates and calculator,
+            find out how many people get each paper for that week.
+            You should start to see a pattern as <m>n \rightarrow \infty</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If you didn't see the pattern, we'll help you out.
+            Let
+            <me>
+              X_{s} = \left[ \begin{array}{r} 100 \\ 50 \end{array}  \right]
+            </me>.
+            Show that <m>QX_{s} = X_{s}</m>  This is called the <em>steady state</em>
+              <idx><h>steady state</h></idx>
+            because the number of people who get each paper didn't change for the next week.
+            Show that <m>Q^{n}X \rightarrow X_{s}</m> as <m>n \rightarrow \infty</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Now let
+            <me>
+              S = \left[ \begin{array}{rr} \frac{2}{3} \amp  \frac{2}{3} \\ \frac{1}{3} \amp  \frac{1}{3} \end{array}  \right]
+            </me>
+            Show that <m>Q^{n} \rightarrow S</m> as <m>n \rightarrow \infty</m>.
+          </p>
+        </li>
+        <li xml:id="MClast">
+          <p>
+            Show that <m>SY = X_{s}</m> for any matrix <m>Y</m> of the form
+            <me>
+              Y = \left[ \begin{array}{r} y \\ 150 - y \end{array}  \right]
+            </me>
+            This means that no matter how the distribution starts in Pedimaxus,
+            if <m>Q</m> is applied often enough,
+            we always end up with 100 people getting the Tribune and 50 people getting the Picayune.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>z = a + bi</m> and <m>w = c + di</m> be arbitrary complex numbers.
+            Associate <m>z</m> and <m>w</m> with the matrices
+            <me>
+              Z = \left[ \begin{array}{rr} a \amp  b \\ -b \amp  a \end{array}  \right] \;\; \mbox{and}  \;\; W = \left[ \begin{array}{rr} c \amp  d \\ -d \amp  c \end{array}  \right]
+            </me>
+            Show that complex number addition,
+            subtraction and multiplication are mirrored by the associated
+            <em>matrix</em> arithmetic.
+            That is, show that <m>Z + W</m>,
+            <m>Z - W</m> and <m>ZW</m> produce matrices which can be associated with the complex numbers <m>z + w</m>,
+            <m>z - w</m> and <m>zw</m>, respectively.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let
+            <me>
+              A = \left[ \begin{array}{rr} 1 \amp  2 \\ 3 \amp  4 \end{array}  \right] \; \mbox{and}  \; B = \left[ \begin{array}{rr} 0 \amp  -3 \\ -5 \amp  2 \end{array}  \right]
+            </me>
+            Compare <m>(A + B)^{2}</m> to <m>A^{2} + 2AB + B^{2}</m>.
+            Discuss with your classmates what constraints must be placed on two arbitrary matrices <m>A</m> and <m>B</m> so that both
+            <m>(A + B)^{2}</m> and <m>A^{2} + 2AB + B^{2}</m> exist.
+            When will <m>(A + B)^{2} = A^{2} + 2AB + B^{2}</m>?
+            In general, what is the correct formula for <m>(A + B)^{2}</m>?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="triangexfirst">Exercises</xref>
+      - <xref ref="triangexlast"></xref>,
+      consider the following definitions.
+      A square matrix is said to be an
+          <idx><h>upper triangular matrix</h></idx>
+          <idx><h>matrix</h><h>upper triangular</h></idx>
+      <em>upper triangular matrix</em>
+      if all of its entries below the main diagonal are zero and it is said to be a
+      <em>lower triangular matrix</em>
+          <idx><h>lower triangular matrix</h></idx>
+          <idx><h>matrix</h><h>lower triangular</h></idx>
+      if all of its entries above the main diagonal are zero.
+      For example,
+      <me>
+        E = \left[ \begin{array}{rrr} 1 \amp  2 \amp  3 \\ 0 \amp  4 \amp  -9 \\ 0 \amp  0 \amp  -5 \end{array}  \right]
+      </me>
+      from <xref ref="matarithfirst">Exercises</xref>
+      - <xref ref="matarithlast"></xref>
+      above is an upper triangular matrix whereas
+      <me>
+        F = \left[ \begin{array}{rr} 1 \amp  0 \\ 3 \amp  0 \end{array}  \right]
+      </me>
+      is a lower triangular matrix.
+      (Zeros are allowed on the main diagonal.)
+      Discuss the following questions with your classmates.
+      <ol>
+        <li xml:id="triangexfirst">
+          <p>
+            Give an example of a matrix which is neither upper triangular nor lower triangular.
+          </p>
+        </li>
+        <li>
+          <p>
+            Is the product of two <m>n \times n</m> upper triangular matrices always upper triangular?
+          </p>
+        </li>
+        <li>
+          <p>
+            Is the product of two <m>n \times n</m> lower triangular matrices always lower triangular?
+          </p>
+        </li>
+        <li>
+          <p>
+            Given the matrix
+            <me>
+              A = \left[ \begin{array}{rr} 1 \amp  2 \\ 3 \amp  4 \end{array}  \right]
+            </me>
+            write <m>A</m> as <m>LU</m> where <m>L</m> is a lower triangular matrix and <m>U</m> is an upper triangular matrix?
+          </p>
+        </li>
+        <li xml:id="triangexlast">
+          <p>
+            Are there any matrices which are simultaneously upper and lower triangular?
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          For <m>A = \left[ \begin{array}{rr} 2 \amp -3 \\ 1 \amp 4 \end{array} \right]</m> and <m>B=\left[ \begin{array}{rr} 5 \amp -2 \\ 4 \amp 8 \end{array} \right]</m>
+          <ul>
+            <li>
+              <p>
+                <m>3A = \left[ \begin{array}{rr} 6 \amp -9 \\ 3 \amp 12 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-B = \left[ \begin{array}{rr} -5 \amp 2 \\ -4 \amp -8 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A^2 = \left[ \begin{array}{rr} 1 \amp -18 \\ 6 \amp 13 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>A-2B = \left[ \begin{array}{rr} -8 \amp 1 \\ -7 \amp -12 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>AB = \left[ \begin{array}{rr} -2 \amp -28 \\ 21 \amp 30 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>BA = \left[ \begin{array}{rr} 8 \amp -23 \\ 16 \amp 20 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>A = \left[ \begin{array}{rr} -1 \amp 5 \\ -3 \amp 6 \end{array} \right]</m> and <m>B=\left[ \begin{array}{rr} 2 \amp 10 \\ -7 \amp 1 \end{array} \right]</m>
+          <ul>
+            <li>
+              <p>
+                <m>3A = \left[ \begin{array}{rr} -3 \amp 15 \\ -9 \amp 18 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-B = \left[ \begin{array}{rr} -2 \amp -10 \\ 7 \amp -1 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A^2 = \left[ \begin{array}{rr} -14 \amp 25 \\ -15 \amp 21 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>A-2B = \left[ \begin{array}{rr} -5 \amp -15 \\ 11 \amp 4 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>AB = \left[ \begin{array}{rr} -37 \amp -5 \\ -48 \amp -24 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>BA = \left[ \begin{array}{rr} -32 \amp 70 \\ 4 \amp -29 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>A = \left[ \begin{array}{rr} -1 \amp 3 \\ 5 \amp 2 \end{array} \right]</m> and <m>B=\left[ \begin{array}{rrr} 7 \amp 0 \amp 8 \\ -3 \amp 1 \amp 4 \end{array} \right]</m>
+          <ul>
+            <li>
+              <p>
+                <m>3A = \left[ \begin{array}{rr} -3 \amp 9 \\ 15 \amp 6 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-B = \left[ \begin{array}{rrr} -7 \amp 0 \amp -8 \\ 3 \amp -1 \amp -4 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A^2 = \left[ \begin{array}{rr} 16 \amp 3 \\ 5 \amp 19 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>A-2B</m> is not defined
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>AB = \left[ \begin{array}{rrr} -16 \amp 3 \amp 4 \\ 29 \amp 2 \amp 48 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>BA</m> is not defined
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>A = \left[ \begin{array}{rr} 2 \amp 4 \\ 6 \amp 8 \end{array} \right]</m> and <m>B=\left[ \begin{array}{rrr} -1 \amp 3 \amp -5 \\ 7 \amp -9 \amp 11 \end{array} \right]</m>
+          <ul>
+            <li>
+              <p>
+                <m>3A = \left[ \begin{array}{rr} 6 \amp 12 \\ 18 \amp 24 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-B = \left[ \begin{array}{rrr} 1 \amp -3 \amp 5 \\ -7 \amp 9 \amp -11 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A^2 = \left[ \begin{array}{rr} 28 \amp 40 \\ 60 \amp 88 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>A-2B</m> is not defined
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>AB = \left[ \begin{array}{rrr} 26 \amp -30 \amp 34 \\ 50 \amp -54 \amp 58 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>BA</m> is not defined
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>A = \left[ \begin{array}{r} 7 \\ 8 \\ 9 \end{array} \right]</m> and <m>B=\left[ \begin{array}{rrr} 1 \amp 2 \amp 3 \end{array} \right]</m>
+          <ul>
+            <li>
+              <p>
+                <m>3A = \left[ \begin{array}{r} 21 \\ 24 \\ 27 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-B = \left[ \begin{array}{rrr} -1 \amp -2 \amp -3 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>A^2</m> is not defined
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A-2B</m> is not defined
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>AB = \left[ \begin{array}{rrr} 7 \amp 14 \amp 21 \\ 8 \amp 16 \amp 24 \\ 9 \amp 18 \amp 27 \end{array} \right]</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>BA = [50]</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>A = \left[ \begin{array}{rr} 1 \amp -2 \\ -3 \amp 4 \\ 5 \amp -6 \end{array} \right]</m> and <m>B=\left[ \begin{array}{rrr} -5 \amp 1 \amp 8 \end{array} \right]</m>
+          <ul>
+            <li>
+              <p>
+                <m>3A = \left[ \begin{array}{rr} 3 \amp -6 \\ -9 \amp 12 \\ 15 \amp -18 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-B = \left[ \begin{array}{rrr} 5 \amp -1 \amp -8 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>A^2</m> is not defined
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A-2B</m> is not defined
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>AB</m> is not defined
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>BA = \left[ \begin{array}{rr} 32 \amp -34 \end{array} \right]</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>A = \left[ \begin{array}{rrr} 2 \amp -3 \amp 5 \\ 3 \amp 1 \amp -2 \\ -7 \amp 1 \amp -1 \end{array} \right]</m> and <m>B= \left[ \begin{array}{rrr} 1 \amp 2 \amp 1 \\ 17 \amp 33 \amp 19 \\ 10 \amp 19 \amp 11 \end{array} \right]</m>
+          <ul>
+            <li>
+              <p>
+                <m>3A = \left[ \begin{array}{rrr} 6 \amp -9 \amp 15 \\ 9 \amp 3 \amp -6 \\ -21 \amp 3 \amp -3 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>-B = \left[ \begin{array}{rrr} -1 \amp -2 \amp -1 \\ -17 \amp -33 \amp -19 \\ -10 \amp -19 \amp -11 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>A^2 = \left[ \begin{array}{rrr} -40 \amp -4 \amp 11 \\ 23 \amp -10 \amp 15 \\ -4 \amp 21 \amp -36 \end{array} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A-2B = \left[ \begin{array}{rrr} 0 \amp -7 \amp 3 \\ -31 \amp -65 \amp -40 \\ -27 \amp -37 \amp -23 \end{array} \right]</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>AB = \left[ \begin{array}{rrr} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right]</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>BA = \left[ \begin{array}{rrr} 1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right]</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <m>7B - 4A = \left[ \begin{array}{rr} -4 \amp -29 \\ -47 \amp -2 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>AB = \left[ \begin{array}{rr} -10 \amp 1 \\ -20 \amp -1 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>BA = \left[ \begin{array}{rr} -9 \amp -12 \\ 1 \amp -2 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>E + D</m> is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>ED = \left[ \begin{array}{rr} \frac{67}{3}\amp 11 \\ -\frac{178}{3} \amp -72 \\ -30 \amp -40 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>CD + 2I_{2}A = \left[ \begin{array}{rr} \frac{238}{3} \amp -126 \\ \frac{863}{15} \amp \frac{361}{5} \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A - 4I_{2} = \left[ \begin{array}{rr} -3 \amp 2 \\ 3 \amp 0 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A^2 - B^2 = \left[ \begin{array}{rr} -8 \amp 16 \\ 25 \amp 3 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(A+B)(A-B) = \left[ \begin{array}{rr} -7 \amp 3 \\ 46 \amp 2 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A^2-5A-2I_{2} = \left[ \begin{array}{rr} 0 \amp 0 \\ 0 \amp 0 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>E^2 + 5E-36I_{3} = \left[ \begin{array}{rrr} -30 \amp 20 \amp -15 \\ 0 \amp 0 \amp -36 \\ 0 \amp 0 \amp -36 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>EDC = \left[ \begin{array}{rrr} \frac{3449}{15} \amp -\frac{407}{6} \amp 99 \\ -\frac{9548}{15} \amp -\frac{101}{3} \amp -648 \\ -324 \amp -35 \amp -360 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>CDE</m> is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>ABCEDI_{2} = \left[ \begin{array}{rr} -\frac{90749}{15} \amp -\frac{28867}{5} \\ -\frac{156601}{15} \amp -\frac{47033}{5} \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>E_{1}A = \left[ \begin{array}{rrr} d \amp e \amp f \\ a \amp b \amp c \end{array} \right]\;\;</m> <m>E_{1}</m> interchanged <m>R1</m> and <m>R2</m> of <m>A</m>.
+          <m>E_{2}A = \left[ \begin{array}{rrr} 5a \amp 5b \amp 5c \\ d \amp e \amp f \end{array} \right]\;\;</m> <m>E_{2}</m> multiplied <m>R1</m> of <m>A</m> by 5.
+          <m>E_{3}A = \left[ \begin{array}{rrr} a - 2d \amp b - 2e \amp c - 2f \\ d \amp e \amp f \end{array} \right]\;\;</m> <m>E_{3}</m> replaced <m>R1</m> in <m>A</m> with
+          <m>R1 - 2R2</m>. <m>E_{4} = \left[ \begin{array}{rr} 1 \amp 0 \\ 0 \amp -6 \end{array} \right]\;\;</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

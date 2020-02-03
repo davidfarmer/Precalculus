@@ -1,0 +1,3023 @@
+<section xml:id="MoreTrigonometricIdentities">
+  <title>More Identities</title>
+  <introduction>
+    <p>
+      In <xref ref="FundamentalTrigonometricIdentities">Section</xref>,
+      we saw the utility of identities in finding the values of the circular functions of a given angle as well as simplifying expressions involving the circular functions.
+      In this section,
+      we introduce several collections of identities which have uses in this course and beyond.
+    </p>
+    <p>
+      Our first set of identities is the <sq>Even / Odd</sq> identities.
+      We <em>observed</em> the even and odd properties of the circular functions graphically in <xref ref="GraphsofSineandCosine">Sections</xref>
+      and <xref ref="GraphsofOtherCircularFunctions"></xref>.
+      Here, we take the time to <em>prove</em>
+      these properties from first principles.
+      We state the theorem below for reference.
+    </p>
+    <theorem xml:id="evenodd">
+      <statement>
+        <p>
+          <em>Even / Odd Identities:</em>
+          For all applicable angles <m>\theta</m>,
+              <idx><h>Even/Odd Identities</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos(-\theta) = \cos(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sec(-\theta) = \sec(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(-\theta) = -\sin(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\csc(-\theta) = -\csc(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(-\theta) = -\tan(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot(-\theta) = -\cot(\theta)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We start by proving <m>\cos(-\theta) = \cos(\theta)</m> and <m>\sin(-\theta) = -\sin(\theta)</m>.
+    </p>
+    <p>
+      Consider an angle <m>\theta</m> plotted in standard position.
+      Let <m>\theta_{0}</m> be the angle coterminal with <m>\theta</m> with <m>0 \leq \theta_{0} \lt 2\pi</m>.
+      (We can construct the angle
+      <m>\theta_{0}</m> by rotating counter-clockwise from the positive <m>x</m>-axis to the terminal side of <m>\theta</m> as pictured below.)
+      Since <m>\theta</m> and <m>\theta_{0}</m> are coterminal,
+      <m>\cos(\theta) = \cos(\theta_{0})</m> and <m>\sin(\theta) = \sin(\theta_{0})</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[18]{-5}{5}{-4.5}{4.5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.25){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{0,-555,-5}{(-t+400)*dir(t)/800}
+          \tlabel(1.5,-1){<m>\theta</m>}
+          \tlabel[cc](-2.5, 2.75){\mbox{\boldmath <m>\theta_{0}</m>} }
+          \point[4pt]{(0,0),(-2.7692, 1.1538)}
+          \penwd{1.25pt}
+          \arrow  \reverse \arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)}
+          \penwd{1.5pt}
+          \arrow \parafcn{5, 150, 5}{1.75*dir(t)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[18]{-5}{5}{-4.5}{4.5}
+          \axes
+          \tlabel(4.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.25){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \tlabel[cc](-2.5, 2.75){\mbox{\boldmath <m>\theta_{0}</m>} }
+          \tlabel[cc](-2.5, -2.75){\mbox{\boldmath <m>-\theta_{0}</m>} }
+          \point[4pt]{(0,0),(-2.7692, 1.1538)}
+          \point[4pt]{(0,0),(-2.7692, -1.1538)}
+          \tlabel(-7,0.75){<m>P(\cos(\theta_{0}),\sin(\theta_{0}))</m>}
+          \tlabel(-7.5,-0.85){<m>Q(\cos(-\theta_{0}),\sin(-\theta_{0}))</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(5,0), (0,0), (-4.6154, 1.9231)}
+          \arrow \reverse \arrow \polyline{(5,0), (0,0), (-4.6154, -1.9231)}
+          \penwd{1.5pt}
+          \arrow \parafcn{5, 150, 5}{1.75*dir(t)}
+          \arrow \parafcn{-5, -145, -5}{1.75*dir(t)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      We now consider the angles <m>-\theta</m> and <m>-\theta_{0}</m>.
+      Since <m>\theta</m> is coterminal with <m>\theta_{0}</m>,
+      there is some integer <m>k</m> so that <m>\theta = \theta_{0} + 2\pi \cdot k</m>.
+      Hence, <m>-\theta = -\theta_{0} - 2\pi \cdot k = -\theta_{0} + 2\pi \cdot(-k)</m>.
+      Since <m>k</m> is an integer, so is <m>(-k)</m>,
+      which means <m>-\theta</m> is coterminal with <m>-\theta_{0}</m>.
+      Therefore, <m>\cos(-\theta) = \cos(-\theta_{0})</m> and <m>\sin(-\theta) = \sin(-\theta_{0})</m>.
+    </p>
+    <p>
+      Let <m>P</m> and <m>Q</m> denote the points on the terminal sides of
+      <m>\theta_{0}</m> and <m>-\theta_{0}</m>,
+      respectively, which lie on the Unit Circle.
+      By definition, the coordinates of <m>P</m> are
+      <m>(\cos(\theta_{0}),\sin(\theta_{0}))</m> and the coordinates of <m>Q</m> are <m>(\cos(-\theta_{0}),\sin(-\theta_{0}))</m>.
+    </p>
+    <p>
+      Since <m>\theta_{0}</m> and
+      <m>-\theta_{0}</m> sweep out congruent central sectors of the Unit Circle,
+      it follows that the points <m>P</m> and <m>Q</m> are symmetric about the <m>x</m>-axis.
+      Thus, <m>\cos(-\theta_{0}) = \cos(\theta_{0})</m> and <m>\sin(-\theta_{0}) = -\sin(\theta_{0})</m>.
+    </p>
+    <p>
+      Since the cosines and sines of <m>\theta_{0}</m> and
+      <m>-\theta_{0}</m> are the same as those for <m>\theta</m> and <m>-\theta</m>,
+      respectively,
+      we get <m>\cos(-\theta) = \cos(\theta)</m> and <m>\sin(-\theta) = -\sin(\theta)</m>,
+      as required.
+    </p>
+    <p>
+      As we saw in <xref ref="GraphsofOtherCircularFunctions">Section</xref>,
+      the remaining four circular functions <sq>inherit</sq> their even/odd nature from sine and cosine courtesy of the Reciprocal and Quotient Identities,
+      <xref ref="recipquotidfull">Theorem</xref>.
+    </p>
+    <p>
+      Our next set of identities establish how the cosine function handles sums and differences of angles.
+    </p>
+    <theorem xml:id="cosinesumdifference">
+      <statement>
+        <p>
+          <em>Sum and Difference Identities for Cosine:</em>
+          For all angles <m>\alpha</m> and <m>\beta</m>,
+          <idx><h>Difference Identity</h><h>for cosine</h></idx>
+          <idx><h>Sum Identity</h><h>for cosine</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos(\alpha + \beta) = \cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(\alpha - \beta) = \cos(\alpha) \cos(\beta) + \sin(\alpha) \sin(\beta)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We first prove the result for differences.
+      As in the proof of the Even / Odd Identities,
+      we can reduce the proof for general angles <m>\alpha</m> and <m>\beta</m> to angles
+      <m>\alpha_{0}</m> and <m>\beta_{0}</m>,
+      coterminal with <m>\alpha</m> and <m>\beta</m>, respectively,
+      each of which measure between <m>0</m> and <m>2\pi</m> radians.
+      Since <m>\alpha</m> and <m>\alpha_{0}</m> are coterminal,
+      as are <m>\beta</m> and <m>\beta_{0}</m>,
+      it follows that <m>(\alpha - \beta)</m> is coterminal with <m>(\alpha_{0} - \beta_{0})</m>.
+      Consider the case below where <m>\alpha_{0} \geq \beta_{0}</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[25]{-4}{4}{-1}{5}
+          \axes
+          \drawcolor[gray]{0.7}
+          \parafcn{0,180,5}{3*dir(t)}
+          \drawcolor{black}
+          \arrow \parafcn{5, 40, 5}{0.75*dir(t)}
+          \arrow \parafcn{5, 115, 5}{1.35*dir(t)}
+          \tlabel[cc](0.25,.95){<m>\alpha_{0}</m>}
+          \tlabel[cc](0.95,0.3){<m>\beta_{0}</m>}
+          \tlabel(3.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.75){<m>y</m>}
+          \tlabel(3,-0.5){<m>1</m>}
+          \tlabel(-0.5,-0.5){<m>O</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{0 step 3 until 3}
+          \dotted \polyline{(2.121, 2.121), (-1.5, 2.598)}
+          \point[4pt]{(0,0), (3,0), (2.121, 2.121), (-1.5, 2.598) }
+          \tlabel(-4.5,2.5){<m>P(\cos(\alpha_{0}),\sin(\alpha_{0}))</m>}
+          \tlabel(2.5,2){<m>Q(\cos(\beta_{0}),\sin(\beta_{0}))</m>}
+          \penwd{1.5pt}
+          \arrow \parafcn{50, 115,5}{1.75*dir(t)}
+          \tlabel(0.1,1.9){\mbox{\boldmath <m>\alpha_{0} - \beta_{0}</m>} }
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(4,0), (0,0), (3.535,3.535)}
+          \arrow \reverse \arrow \polyline{(4,0), (0,0), (-2.5,4.330)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[25]{-4}{4}{-1}{5}
+          \axes
+          \drawcolor[gray]{0.7}
+          \parafcn{0,180,5}{3*dir(t)}
+          \drawcolor{black}
+          \tlabel(3.75,-0.5){<m>x</m>}
+          \tlabel(0.25,4.75){<m>y</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \tlabel(-0.5,-0.5){<m>O</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{0 step 3 until 3}
+          \tlabel(1.25,2.8){<m>A(\cos(\alpha_{0} - \beta_{0}),\sin(\alpha_{0} - \beta_{0}))</m>}
+          \tlabel(2.25,-0.5){<m>B(1,0)</m>}
+          \dotted \polyline{(3,0), (1.026, 2.819)}
+          \point[4pt]{(0,0), (3,0), (1.026, 2.819)}
+          \penwd{1.5pt}
+          \arrow \parafcn{5, 65,5}{1.75*dir(t)}
+          \tlabel(0.2,0.3){\mbox{\boldmath <m>\alpha_{0} - \beta_{0}</m>} }
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \polyline{(4,0), (0,0), (1.710,4.698)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      Since the angles <m>POQ</m> and <m>AOB</m> are congruent,
+      the distance between <m>P</m> and <m>Q</m> is equal to the distance between <m>A</m> and <m>B</m>.<fn>
+      In the picture we've drawn,
+      the <em>tri</em>angles <m>POQ</m> and <m>AOB</m> are congruent,
+      which is even better.
+      However, <m>\alpha_{0} - \beta_{0}</m> could be <m>0</m> or it could be <m>\pi</m>,
+      neither of which makes a triangle.
+      It could also be larger than <m>\pi</m>,
+      which makes a triangle, just not the one we've drawn.
+      You should think about those three cases.
+      </fn> The distance formula,
+      <xref ref="distanceformula">Equation</xref>, yields
+      <me>
+        \begin{array}{rcl}  \sqrt{(\cos(\alpha_{0}) - \cos(\beta_{0}))^2 + (\sin(\alpha_{0}) - \sin(\beta_{0}))^2 } \amp  = \amp  \sqrt{(\cos(\alpha_{0} - \beta_{0}) - 1)^2 + (\sin(\alpha_{0} - \beta_{0}) - 0)^2} \end{array}
+      </me>
+    </p>
+    <p>
+      Squaring both sides, we expand the left hand side of this equation as
+      <me>
+        \begin{array}{rcl} (\cos(\alpha_{0}) - \cos(\beta_{0}))^2 + (\sin(\alpha_{0}) - \sin(\beta_{0}))^2 \amp  = \amp \cos^2(\alpha_{0}) - 2\cos(\alpha_{0})\cos(\beta_{0}) + \cos^2(\beta_{0}) \\ \amp  \amp  + \sin^2(\alpha_{0}) - 2\sin(\alpha_{0})\sin(\beta_{0})  +  \sin^2(\beta_{0}) \\ \amp  = \amp  \cos^2(\alpha_{0}) + \sin^2(\alpha_{0}) + \cos^2(\beta_{0}) + \sin^2(\beta_{0}) \\ \amp  \amp  -  2\cos(\alpha_{0})\cos(\beta_{0}) - 2\sin(\alpha_{0})\sin(\beta_{0}) \end{array}
+      </me>
+    </p>
+    <p>
+      From the Pythagorean Identities,
+      <m>\cos^2(\alpha_{0}) + \sin^2(\alpha_{0}) = 1</m> and <m>\cos^2(\beta_{0}) + \sin^2(\beta_{0}) = 1</m>, so
+      <me>
+        \begin{array}{rcl} (\cos(\alpha_{0}) - \cos(\beta_{0}))^2 + (\sin(\alpha_{0}) - \sin(\beta_{0}))^2 \amp  = \amp  2  - 2\cos(\alpha_{0})\cos(\beta_{0}) - 2\sin(\alpha_{0})\sin(\beta_{0}) \end{array}
+      </me>
+    </p>
+    <p>
+      Turning our attention to the right hand side of our equation, we find
+      <me>
+        \begin{array}{rcl} (\cos(\alpha_{0} - \beta_{0}) - 1)^2 + (\sin(\alpha_{0} - \beta_{0}) - 0)^2 \amp  = \amp  \cos^2(\alpha_{0} - \beta_{0}) - 2\cos(\alpha_{0} - \beta_{0}) + 1 + \sin^2(\alpha_{0} - \beta_{0}) \\ \amp  = \amp  1 +  \cos^2(\alpha_{0} - \beta_{0}) + \sin^2(\alpha_{0} - \beta_{0}) - 2\cos(\alpha_{0} - \beta_{0}) \end{array}
+      </me>
+    </p>
+    <p>
+      Once again, we simplify <m>\cos^2(\alpha_{0} - \beta_{0}) + \sin^2(\alpha_{0} - \beta_{0})= 1</m>, so that
+      <me>
+        \begin{array}{rcl} (\cos(\alpha_{0} - \beta_{0}) - 1)^2 + (\sin(\alpha_{0} - \beta_{0}) - 0)^2 \amp  = \amp  2  - 2\cos(\alpha_{0} - \beta_{0}) \end{array}
+      </me>
+    </p>
+    <p>
+      Putting it all together,
+      we get <m>2 - 2\cos(\alpha_{0})\cos(\beta_{0}) - 2\sin(\alpha_{0})\sin(\beta_{0}) = 2 - 2\cos(\alpha_{0} - \beta_{0})</m>,
+      which simplifies to:
+      <m>\cos(\alpha_{0} - \beta_{0}) = \cos(\alpha_{0})\cos(\beta_{0}) + \sin(\alpha_{0})\sin(\beta_{0})</m>.
+    </p>
+    <p>
+      Since <m>\alpha</m> and <m>\alpha_{0}</m>,
+      <m>\beta</m> and <m>\beta_{0}</m>,
+      and <m>(\alpha - \beta)</m> and
+      <m>(\alpha_{0}- \beta_{0})</m> are all coterminal pairs of angles,
+      we have established the identity:
+      <m>\cos(\alpha - \beta) = \cos(\alpha) \cos(\beta) + \sin(\alpha) \sin(\beta)</m>.
+    </p>
+    <p>
+      For the case where <m>\alpha_{0} \leq \beta_{0}</m>,
+      we can apply the above argument to the angle
+      <m>\beta_{0} - \alpha_{0}</m> to obtain the identity <m>\cos(\beta_{0} - \alpha_{0}) = \cos(\beta_{0})\cos(\alpha_{0}) + \sin(\beta_{0})\sin(\alpha_{0})</m>.
+      Using this formula in conjunction with the Even Identity of cosine gives us the result in this case, too:
+      <me>
+        \begin{array}{rcl}  \cos(\alpha_{0} - \beta_{0}) =  \cos( - (\alpha_{0} - \beta_{0}))  =  \cos(\beta_{0} - \alpha_{0})  \amp  = \amp  \cos(\beta_{0})\cos(\alpha_{0}) + \sin(\beta_{0})\sin(\alpha_{0}) \\ \amp  = \amp  \cos(\alpha_{0})\cos(\beta_{0}) + \sin(\alpha_{0})\sin(\beta_{0}). \end{array}
+      </me>
+    </p>
+    <p>
+      To get the sum identity for cosine,
+      we use the difference formula along with the Even/Odd Identities
+      <me>
+        \cos(\alpha + \beta) = \cos(\alpha - (-\beta)) =  \cos(\alpha) \cos(-\beta) + \sin(\alpha) \sin(-\beta) =  \cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)
+      </me>.
+    </p>
+    <p>
+      We put these newfound identities to good use in the following example.
+    </p>
+    <example xml:id="cosinesumdiffex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Find the exact value of <m>\cos\left(15^{\circ}\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Verify the identity:
+                <m>\cos\left(\frac{\pi}{2} - \theta\right) = \sin(\theta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>\alpha</m> is a Quadrant I angle with
+                <m>\sin(\alpha) = \frac{3}{5}</m> and <m>\beta</m> is a Quadrant IV angle with <m>\sec(\beta) = 4</m>.
+                Find the exact value of <m>\cos(\alpha + \beta)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                In order to use <xref ref="cosinesumdifference">Theorem</xref>
+                to find <m>\cos\left(15^{\circ}\right)</m>,
+                we need to write <m>15^{\circ}</m> as a sum or difference of angles whose cosines and sines we know.
+                One way to do so is to write <m>15^{\circ} = 45^{\circ} - 30^{\circ}</m>.
+                We find:
+                <me>
+                  \begin{array}{rcl}  \cos\left(15^{\circ}\right) \amp  = \amp  \cos\left(45^{\circ} - 30^{\circ} \right) \\ \amp  = \amp  \cos\left(45^{\circ}\right)\cos\left(30^{\circ} \right) + \sin\left(45^{\circ}\right)\sin\left(30^{\circ} \right) \\ \amp  = \amp  \left( \dfrac{\sqrt{2}}{2} \right)\left( \dfrac{\sqrt{3}}{2} \right)  +  \left( \dfrac{\sqrt{2}}{2} \right)\left( \dfrac{1}{2} \right)\\ \amp  = \amp   \dfrac{\sqrt{6}+ \sqrt{2}}{4}. \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Using <xref ref="cosinesumdifference">Theorem</xref> gives:
+                <me>
+                  \begin{array}{rcl}  \cos\left(\dfrac{\pi}{2} - \theta\right) \amp  = \amp  \cos\left(\dfrac{\pi}{2}\right)\cos\left(\theta\right) + \sin\left(\dfrac{\pi}{2}\right)\sin\left(\theta \right) \\ \amp  = \amp  \left( 0 \right)\left( \cos(\theta) \right)  +  \left( 1 \right)\left( \sin(\theta) \right) \\ \amp  = \amp  \sin(\theta) . \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Per <xref ref="cosinesumdifference">Theorem</xref>,
+                we know <m>\cos(\alpha + \beta) = \cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)</m>.
+                Hence, we need to find the sines and cosines of <m>\alpha</m> and <m>\beta</m> to complete the problem.
+                We are given <m>\sin(\alpha) = \frac{3}{5}</m>,
+                so our first task is to find <m>\cos(\alpha)</m>.
+                We can quickly get <m>\cos(\alpha)</m> using the Pythagorean Identity <m>\cos^{2}(\alpha) = 1 - \sin^{2}(\alpha) = 1 - \left(\frac{3}{5}\right)^2 = \frac{16}{25}</m>.
+                We get <m>\cos(\alpha) = \frac{4}{5}</m>,
+                choosing the positive root since <m>\alpha</m> is a Quadrant I angle.
+                Next, we need the <m>\sin(\beta)</m> and <m>\cos(\beta)</m>.
+                Since <m>\sec(\beta) = 4</m>,
+                we immediately get <m>\cos(\beta) = \frac{1}{4}</m> courtesy of the Reciprocal and Quotient Identities.
+                To get <m>\sin(\beta)</m>, we employ the Pythagorean Identity:
+                <m>\sin^{2}(\beta) = 1 - \cos^{2}(\beta) = 1 - \left(\frac{1}{4} \right)^2 = \frac{15}{16}</m>.
+                Here, since <m>\beta</m> is a Quadrant IV angle,
+                we get <m>\sin(\beta) = - \frac{\sqrt{15}}{4}</m>.
+                Finally, we get:
+                <m>\cos(\alpha + \beta) = \cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta) = \left( \frac{4}{5} \right) \left( \frac{1}{4} \right) - \left( \frac{3}{5} \right) \left( - \frac{\sqrt{15}}{4} \right) = \frac{4+3\sqrt{15}}{20}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The identity verified in <xref ref="cosinesumdiffex">Example</xref>, namely,
+      <m>\cos\left(\frac{\pi}{2} - \theta\right) = \sin(\theta)</m>,
+      is the first of the celebrated <sq>cofunction</sq> identities.
+      These identities were first hinted at in <xref ref="cofunctionforeshadowing">Exercise</xref>
+      in <xref ref="AppRightTrig">Section</xref>.
+    </p>
+    <p>
+      From <m>\sin(\theta) = \cos\left(\frac{\pi}{2} - \theta\right)</m>, we get:
+      <m>\sin\left(\frac{\pi}{2} - \theta\right) = \cos\left(\frac{\pi}{2} -\left[\frac{\pi}{2} - \theta\right]\right) = \cos(\theta)</m>,
+      which says,
+      in words,
+      that the <sq>co</sq>sine of an angle is the sine of its <sq>co</sq>mplement.
+      Now that these identities have been established for cosine and sine,
+      the remaining circular functions follow suit.
+      The remaining proofs are left as exercises.
+    </p>
+    <theorem xml:id="cofunctionidentities">
+      <statement>
+        <p>
+          <em>Cofunction Identities:</em>
+          For all applicable angles <m>\theta</m>,
+              <idx><h>Cofunction Identities</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos\left(\dfrac{\pi}{2} - \theta \right) = \sin(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin\left(\dfrac{\pi}{2} - \theta \right) = \cos(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sec\left(\dfrac{\pi}{2} - \theta \right) = \csc(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\csc\left(\dfrac{\pi}{2} - \theta \right) = \sec(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan\left(\dfrac{\pi}{2} - \theta \right) = \cot(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot\left(\dfrac{\pi}{2} - \theta \right) = \tan(\theta)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The Cofunction Identities enable us to derive the sum and difference formulas for sine.
+      We first convert to sine to cosine and expand:
+      <me>
+        \begin{array}{rcl}  \sin(\alpha + \beta) \amp  = \amp  \cos\left( \dfrac{\pi}{2} - (\alpha + \beta) \right) \\ \amp  = \amp  \cos\left( \left[\dfrac{\pi}{2} - \alpha \right] - \beta \right) \\ \amp  = \amp  \cos\left(\dfrac{\pi}{2} - \alpha \right) \cos(\beta) + \sin\left(\dfrac{\pi}{2} - \alpha \right)\sin(\beta) \\ \amp  = \amp  \sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta) \end{array}
+      </me>
+    </p>
+    <p>
+      We can derive the difference formula for sine by rewriting <m>\sin(\alpha - \beta)</m> as
+      <m>\sin(\alpha + (-\beta))</m> and using the sum formula and the Even / Odd Identities.
+      Again, we leave the details to the reader.
+    </p>
+    <theorem xml:id="sinesumdifference">
+      <statement>
+        <p>
+          <em>Sum and Difference Identities for Sine:</em>
+          For all angles <m>\alpha</m> and <m>\beta</m>,
+          <idx><h>Difference Identity</h><h>for sine</h></idx>
+          <idx><h>Sum Identity</h><h>for sine</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\sin(\alpha + \beta) = \sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\alpha - \beta) = \sin(\alpha) \cos(\beta) - \cos(\alpha) \sin(\beta)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We try out these new identities in the next example.
+    </p>
+    <example xml:id="sinesumanddiffex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Find the exact value of <m>\sin\left(\frac{19 \pi}{12}\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>\alpha</m> is a Quadrant II angle with <m>\sin(\alpha) = \frac{5}{13}</m>,
+                and <m>\beta</m> is a Quadrant III angle with <m>\tan(\beta) = 2</m>.
+                Find the exact value of <m>\sin(\alpha - \beta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Derive a formula for <m>\tan(\alpha + \beta)</m> in terms of
+                <m>\tan(\alpha)</m> and <m>\tan(\beta)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                As in  <xref ref="cosinesumdiffex">Example</xref>,
+                we need to write the angle
+                <m>\frac{19 \pi}{12}</m> as a sum or difference of common angles.
+                The denominator of <m>12</m> suggests a combination of angles with denominators <m>3</m> and <m>4</m>.
+                One such combination<fn>
+                It takes some trial and error  to find this combination.
+                One alternative is to convert to degrees <ellipsis/>
+                </fn> is <m>\; \frac{19 \pi}{12} = \frac{4 \pi}{3} + \frac{\pi}{4}</m>.
+                Applying <xref ref="sinesumdifference">Theorem</xref>, we get
+                <me>
+                  \begin{array}{rcl}  \sin\left(\dfrac{19 \pi}{12}\right) \amp  = \amp  \sin\left(\dfrac{4 \pi}{3} + \dfrac{\pi}{4} \right) \\ \amp  = \amp  \sin\left(\dfrac{4 \pi}{3} \right)\cos\left(\dfrac{\pi}{4} \right) + \cos\left(\dfrac{4 \pi}{3} \right)\sin\left(\dfrac{\pi}{4} \right) \\ \amp  = \amp  \left( -\dfrac{\sqrt{3}}{2} \right)\left( \dfrac{\sqrt{2}}{2} \right)  +  \left( -\dfrac{1}{2} \right)\left( \dfrac{\sqrt{2}}{2} \right) \\ \amp  = \amp   \dfrac{-\sqrt{6}- \sqrt{2}}{4} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                In order to find <m>\sin(\alpha - \beta)</m> using <xref ref="sinesumdifference">Theorem</xref>,
+                we need to find <m>\cos(\alpha)</m> and both
+                <m>\cos(\beta)</m> and <m>\sin(\beta)</m>.
+                To find <m>\cos(\alpha)</m>,
+                we use the Pythagorean Identity <m>\cos^2(\alpha) = 1 - \sin^{2}(\alpha) = 1 - \left(\frac{5}{13}\right)^2 = \frac{144}{169}</m>.
+                We get <m>\cos(\alpha) = -\frac{12}{13}</m>, the negative, here,
+                owing to the fact that <m>\alpha</m> is a Quadrant II angle.
+                We now set about finding <m>\sin(\beta)</m> and <m>\cos(\beta)</m>.
+                We have several ways to proceed at this point,
+                but since there isn't a direct way to get from <m>\tan(\beta) = 2</m> to either
+                <m>\sin(\beta)</m> or <m>\cos(\beta)</m>,
+                we opt for a more geometric approach as presented in <xref ref="TheOtherCircularFunctions">Section</xref>.
+                Since <m>\beta</m> is a Quadrant III angle with <m>\tan(\beta) = 2 = \frac{-2}{-1}</m>,
+                we know the point <m>Q(x,y) = (-1,-2)</m> is on the terminal side of <m>\beta</m> as illustrated below.<fn>
+                Note that even though <m>\tan(\beta) = \frac{\sin(\beta)}{\cos(\beta)}</m>,
+                we <em>cannot</em> take <m>\sin(\beta)=-2</m> and <m>\cos(\beta) = -1</m>.
+                Recall that <m>\sin(\beta)</m> and
+                <m>\cos(\beta)</m> are the <m>y</m> and <m>x</m> coordinates on a
+                <em>specific</em> circle, the Unit Circle.
+                As we'll see shortly,
+                <m>(-1,-2)</m> lies on a circle of <m>\sqrt{5}</m>,
+                so <em>not</em> the Unit Circle.
+                </fn>  \begin{mfpic}[18]{-5}{5}{-4}{4.75} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel[cc](-3,-3){<m>(-1,-2)</m>} \tlabel[cc](-2,-1.5){<m>r=\sqrt{5}</m>} \tcaption{the terminal side of <m>\beta</m> contains
+                <m>Q(-1,-2)</m>} \xmarks{-3, -1.5, 1.5, 3} \ymarks{-3, -1.5, 1.5, 3} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-1.79, -3.58)} \point[4pt]{(0,0), (-1.5, -3)} \tlpointsep{4pt} \axislabels {x}{ {<m>-2</m>} -3, {<m>-1</m>} -1.5, {<m>1</m>} 1.5, {<m>2</m>} 3} \axislabels {y}{ {<m>-2</m>} -3, {<m>-1</m>} -1.5, {<m>2</m>} 3, {<m>1</m>} 1.5} \end{mfpic} We find <m>r = \sqrt{x^2 + y^2} = \sqrt{(-1)^2+(-2)^2} = \sqrt{5}</m>,
+                so per <xref ref="circularfunctionscircle">Theorem</xref>,
+                <m>\sin(\beta) = \frac{-2}{\sqrt{5}} = - \frac{2\sqrt{5}}{5}</m> and <m>\cos(\beta) = \frac{-1}{\sqrt{5}} = - \frac{\sqrt{5}}{5}</m> . At last,
+                we have <m>\sin(\alpha - \beta) = \sin(\alpha)\cos(\beta) - \cos(\alpha)\sin(\beta) = \left( \frac{5}{13} \right)\left( -\frac{\sqrt{5}}{5} \right) - \left( -\frac{12}{13} \right)\left( - \frac{2 \sqrt{5}}{5} \right) = -\frac{29\sqrt{5}}{65}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We can start expanding <m>\tan(\alpha + \beta)</m> using a quotient identity and our sum formulas
+                <me>
+                  \begin{array}{rcl}  \tan(\alpha + \beta) \amp  = \amp  \dfrac{\sin(\alpha + \beta)}{\cos(\alpha + \beta)} \\ \amp  = \amp  \dfrac{\sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)}{\cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)} \end{array}
+                </me>
+                Since  <m>\tan(\alpha) = \frac{\sin(\alpha)}{\cos(\alpha)}</m> and <m>\tan(\beta) = \frac{\sin(\beta)}{\cos(\beta)}</m>,
+                it looks as though if we divide both numerator and denominator by
+                <m>\cos(\alpha) \cos(\beta)</m> we will have what we want
+                <me>
+                  \begin{array}{rcl}  \tan(\alpha + \beta) \amp  = \amp  \dfrac{\sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)}{\cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)} \cdot\dfrac{\dfrac{1}{\cos(\alpha) \cos(\beta)}}{\dfrac{1}{\cos(\alpha) \cos(\beta)}}\\ \amp    \amp  \\ \amp  = \amp  \dfrac{\dfrac{\sin(\alpha) \cos(\beta)}{\cos(\alpha) \cos(\beta)} + \dfrac{\cos(\alpha) \sin(\beta)}{\cos(\alpha) \cos(\beta)}}{\dfrac{\cos(\alpha) \cos(\beta)}{\cos(\alpha) \cos(\beta)} - \dfrac{\sin(\alpha) \sin(\beta)}{\cos(\alpha) \cos(\beta)}}\\ \amp    \amp  \\ \amp  = \amp  \dfrac{\dfrac{\sin(\alpha) \cancel{\cos(\beta)}}{\cos(\alpha) \cancel{\cos(\beta)}} + \dfrac{\cancel{\cos(\alpha)} \sin(\beta)}{\cancel{\cos(\alpha)} \cos(\beta)}}{\dfrac{\cancel{\cos(\alpha)} \cancel{\cos(\beta)}}{\cancel{\cos(\alpha)} \cancel{\cos(\beta)}} - \dfrac{\sin(\alpha) \sin(\beta)}{\cos(\alpha) \cos(\beta)}}\\ \amp    \amp  \\ \amp  = \amp  \dfrac{\tan(\alpha) + \tan(\beta)}{1 -\tan(\alpha) \tan(\beta)} \end{array}
+                </me>
+                Naturally, this formula is limited to those cases where all of the tangents are defined.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The formula developed in <xref ref="sinesumanddiffex">Exercise</xref>
+      for <m>\tan(\alpha + \beta)</m> can be used to find a formula for
+      <m>\tan(\alpha - \beta)</m> by rewriting the difference as a sum,
+      <m>\tan(\alpha + (-\beta))</m> and using the odd property of tangent.
+      (The reader is encouraged to fill in the details.)
+      Below we summarize all of the sum and difference formulas.
+    </p>
+    <theorem xml:id="circularsumdifference">
+      <statement>
+        <p>
+          <em>Sum and Difference Identities:</em>
+          For all applicable angles <m>\alpha</m> and <m>\beta</m>,
+          <idx><h>Difference Identity</h><h>for tangent</h></idx>
+          <idx><h>Sum Identity</h><h>for tangent</h></idx>
+          <idx><h>Difference Identity</h><h>for cosine</h></idx>
+          <idx><h>Sum Identity</h><h>for cosine</h></idx>
+          <idx><h>Difference Identity</h><h>for sine</h></idx>
+          <idx><h>Sum Identity</h><h>for sine</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos(\alpha \pm \beta) = \cos(\alpha) \cos(\beta) \mp \sin(\alpha) \sin(\beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\alpha \pm \beta) = \sin(\alpha) \cos(\beta) \pm \cos(\alpha) \sin(\beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(\alpha \pm \beta) = \dfrac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha) \tan(\beta)}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In the statement of <xref ref="circularsumdifference">Theorem</xref>,
+      we have combined the cases for the sum <sq><m>+</m></sq> and difference <sq><m>-</m></sq> of angles into one formula.
+      The convention here is that if you want the formula for the sum <sq><m>+</m></sq> of two angles,
+      you use the top sign in the formula;
+      for the difference, <sq><m>-</m></sq>, use the bottom sign.
+      For example,
+      <me>
+        \tan(\alpha - \beta) = \dfrac{\tan(\alpha) - \tan(\beta)}{1 + \tan(\alpha) \tan(\beta)}
+      </me>
+    </p>
+    <p>
+      If we set <m>\alpha = \beta</m> in the sum formulas in <xref ref="circularsumdifference">Theorem</xref>,
+      we obtain the following <sq>Double Angle</sq> Identities:
+    </p>
+    <theorem xml:id="doubleangle">
+      <statement>
+        <p>
+          <em>Double Angle Identities:</em>
+          For all applicable angles <m>\theta</m>,
+              <idx><h>Double Angle Identities</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos(2\theta) = \left\{ \begin{array}{l} \cos^{2}(\theta) - \sin^{2}(\theta)\\ 2\cos^{2}(\theta) - 1 \\ 1-2\sin^{2}(\theta) \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(2\theta) = 2\sin(\theta)\cos(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(2\theta) = \dfrac{2\tan(\theta)}{1 - \tan^{2}(\theta)}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The three different forms for
+      <m>\cos(2\theta)</m> can be explained by our ability to <sq>exchange</sq> squares of cosine and sine via the Pythagorean Identity.
+      For instance, if we substitute
+      <m>\sin^{2}(\theta) = 1 - \cos^{2}(\theta)</m> into the first formula for <m>\cos(2\theta)</m>,
+      we get <m>\cos(2\theta) = \cos^{2}(\theta) - \sin^{2}(\theta) = \cos^{2}(\theta) - (1 - \cos^{2}(\theta)) = 2 \cos^{2}(\theta) - 1</m>.
+    </p>
+    <p>
+      It is interesting to note that to determine the value of <m>\cos(2\theta)</m>,
+      only <em>one</em> piece of information is required:
+      either <m>\cos(\theta)</m> or <m>\sin(\theta)</m>.
+      To determine <m>\sin(2\theta)</m>, however,
+      it appears that we must know both
+      <m>\sin(\theta)</m> and <m>\cos(\theta)</m>.
+      In the next example, we show how we can find
+      <m>\sin(2\theta)</m> knowing just one piece of information,
+      namely <m>\tan(\theta)</m>.
+    </p>
+    <example xml:id="doubleangleex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Suppose <m>P(-3,4)</m> lies on the terminal side of <m>\theta</m> when <m>\theta</m> is plotted in standard position.
+                Find <m>\cos(2\theta)</m> and
+                <m>\sin(2\theta)</m> and determine the quadrant in which the terminal side of the angle <m>2\theta</m> lies when it is plotted in standard position.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\sin(\theta) = x</m> for <m>-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}</m>,
+                find an expression for <m>\sin(2\theta)</m> in terms of <m>x</m>.
+              </p>
+            </li>
+            <li xml:id="doubleanglesinewtan">
+              <p>
+                Verify the identity:
+                <m>\sin(2\theta) = \dfrac{2\tan(\theta)}{1 + \tan^{2}(\theta)}</m>.
+              </p>
+            </li>
+            <li xml:id="cosinepolynomial">
+              <p>
+                Express <m>\cos(3\theta)</m> as a polynomial in terms of <m>\cos(\theta)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We sketch the terminal side of <m>\theta</m> below on the left.
+                Using <xref ref="cosinesinecircle">Theorem</xref>
+                from <xref ref="TheCircularFunctionsSineandCosine">Section</xref>
+                with <m>x = -3</m> and <m>y=4</m>,
+                we find <m>r = \sqrt{x^2+y^2} = 5</m>.
+                Hence, <m>\cos(\theta) = -\frac{3}{5}</m> and <m>\sin(\theta) = \frac{4}{5}</m>.
+                <xref ref="doubleangle">Theorem</xref>
+                gives us three different formulas to choose from to find <m>\cos(2\theta)</m>.
+                Using the first formula,<fn>
+                We invite the reader to check this answer using the other two formulas.
+                </fn> we get:
+                <m>\cos(2\theta) = \cos^{2}(\theta) - \sin^{2}(\theta) = \left(-\frac{3}{5}\right)^2 - \left(\frac{4}{5}\right)^2 = -\frac{7}{25}</m>.
+                For <m>\sin(2\theta)</m>,
+                we get <m>\sin(2\theta) = 2 \sin(\theta) \cos(\theta) = 2 \left(\frac{4}{5}\right)\left(-\frac{3}{5}\right) = -\frac{24}{25}</m>.
+                Since both cosine and sine of <m>2\theta</m> are negative,
+                the terminal side of <m>2\theta</m>,
+                when plotted in standard position,
+                lies in Quadrant III. To see this more clearly,
+                we plot the terminal side of <m>2\theta</m>,
+                along with the terminal side of <m>\theta</m> below on the right.
+                Note that in order to find the point <m>Q(x,y)</m> on the terminal side of <m>2\theta</m> of a circle of radius <m>5</m>,
+                we use <xref ref="cosinesinecircle">Theorem</xref>
+                again and find <m>x = r \cos(2\theta) = 5 \left(-\frac{7}{25} \right) = -\frac{7}{5}</m> and
+                <m>y = r \sin(2\theta) = 5 \left(-\frac{24}{25}\right) = -\frac{24}{5}</m>. \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel(-4.25,2.75){<m>P(-3,4)</m>} \tlabel[cc](-2,1.5){<m>r=5</m>} \tcaption{<m>P(-3,4)</m> is on the terminal side of <m>\theta</m>. } \xmarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \ymarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-3, 4)} \point[4pt]{(0,0), (-2.012, 2.683)} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -2, {<m>-1</m>} -0.67, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>2</m>} 1.34, {<m>4</m>} 2.68} \axislabels {y}{ {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>2</m>} 1.34, {<m>4</m>} 2.68, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-1</m>} -0.67, {<m>-3</m>} -2 } \end{mfpic} \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel(-4.25,2.75){<m>P(-3,4)</m>} \tlabel(-4,-3.5){<m>Q\left( -\frac{7}{5}, -\frac{24}{5}\right)</m>} \tlabel[cc](-2,1.5){<m>r=5</m>} \tlabel[cc](-1.5,-1.5){<m>r=5</m>} \tcaption{<m>Q\left( -\frac{7}{5}, -\frac{24}{5}\right)</m> is on the terminal side of <m>2\theta</m>.} \xmarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \ymarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-3, 4)} \arrow \reverse \arrow \polyline{(5,0),(0,0), (-1.4, -4.8)} \point[4pt]{(0,0), (-2.012, 2.683), (-0.938, -3.216)} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -2, {<m>-1</m>} -0.67, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>2</m>} 1.34, {<m>4</m>} 2.68} \axislabels {y}{ {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>2</m>} 1.34, {<m>4</m>} 2.68, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-1</m>} -0.67} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                If your first reaction to <sq><m>\sin(\theta) = x</m></sq> is <sq>No it</sq>s not,
+                <m>\cos(\theta) = x</m>!' then you have indeed learned something,
+                and we take comfort in that.
+                While we have mostly used <sq><m>x</m></sq> to represent the <m>x</m>-coordinate of the point the terminal side of an angle <m>\theta</m>, here,
+                <sq><m>x</m></sq> represents the quantity
+                <m>\sin(\theta)</m> and our task is to express
+                <m>\sin(2\theta)</m> in terms of <m>x</m>.
+                Since <m>\sin(2\theta) = 2 \sin(\theta) \cos(\theta) = 2 x \cos(\theta)</m>,
+                what remains is to express
+                <m>\cos(\theta)</m> in terms of <m>x</m>.
+                Substituting <m>\sin(\theta) = x</m> into the Pythagorean Identity,
+                we get <m>\cos^{2}(\theta) = 1- \sin^{2}(\theta) = 1 - x^2</m>,
+                or <m>\cos(\theta) = \pm \sqrt{1-x^2}</m>.
+                Since <m>-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}</m>,
+                <m>\cos(\theta) \geq 0</m>, and thus <m>\cos(\theta) = \sqrt{1-x^2}</m>.
+                Our final answer is <m>\sin(2\theta) = 2 \sin(\theta) \cos(\theta) = 2x\sqrt{1-x^2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We start with the right hand side of the identity and note that <m>1 + \tan^{2}(\theta) = \sec^{2}(\theta)</m>.
+                Next,  we use the Reciprocal and Quotient Identities to rewrite
+                <m>\tan(\theta)</m> and <m>\sec(\theta)</m> in terms of
+                <m>\sin(\theta)</m> and <m>\cos(\theta)</m>:
+                <me>
+                  \begin{array}{rcl}  \dfrac{2\tan(\theta)}{1 + \tan^{2}(\theta)} \amp  = \amp  \dfrac{2\tan(\theta)}{\sec^{2}(\theta)}= \dfrac{2 \left( \dfrac{\sin(\theta)}{\cos(\theta)}\right)}{\dfrac{1}{\cos^{2}(\theta)}}= 2\left( \dfrac{\sin(\theta)}{\cos(\theta)}\right) \cos^{2}(\theta) \\ \amp  = \amp  2\left( \dfrac{\sin(\theta)}{\cancel{\cos(\theta)}}\right) \cancel{\cos(\theta)} \cos(\theta) = 2\sin(\theta) \cos(\theta) = \sin(2\theta). \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                In <xref ref="doubleangle">Theorem</xref>,
+                one of the formulas for <m>\cos(2\theta)</m>,
+                namely <m>\cos(2\theta) = 2\cos^{2}(\theta) - 1</m>,
+                expresses <m>\cos(2\theta)</m> as a polynomial in terms of <m>\cos(\theta)</m>.
+                We are  now asked to find such an  identity for <m>\cos(3\theta)</m>.
+                Using the sum formula for cosine, we begin with
+                <me>
+                  \begin{array}{rcl}  \cos(3\theta) \amp  = \amp  \cos(2\theta + \theta) \\ \amp  = \amp  \cos(2\theta)\cos(\theta) - \sin(2\theta)\sin(\theta). \end{array}
+                </me>
+                Our ultimate goal is to express the right hand side in terms of <m>\cos(\theta)</m> only.
+                To that end, we  substitute
+                <m>\cos(2\theta) = 2\cos^{2}(\theta) -1</m> and <m>\sin(2\theta) = 2\sin(\theta)\cos(\theta)</m> which yields:
+                <me>
+                  \begin{array}{rcl}  \cos(3\theta) \amp  = \amp   \cos(2\theta)\cos(\theta) - \sin(2\theta)\sin(\theta) \\ \amp  = \amp  \left(2\cos^{2}(\theta) - 1\right) \cos(\theta) - \left(2 \sin(\theta) \cos(\theta) \right)\sin(\theta) \\ \amp  = \amp  2\cos^{3}(\theta)- \cos(\theta) - 2 \sin^2(\theta) \cos(\theta) \end{array}
+                </me>
+                Finally, we exchange <m>\sin^{2}(\theta) = 1 - \cos^{2}(\theta)</m> courtesy of the Pythagorean Identity, and get
+                <me>
+                  \begin{array}{rcl}  \cos(3\theta) \amp  = \amp  2\cos^{3}(\theta)- \cos(\theta) - 2 \sin^2(\theta) \cos(\theta) \\ \amp  = \amp  2\cos^{3}(\theta)- \cos(\theta) - 2 \left(1 - \cos^{2}(\theta)\right) \cos(\theta) \\ \amp  = \amp  2\cos^{3}(\theta)- \cos(\theta) - 2\cos(\theta) + 2\cos^{3}(\theta) \\ \amp  = \amp  4\cos^{3}(\theta)- 3\cos(\theta). \end{array}
+                </me>
+                Hence, <m>\cos(3\theta) = 4\cos^{3}(\theta)- 3\cos(\theta)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In the last problem in <xref ref="doubleangleex">Example</xref>,
+      we saw how we could rewrite
+      <m>\cos(3\theta)</m> as sums of powers of <m>\cos(\theta)</m>.
+      In Calculus, we have occasion to do the reverse;
+      that is, reduce the power of cosine and sine.
+    </p>
+    <p>
+      Solving the identity <m>\cos(2\theta) = 2\cos^{2}(\theta) -1</m> for
+      <m>\cos^{2}(\theta)</m> and the identity <m>\cos(2\theta) = 1 - 2\sin^{2}(\theta)</m> for
+      <m>\sin^{2}(\theta)</m> results in the aptly-named <sq>Power Reduction</sq> formulas below.
+    </p>
+    <theorem xml:id="powerreduction">
+      <statement>
+        <p>
+          <em>Power Reduction Formulas:</em>
+          For all angles <m>\theta</m>,
+          <idx><h>Power Reduction Formulas</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos^{2}(\theta) = \dfrac{1 + \cos(2\theta)}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin^{2}(\theta) = \dfrac{1 - \cos(2\theta)}{2}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Our next example is a typical application of <xref ref="powerreduction">Theorem</xref>
+      that you'll likely see in Calculus.
+    </p>
+    <example xml:id="powerreductionex">
+      <statement>
+        <p>
+          Rewrite <m>\sin^{2}(\theta) \cos^{2}(\theta)</m> as a sum and difference of cosines to the first power.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We begin with a straightforward application of <xref ref="powerreduction">Theorem</xref>
+          <me>
+            \begin{array}{rcl}  \sin^{2}(\theta) \cos^{2}(\theta) \amp  = \amp  \left( \dfrac{1 - \cos(2\theta)}{2} \right) \left( \dfrac{1 + \cos(2\theta)}{2} \right) \\ \amp  = \amp  \dfrac{1}{4}\left(1 - \cos^{2}(2\theta)\right) \\ \amp  = \amp  \dfrac{1}{4} - \dfrac{1}{4}\cos^{2}(2\theta) \end{array}
+          </me>
+        </p>
+        <p>
+          Next, we apply the power reduction formula to
+          <m>\cos^{2}(2\theta)</m> to finish the reduction
+          <me>
+            \begin{array}{rcl}  \sin^{2}(\theta) \cos^{2}(\theta)  \amp  = \amp  \dfrac{1}{4} - \dfrac{1}{4}\cos^{2}(2\theta) \\ \amp  = \amp  \dfrac{1}{4} - \dfrac{1}{4} \left(\dfrac{1 + \cos(2(2\theta))}{2}\right) \\ \amp  = \amp  \dfrac{1}{4} - \dfrac{1}{8}  - \dfrac{1}{8}\cos(4\theta) \\ \amp  = \amp  \dfrac{1}{8} - \dfrac{1}{8}\cos(4\theta) \end{array}
+          </me>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Another application of the Power Reduction Formulas is the Half Angle Formulas.
+      To start, we apply the Power Reduction Formula to <m>\cos^{2}\left(\frac{\theta}{2}\right)</m>
+      <me>
+        \cos^{2}\left(\dfrac{\theta}{2}\right) = \dfrac{1 + \cos\left(2 \left(\frac{\theta}{2}\right)\right)}{2} = \dfrac{1 + \cos(\theta)}{2}
+      </me>.
+    </p>
+    <p>
+      We can obtain a formula for
+      <m>\cos\left(\frac{\theta}{2}\right)</m> by extracting square roots.
+      In a similar fashion, we may obtain a half angle formula for sine,
+      and by using a quotient formula,
+      obtain a half angle formula for tangent.
+    </p>
+    <p>
+      We summarize these formulas below.
+    </p>
+    <theorem xml:id="halfangle">
+      <statement>
+        <p>
+          <em>Half Angle Formulas:</em> For all applicable angles <m>\theta</m>,
+              <idx><h>Half-Angle Formulas</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos\left(\dfrac{\theta}{2}\right) = \pm \sqrt{\dfrac{1 + \cos(\theta)}{2}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin\left(\dfrac{\theta}{2}\right) = \pm \sqrt{\dfrac{1 - \cos(\theta)}{2}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan\left(\dfrac{\theta}{2}\right) = \pm \sqrt{\dfrac{1 - \cos(\theta)}{1+\cos(\theta)}}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          where the choice of <m>\pm</m> depends on the quadrant in which the terminal side of <m>\dfrac{\theta}{2}</m> lies.
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Use a half angle formula to find the exact value of <m>\cos\left(15^{\circ}\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose <m>-\pi \leq t \leq 0</m> with <m>\cos(t) = -\frac{3}{5}</m>.
+                Find <m>\sin\left(\frac{t}{2}\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the identity given in <xref ref="doubleanglesinewtan">number</xref>
+                of <xref ref="doubleangleex">Example</xref> to derive the identity
+                <me>
+                  \tan\left(\dfrac{\theta}{2}\right) = \dfrac{\sin(\theta)}{1+\cos(\theta)}
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To use the half angle formula,
+                we note that <m>15^{\circ} = \frac{30^{\circ}}{2}</m> and since
+                <m>15^{\circ}</m> is a Quadrant I angle, its cosine is positive.
+                Thus we have
+                <me>
+                  \begin{array}{rcl}  \cos\left(15^{\circ}\right) \amp  = \amp   + \sqrt{\dfrac{1+\cos\left(30^{\circ}\right)}{2}} = \sqrt{\dfrac{1+\frac{\sqrt{3}}{2}}{2}}\\ \amp  = \amp  \sqrt{\dfrac{1+\frac{\sqrt{3}}{2}}{2}\cdot \dfrac{2}{2}} = \sqrt{\dfrac{2+\sqrt{3}}{4}} = \dfrac{\sqrt{2+\sqrt{3}}}{2} \end{array}
+                </me>
+                Back in <xref ref="cosinesumdiffex">Example</xref>,
+                we found <m>\cos\left(15^{\circ}\right)  = \frac{\sqrt{6}+ \sqrt{2}}{4}</m> by using the difference formula for cosine.
+                The reader is encouraged to prove that these two expressions are equal algebraically.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>-\pi \leq t \leq 0</m>,
+                then <m>-\frac{\pi}{2} \leq \frac{t}{2} \leq 0</m>,
+                which means <m>\frac{t}{2}</m> corresponds to a Quadrant IV angle.
+                Hence,  <m>\sin\left(\frac{t}{2}\right) \lt  0</m>,
+                so we choose the negative root formula from <xref ref="halfangle">Theorem</xref>:
+                <me>
+                  \begin{array}{rcl}  \sin\left(\dfrac{t}{2} \right) \amp  = \amp   -\sqrt{\dfrac{1-\cos\left(t \right)}{2}} = -\sqrt{\dfrac{1- \left(-\frac{3}{5}\right)}{2}}\\ \amp  = \amp  -\sqrt{\dfrac{1 + \frac{3}{5}}{2} \cdot \dfrac{5}{5}} = -\sqrt{\dfrac{8}{10}} =  -\dfrac{2\sqrt{5}}{5} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Instead of our usual approach to verifying identities,
+                namely starting with one side of the equation and trying to transform it into the other,
+                we will start with the identity we proved in <xref ref="doubleanglesinewtan">number</xref>
+                of <xref ref="doubleangleex">Example</xref>
+                and manipulate it into the identity we are asked to prove.
+                The identity we are asked to start with is <m>\; \sin(2\theta) = \frac{2\tan(\theta)}{1 + \tan^{2}(\theta)}</m>.
+                If we are to use this to derive an identity for <m>\tan\left(\frac{\theta}{2}\right)</m>,
+                it seems reasonable to proceed by replacing each occurrence of <m>\theta</m> with <m>\frac{\theta}{2}</m>
+                <me>
+                  \begin{array}{rcl}  \sin\left(2 \left(\frac{\theta}{2}\right)\right) \amp  = \amp   \dfrac{2\tan\left(\frac{\theta}{2}\right)}{1 + \tan^{2}\left(\frac{\theta}{2}\right)} \\ \sin(\theta) \amp  = \amp  \dfrac{2\tan\left(\frac{\theta}{2}\right)}{1 + \tan^{2}\left(\frac{\theta}{2}\right)} \end{array}
+                </me>
+                We now have the <m>\sin(\theta)</m> we need,
+                but we somehow need to get a factor of <m>1+\cos(\theta)</m> involved.
+                We substitute <m>1 + \tan^{2}\left(\frac{\theta}{2}\right) = \sec^{2}\left(\frac{\theta}{2}\right)</m>,
+                and continue  to manipulate our given identity by converting secants to cosines.
+                <me>
+                  \begin{array}{rcl}  \sin(\theta) \amp  = \amp   \dfrac{2\tan\left(\frac{\theta}{2}\right)}{1 + \tan^{2}\left(\frac{\theta}{2}\right)} \\ \sin(\theta) \amp  = \amp  \dfrac{2\tan\left(\frac{\theta}{2}\right)}{\sec^{2}\left(\frac{\theta}{2}\right)} \\ \sin(\theta) \amp  = \amp  2 \tan\left(\frac{\theta}{2}\right) \cos^{2}\left(\frac{\theta}{2}\right) \end{array}
+                </me>
+                Finally, we apply a power reduction formula,
+                and then solve for <m>\tan\left( \frac{\theta}{2} \right)</m>
+                <me>
+                  \begin{array}{rcl} \sin(\theta) \amp  = \amp  2 \tan\left(\frac{\theta}{2}\right) \cos^{2}\left(\frac{\theta}{2}\right) \\ \sin(\theta) \amp  = \amp  2 \tan\left(\frac{\theta}{2}\right) \left(\dfrac{1 + \cos\left(2 \left(\frac{\theta}{2}\right)\right)}{2}\right) \\ \sin(\theta) \amp  = \amp   \tan\left(\frac{\theta}{2}\right) \left(1+\cos(\theta) \right) \\ \tan\left(\dfrac{\theta}{2}\right) \amp  = \amp  \dfrac{\sin(\theta)}{1+\cos(\theta)} \end{array}
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our next batch of identities,
+      the Product to Sum Formulas,<fn>
+      These are also known as the
+      <url href="https://en.wikipedia.org/wiki/Prosthaphaeresis"><em>Prosthaphaeresis Formulas</em></url>
+      and have a rich history.
+      The authors recommend that you conduct some research on them as your schedule allows.
+      </fn> are easily verified by expanding each of the right hand sides in accordance with <xref ref="circularsumdifference">Theorem</xref>
+      and as you should expect by now we leave the details as exercises.
+      They are of particular use in Calculus,
+      and we list them here for reference.
+    </p>
+    <theorem xml:id="producttosum">
+      <statement>
+        <p>
+          <em>Product to Sum Formulas:</em>
+          For all angles <m>\alpha</m> and <m>\beta</m>,
+              <idx><h>Product to Sum Formulas</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos(\alpha)\cos(\beta) = \frac{1}{2} \left[ \cos(\alpha - \beta) + \cos(\alpha + \beta)\right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\alpha)\sin(\beta) = \frac{1}{2} \left[ \cos(\alpha - \beta) - \cos(\alpha + \beta)\right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\alpha)\cos(\beta) = \frac{1}{2} \left[ \sin(\alpha - \beta) + \sin(\alpha + \beta)\right]</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Related to the Product to Sum Formulas are the Sum to Product Formulas,
+      which we will have need of in <xref ref="TrigonometricEquationsandInequalities">Section</xref>.
+      These are essentially restatements of the Product to Sum Formulas
+      (by re-labeling the arguments of the sine and cosine functions)
+      and as such, their proofs are left as exercises.
+    </p>
+    <theorem xml:id="sumtoproduct">
+      <statement>
+        <p>
+          <em>Sum to Product Formulas:</em>
+          For all angles <m>\alpha</m> and <m>\beta</m>,
+              <idx><h>Sum to Product Formulas</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\cos(\alpha) + \cos(\beta) = 2 \cos\left( \dfrac{\alpha + \beta}{2}\right)\cos\left( \dfrac{\alpha - \beta}{2}\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(\alpha) - \cos(\beta) = - 2 \sin\left( \dfrac{\alpha + \beta}{2}\right)\sin\left( \dfrac{\alpha - \beta}{2}\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\alpha) \pm \sin(\beta) = 2 \sin\left( \dfrac{\alpha \pm \beta}{2}\right)\cos\left( \dfrac{\alpha \mp \beta}{2}\right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <example xml:id="prodtosumtoprod">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Write <m>\; \cos(2\theta)\cos(6\theta) \;</m> as a sum.
+              </p>
+            </li>
+            <li xml:id="beatsprodsumex">
+              <p>
+                Write <m>\; \sin(\theta) - \sin(3\theta) \;</m> as a product.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Identifying <m>\alpha = 2\theta</m> and <m>\beta = 6\theta</m>, we find
+                <me>
+                  \begin{array}{rcl}  \cos(2\theta)\cos(6\theta) \amp  = \amp   \frac{1}{2} \left[ \cos(2\theta - 6\theta) + \cos(2\theta + 6\theta)\right]\\ \amp  = \amp  \frac{1}{2} \cos(-4\theta) + \frac{1}{2}\cos(8\theta) \\ \amp  = \amp  \frac{1}{2} \cos(4\theta) + \frac{1}{2} \cos(8\theta), \end{array}
+                </me>
+                where the last equality is courtesy of the even identity for cosine,
+                <m>\cos(-4\theta) = \cos(4\theta)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Identifying <m>\alpha = \theta</m> and <m>\beta = 3\theta</m> yields
+                <me>
+                  \begin{array}{rcl}  \sin(\theta) - \sin(3\theta) \amp  = \amp   2 \sin\left( \dfrac{\theta - 3\theta}{2}\right)\cos\left( \dfrac{\theta + 3\theta}{2}\right) \\ \amp  = \amp   2 \sin\left( -\theta \right)\cos\left( 2\theta \right) \\ \amp  = \amp   -2 \sin\left( \theta \right)\cos\left( 2\theta \right), \end{array}
+                </me>
+                where the last equality is courtesy of the odd identity for sine,
+                <m>\sin(-\theta) = -\sin(\theta)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The reader is reminded that all of the identities presented in this section which regard the circular functions as functions of angles
+      (in radian measure)
+      apply equally well to the circular (trigonometric) functions regarded as functions of real numbers.
+    </p>
+  </introduction>
+  <subsection xml:id="expandedsinusoid">
+    <title>Sinusoids, Revisited</title>
+    <p>
+      We first studied sinusoids in <xref ref="GraphsofSineandCosine">Section</xref>.
+      Using the sum formulas for sine and cosine,
+      we can expand the forms given to us in <xref ref="sinusoidform">Theorem</xref>:
+      <me>
+        S(t) = A \sin(\omega t + \phi) + B = A\sin(\omega t) \cos(\phi) + A \cos(\omega t)\sin(\phi) + B
+      </me>,
+      and
+      <me>
+        C(t) = A \cos(\omega t + \phi) + B = A\cos(\omega t) \cos(\phi) - A \sin(\omega t) \sin(\phi) + B
+      </me>.
+    </p>
+    <p>
+      As we'll see in the next example,
+      recognizing these <sq>expanded</sq> forms of sinusoids allows us to graph functions as sinusoids which,
+      at first glance,
+      don't appear to fit the forms of either <m>C(t)</m> or <m>S(t)</m>.
+    </p>
+    <example xml:id="expandedsinusoidex1">
+      <statement>
+        <p>
+          Consider the function <m>f(t) = \cos(2t) - \sqrt{3} \sin(2t)</m>.
+          Find a formula for <m>f(t)</m>:
+          <ol>
+            <li>
+              <p>
+                in the form <m>C(t) = A \cos(\omega t + \phi) + B</m> for <m>\omega > 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                in the form <m>S(t) = A \sin(\omega t + \phi) + B</m> for <m>\omega > 0</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          Check your answers analytically using identities and using a graphing utility.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The key to this problem is to use the expanded forms of the sinusoid formulas and match up corresponding coefficients.
+                We start by equating  <m>f(t) = \cos(2t) - \sqrt{3} \sin(2t)</m> with the expanded form of <m>C(t) = A \cos(\omega t + \phi) + B</m>:
+                <m>\cos(2t) - \sqrt{3} \sin(2t) = A\cos(\omega t) \cos(\phi) - A \sin(\omega t) \sin(\phi) + B</m>.
+                If we take <m>\omega = 2</m> and <m>B = 0</m>, we get:
+                <m>\cos(2t) - \sqrt{3} \sin(2t) = A\cos(2t) \cos(\phi) - A \sin(2t)\sin(\phi)</m>.
+                To determine <m>A</m> and <m>\phi</m>,
+                a bit more work is involved.
+                We get started by equating the coefficients of the trigonometric functions on either side of the equation.
+                On the left hand side, the coefficient of <m>\cos(2t)</m> is <m>1</m>,
+                while on the right hand side,
+                it is <m>A \cos(\phi)</m>.
+                Since this equation is to hold for all real numbers, we must have<fn>
+                This should remind you of equation coefficients of like powers of <m>x</m> in <xref ref="ParFrac">Section</xref>.
+                </fn> that <m>A \cos(\phi) = 1</m>.
+                Similarly, we find by equating the coefficients of
+                <m>\sin(2t)</m> that <m>A \sin(\phi) = \sqrt{3}</m>.
+                In conjunction with  <m>A \cos(\phi) = 1</m>,
+                we have a system of two (nonlinear) equations and two unknowns.
+                As usual, our first task is to reduce this system of two equations and two unknowns to one equation and one unknown.
+                We can temporarily eliminate the dependence on <m>\phi</m> by using a Pythagorean Identity.
+                From <m>\cos^{2}(\phi) + \sin^{2}(\phi) = 1</m>,
+                we multiply through by <m>A^2</m> to get  <m>A^2\cos^{2}(\phi) + A^2\sin^{2}(\phi) = A^2</m>.
+                In our case,
+                <m>A \cos(\phi) = 1</m> and <m>A \sin(\phi) = \sqrt{3}</m>,
+                hence  <m>A^2 = A^2\cos^{2}(\phi) + A^2\sin^{2}(\phi) = 1^2 + (\sqrt{3})^2 = 4</m> so <m>A = \pm 2</m>.
+                In much the same way we fit a sinusoid to a graph  in <xref ref="fitsinusoidtodata1">Example</xref>,
+                we <em>choose</em> <m>A = 2</m>,
+                and then find the phase angle <m>\phi</m> associated with this choice.
+                Substituting <m>A=2</m> into our two equations,
+                <m>A \cos(\phi) = 1</m> and <m>A \sin(\phi) = \sqrt{3}</m>,
+                we get <m>2\cos(\phi) = 1</m> and <m>2 \sin(\phi) = \sqrt{3}</m>.
+                After some rearrangement,
+                <m>\cos(\phi) = \frac{1}{2}</m> and <m>\sin(\phi) = \frac{\sqrt{3}}{2}</m>.
+                One such angle <m>\phi</m> which satisfies this criteria is <m>\phi = \frac{\pi}{3}</m>.
+                Hence, one way to write <m>f(t)</m> as a sinusoid is  <m>f(t) = 2 \cos\left(2t + \frac{\pi}{3}\right)</m>.
+                We can check our answer using the sum formula for cosine :
+                <me>
+                  \begin{array}{rcl} f(t) \amp   = \amp   2 \cos\left(2t + \frac{\pi}{3}\right) \\ \amp  = \amp   2 \left[ \cos(2t) \cos\left(\frac{\pi}{3}\right) - \sin(2t) \sin\left(\frac{\pi}{3}\right) \right]\\ \amp  = \amp  2 \left[ \cos(2t) \left(\frac{1}{2}\right) - \sin(2t) \left(\frac{\sqrt{3}}{2}\right)\right] \\ \amp  = \amp  \cos(2t) - \sqrt{3} \sin(2t). \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as before, we equate
+                <m>f(t) = \cos(2t) - \sqrt{3} \sin(2t)</m> with the expanded form of of the sinusoid <m>S(t) = A \sin(\omega t + \phi) + B</m> to get:
+                <m>\cos(2t) - \sqrt{3} \sin(2t) = A\sin(\omega t) \cos(\phi) + A \cos(\omega t)\sin(\phi) + B</m>.
+                Taking <m>\omega = 2</m> and <m>B = 0</m>,
+                we get  <m>\cos(2t) - \sqrt{3} \sin(2t) =  A\sin(2t) \cos(\phi) + A \cos(2t)\sin(\phi)</m>.
+                We equate<fn>
+                Be careful here!
+                </fn> the coefficients of
+                <m>\cos(2t)</m> on either side and get
+                <m>A\sin(\phi) = 1</m> and <m>A\cos(\phi) = -\sqrt{3}</m>.
+                Using <m>A^2\cos^{2}(\phi) + A^2\sin^{2}(\phi) = A^2</m> as before,
+                we get <m>A = \pm 2</m>, and again we choose <m>A = 2</m>.
+                This means <m>2 \sin(\phi) = 1</m>,
+                or <m>\sin(\phi) = \frac{1}{2}</m>,
+                and <m>2\cos(\phi) = -\sqrt{3}</m>,
+                so <m>\cos(\phi) = -\frac{\sqrt{3}}{2}</m>.
+                One such angle which meets these criteria  is <m>\phi = \frac{5\pi}{6}</m>.
+                Hence, we have <m>f(t) = 2 \sin\left(2t + \frac{5\pi}{6}\right)</m>.
+                Checking our work analytically, we have
+                <me>
+                  \begin{array}{rcl} f(t) \amp   = \amp   2 \sin\left(2t + \frac{5\pi}{6}\right) \\ \amp  = \amp   2 \left[ \sin(2t) \cos\left(\frac{5\pi}{6}\right) + \cos(2t) \sin\left(\frac{5\pi}{6}\right) \right]\\ \amp  = \amp  2 \left[ \sin(2t) \left(-\frac{\sqrt{3}}{2}\right) +  \cos(2t) \left(\frac{1}{2}\right)\right] \\ \amp  = \amp  \cos(2t) - \sqrt{3} \sin(2t) \end{array}
+                </me>
+                Graphing the three formulas for <m>f(t)</m> result in the identical curve,
+                verifying the work done analytically.
+                <image width="75%" source="./MoreTrigonometricIdentitiesGraphics/ExpandedSinusoidExample.jpg"/>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A couple of remarks about <xref ref="expandedsinusoidex1">Example</xref> are in order.
+      First, had we chosen <m>A = -2</m> instead of <m>A = 2</m> as we worked through <xref ref="expandedsinusoidex1">Example</xref>,
+      our final answers would have <em>looked</em> different.
+      The reader is encouraged to rework <xref ref="expandedsinusoidex1">Example</xref>
+      using <m>A = -2</m> to see what these differences are,
+      and then for a challenging exercise,
+      use identities to show that the formulas are all equivalent.<fn>
+      The general equations to fit a function of the form
+      <m>f(x) = a \, \cos(\omega x) + b \, \sin(\omega x) + B</m> into one of the forms in <xref ref="sinusoidform">Theorem</xref>
+      are explored in <xref ref="sinusoidexercise1">Exercise</xref>.
+      </fn>
+    </p>
+    <p>
+      It is important to note that in order for the technique presented in <xref ref="expandedsinusoidex1">Example</xref>
+      to fit a function into one of the forms in <xref ref="sinusoidform">Theorem</xref>,
+      the <em>frequencies</em> of the sine and cosine terms much match.
+      For example, in the Exercises,
+      you'll be asked to write <m>f(t) = 3\sqrt{3}\sin(3t) - 3\cos(3t)</m> in the form of <m>S(t)</m> and <m>C(t)</m> above,
+      and since both the sine and cosine terms have frequency <m>3</m>,
+      this is possible.
+    </p>
+    <p>
+      However, a function such as
+      <m>f(t) = \sin(t) - \sin(3t)</m> cannot be written in the form of <m>S(t)</m> or <m>C(t)</m>.
+      The quickest way to see this is to examine its graph below which is decidedly not a sinusoid.
+      That being said, we can still analyze this curve using identities.
+    </p>
+    <p>
+      <image width="75%" source="./MoreTrigonometricIdentitiesGraphics/Beats.jpg"/>
+    </p>
+    <p>
+      Using our result from <xref ref="beatsprodsumex">number</xref>
+      <xref ref="prodtosumtoprod">Example</xref>,
+      we may rewrite <m>f(t) = \sin(t) - \sin(3t) = -2 \sin(t) \cos(2t)</m>.
+      Grouping factors,
+      we can view <m>f(t) = [ -2 \sin(t) ] \cos(2t) = A(t) \cos(2t)</m> as the curve
+      <m>y = \cos(2t)</m> with a <em>variable</em>
+      amplitude, <m>A(t) = -2 \sin(t)</m>.
+    </p>
+    <p>
+      Overlaying the graphs of <m>f(t)</m> with the (dashed) graphs of
+      <m>A_{1}(t) = 2 \sin(t)</m> and <m>A_{2}(t) = -2 \sin(t)</m>,
+      we can see the role these two curves play in the graph of <m>y = f(t)</m>.
+      They create a kind of <sq>wave envelope</sq> for the graph of <m>y = f(t)</m>.
+      This is an example of the
+      <url href="https://en.wikipedia.org/wiki/Beat_(acoustics)"><em>beats</em></url>
+      phenomenon.
+      Note that when written as a product of sinusoids,
+      it is always the <em>lower</em>
+      frequency factor which creates the <sq>wave-envelope</sq> of the curve.
+    </p>
+    <p>
+      Note that in order to rewrite a sum or difference of sine and cosine functions with different frequencies into a product using the sum to product identities,
+      <xref ref="sumtoproduct">Theorem</xref>,
+      we need the <em>amplitudes</em>
+      of each term to be the same.
+      We explore more examples of these functions and this behavior in the Exercises.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="evenoddfirst">Exercises</xref>
+      - <xref ref="evenoddlast"></xref>,
+      use the Even / Odd Identities to verify the identity.
+      Assume all quantities are defined.
+      <ol cols="3">
+        <li xml:id="evenoddfirst">
+          <p>
+            <m>\sin(3\pi - 2\theta) = -\sin(2\theta - 3\pi)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( -\frac{\pi}{4} - 5t \right) = \cos \left( 5t + \frac{\pi}{4} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(-x^{2} + 1) = -\tan(x^{2} - 1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(-\theta - 5) = -\csc(\theta + 5)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(-6x) = \sec(6x)</m>
+          </p>
+        </li>
+        <li xml:id="evenoddlast">
+          <p>
+            <m>\cot(9 - 7\theta) = -\cot(7\theta - 9)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="sumdifffirst">Exercises</xref>
+      - <xref ref="sumdifflast"></xref>,
+      use the Sum and Difference Identities to find the exact value.
+      You may have need of the Quotient, Reciprocal or Even / Odd Identities as well.
+    </p>
+    <ol cols="2">
+      <li xml:id="cos75">
+        <p>
+          <m>\cos(75^{\circ})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(165^{\circ})</m>
+        </p>
+      </li>
+      <li xml:id="sin105">
+        <p>
+          <m>\sin(105^{\circ})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(195^{\circ})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(255^{\circ})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(375^{\circ})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\frac{13\pi}{12}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin\left(\frac{11\pi}{12}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan\left(\frac{13\pi}{12}\right)</m>
+        </p>
+      </li>
+      <li xml:id="cos7pi12">
+        <p>
+          <m>\cos \left( \frac{7\pi}{12} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan \left( \frac{17\pi}{12} \right)</m>
+        </p>
+      </li>
+      <li xml:id="sinpi12">
+        <p>
+          <m>\sin \left( \frac{\pi}{12} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot \left( \frac{11\pi}{12} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc \left( \frac{5\pi}{12} \right)</m>
+        </p>
+      </li>
+      <li xml:id="sumdifflast">
+        <p>
+          <m>\sec \left( -\frac{\pi}{12} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\alpha</m> is a Quadrant IV angle with <m>\cos(\alpha) = \frac{\sqrt{5}}{5}</m>,
+          and <m>\sin(\beta) = \frac{\sqrt{10}}{10}</m>,
+          where <m>\frac{\pi}{2} \lt \beta \lt \pi</m>, find
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>\cos(\alpha + \beta)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\alpha + \beta)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\alpha + \beta)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(\alpha - \beta)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\alpha - \beta)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\alpha - \beta)</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          If <m>\csc(\alpha) = 3</m>, where <m>0 \lt \alpha \lt \frac{\pi}{2}</m>,
+          and <m>\beta</m> is a Quadrant II angle with <m>\tan(\beta) = -7</m>, find
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\cos(\alpha + \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\alpha + \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(\alpha + \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(\alpha - \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\alpha - \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(\alpha - \beta)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(\alpha) = \frac{3}{5}</m>,
+          where <m>0 \lt \alpha \lt \frac{\pi}{2}</m>,
+          and <m>\cos(\beta) = \frac{12}{13}</m> where <m>\frac{3\pi}{2} \lt \beta \lt 2\pi</m>, find
+          <ol>
+            <li>
+              <p>
+                <m>\sin(\alpha + \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(\alpha - \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(\alpha - \beta)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sec(\alpha) = -\frac{5}{3}</m>,
+          where <m>\frac{\pi}{2} \lt \alpha \lt \pi</m>,
+          and <m>\tan(\beta) = \frac{24}{7}</m>,
+          where <m>\pi \lt \beta \lt \frac{3\pi}{2}</m>, find
+          <ol>
+            <li>
+              <p>
+                <m>\csc(\alpha - \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sec(\alpha + \beta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot(\alpha + \beta)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="expandedsinusoidexerfirst">Exercises</xref>
+      - <xref ref="expandedsinusoidexerlast"></xref>,
+      use <xref ref="expandedsinusoidex1">Example</xref>
+      as a guide to show that the function is a sinusoid by rewriting it in the forms
+      <m>C(t) = A \cos(\omega t + \phi) + B</m> and <m>S(t) = A \sin(\omega t + \phi) + B</m> for
+      <m>\omega > 0</m> and <m>0 \leq \phi \lt 2\pi</m>.
+      <ol cols="2">
+        <li xml:id="expandedsinusoidexerfirst">
+          <p>
+            <m>f(t) = \sqrt{2}\sin(t) + \sqrt{2}\cos(t) + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = 3\sqrt{3}\sin(3t) - 3\cos(3t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = -\sin(t) + \cos(t) - 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = -\frac{1}{2}\sin(2t) - \frac{\sqrt{3}}{2}\cos(2t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = 2\sqrt{3} \cos(t) - 2\sin(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = \frac{3}{2} \cos(2t) - \frac{3\sqrt{3}}{2} \sin(2t) + 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = -\frac{1}{2} \cos(5t) -\frac{\sqrt{3}}{2} \sin(5t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = -6\sqrt{3} \cos(3t) - 6\sin(3t) - 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = \frac{5\sqrt{2}}{2} \sin(t) -\frac{5\sqrt{2}}{2} \cos(t)</m>
+          </p>
+        </li>
+        <li xml:id="expandedsinusoidexerlast">
+          <p>
+            <m>f(t) =3 \sin \left(\frac{t}{6}\right) -3\sqrt{3} \cos \left(\frac{t}{6}\right)</m>
+          </p>
+        </li>
+        <li xml:id="sinusoidexercise1">
+          <p>
+            In <xref ref="expandedsinusoidexerfirst">Exercises</xref>
+            - <xref ref="expandedsinusoidexerlast"></xref>,
+            you should have noticed a relationship between the phases <m>\phi</m> for the <m>S(t)</m> and <m>C(t)</m>.
+            Show that if <m>f(t) = A \sin(\omega t + \alpha) + B</m>,
+            then <m>f(t) = A \cos(\omega t + \beta) + B</m> where <m>\beta = \alpha - \frac{\pi}{2}</m>.
+          </p>
+        </li>
+        <li xml:id="sinusoidexercise2">
+          <p>
+            Let <m>\phi</m> be an angle measured in radians and let <m>P(a,b)</m> be a point on the terminal side of <m>\phi</m> when it is drawn in standard position.
+            Use <xref ref="cosinesinecircle">Theorem</xref>
+            and the sum identity for sine in <xref ref="sinesumdifference">Theorem</xref>
+            to show that <m>f(t) = a \, \sin(\omega t) + b\, \cos(\omega t) + B</m>
+            (with <m>\omega > 0</m>)
+            can be rewritten as <m>f(t) = \sqrt{a^{2} + b^{2}}\sin(\omega t + \phi) + B</m>.
+          </p>
+        </li>
+        <li xml:id="twodaylightfunctions">
+          <p>
+            In <xref ref="sinusoidsunlight">Example</xref>
+            in <xref ref="GraphsofSineandCosine">Section</xref>,
+            we developed two (seemingly) different formulas to model the hours of daylight,
+            <m>H(t)</m>:
+            <m>H_{1}(t) = 9.25 \sin\left(\frac{\pi}{6} t - \frac{\pi}{2}\right) + 12.55</m> and <m>H_{2}(t) = -8.13 \sin\left(\frac{\pi}{6} t - 4.70\right)+ 12.5</m>.
+            Use the difference identities for sine to expand <m>H_{1}(t)</m> and <m>H_{2}(t)</m>.
+            How different are they?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="identfirstident">Exercises</xref>
+      - <xref ref="identlastident"></xref>, verify the identity.<fn>
+      Note: <xref ref="conversionsineshift">numbers</xref> and <xref ref="conversioncosineshift"></xref>
+      are the conversion formulas stated in <xref ref="cosinesinefunctionprops">Theorem</xref>
+      in <xref ref="GraphsofSineandCosine">Section</xref>.
+      </fn>
+      <ol cols="2">
+        <li xml:id="identfirstident">
+          <p>
+            <m>\sin\left(\theta + \frac{\pi}{2}\right) = \cos(t)</m>
+          </p>
+        </li>
+        <li xml:id="conversioncosineshift">
+          <p>
+            <m>\cos\left(\theta - \frac{\pi}{2} \right) = \sin(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta - \pi) = -\cos(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\pi - \theta) = \sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan\left(\theta + \frac{\pi}{2} \right) = -\cot(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\alpha + \beta) + \sin(\alpha - \beta) = 2\sin(\alpha)\cos(\beta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\alpha + \beta) - \sin(\alpha - \beta) = 2\cos(\alpha) \sin(\beta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\alpha + \beta) + \cos(\alpha - \beta) = 2\cos(\alpha) \cos(\beta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\alpha + \beta) - \cos(\alpha - \beta) = -2\sin(\alpha) \sin(\beta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\sin(\alpha+\beta)}{\sin(\alpha-\beta)} = \dfrac{1+\cot(\alpha) \tan(\beta)}{1 - \cot(\alpha) \tan(\beta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cos(\alpha + \beta)}{\cos(\alpha - \beta)} = \dfrac{1 - \tan(\alpha)\tan(\beta)}{1 + \tan(\alpha)\tan(\beta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\tan(\alpha + \beta)}{\tan(\alpha - \beta)} = \dfrac{\sin(\alpha)\cos(\alpha) + \sin(\beta)\cos(\beta)}{\sin(\alpha)\cos(\alpha) - \sin(\beta)\cos(\beta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\sin(t + h) - \sin(t)}{h} = \cos(t) \left(\dfrac{\sin(h)}{h} \right) + \sin(t) \left( \dfrac{\cos(h) - 1}{h} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{\cos(t + h) - \cos(t)}{h} = \cos(t) \left( \dfrac{\cos(h) - 1}{h} \right) - \sin(t) \left(\dfrac{\sin(h)}{h} \right)</m>
+          </p>
+        </li>
+        <li xml:id="identlastident">
+          <p>
+            <m>\dfrac{\tan(t + h) - \tan(t)}{h} = \left( \dfrac{\tan(h)}{h} \right) \left(\dfrac{\sec^{2}(t)}{1 - \tan(t)\tan(h)} \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="idenhalfanglefirst">Exercises</xref>
+      - <xref ref="idenhalfanglelast"></xref>,
+      use the Half Angle Formulas to find the exact value.
+      You may have need of the Quotient, Reciprocal or Even / Odd Identities as well.
+      <ol cols="5">
+        <li xml:id="idenhalfanglefirst">
+          <p>
+            <m>\cos(75^{\circ})</m> (compare with <xref ref="cos75">Exercise</xref>)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(105^{\circ})</m> (compare with <xref ref="sin105">Exercise</xref>)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(67.5^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(157.5^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(112.5^{\circ})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos\left( \frac{7\pi}{12} \right)</m> (compare with <xref ref="cos7pi12">Exercise</xref>)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin\left( \frac{\pi}{12} \right)</m> (compare with <xref ref="sinpi12">Exercise</xref>)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( \frac{\pi}{8} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin \left( \frac{5\pi}{8} \right)</m>
+          </p>
+        </li>
+        <li xml:id="idenhalfanglelast">
+          <p>
+            <m>\tan \left( \frac{7\pi}{8} \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="doublehalffirst">Exercises</xref>
+      - <xref ref="doublehalflast"></xref>,
+      use the given information about <m>\theta</m> to find the exact values of
+      <ul>
+        <li>
+          <p>
+            <m>\sin(2\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin\left(\frac{\theta}{2}\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(2\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos\left(\frac{\theta}{2}\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(2\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan\left(\frac{\theta}{2}\right)</m>
+          </p>
+        </li>
+      </ul>
+      <ol cols="5">
+        <li xml:id="doublehalffirst">
+          <p>
+            <m>\sin(\theta) = -\frac{7}{25}</m> where <m>\frac{3\pi}{2} \lt \theta \lt 2\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = \frac{28}{53}</m> where <m>0 \lt \theta \lt \frac{\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(\theta) = \frac{12}{5}</m> where <m>\pi \lt \theta \lt \frac{3\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = 4</m> where <m>\frac{\pi}{2} \lt \theta \lt \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = \frac{3}{5}</m> where <m>0 \lt \theta \lt \frac{\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\theta) = -\frac{4}{5}</m> where <m>\pi \lt \theta \lt \frac{3\pi}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(\theta) = \frac{12}{13}</m> where <m>\frac{3\pi}{2} \lt \theta \lt 2\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(\theta) = \frac{5}{13}</m> where <m>\frac{\pi}{2} \lt \theta \lt \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = \sqrt{5}</m> where <m>\frac{3\pi}{2} \lt \theta \lt 2\pi</m>
+          </p>
+        </li>
+        <li xml:id="doublehalflast">
+          <p>
+            <m>\tan(\theta) = -2</m> where <m>\frac{\pi}{2} \lt \theta \lt \pi</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="moreidentfirst">Exercises</xref>
+      - <xref ref="moreidentlast"></xref>, verify the identity.
+      Assume all quantities are defined.
+    </p>
+    <ol cols="6">
+      <li xml:id="moreidentfirst">
+        <p>
+          <m>(\cos(\theta) + \sin(\theta))^2 = 1 + \sin(2\theta)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(\cos(\theta) - \sin(\theta))^2 = 1 - \sin(2\theta)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(2t) = \frac{1}{1-\tan(t)} - \frac{1}{1+\tan(t)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(2\theta) = \frac{\cot(\theta) + \tan(\theta)}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>8 \sin^{4}(x) = \cos(4x) - 4\cos(2x)+3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>8 \cos^{4}(x) = \cos(4x) + 4\cos(2x)+3</m>
+        </p>
+      </li>
+      <li xml:id="sine3theta">
+        <p>
+          <m>\sin(3\theta) = 3\sin(\theta) - 4\sin^{3}(\theta)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(4\theta) = 4\sin(\theta)\cos^{3}(\theta) - 4\sin^{3}(\theta)\cos(\theta)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>32\sin^{2}(t) \cos^{4}(t) = 2 + \cos(2t) - 2\cos(4t) - \cos(6t)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>32\sin^{4}(t) \cos^{2}(t) = 2 - \cos(2t) - 2\cos(4t) + \cos(6t)</m>
+        </p>
+      </li>
+      <li xml:id="cosine4theta">
+        <p>
+          <m>\cos(4\theta) = 8\cos^{4}(\theta) - 8\cos^{2}(\theta) + 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(8\theta) = 128\cos^{8}(\theta)-256\cos^{6}(\theta)+160\cos^{4}(\theta)-32\cos^{2}(\theta)+1</m> (HINT: Use the result to <xref ref="cosine4theta"></xref>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(2x) = \dfrac{\cos(x)}{\cos(x) + \sin(x)} + \dfrac{\sin(x)}{\cos(x)-\sin(x)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{1}{\cos(\theta) - \sin(\theta)} + \dfrac{1}{\cos(\theta) + \sin(\theta)} = \dfrac{2\cos(\theta)}{\cos(2\theta)}</m>
+        </p>
+      </li>
+      <li xml:id="moreidentlast">
+        <p>
+          <m>\dfrac{1}{\cos(\theta) - \sin(\theta)} - \dfrac{1}{\cos(\theta) + \sin(\theta)} = \dfrac{2\sin(\theta)}{\cos(2\theta)}</m>
+        </p>
+      </li>
+      <li xml:id="preludetoarctrigsine">
+        <p>
+          Suppose <m>\theta</m> is a Quadrant I angle with <m>\sin(\theta) = x</m>.
+          Verify the following formulas
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>\cos(\theta) = \sqrt{1-x^2}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(2\theta) = 2x\sqrt{1-x^2}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = 1 - 2x^2</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Discuss with your classmates how each of the formulas, if any,
+          in <xref ref="preludetoarctrigsine">Exercise</xref>
+          change if we change assume <m>\theta</m> is a Quadrant II, III, or IV angle.
+        </p>
+      </li>
+      <li xml:id="preludetoarctrigtan">
+        <p>
+          Suppose <m>\theta</m> is a Quadrant I angle with <m>\tan(\theta) = x</m>.
+          Verify the following formulas
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\cos(\theta) = \dfrac{1}{\sqrt{x^2+1}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(\theta) = \dfrac{x}{\sqrt{x^2+1}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(2\theta) = \dfrac{2x}{x^2+1}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(2\theta) = \dfrac{1-x^2}{x^2+1}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Discuss with your classmates how each of the formulas, if any,
+          in <xref ref="preludetoarctrigtan">Exercise</xref>
+          change if we change assume <m>\theta</m> is a Quadrant II, III, or IV angle.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(t) = x</m> for <m>-\frac{\pi}{2} \lt t \lt \frac{\pi}{2}</m>,
+          find an expression for <m>\tan(t)</m> in terms of <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\tan(\theta) = x</m> for <m>-\frac{\pi}{2} \lt \theta \lt \frac{\pi}{2}</m>,
+          find an expression for <m>\sec(\theta)</m> in terms of <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sec(\theta) = x</m> where <m>\theta</m> is a Quadrant II angle,
+          find an expression for <m>\tan(\theta)</m> in terns of <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sin(t) = \frac{x}{2}</m> for <m>-\frac{\pi}{2} \lt t \lt \frac{\pi}{2}</m>,
+          find an expression for <m>\cos(2t)</m> in terms of <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\tan(\theta) = \frac{x}{7}</m> for <m>-\frac{\pi}{2} \lt \theta \lt \frac{\pi}{2}</m>,
+          find an expression for <m>\sin(2\theta)</m> in terms of <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>\sec(t) = \frac{x}{4}</m> for <m>0 \lt t \lt \frac{\pi}{2}</m>,
+          find an expression for <m>\ln|\sec(t) + \tan(t)|</m> in terms of <m>x</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that <m>\cos^{2}(\theta) - \sin^{2}(\theta) = 2\cos^{2}(\theta) - 1 = 1 - 2\sin^{2}(\theta)</m> for all <m>\theta</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>\theta</m> be a Quadrant III angle with <m>\cos(\theta) = -\frac{1}{5}</m>.
+          Show that this is not enough information to determine the sign of
+          <m>\sin\left(\frac{\theta}{2}\right)</m> by first assuming <m>3\pi \lt \theta \lt \frac{7\pi}{2}</m> and then assuming
+          <m>\pi \lt \theta \lt \frac{3\pi}{2}</m> and computing <m>\sin\left(\frac{\theta}{2}\right)</m> in both cases.
+        </p>
+      </li>
+      <li>
+        <p>
+          Without using your calculator,
+          show that <m>\frac{\sqrt{2 + \sqrt{3}}}{2} = \frac{\sqrt{6} + \sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="cosinepolynomial">part</xref>
+          of <xref ref="doubleangleex">Example</xref>,
+          we wrote <m>\cos(3\theta)</m> as a polynomial in terms of <m>\cos(\theta)</m>.
+          In <xref ref="cosine4theta">Exercise</xref>,
+          we had you verify an identity which expresses
+          <m>\cos(4\theta)</m> as a polynomial in terms of <m>\cos(\theta)</m>.
+          Can you find a polynomial in terms of
+          <m>\cos(\theta)</m> for <m>\cos(5\theta)</m>?
+          <m>\cos(6\theta)</m>?
+          Can you find a pattern so that
+          <m>\cos(n\theta)</m> could be written as a polynomial in cosine for any natural number <m>n</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="sine3theta">Exercise</xref>,
+          we has you verify an identity which expresses
+          <m>\sin(3\theta)</m> as a polynomial in terms of <m>\sin(\theta)</m>.
+          Can you do the same for <m>\sin(5\theta)</m>?
+          What about for <m>\sin(4\theta)</m>?
+          If not, what goes wrong?
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="idengraphfirst">Exercises</xref>
+      - <xref ref="idengraphlast"></xref>,
+      verify the identity by graphing the right and left hand using a graphing utility.
+      <ol cols="2">
+        <li xml:id="idengraphfirst">
+          <p>
+            <m>\sin^{2}(t) + \cos^{2}(t) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec^{2}(x) - \tan^{2}(x) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(t) = \sin\left(\frac{\pi}{2} - t\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan(x+\pi) = \tan(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(2t) = 2\sin(t)\cos(t)</m>
+          </p>
+        </li>
+        <li xml:id="idengraphlast">
+          <p>
+            <m>\tan\left(\frac{x}{2}\right) = \frac{\sin(x)}{1+\cos(x)}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="prodsumfirst">Exercises</xref>
+      - <xref ref="prodsumlast"></xref>,
+      write the given product as a sum.
+      Note: you may need to use an Even/Odd Identity to match the answer provided.
+      <ol cols="2">
+        <li xml:id="prodsumfirst">
+          <p>
+            <m>\cos(3\theta)\cos(5\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(2t)\sin(7t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(9x)\cos(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(2\theta) \cos(6\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(3t) \sin(2t)</m>
+          </p>
+        </li>
+        <li xml:id="prodsumlast">
+          <p>
+            <m>\cos(x) \sin(3x)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="sumprodfirst">Exercises</xref>
+      - <xref ref="sumprodlast"></xref>,
+      write the given sum as a product.
+      Note: you may need to use an Even/Odd or Cofunction Identity to match the answer provided.
+      <ol cols="2">
+        <li xml:id="sumprodfirst">
+          <p>
+            <m>\cos(3\theta) + \cos(5\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(2t) - \sin(7t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(5x) - \cos(6x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(9\theta) - \sin(-\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t) + \cos(t)</m>
+          </p>
+        </li>
+        <li xml:id="sumprodlast">
+          <p>
+            <m>\cos(x) - \sin(x)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="beatexfirst">Exercises</xref>
+      - <xref ref="beatexlast"></xref>,
+      using the remarks following <xref ref="expandedsinusoidex1">Example</xref>
+      on <xref ref="beats">page</xref> as a guide,
+      rewrite the given function <m>f(t)</m> as a product of sinusoids.
+      Identify the functions which create the <sq>wave envelope.</sq> Check your answer by graphing the function along with the <sq>wave-envelope</sq> using a graphing utility.
+      <ol cols="3">
+        <li xml:id="beatexfirst">
+          <p>
+            <m>f(t) = \cos(3t) + \cos(5t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = 3\cos(5t) - 3\cos(6t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = \frac{1}{2} \sin(9t) + \frac{1}{2} \sin(t)</m>
+          </p>
+        </li>
+        <li xml:id="beatexlast">
+          <p>
+            <m>f(t) = \frac{2}{3}\sin(2t) - \frac{2}{3}\sin(7t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Verify the Even / Odd Identities for tangent,
+            secant, cosecant and cotangent.
+          </p>
+        </li>
+        <li>
+          <p>
+            Verify the Cofunction Identities for tangent,
+            secant, cosecant and cotangent.
+          </p>
+        </li>
+        <li>
+          <p>
+            Verify the Difference Identities for sine and tangent.
+          </p>
+        </li>
+        <li>
+          <p>
+            Verify the Product to Sum Identities.
+          </p>
+        </li>
+        <li>
+          <p>
+            Verify the Sum to Product Identities.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\cos(75^{\circ}) = \frac{\sqrt{6} - \sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(165^{\circ}) = -\frac{4}{\sqrt{2}+\sqrt{6}} = \sqrt{2} - \sqrt{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(105^{\circ}) = \frac{\sqrt{6}+\sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(195^{\circ}) = \frac{4}{\sqrt{2}-\sqrt{6}} = -(\sqrt{2}+\sqrt{6})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(255^{\circ}) = \frac{\sqrt{3}-1}{\sqrt{3}+1} = 2-\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(375^{\circ}) = \frac{3-\sqrt{3}}{3+\sqrt{3}} = 2-\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left(\frac{13\pi}{12}\right) = -\frac{\sqrt{6}+\sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin\left(\frac{11\pi}{12}\right) = \frac{\sqrt{6} - \sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan\left(\frac{13\pi}{12}\right) = \frac{3-\sqrt{3}}{3+\sqrt{3}} = 2-\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left( \frac{7\pi}{12} \right) = \frac{\sqrt{2} - \sqrt{6}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan \left( \frac{17\pi}{12} \right) = 2 + \sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin \left( \frac{\pi}{12} \right) = \frac{\sqrt{6} - \sqrt{2}}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot \left( \frac{11\pi}{12} \right) = -(2 + \sqrt{3})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc \left( \frac{5\pi}{12} \right) = \sqrt{6} - \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec \left( -\frac{\pi}{12} \right) = \sqrt{6} - \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\cos(\alpha + \beta) = -\frac{\sqrt{2}}{10}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\alpha + \beta) = \frac{7\sqrt{2}}{10}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\alpha + \beta) = -7</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(\alpha - \beta)= -\frac{\sqrt{2}}{2}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\alpha - \beta) = \frac{\sqrt{2}}{2}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\alpha - \beta) = -1</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol cols="3">
+          <li>
+            <p>
+              <m>\cos(\alpha + \beta) = - \frac{4+7\sqrt{2}}{30}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\alpha + \beta) = \frac{28-\sqrt{2}}{30}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\alpha + \beta) = \frac{-28+\sqrt{2}}{4+7\sqrt{2}} = \frac{63-100\sqrt{2}}{41}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(\alpha - \beta) = \frac{-4+7\sqrt{2}}{30}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin(\alpha - \beta) = - \frac{28+\sqrt{2}}{30}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\alpha - \beta)= \frac{28+\sqrt{2}}{4-7\sqrt{2}} = -\frac{63+100\sqrt{2}}{41}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\sin(\alpha + \beta) = \frac{16}{65}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(\alpha - \beta) = \frac{33}{65}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(\alpha - \beta) = \frac{56}{33}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\csc(\alpha - \beta) = -\frac{5}{4}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sec(\alpha + \beta) = \frac{125}{117}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cot(\alpha + \beta) = \frac{117}{44}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>f(t) = \sqrt{2}\sin(t) + \sqrt{2}\cos(t) + 1 = 2\sin\left(t + \frac{\pi}{4}\right) + 1 = 2\cos\left(t + \frac{7\pi}{4}\right) + 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = 3\sqrt{3}\sin(3t) - 3\cos(3t) = 6\sin\left(3t + \frac{11\pi}{6}\right) = 6\cos\left(3t + \frac{4\pi}{3}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = -\sin(t) + \cos(t) - 2 = \sqrt{2}\sin\left(t + \frac{3\pi}{4}\right) - 2 = \sqrt{2}\cos\left(t + \frac{\pi}{4}\right) - 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = -\frac{1}{2}\sin(2t) - \frac{\sqrt{3}}{2}\cos(2t) = \sin\left(2t + \frac{4\pi}{3}\right) = \cos\left(2t + \frac{5\pi}{6}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = 2\sqrt{3} \cos(t) - 2\sin(t) = 4\sin\left(t+\frac{2\pi}{3} \right) = 4\cos\left(t + \frac{\pi}{6}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \frac{3}{2} \cos(2t) - \frac{3\sqrt{3}}{2} \sin(2t) + 6 =3\sin\left(2t + \frac{5\pi}{6}\right) + 6 = 3\cos\left(2t + \frac{\pi}{3}\right) + 6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = -\frac{1}{2} \cos(5t) -\frac{\sqrt{3}}{2} \sin(5t) = \sin\left(5t + \frac{7\pi}{6}\right) = \cos\left(5t + \frac{2\pi}{3}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = -6\sqrt{3} \cos(3t) - 6\sin(3t) - 3 = 12\sin\left(3t + \frac{4\pi}{3}\right) - 3 = 12\cos\left(3t + \frac{5\pi}{6}\right) - 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \frac{5\sqrt{2}}{2} \sin(t) -\frac{5\sqrt{2}}{2} \cos(t) = 5\sin\left(t + \frac{7\pi}{4}\right)= 5\cos\left(t + \frac{5\pi}{4}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) =3\sin\left(\frac{t}{6}\right) -3\sqrt{3} \cos\left(\frac{t}{6}\right) = 6\sin\left( \frac{t}{6}+\frac{5\pi}{3}\right)= 6\cos\left( \frac{t}{6}+\frac{7\pi}{6}\right)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\cos(75^{\circ}) = \frac{\sqrt{2-\sqrt{3}}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(105^{\circ}) = \frac{\sqrt{2+\sqrt{3}}}{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\cos(67.5^{\circ}) = \frac{\sqrt{2-\sqrt{2}}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(157.5^{\circ}) = \frac{\sqrt{2-\sqrt{2}}}{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\tan(112.5^{\circ}) = - \sqrt{\frac{2+\sqrt{2}}{2-\sqrt{2}}} = -1 - \sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos\left( \frac{7\pi}{12} \right) = -\frac{\sqrt{2-\sqrt{3}}}{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\sin\left( \frac{\pi}{12} \right) = \frac{\sqrt{2-\sqrt{3}}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos \left( \frac{\pi}{8} \right) = \frac{\sqrt{2 + \sqrt{2}}}{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\sin \left( \frac{5\pi}{8} \right) = \frac{\sqrt{2 + \sqrt{2}}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan \left( \frac{7\pi}{8} \right) = -\sqrt{ \frac{2 - \sqrt{2}}{2 + \sqrt{2}} } =1-\sqrt{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = -\frac{336}{625}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{\sqrt{2}}{10}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = \frac{527}{625}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = -\frac{7\sqrt{2}}{10}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta) = -\frac{336}{527}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = -\frac{1}{7}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = \frac{2520}{2809}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{5\sqrt{106}}{106}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = -\frac{1241}{2809}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = \frac{9\sqrt{106}}{106}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta) = -\frac{2520}{1241}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = \frac{5}{9}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = \frac{120}{169}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{3\sqrt{13}}{13}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = -\frac{119}{169}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = -\frac{2\sqrt{13}}{13}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta) = -\frac{120}{119}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = -\frac{3}{2}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = -\frac{\sqrt{15}}{8}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) =\frac{\sqrt{8+2\sqrt{15}}}{4} \\</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = \frac{7}{8}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = \frac{\sqrt{8-2\sqrt{15}}}{4} \\</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta) = -\frac{\sqrt{15}}{7}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = \sqrt{\frac{8+2\sqrt{15}}{8-2\sqrt{15}}} \\ \tan\left(\frac{\theta}{2}\right) = 4+\sqrt{15}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = \frac{24}{25}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{\sqrt{5}}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = -\frac{7}{25}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = \frac{2\sqrt{5}}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta)=-\frac{24}{7}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = \frac{1}{2}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = \frac{24}{25}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{2\sqrt{5}}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = -\frac{7}{25}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = -\frac{\sqrt{5}}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta)=-\frac{24}{7}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = -2</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = -\frac{120}{169}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{\sqrt{26}}{26}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = \frac{119}{169}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = -\frac{5\sqrt{26}}{26}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta)=-\frac{120}{119}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = -\frac{1}{5}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = -\frac{120}{169}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{5\sqrt{26}}{26}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = \frac{119}{169}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right) = \frac{\sqrt{26}}{26}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta)=-\frac{120}{119}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = 5</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = -\frac{4}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{\sqrt{50-10\sqrt{5}}}{10} \\</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = -\frac{3}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right)= -\frac{\sqrt{50+10\sqrt{5}}}{10} \\</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta)=\frac{4}{3}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = -\sqrt{\frac{5-\sqrt{5}}{5+\sqrt{5}}} \\ \tan\left(\frac{\theta}{2}\right) =\frac{5-5\sqrt{5}}{10}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\sin(2\theta) = -\frac{4}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sin\left(\frac{\theta}{2}\right) = \frac{\sqrt{50+10\sqrt{5}}}{10} \\</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos(2\theta) = -\frac{3}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\cos\left(\frac{\theta}{2}\right)= \frac{\sqrt{50-10\sqrt{5}}}{10} \\</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan(2\theta)=\frac{4}{3}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\tan\left(\frac{\theta}{2}\right) = \sqrt{\frac{5+\sqrt{5}}{5-\sqrt{5}}} \\ \tan\left(\frac{\theta}{2}\right) =\frac{5+5\sqrt{5}}{10}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\tan(t) = \frac{x}{\sqrt{1 - x^2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = \sqrt{1+x^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = -\sqrt{x^2-1}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\cos(2t) = 1 - \dfrac{x^{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(2\theta) = \dfrac{14x}{x^{2} + 49}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\ln|\sec(t) + \tan(t)| = \ln |x + \sqrt{x^{2} + 16}| - \ln(4)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\dfrac{\cos(2\theta) + \cos(8\theta)}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\cos(5t) - \cos(9t)}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\sin(8x) + \sin(10x)}{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\dfrac{\cos(4\theta) + \cos(8\theta)}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\cos(t) - \cos(5t)}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\sin(2x) + \sin(4x)}{2}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>2\cos(4\theta)\cos(\theta)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-2\cos \left( \frac{9}{2}t \right) \sin \left( \frac{5}{2}t \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2\sin \left( \frac{11}{2}x \right) \sin \left( \frac{1}{2}x \right)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>2\cos(4\theta)\sin(5\theta)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt{2}\cos \left(t - \frac{\pi}{4} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\sqrt{2}\sin \left(x - \frac{\pi}{4} \right)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>f(t) = [2\cos(t)] \cos(4t)</m>,
+          <m>A(t) = 2\cos(t)</m>, wave-envelope:
+          <m>y = \pm 2\cos(t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \left[6\sin \left( \frac{1}{2} t \right) \right] \sin \left( \frac{11}{2} t \right)</m>,
+          <m>A(t) = 6\sin \left( \frac{1}{2} t \right)</m>, wave-envelope:
+          <m>y = \pm 6\sin \left( \frac{1}{2} t \right)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = [\cos(4t)] \sin(5t)</m>,
+          <m>A(t) = \cos(4t)</m>, wave-envelope:
+          <m>y = \pm \cos(4t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \left[-\frac{4}{3}\sin \left( \frac{5}{2} t \right) \right]\cos \left( \frac{9}{2} t \right)</m>,
+          <m>A(t) = -\frac{4}{3}\sin \left( \frac{5}{2} t \right)</m>,
+          wave-envelope:
+          <m>y = \pm \frac{4}{3} \sin \left( \frac{5}{2} t \right)</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

@@ -1,0 +1,1312 @@
+<section xml:id="AppFactoring">
+  <title>Basic Factoring Techniques</title>
+  <introduction>
+    <p>
+      Now that we have reviewed the basics of polynomial arithmetic it's time to review the basic techniques of factoring polynomial expressions.
+      Our goal is to apply these techniques to help us solve certain specialized classes of non-linear equations.
+      Given that <sq>factoring</sq> literally means to resolve a product into its factors, it is,
+      in the purest sense, <sq>undoing</sq> multiplication.
+      If this sounds like division to you then you've been paying attention.
+      Let's start with a numerical example.
+    </p>
+    <p>
+      Suppose we are asked to factor <m>16337</m>.
+      We could write <m>16337 = 16337 \cdot 1</m>,
+      and while this is technically a factorization of <m>16337</m>,
+      it's probably not an answer the poser of the question would accept.
+      Usually, when we're asked to factor a natural number,
+      we are being asked to resolve it into to a product of so-called <sq>prime</sq> numbers.<fn>
+      As mentioned in <xref ref="AppRealNumberArithmetic">Section</xref>,
+      this is possible, in only one way, thanks to the
+      <url href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic"><em>Fundamental Theorem of Arithmetic</em>.</url>
+      </fn> Recall that <em>prime numbers</em>
+          <idx><h>number</h><h>prime</h></idx>
+      are defined as natural numbers whose only
+      (natural number)
+      factors are themselves and <m>1</m>.
+      They are, in essence,
+      the <sq>building blocks</sq> of natural numbers as far as multiplication is concerned.
+      Said differently,
+      we can build - via multiplication - any natural number given enough primes.
+    </p>
+    <p>
+      So how do we find the prime factors of <m>16337</m>?
+      We start by dividing each of the primes:
+      <m>2</m>, <m>3</m>, <m>5</m>, <m>7</m>,
+      etc., into <m>16337</m> until we get a remainder of <m>0</m>.
+      Eventually, we find that <m>16337 \div 17 = 961</m> with a remainder of <m>0</m>,
+      which means <m>16337 = 17 \cdot 961</m>.
+      So factoring and division are indeed closely related - factors of a number are precisely the divisors of that number which produce a zero remainder.<fn>
+      We'll refer back to this when we get to <xref ref="Polydivision">Section</xref>.
+      </fn> We continue our efforts to see if <m>961</m> can be factored down further,
+      and we find that <m>961 = 31 \cdot 31</m>.
+      Hence, <m>16337</m> can be <sq>completely factored</sq> as <m>17 \cdot 31^2</m>.
+      (This factorization is called the
+      <em>prime factorization</em><idx><h>number</h><h>prime factorization</h></idx> of <m>16337</m>.)
+    </p>
+    <p>
+      In factoring natural numbers,
+      our building blocks are prime numbers,
+      so to be completely factored means that every number used in the factorization of a given number is prime.
+      One of the challenges when it comes to factoring polynomial expressions is to explain what it means to be <sq>completely factored</sq>.
+      In this section,
+      our <sq>building blocks</sq> for factoring polynomials are <sq>irreducible</sq> polynomials as defined below.
+    </p>
+    <definition xml:id="irreduciblepoly">
+      <statement>
+        <p>
+          A polynomial is said to be <term>irreducible</term><idx><h>polynomial</h><h>irreducible</h></idx> if it cannot be written as the product of polynomials of lower degree.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      While <xref ref="irreduciblepoly">Definition</xref> seems straightforward enough,
+      sometimes a greater level of specificity is required.
+      For example, <m>x^2 - 3 = (x-\sqrt{3})(x + \sqrt{3})</m>.
+      While <m>x-\sqrt{3}</m> and
+      <m>x+\sqrt{3}</m> are perfectly fine polynomials,
+      factoring which requires irrational numbers is usually saved for a more advanced treatment of factoring.<fn>
+      See <xref ref="RealZeros">Section</xref>.
+      </fn> For now,
+      we will restrict ourselves to factoring using rational coefficients.
+      So, while the polynomial <m>x^2 - 3</m> can be factored using irrational numbers,
+      it is called irreducible <em>over the rationals</em>,
+      since there are no polynomials with <em>rational</em>
+      coefficients of smaller degree which can be used to factor it.<fn>
+      If this isn't immediately obvious,
+      don't worry - in some sense, it shouldn't be.
+      We'll talk more about this later.
+      </fn>
+    </p>
+    <p>
+      Since polynomials involve terms,
+      the first step in any factoring strategy involves pulling out factors which are common to all of the terms.
+      For example,
+      in the polynomial <m>18x^2y^3 - 54x^3y^2 - 12xy^2</m>,
+      each coefficient is a multiple of <m>6</m> so we can begin the factorization as <m>6(3x^2y^3 - 9x^3y^2 - 2xy^2)</m>.
+      The remaining coefficients: <m>3</m>, <m>9</m> and <m>2</m>,
+      have no common factors so <m>6</m> was the greatest common factor.
+      What about the variables?
+      Each term contains an <m>x</m>,
+      so we can factor an <m>x</m> from each term.
+      When we do this,
+      we are effectively dividing each term by <m>x</m> which means the exponent on <m>x</m> in each term is reduced by <m>1</m>:
+      <m>6x(3xy^3 - 9x^2y^2 - 2y^2)</m>.
+      Next, we see that each term has a factor of <m>y</m> in it.
+      In fact, each term has at least <em>two</em>
+      factors of <m>y</m> in it,
+      since the lowest exponent on <m>y</m> in each term is <m>2</m>.
+      This means that we can factor <m>y^2</m> from each term.
+      Again, factoring out <m>y^2</m> from each term is tantamount to dividing each term by <m>y^2</m> so the exponent on <m>y</m> in each term is reduced by <em>two</em>:
+      <m>6xy^2(3xy - 9x^2 - 2)</m>.
+      Just like we checked our division by multiplication in the previous section,
+      we can check our factoring here by multiplication, too.
+      <m>6xy^2(3xy - 9x^2 - 2) = (6xy^2)(3xy) - (6xy^2)(9x^2) - (6xy^2)(2) = 18x^2y^3 - 54x^3y^2 - 12xy^2 \, \checkmark</m>.
+      We summarize how to find the Greatest Common Factor (G.C.F.) of a polynomial expression below.
+      <em>Finding the G.C.F. of a Polynomial Expression</em>
+      <ul>
+        <li>
+          <p>
+            If the coefficients are integers,
+            find the G.C.F. of the coefficients.
+            <em>NOTE 1:</em> If all of the coefficients are negative,
+            consider the negative as part of the G.C.F.. <em>NOTE 2:</em>
+            If the coefficients involve fractions,
+            get a common denominator, combine numerators,
+            reduce to lowest terms and apply this step to the polynomial in the numerator.
+          </p>
+        </li>
+        <li>
+          <p>
+            If a variable is common to all of the terms,
+            the G.C.F. contains that variable to the smallest exponent which appears among the terms.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      For example, to factor <m>-\frac{3}{5}z^3 - 6z^2</m>,
+      we would first get a common denominator and factor as:
+      <me>
+        -\frac{3}{5}z^3 - 6z^2 = \frac{-3z^3 - 30z^2}{5} = \frac{-3z^2(z + 10)}{5} = -\frac{3z^2(z + 10)}{5} = -\frac{3}{5}z^{2}(z + 10)
+      </me>
+    </p>
+    <p>
+      We now list some common factoring formulas,
+      each of which can be verified by multiplying out the right side of the equation.
+      While they all should look familiar - this is a review section after all - some should look more familiar than others since they appeared as <sq>special product</sq> formulas in the previous section.
+      <em>Common Factoring Formulas</em>
+      <ul>
+        <li>
+          <p>
+            <em>Perfect Square Trinomials:</em>
+            <m>a^2 + 2ab + b^2 = (a+b)^2</m> and <m>a^2 - 2ab + b^2 = (a-b)^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Difference of Two Squares:</em>
+            <m>a^2 - b^2 = (a-b)(a+b)</m> <em>NOTE:</em>
+            In general, the sum of squares,
+            <m>a^2 + b^2</m> is irreducible over the rationals.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Sum of Two Cubes:</em> <m>a^3 + b^3 = (a + b)(a^2 - ab + b^2)</m>
+            <em>NOTE:</em> In general,
+            <m>a^2 - ab + b^2</m> is irreducible over the rationals.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Difference of Two Cubes:</em>
+            <m>a^3 - b^3 = (a - b)(a^2 + ab + b^2)</m>
+            <em>NOTE:</em> In general,
+            <m>a^2 + ab + b^2</m> is irreducible over the rationals.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The example on the next page gives us practice with these formulas.
+    </p>
+    <example xml:id="FormulaFactoring">
+      <statement>
+        <p>
+          Factor the following polynomials completely over the rationals.
+          That is, write each polynomial as a product polynomials of lowest degree which are irreducible over the rationals.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>18x^2 - 48x + 32</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>64y^2 - 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>75t^4 + 30t^3 + 3t^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>w^4 z - w z^4</m>
+              </p>
+            </li>
+            <li xml:id="quadinform1">
+              <p>
+                <m>81 - 16t^4</m>
+              </p>
+            </li>
+            <li xml:id="quadinform2">
+              <p>
+                <m>x^6 - 64</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Our first step is to factor out the G.C.F. which in this case is <m>2</m>.
+                To match what is left with one of the special forms,
+                we rewrite <m>9x^2 = (3x)^2</m> and <m>16 = 4^2</m>.
+                Since the <sq>middle</sq> term is <m>-24x = -2(4)(3x)</m>,
+                we see that we have a perfect square trinomial.
+                <me>
+                  \begin{array}{rclr}  18x^2 - 48x + 32 \amp  = \amp  2(9x^2 - 24x + 16) \amp  \text{ Factor out G.C.F. } \\ \amp  = \amp  2((3x)^2 - 2(4)(3x) + (4)^2) \amp  \\ \amp  = \amp  2(3x-4)^2 \amp  \text{ Perfect Square Trinomial:  \(a = 3x\), \(b=4\) } \end{array}
+                </me>
+                Our final answer is <m>2(3x-4)^2</m>.
+                To check our work, we multiply out
+                <m>2(3x-4)^2</m> to show that it equals <m>18x^2 - 48x + 32</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>64y^2 - 1</m>,
+                we note that the G.C.F. of the terms is just <m>1</m>,
+                so there is nothing
+                (of substance)
+                to factor out of both terms.
+                Since <m>64y^2 - 1</m> is the difference of two terms,
+                one of which is a square,
+                we look to the Difference of Squares Formula for inspiration.
+                Seeing <m>64y^2 = (8y)^2</m> and <m>1 = 1^2</m>, we get
+                <me>
+                  \begin{array}{rclr}  64y^2 - 1 \amp  = \amp  (8y)^2 - 1^2 \amp  \\ \amp  = \amp  (8y-1)(8y+1) \amp  \text{ Difference of Squares, \(a = 8y\), \(b = 1\) } \end{array}
+                </me>
+                As before, we can check our answer by multiplying out
+                <m>(8y-1)(8y+1)</m> to show that it equals <m>64y^2 - 1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The G.C.F. of the terms in <m>75t^4 + 30t^3 + 3t^2</m> is <m>3t^2</m>,
+                so we factor that out first.
+                We identify what remains as a perfect square trinomial:
+                <me>
+                  \begin{array}{rclr}  75t^4 + 30t^3 + 3t^2 \amp  = \amp  3t^2 (25t^2+10t + 1) \amp  \text{ Factor out G.C.F. } \\ \amp  = \amp  3t^2 ((5t)^2 + 2(1)(5t) + 1^2) \amp  \\ \amp  = \amp  3t^2 (5t+1)^2 \amp  \text{ Perfect Square Trinomial, \(a = 5t\), \(b = 1\) } \end{array}
+                </me>
+                Our final answer is <m>3t^2 (5t+1)^2</m>,
+                which the reader is invited to check.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>w^4 z - w z^4</m>,
+                we identify the G.C.F. as <m>wz</m> and once we factor it out a difference of cubes is revealed:
+                <me>
+                  \begin{array}{rclr}  w^4 z - w z^4 \amp  = \amp  wz(w^3 - z^3) \amp  \text{ Factor out G.C.F. }  \\ \amp  = \amp  wz(w-z)(w^2+wz+z^2) \amp  \text{ Difference of Cubes, \(a=w\), \(b = z\) } \end{array}
+                </me>
+                Our final answer is <m>wz(w-z)(w^2+wz+z^2)</m>.
+                The reader is strongly encouraged to multiply this out to see that it reduces to <m>w^4 z - w z^4</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The G.C.F. of the terms in
+                <m>81 - 16t^4</m> is just <m>1</m> so there is nothing of substance to factor out from both terms.
+                With just a difference of two terms,
+                we are limited to fitting this polynomial into either the Difference of Two Squares or Difference of Two Cubes formula.
+                Since the variable here is <m>t^4</m>,
+                and <m>4</m> is a multiple of <m>2</m>,
+                we can think of <m>t^4 = (t^2)^2</m>.
+                This means that we can write
+                <m>16t^4 = (4t^2)^2</m> which is a perfect square.
+                (Since <m>4</m> is not a multiple of <m>3</m>,
+                we cannot write <m>t^4</m> as a perfect cube of a polynomial.)
+                Identifying <m>81 = 9^2</m> and <m>16t^4 = (4t^2)^2</m>,
+                we apply the Difference of Squares Formula to get:
+                <me>
+                  \begin{array}{rclr}  81 - 16t^4 \amp  = \amp  9^2 - (4t^2)^2 \amp  \\ \amp  = \amp  (9-4t^2)(9+4t^2) \amp  \text{ Difference of Squares, \(a = 9\), \(b = 4t^2\) } \end{array}
+                </me>
+                At this point, we have an opportunity to proceed further.
+                Identifying <m>9 = 3^2</m> and <m>4t^2 = (2t)^2</m>,
+                we see that we have another difference of squares in the first quantity,
+                which we can reduce.
+                (The sum of two squares in the second quantity <em>cannot</em>
+                be factored over the rationals.)
+                <me>
+                  \begin{array}{rclr} 81 - 16t^4 \amp  = \amp  (9-4t^2)(9+4t^2) \amp  \\ \amp  = \amp  (3^2 - (2t)^2) (9 + 4t^2) \amp  \\ \amp  = \amp  (3 - 2t)(3+2t)(9 + 4t^2) \amp  \text{ Difference of Squares, \(a = 3\), \(b = 2t\) } \end{array}
+                </me>
+                As always, the reader is encouraged to multiply out <m>(3 - 2t)(3+2t)(9 + 4t^2)</m> to check the result.
+              </p>
+            </li>
+            <li>
+              <p>
+                With a G.C.F. of <m>1</m> and just two terms,
+                <m>x^6 - 64</m> is a candidate for both the Difference of Squares and the Difference of Cubes formulas.
+                Notice that we can identify <m>x^6 = (x^3)^2</m> and <m>64 = 8^2</m>
+                (both perfect squares),
+                but also <m>x^6 = (x^2)^3</m> and <m>64 = 4^3</m>
+                (both perfect cubes).
+                If we follow the Difference of Squares approach, we get:
+                <me>
+                  \begin{array}{rclr}  x^6 - 64 \amp  = \amp  (x^3)^2 - 8^2 \amp  \\ \amp  = \amp  (x^3 - 8)(x^3 + 8) \amp  \text{ Difference of Squares, \(a = x^3\) and \(b = 8\) } \end{array}
+                </me>
+                At this point,
+                we have an opportunity to use both the Difference and Sum of Cubes formulas:
+                <me>
+                  \begin{array}{rclr}  x^6 - 64 \amp  = \amp  (x^3 - 2^3)(x^3 + 2^3) \amp  \\ \amp  = \amp  (x-2)(x^2+2x+2^2)(x+2)(x^2 - 2x + 2^2) \amp  \text{ Sum / Difference of Cubes, \(a = x\), \(b = 2\) }  \\ \amp  = \amp  (x-2)(x+2)(x^2-2x+4)(x^2+2x+4) \amp  \text{ Rearrange factors } \end{array}
+                </me>
+                From this approach,
+                our final answer is <m>(x-2)(x+2)(x^2-2x+4)(x^2+2x+4)</m>.
+                Following the Difference of Cubes Formula approach, we get
+                <me>
+                  \begin{array}{rclr}  x^6 - 64 \amp  = \amp  (x^2)^3 - 4^3 \amp  \\ \amp  = \amp  (x^2 - 4)((x^2)^2 + 4x^2 + 4^2) \amp  \text{ Difference of Cubes, \(a = x^2\), \(b = 4\) }  \\ \amp  = \amp  (x^2 - 4)(x^4 + 4x^2 + 16) \amp \end{array}
+                </me>
+                At this point,
+                we recognize <m>x^2 - 4</m> as a difference of two squares:
+                <me>
+                  \begin{array}{rclr}  x^6 - 64 \amp  = \amp  (x^2 - 2^2)(x^4 + 4x^2 + 16)  \amp  \\ \amp  = \amp  (x-2)(x+2)(x^4 + 4x^2 + 16) \amp  \text{ Difference of Squares, \(a = x\), \(b = 2\) } \end{array}
+                </me>
+                Unfortunately, the remaining factor
+                <m>x^4 + 4x^2 + 16</m> is not a perfect square trinomial - the middle term would have to be <m>8x^2</m> for this to work - so our final answer using this approach is <m>(x-2)(x+2)(x^4 + 4x^2 + 16)</m>.
+                This isn't as factored as our result from the Difference of Squares approach which was <m>(x-2)(x+2)(x^2-2x+4)(x^2+2x+4)</m>.
+                While it is true that <m>x^4 + 4x^2 + 16 = (x^2-2x+4)(x^2+2x+4)</m>,
+                there is no <sq>intuitive</sq> way to motivate this factorization at this point.<fn>
+                Of course, this begs the question,
+                <q>How do we know <m>x^2-2x+4</m> and <m>x^2+2x+4</m> are irreducible?</q>
+                (We were told so on <xref ref="CommonFactoringFormulas">page</xref>,
+                but no reason was given.)  Stay tuned!
+                We'll get back to this in due course.
+                </fn>  The moral of the story?
+                When given the option between using the Difference of Squares and Difference of Cubes,
+                start with the Difference of Squares.
+                Our final answer to this problem is  <m>(x-2)(x+2)(x^2-2x+4)(x^2+2x+4)</m>.
+                The reader is strongly encouraged to show that this reduces down to
+                <m>x^6 - 64</m> after performing all of the  multiplication.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The formulas on <xref ref="CommonFactoringFormulas">page</xref>,
+      while useful, can only take us so far.
+      Thus we need to review some additional factoring strategies which should be good friends from back in the day!
+      <em>Additional Factoring Formulas</em>
+      <ul>
+        <li>
+          <p>
+            <em><sq>un-F.O.I.L.ing</sq>:</em>
+            Given a trinomial <m>Ax^2 + Bx + C</m>,
+            try to reverse the F.O.I.L. process.
+            That is, find <m>a</m>, <m>b</m>,
+            <m>c</m> and <m>d</m> such that <m>Ax^2 + Bx + C= (ax+b)(cx+d)</m>.
+            <em>NOTE:</em> This means <m>ac = A</m>,
+            <m>bd = C</m> and <m>B = ad+bc</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Factor by Grouping:</em> If the expression contains four terms with no common factors among the four terms,
+            try <sq>factor by grouping</sq>:
+            <me>
+              ac + bc + ad + bd = (a +b)c + (a+b)d = (a+b)(c+d)
+            </me>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The techniques of <sq>un-F.O.I.L.ing</sq> and <sq>factoring by grouping</sq> are difficult to describe in general but should make sense to you with enough practice.
+      Be forewarned - like all <sq>Rules of Thumb</sq>,
+      these strategies work just often enough to be useful,
+      but you can be sure there are exceptions which will defy any advice given here and will require some <sq>inspiration</sq> to solve.<fn>
+      Jeff will be sure to pepper the Exercises with these.
+      </fn> Even though <xref ref="PolynomialFunctions">Chapter</xref>
+      will give us more powerful factoring methods,
+      we'll find that, in the end,
+      there is no single algorithm for factoring which works for every polynomial.
+      In other words,
+      there will be times when you just have to try something and see what happens.
+    </p>
+    <example xml:id="advfactoring">
+      <statement>
+        <p>
+          Factor the following polynomials completely over the integers.<fn>
+          This means that all of the coefficients in the factors will be integers.
+          In a rare departure from form, Carl decided to avoid fractions in this set of examples.
+          Don't get complacent, though,
+          because fractions will return with a vengeance soon enough.
+          </fn>
+          <ol cols="2">
+            <li>
+              <p>
+                <m>x^2 - x - 6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2t^2 - 11t + 5</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>36 - 11y - 12y^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>18xy^2 - 54xy - 180x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2t^3 - 10t^2 + 3t - 15</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>x^4 + 4x^2 + 16</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The G.C.F. of the terms <m>x^2 - x - 6</m> is <m>1</m> and
+                <m>x^2 - x - 6</m> isn't a perfect square trinomial (Think about why not.) so we try to reverse the F.O.I.L. process and look for integers <m>a</m>,
+                <m>b</m>,
+                <m>c</m> and <m>d</m> such that <m>(ax + b)(cx + d) = x^2 - x - 6</m>.
+                To get started, we note that <m>ac = 1</m>.
+                Since <m>a</m> and <m>c</m> are meant to be integers,
+                that leaves us with either <m>a</m> and <m>c</m> both being <m>1</m>,
+                or <m>a</m> and <m>c</m> both being <m>-1</m>.
+                We'll go with <m>a = c = 1</m>, since we can factor<fn>
+                Pun intended!
+                </fn> the negatives into our choices for <m>b</m> and <m>d</m>.
+                This yields <m>(x+b)(x+d) = x^2-x-6</m>.
+                Next, we use the fact that <m>bd = -6</m>.
+                The product is negative so we know that one of <m>b</m> or <m>d</m> is positive and the other is negative.
+                Since <m>b</m> and <m>d</m> are integers,
+                one of <m>b</m> or <m>d</m> is <m>\pm 1</m> and the other is <m>\mp 6</m> OR one of <m>b</m> or <m>d</m> is <m>\pm 2</m> and the other is <m>\mp 3</m>.
+                After some guessing and checking,<fn>
+                The authors have seen some strange gimmicks that allegedly help students with this step.
+                We don't like them so we're sticking with good old-fashioned guessing and checking.
+                </fn> we find that <m>x^2 - x - 6 = (x+2)(x-3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As with the previous example,
+                we check the G.C.F. of the terms in <m>2t^2 - 11t + 5</m>,
+                determine it to be <m>1</m> and see that the polynomial doesn't fit the pattern for a perfect square trinomial.
+                We now try to find integers <m>a</m>, <m>b</m>,
+                <m>c</m> and <m>d</m> such that <m>(at+b)(ct+d) = 2t^2 - 11t + 5</m>.
+                Since <m>ac = 2</m>,
+                we have that one of <m>a</m> or <m>c</m> is <m>2</m>,
+                and the other is <m>1</m>.
+                (Once again, we ignore the negative options.)
+                At this stage,
+                there is nothing really distinguishing <m>a</m> from <m>c</m> so we choose <m>a = 2</m> and <m>c = 1</m>.
+                Now we look for <m>b</m> and <m>d</m> so that <m>(2t + b)(t+d) = 2t^2 - 11t + 5</m>.
+                We know <m>bd = 5</m> so one of <m>b</m> or <m>d</m> is <m>\pm 1</m> and the other <m>\pm 5</m>.
+                Given that <m>bd</m> is positive,
+                <m>b</m> and <m>d</m> must have the same sign.
+                The negative middle term <m>-11t</m> guides us to guess <m>b = -1</m> and <m>d = -5</m> so that we get <m>(2t -1)(t -5) = 2t^2 - 11t + 5</m>.
+                We verify our answer by multiplying.<fn>
+                That's the <sq>checking</sq> part of 'guessing and checking'.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Once again, we check for a nontrivial G.C.F. and see if
+                <m>36 - 11y - 12y^2</m> fits the pattern of a perfect square.
+                Twice disappointed, we rewrite
+                <m>36 - 11y - 12y^2 = -12y^2 - 11y + 36</m> for notational convenience.
+                We now look for integers <m>a</m>, <m>b</m>,
+                <m>c</m> and <m>d</m> such that <m>-12y^2 - 11y + 36 = (ay + b)(cy + d)</m>.
+                Since <m>ac =-12</m>,
+                we know that one of <m>a</m> or <m>c</m> is <m>\pm 1</m> and the other <m>\pm 12</m> OR one of them is <m>\pm 2</m> and the other is <m>\pm 6</m> OR one of them is <m>\pm 3</m> while the other is <m>\pm 4</m>.
+                Since their product is <m>-12</m>, however,
+                we know one of them is positive,
+                while the other is negative.
+                To make matters worse,
+                the constant term <m>36</m> has its fair share of factors, too.
+                Our answers for <m>b</m> and <m>d</m> lie among the pairs <m>\pm 1</m> and <m>\pm 36</m>,
+                <m>\pm 2</m> and <m>\pm 18</m>,
+                <m>\pm 4</m> and <m>\pm 9</m>, or <m>\pm 6</m>.
+                Since we know one of <m>a</m> or <m>c</m> will be negative,
+                we can simplify our choices for <m>b</m> and <m>d</m> and just look at the positive possibilities.
+                After some guessing and checking,<fn>
+                Some of these guesses can be more <sq>educated</sq> than others.
+                Since the middle term is relatively <sq>small,</sq> we don't expect the <sq>extreme</sq> factors of <m>36</m> and <m>12</m> to appear,
+                for instance.
+                </fn> we find <m>(-3y + 4)(4y+9) = -12y^2 - 11y + 36</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the G.C.F. of the terms in <m>18xy^2 - 54xy - 180x</m> is <m>18x</m>,
+                we begin the problem by factoring it out first:
+                <m>18xy^2 - 54xy - 180x = 18x(y^2 - 3y - 10)</m>.
+                We now focus our attention on <m>y^2 - 3y - 10</m>.
+                We can take <m>a</m> and <m>c</m> to both be <m>1</m> which yields <m>(y+b)(y+d) = y^2 - 3y - 10</m>.
+                Our choices for <m>b</m> and <m>d</m> are among the factor pairs of <m>-10</m>:
+                <m>\pm 1</m> and <m>\pm 10</m> or <m>\pm 2</m> and <m>\pm 5</m>,
+                where one of <m>b</m> or <m>d</m> is positive and the other is negative.
+                We find <m>(y-5)(y+2) = y^2 - 3y - 10</m>.
+                Our final answer is <m>18xy^2 - 54xy - 180x = 18x(y-5)(y+2)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>2t^3 - 10t^2 - 3t + 15</m>  has four terms,
+                we are pretty much resigned to factoring by grouping.
+                The strategy here is to factor out the G.C.F. from two
+                <em>pairs</em> of terms,
+                and see if this reveals a common factor.
+                If we group the first two terms,
+                we can factor out a <m>2t^2</m> to get <m>2t^3 - 10t^2 = 2t^2(t-5)</m>.
+                We now try to factor something out of the last two terms that will leave us with a factor of <m>(t-5)</m>.
+                Sure enough, we can factor out a <m>-3</m> from both:
+                <m>-3t + 15 = -3(t-5)</m>.
+                Hence, we get
+                <me>
+                  2t^3 - 10t^2 - 3t + 15 = 2t^2(t-5) - 3(t-5) = (2t^2-3)(t-5)
+                </me>
+                Now the question becomes can we factor <m>2t^2 - 3</m> over the integers?
+                This would require integers
+                <m>a,
+                b, c</m> and <m>d</m> such that <m>(at + b)(ct + d) = 2t^2 - 3</m>.
+                Since <m>ab = 2</m> and <m>cd = -3</m>,
+                we aren't left with many options - in fact,
+                we really have only four choices:
+                <m>(2t - 1)(t+3)</m>, <m>(2t+1)(t-3)</m>,
+                <m>(2t - 3)(t+1)</m> and <m>(2t+3)(t-1)</m>.
+                None of these produces <m>2t^2 - 3</m> - which means it's irreducible over the integers - thus our final answer is <m>(2t^2-3)(t-5)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Our last example, <m>x^4 + 4x^2 + 16</m>,
+                is our old friend from <xref ref="FormulaFactoring">Example</xref>.
+                As noted there, it is not a perfect square trinomial,
+                so we could try to reverse the F.O.I.L. process.
+                This is complicated by the fact that our highest degree term is <m>x^4</m>,
+                so we would have to look at factorizations of the form
+                <m>(x+b)(x^3+d)</m> as well as <m>(x^2 + b)(x^2 + d)</m>.
+                We leave it to the reader to show that neither of those work.
+                This is an example of where <sq>trying something</sq> pays off.
+                Even though we've stated that it is not a perfect square trinomial,
+                it's pretty close.
+                Identifying <m>x^4 = (x^2)^2</m> and <m>16 = 4^2</m>,
+                we'd have <m>(x^2 + 4)^2 = x^4 + 8x^2 + 16</m>,
+                but instead of <m>8x^2</m> as our middle term, we only have <m>4x^2</m>.
+                We could add in the extra <m>4x^2</m> we need,
+                but to keep the balance, we'd have to subtract it off.
+                Doing so produces an unexpected opportunity:
+                <me>
+                  \begin{array}{rclr}  x^4 + 4x^2 + 16 \amp  = \amp  x^4 + 4x^2 + 16 + (4x^2 - 4x^2) \amp  \text{ Adding and subtracting the same term }  \\ \amp  = \amp  x^4 + 8x^2 + 16 - 4x^2 \amp  \text{ Rearranging terms }  \\ \amp  = \amp  (x^2 + 4)^2 - (2x)^2 \amp  \text{ Factoring perfect square trinomial }  \\ \amp  = \amp  [(x^2 +4) - 2x][ (x^2 + 4) + 2x] \amp  \text{ Difference of Squares:  \(a= (x^2 + 4)\), \(b = 2x\) } \\ \amp  = \amp  (x^2 - 2x + 4)(x^2 + 2x + 4) \amp  \text{ Rearraging terms } \end{array}
+                </me>
+                We leave it to the reader to check that neither <m>x^2 - 2x + 4</m> nor
+                <m>x^2 + 2x + 4</m> factor over the integers, so we are done.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="solveeqnsbyfactoring">
+    <title>Solving Equations by Factoring</title>
+    <p>
+      Many students wonder why they are forced to learn how to factor.
+      Simply put, factoring is our main tool for solving the non-linear equations which arise in many of the applications of Mathematics.<fn>
+      Also known as <sq>story problems</sq> or <sq>real-world examples</sq>.
+      </fn> We use factoring in conjunction with the Zero Product Property of Real Numbers which was first stated on <xref ref="propertiesofzero">page</xref>
+      and is given here again for reference.
+    </p>
+    <p>
+      <em>The Zero Product Property of Real Numbers:</em>
+      If <m>a</m> and <m>b</m> are real numbers with <m>ab = 0</m> then either <m>a = 0</m> or <m>b = 0</m> or both.
+    </p>
+    <p>
+      Consider the equation <m>6x^2 + 11x = 10</m>.
+      To see how the Zero Product Property is used to help us solve this equation,
+      we first set the equation equal to zero and then apply the techniques from <xref ref="advfactoring">Example</xref>:
+      <me>
+        \begin{array}{rclr} 6x^2 + 11x \amp  = \amp  10 \\ 6x^2 + 11x - 10 \amp  = \amp  0 \amp  \text{ Subtract \(10\) from both sides }  \\ (2x+5)(3x-2) \amp  = \amp  0 \amp  \text{ Factor }  \\ 2x +5 = 0 \amp  \text{ or }  \amp  3x -2 = 0 \amp  \text{ Zero Product Property }  \\ [-2pt] \amp            \amp            \amp  a = 2x+5, b = 3x-2 \\ [-8pt] x = -\frac{5}{2} \amp  \text{ or }  \amp  x = \frac{2}{3} \amp \end{array}
+      </me>
+    </p>
+    <p>
+      The reader should check that both of these solutions satisfy the original equation.
+    </p>
+    <p>
+      It is critical that you see the importance of setting the expression equal to <m>0</m> before factoring.
+      Otherwise, we'd get something silly like:
+      <me>
+        \begin{array}{rclr}  6x^2 + 11x \amp  = \amp  10 \\ x(6x + 11) \amp  = \amp  10 \amp  \text{ Factor } \end{array}
+      </me>
+    </p>
+    <p>
+      What we <em>cannot</em> deduce from this equation is that <m>x = 10</m> or
+      <m>6x+11 = 10</m> or that <m>x = 2</m> and <m>6x+11 = 5</m>.
+      (It's wrong and you should feel bad if you do it.)
+      It is precisely because <m>0</m> plays such a special role in the arithmetic of real numbers
+      (as the Additive Identity)
+      that we can assume a factor is <m>0</m> when the product is <m>0</m>.
+      No other real number has that ability.
+    </p>
+    <p>
+      We summarize the <em>correct</em>
+      equation solving strategy below.
+      <em>Strategy for Solving Non-linear Equations</em>
+      <ol>
+        <li>
+          <p>
+            Put all of the nonzero terms on one side of the equation so that the other side is <m>0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Factor.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the Zero Product Property of Real Numbers and set each factor equal to <m>0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve each of the resulting equations.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Let's finish the section with a collection of examples in which we use this strategy.
+    </p>
+    <example xml:id="solveeqnbyfactoring">
+      <statement>
+        <p>
+          Solve the following equations.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>3x^2 = 35 - 16x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t = \dfrac{1+4t^2}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(y-1)^2 = 2(y-1)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{w^4}{3} = \dfrac{8w^3-12}{12} - \dfrac{w^2-4}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z(z(18z+9)-50) = 25</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>x^4-8x^2 - 9 = 0</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin by gathering all of the nonzero terms to one side getting <m>0</m> on the other and then we proceed to factor and apply the Zero Product Property.
+                <me>
+                  \begin{array}{rclr}  3x^2 \amp  = \amp  35 - 16x \amp  \\  3x^2 + 16x - 35 \amp  = \amp  0 \amp  \text{ Add \(16x\), subtract \(35\) }  \\  (3x-5)(x+7) \amp  = \amp  0 \amp  \text{ Factor }  \\  3x-5 = 0 \amp  \text{ or }  \amp  x+7 = 0 \amp  \text{ Zero Product Property }  \\  x = \frac{5}{3} \amp  \text{ or }  \amp  x = -7 \amp \end{array}
+                </me>
+                We check our answers by substituting each of them into the original equation.
+                Plugging in <m>x = \frac{5}{3}</m> yields
+                <m>\frac{25}{3}</m> on both sides while <m>x = -7</m> gives <m>147</m> on both sides.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>t = \frac{1+4t^2}{4}</m>,
+                we first clear fractions then move all of the nonzero terms to one side of the equation,
+                factor and apply the Zero Product Property.
+                <me>
+                  \begin{array}{rclr}  t \amp  = \amp  \dfrac{1+4t^2}{4} \amp  \\  4t \amp  = \amp  1+4t^2 \amp  \text{ Clear fractions (multiply by \(4\)) }  \\  0 \amp  = \amp  1+4t^2 - 4t \amp  \text{ Subtract 4 }  \\  0 \amp  = \amp  4t^2 - 4t + 1 \amp  \text{ Rearrange terms }  \\  0 \amp  = \amp  (2t-1)^2 \amp  \text{ Factor (Perfect Square Trinomial) } \end{array}
+                </me>
+                At this point, we get <m>(2t-1)^2 = (2t-1)(2t-1) = 0</m>, so,
+                the Zero Product Property gives us <m>2t-1 =0</m> in both cases.<fn>
+                More generally, given a positive power <m>p</m>,
+                the only solution to <m>x^p = 0</m> is <m>x = 0</m>.
+                </fn>  Our final answer is <m>t = \frac{1}{2}</m>,
+                which we invite the reader to check.
+              </p>
+            </li>
+            <li>
+              <p>
+                Following the strategy outlined above,
+                the first step to solving <m>(y-1)^2 = 2(y-1)</m> is to gather the nonzero terms on one side of the equation with <m>0</m> on the other side and factor.
+                <me>
+                  \begin{array}{rclr}  (y-1)^2 \amp  = \amp  2(y-1) \amp  \\  (y-1)^2 - 2(y-1) \amp  = \amp  0 \amp  \text{ Subtract \(2(y-1)\) }  \\ (y-1)[(y-1) - 2] \amp  = \amp  0 \amp  \text{ Factor out G.C.F. }  \\ (y-1)(y-3) \amp  = \amp  0 \amp   \text{ Simplify }  \\ y-1 = 0 \amp  \text{ or }  \amp  y - 3 = 0 \amp  \\  y = 1 \amp  \text{ or }  \amp  y = 3 \amp \end{array}
+                </me>
+                Both of these answers are easily checked by substituting them into the original equation.
+                An alternative method to solving this equation is to begin by dividing both sides by <m>(y-1)</m> to simplify things outright.
+                As we saw in <xref ref="lineareqnreview">Example</xref>,
+                however, whenever we divide by a variable quantity,
+                we make the explicit assumption that this quantity is nonzero.
+                Thus we must stipulate that <m>y - 1 \neq 0</m>.
+                <me>
+                  \begin{array}{rclr}  \dfrac{(y-1)^2}{(y-1)} \amp  = \amp  \dfrac{2(y-1)}{(y-1)} \amp  \text{ Divide by \((y-1)\) - this assumes \((y-1) \neq 0\) } \\ y - 1 \amp  = \amp  2 \amp  \\ y \amp  = \amp  3 \amp \end{array}
+                </me>
+                Note that in this approach,
+                we obtain the <m>y=3</m> solution,
+                but we <sq>lose</sq> the <m>y = 1</m> solution.
+                How did that happen?
+                Assuming <m>y - 1 \neq 0</m> is equivalent to assuming <m>y \neq 1</m>.
+                This is an issue because <m>y = 1</m> is a solution to the original equation and it was <sq>divided out</sq> too early.
+                The moral of the story?
+                If you decide to divide by a variable expression,
+                double check that you aren't excluding any solutions.<fn>
+                You will see other examples throughout this text where dividing by a variable quantity does more harm than good.
+                Keep this basic one in mind as you move on in your studies - it's a good cautionary tale.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as before, we clear fractions,
+                gather the nonzero terms on one side of the equation,
+                have <m>0</m> on the other and factor.
+                <me>
+                  \begin{array}{rclr}  \dfrac{w^4}{3} \amp  = \amp  \dfrac{8w^3-12}{12} - \dfrac{w^2-4}{4} \amp  \\  12 \left(\dfrac{w^4}{3}\right) \amp  = \amp  12 \left(\dfrac{8w^3-12}{12} - \dfrac{w^2-4}{4} \right) \amp  \text{ Multiply by \(12\) } \\  4w^4 \amp  = \amp  (8w^3 - 12) - 3(w^2-4) \amp  \text{ Distribute }  \\ 4w^4 \amp  = \amp  8w^3 - 12 - 3w^2 + 12 \amp  \text{ Distribute }  \\  0 \amp  = \amp  8w^3 - 12 - 3w^2 + 12  - 4w^4 \amp  \text{ Subtract \(4w^4\) }  \\ 0 \amp  = \amp  8w^3  - 3w^2 - 4w^4 \amp  \text{ Gather like terms }  \\ 0 \amp  = \amp  w^2(8w - 3 - 4w^2) \amp  \text{ Factor out G.C.F. } \end{array}
+                </me>
+                At this point,
+                we  apply the Zero Product Property to deduce that <m>w^2 = 0</m> or <m>8w - 3 - 4w^2 = 0</m>.
+                From <m>w^2 = 0</m>, we get <m>w = 0</m>.
+                To solve <m>8w - 3 - 4w^2 = 0</m>,
+                we rearrange terms and factor:
+                <m>-4w^2 + 8w - 3= (2w - 1)(-2w+3) = 0</m>.
+                Applying the Zero Product Property again, we get <m>2w - 1= 0</m>
+                (which gives <m>w = \frac{1}{2}</m>),
+                or <m>-2w+3 = 0</m>
+                (which gives <m>w = \frac{3}{2}</m>).
+                Our final answers are <m>w = 0</m>,
+                <m>w = \frac{1}{2}</m> and <m>w = \frac{3}{2}</m>.
+                The reader is encouraged to check each of these answers in the original equation.  (You need the practice with fractions!)
+              </p>
+            </li>
+            <li>
+              <p>
+                For our next example,
+                we begin by subtracting the <m>25</m> from both sides then work out the indicated operations before factoring by grouping.
+                <me>
+                  \begin{array}{rclr}  z(z(18z+9)-50) \amp  = \amp  25 \amp  \\  z(z(18z+9)-50) - 25 \amp  = \amp  0 \amp  \text{ Subtract \(25\) }  \\ z(18z^2 + 9z - 50) - 25 \amp  = \amp  0 \amp  \text{ Distribute }  \\ 18z^3 + 9z^2 - 50z - 25 \amp  = \amp  0 \amp  \text{ Distribute }  \\  9z^2(2z + 1) - 25(2z + 1) \amp  = \amp  0 \amp  \text{ Factor }  \\  (9z^2 - 25)(2z+1) \amp  = \amp  0 \amp  \text{ Factor } \end{array}
+                </me>
+                At this point, we use the Zero Product Property and get
+                <m>9z^2 - 25 = 0</m> or <m>2z + 1 = 0</m>.
+                The latter gives <m>z = -\frac{1}{2}</m> whereas the former  factors as <m>(3z - 5)(3z+5) = 0</m>.
+                Applying the Zero Product Property again gives <m>3z-5 = 0</m>
+                (so <m>z = \frac{5}{3}</m>)
+                or <m>3z+5 = 0</m>
+                (so <m>z = -\frac{5}{3}</m>.)
+                Our final answers are <m>z = -\frac{1}{2}</m>,
+                <m>z = \frac{5}{3}</m> and <m>z = -\frac{5}{3}</m>,
+                each of which is good fun to check.
+              </p>
+            </li>
+            <li>
+              <p>
+                The nonzero terms of the equation
+                <m>x^4-8x^2 - 9= 0</m> are already on one side of the equation so we proceed to factor.
+                This trinomial doesn't fit the pattern of a perfect square so we attempt to reverse the F.O.I.L.ing process.
+                With an <m>x^4</m> term, we have two possible forms to try:
+                <m>(ax^2 + b)(cx^2 + d)</m> and <m>(ax^3 + b)(cx +d)</m>.
+                We leave it to you to show that
+                <m>(ax^3 + b)(cx +d)</m> does not work and we show that <m>(ax^2 + b)(cx^2 + d)</m> does.
+                Since the coefficient of <m>x^4</m> is <m>1</m>, we take <m>a = c = 1</m>.
+                The constant term is <m>-9</m> so we know <m>b</m> and <m>d</m> have opposite signs and our choices are limited to two options:
+                either <m>b</m> and <m>d</m> come from <m>\pm 1</m> and <m>\pm 9</m> OR one is <m>3</m> while the other is <m>-3</m>.
+                After some trial and error, we get <m>x^4 - 8x^2 - 9 = (x^2 - 9)(x^2+1)</m>.
+                Hence <m>x^4-8x^2 - 9= 0</m> reduces to <m>(x^2 - 9)(x^2 + 1) = 0</m>.
+                The Zero Product Property tells us that either <m>x^2 - 9 = 0</m> or <m>x^2+1 = 0</m>.
+                To solve the former, we factor:
+                <m>(x-3)(x+3) = 0</m>, so <m>x-3 = 0</m> (hence,
+                <m>x = 3</m>) or <m>x+3 = 0</m>
+                (hence, <m>x = -3</m>).
+                The equation <m>x^2 + 1 = 0</m> has no (real) solution,
+                since for any real number <m>x</m>,
+                <m>x^2</m> is always <m>0</m> or greater.
+                Thus <m>x^2 + 1</m> is always positive.
+                Our final answers are <m>x = 3</m> and <m>x = -3</m>.
+                As always, the reader is invited to check both answers in the original equation.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="ExercisesforAppFactoring">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="factoringexfirst">Exercises</xref>
+      - <xref ref="factoringexlast"></xref>,
+      factor completely over the integers.
+      Check your answer by multiplication.
+      <ol cols="2">
+        <li xml:id="factoringexfirst">
+          <p>
+            <m>2x - 10x^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>12t^5 - 8t^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>16xy^2 - 12x^2y</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>5(m+3)^2- 4(m+3)^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(2x-1)(x+3) - 4(2x-1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t^2(t-5) + t - 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>w^2 - 121</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>49 - 4t^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>81t^4 - 16</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>9z^2 - 64y^4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(y+3)^2 - 4y^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x+h)^3 - (x+h)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y^2 - 24y + 144</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>25t^2 + 10t + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>12x^3 - 36x^2 + 27x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>m^4 + 10m^2 + 25</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>27 - 8x^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t^6 +t^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 - 5x - 14</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y^2 - 12y + 27</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3t^2 + 16t + 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>6x^2 - 23x + 20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>35+2m - m^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>7w - 2w^2 - 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3m^3 + 9m^2 - 12m</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^4 + x^2 - 20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4(t^2-1)^2 +3(t^2-1) - 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^3 - 5x^2 - 9x + 45</m>
+          </p>
+        </li>
+        <li xml:id="factoringexlast">
+          <p>
+            <m>3t^2 + t - 3 - t^3</m> \item<fn>
+            <m>y^4 + 5y^2 + 9 = (y^4 + 6y^2 + 9) - y^2</m>
+            </fn> <m>y^4 + 5y^2 + 9</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solvebyfactorfirst">Exercises</xref>
+      - <xref ref="solvebyfactorlast"></xref>,
+      find all rational number solutions.
+      Check your answers.
+      <ol cols="6">
+        <li xml:id="solvebyfactorfirst">
+          <p>
+            <m>(7x+3)(x-5) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(2t-1)^2 (t+4) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(y^2 + 4)(3y^2 +y - 10) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4t = t^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y+3 = 2y^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>26x = 8x^2 + 21</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>16x^4 = 9x^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>w(6w+11) = 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2w^2 + 5w + 2 = - 3(2w+1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2(x-3) = 16(x-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(2t+1)^3 = (2t+1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>a^4 + 4 = 6 - a^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{8t^2}{3} = 2t+3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{x^3+x}{2} = \dfrac{x^2+1}{3}</m>
+          </p>
+        </li>
+        <li xml:id="solvebyfactorlast">
+          <p>
+            <m>\dfrac{y^4}{3} - y^2 = \dfrac{3}{2} (y^2 + 3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            With help from your classmates,
+            factor <m>4x^4 + 8x^2 + 9</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            With help from your classmates,
+            find an equation which has <m>3</m>,
+            <m>-\frac{1}{2}</m>, and <m>117</m> as solutions.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>2x(1 - 5x)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4t^3(3t^2-2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4xy(4y-3x)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-(m+3)^2(4m+7)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2x-1)(x-1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(t-5)(t^2+1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(w-11)(w+11)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(7-2t)(7+2t)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(3t-2)(3t+2)(9t^2+4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(3z-8y^2)(3z+8y^2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-3(y - 3)(y+1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x+h)(x+h-1)(x+h+1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y-12)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(5t+1)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3x(2x-3)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(m^2+5)^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(3-2x)(9 + 6x + 4x^2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t^3(t+1)(t^2 - t + 1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-7)(x+2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y-9)(y-3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(3t+1)(t+5)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2x-5)(3x-4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(7-m)(5+m)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-2w+1)(w-3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3m(m-1)(m+4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-2)(x+2)(x^2+5)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2t-3)(2t+3)(t^2+1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x-3)(x+3)(x-5)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(t-3)(1-t)(1+t)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(y^2-y+3)(y^2+y+3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -\dfrac{3}{7}</m> or <m>x = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{1}{2}</m> or <m>t = -4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{5}{3}</m> or <m>y = -2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 0</m> or <m>t = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = -1</m> or <m>y = \dfrac{3}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{3}{2}</m> or <m>x = \dfrac{7}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0</m> or <m>x = \pm \dfrac{3}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = -\dfrac{5}{2}</m> or <m>w = \dfrac{2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w=-5</m> or <m>w = -\dfrac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=3</m> or <m>x = \pm 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -1</m>, <m>t= -\dfrac{1}{2}</m>, or <m>t = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a = \pm 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\dfrac{3}{4}</m> or <m>t = \dfrac{3}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \pm 3</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

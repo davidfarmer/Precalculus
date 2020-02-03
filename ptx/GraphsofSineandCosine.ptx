@@ -1,0 +1,2096 @@
+<section xml:id="GraphsofSineandCosine">
+  <title>Graphs of Sine and Cosine</title>
+  <introduction>
+    <p>
+      On <xref ref="cosinesineequationsrealnumbers">page</xref>,
+      we discussed how to interpret the sine and cosine of real numbers.
+      To review, we identify a real number <m>t</m> with an oriented angle <m>\theta</m> measuring <m>t</m> radians<fn>
+      which, you'll recall essentially `wraps the real number line around the Unit Circle
+      </fn> and define
+      <m>\sin(t) = \sin(\theta)</m> and <m>\cos(t) = \cos(\theta)</m>.
+      Since every real number can be identified with one and only one angle <m>\theta</m> this way,
+      the domains of the functions <m>f(t) = \sin(t)</m> and
+      <m>g(t) = \cos(t)</m> are all real numbers, <m>(-\infty, \infty)</m>.
+    </p>
+    <p>
+      When it comes to range,
+      recall that the sine and cosine of angles are coordinates of points on the Unit Circle and hence,
+      each fall between <m>-1</m> and <m>1</m> inclusive.
+      Since the real number line,<fn>
+      in particular the interval <m>[0, 2\pi)</m>
+      </fn> when wrapped around the Unit Circle completely covers the circle,
+      we can be assured that every point on the Unit Circle corresponds to at least one real number.
+      Putting these two facts together,
+      we conclude the range of <m>f(t) = \sin(t)</m> and
+      <m>g(t) = \cos(t)</m> are both <m>[-1,1]</m>.
+      We summarize these two important facts below.
+    </p>
+    <theorem xml:id="cosinesinefunctiondomainrange">
+      <statement>
+        <p>
+          <em>Domain and Range of the Cosine and Sine Functions:</em>
+        </p>
+        <tabular>
+          <row>
+            <cell><m>\bullet </m> The function <m>f(t) = \sin(t)</m></cell>
+            <cell><m>\bullet </m> The function <m>g(t) = \cos(t)</m></cell>
+          </row>
+          <row>
+            <cell><mdash/> has domain <m>(-\infty, \infty)</m></cell>
+            <cell><mdash/> has domain <m>(-\infty, \infty)</m></cell>
+          </row>
+          <row>
+            <cell><mdash/> has range <m>[-1,1]</m></cell>
+            <cell><mdash/> has range <m>[-1,1]</m></cell>
+          </row>
+        </tabular>
+      </statement>
+    </theorem>
+    <p>
+      Our aim in this section is to become familiar with the graphs of
+      <m>f(t) = \sin(t)</m> and <m>g(t) = \cos(t)</m>.
+      To that end, we begin by making a table and plotting points.
+      We'll start by graphing <m>f(t) = \sin(t)</m> by making a table of values and plotting the corresponding points.
+      We'll keep the independent variable <sq><m>t</m></sq> for now and use the default <sq><m>y</m></sq> as our dependent variable.<fn>
+      Keep in mind that we're using <sq><m>y</m></sq> here to denote the
+      <em>output</em> from the sine function.
+      It is a coincidence that the <m>y</m>-values on the graph of
+      <m>y=\sin(t)</m> correspond to the <m>y</m>-values on the Unit Circle.
+      </fn> Note in the graph below, on the right,
+      the scale of the horizontal and vertical axis is far from 1:1. (We will present a more accurately scaled graph shortly.)
+    </p>
+    <tabular>
+      {m{2.7in}m{3in}}
+      <me>
+        \begin{array}{|r||r|r|}
+        \hline
+        t \amp  \sin(t) \amp  (t,\sin(t)) \\ \hline
+        0  \amp  0 \amp  (0, 0) \\   \hline
+        \frac{\pi}{4}  \amp  \frac{\sqrt{2}}{2} \amp  \left(\frac{\pi}{4}, \frac{\sqrt{2}}{2}\right) \\ \hline
+        \frac{\pi}{2}  \amp  1 \amp  \left(\frac{\pi}{2}, 1\right) \\ \hline
+        \frac{3\pi}{4}  \amp  \frac{\sqrt{2}}{2} \amp  \left(\frac{3\pi}{4}, \frac{\sqrt{2}}{2}\right) \\ \hline
+        \pi \amp  0 \amp  (\pi, 0) \\ \hline
+        \frac{5\pi}{4}  \amp  -\frac{\sqrt{2}}{2} \amp  \left(\frac{5\pi}{4}, -\frac{\sqrt{2}}{2}\right) \\ \hline
+        \frac{3\pi}{2}  \amp  -1 \amp  \left(\frac{3\pi}{2}, -1 \right) \\ \hline
+        \frac{7\pi}{4}  \amp  -\frac{\sqrt{2}}{2} \amp  \left(\frac{7\pi}{4}, -\frac{\sqrt{2}}{2}\right) \\ \hline
+        2\pi  \amp  0 \amp  (2\pi, 0) \\ \hline
+        \end{array}
+      </me>
+      &amp;
+      \begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5}
+      \point[4pt]{(0,0), (0.7854,0.7071), (1.5708,1), (2.3562,0.7071), (3.1416, 0), (3.9270,-0.7071), (4.7124,-1), (5.4978,-0.7071), (6.2832,0)}
+      \axes
+      \tlabel[cc](7,-0.15){<m>t</m>}
+      \tlabel[cc](0.25,1.5){<m>y</m>}
+      \tcaption{Graphing <m>y = \sin(t)</m>.}
+      \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+      \ymarks{-1,1}
+      \tlpointsep{4pt}
+      \axislabels {x}{{<m>\frac{\pi}{4}</m>} 0.7854, {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\frac{3\pi}{4}</m>} 2.3562, {<m>\pi</m>} 3.1416, {<m>\frac{5\pi}{4}</m>} 3.9270, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>\frac{7\pi}{4}</m>} 5.4978, {<m>2\pi</m>} 6.2832}
+      \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1}
+      \penwd{1.1pt}
+      \function{0, 6.2832, 0.1}{sin(x)}
+      \end{mfpic}
+    </tabular>
+    <p>
+      If we plot additional points,
+      we soon find that the graph repeats itself.
+      This shouldn't come as too much of a surprise considering <xref ref="coterminalsamcosinesinethm">Theorem</xref>.
+      In fact, in light of that theorem,
+      we expect the function to repeat itself every <m>2\pi</m> units.
+      Below is a more accurately scaled graph highlighting the portion we had already graphed above.
+      The graph is often described as having a <sq>wavelike</sq> nature and is sometimes called a
+          <idx><h>wave</h><h>sine</h></idx>
+          <idx><h>sine wave</h></idx> <em>sine wave</em> or, more technically, a
+          <idx><h>sinusoid</h></idx>
+      <em>sinusoid</em>.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-13}{13}{-1.5}{1.5} \axes \point[4pt]{(0,0), (6.2832,0)} \tlabel[cc](13,-0.5){<m>t</m>} \tlabel[cc](0.5,1.25){<m>1</m>} \tlabel[cc](0.5,-1){<m>-1</m>} \tcaption{A more accurately scaled graph of
+      <m>f(t) = \sin(t)</m>.} \ymarks{-1,1} \arrow \reverse \arrow \function{-12, 12, 0.1}{sin(x)} \penwd{1.5pt} \function{0, 6.2832, 0.1}{sin(x)} \end{mfpic}
+    </p>
+    <p>
+      Note that by copying the highlighted portion of the graph and pasting it end-to-end,
+      we obtain the entire graph of <m>f(t) = \sin(t)</m>.
+      We give this <sq>repeating</sq> property a name.
+    </p>
+    <definition xml:id="periodic">
+      <statement>
+        <p>
+          <term>Periodic Functions:</term> A function <m>f</m> is said to be <term>periodic</term>
+              <idx><h>function</h><h>periodic</h></idx>
+              <idx><h>periodic function</h></idx>
+          if there is a real number <m>c</m> so that
+          <m>f(t+c) = f(t)</m> for all real numbers <m>t</m> in the domain of <m>f</m>.
+          The smallest positive number <m>p</m> for which
+          <m>f(t+p) = f(t)</m> for all real numbers <m>t</m> in the domain of <m>f</m>,
+          if it exists, is called the <term>period</term> of <m>f</m>.
+              <idx><h>period</h><h>of a function</h></idx>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We have already seen a family of periodic functions in <xref ref="ConstantandLinearFunctions">Section</xref>:
+      the constant functions.
+      However, despite being periodic a constant function has no period.
+      (We'll leave that odd gem as an exercise for you.)
+    </p>
+    <p>
+      Returning to <m>f(t) = \sin(t)</m>,
+      we see that by <xref ref="periodic">Definition</xref>,
+      <m>f</m> is periodic since <m>\sin(t + 2\pi) = \sin(t)</m>.
+      To determine the period of <m>f</m>,
+      we need to find the smallest real number <m>p</m> so that
+      <m>f(t+p) = f(t)</m> for all real numbers <m>t</m> or,
+      said differently,
+      the smallest positive real number <m>p</m> such that
+      <m>\sin(t+p) = \sin(t)</m> for all real numbers <m>t</m>.
+    </p>
+    <p>
+      We know that <m>\sin(t + 2\pi) = \sin(t)</m> for all real numbers <m>t</m> but the question remains if any smaller real number will do the trick.
+      Suppose <m>p>0</m> and <m>\sin(t + p) = \sin(t)</m> for all real numbers <m>t</m>.
+      Then, in particular,
+      <m>\sin(0+p) = \sin(0)=0</m> so that <m>\sin(p) = 0</m>.
+      From this we know <m>p</m> is a multiple of <m>\pi</m>.
+      Since <m>\sin\left(\frac{\pi}{2} \right) \neq \sin\left(\frac{\pi}{2} + \pi \right)</m>,
+      we know <m>p \neq \pi</m>.
+      Hence, <m>p = 2\pi</m> so the period of <m>f(t) = \sin(t)</m> is <m>2\pi</m>.
+    </p>
+    <p>
+      Having period <m>2\pi</m> essentially means that we can completely understand everything about the function
+      <m>f(t) = \sin(t)</m> by studying <em>one</em>
+      interval of length <m>2\pi</m>, say <m>[0,2\pi]</m>.<fn>
+      Technically, we should study the interval
+      <m>[0,2\pi)</m>,\footnotemark since whatever happens at <m>t=2\pi</m> is the same as what happens at <m>t=0</m>.
+      As we will see shortly,
+      <m>t=2\pi</m> gives us an extra <sq>check</sq> when we go to graph these functions.
+      </fn> For this reason, when graphing sine
+      (and cosine)
+      functions, we typically restrict our attention to graphing these functions over the course of one period to produce one <idx><h>cycle</h><h>of <m>\sin(t)</m> and <m>\cos(t)</m></h></idx>
+      <em>cycle</em> of the graph.
+    </p>
+    <p>
+      Not surprisingly, the graph of
+      <m>g(t) = \cos(t)</m> exhibits similar behavior as <m>f(t) = \sin(t)</m> as seen below.<fn>
+      Here note that the dependent variable <sq><m>y</m></sq> represents the outputs from
+      <m>g(t) = \cos(t)</m> which are <m>x</m>-coordinates on the Unit CIrcle.
+      </fn>
+    </p>
+    <tabular>
+      {m{2.7in}m{3in}}
+      <me>
+        \begin{array}{|r||r|r|}
+        \hline
+        t \amp  \cos(t) \amp  (t,\cos(t)) \\ \hline
+        0  \amp  1 \amp  (0, 1) \\   \hline
+        \frac{\pi}{4}  \amp  \frac{\sqrt{2}}{2} \amp  \left(\frac{\pi}{4}, \frac{\sqrt{2}}{2}\right) \\ \hline
+        \frac{\pi}{2}  \amp  0 \amp  \left(\frac{\pi}{2}, 0\right) \\ \hline
+        \frac{3\pi}{4}  \amp  -\frac{\sqrt{2}}{2} \amp  \left(\frac{3\pi}{4}, -\frac{\sqrt{2}}{2}\right) \\ \hline
+        \pi \amp  -1 \amp  (\pi, -1) \\ \hline
+        \frac{5\pi}{4}  \amp  -\frac{\sqrt{2}}{2} \amp  \left(\frac{5\pi}{4}, -\frac{\sqrt{2}}{2}\right) \\ \hline
+        \frac{3\pi}{2}  \amp  0 \amp  \left(\frac{3\pi}{2}, 0 \right) \\ \hline
+        \frac{7\pi}{4}  \amp  \frac{\sqrt{2}}{2} \amp  \left(\frac{7\pi}{4}, \frac{\sqrt{2}}{2}\right) \\ \hline
+        2\pi  \amp  1 \amp  (2\pi, 1) \\ \hline
+        \end{array}
+      </me>
+      &amp;
+      \begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5}
+      \point[4pt]{(0,1), (0.7854,0.7071), (1.5708,0), (2.3562,-0.7071), (3.1416, -1), (3.9270,-0.7071), (4.7124,0), (5.4978,0.7071), (6.2832,1)}
+      \axes
+      \tlabel[cc](7,-0.15){<m>t</m>}
+      \tlabel[cc](0.25,1.5){<m>y</m>}
+      \tcaption{Graphing <m>y = \cos(t)</m>.}
+      \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 }
+      \ymarks{-1,1}
+      \tlpointsep{4pt}
+      \axislabels {x}{{<m>\frac{\pi}{4}</m>} 0.7854, {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\frac{3\pi}{4}</m>} 2.3562, {<m>\pi</m>} 3.1416, {<m>\frac{5\pi}{4}</m>} 3.9270, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>\frac{7\pi}{4}</m>} 5.4978, {<m>2\pi</m>} 6.2832}
+      \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1}
+      \penwd{1.25pt}
+      \function{0, 6.2832, 0.1}{cos(x)}
+      \end{mfpic}
+    </tabular>
+    <p>
+      Like <m>f(t)=\sin(t)</m>,
+      <m>g(t) = \cos(t)</m> is a wavelike curve with period <m>2\pi</m>.
+      Moreover, the graphs of the sine and cosine functions have the same shape - differing only in what appears to be a horizontal shift.
+      As we'll prove in <xref ref="MoreTrigonometricIdentities">Section</xref>,
+      <m>\sin\left(t + \frac{\pi}{2}\right) = \cos(t)</m>,
+      which means we can obtain the graph of
+      <m>y=\cos(t)</m> by shifting the graph of
+      <m>y=\sin(t)</m> to the left <m>\frac{\pi}{2}</m> units.<fn>
+      Hence, we can obtain the graph of
+      <m>y = \sin(t)</m> by shifting the graph of
+      <m>y = \cos(t)</m> to the <em>right</em>
+      <m>\frac{\pi}{2}</m> units:
+      <m>\cos\left(t - \frac{\pi}{2} \right) = \sin(t)</m>.
+      </fn>
+    </p>
+    <p>
+      \begin{mfpic}[15]{-13}{13}{-1.5}{1.5} \axes \point[4pt]{(0,1), (6.2832,1)} \tlabel[cc](13,-0.5){<m>t</m>} \tcaption{The graph of
+      <m>g(t) = \cos(t)</m>.} \ymarks{-1,1} \tlabel[cc](0.5,1.25){<m>1</m>} \tlabel[cc](0.5,-1){<m>-1</m>} \arrow \reverse \arrow \function{-12.5664, 12.5664, 0.1}{cos(x)} \penwd{1.5pt} \function{0, 6.2832, 0.1}{cos(x)} \end{mfpic}
+    </p>
+    <p>
+      While arguably the most important property shared by <m>f(t) = \sin(t)</m> and
+      <m>g(t) = \cos(t)</m> is their periodic <sq>wavelike</sq> nature,<fn>
+      this is the reason they are so useful in the Sciences and Engineering
+      </fn> their graphs suggest these functions are both continuous and smooth.
+      Recall from <xref ref="GraphsofPolynomials">Section</xref> that,
+      like polynomial functions,
+      the graphs of the sine and cosine functions have no jumps, gaps,
+      holes in the graph, vertical asymptotes, corners or cusps.
+    </p>
+    <p>
+      Moreover, the graphs of both <m>f(t) = \sin(t)</m> and
+      <m>g(t) = \cos(t)</m> meander and never <sq>settle down</sq> as
+      <m>t \rightarrow \pm \infty</m> to any one real number.
+      So even though these functions are <sq>trapped</sq> (or
+          <idx><h>bounded</h></idx>
+      <em>bounded</em>) between <m>-1</m> and <m>1</m>,
+      neither graph has any horizontal asymototes.
+    </p>
+    <p>
+      Lastly, the graphs of <m>f(t) = \sin(t)</m> and
+      <m>g(t) = \cos(t)</m> suggest each enjoy one of the symmetries introduced in <xref ref="GraphsofPolynomials">Section</xref>.
+      The graph of <m>y = \sin(t)</m> appears to be symmetric about the origin while the graph of
+      <m>y = \cos(t)</m> appears to be symmetric about the <m>y</m>-axis.
+      Indeed, as we'll prove in <xref ref="MoreTrigonometricIdentities">Section</xref>,
+      <m>f(t) = \sin(t)</m> is, in fact, an odd function:<fn>
+      The reader may wish to review <xref ref="evenfunctiondefn">Definitions</xref>
+      and <xref ref="oddfunctiondefn"></xref> as needed.
+      </fn> that is,
+      <m>\sin(-t) = -\sin(t)</m> and <m>g(t) = \cos(t)</m> is an even function,
+      so <m>\cos(-t) = \cos(t)</m>.
+    </p>
+    <p>
+      We summarize all of these properties in the following result.
+    </p>
+    <theorem xml:id="cosinesinefunctionprops">
+      <statement>
+        <p>
+          <em>Properties of the Cosine and Sine Functions</em>
+          <idx><h>cosine</h><h>properties of</h></idx>
+          <idx><h>sine</h><h>properties of</h></idx>
+        </p>
+        <tabular>
+          <row>
+            <cell><m>\bullet </m> The function <m>f(t) = \sin(t)</m></cell>
+            <cell><m>\bullet </m> The function <m>g(t) = \cos(t)</m></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><mdash/> has domain <m>(-\infty, \infty)</m></cell>
+            <cell><mdash/> has domain <m>(-\infty, \infty)</m></cell>
+          </row>
+          <row>
+            <cell><mdash/> has range <m>[-1,1]</m></cell>
+            <cell><mdash/> has range <m>[-1,1]</m></cell>
+          </row>
+          <row>
+            <cell><mdash/> is continuous and smooth</cell>
+            <cell><mdash/> is continuous and smooth</cell>
+          </row>
+          <row>
+            <cell><mdash/> is odd</cell>
+            <cell><mdash/> is  even</cell>
+          </row>
+          <row>
+            <cell><mdash/> has period <m>2\pi</m></cell>
+            <cell><mdash/> has period <m>2\pi</m></cell>
+          </row>
+        </tabular>
+        <p>
+          <m>\bullet </m> Conversion formulas:
+          <m>\sin\left(t + \frac{\pi}{2}\right) = \cos(t)</m> and <m>\cos\left(t - \frac{\pi}{2} \right) = \sin(t)</m>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Now that we know the basic shapes of the graphs of
+      <m>y = \sin(t)</m> and <m>y = \cos(t)</m>,
+      we can use the results of <xref ref="Transformations">Section</xref>
+      to graph more complicated functions using transformations.
+      As mentioned already,
+      the fact that both of these functions are periodic means we only have to know what happens over the course of one period of the function in order to determine what happens to all points on the graph.
+      To that end,
+      we graph the <idx><h>fundamental cycle</h><h>of <m>\sin(t)</m> and <m>\cos(t)</m></h></idx>
+      <sq><em>fundamental cycle</em></sq> - the portion of each graph generated over the interval
+      <m>[0, 2\pi]</m> - for each of the sine and cosine functions below.
+    </p>
+    <p>
+      \begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5} \point[4pt]{(0,0), (1.5708,1), (3.1416, 0), (4.7124,-1), (6.2832,0)} \axes \tlabel[cc](7,-0.15){<m>t</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \tlabel[cc](-0.5, -0.15){<m>(0,0)</m>} \tlabel[cc](1.5708, 1.25){<m>\left(\frac{\pi}{2},1 \right)</m>} \tlabel[cc](3.5, 0.15){<m>(\pi,0)</m>} \tlabel[cc](4.7124, -1.25){<m>\left(\frac{3\pi}{2}, -1 \right)</m>} \tlabel[cc](6.2832, 0.15){<m>(2 \pi,0)</m>} \tcaption{The <sq>fundamental cycle</sq> of
+      <m>y = \sin(t)</m>.} \xmarks{1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{-1,1} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832}
+    </p>
+    <p>
+      \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.1pt} \function{0, 6.2832, 0.1}{sin(x)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[25][50]{-1}{7}{-1.5}{1.5} \point[4pt]{(0,1), (1.5708,0), (3.1416, -1), (4.7124,0), (6.2832,1)} \axes \tlabel[cc](7,-0.15){<m>t</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \tlabel[cc](-0.5, 1){<m>(0,1)</m>} \tlabel[cc](2, 0.15){<m>\left(\frac{\pi}{2},0 \right)</m>} \tlabel[cc](3.1416, -1.25){<m>(\pi,-1)</m>} \tlabel[cc](5.5, 0.15){<m>\left(\frac{3\pi}{2}, 0 \right)</m>} \tlabel[cc](6.2832, 1.25){<m>(2 \pi,1)</m>} \tcaption{The <sq>fundamental cycle</sq> of
+      <m>y = \cos(t)</m>.} \xmarks{1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{-1,1} \tlpointsep{4pt}
+    </p>
+    <p>
+      \axislabels {x}{ {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832}
+    </p>
+    <p>
+      \axislabels {y}{{<m>-1</m>} -1} \penwd{1.1pt} \function{0, 6.2832, 0.1}{cos(x)} \end{mfpic}
+    </p>
+    <p>
+      In working through <xref ref="Transformations">Section</xref>,
+      it was very helpful to track <sq>key points</sq> through the transformations.
+      The <sq>key points</sq> we've indicated on the graphs above correspond to the quadrantal angles and generate the zeros and the extrema of functions.
+      Since the quadrantal angles divide the interval
+      <m>[0,2\pi]</m> into four equal pieces,
+      we shall refer to these angles henceforth as the <sq>quarter marks.</sq>
+    </p>
+    <p>
+      It is worth noting that because the transformations discussed in <xref ref="Transformations">Section</xref> are linear,<fn>
+      See the remarks at the beginning of <xref ref="Transformations">Section</xref>.
+      </fn> the <em>relative spacing</em>
+      of the points before and after the transformations remains the same.<fn>
+      If we use a linear function
+      <m>f(t) = mt + b</m> to transform the inputs, <m>t</m>,
+      then <m>\Delta[f(t)] = m \Delta t</m>.
+      That is, the change <em>after</em>
+      the the transformation, <m>m \Delta t</m>,
+      is just a multiple of the change <em>before</em>
+      the transformation, <m>\Delta t</m>.
+      </fn> In particular,
+      wherever the interval <m>[0, 2\pi]</m> is mapped,
+      the quarter marks of the new interval correspond to the quarter marks of
+      <m>[0, 2\pi]</m>. (Can you see why?) We will exploit this fact in the following example.
+    </p>
+    <example xml:id="cosinesinegraphex1">
+      <statement>
+        <p>
+          Graph one cycle of the following functions.
+          State the period of each.
+          <ol>
+            <li>
+              <p>
+                <m>f(t) = 3 \sin(2t)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = 2 \cos\left(t +\frac{\pi}{2} \right) +1</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                One way to proceed is to use <xref ref="transformationsthm">Theorem</xref>
+                and follow the procedure outlined there.
+                Starting with the fundamental cycle of <m>y= \sin(t)</m>,
+                we divide each <m>t</m>-coordinate by <m>2</m> and multiply each <m>y</m>-coordinate by 3 to obtain one cycle of
+                <m>y = 3 \sin(2t)</m>. \begin{mfpic}[20]{-1}{7}{-3.5}{3.5} \point[4pt]{(0,0), (1.5708,1), (3.1416, 0), (4.7124,-1), (6.2832,0)} \axes \tlabel[cc](7,-0.15){<m>t</m>} \tlabel[cc](0.25,3.5){<m>y</m>} \tlabel[cc](-0.5, -0.4){<m>(0,0)</m>} \tlabel[cc](1.5708, 1.5){<m>\left(\frac{\pi}{2},1 \right)</m>} \tlabel[cc](3.5, 0.4){<m>(\pi,0)</m>} \tlabel[cc](4.7124, -1.5){<m>\left(\frac{3\pi}{2}, -1 \right)</m>} \tlabel[cc](6.2832, 0.4){<m>(2 \pi,0)</m>} \tcaption{The <sq>fundamental cycle</sq> of
+                <m>y = \sin(t)</m>.} \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{4}</m>} 0.7854, {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\frac{3\pi}{4}</m>} 2.3562, {<m>\pi</m>} 3.1416, {<m>\frac{5\pi}{4}</m>} 3.9270, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>\frac{7\pi}{4}</m>} 5.4978, {<m>2\pi</m>} 6.2832} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>-2</m>} -2, , {<m>-3</m>} -3} \penwd{1.1pt} \function{0, 6.2832, 0.1}{sin(x)} \end{mfpic} \begin{mfpic}[20]{-1}{7}{-3.5}{3.5} \point[4pt]{(0,0), (0.7854,3), (1.5708, 0), (2.3562,-3), (3.1416,0)} \axes \tlabel[cc](7,-0.15){<m>t</m>} \tlabel[cc](0.25,3.5){<m>y</m>} \tlabel[cc](-0.5, 0.4){<m>(0,0)</m>} \tlabel[cc](1.5, 3){<m>\left(\frac{\pi}{4},3 \right)</m>} \tlabel[cc](0.9, -0.4){<m>\left( \frac{\pi}{2}, 0 \right)</m>} \tlabel[cc](2.3562, -3.5){<m>\left(\frac{3\pi}{4}, -3 \right)</m>} \tlabel[cc](3.1416, 0.4){<m>(\pi,0)</m>} \tcaption{One cycle of
+                <m>y = 3 \sin(2t)</m>.} \xmarks{0.7854, 1.5708, 2.3562, 3.1416, 3.9270, 4.7124,5.4978,6.2832 } \ymarks{-1,1, -2, 2, -3, 3} \tlpointsep{4pt} \axislabels {x}{ {<m>\frac{3\pi}{4}</m>} 2.3562, {<m>\pi</m>} 3.1416, {<m>\frac{5\pi}{4}</m>} 3.9270, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>\frac{7\pi}{4}</m>} 5.4978, {<m>2\pi</m>} 6.2832} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>-2</m>} -2, , {<m>-3</m>} -3} \penwd{1.1pt} \function{0, 3.1416, 0.1}{3*sin(2*x)} \end{mfpic} Since one cycle of <m>y=f(t)</m> is completed over the interval <m>[0, \pi]</m>,
+                the period of <m>f</m> is <m>\pi</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Starting with the fundamental cycle of
+                <m>y = \cos(t)</m> and using <xref ref="transformationsthm">Theorem</xref>,
+                we subtract <m>\frac{\pi}{2}</m> from each of the <m>t</m>-coordinates,
+                then multiply each <m>y</m>-coordinate by <m>2</m>,
+                and add <m>1</m> to each <m>y</m>-coordinate.
+                We find one cycle of <m>y=g(t)</m> is completed over the interval <m>\left[ -\frac{\pi}{2}, \frac{3\pi}{2} \right]</m>,
+                the period is <m>\frac{3\pi}{2} - \left(- \frac{\pi}{2} \right) = 2\pi</m>. \begin{mfpic}[20]{-2}{7}{-3.5}{3.5} \point[4pt]{(0,1), (1.5708,0), (3.1416, -1), (4.7124,0), (6.2832,1)} \axes \tlabel[cc](7,-0.15){<m>t</m>} \tlabel[cc](0.25,3.5){<m>y</m>} \tlabel[cc](-0.75, 1){<m>(0,1)</m>} \tlabel[cc](2, 0.5){<m>\left(\frac{\pi}{2},0 \right)</m>} \tlabel[cc](3.1416, -1.5){<m>(\pi,-1)</m>} \tlabel[cc](4, 0.5){<m>\left(\frac{3\pi}{2}, 0 \right)</m>} \tlabel[cc](7, 1){<m>(2 \pi,1)</m>} \tcaption{The <sq>fundamental cycle</sq> of
+                <m>y = \cos(t)</m>.} \xmarks{-1.5708, 1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{-1,1, -2, 2, -3, 3} \tlpointsep{4pt} \axislabels {x}{ {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832, {<m>-\frac{\pi}{2}</m> } -1.5708 } \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.1pt} \function{0, 6.2832, 0.1}{cos(x)} \end{mfpic} \begin{mfpic}[20]{-2}{7}{-3.5}{3.5} \point[4pt]{(-1.5708,3), (0,1), (1.5708, -1), (3.1416,1), (4.7124,3)} \axes \tlabel[cc](7,-0.15){<m>t</m>} \tlabel[cc](0.25,3.5){<m>y</m>} \tlabel[cc](-2.5, 3){<m>\left( -\frac{\pi}{2}, 3 \right)</m>} \tlabel[cc](-0.75, 1){<m>\left(0, 1 \right)</m>} \tlabel[cc](1.5708, -1.5){<m>\left(\frac{\pi}{2},-1 \right)</m>} \tlabel[cc](3.75, 1){<m>(\pi,1)</m>} \tlabel[cc](5.5, 3){<m>\left(\frac{3\pi}{2}, 3 \right)</m>} \tcaption{One cycle of
+                <m>y = 2\cos\left(t+\frac{\pi}{2} \right)</m>+1} \xmarks{-1.5708, 1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{-1,1, -2, 2, -3, 3} \tlpointsep{4pt} \axislabels {x}{ {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832, {<m>-\frac{\pi}{2}</m> } -1.5708} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.1pt} \function{-1.5708, 4.7124, 0.1}{(2*cos(x+1.5708))+1} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As previously mentioned,
+      the curves graphed in <xref ref="cosinesinegraphex1">Example</xref> are examples of sinusoids.
+      A sinusoid is the result of taking the graph of <m>y = \sin(t)</m> or
+      <m>y = \cos(t)</m> and performing any of the transformations mentioned in <xref ref="Transformations">Section</xref>.
+      We graph one cycle of a generic sinusoid below.
+      Sinusoids can be characterized by four properties:
+      period, phase shift, vertical shift
+      (or <sq>baseline</sq>),
+      and amplitude.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-6.5}{6.5}{-6.5}{6.5} \dashed \polyline{(-6.2832,0), (6.2832,0)}
+    </p>
+    <p>
+      \arrow \reverse \arrow \polyline{(-3.1416, 0.25), (-3.1416, 5.75)} \gclear \tlabelrect[cc](-3.1416, 3){amplitude} \gclear \tlabelrect[cc](3.1416, 0){baseline} \arrow \reverse \arrow \polyline{(-6.2832,-6.5), (6.2832,-6.5)} \gclear \tlabelrect[cc](0, -6.5){period} \penwd{1.25pt} \function{-6.2832, 6.2832, 0.1}{0-6*sin(x/2)} \end{mfpic}
+          <idx><h>sinusoid</h><h>graph of</h></idx>
+    </p>
+    <p>
+      We have already discussed the period of a sinusoid.
+      If we think of <m>t</m> as measuring time,
+      the period is how long it takes for the sinusoid to complete one cycle and is usually represented by the letter <m>T</m>.
+      The standard period of both <m>\sin(t)</m> and <m>\cos(t)</m> is <m>2\pi</m>,
+      but horizontal scalings will change this.
+    </p>
+    <p>
+      In <xref ref="cosinesinegraphex1">Example</xref>, for instance,
+      the function <m>f(t) = 3 \sin(2t)</m> has period <m>\pi</m> instead of <m>2\pi</m> because the graph is horizontally compressed by a factor of <m>2</m> as compared to the graph of <m>y = \sin(t)</m>.
+      However, the period of <m>g(t) = 2 \cos\left(t +\frac{\pi}{2} \right) +1</m> is the same as the period of <m>\cos(t)</m>,
+      <m>2\pi</m>, since there are no horizontal scalings.
+    </p>
+    <p>
+      The
+          <idx><h>phase shift</h></idx>
+          <idx><h>sinusoid</h><h>phase shift</h></idx>
+      <em>phase shift</em> of the sinusoid is the horizontal shift.
+      Again, thinking of <m>t</m> as time,
+      the phase shift of a sinusoid can be thought of as when the sinusoid <sq>starts</sq> as compared to <m>t=0</m>.
+      Assuming there are no reflections across the <m>y</m>-axis,
+      we can determine the phase shift of a sinusoid by finding where the value <m>t=0</m> on the graph of <m>y = \sin(t)</m> or
+      <m>y=\cos(t)</m> is mapped to under the transformations.
+    </p>
+    <p>
+      For <m>f(t) = 3 \sin(2t)</m>,
+      the phase shift is <sq><m>0</m></sq> since the value <m>t=0</m> on the graph of
+      <m>y = \sin(t)</m> remains stationary under the transformations.
+      Loosely speaking, this means both <m>y=\sin(t)</m> and
+      <m>y=3\sin(2t)</m> <sq>start</sq> at the same time.
+      The phase shift of <m>g(t) = 2 \cos\left(t +\frac{\pi}{2} \right) +1</m> is
+      <m>-\frac{\pi}{2}</m> or <sq><m>\frac{\pi}{2}</m> to the
+      <em>left</em></sq> since the value <m>t = 0</m> on the graph of <m>y=\cos(t)</m> is mapped to
+      <m>t = -\frac{\pi}{2}</m> on the graph of <m>y= 2 \cos\left(t +\frac{\pi}{2} \right) +1</m>.
+      Again, loosely speaking,
+      this means <m>y=2 \cos\left(t +\frac{\pi}{2} \right) +1</m> starts <m>\frac{\pi}{2}</m> time units
+      <em>earlier</em> than <m>y=\cos(t)</m>.
+    </p>
+    <p>
+      The vertical shift of a sinusoid is exactly the same as the vertical shifts in <xref ref="Transformations">Section</xref>
+      and determines the new <sq>baseline</sq> of the sinusoid.
+      Thanks to symmetry,
+      the vertical shift can always be found by averaging the maximum and minimum values of the sinusoid.
+      For <m>f(t) = 3 \sin(2t)</m>,
+      the vertical shift is <m>0</m> whereas the vertical shift of
+      <m>g(t) = 2 \cos\left(t +\frac{\pi}{2} \right) +1</m> is <m>1</m> or <sq><m>1</m> up.</sq>
+    </p>
+    <p>
+      The
+          <idx><h>amplitude</h></idx>
+          <idx><h>sinusoid</h><h>amplitude</h></idx>
+      <em>amplitude</em> of the sinusoid is a measure of how <sq>tall</sq> the wave is,
+      as indicated in the figure below.
+      Said differently,
+      the amplitude measures how much the curve gets displaced from its <sq>baseline. </sq> The amplitude of the standard cosine and sine functions is <m>1</m>,
+      but vertical scalings can alter this.
+    </p>
+    <p>
+      In <xref ref="cosinesinegraphex1">Example</xref>,
+      the amplitude of <m>f(t) = 3 \sin(2t)</m> is <m>3</m>,
+      owing to the vertical stretch by a factor of <m>3</m> as compared with the graph of <m>y = \sin(t)</m>.
+      In the case of <m>g(t) = 2 \cos\left(t +\frac{\pi}{2} \right) +1</m>,
+      the amplitude is <m>2</m> due to its vertical stretch as compared with the graph of <m>y = \cos(t)</m>.
+      Note that the <sq><m>+1</m></sq> here does <em>not</em>
+      affect the amplitude of the curve;
+      it merely changes the <sq>baseline</sq> from <m>y=0</m> to <m>y=1</m>.
+    </p>
+    <p>
+      The following theorem shows how these four fundamental quantities relate to the parameters which describe a generic sinusoid.
+      The proof follows from <xref ref="transformationsthm">Theorem</xref>
+      and is left to the reader in <xref ref="proofsinusoidformexercise">Exercise</xref>.
+    </p>
+    <theorem xml:id="sinusoidform">
+      <statement>
+        <p>
+          For <m>\omega > 0</m>, the graphs of
+          <me>
+            S(t) = A \sin(\omega t + \phi) + B  \text{ and }   C(t) = A \cos(\omega t + \phi) + B
+          </me>
+          <ul>
+            <li>
+              <p>
+                have period
+                  <idx><h>sinusoid</h><h>period</h></idx>
+                  <idx><h>period</h><h>of a sinusoid</h></idx> <m>T = \dfrac{2\pi}{\omega}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                have amplitude <idx><h>sinusoid</h><h>amplitude</h></idx>
+                  <idx><h>amplitude</h></idx>
+                <m>|A|</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                have phase shift<idx><h>sinusoid</h><h>phase shift</h></idx>
+                  <idx><h>phase shift</h></idx> <m>-\dfrac{\phi}{\omega}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                have vertical shift or <sq>baseline</sq><idx><h>sinusoid</h><h>vertical shift</h></idx>
+                  <idx><h>sinusoid</h><h>baseline</h></idx> <m>B</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The parameter <m>\omega</m> mentioned above is called the
+      <em>angular frequency</em>, or more simply,
+      the <em>frequency</em> <idx><h>angular frequency</h><h>of a sinusoid</h></idx> of the sinusoid and is the number of cycles the sinusoid completes over an interval of length <m>2\pi</m>.
+      That is, <m>\omega</m> measures how <sq>frequently</sq> the sinusoid repeats over an interval of length <m>2\pi</m>.
+      As we'll see in the next example,
+      we can always ensure <m>\omega > 0</m> using the even and odd properties of the cosine and sine functions,
+      respectively.
+      If <m>t</m> represents time,
+      <m>\omega</m> as represents how fast the sinusoid is being generated in terms of
+      <em>radians</em> per unit time.
+      In essence, it is the <em>angular speed</em> of the curve.
+    </p>
+    <p>
+      A quantity closely related to the angular frequency of the sinusoid is the
+          <idx><h>ordinary frequency</h></idx>
+          <idx><h>ordinary frequency</h><h>of a sinusoid</h></idx>
+      <em>ordinary frequency</em> of the sinusoid, usually denoted <m>f</m>.
+      The ordinary frequency of a sinusoid measures the number of cycles the sinusoid completes over an interval of length <m>1</m>.
+      Since the period,
+      <m>T</m> represents the length of the interval required for a sinusoid to make one complete cycle,
+      we have <m>f =\frac{1}{T}</m>.
+      Once again, if <m>t</m> represents time,
+      the ordinary frequency measures how fast the sinusoid is being generated in terms of
+      <em>complete cycles</em> per unit time.<fn>
+      If <m>t</m> is time measured in seconds,
+      then one cycle per second is 1
+          <idx><h>Hertz</h></idx>
+      <em>Hertz</em>.
+      </fn>
+    </p>
+    <p>
+      Note that since <m>T = \frac{2 \pi}{\omega}</m>,
+      <m>f = \frac{1}{T} = \frac{\omega}{2\pi}</m>.
+      Rewriting, we get <m>\omega = 2 \pi f</m>.
+      To understand this equation in terms of units,
+      recall <m>1</m> complete cycle (revolution) around the Unit Circle counts for <m>2\pi</m> radians.
+      Hence, to get from <m>f</m>,
+      measured in cycles per unit time, to <m>\omega</m>,
+      measured in radians per unit time,
+      we need to multiply by <m>2\pi</m>.
+    </p>
+    <p>
+      If the concepts of period and frequency seem familiar,
+      they should.
+      In <xref ref="RadianMeasure">Section</xref>,
+      we discussed these very same ideas in the context of <xref ref="EarthRotationEx">Example</xref>
+      and revisited them again in <xref ref="TheCircularFunctionsSineandCosine">Section</xref>
+      in <xref ref="equationsforcircularmotion">Equation</xref>. and <xref ref="Lakelandrotates">Example</xref>.
+      On the one hand, the notions presented here are more general,
+      since they are not tied directly to circular motion.
+      On the other hand, the stipulation in this section that
+      <m>\omega > 0</m> means we are restricting our attention to angular <em>speeds</em>
+      instead of the more general angular
+      <em>velocities</em>.<fn>
+      Recall that velocity is speed with a direction.
+      <xref ref="equationsforcircularmotion">In</xref>,
+      <m>\omega > 0</m> indicated counter-clockwise motion while
+      <m>\omega \lt 0</m> indicated clockwise motion.
+      </fn>
+    </p>
+    <p>
+      Last, but not least,
+      the quantity <m>\phi</m> mentioned in <xref ref="sinusoidform">Theorem</xref> is called the
+          <idx><h>phase</h></idx>
+          <idx><h>sinusoid</h><h>phase</h></idx>
+      <em>phase</em> or <em>phase angle</em> of the sinusoid.
+      The phase of a sinusoid is the angle in the argument which corresponds to <m>t=0</m>,
+      and is important in describing waves in fields such as physics and electronics.
+      When <em>graphing</em> sinusoids, however,
+      we focus our attention on the horizontal shift induced by <m>\phi</m>,
+      <m>-\frac{\phi}{\omega}</m>.
+    </p>
+    <p>
+      We put <xref ref="sinusoidform">Theorem</xref>
+      to good use in the next example.
+    </p>
+    <example xml:id="cosinesinegraphex2">
+      <statement>
+        <p>
+          Use <xref ref="sinusoidform">Theorem</xref> to determine the frequency,
+          period, phase shift, amplitude,
+          and vertical shift of each of the following functions and use this information to graph one cycle of each function.
+          <ol>
+            <li>
+              <p>
+                <m>f(t) = 3 \cos\left(\frac{\pi t - \pi}{2}\right) + 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = \frac{1}{2} \sin(\pi - 2t) + \frac{3}{2}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To use <xref ref="sinusoidform">Theorem</xref>,
+                we first need to rewrite <m>f(t)</m> in the form prescribed by <xref ref="sinusoidform">Theorem</xref>.
+                To that end, we rewrite:
+                <m>f(t) =  3 \cos\left(\frac{\pi t - \pi}{2}\right) + 1 = 3\cos\left(\frac{\pi}{2} t + \left(-\frac{\pi}{2}\right)\right) + 1</m>.
+                From this, we identify  <m>A = 3</m>,
+                <m>\omega = \frac{\pi}{2}</m>,
+                <m>\phi = -\frac{\pi}{2}</m> and <m>B = 1</m>.
+                According to <xref ref="sinusoidform">Theorem</xref>,
+                the frequency  is <m>\omega = \frac{\pi}{2}</m>,
+                the period  is <m>T=\frac{2\pi}{\omega} = \frac{2\pi}{\pi/2} = 4</m>,
+                the phase shift is <m>-\frac{\phi}{\omega} = -\frac{-\pi/2}{\pi/2} = 1</m>
+                (indicating a shift to the <em>right</em> <m>1</m> unit),
+                the amplitude  is <m>|A| = |3| = 3</m>,
+                and the vertical shift is <m>B = 1</m>
+                (indicating a shift <em>up</em> <m>1</m> unit.)
+                To graph <m>y = f(t)</m>, we know one cycle begins at <m>t=1</m>
+                (the phase shift.)
+                Since the period is <m>4</m>,
+                we know the cycle ends <m>4</m> units later at <m>t=1+4 = 5</m>.
+                If we divide the interval <m>[1,5]</m> into four equal pieces,
+                each piece has length <m>\frac{4}{4} = 1</m>.
+                Hence, we to get our quarter marks,
+                we start with <m>t=1</m> and add <m>1</m> unit until we reach the endpoint,
+                <m>t=5</m>.
+                Our new quarter marks are:
+                <m>t=1</m>, <m>t=2</m>, <m>t=3</m>,
+                <m>t=4</m>, and <m>t=5</m>.
+                We now substitute these new quarter marks into <m>f(t)</m> to obtain the corresponding <m>y</m>-values on the graph.<fn>
+                Note when we substitute the quarter marks into <m>f(t)</m>,
+                the argument of the cosine function simplifies to the quadrantal angles.
+                That is, when we substitute <m>t=1</m>,
+                the argument of cosine simplifies  to <m>0</m>;
+                when we substitute <m>t=2</m>,
+                the argument simplifies  <m>\frac{\pi}{2}</m> and so on.
+                This provides a quick check of our calculations.
+                </fn>  We connect the dots in a <sq>wavelike</sq> fashion to produce the graph below on the right.
+                Note that we can (partially) spot-check our answer by noting the average of the maximum and minimum is <m>\frac{4+(-2)}{2} = 1</m>
+                (our vertical shift)
+                and the amplitude,  <m>4 - 1 = 1 - (-2) = 3</m> is indeed <m>3</m>.
+                <tabular>
+                  {m{2.7in}m{3in}}
+                  <me>
+                    \begin{array}{|r||r|r|}  \hline  t \amp  f(t) \amp  (t,f(t)) \\ \hline 1  \amp  4 \amp  (1,4) \\   \hline  2  \amp  1 \amp  (2,1) \\ \hline  3 \amp  -2 \amp  (3,-2) \\ \hline  4  \amp  1 \amp  (4,1) \\ \hline  5 \amp  4 \amp  (5,4) \\ \hline \end{array}
+                  </me>
+                  &amp;  \begin{mfpic}[15]{-1}{6}{-3}{5} \point[4pt]{(1,4), (2,1), (3,-2), (4,1), (5, 4)} \axes \tlabel[cc](6,-0.25){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \tcaption{One cycle  of <m>y = f(t)</m>.} \xmarks{1,2,3,4,5} \ymarks{-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \axislabels {y}{{ <m>-2</m>} -2,{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \function{1, 5, 0.1}{3*cos((3.14159*x - 3.14159)/2)+1} \end{mfpic}
+                </tabular>
+                Thought not asked for,
+                this example provides a nice opportunity to interpret the ordinary frequency:
+                <m>f = \frac{1}{T} = \frac{1}{4}</m>.
+                Hence,  <m>\frac{1}{4}</m> of the sinusoid is traced out over an interval that is <m>1</m> unit long.
+              </p>
+            </li>
+            <li>
+              <p>
+                Turning our attention now to the function <m>g</m>,
+                we first note that the coefficient of <m>t</m> is negative.
+                In order to use <xref ref="sinusoidform">Theorem</xref>,
+                we need that coefficient to be positive.
+                Hence, we first use the odd property of the sine function to rewrite
+                <m>\sin(\pi-2t)</m> so that instead of a coefficient of <m>-2</m>,
+                <m>t</m> has a coefficient of <m>2</m>.
+                We get <m>\sin(\pi-2t) = \sin(-2t+\pi) = \sin(- (2t-\pi)) = -\sin(2t-\pi)</m>.
+                Hence,   <m>g(t) =  -\frac{1}{2} \sin(2t + (-\pi)) + \frac{3}{2}</m>.
+                We idenitfy <m>A = -\frac{1}{2}</m>,
+                <m>\omega = 2</m>, <m>\phi = -\pi</m> and <m>B = \frac{3}{2}</m>.
+                The frequency is <m>\omega = 2</m>,
+                the period is  <m>T=\frac{2\pi}{2} = \pi</m>,
+                the phase shift is <m>-\frac{-\pi}{2} = \frac{\pi}{2}</m>
+                (indicating a shift <em>right</em>
+                <m>\frac{\pi}{2}</m> units),
+                the amplitude is <m>\left| - \frac{1}{2} \right| = \frac{1}{2}</m>,
+                and, finally,
+                the vertical shift is <em>up</em> <m>\frac{3}{2}</m>.
+                Proceeding as before, we know one cycle of <m>g</m> starts at
+                <m>t = \frac{\pi}{2}</m> and ends at <m>t = \frac{\pi}{2} + \pi = \frac{3\pi}{2}</m>.
+                Dividing the interval <m>\left[ \frac{\pi}{2}, \frac{3 \pi}{2} \right]</m> into four equal pieces  gives pieces of length  <m>\frac{\pi}{4}</m> units.
+                Hence, to obtain our new quarter marks,
+                we start at <m>t = \frac{\pi}{2}</m> and add
+                <m>\frac{\pi}{4}</m> until we reach <m>t=\frac{3\pi}{2}</m>.
+                Our new quarter marks are:
+                <m>t = \frac{\pi}{2}</m>, <m>t = \frac{3\pi}{4}</m>,
+                <m>t = \pi</m>, <m>t = \frac{5\pi}{4}</m>,
+                <m>t = \frac{3\pi}{2}</m>.
+                Substituting these values into <m>g</m> gives us the points to plot to produce the graph below on the right.
+                Again, we can quickly check the vertical shift by averaging the maximum and minimum values:
+                <m>\frac{2+1}{2} = \frac{3}{2}</m> and verify the amplitude:
+                <m>2 - \frac{3}{2} = \frac{3}{2} - 1 = \frac{1}{2}</m>.
+                <tabular>
+                  {m{2.7in}m{3in}}
+                  <me>
+                    \begin{array}{|r||r|r|}  \hline  t \amp  g(t) \amp  (t,g(t)) \\ \hline \frac{\pi}{2} \amp  \frac{3}{2} \amp  \left(\frac{\pi}{2}, \frac{3}{2}\right)  \\   \hline  \frac{3\pi}{4} \amp  1 \amp  \left(\frac{3\pi}{4} , 1 \right) \\ \hline  \pi \amp  \frac{3}{2} \amp  \left(\pi , \frac{3}{2} \right)  \\ \hline  \frac{5\pi}{4}  \amp  2 \amp   \left(\frac{5\pi}{4} , 2 \right) \\ \hline  \frac{3\pi}{2} \amp  \frac{3}{2} \amp  \left(\frac{3\pi}{2}, \frac{3}{2} \right) \\ \hline \end{array}
+                  </me>
+                  &amp;  \begin{mfpic}[25]{-1}{5.5}{0}{3}  \point[4pt]{(1.5708,1.5), (2.356, 1), (3.1416, 1.5),  (3.927, 2), (4.712, 1.5)} \axes \tlabel[cc](5.5,-0.25){<m>t</m>} \tlabel[cc](0.25,3){<m>y</m>} \tcaption{One cycle  of <m>y = g(t)</m>.} \xmarks{0.7854,1.5708, 2.356, 3.1416, 4.712} \ymarks{1,2} \tlpointsep{4pt} \axislabels {x}{ { <m>\dfrac{\pi}{4}</m>} 0.7854,  { <m>\dfrac{\pi}{2}</m>} 1.5708,  { <m>\dfrac{3\pi}{4}</m>} 2.356,  { <m>\pi</m>} 3.1416,  { <m>\dfrac{5\pi}{4}</m>} 3.927,   { <m>\dfrac{3\pi}{2}</m>} 4.712} \axislabels {y}{ { <m>1</m>} 1, { <m>2</m>} 2} \penwd{1.25pt} \function{1.5708, 4.712, 0.1}{0.5*sin(3.14159-2*x)+1.5} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that in this section,
+      we have discussed <em>two</em> ways to graph sinusoids:
+      using <xref ref="transformationsthm">Theorem</xref>
+      from <xref ref="Transformations">Section</xref>
+      and using <xref ref="sinusoidform">Theorem</xref>.
+      Both methods will produce one cycle of the resulting sinusoid,
+      but each method may produce a <em>different</em>
+      cycle of the same sinusoid.
+    </p>
+    <p>
+      For example, if we graphed the function
+      <m>g(t) = \frac{1}{2} \sin(\pi - 2t) + \frac{3}{2}</m> from <xref ref="cosinesinegraphex2">Example</xref>
+      using <xref ref="transformationsthm">Theorem</xref>, we obtain the following:
+    </p>
+    <tabular>
+      {m{2in}m{1.5in}m{1.5in}}
+      <me>
+        \begin{array}{|r||r|r|}
+        \hline
+        t \amp  g(t) \amp  (t,g(t)) \\ \hline
+        \frac{\pi}{2} \amp  \frac{3}{2} \amp  \left(\frac{\pi}{2}, \frac{3}{2}\right)  \\   \hline
+        \frac{\pi}{4} \amp  2 \amp  \left(\frac{\pi}{4}, 2\right) \\ \hline
+        0 \amp  \frac{3}{2} \amp  \left(0, \frac{3}{2} \right)  \\ \hline
+        -\frac{\pi}{4}  \amp  1 \amp   \left(-\frac{\pi}{4}, 1 \right) \\ \hline
+        -\frac{\pi}{2} \amp  \frac{3}{2} \amp  \left(-\frac{\pi}{2}, \frac{3}{2} \right) \\ \hline
+        \end{array}
+      </me>
+      &amp;
+      \begin{mfpic}[25]{-2}{2}{0}{3}
+      \point[3pt]{(1.5708,1.5), (0.7854,2), (0,1.5), (-0.7854,1), (-1.5708,1.5)}
+      \axes
+      \tlabel[cc](2,-0.25){<m>t</m>}
+      \tlabel[cc](0.25,3){<m>y</m>}
+      \tcaption{One cycle via <xref ref="transformationsthm">Theorem</xref>.}
+      \xmarks{-1.5708,-0.7854,0.7854,1.5708}
+      \ymarks{1,2}
+      \tlpointsep{4pt}
+      \axislabels {x}{{ <m>-\dfrac{\pi}{2}</m>} -1.5708, { <m>-\dfrac{\pi}{4}</m>} -0.7854, { <m>\dfrac{\pi}{4}</m>} 0.7854,  { <m>\dfrac{\pi}{2}</m>} 1.5708}
+      \axislabels {y}{ { <m>1</m>} 1, { <m>2</m>} 2}
+      \penwd{1.25pt}
+      \function{-1.5708, 1.5708, 0.1}{0.5*sin(3.14159-2*x)+1.5}
+      \end{mfpic} &amp;
+      \begin{mfpic}[25]{-1}{5.5}{0}{3}
+      \point[4pt]{(1.5708,1.5), (2.356, 1), (3.1416, 1.5),  (3.927, 2), (4.712, 1.5)}
+      \axes
+      \tlabel[cc](5.5,-0.25){<m>t</m>}
+      \tlabel[cc](0.25,3){<m>y</m>}
+      \tcaption{One cycle  via <xref ref="sinusoidform">Theorem</xref>.}
+      \xmarks{0.7854,1.5708, 2.356, 3.1416, 4.712}
+      \ymarks{1,2}
+      \tlpointsep{4pt}
+      \axislabels {x}{ { <m>\dfrac{\pi}{4}</m>} 0.7854,  { <m>\dfrac{\pi}{2}</m>} 1.5708,  { <m>\dfrac{3\pi}{4}</m>} 2.356,  { <m>\pi</m>} 3.1416,  { <m>\dfrac{5\pi}{4}</m>} 3.927,   { <m>\dfrac{3\pi}{2}</m>} 4.712}
+      \axislabels {y}{ { <m>1</m>} 1, { <m>2</m>} 2}
+      \penwd{1.25pt}
+      \function{1.5708, 4.712, 0.1}{0.5*sin(3.14159-2*x)+1.5}
+      \end{mfpic}
+    </tabular>
+    <p>
+      Comparing this result with the one obtained in <xref ref="cosinesinegraphex2">Example</xref> side by side,
+      we see that one cycle ends right where the other starts.
+      The cause of this discrepancy goes back to using the odd property of sine.
+    </p>
+    <p>
+      Essentially,
+      the odd property of the sine function converts a reflection across the <m>y</m>-axis into a reflection across the <m>t</m>-axis. (Can you see why?) For this reason,
+      whenever the coefficient of <m>t</m> is negative,
+      <xref ref="transformationsthm">Theorems</xref>
+      and <xref ref="sinusoidform"></xref>
+      will produce different results.
+    </p>
+    <p>
+      In the Exercises,
+      we assume the problems are worked using <xref ref="sinusoidform">Theorem</xref>.
+      If you choose to use <xref ref="transformationsthm">Theorems</xref> instead,
+      your answer may look different than what is provided even though both your answer and the textbook's answer represent <em>one</em>
+      cycle of the <em>same</em> function.
+    </p>
+    <p>
+      In the next example, we use <xref ref="sinusoidform">Theorem</xref>
+      to determine the formula of a sinusoid given the graph of one cycle.
+      Note that in some disciplines,
+      sinusoids are written in terms of sines whereas in others,
+      cosines functions are preferred.
+      To cover all bases, we ask for both.
+    </p>
+    <example xml:id="fitsinusoidtodata1">
+      <statement>
+        <p>
+          Below is the graph of one complete cycle of a sinusoid <m>y=f(t)</m>.
+        </p>
+        <p>
+          \begin{mfpic}[25]{-2}{6}{-3}{4} \point[4pt]{(-1,2.5), (0.5,0.5), (2,-1.5), (3.5,0.5), (5,2.5)} \tlabel(-2.25,2.35){ <m>\left(-1,\frac{5}{2}\right)</m>} \tlabel(0.75,0.35){ <m>\left(\frac{1}{2},\frac{1}{2}\right)</m>} \tlabel[cc](2,-2){
+          <m>\left(2,-\frac{3}{2}\right)</m>} \tlabel(3.75,0.35){ <m>\left(\frac{7}{2},\frac{1}{2}\right)</m>} \tlabel(5.25,2.35){
+          <m>\left(5,\frac{5}{2}\right)</m>} \axes \tlabel[cc](6,-0.25){<m>t</m>} \tlabel[cc](0.25,4){<m>y</m>} \tcaption{One cycle of
+          <m>y = f(t)</m>.} \xmarks{-1,1,2,3,4,5} \ymarks{-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \axislabels {y}{ { <m>-2</m>} -2,{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3}
+        </p>
+        <p>
+          \penwd{1.25pt} \function{-1, 5, 0.1}{2*cos(3.14159265*(x+1)/3)+0.5} \end{mfpic}
+          <ol>
+            <li>
+              <p>
+                Write <m>f(t)</m> in the form
+                <m>C(t) = A \cos(\omega t + \phi) + B</m>, for <m>\omega > 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Write <m>f(t)</m> in the form
+                <m>S(t) = A \sin(\omega t + \phi) + B</m>, for <m>\omega > 0</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since one cycle is graphed over the interval <m>[-1,5]</m>,
+                its period is <m>T=5-(-1) = 6</m>.
+                According to <xref ref="sinusoidform">Theorem</xref>,
+                <m>6 = T = \frac{2\pi}{\omega}</m>,
+                so that <m>\omega = \frac{\pi}{3}</m>.
+                Next, we see that the phase shift is <m>-1</m>,
+                so we have <m>-\frac{\phi}{\omega} = -1</m>,
+                or <m>\phi = \omega = \frac{\pi}{3}</m>.
+                To find the baseline, we average the maximum and minimum values:
+                <m>B = \frac{1}{2}\left[ \frac{5}{2} + \left(-\frac{3}{2}\right)\right] = \frac{1}{2}(1) = \frac{1}{2}</m>.
+                To find the amplitude, we subtract the maximum value from the baseline:
+                <m>A = \frac{5}{2} - \frac{1}{2} = 2</m>.
+                Putting this altogether,
+                we obtain our final answer is <m>f(t) = 2 \cos\left(\frac{\pi}{3} t + \frac{\pi}{3} \right) + \frac{1}{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since we have written <m>f(t)</m> in terms of cosines,
+                we can use the conversion from sine to cosine as listed in <xref ref="cosinesinefunctionprops">Theorem</xref>.
+                Since <m>\cos(t) = \sin\left(t +\frac{\pi}{2} \right)</m>,
+                <m>\cos\left(\frac{\pi}{3} t + \frac{\pi}{3} \right) = \sin\left( \left[\frac{\pi}{3} t + \frac{\pi}{3}\right] + \frac{\pi}{2} \right)</m>,
+                so <m>\cos\left(\frac{\pi}{3} t + \frac{\pi}{3} \right) = \sin\left(\frac{\pi}{3} t + \frac{5\pi}{6} \right)</m>.
+                Our final answer is <m>f(t) = 2 \sin\left(\frac{\pi}{3} t + \frac{5\pi}{6} \right) + \frac{1}{2}</m>.
+                However, for the sake of completeness,
+                we provide another solution strategy which enables us to write <m>f(t)</m> in terms of sines without starting with our answer from part 1.
+                Note that we obtain the period,
+                amplitude, and vertical shift as before:
+                <m>\omega = \frac{\pi}{3}</m>,
+                <m>A = 2</m> and <m>B = \frac{1}{2}</m>.
+                The trickier part is finding the phase shift.
+                To that end,
+                we imagine extending the graph of the given sinusoid as in the figure below so that we can identify a cycle beginning at <m>\left(\frac{7}{2}, \frac{1}{2}\right)</m>.
+                Taking the phase shift to be <m>\frac{7}{2}</m>,
+                we get <m>-\frac{\phi}{\omega} = \frac{7}{2}</m>,
+                or <m>\phi = -\frac{7}{2} \omega = -\frac{7}{2}\left(\frac{\pi}{3}\right) = -\frac{7\pi}{6}</m>.
+                Hence, our answer is <m>f(t) = 2 \sin\left(\frac{\pi}{3} t - \frac{7\pi}{6}\right) + \frac{1}{2}</m>. \begin{mfpic}[25]{-2}{11}{-3}{4} \point[4pt]{(3.5,0.5), (5,2.5), (6.5, 0.5), (8, -1.5), (9.5,0.5)} \tlabel(3.75,0.35){ <m>\left(\frac{7}{2},\frac{1}{2}\right)</m>} \tlabel[cc](5,2.75){ <m>\left(5,\frac{5}{2}\right)</m>} \tlabel(6.75,0.35){
+                <m>\left(\frac{13}{2},\frac{1}{2}\right)</m>} \tlabel[cc](8,-2){ <m>\left(8,-\frac{3}{2}\right)</m>} \tlabel(9.75,0.35){
+                <m>\left(\frac{19}{2},\frac{5}{2}\right)</m>} \axes \tlabel[cc](11,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \tcaption{Extending the graph of
+                <m>y = f(t)</m>.} \xmarks{-1,1,2,3,4,5,6,7,8,9,10} \ymarks{-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8, { <m>9</m>} 9, { <m>10</m>} 10} \axislabels {y}{ { <m>-2</m>} -2,{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \dotted \function{-1, 3.5, 0.1}{2*cos(3.14159265*(x+1)/3)+0.5} \penwd{1.25pt} \function{3.5, 9.5, 0.1}{2*cos(3.14159265*(x+1)/3)+0.5} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that each of the answers given in <xref ref="fitsinusoidtodata1">Example</xref>
+      is one choice out of many possible answers.
+      For example, when fitting a sine function to the data,
+      we could have chosen to start at
+      <m>\left(\frac{1}{2}, \frac{1}{2}\right)</m> taking <m>A = -2</m>.
+      In this case, the phase shift is <m>\frac{1}{2}</m> so
+      <m>\phi = -\frac{\pi}{6}</m> for an answer of <m>f(t) = -2 \sin\left(\frac{\pi}{3} t - \frac{\pi}{6}\right) + \frac{1}{2}</m>.
+      The ultimate check of any solution is to graph the answer and check it matches the given data.
+    </p>
+  </introduction>
+  <subsection xml:id="Sinusoid">
+    <title>Applications of Sinusoids</title>
+    <p>
+      In the same way exponential functions can be used to model a wide variety of phenomena in nature,<fn>
+      See <xref ref="ExpLogApplications">Section</xref>.
+      </fn> the sine and cosine functions can be used to model their fair share of natural behaviors.
+      Our first foray into sinusoidal motion revisits circular motion - in particular <xref ref="equationsforcircularmotion">Equation</xref> .
+    </p>
+    <example xml:id="ycoordonwheel">
+      <statement>
+        <p>
+          Recall from <xref ref="giantwheelmotion">Exercise</xref>
+          in <xref ref="RadianMeasure">Section</xref>
+          that The Giant Wheel at Cedar Point is a circle with diameter 128 feet which sits on an 8 foot tall platform making its overall height 136 feet.
+          It completes two revolutions in 2 minutes and 7 seconds.
+          Assuming that the riders are at the edge of the circle,
+          find a sinusoid which describes the height of the passengers above the ground <m>t</m> seconds after they pass the point on the wheel closest to the ground.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We sketch the problem situation below and assume a counter-clockwise rotation.<fn>
+          Otherwise, we could just observe the motion of the wheel from the other side.
+          </fn>
+        </p>
+        <p>
+          \begin{mfpic}[20]{-5}{5}{-1}{9} \polyline{(-5,0), (5,0)} \polyline{(0,0), (0,1)} \point[3pt]{(0,0), (0,1), (-3.46,3), (4,5)} \plotsymbol[3pt]{Asterisk}{(0,5)} \tlabel[cc](0,-0.5){<m>O</m>} \tlabel[cc](0.5,0.5){<m>P</m>} \tlabel[cc](4.5,5){<m>Q</m>} \tlabel[cc](5,7){<m>\theta</m>} \dashed \polyline{(5,5), (6,5)} \arrow \reverse \arrow \polyline{(-3.46, 0.25),(-3.46, 2.75)} \gclear \tlabelrect[cc](-3.46,1.5){<m>h</m>} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,0)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,15)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,30)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,45)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,60)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,75)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,90)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,105)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,120)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,135)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,150)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,165)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,180)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,195)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,210)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,225)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,240)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,255)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,270)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,285)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,300)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,315)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,330)}} \shiftpath{(0,5)} \polyline{\plr{(0,0)}, \plr{(4,345)}} \arrow \shiftpath{(0,5)} \parafcn{-90, -80,5}{(4*cosd(t), 4*sind(t))} \arrow \shiftpath{(0,5)} \parafcn{-80, 10,5}{(4*cosd(t), 4*sind(t))} \arrow \shiftpath{(0,5)} \parafcn{10, 100,5}{(4*cosd(t), 4*sind(t))} \arrow \shiftpath{(0,5)} \parafcn{100, 190,5}{(4*cosd(t), 4*sind(t))} \shiftpath{(0,5)} \parafcn{190, 270,5}{(4*cosd(t), 4*sind(t))} \arrow \shiftpath{(0,5)} \parafcn{5,50,5}{(5*cosd(t), 5*sind(t))} \end{mfpic}
+        </p>
+        <p>
+          We know from the equations given on <xref ref="equationsforcircularmotion">page</xref>
+          in <xref ref="cosinesinebeyond">Section</xref>
+          that the <m>y</m>-coordinate for counter-clockwise motion on a circle of radius <m>r</m> centered at the origin with constant angular velocity (frequency) <m>\omega</m> is given by <m>y = r\sin(\omega t)</m>.
+          Here, <m>t=0</m> corresponds to the point <m>(r,0)</m> so that <m>\theta</m>,
+          the angle measuring the amount of rotation, is in standard position.
+        </p>
+        <p>
+          In our case, the diameter of the wheel is 128 feet,
+          so the radius is <m>r = 64</m> feet.
+          Since the wheel completes two revolutions in 2 minutes and 7 seconds
+          (which is <m>127</m> seconds)
+          the period <m>T = \frac{1}{2} (127) = \frac{127}{2}</m> seconds.
+          Hence, the angular frequency is <m>\omega = \frac{2\pi}{T} = \frac{4 \pi}{127}</m> radians per second.
+        </p>
+        <p>
+          Putting these two pieces of information together,
+          we have that <m>y = 64 \sin\left(\frac{4 \pi}{127} t\right)</m> describes the <m>y</m>-coordinate on the Giant Wheel after <m>t</m> seconds,
+          assuming it is centered at <m>(0,0)</m> with <m>t=0</m> corresponding to point <m>Q</m>.
+        </p>
+        <p>
+          In order to find an expression for <m>h</m>,
+          we take the point <m>O</m> in the figure as the origin.
+          Since the base of the Giant Wheel ride is <m>8</m> feet above the ground and the Giant Wheel itself has a radius of <m>64</m> feet,
+          its center is <m>72</m> feet above the ground.
+          To account for this vertical shift upward,<fn>
+          We are readjusting our <sq>baseline</sq> from <m>y=0</m> to <m>y=72</m>.
+          </fn> we add <m>72</m> to our formula for <m>y</m> to obtain the new formula <m>h = y + 72 = 64 \sin\left(\frac{4 \pi}{127} t\right) + 72</m>.
+        </p>
+        <p>
+          Next, we need to adjust things so that <m>t=0</m> corresponds to the point <m>P</m> instead of the point <m>Q</m>.
+          This is where the phase comes into play.
+          Geometrically,
+          we need to shift the angle <m>\theta</m> in the figure back <m>\frac{\pi}{2}</m> radians.
+        </p>
+        <p>
+          From the discussion on <xref ref="equationsforcircularmotion">page</xref>,
+          we know <m>\theta = \omega t = \frac{4 \pi}{127} t</m>,
+          so we (temporarily) write the height in terms of <m>\theta</m> as <m>h =64 \sin\left(\theta\right) + 72</m>.
+          Subtracting <m>\frac{\pi}{2}</m> from <m>\theta</m> gives <m>h(t) = 64 \sin\left(\theta - \frac{\pi}{2}\right) + 72 = 64\sin\left(\frac{4 \pi}{127} t -\frac{\pi}{2} \right) + 72</m>.
+        </p>
+        <p>
+          We can check the reasonableness of our answer by graphing <m>y = h(t)</m> over the interval
+          <m>\left[0, \frac{127}{2}\right]</m> and visualizing the path of a person on the Big Wheel ride over the course of one rotation.
+        </p>
+        <p>
+          \begin{mfpic}[20][10]{-1}{7}{-1}{15} \axes \tlabel[cc](7,-0.5){<m>t</m>} \tlabel[cc](0.5, 15){<m>y</m>} \xmarks{6.35} \ymarks{0.8, 7.2, 13.6} \point[4pt]{(0,0.8), (1.59, 7.2), (3.18, 13.6), (4.76, 7.2), (6.35,0.8)} \tlabelsep{5pt}
+        </p>
+        <p>
+          \axislabels{x}{{<m>\frac{127}{2}</m>} 6.35} \axislabels{y}{{<m>8</m>} 0.8, {<m>72</m>} 7.2, {<m>136</m>} 13.6}
+        </p>
+        <p>
+          \penwd{1.25pt} \function{0,6.35,0.1}{6.4*(sin(.989*x - 1.57))+7.2} \end{mfpic}
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="ycoordonwheel">Example</xref> are in order.
+      First, note that the amplitude of <m>64</m> in our answer corresponds to the radius of the Giant Wheel.
+      This means that passengers on the Giant Wheel never stray more than <m>64</m> feet vertically from the center of the Wheel,
+      which makes sense.
+      Second, the phase shift of our answer works out to be <m>\frac{\pi/2}{4\pi/127} = \frac{127}{8} = 15.875</m>.
+      This represents the <sq>time delay</sq>
+      (in seconds)
+      we introduce by starting the motion at the point <m>P</m> as opposed to the point <m>Q</m>.
+      Said differently,
+      passengers which <sq>start</sq> at <m>P</m> take <m>15.875</m> seconds to <sq>catch up</sq> to the point <m>Q</m>.
+    </p>
+    <p>
+      Our next example revisits the daylight data first introduced in <xref ref="QuadraticFunctions">Section</xref>,
+      <xref ref="regsunlight">Exercise</xref>.
+    </p>
+    <example xml:id="sinusoidsunlight">
+      <statement>
+        <p>
+          According to the
+          <url href="http://aa.usno.navy.mil/data/docs/RS_OneYear.php"><em>U.S. Naval Observatory</em></url>
+          website, the number of hours <m>H</m> of daylight that Fairbanks, Alaska received on the 21st day of the <m>n</m>th month of 2009 is given below.
+          Here <m>t = 1</m> represents January 21, 2009,
+          <m>t = 2</m> represents February 21, 2009, and so on.
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Month</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Number</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+            <cell>6</cell>
+            <cell>7</cell>
+            <cell>8</cell>
+            <cell>9</cell>
+            <cell>10</cell>
+            <cell>11</cell>
+            <cell>12</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Hours of</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Daylight</cell>
+            <cell>5.8</cell>
+            <cell>9.3</cell>
+            <cell>12.4</cell>
+            <cell>15.9</cell>
+            <cell>19.4</cell>
+            <cell>21.8</cell>
+            <cell>19.4</cell>
+            <cell>15.6</cell>
+            <cell>12.4</cell>
+            <cell>9.1</cell>
+            <cell>5.6</cell>
+            <cell>3.3</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        <ol>
+          <li xml:id="roughsinusoidfit">
+            <p>
+              Find a sinusoid which models these data and graph your answer along with the data.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compare your answer to <xref ref="roughsinusoidfit">part</xref>
+              to one obtained using the regression feature of a graphing utility.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To get a feel for the data, we plot it below on the left.
+                At first glance,
+                the data appear to be more like <sq><m>\wedge</m></sq>-shaped instead of sinusoidal,
+                harkening back to <xref ref="AbsoluteValueFunctions">Section</xref>.
+                However, from experience,
+                the hours of daylight is a cyclical process,
+                which is why we attempt to fit this data to a sine function.
+                Please note that when it comes down to it,
+                fitting a sinusoid to data manually is not an exact science.
+                We do our best to find the constants <m>A</m>, <m>\omega</m>,
+                <m>\phi</m> and <m>B</m> so that the function
+                <m>H(t) = A\sin(\omega t + \phi) + B</m> closely matches the data.
+                In this example,
+                we first go after the vertical shift <m>B</m> to determine the baseline.
+                In a typical sinusoid,
+                the value of <m>B</m> is the average of the maximum and minimum values.
+                So here we take <m>B = \frac{3.3+21.8}{2} = 12.55</m>.
+                Next is the amplitude <m>A</m> which is the displacement from the baseline to the maximum
+                (and minimum)
+                values.
+                We find <m>A = 21.8 - 12.55 = 12.55 - 3.3 = 9.25</m>.
+                At this stage, our sinusoid has the form:
+                <m>H(t) = 9.25\sin(\omega t + \phi) + 12.55</m>.
+                We proceed to find the angular frequency, <m>\omega</m>.
+                Since the data collected is over the span of a year (12 months),
+                we take the period <m>T = 12</m> months.<fn>
+                Even though the data collected lies in the interval <m>[1,12]</m>,
+                which has a length of <m>11</m>,
+                we need to think of the data point at <m>t=1</m> as a representative sample of the amount of daylight for every day in January.
+                That is, it represents <m>H(t)</m> over the interval <m>[0,1]</m>.
+                Similarly, <m>t=2</m> is a sample of <m>H(t)</m> over <m>[1,2]</m>,
+                and so forth.
+                </fn>  This means <m>\omega = \frac{2\pi}{T} = \frac{2\pi}{12} = \frac{\pi}{6}</m>.
+                The last quantity to find is the phase <m>\phi</m>.
+                Unlike the previous example,
+                it is easier in this case to find the phase shift <m>-\frac{\phi}{\omega}</m>.
+                Since we picked <m>A > 0</m>,
+                the phase shift corresponds to the first value of <m>t</m> with
+                <m>H(t) = 12.55</m> (the baseline value).<fn>
+                See the figure on <xref ref="genericsinsuoidfigure">page</xref>.
+                </fn>  Here, we choose <m>t = 3</m>,
+                since its corresponding <m>H</m> value of <m>12.4</m> is closer to <m>12.55</m> than the next value,
+                <m>15.9</m>,
+                which corresponds to <m>t=4</m>.
+                Hence, <m>-\frac{\phi}{\omega} = 3</m>,
+                so <m>\phi = -3 \omega = -3 \left(\frac{\pi}{6}\right) = -\frac{\pi}{2}</m>.
+                We have <m>H(t) = 9.25 \sin\left(\frac{\pi}{6} t - \frac{\pi}{2}\right) + 12.55</m>.
+                Below on the right is a graph of our data with the curve
+                <m>y = H(t)</m>. \begin{mfpic}[15][7.5]{-1}{13}{-1}{23} \axes \xmarks{1,2,3,4,5,6,7,8,9,10,11,12} \ymarks{2,4,6,8,10,12,14,16,18,20,22} \tlabel[cc](13,-0.5){<m>t</m>} \tlabel[cc](0.5,23){<m>H</m>} \tlabelsep{5pt} \axislabels{x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11, {<m>12</m>} 12} \axislabels{y}{{<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6, {<m>8</m>} 8, {<m>10</m>} 10, {<m>12</m>} 12, {<m>14</m>} 14, {<m>16</m>} 16, {<m>18</m>} 18, {<m>20</m>} 20, {<m>22</m>} 22} \point[4pt]{(1,5.8), (2,9.3), (3,12.4), (4, 15.9), (5, 19.4), (6,21.8), (7,19.4), (8,15.6), (9,12.4), (10,9.1), (11,5.6), (12, 3.3)} \end{mfpic} <image width="73%" source="./GraphsofSineandCosineGraphics/RoughFitDaylight.jpg"/> Plotting the data.
+                Plotting the data long with <m>y=H(t)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Using
+                <url href="https://www.desmos.com"><em>desmos</em></url>
+                to find a regression model produces
+                <m>A \approx 8.36</m> and <m>B \approx 12.06</m>,
+                which closely match our answers from <xref ref="roughsinusoidfit">number</xref>.
+                However, desmos calculates
+                <m>\omega \approx -294.81</m> and <m>\phi \approx -26.53</m>,
+                which are far from our values
+                <m>\omega = \frac{\pi}{6}</m> and <m>\phi = -\frac{\pi}{2}</m>.
+                Indeed, in <xref ref="graphdesmosregression">Exercise</xref>,
+                we invite the reader to graph <m>y = 8.36 \sin(-294.81t - 26.53) + 12.06</m> using desmos.
+                At first glance, appears to be a solid gray rectangle.
+                After zooming in, however,
+                we see this rectangle is made up of literally hundreds of oscillations.
+                Though desmos boasts this regression as having an <m>R^{2}</m> value of <m>0.9886</m>,
+                meaning mathematically, this is a very good fit to the data,
+                this curve doesn't model the real-world phenomenon of daylight hours in any sort of reasonable manner.
+                Since we know the period of the sinusoid is 12 months,
+                we set <m>\omega = \frac{\pi}{6}</m> and ask desmos to run a regression for the remaining three parameters.
+                Desmos returns the values <m>A \approx -8.13</m>, <m>B \approx 12.5</m>,
+                and <m>\phi \approx -4.70</m>,
+                with an <m>R^{2}</m> value of <m>0.987</m>,
+                so its regression curve is a much more reasonable <m>H(t) = -8.13 \sin\left(\frac{\pi}{6} t - 4.70\right)+ 12.5</m>.
+                Even though, at first glance,
+                this curve appears much different from our solution to <xref ref="roughsinusoidfit">number</xref>,
+                the we graph both functions below on the right and see they are very similar.<fn>
+                In <xref ref="MoreTrigonometricIdentities">Section</xref>,
+                we can show how similar these two functions are analytically.
+                See <xref ref="twodaylightfunctions">Exercise</xref>.
+                </fn>  (Our solution to <xref ref="roughsinusoidfit">number</xref>
+                is the darker of the two curves.) <image width="92.5%" source="./GraphsofSineandCosineGraphics/desmos_regression.jpg"/> <image width="92.5%" source="./GraphsofSineandCosineGraphics/both_daylight.jpg"/> Plotting the desmos's regression curve.
+                Plotting both solutions.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The scenario described in <xref ref="sinusoidsunlight">Example</xref>
+      is a typical example of where the circular functions are useful outside the context of angles or circular motion.
+      Indeed, sine and cosine functions are used extensively to model a wide range of periodic phenomena including signal analysis,
+      wave physics, and even quantum mechanics.
+      Hence, regardless of your chosen field of study,
+      it is well worth your time to absolutely master sinusoids.
+      To that end, we present the exercises.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="sinecosinegraphfirst">Exercises</xref>
+      - <xref ref="sinecosinegraphlast"></xref>,
+      graph one cycle of the given function.
+      State the period,
+      amplitude, phase shift and vertical shift of the function.
+      <ol cols="4">
+        <li xml:id="sinecosinegraphfirst">
+          <p>
+            <m>f(t) = 3\sin(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = \sin(3t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(t) = -2\cos(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = \cos \left( t - \frac{\pi}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = -\sin \left( t + \frac{\pi}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(t) = \sin(2t - \pi)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = -\frac{1}{3}\cos \left( \frac{1}{2}t + \frac{\pi}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = \cos (3t - 2\pi) + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(t) = \sin \left( -t - \frac{\pi}{4} \right) - 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(t) = \frac{2}{3} \cos \left( \frac{\pi}{2} - 4t \right) + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = -\frac{3}{2} \cos \left( 2t + \frac{\pi}{3} \right) - \frac{1}{2}</m>
+          </p>
+        </li>
+        <li xml:id="sinecosinegraphlast">
+          <p>
+            <m>h(t) = 4\sin (-2\pi t + \pi)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="fitsinecosinefirst">Exercises</xref>
+      - <xref ref="fitsinecosinelast"></xref>, a sinusoid is graphed.
+      Find a formula for the sinusoid in the form
+      <m>S(t) = A \sin(\omega t + \phi) + B</m> and <m>C(t) = A \cos(\omega t + \phi) + B</m>.
+      Select <m>\omega</m> so <m>\omega > 0</m>.
+      Check your answer by graphing.
+    </p>
+    <ol cols="3">
+      <li xml:id="fitsinecosinefirst">
+        <p>
+          <m>~</m> \begin{mfpic}[16]{-5}{5}{-5}{5} \tlabel[cc](5,-0.30){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{-4 step 1 until 4} \point[4pt]{(-3.927, 0), (-2.356, -4), (-0.7854, 0), (0.7854, 4), (2.356, 0)} \tlabel[cc](-3, 0.5){ <m>\left( -\frac{5\pi}{4}, 0 \right)</m>} \tlabel[cc](-2.356, -4.5){ <m>\left( -\frac{3\pi}{4}, -4 \right)</m>} \gclear \tlabelrect(0.25, -0.6){
+          <m>\left( -\frac{\pi}{4}, 0 \right)</m> } \tlabel[cc](0.9, 4.5){<m>\left( \frac{\pi}{4}, 4 \right)</m>} \tlabel[cc](3.25, 0.5){
+          <m>\left( \frac{3\pi}{4}, 4 \right)</m>} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \function{-5, 5, 0.1}{4*sin(x+(pi/4))} \end{mfpic} \item<m>~</m> \begin{mfpic}[16]{-6}{6}{-1}{9} \tlabel[cc](6,-0.30){<m>t</m>} \tlabel[cc](0.25,9){<m>y</m>} \axes \xmarks{-5 step 1 until 5} \ymarks{1 step 1 until 8} \point[4pt]{(-4.712, 0), (-1.571, 6), (0,3), (1.571, 0), (4.712, 6)} \tlabel[cc](-4.712, -0.75){<m>\left( -\frac{3\pi}{2}, 0 \right)</m>} \tlabel[cc](-1.571, 6.5){<m>\left( -\frac{\pi}{2}, 6 \right)</m>} \tlabel[cc](0.75, 3){
+          <m>\left(0, 3 \right)</m>} \tlabel[cc](4.712, 6.5){<m>\left( \frac{3 \pi}{2}, 6 \right)</m>} \tlabel[cc](1.571, -0.75){<m>\left( \frac{\pi}{2}, 0 \right)</m>} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \function{-6, 6, 0.1}{3- 3*sin(x)} \end{mfpic}
+        </p>
+      </li>
+      <li xml:id="fitsinecosinelast">
+        <p>
+          <m>~</m> \begin{mfpic}[15]{-6}{6}{-5}{5} \tlabel[cc](6,-0.30){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \axes \xmarks{-5 step 1 until 5} \ymarks{-4 step 1 until 4} \point[4pt]{(-4.974, 3), (-4.189, 0), (-3.403, -3), (-2.618, 0), (-1.832, 3), (-1.047, 0), (-0.2618, -3), (0.5236, 0), (1.309, 3), (2.094, 0), (2.8880, -3), (3.665, 0), (4.45, 3), (5.236, 0)} \tlabel[cc](-4.974, 3.75){ <m>\left( -\frac{19 \pi}{12}, 3 \right)</m>} \tlabel[cc](-3.403, -3.75){ <m>\left( -\frac{13 \pi}{12}, -3 \right)</m>} \tlabel[cc] (-1.832, 3.75){ <m>\left( -\frac{7 \pi}{12}, 3 \right)</m>} \gclear \tlabelrect(0, -3.75){ <m>\left( -\frac{\pi}{12}, -3 \right)</m>} \tlabel[cc] (1.309, 3.75){
+          <m>\left( \frac{5 \pi}{12}, 3 \right)</m>} \tlabel[cc](2.880, -3.75){
+          <m>\left( \frac{11 \pi}{12}, -3 \right)</m>} \tlabel[cc] (4.45, 3.75){
+          <m>\left( \frac{17 \pi}{12}, 3 \right)</m>} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \function{-6, 5.5, 0.1}{3*sin((2*x)-(pi/3))} \end{mfpic} \item<m>~</m> \begin{mfpic}[22][15]{-5}{5}{-5}{5} \tlabel[cc](5,-0.30){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \axes \xmarks{-4 step 1 until 4} \ymarks{-4 step 1 until 4} \point[4pt]{ (-4, 0.5), (-3.5, 4), (-3, 0.5), (-2.5, -3), (-2, 0.5), (-1.5, 4), (-1, 0.5), (-0.5, -3), (0, 0.5), (0.5, 4), (1, 0.5), (1.5,-3), (2, 0.5), (2.5,4), (3, 0.5), (3.5,-3), (4, 0.5) } \tlabel[cc](-3.5, 4.5){<m>(-3.5, 4)</m>} \tlabel[cc](-2.5, -3.5){<m>(-2.5, -3)</m>} \tlabel[cc](-1.5, 4.5){<m>(-1.5, 4)</m>} \gclear \tlabelrect(0.75, 4.5){<m>(0.5, 4)</m>} \tlabel[cc](1.5, -3.5){<m>(1.5, -3)</m>} \tlabel[cc](2.5, 4.5){<m>(2.5, 4)</m>} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.25, 4.25, 0.1}{(3.5*sin(pi*x))+0.5} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the graph of <m>S(t) = 4 \sin(t)</m> to graph each of the following functions.
+          State the period of each.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>f(t) = | 4 \sin(t)|</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(t) = \sqrt{4 \sin(t)}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="exploregraphsfirst">Exercises</xref>
+      - <xref ref="exploregraphslast"></xref>,
+      use a graphing utility to graph each function and discuss the related questions with your classmates.
+    </p>
+    <ol cols="3">
+      <li xml:id="exploregraphsfirst">
+        <p>
+          <m>f(t) = \cos(3t) + \sin(t)</m>.
+          Is this function periodic?
+          If so, what is the period?
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \frac{\sin(t)}{t}</m>.
+          What appears to be the horizontal asymptote of the graph?
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = t \sin(t)</m>.
+          Graph <m>y = \pm t</m>.
+          What do you notice?
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \sin\left(\frac{1}{t}\right)</m>.
+          What's happening as <m>t \rightarrow 0</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = e^{-0.1t} \left( \cos(2t) + \sin(2t)\right)</m>.
+          Graph <m>y = \pm e^{-0.1t}</m> on the same set of axes.
+          What do you notice?
+        </p>
+      </li>
+      <li xml:id="exploregraphslast">
+        <p>
+          <m>f(t) = e^{-0.1t} \left( \cos(2t) + 2\sin(t)\right)</m>.
+          Graph <m>y = \pm e^{-0.1t}</m> on the same set of axes.
+          What do you notice?
+        </p>
+      </li>
+      <li>
+        <p>
+          Show every constant function <m>f</m> is periodic by explaining why
+          <m>f(x + 117) = f(x)</m> for all real numbers <m>x</m>.
+          Then show that <m>f</m> has no period by showing that you cannot find a <em>smallest</em>
+          number <m>p</m> such that <m>f(x + p) = f(x)</m> for all real numbers <m>x</m>.
+          Said differently, show that
+          <m>f(x + p) = f(x)</m> for all real numbers <m>x</m> for ALL values of <m>p > 0</m>,
+          so no smallest value exists to satisfy the definition of <sq>period</sq>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The sounds we hear are made up of mechanical waves.
+          The note <sq>A</sq> above the note <sq>middle C</sq> is a sound wave with ordinary frequency <m>f = 440</m> Hertz <m>= 440 \frac{\text{ cycles } }{\text{ second } }</m>.
+          Find a sinusoid which models this note,
+          assuming that the amplitude is <m>1</m> and the phase shift is <m>0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The voltage <m>V</m> in an alternating current source has amplitude
+          <m>220 \sqrt{2}</m> and ordinary frequency <m>f = 60</m> Hertz.
+          Find a sinusoid which models this voltage.
+          Assume that the phase is <m>0</m>.
+        </p>
+      </li>
+      <li xml:id="heightlondoneye">
+        <p>
+          The
+          <url href="http://en.wikipedia.org/wiki/London_Eye"><em>London Eye</em></url>
+          is a popular tourist attraction in London, England and is one of the largest Ferris Wheels in the world.
+          It has a diameter of 135 meters and makes one revolution (counter-clockwise) every 30 minutes.
+          It is constructed so that the lowest part of the Eye reaches ground level,
+          enabling passengers to simply walk on to, and off of, the ride.
+          Find a sinsuoid which models the height <m>h</m> of the passenger above the ground in meters <m>t</m> minutes after they board the Eye at ground level.
+        </p>
+      </li>
+      <li xml:id="leftrightlondoneye">
+        <p>
+          On <xref ref="equationsforcircularmotion">page</xref>
+          in <xref ref="cosinesinebeyond">Section</xref>,
+          we found the <m>x</m>-coordinate of counter-clockwise motion on a circle of radius <m>r</m> with angular frequency <m>\omega</m> to be <m>x = r\cos(\omega t)</m>,
+          where <m>t=0</m> corresponds to the point <m>(r,0)</m>.
+          Suppose we are in the situation of <xref ref="heightlondoneye">Exercise</xref> above.
+          Find a sinsusoid which models the horizontal <em>displacement</em>
+          <m>x</m> of the passenger from the center of the Eye in meters <m>t</m> minutes after they board the Eye.
+          Here we take <m>x(t) > 0</m> to mean the passenger is to the
+          <em>right</em> of the center,
+          while <m>x(t) \lt 0</m> means the passenger is to the
+          <em>left</em> of the center.
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="yoyotrick">Exercise</xref>
+          in <xref ref="RadianMeasure">Section</xref>,
+          we introduced the yo-yo trick <sq>Around the World</sq> in which a yo-yo is thrown so it sweeps out a vertical circle.
+          As in that exercise,
+          suppose the yo-yo string is 28 inches and it completes one revolution in 3 seconds.
+          If the closest the yo-yo ever gets to the ground is 2 inches,
+          find a sinsuoid which models the height <m>h</m> of the yo-yo above the ground in inches <m>t</m> seconds after it leaves its lowest point.
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the pendulum below.
+          Ignoring air resistance,
+          the angular displacement of the pendulum from the vertical position,
+          <m>\theta</m>,
+          can be modeled as a sinusoid.<fn>
+          Provided <m>\theta</m> is kept <sq>small.</sq>  Carl remembers the <sq>Rule of Thumb</sq> as being <m>20^{\circ}</m> or less.
+          Check with your friendly neighborhood physicist to make sure.
+          </fn>   \begin{mfpic}[15]{-3}{3}{-5}{1} \polyline{(0,0), (0,-5)} \dashed \polyline{(0,0), (2.5, -4.33)} \arrow \parafcn{275, 295, 5}{4*dir(t)} \tlabel[cc](1.29, -4.83){<m>\theta</m>} \hatchcolor[gray]{.7} \lhatch \rect{(-3,0), (3,1)} \fillcolor[gray]{.7} \gfill \circle{(0,-5),0.25} \gfill \circle{(2.5, -4.33),0.20} \penwd{1.025} \circle{(0,-5),0.25} \circle{(2.5, -4.33),0.25} \rect{(-3,0), (3,1)} \end{mfpic} The amplitude of the sinusoid is the same as the initial angular displacement,
+          <m>\theta_{\text{ \tiny \(0\) } }</m>,
+          of the pendulum and the  period of the motion is given by
+          <me>
+            T = 2\pi \sqrt{\dfrac{\ell}{g}}
+          </me>
+          where <m>\ell</m> is the length of the pendulum and <m>g</m> is the acceleration due to gravity.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find a sinusoid which gives the angular displacement <m>\theta</m> as a function of time,
+              <m>t</m>.
+              Arrange things so <m>\theta(0) = \theta_{\text{ \tiny \(0\) } }</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              In <xref ref="pendulumproblem">Exercise</xref>
+              <xref ref="RootRadicalFunctions">section</xref>,
+              you found the length of the pendulum needed in Jeff's antique Seth-Thomas clock to ensure the period of the pendulum is <m>\frac{1}{2}</m> of a second.
+              Assuming the initial displacement of the pendulum is <m>15^{\circ}</m>,
+              find a sinusoid which models the displacement of the pendulum <m>\theta</m> as a function of time,
+              <m>t</m>,
+              in seconds.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The table below lists the average temperature of Lake Erie as measured in Cleveland, Ohio on the first of the month for each month during the years 1971 <mdash/> 2000.<fn>
+          See this website:
+          <url href="http://www.erh.noaa.gov/cle/climate/cle/normals/laketempcle.html"><em>http://www.erh.noaa.gov/cle/climate/cle/normals/laketempcle.html</em>.</url>
+          </fn>  For example,
+          <m>t=3</m> represents the average of the temperatures recorded for Lake Erie on every March 1 for the years 1971 <mdash/> 2000.
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Month</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Number, <m>t</m></cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+              <cell>6</cell>
+              <cell>7</cell>
+              <cell>8</cell>
+              <cell>9</cell>
+              <cell>10</cell>
+              <cell>11</cell>
+              <cell>12</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Temperature</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>(<m>^{\circ}</m> F), <m>T</m></cell>
+              <cell>36</cell>
+              <cell>33</cell>
+              <cell>34</cell>
+              <cell>38</cell>
+              <cell>47</cell>
+              <cell>57</cell>
+              <cell>67</cell>
+              <cell>74</cell>
+              <cell>73</cell>
+              <cell>67</cell>
+              <cell>56</cell>
+              <cell>46</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ol>
+            <li xml:id="LakeErieTempData">
+              <p>
+                Using the techniques discussed in <xref ref="sinusoidsunlight">Example</xref>,
+                fit a sinusoid to these data.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph your model along with the data set to judge the reasonableness of the fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the model from <xref ref="LakeErieTempData"></xref>
+                to predict the average temperature recorded for Lake Erie on April <m>15^{\text{ th } }</m> and September
+                <m>15^{\text{ th } }</m> during the years 1971<ndash/>2000.<fn>
+                The computed average is <m>41^{\circ}</m>F for April <m>15^{\text{ th } }</m> and
+                <m>71^{\circ}</m>F for September <m>15^{\text{ th } }</m>.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Compare your results to those obtained using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          The fraction of the moon illuminated at midnight Eastern Standard Time on the
+          <m>t^{\text{ th } }</m> day of June, 2009 is given in the table below.<fn>
+          See this website:
+          <url href="http://www.usno.navy.mil/USNO/astronomical-applications/data-services/frac-moon-ill"><em>http://www.usno.navy.mil/USNO/astronomical-applications/data-services/frac-moon-ill</em>.</url>
+          </fn>
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Day of</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>June, <m>t</m></cell>
+              <cell>3</cell>
+              <cell>6</cell>
+              <cell>9</cell>
+              <cell>12</cell>
+              <cell>15</cell>
+              <cell>18</cell>
+              <cell>21</cell>
+              <cell>24</cell>
+              <cell>27</cell>
+              <cell>30</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Fraction</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Illuminated, <m>F</m></cell>
+              <cell>0.81</cell>
+              <cell>0.98</cell>
+              <cell>0.98</cell>
+              <cell>0.83</cell>
+              <cell>0.57</cell>
+              <cell>0.27</cell>
+              <cell>0.04</cell>
+              <cell>0.03</cell>
+              <cell>0.26</cell>
+              <cell>0.58</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ol>
+            <li xml:id="MoonIllumination">
+              <p>
+                Using the techniques discussed in <xref ref="sinusoidsunlight">Example</xref>,
+                fit a sinusoid to these data.<fn>
+                You may want to plot the data before you find the phase shift.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph your model along with the data set to judge the reasonableness of the fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the model from <xref ref="MoonIllumination"></xref>
+                to predict the fraction of the moon illuminated on June 1, 2009.<fn>
+                The listed fraction is <m>0.62</m>.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Compare your results to those obtained using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="graphdesmosregression">
+        <p>
+          Use a graphing utility to graph <m>y = 8.36 \sin(-294.81t - 26.53) + 12.06</m>.
+          (This is the regression model produced by desmos in <xref ref="sinusoidsunlight">Example</xref>.)
+          Zoom in, as needed,
+          until you start to see the wave-like nature of the graph.
+          Use <xref ref="sinusoidform">Theorem</xref>
+          to determine a window which produces exactly one complete cycle of this sinusoid and check your answer graphically.
+        </p>
+      </li>
+      <li xml:id="proofsinusoidformexercise">
+        <p>
+          Use <xref ref="transformationsthm">Theorem</xref>
+          to prove <xref ref="sinusoidform">Theorem</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          With the help of your classmates, research
+          <url href="http://en.wikipedia.org/wiki/Amplitude_modulation"><em>Amplitude Modulation</em></url>
+          and
+          <url href="http://en.wikipedia.org/wiki/Frequency_modulation"><em>Frequency Modulation</em></url>.
+        </p>
+      </li>
+      <li>
+        <p>
+          What other things in the world might be roughly sinusoidal?
+          Look to see what models you can find for them and share your results with your class.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="4">
+      <li>
+        <p>
+          <m>f(t) = 3\sin(t)</m> Period:
+          <m>2\pi</m> Amplitude:
+          <m>3</m> Phase Shift:
+          <m>0</m> Vertical Shift:
+          <m>0</m> \begin{mfpic}[25][15]{-0.25}{7}{-3.5}{3.75} \point[4pt]{(0,0), (1.5708,3), (3.1416, 0), (4.7124,-3), (6.2832,0)} \axes \tlabel[cc](7,-0.30){<m>t</m>} \tlabel[cc](0.25,3.75){<m>y</m>} \xmarks{1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{-3,3} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832} \axislabels {y}{{<m>-3</m>} -3, {<m>3</m>} 3} \penwd{1.25pt} \function{0, 6.2832, 0.1}{3*sin(x)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sin(3t)</m> Period:
+          <m>\frac{2\pi}{3}</m> Amplitude:
+          <m>1</m> Phase Shift:
+          <m>0</m> Vertical Shift:
+          <m>0</m> \begin{mfpic}[70][50]{-0.25}{2.5}{-1.25}{1.25} \point[4pt]{(0,0), (0.5236,1), (1.0472,0), (1.5708,-1), (2.0944,0)} \axes \tlabel[cc](2.5,-0.15){<m>t</m>} \tlabel[cc](0.15,1.25){<m>y</m>} \xmarks{0.5236, 1.0472, 1.5708, 2.0944} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{6}</m>} 0.5236, {<m>\frac{\pi}{3}</m>} 1.0472, {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\frac{2\pi}{3}</m>} 2.0944} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \function{0, 2.0944, 0.1}{sin(3*x)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = -2\cos(t)</m> Period:
+          <m>2\pi</m> Amplitude:
+          <m>2</m> Phase Shift:
+          <m>0</m> Vertical Shift:
+          <m>0</m> \begin{mfpic}[25]{-0.25}{7}{-2.5}{2.5} \point[4pt]{(0,-2), (1.5708,0), (3.1416, 2), (4.7124,0), (6.2832,-2)} \axes \tlabel[cc](7,-0.25){<m>t</m>} \tlabel[cc](0.25,2.5){<m>y</m>} \xmarks{1.5708, 3.1416, 4.7124, 6.2832} \ymarks{-2,2} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832} \axislabels {y}{{<m>-2</m>} -2, {<m>2</m>} 2} \penwd{1.25pt} \function{0, 6.2832, 0.1}{-2*cos(x)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \cos \left( t - \frac{\pi}{2} \right)</m> Period:
+          <m>2\pi</m> Amplitude:
+          <m>1</m> Phase Shift:
+          <m>\frac{\pi}{2}</m> Vertical Shift:
+          <m>0</m> \begin{mfpic}[22][40]{-0.25}{8.3}{-1.5}{1.5} \point[4pt]{(1.5708,1), (3.1416, 0), (4.7124,-1), (6.2832,0), (7.854,1)} \axes \tlabel[cc](8.3,-0.25){<m>t</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \xmarks{1.5708, 3.1416, 4.7124, 6.2832, 7.854} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832, {<m>\frac{5\pi}{2}</m>} 7.854} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \function{1.5708, 7.854, 0.1}{cos(x - 1.5708)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = -\sin \left( t + \frac{\pi}{3} \right)</m> Period:
+          <m>2\pi</m> Amplitude:
+          <m>1</m> Phase Shift:
+          <m>-\frac{\pi}{3}</m> Vertical Shift:
+          <m>0</m> \begin{mfpic}[27][40]{-1.25}{5.75}{-1.5}{1.5} \point[4pt]{(-1.0472,0), (0.5236,-1), (2.0944,0), (3.6652,1), (5.236,0)} \axes \tlabel[cc](5.75,-0.25){<m>t</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \xmarks{-1.0472, 0.5236, 2.0944, 3.6652, 5.236} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{\pi}{3}</m>} -1.0472, {<m>\frac{\pi}{6}</m>} 0.5236, {<m>\frac{2\pi}{3}</m>} 2.0944, {<m>\frac{7\pi}{6}</m>} 3.6652, {<m>\frac{5\pi}{3}</m>} 5.236} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \function{-1.0472, 5.236, 0.1}{-sin(x + 1.0472)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = \sin(2t - \pi)</m> Period:
+          <m>\pi</m> Amplitude:
+          <m>1</m> Phase Shift:
+          <m>\frac{\pi}{2}</m> Vertical Shift:
+          <m>0</m> \begin{mfpic}[35][50]{0}{5.25}{-1.15}{1.5} \point[4pt]{(1.5708,0), (2.3562,1), (3.1415,0), (3.927,-1), (4.7124,0)} \axes \tlabel[cc](5.25,-0.25){<m>t</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \xmarks{1.5708, 2.3562, 3.1415, 3.927, 4.7124} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\frac{3\pi}{4}</m>} 2.3562, {<m>\pi</m>} 3.1415, {<m>\frac{5\pi}{4}</m>} 3.927, {<m>\frac{3\pi}{2}</m>} 4.7124} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \function{1.5708, 4.7124, 0.1}{sin(2*x - 3.1415)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = -\frac{1}{3}\cos \left( \frac{1}{2}t + \frac{\pi}{3} \right)</m> Period:
+          <m>4\pi</m> Amplitude:
+          <m>\frac{1}{3}</m> Phase Shift:
+          <m>-\frac{2\pi}{3}</m> Vertical Shift:
+          <m>0</m> \begin{mfpic}[14][100]{-2.25}{11.5}{-0.5}{0.5} \point[4pt]{(-2.0944, -0.3333), (1.0472, 0), (4.1888, 0.3333), (7.3304, 0), (10.472, -0.3333)} \axes \tlabel[cc](11.5,-0.05){<m>t</m>} \tlabel[cc](0.25,0.5){<m>y</m>} \xmarks{-2.0944, 1.0472, 4.1888, 7.3304, 10.472} \ymarks{-0.3333, 0.3333} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{2\pi}{3}</m>} -2.0944, {<m>\frac{\pi}{3}</m>} 1.0472, {<m>\frac{4\pi}{3}</m>} 4.1888, {<m>\frac{7\pi}{3}</m>} 7.3304, {<m>\frac{10\pi}{3}</m>} 10.472} \axislabels {y}{{<m>-\frac{1}{3}</m>} -0.3333, {<m>\frac{1}{3}</m>} 0.3333} \penwd{1.25pt} \function{-2.0944, 10.472, 0.1}{-0.3333*cos(0.5*x + 1.0472)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \cos (3t - 2\pi) + 4</m> Period:
+          <m>\frac{2\pi}{3}</m> Amplitude:
+          <m>1</m> Phase Shift:
+          <m>\frac{2\pi}{3}</m> Vertical Shift: 4 \begin{mfpic}[36][25]{-0.5}{5}{-0.5}{5.5} \point[4pt]{(2.0944,5), (2.618,4), (3.1415,3), (3.6652,4), (4.1888,5)} \axes \tlabel[cc](5,-0.25){<m>t</m>} \tlabel[cc](0.25,5.5){<m>y</m>} \xmarks{2.0944, 2.618, 3.1415, 3.6652, 4.1888} \ymarks{3,4,5} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{2\pi}{3}</m>} 2.0944, {<m>\frac{5\pi}{6}</m>} 2.618, {<m>\pi</m>} 3.1415, {<m>\frac{7\pi}{6}</m>} 3.6652, {<m>\frac{4\pi}{3}</m>} 4.1888} \axislabels {y}{{<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{2.0944, 4.1888, 0.1}{cos(3*x - 6.2834) + 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = \sin \left( -t - \frac{\pi}{4} \right) - 2</m> Period:
+          <m>2\pi</m> Amplitude:
+          <m>1</m> Phase Shift:
+          <m>-\frac{\pi}{4}</m> (You need to use <m>y = -\sin \left( t + \frac{\pi}{4} \right) - 2</m> to find this.)<fn>
+          Two cycles of the graph are shown to illustrate the discrepancy discussed on <xref ref="phaseshiftissue">page</xref>.
+          </fn>  Vertical Shift:
+          <m>-2</m> \begin{mfpic}[13][27]{-7.5}{6.5}{-3.25}{0.5} \point[4pt]{(-7.0686,-2), (-5.4979,-3), (-3.927,-2), (-2.3562,-1), (-0.7854,-2), (0.7854,-3), (2.3562,-2), (3.927,-1), (5.4979,-2)} \axes \tlabel[cc](6.5,-0.25){<m>t</m>} \tlabel[cc](0.25,0.5){<m>y</m>} \xmarks{-7.0686, -5.4979, -3.927, -2.3562,-0.7854, 0.7854, 2.3562, 3.927, 5.4979} \ymarks{-3,-2,-1} \tlpointsep{5pt} \axislabels {x}{{<m>-\frac{9\pi}{4}</m>} -7.0686, {<m>-\frac{7\pi}{4}</m>} -5.4979, {<m>-\frac{5\pi}{4}</m>} -3.927, {<m>-\frac{3\pi}{4}</m>} -2.3562, {<m>-\frac{\pi}{4}</m>} -0.7854, {<m>\frac{\pi}{4}</m>} 0.7854, {<m>\frac{3\pi}{4}</m>} 2.3562, {<m>\frac{5\pi}{4}</m>} 3.927, {<m>\frac{7\pi}{4}</m>} 5.4979} \axislabels {y}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \function{-7.0686, 5.4979, 0.1}{-1*sin(x + 0.7854) - 2} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \frac{2}{3} \cos \left( \frac{\pi}{2} - 4t \right) + 1</m> Period:
+          <m>\frac{\pi}{2}</m> Amplitude:
+          <m>\frac{2}{3}</m> Phase Shift:
+          <m>\frac{\pi}{8}</m> (You need to use <m>y = \frac{2}{3} \cos \left( 4t - \frac{\pi}{2} \right) + 1</m> to find this.)<fn>
+          Again, we graph two cycles to illustrate the discrepancy discussed on <xref ref="phaseshiftissue">page</xref>.
+          </fn>  Vertical Shift:
+          <m>1</m> \begin{mfpic}[52][45]{-1.5}{2.25}{-0.25}{2} \point[4pt]{(-1.1781, 1.6667), (-0.7854, 1), (-0.3927, 0.3333), (0, 1), (0.3927, 1.6667), (0.7854, 1), (1.1781, 0.3333), (1.5708, 1), (1.9635, 1.6667)} \axes \tlabel[cc](2.25,-0.25){<m>t</m>} \tlabel[cc](0.15,2){<m>y</m>} \xmarks{-1.1781, -0.7854, -0.3927, 0.3927, 0.7854, 1.1781, 1.5708, 1.9635} \ymarks{0.3333, 1, 1.6667} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{3\pi}{8}</m>} -1.1781, {<m>-\frac{\pi}{4}</m>} -0.7854, {<m>-\frac{\pi}{8}</m>} -0.3927, {<m>\frac{\pi}{8}</m>} 0.3927, {<m>\frac{\pi}{4}</m>} 0.7854, {<m>\frac{3\pi}{8}</m>} 1.1781, {<m>\frac{\pi}{2}</m>} 1.5708, {<m>\frac{5\pi}{8}</m>} 1.9635} \axislabels {y}{{<m>\frac{1}{3}</m>} 0.333, {<m>1</m>} 1, {<m>\frac{5}{3}</m>} 1.6667} \penwd{1.25pt} \function{-1.1781, 1.9635, 0.1}{0.6667*cos(4*x - 1.5708) + 1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = -\frac{3}{2} \cos \left( 2t + \frac{\pi}{3} \right) - \frac{1}{2}</m> Period:
+          <m>\pi</m> Amplitude:
+          <m>\frac{3}{2}</m> Phase Shift:
+          <m>-\frac{\pi}{6}</m> Vertical Shift:
+          <m>-\frac{1}{2}</m> \begin{mfpic}[51][30]{-.75}{3}{-2.25}{1.5} \point[4pt]{(-0.5236,-2), (0.2618,-0.5), (1.0472, 1), (1.8326, -0.5), (2.618, -2)} \axes \tlabel[cc](3,-0.25){<m>t</m>} \tlabel[cc](0.15,1.5){<m>y</m>} \xmarks{-0.5236, 0.2618, 1.0472, 1.8326, 2.618} \ymarks{-2, -0.5, 1} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{\pi}{6}</m>} -0.5236, {<m>\frac{\pi}{12}</m>} 0.2618, {<m>\frac{\pi}{3}</m>} 1.0472, {<m>\frac{7\pi}{12}</m>} 1.8326, {<m>\frac{5\pi}{6}</m>} 2.618} \axislabels {y}{{<m>-2</m>} -2, {<m>-\frac{1}{2}</m>} -0.5, {<m>1</m>} 1} \penwd{1.25pt} \function{-0.5236, 2.618, 0.1}{-1.5*cos(2*x + 1.047) - 0.5} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = 4\sin (-2\pi t + \pi)</m> Period: <m>1</m> Amplitude:
+          <m>4</m> Phase Shift:
+          <m>\frac{1}{2}</m> (You need to use <m>h(t) = -4\sin (2\pi t - \pi)</m> to find this.)<fn>
+          This will be the last time we graph two cycles to illustrate the discrepancy discussed on <xref ref="phaseshiftissue">page</xref>.
+          </fn>  Vertical Shift:
+          <m>0</m> \begin{mfpic}[80][12]{-.75}{1.75}{-4.5}{4.75} \point[4pt]{(-0.5,0), (-0.25,-4), (0,0), (0.25,4), (0.5,0), (0.75,-4), (1,0), (1.25,4), (1.5,0)} \axes \tlabel[cc](1.75,-0.5){<m>t</m>} \tlabel[cc](0.1,4.75){<m>y</m>} \xmarks{-0.5, -0.25, 0.25, 0.5, 0.75, 1, 1.25, 1.5} \ymarks{-4,4} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{1}{2}</m> } -0.5, {<m>-\frac{1}{4}</m> } -0.25, {<m>\frac{1}{4}</m>} 0.25, {<m>\frac{1}{2}</m>} 0.5, {<m>\frac{3}{4}</m>} 0.75, {<m>1</m>} 1, {<m>\frac{5}{4}</m>} 1.25, {<m>\frac{3}{2}</m>} 1.5} \axislabels {y}{{<m>-4</m>} -4, {<m>4</m>} 4} \penwd{1.25pt} \function{-0.5, 1.5, 0.01}{(-4)*sin((6.2831853*x) - 3.14159265)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>S(t) = 4 \sin \left(t + \frac{\pi}{4} \right)</m>,
+          <m>C(t) = 4 \cos \left(t - \frac{\pi}{4} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>S(t) = -3 \sin(t) + 3</m>,
+          <m>C(t) = -3 \cos\left(t - \frac{\pi}{2}\right) + 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>S(t) = 3 \sin \left( 2t - \frac{\pi}{3} \right)</m>,
+          <m>C(t) = 3 \cos \left( 2t - \frac{5\pi}{6} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>S(t) = \frac{7}{2} \sin(\pi t) + \frac{1}{2}</m>,
+          <m>C(t) = \frac{7}{2} \cos\left(\pi t \frac{\pi}{2} \right) + \frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>y = |4 \sin(t)|</m>.
+              Period: <m>\pi</m>.
+              Two cycles are graphed below. \begin{mfpic}[25][15]{-0.25}{7}{-4.5}{4.75} \point[4pt]{(0,0), (1.5708,4), (3.1416, 0), (4.7124,4), (6.2832,0)} \axes \tlabel[cc](7,-0.30){<m>t</m>} \tlabel[cc](0.25,4.75){<m>y</m>} \xmarks{1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{4, -4} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832} \axislabels {y}{{<m>4</m>} 4, {<m>-4</m>} -4} \dotted \function{0, 6.2832, 0.1}{4*sin(x)} \penwd{1.25pt} \function{0, 3.14159, 0.1}{4*sin(x)} \function{3.14159,6.2832, 0.1}{-4*sin(x)} \end{mfpic} \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>y = \sqrt{4 \sin(t)}</m>.
+              Period: <m>2\pi</m>.
+              One cycle is graphed below. \begin{mfpic}[25][15]{-0.25}{7}{-4.5}{4.75} \point[4pt]{(0,0), (1.5708,2), (3.1416, 0)} \axes \tlabel[cc](7,-0.30){<m>t</m>} \tlabel[cc](0.25,4.75){<m>y</m>} \xmarks{1.5708, 3.1416, 4.7124, 6.2832 } \ymarks{2,4, -4} \tlpointsep{4pt} \axislabels {x}{{<m>\frac{\pi}{2}</m>} 1.5708, {<m>\pi</m>} 3.1416, {<m>\frac{3\pi}{2}</m>} 4.7124, {<m>2\pi</m>} 6.2832} \axislabels {y}{ {<m>4</m>} 4, {<m>2</m>} 2, {<m>-4</m>} -4} \dotted \function{0, 6.2832, 0.1}{4*sin(x)} \penwd{1.25pt} \function{0, 3.14159, 0.1}{sqrt(4*sin(x))} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>S(t) = \sin\left(880\pi t\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V(t) = 220 \sqrt{2} \sin\left(120\pi t\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = 67.5 \sin\left(\frac{\pi}{15} t - \frac{\pi}{2} \right) + 67.5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x(t) = 67.5 \cos\left(\frac{\pi}{15} t - \frac{\pi}{2} \right) = 67.5 \sin\left(\frac{\pi}{15} t \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = 28\sin\left(\frac{2\pi}{3} t - \frac{\pi}{2}\right) + 30</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\theta(t) = \theta_{\text{ \tiny \(0\) } } \sin\left(\sqrt{\frac{g}{l}}\, t + \frac{\pi}{2}\right)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta(t) = \frac{\pi}{12} \sin\left(4\pi t + \frac{\pi}{2}\right)</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>T(t) = 20.5 \sin\left(\frac{\pi}{6} t - \pi\right) + 53.5</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              The model and data are graphed below.
+              The sinusoid is shifted to the right of our data.
+              <image width="73%" source="./GraphsofSineandCosineGraphics/LakeErieTempReg.jpg"/>
+            </p>
+          </li>
+          <li>
+            <p>
+              The average temperature on April <m>15^{\text{ th } }</m> is approximately
+              <m>T(4.5) \approx 39.00^{\circ}</m>F and the average temperature on September
+              <m>15^{\text{ th } }</m> is approximately <m>T(9.5) \approx 73.38^{\circ}</m>F.
+            </p>
+          </li>
+          <li>
+            <p>
+              Desmos gives:
+              <m>T(t) = 20.8374 \sin (-0.5251 t-0.2812) +52.3659</m>.
+              <image width="73%" source="./GraphsofSineandCosineGraphics/LakeErieRegDesmos.jpg"/> This model predicts the average temperature for April <m>15^{\text{ th } }</m> to be approximately
+              <m>42.42^{\circ}</m>F and the average temperature on September <m>15^{\text{ th } }</m> to be approximately
+              <m>70.05^{\circ}</m>F. This model appears to be more accurate.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              Based on the shape of the data,
+              we either choose <m>A\lt 0</m> or we find the <em>second</em>
+              value of <m>t</m> which closely approximates the <sq>baseline</sq> value,
+              <m>F = 0.505</m>.
+              We choose the latter to obtain <m>F(t) = 0.475 \sin\left(\frac{\pi}{15} t - 2\pi \right) + 0.505 = 0.475 \sin\left(\frac{\pi}{15} t\right) + 0.505</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Our function and the data set are graphed below.
+              It's a pretty good fit.
+              <image width="73%" source="./GraphsofSineandCosineGraphics/MoonIlluminationReg.jpg"/>
+            </p>
+          </li>
+          <li>
+            <p>
+              The fraction of the moon illuminated on June 1st, 2009 is approximately <m>F(1) \approx 0.60</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Using desmos,<fn>
+              <ellipsis/> specifying <m>\omega = \frac{\pi}{15}</m> <ellipsis/>
+              </fn> we get <m>F(t) = 0.49\sin \left(\frac{\pi }{15}t-6.29\right)+0.535</m>.
+              <image width="73%" source="./GraphsofSineandCosineGraphics/MoonIlluminatonDesmos.jpg"/> This model predicts that the fraction of the moon illuminated on June 1st, 2009 is approximately <m>0.63</m>.
+              This appears to be a better fit to the data than our first model.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

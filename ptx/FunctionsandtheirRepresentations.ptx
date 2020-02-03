@@ -1,0 +1,4004 @@
+<section xml:id="FunctionsandtheirRepresentations">
+  <title>Functions and their Representations</title>
+  <subsection>
+    <title>Functions as Mappings</title>
+    <p>
+      Mathematics can be thought of as the study of patterns.
+      In most disciplines, Mathematics is used as a language to express,
+      or codify,
+      relationships between quantities - both algebraically and geometrically - with the ultimate goal of solving real-world problems.
+      The fact that the same algebraic equation which models the growth of bacteria in a petri dish is also used to compute the account balance of a savings account or the potency of radioactive material used in medical treatments speaks to the universal nature of Mathematics.
+      Indeed, Mathematics is more than just about solving a specific problem in a specific situation,
+      it's about abstracting problems and creating universal tools which can be used by a variety of scientists and engineers to solve a variety of problems.
+    </p>
+    <p>
+      This power of abstraction has a tendency to create a language that is initially intimidating to students.
+      Mathematical definitions are precise and adherence to that precision is often a source of confusion and frustration.
+      It doesn't help matters that more often than not very common words are used in Mathematics with slightly different definitions than is commonly expected.
+      The first <sq>universal tool</sq> we wish to highlight - the concept of a <sq>function</sq> - is a perfect example of this phenomenon in that we redefine a word that already has multiple meanings in English.
+    </p>
+    <definition xml:id="functiondefn">
+      <statement>
+        <p>
+          Given two sets<fn>
+          Please refer to <xref ref="AppSetTheory">Section</xref>
+          for a review of this terminology.
+          </fn> <m>A</m> and <m>B</m>,
+          a <idx><h>function</h><h>definition</h></idx> <term>function</term>
+          from <m>A</m> to <m>B</m> is a process by which each element of <m>A</m> is matched with
+          (or <sq>mapped to</sq>)
+          one and only one element of <m>B</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The grammar here <sq><em>from</em> <m>A</m> <em>to</em>
+      <m>B</m></sq> is important.
+      Thinking of a function as a process,
+      we can view the elements of the set <m>A</m> as our starting materials,
+      or <em>inputs</em> to the process.
+      The function processes these inputs according to some specified rule and the result is a set of <em>outputs</em>
+      - elements of the set <m>B</m>.
+      In terms of inputs and outputs,
+      <xref ref="functiondefn">Definition</xref>
+      says that a function is a process in which each <em>input</em>
+      is matched to one and only one <em>output</em>.
+    </p>
+    <p>
+      For example,
+      let's take a look at some of the pets in the Stitz household.
+      Taylor's pets include White Paw and Cooper
+      (both cats),
+      Bingo (a lizard) and Kennie (a turtle).
+      Let <m>N</m> be the set of pet names:
+      <m>N = \{ \text{ White Paw, Cooper, Bingo, Kennie } \}</m>,
+      and let <m>T</m> be the set of pet types:
+      <m>T = \{ \text{ cat, lizard, turtle } \}</m>.
+      Let <m>f</m> be the process that takes each pet's name as the input and returns that pet's type as the output.
+      Let <m>g</m> be the reverse of <m>f</m>:
+      that is, <m>g</m> takes each pet type as the input and returns the names of the pets of that type as the output.
+      Note that both <m>f</m> and <m>g</m> are codifying the <em>same</em>
+      given information about Taylor's pets,
+      but one of them is a function and the other is not.
+    </p>
+    <p>
+      To help identify which process <m>f</m> or <m>g</m> is a function and why the other is not,
+      we create
+          <idx><h>diagram</h><h>mapping</h></idx>
+      <em>mapping diagrams</em> for <m>f</m> and <m>g</m> below.
+      In each case,
+      we organize the inputs in a column on the left and the outputs on a column on the right.
+      We draw an arrow connecting each input to its corresponding output(s).
+      Note that the arrows communicate the grammatical bias:
+      the arrow originates at the input and points to the output.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[19]{-5}{5}{2}{6}
+          \tlabel[cc](-4.25,6){<m>N</m> (inputs)}
+          \tlabel[cc](-4.25,5){White Paw}
+          \tlabel[cc](-4.25,4){Cooper}
+          \tlabel[cc](-4.25,3){Bingo}
+          \tlabel[cc](-4.25,2){Kennie}
+          \tlabel[cc](0,6){<m>f</m>}
+          \tlabel[cc](3.5,5){cat}
+          \tlabel[cc](3.5,4){lizard}
+          \tlabel[cc](3.5,3){turtle}
+          \tlabel[cc](3.5,6){<m>T</m> (outputs)}
+          \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
+          \arrow[l 5pt] \polyline{(-2.5, 4), (2.5, 5)}
+          \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 4)}
+          \arrow[l 5pt] \polyline{(-2.5, 2), (2.5, 3)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[19]{-5}{5}{2}{6}
+          \tlabel[cc](-3.5,6){<m>T</m> (inputs)}
+          \tlabel[cc](-3.5,5){cat}
+          \tlabel[cc](-3.5,4){lizard}
+          \tlabel[cc](-3.5,3){turtle}
+          \tlabel[cc](0,6){<m>g</m>}
+          \tlabel[cc](3.75,6){<m>N</m> (outputs)}
+          \tlabel[cc](3.75,5){White Paw}
+          \tlabel[cc](3.75,4){Cooper}
+          \tlabel[cc](3.75,3){Bingo}
+          \tlabel[cc](3.75,2){Kennie}
+          \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)}
+          \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 4)}
+          \arrow[l 5pt] \polyline{(-2.5, 4), (2.5, 3)}
+          \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 2)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      The process <m>f</m> is a function since <m>f</m> matches each of its inputs
+      (each pet name)
+      to just one output
+      (the pet's type).
+      The fact that different inputs (White Paw and Cooper) are matched to the same output (cat) is fine.
+      On the other hand,
+      <m>g</m> matches the input <sq>cat</sq> to the two different outputs <sq>White Paw</sq> and <sq>Cooper</sq>,
+      so <m>g</m> is not a function.
+      Functions are favored in mathematical circles because they are processes which produce only one answer (output) for any given query
+      (input).
+      In this scenario, for instance,
+      there is only one answer to the question:
+      <sq>What type of pet is White Paw?</sq> but there is more than one answer to the question <sq>Which of Taylor</sq>s pets are cats?'
+    </p>
+    <p>
+      As you might expect,
+      with functions being such an important concept in Mathematics,
+      we need to build a vocabulary to assist us when discussing them.
+      To that end, we have the following definitions.<fn>
+      Please refer to <xref ref="AppSetTheory">Section</xref>
+      for a review of the terminology used in these definitions.
+      </fn>
+    </p>
+    <definition xml:id="domainrangedefns">
+      <statement>
+        <p>
+          Suppose <m>f</m> is a function from <m>A</m> to <m>B</m>.
+          <ul>
+            <li>
+              <p>
+                If <m>a \in A</m>, we write <m>f(a)</m>
+                (read <sq><m>f</m> of <m>a</m></sq>)
+                to denote the unique element of <m>B</m> to which <m>f</m> matches <m>a</m>.
+                That is, if we view <sq><m>a</m></sq> as the input to <m>f</m>,
+                then <sq><m>f(a)</m></sq> is the output from <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>A</m> is called the
+                  <idx><h>domain</h><h>definition</h></idx>
+                <em>domain</em>.
+                Said differently,
+                the domain of a function is the set of inputs to the function.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>\{ f(a) \, | \, a \in A \}</m> is called the
+                  <idx><h>range</h><h>definition</h></idx>
+                <em>range</em> of <m>f</m>.
+                Said differently,
+                the range of a function is the set of outputs from the function.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Some remarks about <xref ref="domainrangedefns">Definition</xref> are in order.
+      First, and most importantly,
+      the notation <sq><m>f(a)</m></sq> in <xref ref="domainrangedefns">Definition</xref>
+      introduces yet another mathematical use for parentheses.
+      Parentheses are used in some cases as grouping symbols,
+      to represent ordered pairs, and to delineate intervals of real numbers.
+      More often than not,
+      the use of parentheses in expressions like <sq><m>f(a)</m></sq> is confused with multiplication.
+      As always, paying attention to the context is key.
+      If <m>f</m> is a function and <sq><m>a</m></sq> is in the domain of <m>f</m>,
+      then <sq><m>f(a)</m></sq> is the output from <m>f</m> when you input <m>a</m>.
+      The diagram below provides a nice generic picture to keep in mind when thinking of a function as a mapping process with input <sq><m>a</m></sq> and output <sq><m>f(a)</m></sq>.
+    </p>
+    <p>
+      \begin{mfpic}[10]{-10}{10}{-10}{10} \tlabel[cc](0,6){<m>f</m>} \tlabel[cc](-9,-1){<m>a</m>} \tlabel[cc](-9,-3){input} \tlabel[cc](7,-1){<m>f(a)</m>} \tlabel[cc](7,-3){output} \point[2pt]{(-9,0), (7,0)} \sclosed \curve{(-6,7), (-12,0), (-6,-9), (-7,0)} \tlabel[cc](-9,-10){<m>A</m>} \sclosed \curve{(6,7), (11,0), (5,-8)} \tlabel[cc](7,-10){<m>B</m>} \penwd{0.75pt} \arrow \curve{(-8.75,0.25), (0,5), (6.75,0.25)} \end{mfpic}
+    </p>
+    <p>
+      In the preceding pet example,
+      the symbol <m>f(\text{ Bingo } )</m>,
+      read <sq><m>f</m> of Bingo</sq>,
+      is asking what type of pet Bingo is,
+      so <m>f(\text{ Bingo } ) = \text{ lizard }</m>.
+      The fact that <m>f</m> is a function means
+      <m>f(\text{ Bingo } )</m> is unambiguous because <m>f</m> matches the name <sq>Bingo</sq> to only one pet type,
+      namely <sq>lizard</sq>.
+      In contrast,
+      if we tried to use the notation <sq><m>g(\text{ cat } )</m></sq> to indicate what pet name <m>g</m> matched to <sq>cat</sq>,
+      we have <em>two</em> possibilities, White Paw and Cooper,
+      with no way to determine which one
+      (or both)
+      is indicated.
+    </p>
+    <p>
+      Continuing to apply <xref ref="domainrangedefns">Definition</xref> to our pet example,
+      we find that the domain of the function <m>f</m> is <m>N</m>,
+      the set of pet names.
+      Finding the range takes a little more work,
+      mostly because it's easy to be caught off guard by the notation used in the definition of <sq>range</sq>.
+      The description of the range as <sq><m>\{ f(a) \, | \, a \in A \}</m></sq> is an example of <sq>set-builder</sq> notation.
+      In English, <sq><m>\{ f(a) \, | \, a \in A \}</m></sq> reads as <sq>the set of <m>f(a)</m> such that <m>a</m> is in <m>A</m></sq>.
+      In other words,
+      the range consists of all of the outputs from <m>f</m> - all of the <m>f(a)</m> values - as <m>a</m> varies through each of the elements in the domain <m>A</m>.
+      Note that while every element of the set <m>A</m> is,
+      by definition, an element of the domain of <m>f</m>,
+      not every element of the set <m>B</m> is necessarily part of the range of <m>f</m>.<fn>
+      For purposes of completeness,
+      the set <m>B</m> is called the <idx><h>codomain</h><h>definition</h></idx>
+      <em>codomain</em> of <m>f</m>.
+      For us, the concepts of domain and range suffice since our codomain will most always be the set of real numbers,
+      <m>\mathbb{R}</m>.
+      </fn>
+    </p>
+    <p>
+      In our pet example,
+      we can obtain the range of <m>f</m> by looking at the mapping diagram or by constructing the set
+      <m>\{ f(\text{ White Paw } ), f(\text{ Cooper } ), f(\text{ Bingo } ), f(\text{ Kennie } ) \}</m> which lists all of the outputs from <m>f</m> as we run through all of the inputs to <m>f</m>.
+      Keep in mind that we list each element of a set only once so the range of <m>f</m> is:<fn>
+      If instead of mapping <m>N</m> into <m>T</m>,
+      we could have mapped <m>N</m> into
+      <m>U=\{ \text{ cat } , \text{ lizard } , \text{ turtle } , \text{ dog } \}</m> in which case the range of <m>f</m> would not have been the entire codomain <m>U</m>.
+      </fn>
+      <me>
+        \{ f(\text{ White Paw } ), f(\text{ Cooper } ), f(\text{ Bingo } ), f(\text{ Kennie } ) \} = \{ \text{ cat } , \text{ lizard } , \text{ turtle }  \} = T
+      </me>.
+    </p>
+    <p>
+      If we let <m>n</m> denote a generic element of <m>N</m> then <m>f(n)</m> is some element <m>t</m> in <m>T</m>,
+      so we write <m>t = f(n)</m>.
+      In this equation,
+      <m>n</m> is called the <idx><h>variable</h><h>independent</h></idx>
+      <em>independent variable</em> and <m>t</m> is called the <idx><h>variable</h><h>dependent</h></idx>
+      <em>dependent variable</em>.<fn>
+      These adjectives stem from the fact that the value of <m>t</m> <em>depends</em>
+      entirely on our (independent) choice of <m>n</m>.
+      </fn> Moreover,
+      we say <sq><m>t</m> is a function of <m>n</m></sq>, or,
+      more specifically,
+      <sq>the type of pet is a function of the pet name</sq> meaning that every pet name <m>n</m> corresponds to one,
+      and only one, pet type <m>t</m>.
+      Even though <m>f</m> and <m>t</m> are different things,<fn>
+      Specifically, <m>f</m> is a function so it requires and domain,
+      a range and a rule of assignment whereas <m>t</m> is simply the output from <m>f</m>.
+      </fn> it is very common for the function and its outputs to become more-or-less synonymous,
+      even in what are otherwise precise mathematical definitions.<fn>
+      In fact, it is not uncommon to see the name of the function as the same as the dependent variable.
+      For example,
+      writing <sq><m>y = y(x)</m></sq> would be a way to communicate the idea that <sq><m>y</m> is a function of <m>x</m></sq>.
+      </fn> We will endeavor to point out such ambiguities as we move through the text.
+    </p>
+    <p>
+      While the concept of a function is very general in scope,
+      we will be focusing primarily on functions of real numbers because most disciplines use real numbers to quantify data.
+      Our next example explores a function defined using a table of numerical values.
+    </p>
+    <example xml:id="timetempex1">
+      <statement>
+        <p>
+          Suppose Skippy records the outdoor temperature every two hours starting at 6 a.m. and ending at 6 p.m. and summarizes the data in the table below:
+          <me>
+            \begin{array}{|c||c|}  \hline  \text{ time (hours after 6 a.m.) }  \amp   \text{ outdoor temperature }  \\ \amp  \text{ in degrees Fahrenheit }  \\ \hline 0 \amp  64  \\  \hline 2 \amp  67  \\  \hline 4 \amp   75  \\  \hline 6 \amp   80 \\  \hline 8 \amp  83  \\  \hline 10 \amp   83 \\  \hline 12 \amp  82  \\  \hline \end{array}
+          </me>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Explain why the recorded outdoor temperature is a function of the corresponding time.
+            </p>
+          </li>
+          <li>
+            <p>
+              Is time a function of the outdoor temperature?
+              Explain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>f</m> be the function which matches time to the corresponding recorded outdoor temperature.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Find and interpret the following:
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <m>f(2)</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>f(4)</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>f(2+4)</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>f(2) + f(4)</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>f(2) + 4</m>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  Solve and interpret <m>f(t) = 83</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  State the range of <m>f</m>.
+                  What is lowest recorded temperature of the day?
+                  The highest?
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The outdoor temperature is a function of time because each time value is associated with only one recorded temperature.
+              </p>
+            </li>
+            <li>
+              <p>
+                Time is not a function of the outdoor temperature because there are instances when different times are associated with a given temperature.
+                For example,
+                the temperature <m>83</m> corresponds to both of the times <m>8</m> and <m>10</m>.
+              </p>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <ul>
+                    <li>
+                      <p>
+                        To find <m>f(2)</m>,
+                        we look in the table to find the recorded outdoor temperature that corresponds to when the time is <m>2</m>.
+                        We get <m>f(2) = 67</m> which means that 2 hours after 6 a.m. (i.e., at 8 a.m.), the temperature is <m>67^{\circ}</m>F.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Per the table, <m>f(4) = 75</m>,
+                        so the recorded outdoor temperature at 10 a.m. (4 hours after 6 a.m.) is <m>75^{\circ}</m>F.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        From the table, we find <m>f(2+4) = f(6) = 80</m>,
+                        which means that at noon (6 hours after 6 a.m.), the recorded outdoor temperature is <m>80^{\circ}</m>F.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        Using results from above we see that <m>f(2) + f(4) = 67 + 75 = 142</m>.
+                        When adding <m>f(2) + f(4)</m>,
+                        we are adding the recorded outdoor temperatures at 8 a.m. (2 hours after 6 a.m.) and 10 a.m. (4 hours after 6 AM), respectively,
+                        to get <m>142^{\circ}</m>F.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        We compute <m>f(2) + 4 = 67 + 4 = 71</m>.
+                        Here, we are adding <m>4^{\circ}</m>F to the outdoor temperature recorded at 8 a.m..
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    Solving <m>f(t) = 83</m> means finding all of the input (time) values <m>t</m> which produce an output value of <m>83</m>.
+                    From the data,
+                    we see that the temperature is <m>83</m> when the time is <m>8</m> or <m>10</m>,
+                    so the solution to <m>f(t) = 83</m> is <m>t = 8</m> or <m>t = 10</m>.
+                    This means the outdoor temperature is
+                    <m>83^{\circ}</m>F at 2 p.m. (8 hours after 6 a.m.) and at 4 p.m. (10 hours after 6 a.m.).
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The range of <m>f</m> is the set of all of the outputs from <m>f</m>,
+                    or in this case, the outside recorded temperatures.
+                    Based on the data, we get <m>\{ 64, 67, 75, 80, 82, 83\}</m>.
+                    (Here again, we list elements of a set only once.)
+                    The lowest recorded temperature of the day is
+                    <m>64^{\circ}</m>F and the highest recorded temperature of the day is <m>83^{\circ}</m>F.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="timetempex1">Example</xref> are in order.
+      First, note that <m>f(2+4)</m>,
+      <m>f(2)+f(4)</m> and <m>f(2)+4</m> all work out to be numerically different,
+      and more importantly, all represent different things.<fn>
+      You may be wondering why one would ever compute these quantities.
+      Rest assured that we will use expressions like these in examples throughout the text.
+      For now, it suffices just to know that they are different.
+      </fn> One of the common mistakes students make is to misinterpret expressions like these,
+      so it's important to pay close attention to the syntax here.
+    </p>
+    <p>
+      Next, when solving <m>f(t) = 83</m>,
+      the variable <sq><m>t</m></sq> is being used as a convenient <sq>dummy</sq> variable or placeholder in the sense that solving
+      <m>f(t) = 83</m> produces the same solutions as solving <m>f(x) = 83</m>,
+      <m>f(w) = 83</m>, or even <m>f(?) = 83</m>.
+      All of these equations are asking for the same thing:
+      what inputs to <m>f</m> produce an output of <m>83</m>.
+      The choice of the letter <sq><m>t</m></sq> here makes sense since the inputs are <em>t</em>ime values.
+      Throughout the text,
+      we will endeavor to use meaningful labels when working in applied situations,
+      but the fact remains that the choice of letters
+      (or symbols)
+      is completely arbitrary.
+    </p>
+    <p>
+      Finally, given that the range in this example was a finite set of real numbers,
+      we could find the smallest and largest elements of it.
+      Here, they correspond to the coolest and warmest temperatures of the day,
+      respectively,
+      but the meaning would change if the function related different quantities.
+      In many applications involving functions,
+      the end goal is to find the minimum or maximum values of the outputs of those functions (called
+          <idx><h>optimization</h></idx>
+          <idx><h>function</h><h>optimization</h></idx> <em>optimizing</em> the function) so for that reason, we have the following definition.
+    </p>
+    <definition xml:id="absmaxmindefn">
+      <statement>
+        <p>
+          Suppose <m>f</m> is a function whose range is a set of real numbers containing <m>m</m> and <m>M</m>.
+          <ul>
+            <li>
+              <p>
+                The value <m>m</m> is called the <em>minimum</em><fn>
+                also called <sq>absolute</sq> or <sq>global</sq> minimum
+                </fn> of <m>f</m> if
+                <m>m \leq f(x)</m> for all <m>x</m> in the domain of <m>f</m>.
+                  <idx><h>minimum</h><h>formal definition of</h></idx>
+              That is, the minimum of <m>f</m> is the smallest output from <m>f</m>,
+                if it exists.
+              </p>
+            </li>
+            <li>
+              <p>
+                The value <m>M</m> is called the <em>maximum</em><fn>
+                also called <sq>absolute</sq> or <sq>global</sq> maximum
+                </fn>  of <m>f</m> if
+                <m>f(x) \leq M</m> for all <m>x</m> in the domain of <m>f</m>.
+                  <idx><h>maximum</h><h>formal definition of</h></idx>
+              That is, the maximum of <m>f</m> is the largest output from <m>f</m>,
+                if it exists.
+              </p>
+            </li>
+            <li>
+              <p>
+                Taken together, the values <m>m</m> and <m>M</m>
+                (if they exist)
+                are called the <em>extrema</em><fn>
+                also called the <sq>absolute</sq> or <sq>global</sq> extrema or the <sq>extreme values</sq>
+                </fn> of <m>f</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      <xref ref="absmaxmindefn">Definition</xref>
+      is an example where the name of the function, <m>f</m>,
+      is being used almost synonymously with its outputs in that when we speak of <sq>the minimum and maximum of the
+      <em>function</em> <m>f</m></sq> we are really talking about the minimum and maximum values of the <em>outputs</em>
+      <m>f(x)</m> as <m>x</m> varies through the domain of <m>f</m>.
+      Thus we say that the <idx><h>function</h><h>(absolute) maximum</h></idx>
+          <idx><h>maximum</h><h>intuitive definition of</h></idx>
+      maximum of <m>f</m> is <m>83</m> and the <idx><h>function</h><h>(absolute,
+      global) minimum</h></idx>
+          <idx><h>minimum</h><h>intuitive definition of</h></idx>
+      minimum of <m>f</m> is <m>64</m> when referring to the highest and lowest recorded temperatures in the previous example.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Algebraic Representations of Functions</title>
+    <p>
+      By focusing our attention to functions that involve real numbers,
+      we gain access to all of the structures and tools from prior courses in Algebra.
+      In this subsection,
+      we discuss how to represent functions algebraically using formulas and begin with the following example.
+    </p>
+    <example xml:id="funcnotatex1">
+      <statement>
+        <ol>
+          <li>
+            <p>
+              Let <m>f</m> be the function which takes a real number and performs the following sequence of operations:
+              <ul>
+                <li>
+                  <p>
+                    Step 1: add 2
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Step 2: multiply the result of Step 1 by 3
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Step 3: subtract 1 from the result of Step 2.
+                  </p>
+                </li>
+              </ul>
+              <ol>
+                <li>
+                  <p>
+                    Find and simplify <m>f(-5)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Find and simplify a formula for <m>f(x)</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>h(t) = -t\,^{2} + 3t + 4</m>.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Find and simplify the following:
+                </p>
+                <ol>
+                  <li>
+                    <p>
+                      <m>h(-1)</m>, <m>h(0)</m> and <m>h(2)</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>h(2x)</m> and <m>2 h(x)</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>h(t + 2)</m>, <m>h(t) + 2</m> and <m>h(t) + h(2)</m>.
+                    </p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>
+                  Solve <m>h(t) = 0</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    We take <m>-5</m> and follow it through each step:
+                    <ul>
+                      <li>
+                        <p>
+                          Step 1: adding 2 gives us <m>-5+2 = -3</m>.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Step 2: multiplying the result of Step 1 by 3 yields <m>(-3)(3) = -9</m>.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Step 3: subtracting 1 from the result of Step 2 produces <m>-9-1 = -10</m>.
+                        </p>
+                      </li>
+                    </ul>
+                  </p>
+                  Hence, <m>f(-5) = -10</m>.
+                </li>
+                <li>
+                  <p>
+                    To find a formula for <m>f(x)</m>,
+                    we repeat the above process but use the variable <sq><m>x</m></sq> in place of the number <m>-5</m>:
+                    <ul>
+                      <li>
+                        <p>
+                          Step 1: adding 2 gives us the quantity <m>x+2</m>.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Step 2: multiplying the result of Step 1 by 3 yields <m>(x+2)(3) = 3x+6</m>.
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          Step 3: subtracting 1 from the result of Step 2 produces <m>(3x+6) - 1 = 3x+5</m>.
+                        </p>
+                      </li>
+                    </ul>
+                  </p>
+                  Hence, we have codified <m>f</m> using the formula <m>f(x) = 3x + 5</m>.
+                  In other words,
+                  the function <m>f</m> matches each real number <sq><m>x</m></sq> with the value of the expression <sq><m>3x + 5</m></sq>.
+                  As a partial check of our answer,
+                  we use this formula to find <m>f(-5)</m>.
+                  We compute <m>f(-5)</m> by substituting <m>x = -5</m> into the formula <m>f(x)</m> and find <m>f(-5) = 3(-5) + 5 = -10</m> as before.
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                As before, representing the function <m>h</m> as
+                <m>h(t) = -t\,^{2} + 3t + 4</m> means that <m>h</m> matches the real number <m>t</m> with the value of the expression  <m>-t\,^{2} + 3t + 4</m>.
+                <ol>
+                  <li>
+                    <p>
+                      To find <m>h(-1)</m>,
+                      we substitute <m>-1</m> for <m>t</m>  in the expression <m>-t\,^{2} + 3t + 4</m>.
+                      It is highly recommended that you be generous with parentheses here in order to avoid common mistakes:
+                      <me>
+                        \begin{array}{rclr} h(-1) \amp  = \amp  -(-1)^2 + 3(-1) + 4 \amp  \\ \amp  = \amp  -(1) + (-3) + 4 \amp  \\ \amp  = \amp  0 .\amp \end{array}
+                      </me>
+                      Similarly, <m>h(0) = -(0)^2 + 3(0) + 4 = 4</m>,
+                      and <m>h(2) = -(2)^2 + 3(2) + 4 = -4 + 6 + 4 = 6</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      To find <m>h(2x)</m>, we substitute <m>2x</m> for <m>t</m>:
+                      <me>
+                        \begin{array}{rclr} h(2x) \amp  = \amp  -(2x)^2 + 3(2x) + 4 \amp  \\ \amp  = \amp  -(4x^2) + (6x) + 4 \amp  \\ \amp  = \amp  -4x^2+6x+4. \amp \end{array}
+                      </me>
+                      The expression <m>2h(x)</m> means that we multiply the expression <m>h(x)</m> by <m>2</m>.
+                      We first get <m>h(x)</m> by substituting <m>x</m> for <m>t</m>:
+                      <m>h(x) = -x^2 + 3x + 4</m>.
+                      Hence,
+                      <me>
+                        \begin{array}{rclr} 2h(x) \amp  = \amp  2\left(-x^2 + 3x + 4\right) \amp  \\ \amp  = \amp  -2x^2 + 6x + 8. \end{array}
+                      </me>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      To find <m>h(t + 2)</m>,
+                      we substitute the quantity <m>t + 2</m> in place of <m>t</m>:
+                      <me>
+                        \begin{array}{rclr} h(t + 2) \amp  = \amp  -(t + 2)^2 + 3(t + 2) + 4 \amp  \\ \amp  = \amp  -\left(t\,^{2} + 4t + 4\right) + (3t + 6) + 4 \amp  \\ \amp  = \amp  -t\,^{2} - 4t - 4 + 3t + 6 + 4 \amp   \\ \amp  = \amp  -t\,^{2} - t + 6. \amp \end{array}
+                      </me>
+                      To find <m>h(t) + 2</m>, we add <m>2</m> to the expression for <m>h(t)</m>
+                      <me>
+                        \begin{array}{rclr} h(t) + 2 \amp  = \amp  \left(-t\,^{2} + 3t + 4\right) + 2  \amp  \\ \amp  = \amp  -t\,^{2} + 3t + 6. \end{array}
+                      </me>
+                      From our work above, we see that <m>h(2) = 6</m> so
+                      <me>
+                        \begin{array}{rclr} h(t) + h(2) \amp  = \amp  \left(-t\,^{2} + 3t + 4\right) + 6  \amp  \\ \amp  = \amp  -t\,^{2} + 3t + 10. \end{array}
+                      </me>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+            <li>
+              <p>
+                We know <m>h(-1) = 0</m> from above,
+                so <m>t=-1</m> should be one of the answers to <m>h(t) = 0</m>.
+                In order to see if there are any more,
+                we set <m>h(t) = -t^2+3t+4 = 0</m>.
+                Factoring<fn>
+                You may need to review <xref ref="AppFactoring">Section</xref>.
+                </fn> gives <m>-(t+1)(t-4) = 0</m>, so we get <m>t=-1</m>
+                (as expected)
+                along with <m>t=4</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="funcnotatex1">Example</xref> are in order.
+      First, note that <m>h(2x)</m> and <m>2 h(x)</m> are different expressions.
+      In the former, we are multiplying the
+      <em>input</em> by <m>2</m>;
+      in the latter, we are multiplying the
+      <em>output</em> by <m>2</m>.
+      The same goes for <m>h(t + 2)</m>,
+      <m>h(t) + 2</m> and <m>h(t) + h(2)</m>.
+      The expression <m>h(t + 2)</m> calls for adding <m>2</m> to the input <m>t</m> and then performing the function <m>h</m>.
+      The expression <m>h(t) + 2</m> has us performing the process <m>h</m> first,
+      then adding <m>2</m> to the output <m>h(t)</m>.
+      Finally, <m>h(t) + h(2)</m> directs us to first find the outputs <m>h(t)</m> and <m>h(2)</m> and then add the results.
+      As we saw in <xref ref="timetempex1">Example</xref>,
+      we see here again the importance paying close attention to syntax.<fn>
+      As was mentioned before,
+      we will give meanings to the these quantities in other examples throughout the text.
+      </fn>
+    </p>
+    <p>
+      Let us return for a moment to the function <m>f</m> in <xref ref="funcnotatex1">Example</xref>
+      which we ultimately represented using the formula <m>f(x) = 3x+5</m>.
+      If we introduce the dependent variable <m>y</m>,
+      we get the equation <m>y = f(x) = 3x + 5</m>,
+      or, more simply <m>y = 3x + 5</m>.
+      To say that the equation <m>y = 3x + 5</m> describes <m>y</m> as a function of <m>x</m> means that for each choice of <m>x</m>,
+      the formula <m>3x + 5</m> determines only one associated <m>y</m>-value.
+    </p>
+    <p>
+      We could turn the tables and ask if the equation <m>y=3x+5</m> describes <m>x</m> as a function of <m>y</m>.
+      That is, for each value we pick for <m>y</m>,
+      does the equation <m>y = 3x+5</m> produce only one associated <m>x</m> value?
+      One way to proceed is to solve
+      <m>y = 3x+5</m> for <m>x</m> and get <m>x= \frac{1}{3} (y-5)</m>.
+      We see that for each choice of <m>y</m>,
+      the expression <m>\frac{1}{3} (y-5)</m> evaluates to just one number, hence,
+      <m>x</m> is a function of <m>y</m>.
+      If we give this function a name, say <m>g</m>,
+      we have <m>x = g(y) = \frac{1}{3}(y-5)</m>, where in this equation,
+      <m>y</m> is the independent variable and <m>x</m> is the dependent variable.
+      We explore this idea in the next example.
+    </p>
+    <example xml:id="equationfunction">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Consider the equation <m>x^{3} + y^{2} = 25</m>.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Does this equation represent <m>y</m> as a function of <m>x</m>?
+                  Explain.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Does this equation represent <m>x</m> as a function of <m>y</m>?
+                  Explain.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Consider the equation <m>u^{4} + t^{3}u = 16</m>.
+              <ol>
+                <li>
+                  <p>
+                    Does this equation represent <m>t</m> as a function of <m>u</m>?
+                    Explain.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Does this equation represent <m>u</m> as a function of <m>t</m>?
+                    Explain.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To say that <m>x^{3} + y^{2} = 25</m> represents <m>y</m> as a function of <m>x</m>,
+                    we need to show that for each <m>x</m> we choose,
+                    the equation produces only one associated <m>y</m>-value.
+                    To help with this analysis,
+                    we solve the equation for <m>y</m> in terms of <m>x</m>.
+                    <me>
+                      \begin{array}{rclr}  x^{3} + y^{2}  \amp  = \amp   25 \amp  \\  y^{2} \amp  = \amp  25 - x^{3} \amp  \\  y \amp  = \amp  \pm \sqrt{25 - x^{3}} \amp  \text{ extract square roots. (See <xref ref="AppRadEqus">Section</xref> for a review, if needed.) } \end{array}
+                    </me>
+                    The presence of the <sq><m>\pm</m></sq> indicates that there is a good chance that for some <m>x</m>-value,
+                    the equation will produce <em>two</em>
+                    corresponding <m>y</m>-values.
+                    Indeed, <m>x = 0</m> produces <m>y = \pm \sqrt{25 - 0^{3}} = \pm 5</m>.
+                    Hence, <m>x^{3} + y^{2} = 25</m> equation does <em>not</em>
+                    represent <m>y</m> as a function of <m>x</m> because <m>x = 0</m> is matched with more than one <m>y</m>-value.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To see if <m>x^{3} + y^{2} = 25</m> represents <m>x</m> as a function of <m>y</m>,
+                    we solve the equation for <m>x</m> in terms of <m>y</m>:
+                    <me>
+                      \begin{array}{rclr}  x^{3} + y^{2}  \amp  = \amp   25 \amp  \\  x^{3} \amp  = \amp  25 - y^{2}\amp  \\  x \amp  = \amp   \sqrt[3]{25 - y^{2}} \amp  \text{ extract cube roots. (See <xref ref="AppRadEqus">Section</xref> for a review, if needed.) } \end{array}
+                    </me>
+                    In this case, each choice of <m>y</m> produces only <em>one</em>
+                    corresponding value for <m>x</m>,
+                    so   <m>x^{3} + y^{2} = 25</m> represents <m>x</m> as a function of <m>y</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To see if  <m>u^{4} + t^{3}u = 16</m> represents <m>t</m> as a function of <m>u</m>,
+                    we proceed as above and solve for <m>t</m> in terms of <m>u</m>:
+                    <me>
+                      \begin{array}{rclr}  u^{4} + t^{3} u  \amp  = \amp   16 \amp  \\  t^{3} u \amp  = \amp  16 - u^{4} \amp  \\  t^{3} \amp  = \amp  \dfrac{16 - u^{4}}{u} \amp  \text{ assumes \(u \neq 0\) }  \\  t \amp  = \amp  \sqrt[3]{\dfrac{16 - u^{4}}{u}} \amp  \text{ extract cube roots. } \end{array}
+                    </me>
+                    Although it's a bit cumbersome,
+                    as long as <m>u \neq 0</m> the expression
+                    <m>\sqrt[3]{\frac{16-u^4}{u}}</m> will produce just one value of <m>t</m> for each value of <m>u</m>.
+                    What if <m>u = 0</m>?
+                    In that case, the equation
+                    <m>u^{4} + t^{3}u = 16</m> reduces to <m>0 = 16</m> - which is never true - so we don't need to worry about that case.<fn>
+                    Said differently,
+                    <m>u = 0</m> is not in the domain of the function represented by the equation <m>u^{4} + t^{3}u = 16</m>.
+                    </fn>  Hence,
+                    <m>u^{4} + t^{3}u = 16</m> represents <m>t</m> as a function of <m>u</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In order to determine if <m>u^{4} + t^{3}u = 16</m> represents <m>u</m> as a function of <m>t</m>,
+                    we could attempt to solve <m>u^{4} + t^{3}u = 16</m> for <m>u</m> in terms of <m>t</m>,
+                    but we won't get very far.<fn>
+                    Try it for yourself!
+                    </fn>  Instead,
+                    we take a different approach and experiment with looking for solutions for <m>u</m> for specific values of <m>t</m>.
+                    If we let <m>t = 0</m>, we get
+                    <m>u^{4} = 16</m> which gives <m>u = \pm \sqrt[4]{16} = \pm 2</m>.
+                    Hence, <m>t = 0</m> corresponds to more than one <m>u</m>-value which means
+                    <m>u^{4} +t^{3}u = 16</m> does not represent <m>u</m> as a function of <m>t</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We'll have more to say about using equations to describe functions in <xref ref="Relations">Section</xref>.
+      For now, we turn our attention to a geometric way to represent functions.
+    </p>
+  </subsection>
+  <subsection xml:id="firsttimewebreaktheaxis">
+    <title>Geometric Representations of Functions</title>
+    <p>
+      In this section, we introduce how to graph functions.
+      As we'll see in this and later sections,
+      visualizing functions geometrically can assist us in both analyzing them and using them to solve associated application problems.
+      Our playground, if you will,
+      for the Geometry in this course is the Cartesian Coordinate Plane.
+      The reader would do well to review <xref ref="AppCartesianPlane">Section</xref> as needed.
+    </p>
+    <p>
+      Our path to the Cartesian Plane requires ordered pairs.
+      In general, we can represent every function as a set of ordered pairs.
+      Indeed, given a function <m>f</m> with domain <m>A</m>,
+      we can represent <m>f = \{ (a, f(a)) \, | \, a \in A\}</m>.
+      That is, we represent <m>f</m> as a set of ordered pairs <m>(a, f(a))</m>,
+      or, more generally, <m>(\text{ input } , \text{ output } )</m>.
+      For example,
+      the function <m>f</m> which matches Taylor's pet's names to their associated pet type can be represented as:
+      <me>
+        f = \{ (\text{ White Paw } , \text{ cat } ), (\text{ Cooper } , \text{ cat } ), (\text{ Bingo } , \text{ lizard } ), (\text{ Kennie } , \text{ turtle } ) \}
+      </me>
+    </p>
+    <p>
+      Moving on, we next consider the function <m>f</m> from <xref ref="timetempex1">Example</xref>
+      which relates time to temperature.
+      In this case,
+      <m>f = \{ (0, 64), (2, 67), (4, 75), (6, 80), (8, 83), (10, 83), (12, 82) \}</m>.
+      This function has numerical values for both the domain and range so we can identify these ordered pairs with points in the Cartesian Plane.
+      The first coordinates of these points
+      (the abscissae)
+      represent time values so we'll use <m>t</m> to label the horizontal axis.
+      Likewise, we'll use <m>T</m> to label the vertical axis since the second coordinates of these points
+      (the ordinates)
+      represent temperature values.
+      Note that labeling these axes in this way determines our independent and dependent variable names,
+      <m>t</m> and <m>T</m>, respectively.
+    </p>
+    <p>
+      The plot of these points is called <sq>the
+      <em>graph</em> of <m>f</m></sq>.
+      More specifically,
+      we could describe this plot as <sq>the graph of <m>f(t)</m></sq>,
+      because we have decided to name the independent variable <m>t</m>.
+      Most specifically,
+      we could describe the plot as <sq>the graph of <m>T = f(t)</m></sq>,
+      given that we have named the independent variable <m>t</m> and the dependent variable <m>T</m>.
+    </p>
+    <p>
+      On the next page we present two plots,
+      both of which are graphs of the function <m>f</m>.
+      In both cases,
+      the vertical axis has been scaled in order to save space.
+      In the graph on the left,
+      the same increment on the horizontal axis to measure <m>1</m> unit measures <m>10</m> units on the vertical axis whereas in the graph on the right,
+      this ratio is <m>1 : 2</m>.
+      The <sq><m>\asymp</m></sq> symbol on the vertical axis in the graph on the right is used to indicate a jump in the vertical labeling.
+      Both are perfectly accurate data plots,
+      but they have different visual impacts.
+      Note here that the extrema of <m>f</m>, <m>64</m> and <m>83</m>,
+      correspond to the lowest and highest points on the graph,
+      respectively:
+      <m>(0, 64)</m>, <m>(8, 83)</m> and <m>(10,83)</m>.
+      More often than not,
+      we will use the graph of a function to help us optimize that function.<fn>
+      One major use of Calculus is to optimize functions analytically - that is,
+      without a graph.
+      </fn>
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-1}{13}{-1}{10}
+          \axes
+          \tlabel[cc](13,-0.5){<m>t</m>}
+          \tlabel[cc](0.5,10){<m>T</m>}
+          \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
+          \ymarks{1,2,3,4,5,6,7,8,9}
+          \point[3pt]{(0, 6.4), (2, 6.7), (4, 7.5), (6, 8.0), (8, 8.3), (10, 8.3), (12, 8.2)}
+          \tlpointsep{4pt}
+          \axislabels {x} {{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11, {<m>12</m>} 12}
+          \axislabels {y}{ {<m>10</m>} 1, {<m>20</m>} 2, {<m>30</m>} 3, {<m>40</m>} 4, {<m>50</m>} 5, {<m>60</m>} 6, {<m>70</m>} 7, {<m>80</m>} 8, {<m>90</m>} 9}
+          \tcaption{The graph of <m>T = f(t)</m>.}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-1}{13}{-1}{10}
+          \axes
+          \tlabel[cc](13,-0.5){<m>t</m>}
+          \tlabel[cc](0.5,10){<m>T</m>}
+          \gclear \tlabelrect(-0.05,0.5){<m>\asymp</m>}
+          \xmarks{1,2,3,4,5,6,7,8,9, 10, 11, 12}
+          \ymarks{1,2,3,4,5,6,7,8,9}
+          \point[3pt]{(0, 1), (2, 2.5), (4, 5.5), (6, 8), (8, 9.5), (10, 9.5), (12, 9)}
+          \tlpointsep{4pt}
+          \axislabels {x} {{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11, {<m>12</m>} 12}
+          \axislabels {y}{{<m>64</m>} 1, {<m>66</m>} 2, {<m>68</m>} 3, {<m>72</m>} 4, {<m>74</m>} 5, {<m>76</m>} 6, {<m>78</m>} 7, {<m>80</m>} 8, {<m>82</m>} 9}
+          \tcaption{The graph of <m>T = f(t)</m>.}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      If you found yourself wanting to connect the dots in the graphs above,
+      you're not alone.
+      As it stands, however,
+      the function <m>f</m> matches only seven inputs to seven outputs,
+      so those seven points - and just those seven points - comprise the graph of <m>f</m>.
+      That being said,
+      common everyday experience tells us that while the data Skippy collected in his table gives some good information about the relationship between time and temperature on a given day,
+      it is by no means a complete description of the relationship.
+    </p>
+    <p>
+      For example, Skippy's data cannot tell us what the temperature was at 7 a.m. or 12:13 p.m, although we are pretty sure there were outdoor temperatures at those times.
+      Also, given that at some point it was <m>64^{\circ}</m>F and later on it was
+      <m>83^{\circ}</m>F, it seems reasonable to assume that at some point it was
+      <m>70^{\circ}</m>F or even <m>79.923^{\circ}</m>F.
+    </p>
+    <p>
+      Skippy's temperature function <m>f</m> is an example of a
+          <idx><h>discrete</h></idx>
+      <em>discrete</em> function in the sense that each of the data points are <sq>isolated</sq> with measurable gaps in between.
+      The idea of <sq>filling in</sq> those gaps is a quest to find a
+          <idx><h>continuous</h></idx>
+      <em>continuous</em> function to model this same phenomenon.<fn>
+      Roughly speaking, a <em>continuous variable</em>
+      is a variable which takes on values over an <em>interval</em>
+      of real numbers as opposed to values in a discrete list.
+      In this case we would think of time as a <sq>continuum</sq> - an interval of real numbers as opposed to <m>7</m> or so isolated times.
+      A <em>continuous function</em> is a function which takes an interval of real numbers and maps it in such a way that its graph is a connected curve with no holes or gaps.
+      This is technically a Calculus idea,
+      but we'll need to discuss the notion of continuity a few times in the text.
+      </fn> We'll return to this example in <xref ref="ConstantandLinearFunctions">Sections</xref>
+      and <xref ref="QuadraticFunctions"></xref>
+      in an attempt to do just that.
+    </p>
+    <p>
+      In the meantime,
+      our next example involves a function whose domain is (almost) an <em>interval</em>
+      of real numbers and whose graph consists of a (mostly) <em>connected</em> arc.
+    </p>
+    <example xml:id="functiongraphex01">
+      <statement>
+        <p>
+          Consider the graph below.
+        </p>
+        <p>
+          \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](-3,-0.5){<m>(-2,0)</m>} \tlabel[cc](1,-4.25){<m>(0,-4)</m>} \tlabel[cc](2,-3.25){<m>(1,-3)</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt}
+        </p>
+        <p>
+          \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+        </p>
+        <p>
+          \penwd{1.25pt} \arrow \function{-2,3,0.1}{x**2-4} \point[4pt]{(-2,0), (0,-4), (2,0)} \pointfillfalse \point[4pt]{(1,-3)} \end{mfpic}
+        </p>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  Explain why this graph suggests that <m>w</m> is a function of <m>v</m>,
+                  <m>w = F(v)</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Find <m>F(0)</m> and solve <m>F(v) = 0</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Find the domain and range of <m>F</m> using interval notation.<fn>
+                  Please consult <xref ref="AppSetTheory">Section</xref>
+                  for a review of interval notation if need be.
+                  </fn>  Find the extrema of <m>F</m>, if any exist.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Does this graph suggest <m>v</m> is a function of <m>w</m>?
+              Explain.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          The challenge in working with only a graph is that unless points are specifically labeled
+          (as some are in this case),
+          we are forced to approximate values.
+          In addition to the labeled points,
+          there are other interesting features of the graph;
+          a gap or <sq>hole</sq> labeled <m>(1,-3)</m> and an arrow on the upper right hand part of the curve.
+          We'll have more to say about these two features shortly.
+        </p>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  In order for <m>w</m> to be a function of <m>v</m>,
+                  each <m>v</m>-value on the graph must be paired with only one <m>w</m>-value.
+                  What if this weren't the case?
+                  We'd have at least two points with the <em>same</em>
+                  <m>v</m>-coordinate with <em>different</em> <m>w</m>-coordinates.
+                  Graphically,
+                  we'd have two points on graph on the same vertical line,
+                  one above the other.
+                  This never happens so we may conclude that <m>w</m> is a function of <m>v</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The value <m>F(0)</m> is the output from <m>F</m> when <m>v = 0</m>.
+                  The points on the graph of <m>F</m> are of the form
+                  <m>(v, F(v))</m> thus we are looking for the <m>w</m>-coordinate of the point on the graph where <m>v = 0</m>.
+                  Given that the point <m>(0,-4)</m> is labeled on the graph,
+                  we can be sure <m>F(0) = -4</m>.
+                  To solve <m>F(v) = 0</m>,
+                  we are looking for the <m>v</m>-values where the output,
+                  or associated <m>w</m> value, is <m>0</m>.
+                  Hence, we are looking for points on the graph with a <m>w</m>-coordinate of <m>0</m>.
+                  We find two such points, <m>(-2,0)</m> and <m>(2,0)</m>,
+                  so our solutions to <m>F(v) = 0</m> are <m>v = \pm 2</m>.
+                  Pictures highlighting the relevant graphical features are given at the top of the next page.
+                  <tabular>
+                    <row>
+                      <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](1,-4.25){<m>(0,-4)</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>-3</m>} -3, {<m>-4</m>} -4,{<m>1</m>} 1,{<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{Finding <m>F(0) = -4</m>.} \penwd{1.25pt} \arrow \function{-2,3,0.1}{x**2-4} \point[4pt]{(-2,0), (0,-4), (2,0)} \pointfillfalse \point[4pt]{(1,-3)} \end{mfpic}</cell>
+                      <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](-3,-0.5){<m>(-2,0)</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \tcaption{Solving <m>F(v) = 0</m>.} \penwd{1.25pt} \arrow \function{-2,3,0.1}{x**2-4} \point[4pt]{(-2,0), (0,-4), (2,0)} \pointfillfalse \point[4pt]{(1,-3)} \end{mfpic}</cell>
+                    </row>
+                  </tabular>
+                </p>
+              </li>
+              <li>
+                <p>
+                  The domain of <m>F</m> is the set of inputs to <m>F</m>.
+                  With <m>v</m> as the input here,
+                  we need to describe the set of <m>v</m>-values on the graph.
+                  We can accomplish this by <idx><h>projection</h><h>to an axis</h></idx>
+                  <em>projecting</em> the graph to the <m>v</m>-axis and seeing what part of the <m>v</m>-axis is covered.
+                  The leftmost point on the graph is <m>(-2,0)</m>,
+                  so we know that the domain starts at <m>v=-2</m>.
+                  The graph continues to the right until we encounter the <sq>hole</sq> labeled at <m>(1,-3)</m>.
+                  This indicates one and only one point,
+                  namely <m>(1,-3)</m> is missing from the curve which for us means <m>v = 1</m> is not in the domain of <m>F</m>.
+                  The graph continues to the right and the arrow on the graph indicates that the graph goes upwards to the right indefinitely.
+                  Hence, our domain is <m>\{ v \, | \, v \geq -2, \, v \neq 1 \}</m> which,
+                  in interval notation, is <m>[-2, 1) \cup (1, \infty)</m>.
+                  Pictures demonstrating the process of projecting the graph to the <m>v</m>-axis are shown below.
+                  <tabular>
+                    <row>
+                      <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \arrow \polyline{(2,4), (2,1)} \arrow \polyline{(-3,-4), (-3,-1)} \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](-3,-0.5){<m>(-2,0)</m>} \tlabel[cc](1,-4.25){<m>(0,-4)</m>} \tlabel[cc](2,-3.25){<m>(1,-3)</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \function{-2,3,0.1}{x**2-4} \point[4pt]{(-2,0), (0,-4), (2,0)} \gclear \tlabelrect[cc](-3,-3){project up} \gclear \tlabelrect[cc](2,2){project down} \pointfillfalse \point[4pt]{(1,-3)} \end{mfpic}</cell>
+                      <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](-3,-0.5){<m>(-2,0)</m>} \tlabel[cc](1,-4.25){<m>(0,-4)</m>} \tlabel[cc](2,-3.25){<m>(1,-3)</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \function{-2,3,0.1}{x**2-4} \pointfillfalse \point[3pt]{(1,-3)} \pointfilltrue \penwd{1.25pt} \arrow \polyline{(-2,0), (4.9,0)} \point[3pt]{(0,-4), (2,0)} \point[4pt]{ (-2,0)} \pointfillfalse \point[4pt]{(1,0)} \end{mfpic}</cell>
+                    </row>
+                  </tabular>
+                  To find the range of <m>F</m>,
+                  we need to describe the set of outputs - in this case,
+                  the <m>w</m>-values on the graph.
+                  Here, we project the graph to the <m>w</m>-axis.
+                  Vertically, the graph starts at <m>(0,-4)</m> so our range starts at <m>w=-4</m>.
+                  Note that even though there is a hole at <m>(1,-3)</m>,
+                  the <m>w</m>-value <m>-3</m> is covered by what <em>appears</em>
+                  to be the point <m>(-1,-3)</m> on the graph.<fn>
+                  For all we know, it could be <m>(-0.992, -3)</m>.
+                  </fn> The arrow indicates that the graph extends upwards indefinitely so the range of <m>F</m> is <m>\{ w \, | \, w \geq -4 \}</m> or,
+                  in interval notation, <m>[-4, \infty)</m>.
+                  Regarding extrema,
+                  <m>F</m> has a minimum of <m>-4</m> when <m>v = 0</m>,
+                  but given that the graph extends upwards indefinitely,
+                  <m>F</m> has no maximum.
+                  Pictures showing the projection of the graph onto the <m>w</m>-axis are given below.
+                  <tabular>
+                    <row>
+                      <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](-3,-0.5){<m>(-2,0)</m>} \tlabel[cc](1,-4.25){<m>(0,-4)</m>} \tlabel[cc](2,-3.25){<m>(1,-3)</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \function{-2,3,0.1}{x**2-4} \point[4pt]{(-2,0), (0,-4), (2,0)} \pointfillfalse \point[4pt]{(1,-3)} \tlabel[cc](-3,-2){project right} \gclear \tlabelrect[cc](2,2.5){project left} \penwd{0.5pt} \gclear \arrow \polyline{(3,2.15), (1,2.15)} \gclear \arrow \polyline{(-4,-2.35), (-2,-2.35)} \end{mfpic}</cell>
+                      <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](-3,-0.5){<m>(-2,0)</m>} \tlabel[cc](1,-4.25){<m>(0,-4)</m>} \tlabel[cc](2,-3.25){<m>(1,-3)</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>4</m>} 4} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \function{-2,3,0.1}{x**2-4} \point[3pt]{(-2,0), (2,0)} \pointfillfalse \point[3pt]{(1,-3)} \pointfilltrue \penwd{1.25pt} \arrow \polyline{(0,-4), (0,5)} \point[4pt]{(0,-4)} \end{mfpic}</cell>
+                    </row>
+                  </tabular>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Finally, to determine if <m>v</m> is a function of <m>w</m>,
+              we look to see if each <m>w</m>-value is paired with only one <m>v</m>-value on the graph.
+              We have points on the graph, namely <m>(-2,0)</m> and <m>(2,0)</m>,
+              that clearly show us that <m>w = 0</m> is matched with the <em>two</em>
+              <m>v</m>-values <m>v = 2</m> and <m>v = -2</m>.
+              Hence, <m>v</m> is not a function of <m>w</m>.
+            </p>
+          </li>
+        </ol>
+      </solution>
+    </example>
+    <p>
+      It cannot be stressed enough that when given a graphical representation of a function,
+      certain assumptions must be made.
+      In the previous example, for all we know,
+      the minimum of the graph is at
+      <m>(0.001, -4.0001)</m> instead of <m>(0,-4)</m>.
+      If we aren't given an equation or table of data,
+      or if specific points aren't labeled,
+      we really have no way to tell.
+      We also are assuming that the graph depicted in the example,
+      while ultimately made of infinitely many points,
+      has no gaps or holes other than those noted.
+      This allows us to make such bold claims as the existence of a point on the graph with a <m>w</m>-coordinate of <m>-3</m>.
+    </p>
+    <p>
+      Before moving on to our next example,
+      it is worth noting that the geometric argument made in <xref ref="functiongraphex01">Example</xref>
+      to establish that <m>w</m> is a function of <m>v</m> can be generalized to any graph.
+      This result is the celebrated Vertical Line Test and it enables us to detect functions geometrically.
+      Note that the statement of the theorem resorts to the <sq>default</sq> <m>x</m> and <m>y</m> labels on the horizontal and vertical axes,
+      respectively.
+    </p>
+    <theorem xml:id="VLT">
+      <statement>
+        <p>
+          <em>The Vertical Line Test:</em>
+          A graph in the <m>xy</m>-plane<fn>
+          That is, the horizontal axis is labeled with <sq><m>x</m></sq> and the vertical axis is labeled with <sq><m>y</m></sq>.
+          </fn> represents <m>y</m> as a function of <m>x</m> if and only if no vertical line intersects the graph more than once.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Let's take a minute to discuss the phrase <sq>if and only if</sq> used in <xref ref="VLT">Theorem</xref>.
+      The statement <sq>the graph represents <m>y</m> as a function of <m>x</m> <em>if and only if</em>
+      no vertical line intersects the graph more than once</sq> is actually saying two things.
+      First, it's saying <sq>the graph represents <m>y</m> as a function of <m>x</m> <em>if</em>
+      no vertical line intersects the graph more than once</sq> and, second,
+      <sq>the graph represents <m>y</m> as a function of <m>x</m> <em>only if</em>
+      no vertical line intersects the graph more than once</sq>.
+    </p>
+    <p>
+      Logically, these statements are saying two different things.
+      The first says that if no vertical line crosses the graph more than once,
+      then the graph represents <m>y</m> as a function of <m>x</m>.
+      But the question remains:
+      could a graph represent <m>y</m> as a function of <m>x</m> and yet there be a vertical line that intersects the graph more than once?
+      The answer to this is <sq>no</sq> because the second statement says that the <em>only</em>
+      way the graph represents <m>y</m> as a function of <m>x</m> is the case when no vertical line intersects the graph more than once.
+    </p>
+    <p>
+      Applying the Vertical Line Test to the graph given in <xref ref="functiongraphex01">Example</xref>,
+      we see below that all of the vertical lines meet the graph at most once
+      (several are shown for illustration)
+      showing <m>w</m> is a function of <m>v</m>.
+      Notice that some of the lines (<m>x = -3</m> and <m>x = 1</m>,
+      for example) don't hit the graph at all.
+      This is fine because the Vertical Line Test is looking for lines that hit the graph more than once.
+      It does not say <em>exactly</em>
+      once so missing the graph altogether is permitted.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \arrow \reverse \arrow \polyline{(-3,-4.25), (-3,4.25)} \arrow \reverse \arrow \polyline{(-2.5,-4.25), (-2.5,4.25)} \arrow \reverse \arrow \polyline{(-1.5,-4.25), (-1.5,4.25)} \arrow \reverse \arrow \polyline{(-1,-4.25), (-1,4.25)} \arrow \reverse \arrow \polyline{(0.5,-4.25), (0.5,4.25)} \arrow \reverse \arrow \polyline{(2,-4.25), (2,4.25)} \arrow \reverse \arrow \polyline{(2.5,-4.25), (2.5,4.25)} \arrow \reverse \arrow \polyline{(1.5,-4.25), (1.5,4.25)} \arrow \reverse \arrow \polyline{(1,-4.25), (1,4.25)} \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,5){<m>w</m>} \xmarks{-4 step 1 until 4 } \ymarks{-4 step 1 until 4} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-1</m>} -1,{<m>-3</m>} -3, {<m>1</m>} 1, {<m>4</m>} 4, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+    </p>
+    <p>
+      \penwd{1.25pt} \arrow \function{-2,3,0.1}{x**2-4} \point[4pt]{(-2,0), (0,-4), (2,0)} \pointfillfalse \point[4pt]{(1,-3)} \end{mfpic}
+    </p>
+    <p>
+      There is also a geometric test to determine if the graph above represents <m>v</m> as a function of <m>w</m>.
+      We introduce this aptly-named <em>Horizontal Line Test</em>
+      in <xref ref="HLTExercise">Exercise</xref>
+      and revisit it in <xref ref="Relations">Sections</xref>
+      and <xref ref="InverseFunctions"></xref>.
+    </p>
+    <p>
+      Our next example revisits the function <m>h</m> from <xref ref="funcnotatex1">Example</xref> from a graphical perspective.
+    </p>
+    <example xml:id="graphalgebraicex">
+      <statement>
+        <p>
+          With the help of a graphing utility graph <m>h(t) = -t\,^{2} + 3t + 4</m>.
+          From your graph, state the domain,
+          range and extrema, if any exist.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The dependent variable wasn't specified so we use the default <sq><m>y</m></sq> label for the vertical axis and set about graphing <m>y = h(t)</m>.
+          From our work in <xref ref="funcnotatex1">Example</xref>,
+          we already know <m>h(-1) = 0</m>,
+          <m>h(0) = 4</m>, <m>h(2) = 6</m> and <m>h(4) = 0</m>.
+          These give us the points <m>(-1,0)</m>,
+          <m>(0,4)</m>, <m>(2,6)</m> and <m>(4,0)</m>, respectively.
+          Using these as a guide, we can use
+          <url href="https://www.desmos.com/"><em>desmos</em></url>
+          to produce the graph at the top of the next page on the left.<fn>
+          The curve in this example is called a <sq>parabola</sq>.
+          In <xref ref="QuadraticFunctions">Section</xref>,
+          we'll learn how to graph these accurately <em>by hand</em>.
+          </fn>
+        </p>
+        <p>
+          As nice as the graph is, it is still technically incomplete.
+          There is no restriction stated on the independent variable <m>t</m> so the domain of <m>h</m> is all real numbers.
+          However, the graph as presented shows only the behavior of <m>h</m> between roughly <m>t = -2.5</m> and <m>t = 4.25</m>.
+          By zooming out,
+          we see that the graph extends downwards indefinitely which we indicate by adding the arrows you see in the graph on the right.
+          We find that the domain is
+          <m>(-\infty, \infty)</m> and the range is <m>(-\infty, 6.25]</m>.
+          There is no minimum,
+          but the maximum of <m>h</m> is <m>6.25</m> and it occurs at <m>t = 1.5</m>.
+          The point <m>(1.5, 6.25)</m> is shown on both graphs.
+        </p>
+        <tabular>
+          {m{3in}m{2in}}
+          <image width="56%" source="./FunctionsandtheirRepresentationsGraphics/ParabolaGraph.jpg"/>
+          &amp;
+          \begin{mfpic}[19]{-3}{5}{-2}{7}
+          \axes
+          \tlabel[cc](5,-0.5){<m>t</m>}
+          \tlabel[cc](0.5,7){<m>y</m>}
+          \xmarks{-2 step 1 until 4 }
+          \ymarks{-1 step 1 until 6}
+          \tlpointsep{5pt}
+          \tlabel[cc](-1.75,0.5){<m>(-1,0)</m>}
+          \tlabel[cc](-0.75,4){<m>(0,4)</m>}
+          \tlabel[cc](2.75,6){<m>(2,6)</m>}
+          \tlabel[cc](4.5,0.5){<m>(4,0)</m>}
+          \tlabel[cc](1.5,6.75){<m>(1.5,6.25)</m>}
+          \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+          \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>5</m>} 5, {<m>6</m>} 6}
+          \penwd{1.5pt}
+          \arrow \reverse \arrow \function{-1.3,4.3,0.1}{4+3x-x**2}
+          \point[4pt]{(-1,0), (0,4), (1.5, 6.25), (2,6), (4,0)}
+          \end{mfpic}
+        </tabular>
+      </solution>
+    </example>
+    <p>
+      Our last example of the section uses the interplay between algebraic and graphical representations of a function to solve a real-world problem.
+    </p>
+    <example xml:id="volumeex1">
+      <statement>
+        <p>
+          The United States Postal Service mandates that when shipping parcels using <sq>Parcel Select</sq> service,
+          the sum of the length
+          (the longest dimension)
+          and the girth
+          (the distance around the thickest part of the parcel perpendicular to the length)
+          must not exceed 130 inches.<fn>
+          See
+          <url href="http://pe.usps.com/text/qsg300/Q201e.htm"><em>here</em></url>.
+          </fn> Suppose we wish to ship a rectangular box whose girth forms a square measuring <m>x</m> inches per side as shown below.
+        </p>
+        <p>
+          \begin{mfpic}[10]{-6}{12}{-1}{17} \polyline{(0,0),(-4,3)} \polyline{(-4,3), (-4,8)} \polyline{(-4,8),(0,5)} \polyline{(0,5),(0,0)} \polyline{(0,0),(12,9)} \polyline{(0,5),(12,14)} \polyline{(-4,8),(8,17)} \polyline{(8,17),(12,14)} \polyline{(12,14),(12,9)} \arrow \reverse \arrow \polyline{(0.5,-0.125),(12,8.5)} \tlabel[cc](9,4){length} \arrow \reverse \arrow \polyline{(-4, 2.5), (-0.5,-0.125)} \tlabel[cc](-3,0.5){ <m>x</m>} \arrow \reverse \arrow \polyline{(-4.5, 3), (-4.5,8)} \tlabel[cc](-5,5){<m>x</m>} \end{mfpic}
+        </p>
+        <p>
+          It turns out<fn>
+          We'll skip the explanation for now because we want to focus on just the different representations of the function.
+          Rest assured,
+          you'll be asked to construct this very model in <xref ref="girthbox1">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>.
+          </fn> that the volume of a box,
+          <m>V(x)</m>, measured in cubic inches,
+          whose length plus girth is exactly 130 inches is given by the formula:
+          <m>V(x) = x^2 (130-4x)</m> for <m>0 \lt x \leq 26</m>.
+          <ol>
+            <li>
+              <p>
+                Find and interpret <m>V(5)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Make a table of values and use these along with a graphing utility to graph <m>y = V(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the largest volume box that can be shipped?
+                What value of <m>x</m> maximizes the volume?
+                Round your answers to two decimal places.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find <m>V(5)</m>,
+                we substitute <m>x=5</m> into the expression <m>V(x)</m>:
+                <m>V(5) = (5)^2 (130-4(5)) = 25(110) = 2750</m>.
+                Our result means that when the length and width of the square measure <m>5</m> inches,
+                the volume of the resulting box is <m>2750</m> cubic inches.<fn>
+                Note that we have <m>V(5)</m> and <m>25(110)</m> in the same string of equality.
+                The first set of parentheses is function notation and directs us to substitute <m>5</m> for <m>x</m> in the expression <m>V(x)</m> while the second indicates multiplying <m>25</m> by <m>110</m>.
+                Context is key!
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                The domain of <m>V</m> is specified by the inequality  <m>0 \lt  x \leq 26</m>,
+                so we can begin graphing <m>V</m> by sampling  <m>V</m> at finitely many <m>x</m>-values in this interval to help us get a sense of the range of <m>V</m>.
+                This, in turn,
+                will help us determine an adequate viewing window on our graphing utility when the time comes.
+                It seems natural to start with what's happening near <m>x = 0</m>.
+                Even though the expression
+                <m>x^2 (130-4x)</m>  is defined when we substitute <m>x = 0</m>
+                (it reduces very quickly to <m>0</m>),
+                it would be incorrect to state
+                <m>V(0) = 0</m> because <m>x = 0</m> is not in the domain of <m>V</m>.
+                However,  there is nothing stopping us from evaluating <m>V(x)</m> at values <m>x</m> <sq>very close</sq> to <m>x = 0</m>.
+                A table of such values is given below.
+                <me>
+                  \begin{array}{||l|l||} \hline x \amp  V(x) \\ \hline 0.1 \amp  1.296 \\ \hline 0.01 \amp  0.012996 \\ \hline 0.001 \amp  0.000129996 \\ \hline 10^{-23} \amp  \approx 1.3 \times 10^{-44} \\ \hline \end{array}
+                </me>
+                There is no such thing as a  <sq>smallest</sq> positive number,<fn>
+                If <m>p</m> is any positive real number,
+                <m>0 \lt  0.5 p \lt  p</m>,
+                so we can always find a smaller positive real number.
+                </fn>  so we will have points on the graph of <m>V</m> to the right of <m>x = 0</m> leading to the point <m>(0,0)</m>.
+                We indicate this behavior by putting a hole at <m>(0,0)</m>.<fn>
+                What's really needed here is the precise definition of <sq>closeness</sq> discussed in Calculus.
+                This hand-waving will do for now.
+                </fn>  Moving forward,
+                we start with <m>x = 5</m> and sample <m>V</m> at steps of <m>5</m> in its domain.
+                Our goal is to graph <m>y = V(x)</m>,
+                so we plot our points <m>(x, V(x))</m>  using  the domain as a guide to help us set the horizontal bounds (i.e., the bounds on <m>x</m>) and the sample values from the range to help us set the vertical bounds (i.e., the bounds on <m>y</m>).
+                The right endpoint, <m>x = 26</m>,
+                is included in the domain <m>0 \lt  x \leq 26</m> so we finish the graph by plotting the point <m>(26, V(26)) = (26,17576)</m>.
+                At the top of the next page on the left is the table of data and on the right is a graph produced with some help from
+                <url href="https://www.desmos.com/"><em>desmos</em></url>.
+                <tabular>
+                  {m{1.9 in}m{4in}}  <m>\begin{array}{|r||c|c|}  \hline  x \amp  V(x) \amp  (x,V(x)) \\ \hline  \approx 0 \amp  \approx 0  \amp  \text{ hole at \((0,0)\) }  \\  \hline 5 \amp  2750 \amp  (5, 2750) \\  \hline 10 \amp  9000 \amp  (10, 9000) \\  \hline 15 \amp  15, \! 750 \amp  ( 15, 15, \! 750) \\  \hline 20 \amp  20, \! 000 \amp  ( 20 , 20, \! 000) \\  \hline 25 \amp  18, \! 750 \amp  ( 25, 18, \! 750) \\  \hline 26 \amp  17, \! 576 \amp   (26,17, \! 576) \\ \hline \end{array}</m>  &amp;  <image width="75%" source="./FunctionsandtheirRepresentationsGraphics/VolumeEx01.jpg"/> Sampling <m>V</m>&amp;  The graph of <m>y = V(x)</m>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                The largest volume in this case refers to the maximum of <m>V</m>.
+                The biggest <m>y</m>-value in our table of data is
+                <m>20, \! 000</m> cubic inches which occurs at <m>x = 20</m> inches,
+                but the graph produced by the graphing utility indicates that there are points on the graph of <m>V</m> with <m>y</m>-values (hence <m>V(x)</m> values) greater than <m>20, \! 000</m>.
+                Indeed, the graph continues to rise to the right of <m>x = 20</m> and the graphing utility reports the maximum <m>y</m>-value to be
+                <m>y \approx 20, \! 342.593</m> when <m>x \approx 21.667</m>.
+                Rounding to two decimal places,
+                we find the maximum volume obtainable under these conditions is about
+                <m>20, \! 342.59</m> cubic inches which occurs when the length and width of the square side of the box are approximately <m>21.67</m> inches.<fn>
+                We could also find the length of the box in this case as well.
+                The sum of length and girth is 130 inches so the length is 130 minus the girth,
+                or <m>130 - 4x \approx 130 - 4(21.67) = 43.32</m> inches.
+                </fn>  <image width="75%" source="./FunctionsandtheirRepresentationsGraphics/VolumeEx02.jpg"/> Finding the maximum volume using the graph of <m>y = V(x)</m>.
+                It is worth noting that while the function <m>V</m> has a maximum,
+                it did not have a minimum.
+                Even though <m>V(x)>0</m> for all <m>x</m> in its domain,<fn>
+                said differently, the values of <m>V(x)</m> are
+                <em>bounded below</em> by <m>0</m>.
+                </fn> the presence of the hole at <m>(0,0)</m> means that <m>0</m> is not in the range of <m>V</m>.
+                Hence, based on our model,
+                we can never make a box with a <sq>smallest</sq> volume.<fn>
+                How realistic is this?
+                </fn>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      <xref ref="volumeex1">Example</xref>
+      typifies the interplay between Algebra and Geometry which lies ahead.
+      Both the algebraic description of <m>V</m>:
+      <m>V(x) = x^2 (130 - 4x)</m> for <m>0 \lt x \leq 26</m>,
+      and the graph of <m>y=V(x)</m> were useful in describing aspects of the physical situation at hand.
+      Wherever possible,
+      we'll use the algebraic representations of functions to
+      <em>analytically</em> produce <em>exact</em>
+      answers to certain problems and use the graphical descriptions to check the reasonableness of our answers.
+    </p>
+    <p>
+      That being said, we'll also encounter problems which we simply
+      <em>cannot</em> answer analytically
+      (such as determining the maximum volume in the previous example),
+      so we will be forced to resort to using technology
+      (specifically graphing technology)
+      in order to find <em>approximate</em> solutions.
+      The most important thing to keep in mind is that while technology may
+      <em>suggest</em> a result,
+      it is ultimately Mathematics that <em>proves</em> it.
+    </p>
+    <p>
+      We close this section with a summary of the different ways to represent functions.
+    </p>
+    <p>
+      <em>Ways to Represent a Function</em>Suppose <m>f</m> is a function with domain <m>A</m>.
+      Then <m>f</m> can be represented:
+      <ul>
+        <li>
+          <p>
+            verbally; that is,
+            by describing how the inputs are matched with their outputs.
+          </p>
+        </li>
+        <li>
+          <p>
+            using a mapping diagram.
+          </p>
+        </li>
+        <li>
+          <p>
+            as a set of ordered pairs of the form <m>(\text{ input } , \text{ output } )</m>:
+            <m>\{ (a, f(a)) \, | \, a \in A \}</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      If <m>f</m> is a function whose domain and range are subsets of real numbers,
+      then <m>f</m> can be represented:
+      <ul>
+        <li>
+          <p>
+            algebraically as a formula for <m>f(a)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            graphically by plotting the points <m>\{ (a, f(a)) \, | \, a \in A \}</m> in the plane.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Note: An important consequence of the last bulleted item is that the point <m>(a, b)</m> is on the graph of
+      <m>y = f(x)</m> if and only if <m>f(a) = b</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="mappingfirst">Exercises</xref>
+      - <xref ref="mappinglast"></xref>,
+      determine whether or not the mapping diagram represents a function.
+      Explain your reasoning.
+      If the mapping does represent a function, state the domain, range,
+      and represent the function as a set of ordered pairs.
+      <ol>
+        <li xml:id="mappingfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[19]{-5}{5}{-5}{6} \tlabel[cc](-4.25,5){Tennant} \tlabel[cc](-4.25,3){Smith} \tlabel[cc](-4.25,1){Calpadi} \tlabel[cc](0,6){<m>M</m>} \tlabel[cc](3.5,5){Eleven} \tlabel[cc](3.5,3){Twelve} \tlabel[cc](3.5,1){Thirteen} \tlabel[cc](3.5,-1){Fourteen} \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)} \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 3)} \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 1)} \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, -1)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="mappinglast">
+          <p>
+            <m>~</m> \begin{mfpic}[19]{-5}{5}{-5}{6} \tlabel[cc](-4.25,5){Hartnell} \tlabel[cc](-4.25,3){Cushing} \tlabel[cc](-4.25,1){Hurndall} \tlabel[cc](-4.25,-1){Troughton} \tlabel[cc](0,6){<m>C</m>} \tlabel[cc](3.5,5){One} \tlabel[cc](3.5,3){Two} \tlabel[cc](3.5,1){Three} \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 5)} \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)} \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 5)} \arrow[l 5pt] \polyline{(-2.5, -1), (2.5, 3)} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="tablefirst">Exercises</xref>
+      - <xref ref="tablelast"></xref>,
+      determine whether or not the data in the given table represents <m>y</m> as a function of <m>x</m>.
+      Explain your reasoning.
+      If the mapping does represent a function, state the domain, range,
+      and represent the function as a set of ordered pairs.
+      <ol cols="2">
+        <li xml:id="tablefirst">
+          <p>
+            <me>
+              \begin{array}{|r||r|}  \hline  \(x\)  \amp   \(y\)  \\ \hline -3 \amp   3 \\  \hline -2 \amp  2  \\  \hline -1 \amp   1  \\  \hline 0 \amp   0 \\  \hline 1 \amp  1  \\  \hline 2 \amp   2 \\  \hline 3 \amp  3  \\  \hline \end{array}
+            </me>
+          </p>
+        </li>
+        <li xml:id="tablelast">
+          <p>
+            <me>
+              \begin{array}{|r||r|}  \hline  \(x\)  \amp \(y\)  \\ \hline  0 \amp  0 \\  \hline 1 \amp  1  \\  \hline 1 \amp  -1  \\  \hline 2 \amp   2 \\  \hline 2 \amp  -2  \\  \hline 3 \amp   3 \\  \hline 3 \amp  -3  \\  \hline \end{array}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>W</m> is the set of words in the English language and we set up a mapping from <m>W</m> into the set of natural numbers <m>\mathbb{N}</m> as follows:
+            <m>\text{ word } \rightarrow \text{ number of letters in the word }</m>.
+            Explain why this mapping is a function.
+            What would you need to know to determine the range of the function?
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>L</m> is the set of last names of all the people who have served or are currently serving as the President of the United States.
+            Consider the mapping from <m>L</m> into <m>\mathbb{N}</m> as follows:
+            <m>\text{ last name } \rightarrow \text{ number of their presidency }</m>.
+            For example,
+            <m>\text{ Washington } \rightarrow 1</m> and <m>\text{ Obama } \rightarrow 44</m>.
+            Is this mapping a function?
+            What if we use full names instead of just last names? (<em>HINT:</em>
+            Research Grover Cleveland.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Under what conditions would the time of day be a function of the outdoor temperature?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      For the functions <m>f</m> described in <xref ref="buildfunctionfirst">Exercises</xref>
+      - <xref ref="buildfunctionlast"></xref>,
+      find <m>f(2)</m> and find and simplify an expression for <m>f(x)</m> that takes a real number <m>x</m> and performs the following three steps in the order given:
+      <ol>
+        <li xml:id="buildfunctionfirst">
+          <p>
+            (1) multiply by 2; (2) add 3; (3) divide by 4.
+          </p>
+        </li>
+        <li>
+          <p>
+            (1) add 3; (2) multiply by 2; (3) divide by 4.
+          </p>
+        </li>
+        <li>
+          <p>
+            (1) divide by 4; (2) add 3; (3) multiply by 2.
+          </p>
+        </li>
+        <li>
+          <p>
+            (1) multiply by 2; (2) add 3; (3) take the square root.
+          </p>
+        </li>
+        <li>
+          <p>
+            (1) add 3; (2) multiply by 2; (3) take the square root.
+          </p>
+        </li>
+        <li xml:id="buildfunctionlast">
+          <p>
+            (1) add 3; (2) take the square root; (3) multiply by 2.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="funcnotationbasicfirst">Exercises</xref>
+      - <xref ref="funcnotationbasiclast"></xref>,
+      use the given function <m>f</m> to find and simplify the following:
+      <ul>
+        <li>
+          <p>
+            <m>f(3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(-1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f\left(\frac{3}{2} \right)</m>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            <m>f(4x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4f(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(-x)</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <m>f(x-4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) - 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f\left(x^2\right)</m>
+        </p>
+      </li>
+    </ul>
+    <ol cols="3">
+      <li xml:id="funcnotationbasicfirst">
+        <p>
+          <m>f(x) = 2x+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 3 - 4x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 2 - x^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^2 - 3x + 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 6</m>
+        </p>
+      </li>
+      <li xml:id="funcnotationbasiclast">
+        <p>
+          <m>f(x) = 0</m>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="secondfuncnotationbasicfirst">Exercises</xref>
+      - <xref ref="secondfuncnotationbasiclast"></xref>,
+      use the given function <m>f</m> to find and simplify the following:
+      <ul>
+        <li>
+          <p>
+            <m>f(2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(2a)</m>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            <m>2 f(a)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(a+2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(a) + f(2)</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <m>f \left( \dfrac{2}{a} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{f(a)}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(a + h)</m>
+        </p>
+      </li>
+    </ul>
+    <ol cols="3">
+      <li xml:id="secondfuncnotationbasicfirst">
+        <p>
+          <m>f(x) = 2x-5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = 5-2t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(w) = 2w^2 - 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(q) = 3q^2+3q-2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(r) = 117</m>
+        </p>
+      </li>
+      <li xml:id="secondfuncnotationbasiclast">
+        <p>
+          <m>f(z) = \dfrac{z}{2}</m>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="findzerofuncfirst">Exercises</xref>
+      - <xref ref="findzerofunclast"></xref>,
+      use the given function <m>f</m> to find <m>f(0)</m> and solve <m>f(x) = 0</m>
+      <ol cols="2">
+        <li xml:id="findzerofuncfirst">
+          <p>
+            <m>f(x) = 2x - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 3 - \frac{2}{5} x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 2x^2 - 6</m>
+          </p>
+        </li>
+        <li xml:id="findzerofunclast">
+          <p>
+            <m>f(x) = x^2 - x - 12</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="equfunctionfirst">Exercises</xref>
+      - <xref ref="equfunctionlast"></xref>,
+      determine whether or not the equation represents <m>y</m> as a function of <m>x</m>.
+      <ol cols="5">
+        <li xml:id="equfunctionfirst">
+          <p>
+            <m>y = x^{3} - x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \sqrt{x - 2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^{3}y = -4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^{2} - y^{2} = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \dfrac{x}{x^{2} - 9}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x = -6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x = y^2 + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = x^2 + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 + y^2 = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>y = \sqrt{4-x^2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 - y^2 = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^3 + y^3 = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2x + 3y = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2xy = 4</m>
+          </p>
+        </li>
+        <li xml:id="equfunctionlast">
+          <p>
+            <m>x^2 = y^2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <xref ref="setfunctionfirst">Exercises</xref>
+      - <xref ref="setfunctionlast"></xref>
+      give a set of points in the <m>xy</m>-plane.
+      Determine if <m>y</m> is a function of <m>x</m>.
+      If so, state the domain and range.
+      <ol cols="4">
+        <li xml:id="setfunctionfirst">
+          <p>
+            \{<m>(-3, 9)</m>, <m>\;(-2, 4)</m>,
+            <m>\;(-1, 1)</m>, <m>\;(0, 0)</m>,
+            <m>\;(1, 1)</m>, <m>\;(2, 4)</m>, <m>\;(3, 9)\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (-3,0), (1,6), (2, -3), (4,2), (-5,6), (4, -9), (6,2) \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (-3,0), (-7,6), (5,5), (6,4), (4,9), (3,0) \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ (1,2), (4,4), (9,6), (16,8), (25,10), (36, 12), \ldots \right\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            \{(<m>x, y) \, | \, x</m> is an odd integer,
+            and <m>y</m> is an even integer\}
+          </p>
+        </li>
+        <li>
+          <p>
+            \{<m>(x, 1) \, | \, x</m> is an irrational number\}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ (1,0), (2,1), (4,2), (8,3), (16,4), (32, 5), \ldots \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ \ldots (-3,9), (-2,4), (-1,1), (0,0), (1,1), (2,4), (3,9), \ldots \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ (-2, y) \, | \, -3 \lt y \lt 4\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ (x,3) \, | \, -2 \leq x \lt 4\}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{ \left(x,x^2\right) \, | \, \text{ \(x\) is a real number } \}</m>
+          </p>
+        </li>
+        <li xml:id="setfunctionlast">
+          <p>
+            <m>\{ \left(x^2,x\right) \, | \, \text{ \(x\) is a real number } \}</m>
+          </p>
+        </li>
+        <li xml:id="HLTExercise">
+          <p>
+            The Vertical Line Test is a quick way to determine from a graph if the vertical axis variable is a function of the horizontal axis variable.
+            If we are given a graph and asked to determine if the horizontal axis variable is a function of the vertical axis variable,
+            we can use horizontal lines instead of vertical lines to check.
+            Using <xref ref="VLT">Theorem</xref> as a guide,
+            formulate a <sq>Horizontal Line Test.</sq> (We'll refer back to this exercise in <xref ref="InverseFunctions">Section</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphfunctionfirstxy">Exercises</xref>
+      - <xref ref="graphfunctionlastxy"></xref>,
+      determine whether or not the graph suggests <m>y</m> is a function of <m>x</m>.
+      For the ones which do, state the domain and range.
+      <ol cols="3">
+        <li xml:id="graphfunctionfirstxy">
+          <p>
+            <m>~</m> \begin{mfpic}[17]{-5}{2}{-2}{5} \point[4pt]{(-4, -1), (-3, 0), (-2, 1), (-1, 2), (0, 3), (1, 4)} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,4.75){<m>y</m>} \xmarks{-4,-3,-2,-1,1} \ymarks{-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1} \axislabels {y}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstxy2">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{2}{-2}{5} \point[4pt]{(-4, -1), (-3, 0), (-3, 1), (-2, 1), (-1, 2), (0, 3), (1, 4)} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,4.75){<m>y</m>} \xmarks{-4,-3,-2,-1,1} \ymarks{-1,1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1} \axislabels {y}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstxy3">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-1}{6} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5.75){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.1, 2.1, 0.1}{x**2+1} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionlastxy">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,3.75){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2,2,0.1}{(cosh(t),sinh(t))} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine which, if any,
+            of the graphs in <xref ref="graphfunctionfirstxy">numbers</xref>
+            - <xref ref="graphfunctionlastxy"></xref>
+            represent <m>x</m> as a function of <m>y</m>.
+            For the ones which do, state the domain and range.
+            (Feel free to use <xref ref="HLTExercise">Exercise</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphfunctionfirstvw">Exercises</xref>
+      - <xref ref="graphfunctionlastvw"></xref>,
+      determine whether or not the graph suggests <m>w</m> is a function of <m>v</m> . For the ones which do,
+      state the domain and range.
+      <ol cols="3">
+        <li xml:id="graphfunctionfirstvw">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-1}{10}{-1}{4} \axes \tlabel[cc](10,-0.5){<m>v</m>} \tlabel[cc](0.5,3.75){<m>w</m>} \xmarks{1,2,3,4,5,6,7,8,9} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8, { <m>9</m>} 9} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \penwd{1.25pt} \arrow \function{2, 10, 0.1}{sqrt(x - 2)} \point[4pt]{(2,0)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstvw2">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>v</m>} \tlabel[cc](0.5,4.75){<m>w</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-5, 5, 0.1}{4/(x**2 + 1)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstvw3">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4.5}{5.5}{-4}{3} \axes \tlabel[cc](5.5,-0.5){<m>v</m>} \tlabel[cc](0.5,2.75){<m>w</m>} \xmarks{-4,-3,-2,-1,1,2,3,4,5} \ymarks{-3,-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{ <m>-4</m>} -4, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>4</m>} 4, { <m>5</m>} 5} \axislabels {y}{ { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1} \penwd{1.25pt} \polyline{(-3, -3), (-3, 2), (3,2), (3,-3), (-3,-3)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="graphfunctionlastvw">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-6}{4}{-2.5}{4.5} \axes \tlabel[cc](4,-0.5){<m>v</m>} \tlabel[cc](0.5,4.75){<m>w</m>} \xmarks{-5 step 1 until 3} \ymarks{-2 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{{ <m>-5</m>} -5, { <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \function{-5,-1,0.1}{-5 - 6*x - x**2} \function{-1,3,0.1}{x/4 - 7/4} \point[4pt]{(-5, 0), (-1, 0)} \pointfillfalse \point[4pt]{(-3,4), (-1,-2), (3,-1)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine which, if any,
+            of the graphs in <xref ref="graphfunctionfirstvw">numbers</xref>
+            - <xref ref="graphfunctionlastvw"></xref>
+            represent <m>v</m> as a function of <m>w</m>.
+            For the ones which do, state the domain and range.
+            (Feel free to use <xref ref="HLTExercise">Exercise</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphfunctionfirsttT">Exercises</xref>
+      - <xref ref="graphfunctionlasttT"></xref>,
+      determine whether or not the graph suggests <m>T</m> is a function of <m>t</m>.
+      For the ones which do, state the domain and range.
+      <ol cols="3">
+        <li xml:id="graphfunctionfirsttT">
+          <p>
+            <m>~</m> \begin{mfpic}[8]{-4}{4}{-6}{10} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,10){<m>T</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8,9} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3,{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-5</m>} -5, { <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8, { <m>9</m>} 9} \penwd{1.25pt} \arrow \function{-2,4.5,0.1}{x**2 - 2*x - 2} \point[4pt]{(-2,6), (1,-3) } \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirsttT2">
+          <p>
+            <m>~</m> \begin{mfpic}[10]{-6}{6}{-6}{6} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>T</m>} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{ <m>-5</m>} -5,{ <m>-4</m>} -4,{ <m>-3</m>} -3,{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \penwd{1.25pt} \plrfcn{0,180,5}{5*sind 3t} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirsttT3">
+          <p>
+            <m>~</m> \begin{mfpic}[10]{-6}{6}{-6}{6} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>T</m>} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{ <m>-5</m>} -5,{ <m>-4</m>} -4,{ <m>-3</m>} -3,{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \axislabels {y}{{ <m>-5</m>} -5,{ <m>-4</m>} -4,{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \penwd{1.25pt} \function{-5,4,0.1}{0.0502*(x**3) - 0.0344*(x**2) - 0.2010*x + 2.138} \pointfillfalse \point[4pt]{(-5,-4),(4,4)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionlasttT">
+          <p>
+            <m>~</m> \begin{mfpic}[10]{-2}{7}{-6}{6} \axes \tlabel[cc](7,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>T</m>} \xmarks{-1,1,2,3,4,5,6} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{ <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6} \axislabels {y}{{ <m>-5</m>} -5,{ <m>-4</m>} -4,{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \penwd{1.25pt} \polyline{(0,-1), (3,-4)} \polyline{(3,1), (4,4), (6,0)} \point[4pt]{(0,-1), (4,4), (6,0)} \pointfillfalse \point[4pt]{(3,-4), (3,1)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine which, if any,
+            of the graphs in <xref ref="graphfunctionfirsttT">numbers</xref>
+            - <xref ref="graphfunctionlasttT"></xref>
+            represent <m>t</m> as a function of <m>T</m>.
+            For the ones which do, state the domain and range.
+            (Feel free to use <xref ref="HLTExercise">Exercise</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphfunctionfirstHs">Exercises</xref>
+      - <xref ref="graphfunctionlastHs"></xref>,
+      determine whether or not the graph suggests <m>H</m> is a function of <m>s</m>.
+      For the ones which do, state the domain and range.
+      <ol cols="3">
+        <li xml:id="graphfunctionfirstHs">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,5){<m>H</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.25,2.25,0.1}{4-(x**2)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstHs2">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,5){<m>H</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2,-1), (1,4), (2,-1)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstHs3">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,5){<m>H</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \function{-2, 1.8, 0.1}{3-2*sqrt(x+2)} \point[4pt]{(-2,3)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="graphfunctionlastHs">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,5){<m>H</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.15, 1.75, 0.1}{x*(x-1)*(x+2)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine which, if any,
+            of the graphs in <xref ref="graphfunctionfirstHs">numbers</xref>
+            - <xref ref="graphfunctionlastHs"></xref>
+            represent <m>s</m> as a function of <m>H</m>.
+            For the ones which do, state the domain and range.
+            (Feel free to use <xref ref="HLTExercise">Exercise</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphfunctionfirstut">Exercises</xref>
+      - <xref ref="graphfunctionlastut"></xref>,
+      determine whether or not the graph suggests <m>u</m> is a function of <m>t</m>.
+      For the ones which do, state the domain and range.
+      <ol cols="3">
+        <li xml:id="graphfunctionfirstut">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-3}{3} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>u</m>} \xmarks{-2,-1,1,2} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>-2</m>} -2, { <m>-1</m>} -1} \penwd{1.25pt} \arrow \polyline{(0,1), (-2,-2)} \arrow \polyline{(1,2), (3,2)} \point[4pt]{(0,1)} \pointfillfalse \point[4pt]{(1,2)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstut2">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-4}{4}{-3}{3} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>u</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3,{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>-2</m>} -2, { <m>-1</m>} -1} \penwd{1.25pt} \function{-3,3,0.1}{2*sin(1.05*x)} \point[4pt]{(-3,0)} \point[4pt]{(3,0)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="graphfunctionfirstut3">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-3}{3} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>u</m>} \xmarks{-2,-1,1,2} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>-2</m>} -2, { <m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(2,-3), (2,3)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="graphfunctionlastut">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-3}{3}{-3}{3} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>u</m>} \xmarks{-2,-1,1,2} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>-2</m>} -2, { <m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-3,2), (3,2)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine which, if any,
+            of the graphs in <xref ref="graphfunctionfirstut">numbers</xref>
+            - <xref ref="graphfunctionlastut"></xref>
+            represent <m>t</m> as a function of <m>u</m>.
+            For the ones which do, state the domain and range.
+            (Feel free to use <xref ref="HLTExercise">Exercise</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="functionvaluesfromgraphfirst">Exercises</xref>
+      - <xref ref="functionvaluesfromgraphlast"></xref>,
+      use the graphs of <m>f</m> and <m>g</m> below to find the indicated values.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-6}{6}{-6}{6}
+    </p>
+    <p>
+      \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}
+    </p>
+    <p>
+      \tcaption{The graph of <m>y = f(x)</m>.} \penwd{1.25pt} \point[4pt]{(-5, -5), (-4, 0), (-3, 4), (-2,2), (-1,0), (0,-1), (1,0), (2,3), (3,1)} \polyline{(-5,-5), (-4,0), (-3,4), (-2,2), (-1,0)} \function{-1, 1, 0.1}{(x**2)-1} \polyline{(1,0), (2,3), (3,1)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-6}{6}
+    </p>
+    <p>
+      \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,6){<m>s</m>} \xmarks{-3,-2,-1,1,2,3,4} \ymarks{-5,-4,-3,-2,-1,1,2,3,4,5} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}
+    </p>
+    <p>
+      \tcaption{The graph of <m>s = g(t)</m>.} \penwd{1.25pt} \function{-4, 4, 0.1}{5*sin(x*3.14159/4)} \point[4pt]{ (-2, -5), (0, 0), (4,0), (2,3), (-4,0)} \pointfillfalse \point[4pt]{(2,5)} \end{mfpic}
+      <ol cols="3">
+        <li xml:id="functionvaluesfromgraphfirst">
+          <p>
+            <m>f(-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve <m>f(x) = 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve <m>g(t) = 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            State the domain and range of <m>f</m>.
+          </p>
+        </li>
+        <li xml:id="functionvaluesfromgraphlast">
+          <p>
+            State the domain and range of <m>g</m> .
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="sketchgraphfirst">Exercises</xref>
+      - <xref ref="sketchgraphlast"></xref>,
+      graph each function by making a table,
+      plotting points, and using a graphing utility
+      (if needed.)
+      Use the independent variable as the horizontal axis label and the default <sq><m>y</m></sq> label for the vertical axis label.
+      State the domain and range of each function.
+    </p>
+    <ol cols="5">
+      <li xml:id="sketchgraphfirst">
+        <p>
+          <m>f(x) = 2-x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t - 2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = s^2 + 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4-x^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = s^3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x(x-1)(x+2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{t-2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = \sqrt{5 - s}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 3-2\sqrt{x+2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt[3]{t}</m>
+        </p>
+      </li>
+      <li xml:id="sketchgraphlast">
+        <p>
+          <m>h(s) = \dfrac{1}{s^{2} + 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Consider the function <m>f</m> described below: \begin{mfpic}[19]{-5}{5}{-5}{6} \tlabel[cc](-3,5){<m>-1</m>} \tlabel[cc](-3,3){0} \tlabel[cc](-3,1){1} \tlabel[cc](-3,-1){2} \tlabel[cc](0,6){<m>f</m>} \tlabel[cc](3.5,5){<m>-3</m>} \tlabel[cc](3.5,3){0} \tlabel[cc](3.5,1){4} \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 3)} \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)} \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 3)} \arrow[l 5pt] \polyline{(-2.5, -1), (2.5, 1)} \end{mfpic}
+        </p>
+        <ol>
+          <li>
+            <p>
+              State the domain and range of <m>f</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find <m>f(0)</m> and solve <m>f(x) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write <m>f</m> as a set of ordered pairs.
+            </p>
+          </li>
+          <li>
+            <p>
+              Graph <m>f</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Let <m>g = \{ (-1,4), (0,2), (2, 3), (3,4) \}</m>
+          <ol>
+            <li>
+              <p>
+                State the domain and range of <m>g</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Create a mapping diagram for <m>g</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>g(0)</m> and solve <m>g(x) = 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>g</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>F = \{ (t, t^2) \, | \, \text{ \(t\) is a real number } \}</m>.
+          Find <m>F(4)</m> and solve <m>F(x) = 4</m>.
+          <em>HINT:</em> Elements of <m>F</m> are of the form <m>(x, F(x))</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>G = \{ (2t, t+5) \, | \, \text{ \(t\) is a real number } \}</m>.
+          Find <m>G(4)</m> and solve <m>G(x) = 4</m>.
+          <em>HINT:</em> Elements of <m>G</m> are of the form <m>(x, G(x))</m>.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          The area enclosed by a square, in square inches,
+          is a function of the length of one of its sides <m>\ell</m>,
+          when measured in inches.
+          This function is represented by the formula <m>A(\ell) = \ell^2</m> for <m>\ell > 0</m>.
+          Find <m>A(3)</m> and solve <m>A(\ell) = 36</m>.
+          Interpret your answers to each.
+          Why is <m>\ell</m> restricted to <m>\ell > 0</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          The area enclosed by a circle, in square meters,
+          is a function of its radius <m>r</m>, when measured in meters.
+          This function is represented by the formula <m>A(r) = \pi r^2</m> for <m>r > 0</m>.
+          Find <m>A(2)</m> and solve <m>A(r) = 16\pi</m>.
+          Interpret your answers to each.
+          Why is <m>r</m> restricted to <m>r > 0</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          The volume enclosed by a cube, in cubic centimeters,
+          is a function of the length of one of its sides <m>s</m>,
+          when measured in centimeters.
+          This function is represented by the formula <m>V(s) = s^3</m> for <m>s > 0</m>.
+          Find <m>V(5)</m> and solve <m>V(s) = 27</m>.
+          Interpret your answers to each.
+          Why is <m>s</m> restricted to <m>s > 0</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          The volume enclosed by a sphere, in cubic feet,
+          is a function of the radius of the sphere <m>r</m>, when measured in feet.
+          This function is represented by the formula <m>V(r) =\frac{4\pi}{3} r^{3}</m> for <m>r > 0</m>.
+          Find <m>V(3)</m> and solve <m>V(r) = \frac{32\pi}{3}</m>.
+          Interpret your answers to each.
+          Why is <m>r</m> restricted to <m>r > 0</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          The height of an object dropped from the roof of an eight story building is modeled by the function:
+          <m>h(t) = -16t^2 + 64</m>, <m>0 \leq t \leq 2</m>.
+          Here, <m>h(t)</m> is the height of the object off the ground,
+          in feet, <m>t</m> seconds after the object is dropped.
+          Find <m>h(0)</m> and solve <m>h(t) = 0</m>.
+          Interpret your answers to each.
+          Why is <m>t</m> restricted to <m>0 \leq t \leq 2</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          The temperature in degrees Fahrenheit <m>t</m> hours after 6 AM is given by
+          <m>T(t) = -\frac{1}{2} t^2 + 8t+3</m> for <m>0 \leq t \leq 12</m>.
+          Find and interpret <m>T(0)</m>,
+          <m>T(6)</m> and <m>T(12)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The function <m>C(x) = x^2-10x+27</m> models the cost,
+          in <em>hundreds</em> of dollars,
+          to produce <m>x</m> <em>thousand</em> pens.
+          Find and interpret <m>C(0)</m>,
+          <m>C(2)</m> and <m>C(5)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Using data from the
+          <url href="http://www.bts.gov/publications/national_transportation_statistics/html/table_04_23.html"><em>Bureau of Transportation Statistics</em></url>,
+          the average fuel economy in miles per gallon for passenger cars in the US can be modeled by
+          <m>E(t) = -0.0076t^2+0.45t + 16</m>, <m>0 \leq t \leq 28</m>,
+          where <m>t</m> is the number of years since <m>1980</m>.
+          Use a calculator to find <m>E(0)</m>,
+          <m>E(14)</m> and <m>E(28)</m>.
+          Round your answers to two decimal places and interpret your answers to each.
+        </p>
+      </li>
+      <li>
+        <p>
+          The perimeter of a square, in centimeters,
+          is four times the length of one if its sides,
+          also measured in centimeters.
+          Represent the function <m>P</m> which takes as its input the length of the side of a square in centimeters,
+          <m>s</m> and returns the perimeter of the square in inches,
+          <m>P(s)</m> using a formula.
+        </p>
+      </li>
+      <li>
+        <p>
+          The circumference of a circle, in feet,
+          is <m>\pi</m> times the diameter of the circle, also measured in feet.
+          Represent the function <m>C</m> which takes as its input the length of the diameter of a circle in feet,
+          <m>D</m> and returns the circumference of a circle in inches,
+          <m>C(D)</m> using a formula.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m>A(P)</m> gives the amount of money in a retirement account
+          (in dollars)
+          after 30 years as a function of the amount of the monthly payment
+          (in dollars),
+          <m>P</m>.
+          <ol>
+            <li>
+              <p>
+                What does <m>A(50)</m> mean?
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the significance of the solution to the equation <m>A(P) = 250000</m>? .
+              </p>
+            </li>
+            <li>
+              <p>
+                Explain what each of the following expressions mean:
+                <m>A(P+50)</m>, <m>A(P)+50</m>, and <m>A(P) + A(50)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m>P(t)</m> gives the chance of precipitation
+          (in percent)
+          <m>t</m> hours after 8 AM.
+          <ol>
+            <li>
+              <p>
+                Write an expression which gives the chance of precipitation at noon.
+              </p>
+            </li>
+            <li>
+              <p>
+                Write an inequality which determines when the chance of precipitation is more than <m>50 \%</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Explain why the graph in <xref ref="graphfunctionfirstvw">Exercise</xref>
+          suggests that not only is <m>v</m> as a function of <m>w</m> but also <m>w</m> is a function of <m>v</m>.
+          Suppose <m>w = f(v)</m> and <m>v = g(w)</m>.
+          That is, <m>f</m> is the name of the function which takes <m>v</m> values as inputs and returns <m>w</m> values as outputs and <m>g</m> is the name of the function which does vice-versa.
+          Find the domain and range of <m>g</m> and compare these to the domain and range of <m>f</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Sketch the graph of a function with domain
+          <m>(-\infty, 3) \cup [4,5)</m> with range <m>\{ 2 \} \cup (5, \infty)</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          The mapping <m>M</m> is not a function since <sq>Tennant</sq> is matched with both <sq>Eleven</sq> and <sq>Twelve.</sq>
+        </p>
+      </li>
+      <li>
+        <p>
+          The mapping <m>C</m> is a function since each input is matched with only one output.
+          The domain of <m>C</m> is <m>\{ \text{ Hartnell } , \text{ Cushing } , \text{ Hurndall } , \text{ Troughton } \}</m> and the range is <m>\{\text{ One } , \text{ Two } \}</m>.
+          We can represent <m>C</m> as the following set of ordered pairs:
+          <m>\{ (\text{ Hartnell } , \text{ One } ), (\text{ Cushing } , \text{ One } ), (\text{ Hurndall } , \text{ One } ), (\text{ Troughton } , \text{ Two } ) \}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          In this case,
+          <m>y</m> is a function of <m>x</m> since each <m>x</m> is matched with only one <m>y</m>.
+          The domain is <m>\{ -3, -2, -1,0,1,2,3 \}</m> and the range is <m>\{ 0,1,2,3 \}</m>.
+          As ordered pairs,
+          this function is <m>\{ (-3,3), (-2,2), (-1,1), (0,0), (1,1), (2,2), (3,3) \}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          In this case,
+          <m>y</m> is not a function of <m>x</m> since there are <m>x</m> values matched with more than one <m>y</m> value.
+          For instance,
+          <m>1</m> is matched both to <m>1</m> and <m>-1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The mapping is a function since given any word,
+          there is only one answer to <sq>how many letters are in the word?</sq> For the range,
+          we would need to know what the length of the longest word is and whether or not we could find words of all the lengths between <m>1</m>
+          (the length of the word <sq>a</sq>)
+          and it.
+          See
+          <url href="https://en.wikipedia.org/wiki/Longest_word_in_English"><em>here</em></url>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Since Grover Cleveland was both the 22nd and 24th POTUS, neither mapping described in this exercise is a function.
+        </p>
+      </li>
+      <li>
+        <p>
+          The outdoor temperature could never be the same for more than two different times - so,
+          for example,
+          it could always be getting warmer or it could always be getting colder.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(2) = \frac{7}{4}</m>, <m>f(x) = \frac{2x+3}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(2) = \frac{5}{2}</m>, <m>f(x) = \frac{2(x+3)}{4} = \frac{x+3}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(2) = 7</m>,
+          <m>f(x) = 2\left(\frac{x}{4} + 3\right) = \frac{1}{2} x + 6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(2) = \sqrt{7}</m>, <m>f(x) = \sqrt{2x+3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(2) = \sqrt{10}</m>, <m>f(x) = \sqrt{2(x+3)} = \sqrt{2x+6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(2) = 2 \sqrt{5}</m>, <m>f(x) = 2\sqrt{x+3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x+1</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(3) = 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-1) = -1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f\left(\frac{3}{2} \right) = 4</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>f(4x) = 8x+1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4f(x) = 8x+4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-x) = -2x+1</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f(x-4) = 2x-7</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x) - 4 = 2x-3</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f\left(x^2\right) = 2x^2+1</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 3-4x</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(3) = -9</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-1) = 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f\left(\frac{3}{2} \right) = -3</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>f(4x) = 3-16x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4f(x) = 12-16x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-x) = 4x+3</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f(x-4) = 19-4x</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x) - 4 = -4x-1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f\left(x^2\right) = 3-4x^2</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2 - x^2</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(3) = -7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-1) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f\left(\frac{3}{2} \right) = -\frac{1}{4}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>f(4x) = 2-16x^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4f(x) = 8-4x^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-x) = 2-x^2</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f(x-4) = -x^2+8x-14</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x) - 4 = -x^{2} - 2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f\left(x^2\right) = 2-x^4</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2 - 3x + 2</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(3) = 2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-1) = 6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f\left(\frac{3}{2} \right) = -\frac{1}{4}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>f(4x) = 16x^2-12x+2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4f(x) = 4x^2-12x+8</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-x) = x^2+3x+2</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f(x-4) = x^2-11x+30</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x) - 4 = x^2-3x-2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f\left(x^2\right) = x^4-3x^2+2</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 6</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(3) = 6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-1) =6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f\left(\frac{3}{2} \right) = 6</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>f(4x) = 6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4f(x) = 24</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-x) = 6</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f(x-4) = 6</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x) - 4 = 2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f\left(x^2\right) = 6</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 0</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(3) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-1) =0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f\left(\frac{3}{2} \right) = 0</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>f(4x) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4f(x) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-x) = 0</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f(x-4) = 0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(x) - 4 = -4</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f\left(x^2\right) = 0</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x-5</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(2) = -1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-2) = -9</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(2a) = 4a-5</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>2 f(a) = 4a-10</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a+2) = 2a-1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a) + f(2) = 2a-6</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f \left( \frac{2}{a} \right) = \frac{4}{a} - 5</m> <m>= \frac{4-5a}{a}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{f(a)}{2} =\frac{2a-5}{2}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(a + h) = 2a + 2h - 5</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 5-2x</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(2) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-2) = 9</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(2a) = 5-4a</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>2 f(a) = 10-4a</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a+2) = 1-2a</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a) + f(2) = 6-2a</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f \left( \frac{2}{a} \right) = 5 - \frac{4}{a}</m> <m>= \frac{5a-4}{a}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{f(a)}{2} = \frac{5-2a}{2}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(a + h) = 5-2a-2h</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x^2-1</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(2) = 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-2) = 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(2a) = 8a^2-1</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>2 f(a) = 4a^2-2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a+2) = 2a^2+8a+7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a) + f(2) = 2a^2+6</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f \left( \frac{2}{a} \right) = \frac{8}{a^2} - 1</m> <m>= \frac{8-a^2}{a^2}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{f(a)}{2} = \frac{2a^2-1}{2}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(a + h) = 2a^2+4ah+2h^2-1</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 3x^2+3x-2</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(2) = 16</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-2) = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(2a) = 12a^2+6a-2</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>2 f(a) = 6a^2+6a-4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a+2) = 3a^2+15a+16</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a) + f(2) = 3a^2+3a+14</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f \left( \frac{2}{a} \right) = \frac{12}{a^2} + \frac{6}{a} - 2</m> <m>= \frac{12+6a-2a^2}{a^2}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{f(a)}{2} = \frac{3a^2+3a-2}{2}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(a + h) = 3a^2 + 6ah + 3h^2+3a+3h-2</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 117</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(2) = 117</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-2) = 117</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(2a) = 117</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>2 f(a) = 234</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a+2) = 117</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a) + f(2) = 234</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f \left( \frac{2}{a} \right) = 117</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{f(a)}{2} = \frac{117}{2}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(a + h) = 117</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{x}{2}</m>
+          <ul>
+            <li>
+              <p>
+                <m>f(2) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(-2) = -1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(2a) = a</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>2 f(a) = a</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a+2) = \frac{a+2}{2}</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(a) + f(2) = \frac{a}{2}+ 1</m> <m>= \frac{a+2}{2}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>f \left( \frac{2}{a} \right) = \frac{1}{a}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{f(a)}{2} = \frac{a}{4}</m> \columnbreak
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(a + h) = \frac{a+h}{2}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x-1</m>, <m>f(0) = -1</m> and
+          <m>f(x) = 0</m> when <m>x = \frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 3 - \frac{2}{5} x</m>,
+          <m>f(0) = 3</m> and <m>f(x) = 0</m> when <m>x = \frac{15}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x^2-6</m>,
+          <m>f(0) = -6</m> and <m>f(x) = 0</m> when <m>x = \pm \sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2-x-12</m>,
+          <m>f(0) = -12</m> and <m>f(x) = 0</m> when <m>x = -3</m> or <m>x=4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = \{<m>-3</m>,
+          <m>-2</m>, <m>-1</m>, <m>0</m>, <m>1</m>,
+          <m>2</m> ,<m>3</m>\} range = \{<m>0</m>, <m>1</m>,
+          <m>4</m>, <m>9</m>\} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>\left\{ -7, -3, 3, 4, 5, 6 \right\}</m> range = <m>\left\{ 0,4,5,6,9 \right\}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>\left\{ 1, 4, 9, 16, 25, 36, \ldots \right\} \\ = \left\{ x \, | \, \text{ \(x\) is a perfect square } \right\}</m> range = <m>\left\{ 2, 4, 6, 8, 10, 12, \ldots \right\} \\ = \left\{ y \, | \, \text{ \(y\) is a positive even integer } \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain <m>= \{x \, | \, \text{ \(x\) is irrational } \}</m> range <m>= \{ 1\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain <m>= \{x \, | \, 1, 2, 4, 8, \ldots \}</m> <m>= \{x \, | \, \text{<m>x = 2^{n}</m> for some whole number <m>n</m>} \}</m> range
+          <m>= \{ 0, 1, 2, 3, \ldots \}</m> <m>= \{y \, | \, \text{ \(y\) is any whole number } \}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain <m>= \{x \, | \, \text{ \(x\) is any integer } \}</m> range <m>= \{y \, | \, \text{ \(y\) is the square of an integer } \}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain <m>= \{x \, | \, -2 \leq x \lt 4 \} = [-2, 4)</m>,
+          range = \{<m>3</m>\}
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain <m>= \{x \, | \, \text{ \(x\) is a real number } \} = (-\infty, \infty)</m> range <m>= \{y \, | \, y \geq 0 \} = [0,\infty)</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Horizontal Line Test:</em> A graph on the <m>xy</m>-plane represents <m>x</m> as a function of <m>y</m> if and only if no <em>horizontal</em>
+          line intersects the graph more than once.
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = \{<m>-4</m>, <m>-3</m>, <m>-2</m>,
+          <m>-1</m>, <m>0</m>, <m>1</m>\} range = \{<m>-1</m>, <m>0</m>,
+          <m>1</m>, <m>2</m>, <m>3</m>, <m>4</m>\} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-\infty, \infty)</m> range = <m>[1, \infty)</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <xref ref="graphfunctionfirstxy">Number</xref>
+              represents <m>x</m> as a function of <m>y</m>. domain = \{<m>-1</m>,
+              <m>0</m>,
+              <m>1</m>, <m>2</m>, <m>3</m>,
+              <m>4</m>\} and range = \{<m>-4</m>,
+              <m>-3</m>, <m>-2</m>, <m>-1</m>, <m>0</m>, <m>1</m>\}
+            </p>
+          </li>
+          <li>
+            <p>
+              <xref ref="graphfunctionlastxy">Number</xref>
+              represents <m>x</m> as a function of <m>y</m>. domain =
+              <m>(-\infty, \infty)</m> and range = <m>[1, \infty)</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>[2, \infty)</m> range = <m>[0, \infty)</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-\infty, \infty)</m> range = <m>(0, 4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>[-5,-3) \cup(-3, 3)</m> range = <m>(-2, -1) \cup [0, 4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Only <xref ref="graphfunctionfirstvw">number</xref>
+          represents <m>v</m> as a function of <m>w</m>;
+          domain = <m>[0, \infty)</m> and range = <m>[2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>[-2, \infty)</m> range = <m>[-3, \infty)</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-5, 4)</m> range = <m>(-4, 4)</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>[0,3) \cup (3,6]</m> range = <m>(-4,-1] \cup [0,4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          None of <xref ref="graphfunctionfirsttT">numbers</xref>
+          - <xref ref="graphfunctionlasttT"></xref>
+          represent <m>t</m> as a function of <m>T</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-\infty, \infty)</m> range = <m>(-\infty, 4]</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-\infty, \infty)</m> range = <m>(-\infty, 4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>[-2, \infty)</m> range = <m>(-\infty, 3]</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-\infty, \infty)</m> range = <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Only <xref ref="graphfunctionfirstHs3">number</xref>
+          represents <m>s</m> as a function of <m>H</m>;
+          domain = <m>(-\infty, 3]</m> and range = <m>[-2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-\infty, 0] \cup (1, \infty)</m> range = <m>(-\infty, 1] \cup \{ 2\}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>[-3,3]</m> range = <m>[-2,2]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Not a function \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Function domain = <m>(-\infty, \infty)</m> range = <m>\{2\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Only <xref ref="graphfunctionfirstut3">number</xref>
+          represents <m>t</m> as a function of <m>u</m>;
+          domain = <m>(-\infty, \infty)</m> and range=<m>\{2 \}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(-2) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(-2) = -5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(2) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(2) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(0) = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(0) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -4, -1, 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -4, 0, 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain: <m>[-5,3]</m>, Range: <m>[-5,4]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Domain: <m>[-4,4]</m>, Range: <m>[-5,5)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) =2-x</m> Domain: <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, \infty)</m> \begin{mfpic}[15]{-3}{4}{-2}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2,-1,1,2,3} \ymarks{-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.75,3.75, 0.1}{2-x} \point[4pt]{(-1,3), (0, 2), (1,1), (2,0), (3,-1)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \dfrac{t - 2}{3}</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, \infty)</m> \columnbreak \begin{mfpic}[15]{-2}{5}{-2}{2} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,2){<m>y</m>} \xmarks{-1,1,2,3,4} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-2,5, 0.1}{(x - 2)/3} \point[4pt]{(-1,-1), (0, -0.6667), (1,-0.3333), (2,0), (3, 0.3333)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = s^2+1</m> Domain: <m>(-\infty, \infty)</m> Range:
+          <m>[1, \infty)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-1}{6} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,5.75){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.1, 2.1, 0.1}{x**2+1} \point[4pt]{(-1,2), (0,1), (1,2), (2,5), (-2,5)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4-x^2</m> Domain: <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, 4]</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.25,2.25,0.1}{4-(x**2)} \point[4pt]{(-1,3), (0,4), (1,3), (-2,0), (2,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 2</m> Domain: <m>(-\infty, \infty)</m> Range:
+          <m>\{2\}</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-1}{4} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3,0.1}{2} \point[4pt]{(-2,2), (-1,2), (0,2), (1,2), (2,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = s^3</m> Domain: <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, \infty)</m> \begin{mfpic}[10]{-3}{3}{-9}{9} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,9){<m>y</m>} \ymarks{-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-8</m>} -8,{<m>-7</m>} -7,{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2.1,2.1,0.1}{(t,t**3)} \point[4pt]{(0,0), (-1, -1), (1, 1), (-2, -8), (2, 8)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x(x-1)(x+2)</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, \infty)</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.25, 1.75, 0.1}{x*(x-1)*(x+2)} \point[4pt]{(-2,0), (-1,2), (0,0), (1,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{t-2}</m> Domain:
+          <m>[2, \infty)</m> Domain:
+          <m>[0, \infty)</m> \columnbreak \begin{mfpic}[15]{-1}{10}{-1}{4} \axes \tlabel[cc](10,-0.5){<m>t</m>} \tlabel[cc](0.5,3.75){<m>y</m>} \xmarks{1,2,3,4,5,6,7,8,9} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4, { <m>5</m>} 5, { <m>6</m>} 6, { <m>7</m>} 7, { <m>8</m>} 8, { <m>9</m>} 9} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \penwd{1.25pt} \arrow \function{2, 10, 0.1}{sqrt(x - 2)} \point[4pt]{(2,0), (3,1), (6,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = \sqrt{5 - s}</m> Domain:
+          <m>(-\infty, 5]</m> Range:
+          <m>[0, \infty)</m> \begin{mfpic}[15]{-5}{6}{-1}{4} \axes \tlabel[cc](6,-0.5){<m>s</m>} \tlabel[cc](0.5,3.75){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4,5} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \function{-4.5, 5, 0.1}{sqrt(5 - x)} \point[4pt]{(5,0), (0, 2.2360679), (1, 2), (-4, 3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 3-2\sqrt{x+2}</m> Domain:
+          <m>[-2,\infty)</m> Range:
+          <m>(-\infty, 3]</m> \columnbreak \begin{mfpic}[15]{-3}{3}{-1.5}{5} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{ <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2} \axislabels {y}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \penwd{1.25pt} \arrow \function{-2, 3, 0.1}{3-2*sqrt(x+2)} \point[4pt]{(-2,3), (-1,1), (2,-1)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt[3]{t}</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>(-\infty, \infty)</m> \columnbreak \begin{mfpic}[10]{-9}{9}{-3}{3} \point[4pt]{(0,0), (-1, -1), (1, 1), (-8, -2), (8, 2)} \axes \tlabel[cc](9,-0.5){<m>t</m>} \tlabel[cc](0.5,2.75){<m>y</m>} \xmarks{-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2.1,2.1,0.1}{(t**3,t)} \point[4pt]{(0,0), (-1, -1), (1, 1), (-8, -2), (8, 2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(s) = \dfrac{1}{s^{2} + 1}</m> Domain:
+          <m>(-\infty, \infty)</m> Range:
+          <m>(0, 1]</m> \columnbreak \begin{mfpic}[23]{-3}{3}{-1}{2} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.5,1.75){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.5, 2.5, 0.1}{1/(x**2 + 1)} \point[4pt]{(0, 1), (1,0.5), (-1,0.5)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              domain <m>= \{ -1, 0, 1, 2 \}</m>,
+              range <m>= \{ -3, 0, 4\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(0) = -3</m>, <m>f(x) = 0</m> for <m>x = -1, 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f = \{ (-1,0), (0, -3), (1,0), (2,4) \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>~</m> \begin{mfpic}[17]{-4}{4}{-5}{5} \point[4pt]{(-1, 0), (0, -3), (1,0), (2, 4)} \axes \xmarks{-3, -2, -1, 0, 1, 2, 3} \ymarks{-4 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{{ <m>-4</m>} -4, { <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              domain <m>= \{ -1, 0, 2, 3 \}</m>,
+              range <m>=\{ 2, 3, 4 \}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>~</m> \begin{mfpic}[19]{-5}{5}{-5}{6} \tlabel[cc](-3,5){-1} \tlabel[cc](-3,3){0} \tlabel[cc](-3,1){2} \tlabel[cc](-3,-1){3} \tlabel[cc](0,6){<m>g</m>} \tlabel[cc](3.5,5){2} \tlabel[cc](3.5,3){3} \tlabel[cc](3.5,1){4} \arrow[l 5pt] \polyline{(-2.5, 5), (2.5, 1)} \arrow[l 5pt] \polyline{(-2.5, 3), (2.5, 5)} \arrow[l 5pt] \polyline{(-2.5, 1), (2.5, 3)} \arrow[l 5pt] \polyline{(-2.5, -1), (2.5, 1)} \end{mfpic}
+            </p>
+          </li>
+          <li>
+            <p>
+              Find <m>g(0) = 2</m> and <m>g(x) = 0</m> has no solutions.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>~</m> \begin{mfpic}[17]{-4}{4}{-1}{5} \point[4pt]{(-1, 4), (0, 2), (2,3), (3, 4)} \axes \xmarks{-3, -2, -1, 0, 1, 2, 3} \ymarks{1 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{{ <m>-3</m>} -3, { <m>-2</m>} -2, { <m>-1</m>} -1, { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \axislabels {y}{ { <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3, { <m>4</m>} 4} \end{mfpic}
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>F(4) = 4^2 = 16</m>
+          (when <m>t = 4</m>),
+          the solutions to <m>F(x) = 4</m> are <m>x = \pm 2</m>
+          (when <m>t = \pm 2</m>).
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(4) = 7</m>
+          (when <m>t = 2</m>),
+          the solution to <m>G(t) = 4</m> is <m>x = -2</m> (when <m>t = -1</m>)
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>A(3) = 9</m>,
+          so the area enclosed by a square with a side of length <m>3</m> inches is <m>9</m> square inches.
+          The solutions to <m>A(\ell) = 36</m> are <m>\ell = \pm 6</m>.
+          Since <m>\ell</m> is restricted to <m>\ell > 0</m>,
+          we only keep <m>\ell = 6</m>.
+          This means for the area enclosed by the square to be <m>36</m> square inches,
+          the length of the side needs to be <m>6</m> inches.
+          Since <m>\ell</m> represents a length, <m>\ell > 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A(2) = 4\pi</m>,
+          so the area enclosed by a circle with radius <m>2</m> meters is <m>4\pi</m> square meters.
+          The solutions to <m>A(r) = 16\pi</m> are <m>r = \pm 4</m>.
+          Since <m>r</m> is restricted to <m>r > 0</m>,
+          we only keep <m>r = 4</m>.
+          This means for the area enclosed by the circle to be <m>16\pi</m> square meters,
+          the radius needs to be <m>4</m> meters.
+          Since <m>r</m> represents a radius (length), <m>r > 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V(5) = 125</m>,
+          so the volume enclosed by a cube with a side of length <m>5</m> centimeters is <m>125</m> cubic centimeters.
+          The solution to <m>V(s) = 27</m> is <m>s = 3</m>.
+          This means for the volume enclosed by the cube to be <m>27</m> cubic centimeters,
+          the length of the side needs to <m>3</m> centimeters.
+          Since <m>x</m> represents a length, <m>x > 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V(3) = 36\pi</m>,
+          so the volume enclosed by a sphere with radius <m>3</m> feet is <m>36\pi</m> cubic feet.
+          The solution to <m>V(r) = \frac{32\pi}{3}</m> is <m>r = 2</m>.
+          This means for the volume enclosed by the sphere to be <m>\frac{32\pi}{3}</m> cubic feet,
+          the radius needs to <m>2</m> feet.
+          Since <m>r</m> represents a radius (length), <m>r > 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(0) = 64</m>,
+          so at the moment the object is dropped off the building,
+          the object is <m>64</m> feet off of the ground.
+          The solutions to <m>h(t) = 0</m> are <m>t = \pm 2</m>.
+          Since we restrict <m>0 \leq t \leq 2</m>,
+          we only keep <m>t = 2</m>.
+          This means <m>2</m> seconds after the object is dropped off the building,
+          it is <m>0</m> feet off the ground.
+          Said differently, the object hits the ground after <m>2</m> seconds.
+          The restriction <m>0 \leq t \leq 2</m> restricts the time to be between the moment the object is released and the moment it hits the ground.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>T(0) = 3</m>,
+          so at 6 AM (<m>0</m> hours after 6 AM), it is <m>3^{\circ}</m> Fahrenheit.
+          <m>T(6) = 33</m>,
+          so at noon (<m>6</m> hours after 6 AM), the temperature is <m>33^{\circ}</m> Fahrenheit.
+          <m>T(12) = 27</m>,
+          so at 6 PM (<m>12</m> hours after 6 AM), it is <m>27^{\circ}</m> Fahrenheit.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>C(0) = 27</m>, so to make <m>0</m> pens, it costs<fn>
+          This is called the <sq>fixed</sq> or <sq>start-up</sq> cost.
+          We'll revisit this concept in <xref ref="PortaBoyCost">Example</xref>
+          in <xref ref="ConstantandLinearFunctions">Section</xref>.
+          </fn> <m>$ 2700</m>.
+          <m>C(2) = 11</m>, so to make <m>2000</m> pens,
+          it costs <m>\dollar1100</m>.
+          <m>C(5) = 2</m>, so to make <m>5000</m> pens,
+          it costs <m>\dollar2000</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>E(0) = 16.00</m>, so in 1980 (<m>0</m> years after 1980),
+          the average fuel economy of passenger cars in the US was <m>16.00</m> miles per gallon.
+          <m>E(14) = 20.81</m>, so in 1994 (<m>14</m> years after 1980),
+          the average fuel economy of passenger cars in the US was <m>20.81</m> miles per gallon.
+          <m>E(28) = 22.64</m>, so in 2008 (<m>28</m> years after 1980),
+          the average fuel economy of passenger cars in the US was <m>22.64</m> miles per gallon.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P(s) = 4s</m>, <m>s > 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>C(D) = \pi D</m>, <m>D > 0</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              The amount in the retirement account after 30 years if the monthly payment is <m>\dollar50</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The solution to <m>A(P) = 250000</m> is what the monthly payment needs to be in order to have
+              <m>\dollar250,\!000</m> in the retirement account after 30 years.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A(P+50)</m> is how much is in the retirement account in 30 years if <m>$ 50</m> is added to the monthly payment <m>P</m>.
+              <m>A(P)+50</m> represents the amount of money in the retirement account after 30 years if
+              <m>\dollarP</m> is invested each month plus an additional <m>\dollar50</m>.
+              <m>A(P)+A(50)</m> is the sum of money from two retirement accounts after 30 years:
+              one with monthly payment <m>\dollarP</m> and one with monthly payment <m>\dollar50</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              Since noon is <m>4</m> hours after 8 AM, <m>P(4)</m> gives the chance of precipitation at noon.
+            </p>
+          </li>
+          <li>
+            <p>
+              We would need to solve <m>P(t) \geq 50 \%</m> or <m>P(t) \geq 0.5</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The graph in question passes the horizontal line test meaning for each <m>w</m> there is only one <m>v</m>.
+          The domain of <m>g</m> is <m>[0, \infty)</m>
+          (which is the range of <m>f</m>)
+          and the range of <m>g</m> is
+          <m>[2, \infty)</m> which is the domain of <m>f</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Answers vary.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

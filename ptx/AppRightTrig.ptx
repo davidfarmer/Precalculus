@@ -1,0 +1,1291 @@
+<section xml:id="AppRightTrig">
+  <title>Right Triangle Trigonometry</title>
+  <introduction>
+    <p>
+      The word <sq>trigonometry</sq> literally means <sq>measuring triangles,</sq> so naturally most students' first introduction to trigonometry focuses on triangles.
+      This section focuses on
+          <idx><h>triangle</h><h>right</h></idx>
+          <idx><h>right triangle</h></idx> <em>right triangles</em>, triangles in which one angle measures <m>90^{\circ}</m>.
+      Consider the right triangle below, where, as usual,
+      the small square <sq><m>\! \! \! \! \! \!</m></sq> denotes the right angle,
+      the labels <sq><m>a</m>,</sq> <sq><m>b</m>,</sq> and <sq><m>c</m></sq> denote the lengths of the sides of the triangle,
+      and <m>\alpha</m> and <m>\beta</m> represent the
+      (measure of)
+      the non-right angles.
+      As you may recall, the side opposite the right angle is called the
+          <idx><h>hypotenuse</h></idx>
+      <em>hypotenuse</em> of the right triangle.
+      Also note that since the sum of the measures of all angles in a triangle must add to <m>180^{\circ}</m>,
+      we have <m>\alpha + \beta + 90^{\circ}= 180^{\circ}</m>,
+      or <m>\alpha + \beta = 90^{\circ}</m>.
+      Said differently,
+      the non-right angles in a right triangle are <em>complements</em>.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \tlabel(0,-0.75){<m>a</m>} \tlabel(4.75,2.25){<m>b</m>} \tlabel(0,3){<m>c</m>} \polyline{(3.93, 0), (3.93, 0.4), (4.33, 0.4)} \arrow \reverse \arrow \shiftpath{(-4.330,0)} \parafcn{5, 25, 5}{2.5*dir(t)} \arrow \reverse \arrow \shiftpath{(4.330,5)} \parafcn{215, 265, 5}{1.5*dir(t)} \tlabel(-1.5,0.5){<m>\beta</m>} \tlabel(3,3){<m>\alpha</m>} \penwd{1.25pt} \polyline{(-4.330,0), (4.330,0), (4.330,5), (-4.330,0)} \end{mfpic}
+    </p>
+    <p>
+      We now state and prove the most famous result about right triangles:
+          <idx><h>Pythagorean Theorem</h></idx>
+          <idx><h>Theorem</h><h>Pythagorean</h></idx> <em>The Pythagorean Theorem</em>.
+    </p>
+    <theorem xml:id="PythagoreanTheorem">
+      <statement>
+        <p>
+          (<em>The Pythagorean Theorem</em>) The square of the length of the hypotenuse of a right triangle is equal to the sums of the squares of the other two sides.
+          More specifically,
+          if <m>c</m> is the length of the hypotenuse of a right triangle and <m>a</m> and <m>b</m> are the lengths of the other two sides,
+          then <m>a^2 + b^2 = c^2</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      There are several proofs of the Pythagorean Theorem,<fn>
+      Including one by Mentor, Ohio native
+      <url href="http://www.maa.org/press/periodicals/convergence/mathematical-treasure-james-a-garfields-proof-of-the-pythagorean-theorem"><em>President James Garfield</em></url>.
+      </fn> but the one we choose to reproduce here showcases a nice interplay between algebra and geometry.
+      Consider taking four copies of the right triangle below on the left and arranging them as seen below on the right.
+    </p>
+    <p>
+      \begin{mfpic}[22.5]{-1}{5}{-1}{5}
+    </p>
+    <p>
+      \arrow \reverse \arrow \shiftpath{(3,0)} \parafcn{130, 175, 5}{dir(t)} \arrow \reverse \arrow \shiftpath{(0,4)} \parafcn{275, 300, 5}{1.5*dir(t)} \polyline{(0, 0), (0.4, 0), (0.4, 0.4), (0, 0.4), (0,0)}
+    </p>
+    <p>
+      \penwd{1.25pt} \polyline{(0,0), (3,0), (0,4), (0,0)}
+    </p>
+    <p>
+      \tlabel[cc](1.5,-0.5){<m>a</m>} \tlabel[cc](-0.5,2){<m>b</m>} \tlabel[cc](2,2){<m>c</m>} \tlabel[cc](1.5,0.5){<m>\beta</m>} \tlabel[cc](0.5,2){<m>\alpha</m>} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[20]{-1}{8}{-1}{8}
+    </p>
+    <p>
+      \arrow \reverse \arrow \shiftpath{(3,0)} \parafcn{130, 175, 5}{dir(t)} \arrow \reverse \arrow \shiftpath{(7,3)} \parafcn{220, 265, 5}{dir(t)} \arrow \reverse \arrow \shiftpath{(0,4)} \parafcn{40, 85, 5}{dir(t)} \arrow \reverse \arrow \shiftpath{(4,7)} \parafcn{310, 355, 5}{dir(t)}
+    </p>
+    <p>
+      \arrow \reverse \arrow \shiftpath{(3,0)} \parafcn{5, 30, 5}{1.5*dir(t)} \arrow \reverse \arrow \shiftpath{(7,3)} \parafcn{95, 120, 5}{1.5*dir(t)} \arrow \reverse \arrow \shiftpath{(0,4)} \parafcn{275, 300, 5}{1.5*dir(t)} \arrow \reverse \arrow \shiftpath{(4,7)} \parafcn{185, 210, 5}{1.5*dir(t)}
+    </p>
+    <p>
+      \polyline{(0, 0), (0.4, 0), (0.4, 0.4), (0, 0.4), (0,0)} \polyline{(6.6, 0), (7, 0), (7, 0.4), (6.6, 0.4), (6.6,0)} \polyline{(6.6, 6.6), (7, 6.6), (7, 7), (6.6, 7), (6.6, 6.6)} \polyline{(0, 6.6), (0.4, 6.6), (0.4, 7), (0, 7), (0,6.6)} \penwd{1.25pt} \polyline{(0,0), (7,0), (7,7), (0,7), (0,0)} \fillcolor[gray]{.7} \gfill \polygon{(0,4), (3,0), (7,3), (4,7), (0,4)} \polyline{(0,4), (3,0), (7,3), (4,7), (0,4)} \tlabel[cc](1.5,-0.5){<m>a</m>} \tlabel[cc](-0.5,5.5){<m>a</m>} \tlabel[cc](5.5,7.5){<m>a</m>} \tlabel[cc](7.5,1.5){<m>a</m>} \tlabel[cc](5,-0.5){<m>b</m>} \tlabel[cc](-0.5,2){<m>b</m>} \tlabel[cc](2,7.5){<m>b</m>} \tlabel[cc](7.5,5){<m>b</m>}
+    </p>
+    <p>
+      \tlabel[cc](2, 5){<m>c</m>} \tlabel[cc](5,5){<m>c</m>} \tlabel[cc](2,2){<m>c</m>} \tlabel[cc](5,2){<m>c</m>}
+    </p>
+    <p>
+      \tlabel[cc](1.5,0.5){<m>\beta</m>} \tlabel[cc](0.5,5.5){<m>\beta</m>} \tlabel[cc](5.5,6.5){<m>\beta</m>} \tlabel[cc](6.5,1.5){<m>\beta</m>}
+    </p>
+    <p>
+      \tlabel[cc](0.5,2){<m>\alpha</m>} \tlabel[cc](2,6.5){<m>\alpha</m>} \tlabel[cc](6.5,5){<m>\alpha</m>} \tlabel[cc](5,0.5){<m>\alpha</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      It should be clear that we have produced a large square with a side length of <m>(a+b)</m>.
+      What is also true, but may not be obvious,
+      is that the shaded quadrilateral is also a square.
+      We can readily see the shaded quadrilateral has equal sides of length <m>c</m>.
+      Moreover, since <m>\alpha + \beta = 90^{\circ}</m>,
+      we get the interior angles of the shaded quadrilateral are each <m>90^{\circ}</m>.
+      Hence, the shaded quadrilateral is indeed a square.
+    </p>
+    <p>
+      We finish the proof by computing the area of the of the large square in two ways.
+      First, we square the length of its side: <m>(a+b)^2</m>.
+      Next, we add up the areas of the four triangles,
+      each having area <m>\frac{1}{2} ab</m> along with the area of the shaded square,
+      <m>c^2</m>.
+      Equating these to expressions gives:
+      <m>(a+b)^2 = 4 \left( \frac{1}{2} ab\right)+c^2</m>.
+      Since <m>(a+b)^2 = a^2+2ab+b^2</m> and <m>4 \left( \frac{1}{2} ab\right) = 2ab</m>,
+      we have <m>a^2+2ab+b^2 = 2ab + c^2</m> or <m>a^2+b^2 = c^2</m>,
+      as required.
+    </p>
+    <p>
+      It should be noted that the converse of the Pythagorean Theorem is also true.
+      That is if <m>a</m>, <m>b</m>,
+      and <m>c</m> are the lengths of sides of a triangle and <m>a^2+b^2 = c^2</m>,
+      then <m>c</m> the triangle is a right triangle.<fn>
+      We will prove this in <xref ref="TheLawofCosines">Section</xref>
+      by generalizing the Pythagorean Theorem to a formula that works for <em>all</em> triangles.
+      </fn>
+    </p>
+    <p>
+      A list of integers <m>(a,b,c)</m> which satisfy the relationship <m>a^2+b^2 = c^2</m> is called a
+          <idx><h>Pythagorean triple</h></idx>
+      <em>Pythagorean Triple</em>.
+      Some of the more common triples are:
+      <m>(3,4,5)</m>, <m>(5,12,13)</m>,
+      <m>(7,24,25)</m>, and <m>(8,15,17)</m>.
+      We leave it to the reader to verify these integers satisfy the equation
+      <m>a^2+b^2 = c^2</m> and suggest committing these triples to memory.
+    </p>
+    <p>
+      Next, we set about defining characteristic ratios associated with acute angles.
+      Given any acute angle <m>\theta</m>,
+      we can imagine <m>\theta</m> being an interior angle of a right triangle as seen below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \reverse \arrow \shiftpath{(-4.330,0)} \parafcn{5, 25, 5}{3*dir(t)} \tlabel(-1, 0.6){<m>\theta</m>} \tlabel(0,-0.75){<m>a</m>} \tlabel(4.75,2.25){<m>b</m>} \tlabel(0,3){<m>c</m>} \polyline{(3.93, 0), (3.93, 0.4), (4.33, 0.4)} \penwd{1.25pt} \polyline{(-4.330,0), (4.330,0), (4.330,5), (-4.330,0)} \end{mfpic}
+    </p>
+    <p>
+      Focusing on the arrangement of the sides of the triangle with respect to the angle <m>\theta</m>,
+      we make the following definitions:
+      the side with length <m>a</m> is called the side of the triangle which is
+          <idx><h>side</h><h>adjacent</h></idx>
+          <idx><h>adjacent side</h></idx> <em>adjacent</em> to <m>\theta</m> and the side with length <m>b</m> is called the side of the triangle
+          <idx><h>side</h><h>opposite</h></idx>
+          <idx><h>opposite side</h></idx>
+      <em>opposite</em> <m>\theta</m>.
+      As usual, the side labeled <sq><m>c</m></sq>
+      (the side opposite the right angle)
+      is the hypotenuse.
+      Using this diagram,
+      we define three important <idx><h>ratios</h><h>trigonometric</h></idx>
+          <idx><h>trigonometric ratios</h></idx> <em>trigonometric ratios</em> of <m>\theta</m>.
+    </p>
+    <definition xml:id="righttrianglesinecosinetangent">
+      <statement>
+        <p>
+          Suppose <m>\theta</m> is an acute angle residing in a right triangle as depicted above.
+          <ul>
+            <li>
+              <p>
+                The <idx><h>sine</h><h>right triangle</h></idx>
+                <em>sine</em> of <m>\theta</m>,
+                denoted <m>\sin(\theta)</m> is defined by the ratio:
+                <m>\sin(\theta) = \dfrac{b}{c}</m>,
+                or <m>\dfrac{\text{ `length of opposite' } }{\text{ `length of hypotenuse' } }</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>cosine</h><h>right triangle</h></idx>
+                <em>cosine</em> of <m>\theta</m>,
+                denoted <m>\cos(\theta)</m> is defined by the ratio:
+                <m>\cos(\theta) = \dfrac{a}{c}</m>,
+                or <m>\dfrac{\text{ `length of adjacent' } }{\text{ `length of hypotenuse' } }</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>tangent</h><h>right triangle</h></idx>
+                <em>tangent</em> of <m>\theta</m>,
+                denoted <m>\tan(\theta)</m> is defined by the ratio:
+                <m>\tan(\theta) = \dfrac{b}{a}</m>,
+                or <m>\dfrac{\text{ `length of opposite' } }{\text{ `length of adjacent' } }</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For example,
+      consider the angle <m>\theta</m> indicated in the triangle below on the left.
+      Using <xref ref="righttrianglesinecosinetangent">Definition</xref>,
+      we get <m>\sin(\theta) = \frac{4}{5}</m>,
+      <m>\cos(\theta) = \frac{3}{5}</m>,
+      and <m>\tan(\theta) = \frac{4}{3}</m>.
+      One may well wonder if these trigonometric ratios we've found for <m>\theta</m> change if the triangle containing <m>\theta</m> changes.
+      For example,
+      if we scale all the sides of the triangle below on the left by a factor of <m>2</m>,
+      we produce the
+          <idx><h>similar triangle</h></idx>
+          <idx><h>triangle</h><h>similar</h></idx> <em>similar triangle</em> below in the middle.<fn>
+      That is, a triangle with the same <sq>shape</sq> - that is,
+      the same angles.
+      </fn> Using this triangle to compute our ratios for <m>\theta</m>,
+      we find <m>\sin(\theta) = \frac{8}{10} = \frac{4}{5}</m>,
+      <m>\cos(\theta) = \frac{6}{10} = \frac{3}{5}</m>,
+      and <m>\tan(\theta) = \frac{8}{6} = \frac{4}{3}</m>.
+      Note that the scaling factor, here <m>2</m>,
+      is common to all sides of the triangle, and, hence,
+      cancels from the numerator and denominator when simplifying each of the ratios.
+    </p>
+    <p>
+      \begin{mfpic}[22.5]{-1}{5}{-1}{5}
+    </p>
+    <p>
+      \arrow \reverse \arrow \parafcn{5, 50, 5}{dir(t)}
+    </p>
+    <p>
+      \polyline{(2.6, 0), (3, 0), (3, 0.4), (2.6, 0.4), (2.6,0)}
+    </p>
+    <p>
+      \penwd{1.25pt} \polyline{(0,0), (3,0), (3,4), (0,0)}
+    </p>
+    <p>
+      \tlabel[cc](1.5,-0.5){<m>3</m>} \tlabel[cc](3.5,2){<m>4</m>} \tlabel[cc](1,2){<m>5</m>} \tlabel[cc](1.5,0.5){<m>\theta</m>} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[22.5]{-1}{5}{-1}{5}
+    </p>
+    <p>
+      \arrow \reverse \arrow \parafcn{5, 50, 5}{dir(t)}
+    </p>
+    <p>
+      \polyline{(2.6, 0), (3, 0), (3, 0.4), (2.6, 0.4), (2.6,0)}
+    </p>
+    <p>
+      \penwd{1.25pt} \polyline{(0,0), (3,0), (3,4), (0,0)}
+    </p>
+    <p>
+      \tlabel[cc](1.5,-0.5){<m>6</m>} \tlabel[cc](3.5,2){<m>8</m>} \tlabel[cc](1,2){<m>10</m>} \tlabel[cc](1.5,0.5){<m>\theta</m>} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[22.5]{-1}{5}{-1}{5}
+    </p>
+    <p>
+      \arrow \reverse \arrow \parafcn{5, 50, 5}{dir(t)}
+    </p>
+    <p>
+      \polyline{(2.6, 0), (3, 0), (3, 0.4), (2.6, 0.4), (2.6,0)}
+    </p>
+    <p>
+      \penwd{1.25pt} \polyline{(0,0), (3,0), (3,4), (0,0)}
+    </p>
+    <p>
+      \tlabel[cc](1.5,-0.5){<m>3r</m>} \tlabel[cc](3.5,2){<m>4r</m>} \tlabel[cc](1,2){<m>5r</m>} \tlabel[cc](1.5,0.5){<m>\theta</m>} \end{mfpic}
+    </p>
+    <p>
+      In general, thanks to the
+      <url href="https://en.wikipedia.org/wiki/AA_postulate"><em>Angle Angle Similarity Postulate</em></url>,
+      any two <em>right</em> triangles which contain our angle <m>\theta</m> are similar which means there is a positive constant <m>r</m> so that the sides of the triangle are <m>3r</m>,
+      <m>4r</m>, and <m>5r</m> as seen above on the right.
+      Hence, regardless of the right triangle in which we choose to imagine <m>\theta</m>,
+      <m>\sin(\theta) = \frac{4r}{5r} = \frac{4}{5}</m>,
+      <m>\cos(\theta) = \frac{3r}{5r} = \frac{3}{5}</m>,
+      and <m>\tan(\theta) = \frac{4r}{3r} = \frac{4}{3}</m>.
+      Generalizing this same argument to any acute angle <m>\theta</m> assures us that the ratios as described in <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      are independent of the triangle we use.
+    </p>
+    <p>
+      Our next objective is to determine the values of
+      <m>\sin(\theta)</m>, <m>\cos(\theta)</m>,
+      and <m>\tan(\theta)</m> for some of the more commonly used angles.
+      We begin with <m>45^{\circ}</m>.
+      In a right triangle,
+      if one of the non-right angles measures <m>45^{\circ}</m>,
+      then the other measures <m>45^{\circ}</m> as well.
+      It follows that the two legs of the triangle must be congruent.
+      Since we may choose any right triangle containing a
+      <m>45^{\circ}</m> angle for our computations,
+      we choose the length of one
+      (hence both)
+      of the legs to be <m>1</m>.
+      The Pythagorean Theorem gives the hypotenuse is:
+      <m>c^2 = 1^2+1^2 = 2</m>, so <m>c = \sqrt{2}</m>.
+      (We take only the positive square root here since <m>c</m> represents the length of the hypotenuse here,
+      so, necessarily <m>c>0</m>.)
+      From this, we obtain the values below,
+      and suggest committing them to memory.
+    </p>
+    <p>
+      \begin{mfpic}[18]{-5}{5}{-5}{5}
+    </p>
+    <p>
+      \arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{5, 35, 5}{1.5*dir(t)} \arrow \reverse \arrow \shiftpath{(2.5,5)} \parafcn{230, 265, 5}{1.5*dir(t)} \tlabel(-0.8, 0.4){<m>45^{\circ}</m>} \tlabel(1.4,2.8){<m>45^{\circ}</m>} \tlabel(0,-0.5){<m>1</m>} \tlabel(2.75,2.25){<m>1</m>} \tlabel[cc](-1,3){<m>c=\sqrt{2}</m>} \polyline{(2.1, 0), (2.1, 0.4), (2.5, 0.4)} \penwd{1.25pt} \polyline{(-2.5,0), (2.5,0), (2.5,5), (-2.5,0)}
+    </p>
+    <p>
+      \end{mfpic}
+      <ul>
+        <li>
+          <p>
+            <m>\sin\left(45^{\circ}\right) = \dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos\left(45^{\circ}\right) = \dfrac{1}{\sqrt{2}} =\dfrac{\sqrt{2}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan\left(45^{\circ}\right) = \dfrac{1}{1} = 1</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Note that we have <sq>rationalized</sq> here to avoid the irrational number
+      <m>\sqrt{2}</m> appearing in the denominator.
+      This is a common convention in trigonometry,
+      and we will adhere to it unless extremely inconvenient.
+    </p>
+    <p>
+      Next, we investigate <m>60^{\circ}</m> and <m>30^{\circ}</m> angles.
+      Consider the equilateral triangle below each of whose sides measures <m>2</m> units.
+      Each of its interior angles is necessarily <m>60^{\circ}</m>,
+      so if we drop an altitude,
+      we produce two <m>30^{\circ} - 60^{\circ} - 90^{\circ}</m> triangles each having a base measuring <m>1</m> unit and a hypotenuse of <m>2</m> units.
+      Using the Pythagorean Theorem,
+      we can find the height, <m>h</m> of these triangles:
+      <m>1^2+h^2 = 2^2</m> so <m>h^2 = 3</m> or <m>h = \sqrt{3}</m>.
+      Using these,
+      we can find the values of the trigonometric ratios for both
+      <m>60^{\circ}</m> and <m>30^{\circ}</m>.
+      Again, we recommend committing these values to memory.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \reverse \arrow \shiftpath{(-5,-4.330)} \parafcn{5, 55, 5}{1.5*dir(t)} \arrow \reverse \arrow \shiftpath{(0,4.330)} \parafcn{245, 265, 5}{2.5*dir(t)} \tlabel(-3.4,-3.75){<m>60^{\circ}</m>} \tlabel(-1.4,0.75){<m>30^{\circ}</m>} \tlabel(-2.5,-5.25){<m>1</m>} \tlabel(2.5,-5.25){<m>1</m>} \tlabel(0.25,-1){<m>h=\sqrt{3}</m>} \tlabel[cc](-3.25,0){<m>2</m>} \tlabel[cc](3.25,0){<m>2</m>} \polyline{(-0.4, -4.330), (-0.4,-3.930), (0, -3.930)} \polyline{(0.4, -4.330), (0.4,-3.930), (0, -3.930)} \penwd{1.25pt} \polyline{(-5,-4.330), (0,-4.330), (0,4.330), (-5,-4.330)} \polyline{(0,4.330), (5,-4.330), (0,-4.330)} \end{mfpic}
+      <ul>
+        <li>
+          <p>
+            <m>\sin\left(60^{\circ}\right) = \dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos\left(60^{\circ}\right) = \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan\left(60^{\circ}\right) = \dfrac{\sqrt{3}}{1} = \sqrt{3}</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      \columnbreak
+      <ul>
+        <li>
+          <p>
+            <m>\sin\left(30^{\circ}\right) = \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos\left(30^{\circ}\right) = \dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan\left(30^{\circ}\right) = \dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Since <m>30^{\circ}</m> and <m>60^{\circ}</m> are complements,
+      the side <em>adjacent</em> to the <m>60^{\circ}</m> angle is the side
+      <em>opposite</em> the <m>30^{\circ}</m> and the side <em>opposite</em>
+      the <m>60^{\circ}</m> angle is the side <em>adjacent</em>
+      to the <m>30^{\circ}</m> . This sort of <sq>swapping</sq> is true of all complementary angles and will be generalized in <xref ref="MoreTrigonometricIdentities">Section</xref>,
+      <xref ref="cofunctionidentities">Theorem</xref>.
+    </p>
+    <p>
+      Note that the values of the trigonometric ratios we have derived for <m>30^{\circ}</m>,
+      <m>45^{\circ}</m>,
+      and <m>60^{\circ}</m> angles are the
+      <em>exact</em> values of these ratios.
+      For these angles,
+      we can conveniently express the exact values of their sines,
+      cosines, and tangents resorting,
+      at worst, to using square roots.
+      The reader may well wonder if,
+      for instance, we can express the exact value of, say,
+      <m>\sin\left(42^{\circ}\right)</m> in terms of radicals.
+      The answer in this case is <sq>yes</sq> (see
+      <url href="https://math.la.asu.edu/~surgent/mat170/Exact_Trig_Values.pdf"><em>here</em></url>),
+      but, in general,
+      we will not take the time to pursue such representations.<fn>
+      We will do a little of this in <xref ref="MoreTrigonometricIdentities">Section</xref>.
+      </fn> Hence,
+      if a problem requests an <sq>exact</sq> answer involving <m>\sin\left(42^{\circ}\right)</m>,
+      we will leave it written as <sq><m>\sin\left(42^{\circ}\right)</m></sq> and use a calculator to produce a suitable approximation as the situation warrants.
+    </p>
+    <p>
+      Our first example requires the concept of an <sq>angle of inclination.</sq> The <idx><h>angle</h><h>of inclination</h></idx> angle of inclination
+      (or <idx><h>angle</h><h>of elevation</h></idx> angle of elevation)
+      of an object refers to the angle whose initial side is some kind of base-line (say,
+      the ground),
+      and whose terminal side is the line-of-sight to an object above the base-line.
+      Schematically:
+    </p>
+    <p>
+      \begin{mfpic}[18]{-5}{5}{-5}{5} \polyline{(-4.330,0), (5,0)} \dashed \polyline{(-4.330,0), (4.330,5)} \arrow \shiftpath{(-4.330,0)} \parafcn{5, 25, 5}{3*dir(t)} \tlabel(-1, 0.6){<m>\theta</m>} \tlabel[cc](0,-1){<sq>base line</sq>} \plotsymbol[3pt]{Asterisk}{(4.330,5)} \tlabel(4.5,4.5){object} \end{mfpic}
+    </p>
+    <p>
+      The angle of inclination from the base line to the object is <m>\theta</m>
+    </p>
+    <example xml:id="righttriangleex1">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                The angle of inclination from a point on the ground 30 feet away to the top of Lakeland's Armington Clocktower<fn>
+                Named in honor of Raymond Q. Armington, Lakeland's Clocktower has been a part of campus since 1972.
+                </fn> is <m>60^{\circ}</m>.
+                Find the height of the Clocktower to the nearest foot.
+              </p>
+            </li>
+            <li>
+              <p>
+                The Americans with Disabilities Act (ADA) stipulates the incline on an accessibility ramp be <m>5^{\circ}</m>.
+                If a ramp is to be built so that it replaces stairs that measure 21 inches tall,
+                how long does the ramp need to be?
+                Round your answer to the nearest inch.
+              </p>
+            </li>
+            <li>
+              <p>
+                In order to determine the height of a California Redwood tree,
+                two sightings from the ground,
+                one 200 feet directly behind the other, are made.
+                If the angles of inclination were
+                <m>45^{\circ}</m> and <m>30^{\circ}</m>,
+                respectively, how tall is the tree to the nearest foot?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We can represent the problem situation using a right triangle as shown below on the left.
+                If we let <m>h</m> denote the height of the tower,
+                then we have <m>\tan\left(60^{\circ}\right) = \frac{h}{30}</m>.
+                From this we get an exact answer of <m>h = 30 \tan\left(60^{\circ}\right) = 30 \sqrt{3}</m> feet.
+                Using a calculator, we get the approximation <m>51.96</m> which,
+                when rounded to the nearest foot,
+                gives us our answer of <m>52</m> feet.
+              </p>
+            </li>
+            <li>
+              <p>
+                We diagram the situation below on the left using <m>\ell</m> to represent the unknown length of the ramp.
+                We have <m>\sin\left(5^{\circ} \right)= \frac{21}{\ell}</m> so that <m>\ell = \frac{21}{\sin\left(5^{\circ} \right)} \approx 240.95</m> inches.
+                Hence, the ramp is <m>241</m> inches long. \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \shiftpath{(0,-4.330)} \parafcn{5, 55, 5}{1.5*dir(t)} \tlabel(1.6,-3.75){<m>60^{\circ}</m>} \tlabel(2,-5.5){<m>30</m> ft.} \tlabel(5.25,0){<m>h</m> ft.} \polyline{(4.6, -4.330), (4.6,-3.930), (5, -3.930)} \penwd{1.25pt} \polyline{(0,-4.330), (5,-4.330), (5,4.330), (0,-4.330)} \end{mfpic} \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \shiftpath{(-5,-4.330)} \parafcn{5, 25, 5}{3*dir(t)} \tlabel(-1.5,-3.75){<m>5^{\circ}</m>} \tlabel(5.25,-1.83){<m>21</m> in.} \tlabel(0,-1){<m>\ell</m> in.} \polyline{(4.6, -4.330), (4.6,-3.930), (5, -3.930)} \penwd{1.25pt} \polyline{(-5,-4.330), (5, -4.330), (5, 0.667), (-5, -4.330)} \end{mfpic} Finding the height of the Clocktower Finding the length of an accessibility ramp.
+              </p>
+            </li>
+            <li>
+              <p>
+                Sketching the problem situation below,
+                we find ourselves with two unknowns:
+                the height <m>h</m> of the tree and the distance <m>x</m> from the base of the tree to the first observation point.  \begin{mfpic}[18]{-7}{5}{-5}{5} \arrow \shiftpath{(-2.5,0)} \parafcn{5, 35, 5}{1.5*dir(t)} \tlabel(-0.8, 0.4){<m>45^{\circ}</m>} \tlabel(-4, 0.4){<m>30^{\circ}</m>} \arrow \shiftpath{(-6,0)} \parafcn{5, 25, 5}{1.75*dir(t)} \tlabel(-5,-1){<m>200</m> ft.} \tlabel(-1,-1){<m>x</m> ft.} \tlabel(2.75,2.25){<m>h</m> ft.} \polyline{(2.1, 0), (2.1, 0.4), (2.5, 0.4)} \penwd{1.25pt} \polyline{(-2.5,0), (2.5,0), (2.5,5), (-2.5,0)} \polyline{(-6,0), (2.5,0), (2.5,5), (-6,0)} \point[4pt]{(-2.5,0), (-6,0)} \end{mfpic}  Finding the height of a California Redwood Luckily,
+                we have two right triangles to help us find each unknown,
+                as shown below.
+                From the triangle below on the left,
+                we get <m>\tan\left(45^{\circ}\right) = \frac{h}{x}</m>.
+                From the triangle below on the right,
+                we see  <m>\tan\left(30^{\circ}\right) = \frac{h}{x+200}</m>.   \begin{mfpic}[18]{-7}{5}{-5}{5} \arrow \shiftpath{(-2.5,0)} \parafcn{5, 35, 5}{1.5*dir(t)} \tlabel(-0.8, 0.4){<m>45^{\circ}</m>} \tlabel(-1,-1){<m>x</m> ft.} \tlabel(2.75,2.25){<m>h</m> ft.} \polyline{(2.1, 0), (2.1, 0.4), (2.5, 0.4)} \penwd{1.25pt} \polyline{(-2.5,0), (2.5,0), (2.5,5), (-2.5,0)} \end{mfpic}  \begin{mfpic}[18]{-7}{5}{-5}{5} \tlabel(-4, 0.4){<m>30^{\circ}</m>} \arrow \shiftpath{(-6,0)} \parafcn{5, 25, 5}{1.75*dir(t)} \tlabel(-3,-1){<m>x+200</m> ft.} \tlabel(2.75,2.25){<m>h</m> ft.} \polyline{(2.1, 0), (2.1, 0.4), (2.5, 0.4)} \penwd{1.25pt} \polyline{(-6,0), (2.5,0), (2.5,5), (-6,0)} \end{mfpic}       Since <m>\tan\left(45^{\circ}\right) = 1</m>,
+                the first equation gives <m>\frac{h}{x} = 1</m>, or <m>x = h</m>.
+                Substituting this into the second equation gives <m>\frac{h}{h+200} = \tan\left(30^{\circ}\right) = \frac{\sqrt{3}}{3}</m>.
+                Clearing fractions,  we get <m>3h = (h+200) \sqrt{3}</m>.
+                The result is a linear equation for <m>h</m>,
+                so we  expand the right hand side and gather all the terms involving <m>h</m> to one side.
+                <me>
+                  \begin{array}{rcl}  3h \amp  = \amp  (h+200)\sqrt{3} \\ 3h \amp  = \amp  h \sqrt{3} + 200 \sqrt{3} \\ 3h - h \sqrt{3} \amp  = \amp  200 \sqrt{3} \\ (3-\sqrt{3}) h \amp  = \amp  200 \sqrt{3} \\ h \amp  = \amp  \dfrac{200\sqrt{3}}{3-\sqrt{3}} \approx 273.20 \end{array}
+                </me>
+                Hence, the tree is approximately <m>273</m> feet tall.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      There are three more trigonometric ratios which are commonly used and they are defined in the same manner the ratios in <xref ref="righttrianglesinecosinetangent">Definition</xref> are defined.
+      They are listed below.
+    </p>
+    <definition xml:id="righttriangletherest">
+      <statement>
+        <p>
+          Suppose <m>\theta</m> is an acute angle residing in a right triangle as depicted on <xref ref="righttranglediagram">page</xref>.
+          <ul>
+            <li>
+              <p>
+                The <idx><h>cosecant</h><h>right triangle</h></idx>
+                <em>cosecant</em> of <m>\theta</m>,
+                denoted <m>\csc(\theta)</m> is defined by the ratio:
+                <m>\csc(\theta) = \dfrac{c}{b}</m> , or <m>\dfrac{\text{ `length of hypotenuse' } }{\text{ `length of opposite' } }</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>secant</h><h>right triangle</h></idx>
+                <em>secant</em> of <m>\theta</m>,
+                denoted <m>\sec(\theta)</m> is defined by the ratio:
+                <m>\sec(\theta) = \dfrac{c}{a}</m> , or <m>\dfrac{\text{ `length of hypotenuse' } }{\text{ `length of adjacent' } }</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>cotangent</h><h>right triangle</h></idx>
+                <em>cotangent</em> of <m>\theta</m>,
+                denoted <m>\cot(\theta)</m> is defined by the ratio:
+                <m>\cot(\theta) = \dfrac{a}{b}</m> , or <m>\dfrac{\text{ `length of adjacent' } }{\text{ `length of opposite' } }</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We practice these definitions in the following example.
+    </p>
+    <example xml:id="righttriangleex2">
+      <statement>
+        <p>
+          Suppose <m>\theta</m> is an acute angle with <m>\cot(\theta) = 3</m>.
+          Find the values of the remaining five trigonometric ratios:
+          <m>\sin(\theta)</m>, <m>\cos(\theta)</m>,
+          <m>\tan(\theta)</m>, <m>\csc(\theta)</m>, and <m>\sec(\theta)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We are given <m>\cot(\theta) = 3</m>.
+          So, to proceed,
+          we construct a right triangle in which the length of the side adjacent to <m>\theta</m> and the length of the side opposite of <m>\theta</m> has a ratio of <m>3 = \frac{3}{1}</m>.
+          Note there are infinitely many such right triangles - we have produced two below for reference.
+          We will focus our attention on the triangle below on the left and encourage the reader to work through the details using the triangle below on the right to verify the choice of triangle doesn't matter.
+        </p>
+        <p>
+          \begin{mfpic}[20]{-1}{14}{-1}{5} \tlabel(2.25, 0.25){<m>\theta</m>} \arrow \reverse \arrow \parafcn{3, 17, 5}{2*dir(t)} \tlabel(3,-0.5){<m>3</m>} \tlabel(1.25,1.5){<m>c = \sqrt{10}</m>} \tlabel(6.5,1){<m>1</m>} \polyline{(5.6, 0), (5.6, 0.4), (6, 0.4)} \penwd{1.25pt} \polyline{(0,0), (6,0), (6,2), (0,0)} \end{mfpic}
+        </p>
+        <p>
+          \begin{mfpic}[20]{-1}{14}{-1}{5} \tlabel(2.25, 0.25){<m>\theta</m>} \arrow \reverse \arrow \parafcn{3, 17, 5}{2*dir(t)} \tlabel(3,-0.5){<m>6</m>} \tlabel(6.5,1){<m>2</m>} \polyline{(5.6, 0), (5.6, 0.4), (6, 0.4)} \penwd{1.25pt} \polyline{(0,0), (6,0), (6,2), (0,0)} \end{mfpic}
+        </p>
+        <p>
+          From the diagram,
+          we see immediately <m>\tan(\theta) = \frac{1}{3}</m>,
+          but in order to determine the remaining four trigonometric ratios,
+          we need to first find the value of the hypotenuse.
+          The Pythagorean Theorem gives <m>1^2 + 3^2 = c^2</m> so
+          <m>c^2 = 10</m> or <m>c = \sqrt{10}</m>.
+          Rationalizing denominators,
+          we find <m>\sin(\theta) = \frac{1}{\sqrt{10}} = \frac{\sqrt{10}}{10}</m>,
+          <m>\cos(\theta) = \frac{3}{\sqrt{10}} = \frac{3\sqrt{10}}{10}</m>,
+          <m>\csc(\theta) = \frac{\sqrt{10}}{1} = \sqrt{10}</m> and <m>\sec(\theta) = \frac{\sqrt{10}}{3}</m>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      While we learned all about the trigonometric ratios of <m>\theta</m> in <xref ref="righttriangleex2">Example</xref>,
+      the identity of <m>\theta</m> remains unknown.
+      Since <m>\sin(\theta) = \frac{\sqrt{10}}{10} \approx 0.316</m> is decidedly less than <m>\sin\left(30^{\circ}\right) = \frac{1}{2} = 0.5</m>,
+      it stands to reason that <m>\theta \lt  30^{\circ}</m>.
+      It turns out the calculator can provide for us a decimal approximation of <m>\theta</m> by way of the <sq><m>\sin^{-1}(x)</m></sq> function.
+      Here, the <sq><m>-1</m></sq> exponent denotes an inverse function
+      (see <xref ref="InverseFunctions">Section</xref>)
+      does <em>not</em> mean reciprocal.<fn>
+      That is, <m>\sin^{-1}(x) \neq \frac{1}{\sin(x)}</m>.
+      That being said,
+      <m>(\sin(x))^{-1} = \frac{1}{\sin(x)} = \csc(x)</m>.
+      </fn> That is, <m>\sin^{-1}(x)</m>
+      (read <sq>sine-inverse of <m>x</m></sq>)
+      gives an angle whose sine is <m>x</m>.
+      Hence, we may write <m>\theta = \sin^{-1}\left(\frac{\sqrt{10}}{10}\right) \approx 18.43^{\circ}</m>.
+      The functions <m>\cos^{-1}(x)</m> and <m>\tan^{-1}(x)</m> work similarly.
+      Indeed,
+      <me>
+        \theta = \sin^{-1}\left(\frac{\sqrt{10}}{10}\right)  = \cos^{-1}\left(\frac{3 \sqrt{10}}{10}\right)  = \tan^{-1} \left( \frac{1}{3} \right)
+      </me>,
+      and the reader is encouraged to use a calculator to verify these statements.
+    </p>
+    <p>
+      Please note there is <em>much</em>
+      more to these inverse functions than the <sq>angle finder</sq> description use here.<fn>
+      See <xref ref="TheInverseTrigonometricFunctions">Section</xref>
+      for all of the pedantic details.
+      </fn> That being said,
+      we finish this section showcasing a use for the <m>\tan^{-1}(x)</m> function below.
+    </p>
+    <example xml:id="roofpitchex">
+      <statement>
+        <p><fn>
+          The authors would like to thank Dan Stitz for this problem and associated graphics.
+          </fn> The roof on the house below has a <sq><m>6/12</m> pitch</sq>. This means that when viewed from the side, the roof line has a rise of 6 feet over a run of 12 feet. Find the angle of inclination from the bottom of the roof to the top of the roof. Round your answer to the nearest hundredth of a degree.
+        </p>
+        <tabular>
+          <row>
+            <cell><image width="51%" source="./AppRightTrigGraphics/AppRightTrig01.jpg"/></cell>
+            <cell><image width="37%" source="./AppRightTrigGraphics/AppRightTrig02.jpg"/></cell>
+          </row>
+          <row>
+            <cell>Front View</cell>
+            <cell>Side View</cell>
+          </row>
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          If we divide the side view of the house down the middle,
+          we find that the roof line forms the hypotenuse of a right triangle with legs of length <m>6</m> feet and <m>12</m> feet as depicted below.
+        </p>
+        <p>
+          \begin{mfpic}[15]{0}{13.25}{-1}{6} \polyline{(11.25,0), (11.25,0.75), (12,0.75)} \arrow \reverse \arrow \polyline{(0,-1),(12,-1)} \gclear \tlabelrect[cc](6,-1){<m>12</m> feet} \arrow \reverse \arrow \polyline{(13.25,0),(13.25,6)} \gclear \tlabelrect[cc](13.25,3){<m>6</m> feet} \arrow \reverse \arrow \parafcn{3, 19, 5}{2.75*dir(t)} \tlabel[cc](3.25,0.65){<m>\theta</m>} \penwd{1.25pt} \polyline{(0,0), (12,0), (12,6), (0,0)} \end{mfpic}
+        </p>
+        <p>
+          The angle of inclination, <m>\theta</m>,
+          satisfies <m>\tan(\theta) = \frac{6}{12} = \frac{1}{2}</m>.
+          Hence, <m>\theta = \tan^{-1}\left( \frac{1}{2}\right) \approx 26.56^{\circ}</m>.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforAppRightTrig">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="trianglecircfirst">Exercises</xref>
+      - <xref ref="trianglecirclast"></xref>,
+      find the requested quantities.
+      <ol cols="2">
+        <li xml:id="trianglecircfirst">
+          <p>
+            Find <m>\theta</m>, <m>a</m>,
+            and <m>c</m>. \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \reverse \arrow \shiftpath{(-4.330,0)} \parafcn{5, 25, 5}{3*dir(t)} \arrow \reverse \arrow \shiftpath{(4.330,5)} \parafcn{215, 265, 5}{1.5*dir(t)} \tlabel(-1.25, 0.6){<m>\theta</m>} \tlabel(0,-0.75){<m>9</m>} \tlabel(4.75,2.25){<m>a</m>} \tlabel(-0.5,3){<m>c</m>} \tlabel(2.75,2.85){<m>60^{\circ}</m>} \polyline{(3.93, 0), (3.93, 0.4), (4.33, 0.4)} \penwd{1.25pt} \polyline{(-4.330,0), (4.330,0), (4.330,5), (-4.330,0)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Find <m>\alpha</m>, <m>b</m>,
+            and <m>c</m>. \begin{mfpic}[15]{-1}{5}{-1}{7} \arrow \reverse \arrow \parafcn{60, 87, 5}{1.75*dir(t)} \arrow \reverse \arrow \shiftpath{(4.357,6.709)} \parafcn{185, 232, 5}{1.5*dir(t)} \tlabel(0.25, 2){<m>34^{\circ}</m>} \tlabel(2.5,3){<m>c</m>} \tlabel(2,7){<m>b</m>} \tlabel(-0.85,4){<m>12</m>} \tlabel(2.25,5.75){<m>\alpha</m>} \polyline{(0,6.304), (0.4, 6.304), (0.4, 6.704)} \penwd{1.25pt} \polyline{(0,0), (0,6.709), (4.357, 6.709), (0,0)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            Find <m>\theta</m>, <m>a</m>,
+            and <m>c</m>. \begin{mfpic}[18]{-5}{5}{-5}{5} \arrow \reverse \arrow \shiftpath{(2.5,0)} \parafcn{140, 175, 5}{1.5*dir(t)} \arrow \reverse \arrow \shiftpath{(-2.5,5)} \parafcn{275, 310, 5}{1.5*dir(t)} \tlabel(-2, 2.75){<m>47^{\circ}</m>} \tlabel(-0.5,-0.75){<m>6</m>} \tlabel(-3.25,2.25){<m>a</m>} \tlabel(0,3){<m>c</m>} \tlabel(0.5,0.5){<m>\theta</m>} \polyline{(-2.5, 0.4), (-2.1, 0.4), (-2.1, 0)} \penwd{1.25pt} \polyline{(-2.5, 0), (2.5,0), (-2.5,5), (-2.5,0)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="trianglecirclast">
+          <p>
+            Find <m>\beta</m>, <m>b</m>,
+            and <m>c</m>. \begin{mfpic}[18]{-6}{1}{-1}{9} \arrow \reverse \arrow \parafcn{95, 127, 5}{1.75*dir(t)} \arrow \reverse \arrow \shiftpath{(-5.402,6)} \parafcn{317, 355, 5}{1.5*dir(t)} \tlabel(-3.75, 5){<m>\beta</m>} \tlabel(0.5,3){<m>2.5</m>} \tlabel(-2.6,6.25){<m>b</m>} \tlabel(-3.25,2.5){<m>c</m>} \tlabel(-1.2,2){<m>50^{\circ}</m>} \polyline{(0,5.6), (-0.4, 5.6), (-0.4, 6)} \penwd{1.25pt} \polyline{(0,0), (0,6), (-5.402, 6), (0,0)} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="moretrianglecircfirst">Exercises</xref>
+      - <xref ref="moretrianglecirclast"></xref>,
+      answer the following questions assuming <m>\theta</m> is an angle in a right triangle.
+      <ol>
+        <li xml:id="moretrianglecircfirst">
+          <p>
+            If <m>\theta = 30^{\circ}</m> and the side opposite <m>\theta</m> has length <m>4</m>,
+            how long is the side adjacent to <m>\theta</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\theta = 15^{\circ}</m> and the hypotenuse has length <m>10</m>,
+            how long is the side opposite <m>\theta</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\theta = 87^{\circ}</m> and the side adjacent to <m>\theta</m> has length <m>2</m>,
+            how long is the side opposite <m>\theta</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\theta = 38.2^{\circ}</m> and the side opposite <m>\theta</m> has lengh <m>14</m>,
+            how long is the hypoteneuse?
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>\theta = 2.05^{\circ}</m> and the hypotenuse has length <m>3.98</m>,
+            how long is the side adjacent to <m>\theta</m>?
+          </p>
+        </li>
+        <li xml:id="moretrianglecirclast">
+          <p>
+            If <m>\theta = 42^{\circ}</m> and the side adjacent to <m>\theta</m> has length <m>31</m>,
+            how long is the side opposite <m>\theta</m>?
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="trianglesidesfirst">Exercises</xref>
+      - <xref ref="trianglesideslast"></xref>,
+      find the two acute angles in the right triangle whose sides have the given lengths.
+      Express your answers using degree measure rounded to two decimal places.
+      <ol>
+        <li xml:id="trianglesidesfirst">
+          <p>
+            3, 4 and 5
+          </p>
+        </li>
+        <li>
+          <p>
+            5, 12 and 13
+          </p>
+        </li>
+        <li xml:id="trianglesideslast">
+          <p>
+            336, 527 and 625
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findothercircfirstapprighttrig">Exercises</xref>
+      - <xref ref="findothercirclastapprighttrig"></xref>,
+      <m>\theta</m> is an acute angle.
+      Use the given trigonometric ratio to find the exact values of the remaining trigonometric ratios of <m>\theta</m>.
+      Find a decimal approximation to <m>\theta</m>,
+      rounded to two decimal places.
+    </p>
+    <ol cols="6">
+      <li xml:id="findothercircfirstapprighttrig">
+        <p>
+          <m>\sin(\theta) = \dfrac{3}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = \dfrac{12}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(\theta) = \dfrac{25}{24}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = 7</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(\theta) = \dfrac{10\sqrt{91}}{91}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(\theta) = 23</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(\theta) = \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cos(\theta) = \dfrac{1}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\cot(\theta) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\csc(\theta) = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\tan(\theta) = \sqrt{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sec(\theta) = 2\sqrt{5}</m>
+        </p>
+      </li>
+      <li xml:id="findothercirclastapprighttrig">
+        <p>
+          <m>\cos(\theta) = 0.4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          A tree standing vertically on level ground casts a 120 foot long shadow.
+          The angle of elevation from the end of the shadow to the top of the tree is <m>21.4^{\circ}</m>.
+          Find the height of the tree to the nearest foot.
+          With the help of your classmates,
+          research the term <em>umbra versa</em>
+          and see what it has to do with the shadow in this problem.
+        </p>
+      </li>
+      <li>
+        <p>
+          The broadcast tower for radio station WSAZ (Home of
+          <q>Algebra in the Morning with Carl and Jeff</q>
+          ) has two enormous flashing red lights on it:
+          one at the very top and one a few feet below the top.
+          From a point 5000 feet away from the base of the tower on level ground the angle of elevation to the top light is
+          <m>7.970^{\circ}</m> and to the second light is <m>7.125^{\circ}</m>.
+          Find the distance between the lights to the nearest foot.
+        </p>
+      </li>
+      <li xml:id="angleofdepression">
+        <p>
+          On <xref ref="angleofelevation">page</xref>
+          we defined the angle of inclination
+          (also known as the angle of elevation)
+          and in this exercise we introduce a related angle - <idx><h>angle</h><h>of depression</h></idx> the angle of depression
+          (also known as <idx><h>angle</h><h>of declination</h></idx> the angle of declination).
+          The angle of depression of an object refers to the angle whose initial side is a horizontal line above the object and whose terminal side is the line-of-sight to the object below the horizontal.
+          This is represented schematically below. \begin{mfpic}[18]{-5}{5}{-5}{5} \polyline{(-5,5), (4.330,5)} \point[3pt]{(4.330,5)} \dashed \polyline{(-4.330,0), (4.330,5)} \reverse \arrow \shiftpath{(4.330,5)} \parafcn{185, 205, 5}{3*dir(t)} \tlabel(0.75, 4){<m>\theta</m>} \tlabel[cc](-1,5.5){horizontal} \tlabel[cc](5.25,4.5){observer} \plotsymbol[3pt]{Asterisk}{(-4.330,0)} \tlabel(-5.0,-0.75){object} \end{mfpic} The angle of depression from the horizontal to the object is <m>\theta</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Show that if the horizontal is above and parallel to level ground then the angle of depression
+              (from observer to object)
+              and the angle of inclination
+              (from object to observer)
+              will be congruent because they are alternate interior angles.
+            </p>
+          </li>
+          <li xml:id="sasquatchfire">
+            <p>
+              From a firetower 200 feet above level ground in the Sasquatch National Forest,
+              a ranger spots a fire off in the distance.
+              The angle of depression to the fire is <m>2.5^{\circ}</m>.
+              How far away from the base of the tower is the fire?
+            </p>
+          </li>
+          <li>
+            <p>
+              The ranger in <xref ref="sasquatchfire">part</xref>
+              sees a Sasquatch running directly from the fire towards the firetower.
+              The ranger takes two sightings.
+              At the first sighting,
+              the angle of depression from the tower to the Sasquatch is <m>6^{\circ}</m>.
+              The second sighting, taken just 10 seconds later,
+              gives the the angle of depression as <m>6.5^{\circ}</m>.
+              How far did the Saquatch travel in those 10 seconds?
+              Round your answer to the nearest foot.
+              How fast is it running in miles per hour?
+              Round your answer to the nearest mile per hour.
+              If the Sasquatch keeps up this pace,
+              how long will it take for the Sasquatch to reach the firetower from his location at the second sighting?
+              Round your answer to the nearest minute.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          When I stand 30 feet away from a tree at home,
+          the angle of elevation to the top of the tree is
+          <m>50^{\circ}</m> and the angle of depression to the base of the tree is <m>10^{\circ}</m>.
+          What is the height of the tree?
+          Round your answer to the nearest foot.
+        </p>
+      </li>
+      <li>
+        <p>
+          From the observation deck of the lighthouse at Sasquatch Point 50 feet above the surface of Lake Ippizuti,
+          a lifeguard spots a boat out on the lake sailing directly toward the lighthouse.
+          The first sighting had an angle of depression of
+          <m>8.2^{\circ}</m> and the second sighting had an angle of depression of <m>25.9^{\circ}</m>.
+          How far had the boat traveled between the sightings?
+        </p>
+      </li>
+      <li>
+        <p>
+          A guy wire 1000 feet long is attached to the top of a tower.
+          When pulled taut it makes a
+          <m>43^{\circ}</m> angle with the ground.
+          How tall is the tower?
+          How far away from the base of the tower does the wire hit the ground?
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          A guy wire 1000 feet long is attached to the top of a tower.
+          When pulled taut it touches level ground 360 feet from the base of the tower.
+          What angle does the wire make with the ground?
+          Express your answer using degree measure rounded to one decimal place.
+        </p>
+      </li>
+      <li>
+        <p>
+          At Cliffs of Insanity Point, The Great Sasquatch Canyon is 7117 feet deep.
+          From that point,
+          a fire is seen at a location known to be 10 miles away from the base of the sheer canyon wall.
+          What angle of depression is made by the line of sight from the canyon edge to the fire?
+          Express your answer using degree measure rounded to one decimal place.
+        </p>
+      </li>
+      <li>
+        <p>
+          Shelving is being built at the Utility Muffin Research Library which is to be 14 inches deep.
+          An 18-inch rod will be attached to the wall and the underside of the shelf at its edge away from the wall,
+          forming a right triangle under the shelf to support it.
+          What angle, to the nearest degree,
+          will the rod make with the wall?
+        </p>
+      </li>
+      <li>
+        <p>
+          A parasailor is being pulled by a boat on Lake Ippizuti.
+          The cable is 300 feet long and the parasailor is 100 feet above the surface of the water.
+          What is the angle of elevation from the boat to the parasailor?
+          Express your answer using degree measure rounded to one decimal place.
+        </p>
+      </li>
+      <li>
+        <p>
+          A tag-and-release program to study the Sasquatch population of the eponymous Sasquatch National Park is begun.
+          From a 200 foot tall tower,
+          a ranger spots a Sasquatch lumbering through the wilderness directly towards the tower.
+          Let <m>\theta</m> denote the angle of depression from the top of the tower to a point on the ground.
+          If the range of the rifle with a tranquilizer dart is 300 feet,
+          find the smallest value of <m>\theta</m> for which the corresponding point on the ground is in range of the rifle.
+          Round your answer to the nearest hundreth of a degree.
+        </p>
+      </li>
+      <li>
+        <p>
+          The rule of thumb for safe ladder use states that the length of the ladder should be at least four times as long as the distance from the base of the ladder to the wall.
+          Assuming the ladder is resting against a wall which is <sq>plumb</sq>
+          (that is, makes a <m>90^{\circ}</m> angle with the ground),
+          determine the acute angle the ladder makes with the ground,
+          rounded to the nearest tenth of a degree.
+        </p>
+      </li>
+    </ol>
+    <p>
+      As you may have already noticed in working through the exercises,
+      since the six trigonometric ratios are all defined in terms of the three sides of a right triangle,
+      there are several relationships between them.
+      In <xref ref="rtidentityfirst">Exercises</xref>
+      - <xref ref="rtidentitylast"></xref>,
+      use the diagram on <xref ref="righttranglediagram">page</xref> along with <xref ref="righttrianglesinecosinetangent">Definitions</xref>
+      and <xref ref="righttriangletherest"></xref>
+      to show the following relationships hold for all acute angles.<fn>
+      These are called trigonometric <em>identities</em>
+      and will be studied in greater detail in <xref ref="FundamentalTrigonometricIdentities">Section</xref>.
+      </fn>
+      <ol>
+        <li xml:id="rtidentityfirst">
+          <p>
+            <m>\tan(\theta) = \dfrac{\sin(\theta)}{\cos(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = \dfrac{1}{\sin(\theta)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = \dfrac{1}{\cos(\theta)}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      For <xref ref="rtcofunctionfirst">Exercises</xref>
+      - <xref ref="rrcofunctionlast"></xref>,
+      it may be helpful to recall that
+      <m>90^{\circ} - \theta</m> is the measure of the <sq>other</sq> acute angle in the right triangle besides <m>\theta</m>.
+      <ol>
+        <li xml:id="rtcofunctionfirst">
+          <p>
+            <m>\cos(\theta) = \sin\left( 90^{\circ} - \theta \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc(\theta) = \sec\left( 90^{\circ} - \theta \right)</m>
+          </p>
+        </li>
+        <li xml:id="rrcofunctionlast">
+          <p>
+            <m>\cot(\theta) = \tan\left( 90^{\circ} - \theta \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      For <xref ref="rtpythexercisefirst">Exercises</xref>
+      - <xref ref="rtpythexerciselast"></xref>,
+      it may be helpful to remember that <m>a^2+b^2 = c^2</m>:
+      <ol>
+        <li xml:id="rtpythexercisefirst">
+          <p>
+            <m>(\cos(\theta))^2 + (\sin(\theta))^2 = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1 + (\tan(\theta))^2 = (\sec(\theta))^2</m>
+          </p>
+        </li>
+        <li xml:id="rtpythexerciselast">
+          <p>
+            <m>1 + (\cot(\theta))^2 = (\csc(\theta))^2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="6">
+      <li>
+        <p>
+          <m>\theta = 30^{\circ}</m>,
+          <m>a = 3\sqrt{3}</m>, <m>c = \sqrt{108} = 6\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\alpha = 56^{\circ}</m>, <m>b = 12 \tan(34^{\circ}) = 8.094</m>,
+          <m>c = 12\sec(34^{\circ}) = \dfrac{12}{\cos(34^{\circ})} \approx 14.475</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = 43^{\circ}</m>,
+          <m>a = 6\cot(47^{\circ}) = \dfrac{6}{\tan(47^{\circ})} \approx 5.595</m>,
+          <m>c = 6\csc(47^{\circ}) = \dfrac{6}{\sin(47^{\circ})} \approx 8.204</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\beta = 40^{\circ}</m>, <m>b = 2.5 \tan(50^{\circ}) \approx 2.979</m>,
+          <m>c = 2.5\sec(50^{\circ}) = \dfrac{2.5}{\cos(50^{\circ})} \approx 3.889</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The side adjacent to <m>\theta</m> has length <m>4\sqrt{3} \approx 6.928</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The side opposite <m>\theta</m> has length <m>10 \sin(15^{\circ}) \approx 2.588</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The side opposite <m>\theta</m> is <m>2\tan(87^{\circ}) \approx 38.162</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The hypoteneuse has length <m>14 \csc(38.2^{\circ}) = \dfrac{14}{\sin(38.2^{\circ})} \approx 22.639</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The side adjacent to <m>\theta</m> has length <m>3.98 \cos(2.05^{\circ}) \approx 3.977</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The side opposite <m>\theta</m> has length <m>31\tan(42^{\circ}) \approx 27.912</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>36.87^{\circ}</m> and <m>53.13^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>22.62^{\circ}</m> and <m>67.38^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>32.52^{\circ}</m> and <m>57.48^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{3}{5}, \cos(\theta) = \frac{4}{5}, \tan(\theta) = \frac{3}{4}, \csc(\theta) = \frac{5}{3}, \sec(\theta) = \frac{5}{4}, \cot(\theta) = \frac{4}{3}</m>,
+          <m>\theta \approx 36.87^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{12}{13}, \cos(\theta) = \frac{5}{13}, \tan(\theta) = \frac{12}{5}, \csc(\theta) = \frac{13}{12}, \sec(\theta) = \frac{13}{5}, \cot(\theta) = \frac{5}{12}</m>,
+          <m>\theta \approx 67.38^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{24}{25}, \cos(\theta) = \frac{7}{25}, \tan(\theta) = \frac{24}{7}, \csc(\theta) = \frac{25}{24}, \sec(\theta) = \frac{25}{7}, \cot(\theta) = \frac{7}{24}</m>,
+          <m>\theta \approx 73.74^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{4\sqrt{3}}{7}, \cos(\theta) = \frac{1}{7}, \tan(\theta) = 4\sqrt{3}, \csc(\theta) = \frac{7\sqrt{3}}{12}, \sec(\theta) = 7, \cot(\theta) = \frac{\sqrt{3}}{12}</m>,
+          <m>\theta \approx 81.79^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{91}}{10}, \cos(\theta) = \frac{3}{10}, \tan(\theta) = \frac{\sqrt{91}}{3}, \csc(\theta) = \frac{10\sqrt{91}}{91}, \sec(\theta) = \frac{10}{3}, \cot(\theta) = \frac{3\sqrt{91}}{91}</m>,
+          <m>\theta \approx 72.54^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{530}}{530}, \cos(\theta) = \frac{23\sqrt{530}}{530}, \tan(\theta) = \frac{1}{23}, \csc(\theta) = \sqrt{530}, \sec(\theta) = \frac{\sqrt{530}}{23}, \cot(\theta) = 23</m>,
+          <m>\theta \approx 2.49^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{2\sqrt{5}}{5}, \cos(\theta) = \frac{\sqrt{5}}{5}, \tan(\theta) = 2, \csc(\theta) = \frac{\sqrt{5}}{2}, \sec(\theta) = \sqrt{5}, \cot(\theta) = \frac{1}{2}</m>,
+          <m>\theta \approx 63.43^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{15}}{4}, \cos(\theta) = \frac{1}{4}, \tan(\theta) = \sqrt{15}, \csc(\theta) = \frac{4\sqrt{15}}{15}, \sec(\theta) = 4, \cot(\theta) = \frac{\sqrt{15}}{15}</m>,
+          <m>\theta \approx 75.52^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{6}}{6}, \cos(\theta) = \frac{\sqrt{30}}{6}, \tan(\theta) = \frac{\sqrt{5}}{5}, \csc(\theta) = \sqrt{6}, \sec(\theta) = \frac{\sqrt{30}}{5}, \cot(\theta) = \sqrt{5}</m>,
+          <m>\theta \approx 24.09^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{2\sqrt{2}}{3}, \cos(\theta) = \frac{1}{3}, \tan(\theta) = 2\sqrt{2}, \csc(\theta) = \frac{3\sqrt{2}}{4}, \sec(\theta) = 3, \cot(\theta) = \frac{\sqrt{2}}{4}</m>,
+          <m>\theta \approx 70.53^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{5}}{5}, \cos(\theta) = \frac{2\sqrt{5}}{5}, \tan(\theta) = \frac{1}{2}, \csc(\theta) = \sqrt{5}, \sec(\theta) = \frac{\sqrt{5}}{2}, \cot(\theta) = 2</m>,
+          <m>\theta \approx 26.57^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{1}{5}, \cos(\theta) = \frac{2\sqrt{6}}{5}, \tan(\theta) = \frac{\sqrt{6}}{12}, \csc(\theta) = 5, \sec(\theta) = \frac{5\sqrt{6}}{12}, \cot(\theta) = 2\sqrt{6}</m>,
+          <m>\theta \approx 11.54^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{110}}{11}, \cos(\theta) = \frac{\sqrt{11}}{11}, \tan(\theta) = \sqrt{10}, \csc(\theta) = \frac{\sqrt{110}}{10}, \sec(\theta) = \sqrt{11}, \cot(\theta) = \frac{\sqrt{10}}{10}</m>,
+          <m>\theta \approx 72.45^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{95}}{10}, \cos(\theta) = \frac{\sqrt{5}}{10}, \tan(\theta) = \sqrt{19}, \csc(\theta) = \frac{2\sqrt{95}}{19}, \sec(\theta) = 2\sqrt{5}, \cot(\theta) = \frac{\sqrt{19}}{19}</m>,
+          <m>\theta \approx 77.08^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sin(\theta) = \frac{\sqrt{21}}{5}, \cos(\theta) = \frac{2}{5}, \tan(\theta) = \frac{\sqrt{21}}{2}, \csc(\theta) = \frac{5\sqrt{21}}{21}, \sec(\theta) = \frac{5}{2}, \cot(\theta) = \frac{2\sqrt{21}}{21}</m>,
+          <m>\theta \approx 66.42^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The tree is about 47 feet tall.
+        </p>
+      </li>
+      <li>
+        <p>
+          The lights are about 75 feet apart.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              The fire is about 4581 feet from the base of the tower.
+            </p>
+          </li>
+          <li>
+            <p>
+              The Sasquatch ran <m>200\cot(6^{\circ}) - 200\cot(6.5^{\circ}) \approx 147</m> feet in those 10 seconds.
+              This translates to <m>\approx 10</m> miles per hour.
+              At the scene of the second sighting,
+              the Sasquatch was <m>\approx 1755</m> feet from the tower,
+              which means,
+              if it keeps up this pace, it will reach the tower in about <m>2</m> minutes.
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          The tree is about 41 feet tall.
+        </p>
+      </li>
+      <li>
+        <p>
+          The boat has traveled about 244 feet.
+        </p>
+      </li>
+      <li>
+        <p>
+          The tower is about 682 feet tall.
+          The guy wire hits the ground about 731 feet away from the base of the tower.
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>68.9^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>7.7^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>51^{\circ}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>19.5^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>41.81^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>75.5^{\circ}</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

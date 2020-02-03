@@ -1,0 +1,1497 @@
+<section xml:id="TheLawofSines">
+  <title>The Law of Sines</title>
+  <introduction>
+    <p>
+      In this chapter,
+      we showcase how the the tools we've developed in <xref ref="FoundationsofTrigonometry">Chapters</xref>
+      and <xref ref="AnalyticalTrigonometry"></xref> can be applied to Geometry.
+      Our first two sections focus specifically on solving oblique (non-right) Triangles.<fn>
+      Recall that the word <sq>Trigonometry</sq> literally means <sq>measuring triangles</sq> so we are returning to our roots here.
+      </fn>
+    </p>
+    <p>
+      Our first example reviews the basics of right triangle trigonometry.
+      The reader is referred to <xref ref="AppRightTrig">Section</xref>
+      for more details and practice with these concepts.
+    </p>
+    <example xml:id="righttrianglereviewex">
+      <statement>
+        <p>
+          Given a right triangle with a hypotenuse of length <m>7</m> units and one leg of length <m>4</m> units,
+          find the length of the remaining side and the measures of the remaining angles.
+          Express the angles in decimal degrees,
+          rounded to the nearest hundredth of a degree.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For definitiveness, we label the triangle below.
+        </p>
+        <p>
+          \begin{mfpic}[18]{0}{4}{0}{6} \tlabel[cc](2,-1){<m>b=4</m>} \tlabel(4.25,2){<m>a</m>} \tlabel[cc](1.75,0.75){<m>\alpha</m>} \tlabel[cc](3.25,3.5){<m>\beta</m>} \arrow \reverse \arrow \parafcn{5, 50, 5}{1.5*dir(t)} \arrow \reverse \arrow \shiftpath{(4,5.75)} \parafcn{240, 265, 5}{1.5*dir(t)} \tlpointsep{-10pt} \tlabel(0,0){\rotatebox{55}{<m>c = 7</m>}} \polyline{(3.5,0), (3.5,0.5), (4,0.5)} \penwd{1.25pt} \polyline{(0,0), (4,0), (4,5.75), (0,0)}
+        </p>
+        <p>
+          \end{mfpic}
+        </p>
+        <p>
+          To find <m>a</m>, we use the Pythagorean Theorem,
+          <xref ref="PythagoreanTheorem">Theorem</xref>:
+          <m>a^2 + 4^2 = 7^2</m>, so <m>a = \sqrt{33}</m> units.
+        </p>
+        <p>
+          Now that all three sides of the triangle are known,
+          there are several ways we can find <m>\alpha</m> using the inverse trigonometric functions.
+        </p>
+        <p>
+          To decrease the chances of propagating error, however,
+          we stick to using the data given to us in the problem.
+          In this case, the lengths <m>4</m> and <m>7</m> were given,
+          so we want to relate these to <m>\alpha</m>.
+        </p>
+        <p>
+          According to <xref ref="righttrianglesinecosinetangent">Definition</xref>,
+          <m>\cos(\alpha) = \frac{4}{7}</m>.
+          Since <m>\alpha</m> is an acute angle,
+          <m>\alpha = \arccos\left(\frac{4}{7}\right)</m> radians <m>\approx 55.15^{\circ}</m>.
+        </p>
+        <p>
+          Now that we have the measure of angle <m>\alpha</m>,
+          we could find the measure of angle <m>\beta</m> using the fact that <m>\alpha</m> and <m>\beta</m> are complements so <m>\alpha + \beta = 90^{\circ}</m>.
+        </p>
+        <p>
+          Once again, in the interests of minimizing propagated error,
+          we opt to use the data given to us in the problem.
+          According to <xref ref="righttrianglesinecosinetangent">Definition</xref>,
+          <m>\sin(\beta) = \frac{4}{7}</m> so
+          <m>\beta = \arcsin\left(\frac{4}{7}\right)</m> radians <m>\approx 34.85^{\circ}</m>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="righttrianglereviewex">Example</xref> are in order.
+      First, we adhere to the convention that a lower case Greek letter denotes an angle
+      (as well as the measure of said angle)
+      and the corresponding lowercase English letter represents the side
+      (as well as the length of said side)
+      opposite that angle.
+    </p>
+    <p>
+      More specifically, <m>a</m> is the side opposite <m>\alpha</m>,
+      <m>b</m> is the side opposite <m>\beta</m> and <m>c</m> is the side opposite <m>\gamma</m>.
+      Taken together, the pairs <m>(\alpha, a)</m>,
+      <m>(\beta, b)</m> and <m>(\gamma,
+      c)</m> are called <idx><h>angle side opposite pairs</h></idx>
+      <em>angle-side opposite pairs</em>.
+    </p>
+    <p>
+      Second, as mentioned earlier,
+      we will strive to solve for quantities using the original data given in the problem whenever possible.
+      While this is not always the easiest or fastest way to proceed,
+      it minimizes the chances of propagated error.<fn>
+      Your Science teachers should thank us for this.
+      </fn>
+    </p>
+    <p>
+      Third, since many of the applications which require solving triangles <sq>in the wild</sq> rely on degree measure,
+      we shall adopt this convention for the time being.
+    </p>
+    <p>
+      The Pythagorean Theorem along with <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      allow us to easily handle any given
+      <em>right</em> triangle problem,
+      but what if the triangle isn't a right triangle?
+      In certain cases, we can use the <em>Law of Sines</em>.
+    </p>
+    <theorem xml:id="lawofsines">
+      <statement>
+        <p>
+              <idx><h>Law of Sines</h></idx> <em>The Law of Sines:</em> Given a triangle with angle-side opposite pairs <m>(\alpha, a)</m>, <m>(\beta, b)</m> and <m>(\gamma, c)</m>, the following ratios hold:
+          <me>
+            \frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c} \qquad \text{ or, equivalently, }  \qquad  \frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}  = \frac{c}{\sin(\gamma)}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of the Law of Sines can be broken into three cases, and,
+      as we'll see,
+      ultimately relies on what we know about right triangles.
+    </p>
+    <p>
+      For our first case, consider the triangle <m>\triangle ABC</m> below,
+      all of whose angles are acute,
+      with angle-side opposite pairs <m>(\alpha, a)</m>,
+      <m>(\beta, b)</m> and <m>(\gamma, c)</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{0}{8}{0}{6}
+          \tlabel[cc](7,2.5){<m>a</m>}
+          \tlabel[cc](4,-1){<m>b</m>}
+          \tlabel[cc](2,2.75){<m>c</m>}
+          \tlabel[cc](1.75,0.75){<m>\alpha</m>}
+          \tlabel[cc](4.75,2.75){<m>\beta</m>}
+          \tlabel[cc](6.25,1){<m>\gamma</m>}
+          \tlabel[cc](-0.5,-0.5){<m>A</m>}
+          \tlabel[cc](8.5,-0.5){<m>C</m>}
+          \tlabel[cc](5,5.5){<m>B</m>}
+          \arrow \reverse \arrow \parafcn{5, 40, 5}{1.5*dir(t)}
+          \arrow \reverse \arrow \shiftpath{(5,5)}  \parafcn{230, 295, 5}{1.5*dir(t)}
+          \arrow \reverse \arrow \shiftpath{(8,0)}  \parafcn{125, 175, 5}{1.5*dir(t)}
+          \penwd{1.25pt}
+          \polyline{(0,0), (8,0), (5,5), (0,0)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{0}{8}{0}{6}
+          \tlabel[cc](7,2.5){<m>a</m>}
+          \tlabel[cc](2,2.75){<m>c</m>}
+          \tlabel[cc](1.75,0.75){<m>\alpha</m>}
+          \tlabel[cc](6.25,1){<m>\gamma</m>}
+          \tlabel[cc](-0.5,-0.5){<m>A</m>}
+          \tlabel[cc](8.5,-0.5){<m>C</m>}
+          \tlabel[cc](5,5.5){<m>B</m>}
+          \tlabel[cc](5,-1){<m>Q</m>}
+          \tlabel[cc](5.5,2.5){<m>h</m>}
+          \polyline{(4.5,0), (4.5, 0.5), (5.5,0.5), (5.5,0)}
+          \arrow \reverse \arrow \parafcn{5, 40, 5}{1.5*dir(t)}
+          \arrow \reverse \arrow \shiftpath{(8,0)}  \parafcn{125, 175, 5}{1.5*dir(t)}
+          \penwd{1.25pt}
+          \polyline{(0,0), (8,0), (5,5), (0,0)}
+          \polyline{(5,5), (5,0)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{0}{8}{0}{6}
+          \tlabel[cc](4,-1){<m>b</m>}
+          \tlabel[cc](2,2.75){<m>c</m>}
+          \tlabel[cc](4.25,3.5){<m>\beta</m>}
+          \tlabel[cc](6.25,1){<m>\gamma</m>}
+          \tlabel[cc](-0.5,-0.5){<m>A</m>}
+          \tlabel[cc](8.5,-0.5){<m>C</m>}
+          \tlabel[cc](5,5.5){<m>B</m>}
+          \tlabel[cc](6.25,3.5){<m>Q</m>}
+          \tlabel[cc](4,1.75){<m>h'</m>}
+          \polyline{(5.62, 3.96), (5.19, 3.70), (5.71, 2.84), (6.14,3.10) }
+          \arrow \reverse \arrow \shiftpath{(5,5)}  \parafcn{230, 295, 5}{.75*dir(t)}
+          \arrow \reverse \arrow \shiftpath{(8,0)}  \parafcn{125, 175, 5}{1.5*dir(t)}
+          \penwd{1.25pt}
+          \polyline{(0,0), (8,0), (5,5), (0,0)}
+          \polyline{(0,0), (5.88,3.53)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      If we drop an altitude from vertex <m>B</m>,
+      we divide the triangle into two right triangles:
+      <m>\triangle ABQ</m> and <m>\triangle BCQ</m>.
+    </p>
+    <p>
+      If we call the length of the altitude <m>h</m>
+      (for height),
+      we get from <xref ref="righttrianglesinecosinetangent">Definition</xref>
+      that <m>\sin(\alpha) = \frac{h}{c}</m> and
+      <m>\sin(\gamma) = \frac{h}{a}</m> so that <m>h = c\sin(\alpha) = a \sin(\gamma)</m>.
+      Rearranging this last equation,
+      we get <m>\frac{\sin(\alpha)}{a} = \frac{\sin(\gamma)}{c}</m>.
+    </p>
+    <p>
+      Dropping an altitude from vertex <m>A</m>,
+      we can proceed as above using the triangles
+      <m>\triangle ABQ</m> and <m>\triangle ACQ</m>.
+      We find that <m>\frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}</m>,
+      so we have shown <m>\frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}</m> as required.
+    </p>
+    <p>
+      For our next case consider the triangle <m>\triangle ABC</m> below with
+      <em>obtuse</em> angle <m>\alpha</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[30]{-2}{6}{0}{2}
+          \tlabel[cc](2,1.25){<m>a</m>}
+          \tlabel[cc](2,-0.25){<m>b</m>}
+          \tlabel[cc](-0.75,0.75){<m>c</m>}
+          \tlabel[cc](0.25,0.75){<m>\alpha</m>}
+          \tlabel[cc](3.3,0.25){<m>\gamma</m>}
+          \tlabel[cc](-0.30,1.1){<m>\beta</m>}
+          \tlabel[cc](-0.25,-0.25){<m>A</m>}
+          \tlabel[cc](-1.25,2){<m>B</m>}
+          \tlabel[cc](6,-0.25){<m>C</m>}
+          \arrow \reverse \arrow \parafcn{5, 115, 5}{0.5*dir(t)}
+          \arrow \reverse \arrow \shiftpath{(5.72,0)}  \parafcn{168, 178, 5}{2*dir(t)}
+          \arrow \reverse \arrow \shiftpath{(-1.04,1.81)}  \parafcn{305, 335, 5}{0.75*dir(t)}
+          \penwd{1.25pt}
+          \polyline{(0,0), (5.72,0), (-1.04,1.81), (0,0)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[30]{-2}{6}{0}{2}
+          \polyline{(0.13, 1.49), (0.08, 1.25), (0.56, 1.12), (0.62, 1.36)}
+          \tlabel[cc](2,1.25){<m>a</m>}
+          \tlabel[cc](2,-0.25){<m>b</m>}
+          \tlabel[cc](-0.75,0.75){<m>c</m>}
+          \tlabel[cc](3.3,0.25){<m>\gamma</m>}
+          \tlabel[cc](-0.30,1.1){<m>\beta</m>}
+          \tlabel[cc](-0.25,-0.25){<m>A</m>}
+          \tlabel[cc](-1.25,2){<m>B</m>}
+          \tlabel[cc](6,-0.25){<m>C</m>}
+          \tlabel[cc](0.38,1.68){<m>Q</m>}
+          \tlabel[cc](0.38,0.75){<m>h</m>}
+          \arrow \reverse \arrow \shiftpath{(5.72,0)}  \parafcn{168, 178, 5}{2*dir(t)}
+          \arrow \reverse \arrow \shiftpath{(-1.04,1.81)}  \parafcn{305, 335, 5}{0.75*dir(t)}
+          \penwd{1.25pt}
+          \polyline{(0,0), (5.72,0), (-1.04,1.81), (0,0)}
+          \polyline{(0,0), (0.38, 1.43)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      Extending an altitude from vertex <m>A</m> gives two right triangles,
+      as in the previous case:
+      <m>\triangle ABQ</m> and <m>\triangle ACQ</m>.
+    </p>
+    <p>
+      Proceeding as before, we get <m>h = b \sin(\gamma)</m> and
+      <m>h = c \sin(\beta)</m> so that <m>\frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}</m>.
+    </p>
+    <p>
+      Dropping an altitude from vertex B also generates two right triangles,
+      <m>\triangle ABQ</m> and <m>\triangle BCQ</m>.
+    </p>
+    <p>
+      \begin{mfpic}[50]{-2}{6}{0}{2} \polyline{(-1.04,0.15), (-0.89,0.15), (-0.89,0)} \tlabel[cc](2,1.25){<m>a</m>} \tlabel[cc](2,-0.25){<m>b</m>} \tlabel[cc](-0.75,0.75){<m>c</m>} \tlabel[cc](0.25,0.25){<m>\alpha</m>} \tlabel[cc](-0.5,0.25){<m>\alpha'</m>} \tlabel[cc](3.5,0.25){<m>\gamma</m>} \tlabel[cc](-0.5,1.3){<m>\beta</m>} \tlabel[cc](-0.15,-0.15){<m>A</m>} \tlabel[cc](-1.19,1.96){<m>B</m>} \tlabel[cc](5.87,-0.15){<m>C</m>} \tlabel[cc](-1.19,-0.15){<m>Q</m>} \tlabel[cc](-1.29, 0.9){<m>h'</m>} \arrow \reverse \arrow \parafcn{5, 115, 5}{0.25*dir(t)} \arrow \reverse \arrow \parafcn{125, 175, 5}{0.45*dir(t)} \arrow \reverse \arrow \shiftpath{(5.72,0)} \parafcn{168, 178, 5}{2*dir(t)} \arrow \reverse \arrow \shiftpath{(-1.04,1.81)} \parafcn{305, 335, 5}{0.5*dir(t)} \penwd{1.25pt} \polyline{(0,0), (5.72,0), (-1.04,1.81), (0,0)} \polyline{(-1.04, 1.81), (-1.04,0), (0,0)} \end{mfpic}
+    </p>
+    <p>
+      We see <m>\sin(\alpha') = \frac{h'}{c}</m> so that <m>h' = c \sin(\alpha')</m>.
+      Since <m>\alpha' = 180^{\circ} - \alpha</m>,
+      <m>\sin(\alpha') = \sin(\alpha)</m>,
+      so <m>h' = c\sin(\alpha)</m>.
+    </p>
+    <p>
+      Proceeding to <m>\triangle BCQ</m>,
+      we get <m>\sin(\gamma) = \frac{h'}{a}</m> so <m>h' = a \sin(\gamma)</m>.
+    </p>
+    <p>
+      As before, we get <m>\frac{\sin(\gamma)}{c} = \frac{\sin(\alpha)}{a}</m>,
+      so <m>\frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}</m> in this case, too.
+    </p>
+    <p>
+      The remaining case is when <m>\triangle ABC</m> is a right triangle.
+      In this case,
+      the Law of Sines reduces to the formulas given in <xref ref="righttrianglesinecosinetangent">Definition</xref> and is left to the reader.
+    </p>
+    <p>
+      In order to use the Law of Sines to solve a triangle,
+      we need at least one angle-side opposite pair.
+      The next example showcases some of the power,
+      and the pitfalls, of the Law of Sines.
+    </p>
+    <example xml:id="losex">
+      <statement>
+        <p>
+          Solve the following triangles.
+          Give exact answers and decimal approximations
+          (rounded to hundredths)
+          and sketch the triangle.
+          <ol cols="3">
+            <li xml:id="losaas">
+              <p>
+                <m>\alpha = 120^{\circ}</m>, <m>a = 7</m> units, <m>\beta = 45^{\circ}</m>
+              </p>
+            </li>
+            <li xml:id="losasa">
+              <p>
+                <m>\alpha = 85^{\circ}</m>,
+                <m>\beta = 30^{\circ}</m>, <m>c = 5.25</m> units
+              </p>
+            </li>
+            <li xml:id="losnotriangleex">
+              <p>
+                <m>\alpha = 30^{\circ}</m>, <m>a=1</m> units, <m>c = 4</m> units
+              </p>
+            </li>
+            <li xml:id="losrighttriangleex">
+              <p>
+                <m>\alpha = 30^{\circ}</m>, <m>a=2</m> units, <m>c = 4</m> units
+              </p>
+            </li>
+            <li xml:id="lostwotriangleex">
+              <p>
+                <m>\alpha = 30^{\circ}</m>, <m>a=3</m> units, <m>c = 4</m> units
+              </p>
+            </li>
+            <li xml:id="losonetriangleex">
+              <p>
+                <m>\alpha = 30^{\circ}</m>, <m>a=4</m> units, <m>c = 4</m> units
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Knowing an angle-side opposite pair,
+                namely <m>\alpha</m> and <m>a</m>,
+                we may proceed in using the Law of Sines.
+                Since <m>\beta = 45^{\circ}</m>,
+                we use <m>\frac{b}{\sin\left(45^{\circ}\right)} = \frac{7}{\sin\left(120^{\circ}\right)}</m> so <m>b = \frac{7\sin\left(45^{\circ}\right)}{\sin\left(120^{\circ}\right)} = \frac{7\sqrt{6}}{3} \approx 5.72</m> units.
+                To find <m>\gamma</m>,
+                we use the fact that the sum of the measures of the angles in a triangle is <m>180^{\circ}</m>.
+                Hence, <m>\gamma = 180^{\circ} - 120^{\circ} - 45^{\circ} = 15^{\circ}</m>.
+                To find <m>c</m>,
+                we have no choice but to used the derived value <m>\gamma = 15^{\circ}</m>,
+                yet we can minimize the propagation of error here by using the given angle-side opposite pair <m>(\alpha, a)</m>.
+                The Law of Sines gives us <m>\frac{c}{\sin\left(15^{\circ}\right)} = \frac{7}{\sin\left(120^{\circ}\right)}</m> so that <m>c = \frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)} \approx 2.09</m> units.<fn>
+                The exact value of <m>\sin(15^{\circ})</m> could be found using the difference identity for sine or a half-angle formula,
+                but that becomes unnecessarily messy for the discussion at hand.
+                Thus
+                <q>exact</q>
+                here means <m>\frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)}</m>.
+                </fn>  We sketch this triangle below on the left.
+              </p>
+            </li>
+            <li>
+              <p>
+                In this example,
+                we are not immediately given an angle-side opposite pair,
+                but as we have the measures of <m>\alpha</m> and <m>\beta</m>,
+                we can solve for <m>\gamma</m> since <m>\gamma = 180^{\circ} - 85^{\circ} - 30^{\circ} = 65^{\circ}</m>.
+                As in the previous example,
+                we are forced to use a derived value in our computations since the only angle-side pair available is <m>(\gamma, c)</m>.
+                The Law of Sines gives <m>\frac{a}{\sin\left(85^{\circ}\right)} = \frac{5.25}{\sin\left(65^{\circ}\right)}</m>.
+                Solving, we get <m>a = \frac{5.25\sin\left(85^{\circ}\right)}{\sin\left(65^{\circ}\right)} \approx 5.77</m> units.
+                To find <m>b</m> we use the angle-side pair <m>(\gamma,c)</m>:
+                <m>\frac{b}{\sin\left(30^{\circ}\right)} = \frac{5.25}{\sin\left(65^{\circ}\right)}</m>.
+                Hence <m>b = \frac{5.25\sin\left(30^{\circ}\right)}{\sin\left(65^{\circ}\right)} \approx 2.90</m> units.
+                We sketch this triangle below on the right.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[30]{-2}{6}{0}{2} \tlabel[cc](2,1.25){<m>a = 7</m>} \tlabel[cc](2,-0.25){<m>b \approx 5.72</m>} \tlabel[cc](-1,0.5){<m>c \approx 2.09</m>} \tlabel[cc](1,0.5){<m>\alpha = 120^{\circ}</m>} \tlabel[cc](3,0.25){<m>\gamma = 15^{\circ}</m>} \tlabel[cc](0.1,1.1){<m>\beta = 45^{\circ}</m>} \arrow \reverse \arrow \parafcn{5, 115, 5}{0.5*dir(t)} \arrow \reverse \arrow \shiftpath{(5.72,0)} \parafcn{168, 178, 5}{2*dir(t)} \arrow \reverse \arrow \shiftpath{(-1.04,1.81)} \parafcn{305, 335, 5}{0.75*dir(t)} \penwd{1.25pt} \polyline{(0,0), (5.72,0), (-1.04,1.81), (0,0)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[20]{-2}{6}{0}{2} \tlabel[cc](4.25,2.5){<m>a \approx 5.77</m>} \tlabel[cc](2.5,-0.5){<m>b \approx 2.90</m>} \tlabel[cc](-1,2.5){<m>c = 5.25</m>} \tlabel[cc](1.25,0.5){<m>\alpha = 85^{\circ}</m>} \tlabel[cc](3.75,0.5){<m>\gamma = 65^{\circ}</m>} \tlabel[cc](1.25,3.5){<m>\beta = 30^{\circ}</m>} \arrow \reverse \arrow \parafcn{5, 80, 5}{0.5*dir(t)} \arrow \reverse \arrow \shiftpath{(5.77,0)} \parafcn{140, 175, 5}{1.25*dir(t)} \arrow \reverse \arrow \shiftpath{(0.46,5.23)} \parafcn{276, 304, 5}{1.25*dir(t)} \penwd{1.25pt} \polyline{(0,0), (5.77,0), (0.46,5.23), (0,0)} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>Triangle for <xref ref="losaas">number</xref></cell>
+                    <cell>Triangle for <xref ref="losasa">number</xref></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since we are given <m>(\alpha,a)</m> and <m>c</m>,
+                we use the Law of Sines to find the measure of <m>\gamma</m>.
+                From <m>\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{1}</m>,
+                we get <m>\sin(\gamma) = 4 \sin\left(30^{\circ}\right) = 2</m>,
+                which is impossible. (Why?) As seen below on the left,
+                side <m>a</m> is just too short to make a triangle.
+              </p>
+            </li>
+          </ol>
+          <p>
+            The next three examples keep the same values for the measure of <m>\alpha</m> and the length of <m>c</m> while varying the length of <m>a</m>.
+            We will discuss this case in more detail after we see what happens in those examples.
+            <ol>
+              <li>
+                <p>
+                  In this case, we have the measure of <m>\alpha = 30^{\circ}</m>,
+                  <m>a = 2</m> and <m>c=4</m>.
+                  Using the Law of Sines, we get
+                  <m>\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{2}</m> so <m>\sin(\gamma) = 2 \sin\left(30^{\circ}\right) = 1</m>.
+                  Since <m>\gamma</m> is an angle in a triangle which also contains <m>\alpha = 30^{\circ}</m>,
+                  <m>\gamma</m> must measure between <m>0^{\circ}</m> and
+                  <m>150^{\circ}</m> in order to fit inside the triangle with <m>\alpha</m>.
+                  The only angle that satisfies this requirement and has
+                  <m>\sin(\gamma) = 1</m> is <m>\gamma = 90^{\circ}</m>,
+                  so we are working in a right triangle.
+                  We find the measure of <m>\beta</m> to be <m>\beta = 180^{\circ} - 30^{\circ} - 90^{\circ} = 60^{\circ}</m>.
+                  Using the Law of Sines,
+                  we get <m>b = \frac{2 \sin\left(60^{\circ}\right)}{\sin\left(30^{\circ}\right)} = 2 \sqrt{3} \approx 3.46</m> units.
+                  As seen below on the right,
+                  the side <m>a</m> is just long enough to form a right triangle in this case.
+                  <tabular>
+                    <row>
+                      <cell>\begin{mfpic}[40]{0}{4}{0}{2} \tlabel[cc](4.25,1.5){ <m>a = 1</m>} \tlabel[cc](1.75,1.5){ <m>c = 4</m>} \tlabel[cc](1.85,0.35){ <m>\alpha = 30^{\circ}</m>} \tlabel[cc](1.75,-0.25){ } \arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)} \dotted \shiftpath{(3.46,2)} \parafcn{240, 300, 5}{dir(t)} \penwd{1.25pt} \polyline{(4,0), (0,0), (3.46,2), (3.46,1)} \end{mfpic}</cell>
+                      <cell>\begin{mfpic}[40]{0}{4}{0}{4} \polyline{(3.21,0), (3.21,0.25), (3.46,.25)} \tlabel[cc](4,1){ <m>a = 2</m>} \tlabel[cc](1,1){ <m>c = 4</m>} \tlabel[cc](1.75,-0.25){ <m>b \approx 3.46</m>} \tlabel[cc](1.85,0.35){ <m>\alpha = 30^{\circ}</m>} \tlabel[cc](2.9,1){ <m>\beta = 60^{\circ}</m>} \arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)} \arrow \reverse \arrow \shiftpath{(3.46,2)} \parafcn{215, 265, 5}{0.75*dir(t)} \penwd{1.25pt} \polyline{(0,0), (3.46,2), (3.46,0), (0,0)} \end{mfpic}</cell>
+                    </row>
+                    <row>
+                      <cell>Diagram for <xref ref="losnotriangleex">number</xref></cell>
+                      <cell>Triangle for <xref ref="losrighttriangleex">number</xref></cell>
+                    </row>
+                  </tabular>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Proceeding as we have in the previous two examples,
+                  we use the Law of Sines to find <m>\gamma</m>.
+                  In this case,
+                  we have <m>\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{3}</m> or <m>\sin(\gamma) = \frac{4\sin\left(30^{\circ}\right)}{3} = \frac{2}{3}</m>.
+                  Since <m>\gamma</m> lies in a triangle with <m>\alpha = 30^{\circ}</m>,
+                  we must have that <m>0^{\circ} \lt \gamma \lt 150^{\circ}</m>.
+                  In this case, there are <em>two</em>
+                  angles that fall in this range:
+                  <m>\gamma = \arcsin\left(\frac{2}{3}\right)</m> radians <m>\approx 41.81^{\circ}</m> and
+                  <m>\gamma = \pi - \arcsin\left(\frac{2}{3}\right)</m> radians <m>\approx 138.19^{\circ}</m>.
+                  At this point,
+                  we pause to see if it makes sense that we have two cases to consider.
+                  Since <m>c > a</m>, it must also be true that <m>\gamma</m>,
+                  which is opposite <m>c</m>,
+                  has greater measure than <m>\alpha</m> which is opposite <m>a</m>.
+                  In both cases, <m>\gamma > \alpha</m>,
+                  so both candidates for <m>\gamma</m> make sense with the given value of <m>c</m>.
+                  Thus have two triangles on our hands.
+                  In the case <m>\gamma = \arcsin\left(\frac{2}{3}\right)</m> radians <m>\approx 41.81^{\circ}</m>,
+                  we find<fn>
+                  To find an exact expression for <m>\beta</m>,
+                  we convert everything back to radians:
+                  <m>\alpha = 30^{\circ} = \frac{\pi}{6}</m> radians,
+                  <m>\gamma = \arcsin\left(\frac{2}{3}\right)</m> radians and <m>180^{\circ} = \pi</m> radians.
+                  Hence, <m>\beta = \pi - \frac{\pi}{6} - \arcsin\left(\frac{2}{3}\right) = \frac{5\pi}{6} - \arcsin\left(\frac{2}{3}\right)</m> radians <m>\approx 108.19^{\circ}</m>.
+                  </fn> <m>\beta \approx 180^{\circ} - 30^{\circ} - 41.81^{\circ} = 108.19^{\circ}</m>.
+                  The Law of Sines with the angle-side opposite pair
+                  <m>(\alpha,
+                  a)</m> and <m>\beta</m> gives <m>b \approx \frac{3 \sin\left(108.19^{\circ}\right)}{\sin\left(30^{\circ}\right)} \approx 5.70</m> units.
+                  We sketch this triangle below on the left.
+                  In the case <m>\gamma = \pi - \arcsin\left(\frac{2}{3}\right)</m> radians <m>\approx 138.19^{\circ}</m>,
+                  we repeat the same steps and find
+                  <m>\beta \approx 11.81^{\circ}</m> and <m>b \approx 1.23</m> units.<fn>
+                  An exact answer for <m>\beta</m> in this case is
+                  <m>\beta = \arcsin\left(\frac{2}{3}\right) - \frac{\pi}{6}</m> radians <m>\approx 11.81^{\circ}</m>.
+                  </fn>  We sketch this triangle below on the right.
+                  <tabular>
+                    <row>
+                      <cell>\begin{mfpic}[40]{0}{6}{0}{2} \tlabel[cc](5,1.15){ <m>a = 3</m>} \tlabel[cc](1.5,1.25){ <m>c = 4</m>} \tlabel[cc](1.75,0.35){ <m>\alpha = 30^{\circ}</m>} \tlabel[cc](3.25,1.15){ <m>\beta \approx 108.19^{\circ}</m>} \tlabel[cc](4.15,0.35){ <m>\gamma \approx 41.81^{\circ}</m>} \tlabel[cc](2.85,-0.25){ <m>b \approx 5.70</m>} \arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)} \arrow \reverse \arrow \shiftpath{(3.46,2)} \parafcn{215, 313, 5}{0.5*dir(t)} \arrow \reverse \arrow \shiftpath{(5.70,0)} \parafcn{145, 175, 5}{0.75*dir(t)} \penwd{1.25pt} \polyline{(0,0), (3.46,2), (5.70,0),(0,0)} \end{mfpic}</cell>
+                      <cell>\begin{mfpic}[50]{0}{2}{0}{2} \tlabel[cc](2.15,0.5){ <m>a = 3</m>} \tlabel[cc](1.25,1){ <m>c = 4</m>} \tlabel[cc](0,0.35){ <m>\alpha = 30^{\circ}</m>} \tlabel[cc](2.5,1.75){ <m>\beta \approx 11.81^{\circ}</m>} \tlabel[cc](1.9,0.05){ <m>\gamma \approx 138.19^{\circ}</m>} \tlabel[cc](0.6,-0.25){ <m>b \approx 1.23</m>} \arrow \reverse \arrow \parafcn{5, 25, 5}{0.5*dir(t)} \arrow \reverse \arrow \shiftpath{(1.23,0)} \parafcn{45, 175, 5}{0.25*dir(t)} \penwd{1.25pt} \polyline{(0,0), (3.46,2), (1.23,0),(0,0)} \end{mfpic}</cell>
+                    </row>
+                  </tabular>
+                </p>
+              </li>
+              <li>
+                <p>
+                  For this last problem,
+                  we repeat the usual Law of Sines routine to find that
+                  <m>\frac{\sin(\gamma)}{4} = \frac{\sin\left(30^{\circ}\right)}{4}</m> so that <m>\sin(\gamma) = \frac{1}{2}</m>.
+                  Since <m>\gamma</m> must inhabit a triangle with <m>\alpha = 30^{\circ}</m>,
+                  we must have <m>0^{\circ} \lt \gamma \lt 150^{\circ}</m>.
+                  Since the measure of <m>\gamma</m> must be
+                  <em>strictly less</em> than <m>150^{\circ}</m>,
+                  there is just <em>one</em> angle which satisfies both required conditions,
+                  namely <m>\gamma = 30^{\circ}</m>.
+                  Hence, <m>\beta = 180^{\circ} - 30^{\circ} - 30^{\circ} = 120^{\circ}</m>.
+                  The Law of Sines gives <m>b = \frac{4\sin\left(120^{\circ}\right)}{\sin\left(30^{\circ}\right)} = 4\sqrt{3} \approx 6.93</m> units.
+                  We sketch this triangle below. \begin{mfpic}[40]{0}{7}{0}{2} \tlabel[cc](5.5,1.15){ <m>a = 4</m>} \tlabel[cc](1.5,1.25){ <m>c = 4</m>} \tlabel[cc](1.75,0.35){ <m>\alpha = 30^{\circ}</m>} \tlabel[cc](3.5,1.15){
+                  <m>\beta = 120^{\circ}</m>} \tlabel[cc](5.25,0.35){
+                  <m>\gamma = 30^{\circ}</m>} \tlabel[cc](3.5,-0.25){
+                  <m>b \approx 6.93</m>} \arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)} \arrow \reverse \arrow \shiftpath{(3.46,2)} \parafcn{215, 325, 5}{0.5*dir(t)} \arrow \reverse \arrow \shiftpath{(6.93,0)} \parafcn{155, 175, 5}{1.25*dir(t)} \penwd{1.25pt} \polyline{(0,0), (3.46,2), (6.93,0),(0,0)} \end{mfpic}
+                </p>
+              </li>
+            </ol>
+          </p>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Some remarks about <xref ref="losex">Example</xref> are in order.
+      First note that if we are given the measures of two of the angles in a triangle,
+      say <m>\alpha</m> and <m>\beta</m>,
+      the measure of the third angle <m>\gamma</m> is uniquely determined using the equation <m>\gamma = 180^{\circ} - \alpha - \beta</m>.
+      Knowing the measures of all three angles of a triangle completely determines the triangle's <em>shape</em>.
+    </p>
+    <p>
+      If in addition we are given the length of one of the sides of the triangle,
+      we can then use the Law of Sines to find the lengths of the remaining two sides to determine the
+      <em>size</em> of the triangle.
+      Such is the case in <xref ref="losaas">numbers</xref>
+      and <xref ref="losasa"></xref> above.
+    </p>
+    <p>
+      In <xref ref="losaas">number</xref>,
+      the given side is adjacent to just one of the angles <mdash/> this is called the <sq>Angle-Angle-Side</sq> (AAS) case.<fn>
+      If this sounds familiar, it should.
+      From Geometry,
+      we know there are four congruence conditions for triangles:  Angle-Angle-Side (AAS), Angle-Side-Angle (ASA), Side-Angle-Side (SAS) and Side-Side-Side (SSS).
+      If we are given information about a triangle that meets one of these four criteria,
+      then we are guaranteed that exactly one triangle exists which satisfies said criteria.
+      </fn> In <xref ref="losasa">number</xref>,
+      the given side is adjacent to both angles which means we are in the so-called <sq>Angle-Side-Angle</sq> (ASA) case.
+    </p>
+    <p>
+      If, on the other hand,
+      we are given the measure of just one of the angles in the triangle along with the length of two sides,
+      only one of which is adjacent to the given angle,
+      we are in the <sq>Angle-Side-Side</sq> (ASS) case.<fn>
+      In more reputable books,
+      this is called the <sq>Side-Side-Angle</sq> or SSA case.
+      </fn> Such was the case in <xref ref="losnotriangleex">numbers</xref>,
+      <xref ref="losrighttriangleex"></xref>,
+      <xref ref="lostwotriangleex"></xref>,
+      and <xref ref="losonetriangleex"></xref> above.
+    </p>
+    <p>
+      In <xref ref="losnotriangleex">number</xref>,
+      the length of the one given side <m>a</m> was too short to even form a triangle;
+      in <xref ref="losrighttriangleex">number</xref>,
+      the length of <m>a</m> was just long enough to form a right triangle;
+      in <xref ref="lostwotriangleex"></xref>, <m>a</m> was long enough,
+      but not too long, so that two triangles were possible;
+      and in <xref ref="losonetriangleex">number</xref>,
+      side <m>a</m> was long enough to form a triangle but too long to swing back and form two.
+      These four cases exemplify all of the possibilities in the Angle-Side-Side case which are summarized in the following theorem.
+    </p>
+    <theorem xml:id="ASScase">
+      <statement>
+        <p>
+          Suppose <m>(\alpha,a)</m> and
+          <m>(\gamma,
+          c)</m> are intended to be angle-side pairs in a triangle where <m>\alpha</m>,
+          <m>a</m> and <m>c</m> are given.
+          Let <m>h = c\sin(\alpha)</m>
+          <ul>
+            <li>
+              <p>
+                If <m>a \lt h</m>,
+                then no triangle exists which satisfies the given criteria.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>a = h</m>,
+                then <m>\gamma = 90^{\circ}</m> so exactly one (right) triangle exists which satisfies the criteria.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>h \lt a \lt c</m>,
+                then two distinct triangles exist which satisfy the given criteria.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>a \geq c</m>,
+                then <m>\gamma</m> is acute and exactly one triangle exists which satisfies the given criteria
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      <xref ref="ASScase">Theorem</xref>
+      is proved on a case-by-case basis.
+      If <m>a \lt h</m>, then <m>a \lt c\sin(\alpha)</m>.
+      If a triangle were to exist,
+      the Law of Sines would have <m>\frac{\sin(\gamma)}{c} = \frac{\sin(\alpha)}{a}</m> so that
+      <m>\sin(\gamma) = \frac{c \sin(\alpha)}{a} > \frac{a}{a} = 1</m>,
+      which is impossible.
+    </p>
+    <p>
+      In the figure below on the left,
+      we see geometrically why this is the case.
+      Simply put, if <m>a \lt h</m> the side <m>a</m> is too short to connect to form a triangle.
+    </p>
+    <p>
+      This means if <m>a \geq h</m>,
+      we are always guaranteed to have at least one triangle,
+      and the remaining parts of the theorem tell us what kind and how many triangles to expect in each case.
+    </p>
+    <p>
+      If <m>a = h</m>,
+      then <m>a = c\sin(\alpha)</m> and the Law of Sines gives
+      <m>\frac{\sin(\alpha)}{a} = \frac{\sin(\gamma)}{c}</m> so that <m>\sin(\gamma) = \frac{c \sin(\alpha)}{a} = \frac{a}{a} = 1</m>.
+      Here, <m>\gamma = 90^{\circ}</m> as required.
+      This situation is sketched below on the right.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[40]{0}{4}{0}{2}
+          \tlabel[cc](1.75,1.5){  <m>c</m>}
+          \tlabel[cc](1.5,0.35){ <m>\alpha</m>}
+          \arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
+          \arrow \reverse \arrow \polyline{(4.25,0), (4.25,2)}
+          \arrow \reverse \arrow \polyline{(3.75,2), (3.75,1.25)}
+          \gclear \tlabelrect[cc](3.75,1.625){ <m>a</m>}
+          \gclear \tlabelrect[cc](4.5,1){ <m>h=c \sin(\alpha)</m>}
+          \penwd{1.25pt}
+          \polyline{(3.46,0), (0,0), (3.46,2), (3.46,1.25)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[40]{0}{4}{0}{4}
+          \polyline{(3.21,0), (3.21,0.25), (3.46,.25)}
+          \tlabel[cc](1.75,1.5){  <m>c</m>}
+          \tlabel[cc](1.5,0.35){  <m>\alpha</m>}
+          \arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
+          \arrow \reverse \arrow \polyline{(4,0), (4,2)}
+          \gclear \tlabelrect[cc](4.5,1){ <m>a = h = c\sin(\alpha)</m>}
+          \penwd{1.25pt}
+          \polyline{(0,0), (3.46,2), (3.46,0), (0,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>a \lt  h</m>, no triangle</cell>
+        <cell><m>a = h</m>, <m>\gamma = 90^{\circ}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      Moving along, now suppose <m>h \lt a \lt c</m>.
+      As before, the Law of Sines<fn>
+      Remember, we have already argued that a triangle exists in this case!
+      </fn> gives <m>\sin(\gamma) = \frac{c \sin(\alpha)}{a}</m>.
+    </p>
+    <p>
+      Since <m>h \lt a</m>, <m>c \sin(\alpha) \lt a</m> or
+      <m>\frac{c\sin(\alpha)}{a} \lt 1</m> which means there are two solutions to <m>\sin(\gamma) = \frac{c \sin(\alpha)}{a}</m>:
+      an acute angle which we'll call <m>\gamma_{0}</m>,
+      and its supplement, <m>180^{\circ} - \gamma_{0}</m>.
+    </p>
+    <p>
+      Our job now is to argue that each of these angles <sq>fit</sq> into a triangle with <m>\alpha</m>.
+      Since <m>(\alpha, a)</m> and
+      <m>(\gamma_{0},c)</m> are angle-side opposite pairs,
+      the assumption <m>c > a</m> in this case gives us <m>\gamma_{0} > \alpha</m>.
+      Since <m>\gamma_{0}</m> is acute,
+      we must have that <m>\alpha</m> is acute as well.
+      This means one triangle can contain both <m>\alpha</m> and <m>\gamma_{0}</m>,
+      giving us one of the triangles promised in the theorem.
+    </p>
+    <p>
+      If we manipulate the inequality <m>\gamma_{0} > \alpha</m> a bit,
+      we have <m>180^{\circ} - \gamma_{0} \lt 180^{\circ} - \alpha</m>.
+      Adding <m>\alpha</m> to both sides gives <m>\left(180^{\circ} - \gamma_{0}\right) + \alpha \lt 180^{\circ}</m>.
+      This proves a triangle can contain both of the angles <m>\alpha</m> and <m>\left(180^{\circ} - \gamma_{0}\right)</m>,
+      giving us the second triangle predicted in the theorem.
+      We sketch the two triangle case below on the left.
+    </p>
+    <p>
+      To prove the last case in the theorem,
+      we assume <m>a \geq c</m>.
+      Then <m>\alpha \geq \gamma</m>,
+      which forces <m>\gamma</m> to be an acute angle.
+      Hence, we get only one triangle in this case, completing the proof.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[50]{0}{6}{0}{2}
+          \arrow \reverse \arrow \polyline{(3.46,1.9), (3.46,0.1)}
+          \tlabel[cc](4.5,1.25){ <m>a</m>}
+          \tlabel[cc](2.8,1.25){ <m>a</m>}
+          \tlabel[cc](1.75,1.25){  <m>c</m>}
+          \tlabel[cc](3.6,1){  <m>h</m>}
+          \tlabel[cc](0.75,0.15){ <m>\alpha</m>}
+          \tlabel[cc](5,0.15){ <m>\gamma_{0}</m>}
+          \tlabel[cc](1.9,0.15){ <m>\gamma_{0}</m>}
+          \arrow \reverse \arrow \parafcn{5, 25, 5}{0.6*dir(t)}
+          \arrow \reverse \arrow  \shiftpath{(5.70,0)}  \parafcn{145, 175, 5}{0.5*dir(t)}
+          \arrow \reverse \arrow  \shiftpath{(1.23,0)}  \parafcn{45, 175, 5}{0.25*dir(t)}
+          \arrow \reverse \arrow  \shiftpath{(1.23,0)}  \parafcn{5, 35, 5}{0.5*dir(t)}
+          \penwd{1.25pt}
+          \polyline{(0,0), (1.23,0), (3.46,2), (0,0)}
+          \polyline{(0,0), (3.46,2), (5.70,0),(0,0)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[25]{0}{7}{0}{2}
+          \arrow \reverse \arrow \polyline{(3.46,1.9), (3.46,0.1)}
+          \tlabel[cc](3.6,1){  <m>h</m>}
+          \tlabel[cc](5.5,1.15){ <m>a</m>}
+          \tlabel[cc](1.5,1.25){  <m>c</m>}
+          \tlabel[cc](1.75,0.35){ <m>\alpha</m>}
+          \tlabel[cc](5.25,0.35){ <m>\gamma</m>}
+          \arrow \reverse \arrow \parafcn{5, 25, 5}{1.25*dir(t)}
+          \arrow \reverse \arrow  \shiftpath{(6.93,0)}  \parafcn{155, 175, 5}{1.25*dir(t)}
+          \penwd{1.25pt}
+          \polyline{(0,0), (3.46,2), (6.93,0),(0,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>h \lt  a \lt  c</m>, two triangles</cell>
+        <cell><m>a \geq c</m>, one triangle</cell>
+      </row>
+    </tabular>
+    <p>
+      One last comment regarding the Angle-Side-Side case:
+      if you are given an obtuse angle to begin with then it is impossible to have the two triangle case.
+      Think about this before reading further.
+    </p>
+    <p>
+      In many of the derivations and arguments in this section,
+      we used the height of a given triangle,
+      <m>h</m>, as an intermediate variable to prove equivalences.
+      Since the height of a triangle can be used to determine the area enclosed by said triangle,
+      we can use the methods in this section to reformulate area in terms of side lengths and sines of angles.
+      We state the following theorem and leave its proof as an exercise.
+    </p>
+    <theorem xml:id="areaformulasine">
+      <statement>
+        <p>
+          Suppose <m>(\alpha, a)</m>, <m>(\beta, b)</m> and
+          <m>(\gamma,
+          c)</m> are the angle-side opposite pairs of a triangle.
+          Then the area <m>A</m> enclosed by the triangle is given by
+          <me>
+            A = \frac{1}{2}bc\sin(\alpha) =  \frac{1}{2}ac\sin(\beta) =  \frac{1}{2}ab\sin(\gamma)
+          </me>
+        </p>
+        <p>
+          That is, the area enclosed by the triangle <m>A = \frac{1}{2} \, (\text{ the product of two sides } ) \, \sin(\text{ of the included angle } )</m>.
+        </p>
+      </statement>
+    </theorem>
+    <example xml:id="areaformulasineex">
+      <statement>
+        <p>
+          Find the area of the triangle in <xref ref="losex">Example</xref>
+          <xref ref="losaas">number</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From our work in <xref ref="losex">Example</xref>
+          <xref ref="losaas">number</xref>,
+          we have all three angles and all three sides to work with.
+          However, to minimize propagated error,
+          we choose <m>A = \frac{1}{2} ac \sin(\beta)</m> from <xref ref="areaformulasine">Theorem</xref>
+          because it uses the most pieces of given information.
+        </p>
+        <p>
+          We are given <m>a = 7</m> and <m>\beta = 45^{\circ}</m>,
+          and we calculated <m>c = \frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)}</m>.
+          Using these values,
+          we find the area <m>A = \frac{1}{2}(7)\left(\frac{7\sin\left(15^{\circ}\right)}{\sin\left(120^{\circ}\right)} \right) \sin\left(45^{\circ}\right) = \approx 5.18</m> square units.
+          The reader is encouraged to check this answer against the results obtained using the other formulas in <xref ref="areaformulasine">Theorem</xref>.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="bearings">
+    <title>Bearings</title>
+    <p>
+      Our last example of the section uses the navigation tool known as
+          <idx><h>bearings</h></idx>
+      <em>bearings</em>.
+      Simply put, a bearing is the direction you are heading according to a compass.
+    </p>
+    <p>
+      The classic nomenclature for bearings, however,
+      is not given as an angle in standard position,
+      so we must first understand the notation.
+      A bearing is given as an acute angle of rotation
+      (to the east or to the west)
+      away from the north-south
+      (up and down)
+      line of a compass rose.
+    </p>
+    <p>
+      For example, N<m>40^{\circ}</m>E (read
+      <q><m>40^{\circ}</m> east of north</q>
+      ) is a bearing which is rotated clockwise <m>40^{\circ}</m> from due north.
+      If we imagine standing at the origin in the Cartesian Plane,
+      this bearing would have us heading into Quadrant I along the terminal side of <m>\theta = 50^{\circ}</m>.
+    </p>
+    <p>
+      Similarly, S<m>50^{\circ}</m>W would point into Quadrant III along the terminal side of
+      <m>\theta = 220^{\circ}</m> because we started out pointing due south
+      (along <m>\theta = 270^{\circ}</m>)
+      and rotated clockwise <m>50^{\circ}</m> back to <m>220^{\circ}</m>.
+    </p>
+    <p>
+      Counter-clockwise rotations would be found in the bearings N<m>60^{\circ}</m>W
+      (which is on the terminal side of <m>\theta = 150^{\circ}</m>)
+      and S<m>27^{\circ}</m>E
+      (which lies along the terminal side of <m>\theta = 297^{\circ}</m>).
+    </p>
+    <p>
+      These four bearings are sketched in the plane below.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-5}{5}{-5}{5} \axes \tlabel[cc](0,5.5)N \tlabel[cc](5.5,0)E \tlabel[cc](0,-5.5)S \tlabel[cc](-5.5,0)W \arrow[l5pt] \polyline{(0,0), (-5,0)} \arrow[l5pt] \polyline{(0,0), (0,-5)} \tlabel[cc](3.53, 4.21){N<m>40^{\circ}</m>E} \arrow \arc[c]{(0,0), (0.1,2), -35} \tlabel[cc](0.86,2.3){<m>40^{\circ}</m>} \tlabel[cc](-4.76,2.8){N<m>60^{\circ}</m>W} \arrow \arc[c]{(0,0), (-0.1,2), 55} \tlabel[cc](-1.25,2.17){<m>60^{\circ}</m>} \tlabel[cc](-4.4,-3.7){S<m>50^{\circ}</m>W} \arrow \arc[c]{(0,0), (-0.1,-2), -45} \tlabel[cc](-1.04,-2.22){<m>50^{\circ}</m>} \tlabel[cc](2.50,-5){S<m>27^{\circ}</m>E} \arrow \arc[c]{(0,0), (0.1,-2), 23} \tlabel[cc](0.57, -2.38){<m>27^{\circ}</m>} \point[4pt]{(0,0)} \penwd{1.25pt} \arrow \reverse \polyline{(3.2139, 3.8302), (0,0)} \arrow \reverse \polyline{(-4.3301,2.5), (0,0)} \arrow \reverse \polyline{(-3.83,-3.21), (0,0)} \arrow \reverse \polyline{(2.2700,-4.4550), (0,0)} \end{mfpic}
+    </p>
+    <p>
+      The cardinal directions north, south,
+      east and west are usually not given as bearings in the fashion described above,
+      but rather, one just refers to them as <sq>due north</sq>,
+      <sq>due south</sq>,
+      <sq>due east</sq> and <sq>due west</sq>, respectively,
+      and it is assumed that you know which quadrantal angle goes with each cardinal direction.
+    </p>
+    <p>
+      We make good use of bearings and the Law of Sines in our next example.
+    </p>
+    <example xml:id="losapplication">
+      <statement>
+        <p>
+          Sasquatch Island lies off the coast of Ippizuti Lake.
+          As illustrated below, from a point <m>P</m> on the shore,
+          the bearing to Sasquatch Island is observed to be N<m>60^{\circ}</m>E. From a point <m>Q</m> that is 5 miles due East of <m>P</m>,
+          the bearing to the island is observed to be N<m>45^{\circ}</m>E.
+        </p>
+        <p>
+          \begin{mfpic}[20]{-7}{5}{-5}{6} \polyline{(-6,0), (-2.5,0), (2.5,5),(-6,0)} \polyline{(-2.5,0), (0.25,0)} \arrow \polyline{(-6,0), (-6, 5)} \tlabel[cc](-5.75,5){<m>N</m>} \tlabel[cc](-2.15,5){<m>N</m>} \arrow \polyline{(-2.5,0), (-2.5, 5)} \tlabel(-2.25, 1.5){<m>45^{\circ}</m>} \tlabel(-5.25, 1.5){<m>60^{\circ}</m>} \tlabel[cc](-6.25,-0.5){<m>P</m>} \tlabel[cc](-2.75,-0.5){<m>Q</m>} \arrow \reverse \arrow \shiftpath{(-6,0)} \parafcn{35, 85, 5}{1.25*dir(t)} \arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{50, 85, 5}{dir(t)} \arrow \reverse \arrow \polyline{(-6,-0.8), (-2.5,-0.8)} \tlabel[cc](-4.25,-1.25){<m>5</m> miles} \tlabel(0.5,-0.15){Shoreline} \point[4pt]{(-2.5,0), (-6,0)} \plotsymbol[5pt]{Asterisk}{(2.5,5)} \tlabel[cc](2.75,5.75){Sasquatch Island} \penwd{1.25pt} \polyline{(-6,0), (0.25,0)} \end{mfpic}
+        </p>
+        <p>
+          Assuming the coastline continues to run due East,
+          find the distance from the point <m>Q</m> to the island.
+          What point on the shore is closest to the island?
+          How far is the island from this point?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          As illustrated above, the points <m>P</m>,
+          <m>Q</m>, and the location of the island
+          (represented as a point)
+          form a triangle.
+          Using the bearings information given,
+          we get that the angle between the shore and the island at point <m>P</m> is
+          <m>90^{\circ} - 60^{\circ} = 30^{\circ}</m> while the angle between the shore and the island at point <m>Q</m> is <m>90^{\circ} - 45^{\circ} = 45^{\circ}</m>.
+        </p>
+        <p>
+          We pause for a moment to summarize our known
+          (and label our unknown)
+          information below.
+        </p>
+        <p>
+          \begin{mfpic}[25]{-7}{5}{-5}{6} \arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{5, 35, 5}{dir(t)} \tlabel(-1.25, 0.25){<m>45^{\circ}</m>} \tlabel(-4.5, 0.25){<m>30^{\circ}</m>} \tlabel[cc](-2.75, 0.75){<m>\gamma</m>} \tlabel[cc](0.25, 3.25){<m>\beta</m>} \tlabel[cc](-6.25,-0.5){<m>P</m>} \tlabel[cc](-2.75,-0.5){<m>Q</m>} \arrow \reverse \arrow \shiftpath{(-6,0)} \parafcn{5, 25, 5}{1.25*dir(t)} \arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{50, 175, 5}{0.5*dir(t)} \arrow \reverse \arrow \shiftpath{(2.5,5)} \parafcn{212, 223, 5}{2*dir(t)} \arrow \reverse \arrow \polyline{(-6,-0.8), (-2.5,-0.8)} \tlabel[cc](-4.25,-1.25){<m>5</m> miles} \tlabel(-0.75,1.25){<m>d</m> miles} \tlabel(0.5,-0.15){Shoreline} \point[4pt]{(-2.5,0), (-6,0)} \plotsymbol[6pt]{Asterisk}{(2.5,5)} \tlabel[cc](2.75,5.75){Sasquatch Island} \polyline{(-2.5,0), (0.25,0)} \penwd{1.25pt} \polyline{(-6,0), (-2.5,0), (2.5,5),(-6,0)} \end{mfpic}
+        </p>
+        <p>
+          In order to use the Law of Sines to find the distance <m>d</m> from <m>Q</m> to the island,
+          we first need to find the measure of <m>\beta</m> which is the angle opposite the side of length <m>5</m> miles.
+        </p>
+        <p>
+          Since the angles <m>\gamma</m> and <m>45^{\circ}</m> are supplemental,
+          we get <m>\gamma = 180^{\circ} - 45^{\circ} = 135^{\circ}</m>.
+          Knowing <m>\gamma</m>,
+          we now find <m>\beta = 180^{\circ} - 30^{\circ} - \gamma = 180^{\circ} - 30^{\circ} - 135^{\circ} = 15^{\circ}</m>.
+        </p>
+        <p>
+          By the Law of Sines, we have
+          <m>\frac{d}{\sin\left(30^{\circ}\right)} = \frac{5}{\sin\left(15^{\circ}\right)}</m> which gives <m>d = \frac{5\sin\left(30^{\circ}\right)}{\sin\left(15^{\circ}\right)} \approx 9.66</m> miles.
+        </p>
+        <p>
+          To find the point on the coast closest to the island,
+          which we've labeled as <m>C</m> in the diagram below,
+          we need to find the perpendicular distance from the island to the coast.<fn>
+          Do you see why <m>C</m> must lie to the right (East) of <m>Q</m>?
+          </fn> Let <m>x</m> denote the distance from the second observation point <m>Q</m> to the point <m>C</m> and let <m>y</m> denote the distance from <m>C</m> to the island.
+        </p>
+        <p>
+          \begin{mfpic}[25]{-7}{5}{-5}{6} \polyline{(2.25, 0), (2.25, 0.25), (2.5, 0.25)} \tlabel(-1.25, 0.25){<m>45^{\circ}</m>} \tlabel(1.75,3.5){<m>\beta</m>} \tlabel(-3,2.5){<m>d \approx 9.66</m> miles} \arrow \reverse \arrow \shiftpath{(-2.5,0)} \parafcn{5, 35, 5}{dir(t)} \arrow \reverse \arrow \shiftpath{(2.5,5)} \parafcn{230, 265, 5}{dir(t)} \arrow \reverse \arrow \polyline{(-2.5,-0.8), (2.5,-0.8)} \tlabel[cc](0,-1.25){<m>x</m> miles} \tlabel(2.75,2.25){<m>y</m> miles} \tlabel[cc](-2.75,-0.5){<m>Q</m>} \tlabel[cc](2.75,-0.5){<m>C</m>} \point[4pt]{(-2.5,0), (2.5,0)} \plotsymbol[6pt]{Asterisk}{(2.5,5)} \tlabel[cc](2.75,5.75){Sasquatch Island} \penwd{1.25pt} \polyline{(-2.5,0), (2.5,5), (2.5,0), (-2.5,0)} \end{mfpic}
+        </p>
+        <p>
+          Using <xref ref="righttrianglesinecosinetangent">Definition</xref>,
+          we get <m>\sin\left(45^{\circ}\right) = \frac{y}{d}</m>,
+          so <m>y = d \sin\left(45^{\circ}\right) \approx 9.66 \left(\frac{\sqrt{2}}{2}\right) \approx 6.83</m> miles.
+          Hence, the island is approximately <m>6.83</m> miles from the coast.
+        </p>
+        <p>
+          To find the distance from <m>Q</m> to <m>C</m>,
+          we note that <m>\beta = 180^{\circ} - 90^{\circ} - 45^{\circ} = 45^{\circ}</m> so by symmetry,<fn>
+          Or by <xref ref="righttrianglesinecosinetangent">Definition</xref> again <ellipsis/>
+          </fn> we get <m>x = y \approx 6.83</m> miles.
+          Hence, the point on the shore closest to the island is approximately <m>6.83</m> miles down the coast from the second observation point <m>Q</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="gradeofroad">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="firstlawofsines">Exercises</xref>
+      - <xref ref="lastlawofsines"></xref>,
+      solve for the remaining side(s) and angle(s) if possible.
+      As in the text, <m>(\alpha, a)</m>,
+      <m>(\beta, b)</m> and <m>(\gamma,
+      c)</m> are angle-side opposite pairs.
+      <ol cols="2">
+        <li xml:id="firstlawofsines">
+          <p>
+            <m>\alpha = 13^{\circ}, \; \beta = 17^{\circ}, \; a = 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 73.2^{\circ}, \; \beta = 54.1^{\circ}, \; a = 117</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 95^{\circ}, \; \beta = 85^{\circ}, \; a = 33.33</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 95^{\circ}, \; \beta = 62^{\circ}, \; a = 33.33</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 117^{\circ}, \; a = 35, \; b = 42</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 117^{\circ}, \; a = 45, \; b = 42</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 68.7^{\circ}, \; a = 88, \; b = 92</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 42^{\circ}, \; a = 17, \; b = 23.5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 68.7^{\circ}, \; a = 70, \; b = 90</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 30^{\circ}, \; a = 7, \; b = 14</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 42^{\circ}, \; a = 39, \; b = 23.5</m>
+          </p>
+        </li>
+        <li xml:id="secondarea">
+          <p>
+            <m>\gamma = 53^{\circ}, \; \alpha = 53^{\circ}, \; c = 28.01</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\alpha = 6^{\circ}, \; a = 57, \; b = 100</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\gamma = 74.6^{\circ}, \; c = 3, \; a = 3.05</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\beta = 102^{\circ}, \; b = 16.75, \; c = 13</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\beta = 102^{\circ}, \; b = 16.75, \; c = 18</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\beta = 102^{\circ}, \; \gamma = 35^{\circ}, \; b = 16.75</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\beta = 29.13^{\circ}, \; \gamma = 83.95^{\circ}, \; b = 314.15</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\gamma = 120^{\circ}, \; \beta = 61^{\circ}, \; c = 4</m>
+          </p>
+        </li>
+        <li xml:id="lastlawofsines">
+          <p>
+            <m>\alpha = 50^{\circ}, \; a = 25, \; b = 12.5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the area of the triangles given in <xref ref="firstlawofsines">Exercises</xref>,
+            <xref ref="secondarea"></xref> and <xref ref="lastlawofsines"></xref> above.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <em>The Grade of a Road:</em> The grade of a road is much like the pitch of a roof (See <xref ref="roofpitchex">Example</xref>) in that it expresses the ratio of rise/run.
+      In the case of a road,
+      this ratio is always positive because it is measured going uphill and it is usually given as a percentage.
+      For example,
+      a road which rises 7 feet for every 100 feet of (horizontal) forward progress is said to have a 7% grade.
+      However, if we want to apply any Trigonometry to a story problem involving roads going uphill or downhill,
+      we need to view the grade as an angle with respect to the horizontal.
+      In <xref ref="firstroadgrade">Exercises</xref>
+      - <xref ref="lastroadgrade"></xref>,
+      we first have you change road grades into angles and then use the Law of Sines in an application.
+      <ol>
+        <li xml:id="firstroadgrade">
+          <p>
+            Using a right triangle with a horizontal leg of length 100 and vertical leg with length 7, show that a 7% grade means that the road (hypotenuse) makes about a
+            <m>4^{\circ}</m> angle with the horizontal.
+            (It will not be exactly <m>4^{\circ}</m>, but it's pretty close.)
+          </p>
+        </li>
+        <li>
+          <p>
+            What grade is given by a <m>9.65^{\circ}</m> angle made by the road and the horizontal?<fn>
+            I have friends who live in Pacifica, CA and their road is actually this steep.
+            It's not a nice road to drive.
+            </fn>
+          </p>
+        </li>
+        <li xml:id="lastroadgrade">
+          <p>
+            Along a long, straight stretch of mountain road with a 7% grade,
+            you see a tall tree standing perfectly plumb alongside the road.<fn>
+            The word <sq>plumb</sq> here means that the tree is perpendicular to the horizontal.
+            </fn>  From a point 500 feet downhill from the tree,
+            the angle of inclination from the road to the top of the tree is <m>6^{\circ}</m>.
+            Use the Law of Sines to find the height of the tree.
+            (Hint: First show that the tree makes a
+            <m>94^{\circ}</m> angle with the road.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <xref ref="bearingfirstexercise">Exercises</xref>
+      - <xref ref="bearinglastexercise"></xref>
+      use the concept of bearings as introduced in <xref ref="bearings">Section</xref>.
+    </p>
+    <ol cols="2">
+      <li xml:id="bearingfirstexercise">
+        <p>
+          Find the angle <m>\theta</m> in standard position with
+          <m>0^{\circ} \leq \theta \lt 360^{\circ}</m> which corresponds to each of the bearings given below.
+        </p>
+        <ol>
+          <li>
+            <p>
+              due west
+            </p>
+          </li>
+          <li>
+            <p>
+              S<m>83^{\circ}</m>E
+            </p>
+          </li>
+          <li>
+            <p>
+              N<m>5.5^{\circ}</m>E
+            </p>
+          </li>
+          <li>
+            <p>
+              due south
+            </p>
+          </li>
+          <li>
+            <p>
+              N<m>31.25^{\circ}</m>W
+            </p>
+          </li>
+          <li>
+            <p>
+              S<m>72^{\circ}41'12''</m>W<fn>
+              See <xref ref="degreeex">Example</xref>
+              in <xref ref="AppAngles">Section</xref>
+              for a review of the DMS system.
+              </fn>
+            </p>
+          </li>
+          <li>
+            <p>
+              N<m>45^{\circ}</m>E
+            </p>
+          </li>
+          <li>
+            <p>
+              S<m>45^{\circ}</m>W
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The Colonel spots a campfire at a of bearing N<m>42^{\circ}</m>E from his current position.
+          Sarge, who is positioned 3000 feet due east of the Colonel,
+          reckons the bearing to the fire to be N<m>20^{\circ}</m>W from his current position.
+          Determine the distance from the campfire to each man,
+          rounded to the nearest foot.
+        </p>
+      </li>
+      <li>
+        <p>
+          A hiker starts walking due west from Sasquatch Point and gets to the Chupacabra Trailhead before she realizes that she hasn't reset her pedometer.
+          From the Chupacabra Trailhead she hikes for 5 miles along a bearing of N<m>53^{\circ}</m>W which brings her to the Muffin Ridge Observatory.
+          From there, she knows a bearing of S<m>65^{\circ}</m>E will take her straight back to Sasquatch Point.
+          How far will she have to walk to get from the Muffin Ridge Observatory to Sasquach Point?
+          What is the distance between Sasquatch Point and the Chupacabra Trailhead?
+        </p>
+      </li>
+      <li>
+        <p>
+          The captain of the SS Bigfoot sees a signal flare at a bearing of N<m>15^{\circ}</m>E from her current location.
+          From his position,
+          the captain of the HMS Sasquatch finds the signal flare to be at a bearing of N<m>75^{\circ}</m>W. If the SS Bigfoot is 5 miles from the HMS Sasquatch and the bearing from the SS Bigfoot to the HMS Sasquatch is N<m>50^{\circ}</m>E, find the distances from the flare to each vessel,
+          rounded to the nearest tenth of a mile.
+        </p>
+      </li>
+      <li>
+        <p>
+          Carl spies a potential Sasquatch nest at a bearing of N<m>10^{\circ}</m>E and radios Jeff,
+          who is at a bearing of N<m>50^{\circ}</m>E from Carl's position.
+          From Jeff's position,
+          the nest is at a bearing of S<m>70^{\circ}</m>W. If Jeff and Carl are 500 feet apart,
+          how far is Jeff from the Sasquatch nest?
+          Round your answer to the nearest foot.
+        </p>
+      </li>
+      <li>
+        <p>
+          A hiker determines the bearing to a lodge from her current position is S<m>40^{\circ}</m>W. She proceeds to hike 2 miles at a bearing of S<m>20^{\circ}</m>E at which point she determines the bearing to the lodge is S<m>75^{\circ}</m>W. How far is she from the lodge at this point?
+          Round your answer to the nearest hundredth of a mile.
+        </p>
+      </li>
+      <li xml:id="bearinglastexercise">
+        <p>
+          A watchtower spots a ship off shore at a bearing of N<m>70^{\circ}</m>E. A second tower,
+          which is 50 miles from the first at a bearing of S<m>80^{\circ}</m>E from the first tower,
+          determines the bearing to the ship to be N<m>25^{\circ}</m>W. How far is the boat from the second tower?
+          Round your answer to the nearest tenth of a mile.
+        </p>
+      </li>
+    </ol>
+    <p>
+      <xref ref="losincliniationdepressionexfirst">Exercises</xref> - <xref ref="losincliniationdepressionexlast"></xref>
+      use the concepts of <sq>angle of inclination</sq> and <sq>angle of depression</sq> introduced in <xref ref="AppRightTrig">Section</xref>
+      on <xref ref="angleofelevation">page</xref>
+      and <xref ref="angleofdepression">Exercise</xref>, respectively.
+    </p>
+    <ol>
+      <li xml:id="losincliniationdepressionexfirst">
+        <p>
+          Skippy and Sally decide to hunt UFOs.
+          One night, they position themselves 2 miles apart on an abandoned stretch of desert runway.
+          An hour into their investigation, Skippy spies a UFO hovering over a spot on the runway directly between him and Sally.
+          He records the angle of inclination from the ground to the craft to be
+          <m>75^{\circ}</m> and radios Sally immediately to find the angle of inclination from her position to the craft is <m>50^{\circ}</m>.
+          How high off the ground is the UFO at this point?
+          Round your answer to the nearest foot.
+          (Recall: 1 mile is 5280 feet.)
+        </p>
+      </li>
+      <li xml:id="losincliniationdepressionexlast">
+        <p>
+          The angle of depression from an observer in an apartment complex to a gargoyle on the building next door is <m>55^{\circ}</m>.
+          From a point five stories below the original observer,
+          the angle of inclination to the gargoyle is <m>20^{\circ}</m>.
+          Find the distance from each observer to the gargoyle and the distance from the gargoyle to the apartment complex.
+          Round your answers to the nearest foot.
+          (Use the rule of thumb that one story of a building is 9 feet.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that the Law of Sines holds when <m>\triangle ABC</m> is a right triangle.
+        </p>
+      </li>
+      <li>
+        <p>
+          Discuss with your classmates why knowing only the three angles of a triangle is not enough to determine any of the sides.
+        </p>
+      </li>
+      <li>
+        <p>
+          Discuss with your classmates why the Law of Sines cannot be used to find the angles in the triangle when only the three sides are given.
+          Also discuss what happens if only two sides and the angle between them are given.
+          (Said another way,
+          explain why the Law of Sines cannot be used in the SSS and SAS cases.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Given <m>\alpha = 30^{\circ}</m> and <m>b = 10</m>,
+          choose four different values for <m>a</m> so that
+        </p>
+        <ol>
+          <li>
+            <p>
+              the information yields no triangle
+            </p>
+          </li>
+          <li>
+            <p>
+              the information yields exactly one right triangle
+            </p>
+          </li>
+          <li>
+            <p>
+              the information yields two distinct triangles
+            </p>
+          </li>
+          <li>
+            <p>
+              the information yields exactly one obtuse triangle
+            </p>
+          </li>
+        </ol>
+        Explain why you cannot choose <m>a</m> in such a way as to have <m>\alpha = 30^{\circ}</m>,
+        <m>b = 10</m> and your choice of <m>a</m> yield only one triangle where that unique triangle has three acute angles.
+      </li>
+      <li>
+        <p>
+          Use the cases and diagrams in the proof of the Law of Sines
+          (<xref ref="lawofsines">Theorem</xref>)
+          to prove the area formulas given in <xref ref="areaformulasine">Theorem</xref>.
+          Why do those formulas yield square units when four quantities are being multiplied together?
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 13^{\circ} \amp \beta = 17^{\circ} \amp \gamma = 150^{\circ} \\ a = 5 \amp b \approx 6.50 \amp c \approx 11.11 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 73.2^{\circ} \amp \beta = 54.1^{\circ} \amp \gamma = 52.7^{\circ} \\ a = 117 \amp b \approx 99.00 \amp c \approx 97.22 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <tabular>
+            <row>
+              <cell>Information does not</cell>
+            </row>
+            <row>
+              <cell>produce a triangle</cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 95^{\circ} \amp \beta = 62^{\circ} \amp \gamma = 23^{\circ} \\ a = 33.33 \amp b \approx 29.54 \amp c \approx 13.07 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <tabular>
+            <row>
+              <cell>Information does not</cell>
+            </row>
+            <row>
+              <cell>produce a triangle</cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 117^{\circ} \amp \beta \approx 56.3^{\circ} \amp \gamma \approx 6.7^{\circ} \\ a = 45 \amp b = 42 \amp c \approx 5.89 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 68.7^{\circ} \amp \beta \approx 76.9^{\circ} \amp \gamma \approx 34.4^{\circ} \\ a = 88 \amp b = 92 \amp c \approx 53.36 \end{array}</m> <m>\begin{array}{lll} \alpha = 68.7^{\circ} \amp \beta \approx 103.1^{\circ} \amp \gamma \approx 8.2^{\circ} \\ a = 88 \amp b = 92 \amp c \approx 13.47 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 42^{\circ} \amp \beta \approx 67.66^{\circ} \amp \gamma \approx 70.34^{\circ} \\ a = 17 \amp b = 23.5 \amp c \approx 23.93 \end{array}</m> <m>\begin{array}{lll} \alpha = 42^{\circ} \amp \beta \approx 112.34^{\circ} \amp \gamma \approx 25.66^{\circ} \\ a = 17 \amp b = 23.5 \amp c \approx 11.00 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <tabular>
+            <row>
+              <cell>Information does not</cell>
+            </row>
+            <row>
+              <cell>produce a triangle</cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 30^{\circ} \amp \beta = 90^{\circ} \amp \gamma = 60^{\circ} \\ a = 7 \amp b = 14 \amp c = 7\sqrt{3} \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 42^{\circ} \amp \beta \approx 23.78^{\circ} \amp \gamma \approx 114.22^{\circ} \\ a = 39 \amp b = 23.5 \amp c \approx 53.15 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 53^{\circ} \amp \beta = 74^{\circ} \amp \gamma = 53^{\circ} \\ a = 28.01 \amp b \approx 33.71 \amp c = 28.01 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 6^{\circ} \amp \beta \approx 169.43^{\circ} \amp \gamma \approx 4.57^{\circ} \\ a = 57 \amp b = 100 \amp c \approx 43.45 \end{array}</m> <m>\begin{array}{lll} \alpha = 6^{\circ} \amp \beta \approx 10.57^{\circ} \amp \gamma \approx 163.43^{\circ} \\ a = 57 \amp b = 100 \amp c \approx 155.51 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha \approx 78.59^{\circ} \amp \beta \approx 26.81^{\circ} \amp \gamma = 74.6^{\circ} \\ a = 3.05 \amp b \approx 1.40 \amp c = 3 \end{array}</m> <m>\begin{array}{lll} \alpha \approx 101.41^{\circ} \amp \beta \approx 3.99^{\circ} \amp \gamma = 74.6^{\circ} \\ a = 3.05 \amp b \approx 0.217 \amp c = 3 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha \approx 28.61^{\circ} \amp \beta = 102^{\circ} \amp \gamma \approx 49.39^{\circ} \\ a \approx 8.20 \amp b = 16.75 \amp c = 13 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <tabular>
+            <row>
+              <cell>Information does not</cell>
+            </row>
+            <row>
+              <cell>produce a triangle</cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 43^{\circ} \amp \beta = 102^{\circ} \amp \gamma = 35^{\circ} \\ a \approx 11.68 \amp b = 16.75 \amp c \approx 9.82 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 66.92^{\circ} \amp \beta = 29.13^{\circ} \amp \gamma = 83.95^{\circ} \\ a \approx 593.69 \amp b = 314.15 \amp c \approx 641.75 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <tabular>
+            <row>
+              <cell>Information does not</cell>
+            </row>
+            <row>
+              <cell>produce a triangle</cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\begin{array}{lll} \alpha = 50^{\circ} \amp \beta \approx 22.52^{\circ} \amp \gamma \approx 107.48^{\circ} \\ a = 25 \amp b = 12.5 \amp c \approx 31.13 \end{array}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The area of the triangle from <xref ref="firstlawofsines">Exercise</xref> is about 8.1 square units.
+          The area of the triangle from <xref ref="secondarea">Exercise</xref> is about 377.1 square units.
+          The area of the triangle from <xref ref="lastlawofsines">Exercise</xref> is about 149 square units.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\arctan\left(\frac{7}{100}\right) \approx 0.699</m> radians,
+          which is equivalent to <m>4.004^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          About 17
+        </p>
+      </li>
+      <li>
+        <p>
+          About 53 feet
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\theta = 180^{\circ}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta = 353^{\circ}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta = 84.5^{\circ}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta = 270^{\circ}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta = 121.25^{\circ}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta = 197^{\circ} 18' 48''</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta = 45^{\circ}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\theta = 225^{\circ}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          The Colonel is about 3193 feet from the campfire.
+          Sarge is about 2525 feet to the campfire.
+        </p>
+      </li>
+      <li>
+        <p>
+          The distance from the Muffin Ridge Observatory to Sasquach Point is about 7.12 miles.
+          The distance from Sasquatch Point to the Chupacabra Trailhead is about 2.46 miles.
+        </p>
+      </li>
+      <li>
+        <p>
+          The SS Bigfoot is about 4.1 miles from the flare.
+          The HMS Sasquatch is about 2.9 miles from the flare.
+        </p>
+      </li>
+      <li>
+        <p>
+          Jeff is about 371 feet from the nest.
+        </p>
+      </li>
+      <li>
+        <p>
+          She is about 3.02 miles from the lodge
+        </p>
+      </li>
+      <li>
+        <p>
+          The boat is about 25.1 miles from the second tower.
+        </p>
+      </li>
+      <li>
+        <p>
+          The UFO is hovering about 9539 feet above the ground.
+        </p>
+      </li>
+      <li>
+        <p>
+          The gargoyle is about 44 feet from the observer on the upper floor.
+          The gargoyle is about 27 feet from the observer on the lower floor.
+          The gargoyle is about 25 feet from the other building.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

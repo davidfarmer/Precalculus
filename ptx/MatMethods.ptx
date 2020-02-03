@@ -1,0 +1,1084 @@
+<section xml:id="MatMethods">
+  <title>Systems of Linear Equations: Matrix Inverses</title>
+  <introduction>
+    <p>
+      We concluded <xref ref="MatArithmetic">Section</xref>
+      by showing how we can rewrite a system of linear equations as the matrix equation <m>AX=B</m> where <m>A</m> and <m>B</m> are known matrices and the solution matrix <m>X</m> of the equation corresponds to the solution of the system.
+      In this section,
+      we develop the method for solving such an equation.
+      To that end, consider the system
+      <me>
+        \left\{ \begin{array}{rcr} 2x-3y \amp  = \amp  16 \\ 3x+4y \amp  = \amp  7 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      To write this as a matrix equation,
+      we follow the procedure outlined on <xref ref="systemasmatrixeqn">page</xref>.
+      We find the coefficient matrix <m>A</m>,
+      the unknowns matrix <m>X</m> and constant matrix <m>B</m> to be
+      <me>
+        \begin{array}{ccc}  A = \left[ \begin{array}{rr} 2 \amp  -3 \\ 3 \amp  4 \end{array}  \right]  \amp  X = \left[ \begin{array}{r} x \\ y \end{array}  \right]  \amp  B = \left[ \begin{array}{r} 16 \\ 7 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      In order to motivate how we solve a matrix equation like <m>AX = B</m>,
+      we revisit solving a similar equation involving real numbers.
+      For instance, to solve <m>3x = 5</m>,
+      we divide both sides by <m>3</m> and obtain <m>x = \frac{5}{3}</m>.
+      How can we go about defining an analogous process for matrices?
+      To answer this question, we solve <m>3x=5</m> again, but this time,
+      we pay attention to the properties of real numbers being used at each step.
+      Recall that dividing by <m>3</m> is the same as multiplying by <m>\frac{1}{3} = 3^{-1}</m>,
+      the so-called <em>multiplicative inverse</em><fn>
+      Every nonzero real number <m>a</m> has a multiplicative inverse,
+      denoted <m>a^{-1}</m>,
+      such that  <m>a^{-1} \cdot a = a \cdot a^{-1} = 1</m>.
+      </fn> of <m>3</m>.
+      <me>
+        \begin{array}{rclr}  3x \amp  = \amp  5 \\ 3^{-1}(3x) \amp  = \amp  3^{-1}(5) \amp  \text{ Multiply by the (multiplicative) inverse of \(3\) }  \\ \left(3^{-1}\cdot 3\right) x \amp  = \amp  3^{-1}(5) \amp  \text{ Associative property of multiplication }  \\ 1 \cdot x \amp   = \amp  3^{-1}(5) \amp  \text{ Inverse property }  \\ x \amp   = \amp  3^{-1}(5) \amp  \text{ Multiplicative Identity } \end{array}
+      </me>
+    </p>
+    <p>
+      If we wish to check our answer,
+      we substitute <m>x = 3^{-1}(5)</m> into the original equation
+      <me>
+        \begin{array}{rclr}  3x \amp  \stackrel{?}{=} \amp  5 \\ 3\left( 3^{-1}(5)\right) \amp  \stackrel{?}{=} \amp  5 \\ \left(3 \cdot 3^{-1}\right)(5) \amp  \stackrel{?}{=} \amp  5 \amp  \text{ Associative property of multiplication }   \\ 1 \cdot 5 \amp  \stackrel{?}{=} \amp  5 \amp  \text{ Inverse property }  \\ 5 \amp  \stackrel{\checkmark}{=} \amp  5 \amp  \text{ Multiplicative Identity } \end{array}
+      </me>
+    </p>
+    <p>
+      Thinking back to <xref ref="matrixmultprops">Theorem</xref>,
+      we know that matrix multiplication enjoys both an associative property and a multiplicative identity.
+      What's missing from the mix is a multiplicative inverse for the coefficient matrix <m>A</m>.
+      Assuming we can find such a beast, we can mimic our solution
+      (and check)
+      to <m>3x=5</m> as follows
+      <me>
+        \begin{array}{cc}  \text{ Solving \(AX = B\) }  \amp  \text{ Checking our answer } \begin{array}{rcl}  AX \amp  = \amp  B \\  A^{-1}(AX) \amp  = \amp  A^{-1}B \\  \left(A^{-1}A\right) X \amp  = \amp  A^{-1}B \\  I_{2}X \amp  = \amp  A^{-1}B \\  X \amp  = \amp  A^{-1}B \end{array}  \amp  \begin{array}{rcl}  AX \amp  \stackrel{?}{=} \amp  B \\  A \left(A^{-1}B\right) \amp  \stackrel{?}{=} \amp  B \\  \left(AA^{-1}\right) B \amp  \stackrel{?}{=}\amp  B \\  I_{2}B \amp  \stackrel{?}{=} \amp  B \\  B \amp  \stackrel{\checkmark}{=}\amp  B \end{array} \end{array}
+      </me>
+    </p>
+    <p>
+      The matrix <m>A^{-1}</m> is read <sq><m>A</m>-inverse</sq> and we will define it formally later in the section.
+      At this stage,
+      we have no idea if such a matrix <m>A^{-1}</m> exists,
+      but that won't deter us from trying to find it.<fn>
+      Much like Carl's quest to find Sasquatch.
+      </fn>
+    </p>
+    <p>
+      We want <m>A^{-1}</m> to satisfy two equations,
+      <m>A^{-1}A = I_{2}</m> and <m>AA^{-1} = I_{2}</m>,
+      making <m>A^{-1}</m> necessarily a <m>2 \times 2</m> matrix.<fn>
+      Since matrix multiplication isn't necessarily commutative,
+      at this stage,
+      these are two different equations.
+      </fn> Hence, <m>A^{-1}</m> has the form
+      <me>
+        A^{-1} = \left[ \begin{array}{rr} x_{1} \amp  x_{2} \\ x_{3} \amp  x_{4} \end{array}  \right]
+      </me>
+      for real numbers <m>x_{1}</m>,
+      <m>x_{2}</m>, <m>x_{3}</m> and <m>x_{4}</m>.
+      For reasons which will become clear later,
+      we focus our attention on the equation <m>AA^{-1} = I_{2}</m>.
+      We have
+      <me>
+        \begin{array}{rcl}  AA^{-1} \amp  = \amp  I_{2} \\  \left[ \begin{array}{rr} 2 \amp  -3 \\ 3 \amp  4 \end{array}  \right] \left[ \begin{array}{rr} x_{1} \amp  x_{2} \\ x_{3} \amp  x_{4} \end{array}  \right]  \amp  = \amp  \left[ \begin{array}{rr} 1 \amp  0 \\ 0 \amp  1 \end{array}  \right] \\  \left[ \begin{array}{rr} 2x_{1} - 3x_{3} \amp   2x_{2} - 3x_{4} \\ 3x_{1} +4x_{3} \amp   3x_{2} +4x_{4} \end{array}  \right]  \amp  = \amp  \left[ \begin{array}{rr} 1 \amp  0 \\ 0 \amp  1 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      This gives rise to <em>two</em>
+      more systems of equations
+      <me>
+        \begin{array}{cc}  \left\{ \begin{array}{rcr} 2x_{1}-3x_{3} \amp  = \amp  1 \\ 3x_{1}+4x_{3} \amp  = \amp  0 \end{array}  \right.  \amp  \left\{ \begin{array}{rcr} 2x_{2}-3x_{4} \amp  = \amp  0 \\ 3x_{2}+4x_{4} \amp  = \amp  1 \end{array}  \right. \end{array}
+      </me>
+    </p>
+    <p>
+      At this point, it may seem absurd to continue with this venture.
+      After all, the intent was to solve
+      <em>one</em> system of equations,
+      and in doing so, we have produced
+      <em>two</em> more to solve.
+      Remember, the objective of this discussion is to develop a general <em>method</em> which,
+      when used in the correct scenarios,
+      allows us to do far more than just solve a system of equations.
+    </p>
+    <p>
+      If we set about solving these systems using augmented matrices using the techniques in <xref ref="AugMatrices">Section</xref>,
+      we see that not only do both systems have the same coefficient matrix,
+      this coefficient matrix is none other than the matrix <m>A</m> itself! (We will come back to this observation in a moment.)
+      <me>
+        \begin{array}{ccc}  \left\{ \begin{array}{rcr} 2x_{1}-3x_{3} \amp  = \amp  1 \\ 3x_{1}+4x_{3} \amp  = \amp  0 \end{array}  \right.  \amp \xrightarrow{\text{ Encode into a matrix } }  \amp \left[ \begin{array}{rr|r} 2 \amp  -3 \amp  1 \\ 3 \amp  4 \amp  0 \end{array}  \right] \\   \left\{ \begin{array}{rcr} 2x_{2}-3x_{4} \amp  = \amp  0 \\ 3x_{2}+4x_{4} \amp  = \amp  1 \end{array}  \right.  \amp \xrightarrow{\text{ Encode into a matrix } }  \amp  \left[ \begin{array}{rr|r} 2 \amp  -3 \amp  0 \\ 3 \amp  4 \amp  1 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      To solve these two systems,
+      we use Gauss-Jordan Elimination to put the augmented matrices into reduced row echelon form.
+      (We leave the details to the reader.)
+      For the first system, we get
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rr|r} 2 \amp  -3 \amp  1 \\ 3 \amp  4 \amp  0 \end{array}  \right] \amp \xrightarrow{\text{ Gauss Jordan Elimination } }  \amp \left[ \begin{array}{rr|r} 1 \amp  0 \amp  \frac{4}{17} \\ 0 \amp  1 \amp  -\frac{3}{17} \end{array}  \right] \end{array}
+      </me>
+      which gives <m>x_{1} =  \frac{4}{17}</m> and <m>x_{3} = -\frac{3}{17}</m>.
+      To solve the second system,
+      we use the exact same row operations,
+      in the same order, and we obtain
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rr|r} 2 \amp  -3 \amp  0 \\ 3 \amp  4 \amp  1 \end{array}  \right] \amp \xrightarrow{\text{ Gauss Jordan Elimination } }  \amp \left[ \begin{array}{rr|r} 1 \amp  0 \amp  \frac{3}{17} \\ 0 \amp  1 \amp  \frac{2}{17} \end{array}  \right] \end{array}
+      </me>
+      which means <m>x_{2} = \frac{3}{17}</m> and <m>x_{4} = \frac{2}{17}</m>.
+      Hence,
+      <me>
+        A^{-1} = \left[ \begin{array}{rr} x_{1} \amp  x_{2} \\ x_{3} \amp  x_{4} \end{array}  \right] = \left[ \begin{array}{rr} \frac{4}{17} \amp  \frac{3}{17} \\  -\frac{3}{17} \amp  \frac{2}{17} \end{array}  \right]
+      </me>
+    </p>
+    <p>
+      We can check to see that <m>A^{-1}</m> behaves as it should by computing <m>AA^{-1}</m>
+      <me>
+        AA^{-1} = \left[ \begin{array}{rr} 2 \amp  -3 \\ 3 \amp  4 \end{array}  \right] \left[ \begin{array}{rr} \frac{4}{17} \amp  \frac{3}{17} \\  -\frac{3}{17} \amp  \frac{2}{17} \end{array}  \right] = \left[ \begin{array}{rr} 1 \amp  0 \\ 0 \amp  1 \end{array}  \right] = I_{2} \, \, \checkmark
+      </me>
+    </p>
+    <p>
+      As an added bonus,
+      <me>
+        A^{-1}A = \left[ \begin{array}{rr} \frac{4}{17} \amp  \frac{3}{17} \\  -\frac{3}{17} \amp  \frac{2}{17} \end{array}  \right]\left[ \begin{array}{rr} 2 \amp  -3 \\ 3 \amp  4 \end{array}  \right]  = \left[ \begin{array}{rr} 1 \amp  0 \\ 0 \amp  1 \end{array}  \right] = I_{2} \, \, \checkmark
+      </me>
+    </p>
+    <p>
+      We can now return to the problem at hand.
+      From our discussion on <xref ref="solvingmatrixeqn">page</xref>, we know
+      <me>
+        X = A^{-1}B = \left[ \begin{array}{rr} \frac{4}{17} \amp  \frac{3}{17} \\  -\frac{3}{17} \amp  \frac{2}{17} \end{array}  \right]\left[ \begin{array}{r} 16 \\ 7 \end{array}  \right] = \left[ \begin{array}{r} 5 \\ -2 \end{array}  \right]
+      </me>
+      so that our final solution to the system is <m>(x,y) = (5,-2)</m>.
+    </p>
+    <p>
+      As mentioned,
+      the point of this exercise was not just to solve the system of linear equations,
+      but to develop a general method for finding <m>A^{-1}</m>.
+      To that end,
+      we analyze the foregoing discussion in a more general context.
+      To find <m>A^{-1}</m>, we used two augmented matrices,
+      both containing the entries as <m>A</m>:
+      <me>
+        \begin{array}{rcl}  \left[ \begin{array}{rr|r} 2 \amp  -3 \amp  1 \\ 3 \amp  4 \amp  0 \end{array}  \right] \amp  = \amp  \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ <em>A</em>}</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>0</cell>
+          </row>
+        </tabular>
+        \right] \\  \left[ \begin{array}{rr|r} 2 \amp  -3 \amp  0 \\ 3 \amp  4 \amp  1 \end{array}  \right] \amp  = \amp  \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ <em>A</em>}</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>1</cell>
+          </row>
+        </tabular>
+        \right] \end{array}
+      </me>
+    </p>
+    <p>
+      We also note that the reduced row echelon forms of these augmented matrices can be written as
+      <me>
+        \begin{array}{rcl}  \left[ \begin{array}{rr|r} 1 \amp  0 \amp  \frac{4}{17} \\ 0 \amp  1 \amp  -\frac{3}{17} \end{array}  \right] \amp  = \amp  \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ \(I_{2}\)}</cell>
+            <cell>\(x_{1}\)</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>\(x_{3}\)</cell>
+          </row>
+        </tabular>
+        \right]\\  \left[ \begin{array}{rr|r} 1 \amp  0 \amp  \frac{3}{17} \\ 0 \amp  1 \amp  \frac{2}{17} \end{array}  \right] \amp  = \amp  \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ \(I_{2}\)}</cell>
+            <cell>\(x_{2}\)</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>\(x_{4}\)</cell>
+          </row>
+        </tabular>
+        \right] \end{array}
+      </me>
+      where we have identified the entries to the left of the vertical bar as the identity <m>I_{2}</m> and the entries to the right of the vertical bar as the solutions to our systems.
+      The long and short of the solution process can be summarized as
+      <me>
+        \begin{array}{ccc}  \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ <em>A</em>}</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>0</cell>
+          </row>
+        </tabular>
+        \right] \amp \xrightarrow{\text{ Gauss Jordan Elimination } } \amp \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ \(I_{2}\)}</cell>
+            <cell>\(x_{1}\)</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>\(x_{3}\)</cell>
+          </row>
+        </tabular>
+        \right]  \\  \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ <em>A</em>}</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>1</cell>
+          </row>
+        </tabular>
+        \right] \amp \xrightarrow{\text{ Gauss Jordan Elimination } } \amp \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ \(I_{2}\)}</cell>
+            <cell>\(x_{2}\)</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>\(x_{4}\)</cell>
+          </row>
+        </tabular>
+        \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Since the row operations for both processes are the same,
+      all of the arithmetic on the left hand side of the vertical bar is identical in both problems.
+      The only difference between the two processes is what happens to the constants to the right of the vertical bar.
+      As long as we keep these separated into columns,
+      we can combine our efforts into one <sq>super-sized</sq> augmented matrix and describe the above process as
+      <me>
+        \begin{array}{ccc}  \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ <em>A</em>}</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>0</cell>
+            <cell>1</cell>
+          </row>
+        </tabular>
+        \right] \amp \xrightarrow{\text{ Gauss Jordan Elimination } } \amp \left[
+        <tabular>
+          <row>
+            <cell>\multirow{2}{10pt}{ \(I_{2}\)}</cell>
+            <cell>\(x_{1}\)</cell>
+            <cell>\(x_{2}\)</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>\(x_{3}\)</cell>
+            <cell>\(x_{4}\)</cell>
+          </row>
+        </tabular>
+        \right] \end{array}
+      </me>
+    </p>
+    <p>
+      We have the identity matrix <m>I_{2}</m> appearing as the right hand side of the first super-sized augmented matrix and the left hand side of the second super-sized augmented matrix.
+      To our surprise and delight,
+      the elements on the right hand side of the second super-sized augmented matrix are none other than those which comprise <m>A^{-1}</m>.
+      Hence, we have
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{c|c} A \amp  I_{2} \end{array}  \right]  \amp \xrightarrow{\text{ Gauss Jordan Elimination } }  \amp  \left[ \begin{array}{c|c} I_{2} \amp  A^{-1} \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      In other words,
+      the process of finding <m>A^{-1}</m> for a matrix <m>A</m> can be viewed as performing a series of row operations which transform <m>A</m> into the identity matrix of the same dimension.
+      We can view this process as follows.
+      In trying to find <m>A^{-1}</m>,
+      we are trying to <sq>undo</sq> multiplication by the matrix <m>A</m>.
+      The identity matrix in the super-sized augmented matrix <m>[A | I]</m> keeps a running memory of all of the moves required to <sq>undo</sq> <m>A</m>.
+      This results in exactly what we want, <m>A^{-1}</m>.
+      We are now ready to formalize and generalize the foregoing discussion.
+      We begin with the formal definition of an invertible matrix.<fn>
+      If this rhetoric sounds familiar, it should.
+      See <xref ref="InverseFunctions">section</xref>.
+      </fn>
+    </p>
+    <definition xml:id="matrixinverse">
+      <statement>
+        <p>
+          An <m>n \times n</m> matrix <m>A</m> is said to be
+              <idx><h>matrix</h><h>invertible</h></idx>
+              <idx><h>matrix</h><h>multiplicative inverse</h></idx>
+              <idx><h>invertible</h><h>matrix</h></idx>
+          <term>invertible</term> if there exists a matrix <m>A^{-1}</m>,
+          read <sq><m>A</m> inverse</sq>,
+          such that <m>A^{-1}A = AA^{-1}=I_{n}</m>.
+              <idx><h>inverse</h><h>matrix, multiplicative</h></idx>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Note that, as a consequence of our definition,
+      invertible matrices are square, and as such,
+      the conditions in <xref ref="matrixinverse">Definition</xref>
+      force the matrix <m>A^{-1}</m> to be same dimensions as <m>A</m>,
+      that is, <m>n \times n</m>.
+      Since not all matrices are square,
+      not all matrices are invertible.
+      However, just because a matrix is square doesn't guarantee it is invertible.
+      (See the exercises.)
+    </p>
+    <p>
+      Our first result summarizes some of the important characteristics of invertible matrices and their inverses.
+    </p>
+    <theorem xml:id="inversematrixprops">
+      <statement>
+        <p>
+          Suppose <m>A</m> is an <m>n \times n</m> matrix.
+          <ol>
+            <li>
+              <p>
+                If <m>A</m> is invertible then <m>A^{-1}</m> is unique.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is invertible if and only if <m>AX = B</m> has a unique solution for every <m>n \times r</m> matrix <m>B</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proofs of the properties in <xref ref="inversematrixprops">Theorem</xref>
+      rely on a healthy mix of definition and matrix arithmetic.
+    </p>
+    <p>
+      To establish the first property,
+      we assume that <m>A</m> is invertible and suppose the matrices <m>B</m> and <m>C</m> act as inverses for <m>A</m>.
+      That is, <m>BA = AB = I_{n}</m> and <m>CA = AC = I_{n}</m>.
+      We need to show that <m>B</m> and <m>C</m> are, in fact,
+      the same matrix.
+      To see this,
+      we note that <m>B = I_{n}B = (CA)B = C(AB) = CI_{n} = C</m>.
+      Hence, any two matrices that act like <m>A^{-1}</m> are,
+      in fact, the same matrix.<fn>
+      If this proof sounds familiar, it should.
+      See the discussion following <xref ref="inversefunctionprops">Theorem</xref>.
+      </fn>
+    </p>
+    <p>
+      To prove the second property of <xref ref="inversematrixprops">Theorem</xref>,
+      we note that if <m>A</m> is invertible then the discussion on <xref ref="solvingmatrixeqn">page</xref>
+      shows the solution to <m>AX=B</m> to be <m>X = A^{-1}B</m>,
+      and since <m>A^{-1}</m> is unique, so is <m>A^{-1}B</m>.
+    </p>
+    <p>
+      Conversely, if <m>AX = B</m> has a unique solution for every
+      <m>n \times r</m> matrix <m>B</m>, then, in particular,
+      there is a unique solution <m>X_{0}</m> to the equation <m>AX = I_{n}</m>.
+      The solution matrix <m>X_{0}</m> is our candidate for <m>A^{-1}</m>.
+      We have <m>AX_{0} = I_{n}</m> by definition,
+      but we need to also show <m>X_{0}A = I_{n}</m>.
+      To that end,
+      we note that <m>A\left(X_{0}A\right) = \left(AX_{0}\right)A = I_{n}A = A</m>.
+      In other words,
+      the matrix <m>X_{0}A</m> is a solution to the equation <m>AX = A</m>.
+      Clearly, <m>X=I_{n}</m> is also a solution to the equation <m>AX = A</m>,
+      and since we are assuming every such equation as a
+      <em>unique</em> solution,
+      we must have <m>X_{0}A = I_{n}</m>.
+      Hence, we have <m>X_{0}A = AX_{0} = I_{n}</m>,
+      so that <m>X_{0} = A^{-1}</m> and <m>A</m> is invertible.
+    </p>
+    <p>
+      The foregoing discussion justifies our quest to find <m>A^{-1}</m> using our super-sized augmented matrix approach
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{c|c} A \amp  I_{n} \end{array}  \right]  \amp \xrightarrow{\text{ Gauss Jordan Elimination } }  \amp  \left[ \begin{array}{c|c} I_{n} \amp  A^{-1} \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      We are, in essence, trying to find the unique solution to the equation
+      <m>AX = I_{n}</m> using row operations.
+    </p>
+    <p>
+      What does all of this mean for a system of linear equations?
+      <xref ref="inversematrixprops">Theorem</xref>
+      tells us that if we write the system in the form <m>AX=B</m>,
+      then if the coefficient matrix <m>A</m> is invertible,
+      there is only one solution to the system <m>-</m> that is,
+      if <m>A</m> is invertible, the system is consistent and independent.<fn>
+      It can be shown that a matrix is invertible if and only if when it serves as a coefficient matrix for a system of equations,
+      the system is always consistent independent.
+      It amounts to the second property in <xref ref="inversematrixprops">Theorem</xref>
+      where the matrices <m>B</m> are restricted to being <m>n \times 1</m> matrices.
+      We note that, owing to how matrix multiplication is defined,
+      being able to find unique solutions to <m>AX = B</m> for
+      <m>n \times 1</m> matrices <m>B</m> gives you the same statement about solving such equations for
+      <m>n \times r</m> matrices <m>-</m> since we can find a unique solution to them one column at a time.
+      </fn>
+    </p>
+    <p>
+      We also know that the process by which we find <m>A^{-1}</m> is determined completely by <m>A</m>,
+      and not by the constants in <m>B</m>.
+      This answers the question as to why we would bother doing row operations on a super-sized augmented matrix to find <m>A^{-1}</m> instead of an ordinary augmented matrix to solve a system;
+      by finding <m>A^{-1}</m> we have done all of the row operations we ever need to do,
+      once and for all,
+      since we can quickly solve <em>any</em>
+      equation <m>AX = B</m> using <em>one</em>
+      multiplication, <m>A^{-1}B</m>.
+    </p>
+    <example xml:id="matrixinverseex">
+      <statement>
+        <p>
+          Let <m>A = \left[ \begin{array}{rrr} 3 \amp 1 \amp 2 \\ 0 \amp -1 \amp 5 \\ 2 \amp 1 \amp 4 \end{array} \right]</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Use row operations to find <m>A^{-1}</m>.
+              Check your answer by finding <m>A^{-1}A</m> and <m>AA^{-1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use <m>A^{-1}</m> to solve the following systems of equations
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\left\{ \begin{array}{rcl} 3x+y+2z \amp = \amp 26 \\-y+5z \amp = \amp 39 \\ 2x+y+4z\amp =\amp 117 \end{array} \right.</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\left\{ \begin{array}{rcl} 3x+y+2z \amp = \amp 4 \\-y+5z \amp = \amp 2 \\ 2x+y+4z\amp =\amp 5 \end{array} \right.</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\left\{ \begin{array}{rcl} 3x+y+2z \amp = \amp 1 \\-y+5z \amp = \amp 0 \\ 2x+y+4z\amp =\amp 0 \end{array} \right.</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin with a super-sized augmented matrix and proceed with Gauss-Jordan elimination.
+                <m>\begin{array}{ccc}  \left[ \begin{array}{rrr|rrr} 3 \amp  1 \amp  2 \amp  1 \amp  0 \amp  0 \\ 0 \amp  -1 \amp  5 \amp  0 \amp  1 \amp  0 \\ 2 \amp  1 \amp  4 \amp  0 \amp  0 \amp  1 \end{array}  \right]  \amp  \xrightarrow[\text{with
+                <m>\frac{1}{3}R1</m>} ]{\text{ Replace \(R1\) } }  \amp  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  -1 \amp  5 \amp  0 \amp  1 \amp  0 \\ 2 \amp  1 \amp  4 \amp  0 \amp  0 \amp  1 \end{array}  \right] \end{array}</m>  <m>\begin{array}{ccc}  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  -1 \amp  5 \amp  0 \amp  1 \amp  0 \\ 2 \amp  1 \amp  4 \amp  0 \amp  0 \amp  1 \end{array}  \right]  \xrightarrow[\text{ \(-2R1+R3\) } ]{\text{ Replace \(R3\) with } }  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  -1 \amp  5 \amp  0 \amp  1 \amp  0 \\ 0 \amp  \frac{1}{3} \amp  \frac{8}{3} \amp  -\frac{2}{3} \amp  0 \amp  1 \end{array}  \right] \end{array}</m>
+                <m>\begin{array}{ccc}  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  -1 \amp  5 \amp  0 \amp  1 \amp  0 \\ 0 \amp  \frac{1}{3} \amp  \frac{8}{3} \amp  -\frac{2}{3} \amp  0 \amp  1 \end{array}  \right]  \amp  \xrightarrow[\text{ with \((-1)R2\) } ]{\text{ Replace \(R2\) } }  \amp  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  1 \amp  -5 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  \frac{1}{3} \amp  \frac{8}{3} \amp  -\frac{2}{3} \amp  0 \amp  1 \end{array}  \right] \end{array}</m>  <m>\begin{array}{ccc}  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  1 \amp  -5 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  \frac{1}{3} \amp  \frac{8}{3} \amp  -\frac{2}{3} \amp  0 \amp  1 \end{array}  \right]  \xrightarrow[\text{<m>-\frac{1}{3}R2+R3</m>} ]{\text{ Replace \(R3\) with } }  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  1 \amp  -5 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  0 \amp  \frac{13}{3} \amp  -\frac{2}{3} \amp  \frac{1}{3} \amp  1 \end{array}  \right] \end{array}</m>  <m>\begin{array}{ccc}  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  1 \amp  -5 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  0 \amp  \frac{13}{3} \amp  -\frac{2}{3} \amp  \frac{1}{3} \amp  1 \end{array}  \right]  \amp  \xrightarrow[\text{with
+                <m>\frac{3}{13}R3</m>} ]{\text{ Replace \(R3\) } }  \amp  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  1 \amp  -5 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  0 \amp  1 \amp  -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right] \end{array}</m>  <m>\begin{array}{ccc}  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  \frac{2}{3} \amp  \frac{1}{3} \amp  0 \amp  0 \\ 0 \amp  1 \amp  -5 \amp  0 \amp  -1 \amp  0 \\ 0 \amp  0 \amp  1 \amp  -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right]  \amp  \xrightarrow[\text{
+                <tabular>
+                  <row>
+                    <cell>Replace \(R2\) with</cell>
+                  </row>
+                  <row>
+                    <cell>\(5R3+R2\)</cell>
+                  </row>
+                </tabular>
+                } ]{\text{
+                <tabular>
+                  <row>
+                    <cell>Replace <m>R1</m> with</cell>
+                  </row>
+                  <row>
+                    <cell><m>-\frac{2}{3}R3+R1</m></cell>
+                  </row>
+                </tabular>
+                } }  \amp  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  0 \amp  \frac{17}{39} \amp  -\frac{2}{39} \amp  -\frac{2}{13} \\ 0 \amp  1 \amp  0 \amp -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ 0 \amp  0 \amp  1 \amp  -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right] \end{array}</m>  <m>\begin{array}{ccc}  \left[ \begin{array}{rrr|rrr} 1 \amp  \frac{1}{3} \amp  0 \amp  \frac{17}{39} \amp  -\frac{2}{39} \amp  -\frac{2}{13} \\ 0 \amp  1 \amp  0 \amp -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ 0 \amp  0 \amp  1 \amp  -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right] \amp \xrightarrow[\text{<m>-\frac{1}{3}R2+R1</m>} ]{\text{ Replace \(R1\) with } } \amp  \left[ \begin{array}{rrr|rrr} 1 \amp  0 \amp  0 \amp  \frac{9}{13} \amp  \frac{2}{13} \amp  -\frac{7}{13} \\ 0 \amp  1 \amp  0 \amp -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ 0 \amp  0 \amp  1 \amp  -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right] \end{array}</m>  We find <m>A^{-1} = \left[ \begin{array}{rrr} \frac{9}{13} \amp  \frac{2}{13} \amp  -\frac{7}{13} \\ -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right]</m>.
+                To check our answer, we compute
+                <me>
+                  A^{-1}A =  \left[ \begin{array}{rrr} \frac{9}{13} \amp  \frac{2}{13} \amp  -\frac{7}{13} \\ -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right]\left[ \begin{array}{rrr} 3 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right] = \left[ \begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1 \end{array}  \right] = I_{3} \, \, \checkmark
+                </me>
+                and
+                <me>
+                  AA^{-1} = \left[ \begin{array}{rrr} 3 \amp  1 \amp  2 \\ 0 \amp  -1 \amp  5 \\ 2 \amp  1 \amp  4 \end{array}  \right] \left[ \begin{array}{rrr} \frac{9}{13} \amp  \frac{2}{13} \amp  -\frac{7}{13} \\ -\frac{10}{13} \amp  -\frac{8}{13} \amp  \frac{15}{13} \\ -\frac{2}{13} \amp  \frac{1}{13} \amp  \frac{3}{13} \end{array}  \right] = \left[ \begin{array}{rrr} 1 \amp  0 \amp  0 \\ 0 \amp  1 \amp  0 \\ 0 \amp  0 \amp  1 \end{array}  \right] = I_{3} \, \, \checkmark
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Each of the systems in this part has <m>A</m> as its coefficient matrix.
+                The only difference between the systems is the constants which is the matrix <m>B</m> in the associated matrix equation <m>AX=B</m>.
+                We solve each of them using the formula <m>X = A^{-1}B</m>.
+                <ol>
+                  <li>
+                    <p>
+                      <m>X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} \amp \frac{2}{13} \amp -\frac{7}{13} \\ -\frac{10}{13} \amp -\frac{8}{13} \amp \frac{15}{13} \\ -\frac{2}{13} \amp \frac{1}{13} \amp \frac{3}{13} \end{array} \right] \left[ \begin{array}{r} 26 \\ 39 \\ 117 \end{array} \right] = \left[ \begin{array}{r} -39 \\ 91 \\ 26 \end{array} \right]</m>.
+                      Our solution is <m>(-39,91,26)</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} \amp \frac{2}{13} \amp -\frac{7}{13} \\ -\frac{10}{13} \amp -\frac{8}{13} \amp \frac{15}{13} \\ -\frac{2}{13} \amp \frac{1}{13} \amp \frac{3}{13} \end{array} \right] \left[ \begin{array}{r} 4 \\ 2 \\ 5 \end{array} \right] = \left[ \begin{array}{r} \frac{5}{13} \\ \frac{19}{13} \\ \frac{9}{13} \end{array} \right]</m>.
+                      We get <m>\left( \frac{5}{13}, \frac{19}{13}, \frac{9}{13} \right)</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>X = A^{-1}B = \left[ \begin{array}{rrr} \frac{9}{13} \amp \frac{2}{13} \amp -\frac{7}{13} \\ -\frac{10}{13} \amp -\frac{8}{13} \amp \frac{15}{13} \\ -\frac{2}{13} \amp \frac{1}{13} \amp \frac{3}{13} \end{array} \right] \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array} \right] = \left[ \begin{array}{r} \frac{9}{13} \\ -\frac{10}{13} \\ -\frac{2}{13} \end{array} \right]</m>.
+                      We find <m>\left( \frac{9}{13}, -\frac{10}{13}, -\frac{2}{13} \right)</m>.<fn>
+                      Note that the solution is the first column of the <m>A^{-1}</m>.
+                      The reader is encouraged to meditate on this <sq>coincidence</sq>.
+                      </fn>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In <xref ref="matrixinverseex">Example</xref>,
+      we see that finding one inverse matrix can enable us to solve an entire family of systems of linear equations.
+      There are many examples of where this comes in handy <sq>in the wild</sq>,
+      and we chose our example for this section from the field of electronics.
+      We also take this opportunity to introduce the student to how we can compute inverse matrices using the calculator.
+    </p>
+    <example xml:id="circuitex">
+      <statement>
+        <p>
+          Consider the circuit diagram below.<fn>
+          The authors wish to thank Don Anthan of Lakeland Community College for the design of this example.
+          </fn> We have two batteries with source voltages <m>V\!B_{1}</m> and <m>V\!B_{2}</m>,
+          measured in volts <m>V</m>,
+          along with six resistors with resistances <m>R_{1}</m> through <m>R_{6}</m>,
+          measured in kiloohms, <m>k\Omega</m>.
+          Using
+          <url href="http://en.wikipedia.org/wiki/Ohm's_law"><em>Ohm's Law</em></url>
+              <idx><h>Ohm's Law</h></idx>
+              <idx><h>Kirchhoff's Voltage Law</h></idx>
+          and
+          <url href="http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws"><em>Kirchhoff's Voltage Law</em></url>,
+          we can relate the voltage supplied to the circuit by the two batteries to the voltage drops across the six resistors in order to find the four <sq>mesh</sq> currents:
+          <m>i_{1}</m>, <m>i_{2}</m>,
+          <m>i_{3}</m> and <m>i_{4}</m>,
+          measured in milliamps, <m>mA</m>.
+          If we think of electrons flowing through the circuit,
+          we can think of the voltage sources as providing the <sq>push</sq> which makes the electrons move,
+          the resistors as obstacles for the electrons to overcome,
+          and the mesh current as a net rate of flow of electrons around the indicated loops.
+        </p>
+        <p>
+          <image width="73%" source="./MatMethodsGraphics/CircuitDiagram01.pdf"/>
+        </p>
+        <p>
+          The system of linear equations associated with this circuit is
+          <me>
+            \left\{ \begin{array}{rcl} \left(R_{1} + R_{3}\right)i_{1} - R_{3}i_{2} - R_{1}i_{4} \amp  = \amp  V\!B_{1} \\ -R_{3}i_{1} + \left(R_{2} + R_{3} + R_{4}\right)i_{2} - R_{4}i_{3} - R_{2}i_{4} \amp  = \amp  0 \\ -R_{4}i_{2} + \left(R_{4} + R_{6}\right)i_{3} - R_{6}i_{4} \amp  = \amp  -V\!B_{2} \\ -R_{1}i_{1} - R_{2}i_{2} - R_{6}i_{3} + \left(R_{1} + R_{2} + R_{5} + R_{6}\right)i_{4} \amp  = \amp  0 \end{array}  \right.
+          </me>
+        </p>
+        <p>
+          Assuming the resistances are all <m>1 k\Omega</m>,
+          find the mesh currents if the battery voltages are
+          <ul>
+            <li>
+              <p>
+                <m>V\!B_{1} = 10 V</m> and <m>V\!B_{2} = 5 V</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>V\!B_{1} = 10 V</m> and <m>V\!B_{2} = 0 V</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>V\!B_{1} = 0 V</m> and <m>V\!B_{2} = 10 V</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>V\!B_{1} = 10 V</m> and <m>V\!B_{2} = 10 V</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Substituting the resistance values into our system of equations, we get
+          <me>
+            \left\{ \begin{array}{rcl} 2i_{1} - i_{2}-i_{4} \amp  = \amp  V\!B_{1} \\ -i_{1} + 3i_{2} - i_{3} - i_{4} \amp  = \amp  0 \\ -i_{2} + 2i_{3} - i_{4} \amp  = \amp  -V\!B_{2} \\ -i_{1} - i_{2}-i_{3} + 4i_{4} \amp  = \amp  0 \end{array}  \right.
+          </me>
+        </p>
+        <p>
+          This corresponds to the matrix equation <m>AX = B</m> where
+          <me>
+            \begin{array}{ccc}  A = \left[ \begin{array}{rrrr} 2 \amp  -1 \amp  0 \amp  -1  \\ -1 \amp  3 \amp  -1 \amp  -1 \\ 0 \amp  -1 \amp  2 \amp  -1 \\ -1 \amp  -1 \amp  -1 \amp  4 \end{array}  \right]  \amp  X = \left[ \begin{array}{r} i_{1} \\ i_{2} \\ i_{3} \\ i_{4} \end{array}  \right]  \amp  B = \left[ \begin{array}{r} V\!B_{1} \\ 0 \\ -V\!B_{2} \\ 0 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          When we input the matrix <m>A</m> into the calculator, we find
+        </p>
+        <tabular>
+          <row>
+            <cell><image width="37%" source="./MatMethodsGraphics/MATRIXINVERSE01.jpg"/></cell>
+            <cell><image width="37%" source="./MatMethodsGraphics/MATRIXINVERSE02.jpg"/></cell>
+          </row>
+        </tabular>
+        <p>
+          from which we have <m>A^{-1} = \left[ \begin{array}{rrrr} 1.625 \amp 1.25 \amp 1.125 \amp 1 \\ 1.25 \amp 1.5 \amp 1.25 \amp 1 \\ 1.125 \amp 1.25 \amp 1.625 \amp 1 \\ 1 \amp 1 \amp 1 \amp 1 \end{array} \right]</m>.
+        </p>
+        <p>
+          To solve the four systems given to us,
+          we find <m>X=A^{-1}B</m> where the value of <m>B</m> is determined by the given values of <m>V\!B_{1}</m> and <m>V\!B_{2}</m>
+          <me>
+            \begin{array}{cccc}  B = \left[ \begin{array}{r} 10 \\ 0 \\ -5 \\ 0 \end{array}  \right], \amp  B = \left[ \begin{array}{r} 10 \\ 0 \\ 0 \\ 0 \end{array}  \right], \amp  B = \left[ \begin{array}{r} 0 \\ 0 \\ -10 \\ 0 \end{array}  \right], \amp  B = \left[ \begin{array}{r} 10 \\ 0 \\ 10 \\ 0 \end{array}  \right] \end{array}
+          </me>
+          <ul>
+            <li>
+              <p>
+                For <m>V\!B_{1} = 10 V</m> and <m>V\!B_{2} = 5 V</m>,
+                the calculator gives <m>i_{1} = 10.625 \, \, mA</m>,
+                <m>i_{2} = 6.25 \, \, mA</m>,
+                <m>i_{3} = 3.125 \, \, mA</m>,
+                and <m>i_{4} = 5 \, \, mA</m>.
+                We include a calculator screenshot below for this part
+                (and this part only!)
+                for reference.
+                <image width="37%" source="./MatMethodsGraphics/MATRIXINVERSE03.jpg"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                By keeping <m>V\!B_{1} = 10 V</m> and setting <m>V\!B_{2} = 0 V</m>,
+                we are removing the effect of the second battery.
+                We get <m>i_{1} = 16.25 \, \, mA</m>,
+                <m>i_{2} = 12.5 \, \, mA</m>,
+                <m>i_{3} = 11.25 \, \, mA</m>,
+                and <m>i_{4} = 10 \, \, mA</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Here, we are zeroing out <m>V\!B_{1}</m> and making <m>V\!B_{2} = 10</m>,
+                essentially removing the effect of the first battery.
+                We find <m>i_{1} = -11.25 \, \, mA</m>,
+                <m>i_{2} = -12.5 \, \, mA</m>,
+                <m>i_{3} = -16.25 \, \, mA</m>,
+                and <m>i_{4} = -10 \, \, mA</m>,
+                where the negatives indicate that the current is flowing in the opposite direction as is indicated on the diagram.
+                The reader is encouraged to study the symmetry here, and if need be,
+                hold up a mirror to the diagram to literally <sq>see</sq> what is happening.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>V\!B_{1} = 10 V</m> and <m>V\!B_{2} = 10 V</m>,
+                we get <m>i_{1} = 5 \, \, mA</m>,
+                <m>i_{2} = 0 \, \, mA</m>,
+                <m>i_{3} = -5 \, \, mA</m>, and <m>i_{4} = 0 \, \, mA</m>.
+                The mesh currents <m>i_{2}</m> and <m>i_{4}</m> being zero is a consequence of both batteries <sq>pushing</sq> in equal but opposite directions,
+                causing the net flow of electrons in these two regions to cancel out.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforMatMethods">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="findmatinversefirst">Exercises</xref>
+      - <xref ref="findmatinverselast"></xref>,
+      find the inverse of the matrix or state that the matrix is not invertible.
+      <ol cols="4">
+        <li xml:id="findmatinversefirst">
+          <p>
+            <m>A = \left[ \begin{array}{rr} 1 \amp 2 \\ 3 \amp 4 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="matrixB">
+          <p>
+            <m>B = \left[ \begin{array}{rr} 12 \amp -7 \\ -5 \amp 3 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>C = \left[ \begin{array}{rr} 6 \amp 15 \\ 14 \amp 35 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="matrixD">
+          <p>
+            <m>D = \left[ \begin{array}{rr} 2 \amp -1 \\ 16 \amp -9 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="matrixE">
+          <p>
+            <m>E = \left[ \begin{array}{rrr} 3 \amp 0 \amp 4 \\ 2 \amp -1 \amp 3 \\ -3 \amp 2 \amp -5 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F = \left[ \begin{array}{rrr} 4 \amp 6 \amp -3 \\ 3 \amp 4 \amp -3 \\ 1 \amp 2 \amp 6 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>G = \left[ \begin{array}{rrr} 1 \amp 2 \amp 3 \\ 2 \amp 3 \amp 11 \\ 3 \amp 4 \amp 19 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="findmatinverselast">
+          <p>
+            <m>H = \left[ \begin{array}{rrrr} 1 \amp 0 \amp -3 \amp 0 \\ 2 \amp -2 \amp 8 \amp 7 \\ -5 \amp 0 \amp 16 \amp 0 \\ 1 \amp 0 \amp 4 \amp 1 \end{array} \right]</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="x2by2inversefirst">Exercises</xref>
+      - <xref ref="x2by2inverselast"></xref>,
+      use one matrix inverse to solve the following systems of linear equations.
+      <ol>
+        <li xml:id="x2by2inversefirst">
+          <p>
+            <m>\left\{ \begin{array}{rcr} 3x + 7y \amp = \amp 26 \\ 5x + 12y \amp = \amp 39 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 3x + 7y \amp = \amp 0 \\ 5x + 12y \amp = \amp -1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="x2by2inverselast">
+          <p>
+            <m>\left\{ \begin{array}{rcr} 3x + 7y \amp = \amp -7 \\ 5x + 12y \amp = \amp 5 \end{array} \right.</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="x3by3inversefirst">Exercises</xref>
+      - <xref ref="x3by3inverselast"></xref>,
+      use the inverse of <m>E</m> from <xref ref="matrixE">Exercise</xref>
+      above to solve the following systems of linear equations.
+    </p>
+    <ol cols="2">
+      <li xml:id="x3by3inversefirst">
+        <p>
+          <m>\left\{ \begin{array}{rcr} 3x + 4z \amp = \amp 1 \\ 2x - y + 3z \amp = \amp 0 \\ \!-3x + 2y - 5z \amp = \amp 0 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} 3x + 4z \amp = \amp 0 \\ 2x - y + 3z \amp = \amp 1 \\ \!-3x + 2y - 5z \amp = \amp 0 \end{array} \right.</m>
+        </p>
+      </li>
+      <li xml:id="x3by3inverselast">
+        <p>
+          <m>\left\{ \begin{array}{rcr} 3x + 4z \amp = \amp 0 \\ 2x - y + 3z \amp = \amp 0 \\ \!-3x + 2y - 5z \amp = \amp 1 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          This exercise is a continuation of <xref ref="rotationmatrixex">Example</xref>
+          in <xref ref="MatArithmetic">Section</xref>
+          and gives another application of matrix inverses.
+          Recall that given the position matrix <m>P</m> for a point in the plane,
+          the matrix <m>RP</m> corresponds to a point rotated
+          <m>45^{\circ}</m> counterclockwise from <m>P</m> where
+          <me>
+            R = \left[ \begin{array}{rr} \frac{\sqrt{2}}{2} \amp  -\frac{\sqrt{2}}{2} \\ \frac{\sqrt{2}}{2} \amp  \frac{\sqrt{2}}{2} \end{array}  \right]
+          </me>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find <m>R^{-1}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>RP</m> rotates a point counterclockwise <m>45^{\circ}</m>,
+              what should <m>R^{-1}P</m> do?
+              Check your answer by finding <m>R^{-1}P</m> for various points on the coordinate axes and the lines <m>y=\pm x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find <m>R^{-1}P</m> where <m>P</m> corresponds to a generic point <m>P(x,y)</m>.
+              Verify that this takes points on the curve
+              <m>y=\frac{2}{x}</m> to points on the curve <m>x^2-y^2=4</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li xml:id="SasquatchDiet">
+        <p>
+          A Sasquatch's diet consists of three primary foods: Ippizuti Fish, Misty Mushrooms,
+          and Sun Berries.
+          Each serving of Ippizuti Fish is 500 calories,
+          contains 40 grams of protein,
+          and has no Vitamin X. Each serving of Misty Mushrooms is 50 calories,
+          contains 1 gram of protein,
+          and 5 milligrams of Vitamin X. Finally,
+          each serving of Sun Berries is 80 calories,
+          contains no protein, but has 15 milligrams of Vitamin X.<fn>
+          Misty Mushrooms and Sun Berries are the only known fictional sources of Vitamin X.
+          </fn>
+          <ol>
+            <li>
+              <p>
+                If an adult male Sasquatch requires 3200 calories, 130 grams of protein,
+                and 275 milligrams of Vitamin X daily,
+                use a matrix inverse to find how many servings each of Ippizuti Fish, Misty Mushrooms,
+                and Sun Berries he needs to eat each day.
+              </p>
+            </li>
+            <li>
+              <p>
+                An adult female Sasquatch requires 3100 calories, 120 grams of protein,
+                and 300 milligrams of Vitamin X daily.
+                Use the matrix inverse you found in part (a) to find how many servings each of Ippizuti Fish, Misty Mushrooms,
+                and Sun Berries she needs to eat each day.
+              </p>
+            </li>
+            <li>
+              <p>
+                An adolescent Sasquatch requires 5000 calories, 400 grams of protein daily,
+                but no Vitamin X daily.<fn>
+                Vitamin X is needed to sustain Sasquatch longevity only.
+                </fn>  Use the matrix inverse you found in part (a) to find how many servings each of Ippizuti Fish, Misty Mushrooms,
+                and Sun Berries she needs to eat each day.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Matrices can be used in cryptography.
+          Suppose we wish to encode the message <sq>BIGFOOT LIVES</sq>.
+          We start by assigning a number to each letter of the alphabet,
+          say <m>A=1</m>, <m>B=2</m> and so on.
+          We reserve <m>0</m> to act as a space.
+          Hence, our message <sq>BIGFOOT LIVES</sq> corresponds to the string of numbers <sq>2, 9, 7, 6, 15, 15, 20, 0, 12, 9, 22, 5, 19.</sq> To encode this message,
+          we use an invertible matrix.
+          Any invertible matrix will do,
+          but for this exercise, we choose
+          <me>
+            A = \left[ \begin{array}{rrr} 2 \amp  -3 \amp  5 \\ 3 \amp  1 \amp -2 \\ -7 \amp  1 \amp  -1 \end{array}  \right]
+          </me>
+          Since <m>A</m> is  <m>3 \times 3</m> matrix,
+          we encode our message string into a matrix <m>M</m> with <m>3</m> rows.
+          To do this, we take the first three numbers, 2 9 7, and make them our first column,
+          the next three numbers, 6 15 15,
+          and make them our second column, and so on.
+          We put <m>0</m>'s to round out the matrix.
+          <me>
+            M = \left[  \begin{array}{rrrrr} 2 \amp  6 \amp  20 \amp  9 \amp  19 \\ 9 \amp  15 \amp  0 \amp  22 \amp  0 \\ 7 \amp  15 \amp  12 \amp  5 \amp  0 \end{array}  \right]
+          </me>
+          To encode the message, we find the product <m>AM</m>
+          <me>
+            AM =  \left[ \begin{array}{rrr} 2 \amp  -3 \amp  5 \\ 3 \amp  1 \amp -2 \\ -7 \amp  1 \amp  -1 \end{array}  \right]\left[  \begin{array}{rrrrr} 2 \amp  6 \amp  20 \amp  9 \amp  19 \\ 9 \amp  15 \amp  0 \amp  22 \amp  0 \\ 7 \amp  15 \amp  12 \amp  5 \amp  0 \end{array}  \right] = \left[  \begin{array}{rrrrr} 12 \amp  42 \amp  100 \amp  -23 \amp  38 \\ 1 \amp  3 \amp  36 \amp  39 \amp  57 \\ -12 \amp  -42 \amp  -152 \amp  -46 \amp  -133 \end{array}  \right]
+          </me>
+          So our coded message is <sq>12, 1, <m>-12</m>, 42, 3, <m>-42</m>, 100, 36, <m>-152</m>,
+          <m>-23</m>, 39,
+          <m>-46</m>, 38, 57, <m>-133</m>.</sq>  To decode this message,
+          we start with this string of numbers,
+          construct a message matrix as we did earlier
+          (we should get the matrix <m>AM</m> again)
+          and then multiply by <m>A^{-1}</m>.
+          <ol>
+            <li>
+              <p>
+                Find <m>A^{-1}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use <m>A^{-1}</m> to decode the message and check this method actually works.
+              </p>
+            </li>
+            <li>
+              <p>
+                Decode the message <sq>14, 37,
+                <m>-76</m>, 128, 21, <m>-151</m>, 31, 65, <m>-140</m></sq>
+              </p>
+            </li>
+            <li>
+              <p>
+                Choose another invertible matrix and encode and decode your own messages.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Using the matrices <m>A</m> from <xref ref="findmatinversefirst">Exercise</xref>,
+          <m>B</m> from <xref ref="matrixB">Exercise</xref>
+          and <m>D</m> from <xref ref="matrixD">Exercise</xref>,
+          show <m>AB = D</m> and <m>D^{-1} = B^{-1}A^{-1}</m>.
+          That is, show that <m>(AB)^{-1} = B^{-1}A^{-1}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>M</m> and <m>N</m> be invertible <m>n \times n</m> matrices.
+          Show that <m>(MN)^{-1} = N^{-1}M^{-1}</m> and compare your work to <xref ref="fcircginverse">Exercise</xref>
+          in <xref ref="InverseFunctions">Section</xref>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="4">
+      <li>
+        <p>
+          <m>A^{-1} = \left[ \begin{array}{rr} -2 \amp 1 \\ \frac{3}{2} \amp -\frac{1}{2} \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>B^{-1} = \left[ \begin{array}{rr} 3 \amp 7 \\ 5 \amp 12 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>C</m> is not invertible
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>D^{-1} = \left[ \begin{array}{rr} \frac{9}{2} \amp -\frac{1}{2} \\ 8 \amp -1 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>E^{-1} = \left[ \begin{array}{rrr} -1 \amp 8 \amp 4 \\ 1 \amp -3 \amp -1 \\ 1 \amp -6 \amp -3 \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F^{-1} = \left[ \begin{array}{rrr} -\frac{5}{2} \amp \frac{7}{2} \amp \frac{1}{2} \\ \frac{7}{4} \amp -\frac{9}{4} \amp -\frac{1}{4} \\ -\frac{1}{6} \amp \frac{1}{6} \amp \frac{1}{6} \end{array} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G</m> is not invertible
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>H^{-1} = \left[ \begin{array}{rrrr} 16 \amp 0 \amp 3 \amp 0 \\ -90 \amp -\frac{1}{2} \amp -\frac{35}{2} \amp \frac{7}{2} \\ 5 \amp 0 \amp 1 \amp 0 \\ -36 \amp 0 \amp -7 \amp 1 \end{array} \right]</m>
+        </p>
+      </li>
+    </ol>
+    <p>
+      The coefficient matrix is <m>B^{-1}</m> from <xref ref="matrixB">Exercise</xref>
+      above so the inverse we need is <m>(B^{-1})^{-1} = B</m>.
+      <ol>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rr} 12 \amp -7 \\ -5 \amp 3 \end{array} \right] \left[ \begin{array}{r} 26 \\ 39 \end{array} \right] = \left[ \begin{array}{r} 39 \\ -13 \end{array} \right] \;</m> So <m>x = 39</m> and <m>y = -13</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rr} 12 \amp -7 \\ -5 \amp 3 \end{array} \right] \left[ \begin{array}{r} 0 \\ -1 \end{array} \right] = \left[ \begin{array}{r} 7 \\ -3 \end{array} \right] \;</m> So <m>x = 7</m> and <m>y = -3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rr} 12 \amp -7 \\ -5 \amp 3 \end{array} \right] \left[ \begin{array}{r} -7 \\ 5 \end{array} \right] = \left[ \begin{array}{r} -119 \\ 50 \end{array} \right] \;</m> So <m>x = -119</m> and <m>y = 50</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      The coefficient matrix is <m>E = \left[ \begin{array}{rrr} 3 \amp 0 \amp 4 \\ 2 \amp -1 \amp 3 \\ -3 \amp 2 \amp -5 \end{array} \right]</m> from <xref ref="matrixE">Exercise</xref>,
+      so <m>E^{-1} = \left[ \begin{array}{rrr} -1 \amp 8 \amp 4 \\ 1 \amp -3 \amp -1 \\ 1 \amp -6 \amp -3 \end{array} \right]</m>
+    </p>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\left[ \begin{array}{rrr} -1 \amp 8 \amp 4 \\ 1 \amp -3 \amp -1 \\ 1 \amp -6 \amp -3 \end{array} \right] \left[ \begin{array}{r} 1 \\ 0 \\ 0 \end{array} \right] = \left[ \begin{array}{r} -1 \\ 1 \\ 1 \end{array} \right] \;</m> So <m>x = -1</m>,
+          <m>y = 1</m> and <m>z = 1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \begin{array}{rrr} -1 \amp 8 \amp 4 \\ 1 \amp -3 \amp -1 \\ 1 \amp -6 \amp -3 \end{array} \right] \left[ \begin{array}{r} 0 \\ 1 \\ 0 \end{array} \right] = \left[ \begin{array}{r} 8 \\ -3 \\ -6 \end{array} \right] \;</m> So <m>x = 8</m>,
+          <m>y = -3</m> and <m>z = -6</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \begin{array}{rrr} -1 \amp 8 \amp 4 \\ 1 \amp -3 \amp -1 \\ 1 \amp -6 \amp -3 \end{array} \right] \left[ \begin{array}{r} 0 \\ 0 \\ 1 \end{array} \right] = \left[ \begin{array}{r} 4 \\ -1 \\ -3 \end{array} \right] \;</m> So <m>x = 4</m>,
+          <m>y = -1</m> and <m>z = -3</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              The adult male Sasquatch needs: 3 servings of Ippizuti Fish, 10 servings of Misty Mushrooms,
+              and 15 servings of Sun Berries daily.
+            </p>
+          </li>
+          <li>
+            <p>
+              The adult female Sasquatch needs: 3 servings of Ippizuti Fish and 20 servings of Sun Berries daily. (No Misty Mushrooms are needed!)
+            </p>
+          </li>
+          <li>
+            <p>
+              The adolescent Sasquatch requires 10 servings of Ippizuti Fish daily. (No Misty Mushrooms or Sun Berries are needed!)
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>A^{-1} = \left[ \begin{array}{rrr} 1 \amp 2 \amp 1 \\ 17 \amp 33 \amp 19 \\ 10 \amp 19 \amp 11 \end{array} \right]</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\left[ \begin{array}{rrr} 1 \amp 2 \amp 1 \\ 17 \amp 33 \amp 19 \\ 10 \amp 19 \amp 11 \end{array} \right] \left[ \begin{array}{rrrrr} 12 \amp 42 \amp 100 \amp -23 \amp 38 \\ 1 \amp 3 \amp 36 \amp 39 \amp 57 \\ -12 \amp -42 \amp -152 \amp -46 \amp -133 \end{array} \right] = \left[ \begin{array}{rrrrr} 2 \amp 6 \amp 20 \amp 9 \amp 19 \\ 9 \amp 15 \amp 0 \amp 22 \amp 0 \\ 7 \amp 15 \amp 12 \amp 5 \amp 0 \end{array} \right] \checkmark</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <sq>LOGS RULE</sq>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

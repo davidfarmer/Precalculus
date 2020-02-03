@@ -1,0 +1,8 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="FoundationsofTrigonometry">
+  <title>Foundations of Trigonometry</title>
+  <xi:include  href="RadianMeasure.ptx"/>
+  <xi:include  href="TheCircularFunctionsSineandCosine.ptx"/>
+  <xi:include  href="GraphsofSineandCosine.ptx"/>
+  <xi:include  href="TheOtherCircularFunctions.ptx"/>
+  <xi:include  href="GraphsofOtherCircularFunctions.ptx"/>
+</chapter>

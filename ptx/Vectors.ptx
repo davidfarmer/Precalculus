@@ -1,0 +1,2510 @@
+<section xml:id="Vectors">
+  <title>Vectors</title>
+  <introduction>
+    <p>
+      As we have seen numerous times in this book, Mathematics can be used to model and solve real-world problems.
+      For many applications, real numbers suffice;
+      that is, real numbers with the appropriate units attached can be used to answer questions like
+      <q>How close is the nearest Sasquatch nest?</q>
+    </p>
+    <p>
+      There are other times though,
+      when these kinds of quantities do not suffice.
+      Perhaps it is important to know, for instance,
+      how close the nearest Sasquatch nest is as well as the direction in which it lies.
+      To answer questions like these which involve both a quantitative answer,
+      or <em>magnitude</em>, along with a <em>direction</em>,
+      we use the mathematical objects called <idx><h>vector</h><h>definition of</h></idx>
+      <em>vectors</em>.<fn>
+      The word <sq>vector</sq> comes from the Latin <em>vehere</em>
+      meaning <sq>to convey</sq> or <sq>to carry.</sq>
+      </fn>
+    </p>
+    <p>
+      A vector is represented geometrically as a directed line segment where the magnitude of the vector is taken to be the length of the line segment and the direction is made clear with the use of an arrow at one endpoint of the segment.
+      When referring to vectors in this text, we shall adopt<fn>
+      Other textbook authors use bold vectors such as <m>v</m>.
+      We find that writing in bold font on the chalkboard is inconvenient at best,
+      so we have chosen the <sq>arrow</sq> notation.
+      </fn> the <sq>arrow</sq> notation,
+      so the symbol <m>\vec{v}</m> is read as <sq>the vector <m>v</m></sq>.
+      Below is a typical vector <m>\vec{v}</m> with endpoints
+      <m>P\left(1, 2\right)</m> and <m>Q\left(4, 6\right)</m>.
+    </p>
+    <p>
+      The point <m>P</m> is called the <idx><h>vector</h><h>initial point</h></idx>
+      <em>initial point</em> or
+          <idx><h>vector</h><h>tail</h></idx>
+      <em>tail</em> of <m>\vec{v}</m> and the point <m>Q</m> is called the <idx><h>vector</h><h>terminal point</h></idx>
+      <em>terminal point</em> or
+          <idx><h>vector</h><h>head</h></idx>
+      <em>head</em> of <m>\vec{v}</m>.
+      Since we can reconstruct <m>\vec{v}</m> completely from <m>P</m> and <m>Q</m>,
+      we write <m>\vec{v} = \overrightarrow{PQ}</m>,
+      where the order of points <m>P</m>
+      (initial point)
+      and <m>Q</m>
+      (terminal point)
+      is important.
+      (Think about this before moving on.)
+    </p>
+    <p>
+      \begin{mfpic}[20]{0}{6}{0}{7} \point[4pt]{(1,2), (4,6)} \tlabel(-0.75,1.75){<m>P\left(1, 2 \right)</m>} \tlabel(4.25,6){<m>Q\left(4, 6 \right)</m>} \headshape{1}{1}{true} \tcaption{<m>\vec{v} = \overrightarrow{PQ}</m>} \penwd{1.25pt} \arrow \polyline{(1,2),(4,6)} \end{mfpic}
+    </p>
+    <p>
+      While it is true that <m>P</m> and <m>Q</m> completely determine <m>\vec{v}</m>,
+      it is important to note that since vectors are defined in terms of their two characteristics,
+      magnitude and direction,
+      any directed line segment with the same length and direction as <m>\vec{v}</m> is considered to be the same vector as <m>\vec{v}</m>,
+      regardless of its initial point.
+    </p>
+    <p>
+      In the case of our vector <m>\vec{v}</m> above,
+      any vector which moves three units to the right and four up<fn>
+      If this idea of <sq>over</sq> and <sq>up</sq> seems familiar,
+      it should.
+      The slope of the line segment containing <m>\vec{v}</m> is <m>\frac{4}{3}</m>.
+      </fn> from its initial point to arrive at its terminal point is considered the same vector as <m>\vec{v}</m>.
+      The notation we use to capture this idea is the <idx><h>vector</h><h>component form</h></idx>
+      <em>component form</em> of the vector,
+      <m>\vec{v} = \left\lt 3,4\right></m>,
+      where the first number, <m>3</m>,
+      is called the <m>x</m>-<em>component</em>
+          <idx><h>vector</h><h><m>x</m>-component</h></idx>
+      of <m>\vec{v}</m> and the second number,
+      <m>4</m>,
+      is called the <m>y</m>-<em>component</em>
+          <idx><h>vector</h><h><m>y</m>-component</h></idx>
+      of <m>\vec{v}</m>.
+    </p>
+    <p>
+      For example, if we wanted to reconstruct
+      <m>\vec{v} = \left\lt 3,4\right></m> with initial point <m>P'(-2,3)</m>,
+      then we would find the terminal point of <m>\vec{v}</m> by adding <m>3</m> to the <m>x</m>-coordinate and adding <m>4</m> to the <m>y</m>-coordinate to obtain the terminal point <m>Q'(1,7)</m>,
+      as seen below.
+    </p>
+    <p>
+      \begin{mfpic}[20]{0}{6}{0}{6} \point[4pt]{(1,2), (4,6)} \tlabel(-1,1.75){<m>P'\left(-2, 3 \right)</m>} \tlabel(4.25,6){<m>Q'\left(1, 7 \right)</m>} \tlabel[cc](2.5,1.5){over <m>3</m>} \tlabel[cc](4.5,4){up <m>4</m>} \dashed \arrow \polyline{(1.25,2), (4,2)} \dashed \arrow \polyline{(4,2.25), (4,5.75)} \headshape{1}{1}{true} \tcaption{<m>\vec{v} = \left\lt 3,4\right></m> with initial point
+      <m>P'\left(-2, 3 \right)</m>.} \penwd{1.25pt} \arrow \polyline{(1,2),(4,6)} \end{mfpic}
+    </p>
+    <p>
+      The component form of a vector is what ties these very geometric objects back to Algebra and ultimately Trigonometry.
+      We generalize our example in our definition below.
+    </p>
+    <definition xml:id="componentformvector">
+      <statement>
+        <p>
+          Suppose <m>\vec{v}</m> is represented by a directed line segment with initial point
+          <m>P\left(x_{0}, y_{0}\right)</m> and terminal point <m>Q\left(x_{1}, y_{1}\right)</m>.
+          The <term>component form</term> of <m>\vec{v}</m> is given by <idx><h>component form of a vector</h></idx>
+          <me>
+            \vec{v} = \overrightarrow{PQ} = \left\lt  x_{1} - x_{0}, y_{1} - y_{0} \right>
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Using the language of components,
+      we have that two vectors are equal if and only if their corresponding components are equal.
+      That is, <m>\left\lt v_{1}, v_{2}\right> = \left\lt v_{1}', v_{2}'\right></m> if and only if
+      <m>v_{1} = v_{1}'</m> and <m>v_{2} = v_{2}'</m>.
+      (Again, think about this before reading on.)
+    </p>
+    <p>
+      We now set about defining operations on vectors.
+      Suppose we are given two vectors <m>\vec{v}</m> and <m>\vec{w}</m>.
+      The sum, or
+          <idx><h>vector</h><h>resultant</h></idx>
+      <em>resultant</em> vector <m>\vec{v} + \vec{w}</m> is obtained as follows.
+      First, plot <m>\vec{v}</m>.
+      Next, plot <m>\vec{w}</m> so that its initial point is the terminal point of <m>\vec{v}</m>.
+      To plot the vector <m>\vec{v} + \vec{w}</m> we begin at the initial point of <m>\vec{v}</m> and end at the terminal point of <m>\vec{w}</m>.
+      It is helpful to think of the vector
+      <m>\vec{v} + \vec{w}</m> as the <sq>net result</sq> of moving along <m>\vec{v}</m> then moving along <m>\vec{w}</m>.
+    </p>
+    <p>
+      \begin{mfpic}[20]{0}{6}{0}{7} \point[3pt]{(0,0), (3,2), (4,6)} \tlabel[cc](1.5, 0.5){<m>\vec{v}</m>} \tlabel[cc](4, 4){<m>\vec{w}</m>} \tlabel[cc](1, 3.5){<m>\vec{v} + \vec{w}</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0),(3,2)} \arrow \polyline{(3,2),(4,6)} \arrow \polyline{(0,0),(4,6)} \tcaption{<m>\vec{v}</m>,
+      <m>\vec{w}</m>, and <m>\vec{v} + \vec{w}</m>} \end{mfpic}
+    </p>
+    <p>
+      Our next example makes good use of resultant vectors and reviews bearings and the Law of Cosines.<fn>
+      If necessary, review <xref ref="bearings">Sections</xref>
+      and <xref ref="TheLawofCosines"></xref>.
+      </fn>
+    </p>
+    <example xml:id="vectorbearingex">
+      <statement>
+        <p>
+          A plane leaves an airport with an airspeed<fn>
+          That is, the speed of the plane relative to the air around it.
+          If there were no wind,
+          plane's airspeed would be the same as its speed as observed from the ground.
+          How does wind affect this?
+          Keep reading!
+          </fn> of 175 miles per hour at a bearing of N<m>40^{\circ}</m>E. A 35 mile per hour wind is blowing at a bearing of S<m>60^{\circ}</m>E. Find the true speed of the plane,
+          rounded to the nearest mile per hour,
+          and the true bearing of the plane,
+          rounded to the nearest degree.
+        </p>
+        <p>
+          <em>Solution:</em> For both the plane and the wind,
+          we are given their speeds and their directions.
+          Coupling speed
+          (as a magnitude)
+          with direction is the concept of <em>velocity</em>
+          which we've seen a few times before.<fn>
+          See <xref ref="circularmotion">Section</xref>, for instance.
+          </fn>
+        </p>
+        <p>
+          We let <m>\vec{v}</m> denote the plane's velocity and <m>\vec{w}</m> denote the wind's velocity in the diagram below.
+          The <sq>true</sq> speed and bearing is found by analyzing the resultant vector,
+          <m>\vec{v} + \vec{w}</m>.
+        </p>
+        <p>
+          From the vector diagram, we get a triangle,
+          the lengths of whose sides are the magnitude of <m>\vec{v}</m>,
+          which is 175, the magnitude of <m>\vec{w}</m>, which is 35,
+          and the magnitude of <m>\vec{v} + \vec{w}</m>,
+          which we'll call <m>c</m>.
+        </p>
+        <p>
+          From the given bearing information,
+          we go through the usual geometry to determine that the angle between the sides of length 35 and 175 measures <m>100^{\circ}</m>.
+        </p>
+        <tabular>
+          <row>
+            <cell>\begin{mfpic}[15]{-1}{8}{-2}{9}
+              \axes
+              \tlabel[cl](8,-0.5)E
+              \tlabel[cl](0.5,9)N
+              \arrow \parafcn{85,55,-5}{5*dir(t)}
+              \tlabel[cc](1.88, 5.17){<m>40^{\circ}</m>}
+              \arrow \parafcn{275,325,-5}{1.5*dir(t)}
+              \tlabel[cc](1, -1.73){<m>60^{\circ}</m>}
+              \headshape{1}{1}{true}
+              \tlabel[cc](6.75, 8.04){<m>\vec{v}</m>}
+              \tlabel[cc](2.16, -1.25){<m>\vec{w}</m>}
+              \arrow \dashed \polyline{(0,0), (8.16,6.66)}
+              \dotted \polyline{(1.73, -1), (8.16, 6.66)}
+              \dotted \polyline{(6.43, 7.66), (8.16, 6.66)}
+              \tlabel[cc](9,6.75){<m>\vec{v} + \vec{w}</m>}
+              \penwd{1.25pt}
+              \arrow \polyline{(0,0), (6.43, 7.66)}
+              \arrow \polyline{(0,0), (1.73, -1)}
+              \end{mfpic}</cell>
+            <cell>\begin{mfpic}[15]{-1}{8}{-2}{9}
+              \axes
+              \tlabel[cl](8,-0.5)E
+              \tlabel[cl](0.5,9)N
+              \tlabel[cc](3,4.5){<m>175</m>}
+              \tlabel[cc](5,3.5){<m>c</m>}
+              \tlabel[cc](7.5, 7.5){<m>35</m>}
+              \arrow \parafcn{85,55,-5}{3*dir(t)}
+              \tlabel[cc](1.2, 3.3){<m>40^{\circ}</m>}
+              \arrow \parafcn{275,325,-5}{1.5*dir(t)}
+              \tlabel[cc](1, -1.73){<m>60^{\circ}</m>}
+              \arrow \reverse \arrow \shiftpath{(6.43, 7.66)} \parafcn{235, 325,5}{dir(t)}
+              \tlabel[cc]{(6.5,6.25)}{<m>100^{\circ}</m>}
+              \arrow \reverse \arrow \parafcn{41,49,1}{5*dir(t)}
+              \tlabel[cc]{(3.9, 3.9)}{<m>\alpha</m>}
+              \dotted \polyline{(5.9,7.66), (6.9, 7.66)}
+              \dotted \polyline{(6.43, 7.15), (6.43,8.15)}
+              \dotted  \polyline{(0,0), (1.73, -1)}
+              \penwd{1.25pt}
+              \polyline{(0,0), (6.43, 7.66)}
+              \polyline{(0,0), (8.16,6.66)}
+              \polyline{(6.43, 7.66), (8.16, 6.66)}
+              \end{mfpic}</cell>
+          </row>
+        </tabular>
+        <p>
+          From the Law of Cosines,
+          we determine <m>c = \sqrt{31850 - 12250\cos(100^{\circ})} \approx 184</m>,
+          which means the true speed of the plane is (approximately) <m>184</m> miles per hour.
+        </p>
+        <p>
+          To determine the true bearing of the plane,
+          we need to determine the angle <m>\alpha</m>.
+          Using the Law of Cosines once more,<fn>
+          Or, since our given angle, <m>100^{\circ}</m>, is obtuse,
+          we could use the Law of Sines without any ambiguity here.
+          </fn> we find <m>\cos(\alpha) = \frac{c^2+29400}{350c}</m> so that <m>\alpha \approx 11^{\circ}</m>.
+        </p>
+        <p>
+          Given the geometry of the situation,
+          we add <m>\alpha</m> to the given
+          <m>40^{\circ}</m> and find the true bearing of the plane to be (approximately) N<m>51^{\circ}</m>E.
+        </p>
+      </statement>
+    </example>
+    <p>
+      Our next step is to define addition of vectors component-wise to match the geometric action.<fn>
+      Adding vectors <sq>component-wise</sq> should seem hauntingly familiar.
+      Compare this with how matrix addition was defined in <xref ref="MatArithmetic">section</xref>.
+      In more advanced courses. chief among them Linear Algebra,
+      vectors are actaually <em>defined</em>
+      as <m>1\times n</m> or <m>n \times 1</m> matrices,
+      depending on the situation.
+      </fn>
+    </p>
+    <definition xml:id="vectoradd">
+      <statement>
+        <p>
+          Suppose <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> and <m>\vec{w} = \left\lt w_{1},w_{2}\right></m>.
+          The vector <m>\vec{v} + \vec{w}</m> is defined by <idx><h>vector</h><h>addition ! definition of</h></idx>
+          <me>
+            \vec{v} + \vec{w}  = \left\lt  v_{1} + w_{1}, v_{2} + w_{2} \right>
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <example xml:id="vectoraddex">
+      <statement>
+        <p>
+          Let <m>\vec{v} = \left\lt 3,4\right></m> and suppose
+          <m>\vec{w} = \overrightarrow{PQ}</m> where <m>P(-3,7)</m> and <m>Q(-2,5)</m>.
+          Find <m>\vec{v} + \vec{w}</m> and interpret this sum geometrically.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Before can add the vectors using <xref ref="vectoradd">Definition</xref>,
+          we need to write <m>\vec{w}</m> in component form.
+          Using <xref ref="componentformvector">Definition</xref>,
+          we get <m>\vec{w} = \left\lt -2-(-3),5-7\right> = \left\lt 1,-2\right></m>.
+          Thus,
+          <me>
+            \vec{v} + \vec{w} =  \left\lt 3,4\right> + \left\lt 1,-2\right> =  \left\lt  3 + 1, 4 + (-2) \right> =  \left\lt 4, 2\right>
+          </me>.
+        </p>
+        <p>
+          To visualize this sum,
+          we draw <m>\vec{v}</m> with its initial point at <m>(0,0)</m>
+          (for convenience)
+          so that its terminal point is <m>(3,4)</m>.
+          Next, we graph <m>\vec{w}</m> with its initial point at <m>(3,4)</m>.
+          Moving one to the right and two down,
+          we find the terminal point of <m>\vec{w}</m> to be <m>(4,2)</m>. \begin{mfpic}[20]{-0.25}{5}{-0.5}{5} \axes \xmarks{1,2,3,4} \ymarks{1,2,3,4} \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \point[3pt]{(0,0), (3,4), (4,2)} \tlabel[cc](1.5,2.5){<m>\vec{v}</m>} \tlabel[cc](4,3){<m>\vec{w}</m>} \tlabel[cc](2.5,0.5){<m>\vec{v} + \vec{w}</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0),(3,4)} \arrow \polyline{(3,4),(4,2)} \arrow \polyline{(0,0),(4,2)} \tlpointsep{4pt} \axislabels{x}{ {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>}4} \axislabels{y}{ {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>}4}] \end{mfpic}
+        </p>
+        <p>
+          We see the vector <m>\vec{v} + \vec{w}</m> has initial point <m>(0,0)</m> and terminal point <m>(4,2)</m> so its component form is <m>\left\lt 4,2\right></m>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      In order for vector addition to enjoy the same kinds of properties as real number addition,
+      it is necessary to extend our definition of vectors to include a <sq>zero vector</sq>,
+      <m>\vec{0} = \left\lt 0, 0\right></m>.
+    </p>
+    <p>
+      Geometrically, <m>\vec{0}</m> represents a point, which we can
+      (very broadly)
+      think of as a directed line segment with the same initial and terminal points.
+      The reader may well object to the inclusion of <m>\vec{0}</m>,
+      since after all,
+      vectors are supposed to have both a magnitude (length) and a direction.
+    </p>
+    <p>
+      While it seems clear that the magnitude of <m>\vec{0}</m> should be <m>0</m>,
+      it is not clear what its direction is.
+      As we shall see,
+      the direction of <m>\vec{0}</m> is in fact undefined,
+      but this minor hiccup in the natural flow of things is worth the benefits we reap by including <m>\vec{0}</m> in our discussions.
+      We have the following theorem.
+    </p>
+    <theorem xml:id="vectoradditionprops">
+      <statement>
+        <p>
+          <em>Properties of Vector Addition</em>
+          <idx><h>vector</h><h>addition ! properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Commutative Property:</em> For all vectors <m>\vec{v} \text{ and } \vec{w}</m>,
+                <m>\vec{v} + \vec{w} = \vec{w} + \vec{v}</m>.
+                  <idx><h>vector</h><h>addition ! commutative property</h></idx>
+                  <idx><h>commutative property</h><h>vector ! addition</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Associative Property:</em> For all vectors <m>\vec{u}, \vec{v} \text{ and } \vec{w}</m>,
+                <m>\left(\vec{u} + \vec{v}\right) + \vec{w} = \vec{u} + \left(\vec{v} + \vec{w}\right)</m>.
+                  <idx><h>vector</h><h>addition ! associative property</h></idx>
+                  <idx><h>associative property</h><h>vector ! addition</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Identity Property:</em> <idx><h>vector</h><h>additive identity</h></idx>  For all vectors <m>\vec{v}</m>,
+                <me>
+                  \vec{v} + \vec{0} = \vec{0} + \vec{v} = \vec{v}
+                </me>.
+                The vector <m>\vec{0}</m> acts as the additive identity for vector addition.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Inverse Property:</em> <idx><h>vector</h><h>additive inverse</h></idx>  For every vector  <m>\vec{v} = \left\lt  v_{1}, v_{2} \right></m>,
+                the vector <m>\vec{w} = \left\lt  - v_{1}, -v_{2} \right></m> satisfies
+                <me>
+                  \vec{v} + \vec{w} = \vec{w} + \vec{v} = \vec{0}
+                </me>.
+                That is, the additive inverse of a vector is the vector of the additive inverses of its components.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The properties in <xref ref="vectoradditionprops">Theorem</xref>
+      are easily verified using the definition of vector addition,<fn>
+      The interested reader is encouraged to compare <xref ref="vectoradditionprops">Theorem</xref>
+      and the ensuing discussion with <xref ref="matrixadditionprops">Theorem</xref>
+      in <xref ref="MatArithmetic">Section</xref>.
+      </fn> and are a direct consequence of the definition of vector addition along with properties inherited from real number arithmetic.
+    </p>
+    <p>
+      For the commutative property,
+      we note that if <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> and <m>\vec{w} = \left\lt w_{1},w_{2}\right></m> then
+      <me>
+        \begin{array}{rcl} \vec{v} + \vec{w}  \amp  = \amp   \left\lt  v_{1}, v_{2} \right> +  \left\lt   w_{1}, w_{2} \right> \\ \amp  = \amp  \left\lt  v_{1} + w_{1}, v_{2} + w_{2} \right> \\ \amp  = \amp   \left\lt  w_{1} + v_{1}, w_{2} + v_{2} \right> \\ \amp  = \amp  \vec{w} + \vec{v} \end{array}
+      </me>
+    </p>
+    <p>
+      Geometrically,
+      we can <sq>see</sq> the commutative property by realizing that the sums <m>\vec{v}+\vec{w}</m> and
+      <m>\vec{w} + \vec{v}</m> are the same directed diagonal determined by the parallelogram below.
+    </p>
+    <p>
+      \begin{mfpic}[20]{0}{6}{0}{7} \point[4pt]{(0,0), (1,4), (3,2), (4,6)} \tlabel[cc](1.5, 0.5){<m>\vec{v}</m>} \tlabel[cc](4, 4){<m>\vec{w}</m>} \tlabel[cc](2, 5){<m>\vec{v}</m>} \tlabel[cc](0, 2){<m>\vec{w}</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0),(3,2)} \arrow \polyline{(3,2),(4,6)} \arrow \polyline{(0,0),(4,6)} \arrow \polyline{(0,0),(1,4)} \arrow \polyline{(1,4),(4,6)} \tlabelsep{-10pt} \tlabel(0,0){\rotatebox{56}{
+      <m>\vec{w}+\vec{v}</m>}} \tlabelsep{5pt} \tlabel(0,0){\rotatebox{56}{ <m>\vec{v}+\vec{w}</m>}} \end{mfpic}
+    </p>
+    <p>
+      Demonstrating the commutative property of vector addition.
+    </p>
+    <p>
+      The proofs of the associative and identity properties proceed similarly,
+      and the reader is encouraged to verify them and provide accompanying diagrams.
+    </p>
+    <p>
+      The additive identity property is likewise verified algebraically using a calculation.
+      If <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> , then
+      <me>
+        \vec{v} + \vec{0} = \left\lt v_{1},v_{2}\right> + \left\lt 0, 0\right> = \left\lt  v_{1} + 0, v_{2} + 0 \right> =  \left\lt v_{1},v_{2}\right>  = \vec{v}
+      </me>.
+    </p>
+    <p>
+      From the commutative property of vector addition,
+      we get that <m>\vec{0} + \vec{v} = \vec{v}</m> as well.
+      Again, the reader is encouraged to visualize what this means geometrically.<fn>
+      Recall, <m>\vec{0}</m> is represented geometrically as a point <ellipsis/>
+      </fn>
+    </p>
+    <p>
+      Regarding additive inverses,
+      we can verify by direct computation that if
+      <m>\vec{v} = \left\lt  v_{1}, v_{2} \right></m> and <m>\vec{w} = \left\lt  - v_{1}, -v_{2} \right></m>,
+      <me>
+        \vec{v} + \vec{w} = \left\lt  v_{1}, v_{2} \right> + \left\lt  - v_{1}, -v_{2} \right> = \left\lt   v_{1} + ( - v_{1}), v_{2} + ( - v_{2}) \right> = \lt 0,0> = \vec{0}
+      </me>.
+    </p>
+    <p>
+      Once again, the commutative property of vector addition assures us that,
+      likewise,
+      <m>\vec{w} + \vec{v} = \vec{0}</m>.
+    </p>
+    <p>
+      Moreover, additive inverses of vectors are <em>unique</em>.
+      That is, given a vector <m>\vec{v} = \left\lt v_{1}, v_{2}\right></m>,
+      there is precisely only <em>one</em>
+      vector <m>\vec{w}</m> so that <m>\vec{v} + \vec{w} = \vec{0}</m>.
+    </p>
+    <p>
+      To see this, suppose a vector
+      <m>\vec{w} = \left\lt w_{1},w_{2}\right></m> satisfies <m>\vec{v} + \vec{w} = \vec{0}</m>.
+      By the definition of vector addition,
+      we have <m>\left\lt v_{1} + w_{1}, v_{2} + w_{2}\right> = \left\lt 0,0\right></m>.
+      Hence, <m>v_{1} + w_{1} = 0</m> and <m>v_{2} + w_{2} = 0</m>.
+      We get <m>w_{1} = -v_{1}</m> and <m>w_{2} = -v_{2}</m> so that
+      <m>\vec{w} = \left\lt -v_{1} , -v_{2} \right></m> as prescribed in <xref ref="vectoradditionprops">Theorem</xref>.
+    </p>
+    <p>
+      Hence, every vector <m>\vec{v}</m> has one,
+      and only one, additive inverse.
+      In general, we denote the additive inverse of a vector <m>\vec{v}</m> with the
+      (highly suggestive)
+      notation <m>- \vec{v}</m>.
+    </p>
+    <p>
+      Geometrically,
+      the vectors <m>\vec{v} = \left\lt v_{1}, v_{2}\right></m> and
+      <m>-\vec{v} = \left\lt -v_{1}, -v_{2}\right></m> have the same length,
+      but opposite directions.
+      As a result, when adding the vectors geometrically,
+      the sum <m>\vec{v} + (-\vec{v})</m> results in starting at the initial point of <m>\vec{v}</m> and ending back at the initial point of <m>\vec{v}</m>.
+      That is, the net result of moving <m>\vec{v}</m> then
+      <m>-\vec{v}</m> is not moving at all.
+    </p>
+    <p>
+      \begin{mfpic}[20]{0}{6}{0}{7} \tlabel[cc](1.5, 4.5){<m>\vec{v}</m>} \tlabel[cc](3.5, 3.5){<m>-\vec{v}</m>} \headshape{1}{2}{true} \penwd{1.25pt} \arrow \polyline{(0,2),(3,6)} \arrow \reverse \polyline{(2,2),(5,6)} \end{mfpic}
+    </p>
+    <p>
+      Using the additive inverse of a vector,
+      we can define the difference of two vectors:
+      <m>\vec{v} - \vec{w} = \vec{v} + (-\vec{w})</m>.
+      Looking at this at the level of components,
+      we see if <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> and <m>\vec{w} = \left\lt w_{1},w_{2}\right></m> then
+      <me>
+        \begin{array}{rcl} \vec{v} - \vec{w} \amp  = \amp  \vec{v} + (-\vec{w}) \\ \amp   = \amp  \left\lt v_{1},v_{2}\right> + \left\lt -w_{1},-w_{2}\right> \\ \amp  = \amp   \left\lt v_{1} + \left(-w_{1}\right),v_{2} + \left(-w_{2}\right) \right>\\ \amp  = \amp   \left\lt v_{1} -w_{1},v_{2} - w_{2}\right> \end{array}
+      </me>
+    </p>
+    <p>
+      In other words, like vector addition,
+      vector subtraction works component-wise.
+    </p>
+    <p>
+      To interpret the vector <m>\vec{v} - \vec{w}</m> geometrically, we note
+      <me>
+        \begin{array}{rcll} \vec{w} + \left(\vec{v} - \vec{w}\right) \amp  = \amp  \vec{w} + \left(\vec{v} +(-\vec{w})\right) \amp  \text{ Definition of Vector Subtraction }  \\ \amp  = \amp  \vec{w} + \left((-\vec{w})+\vec{v}\right) \amp  \text{ Commutativity of Vector Addition }  \\ \amp  = \amp  (\vec{w} + (-\vec{w})) + \vec{v} \amp  \text{ Associativity of Vector Addition }  \\ \amp  = \amp  \vec{0} + \vec{v} \amp  \text{ Definition of Additive Inverse } \\ \amp  = \amp  \vec{v} \amp  \text{ Definition of Additive Identity } \end{array}
+      </me>
+    </p>
+    <p>
+      This means that the <sq>net result</sq> of moving along <m>\vec{w}</m> then moving along
+      <m>\vec{v} - \vec{w}</m> is just <m>\vec{v}</m> itself.
+    </p>
+    <p>
+      From the diagram below on the left,
+      we see that <m>\vec{v}-\vec{w}</m> may be interpreted as the vector whose initial point is the terminal point of <m>\vec{w}</m> and whose terminal point is the terminal point of <m>\vec{v}</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{0}{6}{0}{7}
+          \point[3pt]{(0,0), (1,4), (3,2)}
+          \tlabel[cc](1.5, 0.5){<m>\vec{v}</m>}
+          \tlabel[cc](0, 2){<m>\vec{w}</m>}
+          \tlabel[cc](2.5, 3.5){<m>\vec{v} - \vec{w}</m>}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow \polyline{(0,0),(3,2)}
+          \arrow \polyline{(1,4),(3,2)}
+          \arrow \polyline{(0,0),(1,4)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{0}{6}{0}{7}
+          \point[3pt]{(0,0), (1,4), (3,2), (4,6)}
+          \tlabel[cc](1.5, 0.5){<m>\vec{v}</m>}
+          \tlabel[cc](4, 4){<m>\vec{w}</m>}
+          \tlabel[cc](2, 5){<m>\vec{v}</m>}
+          \tlabel[cc](0, 2){<m>\vec{w}</m>}
+          \tlabel[cc](2.5, 3.5){<m>\vec{v} - \vec{w}</m>}
+          \headshape{1}{1}{true}
+          \penwd{1.25pt}
+          \arrow \polyline{(0,0),(3,2)}
+          \arrow \polyline{(3,2),(4,6)}
+          \arrow \polyline{(1,4),(3,2)}
+          \arrow \polyline{(0,0),(1,4)}
+          \arrow \polyline{(1,4),(4,6)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      It is also worth mentioning that in the parallelogram determined by the vectors <m>\vec{v}</m> and <m>\vec{w}</m> above on the right,
+      the vector <m>\vec{v}-\vec{w}</m> is one of the diagonals <mdash/> the other being <m>\vec{v} + \vec{w}</m>.
+    </p>
+    <p>
+      Next, we discuss <em>scalar</em>
+      multiplication <mdash/> that is,
+      taking a real number times a vector.
+      We define scalar multiplication for vectors in the same way we defined it for matrices in <xref ref="MatArithmetic">Section</xref>.
+    </p>
+    <definition xml:id="scalarmultvector">
+      <statement>
+        <p>
+              <idx><h>vector</h><h>scalar multiplication ! definition of</h></idx>
+              <idx><h>scalar multiplication</h><h>vector ! definition of</h></idx>
+          If <m>k</m> is a real number and <m>\vec{v} = \left\lt v_{1},v_{2}\right></m>, we define <m>k\vec{v}</m> by
+          <me>
+            k\vec{v} = k\left\lt v_{1},v_{2}\right> =\left\lt k v_{1},k v_{2}\right>
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Scalar multiplication by <m>k</m> in vectors can be understood geometrically as scaling the vector
+      (if <m>k > 0</m>)
+      or scaling the vector and reversing its direction
+      (if <m>k \lt 0</m>)
+      as demonstrated below.
+    </p>
+    <p>
+      \begin{mfpic}[18]{0}{6}{0}{6} \tlabel[cc](0,3){<m>\vec{v}</m>} \tlabel[cc](2.5,4){<m>2\vec{v}</m>} \tlabel[cc](3.75,2.5){<m>\frac{1}{2}\vec{v}</m>} \tlabel[cc](5,1){<m>-2\vec{v}</m>} \dotted \polyline{(0,2), (6,2)} \headshape{1}{2}{true} \penwd{1.25pt} \arrow \polyline{(0,2),(1,4)} \arrow \polyline{(2,2), (4, 6)} \arrow \polyline{(4,2),(4.5,3)} \arrow \polyline{(6,2), (5,0)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      Note by <xref ref="scalarmultvector">definition</xref>,
+      <m>(-1)\vec{v} = (-1)\left\lt v_{1},v_{2}\right> = \left\lt (-1)v_{1}, (-1)v_{2}\right> = \left\lt -v_{1},-v_{2}\right> = -\vec{v}</m>,
+      which is what we would expect.
+      This and other properties of scalar multiplication are summarized in the theorem below.
+    </p>
+    <theorem xml:id="vectorscalarmultprops">
+      <statement>
+        <p>
+          <em>Properties of Scalar Multiplication</em>
+          <idx><h>vector</h><h>scalar multiplication ! properties of</h></idx>
+          <idx><h>scalar multiplication</h><h>vector ! properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Associative Property:</em> <idx><h>vector</h><h>scalar multiplication ! associative property of</h></idx> <idx><h>scalar multiplication</h><h>vector ! associative property of</h></idx> <idx><h>associative property</h><h>vector ! scalar multiplication</h></idx> For every vector <m>\vec{v}</m> and scalars <m>k</m> and <m>r</m>,
+                <m>(kr)\vec{v} = k(r\vec{v})</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Identity Property:</em> <idx><h>vector</h><h>scalar multiplication ! identity for</h></idx> For all vectors <m>\vec{v}</m>,
+                <m>1\vec{v} = \vec{v}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Additive Inverse Property:</em>
+                For all vectors <m>\vec{v}</m>,
+                <m>-\vec{v} = (-1)\vec{v}</m>.
+                  <idx><h>vector</h><h>additive inverse</h></idx>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Property of Scalar Multiplication over Scalar Addition:</em>
+                  <idx><h>vector</h><h>scalar multiplication ! distributive properties</h></idx>
+                  <idx><h>distributive property</h><h>vector ! scalar multiplication</h></idx>
+                  <idx><h>scalar multiplication</h><h>vector ! distributive properties of</h></idx>
+              For every  vector <m>\vec{v}</m> and scalars  <m>k</m> and <m>r</m>,
+                <me>
+                  (k+r)\vec{v} = k\vec{v} + r\vec{v}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Property of Scalar Multiplication over Vector Addition:</em>
+                For all vectors <m>\vec{v}</m> and <m>\vec{w}</m> and scalars <m>k</m>,
+                <me>
+                  k(\vec{v}+\vec{w}) = k\vec{v} + k\vec{w}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Zero Product Property:</em>
+                  <idx><h>vector</h><h>scalar multiplication ! zero product property</h></idx>
+              If <m>\vec{v}</m> is vector and <m>k</m> is a scalar, then
+                <me>
+                  k\vec{v} = \vec{0}  \text{ if and only if }   k=0  \text{ or }   \vec{v} =\vec{0}
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="vectorscalarmultprops">Theorem</xref>,
+      like the proof of <xref ref="vectoradditionprops">Theorem</xref>,
+      ultimately boils down to the definition of scalar multiplication and properties of real numbers.
+    </p>
+    <p>
+      For example, to prove the associative property,
+      we let <m>\vec{v} = \left\lt v_{1},v_{2}\right></m>.
+      If <m>k</m> and <m>r</m> are scalars then
+      <me>
+        \begin{array}{rcll}  (kr) \vec{v} \amp  = \amp  (kr) \left\lt v_{1},v_{2}\right> \amp  \\ \amp  = \amp   \left\lt (kr) v_{1}, (kr) v_{2}\right> \amp  \text{ Definition of Scalar Multiplication }  \\ \amp  = \amp    \left\lt k (r v_{1}),  k (r v_{2})\right> \amp  \text{ Associative Property of Real Number Multiplication }  \\ \amp  = \amp    k\left\lt r v_{1},  r v_{2}\right> \amp  \text{ Definition of Scalar Multiplication }  \\ \amp  = \amp    k\left(r\left\lt v_{1}, v_{2}\right>\right) \amp  \text{ Definition of Scalar Multiplication }  \\ \amp  = \amp  k(r\vec{v}) \amp \end{array}
+      </me>
+    </p>
+    <p>
+      The reader is invited to think about what this property means geometrically.
+      The remaining properties are proved similarly and are left as exercises.
+    </p>
+    <p>
+      Our next example demonstrates how <xref ref="vectorscalarmultprops">Theorem</xref>
+      allows us to do the same kind of algebraic manipulations with vectors as we do with variables <mdash/> multiplication and division of vectors notwithstanding.
+      If the pedantry seems familiar, it should.
+      This is the same treatment we gave <xref ref="matrixaddscalarex">Example</xref>
+      in <xref ref="MatArithmetic">Section</xref>.
+      As in that example,
+      we spell out the solution in excruciating detail to encourage the reader to think carefully about why each step is justified.
+    </p>
+    <example xml:id="vectoreqnex">
+      <statement>
+        <p>
+          Solve <m>5\vec{v} - 2\left(\vec{v} + \left\lt 1,-2\right>\right) = \vec{0}</m> for <m>\vec{v}</m>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \begin{array}{rcl}
+          5\vec{v} - 2\left(\vec{v} +\ \left\lt 1,-2\right>\right) \amp  = \amp   \vec{0} \\
+          5\vec{v} + (-1)\left[ 2\left(\vec{v} +\left\lt 1,-2\right>\right)\right] \amp  = \amp   \vec{0}\\
+          5\vec{v} + [(-1)(2)]\left(\vec{v} + \left\lt 1,-2\right>\right) \amp   = \amp   \vec{0}\\
+          5\vec{v} + (-2)\left(\vec{v} + \left\lt 1,-2\right>\right)  \amp   = \amp   \vec{0}\\
+          5\vec{v} + \left[(-2)\vec{v} + (-2)\left\lt 1,-2\right> \right] \amp   = \amp   \vec{0}\\
+          5\vec{v} + \left[(-2)\vec{v} + \left\lt (-2)(1),(-2)(-2)\right> \right] \amp   = \amp   \vec{0}\\
+          \left[5\vec{v} + (-2)\vec{v}\right] + \left\lt -2,4\right> \amp   = \amp   \vec{0}\\
+          (5 + (-2)) \vec{v} + \left\lt -2,4\right>  \amp   = \amp   \vec{0}\\
+          3\vec{v} + \left\lt -2,4\right>  \amp   = \amp   \vec{0}\\
+          \left(3\vec{v} + \left\lt -2,4\right>\right) + \left(- \left\lt -2,4\right>\right)  \amp   = \amp   \vec{0} + \left(- \left\lt -2,4\right>\right)\\
+          3\vec{v} + \left[\left\lt -2,4\right> + \left(- \left\lt -2,4\right>\right)\right]  \amp   = \amp   \vec{0} +  (-1) \left\lt -2,4\right>\\
+          3\vec{v} + \vec{0}  \amp   = \amp   \vec{0} +  \left\lt (-1)(-2),(-1)(4)\right>\\
+          3\vec{v}   \amp   = \amp    \left\lt 2,-4\right>\\
+          \frac{1}{3} \left(3\vec{v} \right)  \amp   = \amp    \frac{1}{3} \left(\left\lt 2,-4\right>\right)\\
+          \left[\left(\frac{1}{3}\right) (3) \right]\vec{v}   \amp   = \amp    \left\lt  \left(\frac{1}{3}\right)(2), \left(\frac{1}{3}\right)(-4)\right>\\
+          1 \vec{v} \amp  = \amp  \left\lt  \frac{2}{3}, -\frac{4}{3} \right> \\
+          \vec{v} \amp  =\amp   \left\lt  \frac{2}{3}, -\frac{4}{3} \right>
+          \end{array}
+        </me>
+        <p>
+          The reader is invited to check our solution in the original equation.
+        </p>
+      </solution>
+    </example>
+    <p>
+      A vector whose initial point is <m>(0,0)</m> is said to be in <idx><h>vector</h><h>standard position</h></idx> <idx><h>standard position of a vector</h></idx>
+      <em>standard position</em>.
+      If <m>\vec{v} = \left\lt v_{1},v_{2}\right></m> is plotted in standard position,
+      then its terminal point is necessarily <m>\left(v_{1},v_{2}\right)</m>.
+      (Once more, think about this before reading on.)
+    </p>
+    <p>
+      \begin{mfpic}[20]{-1}{5}{-0.5}{5} \axes \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \arrow \parafcn{5,45,5}{1.5*dir(t)} \tlabel[cc](1.75, 0.75){<m>\theta</m>} \tlabel(0,1){\rotatebox{55}{
+      <m>\| \vec{v} \| = \sqrt{v_{1}^2 + v_{2}^2}</m>}} \point[4pt]{(0,0), (3,4)} \tlabel(3.25,4){<m>\left(v_{1},v_{2}\right)</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0),(3,4)} \end{mfpic}
+    </p>
+    <p>
+      <m>\vec{v} =\left\lt v_{1},v_{2}\right></m> in standard position.
+      Plotting a vector in standard position enables us to more easily quantify the concepts of magnitude and direction of the vector.
+    </p>
+    <p>
+      Recall the magnitude of vector <m>\vec{v}</m> is the length of the directed line segment representing <m>\vec{v}</m>.
+      When plotted in standard position,
+      the length of this line segment is none other than the distance from the origin <m>(0,0)</m> to the point <m>\left(v_{1},v_{2}\right)</m>.
+      Hence, the magnitude of <m>\vec{v}</m>,
+      which we denote <m>\| \vec{v} \|</m>,
+      is given by <m>\| \vec{v} \| = \sqrt{v_{1}^2 + v_{2}^2}</m>.
+    </p>
+    <p>
+      Turning to the notion of direction,
+      we note that the point <m>\left(v_{1},v_{2}\right)</m> is on the terminal side of the angle <m>\theta</m> depicted in the diagram above.
+      From <xref ref="cosinesinecircle">Theorem</xref>,
+      we have <m>v_{1} = \| \vec{v} \| \cos(\theta)</m> and <m>v_{2}  =  \| \vec{v} \| \sin(\theta)</m>.
+      From the definition of scalar multiplication and vector equality, we get
+      <me>
+        \begin{array}{rcl} \vec{v} \amp  = \amp  \left\lt  v_{1} , v_{2}  \right> \\ \amp  = \amp  \left\lt  \| \vec{v} \| \cos(\theta), \| \vec{v} \| \sin(\theta) \right> \\ \amp  = \amp   \| \vec{v} \| \left\lt  \cos(\theta),\sin(\theta) \right> \end{array}
+      </me>
+    </p>
+    <p>
+      This motivates the following definition.
+    </p>
+    <definition xml:id="polarformvector">
+      <statement>
+        <p>
+          Suppose <m>\vec{v}</m> is a vector with component form <m>\vec{v} =\left\lt v_{1} , v_{2} \right></m>.
+          Let <m>\theta</m> be an angle in standard position whose terminal side contains the point <m>\left(v_{1},v_{2}\right)</m>.
+          <ul>
+            <li>
+              <p>
+                The <idx><h>vector</h><h>magnitude ! definition of</h></idx>
+                <em>magnitude</em> of <m>\vec{v}</m>,
+                denoted <m>\| \vec{v} \|</m>,
+                is given by <m>\| \vec{v} \| = \sqrt{v_{1}^2 + v_{2}^2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\vec{v} \neq \vec{0}</m>,
+                  <idx><h>vector</h><h>direction ! definition of</h></idx>
+                the
+                <em>(vector) direction</em> of <m>\vec{v}</m>,
+                denoted <m>\bm\hat{v}</m> is given by <m>\bm\hat{v} = \left\lt \cos(\theta), \sin(\theta) \right></m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Taken together,
+          we get <m>\vec{v} = \left\lt \| \vec{v} \| \cos(\theta), \| \vec{v} \| \sin(\theta) \right></m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A few remarks are in order.
+      First, we note that if <m>\vec{v} \neq 0</m> then there are infinitely many angles <m>\theta</m> which satisfy <xref ref="polarformvector">Definition</xref>.
+      However, the fact that all of them must contain the same point
+      <m>\left(v_{1},v_{2}\right)</m> on their terminal sides means they are all coterminal.
+    </p>
+    <p>
+      Hence, if <m>\theta</m> and <m>\theta'</m> both satisfy the conditions of <xref ref="polarformvector">Definition</xref>,
+      then <m>\cos(\theta) = \cos(\theta')</m> and <m>\sin(\theta) = \sin(\theta')</m>,
+      and as such,
+      <m>\left\lt \cos(\theta), \sin(\theta) \right> = \left\lt \cos(\theta'), \sin(\theta') \right></m> making <m>\bm\hat{v}</m> is well-defined.
+    </p>
+    <p>
+      For <m>\vec{0} = \left\lt 0, 0 \right></m>,
+      note that <m>\| \vec{0} \| = \sqrt{0^2 + 0^2} = 0</m>.
+      Hence, <m>\| \vec{0} \| \left\lt \cos(\theta), \sin(\theta) \right> = 0 \left\lt \cos(\theta), \sin(\theta) \right> = \lt 0,0></m> for
+      <em>every</em> angle <m>\theta</m>.
+      In other words, every angle <m>\theta</m> satisfies the equation
+      <m>\vec{v} = \left\lt \| \vec{v} \| \cos(\theta), \| \vec{v} \| \sin(\theta) \right></m> in <xref ref="polarformvector">Definition</xref>,
+      so for this reason, <m>\bm\hat{0}</m> is undefined.
+    </p>
+    <p>
+      The following theorem summarizes the important facts about the magnitude and direction of a vector.
+    </p>
+    <theorem xml:id="magdirprops">
+      <statement>
+        <p>
+          <em>Properties of Magnitude and Direction</em>: Suppose <m>\vec{v}</m> is a vector.
+              <idx><h>vector</h><h>magnitude ! properties of</h></idx>
+              <idx><h>vector</h><h>direction ! properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <m>\| \vec{v} \| \geq 0</m> and
+                <m>\| \vec{v} \| = 0</m> if and only if <m>\vec{v} = \vec{0}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                For all scalars <m>k</m>, <m>\| k \, \vec{v} \| = |k| \| \vec{v} \|</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\vec{v} \neq \vec{0}</m> then <m>\vec{v} = \| \vec{v} \| \bm\hat{v}</m>,
+                so that <m>\bm\hat{v} = \left(\dfrac{1}{\|\vec{v}\|}\right) \vec{v}</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of the first property in <xref ref="magdirprops">Theorem</xref>
+      is a direct consequence of the definition of <m>\| \vec{v} \|</m>.
+      Given <m>\vec{v} = \left\lt v_{1} ,v_{2}\right></m>,
+      then <m>\| \vec{v} \| = \sqrt{v_{1}^2 + v_{2}^2}</m> which is by definition greater than or equal to <m>0</m>.
+      Moreover, <m>\sqrt{v_{1}^2 + v_{2}^2} = 0</m> if and only of
+      <m>v_{1}^2 + v_{2}^2 = 0</m> if and only if <m>v_{1} = v_{2} = 0</m>.
+      Hence, <m>\| \vec{v} \| = 0</m> if and only if <m>\vec{v} = \left\lt 0,0\right> = \vec{0}</m>,
+      as required.
+    </p>
+    <p>
+      The second property is a result of the definition of magnitude and scalar multiplication along with a property of radicals.
+      If <m>\vec{v} = \left\lt  v_{1} ,v_{2}\right></m> and <m>k</m> is a scalar then
+      <me>
+        \begin{array}{rcll}  \| k \, \vec{v} \| \amp  = \amp  \| k \left\lt  v_{1}, v_{2}\right> \| \amp  \\ \amp  = \amp  \| \left\lt kv_{1},kv_{2}\right>\| \amp  \text{ Definition of scalar multiplication }  \\ \amp  = \amp  \sqrt{\left(kv_{1}\right)^2 + \left(kv_{2}\right)^2} \amp  \text{ Definition of magnitude }  \\ \amp  = \amp  \sqrt{k^2v_{1}^2 + k^2v_{2}^2} \amp  \\ \amp  = \amp  \sqrt{k^2(v_{1}^2+v_{2}^2)} \amp  \\ \amp  = \amp  \sqrt{k^2} \sqrt{v_{1}^2+v_{2}^2} \amp  \text{ Product Rule for Radicals }  \\ \amp  = \amp  |k| \sqrt{v_{1}^2+v_{2}^2} \amp  \text{Since \(\sqrt{k^2} = |k|\)}  \\ \amp  = \amp  |k| \| \vec{v} \| \amp \end{array}
+      </me>
+    </p>
+    <p>
+      The equation <m>\vec{v} = \| \vec{v} \| \bm\hat{v}</m> in <xref ref="magdirprops">Theorem</xref>
+      is a consequence of the definitions of <m>\| \vec{v} \|</m> and
+      <m>\bm\hat{v}</m> and was worked out in the discussion just prior to <xref ref="polarformvector">Definition</xref>
+      on <xref ref="polarformvectorsection">page</xref>.
+      In words, the equation <m>\vec{v} = \| \vec{v} \| \bm\hat{v}</m> says that any given vector is the product of its magnitude and its direction <mdash/> an important concept to keep in mind when studying and using vectors.
+    </p>
+    <p>
+      The formula for <m>\bm\hat{v}</m> stated in <xref ref="magdirprops">Theorem</xref>
+      is a consequence of solving
+      <m>\vec{v} = \| \vec{v} \| \bm\hat{v}</m> for <m>\bm\hat{v}</m> by multiplying<fn>
+      Of course, to go from <m>\vec{v} = \| \vec{v} \| \bm\hat{v}</m> to <m>\bm\hat{v} = \left( \frac{1}{\|\vec{v}\|}\right) \vec{v}</m>,
+      we are essentially <sq>dividing both sides</sq> of the equation by the scalar <m>\| \vec{v} \|</m>.
+      The authors encourage the reader, however,
+      to work out the details carefully to gain an appreciation of the properties in play.
+      </fn> both sides of the equation by
+      <m>\frac{1}{\| \vec{v} \|}</m> and using the properties of <xref ref="vectorscalarmultprops">Theorem</xref>.
+      We leave these details to the reader.
+      We are overdue for an example.
+    </p>
+    <example xml:id="polarformvecex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li xml:id="resolvecomponents">
+            <p>
+              Find the component form of the vector <m>\vec{v}</m> with
+              <m>\|\vec{v}\| = 5</m> so that when <m>\vec{v}</m> is plotted in standard position,
+              it lies in Quadrant II and makes a <m>60^{\circ}</m> angle<fn>
+              Due to the utility of vectors in <sq>real-world</sq> applications,
+              we will usually use degree measure for the angle when giving the vector's direction.
+              That being said,
+              since Carl doesn't want you to forget about radians,
+              he's made sure there are examples and exercises which use them as well.
+              </fn> with the negative <m>x</m>-axis.
+            </p>
+          </li>
+          <li>
+            <p>
+              For <m>\vec{v} = \left\lt 3, -3\sqrt{3}\right></m>,
+              find <m>\|\vec{v}\|</m> and <m>\theta</m>,
+              <m>0 \leq \theta \lt 2\pi</m> so that <m>\vec{v} = \| \vec{v} \| \left\lt \cos(\theta), \sin(\theta)\right></m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For the vectors <m>\vec{v} = \left\lt 3,4\right></m> and <m>\vec{w} = \left\lt 1, -2\right></m>,
+              find the following.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\bm\hat{v}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\| \vec{v} \| -2 \|\vec{w}\|</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\| \vec{v} -2\vec{w}\|</m>
+                </p>
+              </li>
+              <li xml:id="preludetounitvector">
+                <p>
+                  <m>\| \bm\hat{w} \|</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We are told that <m>\| \vec{v} \| = 5</m> and are given information about its direction,
+                so we can use the formula <m>\vec{v} = \| \vec{v} \| \bm\hat{v}</m> to get the component form of <m>\vec{v}</m>.
+                To determine <m>\bm\hat{v}</m>,
+                we appeal to <xref ref="polarformvector">Definition</xref>.
+                Since <m>\vec{v}</m> lies in Quadrant II and makes a
+                <m>60^{\circ}</m> angle with the negative <m>x</m>-axis,
+                one angle <m>\theta</m> satisfying the criteria of <xref ref="polarformvector">Definition</xref>
+                is <m>\theta = 120^{\circ}</m>. \begin{mfpic}[20]{-4}{4}{-1}{6} \axes \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5} \arrow \reverse \arrow \parafcn{125,175,5}{1.5*dir(t)} \arrow \parafcn{5,115,5}{1.5*dir(t)} \headshape{1}{1}{true} \tlabel[cc](4,-0.25){<m>x</m>} \tlabel[cc](0.25,6){<m>y</m>} \tlabel[cc](2.5,1){<m>\theta = 120^{\circ}</m>} \tlabel[cc](-2,1){<m>60^{\circ}</m>} \tlabel[cc](-1.25,3){<m>\vec{v}</m>} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \polyline{(0,0), (-2.5, 4.33)} \end{mfpic} Hence,
+                <m>\bm\hat{v} = \left\lt \cos\left(120^{\circ}\right), \sin\left(120^{\circ}\right) \right> = \left\lt - \frac{1}{2} , \frac{\sqrt{3}}{2} \right></m>,
+                so <m>\vec{v} = \| \vec{v} \| \bm\hat{v} = 5 \left\lt - \frac{1}{2} , \frac{\sqrt{3}}{2} \right> = \left\lt - \frac{5}{2} , \frac{5\sqrt{3}}{2} \right></m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>\vec{v} = \left\lt 3, -3\sqrt{3}\right></m>,
+                we get <m>\| \vec{v} \| = \sqrt{(3)^2+(-3\sqrt{3})^2} = 6</m>.
+                In light of <xref ref="polarformvector">Definition</xref>,
+                we can find the <m>\theta</m> we're after by finding a Quadrant IV angle whose terminal side contains the point <m>(3, -3\sqrt{3})</m>.
+                Going through the usual calculations,
+                we find <m>\cos(\theta) = \frac{1}{2}</m> and <m>\sin(\theta) = -\frac{\sqrt{3}}{2}</m>.
+                Hence, <m>\theta = \frac{5\pi}{3}</m>.
+                We may check our answer by verifying <m>6\left\lt \cos\left(\frac{5\pi}{3}\right), \sin\left(\frac{5\pi}{3}\right) \right> = \left\lt 3, -3\sqrt{3}\right> = \vec{v}</m>.
+              </p>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Since we are given the component form of <m>\vec{v}</m>,
+                    we'll use the formula <m>\bm\hat{v} = \left(\frac{1}{\|\vec{v}\|}\right) \vec{v}</m>.
+                    For <m>\vec{v} = \left\lt 3,4\right></m>,
+                    we have <m>\| \vec{v} \| = \sqrt{3^2+4^2} = \sqrt{25} = 5</m>.
+                    Hence, <m>\bm\hat{v} = \frac{1}{5} \left\lt 3, 4 \right> = \left\lt \frac{3}{5}, \frac{4}{5}\right></m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We know from our work above that <m>\| \vec{v} \| = 5</m>,
+                    so to find <m>\| \vec{v} \| -2 \|\vec{w}\|</m>,
+                    we need only find <m>\| \vec{w} \|</m>.
+                    Since <m>\vec{w} = \left\lt 1, -2\right></m>,
+                    we get <m>\| \vec{w} \| = \sqrt{1^2+(-2)^2} = \sqrt{5}</m>.
+                    Hence, <m>\| \vec{v} \| -2 \|\vec{w}\| = 5 - 2\sqrt{5}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In the expression <m>\| \vec{v} -2\vec{w}\|</m>,
+                    notice that the arithmetic on the vectors comes first,
+                    then the magnitude.
+                    Hence, our first step is to find the component form of the vector <m>\vec{v} - 2\vec{w}</m>.
+                    We get <m>\vec{v} - 2 \vec{w} = \left\lt 3,4\right> - 2\left\lt 1,-2\right> = \left\lt 1, 8\right></m>.
+                    Hence, <m>\| \vec{v} -2\vec{w}\| = \| \left\lt 1, 8\right>\| = \sqrt{1^2+8^2} = \sqrt{65}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    One approach to find <m>\| \bm\hat{w} \|</m>,
+                    is to first find <m>\bm\hat{w}</m> and then take the magnitude.
+                    Using the formula  <m>\bm\hat{w} = \left(\frac{1}{\| \vec{w} \|}\right) \vec{w}</m> along with <m>\| \vec{w} \| = \sqrt{5}</m>,
+                    which we found the in the previous problem,
+                    we get  <m>\bm\hat{w} = \frac{1}{\sqrt{5}} \left\lt 1, -2\right> = \left\lt  \frac{1}{\sqrt{5}}, -\frac{2}{\sqrt{5}}\right>  = \left\lt  \frac{\sqrt{5}}{5}, -\frac{2\sqrt{5}}{5}\right></m>.
+                    Hence, <m>\| \bm\hat{w} \| = \sqrt{\left( \frac{\sqrt{5}}{5}\right)^2 + \left(-\frac{2\sqrt{5}}{5}\right)^2} = \sqrt{\frac{5}{25} + \frac{20}{25}} = \sqrt{1} = 1</m>.
+                    Alternatively, we can use <xref ref="magdirprops">Theorem</xref>.
+                    Since <m>\bm\hat{w} = \left(\frac{1}{\| \vec{w} \|} \right) \vec{w}</m>,
+                    where <m>\frac{1}{\| \vec{w} \|}>0</m> is a scalar,
+                    <me>
+                      \| \bm\hat{w} \| = \left\|  \left(\frac{1}{\| \vec{w} \|} \right) \vec{w} \right\| = \frac{1}{\| \vec{w} \|} \| \vec{w} \| = \frac{\| \vec{w} \|}{\| \vec{w} \|} = 1
+                    </me>.
+                    For a third way to show <m>\| \bm\hat{w} \| = 1</m>,
+                    we can appeal to <xref ref="polarformvector">Definition</xref>.
+                    Since <m>\bm\hat{w} = \left\lt  \cos(\theta), \sin(\theta) \right></m> for some angle <m>\theta</m>,
+                    <m>\| \bm\hat{w} \| = \sqrt{\cos^{2}(\theta) + \sin^{2}(\theta)} = \sqrt{1} = 1</m>,
+                    where we have used the Pythagorean Identity,
+                    <m>\cos^{2}(\theta) + \sin^{2}(\theta) = 1</m>.
+                    No matter how we approach the problem,
+                    <m>\| \bm\hat{w} \| = 1</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that the second and third solutions to <xref ref="preludetounitvector">number</xref>
+      in <xref ref="polarformvecex">Example</xref> above work for <em>any</em>
+      nonzero vector, <m>\vec{w}</m>.
+      We will have more to say about this shortly.
+    </p>
+    <p>
+      The process exemplified by <xref ref="resolvecomponents">number</xref>
+      in <xref ref="polarformvecex">Example</xref>
+      above by which we take information about the magnitude and direction of a vector and find the component form of a vector is called <em>resolving</em>
+      a vector into its components.
+      As an application of this process,
+      we revisit <xref ref="vectorbearingex">Example</xref> below.
+    </p>
+    <example xml:id="vectorbearingexresolve">
+      <statement>
+        <p>
+          A plane leaves an airport with an airspeed of 175 miles per hour with bearing N<m>40^{\circ}</m>E. A 35 mile per hour wind is blowing at a bearing of S<m>60^{\circ}</m>E. Find the true speed of the plane,
+          rounded to the nearest mile per hour,
+          and the true bearing of the plane,
+          rounded to the nearest degree.
+        </p>
+        <p>
+          <em>Solution:</em> We proceed as we did in <xref ref="vectorbearingex">Example</xref>
+          and let <m>\vec{v}</m> denote the plane's velocity and <m>\vec{w}</m> denote the wind's velocity,
+          and set about determining <m>\vec{v} + \vec{w}</m>.
+        </p>
+        <p>
+          If we regard the airport as being at the origin,
+          the positive <m>y</m>-axis acting as due north and the positive <m>x</m>-axis acting as due east,
+          we see that the vectors <m>\vec{v}</m> and <m>\vec{w}</m> are in standard position and their directions correspond to the angles
+          <m>50^{\circ}</m> and <m>-30^{\circ}</m>, respectively.
+        </p>
+        <p>
+          Hence, the component form of
+          <m>\vec{v} = 175\left\lt \cos(50^{\circ}), \sin(50^{\circ})\right> = \left\lt 175\cos(50^{\circ}), 175\sin(50^{\circ})\right></m> and the component form of <m>\vec{w} = \left\lt 35\cos(-30^{\circ}), 35\sin(-30^{\circ}) \right></m>.
+        </p>
+        <p>
+          Since we have no convenient way to express the exact values of cosine and sine of <m>50^{\circ}</m>,
+          we leave both vectors in terms of cosines and sines.<fn>
+          Keeping things <sq>calculator</sq> friendly, for once!
+          </fn> Adding corresponding components,
+          we find the resultant vector <m>\vec{v} + \vec{w} = \left\lt  175\cos(50^{\circ}) + 35\cos(-30^{\circ}), 175\sin(50^{\circ}) + 35\sin(-30^{\circ})\right></m>.
+          To find the <sq>true</sq> speed of the plane,
+          we compute the magnitude of this resultant vector
+          <me>
+            \| \vec{v} + \vec{w}\| = \sqrt{ (175\cos(50^{\circ}) + 35\cos(-30^{\circ}))^2 + (175\sin(50^{\circ}) + 35\sin(-30^{\circ}))^2} \approx 184
+          </me>
+        </p>
+        <p>
+          Hence, the <sq>true</sq> speed of the plane is approximately 184 miles per hour.
+        </p>
+        <p>
+          To find the true bearing,
+          we need to find the angle <m>\theta</m> whose terminal side when graphed in standard position contains <m>(x,y) = (175\cos(50^{\circ}) + 35\cos(-30^{\circ}), 175\sin(50^{\circ}) + 35\sin(-30^{\circ}))</m>.
+        </p>
+        <p>
+          Since both of these coordinates are positive,<fn>
+          Yes, a calculator approximation is the quickest way to see this,
+          but you can also use good old-fashioned inequalities and the fact that <m>45^{\circ} \leq 50^{\circ} \leq 60^{\circ}</m>.
+          </fn> we know <m>\theta</m> is a Quadrant I angle,
+          as depicted below.
+          Furthermore,
+          <me>
+            \tan(\theta) = \frac{y}{x} = \frac{175\sin(50^{\circ}) + 35\sin(-30^{\circ})}{175\cos(50^{\circ}) + 35\cos(-30^{\circ})}
+          </me>,
+          so using the arctangent function,<fn>
+          We could just have easily used arcsine or arccosine here <ellipsis/>
+          </fn> we get <m>\theta \approx 39^{\circ}</m>.
+          Since, for the purposes of bearing,
+          we need the angle between <m>\vec{v} + \vec{w}</m> and the positive <m>y</m>-axis,
+          we take the complement of <m>\theta</m> and find the <sq>true</sq> bearing of the plane to be approximately N<m>51^{\circ}</m>E.
+        </p>
+        <tabular>
+          <row>
+            <cell>\begin{mfpic}[15]{-1}{8}{-2}{9}
+              \axes
+              \tlabel[cl](8,-0.5){<m>x</m>  (E)}
+              \tlabel[cl](0.5,9){<m>y</m> (N)}
+              \arrow \parafcn{85,55,-5}{3*dir(t)}
+              \tlabel[cc](1.2, 3.3){<m>40^{\circ}</m>}
+              \arrow \parafcn{5,45,5}{3*dir(t)}
+              \tlabel[cc](3.2, 1.5){<m>50^{\circ}</m>}
+              \arrow \parafcn{275,325,-5}{1.5*dir(t)}
+              \tlabel[cc](1, -1.73){<m>60^{\circ}</m>}
+              \arrow \parafcn{-5,-25,-5}{1.5*dir(t)}
+              \tlabel[cc](2.3, -0.52){<m>-30^{\circ}</m>}
+              \headshape{1}{1}{true}
+              \penwd{1.25pt}
+              \arrow \polyline{(0,0), (6.43, 7.66)}
+              \tlabel[cc](6.75, 8.04){<m>\vec{v}</m>}
+              \arrow \polyline{(0,0), (1.73, -1)}
+              \tlabel[cc](2.16, -1.25){<m>\vec{w}</m>}
+              \end{mfpic}</cell>
+            <cell>\begin{mfpic}[15]{-1}{8}{-2}{9}
+              \axes
+              \tlabel[cl](8,-0.5){<m>x</m> (E)}
+              \tlabel[cl](0.5,9){<m>y</m> (N)}
+              \arrow \parafcn{5,35,5}{3*dir(t)}
+              \tlabel[cc]{(4,1.2)}{<m>\theta \approx 39^{\circ}</m>}
+              \headshape{1}{1}{true}
+              \penwd{1.25pt}
+              \arrow \polyline{(0,0), (6.43, 7.66)}
+              \tlabel[cc](6.75, 8.04){<m>\vec{v}</m>}
+              \arrow \polyline{(0,0), (1.73, -1)}
+              \tlabel[cc](2.16, -1.25){<m>\vec{w}</m>}
+              \arrow \polyline{(0,0), (8.16,6.66)}
+              \tlabel[cc](9,6.75){<m>\vec{v} + \vec{w}</m>}
+              \end{mfpic}</cell>
+          </row>
+        </tabular>
+      </statement>
+    </example>
+    <p>
+      In <xref ref="preludetounitvector">part</xref>
+      of <xref ref="polarformvecex">Example</xref>,
+      we saw that the length of the direction vector,
+      <m>\bm\hat{w}</m>, <m>\| \bm\hat{w} \| = 1</m>.
+      Vectors of length <m>1</m> play such an important role that they are given a special name.
+    </p>
+    <definition xml:id="unitvectordefn">
+      <statement>
+        <p>
+              <idx><h>vector</h><h>unit vector</h></idx>
+              <idx><h>unit vector</h></idx>
+          <term>Unit Vectors:</term> Let <m>\vec{v}</m> be a vector.
+          If <m>\| \vec{v} \| = 1</m>,
+          we say that <m>\vec{v}</m> is a <term>unit vector</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Note that if <m>\vec{v}</m> is a unit vector, then necessarily,
+      <m>\vec{v} = \| \vec{v} \| \bm\hat{v} = 1 \cdot \bm\hat{v} = \bm\hat{v}</m>.
+      Conversely, in the solution of <xref ref="preludetounitvector">part</xref>
+      of <xref ref="polarformvecex">Example</xref>,
+      two different arguments show for any nonzero vector <m>\vec{v}</m>,
+      <m>\| \bm\hat{v} \| = 1</m>, so <m>\bm\hat{v}</m> is a unit vector.
+    </p>
+    <p>
+      In other words, unit vectors are direction vectors and vice-versa.
+      Indeed, the vector <m>\bm\hat{v}</m> which we have defined as <sq>the <em>direction</em>
+      of <m>\vec{v}</m></sq> is often described as <sq>the
+      <em>unit vector in the direction</em> of <m>\vec{v}</m>.</sq>
+    </p>
+    <p>
+      In practice, if <m>\vec{v}</m> is a unit vector we write it as
+      <m>\bm\hat{v}</m> as opposed to <m>\vec{v}</m> because we have reserved the <sq><m>\bm\hat{~}</m></sq> notation for unit vectors.
+      The process of multiplying a nonzero vector by the factor
+      <m>\frac{1}{\| \vec{v} \|}</m> to produce a unit vector is called <idx><h>vector</h><h>normalization</h></idx> <sq><em>normalizing</em> the vector.</sq>
+    </p>
+    <p>
+      The terminal points of unit vectors,
+      when plotted in standard position, lie on the Unit Circle.
+      (You should take the time to show this.)
+      As a result,
+      we visualize normalizing a nonzero vector <m>\vec{v}</m> as shrinking<fn>
+      <ellipsis/> if <m>\| \vec{v} \| > 1</m> <ellipsis/>
+      </fn> its terminal point,
+      when plotted in standard position, back to the Unit Circle.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-4}{4}{-4}{4} \drawcolor[gray]{0.7} \circle{(0,0),2} \drawcolor[rgb]{0.33,0.33,0.33} \axes \tlabel[cl](4,-0.5){<m>x</m>} \tlabel[cl](0.5,4){<m>y</m>} \xmarks{-2,2} \ymarks{-2,2} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0), (2, 3.46)} \tlabel[cc](2.25, 3.46){<m>\vec{v}</m>} \tlabel[cc](1.5, 1.73){\text{\boldmath
+      <m>\bm\hat{v}</m>} } \penwd{1.025} \headshape{1}{1}{true} \arrow \polyline{(0,0), (1, 1.73)} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-1</m>} -2, {<m>1</m>} 2} \axislabels {y}{{<m>-1</m>} -2, {<m>1</m>} 2}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      Visualizing vector normalization <m>\bm\hat{v} = \left( \frac{1}{\|\vec{v}\|} \right) \vec{v}</m>
+    </p>
+    <p>
+      Of all of the unit vectors, two deserve special mention.
+    </p>
+    <definition xml:id="ihatjhatdefn">
+      <statement>
+        <p>
+          <term>The Principal Unit Vectors:</term>
+          <m>~</m> <idx><h>vector</h><h>principal unit vectors,
+          <m>\bm\hat{\text{i} }</m>,
+          <m>\bm\hat{\text{j} }</m></h></idx> <idx><h>principal unit vectors,
+          <m>\bm\hat{\text{i} }</m>, <m>\bm\hat{\text{j} }</m></h></idx>
+          <ul>
+            <li>
+              <p>
+                The vector <m>\bm\hat{\text{i} }</m> is defined by <m>\bm\hat{\text{i} } = \left\lt 1,0\right></m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The vector <m>\bm\hat{\text{j} }</m> is defined by <m>\bm\hat{\text{j} } = \left\lt 0,1\right></m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Geometrically, in the <m>xy</m>-plane,
+      the vector <m>\bm\hat{\text{i} }</m> as represents the positive <m>x</m>-direction,
+      whereas the vector <m>\bm\hat{\text{j} }</m> represents the positive <m>y</m>-direction.
+      We have the following <sq>decomposition</sq> theorem.<fn>
+      We will see a generalization of <xref ref="ijdecomp">Theorem</xref>
+      in <xref ref="TheDotProduct">Section</xref>.
+      Stay tuned!
+      </fn>
+    </p>
+    <theorem xml:id="ijdecomp">
+      <statement>
+        <p>
+          <em>Principal Vector Decomposition Theorem:</em>
+        </p>
+        <p>
+          Let <m>\vec{v}</m> be a vector with component form <m>\vec{v} = \left\lt v_{1} ,v_{2}\right></m>.
+          Then <m>\vec{v} = v_{1} \bm\hat{\text{i} } + v_{2} \bm\hat{\text{j} }</m>.
+              <idx><h>vector</h><h>Decomposition Theorem ! Principal</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="ijdecomp">Theorem</xref> is straightforward.
+      Since <m>\bm\hat{\text{i} } = \left\lt 1,0\right></m> and <m>\bm\hat{\text{j} } = \left\lt  0,1\right></m>,
+      we have from the definition of scalar multiplication and vector addition that
+      <me>
+        v_{1} \bm\hat{\text{i} } + v_{2} \bm\hat{\text{j} } = v_{1}\left\lt 1,0\right> + v_{2}\left\lt 0,1\right> = \left\lt v_{1},0\right> + \left\lt 0,v_{2}\right> = \left\lt v_{1},v_{2}\right> = \vec{v}
+      </me>
+    </p>
+    <p>
+      Geometrically, the situation looks like this:
+    </p>
+    <p>
+      \begin{mfpic}[20]{-1}{5}{-1}{5} \axes \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \point[3pt]{(0,0)} \xmarks{1,3} \ymarks{1,4} \tlabel(3.25,4){<m>\vec{v} = \left\lt v_{1},v_{2}\right></m>} \tlabel[cc](3,-0.5){<m>v_{1} \bm\hat{\text{i} }</m>} \tlabel(-1,4){<m>v_{2} \bm\hat{\text{j} }</m>} \tlabel[cc](1,-0.5){<m>\bm\hat{\text{i} }</m>} \tlabel(-0.5,1){<m>\bm\hat{\text{j} }</m>} \headshape{1}{1}{true} \penwd{1.25pt} \arrow \polyline{(0,0),(3,4)} \penwd{1.025} \arrow \polyline{(0,0), (1,0)} \arrow \polyline{(1,0), (3,0)} \arrow \polyline{(0,0), (0,1)} \arrow \polyline{(0,1), (0,4)} \tcaption{<m>\vec{v} = \left\lt v_{1},v_{2}\right> = v_{1}\bm\hat{\text{i} } + v_{2} \bm\hat{\text{j} }</m>.} \end{mfpic}
+    </p>
+    <p>
+      We conclude this section with a classic example which demonstrates how vectors are used in physics to study forces.
+      A <sq>force</sq> is defined as a <sq>push</sq> or a <sq>pull.</sq> The intensity of the push or pull is the magnitude of the force,
+      and is measured in Netwons (N) in the SI system or pounds (lbs.)<m>\!</m> in the English system.<fn>
+      See also <xref ref="harmomicmotion">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      The following example uses all of the concepts in this section,
+      and should be studied in great detail.
+    </p>
+    <example xml:id="forceex">
+      <statement>
+        <p>
+          A <m>50</m> pound speaker is suspended from the ceiling by two support braces.
+          If one of them makes a <m>60^{\circ}</m> angle with the ceiling and the other makes a
+          <m>30^{\circ}</m> angle with the ceiling,
+          what are the tensions on each of the supports?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We represent the problem schematically below along with the corresponding vector diagram.
+        </p>
+        <tabular>
+          <row>
+            <cell>\begin{mfpic}[18]{-8}{3}{-5}{5}
+              \hatchcolor[gray]{.7}
+              \lhatch \rect{(-8,4), (3,5)}
+              \polyline{(0,0),(2.31,4)}
+              \polyline{(0,0),  (-6.93, 4)}
+              \arrow \reverse \arrow \shiftpath{(2.31,4)}  \parafcn{185, 235, 5}{1.5*dir(t)}
+              \arrow \reverse \arrow \shiftpath{(-6.93,4)}  \parafcn{-5, -25, 5}{2*dir(t)}
+              \tlabel[cc](-4,3.25){<m>30^{\circ}</m>}
+              \tlabel[cc](0,3.25){<m>60^{\circ}</m>}
+              \tlabel[cc](0,-2){50 lbs.}
+              \point[3pt]{(0,0), (-6.93,4), (2.31,4)}
+              \penwd{1.025}
+              \rect{(-8,4), (3,5)}
+              \rect{(-2,-4),(2,0)}
+              \end{mfpic}</cell>
+            <cell>\begin{mfpic}[18]{-8}{3}{-5}{5}
+              \dotted \polyline{(0,0), (-6.93,4)}
+              \dotted \polyline{(0,0), (2.31,4)}
+              \dotted \polyline{(-8,4), (3,4)}
+              \arrow \reverse \arrow \shiftpath{(2.31,4)}  \parafcn{185, 235, 5}{1.5*dir(t)}
+              \arrow \reverse \arrow \shiftpath{(-6.93,4)}  \parafcn{-5, -25, 5}{2*dir(t)}
+              \tlabel[cc](-4,3.25){<m>30^{\circ}</m>}
+              \tlabel[cc](0,3.25){<m>60^{\circ}</m>}
+              \dashed \polyline{(-8,0), (3,0)}
+              \arrow \reverse \arrow   \parafcn{155, 175, 5}{2*dir(t)}
+              \arrow \reverse \arrow  \parafcn{5, 55, 5}{1.5*dir(t)}
+              \tlabel[cc](-2.5,0.5){<m>30^{\circ}</m>}
+              \tlabel[cc](2,1){<m>60^{\circ}</m>}
+              \tlabel[cc](0.5,-2){<m>\vec{w}</m>}
+              \tlabel[cc](2.5,3.4){<m>\vec{T_{\text{ \tiny \(1\) } }}</m>}
+              \tlabel[cc](-3,2.25){<m>\vec{T_{\text{ \tiny \(2\) } }}</m>}
+              \headshape{1}{1}{true}
+              \penwd{1.25pt}
+              \arrow \polyline{(0,0), \plr{(4,60)}}
+              \arrow \polyline{(0,0),  \plr{(4,150)} }
+              \arrow \polyline{(0,0), (0,-4)}
+              \point[4pt]{(0,0)}
+              \end{mfpic}</cell>
+          </row>
+        </tabular>
+        <p>
+          We have three forces acting on the speaker:
+          the weight of the speaker, which we'll call <m>\vec{w}</m>,
+          pulling the speaker directly downward,
+          and the forces on the support rods,
+          which we'll call <m>\vec{T_{\text{ \tiny \(1\) } }}</m> and <m>\vec{T_{\text{ \tiny \(2\) } }}</m>
+          (for <sq>tensions</sq>)
+          acting upward at angles <m>60^{\circ}</m> and <m>30^{\circ}</m>,
+          respectively.
+        </p>
+        <p>
+          We are looking for the tensions on the support,
+          which are the magnitudes <m>\| \vec{T_{\text{ \tiny \(1\) } }} \|</m> and <m>\| \vec{T_{\text{ \tiny \(2\) } }} \|</m>.
+          In order for the speaker to remain stationary,<fn>
+          This is the criteria for <sq>static equilbrium</sq>.
+          </fn> we require <m>\vec{w} + \vec{T_{\text{ \tiny \(1\) } }} + \vec{T_{\text{ \tiny \(2\) } }} = \vec{0}</m>.
+        </p>
+        <p>
+          Viewing the common initial point of these vectors as the origin and the dashed line as the <m>x</m>-axis,
+          we use <xref ref="magdirprops">Theorem</xref>
+          to get component representations for the three vectors involved.
+          We can model the weight of the speaker as a vector pointing directly downwards with a magnitude of 50 pounds.
+          That is, <m>\| \vec{w} \| = 50</m> and <m>\bm\hat{w} = -\bm\hat{\text{j} } = \left\lt 0,-1\right></m>.
+          Hence, <m>\vec{w} = 50\left\lt 0,-1\right> = \left\lt 0,-50\right></m>.
+          For the force in the first support, we get
+          <me>
+            \begin{array}{rcl}  \vec{T_{\text{ \tiny \(1\) } }} \amp   = \amp   \| \vec{T_{\text{ \tiny \(1\) } }} \|\left\lt \cos\left(60^{\circ}\right), \sin\left(60^{\circ}\right)\right> \\ \amp  =  \amp  \left\lt  \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|}{2} , \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|\sqrt{3}}{2}\right> \end{array}
+          </me>
+        </p>
+        <p>
+          For the second support, we note that the angle
+          <m>30^{\circ}</m> is measured from the negative <m>x</m>-axis,
+          so the angle needed to write
+          <m>\vec{T_{\text{ \tiny \(2\) } }}</m> in component form is <m>150^{\circ}</m>.
+          Hence
+          <me>
+            \begin{array}{rcl}  \vec{T_{\text{ \tiny \(2\) } }} \amp  = \amp  \| \vec{T_{\text{ \tiny \(2\) } }} \|\left\lt \cos\left(150^{\circ}\right), \sin\left(150^{\circ}\right)\right>\\ \amp  =  \amp  \left\lt -\dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|\sqrt{3}}{2}, \dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|}{2} \right> \end{array}
+          </me>
+        </p>
+        <p>
+          The requirement <m>\vec{w} + \vec{T_{\text{ \tiny \(1\) } }} + \vec{T_{\text{ \tiny \(2\) } }} = \vec{0}</m> gives us the vector equation:
+          <me>
+            \begin{array}{rcl}  \vec{w} + \vec{T_{\text{ \tiny \(1\) } }} + \vec{T_{\text{ \tiny \(2\) } }} \amp   = \amp   \vec{0}  \\  \left\lt 0,-50\right> + \left\lt  \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|}{2} , \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|\sqrt{3}}{2}\right> +  \left\lt -\dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|\sqrt{3}}{2}, \dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|}{2} \right> \amp  = \amp  \left\lt 0, 0\right> \\  \left\lt  \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|}{2} -\dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|\sqrt{3}}{2}, \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|\sqrt{3}}{2} +  \dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|}{2} -50  \right> \amp  = \amp  \left\lt 0, 0\right> \end{array}
+          </me>
+        </p>
+        <p>
+          Equating the corresponding components of the vectors on each side,
+          we get a system of linear equations in the variables
+          <m>\| \vec{T_{\text{ \tiny \(1\) } }} \|</m> and <m>\| \vec{T_{\text{ \tiny \(2\) } }} \|</m>.
+          <me>
+            \left\{ \begin{array}{lrcl} (E1) \amp   \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|}{2} -\dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|\sqrt{3}}{2} \amp  = \amp  0 \\  (E2) \amp   \dfrac{\| \vec{T_{\text{ \tiny \(1\) } }} \|\sqrt{3}}{2} +  \dfrac{\| \vec{T_{\text{ \tiny \(2\) } }} \|}{2} -50 \amp  = \amp  0 \end{array}  \right.
+          </me>
+        </p>
+        <p>
+          From <m>(E1)</m>,
+          we get <m>\| \vec{T_{\text{ \tiny \(1\) } }} \| = \| \vec{T_{\text{ \tiny \(2\) } }} \| \sqrt{3}</m>.
+          Substituting that into <m>(E2)</m> gives <m>\frac{(\| \vec{T_{\text{ \tiny \(2\) } }} \| \sqrt{3})\sqrt{3}}{2} + \frac{\| \vec{T_{\text{ \tiny \(2\) } }} \|}{2} - 50 = 0</m>.
+        </p>
+        <p>
+          Solving, we get <m>2\| \vec{T_{\text{ \tiny \(2\) } }} \| - 50 =0</m>,
+          so <m>\| \vec{T_{\text{ \tiny \(2\) } }} \| = 25</m> pounds.
+          Hence, <m>\| \vec{T_{\text{ \tiny \(1\) } }} \| = \| \vec{T_{\text{ \tiny \(2\) } }} \| \sqrt{3} = 25 \sqrt{3}</m> pounds.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that the sum of the tensions on the wires in <xref ref="forceex">Example</xref>
+      exceed the <m>50</m> pounds of the speaker.
+      Explaining why this happens is a good exercise and gets at the heart of the concept of vectors and resolution of forces.
+      Speaking of exercises <ellipsis/>
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="vectorbasicfirst">Exercises</xref>
+      - <xref ref="vectorbasiclast"></xref>,
+      use the given pair of vectors <m>\vec{v}</m> and <m>\vec{w}</m> to find the following quantities.
+      State whether the result is a vector or a scalar.
+    </p>
+    <p>
+      <m>\text{ \tiny \(\bullet\) } \, \vec{v} + \vec{w} \;\;\;</m> <m>\text{ \tiny \(\bullet\) } \, \vec{w} - 2\vec{v} \;\;\;</m>
+      <m>\text{ \tiny \(\bullet\) } \, \| \vec{v} + \vec{w} \| \;\;\;</m> <m>\text{ \tiny \(\bullet\) } \, \| \vec{v} \| + \| \vec{w} \|</m>
+      <m>\text{ \tiny \(\bullet\) } \, \| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v}</m> <m>\text{ \tiny \(\bullet\) } \, \|\vec{w}\| \hat{v}</m>
+    </p>
+    <p>
+      Finally, verify that the vectors satisfy the
+      <url href="http://en.wikipedia.org/wiki/Parallelogram_law"><em><em>Parallelogram Law</em></em></url>
+      <me>
+        \|\vec{v}\|^2 + \|\vec{w}\|^2 = \dfrac{1}{2}\left[ \| \vec{v} + \vec{w}\|^2 + \|\vec{v} - \vec{w}\|^2\right]
+      </me>
+      <ol cols="5">
+        <li xml:id="vectorbasicfirst">
+          <p>
+            <m>\vec{v} = \left\lt 12, -5\right></m>,
+            <m>\vec{w} = \left\lt 3, 4\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -7, 24 \right></m>,
+            <m>\vec{w} = \left\lt -5, -12\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 2, -1 \right></m>,
+            <m>\vec{w} = \left\lt -2, 4 \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 10, 4 \right></m>,
+            <m>\vec{w} = \left\lt -2, 5 \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -\sqrt{3}, 1\right></m>,
+            <m>\vec{w} = \left\lt 2\sqrt{3}, 2\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt \frac{3}{5}, \frac{4}{5}\right></m>,
+            <m>\vec{w} = \left\lt -\frac{4}{5}, \frac{3}{5}\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt \frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right></m>,
+            <m>\vec{w} = \left\lt -\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2} \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt \frac{1}{2}, \frac{\sqrt{3}}{2} \right></m>,
+            <m>\vec{w} = \left\lt -1, -\sqrt{3} \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = 3\bm\hat{\text{i} } + 4\bm\hat{\text{j} }</m>,
+            <m>\vec{w} = -2\bm\hat{\text{j} }</m>
+          </p>
+        </li>
+        <li xml:id="vectorbasiclast">
+          <p>
+            <m>\vec{v} =\frac{1}{2} \left(\bm\hat{\text{i} } + \bm\hat{\text{j} }\right)</m>,
+            <m>\vec{w} = \frac{1}{2} \left(\bm\hat{\text{i} } - \bm\hat{\text{j} }\right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="vectorcompfirst">Exercises</xref>
+      - <xref ref="vectorcomplast"></xref>,
+      find the component form of the vector <m>\vec{v}</m> using the information given about its magnitude and direction.
+      Give exact values.
+      <ol>
+        <li xml:id="vectorcompfirst">
+          <p>
+            <m>\|\vec{v}\| = 6</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant I and makes a
+            <m>60^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 3</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant I and makes a
+            <m>45^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = \frac{2}{3}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant I and makes a
+            <m>60^{\circ}</m> angle with the positive <m>y</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 12</m>;
+            when drawn in standard position <m>\vec{v}</m> lies along the positive <m>y</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 4</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant II and makes a
+            <m>30^{\circ}</m> angle with the negative <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 2\sqrt{3}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant II and makes a
+            <m>30^{\circ}</m> angle with the positive <m>y</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = \frac{7}{2}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies along the negative <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 5\sqrt{6}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant III and makes a
+            <m>45^{\circ}</m> angle with the negative <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 6.25</m>;
+            when drawn in standard position <m>\vec{v}</m> lies along the negative <m>y</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 4\sqrt{3}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant IV and makes a
+            <m>30^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 5\sqrt{2}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant IV and makes a
+            <m>45^{\circ}</m> angle with the negative <m>y</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\| \vec{v}\| = 2\sqrt{5}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant I and makes an angle measuring
+            <m>\arctan(2)</m> with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\| \vec{v}\| = \sqrt{10}</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant II and makes an angle measuring
+            <m>\arctan(3)</m> with the negative <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\| \vec{v}\| = 5</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant III and makes an angle measuring
+            <m>\arctan\left(\frac{4}{3}\right)</m> with the negative <m>x</m>-axis
+          </p>
+        </li>
+        <li xml:id="vectorcomplast">
+          <p>
+            <m>\| \vec{v}\| = 26</m>;
+            when drawn in standard position <m>\vec{v}</m> lies in Quadrant IV and makes an angle measuring
+            <m>\arctan\left(\frac{5}{12}\right)</m> with the positive <m>x</m>-axis
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="vectorcompcalcfirst">Exercises</xref>
+      - <xref ref="vectorcompcalclast"></xref>,
+      approximate the component form of the vector <m>\vec{v}</m> using the information given about its magnitude and direction.
+      Round your approximations to two decimal places.
+      <ol>
+        <li xml:id="vectorcompcalcfirst">
+          <p>
+            <m>\|\vec{v}\| = 392</m>;
+            when drawn in standard position <m>\vec{v}</m> makes a
+            <m>117^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 63.92</m>;
+            when drawn in standard position <m>\vec{v}</m> makes a
+            <m>78.3^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 5280</m>;
+            when drawn in standard position <m>\vec{v}</m> makes a
+            <m>12^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 450</m>;
+            when drawn in standard position <m>\vec{v}</m> makes a
+            <m>210.75^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\|\vec{v}\| = 168.7</m>;
+            when drawn in standard position <m>\vec{v}</m> makes a
+            <m>252^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+        <li xml:id="vectorcompcalclast">
+          <p>
+            <m>\| \vec{v}\| = 26</m>;
+            when drawn in standard position <m>\vec{v}</m> makes a
+            <m>304.5^{\circ}</m> angle with the positive <m>x</m>-axis
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findmaganglefirst">Exercises</xref>
+      - <xref ref="findmaganglelast"></xref>,
+      for the given vector <m>\vec{v}</m>,
+      find the magnitude <m>\|\vec{v}\|</m> and an angle <m>\theta</m> with <m>0 \leq \theta \lt 360^{\circ}</m> so that
+      <m>\vec{v} = \|\vec{v}\| \left\lt \cos(\theta), \sin(\theta) \right></m> (See <xref ref="polarformvector">Definition</xref>.) Round approximations to two decimal places.
+      <ol cols="2">
+        <li xml:id="findmaganglefirst">
+          <p>
+            <m>\vec{v} = \left\lt 1,\sqrt{3}\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 5,5\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -2\sqrt{3}, 2 \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -\sqrt{2}, \sqrt{2} \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -\frac{1}{2}, -\frac{\sqrt{3}}{2} \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 6, 0\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -2.5, 0\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 0, \sqrt{7} \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = -10 \bm\hat{\text{j} }</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 3,4\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 12, 5\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -4, 3 \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -7, 24\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -2, -1 \right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt -2, -6\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \bm\hat{\text{i} } + \bm\hat{\text{j} }</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \bm\hat{\text{i} } - 4\bm\hat{\text{j} }</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 123.4, -77.05\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\vec{v} = \left\lt 965.15, 831.6\right></m>
+          </p>
+        </li>
+        <li xml:id="findmaganglelast">
+          <p>
+            <m>\vec{v} = \left\lt -114.1, 42.3\right></m>
+          </p>
+        </li>
+        <li>
+          <p>
+            A small boat leaves the dock at Camp DuNuthin and heads across the Nessie River at 17 miles per hour
+            (that is, with respect to the water)
+            at a bearing of S<m>68^{\circ}</m>W. The river is flowing due east at 8 miles per hour.
+            What is the boat's true speed and heading?
+            Round the speed to the nearest mile per hour and express the heading as a bearing,
+            rounded to the nearest tenth of a degree.
+          </p>
+        </li>
+        <li xml:id="HMSSasquatchVectorBearing">
+          <p>
+            The HMS Sasquatch leaves port with bearing S<m>20^{\circ}</m>E maintaining a speed of 42 miles per hour
+            (that is, with respect to the water).
+            If the ocean current is 5 miles per hour with a bearing of N<m>60^{\circ}</m>E, find the HMS Sasquatch's true speed and bearing.
+            Round the speed to the nearest mile per hour and express the heading as a bearing,
+            rounded to the nearest tenth of a degree.
+          </p>
+        </li>
+        <li>
+          <p>
+            If the captain of the HMS Sasquatch in <xref ref="HMSSasquatchVectorBearing">Exercise</xref>
+            wishes to reach Chupacabra Cove,
+            an island 100 miles away at a bearing of S<m>20^{\circ}</m>E from port,
+            in three hours,
+            what speed and heading should she set to take into account the ocean current?
+            Round the speed to the nearest mile per hour and express the heading as a bearing,
+            rounded to the nearest tenth of a degree.
+            <em>HINT:</em> If <m>\vec{v}</m> denotes the velocity of the HMS Sasquatch and <m>\vec{w}</m> denotes the velocity of the current,
+            what does <m>\vec{v} + \vec{w}</m> need to be to reach Chupacabra Cove in three hours?
+          </p>
+        </li>
+        <li>
+          <p>
+            In calm air,
+            a plane flying from the Pedimaxus International Airport can reach Cliffs of Insanity Point in two hours by following a bearing of N<m>8.2^{\circ}</m>E at 96 miles an hour.
+            (The distance between the airport and the cliffs is 192 miles.)
+            If the wind is blowing from the southeast at 25 miles per hour,
+            what speed and bearing should the pilot take so that she makes the trip in two hours along the original heading?
+            Round the speed to the nearest hundredth of a mile per hour and your angle to the nearest tenth of a degree.
+          </p>
+        </li>
+        <li>
+          <p>
+            The SS Bigfoot leaves Yeti Bay on a course of N<m>37^{\circ}</m>W at a speed of 50 miles per hour.
+            After traveling half an hour,
+            the captain determines he is 30 miles from the bay and his bearing back to the bay is S<m>40^{\circ}</m>E. What is the speed and bearing of the ocean current?
+            Round the speed to the nearest mile per hour and express the heading as a bearing,
+            rounded to the nearest tenth of a degree.
+          </p>
+        </li>
+        <li>
+          <p>
+            A <m>600</m> pound Sasquatch statue is suspended by two cables from a gymnasium ceiling.
+            If each cable makes a <m>60^{\circ}</m> angle with the ceiling,
+            find the tension on each cable.
+            Round your answer to the nearest pound.
+          </p>
+        </li>
+        <li>
+          <p>
+            Two cables are to support an object hanging from a ceiling.
+            If the cables are each to make a
+            <m>42^{\circ}</m> angle with the ceiling,
+            and each cable is rated to withstand a maximum tension of <m>100</m> pounds,
+            what is the heaviest object that can be supported?
+            Round your answer down to the nearest pound.
+          </p>
+        </li>
+        <li>
+          <p>
+            A <m>300</m> pound metal star is hanging on two cables which are attached to the ceiling.
+            The left hand cable makes a
+            <m>72^{\circ}</m> angle with the ceiling while the right hand cable makes a
+            <m>18^{\circ}</m> angle with the ceiling.
+            What is the tension on each of the cables?
+            Round your answers to three decimal places.
+          </p>
+        </li>
+        <li xml:id="kegpull">
+          <p>
+            Two drunken college students have filled an empty beer keg with rocks and tied ropes to it in order to drag it down the street in the middle of the night.
+            The stronger of the two students pulls with a force of 100 pounds at a heading of N<m>77^{\circ}</m>E and the other pulls at a heading of S<m>68^{\circ}</m>E. What force should the weaker student apply to his rope so that the keg of rocks heads due east?
+            What resultant force is applied to the keg?
+            Round your answer to the nearest pound.
+          </p>
+        </li>
+        <li>
+          <p>
+            Emboldened by the success of their late night keg pull in <xref ref="kegpull">Exercise</xref> above,
+            our intrepid young scholars have decided to pay homage to the chariot race scene from the movie <sq>Ben-Hur</sq> by tying three ropes to a couch,
+            loading the couch with all but one of their friends and pulling it due west down the street.
+            The first rope points N<m>80^{\circ}</m>W, the second points due west and the third points S<m>80^{\circ}</m>W. The force applied to the first rope is 100 pounds,
+            the force applied to the second rope is 40 pounds and the force applied
+            (by the non-riding friend)
+            to the third rope is 160 pounds.
+            They need the resultant force to be at least 300 pounds otherwise the couch won't move.
+            Does it move?
+            If so, is it heading due west?
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>\vec{v} = \langle v_{\text{ \tiny \(1\) } }, v_{\text{ \tiny \(2\) } } \rangle</m> be any non-zero vector.
+            Show that <m>\dfrac{1}{\|\vec{v}\|} \vec{v}</m> has length 1.
+          </p>
+        </li>
+        <li xml:id="parallelvectorexercise">
+          <p>
+            We say that two non-zero vectors <m>\vec{v}</m> and <m>\vec{w}</m> are <em>parallel</em>
+    <idx><h>vector</h><h>parallel</h></idx>
+    <idx><h>parallel vectors</h></idx>
+            if they have same or opposite directions.
+            That is, <m>\vec{v} \neq \vec{0}</m> and
+            <m>\vec{w} \neq \vec{0}</m> are parallel if either
+            <m>\hat{v} = \hat{w}</m> or <m>\hat{v} = -\hat{w}</m>.
+            Show that this means <m>\vec{v} = k\vec{w}</m> for some non-zero scalar <m>k</m> and that <m>k > 0</m> if the vectors have the same direction and <m>k \lt 0</m> if they point in opposite directions.
+          </p>
+        </li>
+        <li xml:id="x2dvectorsgiveuslines">
+          <p>
+            The goal of this exercise is to use vectors to describe non-vertical lines in the plane.
+            To that end, consider the line <m>y = 2x - 4</m>.
+            Let <m>\vec{v}_{\text{ \tiny \(0\) } } = \langle 0, -4 \rangle</m> and let <m>\vec{s} = \langle 1, 2 \rangle</m>.
+            Let <m>t</m> be any real number.
+            Show that the vector defined by <m>\vec{v} = \vec{v}_{\text{ \tiny \(0\) } } + t\vec{s}</m>,
+            when drawn in standard position,
+            has its terminal point on the line <m>y = 2x - 4</m>. (Hint: Show that
+            <m>\vec{v}_{\text{ \tiny \(0\) } } + t\vec{s} = \langle t, 2t - 4 \rangle</m> for any real number <m>t</m>.) Now consider the non-vertical line <m>y = mx + b</m>.
+            Repeat the previous analysis with
+            <m>\vec{v}_{\text{ \tiny \(0\) } } = \langle 0, b \rangle</m> and let <m>\vec{s} = \langle 1, m \rangle</m>.
+            Thus any non-vertical line can be thought of as a collection of terminal points of the vector sum of <m>\langle 0, b \rangle</m>
+            (the position vector of the <m>y</m>-intercept)
+            and a scalar multiple of the slope vector <m>\vec{s} = \langle 1, m \rangle</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove the associative and identity properties of vector addition in <xref ref="vectoradditionprops">Theorem</xref>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove the properties of scalar multiplication in <xref ref="vectorscalarmultprops">Theorem</xref>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt 15,-1 \right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -21,14 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = \sqrt{226}</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 18</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -21,77\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt \frac{60}{13}, -\frac{25}{13} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt -12,12 \right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt 9,-60 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = 12\sqrt{2}</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 38</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -34,-612\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt -\frac{91}{25}, \frac{312}{25} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt 0,3\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -6,6 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = 3</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 3\sqrt{5}</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -6\sqrt{5},6\sqrt{5}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt 4, -2 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt 8,9\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -22, -3 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = \sqrt{145}</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 3\sqrt{29}</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -14\sqrt{29},6\sqrt{29}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt 5, 2 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt \sqrt{3},3\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt 4\sqrt{3}, 0 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = 2\sqrt{3}</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 6</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt 8\sqrt{3},0\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt -2\sqrt{3}, 2 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt -\frac{1}{5},\frac{7}{5}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -2, -1 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = \sqrt{2}</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 2</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -\frac{7}{5},-\frac{1}{5}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt \frac{3}{5}, \frac{4}{5} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt 0,0\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -\frac{3\sqrt{2}}{2}, \frac{3\sqrt{2}}{2} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = 0</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 2</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -\sqrt{2},\sqrt{2}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt \frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt -\frac{1}{2}, -\frac{\sqrt{3}}{2}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -2, -2\sqrt{3} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = 1</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 3</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -2,-2\sqrt{3}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt 1, \sqrt{3} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt 3,2\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -6, -10 \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = \sqrt{13}</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = 7</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt -6,-18\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt \frac{6}{5}, \frac{8}{5}\right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{v} + \vec{w} = \left\lt 1,0\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\vec{w} - 2\vec{v} = \left\lt -\frac{1}{2}, -\frac{3}{2} \right></m>, vector
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} + \vec{w} \| = 1</m>, scalar
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\| \vec{v} \| + \| \vec{w}\| = \sqrt{2}</m>, scalar
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\| \vec{v} \| \vec{w} - \| \vec{w} \| \vec{v} = \left\lt 0,-\frac{\sqrt{2}}{2}\right></m>, vector
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\|w\| \hat{v}= \left\lt \frac{1}{2}, \frac{1}{2}\right></m>, vector
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt 3,3\sqrt{3}\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt \frac{3\sqrt{2}}{2},\frac{3\sqrt{2}}{2}\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt \frac{\sqrt{3}}{3}, \frac{1}{3}\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt 0,12\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt -2\sqrt{3}, 2\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt -\sqrt{3}, 3\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt -\frac{7}{2}, 0\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt -5\sqrt{3}, -5\sqrt{3}\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt 0, -6.25\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt 6, -2\sqrt{3}\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt 5, -5\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt 2,4\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt -1, 3\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt -3, -4\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} = \left\lt 24, -10\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} \approx \left\lt -177.96, 349.27\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} \approx \left\lt 12.96, 62.59\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} \approx \left\lt 5164.62, 1097.77\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} \approx \left\lt -386.73, -230.08\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} \approx \left\lt -52.13, -160.44\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\vec{v} \approx \left\lt 14.73, -21.43\right></m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 2</m>, <m>\theta = 60^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 5\sqrt{2}</m>,
+          <m>\theta = 45^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 4</m>, <m>\theta = 150^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 2</m>, <m>\theta = 135^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 1</m>, <m>\theta = 225^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 1</m>, <m>\theta = 240^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 6</m>, <m>\theta = 0^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 2.5</m>, <m>\theta = 180^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = \sqrt{7}</m>,
+          <m>\theta = 90^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 10</m>, <m>\theta = 270^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 5</m>, <m>\theta \approx 53.13^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 13</m>, <m>\theta \approx 22.62^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 5</m>, <m>\theta \approx 143.13^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 25</m>, <m>\theta \approx 106.26^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = \sqrt{5}</m>,
+          <m>\theta \approx 206.57^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = 2\sqrt{10}</m>,
+          <m>\theta \approx 251.57^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = \sqrt{2}</m>,
+          <m>\theta \approx 45^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| = \sqrt{17}</m>,
+          <m>\theta \approx 284.04^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| \approx 145.48</m>,
+          <m>\theta \approx 328.02^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| \approx 1274.00</m>,
+          <m>\theta \approx 40.75^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\|\vec{v}\| \approx 121.69</m>,
+          <m>\theta \approx 159.66^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The boat's true speed is about 10 miles per hour at a heading of S<m>50.6^{\circ}</m>W.
+        </p>
+      </li>
+      <li>
+        <p>
+          The HMS Sasquatch's true speed is about 41 miles per hour at a heading of S<m>26.8^{\circ}</m>E.
+        </p>
+      </li>
+      <li>
+        <p>
+          She should maintain a speed of about 35 miles per hour at a heading of S<m>11.8^{\circ}</m>E.
+        </p>
+      </li>
+      <li>
+        <p>
+          She should fly at 83.46 miles per hour with a heading of N<m>22.1^{\circ}</m>E
+        </p>
+      </li>
+      <li>
+        <p>
+          The current is moving at about 10 miles per hour bearing N<m>54.6^{\circ}</m>W.
+        </p>
+      </li>
+      <li>
+        <p>
+          The tension on each of the cables is about <m>346</m> pounds.
+        </p>
+      </li>
+      <li>
+        <p>
+          The maximum weight that can be held by the cables in that configuration is about <m>133</m> pounds.
+        </p>
+      </li>
+      <li>
+        <p>
+          The tension on the left hand cable is <m>285.317</m> lbs. and on the right hand cable is <m>92.705</m> lbs.
+        </p>
+      </li>
+      <li>
+        <p>
+          The weaker student should pull about 60 pounds.
+          The net force on the keg is about 153 pounds.
+        </p>
+      </li>
+      <li>
+        <p>
+          The resultant force is only about 296 pounds so the couch doesn't budge.
+          Even if it did move,
+          the stronger force on the third rope would have made the couch drift slightly to the south as it traveled down the street.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="GeometricApplicationsofTrigonometry">
+  <title>Geometric Applications of Trigonometry</title>
+  <xi:include  href="TheLawofSines.ptx"/>
+  <xi:include  href="TheLawofCosines.ptx"/>
+  <xi:include  href="Vectors.ptx"/>
+  <xi:include  href="TheDotProduct.ptx"/>
+</chapter>

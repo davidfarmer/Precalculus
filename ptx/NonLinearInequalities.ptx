@@ -1,0 +1,753 @@
+<section xml:id="NonLinearInequalities">
+  <title>Inequalities and Regions in the Plane</title>
+  <introduction>
+    <p>
+      With few exceptions,
+      we have spent our time in this course graphing equations relating two variables.
+      In this section,
+      we explore graphing inequalities relating two variables which usually a two-dimensional <em>region</em>
+      in the plane instead of a one dimensional line or curve.<fn>
+      We have <em>some</em> experience describing simple regions in the plane using inequalities from our work in <xref ref="Relations">Section</xref>.
+      </fn> In our first example,
+      we restrict our attention to looking at regions in the <m>xy</m>-plane bounded by equations which describe <m>y</m> as a function of <m>x</m>.
+    </p>
+    <example xml:id="ineqgraphex01">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol cols="2">
+          <li>
+            <p>
+              Sketch the following sets of points in the <m>xy</m>-plane.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>R = \{ (x,y) \, | \, y > |x| \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>S = \{ (x,y) \, | \, y \leq 6-x^2 \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>T = \{ (x,y) \, | \, |x| \lt y \leq 6 -x^2 \}</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li xml:id="describeregionex">
+            <p>
+              Find a set builder description for each of the following regions described below:
+              <ol>
+                <li xml:id="parabolalineregionex">
+                  <p>
+                    The region graphed below: \begin{mfpic}[20]{-4}{4}{-1}{5} \fillcolor[gray]{.7} \gfill \btwnfcn{-1,2,0.1}{x**2}{x+2} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \gclear \tlabelrect(0,3){<m>y=x+2</m> } \tlabel[cc](2.5,2){<m>y=x^2</m>} \xmarks{-3 step 1 until 3} \ymarks{1, 2, 4} \tcaption{The region <m>R</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>4</m>} 4} \gfill \btwnfcn{0.5,2,0.1}{x**2}{x+2} \penwd{1.25pt} \function{-1,2,0.1}{x**2} \function{-1,2,0.1}{x+2} \point[4pt]{(-1,1), (2,4)} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The region <m>S</m> between the graphs<fn>
+                    sometimes written as <sq>the region bounded by the graphs</sq> <ellipsis/>
+                    </fn> of <m>f(x) = x^3-3x</m> and <m>g(x) = x</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    The set <m>R</m> consists of all points <m>(x,y)</m> whose <m>y</m>-coordinate is greater than <m>|x|</m>.
+                    If we graph <m>y=|x|</m>,
+                    we get the familiar <sq><m>\vee</m></sq> shape with vertex at <m>(0,0)</m>.
+                    Hence, in order for an ordered pair <m>(x,y)</m> to satisfy <m>y > |x|</m>,
+                    the point <m>(x,y)</m> must be <em>above</em>
+                    the graph of <m>y = |x|</m>.
+                    Since the inequality here, <m>y > |x|</m> is strict,
+                    we use a dashed line with which to indicate the graph of <m>y=|x|</m> and shade the region above,
+                    or <sq>inside,</sq> the <sq><m>\vee</m></sq> as shown below on the left.
+                    Note that one way to check our answer is to choose points both inside and outside the shaded region to verify the inequality either holds or it doesn't, respectively.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Using the same reasoning as above we note a point <m>(x,y)</m> is in <m>S</m> if its <m>y</m>-coordinate is less than or equal to the <m>y</m>-coordinate on the parabola <m>y=6-x^2</m>.
+                    Hence, we graph the points <em>below</em>
+                    the parabola (<m>y \lt 6-x^2</m>) along with the points <em>on</em>
+                    the parabola (<m>y=6-x^2</m>) below on the right.
+                    <tabular>
+                      {m{3in}m{3in}} \begin{mfpic}[15]{-7}{7}{-2}{7} \fillcolor[gray]{.7} \gfill \btwnfcn{-6.75,0,0.1}{-x+0.01}{6.75} \gfill \btwnfcn{0,6.75,0.1}{x+0.01}{6.75} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \xmarks{-6 step 1 until 6} \ymarks{-1 step 1 until 6} \tcaption{<m>R = \{ (x,y) : y > |x| \}</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6} \penwd{1.25pt} \arrow \reverse \arrow \dashed \polyline{(-7,7),(0,0),(7,7)} \end{mfpic} &amp; \begin{mfpic}[15]{-7}{7}{-2}{7} \fillcolor[gray]{.7} \gfill \btwnfcn{-2.82,2.82,0.1}{6-(x**2)}{-1.75} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \xmarks{-6 step 1 until 6} \ymarks{-1 step 1 until 6} \tcaption{<m>S = \{ (x,y) : y \leq 2-x^2 \}</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6.25} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.82,2.82,0.1}{6-(x**2)} \end{mfpic}
+                    </tabular>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    For a point <m>(x,y)</m> to be in <m>T</m>,
+                    the <m>y</m>-coordinate must satisfy
+                    <m>|x| \lt y \leq 6-x^2</m> which means it must belong to both <m>R</m> and <m>S</m>.<fn>
+                    Said differently,
+                    <m>T</m> is the set-theoretic intersection of <m>R</m> and <m>S</m>,
+                    <m>T = R \cap S</m> as described in <xref ref="AppSetTheory"></xref>.
+                    </fn> Thus we shade the region <em>between</em>
+                    <m>y=|x|</m> and <m>y=6-x^2</m>,
+                    keeping those points on the parabola,
+                    but not the points on <m>y=|x|</m>.
+                    To get an accurate graph,
+                    we need to find where these two graphs intersect,
+                    so we set <m>|x| = 6-x^2</m>.
+                    Using the techniques discussed in <xref ref="AbsoluteValueFunctions">Sections</xref>
+                    and <xref ref="QuadraticFunctions"></xref>, we find <m>x=-2,2</m>.
+                    To find the associated <m>y</m>-coordinates of the intersection points,
+                    we substitute <m>x= \pm 2</m> into either <m>y = |x|</m> or <m>y = 6-x^2</m>
+                    (or both, to check!)
+                    In both cases,
+                    we find the associated <m>y</m>-coordinate to be <m>2</m>,
+                    so the intersection points are <m>(-2,2)</m> and <m>(2,2)</m>.
+                    On our graph, however,
+                    these are the location of <sq>holes</sq> owing to the strictness of the inequality <m>y > |x|</m>. \begin{mfpic}[15]{-7}{7}{-2}{7} \fillcolor[gray]{.7} \gfill \btwnfcn{-2,0,0.1}{-x+0.01}{6-(x**2)} \gfill \btwnfcn{0,2,0.1}{x+0.01}{6-(x**2)} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](3,2){<m>(2,2)</m>} \tlabel[cc](-3.25,2){<m>(-2,2)</m>} \xmarks{-6 step 1 until 6} \ymarks{-1 step 1 until 6} \tcaption{<m>T = \{ (x,y) : |x| \lt y \leq 6 -x^2 \}</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4,{<m>5</m>} 5,{<m>6</m>} 6.25} \penwd{1.25pt} \function{-2,2,0.1}{6-(x**2)} \dashed \polyline{(-2,2),(0,0),(2,2)} \pointfillfalse \point[4pt]{(-2,2), (2,2)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Verbally, we may describe <m>R</m> as the region <em>between</em>
+                    the graphs of <m>y = x^2</m> and <m>y = x+2</m>.
+                    More specifically, <m>R</m> is the set of points <em>above</em>
+                    (or on)
+                    the parabola <m>y=x^2</m> but <em>below</em>
+                    (or on)
+                    the line <m>y = x+2</m>.
+                    That is, for the points <m>(x,y)</m> in <m>R</m>,
+                    we have <m>x^2 \leq y \leq x+2</m>.
+                    To find the restrictions on <m>x</m>,
+                    we find the intersection of the graphs.
+                    Solving <m>x^2 = x+2</m> gives <m>x = -1</m> and <m>x = 2</m>.
+                    Hence, to be in <m>R</m>,
+                    points <m>(x,y)</m> need to satisfy <m>-1 \leq x \leq 2</m>.
+                    Hence, one way to describe <m>R</m> is <m>R = \{ (x,y) \, | \, -1 \leq x \leq 2, \, x^2 \leq y \leq x+2 \}</m>.
+                    While this answer is correct,
+                    the fact that the line and the parabola intersect only twice producing only <em>one</em>
+                    region where the inequality <m>x^2 \leq y \leq x+2</m> is true,
+                    we may shorten our description of <m>R</m> to just <m>R = \{ (x,y) \, | \, x^2 \leq y \leq x+2 \}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since we are given a verbal description of <m>S</m>,
+                    we first sketch the graph to get a sense of the geometric situation.
+                    To graph <m>f(x) = x^3-3x</m>,
+                    we use what we learned in <xref ref="GraphsofPolynomials">Section</xref>:
+                    end behavior,
+                    behavior near the <m>x</m>-intercepts, and symmetry.
+                    The graph of <m>g(x) = x</m> is a line with slope <m>1</m> through the origin.
+                    Graphing both of these functions on the same pair of axes,
+                    we see three intersection points.
+                    Solving <m>f(x) = g(x)</m>,
+                    that is <m>x^3-3x = x</m> gives <m>x = 0</m> and  <m>x = \pm 2</m>.
+                    These solutions correspond to the intersection points <m>(-2,-2)</m>,
+                    <m>(0,0)</m>, and <m>(2,2)</m>.
+                    <m>S</m> is described as the region <sq><em>between</em></sq> these graphs,
+                    so we shade between the graphs accordingly.    \begin{mfpic}[15]{-5}{5}{-5}{5} \fillcolor[gray]{.7} \gfill \btwnfcn{-2,0,0.1}{(x**3)-(3*x)}{x} \gfill \btwnfcn{0,2,0.1}{x}{(x**3)-(3*x)} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3,2){<m>(2,2)</m>} \tlabel[cc](-3.5, -2){<m>(-2,-2)</m>} \xmarks{-4 step 1 until 4} \ymarks{-4 step 1 until 4} \tcaption{Graphing <m>f(x) = x^3-3x</m> and
+                    <m>g(x) = x</m>}  \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>2</m>} 2,{<m>3</m>} 3,{<m>4</m>} 4}  \penwd{1.25pt} \arrow \reverse \arrow \function{-2.2,2.2,0.1}{(x**3)-(3*x)} \arrow \reverse \arrow \polyline{(-4.5,-4.5),(4.5, 4.5)} \point[4pt]{(-2,-2), (0,0), (2,2)}  \end{mfpic}  From the graph,
+                    we see that for <m>-2 \lt  x \lt  0</m>,
+                    the graph of <m>f</m> is above the graph of <m>g</m>.
+                    Algebraically,
+                    this means that for all <m>x</m> with <m>-2 \leq x \leq 0</m>,
+                    <m>f(x) \geq g(x)</m> or <m>x^3-3x \geq x</m>.
+                    At <m>x=0</m>,
+                    the situation changes and we have <m>f(x) \leq g(x)</m> or
+                    <m>x^3-3x \leq x</m> for <m>0 \leq x \leq 2</m>.
+                    One to describe <m>S</m> is to describe each of these pieces and take their set theoretic union.
+                    We first consider the piece for <m>-2 \leq x \leq 0</m>.
+                    Unlike the previous problem,
+                    we cannot completely describe this region in terms of the <m>y</m>-values since there are <em>two</em>
+                    regions where <m>x \leq y \leq x^3-3x</m> is true:
+                    one where <m>-2 \leq x \leq 0</m>
+                    (the one we want)
+                    and one here <m>x \geq 2</m>
+                    (which we don't want.)
+                    Hence, we describe this first piece as <m>\{ (x,y) \, | \, -2 \leq x \leq 0, \, x \leq y \leq x^3-3x \}</m>.
+                    Following this methodology for the second piece,
+                    we obtain the complete description for <m>S</m> below:
+                    <me>
+                      S = \{ (x,y) \, | \, -2 \leq x \leq 0, \, x \leq y \leq x^3-3x \} \cup\{ (x,y) \, | \, 0 \leq x \leq 2, \, x^3-3x \leq y \leq x \}
+                    </me>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks about <xref ref="ineqgraphex01">Example</xref> are in order.
+      First note that each of the regions presented here can be views as graphs of relations as described in <xref ref="Relations">Section</xref>.
+      Moreover, there are many ways to describe a region so our answers to <xref ref="describeregionex">number</xref> above are by no means unique.
+    </p>
+    <p>
+      In particular, our solution
+      <m>R = \{ (x,y) \, | \, -1 \leq x \leq 2, \, x^2 \leq y \leq x+2 \}</m> to <xref ref="parabolalineregionex">number</xref>
+      can be visualized as <sq>filling up</sq> the region <m>R</m> from the bottom curve,
+      <m>y = x^2</m> to the top curve,
+      <m>y = x+2</m> as <m>x</m> runs from the leftmost extent of the region at <m>x = -1</m> to the rightmost extent at <m>x = 2</m> as indicated below.
+      The notion that each <m>x</m> determines where to start and stop filling the region is a consequence of us viewing the bounding curves as functions of <m>x</m>.
+      That is, for each <m>x</m>, we can determine the lower boundary of the region,
+      <m>y = x^2</m> and the upper boundary of the region, <m>y = x+2</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{-4}{4}{-1}{5}
+          \axes
+          \tlabel[cc](4,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \tlabel[cc](-2,1){<m>(-1,1)</m>}
+          \tlabel[cc](2.75,4){<m>(2,4)</m>}
+          \xmarks{-3 step 1 until 3}
+          \ymarks{1, 2, 3, 4}
+          \tcaption{<sq>Filling up</sq>  <m>R</m> from bottom to top.}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3}
+          \axislabels {y}{ {<m>2</m>} 2, {<m>3</m>} 3,{<m>4</m>} 4}
+          \arrow \polyline{ (-0.75, 0.5625), (-0.75, 1.15)}
+          \arrow \polyline{ (-0.5, 0.25), (-0.5, 1.4)}
+          \arrow \polyline{ (-0.25, 0.0625), (-0.25, 1.65)}
+          \arrow \polyline{ (0, 0), (0,1.8)}
+          \arrow \polyline{ (0.25, 0.0625), (0.25, 2.15)}
+          \arrow \polyline{ (0.5, 0.25), (0.5,2.4)}
+          \arrow \polyline{ (0.75, 0.5625), (0.75, 2.65)}
+          \arrow \polyline{ (1, 1), (1,2.9)}
+          \arrow \polyline{ (1.25, 1.5625), (1.25,3.15)}
+          \arrow \polyline{ (1.5, 2.25), (1.5,3.4)}
+          \arrow \polyline{ (1.75,3.0625), (1.75,3.65)}
+          \penwd{1.25pt}
+          \function{-1,2,0.1}{x**2}
+          \function{-1,2,0.1}{x+2}
+          \point[4pt]{(-1,1), (2,4)}
+          \end{mfpic}</cell>
+        <cell><m>\xrightarrow{}</m></cell>
+        <cell>\begin{mfpic}[20]{-4}{4}{-1}{5}
+          \fillcolor[gray]{.7}
+          \gfill \btwnfcn{-1,2,0.1}{x**2}{x+2}
+          \axes
+          \tlabel[cc](4,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \gclear \tlabelrect(0,3){<m>y=x+2</m>  }
+          \tlabel[cc](2.5,2){<m>y=x^2</m>}
+          \xmarks{-3 step 1 until 3}
+          \ymarks{1, 2, 4}
+          \tcaption{The region <m>R</m>.}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3}
+          \axislabels {y}{{<m>1</m>} 1,{<m>2</m>} 2,{<m>4</m>} 4}
+          \gfill \btwnfcn{0.5,2,0.1}{x**2}{x+2}
+          \penwd{1.25pt}
+          \function{-1,2,0.1}{x**2}
+          \function{-1,2,0.1}{x+2}
+          \point[4pt]{(-1,1), (2,4)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      There are times in Calculus where it may be convenient to describe the region <m>R</m> as filling up left-to-right as <m>y</m> varies from the bottom most extent,
+      <m>y = 0</m> to the top most extent, <m>y = 4</m>.
+      In this case,
+      we need to describe the bounding curves as functions of <m>y</m>.
+      To that end,
+      we solve <m>y = x+2</m> and <m>y = x^2</m> for <m>x</m> and get three functions of <m>y</m>:
+      <m>x = y-2</m>,
+      <m>x = \sqrt{y}</m> and <m>x = -\sqrt{y}</m> as labeled below.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{-4}{4}{-1}{5}
+          \axes
+          \tlabel[cc](4,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \tlabel[cc](-2,1){<m>(-1,1)</m>}
+          \tlabel[cc](0.5,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](2.75,4){<m>(2,4)</m>}
+          \xmarks{-3 step 1 until 3}
+          \ymarks{2, 3, 4}
+          \tcaption{<sq>Filling up</sq>  <m>R</m> from left to right.}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>2</m>} 2,{<m>3</m>} 3}
+          \axislabels {y}{ {<m>2</m>} 2, {<m>3</m>} 3,{<m>4</m>} 4}
+          \arrow \polyline{ (-0.5, 0.25), (0.4, 0.25)}
+          \arrow \polyline{ (-0.7, 0.5), (0.6, 0.5)}
+          \arrow \polyline{ (-0.86, 0.75), (0.76, 0.75)}
+          \dotted  \polyline{ (-1, 1), (1, 1)}
+          \arrow \polyline{ (-0.75, 1.25), (1.01, 1.25)}
+          \arrow \polyline{ (-0.5, 1.5), (1.12, 1.5)}
+          \arrow \polyline{ (-0.25, 1.75), (1.22, 1.75)}
+          \arrow \polyline{ (0, 2), (1.31, 2)}
+          \arrow \polyline{ (0.25, 2.25), (1.4, 2.25)}
+          \arrow \polyline{ (0.5, 2.5), (1.48, 2.5)}
+          \arrow \polyline{ (0.75, 2.75), (1.55, 2.75)}
+          \arrow \polyline{ (1, 3), (1.63, 3)}
+          \arrow \polyline{ (1.25, 3.25), (1.70, 3.25)}
+          \arrow \polyline{ (1.5, 3.5), (1.77, 3.5)}
+          \penwd{1.25pt}
+          \function{-1,2,0.1}{x**2}
+          \function{-1,2,0.1}{x+2}
+          \point[4pt]{(-1,1), (2,4), (0,0)}
+          \end{mfpic}</cell>
+        <cell><m>\xrightarrow{}</m></cell>
+        <cell>\begin{mfpic}[20]{-4}{4}{-1}{5}
+          \fillcolor[gray]{.7}
+          \gfill \btwnfcn{-1,2,0.1}{x**2}{x+2}
+          \axes
+          \tlabel[cc](4,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \tlabel[cc](1.75,1){<m>y=1</m>}
+          \tlabel[cc](2.5,2){<m>x = \sqrt{y}</m>}
+          \tlabel[cc](1.5,0.5){<m>x = \sqrt{y}</m>}
+          \tlabel[cc](-2,0.5){<m>x = - \sqrt{y}</m>}
+          \gclear \tlabelrect(0,3){<m>x=y-2</m>  }
+          \xmarks{-3 step 1 until 3}
+          \ymarks{1, 2, 4}
+          \tcaption{The region  <m>R</m>}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3}
+          \axislabels {y}{{<m>2</m>} 2,{<m>4</m>} 4}
+          \gfill \btwnfcn{0.5,2,0.1}{x**2}{x+2}
+          \polyline{(-1,1), (1,1)}
+          \penwd{1.25pt}
+          \function{-1,2,0.1}{x**2}
+          \function{-1,2,0.1}{x+2}
+          \point[4pt]{(-1,1), (2,4), (1,1), (0,0)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      Based on the diagram,
+      we see we need to describe <m>R</m> as <em>two</em> pieces.
+      The first piece being bounded on the left by <m>x = -\sqrt{y}</m> and on the right
+      <m>x = \sqrt{y}</m> from <m>y = 0</m> to <m>y=1</m>,
+      and the second piece bounded on the left by <m>x = y-2</m> and on the right by
+      <m>x= \sqrt{y}</m> from <m>y = 1</m> to <m>y = 4</m>.
+      That is,
+      <me>
+        R = \{ (x,y) \, | \, 0 \leq y \leq 1, \, -\sqrt{y} \leq x \leq \sqrt{y} \} \cup\{ (x,y) \, | \, 1 \leq y \leq 4, \, y-2 \leq x \leq \sqrt{y} \}
+      </me>.
+    </p>
+    <p>
+      Not all regions in the plane are best described using functions of <m>x</m> or <m>y</m>.<fn>
+      See <xref ref="PolarGraphs">Section</xref> for instance!
+      </fn> Suppose, for instance,
+      we wish to sketch the region <m>\{ (x,y) \, | \, x^2 \lt 4 - y^2. \}</m> Algebraically,
+      we wish to plot all points <m>(x,y)</m> for which the inequality <m>x^2\lt 4 - y^2</m> is true.
+      One way to proceed is to mimic the <sq>sign diagram</sq> routine we use for solving nonlinear inequalities in one variable:
+      rewrite the inequality so as to obtain <m>0</m> on one side of the inequality,
+      find the zeros of the non-zero side,
+      choose test values determined by the zeros, and record our solution.
+    </p>
+    <p>
+      First, we gather all of the terms on one side and leave a <m>0</m> on the other:
+      <m>x^2 + y^2 -4 \lt 0</m>.
+      Next, we find the zeros of the left hand side, that is,
+      where is <m>x^2 + y^2 - 4 = 0</m>.
+      Rewriting, we get <m>x^2+y^2 = 4</m> which describes the circle of radius <m>2</m> centered at the origin.
+      In other words, instead of obtaining a few <em>numbers</em>
+      which divide the real number <em>line</em> into <em>intervals</em>,
+      we get an equation of a <em>curve</em>, in this case, a circle,
+      which divides the <em>plane</em>
+      into two <em>regions</em>
+      - the <sq>inside</sq> and <sq>outside</sq> of the circle.
+    </p>
+    <p>
+      Just like we used test <em>values</em>
+      to determine whether or not an interval belongs to the solution of the inequality,
+      we use test <em>points</em> in the each of the regions to see which of these belong to our solution set.<fn>
+      The theory behind why all this works is, surprisingly,
+      the same theory which guarantees that sign diagrams work the way they do - continuity and the Intermediate Value Theorem - but in this case,
+      applied to functions of more than one variable.
+      </fn> We choose <m>(0,0)</m> to represent the region inside the circle and <m>(0,3)</m> to represent the points outside of the circle.
+      When we substitute <m>(0,0)</m> into <m>x^2 + y^2 -4 \lt 0</m>,
+      we get <m>-4 \lt 4</m> which is true.
+      This means <m>(0,0)</m> and all the other points inside the circle are part of the solution.
+      On the other hand,
+      when we substitute <m>(0,3)</m> into the same inequality,
+      we get <m>5 \lt 0</m> which is false.
+      This means <m>(0,3)</m> along with all other points outside the circle are not part of the solution.
+      What about points on the circle itself?
+      Choosing a point on the circle,
+      say <m>(0,2)</m>, we get <m>0 \lt 0</m>,
+      which means the circle itself does not satisfy the inequality.<fn>
+      Another way to see this is that points on the circle satisfy <m>x^2 + y^2 - 4 = 0</m>,
+      so they do not satisfy <m>x^2 + y^2 - 4 \lt 0</m>.
+      </fn> As a result,
+      we leave the circle dashed in the final diagram.
+    </p>
+    <p>
+      \begin{mfpic}[25]{-3}{3}{-3}{3} \fillcolor[gray]{.7} \gfill \btwnfcn{-1.99,1.99,0.1}{0-sqrt(4-x**2)}{sqrt(4-x**2)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \tlabel[cc](0.5,2.25){<m>2</m>} \tlabel[cc](0.5,-2.25){<m>-2</m>} \xmarks{-2,-1,1,2} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>2</m>} 2} \penwd{1.25pt} \dashed \circle{(0,0),2.01} \end{mfpic}
+    </p>
+    <p>
+      The solution to <m>x^2 \lt 4 - y^2</m>
+    </p>
+    <p>
+      We put this technique to good use in the following example.
+    </p>
+    <example xml:id="nonlinearineqex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Sketch the following regions in the <m>xy</m>-plane:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>R = \{ (x,y) \, | \, y^2 - 4 \leq x \lt y+2 \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  The solution to:
+                  <m>\left\{\begin{array}{rcr} x^2 +y^2 \amp \geq \amp 4 \\ x^2 - 2x + y^2 - 2y \amp \leq \amp 0 \end{array} \right.</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find a set builder description for the region between the Unit Circle and the graph of <m>x^2+y^2 = 16</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    The inequality <m>y^2 - 4 \leq x \lt  y+2</m> is a compound inequality which translates as <m>y^2 - 4 \leq x</m>
+                    <em>and</em> <m>x \lt  y+2</m>.
+                    Hence, our approach is to solve each inequality separately and take the set theoretic intersection to determine the region which satisfies both inequalities.
+                    Starting with <m>y^2 - 4 \leq x</m>,
+                    we rewrite this as <m>y^2 - x - 4 \leq 0</m> and set about graphing <m>y^2 - x - 4 = 0</m>.
+                    Since only one variable is squared,
+                    we know this equation describes a parabola.
+                    Rewriting in  standard form, we get <m>y^2 = x+4</m>,
+                    so the vertex is <m>(-4,0)</m> and the parabola opens to the right.
+                    Using the test points <m>(-5,0)</m> and <m>(0,0)</m>,
+                    we find that the solution to the inequality includes the region to the <em>right</em> of,
+                    or <sq>inside</sq>, the parabola.
+                    The points on the parabola itself are also part of the solution,
+                    owing to the <sq>equality</sq> in the <sq>inequality.</sq>  (We could also check a point on the parabola such as <m>(-4,0)</m> satisfies the inequality.)  Turning our attention to <m>x \lt  y+2</m>,
+                    we first rewrite this as <m>x - y - 2 \lt  0</m> and focus our attention on <m>x-y-2 = 0</m>.
+                    Rewriting, we have the line <m>y = x-2</m> and using the test points <m>(0,0)</m> and <m>(0,-4)</m>,
+                    we find points in the region <em>above</em>
+                    the line satisfy the inequality.   (Owing to the strictness of the inequality,
+                    the points on the line itself do not.)<fn>
+                    We could also have rewritten
+                    <m>x\lt y+2</m> as <m>y > x-2</m> directly and sketched the region as explained in <xref ref="ineqgraphex01">Example</xref>.
+                    </fn>  We see that these two regions do overlap but to make the graph more precise,
+                    we seek the intersection of these two curves.
+                    That is, we need to solve the system of nonlinear equations
+                    <me>
+                      \left\{\begin{array}{lrcr}  (E1) \amp  y^2 \amp  = \amp  x + 4 \\ (E2) \amp  y \amp  = \amp  x - 2 \end{array}  \right.
+                    </me>
+                    Solving <m>E1</m> for <m>x</m>,
+                    we get <m>x = y^2 - 4</m>.
+                    Substituting this into <m>E2</m> gives
+                    <m>y = y^2 - 4 - 2</m>, or <m>y^2-y-6 = 0</m>.
+                    We find <m>y = -2</m> and <m>y=3</m> and since <m>x = y^2-4</m>,
+                    we get that the graphs intersect at <m>(0,-2)</m> and <m>(5,3)</m>.
+                    Putting all of this together,
+                    we get our final answer below.
+                    <me>
+                      \begin{array}{ccc}  \begin{mfpic}[10]{-6}{6}{-4}{4} \fillcolor[gray]{.7} \gfill \btwnfcn{-4,5.5,0.1}{0-sqrt(x+4)}{sqrt(x+4)} \axes \tlabel[cc](6,-0.5){\(x\)} \tlabel[cc](0.5,4){\(y\)} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(-5 \)} -5} \axislabels {y}{{\(-3\)} -3,{\(3\)} 3} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-3.16,3.16,0.1}{(t^2-4,t)} \end{mfpic}  \amp    \begin{mfpic}[10]{-6}{6}{-4}{4} \fillcolor[gray]{.7} \gfill \btwnfcn{-2,5.5,0.1}{x-2}{3.5} \gfill \btwnfcn{-6,-2,0.1}{-4}{3.5}  \axes \tlabel[cc](6,-0.5){\(x\)} \tlabel[cc](0.5,4){\(y\)} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(2\)} 2, {\(3\)} 3,{\(4\)} 4,{\(5\)} 5} \penwd{1.25pt} \dashed \polyline{(-2,-4), (5.5,3.5)} \end{mfpic}  \amp    \begin{mfpic}[10]{-6}{6}{-4}{4} \fillcolor[gray]{.7} \gfill \btwnfcn{-4,0,0.1}{0-sqrt(x+4)}{sqrt(x+4)} \gfill \btwnfcn{0,5,0.1}{x-2}{sqrt(x+4)} \axes \tlabel[cc](6,-0.5){\(x\)} \tlabel[cc](0.5,4){\(y\)} \tlabel[cc](2, -2){\((0,-2)\)} \tlabel[cc](5,4){\((5,3)\)} \xmarks{-5,-4,-3,-2,-1,1,2,3,4,5} \ymarks{-3,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(-5 \)} -5, {\(2\)} 2, {\(3\)} 3,{\(4\)} 4,{\(5\)} 5} \penwd{1.25pt} \parafcn{-2,3,0.1}{(t^2-4,t)} \dashed \polyline{(0,-2), (5,3)} \pointfillfalse \point[4pt]{(0,-2), (5,3)} \end{mfpic} \\  y^2 - 4 \leq x \amp    x \lt  y+2 \amp   y^2 - 4 \leq x \lt  y+2 \end{array}
+                    </me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Like any system,
+                    our solution to this problem requires us to graph the points <m>(x,y)</m> which satisfy
+                    <em>both</em> inequalities.
+                    To do this, we solve each inequality separately and take the set theoretic intersection of the solution sets.
+                    We begin with the inequality
+                    <m>x^2 + y^2 \geq 4</m> which we rewrite as <m>x^2+y^2 - 4 \geq 0</m>.
+                    The points which satisfy <m>x^2 + y^2 - 4 = 0</m> form the circle <m>x^2+y^2 = 4</m>.
+                    Using test points <m>(0,0)</m>, <m>(0,2)</m>,
+                    and <m>(0,3)</m> we find that our solution comprises the region <em>outside</em>
+                    the circle along with the circle itself.
+                    Moving to  <m>x^2 - 2x + y^2 - 2y \leq 0</m>,
+                    we start with <m>x^2 - 2x + y^2 - 2y = 0</m>.
+                    Completing the squares, we obtain <m>(x-1)^2 + (y-1)^2 = 2</m>,
+                    which is a circle centered at <m>(1,1)</m> with a radius of <m>\sqrt{2}</m>.
+                    Choosing <m>(1,1)</m> to represent the inside of the circle,
+                    <m>(0,0)</m> as a point on the circle,
+                    and <m>(1,3)</m> as a point outside of the circle,
+                    we find that the solution to the inequality is the inside of the circle,
+                    including the circle itself.
+                    Our final answer,
+                    then, consists of the points on or outside of the circle
+                    <m>x^2 + y^2 = 4</m> which lie on or inside the circle <m>(x-1)^2+(y-1)^2 = 2</m>.
+                    To produce the most accurate graph,
+                    we need to find where these circles intersect.
+                    To that end, we solve the system
+                    <me>
+                      \left\{\begin{array}{lrcr}  (E1) \amp  x^2 + y^2 \amp  = \amp  4 \\ (E2) \amp  x^2 - 2x + y^2 - 2y \amp  = \amp  0 \end{array}  \right.
+                    </me>
+                    We can eliminate both the <m>x^2</m> and <m>y^2</m> by replacing <m>E2</m> with <m>-E1 + E2</m>.
+                    Doing so produces <m>-2x - 2y = -4</m>.
+                    Solving  for <m>y</m> gives <m>y = 2-x</m>.
+                    Substituting this into <m>E1</m> gives <m>x^2 + (2-x)^2 = 4</m> which simplifies to
+                    <m>x^2 + 4-4x+x^2 = 4</m> or <m>2x^2 - 4x = 0</m>.
+                    Factoring yields <m>2x(x-2)</m> which gives <m>x=0</m> or <m>x=2</m>.
+                    Substituting these values into <m>y=2-x</m> gives the points <m>(0,2)</m> and <m>(2,0)</m>.
+                    The intermediate graphs and final solution are below.
+                    <me>
+                      \begin{array}{ccc}  \begin{mfpic}[15]{-4}{4}{-4}{4} \fillcolor[gray]{.7} \gfill \btwnfcn{-3.5,3.5,0.1}{-3.5}{3.5} \gclear \circle{(0,0),2} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,4){\(y\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(1\)} 1 } \axislabels {y}{{\(-1\)} -1,{\(1\)} 1} \penwd{1.25pt} \circle{(0,0),2} \end{mfpic}  \amp    \begin{mfpic}[15]{-4}{4}{-4}{4} \fillcolor[gray]{.7} \gfill \circle{(1,1),1.414} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,4){\(y\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3,{\(-2 \)} -2,{\(-1 \)} -1, {\( 2\)} 2} \axislabels {y}{{\(-3\)} -3,{\(-2\)} -2,{\(-1\)} -1,{\(2\)} 2,{\(3\)} 3} \penwd{1.25pt} \circle{(1,1),1.414} \end{mfpic}  \amp    \begin{mfpic}[15]{-4}{4}{-4}{4} \fillcolor[gray]{.7} \penwd{1.25pt} \gfill \circle{(1,1),1.414} \circle{(1,1),1.414} \gclear \circle{(0,0),2} \arc[s]{(2,0),(0,2),90} \penwd{0.5pt} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5,4){\(y\)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{\(-3 \)} -3,{\(-2 \)} -2,{\(-1 \)} -1} \axislabels {y}{{\(-3\)} -3,{\(-2\)} -2,{\(-1\)} -1,{\(3\)} 3} \point[4pt]{(0,2), (2,0)} \tlabel[cc](-1, 2){\((0,2)\)} \tlabel[cc](2,-0.5){\((2,0)\)} \end{mfpic} \\ x^2+y^2 \geq 4 \amp   x^2 - 2x + y^2 - 2y \leq 0  \amp   \text{ Solution to the system. } \end{array}
+                    </me>
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                We first recall the Unit Circle is the circle centered at the origin with radius <m>1</m> and hence is described algebraically by the equation <m>x^2+y^2 = 1</m>.
+                The equation <m>x^2+y^2 = 16</m> describes a circle centered at the origin with radius <m>4</m>.
+                Hence, the <sq>region between</sq> these two circles indicates we want is <em>outside</em>
+                the Unit Circle but <em>inside</em>
+                the circle <m>x^2+y^2 = 16</m>.
+                Based on our experience from the earlier problems,
+                we know points outside the Unit Circle satisfy
+                <m>x^2+y^2 > 1</m> whereas the points inside the circle
+                <m>x^2+y^2 = 16</m> satisfy <m>x^2+y^2\lt 16</m>.
+                Hence, the points we seek satisfy
+                <em>both</em> inequalities,
+                so our solution is <m>\{ (x,y) \, | \, 1 \lt x^2+y^2 \lt 16 \}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We close this section with a follow-up to <xref ref="circuitex">Example</xref>
+      in <xref ref="MatMethods">Section</xref>.
+      Recall in the circuit diagrammed below,
+      we have two batteries with source voltages
+      <m>V\!B_{\text{ \(1\) } }</m> and <m>V\!B_{\text{ \(2\) } }</m>,
+      measured in volts <m>V</m>,
+      along with six resistors with resistances <m>R_{\text{ \(1\) } }</m> through
+      <m>R_{\text{ \(6\) } }</m>, measured in kiloohms,
+      <m>k\Omega</m>.Recall if we think of electrons flowing through the circuit,
+      we can think of the voltage sources as providing the <sq>push</sq> which makes the electrons move,
+      the resistors as obstacles for the electrons to overcome,
+      and the mesh current as a net rate of flow of electrons around the indicated loops.
+    </p>
+    <p>
+      <image width="73%" source="./NonLinearInequalitiesGraphics/CircuitDiagram01.pdf"/>
+    </p>
+    <p>
+      Using
+      <url href="http://en.wikipedia.org/wiki/Ohm's_law"><em>Ohm's Law</em></url>
+          <idx><h>Ohm's Law</h></idx>
+          <idx><h>Kirchhoff's Voltage Law</h></idx>
+      and
+      <url href="http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws"><em>Kirchhoff's Voltage Law</em></url>,
+      we can relate the voltage supplied to the circuit by the two batteries to the voltage drops across the six resistors in order to find the four <sq>mesh</sq> currents:
+      <m>i_{\text{ \(1\) } }</m>, <m>i_{\text{ \(2\) } }</m>,
+      <m>i_{\text{ \(3\) } }</m> and <m>i_{\text{ \(4\) } }</m>,
+      measured in milliamps, <m>mA</m>.
+      This gives rise to the following system of linear equations:
+      <me>
+        \left\{ \begin{array}{rcl} \left(R_{\text{ \(1\) } } + R_{\text{ \(3\) } }\right)i_{\text{ \(1\) } } - R_{\text{ \(3\) } }i_{\text{ \(2\) } } - R_{\text{ \(1\) } }i_{\text{ \(4\) } } \amp  = \amp  V\!B_{\text{ \(1\) } } \\ -R_{\text{ \(3\) } }i_{\text{ \(1\) } } + \left(R_{\text{ \(2\) } } + R_{\text{ \(3\) } } + R_{\text{ \(4\) } }\right)i_{\text{ \(2\) } } - R_{\text{ \(4\) } }i_{\text{ \(3\) } } - R_{\text{ \(2\) } }i_{\text{ \(4\) } } \amp  = \amp  0 \\ -R_{\text{ \(4\) } }i_{\text{ \(2\) } } + \left(R_{\text{ \(4\) } } + R_{\text{ \(6\) } }\right)i_{\text{ \(3\) } } - R_{\text{ \(6\) } }i_{\text{ \(4\) } } \amp  = \amp  -V\!B_{\text{ \(2\) } } \\ -R_{\text{ \(1\) } }i_{\text{ \(1\) } } - R_{\text{ \(2\) } }i_{\text{ \(2\) } } - R_{\text{ \(6\) } }i_{\text{ \(3\) } } + \left(R_{\text{ \(1\) } } + R_{\text{ \(2\) } } + R_{\text{ \(5\) } } + R_{\text{ \(6\) } }\right)i_{\text{ \(4\) } } \amp  = \amp  0 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      In <xref ref="circuitex">Example</xref>,
+      we found that under the assumptions <m>V\!B_{\text{ \(1\) } } = 10 V</m>,
+      <m>V\!B_{\text{ \(2\) } } = 5 V</m>,
+      and all the resistances are all <m>1 k\Omega</m>,
+      the mesh currents worked out to be <m>i_{\text{ \(1\) } } = 10.625 \, \, mA</m>,
+      <m>i_{\text{ \(2\) } } = 6.25 \, \, mA</m>,
+      <m>i_{\text{ \(3\) } } = 3.125 \, \, mA</m>,
+      and <m>i_{\text{ \(4\) } } = 5 \, \, mA</m>.
+    </p>
+    <p>
+      In our final example, we assume <m>V\!B_{\text{ \(1\) } } = 10 V</m> and
+      <m>V\!B_{\text{ \(2\) } } = 5 V</m> and work to find what combination of resistances would combine to produce these mesh currents.
+    </p>
+    <example xml:id="circuitex02">
+      <statement>
+        <p>
+          For the circuit described above,
+          if <m>V\!B_{\text{ \(1\) } } = 10 V</m> and <m>V\!B_{\text{ \(2\) } } = 5 V</m>,
+          find the possible combinations of resistances which yield the currents <m>i_{\text{ \(1\) } } = 10.625 \, \, mA</m>,
+          <m>i_{\text{ \(2\) } } = 6.25 \, \, mA</m>,
+          <m>i_{\text{ \(3\) } } = 3.125 \, \, mA</m>,
+          and <m>i_{\text{ \(4\) } } = 5 \, \, mA</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We begin by substituting the known values of the currents into the system of equations.
+          We get:
+          <me>
+            \left\{ \begin{array}{rcr} 5.625R_{\text{ \(1\) } } + 4.375R_{\text{ \(3\) } }\amp  = \amp  10 \\ 1.25R_{\text{ \(2\) } } - 4.375R_{\text{ \(3\) } } + 3.125R_{\text{ \(4\) } }\amp  = \amp  0 \\ -3.125R_{\text{ \(4\) } } - 1.875R_{\text{ \(6\) } } \amp  = \amp  -5 \\ -5.625R_{\text{ \(1\) } } - 1.25R_{\text{ \(2\) } } + 5R_{\text{ \(5\) } } + 1.875R_{\text{ \(6\) } } \amp  = \amp  0 \end{array}  \right.
+          </me>
+        </p>
+        <p>
+          The coefficient matrix for this system is
+          <m>4 \times 6</m> (4 equations with 6 unknowns) and is therefore not invertible.
+          We do know, however, this system is consistent,
+          since setting all the resistance values equal to <m>1</m> corresponds to our situation <xref ref="circuitex">Example</xref>.
+          This means we have an underdetermined consistent system which is necessarily dependent.
+          To solve this system, we encode it into an augmented matrix
+          <me>
+            \left[ \begin{array}{rrrrrr|r} 5.25 \amp  0 \amp  4.375 \amp  0 \amp  0 \amp  0 \amp  10 \\ 0 \amp  1.25 \amp  -4.375 \amp  3.125 \amp  0 \amp  0 \amp  0 \\ 0 \amp  0 \amp  0 \amp  -3.125 \amp  0 \amp  -1.875 \amp  -5 \\ -5.625 \amp  -1.25 \amp  0 \amp  0 \amp  5 \amp  1.875 \amp  0 \end{array}  \right]
+          </me>
+        </p>
+        <p>
+          A graphing utility gives the reduced-row echelon form of the matrix as:
+          <me>
+            \left[ \begin{array}{rrrrrr|r} 1 \amp  0 \amp  0.\overline{7} \amp  0 \amp  0 \amp  0 \amp  1.\overline{7} \\ 0 \amp  1 \amp  -3.5           \amp  0 \amp  0 \amp  -1.5 \amp  -4 \\ 0 \amp  0 \amp  0              \amp  1 \amp  0 \amp  0.6 \amp  1.6 \\ 0 \amp  0 \amp  0              \amp  0 \amp  1 \amp  0 \amp  1 \end{array}  \right]
+          </me>
+          from which we obtain the system:
+          <me>
+            \left\{ \begin{array}{rcr} R_{\text{ \(1\) } } + 0.\overline{7}R_{\text{ \(3\) } }\amp  = \amp  1.\overline{7} \\ R_{\text{ \(2\) } } - 3.5R_{\text{ \(3\) } } - 1.5R_{\text{ \(6\) } }\amp  = \amp  -4 \\ R_{\text{ \(4\) } } + 0.6R_{\text{ \(6\) } } \amp  = \amp  1.6 \\ R_{\text{ \(5\) } }\amp  = \amp  1 \end{array}  \right.
+          </me>
+        </p>
+        <p>
+          We can solve for <m>R_{\text{ \(1\) } }</m>,
+          <m>R_{\text{ \(2\) } }</m>,
+          <m>R_{\text{ \(4\) } }</m> and <m>R_{\text{ \(5\) } }</m> leaving
+          <m>R_{\text{ \(3\) } }</m> and <m>R_{\text{ \(6\) } }</m> as free variables.
+          Labeling <m>R_{\text{ \(3\) } } = s</m> and <m>R_{\text{ \(6\) } } = t</m>,
+          we have <m>R_{\text{ \(1\) } } = - 0.\overline{7}s + 1.\overline{7}</m>,
+          <m>R_{\text{ \(2\) } } = 3.5s + 1.5t - 4</m>,
+          <m>R_{\text{ \(4\) } } = -0.6t + 1.6</m> and <m>R_{\text{ \(5\) } } = 1</m>.
+        </p>
+        <p>
+          Since resistance values are always positive,
+          we need to restrict our values of <m>s</m> and <m>t</m>.
+          We know <m>R_{\text{ \(3\) } } = s > 0</m> and when we combine that with <m>R_{\text{ \(1\) } } = - 0.\overline{7}s + 1.\overline{7} >0</m>,
+          we get <m>0 \lt s \lt 2.\overline{285714}</m>.
+          Similarly, <m>R_{\text{ \(6\) } } = t > 0</m> and with <m>R_{\text{ \(4\) } } = -0.6t + 1.6 > 0</m>,
+          we find <m>0 \lt t \lt 2.\overline{6}</m>.
+        </p>
+        <p>
+          In order visualize the inequality <m>R_{\text{ \(2\) } } = 3.5s + 1.5t - 4 > 0</m>,
+          we graph the line <m>3.5s + 1.5t - 4 =0</m> on the <m>ts</m>-plane below on the left and shade accordingly.
+          Imposing the additional conditions
+          <m>0 \lt  s \lt  2.\overline{285714}</m> and <m>0 \lt  t \lt 2.\overline{6}</m>,
+          we find our values of <m>s</m> and <m>t</m> restricted to the region <m>R</m> graphed below on the right.
+          <me>
+            \begin{array}{cc}  \begin{mfpic}[20]{-3}{5}{-2}{4} \fillcolor[gray]{.7} \gfill \btwnfcn{-2.25,4.75,0.1}{(4.1-1.5*x)/3.5}{3.5} \axes \penwd{1.25pt} \dashed \arrow \reverse \arrow \function{-2.5,5,0.1}{(4-1.5*x)/3.5} \xmarks{-2,-1,1,2,3,4} \ymarks{-1,1,2,3} \tlabel(5,-0.5){\(t\)} \tlabel(0.25,4){\(s\)} \tcaption{ The region where \(3.5s+1.5t-4> 0\)} \tlpointsep{5pt} \axislabels {x}{{\(-2 \)} -2,  {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(4\)} 4} \axislabels {y}{{\(-1\)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \end{mfpic}  \amp  \begin{mfpic}[20]{-3}{5}{-2}{4} \fillcolor[gray]{.7} \gfill \btwnfcn{0,2.6666,0.1}{(4.1-1.5*x)/3.5}{2.2857} \penwd{1.25pt} \arrow \dashed \polyline{(0,-2), (0,4)} \arrow \polyline{(-3,0),(5,0)} \dashed \polyline{(-1.5,2.2857),(4,2.2857)} \dashed \polyline{(2.6666,-1),(2.6666,3)} \dashed \arrow \reverse \arrow \function{-2.5,5,0.1}{(4-1.5*x)/3.5} \xmarks{-2,-1,1,2,3,4} \ymarks{-1,1,2,3} \tlabel(5,-0.5){\(t\)} \tlabel(0.25,4){\(s\)} \tlabel[cc](2.6666,-1.75){\(t =2.\overline{6}\)} \tlabel[cc](4.75,2){\(s =2.\overline{285714}\)} \tcaption{ The region \(R\) for our parameters \(s\) and \(t\).} \tlpointsep{5pt} \axislabels {x}{{\(-2 \)} -2,  {\(-1 \)} -1, {\(1\)} 1, {\(2\)} 2, {\(4\)} 4} \axislabels {y}{{\(-1\)} -1, {\(1\)} 1, {\(2\)} 2, {\(3\)} 3} \end{mfpic} \end{array}
+          </me>
+        </p>
+        <p>
+          Hence, our final answer is:
+          <me>
+            \left\{ \begin{array}{rcr} R_{\text{ \(1\) } } \amp  = \amp  - 0.\overline{7}s + 1.\overline{7}\\ R_{\text{ \(2\) } }  \amp  = \amp   3.5s + 1.5t - 4 \\ R_{\text{ \(4\) } }  \amp  = \amp   -0.6t + 1.6 \\ R_{\text{ \(5\) } } \amp  = \amp  1, \end{array}  \right.
+          </me>
+          where <m>s</m> and <m>t</m> are pulled from the region <m>R = \left\{ (s,t) \, | \,  0 \lt  s \lt  2.\overline{285714}, \, \,  0 \lt  t \lt  2.\overline{6}, \, \, 3.5s+1.5t-4 > 0\right\}</m>.
+        </p>
+        <p>
+          The reader is encouraged to check that the solution presented in <xref ref="circuitex">Example</xref>,
+          namely all resistance values equal to <m>1</m>,
+          corresponds to a pair <m>(s,t)</m> in this region.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforNonLinearInequalities">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="nonlinearsysineqfirst">Exercises</xref>
+      - <xref ref="nonlinearsysineqlast"></xref>,
+      sketch the solution to each system of nonlinear inequalities in the plane.
+      <ol cols="3">
+        <li xml:id="nonlinearsysineqfirst">
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} - y^{2} \amp \leq \amp 1 \\ x^{2} + 4y^{2} \amp \geq \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp \lt \amp 25 \\ x^{2} + (y - 3)^{2} \amp \geq \amp 10 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} (x - 2)^{2} + y^{2} \amp \lt \amp 1 \\ x^{2} + 4y^{2} \amp \lt \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} y \amp > \amp 10x - x^{2} \\ y \amp \lt \amp x^{3} + 8 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{\begin{array}{rcr} x + 2y^{2} \amp > \amp 2 \\ x^{2} + 4y^{2} \amp \leq \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="nonlinearsysineqlast">
+          <p>
+            <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp \geq \amp 25 \\ y - x \amp \leq \amp 1 \end{array} \right.</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="3">
+      <li>
+        <p>
+          <m>\left\{\begin{array}{rcr} x^{2} - y^{2} \amp \leq \amp 1 \\ x^{2} + 4y^{2} \amp \geq \amp 4 \end{array} \right.</m> \begin{mfpic}[15]{-3}{3}{-3}{3} \fillcolor[gray]{.7} \gfill \rect{(-2.8,-2.8),(2.8,2.8)} \gclear \btwnfcn{-3,-1,0.1}{sqrt((x**2) - 1)}{-sqrt((x**2) - 1)} \gclear \btwnfcn{1,3,0.1}{sqrt((x**2) - 1)}{-sqrt((x**2) - 1)} \gclear \btwnfcn{-2,2,0.1}{sqrt(1 - ((x**2)/4))}{-sqrt(1 - ((x**2)/4))} \function{-1.2649,1.2649,0.1}{sqrt(1 - ((x**2)/4))} \function{-1.2649,1.2649,0.1}{-sqrt(1 - ((x**2)/4))} \arrow \reverse \function{-3,-1.2649,0.1}{sqrt((x**2) - 1)} \arrow \reverse \function{-3,-1.2649,0.1}{-sqrt((x**2) - 1)} \arrow \function{1.2649,3,0.1}{sqrt((x**2) - 1)} \arrow \function{1.2649,3,0.1}{-sqrt((x**2) - 1)} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp \lt \amp 25 \\ x^{2} + (y - 3)^{2} \amp \geq \amp 10 \end{array} \right.</m> \begin{mfpic}[10]{-6}{6}{-6}{5} \fillcolor[gray]{.7} \gfill \circle{(0,0),5} \dashed \circle{(0,0),5} \gclear \circle{(0,3),3.16228} \arc[t]{(-3,4),(0,-0.166228),(3,4)} \gclear \circle{(3,4),0.15} \circle{(3,4),0.15} \gclear \circle{(-3,4),0.15} \circle{(-3,4),0.15} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-5 step 1 until 5} \ymarks{-5 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{\begin{array}{rcr} (x - 2)^{2} + y^{2} \amp \lt \amp 1 \\ x^{2} + 4y^{2} \amp \lt \amp 4 \end{array} \right.</m> \begin{mfpic}[30]{0}{2.75}{-1.5}{1.5} \fillcolor[gray]{.7} \gfill \circle{(2,0),1} \gclear \btwnfcn{1.3333,2,0.1}{sqrt(1 - ((x**2)/4))}{sqrt(1 - ((x - 2)**2))} \gclear \btwnfcn{1.3333,2,0.1}{-sqrt(1 - ((x**2)/4))}{-sqrt(1 - ((x - 2)**2))} \gclear \btwnfcn{2,3,0.1}{-sqrt(1 - ((x - 2)**2))}{sqrt(1 - ((x - 2)**2))} \gclear \rect{(2.5,-1),(3,1)} \drawcolor{white} \arc[t]{(1.3333,-0.745356),(3,0),(1.3333,0.745356)} \drawcolor{white} \polyline{(2,-1),(2,1)} \drawcolor{black} \dashed \arc[t]{(1.3333,-0.745356),(1,0),(1.3333,0.745356)} \dashed \parafcn{-0.84107,0.84107,0.1}{(2*cos(t),sin(t))} \axes \tlabel[cc](2.75,-0.25){<m>x</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 0.9, {<m>2</m>} 2.1} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{\begin{array}{rcr} y \amp > \amp 10x - x^{2} \\ y \amp \lt \amp x^{3} + 8 \end{array} \right.</m> \begin{mfpic}[10][1]{-5}{7}{-28}{120} \fillcolor[gray]{.7} \gfill \btwnfcn{-4,1,0.1}{0.5*(10*x - (x**2))}{0.5*((x**3) + 8)} \gfill \btwnfcn{2,6.2,0.1}{0.5*(10*x - (x**2))}{0.5*((x**3) + 8)} \dashed \function{-4,1,0.1}{0.5*(10*x - (x**2))} \dashed \function{-4,1,0.1}{0.5*((x**3) + 8)} \arrow \dashed \function{2,6.2,0.1}{0.5*(10*x - (x**2))} \arrow \dashed \function{2,6.2,0.1}{0.5*((x**3) + 8)} \axes \tlabel[cc](7,-4){<m>x</m>} \tlabel[cc](0.5,120){<m>y</m>} \xmarks{-4 step 1 until 2} \ymarks{-28,4.5,8} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-56</m>} -28, {<m>9</m>} 4.5, {<m>16</m>} 8} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{\begin{array}{rcr} x + 2y^{2} \amp > \amp 2 \\ x^{2} + 4y^{2} \amp \leq \amp 4 \end{array} \right.</m> \begin{mfpic}[30]{-0.5}{2.5}{-1.5}{1.5} \fillcolor[gray]{.7} \gfill \btwnfcn{0,2,0.1}{sqrt(1 - (x/2))}{sqrt(1 - ((x**2)/4))} \gfill \btwnfcn{0,2,0.1}{-sqrt(1 - (x/2))}{-sqrt(1 - ((x**2)/4))} \parafcn{-1.5708, 1.5708,0.1}{(2*cos(t),sin(t))} \dashed \parafcn{-1,1,0.1}{(2 - (2*(t**2)),
+          t)} \axes \gclear \circle{(2,0), 0.05} \circle{(2,0), 0.05} \gclear \circle{(0,1), 0.05} \circle{(0,1), 0.05} \gclear \circle{(0,-1), 0.05} \circle{(0,-1), 0.05} \tlabel[cc](2.5,-0.25){<m>x</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \xmarks{1} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2.1} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{\begin{array}{rcr} x^{2} + y^{2} \amp \geq \amp 25 \\ y - x \amp \leq \amp 1 \end{array} \right.</m> \begin{mfpic}[6]{-7}{7}{-7}{8} \fillcolor[gray]{.7} \gfill \btwnfcn{-7,7,0.1}{-7}{1+x} \gclear \circle{(0,0), 5} \arc[t]{(-4,-3), (5,0), (3,4)} \arrow \reverse \function{-7,-4,0.1}{1+x} \arrow \function{3,7,0.1}{1+x} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \xmarks{-6 step 1 until 6} \ymarks{-6 step 1 until 7} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5} \axislabels {y}{ {<m>-5</m>} -5, {<m>-3</m>} -3, {<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7} \end{mfpic}
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

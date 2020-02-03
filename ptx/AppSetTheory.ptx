@@ -1,0 +1,2058 @@
+<section xml:id="AppSetTheory">
+  <title>Basic Set Theory and Interval Notation</title>
+  <subsection xml:id="SetTheoryNotions">
+    <title>Some Basic Set Theory Notions</title>
+    <p>
+      We begin this section with the definition of a concept that is central to all of Mathematics.
+    </p>
+    <definition xml:id="setdef">
+      <statement>
+        <p>
+          A <term>set</term>
+              <idx><h>set</h><h>definition of</h></idx>
+          is a well-defined collection of objects which are called the elements of the set.
+          Here, <sq>well-defined</sq> means that it is possible to determine if something belongs to the collection or not,
+          without prejudice.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      For example, the collection of letters that make up the word
+      <q>smolko</q>
+      is well-defined and is a set,
+      but the collection of the worst Math teachers in the world is <em>not</em>
+      well-defined and therefore is <em>not</em> a set.<fn>
+      For a more thought-provoking example,
+      consider the collection of all things that do not contain themselves - this leads to the famous paradox known as
+      <url href="http://en.wikipedia.org/wiki/Russell's_paradox"><em>Russell's Paradox</em></url>.
+      </fn>
+    </p>
+    <p>
+      In general, there are three ways to describe sets and those methods are listed below.
+      <em>Ways to Describe Sets</em>
+      <ol>
+        <li>
+          <p>
+            <em>The Verbal Method:</em> Use a sentence to describe the elements the set.
+              <idx><h>set</h><h>verbal description</h></idx>
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>The Roster Method:</em> Begin with a left brace <sq><m>\{</m></sq>,
+            list each element of the set <em>only once</em>
+            and then end with a right brace <sq><m>\}</m></sq>.
+              <idx><h>set</h><h>roster method</h></idx>
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>The Set-Builder Method:</em>
+            A combination of the verbal and roster methods using a
+            <q>dummy variable</q>
+            such as <m>x</m> and conditions on that variable.
+              <idx><h>set</h><h>set-builder notation</h></idx>
+              <idx><h>set-builder notation</h></idx>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Let <m>S</m> be the set described <em>verbally</em>
+      as the set of letters that make up the word
+      <q>smolko</q>. A <em>roster</em> description of <m>S</m> is <m>\left\{ s, m, o, l, k \right\}</m>.
+      Note that we listed <sq>o</sq> only once,
+      even though it appears twice in the word
+      <q>smolko</q>. Also, the order of the elements doesn't matter,
+      so <m>\left\{ k, l, m, o, s \right\}</m> is also a roster description of <m>S</m>.
+      A <em>set-builder</em> description of <m>S</m> is:
+      <m>\{ x \, | \, \mbox{<m>x</m> is a letter in the word ``smolko''} \}</m>.
+      The way to read this is <sq>The set of elements <m>x</m> <em>such that</em>
+      <m>x</m> is a letter in the word
+      <q>smolko</q>.</sq> In each of the above cases,
+      we may use the familiar equals sign <sq><m>=</m></sq> and write
+      <m>S = \left\{ s, m, o, l, k \right\}</m> or <m>S = \{ x \, | \, \mbox{<m>x</m> is a letter in the word ``smolko''} \}</m>.
+    </p>
+    <p>
+      Notice that <m>m</m> is in <m>S</m> but many other letters,
+      such as <m>q</m>, are not in <m>S</m>.
+      We express these ideas of set inclusion and exclusion mathematically using the symbols <m>m \in S</m>
+      (read <sq><m>m</m> <em>is in</em> <m>S</m></sq>)
+      and <m>q \notin S</m>
+      (read <sq><m>q</m> <em>is not in</em> <m>S</m></sq>).
+      More precisely, we have the following.
+    </p>
+    <definition xml:id="notationforsetinclusion">
+      <statement>
+        <p>
+          Let <m>A</m> be a set.
+          <ul>
+            <li>
+              <p>
+                If <m>x</m> is an element of <m>A</m> then we write <m>x \in A</m>
+                  <idx><h>set</h><h>inclusion</h></idx>
+                  <idx><h><m>\in</m></h></idx>
+                which is read <sq><m>x</m> is in <m>A</m></sq>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>x</m> is <em>not</em> an element of <m>A</m> then we write <m>x \notin A</m>
+                  <idx><h>set</h><h>exclusion</h></idx>
+                  <idx><h><m>\notin</m></h></idx>
+                which is read <sq><m>x</m> is not in <m>A</m></sq>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Now let's consider the set <m>C = \{ x \, | \, \mbox{<m>x</m> is a consonant in the word ``smolko''} \}</m>.
+      A roster description of <m>C</m> is <m>C = \{ s, m, l, k\}</m>.
+      Note that by construction, every element of <m>C</m> is also in <m>S</m>.
+      We express this relationship by stating that the set <m>C</m> is a
+      <em>subset</em> of the set <m>S</m>,
+      which is written in symbols as <m>C \subseteq S</m>.
+      The more formal definition is given at the top of the next page.
+    </p>
+    <definition xml:id="subsetdef">
+      <statement>
+        <p>
+          Given sets <m>A</m> and <m>B</m>,
+          we say that the set <m>A</m> is a
+          <term>subset</term><idx><h>subset</h><h>definition of</h></idx> of the set <m>B</m> and write <sq><m>A \subseteq B</m></sq> if every element in <m>A</m> is also an element of <m>B</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In our previous example,
+      <m>C \subseteq S</m> yet not vice-versa since <m>o \in S</m> but <m>o \notin C</m>.
+      Additionally, the set of vowels <m>V = \{ a, e, i, o, u\}</m>,
+      while it does have an element in common with <m>S</m>,
+      is not a subset of <m>S</m>.
+      (As an added note, <m>S</m> is not a subset of <m>V</m>, either.)
+      We could, however, <em>build</em>
+      a set which contains both <m>S</m> and <m>V</m> as subsets by gathering all of the elements in both <m>S</m> and <m>V</m> together into a single set,
+      say <m>U = \{ s, m, o, l, k, a, e, i, u\}</m>.
+      Then <m>S \subseteq U</m> and <m>V \subseteq U</m>.
+      The set <m>U</m> we have built is called the <em>union</em>
+      of the sets <m>S</m> and <m>V</m> and is denoted <m>S \cup V</m>.
+      Furthermore, <m>S</m> and <m>V</m> aren't completely
+      <em>different</em> sets since they both contain the letter <sq>o.</sq> The <em>intersection</em>
+      of two sets is the set of elements
+      (if any)
+      the two sets have in common.
+      In this case,
+      the intersection of <m>S</m> and <m>V</m> is <m>\{ o\}</m>,
+      written <m>S \cap V = \{ o \}</m>.
+      We formalize these ideas below.
+    </p>
+    <definition xml:id="intersectionunion">
+      <statement>
+        <p>
+          Suppose <m>A</m> and <m>B</m> are sets.
+          <ul>
+            <li>
+              <p>
+                The <em>intersection</em>
+                  <idx><h>set</h><h>intersection</h></idx>
+                  <idx><h>intersection of two sets</h></idx>
+                of <m>A</m> and <m>B</m> is <m>A \cap B = \{ x \, | \, x \in A \, \text{ and } \,\, x \in B \}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The <em>union</em>
+                  <idx><h>set</h><h>union</h></idx>
+                  <idx><h>union of two sets</h></idx>
+                of <m>A</m> and <m>B</m> is <m>A \cup B = \{ x \, | \, x \in A \, \text{ or } \,\, x \in B \, \, \text{
+                (or both)
+                } \}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The key words in <xref ref="intersectionunion">Definition</xref>
+      to focus on are the conjunctions:
+      <sq>intersection</sq> corresponds to <sq>and</sq> meaning the elements have to be in <em>both</em>
+      sets to be in the intersection,
+      whereas <sq>union</sq> corresponds to <sq>or</sq> meaning the elements have to be in one set,
+      or the other set
+      (or both).
+      Please note that this mathematical use of the word <sq>or</sq> differs than how we use <sq>or</sq> in spoken English.
+      In Math, we use the <em>inclusive or</em>
+      which allows for the element to be in both sets.
+      At a restaurant if you're asked
+      <q>Do you want fries or a salad?</q>
+      you must pick one and only one.
+      This is known as the <em>exclusive or</em>
+      and it plays a role in other Math classes.
+      For our purposes it is good enough to say that for an element to belong to the union of two sets it must belong to
+      <em>at least one</em> of them.
+    </p>
+    <p>
+      Returning to the sets <m>C</m> and <m>V</m> above,
+      <m>C \cup V = \{ s, m, l, k, a, e, i, o, u\}</m>.<fn>
+      Which just so happens to be the same set as <m>S \cup V</m>.
+      </fn> Their intersection, however,
+      creates a bit of notational awkwardness since <m>C</m> and <m>V</m> have no elements in common.
+      While we could write <m>C \cap V = \{ \}</m>,
+      this sort of thing happens often enough that we give the set with no elements a name.
+    </p>
+    <definition xml:id="emptysetdefn">
+      <statement>
+        <p>
+          The <term>Empty Set</term> is the set which contains no elements and is denoted <m>\emptyset</m>.
+              <idx><h>set</h><h>empty</h></idx>
+              <idx><h>empty set</h></idx>
+          That is,
+          <me>
+            \emptyset=\{ \}=\{x\,|\,\mbox{\(x \neq x\)} \}
+          </me>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As promised,
+      the empty set is the set containing no elements since no matter what <sq><m>x</m></sq> is,
+      <sq><m>x = x</m>.</sq> Like the number <sq><m>0</m>,</sq> the empty set plays a vital role in mathematics.<fn>
+      Sadly, the full extent of the empty set's role will not be explored in this text.
+      </fn> We introduce it here more as a symbol of convenience as opposed to a contrivance<fn>
+      Actually, the empty set can be used to generate numbers - mathematicians can create something from nothing!
+      </fn> because saying that
+      <m>C \cap V = \emptyset</m> is unambiguous whereas <m>\{ \}</m> looks like a typographical error.
+    </p>
+    <p>
+      A nice way to visualize the relationships between sets and set operations is to draw a
+      <url href="http://en.wikipedia.org/wiki/Venn_diagram"><em><em>Venn Diagram</em></em></url>
+          <idx><h>diagram</h><h>Venn Diagram</h></idx>.
+          <idx><h>Venn Diagram</h></idx>
+      A Venn Diagram for the sets <m>S</m>,
+      <m>C</m> and <m>V</m> is drawn at the top of the next page.
+    </p>
+    <p>
+      \begin{mfpic}[10]{-10}{10}{-10}{10}
+    </p>
+    <p>
+      \rect{(-10,-8),(10,8)} \circle{(-3,0), 5} \circle{(3,0), 5} \circle{(-4,0), 1.5} \tlabel[cc](-4,0){<m>s</m> <m>m</m> <m>l</m> <m>k</m>} \tlabel[cc](0,0){<m>o</m>} \tlabel[cc](4,0){<m>a</m> <m>e</m> <m>i</m> <m>u</m>} \tlabel[cc](-3,-6){<m>S</m>} \tlabel[cc](3,-6){<m>V</m>} \tlabel[cc](-4,2){<m>C</m>} \tlabel[cc](9,7){<m>U</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      A Venn Diagram for <m>C</m>, <m>S</m> and <m>V</m>.
+    </p>
+    <p>
+      In the Venn Diagram above we have three circles - one for each of the sets <m>C</m>,
+      <m>S</m> and <m>V</m>.
+      We visualize the area enclosed by each of these circles as the elements of each set.
+      Here, we've spelled out the elements for definitiveness.
+      Notice that the circle representing the set <m>C</m> is completely inside the circle representing <m>S</m>.
+      This is a geometric way of showing that <m>C \subseteq S</m>.
+      Also, notice that the circles representing <m>S</m> and <m>V</m> overlap on the letter <sq>o</sq>.
+      This common region is how we visualize <m>S \cap V</m>.
+      Notice that since <m>C \cap V = \emptyset</m>,
+      the circles which represent <m>C</m> and <m>V</m> have no overlap whatsoever.
+    </p>
+    <p>
+      All of these circles lie in a rectangle labeled <m>U</m> for the <sq>universal</sq> set.
+      A universal set contains all of the elements under discussion,
+      so it could always be taken as the union of all of the sets in question,
+      or an even larger set.
+      In this case, we could take
+      <m>U = S \cup V</m> or <m>U</m> as the set of letters in the entire alphabet.
+      The reader may well wonder if there is an ultimate universal set which contains <em>everything</em>.
+      The short answer is <sq>no</sq> and we refer you once again to
+      <url href="http://en.wikipedia.org/wiki/Russell's_paradox"><em>Russell's Paradox</em></url>.
+      The usual triptych of Venn Diagrams indicating generic sets <m>A</m> and <m>B</m> along with
+      <m>A \cap B</m> and <m>A \cup B</m> is given below.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[40]{-2}{2}{-2}{2}
+          \fillcolor[gray]{0.7}
+          \circle{(0.4375,0),1}
+          \circle{(-0.4375,0),1}
+          \tlabel[cc](-0.4375,-1.25){<m>A</m>}
+          \tlabel[cc](0.4375,-1.25){<m>B</m>}
+          \tlabel[cc](1.25,1.25){<m>U</m>}
+          \rect{(-1.5, -1.5), (1.5, 1.5)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[40]{-2}{2}{-2}{2}
+          \fillcolor[gray]{0.7}
+          \gfill\circle{(0.4375,0),1}
+          \gclip\circle{(-0.4375,0),1}
+          \circle{(0.4375,0),1}
+          \circle{(-0.4375,0),1}
+          \tlabel[cc](0,0){<m>A \cap B</m>}
+          \tlabel[cc](-0.4375,-1.25){<m>A</m>}
+          \tlabel[cc](0.4375,-1.25){<m>B</m>}
+          \tlabel[cc](1.25,1.25){<m>U</m>}
+          \rect{(-1.5, -1.5), (1.5, 1.5)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[40]{-2}{2}{-2}{2}
+          \fillcolor[gray]{0.7}
+          \gfill\circle{(0.4375,0),1}
+          \gfill\circle{(-0.4375,0),1}
+          \circle{(0.4375,0),1}
+          \circle{(-0.4375,0),1}
+          \tlabel[cc](0,0){<m>A \cup B</m>}
+          \tlabel[cc](-0.4375,-1.25){<m>A</m>}
+          \tlabel[cc](0.4375,-1.25){<m>B</m>}
+          \tlabel[cc](1.25,1.25){<m>U</m>}
+          \rect{(-1.5, -1.5), (1.5, 1.5)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell>Sets <m>A</m> and <m>B</m>.</cell>
+        <cell><m>A \cap B</m> is shaded.</cell>
+        <cell><m>A \cup B</m> is shaded.</cell>
+      </row>
+    </tabular>
+    <p>
+      The one major limitation of Venn Diagrams is that they become unwieldy if more than four sets need to be drawn simultaneously within the same universal set.
+      This idea is explored in the Exercises.
+    </p>
+  </subsection>
+  <subsection xml:id="SetsofRealNumbers">
+    <title>Sets of Real Numbers</title>
+    <p>
+      The playground for most of this text is the set of <em>Real Numbers</em>.
+      Much of the
+      <q>real world</q>
+      can be quantified using real numbers:
+      the temperature at a given time,
+      the revenue generated by selling a certain number of products and the maximum population of Sasquatch which can inhabit a particular region are just three basic examples.
+      A succinct, but nonetheless incomplete<fn>
+      Math pun intended!
+      </fn> definition of a real number is given below.
+    </p>
+    <definition xml:id="realnumberdefn">
+      <statement>
+        <p>
+          A <term>real number</term><idx><h>real number</h><h>set of</h></idx>
+              <idx><h>real number</h><h>definition of</h></idx>
+          is any number which possesses a decimal representation.
+          The set of real numbers is denoted by the character <m>\R</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Certain subsets of the real numbers are worthy of note and are listed below.
+      In fact, in more advanced texts,<fn>
+      See, for instance, Landau's <em>Foundations of Analysis</em>.
+      </fn> the real numbers are <em>constructed</em>
+      from some of these subsets.
+      <em>Special Subsets of Real Numbers</em><idx><h>set</h><h>sets of real numbers</h></idx>
+      <ol>
+        <li>
+          <p>
+            The <em>Natural Numbers</em>:<idx><h>natural number</h><h>set of</h></idx>
+              <idx><h>natural number</h><h>definition of</h></idx> <m>\N= \{ 1, 2, 3, \ldots\}</m> The periods of ellipsis <sq><m>\ldots</m></sq> here indicate that the natural numbers contain <m>1</m>, <m>2</m>, <m>3</m> <sq>and so forth</sq>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The <em>Whole Numbers</em>:<idx><h>whole number</h><h>set of</h></idx>
+              <idx><h>whole number</h><h>definition of</h></idx> <m>\W = \{ 0, 1, 2, \ldots \}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The <em>Integers</em>:
+              <idx><h>integer</h><h>set of</h></idx>
+              <idx><h>integer</h><h>definition of</h></idx> <m>\mathbb Z=\{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \} = \{ 0, \pm 1, \pm 2, \pm 3, \ldots\}</m>.<fn>
+            The symbol <m>\pm</m> is read <sq>plus or minus</sq> and it is a shorthand notation which appears throughout the text.
+            Just remember that <m>x = \pm 3</m> means <m>x = 3</m> or <m>x = -3</m>.
+            </fn>
+          </p>
+        </li>
+        <li>
+          <p>
+            The <em>Rational Numbers</em>:<idx><h>rational number</h><h>set of</h></idx>
+              <idx><h>rational number</h><h>definition of</h></idx> <m>\Q=\left\{\frac{a}{b} \, | \, a \in \mathbb Z \, \mbox{and}  \, b \in \mathbb Z \, \mbox{where}  \, b \neq 0\right\}</m>.
+            <em>Ratio</em>nal numbers are the
+            <em>ratio</em>s of integers where the denominator is not zero.
+            It turns out that another way to describe the rational numbers<fn>
+            See <xref ref="Summation">Section</xref>.
+            </fn> is:
+            <me>
+              \Q=\{x\,|\,\mbox{\(x\) possesses a repeating or terminating decimal representation} \}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            The <em>Irrational Numbers</em>:<idx><h>irrational number</h><h>set of</h></idx>
+              <idx><h>irrational number</h><h>definition of</h></idx> <m>\mathbb P = \{x\,|\,\mbox{<m>x \in \R</m> but <m>x \notin \Q</m>} \}</m>.<fn>
+            Examples here include number <m>\pi</m> (See <xref ref="AppAngles">Section</xref>),
+            <m>\sqrt{2}</m> and <m>0.101001000100001\ldots</m>.
+            </fn>  That is,
+            an <em>ir</em>rational number is a real number which isn't rational.
+            Said differently,
+            <me>
+              \mathbb P = \{x\,|\,\mbox{\(x\) possesses a decimal representation which neither repeats nor terminates} \}
+            </me>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Note that every natural number is a whole number which, in turn,
+      is an integer.
+      Each integer is a rational number
+      (take <m>b =1</m> in the above definition for <m>\Q</m>)
+      and since every rational number is a real number<fn>
+      Thanks to long division!
+      </fn> the sets <m>\N</m>, <m>\W</m>,
+      <m>\mathbb Z</m>, <m>\Q</m>, and <m>\R</m> are nested like
+      <url href="http://en.wikipedia.org/wiki/Matryoshka_doll"><em>Matryoshka dolls</em></url>.
+      More formally, these sets form a subset chain:
+      <m>\N \subseteq \W \subseteq \mathbb Z \subseteq \Q \subseteq \R</m>.
+      The reader is encouraged to sketch a Venn Diagram depicting <m>\R</m> and all of the subsets mentioned above.
+    </p>
+    <p>
+      It is time to put all of this together in an example.
+    </p>
+    <example xml:id="numbersetex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Write a roster description for
+              <m>P = \{ 2^{n} \, | \, n \in \N \}</m> and <m>E = \{ 2n \, | \, n \in \mathbb Z \}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write a verbal description for <m>S = \{ x^2 \, | \, x \in \R \}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>A = \{-117, \frac{4}{5}, 0.20\overline{2002}, 0.202002000200002 \ldots\}</m>.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Which elements of <m>A</m> are natural numbers?
+                  Rational numbers?
+                  Real numbers?
+                </p>
+              </li>
+              <li>
+                <p>
+                  Find <m>A \cap \W</m>,
+                  <m>A \cap \mathbb Z</m> and <m>A \cap \mathbb P</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              What is another name for <m>\N \cup \Q</m>?
+              What about <m>\Q \cup \mathbb P</m>?
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find roster descriptions for each of these sets,
+                we need to list their elements.
+                Starting with the set <m>P = \{ 2^{n} \, | \, n \in \N \}</m>,
+                we substitute natural number values <m>n</m> into the formula <m>2^n</m>.
+                For <m>n = 1</m> we get <m>2^1 = 2</m>,
+                for <m>n = 2</m> we get <m>2^2 = 4</m>,
+                for <m>n = 3</m> we get <m>2^3 = 8</m> and for <m>n = 4</m> we get <m>2^4 = 16</m>.
+                Hence <m>P</m> describes the powers of <m>2</m>,
+                so a roster description for <m>P</m> is
+                <m>P = \{ 2, 4, 8, 16, \ldots \}</m> where the <sq><m>\ldots</m></sq> indicates the that pattern continues.<fn>
+                This isn't the most <em>precise</em>
+                way to describe this set - it's always dangerous to use <sq><m>\ldots</m></sq> since we assume that the pattern is clearly demonstrated and thus made evident to the reader.
+                Formulas are more precise because the pattern is clear.
+                </fn>  Proceeding in the same way,
+                we generate elements in <m>E = \{ 2n \, | \, n \in \mathbb Z \}</m> by plugging in integer values of <m>n</m> into the formula <m>2n</m>.
+                Starting with <m>n = 0</m> we obtain <m>2(0) = 0</m>.
+                For <m>n = 1</m> we get <m>2(1) = 2</m>,
+                for <m>n = -1</m> we get <m>2(-1) = -2</m> for <m>n = 2</m>,
+                we get <m>2(2) = 4</m> and for <m>n = -2</m> we get <m>2(-2) = -4</m>.
+                As <m>n</m> moves through the integers,
+                <m>2n</m> produces all of the <em>even</em> integers.<fn>
+                This shouldn't be too surprising,
+                since an even integer is <em>defined</em>
+                to be an integer multiple of <m>2</m>.
+                </fn> A roster description for <m>E</m> is <m>E = \{ 0, \pm 2, \pm 4, \ldots \}</m>.
+              </p>
+            </li>
+            <li xml:id="repeatingdecimalnote">
+              <p>
+                One way to verbally describe <m>S</m> is to say that <m>S</m> is the <sq>set of all squares of real numbers</sq>.
+                While this isn't incorrect,
+                we'd like to take this opportunity to delve a little deeper.<fn>
+                Think of this as an opportunity to stop and smell the mathematical roses.
+                </fn>  What makes the set
+                <m>S = \{ x^2 \, | \, x \in \R \}</m> a little trickier to wrangle than the sets <m>P</m> or <m>E</m> above is that the dummy variable here,
+                <m>x</m>,
+                runs through all <em>real</em> numbers.
+                Unlike the natural numbers or the integers,
+                the real numbers cannot be listed in any methodical way.<fn>
+                This is a nontrivial statement.
+                Interested readers are directed to a discussion of
+                <url href="http://en.wikipedia.org/wiki/Cantor's_diagonal_argument"><em>Cantor's Diagonal Argument</em></url>.
+                </fn>  Nevertheless,
+                we can select some real numbers,
+                square them and get a sense of what kind of numbers lie in <m>S</m>.
+                For <m>x = -2</m>,
+                <m>x^2 = (-2)^2 = 4</m> so <m>4</m> is in <m>S</m>,
+                as are <m>\left(\frac{3}{2}\right)^2 = \frac{9}{4}</m> and <m>(\sqrt{117})^2 = 117</m>.
+                Even things like <m>(-\pi)^2</m> and <m>(0.101001000100001 \ldots)^2</m> are in <m>S</m>.
+                So suppose <m>s \in S</m>.
+                What can be said about <m>s</m>?
+                We know there is some real number <m>x</m> so that <m>s = x^2</m>.
+                Since <m>x^2 \geq 0</m> for any real number <m>x</m>, we know <m>s \geq 0</m>.
+                This tells us that everything in <m>S</m> is a non-negative real number.<fn>
+                This means <m>S</m> is a subset of the non-negative real numbers.
+                </fn>  This begs the question:
+                are <em>all</em> of the non-negative real numbers in <m>S</m>?
+                Suppose <m>n</m> is a non-negative real number, that is,
+                <m>n \geq 0</m>.
+                If <m>n</m> were in <m>S</m>,
+                there would be a real number <m>x</m> so that <m>x^2=n</m>.
+                As you may recall,
+                we can solve <m>x^2 = n</m> by <sq>extracting square roots</sq>:
+                <m>x = \pm \sqrt{n}</m>.
+                Since <m>n \geq 0</m>, <m>\sqrt{n}</m> is a real number.<fn>
+                This is called the <sq>square root closed property</sq> of the non-negative real numbers.
+                </fn>  Moreover,
+                <m>(\sqrt{n})^2 = n</m> so <m>n</m> is the square of a real number which means <m>n \in S</m>.
+                Hence, <m>S</m> is the set of non-negative real numbers.
+              </p>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    The set <m>A</m> contains no natural numbers.<fn>
+                    Carl was tempted to include
+                    <m>0.\overline{9}</m> in the set <m>A</m>, but thought better of it.
+                    See <xref ref="Summation">Section</xref> for details.
+                    </fn>  Clearly <m>\frac{4}{5}</m> is a rational number as is <m>-117</m>
+                    (which can be written as <m>\frac{-117}{1}</m>).
+                    It's the last two numbers listed in <m>A</m>,
+                    <m>0.20\overline{2002}</m> and <m>0.202002000200002 \ldots</m>,
+                    that warrant some discussion.
+                    First, recall that the <sq>line</sq> over the digits <m>2002</m> in <m>0.20\overline{2002}</m>
+                    (called the vinculum)
+                    indicates that these digits repeat,
+                    so it is a rational number.<fn>
+                    So <m>0.20\overline{2002} = 0.20200220022002 \ldots</m>.
+                    </fn>  As for the number <m>0.202002000200002 \ldots</m>,
+                    the <sq><m>\ldots</m></sq> indicates the pattern of adding an extra <sq><m>0</m></sq> followed by a <sq><m>2</m></sq> is what defines this real number.
+                    Despite the fact there is a <em>pattern</em> to this decimal,
+                    this decimal is <em>not repeating</em>,
+                    so it is not a rational number - it is,
+                    in fact, an irrational number.
+                    All of the elements of <m>A</m> are real numbers,
+                    since all of them can be expressed as decimals
+                    (remember that <m>\frac{4}{5} = 0.8</m>).
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The set <m>A \cap \W = \{ x \, | \, \text{ \(x \in A\) and \(x \in \W\) } \}</m> is another way of saying we are looking for the set of numbers in <m>A</m> which are whole numbers.
+                    Since <m>A</m> contains no whole numbers,
+                    <m>A \cap \W = \emptyset</m>.
+                    Similarly, <m>A \cap \mathbb Z</m> is looking for the set of numbers in <m>A</m> which are integers.
+                    Since <m>-117</m> is the only integer in <m>A</m>,
+                    <m>A \cap \mathbb Z = \{ -117 \}</m>.
+                    For the set <m>A \cap \mathbb P</m>,
+                    as discussed in part (a),
+                    the number <m>0.202002000200002 \ldots</m> is irrational,
+                    so <m>A \cap \mathbb P = \{ 0.202002000200002 \ldots \}</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                The set <m>\N \cup \Q = \{ x \, | \, \text{ \(x \in \N\) or \(x \in \Q\) } \}</m> is the union of the set of natural numbers with the set of rational numbers.
+                Since every natural number is a rational number,
+                <m>\N</m> doesn't contribute any new elements to <m>\Q</m>,
+                so <m>\N \cup \Q = \Q</m>.<fn>
+                In fact, anytime <m>A \subseteq B</m>,
+                <m>A \cup B = B</m> and vice-versa.
+                See the exercises.
+                </fn>  For the set <m>\Q \cup \mathbb P</m>,
+                we note that every real number is either rational or not,
+                hence <m>\Q \cup \mathbb P = \R</m>,
+                pretty much by the definition of the set <m>\mathbb P</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As you may recall,
+      we often visualize the set of real numbers <m>\R</m> as a line where each point on the line corresponds to one and only one real number.
+      Given two different real numbers <m>a</m> and <m>b</m>,
+      we write <m>a \lt b</m> if <m>a</m> is located to the left of <m>b</m> on the number line,
+      as shown below.
+    </p>
+    <p>
+      \begin{mfpic}[10]{-5}{5}{-2}{2}
+    </p>
+    <p>
+      \tlpointsep{4pt} \axislabels {x}{{<m>a</m>} -3, {<m>b</m>} 3}
+    </p>
+    <p>
+      \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \point[3pt]{(3,0), (-3,0)}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      The real number line with two numbers <m>a</m> and <m>b</m> where <m>a \lt b</m>.
+    </p>
+    <p>
+      While this notion seems innocuous,
+      it is worth pointing out that this convention is rooted in two deep properties of real numbers.
+      The first property is that <m>\R</m> is
+      <url href="http://en.wikipedia.org/wiki/Complete_metric_space"><em>complete</em></url>.
+      This means that there are no <sq>holes</sq> or <sq>gaps</sq> in the real number line.<fn>
+      Alas, this intuitive feel for what it means to be <sq>complete</sq> is as good as it gets at this level.
+      Completeness is given a much more precise meaning later in courses like Analysis and Topology.
+      </fn> Another way to think about this is that if you choose any two distinct (different) real numbers,
+      and look between them, you'll find a solid line segment
+      (or interval)
+      consisting of infinitely many real numbers.
+      The next result tells us what types of numbers we can expect to find.
+      <em>Density Property of <m>\Q</m> and <m>\mathbb P</m> in <m>\R</m></em>
+    </p>
+    <p>
+      Between any two distinct real numbers,
+      there is at least one rational number and one irrational number.
+      It then follows that between any two distinct real numbers there will be
+      <em>infinitely many</em>
+      rational and <em>infinitely many</em> irrational numbers.
+    </p>
+    <p>
+      The root word <sq>dense</sq> here communicates the idea that rationals and irrationals are <sq>thoroughly mixed</sq> into <m>\R</m>.
+      The reader is encouraged to think about how one would find both a rational and an irrational number between,
+      say, <m>0.9999</m> and <m>1</m>.
+      Once you've done that, try doing the same thing for the numbers
+      <m>0.\overline{9}</m> and <m>1</m>. (<sq>Try</sq> is the operative word,
+      here.<fn>
+      Again, see <xref ref="Summation">Section</xref> for details.
+      </fn>)
+    </p>
+    <p>
+      The second property <m>\R</m> possesses that lets us view it as a line is that the set is
+      <url href="http://en.wikipedia.org/wiki/Total_order"><em>totally ordered</em></url>.
+      This means that given any two real numbers <m>a</m> and <m>b</m>,
+      either <m>a \lt b</m>,
+      <m>a > b</m> or <m>a = b</m> which allows us to arrange the numbers from least (left) to greatest
+      (right).
+      This property is given below.
+          <idx><h>trichotomy</h></idx>
+      <em>Law of Trichotomy</em>
+    </p>
+    <p>
+      If <m>a</m> and <m>b</m> are real numbers then exactly one of the following statements is true:
+      <me>
+        \begin{array}{lclcl} a \lt  b \amp   \amp  a > b \amp   \amp  a = b \end{array}
+      </me>
+    </p>
+    <p>
+      Segments of the real number line are called <em>intervals</em>.
+          <idx><h>interval</h><h>definition of</h></idx>
+      They play a huge role not only in this text but also in the Calculus curriculum so we need a concise way to describe them.
+      We start by examining a few examples of the
+      <em>interval notation</em><idx><h>interval</h><h>notation for</h></idx> associated with some specific sets of numbers.
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Set of Real Numbers</cell>
+        <cell>Interval Notation</cell>
+        <cell>Region on the Real Number Line</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,|\,1\leq x\lt  3\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>[1,3)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>1</m>} -3, {<m>3</m>} 3}
+          \polyline{(-3,0), (3,0)}
+          \point[3pt]{(-3,0)}
+          \pointfillfalse
+          \point[3pt]{(3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,|\,-1\leq x \leq 4\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>[-1,4]</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>-1</m>} -3, {<m>4</m>} 3}
+          \polyline{(-3,0), (3,0)}
+          \point[3pt]{(-3,0), (3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,| \, x \leq 5 \}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(-\infty, 5]</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>5</m>} 3}
+          \arrow \polyline{(3,0), (-3,0)}
+          \point[3pt]{(3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,| \, x > -2 \}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(-2, \infty)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>-2</m>} -3}
+          \arrow \polyline{(-3,0), (3,0)}
+          \pointfillfalse
+          \point[3pt]{(-3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+    <p>
+      As you can glean from the table,
+      for intervals with finite endpoints we start by writing <sq>left endpoint,
+      right endpoint</sq>.
+      We use square brackets, <sq><m>[</m></sq> or <sq><m>]</m></sq>,
+      if the endpoint is included in the interval.
+      This corresponds to a <sq>filled-in</sq> or <sq>closed</sq> dot on the number line to indicate that the number is included in the set.
+      Otherwise, we use parentheses,
+      <sq><m>(</m></sq> or <sq><m>)</m></sq> that correspond to an <sq>open</sq> circle which indicates that the endpoint is not part of the set.
+      If the interval does not have finite endpoints,
+      we use the symbol <m>-\infty</m> to indicate that the interval extends indefinitely to the left and the symbol <m>\infty</m> to indicate that the interval extends indefinitely to the right.
+      Since infinity is a concept, and not a number,
+      we always use parentheses when using these symbols in interval notation,
+      and use the appropriate arrow to indicate that the interval extends indefinitely in one or both directions.
+      We summarize all of the possible cases in one convenient table below.<fn>
+      The importance of understanding interval notation in this book and also in Calculus cannot be overstated so please do yourself a favor and memorize this chart.
+      </fn> <em>Interval Notation</em>
+    </p>
+    <p>
+      Let <m>a</m> and <m>b</m> be real numbers with <m>a\lt b</m>.
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Set of Real Numbers</cell>
+        <cell>Interval Notation</cell>
+        <cell>Region on the Real Number Line</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,|\,a\lt x\lt b\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(a,b)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>a</m>} -3, {<m>b</m>} 3}
+          \polyline{(-3,0), (3,0)}
+          \pointfillfalse
+          \point[3pt]{(3,0), (-3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,|\,a\leq x\lt b\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>[a,b)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>a</m>} -3, {<m>b</m>} 3}
+          \polyline{(-3,0), (3,0)}
+          \point[3pt]{(-3,0)}
+          \pointfillfalse
+          \point[3pt]{(3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,|\,a\lt x\leq b\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(a,b]</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>a</m>} -3, {<m>b</m>} 3}
+          \polyline{(-3,0), (3,0)}
+          \point[3pt]{(3,0)}
+          \pointfillfalse
+          \point[3pt]{(-3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,|\,a\leq x \leq b\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>[a,b]</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>a</m>} -3, {<m>b</m>} 3}
+          \polyline{(-3,0), (3,0)}
+          \point[3pt]{(3,0), (-3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,| \, x\lt b\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(-\infty,b)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>b</m>} 3}
+          \arrow \polyline{(3,0), (-3,0)}
+          \pointfillfalse
+          \point[3pt]{(3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,| \, x \leq b\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(-\infty,b]</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>b</m>} 3}
+          \arrow \polyline{(3,0), (-3,0)}
+          \point[3pt]{(3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,| \, x>a\}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(a,\infty)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>a</m>} -3}
+          \arrow \polyline{(-3,0), (3,0)}
+          \pointfillfalse
+          \point[3pt]{(-3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\{x\,| \, x \geq a \}</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>[a,\infty)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{<m>a</m>} -3}
+          \arrow \polyline{(-3,0), (3,0)}
+          \point[3pt]{(-3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\shortstack{<m>\R</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\shortstack{<m>(-\infty,\infty)</m></cell>
+      </row>
+      <row>
+        <cell>}</cell>
+        <cell>\begin{mfpic}[10]{-3}{3}{-2}{2}
+          \backgroundcolor[gray]{.95}
+          \tlpointsep{4pt}
+          \axislabels {x}{{} -3}
+          \arrow \reverse \arrow \polyline{(-3,0), (3,0)}
+          \end{mfpic}</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+    <p>
+      Intervals of the forms <m>(a, b), (-\infty,
+      b)</m> and <m>(a, \infty)</m> are said to be
+      <em>open</em> intervals.
+          <idx><h>interval</h><h>open</h></idx>
+          <idx><h>open interval</h></idx>
+      Those of the forms <m>[a, b], (-\infty, b]</m> and <m>[a, \infty)</m> are said to be <em>closed</em> intervals.
+          <idx><h>interval</h><h>closed</h></idx>
+          <idx><h>closed interval</h></idx>
+    </p>
+    <p>
+      Unfortunately,
+      the words <sq>open</sq> and <sq>closed</sq> are not antonyms here because the empty set <m>\emptyset</m> and the set
+      <m>(-\infty, \infty)</m> are simultaneously open and closed<fn>
+      You don't need to worry about that fact until you take an advanced course in Topology.
+      </fn> while the intervals <m>(a, b]</m> and <m>[a, b)</m> are neither open nor closed.
+      The inclusion or exclusion of an endpoint might seem like a terribly small thing to fuss about but these sorts of technicalities in the language become important in Calculus so we feel the need to put this material in the Precalculus book.
+    </p>
+    <p>
+      We close this section with an example that ties together some of the concepts presented earlier.
+      Specifically,
+      we demonstrate how to use interval notation along with the concepts of union and intersection to describe a variety of sets on the real number line.
+      In many sections of the text to come you will need to be fluent with this notation so take the time to study it deeply now.
+    </p>
+    <example xml:id="intervalex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol cols="2">
+          <li>
+            <p>
+              Express the following sets of numbers using interval notation.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\{ x \, | \, x \leq -2 \, \, \text{ or } \, \, x \geq 2 \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\{ x \, | \, x \lt \sqrt{3} \,\, \text{ and } \,\, x \geq -\frac{8}{5} \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\{ x \, | \, x \neq \pm 3 \}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\{ x \, | \, -1 \lt x \leq 3 \,\, \text{ or } \,\, x = 5\}</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Let <m>A = [-5,3)</m> and <m>B = (1, \infty)</m>.
+              Find <m>A \cap B</m> and <m>A\cup B</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    The best way to proceed here is to graph the set of numbers on the number line and glean the answer from it.
+                    The inequality <m>x \leq -2</m> corresponds to the interval <m>(-\infty, -2]</m> and the inequality
+                    <m>x \geq 2</m> corresponds to the interval <m>[2, \infty)</m>.
+                    The <sq>or</sq> in <m>\{ x \, | \, x \leq -2 \, \, \text{ or } \, \, x \geq 2 \}</m> tells us that we are looking for the union of these two intervals,
+                    so our answer is <m>(-\infty, -2] \cup [2, \infty)</m>. \begin{mfpic}[10]{-5}{5}{-2}{2} \polyline{(-5,0), (5,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-2</m>} -2, {<m>2</m>} 2} \penwd{1.15pt} \arrow \polyline{(2,0), (5,0)} \arrow \polyline{(-2,0), (-5,0)} \point[4pt]{(-2,0), (2,0)} \end{mfpic} <m>(-\infty, -2] \cup [2, \infty)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    For the set <m>\{ x \, | \, x \lt \sqrt{3} \,\, \text{ and } \,\, x \geq -\frac{8}{5} \}</m>,
+                    we need the real numbers less than
+                    (to the left of)
+                    <m>\sqrt{3}</m> that are simultaneously greater than
+                    (to the right of)
+                    <m>-\frac{8}{5}</m>, including
+                    <m>-\frac{8}{5}</m> but excluding <m>\sqrt{3}</m>.
+                    This yields <m>\{ x \, | \, x \lt \sqrt{3} \,\, \text{ and } \,\, x \geq -\frac{8}{5} \} = \left[ -\frac{8}{5}, \sqrt{3} \right)</m>. \begin{mfpic}[10]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-\frac{8}{5}</m>} -3, {<m>\sqrt{3}</m>} 3} \penwd{1.15pt} \polyline{(-3,0), (3,0)} \point[4pt]{(-3,0)} \pointfillfalse \point[3pt]{(3,0)} \end{mfpic} <m>\left[ -\frac{8}{5}, \sqrt{3} \right)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    For the set <m>\{ x \, | \, x \neq \pm 3 \}</m>,
+                    we proceed as before and exclude both <m>x=3</m> and <m>x=-3</m> from our set. (Refer back to <xref ref="setsofnumbersboxonthispage">page</xref>
+                    for a discussion about <m>x = \pm 3</m>) This breaks the number line into
+                    <em>three</em> intervals,
+                    <m>(-\infty, -3)</m>, <m>(-3,3)</m> and <m>(3, \infty)</m>.
+                    Since the set describes real numbers which come from the first,
+                    second <em>or</em> third interval,
+                    we have <m>\{ x \, | \, x \neq \pm 3 \} = (-\infty, -3) \cup (-3,3) \cup (3, \infty)</m>. \begin{mfpic}[10]{-5}{5}{-2}{2} \tlpointsep{5pt} \axislabels {x}{{<m>-3</m>} -3, {<m>3</m>} 3} \penwd{1.15pt} \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \pointfillfalse \point[3pt]{(-3,0), (3,0)} \end{mfpic} <m>(-\infty, -3) \cup (-3,3) \cup (3, \infty)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Graphing the set <m>\{ x \, | \, -1 \lt x \leq 3 \,\, \text{ or } \,\, x = 5\}</m> yields the interval <m>(-1,3]</m> along with the single number 5.
+                    While we <em>could</em> express this single point as <m>[5,5]</m>,
+                    it is customary to write a single point as a <sq>singleton set</sq>,
+                    so in our case we have the set <m>\{ 5\}</m>.
+                    This means that our final answer is written
+                    <m>\{ x \, | \, -1 \lt x \leq 3 \,\, \text{ or } \,\, x = 5\} = (-1,3] \cup \{ 5\}</m>. \begin{mfpic}[10]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-1</m>} -3, {<m>3</m>} 1, {<m>5</m>} 3} \penwd{1.15pt} \polyline{(-3,0), (1,0)} \point[4pt]{(3,0), (1,0)} \pointfillfalse \point[3pt]{(-3,0)} \end{mfpic} <m>(-1,3] \cup \{ 5\}</m>
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                We start by graphing <m>A = [-5,3)</m> and <m>B = (1, \infty)</m> on the number line.
+                To find <m>A\cap B</m>,
+                we need to find the numbers common to both <m>A</m> and <m>B</m>;
+                in other words, we need to find the overlap of the two intervals.
+                Clearly, everything between <m>1</m> and <m>3</m> is in both <m>A</m> and <m>B</m>.
+                However, since <m>1</m> is in <m>A</m> but not in <m>B</m>,
+                <m>1</m> is not in the intersection.
+                Similarly, since <m>3</m> is in <m>B</m> but not in <m>A</m>,
+                it isn't in the intersection either.
+                Hence, <m>A \cap B = (1,3)</m>.
+                To find <m>A \cup B</m>,
+                we need to find the numbers in at least one of <m>A</m> or <m>B</m>.
+                Graphically, we shade <m>A</m> and <m>B</m> along with it.
+                Notice here that even though <m>1</m> isn't in <m>B</m>,
+                it is in <m>A</m>,
+                so it's in the union along with all of the other elements of <m>A</m> between <m>-5</m> and <m>1</m>.
+                A similar argument goes for the inclusion of <m>3</m> in the union.
+                The result of shading both <m>A</m> and <m>B</m> together gives us <m>A \cup B = [-5,\infty)</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[10]{-5}{7}{-2}{2} \arrow \polyline{(-5.5,0),(7.5,0)} \axismarks{x}{-5,1,3} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>1</m>} 1,{<m>3</m>} 3,} \penwd{1.15pt} \polyline{(-5,2), (3,2)} \arrow \polyline{ (1,1), (7,1)} \point[4pt]{(-5,2)} \pointfillfalse \point[3pt]{(1,1), (3,2)} \tcaption{<m>A = [-5,3)</m>, <m>B = (1, \infty)</m> } \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[10]{-5}{7}{-2}{2} \arrow \polyline{(-5,0),(7,0)} \axismarks{x}{-5,3} \tlpointsep{5pt} \axislabels {x}{{<m>-5</m>} -5, {<m>1</m>} 1,{<m>3</m>} 3,} \penwd{1.15pt} \polyline{(-5,2), (3,2)} \arrow \polyline{ (1,1), (7,1)} \polyline{(1,0), (3,0)} \point[4pt]{(-5,2)} \pointfillfalse \point[3pt]{(1,0),(1,1), (3,2), (3,0)} \tcaption{<m>A \cap B = (1,3)</m>} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[10]{-5}{7}{-2}{2} \tlpointsep{5pt} \axislabels {x}{{<m>-5</m>} -5, {<m>1</m>} 1,{<m>3</m>} 3,} \penwd{1.15pt} \polyline{(-5,2), (3,2)} \arrow \polyline{ (1,1), (7,1)} \arrow \polyline{(-5,0), (7,0)} \point[4pt]{(-5,0),(-5,2)} \pointfillfalse \point[3pt]{(1,1), (3,2)} \tcaption{<m>A \cup B = [-5,\infty)</m>} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="ExercisesforAppSetTheory">
+    <title>Exercises</title>
+    <ol>
+      <li>
+        <p>
+          Find a verbal description for <m>O = \{ 2n-1 \, | \, n \in \N\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Find a roster description for <m>X = \{ z^2 \, | \, z \in \mathbb{Z}\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>A = \left\{ -3, -1.02, -\dfrac{3}{5}, 0.57, 1.\overline{23}, \sqrt{3}, 5.2020020002 \ldots, \dfrac{20}{10}, 117 \right\}</m>
+          <ol>
+            <li>
+              <p>
+                List the elements of <m>A</m> which are natural numbers.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the elements of <m>A</m> which are irrational numbers.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>A \cap \mathbb{Z}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>A \cap \Q</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Fill in the chart below.
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Set of Real Numbers</cell>
+              <cell>Interval Notation</cell>
+              <cell>Region on the Real Number Line</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\,-1\leq x\lt 5\}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell>\shortstack{<m>[0,3)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>2</m>} -3, {<m>7</m>} 3} \polyline{(-3,0), (3,0)} \point[3pt]{(3,0)} \pointfillfalse \point[3pt]{(-3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\, -5 \lt x \leq 0 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell>\shortstack{<m>(-3,3)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>5</m>} -3, {<m>7</m>} 3} \polyline{(-3,0), (3,0)} \point[3pt]{(-3,0), (3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,| \, x \leq 3 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell>\shortstack{<m>(-\infty, 9)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>4</m>} -3} \arrow \polyline{(-3,0), (3,0)} \pointfillfalse \point[3pt]{(-3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,| \, x \geq -3 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="findunionintfirst">Exercises</xref>
+      - <xref ref="findunionintlast"></xref>,
+      find the indicated intersection or union and simplify if possible.
+      Express your answers in interval notation.
+      <ol cols="2">
+        <li xml:id="findunionintfirst">
+          <p>
+            <m>(-1,5] \cap [0,8)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-1,1) \cup [0,6]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-\infty,4]\cap (0,\infty)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-\infty,0) \cap [1,5]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(-\infty, 0) \cup [1,5]</m>
+          </p>
+        </li>
+        <li xml:id="findunionintlast">
+          <p>
+            <m>(-\infty, 5] \cap [5,8)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="writeintervalfirst">Exercises</xref>
+      - <xref ref="writeintervallast"></xref>,
+      write the set using interval notation.
+      <ol cols="4">
+        <li xml:id="writeintervalfirst">
+          <p>
+            <m>\{x\,|\, x \neq 5 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \neq -1 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \neq -3,\, 4 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \neq 0, \, 2 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \neq 2, \, -2 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \neq 0,\, \pm 4 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \leq -1 \, \text{ or } \, x \geq 1 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \lt 3 \, \text{ and } \, x \geq 2 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \leq -3 \, \text{ or } \, x > 0 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x \leq 2 \, \text{ and } \, x > 3 \}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\{x\,|\, x > 2 \, \text{ or } \, x = \pm 1 \}</m>
+          </p>
+        </li>
+        <li xml:id="writeintervallast">
+          <p>
+            <m>\{x\,|\, 3 \lt x \lt 13 \, \text{ and } \, x \neq 4 \}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      For <xref ref="shadevennfirst">Exercises</xref>
+      - <xref ref="shadevennlast"></xref>,
+      use the blank Venn Diagram below with <m>A</m>, <m>B</m>,
+      and <m>C</m> in it as a guide to help you shade the following sets.
+    </p>
+    <p>
+      \begin{mfpic}[40]{-2}{2}{-2}{2}
+    </p>
+    <p>
+      \circle{(.5,-.875),1} \circle{(0,0),1} \circle{(.875,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+      <ol cols="3">
+        <li xml:id="shadevennfirst">
+          <p>
+            <m>A \cup C</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>B \cap C</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A \cup B) \cup C</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A \cap B) \cap C</m>
+          </p>
+        </li>
+        <li xml:id="intoverunion">
+          <p>
+            <m>A \cap (B \cup C)</m>
+          </p>
+        </li>
+        <li xml:id="shadevennlast">
+          <p>
+            <m>(A \cap B) \cup (A \cap C)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Explain how your answers to <xref ref="intoverunion">problems</xref>
+            and <xref ref="shadevennlast"></xref>
+            show <m>A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</m>.
+            Phrased differently, this shows <sq>intersection <em>distributes</em>
+            over union.</sq> Discuss with your classmates if <sq>union</sq> distributes over <sq>intersection.</sq> Use a Venn Diagram to support your answer.
+          </p>
+        </li>
+        <li>
+          <p>
+            Show that <m>A \subseteq B</m> if and only if <m>A \cup B = B</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Let <m>A = \{1,3,5,7,9\}, B = \{2,4,6,8,10\}, C = \{1,6,9\}</m> and <m>D = \{2,7,10\}</m>.
+            Draw one Venn Diagram that shows all four of these sets.
+            What sort of difficulties do you encounter?
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol>
+      <li>
+        <p>
+          <m>O</m> is the odd natural numbers.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>X = \{ 0, 1, 4, 9, 16, \ldots \}</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>\dfrac{20}{10} = 2</m> and <m>117</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\sqrt{3}</m> and <m>5.2020020002</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\left\{ -3, \dfrac{20}{10}, 117\right\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\left\{ -3, -1.02, -\dfrac{3}{5}, 0.57, 1.\overline{23},\dfrac{20}{10}, 117 \right \}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>~</m>
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Set of Real Numbers</cell>
+              <cell>Interval Notation</cell>
+              <cell>Region on the Real Number Line</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\,-1\leq x\lt 5\}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>[-1,5)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -3, {<m>5</m>} 3} \polyline{(-3,0), (3,0)} \point[3pt]{(-3,0)} \pointfillfalse \point[3pt]{(3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\,0\leq x \lt 3\}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>[0,3)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>0</m>} -3, {<m>3</m>} 3} \polyline{(-3,0), (3,0)} \point[3pt]{(-3,0)} \pointfillfalse \point[3pt]{(3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\, 2 \lt x \leq 7 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>(2,7]</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>2</m>} -3, {<m>7</m>} 3} \polyline{(-3,0), (3,0)} \point[3pt]{(3,0)} \pointfillfalse \point[3pt]{(-3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\, -5 \lt x \leq 0 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>(-5,0]</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -3, {<m>0</m>} 3} \polyline{(-3,0), (3,0)} \point[3pt]{(3,0)} \pointfillfalse \point[3pt]{(-3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\, -3 \lt x \lt 3 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>(-3,3)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>3</m>} 3} \polyline{(-3,0), (3,0)} \pointfillfalse \point[3pt]{(-3,0), (3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,|\,5\leq x \leq 7\}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>[5,7]</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>5</m>} -3, {<m>7</m>} 3} \polyline{(-3,0), (3,0)} \point[3pt]{(-3,0), (3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,| \, x \leq 3 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>(-\infty, 3]</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>3</m>} 3} \arrow \polyline{(3,0), (-3,0)} \point[3pt]{(3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,| \, x \lt 9 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>(-\infty, 9)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>9</m>} 3} \arrow \polyline{(3,0), (-3,0)} \pointfillfalse \point[3pt]{(3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,| \, x > 4 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>(4, \infty)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>4</m>} -3} \arrow \polyline{(-3,0), (3,0)} \pointfillfalse \point[3pt]{(-3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>\shortstack{<m>\{x\,| \, x \geq -3 \}</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\shortstack{<m>[-3, \infty)</m></cell>
+            </row>
+            <row>
+              <cell>}</cell>
+              <cell>\begin{mfpic}[10]{-3}{3}{-2}{2} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3} \arrow \polyline{(-3,0), (3,0)} \point[3pt]{(-3,0)} \end{mfpic}</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-1,5] \cap [0,8) = [0,5]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-1,1) \cup [0,6] = (-1,6]</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-\infty,4]\cap (0,\infty) = (0,4]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty,0) \cap [1,5] = \emptyset</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-\infty, 0) \cup [1,5] = (-\infty,0) \cup [1,5]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, 5] \cap [5,8) = \left\{ 5\right\}</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-\infty, 5) \cup (5, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -1) \cup (-1, \infty)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-\infty, -3) \cup (-3, 4)\cup (4, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, 0) \cup (0, 2)\cup (2, \infty)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-\infty, -2) \cup (-2, 2)\cup (2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -4) \cup (-4, 0) \cup (0, 4) \cup (4, \infty)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-\infty, -1] \cup [1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[2, 3)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(-\infty, -3] \cup (0, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\emptyset</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>\{-1\} \cup \{1\} \cup (2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(3,4) \cup (4, 13)</m>
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>A \cup C</m> \begin{mfpic}[40]{-2}{2}{-2}{2} \fillcolor[gray]{0.7} \gfill\circle{(.5,-.875),1} \gfill\circle{(0,0),1} \circle{(.5,-.875),1} \circle{(0,0),1} \circle{(.875,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>B \cap C</m> \begin{mfpic}[40]{-2}{2}{-2}{2} \fillcolor[gray]{0.7} \gfill\circle{(.5,-.875),1} \gclip\circle{(.875,0),1} \circle{(.5,-.875),1} \circle{(.875,0),1} \circle{(0,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>(A \cup B) \cup C</m> \begin{mfpic}[40]{-2}{2}{-2}{2} \fillcolor[gray]{0.7} \gfill\circle{(.5,-.875),1} \gfill\circle{(.875,0),1} \gfill\circle{(0,0),1} \circle{(.5,-.875),1} \circle{(.875,0),1} \circle{(0,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(A \cap B) \cap C</m> \begin{mfpic}[40]{-2}{2}{-2}{2} \fillcolor[gray]{0.7} \gfill\circle{(.5,-.875),1} \gclip\circle{(.875,0),1} \gclip\circle{(0,0),1} \circle{(.5,-.875),1} \circle{(.875,0),1} \circle{(0,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>A \cap (B \cup C)</m> \begin{mfpic}[40]{-2}{2}{-2}{2} \fillcolor[gray]{0.7} \gfill \circle{(0,0),1} \gclip \circle{(.875,0),1} \gfill \circle{(.5,-.875),1} \gclip \circle{(0,0),1} \circle{(.5,-.875),1} \circle{(.875,0),1} \circle{(0,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(A \cap B) \cup (A \cap C)</m> \begin{mfpic}[40]{-2}{2}{-2}{2} \fillcolor[gray]{0.7} \gfill \circle{(0,0),1} \gclip \circle{(.875,0),1} \gfill \circle{(.5,-.875),1} \gclip \circle{(0,0),1} \circle{(.5,-.875),1} \circle{(.875,0),1} \circle{(0,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          Yes, <m>A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</m>. \begin{mfpic}[40]{-2}{2}{-2}{2} \fillcolor[gray]{0.7} \gfill \circle{(.5,-.875),1} \gclip \circle{(.875,0),1} \gfill \circle{(0,0),1} \circle{(.5,-.875),1} \circle{(.875,0),1} \circle{(0,0),1} \tlabel[cc](-1.25, 0){<m>A</m>} \tlabel[cc](2.125, 0){<m>B</m>} \tlabel[cc](0.5,-2.125){<m>C</m>} \tlabel[cc](2.375, 1.5){<m>U</m>} \rect{(-1.75,-2.625), (2.625, 1.75)} \end{mfpic}
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

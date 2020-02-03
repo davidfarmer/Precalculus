@@ -1,0 +1,581 @@
+<section xml:id="Induction">
+  <title>Mathematical Induction</title>
+  <introduction>
+    <p>
+      The Chinese philosopher
+      <url href="http://en.wikipedia.org/wiki/Confucius"><em>Confucius</em></url>
+      is credited with the saying,
+      <q>A journey of a thousand miles begins with a single step.</q>
+      In many ways, this is the central theme of this section.
+      Here we introduce a method of proof, Mathematical Induction,
+      which allows us to <em>prove</em>
+      many of the formulas we have merely <em>motivated</em>
+      in <xref ref="Sequences">Sections</xref>
+      and <xref ref="Summation"></xref>
+      by starting with just a single step.
+      A good example is the formula for arithmetic sequences we touted in <xref ref="arithgeoformula">Equation</xref>.
+      Arithmetic sequences are defined recursively,
+      starting with <m>a_{1} = a</m> and then <m>a_{n+1} = a_{n} + d</m> for <m>n \geq 1</m>.
+      This tells us that we start the sequence with <m>a</m> and we go from one term to the next by successively adding <m>d</m>.
+      In symbols,
+      <me>
+        a, a+d, a+2d, a + 3d, a + 4d +  \ldots
+      </me>
+    </p>
+    <p>
+      The pattern <em>suggested</em> here is that to reach the <m>n</m>th term,
+      we start with <m>a</m> and add <m>d</m> to it exactly <m>n-1</m> times,
+      leading to the formula <m>a_{n} = a + (n-1)d</m> for <m>n \geq 1</m>.
+      In order to <em>prove</em> this is the case, we have:
+      <em>The Principle of Mathematical Induction (PMI):</em>
+    </p>
+    <p>
+      Suppose <m>P(n)</m> is a sentence involving the natural number <m>n</m>.
+          <idx><h>Principle of Mathematical Induction</h></idx>
+    </p>
+    <p>
+      <em>IF</em>
+      <ol>
+        <li>
+          <p>
+            <m>P(1)</m> is true <em>and</em>
+          </p>
+        </li>
+        <li>
+          <p>
+            whenever <m>P(k)</m> is true,
+            it follows that <m>P(k+1)</m> is also true
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      <em>THEN</em> the sentence <m>P(n)</m> is true for all natural numbers <m>n</m>.
+    </p>
+    <p>
+      The Principle of Mathematical Induction,
+      or PMI for short, is exactly that - a principle.<fn>
+      Another word for this you may have seen is <sq>axiom.</sq>
+      </fn> It is a property of the natural numbers we either choose to accept or reject.
+      The notation which is used here,
+      <sq><m>P(n)</m>,</sq> acts just like function notation.
+      For example,
+      if <m>P(n)</m> is the sentence (formula) <sq><m>n^2 + 1 = 3</m></sq>,
+      then <m>P(1)</m> would be <sq><m>1^2 + 1 = 3</m></sq>,
+      which is false.
+      In this case,
+      the construction <m>P(k+1)</m> would be <sq><m>(k+1)^2 + 1 = 3</m></sq>.
+    </p>
+    <p>
+      In English, the PMI says that if we want to prove that a formula works for all natural numbers <m>n</m>,
+      we start by showing it is true for <m>n=1</m>
+      (the <idx><h>induction</h><h>base step</h></idx> <sq><em>base step</em></sq>)
+      and then show that <em>if</em> it is true for a generic natural number <m>k</m>,
+      <em>then</em> it must be true for the next natural number,
+      <m>k+1</m>
+      (the <idx><h>induction</h><h>inductive step</h></idx> <sq><em>inductive step</em></sq>).
+      In essence, by showing that <m>P(k+1)</m> must always be true when <m>P(k)</m> is true,
+      we are showing that the formula <m>P(1)</m> can be used to get the formula <m>P(2)</m>,
+      which in turn can be used to derive the formula <m>P(3)</m>,
+      which in turn can be used to establish the formula <m>P(4)</m>,
+      and so on,
+      for all natural numbers <m>n</m>.
+    </p>
+    <p>
+      One might liken Mathematical Induction to a repetitive process like climbing stairs.<fn>
+      Falling dominoes is the most widely used metaphor in the mainstream College Algebra books.
+      </fn> If you are sure that (1) you can get on the stairs
+      (the base case)
+      and (2) you can climb from any one step to the next step
+      (the inductive step),
+      then presumably you can climb the entire staircase.<fn>
+      This is how Carl climbed the stairs in the Cologne Cathedral.
+      Well, that, and encouragement from Kai.
+      </fn> We get some more practice with induction in the following example.
+    </p>
+    <example xml:id="inductionex01">
+      <statement>
+        <p>
+          Prove the following assertions using the Principle of Mathematical Induction.
+          <ol>
+            <li>
+              <p>
+                If <m>a_{1} = 4</m> and <m>a_{n+1} = -\dfrac{a_{n}}{2}</m> for <m>n \geq 1</m>,
+                then prove <m>a_{n} = (-1)^{n-1} 2^{3-n}</m> for <m>n \geq 1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>1 + 3 + 5 + \ldots + (2n-1) = n^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>3^{n} > 100n</m> for <m>n > 5</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To prove <m>a_{n} = (-1)^{n-1} 2^{3-n}</m> for <m>n \geq 1</m> by induction,
+                we first identify the sentence <m>P(n)</m> as the equation <m>a_{n} = (-1)^{n-1} 2^{3-n}</m>.
+                The sentence <m>P(1)</m> is the equation <m>a_{1} = (-1)^{1-1}2^{3-1}</m> or,
+                after simplifying,  <m>a_{1} = 4</m>,
+                which we are told is true.
+                Next, we <em>assume</em> the sentence <m>P(k)</m> is true, that is,
+                <m>a_{k}= (-1)^{k-1} 2^{3-k}</m>
+                (this is called the<idx><h>induction</h><h>induction hypothesis</h></idx> <sq><em>induction hypothesis</em></sq>)
+                and must use this to <em>deduce</em> <m>P(k+1)</m> is true.
+                That is, we need to use the fact that
+                <m>a_{k}= (-1)^{k-1} 2^{3-k}</m> to show <m>a_{k+1} = (-1)^{(k+1)-1}2^{3-(k+1)}</m> or,
+                after simplifying, <m>a_{k+1} = (-1)^{k} 2^{2-k}</m>.
+                We are told <m>a_{k+1} =  -\frac{a_{k}}{2}</m> and we are assuming <m>a_{k}= (-1)^{k-1} 2^{3-k}</m>,
+                so we put these together to get
+                <me>
+                  a_{k+1} =  -\frac{a_{k}}{2} =  -\frac{(-1)^{k-1} 2^{3-k}}{2}  = (-1)^{1} \frac{(-1)^{k-1} 2^{3-k}}{2^{1}}=  (-1)^{k-1+1} 2^{3-k+1} = (-1)^{k} 2^{2-k}
+                </me>,
+                as required.
+                Hence, by induction,
+                <m>a_{n} = (-1)^{n-1} 2^{3-n}</m> for <m>n \geq 1</m>.
+                We take a moment and recognize the sequence here, as described,
+                is a geometric sequence with <m>a = 4</m> and <m>r  = -\frac{1}{2}</m>.
+                Using <xref ref="arithgeoformula">Equation</xref>
+                we arrive at the explicit formula for <m>a_{n} = 4 \left(- \frac{1}{2} \right)^{n-1}</m> for
+                <m>n \geq 1</m> which we leave to the reader to show reduces to  <m>a_{n} = (-1)^{n-1} 2^{3-n}</m>.
+                (Note: You'll be asked to prove <xref ref="arithgeoformula">Equation</xref>
+                in <xref ref="proofgeosequeneex">Exercise</xref>.)
+              </p>
+            </li>
+            <li>
+              <p>
+                As above, our first step is to identify the sentence <m>P(n)</m> which is the equation
+                <m>1 + 3 + 5 + \ldots + (2n-1) = n^2</m> which is more precisely written using summation notation:
+                <m>\displaystyle{ \sum_{j=1}^{n} (2j-1) = n^2}</m>.
+                (Note we use <sq><m>j</m></sq> as our dummy variable here since <sq><m>n</m></sq> is already used and we usually reserve <sq><m>k</m></sq> for the induction variable.)
+                The sentence <m>P(1)</m> is
+                <m>\displaystyle{ \sum_{j=1}^{1} (2j-1) = 1^2}</m> which reduces to <m>2(1)-1 = 1</m> which is true.
+                Next, we assume <m>P(k)</m> is true,
+                <m>\displaystyle{ \sum_{j=1}^{k} (2j-1) = k^2}</m>,
+                and use it to show <m>P(k+1)</m> is true:
+                <m>\displaystyle{ \sum_{j=1}^{k+1} (2j-1) = (k+1)^2}</m>.
+                We have:
+                <me>
+                  \underbrace{\displaystyle{\sum_{j=1}^{k+1} (2j-1)}}_{\text{ adding \(k+1\) terms } }  = \underbrace{\displaystyle{\sum_{j=1}^{k} (2j-1)}}_{\text{ adding the first \(k\) terms } } + \underbrace{(2(k+1)-1) }_{\text{ adding the first \(k+1\) term } } = \underbrace{k^2 }_{\text{ \(P(k)\) } }+ \underbrace{2k+1 }_{\text{ simplify } } =\underbrace{(k+1)^2 }_{\text{ factor } }
+                </me>,
+                as required.
+                Hence, by induction,
+                <m>1 + 3 + 5 + \ldots + (2n-1) = n^2</m> for all natural numbers <m>n \geq 0</m>.
+                As with the first example,
+                this problem, too, can be shown using a previous result.
+                The sequence being added in the equation <m>1 + 3 + 5 + \ldots + (2n-1)=n^2</m> is arithmetic,
+                so <xref ref="arithgeosum">Equation</xref>
+                applies to give the sum as <m>\frac{n}{2} (1 + (2n-1)) = n^2</m>.
+                We'll prove <xref ref="arithgeosum">Equation</xref>
+                for arithmetic sequences in the next example.
+                We leave the case for geometric sequences to the reader in <xref ref="proofgeosumex">Exercise</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The first wrinkle we encounter in this problem is that we are asked to prove this formula for <m>n > 5</m> instead of <m>n \geq 1</m>.
+                Since <m>n</m> is a natural number,
+                this means our base step occurs at <m>n=6</m>.
+                We can still use the PMI in this case,
+                but our conclusion will be that the formula is valid for all <m>n \geq 6</m>.
+                We let <m>P(n)</m> be the inequality <m>3^{n} > 100n</m>,
+                and check that <m>P(6)</m> is true.
+                Comparing <m>3^6 = 729</m> and <m>100(6) = 600</m>,
+                we see <m>3^6 > 100(6)</m> as required.
+                Next, we assume that <m>P(k)</m> is true,
+                that is we assume <m>3^{k} > 100k</m>.
+                We need to show that <m>P(k+1)</m> is true,
+                that is, we need to show <m>3^{k+1} > 100(k+1)</m>.
+                Since <m>3^{k+1} = 3 \cdot 3^{k}</m>,
+                the induction hypothesis gives <m>3^{k+1} = 3 \cdot 3^{k} > 3(100k) = 300k</m>.
+                To complete the proof,
+                we need to show <m>300k > 100(k+1)</m> for <m>k \geq 6</m>.
+                Solving <m>300k > 100(k+1)</m> we get <m>k > \frac{1}{2}</m>.
+                Since <m>k \geq 6</m>, we know this is true.
+                Putting all of this together,
+                we have <m>3^{k+1} = 3 \cdot 3^{k} > 3(100k) = 300k > 100(k+1)</m>,
+                and hence <m>P(k+1)</m> is true.
+                By induction, <m>3^{n} > 100n</m> for all <m>n \geq 6</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      One of the things that may seem troubling about proving statements by induction is the induction hypothesis:
+      that is, assuming that <m>P(k)</m> is true.
+      After all, isn't that what we are trying to prove?
+      When we assume <m>P(k)</m> is true,
+      we are doing so with the <em>express purpose</em>
+      of showing that <m>P(k+1)</m> follows.
+      That is, we are interested in showing <em>how</em>
+      we go <sq>from one step to the next.</sq>
+    </p>
+    <p>
+      As mentioned at the beginning of this section,
+      induction is the formal way to prove many the formulas we've used in <xref ref="Sequences">Sections</xref>
+      and <xref ref="Summation"></xref>.
+      Indeed, now that we have some experience using the PMI to prove formulas,
+      we return to proving the formula for an arithmetic sequence.
+    </p>
+    <p>
+      Recall we define an arithmetic sequence recursively as:
+      <m>a_{1} = a</m> and <m>a_{n+1} = a_{n} + d</m> for <m>n \geq 1</m>.
+      We need to prove <m>a_{n} = a + (n-1) d</m> for <m>n \geq 1</m>.
+      Identifying <m>P(n)</m> as the formula <m>a_{n} = a + (n-1)d</m>,
+      we see <m>P(1)</m> is <m>a_{1} = a + (1-1) d = a</m>, which is true.
+    </p>
+    <p>
+      Next, we assume <m>P(k)</m> is true, that is,
+      <m>a_{k} = a + (k-1)d</m> and use this to show <m>P(k+1)</m>,
+      or <m>a_{k+1} = a+((k+1)-1)d</m> or <m>a_{k+1} = a + kd</m> is true.
+      We know <m>a_{k+1} = a_{k} + d</m> from the definition of arithmetic sequence, hence
+      <me>
+        a_{k+1} = a_{k} + d = a + (k-1)d + d= a + kd
+      </me>,
+      as required.
+      Hence, <m>a_{n} = a + (n-1)d</m>,
+      for all natural numbers <m>n \geq 1</m>.
+    </p>
+    <p>
+      We conclude this section with three more proofs by induction.
+    </p>
+    <example xml:id="inductionex02">
+      <statement>
+        <p>
+          Prove the following assertions using the Principle of Mathematical Induction.
+          <ol>
+            <li>
+              <p>
+                The sum formula for arithmetic sequences:
+                <m>\displaystyle{\sum_{j=1}^{n} (a + (j-1)d) = \dfrac{n}{2}(2a + (n-1)d)}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For a complex number <m>z</m>,
+                <m>\left(\overline{z}\right)^n = \overline{z^{n}}</m> for <m>n \geq 1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>A</m> be an <m>n \times n</m> matrix and let <m>A'</m> be the matrix obtained by replacing a row <m>R</m> of <m>A</m> with <m>cR</m> for some real number <m>c</m>.
+                Use the definition of determinant to show <m>\det(A') = c \det(A)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We set <m>P(n)</m> to be the equation we are asked to prove,
+                namely  <m>\displaystyle{\sum_{j=1}^{n} (a + (j-1)d) = \dfrac{n}{2}(2a + (n-1)d)}</m>.
+                The statement <m>P(1)</m>,
+                <m>\displaystyle{\sum_{j=1}^{1} (a + (j-1)d) = \dfrac{1}{2}(2a + (1-1)d)}</m> ,  reduces to
+                <m>a+(0)d = \frac{1}{2} (2a)</m> or <m>a = a</m>, which is true.
+                Next we assume <m>P(k)</m> is true, that is,
+                we assume <m>\displaystyle{\sum_{j=1}^{k} (a + (j-1)d)  = \dfrac{k}{2}(2a + (k-1)d)}</m> and use this to  show <m>P(k+1)</m> is true:
+                <m>\displaystyle{\sum_{j=1}^{k+1} (a + (j-1)d)  =  \dfrac{k+1}{2}(2a + (k+1-1)d) = \dfrac{k+1}{2}(2a + kd)}</m>:
+                <me>
+                  \underbrace{\displaystyle{\sum_{j=1}^{k+1} (a + (j-1)d)}}_{\text{ adding \(k+1\) terms } }  = \underbrace{\displaystyle{\sum_{j=1}^{k} (a + (j-1)d)}}_{\text{ adding the first \(k\) terms } } + \underbrace{(a+((k+1)-1)d )  }_{\text{ adding the first \(k+1\) term } } =  \underbrace{\dfrac{k}{2}(2a + (k-1)d) }_{\text{ \(P(k)\) } } +\underbrace{a+kd  }_{\text{ simplify } }
+                </me>.
+                We leave it  to the reader to show that, indeed,
+                <me>
+                  \frac{k}{2}(2a + (k-1)d) + a + kd = \frac{k+1}{2}(2a+d)
+                </me>,
+                which completes the proof that <m>P(k+1)</m> is true.
+                By induction,
+                <m>\displaystyle{\sum_{j=1}^{n} (a + (j-1)d) = \dfrac{n}{2}(2a + (n-1)d)}</m> for all natural numbers <m>n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We let <m>P(n)</m> be the equation <m>\left(\overline{z}\right)^n = \overline{z^{n}}</m>.
+                The base case <m>P(1)</m> is
+                <m>\left(\overline{z}\right)^1 = \overline{z^{1}}</m> reduces to <m>\overline{z} = \overline{z}</m> which is true.
+                We now assume <m>P(k)</m> is true, that is,
+                we assume <m>\left(\overline{z}\right)^k = \overline{z^{k}}</m> and use this to show that <m>P(k+1)</m> is true,
+                namely  <m>\left(\overline{z}\right)^{k+1} = \overline{z^{k+1}}</m>.
+                Since <m>\left(\overline{z}\right)^{k+1} = \left(\overline{z}\right)^{k} \, \overline{z}</m>,
+                we can use the induction hypothesis to write <m>\left(\overline{z}\right)^k = \overline{z^{k}}</m>.
+                Hence,
+                <me>
+                  \left(\overline{z}\right)^{k+1} = \left(\overline{z}\right)^{k} \, \overline{z} =  \overline{z^{k}} \, \overline{z} = \overline{z^{k} z} = \overline{z^{k+1}}
+                </me>,
+                where the second-to-last equality is courtesy of the product rule for conjugates<fn>
+                See <xref ref="zbarexercise">Exercise</xref>
+                in <xref ref="ComplexZeros">Section</xref>:
+                <m>\overline{z} \, \overline{w} = \overline{zw}</m>.
+                </fn>  This shows <m>P(k+1)</m> is true and hence,
+                by induction,
+                <m>\left(\overline{z}\right)^n = \overline{z^{n}}</m> for all natural numbers <m>n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To prove this determinant property,
+                we use induction on <m>n</m>,
+                where we take <m>P(n)</m> to be that the property we wish to prove is true for all <m>n \times n</m> matrices.
+                For the base case,
+                we note that if <m>A</m> is a <m>1 \times 1</m> matrix,
+                then <m>A = [a]</m> so <m>A' = [ca]</m>.
+                By definition, <m>\det(A) = a</m> and
+                <m>\det(A') = ca</m> so we have <m>\det(A') = c \det(A)</m>.
+                Now suppose that the property we wish to prove is true for all <m>k \times k</m> matrices.
+                Let <m>A</m> be a <m>(k+1) \times (k+1)</m> matrix.
+                We have two cases,
+                depending on if the row <m>R</m> being replaced is the first row of <m>A</m>.
+                <sc>Case 1: </sc> The row <m>R</m> being replaced is the first row of <m>A</m>.
+                By definition,
+                <me>
+                  \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{1p} C'_{1p}}
+                </me>
+                where the <m>1p</m> cofactor of <m>A'</m> is
+                <m>C'_{1p} = (-1)^{(1+p)} \det\left(A'_{1p}\right)</m> and <m>A'_{1p}</m> is the
+                <m>k \times k</m> matrix obtained by deleting the <m>1</m>st row and <m>p</m>th column of <m>A'</m>.<fn>
+                See <xref ref="Determinants">Section</xref>
+                for a review of this notation.
+                </fn>    Since the first row of <m>A'</m> is <m>c</m> times the first row of <m>A</m>,
+                we have <m>a'_{1p} = c \, a_{1p}</m>.
+                In addition,
+                since the remaining rows of <m>A'</m> are identical to those of <m>A</m>,
+                <m>A'_{1p} = A_{1p}</m>.
+                (To obtain these matrices, the first row of <m>A'</m> is removed.)
+                Hence <m>\det\left(A'_{1p}\right) = \det\left(A_{1p}\right)</m>,
+                so that <m>C'_{1p} = C_{1p}</m>.
+                As a result, we get
+                <me>
+                  \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{1p} C'_{1p}} = \displaystyle{\sum_{p=1}^{n} c \, a_{1p} C_{1p}} = c \displaystyle{\sum_{p=1}^{n} a_{1p} C_{1p}} = c \det(A)
+                </me>,
+                as required.
+                Hence, <m>P(k+1)</m> is true in this case,
+                which means the result is true in this case for all natural numbers <m>n \geq 1</m>.
+                (You'll note that we did not use the induction hypothesis at all in this case.
+                It is possible to restructure the proof so that induction is only used where it is needed.
+                While mathematically more elegant, it is less intuitive.)
+                <sc>Case 2:</sc> The row <m>R</m> being replaced is the not the first row of <m>A</m>.
+                By definition,
+                <me>
+                  \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{1p} C'_{1p}}
+                </me>,
+                where in this case, <m>a'_{1p} = a_{1p}</m>,
+                since the first rows of <m>A</m> and <m>A'</m> are the same.
+                The matrices <m>A'_{1p}</m> and <m>A_{1p}</m>, on the other hand,
+                are different but in a very predictable way <m>-</m> the row in <m>A'_{1p}</m> which corresponds to the row <m>cR</m> in <m>A'</m> is exactly <m>c</m> times the row in <m>A_{1p}</m> which corresponds to the row <m>R</m> in <m>A</m>.
+                This means <m>A'_{1p}</m> and <m>A_{1p}</m> are
+                <m>k \times k</m> matrices which satisfy the induction hypothesis.
+                Hence, we know <m>\det\left(A'_{1p}\right) = c \det\left(A_{1p}\right)</m> and <m>C'_{1p} = c \, C_{1p}</m>.
+                We get
+                <me>
+                  \det(A') = \displaystyle{\sum_{p=1}^{n} a'_{1p} C'_{1p}} = \displaystyle{\sum_{p=1}^{n} a_{1p} c\, C_{1p}} = c \displaystyle{\sum_{p=1}^{n} a_{1p} C_{1p}} = c \det(A)
+                </me>,
+                which establishes <m>P(k+1)</m> to be true.
+                Hence by induction,
+                we have shown that the result holds in this case for <m>n \geq 1</m> and we are done.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      While we have used the Principle of Mathematical Induction to prove some of the formulas we have merely motivated in the text,
+      our main use of this result comes in <xref ref="Binomial">Section</xref>
+      to prove the celebrated Binomial Theorem.
+      The ardent Mathematics student will no doubt see the PMI in many courses yet to come.
+      Sometimes it is explicitly stated and sometimes it remains hidden in the background.
+      If ever you see a property stated as being true <sq>for all natural numbers <m>n</m></sq>,
+      it's a solid bet that the formal proof requires the Principle of Mathematical Induction.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="proofindfirst">Exercises</xref>
+      - <xref ref="proofindlast"></xref>,
+      prove each assertion using the Principle of Mathematical Induction.
+    </p>
+    <ol>
+      <li xml:id="proofindfirst">
+        <p>
+          <m>\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle{ \sum_{j=1}^{n} j^3 = \dfrac{n^2(n+1)^2}{4}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2^{n} > 500 n</m> for <m>n > 12</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3^{n} \geq n^3</m> for <m>n \geq 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the Product Rule for Absolute Value to show
+          <m>\left|x^{n}\right| = |x|^{n}</m> for all real numbers <m>x</m> and all natural numbers <m>n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the Product Rule for Logarithms to show
+          <m>\log\left(x^{n}\right) = n \log(x)</m> for all real numbers <m>x > 0</m> and all natural numbers <m>n \geq 1</m>.
+        </p>
+      </li>
+      <li xml:id="proofindlast">
+        <p>
+          <m>\left[ \begin{array}{cc} a \amp 0 \\ 0 \amp b \end{array} \right]^{n} = \left[ \begin{array}{cc} a^{n} \amp 0 \\ 0 \amp b^{n} \end{array} \right]</m> for <m>n \geq 1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="arithgeoformula">Equations</xref>
+          and <xref ref="arithgeosum"></xref>
+          for the case of geometric sequences.
+          That is:
+        </p>
+        <ol>
+          <li xml:id="proofgeosequeneex">
+            <p>
+              For the sequence <m>a_{1} = a</m>,
+              <m>a_{n\mbox{\tiny{<m>+1</m>}} } = r a_{n}</m>,
+              <m>n \geq 1</m>, prove <m>a_{n} = ar^{n-1}</m>, <m>n \geq 1</m>.
+            </p>
+          </li>
+          <li xml:id="proofgeosumex">
+            <p>
+              <m>\displaystyle{\sum_{j=1}^{n} a r^{j-1} = a \left( \dfrac{1-r^n}{1-r}\right)}</m>,
+              if <m>r \neq 1</m>,
+              <m>\displaystyle{\sum_{j=1}^{n} a r^{j-1} = na}</m>, if <m>r=1</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Prove that the determinant of a lower triangular matrix is the product of the entries on the main diagonal.
+          (See <xref ref="triangularmatrices">Exercise</xref>
+          in <xref ref="MatArithmetic">Section</xref>.)
+          Use this result to then show
+          <m>\det\left(I_{n}\right) = 1</m> where <m>I_{n}</m> is the <m>n \times n</m> identity matrix.
+        </p>
+      </li>
+      <li>
+        <p>
+          Discuss the classic <sq>paradox</sq>
+          <url href="http://en.wikipedia.org/wiki/All_horses_are_the_same_color"><em>All Horses are the Same Color</em></url>
+          problem with your classmates.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Selected Answers</title>
+    <ol>
+      <li>
+        <p>
+          Let <m>P(n)</m> be the sentence <m>\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}</m>.
+          For the base case, <m>n=1</m>, we get
+          <me>
+            \begin{array}{rcl}  \displaystyle{ \sum_{j=1}^{1} j^2} \amp  \stackrel{?}{=} \amp   \dfrac{(1)(1+1)(2(1)+1)}{6} \\ 1^2  \amp  = \amp  1 \, \checkmark \end{array}
+          </me>
+          We now assume <m>P(k)</m> is true and use it to show <m>P(k+1)</m> is true.
+          We have
+          <me>
+            \begin{array}{rcl}  \displaystyle{ \sum_{j=1}^{k+1} j^2} \amp  \stackrel{?}{=} \amp   \dfrac{(k+1)((k+1)+1)(2(k+1)+1)}{6} \\ \displaystyle{ \sum_{j=1}^{k} j^2}  + (k+1)^2 \amp   \stackrel{?}{=}  \amp  \dfrac{(k+1)(k+2)(2k+3)}{6} \\ \underbrace{\dfrac{k(k+1)(2k+1)}{6}}_{\text{ Using \(P(k)\) } } + (k+1)^2 \amp   \stackrel{?}{=}  \amp  \dfrac{(k+1)(k+2)(2k+3)}{6}  \\  \amp \amp  \\  \dfrac{k(k+1)(2k+1)}{6} + \dfrac{6(k+1)^2}{6} \amp   \stackrel{?}{=}  \amp  \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ \dfrac{k(k+1)(2k+1)+6(k+1)^2}{6} \amp   \stackrel{?}{=}  \amp  \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ \dfrac{(k+1)(k(2k+1)+6(k+1))}{6} \amp   \stackrel{?}{=}  \amp  \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ \dfrac{(k+1)\left(2k^2+7k+6\right)}{6} \amp   \stackrel{?}{=}  \amp  \dfrac{(k+1)(k+2)(2k+3)}{6}  \\ \dfrac{(k+1)(k+2)(2k+3)}{6} \amp  = \amp  \dfrac{(k+1)(k+2)(2k+3)}{6}  \, \checkmark \end{array}
+          </me>
+          By induction,
+          <m>\displaystyle{ \sum_{j=1}^{n} j^2 = \dfrac{n(n+1)(2n+1)}{6}}</m> is true for all natural numbers <m>n \geq 1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>P(n)</m> be the sentence <m>3^n > n^3</m>.
+          Our base case is <m>n=4</m> and we check <m>3^4 = 81</m> and
+          <m>4^3 = 64</m> so that <m>3^4 > 4^3</m> as required.
+          We now assume <m>P(k)</m> is true,
+          that is <m>3^k > k^3</m>, and try to show <m>P(k+1)</m> is true.
+          We note that <m>3^{k+1} = 3 \cdot 3^{k} > 3k^3</m> and so we are done if we can show <m>3k^3 > (k+1)^3</m> for <m>k \geq 4</m>.
+          We can solve the inequality
+          <m>3x^3 > (x+1)^3</m> using the techniques of <xref ref="RootRadicalFunctions">Section</xref>,
+          and doing so gives us <m>x > \frac{1}{\sqrt[3]{3}-1} \approx 2.26</m>.
+          Hence, for <m>k \geq 4</m>,
+          <m>3^{k+1} = 3 \cdot 3^{k} > 3k^3 > (k+1)^3</m> so that <m>3^{k+1} > (k+1)^3</m>.
+          By induction,
+          <m>3^n > n^3</m> is true for all natural numbers <m>n \geq 4</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>P(n)</m> be the sentence <m>\log\left(x^n \right) = n \log(x)</m>.
+          For the duration of this argument, we assume <m>x > 0</m>.
+          The base case <m>P(1)</m> amounts checking that
+          <m>\log\left(x^1\right) = 1 \log(x)</m> which is clearly true.
+          Next we assume <m>P(k)</m> is true,
+          that is <m>\log\left(x^{k}\right) = k \log(x)</m> and try to show <m>P(k+1)</m> is true.
+          Using the Product Rule for Logarithms along with the induction hypothesis, we get
+          <me>
+            \log\left(x^{k+1}\right) = \log\left(x^{k} \cdot x\right) = \log\left(x^{k}\right) + \log(x) = k \log(x) + \log(x) = (k+1) \log(x)
+          </me>
+          Hence, <m>\log\left(x^{k+1}\right) = (k+1) \log(x)</m>.
+          By induction  <m>\log\left(x^n \right) = n \log(x)</m> is true for all <m>x>0</m> and all natural numbers <m>n \geq 1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>A</m> be an <m>n \times n</m> lower triangular matrix.
+          We proceed to prove the <m>\det(A)</m> is the product of the entries along the main diagonal by inducting on <m>n</m>.
+          For <m>n=1</m>, <m>A = [a]</m> and <m>\det(A) = a</m>,
+          so the result is (trivially) true.
+          Next suppose the result is true for
+          <m>k \times k</m> lower triangular matrices.
+          Let <m>A</m> be a <m>(k+1) \times (k+1)</m> lower triangular matrix.
+          Expanding <m>\det(A)</m> along the first row, we have
+          <me>
+            \det(A)  = \displaystyle{\sum_{p=1}^{n} a_{1p} C_{1p}}
+          </me>
+          Since <m>a_{1p} = 0</m> for <m>2 \leq p \leq k+1</m>,
+          this simplifies <m>\det(A) = a_{11}C_{11}</m>.
+          By definition, we know that
+          <m>C_{11} = (-1)^{1+1} \det\left(A_{11}\right) =\det\left(A_{11}\right)</m> where <m>A_{11}</m> is
+          <m>k \times k</m>  matrix obtained by deleting the first row and first column of <m>A</m>.
+          Since <m>A</m> is lower triangular, so is <m>A_{11}</m> and,
+          as such, the induction hypothesis applies to <m>A_{11}</m>.
+          In other words,
+          <m>\det\left(A_{11}\right)</m> is the product of the entries along <m>A_{11}</m>'s main diagonal.
+          Now, the entries on the main diagonal of <m>A_{11}</m> are the entries <m>a_{22}</m>,
+          <m>a_{33}</m>,
+          <ellipsis/>, <m>a_{(k\mbox{\tiny<m>+1</m>} )(k\mbox{\tiny<m>+1</m>} )}</m> from the main diagonal of <m>A</m>.
+          Hence,
+          <me>
+            \det(A) = a_{11} \det\left(A_{11}\right) = a_{11} \left(a_{22}a_{33} \cdots a_{(k\mbox{\tiny\(+1\)} )(k\mbox{\tiny\(+1\)} )} \right) = a_{11} a_{22}a_{33} \cdots a_{(k\mbox{\tiny\(+1\)} )(k\mbox{\tiny\(+1\)} )}
+          </me>
+          We have <m>\det(A)</m> is the product of the entries along its main diagonal.
+          This shows <m>P(k+1)</m> is true, and, hence, by induction,
+          the result holds for all <m>n \times n</m> upper triangular matrices.
+          The <m>n \times n</m> identity matrix <m>I_{n}</m> is a lower triangular matrix whose main diagonal consists of all <m>1</m>'s.
+          Hence,  <m>\det\left(I_{n}\right) = 1</m>, as required.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

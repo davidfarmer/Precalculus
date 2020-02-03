@@ -1,0 +1,9 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="FurtherTopicsonFunctions">
+  <title>Further Topics on Functions</title>
+  <xi:include  href="GraphsofFunctions.ptx"/>
+  <xi:include  href="FunctionArithmetic.ptx"/>
+  <xi:include  href="FunctionComposition.ptx"/>
+  <xi:include  href="Transformations.ptx"/>
+  <xi:include  href="Relations.ptx"/>
+  <xi:include  href="InverseFunctions.ptx"/>
+</chapter>

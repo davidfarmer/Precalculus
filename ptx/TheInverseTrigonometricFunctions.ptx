@@ -1,0 +1,2399 @@
+<section xml:id="TheInverseTrigonometricFunctions">
+  <title>The Inverse Circular Functions</title>
+  <introduction>
+    <p>
+      In this section we concern ourselves with finding inverses of the circular (trigonometric) functions.<fn>
+      We have already discussed this concept in <xref ref="AppRightTrig">Section</xref>
+      as the <sq>angle finder</sq> in the context of acute angles in right triangles.
+      </fn> Our immediate problem is that,
+      owing to their periodic nature,
+      none of the six circular functions is one-to-one.
+      To remedy this,
+      we restrict the domains of the circular functions in the same way we restricted the domain of the quadratic function in <xref ref="inverserestrictionex">Example</xref>
+      in <xref ref="InverseFunctions">Section</xref>
+      to obtain a one-to-one function.
+    </p>
+    <p>
+      We start with <m>f(t) = \sin(t)</m> and restrict our domain to
+      <m>\left[ -\frac{\pi}{2}, \frac{\pi}{2}\right]</m> in order to keep the range as <m>[-1,1]</m> as well as the properties of being smooth and continuous.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-13}{13}{-1.5}{1.5} \axes \point[4pt]{(-1.5708,-1), (0,0), (1.5708,1)} \tlabel[cc](13,-0.5){<m>t</m>} \tlabel[cc](0.5,1.5){<m>y</m>} \tcaption{Restricting the domain of <m>f(t) = \sin(t)</m> to
+      <m>\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m>.} \ymarks{-1,1} \dashed \arrow \reverse \arrow \function{-12, 12, 0.1}{sin(x)} \penwd{1.25pt} \function{-1.5708,1.5708, 0.1}{sin(x)} \end{mfpic}
+    </p>
+    <p>
+      Recall from <xref ref="InverseFunctions">Section</xref>
+      that the inverse of a function <m>f</m> is typically denoted <m>f^{-1}</m>.
+      For this reason, some textbooks use the notation
+      <m>f^{-1}(t) = \sin^{-1}(t)</m> for the inverse of <m>f(t) = \sin(t)</m>.
+      The obvious pitfall here is our convention of writing
+      <m>(\sin(t))^2</m> as <m>\sin^{2}(t)</m>,
+      <m>(\sin(t))^3</m> as <m>\sin^{3}(t)</m> and so on.
+      It is far too easy to confuse <m>\sin^{-1}(t)</m> with
+      <m>\frac{1}{\sin(t)} = \csc(t)</m> so we will not use this notation in our text.<fn>
+      But be aware that many books do!
+      As always, be sure to check the context!
+      </fn>
+    </p>
+    <p>
+      Instead, we use the notation <m>f^{-1}(t) = \arcsin(t)</m>,
+      read <sq>arc-sine of <m>t</m></sq>.
+      We'll explain the <sq>arc</sq> in <sq>arcsine</sq> shortly.
+      For now, we graph <m>f(t) = \sin(t)</m> and <m>f^{-1}(t) = \arcsin(t)</m>,
+      where we obtain the latter from the former by reflecting it across the line <m>y=t</m>,
+      in accordance with <xref ref="inversefunctionprops">Theorem</xref>.
+          <idx><h>arcsine</h><h>graph of</h></idx>
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[25]{-2}{2}{-2}{2} \point[4pt]{(-1.5708,-1), (0,0), (1.5708,1)} \axes \tlabel[cc](2,-0.25){\(t\)} \tlabel[cc](0.25,2){\(y\)} \tcaption{\(f(t) = \sin(t)\),  \(-\frac{\pi}{2} \leq t \leq  \frac{\pi}{2}\).} \xmarks{-1.5708, 1.5708} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(-\frac{\pi}{2} \)} -1.5708, {\(\frac{\pi}{2}\)} 1.5708} \axislabels {y}{{\(-1\)} -1, {\(1\)} 1} \penwd{1.25pt} \function{-1.5708,1.5708, 0.1}{sin(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(t\) and \(y\) coordinates} }  \amp  \begin{mfpic}[25]{-2}{2}{-2}{2} \point[4pt]{(-1,-1.5708), (0,0), (1,1.5708)} \axes \tlabel[cc](2,-0.25){\(t\)} \tlabel[cc](0.25,2){\(y\)} \tcaption{\(f^{-1}(t) = \arcsin(t)\).} \ymarks{-1.5708, 1.5708} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{\(-\frac{\pi}{2}\)} -1.5708, {\(\frac{\pi}{2}\)} 1.5708} \axislabels {x}{{\(-1 \)} -1, {\(1\)} 1} \penwd{1.25pt} \parafcn{-1.5708,1.5708, 0.1}{(sin(t),t)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      Next, we consider <m>g(t) = \cos(t)</m>.
+      Here, we select the interval <m>[0,\pi]</m> for our restriction.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-13}{13}{-1.5}{1.5} \axes \point[4pt]{(0,1), (1.5708,0), (3.1416, -1)} \tlabel[cc](13,-0.5){<m>t</m>} \tlabel[cc](0.5,1.5){<m>y</m>} \tcaption{Restricting the domain of
+      <m>f(t) = \cos(t)</m> to <m>[0,\pi]</m>.} \ymarks{-1,1} \dashed \arrow \reverse \arrow \function{-12.5664, 12.5664, 0.1}{cos(x)} \penwd{1.25pt} \function{0, 3.1416, 0.1}{cos(x)} \end{mfpic}
+    </p>
+    <p>
+      Reflecting the across the line <m>y = t</m> produces the graph <m>y = g^{-1}(t) = \arccos(t)</m>.
+          <idx><h>arccosine</h><h>graph of</h></idx>
+      <me>
+        \begin{array}{ccc} \begin{mfpic}[25]{-0.5}{4}{-2.25}{2.25} \point[4pt]{(0,1), (1.5708,0), (3.1416, -1)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,2.25){\(y\)} \tcaption{\(f(t) = \cos(t)\), \(0 \leq t \leq \pi\)} \xmarks{1.5708, 3.1416} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416} \axislabels {y}{{\(-1\)} -1, { \(1\)} 1} \penwd{1.25pt} \function{0, 3.1416, 0.1}{cos(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(t\) and \(y\) coordinates} }  \amp  \begin{mfpic}[25]{-2.25}{2.25}{-0.5}{4} \point[4pt]{(1,0), (0,1.5708), (-1,3.1416)} \axes \tlabel[cc](2.25,-0.25){\(t\)} \tlabel[cc](0.25,4){\(y\)} \tcaption{\(f^{-1}(t) = \arccos(t)\).} \xmarks{-1,1} \ymarks{1.5708, 3.1416} \tlpointsep{4pt} \axislabels {y}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416} \axislabels {x}{{\(-1 \)} -1, {\(1\)} 1} \penwd{1.25pt} \parafcn{0, 3.1416, 0.1}{(cos(t), t)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      We list some important facts about the arcsine and arccosine functions in the following theorem.<fn>
+      We switch the input variable to the arcsine and arccosine functions to <sq><m>x</m></sq> to avoid confusion with the outputs we label <sq><m>t</m>.</sq>
+      </fn> Everything in <xref ref="arccosinesinefunctionprops">Theorem</xref>
+      is a direct consequence of <xref ref="inversefunctionprops">Theorem</xref>
+      as applied to the (restricted) sine and cosine functions,
+      and as such,
+      its proof is left to the reader.
+    </p>
+    <theorem xml:id="arccosinesinefunctionprops">
+      <statement>
+        <p>
+          <em>Properties of the Arccosine and Arcsine Functions</em>
+          <idx><h>arccosine</h><h>definition of</h></idx>
+          <idx><h>arccosine</h><h>properties of</h></idx>
+          <idx><h>arcsine</h><h>definition of</h></idx>
+          <idx><h>arcsine</h><h>properties of</h></idx>
+        </p>
+        <ul>
+          <li>
+            <p>
+              Properties of <m>F(x) = \arcsin(x)</m>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Domain: <m>[-1,1]</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Range: <m>\left[ -\frac{\pi}{2}, \frac{\pi}{2}\right]</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arcsin(x) = t</m> if and only if
+                  <m>\sin(t) = x</m> and <m>-\frac{\pi}{2} \leq t \leq \frac{\pi}{2}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\sin(\arcsin(x)) = x</m> provided <m>-1 \leq x \leq 1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arcsin(\sin(t)) = t</m> provided <m>-\frac{\pi}{2} \leq t \leq \frac{\pi}{2}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>F(x) = \arcsin(x)</m> is odd
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Properties of <m>G(x)= \arccos(x)</m>
+              <ul>
+                <li>
+                  <p>
+                    Domain: <m>[-1,1]</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Range: <m>[0,\pi]</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\arccos(x) = t</m> if and only if
+                    <m>\cos(t) = x</m> and <m>0 \leq t \leq \pi</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\cos(\arccos(x)) = x</m> provided <m>-1 \leq x \leq 1</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\arccos(\cos(t)) = t</m> provided <m>0 \leq t \leq \pi</m>
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+        </ul>
+      </statement>
+    </theorem>
+    <p>
+      Before moving to an example,
+      we take a moment to understand the <sq>arc</sq> in <sq>arcsine.</sq> Consider the figure below which illustrates the specific case of <m>\arcsin\left(\frac{\sqrt{3}}{2} \right)</m>.
+    </p>
+    <p>
+      By definition,
+      the real number <m>t = \arcsin\left(\frac{\sqrt{3}}{2} \right)</m> satisfies
+      <m>\sin(t) = \frac{\sqrt{3}}{2}</m> with <m>-\frac{\pi}{2} \leq t \leq \frac{\pi}{2}</m>.
+      In other words,
+      we are looking for angle measuring <m>t</m> radians between <m>-\frac{\pi}{2}</m> and
+      <m>\frac{\pi}{2}</m> with a sine of <m>\frac{\sqrt{3}}{2}</m>.
+      Hence, <m>\arcsin\left(\frac{\sqrt{3}}{2} \right) = \frac{\pi}{3}</m>.
+    </p>
+    <p>
+      In terms of oriented arcs<fn>
+      See <xref ref="wrappingfunction">page</xref>
+      if you need a review of how we associate real numbers with angles in radian measure.
+      </fn>,
+      if we start at <m>(1,0)</m> and travel along the Unit Circle in the positive (counterclockwise) direction for <m>\frac{\pi}{3}</m> units,
+      we will arrive at the point whose <m>y</m>-coordinate is <m>\frac{\sqrt{3}}{2}</m>.
+      Hence, the real number <m>\frac{\pi}{3}</m> also corresponds to <sq>arc</sq> corresponding to the <sq>sine</sq> that is <m>\frac{\sqrt{3}}{2}</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \tlabel[cc](2.75, 2.6){<m>\left( \frac{1}{2}, \frac{\sqrt{3}}{2} \right)</m>}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \point[3pt]{(0,0), (1.5, 2.6)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \polyline{(0,0), (2.5, 4.3301)}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\frac{\pi}{3}</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,60,5}{3*dir(t)}
+          \tlabel[cc](4.25,1.75){<m>\arcsin \left( \frac{\sqrt{3}}{2} \right)  = \frac{\pi}{3}</m>}
+          \point[3pt]{(0,0), (1.5, 2.6)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>y</m>-value on Unit Circle is <m>\frac{\sqrt{3}}{2}</m>.</cell>
+        <cell>corresponding oriented arc:  <m>t = \frac{\pi}{3}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      In general, the function <m>f(t) = \sin(t)</m> takes a real number input <m>t</m>,
+      associates it with the angle <m>\theta = t</m> radians,
+      and returns the value <m>\sin(\theta)</m>.
+      The value <m>\sin(\theta) = \sin(t)</m> is the <m>y</m>-coordinate of the terminal point on the Unit Circle of an oriented arc of length <m>|t|</m> whose initial point is <m>(1, 0)</m>.
+    </p>
+    <p>
+      Hence, we may view the inputs to
+      <m>f(t) = \sin(t)</m> as oriented arcs and the outputs as <m>y</m>-coordinates on the Unit Circle.
+      Therefore, the function <m>f^{-1}</m> reverses this process and takes <m>y</m>-coordinates on the Unit Circle and return oriented arcs,
+      hence the <sq>arc</sq> in arcsine.
+    </p>
+    <p>
+      It is high time for an example.
+    </p>
+    <example xml:id="arccosinesineex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol cols="4">
+          <li>
+            <p>
+              Find the exact values of the following.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\arcsin\left(\frac{\sqrt{2}}{2}\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arccos\left(\frac{1}{2}\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arcsin\left(-\frac{1}{2}\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arccos\left(-\frac{\sqrt{2}}{2}\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arccos\left( \cos\left(\frac{\pi}{6}\right)\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arccos\left( \cos\left(\frac{11\pi}{6}\right)\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\cos\left(\arccos\left(-\frac{3}{5}\right)\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\sin\left(\arccos\left(-\frac{3}{5}\right)\right)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li xml:id="algarcsincos">
+            <p>
+              Rewrite each of the following composite functions as algebraic functions of <m>x</m> and state the domain.
+              <ol>
+                <li xml:id="tanarccos">
+                  <p>
+                    <m>f(x) = \tan\left(\arccos\left(x \right)\right)</m>
+                  </p>
+                </li>
+                <li xml:id="cosarcsin">
+                  <p>
+                    <m>g(x) = \cos\left(2 \arcsin(x)\right)</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          The best way to approach these problems is to remember that <m>\arcsin(x)</m> and
+          <m>\arccos(x)</m> are real numbers which correspond to the radian measure of angles that fall within a certain prescribed range.
+        </p>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  To find <m>\arcsin\left(\frac{\sqrt{2}}{2}\right)</m>,
+                  we need the angle measuring <m>t</m> radians which lies between <m>-\frac{\pi}{2}</m> and
+                  <m>\frac{\pi}{2}</m> with <m>\sin(t) = \frac{\sqrt{2}}{2}</m>.
+                  Hence, <m>\arcsin\left(\frac{\sqrt{2}}{2}\right) = \frac{\pi}{4}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  To find <m>\arccos\left(\frac{1}{2}\right)</m>,
+                  we are looking for the angle measuring <m>t</m> radians which lies between <m>0</m> and <m>\pi</m> that has <m>\cos(t) = \frac{1}{2}</m>.
+                  Our answer is <m>\arccos\left(\frac{1}{2}\right)= \frac{\pi}{3}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  For <m>\arcsin\left(-\frac{1}{2}\right)</m>,
+                  we are looking for an angle measuring <m>t</m> radians which lies between <m>-\frac{\pi}{2}</m> and
+                  <m>\frac{\pi}{2}</m> with <m>\sin(t) = -\frac{1}{2}</m>.
+                  Hence, <m>\arcsin\left(-\frac{1}{2}\right) = -\frac{\pi}{6}</m>.
+                  Alternatively,
+                  we could use the fact that the arcsine function is odd,
+                  so <m>\arcsin\left(-\frac{1}{2}\right) = - \arcsin\left(\frac{1}{2}\right)</m>.
+                  We find <m>\arcsin\left(\frac{1}{2}\right) = \frac{\pi}{6}</m>,
+                  so <m>\arcsin\left(-\frac{1}{2}\right) = - \arcsin\left(\frac{1}{2}\right) = -\frac{\pi}{6}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  For <m>\arccos\left(-\frac{\sqrt{2}}{2}\right)</m>,
+                  we need the angle measuring <m>t</m> radians which lies between <m>0</m> and <m>\pi</m> with <m>\cos(t) = -\frac{\sqrt{2}}{2}</m> . Hence,
+                  <m>\arccos\left(-\frac{\sqrt{2}}{2}\right) = \frac{3\pi}{4}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Since <m>0 \leq \frac{\pi}{6} \leq \pi</m>,
+                  we could simply invoke <xref ref="arccosinesinefunctionprops">Theorem</xref>
+                  to get <m>\arccos\left( \cos\left(\frac{\pi}{6}\right)\right) = \frac{\pi}{6}</m>.
+                  However, in order to make sure we understand
+                  <em>why</em> this is the case,
+                  we choose to work the example through using the definition of arccosine.
+                  Working from the inside out,
+                  <m>\arccos\left( \cos\left(\frac{\pi}{6}\right)\right) = \arccos\left( \frac{\sqrt{3}}{2}\right)</m>.
+                  To find <m>\arccos\left( \frac{\sqrt{3}}{2}\right)</m>,
+                  we need an angle measuring <m>t</m> radians which lies between <m>0</m> and <m>\pi</m> that has <m>\cos(t) = \frac{\sqrt{3}}{2}</m>.
+                  We get <m>t = \frac{\pi}{6}</m>,
+                  so that <m>\arccos\left( \cos\left(\frac{\pi}{6}\right)\right) = \arccos\left( \frac{\sqrt{3}}{2}\right) = \frac{\pi}{6}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Since <m>\frac{11\pi}{6}</m> does not fall between <m>0</m> and <m>\pi</m>,
+                  <xref ref="arccosinesinefunctionprops">Theorem</xref> does not apply.
+                  We are forced to work through from the inside out starting with <m>\arccos\left( \cos\left(\frac{11\pi}{6}\right)\right) = \arccos\left(\frac{\sqrt{3}}{2}\right)</m>.
+                  From the previous problem,
+                  we know <m>\arccos\left(\frac{\sqrt{3}}{2}\right) = \frac{\pi}{6}</m>.
+                  Hence, <m>\arccos\left( \cos\left(\frac{11\pi}{6}\right)\right) = \frac{\pi}{6}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  One way to simplify <m>\cos\left(\arccos\left(-\frac{3}{5}\right)\right)</m> is to use <xref ref="arccosinesinefunctionprops">Theorem</xref> directly.
+                  Since <m>-\frac{3}{5}</m> is between <m>-1</m> and <m>1</m>,
+                  we have that <m>\cos\left(\arccos\left(-\frac{3}{5}\right)\right) = -\frac{3}{5}</m> and we are done.
+                  However, as before, to really understand <em>why</em>
+                  this cancellation occurs,
+                  we let <m>t = \arccos\left(-\frac{3}{5}\right)</m>.
+                  By definition, <m>\cos(t) = -\frac{3}{5}</m>.
+                  Hence, <m>\cos\left(\arccos\left(-\frac{3}{5}\right)\right) = \cos(t) = -\frac{3}{5}</m>,
+                  and we are finished in (nearly) the same amount of time.
+                </p>
+              </li>
+              <li>
+                <p>
+                  As in the previous example,
+                  we let <m>t = \arccos\left(-\frac{3}{5}\right)</m> so that
+                  <m>\cos(t) = -\frac{3}{5}</m> for some angle measuring <m>t</m> radians between <m>0</m> and <m>\pi</m>.
+                  Since <m>\cos(t) \lt 0</m>,
+                  we can narrow this down a bit and conclude that <m>\frac{\pi}{2} \lt t \lt \pi</m>,
+                  so that <m>t</m> corresponds to an angle in Quadrant II. In terms of <m>t</m>, then,
+                  we need to find <m>\sin\left(\arccos\left(-\frac{3}{5}\right)\right) = \sin(t)</m>,
+                  and since we know <m>\cos(t)</m>,
+                  the fastest route is through the Pythagorean Identity.
+                  We get <m>\sin^{2}(t) = 1 - \cos^{2}(t) = 1 - \left(-\frac{3}{5}\right)^2 = \frac{16}{25}</m>.
+                  Since <m>t</m> corresponds to a Quadrant II angle,
+                  we choose the positive root, <m>\sin(t) = \frac{4}{5}</m>,
+                  so <m>\sin\left(\arccos\left(-\frac{3}{5}\right)\right) = \frac{4}{5}</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  We begin this problem in the same manner we began the previous two problems.
+                  We let <m>t = \arccos(x)</m>,
+                  so our goal is to find a way to express
+                  <m>\tan\left(\arccos\left(x \right)\right) = \tan(t)</m> in terms of <m>x</m>.
+                  Since <m>t = \arccos(x)</m>,
+                  we know <m>\cos(t) = x</m> where <m>0 \leq t \leq \pi</m>.
+                  One approach<fn>
+                  Alternatively, we could use the identity:
+                  <m>1 + \tan^{2}(t) = \sec^{2}(t)</m>.
+                  Since <m>x = \cos(t)</m>, <m>\sec(t) = \frac{1}{\cos(t)} = \frac{1}{x}</m>.
+                  The reader is invited to work through this approach to see what,
+                  if any, difficulties arise.
+                  </fn> to finding <m>\tan(t)</m> is to use the quotient identity <m>\tan(t) = \frac{\sin(t)}{\cos(t)}</m>.
+                  Since we know <m>\cos(t)</m>,
+                  we just need to find <m>\sin(t)</m>.
+                  Using the Pythagorean Identity,
+                  we get <m>\sin^{2}(t) = 1 - \cos^{2}(t) = 1 - x^2</m> so that <m>\sin(t) = \pm \sqrt{1-x^2}</m>.
+                  Since <m>0 \leq t \leq \pi</m>,
+                  <m>\sin(t) \geq 0</m>, so we choose <m>\sin(t) = \sqrt{1-x^2}</m>.
+                  Thus, <m>\tan(t) = \frac{\sin(t)}{\cos(t)} = \frac{\sqrt{1-x^2}}{x}</m>,
+                  so <m>f(x) = \tan(\arccos(x)) = \frac{\sqrt{1-x^2}}{x}</m>.
+                  To determine the domain,
+                  we harken back to <xref ref="FunctionComposition">Section</xref>.
+                  The function <m>f(x) = \tan\left(\arccos\left(x \right)\right)</m> can be thought of as a two step process:
+                  first, take the arccosine of a number, and second,
+                  take the tangent of whatever comes out of the arccosine.
+                  Since the domain of <m>\arccos(x)</m> is <m>-1 \leq x \leq 1</m>,
+                  the domain of <m>f</m> will be some subset of <m>[-1,1]</m>.
+                  The range of <m>\arccos(x)</m> is <m>[0,\pi]</m>, and of these values,
+                  only <m>\frac{\pi}{2}</m> will cause a problem for the tangent function.
+                  Since <m>\arccos(x) = \frac{\pi}{2}</m> happens when <m>x = \cos\left(\frac{\pi}{2} \right) = 0</m>,
+                  we exclude <m>x=0</m> from our domain.
+                  Hence, the domain of <m>f(x) = \tan\left(\arccos\left(x \right)\right) =\frac{\sqrt{1-x^2}}{x}</m> is <m>[-1,0)\cup(0,1]</m>.
+                  Note that <em>in this particular case</em>,
+                  we could have obtained the correct domain of <m>f</m> using its algebraic description:
+                  <m>f(x) = \tan(\arccos(x)) = \frac{\sqrt{1-x^2}}{x}</m>.
+                  This is not always true, however,
+                  as we'll see in the next problem.
+                </p>
+              </li>
+              <li>
+                <p>
+                  We proceed as in the previous problem by writing
+                  <m>t = \arcsin(x)</m> so that <m>t</m> lies in the interval
+                  <m>\left[ -\frac{\pi}{2}, \frac{\pi}{2}\right]</m> with <m>\sin(t) = x</m>.
+                  We aim to express <m>\cos\left(2 \arcsin(x)\right) = \cos(2t)</m> in terms of <m>x</m>.
+                  Thanks to <xref ref="doubleangle">Theorem</xref>,
+                  we have three choices for rewriting <m>\cos(2t)</m>:
+                  <m>\cos(2t) = \cos^{2}(t) - \sin^{2}(t)</m>,
+                  <m>\cos(2t) = 2\cos^{2}(t) - 1</m> and <m>\cos(2t) = 1 - 2\sin^{2}(t)</m>.
+                  Since we know <m>x = \sin(t)</m>, we choose:
+                  <m>\cos\left(2 \arcsin(x)\right) = \cos(2t) = 1 - 2\sin^{2}(t) = 1 - 2x^2</m>.
+                  Hence, <m>g(x) = \cos\left(2 \arcsin(x)\right) = 1 - 2x^2</m>.
+                  To find the domain of <m>g(x) = \cos\left(2 \arcsin(x)\right)</m>,
+                  we once again appeal to what we learned in <xref ref="FunctionComposition">Section</xref>.
+                  The domain of <m>\arcsin(x)</m> is <m>[-1,1]</m>,
+                  and since there are no domain restrictions on cosine,
+                  the domain of <m>g</m> is <m>[-1,1]</m>.
+                  It is important to note that in this case,
+                  even though the algebraic expression <m>1-2x^2</m> is defined for all real numbers,
+                  the domain of <m>g</m> is limited to that of
+                  <m>\arcsin(x)</m>, namely <m>[-1,1]</m>.
+                  The adage <sq>find the domain <em>before</em>
+                  you simplify</sq> rings as true here as it did in <xref ref="FurtherTopicsonFunctions">Chapter</xref>.
+                </p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </solution>
+    </example>
+    <p>
+      The next pair of functions we wish to discuss are the inverses of tangent and cotangent.
+      First, we restrict <m>f(t) = \tan(t)</m> to its fundamental cycle on
+      <m>\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)</m> to obtain the arctangent function,
+      <m>f^{-1}(t) = \arctan(t)</m>.
+      Among other things, note that the <em>vertical</em>
+      asymptotes <m>t = -\frac{\pi}{2}</m> and <m>t = \frac{\pi}{2}</m> of the graph of
+      <m>f(t) = \tan(t)</m> become the <em>horizontal</em>
+      asymptotes <m>y = -\frac{\pi}{2}</m> and
+      <m>y = \frac{\pi}{2}</m> of the graph of <m>f^{-1}(t) = \arctan(t)</m>.
+          <idx><h>arctangent</h><h>graph of</h></idx>
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[25][20]{-2}{2}{-4}{4} \point[4pt]{(-0.7854,-1), (0,0), (0.7854,1)} \axes \tlabel[cc](2,-0.25){\(t\)} \tlabel[cc](0.25,4){\(y\)} \tcaption{\(f(t) = \tan(t)\),  \(-\frac{\pi}{2} \lt  t \lt   \frac{\pi}{2}\).} \xmarks{-0.7854, 0.7854} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(-\frac{\pi}{4} \)} -0.7854, {\(-\frac{\pi}{2} \)} -1.5708, {\(\frac{\pi}{4}\)} 0.7854, {\(\frac{\pi}{2}\)} 1.5708} \axislabels {y}{{\(-1\)} -1, {\(1\)} 1} \dashed \polyline{(1.5708,-4), (1.5708,4)} \dashed \polyline{(-1.5708,-4), (-1.5708,4)} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{tan(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(t\) and \(y\) coordinates} }  \amp  \begin{mfpic}[20][25]{-4}{4}{-2}{2} \point[4pt]{(-1, -0.7854), (0,0), (1,0.7854)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,2){\(y\)} \tcaption{\(f^{-1}(t) = \arctan(t)\).} \ymarks{-0.7854, 0.7854} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{\(-\frac{\pi}{4}\)} -0.7854, {\(-\frac{\pi}{2}\)} -1.5708, {\(\frac{\pi}{4}\)} 0.7854, {\(\frac{\pi}{2}\)} 1.5708} \axislabels {x}{{\(-1 \)} -1, {\(1\)} 1} \dashed \polyline{(-4, 1.5708), (4, 1.5708)} \dashed \polyline{(-4, -1.5708), (4, -1.5708)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.3181, 1.3181, 0.1}{(tan(t), t)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      Next, we restrict <m>g(t) = \cot(t)</m> to its fundamental cycle on <m>(0,\pi)</m> to obtain <m>g^{-1}(t) = \mbox{arccot} (t)</m>,
+      the arccotangent function.
+      Once again, the vertical asymptotes <m>t=0</m> and <m>t=\pi</m> of the graph of
+      <m>g(t) = \cot(t)</m> become the horizontal asymptotes <m>y = 0</m> and <m>y = \pi</m> of the graph of <m>g^{-1}(t) = \mbox{arccot} (t)</m>.
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[25][20]{-1}{4}{-4}{4.25} \point[4pt]{ (0.7854,1), (1.5708,0), (2.3562,-1)} \dashed \polyline{(3.1416,-4), (3.1416,4)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,4.25){\(y\)} \tcaption{\(g(t) = \cot(t)\), \(0 \lt  t \lt  \pi\).} \xmarks{0.7854, 1.5708, 2.3562, 3.1416} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(\frac{\pi}{4}\)} 0.7854, {\(\frac{\pi}{2}\)} 1.5708, {\(\frac{3\pi}{4}\)} 2.3562, {\(\pi\)} 3.1416} \axislabels {y}{{\(-1\)} -1, {\(1\)} 1} \penwd{1.25pt} \arrow \reverse \arrow \function{0.2450, 2.8966, 0.1}{cot(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(t\) and \(y\) coordinates} }  \amp  \begin{mfpic}[20][25]{-4}{4.25}{-1}{4} \point[4pt]{ (1,0.7854), (0,1.5708), (-1,2.3562)} \dashed \polyline{(-4,3.1416), (4,3.1416)} \axes \tlabel[cc](4.25,-0.25){\(t\)} \tlabel[cc](0.25,4){\(y\)} \tcaption{\(g^{-1}(t) = \mbox{arccot} (t)\).} \ymarks{0.7854, 1.5708, 2.3562, 3.1416} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{\(\frac{\pi}{4}\)} 0.7854, {\(\frac{\pi}{2}\)} 1.5708, {\(\frac{3\pi}{4}\)} 2.3562, {\(\pi\)} 3.1416} \axislabels {x}{{\(-1 \)} -1, {\(1\)} 1} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{0.2450, 2.8966, 0.1}{(cot(t),t)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+          <idx><h>arccotangent</h><h>graph of</h></idx>
+    </p>
+    <p>
+      Below we summarize the important properties of the arctangent and arccotangent functions.
+    </p>
+    <theorem xml:id="arctangentcotangentfunctionprops">
+      <statement>
+        <p>
+          <em>Properties of the Arctangent and Arccotangent Functions</em>
+          <idx><h>arctangent</h><h>definition of</h></idx>
+          <idx><h>arctangent</h><h>properties of</h></idx>
+          <idx><h>arccotangent</h><h>definition of</h></idx>
+          <idx><h>arccotangent</h><h>properties of</h></idx>
+        </p>
+        <ul>
+          <li>
+            <p>
+              Properties of <m>F(x)= \arctan(x)</m>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Domain: <m>(-\infty, \infty)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Range: <m>\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  as <m>x \rightarrow -\infty</m>,
+                  <m>\arctan(x) \rightarrow -\frac{\pi}{2}^{+}</m>;
+                  as <m>x \rightarrow \infty</m>,
+                  <m>\arctan(x) \rightarrow \frac{\pi}{2}^{-}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arctan(x) = t</m> if and only if
+                  <m>\tan(t) = x</m> and <m>-\frac{\pi}{2} \lt t \lt \frac{\pi}{2}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arctan(x) = \mbox{arccot} \left(\frac{1}{x}\right)</m> for <m>x > 0</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\tan\left(\arctan(x)\right) = x</m> for all real numbers <m>x</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\arctan(\tan(t)) = t</m> provided <m>-\frac{\pi}{2} \lt t \lt \frac{\pi}{2}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>F(x)= \arctan(x)</m> is odd
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Properties of <m>G(x) = \mbox{arccot} (x)</m>
+              <ul>
+                <li>
+                  <p>
+                    Domain: <m>(-\infty, \infty)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Range: <m>(0, \pi)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    as <m>x \rightarrow -\infty</m>,
+                    <m>\mbox{arccot} (x) \rightarrow \pi^{-}</m>;
+                    as <m>x \rightarrow \infty</m>,
+                    <m>\mbox{arccot} (x) \rightarrow 0^{+}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccot} (x) = t</m> if and only if
+                    <m>\cot(t) = x</m> and <m>0 \lt t \lt \pi</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccot} (x) =\arctan\left(\frac{1}{x}\right)</m> for <m>x > 0</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\cot\left(\mbox{arccot} (x)\right) = x</m> for all real numbers <m>x</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccot} (\cot(t)) = t</m> provided <m>0 \lt t \lt \pi</m>
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+        </ul>
+      </statement>
+    </theorem>
+    <p>
+      The properties listed in <xref ref="arctangentcotangentfunctionprops">Theorem</xref>
+      are consequences of the definitions of the arctangent and arccotangent functions along with <xref ref="inversefunctionprops">Theorem</xref>,
+      and its proof is left to the reader.
+    </p>
+    <example xml:id="arctanarccotexample">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol cols="2">
+          <li>
+            <p>
+              Find the exact values of the following.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\arctan(\sqrt{3})</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arccot} (-\sqrt{3})</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\cot(\mbox{arccot} (-5))</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\sin\left(\arctan\left(-\frac{4}{3}\right)\right)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Rewrite each of the following composite functions as algebraic functions of <m>x</m> and state the domain.
+              <ol>
+                <li>
+                  <p>
+                    <m>\tan(2 \arctan(x))</m>
+                  </p>
+                </li>
+                <li xml:id="cosineofarccotex">
+                  <p>
+                    <m>\cos(\mbox{arccot} (2x))</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To find <m>\arctan(\sqrt{3})</m>,
+                    we need the angle measuring <m>t</m> radians which lies between <m>-\frac{\pi}{2}</m> and
+                    <m>\frac{\pi}{2}</m> with <m>\tan(t) = \sqrt{3}</m>.
+                    We find <m>\arctan(\sqrt{3}) = \frac{\pi}{3}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To find <m>\mbox{arccot} (-\sqrt{3})</m>,
+                    we need the angle measuring <m>t</m> radians which lies between <m>0</m> and <m>\pi</m> with <m>\cot(t) = -\sqrt{3}</m>.
+                    Hence, <m>\mbox{arccot} (-\sqrt{3}) = \frac{5\pi}{6}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We can apply <xref ref="arctangentcotangentfunctionprops">Theorem</xref>
+                    directly and obtain <m>\cot(\mbox{arccot} (-5)) = -5</m>.
+                    However, working it through provides us with yet another opportunity to understand why this is the case.
+                    Letting <m>t = \mbox{arccot} (-5)</m>,
+                    by definition, <m>\cot(t)=-5</m>.
+                    Hence, <m>\cot(\mbox{arccot} (-5)) = \cot(t)=-5</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We start simplifying <m>\sin\left(\arctan\left(-\frac{4}{3}\right)\right)</m> by letting <m>t = \arctan\left(-\frac{4}{3}\right)</m>.
+                    By definition,
+                    <m>\tan(t) = -\frac{4}{3}</m> for some angle measuring <m>t</m> radians which lies between
+                    <m>-\frac{\pi}{2}</m> and <m>\frac{\pi}{2}</m>.
+                    Since <m>\tan(t) \lt 0</m>, we know,
+                    in fact, <m>t</m> corresponds to a Quadrant IV angle.
+                    We are given <m>\tan(t)</m> but wish to know <m>\sin(t)</m>.
+                    Since there is no direct identity to marry the two,
+                    we make a quick sketch of the situation below.
+                    Since <m>\tan(t) = -\frac{4}{3} = \frac{-4}{3}</m>,
+                    we take <m>P(3,-4)</m> as a point on the terminal side of
+                    <m>\theta = t = \arctan\left(-\frac{4}{3}\right)</m> radians. \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(4.75,-0.5){<m>x</m>} \tlabel(0.25,4.5){<m>y</m>} \tlabel(2.5,-2.75){<m>P(3,-4)</m>} \tlabel[cc](1,-2.5){<m>r=5</m>} \tlabel[cc](1.75,-1){<m>\theta</m>} \xmarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \ymarks{-2.68, -2, -1.34, -0.67, 0.67, 1.34, 2, 2.68} \tcaption{<m>P(3,-4)</m> is on the terminal side of <m>\theta</m>.} \drawcolor[gray]{0.7} \circle{(0,0),3.354} \drawcolor{black} \arrow \parafcn{-5, -50, -5}{1.5*dir(t)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0),(0,0), (3, -4)} \point[4pt]{(0,0), (2.012, -2.683)} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -2, {<m>-1</m>} -0.67, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>4</m>} 2.68} \axislabels {y}{ {<m>-2</m>} -1.34, {<m>-4</m>} -2.68, {<m>2</m>} 1.34, {<m>4</m>} 2.68, {<m>1</m>} 0.67, {<m>3</m>} 2, {<m>-1</m>} -0.67, {<m>-3</m>} -2 } \end{mfpic} We find <m>r = \sqrt{x^2+y^2} = \sqrt{(3)^2+(-4)^2} = 5</m>,
+                    so <m>\sin(t) = -\frac{4}{5}</m>.
+                    Hence, <m>\sin\left(\arctan\left(-\frac{4}{3}\right)\right) = -\frac{4}{5}</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    We proceed as above and let <m>t = \arctan(x)</m>.
+                    We have <m>\tan(t) = x</m> where <m>-\frac{\pi}{2} \lt t \lt \frac{\pi}{2}</m>.
+                    Our goal is to express <m>\tan(2 \arctan(x)) = \tan(2t)</m> in terms of <m>x</m>.
+                    From <xref ref="doubleangle">Theorem</xref>,
+                    we know <m>\tan(2t) = \frac{2 \tan(t)}{1 - \tan^{2}(t)} = \frac{2x}{1-x^2}</m>.
+                    Hence <m>f(x) = \tan(2 \arctan(x)) = \frac{2x}{1-x^2}</m>.
+                    To find the domain, we once again think of
+                    <m>f(x) = \tan(2 \arctan(x))</m> as a sequence of steps and work from the inside out.
+                    The first step is to find the arctangent of a real number.
+                    Since the domain of <m>\arctan(x)</m> is all real numbers,
+                    we have no restrictions here and we get out all values <m>\left(-\frac{\pi}{2}, \frac{\pi}{2} \right)</m>.
+                    The next step is to multiply <m>\arctan(x)</m> by <m>2</m>.
+                    There are no restrictions here, either.
+                    Since the range of <m>\arctan(x)</m> is <m>\left(-\frac{\pi}{2}, \frac{\pi}{2} \right)</m>,
+                    the range of <m>2 \arctan(x)</m> is <m>(-\pi, \pi)</m>.
+                    The last step is to take the tangent of <m>2 \arctan(x)</m>.
+                    Since we are taking the tangent of values in the interval <m>(-\pi, \pi)</m>,
+                    we will run into trouble if <m>2 \arctan(x) = \pm \frac{\pi}{2}</m>, that is,
+                    if <m>\arctan(x) = \pm \frac{\pi}{4}</m>.
+                    Since this happens exactly when <m>x = \tan\left( \pm \frac{\pi}{4}\right) = \pm 1</m>,
+                    we must exclude <m>x = \pm 1</m> from the domain of <m>f</m>.
+                    Hence, the domain of <m>f(x) = \tan(2 \arctan(x))</m> is <m>(-\infty, -1) \cup (-1,1) \cup (1,\infty)</m>.
+                    In this example,
+                    we could have obtained the correct answer by looking at the algebraic equivalence,
+                    <m>f(x) = \frac{2x}{1-x^2}</m>.
+                    However, as we saw in <xref ref="arccosinesineex">Example</xref>,
+                    <xref ref="cosarcsin">number</xref>,
+                    this is not always the case.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To get started, we let <m>t = \mbox{arccot} (2x)</m> so that
+                    <m>\cot(t) = 2x</m> where <m>0 \lt t \lt \pi</m>.
+                    In terms of <m>t</m>, <m>\cos(\mbox{arccot} (2x)) = \cos(t)</m>,
+                    and our goal is to express the latter in terms of <m>x</m>.
+                    One way to proceed is to rewrite the identity <m>\cot(t) = \frac{\cos(t)}{\sin(t)}</m> as
+                    <m>\cos(t) = \cot(t) \sin(t)</m> and use the fact that
+                    <m>\cot(t) = 2x</m> to find <m>\sin(t)</m> in terms of <m>x</m>.
+                    This isn't as hopeless as it might seem,
+                    since the Pythagorean Identity
+                    <m>\csc^{2}(t) = 1 + \cot^{2}(t)</m> relates cotangent to cosecant,
+                    and <m>\sin(t) = \frac{1}{\csc(t)}</m>.
+                    Following this strategy,
+                    we get <m>\csc^{2} (t) = 1 + \cot^{2}(t) = 1 + (2x)^2 = 1 + 4x^2</m> so <m>\csc(t) = \pm \sqrt{4x^2+1}</m>.
+                    Since <m>t</m> is between <m>0</m> and <m>\pi</m>, <m>\csc(t) > 0</m>.
+                    Hence, <m>\csc(t) =\sqrt{4x^2+1}</m>,
+                    so <m>\sin(t) = \frac{1}{\csc(t)} = \frac{1}{\sqrt{4x^2+1}}</m>.
+                    We find <m>\cos(t) = \cot(t) \sin(t) = \frac{2x}{\sqrt{4x^2+1}}</m>.
+                    Hence, <m>g(x) = \cos(\mbox{arccot} (2x)) = \frac{2x}{\sqrt{4x^2+1}}</m>.
+                    Viewing <m>g(x) = \cos(\mbox{arccot} (2x))</m> as a sequence of steps,
+                    we see we first double the input <m>x</m>,
+                    then take the arccotangent, and, finally, take the cosine.
+                    Since each of these processes are valid for all real numbers,
+                    the domain of <m>g</m> is <m>(-\infty, \infty)</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The reader may well wonder if there isn't a more direct way to handle <xref ref="arctanarccotexample">Example</xref>
+      <xref ref="cosineofarccotex">number</xref>.
+      Indeed, we can take some inspiration from <xref ref="TheOtherCircularFunctions">Section</xref>
+      and imagine an angle <m>\theta</m> measuring <m>t</m> radians so that
+      <m>\cot(\theta) = \cot(t) = 2x</m> where <m>0\lt \theta \lt \pi</m>.
+    </p>
+    <p>
+      Thinking of <m>\cot(\theta)</m> as a ratio of coordinates on a circle,
+      we may rewrite <m>\cot(\theta) = 2x = \frac{2x}{1}</m> and we would like to identify a point <m>P(2x,1)</m> on the terminal side of <m>\theta</m>.
+    </p>
+    <p>
+      We need to be careful here.
+      Since <m>\cot(\theta) = 2x</m>,
+      <m>x = \frac{1}{2} \cot(\theta)</m>,
+      so as <m>\theta</m> ranges between <m>0</m> and <m>\pi</m>,
+      <m>x</m> can take on positive,
+      negative or <m>0</m> values.
+      We need to argue that the point <m>P(2x,1)</m> lies in the quadrant we expect
+      (as depicted below)
+      in all cases before we delve too far into our analysis.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[14]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \tlabel[cc](3,2.75){<m>P(2x,1)</m>}
+          \point[4pt]{(0,0), (1.5, 2.6)}
+          \penwd{1.25pt}
+          \arrow \polyline{(5,0), (0,0), (2.5, 4.3301)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[14]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 85, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \penwd{1.25pt}
+          \tlabel[cc](1.25,3.5){<m>P(0,1)</m>}
+          \point[4pt]{(0,0), (0, 3)}
+          \penwd{1.25pt}
+          \arrow \polyline{(5,0), (0,0), (0, 5)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[14]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(5,-0.5){<m>x</m>}
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 115, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \tlabel[cc](-3.5,2.75){<m>P(2x,1)</m>}
+          \point[4pt]{(0,0), (-1.5, 2.6)}
+          \penwd{1.25pt}
+          \arrow \polyline{(5,0), (0,0), (-2.5, 4.3301)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>0 \lt  \theta \lt  \frac{\pi}{2}</m>, <m>x>0</m>.</cell>
+        <cell><m>\theta = \frac{\pi}{2}</m>, <m>x = 0</m>.</cell>
+        <cell><m>\frac{\pi}{2} \lt  \theta \lt  \pi</m>, <m>x \lt 0</m>.</cell>
+      </row>
+    </tabular>
+    <p>
+      If <m>0 \lt \theta \lt \frac{\pi}{2}</m>,
+      then <m>\cot(\theta) > 0</m>.
+      Hence, <m>x>0</m> so the point <m>P(2x,1)</m> is in Quadrant I, as required.
+      If <m>\theta = \frac{\pi}{2}</m>,
+      then <m>x = 0</m>, and our point <m>P(2x,1) = (0,1)</m>,
+      as required.
+      If <m>\frac{\pi}{2} \lt \theta \lt \pi</m>,
+      then <m>\cot(\theta)\lt 0</m>.
+      Hence, <m>x\lt 0</m>, so <m>P(2x,1)</m> is in Quadrant II, as required.
+    </p>
+    <p>
+      Hence, in all three cases,
+      our formula for the point <m>P(2x,1)</m> determines a point in the same quadrant as the terminal side of <m>\theta</m>,
+      as illustrated above.
+    </p>
+    <p>
+      This allows us to use <xref ref="circularfunctionscircle">Theorem</xref>
+      from <xref ref="TheOtherCircularFunctions">Section</xref>.
+      We find <m>r = \sqrt{(2x)^2+1^2} = \sqrt{4x^2+1}</m>,
+      and hence, <m>\cos(\theta) = \frac{2x}{\sqrt{4x^2+1}}</m>,
+      which agrees with our answer from <xref ref="arctanarccotexample">Example</xref>.
+    </p>
+    <p>
+      It shouldn't surprise the reader that there are some cases where the approach outlined above doesn't go as smoothly (as we'll see in the discussion following <xref ref="arcsecantcosecantex1">Example</xref>.)
+    </p>
+    <p>
+      The last two functions to invert are secant and cosecant.
+      A portion of each of their graphs,
+      which were first discussed in <xref ref="secantcosecantgraphsection">Subsection</xref>,
+      are given below with the fundamental cycles highlighted.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[12]{-8.5}{8.5}{-4}{4}
+          \point[4pt]{(0,1), (3.1416, -1), (6.2832,1)}
+          \axes
+          \tlabel[cc](8.5,-0.25){<m>x</m>}
+          \tlabel[cc](0.25,4){<m>y</m>}
+          \tcaption{The graph of <m>y = \sec(x)</m>.}
+          \tlpointsep{4pt}
+          \dotted \function{-7.854, 7.854, 0.1}{cos(x)}
+          \dashed \polyline{(1.5708, -4), (1.5708, 4)}
+          \dashed \polyline{(4.7124, -4), (4.7124, 4)}
+          \dashed \polyline{(7.8540, -4), (7.8540, 4)}
+          \dashed \polyline{(-1.5708, -4), (-1.5708, 4)}
+          \dashed \polyline{(-4.7124, -4), (-4.7124, 4)}
+          \dashed \polyline{(-7.8540, -4), (-7.8540, 4)}
+          \arrow \reverse \arrow \function{-1.3181, 1.3181, 0.1}{1/cos(x)}
+          \arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{1/cos(x)}
+          \arrow \reverse \arrow \function{4.9651, 7.6013, 0.1}{1/cos(x)}
+          \arrow \reverse \arrow \function{-1.8235, -4.460, -0.1}{1/cos(x)}
+          \arrow \reverse \arrow \function{-4.9651, -7.6013, -0.1}{1/cos(x)}
+          \penwd{1.5pt}
+          \arrow \function{0, 1.3181, 0.1}{1/cos(x)}
+          \arrow \reverse \arrow \function{1.8235, 4.460, 0.1}{1/cos(x)}
+          \arrow \reverse \function{4.9651, 6.28, 0.1}{1/cos(x)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[12]{-8.5}{8.5}{-4}{4.25}
+          \point[4pt]{ (1.5708, 1), (4.7124, -1)}
+          \axes
+          \tlabel[cc](8.5,-0.25){<m>x</m>}
+          \tlabel[cc](0.25,4.25){<m>y</m>}
+          \tcaption{The graph of <m>y = \csc(x)</m>.}
+          \tlpointsep{4pt}
+          \dotted \function{-7.854, 7.854, 0.1}{sin(x)}
+          \dashed \polyline{(3.1416, -4), (3.1416, 4)}
+          \dashed \polyline{(6.2832, -4), (6.2832, 4)}
+          \dashed \polyline{(-3.1416, -4), (-3.1416, 4)}
+          \dashed \polyline{(-6.2832, -4), (-6.2832, 4)}
+          \arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{1/sin(x)}
+          \arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{1/sin(x)}
+          \arrow \reverse \arrow \function{-0.2527, -2.889, -0.1}{1/sin(x)}
+          \arrow \reverse \arrow \function{-3.3943, -6.0306, -0.1}{1/sin(x)}
+          \arrow \reverse \function{6.5359, 7.854, 0.1}{1/sin(x)}
+          \arrow \reverse \function{-6.5359, -7.854, -0.1}{1/sin(x)}
+          \penwd{1.5pt}
+          \arrow \reverse \arrow \function{0.2527, 2.889, 0.1}{1/sin(x)}
+          \arrow \reverse \arrow \function{3.3943, 6.0306, 0.1}{1/sin(x)}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      It is clear from the graph of secant that we cannot find one single continuous piece of its graph which covers its entire range of
+      <m>(-\infty, -1] \cup [1, \infty)</m> and restricts the domain of the function so that it is one-to-one.
+      The same is true for cosecant.
+    </p>
+    <p>
+      Thus in order to define the arcsecant and arccosecant functions,
+      we must settle for a piecewise approach wherein we choose one piece to cover the top of the range,
+      namely <m>[1, \infty)</m>,
+      and another piece to cover the bottom,
+      namely <m>(-\infty, -1]</m>.
+    </p>
+    <p>
+      There are two generally accepted ways make these choices which restrict the domains of these functions so that they are one-to-one.
+      One approach simplifies the Trigonometry associated with the inverse functions,
+      but complicates the Calculus;
+      the other makes the Calculus easier,
+      but the Trigonometry less so.
+    </p>
+    <p>
+      For completeness, we present both points of view,
+      each in its own subsection.
+    </p>
+  </introduction>
+  <subsection xml:id="arcsecanttrigfriendly">
+    <title>Inverses of Secant and Cosecant: Trigonometry Friendly Approach</title>
+    <p>
+      In this subsection,
+      we restrict the secant and cosecant functions to coincide with the restrictions on cosine and sine,
+      respectively.
+      For <m>f(t) = \sec(t)</m>,
+      we restrict the domain to <m>\left[0, \frac{\pi}{2}\right) \cup \left( \frac{\pi}{2}, \pi\right]</m> <idx><h>arcsecant</h><h>trigonometry friendly ! graph of</h></idx>
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[25][20]{-0.5}{4}{-4}{4} \point[4pt]{(0,1), (3.1416, -1)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,4){\(y\)} \tcaption{\(f(t) = \sec(t)\) on  \(\left[0, \frac{\pi}{2}\right) \cup \left( \frac{\pi}{2}, \pi\right]\)} \xmarks{1.5708, 3.1416} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416} \axislabels {y}{{\(-1\)} -1, { \(1\)} 1} \dashed \polyline{(1.5708, -4), (1.5708, 4)} \penwd{1.25pt} \arrow \function{0, 1.3181, 0.1}{1/cos(x)} \arrow  \reverse  \function{1.8235, 3.1416, 0.1}{1/cos(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(t\) and \(y\) coordinates} }  \amp  \begin{mfpic}[20][25]{-4}{4}{-0.5}{4} \point[4pt]{(1,0), (-1,3.1416)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,4){\(y\)} \tcaption{\(f^{-1}(t) = \mbox{arcsec} (t)\)} \ymarks{1.5708, 3.1416} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416} \axislabels {x}{{\(-1 \)} -1, { \(1\)} 1} \dashed \polyline{(-4, 1.5708), (4, 1.5708)} \penwd{1.25pt} \arrow \parafcn{0, 1.3181, 0.1}{(1/cos(t),t)} \arrow  \reverse  \parafcn{1.8235, 3.1416, 0.1}{(1/cos(t),t)} \end{mfpic} \end{array}
+      </me>
+      and we restrict <m>g(t) = \csc(t)</m> to <m>\left[-\frac{\pi}{2}, 0\right) \cup \left(0,  \frac{\pi}{2}\right]</m>.
+          <idx><h>arccosecant</h><h>trigonometry friendly ! graph of</h></idx>
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[27][20]{-2}{2}{-4}{4} \point[4pt]{(-1.5708,-1), (1.5708, 1)} \axes \tlabel[cc](2,-0.25){\(t\)} \tlabel[cc](0.25,4.25){\(y\)} \tcaption{\(g(t) = \csc(t)\) on  \(\left[-\frac{\pi}{2}, 0\right) \cup \left(0,  \frac{\pi}{2}\right]\)} \xmarks{-1.5708, 1.5708} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(-\frac{\pi}{2} \)} -1.5708, {\(\frac{\pi}{2}\)} 1.5708} \axislabels {y}{{\(-1\)} -1, { \(1\)} 1} \penwd{1.25pt} \arrow \reverse \function{0.2527, 1.5708, 0.1}{1/sin(x)} \arrow  \reverse \function{-0.2527, -1.5708, -0.1}{1/sin(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(t\) and \(y\) coordinates} }  \amp  \begin{mfpic}[20][25]{-4}{4}{-2}{2} \point[4pt]{(-1,-1.5708), (1,1.5708)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,2){\(y\)} \tcaption{\(g^{-1}(t) = \mbox{arccsc} (t)\)} \ymarks{-1.5708, 1.5708} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{\(-\frac{\pi}{2}\)} -1.5708, {\(\frac{\pi}{2}\)} 1.5708} \axislabels {x}{{\(-1 \)} -1, { \(1\)} 1} \penwd{1.25pt} \arrow \reverse \parafcn{0.2527, 1.5708, 0.1}{(1/sin(t),t)} \arrow  \reverse \parafcn{-0.2527, -1.5708, -0.1}{(1/sin(t),t)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      Note that for both arcsecant and arccosecant,
+      the domain is <m>(-\infty, -1] \cup [1, \infty)</m>.
+      Taking a page from <xref ref="AppAbsValEqIneq">Section</xref>,
+      we can rewrite this as <m>\left\{ x \, | \, |x| \geq 1\right\}</m>.
+      (This is often done in Calculus textbooks,
+      so we include it here for completeness.)
+    </p>
+    <p>
+      Using these definitions along with <xref ref="inversefunctionprops">Theorem</xref>,
+      we get the following properties of the arcsecant and arccosecant functions.
+    </p>
+    <theorem xml:id="arcsecantcosecantfunctionprops1">
+      <statement>
+        <p>
+          <em>Properties of the Arcsecant and Arccosecant Functions</em><fn>
+          <ellipsis/> assuming the
+          <q>Trigonometry Friendly</q>
+          ranges are used.
+          </fn>
+        </p>
+        <ul>
+          <li>
+            <p>
+              Properties of <m>F(x)= \mbox{arcsec} (x)</m> <idx><h>arcsecant</h><h>trigonometry friendly ! definition of</h></idx> <idx><h>arcsecant</h><h>trigonometry friendly ! properties of</h></idx>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Domain: <m>\left\{ x \, | \, |x| \geq 1 \right\} = (-\infty, -1] \cup [1,\infty)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Range: <m>\left[0, \frac{\pi}{2} \right) \cup \left(\frac{\pi}{2}, \pi\right]</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  as <m>x \rightarrow -\infty</m>,
+                  <m>\mbox{arcsec} (x) \rightarrow \frac{\pi}{2}^{+}</m>;
+                  as <m>x \rightarrow \infty</m>,
+                  <m>\mbox{arcsec} (x) \rightarrow \frac{\pi}{2}^{-}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (x) = t</m> if and only if <m>\sec(t) = x</m> and
+                  <m>0 \leq t \lt \frac{\pi}{2}</m> or <m>\frac{\pi}{2} \lt t \leq \pi</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (x) = \arccos\left(\frac{1}{x}\right)</m> provided <m>|x| \geq 1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\sec\left(\mbox{arcsec} (x)\right) = x</m> provided <m>|x| \geq 1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (\sec(t)) = t</m> provided
+                  <m>0 \leq t \lt \frac{\pi}{2}</m> or <m>\frac{\pi}{2} \lt t \leq \pi</m>
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Properties of <m>G(x) = \mbox{arccsc} (x)</m> <idx><h>arccosecant</h><h>trigonometry friendly ! definition of</h></idx> <idx><h>arccosecant</h><h>trigonometry friendly ! properties of</h></idx>
+              <ul>
+                <li>
+                  <p>
+                    Domain: <m>\left\{ x \, | \, |x| \geq 1 \right\} = (-\infty, -1] \cup [1,\infty)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Range: <m>\left[-\frac{\pi}{2}, 0 \right) \cup \left(0, \frac{\pi}{2} \right]</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    as <m>x \rightarrow -\infty</m>,
+                    <m>\mbox{arccsc} (x) \rightarrow 0^{-}</m>;
+                    as <m>x \rightarrow \infty</m>,
+                    <m>\mbox{arccsc} (x) \rightarrow 0^{+}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccsc} (x) = t</m> if and only if <m>\csc(t) = x</m> and
+                    <m>-\frac{\pi}{2} \leq t \lt 0</m> or <m>0 \lt t \leq \frac{\pi}{2}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccsc} (x) = \arcsin\left(\frac{1}{x}\right)</m> provided <m>|x| \geq 1</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\csc\left(\mbox{arccsc} (x)\right) = x</m> provided <m>|x| \geq 1</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccsc} (\csc(t)) = t</m> provided
+                    <m>-\frac{\pi}{2} \leq t \lt 0</m> or <m>0 \lt t \leq \frac{\pi}{2}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>G(x) = \mbox{arccsc} (x)</m> is odd
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+        </ul>
+      </statement>
+    </theorem>
+    <p>
+      The reason the ranges here are called <sq>Trigonometry Friendly</sq> is specifically because of two properties listed in <xref ref="arcsecantcosecantfunctionprops1">Theorem</xref>:
+      <m>\mbox{arcsec} (x) = \arccos\left(\frac{1}{x}\right)</m> and <m>\mbox{arccsc} (x) = \arcsin\left(\frac{1}{x}\right)</m>.
+    </p>
+    <p>
+      These formulas essentially allow us to always convert arcsecants and arccosecants back to arccosines and arcsines,
+      respectively.
+      We see this play out in our next example.
+    </p>
+    <example xml:id="arcsecantcosecantex1">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the exact values of the following.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arccsc} (-2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} \left( \sec\left( \frac{5\pi}{4} \right) \right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\cot\left(\mbox{arccsc} \left(-3\right)\right)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Rewrite each of the following composite functions as algebraic functions of <m>x</m> and state the domain.
+              <ol>
+                <li xml:id="tangentofarcsecantexample">
+                  <p>
+                    <m>f(x) = \tan(\mbox{arcsec} (x))</m>
+                  </p>
+                </li>
+                <li xml:id="cosineofarccosecantexample">
+                  <p>
+                    <m>g(x) = \cos(\mbox{arccsc} (4x))</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Using <xref ref="arcsecantcosecantfunctionprops1">Theorem</xref>,
+                    we have <m>\mbox{arcsec} (2) = \arccos\left(\frac{1}{2}\right) = \frac{\pi}{3}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Once again, <xref ref="arcsecantcosecantfunctionprops1">Theorem</xref>
+                    comes to our aid giving <m>\mbox{arccsc} (-2) = \arcsin\left(-\frac{1}{2}\right) = -\frac{\pi}{6}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since <m>\frac{5\pi}{4}</m> doesn't fall between <m>0</m> and
+                    <m>\frac{\pi}{2}</m> or <m>\frac{\pi}{2}</m> and <m>\pi</m>,
+                    we cannot use the inverse property stated in <xref ref="arcsecantcosecantfunctionprops1">Theorem</xref>.
+                    Hence, we work from the <sq>inside out.</sq> We get:
+                    <m>\mbox{arcsec} \left( \sec\left( \frac{5\pi}{4} \right) \right) = \mbox{arcsec} (-\sqrt{2}) = \arccos\left(-\frac{1}{\sqrt{2}}\right) =\arccos\left(-\frac{\sqrt{2}}{2}\right) = \frac{3\pi}{4}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We begin simplifying <m>\cot\left(\mbox{arccsc} \left(-3\right)\right)</m> by letting <m>t = \mbox{arccsc} (-3)</m>.
+                    Then, <m>\csc(t) = -3</m>.
+                    Since <m>\csc(t) \lt 0</m>,
+                    <m>t</m> lies in the interval <m>\left[ -\frac{\pi}{2},0\right)</m>,
+                    so <m>t</m> corresponds to a Quadrant IV angle.
+                    To find <m>\cot\left(\mbox{arccsc} \left(-3\right)\right) = \cot(t)</m>,
+                    we use the Pythagorean Identity:
+                    <m>\cot^{2}(t) = \csc^{2}(t)-1</m>.
+                    We get <m>\csc^{2}(t) = (-3)^2 - 1 = 8</m>,
+                    or <m>\cot(t) = \pm \sqrt{8} = \pm 2 \sqrt{2}</m>.
+                    Since <m>t</m> corresponds to a Quadrant IV angle, <m>\cot(t) \lt 0</m>.
+                    Hence, <m>\cot\left(\mbox{arccsc} \left(-3\right)\right) = -2\sqrt{2}</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Proceeding as above, we let <m>t = \mbox{arcsec} (x)</m>.
+                    Then, <m>\sec(t) = x</m> for <m>t</m> in <m>\left[0, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \pi \right]</m>.
+                    We seek a formula for <m>\tan(\mbox{arcsec} (x)) = \tan(t)</m> in terms of <m>x</m>.
+                    To relate <m>\sec(t)</m> to <m>\tan(t)</m>,
+                    we use the Pythagorean Identity:
+                    <m>\tan^{2}(t) = \sec^{2}(t) - 1</m>.
+                    Substituting  <m>\sec(t) = x</m>,
+                    we get <m>\tan^{2}(t) = \sec^{2}(t) - 1 = x^2-1</m>,
+                    so <m>\tan(t) = \pm \sqrt{x^2-1}</m>.
+                    If <m>t</m> belongs to <m>\left[0, \frac{\pi}{2}\right)</m> then <m>\tan(t) \geq 0</m>.
+                    On  the the other hand, if <m>t</m> belongs to
+                    <m>\left(\frac{\pi}{2}, \pi \right]</m> then <m>\tan(t) \leq 0</m>.
+                    As a result, we get a <em>piecewise defined</em>
+                    function for <m>\tan(t)</m>:
+                    <me>
+                      \tan(t) = \left\{ \begin{array}{rr} \sqrt{x^2-1}, \amp  \text{if \(0 \leq t \lt  \frac{\pi}{2}\)}  \\ -\sqrt{x^2-1}, \amp  \text{if \(\frac{\pi}{2} \lt  t \leq \pi\)} \end{array} \right.
+                    </me>
+                    Now we need to determine what these conditions on <m>t</m> mean for <m>x</m>.
+                    Since <m>x = \sec(t)</m>,
+                    when <m>0 \leq t \lt  \frac{\pi}{2}</m>, <m>x \geq 1</m>,
+                    and when <m>\frac{\pi}{2} \lt  t \leq \pi</m>, <m>x \leq -1</m>.
+                    Hence,
+                    <me>
+                      f(x) =  \tan(\mbox{arcsec} (x)) = \left\{ \begin{array}{rr} \sqrt{x^2-1}, \amp  \text{ if \(x \geq 1\) }  \\  -\sqrt{x^2-1}, \amp  \text{ if \(x \leq -1\) } \end{array} \right.
+                    </me>
+                    To find the domain of <m>f</m>,
+                    we consider <m>f(x) =  \tan(\mbox{arcsec} (x))</m> as a two step process.
+                    First, we have the arcsecant function,
+                    whose domain is <m>(\-\infty, -1] \cup [1, \infty)</m>.
+                    Since the range of <m>\mbox{arcsec} (x)</m> is <m>\left[0, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \pi \right]</m>,
+                    taking the tangent of any output from <m>\mbox{arcsec} (x)</m>  is defined.
+                    Hence, the domain of <m>f</m> is <m>(-\infty, -1] \cup [1, \infty)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Taking a cue from the previous problem,
+                    we start by letting <m>t = \mbox{arccsc} (4x)</m>.
+                    Then <m>\csc(t) = 4x</m> for <m>t</m> in <m>\left[-\frac{\pi}{2}, 0 \right) \cup \left(0, \frac{\pi}{2}\right]</m>.
+                    Our goal is to rewrite  <m>\cos(\mbox{arccsc} (4x)) = \cos(t)</m> in terms of <m>x</m>.
+                    From <m>\csc(t) = 4x</m>, we get <m>\sin(t) = \frac{1}{4x}</m>,
+                    so to find <m>\cos(t)</m>, we can make use of the Pythagorean Identity:
+                    <m>\cos^{2}(t)= 1- \sin^{2}(t)</m>.
+                    Substituting <m>\sin(t) = \frac{1}{4x}</m>  gives <m>\cos^{2}(t) = 1 - \left(\frac{1}{4x}\right)^2 = 1 - \frac{1}{16x^2}</m>.
+                    Getting a common denominator and extracting square roots,
+                    we obtain:
+                    <me>
+                      \cos(t) = \pm \sqrt{\frac{16x^2-1}{16x^2}} = \pm \frac{\sqrt{16x^2-1}}{4|x|}
+                    </me>.
+                    Since <m>t</m> belongs to <m>\left[-\frac{\pi}{2}, 0 \right) \cup \left(0, \frac{\pi}{2}\right]</m>,
+                    we know <m>\cos(t) \geq 0</m>,
+                    so we choose <m>\cos(t) = \frac{\sqrt{16-x^2}}{4|x|}</m>.
+                    (The absolute values here are necessary,
+                    since <m>x</m> could be negative.)
+                    Hence,
+                    <me>
+                      g(x) = \cos(\mbox{arccsc} (4x)) = \frac{\sqrt{16-x^2}}{4|x|}
+                    </me>.
+                    To find the domain of <m>g(x) = \cos(\mbox{arccsc} (4x))</m>,
+                    as usual, we think of <m>g</m> as a series of processes.
+                    First, we take the input, <m>x</m>,
+                    and multiply it by <m>4</m>.
+                    Since this can be done to any real number,
+                    we have no restrictions here.
+                    Next, we take the arccosecant of <m>4x</m>.
+                    Using interval notation,
+                    the domain of the arccosecant function is written as:
+                    <m>(-\infty, -1] \cup [1, \infty)</m>.
+                    Hence to take the arccosecant of <m>4x</m>,
+                    the quantity <m>4x</m> must lie in one of these two intervals.<fn>
+                    Alternatively, we can write the domain of
+                    <m>\mbox{arccsc} (x)</m> as <m>|x| \geq 1</m>,
+                    so the domain of  <m>\mbox{arccsc} (4x)</m> is <m>|4x| \geq 1</m>.
+                    </fn>  That is, <m>4x \leq -1</m> or <m>4x \geq 1</m>,
+                    so <m>x \leq -\frac{1}{4}</m> or <m>x \geq \frac{1}{4}</m>.
+                    The third and final process coded in
+                    <m>g(x) = \cos(\mbox{arccsc} (4x))</m> is to take the cosine of <m>\mbox{arccsc} (4x)</m>.
+                    Since the cosine accepts any real number,
+                    we have no additional restrictions.
+                    Hence, the domain of <m>g</m> is <m>\left( -\infty, -\frac{1}{4} \right] \cup \left[ \frac{1}{4}, \infty \right)</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As promised in the discussion following <xref ref="arctanarccotexample">Example</xref>,
+      in which we used the methods from <xref ref="TheOtherCircularFunctions">Section</xref>
+      to circumvent some onerous identity work,
+      we take some time here to revisit <xref ref="tangentofarcsecantexample">number</xref>
+      to see what issues arise when we take a <xref ref="TheOtherCircularFunctions">Section</xref> approach here.
+    </p>
+    <p>
+      As above, we start rewriting <m>f(x) = \tan(\mbox{arcsec} (x))</m> by letting
+      <m>t = \mbox{arcsec} (x)</m> so that <m>\sec(t) = x</m> where
+      <m>0 \leq t \lt \frac{\pi}{2}</m> or <m>\frac{\pi}{2} \lt t \leq \pi</m>.
+      We let <m>\theta = t</m> radians and wish to view
+      <m>\sec(\theta) = \sec(t) = x</m> as described in <xref ref="circularfunctionscircle">Theorem</xref>:
+      the ratio of the radius of a circle,
+      <m>r</m> centered at the origin,
+      divided by the abscissa<fn>
+      We'll avoid the label <sq><m>x</m>-coordinate</sq> here since as we'll see,
+      the quantity <m>x</m> in this problem is tied to the radius as opposed to the coordinates of points on the terminal side of <m>\theta</m>.
+      </fn> of a point on the terminal side of <m>\theta</m> which intersects said circle.
+    </p>
+    <p>
+      If we make the usual identification <m>\sec(\theta) = x = \frac{x}{1}</m>,
+      we see that if <m>0 \leq \theta \lt \frac{\pi}{2}</m>,
+      then <m>x = \sec{\theta} \geq 1</m>,
+      so it makes sense to identify the quantity <m>x</m> as the radius of the circle with <m>1</m> as the abscissa of the point where the terminal side of <m>\theta</m> intersects said circle.
+      To find the associated ordinate (<m>y</m>-coordinate),
+      we have <m>1^2 + y^2 = x^2</m> so <m>y = \sqrt{x^2-1}</m>,
+      where we have chosen the positive root since we are in Quadrant I. We sketch out this scenario below on the left.
+    </p>
+    <p>
+      If, however, <m>\frac{\pi}{2} \lt t \leq \pi</m>,
+      then <m>x = \sec(t) \leq -1</m>,
+      so we need to rewrite <m>\sec(\theta) = x = \frac{x}{1} = \frac{-x}{-1}</m> in order to keep the radius of the circle,
+      <m>r = -x > 0</m> and the abscissa, <m>-1 \lt 0</m>.
+      From <m>(-1)^2+y^2 = (-x)^2</m>,
+      we still get <m>y = \sqrt{x^2-1}</m>,
+      as shown below on the right.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \tlabel[cc](3,2.75){<m>P(1,\sqrt{x^2-1})</m>}
+          \gclear \tlabelrect(0,1.5){<m>r = x</m> }
+          \point[4pt]{(0,0), (1.5, 2.6)}
+          \penwd{1.25pt}
+          \arrow \polyline{(5,0), (0,0), (2.5, 4.3301)}
+          \end{mfpic}</cell>
+        <cell></cell>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 115, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \tlabel[cc](-3.5,2.75){<m>P(-1,\sqrt{x^2-1})</m>}
+          \tlabel[cc](-2,1.25){<m>r = -x</m>}
+          \point[4pt]{(0,0), (-1.5, 2.6)}
+          \penwd{1.25pt}
+          \arrow \polyline{(5,0), (0,0), (-2.5, 4.3301)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>0 \lt  \theta \lt  \frac{\pi}{2}</m>, <m>x \geq 1</m>, <m>r = x</m>.</cell>
+        <cell></cell>
+        <cell><m>\frac{\pi}{2} \lt  \theta \lt  \pi</m>, <m>x \leq -1</m>, <m>r = -x</m>.</cell>
+      </row>
+    </tabular>
+    <p>
+      In the Quadrant I case, when <m>x \geq 1</m>,
+      we get <m>\tan(\theta) = \frac{\sqrt{x^2-1}}{1} = \sqrt{x^2-1}</m>.
+      In Quadrant II, when <m>x \leq -1</m>,
+      we obtain <m>\tan(\theta) = \frac{\sqrt{x^2-1}}{-1} = - \sqrt{x^2-1}</m>.
+      Hence, we get the piecewise definition for <m>f(x)</m> as we did in <xref ref="tangentofarcsecantexample">number</xref> above:
+      <m>f(x) = \tan(\mbox{arcsec} (x)) = \sqrt{x^2-1}</m> if
+      <m>x \geq 1</m> and <m>f(x) = \tan(\mbox{arcsec} (x)) = -\sqrt{x^2-1}</m> if <m>x \leq -1</m>.
+    </p>
+    <p>
+      The moral of the story here is that you are free to choose whichever route you like to simplify expressions like those found in <xref ref="arcsecantcosecantex1">Example</xref>
+      <xref ref="tangentofarcsecantexample">number</xref>.
+      Whether you choose identities or a more geometric route,
+      just be careful to keep in mind which quadrants are in play,
+      which variables represent which quantities,
+      and what signs (<m>\pm</m>) each should have.
+    </p>
+  </subsection>
+  <subsection xml:id="arcsecantcalcfriendly">
+    <title>Inverses of Secant and Cosecant: Calculus Friendly Approach</title>
+    <p>
+      In this subsection, we restrict <m>f(t) = \sec(t)</m> to
+      <m>\left[0, \frac{\pi}{2}\right) \cup \left[\pi, \frac{3\pi}{2}\right)</m> <idx><h>arcsecant</h><h>calculus friendly ! graph of</h></idx> and
+      <m>g(t) = \csc(t)</m> to <m>\left(0, \frac{\pi}{2}\right] \cup \left( \pi, \frac{3\pi}{2}\right]</m>.
+          <idx><h>arccosecant</h><h>calculus friendly ! graph of</h></idx>
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[25][20]{-0.5}{6}{-4}{4} \point[4pt]{(0,1), (3.1416, -1)} \axes \tlabel[cc](6,-0.25){\(t\)} \tlabel[cc](0.25,4){\(y\)} \tcaption{\(f(t) = \sec(t)\) on  \(\left[0, \frac{\pi}{2}\right) \cup \left[\pi,  \frac{3\pi}{2} \right)\)} \xmarks{1.5708, 3.1416, 4.71238} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416, {\(\frac{3\pi}{2}\)} 4.71238} \axislabels {y}{{\(-1\)} -1, { \(1\)} 1} \dashed \polyline{(1.5708, -4), (1.5708, 4)} \dashed \polyline{(4.7124, -4), (4.7124, 4)} \penwd{1.25pt} \arrow \function{0, 1.3181, 0.1}{1/cos(x)} \arrow \function{3.1416, 4.460, 0.1}{1/cos(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(t\) and \(y\) coordinates} }  \amp  \begin{mfpic}[20][25]{-4}{4}{-0.5}{6} \point[4pt]{(1,0), (-1,3.1416)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,6){\(y\)} \tcaption{\(f^{-1}(t) = \mbox{arcsec} (t)\)} \ymarks{1.5708, 3.1416, 4.71238} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416, {\(\frac{3\pi}{2}\)} 4.71238} \axislabels {x}{{\(-1  \)} -1, { \(1\)} 1} \dashed \polyline{(-4, 1.5708), (4, 1.5708)} \dashed \polyline{(-4, 4.7124), (4, 4.7124)} \penwd{1.25pt} \arrow \parafcn{0, 1.3181, 0.1}{(1/cos(t),t)} \arrow \parafcn{3.1416, 4.460, 0.1}{(1/cos(t),t)} \end{mfpic} \end{array}
+      </me>
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[25][20]{-0.5}{6}{-4}{4} \point[4pt]{(1.5708,1), (4.7124, -1)} \axes \tlabel[cc](6,-0.25){\(t\)} \tlabel[cc](0.25,4.25){\(y\)} \tcaption{\(g(t) = \csc(t)\) on \(\left(0, \frac{\pi}{2}\right] \cup \left( \pi, \frac{3\pi}{2}\right]\)} \xmarks{1.5708, 3.1416, 4.71238} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416, {\(\frac{3\pi}{2}\)} 4.71238} \axislabels {y}{{\(-1\)} -1, { \(1\)} 1} \dashed \polyline{(3.1416, -4), (3.14156, 4)} \penwd{1.25pt} \arrow \reverse \function{0.2527, 1.5708, 0.1}{1/sin(x)} \arrow \reverse \function{3.3943, 4.7124, 0.1}{1/sin(x)} \end{mfpic}  \amp  \stackrel{\stackrel{\mbox{reflect across \(y=t\)} }{\xrightarrow{}}}{\mbox{ switch \(x\) and \(y\) coordinates} }  \amp  \begin{mfpic}[20][25]{-4}{4}{-0.5}{6} \point[4pt]{(1,1.5708), (-1,4.7124)} \axes \tlabel[cc](4,-0.25){\(t\)} \tlabel[cc](0.25,6){\(y\)} \tcaption{\(g^{-1}(t) = \mbox{arccsc} (t)\)} \ymarks{1.5708, 3.1416, 4.71238} \xmarks{-1,1} \tlpointsep{4pt} \axislabels {y}{{\(\frac{\pi}{2}\)} 1.5708,  {\(\pi\)} 3.1416, {\(\frac{3\pi}{2}\)} 4.71238} \axislabels {x}{{\(-1  \)} -1, { \(1\)} 1} \dashed \polyline{(-4,3.1416), (4, 3.14156)} \penwd{1.25pt} \arrow \reverse \parafcn{0.2527, 1.5708, 0.1}{(1/sin(t),t)} \arrow \reverse \parafcn{3.3943, 4.7124, 0.1}{(1/sin(t),t)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      Using these definitions, we get the following.
+    </p>
+    <theorem xml:id="arcsecantcosecantfunctionprops2">
+      <statement>
+        <p>
+          <em>Properties of the Arcsecant and Arccosecant Functions</em><fn>
+          <ellipsis/> assuming the
+          <q>Calculus Friendly</q>
+          ranges are used.
+          </fn>
+        </p>
+        <ul>
+          <li>
+            <p>
+              Properties of <m>F(x)= \mbox{arcsec} (x)</m> <idx><h>arcsecant</h><h>calculus friendly ! definition of</h></idx> <idx><h>arcsecant</h><h>calculus friendly ! properties of</h></idx>
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Domain: <m>\left\{ x \, | \, |x| \geq 1 \right\} = (-\infty, -1] \cup [1,\infty)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Range: <m>\left[0, \frac{\pi}{2} \right) \cup \left[\pi, \frac{3\pi}{2} \right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  as <m>x \rightarrow -\infty</m>,
+                  <m>\mbox{arcsec} (x) \rightarrow \frac{3\pi}{2}^{-}</m>;
+                  as <m>x \rightarrow \infty</m>,
+                  <m>\mbox{arcsec} (x) \rightarrow \frac{\pi}{2}^{-}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (x) = t</m> if and only if <m>\sec(t) = x</m> and
+                  <m>0 \leq t \lt \frac{\pi}{2}</m> or <m>\pi \leq t \lt \frac{3\pi}{2}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (x) = \arccos\left(\frac{1}{x}\right)</m> for <m>x \geq 1</m> only
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\sec\left(\mbox{arcsec} (x)\right) = x</m> provided <m>|x| \geq 1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (\sec(t)) = t</m> provided
+                  <m>0 \leq t \lt \frac{\pi}{2}</m> or <m>\pi \leq t \lt \frac{3\pi}{2}</m>
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Properties of <m>G(x) = \mbox{arccsc} (x)</m> <idx><h>arccosecant</h><h>calculus friendly ! definition of</h></idx> <idx><h>arccosecant</h><h>calculus friendly ! properties of</h></idx>
+              <ul>
+                <li>
+                  <p>
+                    Domain: <m>\left\{ x \, | \, |x| \geq 1 \right\} = (-\infty, -1] \cup [1,\infty)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Range: <m>\left(0, \frac{\pi}{2} \right] \cup \left( \pi, \frac{3\pi}{2} \right]</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    as <m>x \rightarrow -\infty</m>,
+                    <m>\mbox{arccsc} (x) \rightarrow \pi^{+}</m>;
+                    as <m>x \rightarrow \infty</m>,
+                    <m>\mbox{arccsc} (x) \rightarrow 0^{+}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccsc} (x) = t</m> if and only if <m>\csc(t) = x</m> and
+                    <m>0 \lt t \leq \frac{\pi}{2}</m> or <m>\pi \lt t \leq \frac{3\pi}{2}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccsc} (x) = \arcsin\left(\frac{1}{x}\right)</m> for <m>x \geq 1</m> only
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\csc\left(\mbox{arccsc} (x)\right) = x</m> provided <m>|x| \geq 1</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\mbox{arccsc} (\csc(t)) = t</m> provided
+                    <m>0 \lt t \leq \frac{\pi}{2}</m> or <m>\pi \lt t \leq \frac{3\pi}{2}</m>
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+        </ul>
+      </statement>
+    </theorem>
+    <p>
+      While it is difficult to explain why the choices here for the ranges for the arcsecant an arccosecant are, indeed,
+      <sq>Calculus Friendly,</sq> we can demonstrate how they are slightly less <sq>Trigonometry Friendly.</sq> Note the equivalences <m>\mbox{arcsec} (x) = \arccos\left(\frac{1}{x}\right)</m> and
+      <m>\mbox{arccsc} (x) = \arcsin\left(\frac{1}{x}\right)</m> hold for <m>x \geq 1</m> only,
+      and not for all <m>x</m> in the domain.
+      We will need to remember this as we work through the problems in the next example.
+    </p>
+    <p>
+      Speaking of which,
+      our next example is a duplicate of <xref ref="arcsecantcosecantex1">Example</xref>.
+      The interested reader is invited to see what differences are to be had as a consequence of the change in ranges.
+    </p>
+    <example xml:id="arcsecantcosecantex2">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the exact values of the following.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arccsc} (-2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} \left( \sec\left( \frac{5\pi}{4} \right) \right)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\cot\left(\mbox{arccsc} \left(-3\right)\right)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Rewrite each of the following composite functions as algebraic functions of <m>x</m> and state the domain.
+              <ol>
+                <li xml:id="tangentofarcsecantexample2">
+                  <p>
+                    <m>\tan(\mbox{arcsec} (x))</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\cos(\mbox{arccsc} (4x))</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Since <m>2 \geq 1</m>,
+                    we may invoke <xref ref="arcsecantcosecantfunctionprops2">Theorem</xref>
+                    to get <m>\mbox{arcsec} (2) = \arccos\left(\frac{1}{2}\right) = \frac{\pi}{3}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Unfortunately, <m>-2</m> is not greater to or equal to <m>1</m>,
+                    so we cannot apply <xref ref="arcsecantcosecantfunctionprops2">Theorem</xref>
+                    to <m>\mbox{arccsc} (-2)</m> and convert this into an arcsine problem.
+                    Instead, we appeal to the definition.
+                    To find <m>t = \mbox{arccsc} (-2)</m> , we need the angle measuring <m>t</m> radians with
+                    <m>\csc(t) = -2</m> and is either between <m>0</m> and
+                    <m>\frac{\pi}{2}</m> or between <m>\pi</m> and <m>\frac{3\pi}{2}</m>.
+                    Since <m>\csc(t)\lt 0</m>,
+                    we know <m>t</m> corresponds to an angle between <m>\pi</m> and <m>\frac{3\pi}{2}</m>,
+                    and since <m>\csc(t) = -2</m>,
+                    we know <m>\sin(t) = -\frac{1}{2}</m>.
+                    Hence, <m>t = \mbox{arccsc} (-2) = \frac{7\pi}{6}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since <m>\frac{5\pi}{4}</m> lies between <m>\pi</m> and <m>\frac{3\pi}{2}</m>,
+                    <xref ref="arcsecantcosecantfunctionprops2">Theorem</xref> applies:
+                    <m>\mbox{arcsec} \left( \sec\left( \frac{5\pi}{4} \right) \right) = \frac{5\pi}{4}</m>.
+                    We encourage the reader to work this through using the definition as we have done in the previous examples to see how it goes.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To simplify <m>\cot\left(\mbox{arccsc} \left(-3\right)\right)</m> we let
+                    <m>t = \mbox{arccsc} \left(-3\right)</m> so that <m>\cot\left(\mbox{arccsc} \left(-3\right)\right) = \cot(t)</m>.
+                    We know <m>\csc(t) = -3</m>, and since this is negative,
+                    <m>t</m> lies in <m>\left( \pi, \frac{3\pi}{2}\right]</m>.
+                    To get from <m>\csc(t)</m> to <m>\cot(t)</m>,
+                    we use the Pythagorean Identity:
+                    <m>\cot^{2}(t) = \csc^{2}(t) - 1</m>.
+                    We find <m>\cot^{2}(t) = (-3)^2 - 1 = 8</m> so that <m>\cot(t) = \pm \sqrt{8} = \pm 2 \sqrt{2}</m>.
+                    Since <m>t</m> is in the interval <m>\left(\pi, \frac{3\pi}{2}\right]</m>,
+                    <m>t</m> corresponds to a Quadrant III angle,
+                    so we know <m>\cot(t) > 0</m>.
+                    Hence, our answer is <m>\cot\left(\mbox{arccsc} \left(-3\right)\right) = 2 \sqrt{2}</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    We begin rewriting <m>f(x) = \tan(\mbox{arcsec} (x))</m> by letting <m>t = \mbox{arcsec} (x)</m>.
+                    Hence, <m>\sec(t) = x</m> where either
+                    <m>0 \leq t \lt \frac{\pi}{2}</m> or <m>\pi \leq t \lt \frac{3\pi}{2}</m>.
+                    Our goal is to find an expression for <m>\tan(t)</m> in terms of <m>x</m>.
+                    To relate <m>\sec(t)</m> to <m>\tan(t)</m>,
+                    we use the Pythagorean Identity:
+                    <m>\tan^{2}(t) = \sec^{2}(t)-1 = x^2 - 1</m> so that <m>\tan(t) = \pm \sqrt{x^2-1}</m>.
+                    Since <m>t</m> lies in <m>\left[0, \frac{\pi}{2} \right) \cup \left[\pi, \frac{3\pi}{2} \right)</m>,
+                    <m>\tan(t) \geq 0</m>, so we choose <m>\tan(t) = \sqrt{x^2-1}</m>.
+                    Hence, <m>f(x) = \tan(\mbox{arcsec} (x)) = \sqrt{x^2-1}</m>.
+                    For the domain of <m>f</m>,
+                    we note that the domain of
+                    <m>\mbox{arcsec} (x)</m> is <m>(-\infty, -1] \cup [1, \infty)</m>.
+                    Since all values in the range of arcsecant,
+                    <m>\left[0, \frac{\pi}{2} \right) \cup \left[\pi, \frac{3\pi}{2} \right)</m>,
+                    are in the domain of the tangent function,
+                    we find the domain of <m>f</m> is <m>(-\infty, -1] \cup [1,\infty)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To rewrite  <m>g(x) = \cos(\mbox{arccsc} (4x))</m>,
+                    we start by letting <m>t = \mbox{arccsc} (4x)</m>.
+                    Then <m>\csc(t) = 4x</m> where either
+                    <m>0 \lt  t \leq \frac{\pi}{2}</m>  or <m>\pi\lt  t \leq \frac{3\pi}{2}</m>.
+                    Our goal is to find an expression for <m>\cos(t)</m> in terms of <m>x</m>.
+                    From <m>\csc(t) = 4x</m>, we get <m>\sin(t) = \frac{1}{4x}</m>,
+                    so to find <m>\cos(t)</m>, we can make use of the Pythagorean Identity:
+                    <m>\cos^{2}(t)  = 1 - \sin^{2}(t)</m>.
+                    Substituting <m>\sin(t) = \frac{1}{4x}</m>  gives <m>\cos^{2}(t) = 1 -  \left(\frac{1}{4x}\right)^2 = 1 - \frac{1}{16x^2}</m>.
+                    Getting a common denominator and extracting square roots,
+                    we obtain:
+                    <me>
+                      \cos(t) = \pm \sqrt{\frac{16x^2-1}{16x^2}} = \pm \frac{\sqrt{16x^2-1}}{4|x|}
+                    </me>.
+                    If <m>t</m> lies in <m>\left(0, \frac{\pi}{2} \right]</m>,
+                    then <m>\cos(t) \geq 0</m>,
+                    and we choose  <m>\cos(t) = \frac{\sqrt{16x^2-1}}{4|x|}</m>.
+                    Here, <m>x = \frac{1}{4} \csc(t) > 0</m> as well,
+                    so we can disregard the absolute values here and write <m>\cos(t) = \frac{\sqrt{16x^2-1}}{4x}</m>.
+                    If <m>t</m> belongs to <m>\left( \pi, \frac{3\pi}{2} \right]</m>,
+                    then  <m>\cos(t) \leq 0</m>, so,
+                    we choose <m>\cos(t) = -\frac{\sqrt{16x^2-1}}{4|x|}</m>.
+                    In this case,
+                    <m>x = \frac{1}{4} \csc(t) \lt  0</m> , so <m>|x| = -x</m>
+                    (see <xref ref="AbsoluteValueFunctions">Section</xref>
+                    for a refresher, if needs be!)
+                    and so,
+                    <me>
+                      \cos(t) = -\frac{\sqrt{16x^2-1}}{4|x|} =  -\frac{\sqrt{16x^2-1}}{4(-x)} = \frac{\sqrt{16x^2-1}}{4x}
+                    </me>.
+                    Hence, in both cases, we get
+                    <me>
+                      g(x) = \cos(\mbox{arccsc} (4x)) = \frac{\sqrt{16x^2-1}}{4x}
+                    </me>.
+                    To find the domain of <m>g(x) = \cos(\mbox{arccsc} (4x))</m>,
+                    as usual, we think of <m>g</m> as a series of processes.
+                    First, we take the input, <m>x</m>,
+                    and multiply it by <m>4</m>.
+                    Since this can be done to any real number,
+                    we have no restrictions here.
+                    Next, we take the arccosecant of <m>4x</m>.
+                    Using interval notation,
+                    the domain of the arccosecant function is written as:
+                    <m>(-\infty, -1] \cup [1, \infty)</m>.
+                    Hence to take the arccosecant of <m>4x</m>,
+                    the quantity <m>4x</m> must lie in one of these two intervals.<fn>
+                    Alternatively, we can write the domain of
+                    <m>\mbox{arccsc} (x)</m> as <m>|x| \geq 1</m>,
+                    so the domain of  <m>\mbox{arccsc} (4x)</m> is <m>|4x| \geq 1</m>.
+                    </fn>  That is, <m>4x \leq -1</m> or <m>4x \geq 1</m>,
+                    so <m>x \leq -\frac{1}{4}</m> or <m>x \geq \frac{1}{4}</m>.
+                    The third and final process coded in
+                    <m>g(x) = \cos(\mbox{arccsc} (4x))</m> is to take the cosine of <m>\mbox{arccsc} (4x)</m>.
+                    Since the cosine accepts any real number,
+                    we have no additional restrictions.
+                    Hence, the domain of <m>g</m> is <m>\left( -\infty, -\frac{1}{4} \right] \cup \left[ \frac{1}{4}, \infty \right)</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      For completeness,
+      we embark here on a discussion of how the techniques from <xref ref="TheOtherCircularFunctions">Section</xref>,
+      in particular <xref ref="circularfunctionscircle">Theorem</xref>
+      can be used to circumvent some of the identity work in <xref ref="tangentofarcsecantexample2">number</xref> above.<fn>
+      See also the remarks following <xref ref="arctanarccotexample">Examples</xref>
+      and <xref ref="arcsecantcosecantex1"></xref>.
+      </fn>
+    </p>
+    <p>
+      As above, we start rewriting <m>f(x) = \tan(\mbox{arcsec} (x))</m> by letting
+      <m>t = \mbox{arcsec} (x)</m> so that <m>\sec(t) = x</m> where
+      <m>0 \leq t \lt \frac{\pi}{2}</m> or <m>\pi \leq t \lt \frac{3\pi}{2}</m>.
+      We let <m>\theta = t</m> radians and wish to view
+      <m>\sec(\theta) = \sec(t) = x</m> as described in <xref ref="circularfunctionscircle">Theorem</xref>:
+      the ratio of the radius of a circle,
+      <m>r</m> centered at the origin,
+      divided by the abscissa<fn>
+      We'll avoid the label <sq><m>x</m>-coordinate</sq> here since as we'll see,
+      the quantity <m>x</m> in this problem is tied to the radius as opposed to the coordinates of points on the terminal side of <m>\theta</m>.
+      </fn> of a point on the terminal side of <m>\theta</m> which intersects said circle.
+    </p>
+    <p>
+      If we make the usual identification <m>\sec(\theta) = x = \frac{x}{1}</m>,
+      we see that if <m>0 \leq \theta \lt \frac{\pi}{2}</m>,
+      then <m>x = \sec{\theta} \geq 1</m>,
+      so it makes sense to identify the quantity <m>x</m> as the radius of the circle with <m>1</m> as the abscissa of the point where the terminal side of <m>\theta</m> intersects said circle.
+      To find the associated ordinate (<m>y</m>-coordinate),
+      we have <m>1^2 + y^2 = x^2</m> so <m>y = \sqrt{x^2-1}</m>,
+      where we have chosen the positive root since we are in Quadrant I. We sketch out this scenario below on the left.
+    </p>
+    <p>
+      If, however, <m>\pi \leq t \lt \frac{3\pi}{2}</m>,
+      then <m>x = \sec(t) \leq -1</m>,
+      so we need to rewrite <m>\sec(\theta) = x = \frac{x}{1} = \frac{-x}{-1}</m> in order to keep the radius of the circle,
+      <m>r = -x > 0</m> and the abscissa, <m>-1 \lt 0</m>.
+      From <m>(-1)^2+y^2 = (-x)^2</m>,
+      we get <m>y = -\sqrt{x^2-1}</m>,
+      in this case choosing the negative root since we are in Quadrant III.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 55, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \tlabel[cc](3,2.75){<m>P(1,\sqrt{x^2-1})</m>}
+          \gclear \tlabelrect(0,1.5){<m>r = x</m> }
+          \point[4pt]{(0,0), (1.5, 2.6)}
+          \penwd{1.25pt}
+          \arrow \polyline{(5,0), (0,0), (2.5, 4.3301)}
+          \end{mfpic}</cell>
+        <cell></cell>
+        <cell>\begin{mfpic}[18]{-5}{5}{-5}{5}
+          \axes
+          \tlabel(0.5,5){<m>y</m>}
+          \tlabel(3.1,-0.75){<m>1</m>}
+          \tlabel(0.25,3.1){<m>1</m>}
+          \xmarks{-3 step 3 until 3}
+          \ymarks{-3 step 3 until 3}
+          \drawcolor[gray]{0.7}
+          \circle{(0,0),3}
+          \drawcolor{black}
+          \arrow \parafcn{5, 235, 5}{1.5*dir(t)}
+          \tlabel[cc](1.732, 1){<m>\theta</m>}
+          \tlabel[cc](-3.5,-2.75){<m>P(-1,-\sqrt{x^2-1})</m>}
+          \tlabel[cc](-2,-1.25){<m>r = -x</m>}
+          \point[4pt]{(0,0), (-1.5, -2.6)}
+          \penwd{1.25pt}
+          \arrow \polyline{(5,0), (0,0), (-2.5, -4.3301)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>0 \lt  \theta \lt  \frac{\pi}{2}</m>, <m>x \geq 1</m>, <m>r = x</m>.</cell>
+        <cell></cell>
+        <cell><m>\pi \lt  \theta \lt  \frac{3 \pi}{2}</m>, <m>x \leq -1</m>, <m>r = -x</m>.</cell>
+      </row>
+    </tabular>
+    <p>
+      In the Quadrant I case, when <m>x \geq 1</m>,
+      we get <m>\tan(\theta) = \frac{\sqrt{x^2-1}}{1} = \sqrt{x^2-1}</m>.
+      In Quadrant III, when <m>x \leq -1</m>,
+      we obtain <m>\tan(\theta) = \frac{-\sqrt{x^2-1}}{-1} = \sqrt{x^2-1}</m>.
+      Hence, in both cases,
+      we obtain the same answer as we did in <xref ref="tangentofarcsecantexample2">number</xref> above:
+      <m>f(x) = \tan(\mbox{arcsec} (x)) = \sqrt{x^2-1}</m> for <m>x</m> in <m>(-\infty, -1] \cup [1, \infty)</m>.
+    </p>
+  </subsection>
+  <subsection xml:id="sectionarcstuffoncalc">
+    <title>Calculators and the Inverse Circular Functions.</title>
+    <p>
+      In the sections to come,
+      we will have need to approximate the values of the inverse circular functions.
+      On most calculators, only the arcsine,
+      arccosine and arctangent functions are available and they are usually labeled as
+      <m>\sin^{-1}, \cos^{-1}</m> and <m>\tan^{-1}</m>, respectively.
+      If we are asked to approximate these values,
+      it is a simple matter to punch up the appropriate decimal on the calculator.
+    </p>
+    <p>
+      If we are asked for an arccotangent,
+      arcsecant or arccosecant, however,
+      we often need to employ some ingenuity,
+      as our next example illustrates.
+    </p>
+    <example xml:id="arcstuffoncalc">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Use a calculator to approximate the following values to four decimal places.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\mbox{arccot} (2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arcsec} (5)</m>
+                </p>
+              </li>
+              <li xml:id="arccotneg2">
+                <p>
+                  <m>\mbox{arccot} (-2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\mbox{arccsc} \left(-\dfrac{3}{2}\right)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find the domain and range of the following functions.
+              Check your answers using a graphing utility.
+              <ol>
+                <li>
+                  <p>
+                    <m>f(x) = \frac{\pi}{2} - \arccos\left(\frac{x}{5}\right)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>g(x) = 3\arctan\left(4x \right)</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Since <m>2 > 0</m>,
+                    we can use the property listed in <xref ref="arctangentcotangentfunctionprops">Theorem</xref> to get:
+                    <m>\mbox{arccot} (2) = \arctan\left(\frac{1}{2}\right)</m>.
+                    In <sq>radian</sq> mode,
+                    we find <m>\mbox{arccot} (2) = \arctan\left(\frac{1}{2}\right) \approx 0.4636</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since <m>5 \geq 1</m>,
+                    we can use the property from either <xref ref="arcsecantcosecantfunctionprops1">Theorem</xref>
+                    or <xref ref="arcsecantcosecantfunctionprops2">Theorem</xref>
+                    to write <m>\mbox{arcsec} (5) = \arccos\left(\frac{1}{5}\right) \approx 1.3694</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since the argument <m>-2</m> is negative,
+                    we cannot directly apply <xref ref="arctangentcotangentfunctionprops">Theorem</xref>
+                    to help us find <m>\mbox{arccot} (-2)</m>,
+                    so we appeal to the definition.
+                    The number <m>t=\mbox{arccot} (-2)</m> corresponds to an angle <m>\theta = t</m> radians with
+                    <m>\cot(\theta) = -2</m> which lies between <m>0</m> and <m>\pi</m>.
+                    Moreover, since <m>\cot(\theta) \lt 0</m>,
+                    we know <m>\theta</m> is a Quadrant II angle.
+                    Let <m>\alpha</m> be the reference angle for <m>\theta</m>,
+                    as pictured below on the left.
+                    By definition,
+                    <m>\alpha</m> is an acute angle which means <m>0 \lt \alpha \lt \frac{\pi}{2}</m>.
+                    By The Reference Angle Theorem,
+                    <xref ref="refanglethm">Theorem</xref>,
+                    we also know <m>\cot(\alpha) = 2</m>.
+                    Hence, by definition, <m>\alpha = \mbox{arccot} (2)</m> radians.
+                    Since the argument of arccotangent is now a
+                    <em>positive</em> <m>2</m>,
+                    we can use <xref ref="arctangentcotangentfunctionprops">Theorem</xref>
+                    to get <m>\alpha = \mbox{arccot} (2) =\arctan\left(\frac{1}{2}\right)</m> radians.
+                    Since <m>\theta = \pi - \alpha = \pi - \arctan\left(\frac{1}{2}\right) \approx 2.6779</m> radians,
+                    we get <m>\mbox{arccot} (-2) \approx 2.6779</m>. \begin{mfpic}[18]{-5}{5}{-3.5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{157, 177, 5}{2.25*dir(t)} \tlabel[cc](-2.75, 0.5){<m>\alpha</m>} \point[4pt]{(0,0)} \gclear \tlabelrect[cc](2.75, 2.5){\mbox{<m>\theta = \mbox{arccot}(-2)</m> radians} } \arrow \parafcn{0, 150, 5}{2.25*dir(t)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (-4.532, 2.113)} \tcaption{<m>\alpha</m> is a reference angle of <m>\theta</m> } \end{mfpic} \begin{mfpic}[18]{-5}{5}{-3.5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \parafcn{157, 177, -5}{2*dir(t)} \arrow \parafcn{-3, -23, -5}{2*dir(t)} \gclear \tlabelrect[cc](0, 1.6){\mbox{<m>\pi</m>} } \arrow \parafcn{5, 175, 5}{1.35*dir(t)} \arrow \reverse \arrow \parafcn{160,325,5}{0.9*dir(t)} \tlabel[cc](-0.65,-1){<m>\pi</m>} \tlabel[cc](-2.5, 0.5){<m>\beta</m>} \tlabel[cc](2.5, -0.5){<m>\beta</m>} \point[4pt]{(0,0)} \gclear \tlabelrect[cc](2.75, 2.5){\mbox{<m>\theta = \mbox{arccot}(-2)</m> radians} } \arrow \parafcn{0, 150, 5}{2.25*dir(t)} \penwd{1.25pt} \arrow \polyline{(0,0), (-4.532, 2.113)} \arrow \reverse \arrow \polyline{(5,0), (0,0), (4.532, -2.113)} \tcaption{<m>\beta = \arctan\left(-\frac{1}{2}\right)</m> radians} \end{mfpic} Another way to attack the problem is to use <m>\arctan\left(-\frac{1}{2}\right)</m>.
+                    By definition,
+                    we have the real number <m>t = \arctan\left(-\frac{1}{2}\right)</m> satisfies
+                    <m>\tan(t) = -\frac{1}{2}</m> with <m>-\frac{\pi}{2} \lt t \lt \frac{\pi}{2}</m>.
+                    Since <m>\tan(t)\lt 0</m>,
+                    we know more specifically that <m>-\frac{\pi}{2} \lt t \lt 0</m>,
+                    so <m>t</m> corresponds to an angle <m>\beta</m> in Quadrant IV. We sketch <m>\beta</m> along with
+                    <m>\theta = \mbox{arccot} (-2)</m> radians above on the right.
+                    To find the value of <m>\mbox{arccot} (-2)</m>,
+                    we once again visualize the angle
+                    <m>\theta = \mbox{arccot} (-2)</m> radians and note that it is a Quadrant II angle with <m>\tan(\theta) = -\frac{1}{2}</m>.
+                    This means it is exactly <m>\pi</m> units away from <m>\beta</m>,
+                    and we get <m>\theta = \pi + \beta = \pi + \arctan\left(-\frac{1}{2}\right) \approx 2.6779</m> radians.
+                    Hence, as before, <m>\mbox{arccot} (-2) \approx 2.6779</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If the range of arccosecant is taken to be <m>\left[-\frac{\pi}{2}, 0\right) \cup \left(0, \frac{\pi}{2}\right]</m>,
+                    we can use <xref ref="arcsecantcosecantfunctionprops1">Theorem</xref>
+                    to get <m>\mbox{arccsc} \left(-\frac{3}{2}\right) = \arcsin\left(-\frac{2}{3}\right) \approx -0.7297</m>.
+                    If, on the other hand,
+                    the range of arccosecant is taken to be <m>\left(0, \frac{\pi}{2}\right] \cup \left(\pi, \frac{3\pi}{2}\right]</m>,
+                    then we proceed as in the previous problem by letting <m>t = \mbox{arccsc} \left(-\frac{3}{2}\right)</m>.
+                    Then <m>t</m> is a real number with
+                    <m>\csc(t) = -\frac{3}{2}</m> and since <m>\csc(t) \lt 0</m>,
+                    we know <m>\pi \lt \theta \leq \frac{3\pi}{2}</m>, Hence,
+                    <m>t</m> corresponds to a Quadrant III angle,
+                    <m>\theta</m>, as depicted below.
+                    As above, we let <m>\alpha</m> be the reference angle for <m>\theta</m>.
+                    Then <m>0 \lt \alpha \lt \frac{\pi}{2}</m> and <m>\csc(\alpha) =\frac{3}{2}</m>,
+                    which means <m>\alpha = \mbox{arccsc} \left(\frac{3}{2}\right)</m> radians.
+                    Since the argument of arccosecant is now positive,
+                    <xref ref="arcsecantcosecantfunctionprops2">Theorem</xref>
+                    applies so we can rewrite <m>\alpha = \mbox{arccsc} \left(\frac{3}{2}\right) = \arcsin\left(\frac{2}{3}\right)</m> radians.
+                    Since <m>\theta = \pi + \alpha = \pi + \arcsin\left(\frac{2}{3}\right) \approx 3.8713</m> radians,
+                    we have that in this case,
+                    <m>\mbox{arccsc} \left(-\frac{3}{2}\right) \approx 3.8713</m>. \begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{185, 215, 5}{1.5*dir(t)} \tlabel[cc](-1.88, -0.68){<m>\alpha</m>} \point[4pt]{(0,0)} \gclear \tlabelrect[cc](3.5, 2.5){<m>\theta = \mbox{arccsc} \left(-\frac{3}{2}\right)</m> radians} \arrow \parafcn{0, 215, 5}{2.5*dir(t)} \penwd{1.25pt} \arrow \polyline{(5,0), (0,0), (-3.83, -3.21)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To find the domain of <m>f</m>,
+                    we can think of the function as a sequence of steps and track our inputs through each step and track the restrictions that arise.
+                    To that end,
+                    we rewrite <m>f(x)</m> as we did in <xref ref="Transformations">Section</xref>:
+                    <m>f(x) = \frac{\pi}{2} - \arccos\left(\frac{x}{5}\right) = - \arccos\left(\frac{x}{5}\right) + \frac{\pi}{2}</m>.
+                    Starting with a real number <m>x</m>,
+                    we divide by <m>5</m> to obtain <m>\frac{x}{5}</m>.
+                    So far, we have no restrictions.
+                    Next, we take the arccosine of <m>\frac{x}{5}</m>.
+                    Since the arccosine function only admits inputs between <m>-1</m> and <m>1</m> inclusive,
+                    we require that <m>-1 \leq \frac{x}{5} \leq 1</m>.
+                    Solving, we get <m>-5 \leq x \leq 5</m>.
+                    Moving outside the arccosine,
+                    we multiply the outputs from the arccosine by <m>-1</m> and then add <m>\frac{\pi}{2}</m>.
+                    Since these are defined for all real numbers,
+                    we have our domain restricted only by the arccosine itself.
+                    Hence, the domain of <m>f</m> is <m>[-5,5]</m>.
+                    To determine the range of <m>f</m>,
+                    we work through the steps above,
+                    this time paying attention to the outputs from each step.
+                    We know our domain is restricted to <m>[-5,5]</m> due to the arccosine,
+                    so we start with the range of arccosine: <m>[0, \pi]</m>.
+                    Let <m>y</m> represent a typical output from <m>\arccos(x)</m>.
+                    Then <m>0 \leq y \leq \pi</m>.
+                    From our work above,
+                    we know the arccosine values are first multiplied by <m>-1</m> and then added to <m>\frac{\pi}{2}</m>,
+                    so we apply these same operations to the inequality <m>0 \leq y \leq \pi</m>.
+                    Multiplying this inequality through by <m>-1</m> gives <m>-\pi \leq -y \leq 0</m>.
+                    Adding through by <m>\frac{\pi}{2}</m> gives <m>-\frac{\pi}{2} \leq -y + \frac{\pi}{2} \leq \frac{\pi}{2}</m>.
+                    Hence the range of <m>f(x) = - \arccos\left(\frac{x}{5}\right) + \frac{\pi}{2}</m> is <m>\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]</m>.
+                    Our graph below on the left confirms our results.<fn>
+                    If this sort of analysis sounds familiar, it should.
+                    We are really just tracking the effect of transformations as in <xref ref="Transformations">Section</xref>.
+                    </fn>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    As with the previous example,
+                    we think of <m>g(x) = 3\arctan\left(4x \right)</m> as a series of steps in order to find the domain and track the range.
+                    Starting with an input <m>x</m>,
+                    we multiply it by <m>4</m>,
+                    take the arctangent, and then multiply that result by <m>3</m>.
+                    Since all of these operations are defined for all real numbers,
+                    we conclude the domain of <m>g</m> is also all real numbers,
+                    or <m>(-\infty, \infty)</m>.
+                    Looking at outputs,
+                    we find that the range first becomes limited when taking the arctangent.
+                    If <m>y</m> represent a typical output from <m>\arctan(x)</m>,
+                    then <m>-\frac{\pi}{2} \lt y \lt \frac{\pi}{2}</m>.
+                    In our formula for <m>g(x)</m>,
+                    the outputs from the arctangent are multiplied by <m>3</m>.
+                    Multiplying the inequality
+                    <m>-\frac{\pi}{2} \lt y \lt \frac{\pi}{2}</m> through by <m>3</m> gives <m>-\frac{3\pi}{2} \lt 3y \lt \frac{3\pi}{2}</m>.
+                    Hence the range of <m>g</m> is <m>\left( -\frac{3\pi}{2}, \frac{3\pi}{2} \right)</m>.
+                    Our answers are confirmed by examining the graph of <m>g</m> below on the right.
+                    <image width="73%" source="./TheInverseTrigonometricFunctionsGraphics/arccosgraph.jpg"/> <image width="73%" source="./TheInverseTrigonometricFunctionsGraphics/arctangraph.jpg"/>
+                    <m>y =f(x) = \frac{\pi}{2} - \arccos\left(\frac{x}{5}\right)</m> <m>y = g(x) = 3\arctan\left(4x \right)</m>
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Solving Equations Using the Inverse Trigonometric Functions.</title>
+    <p>
+      In <xref ref="TheCircularFunctionsSineandCosine">Sections</xref>
+      and <xref ref="TheOtherCircularFunctions"></xref>,
+      we learned how to solve equations like
+      <m>\sin(\theta) = \frac{1}{2}</m> and <m>\tan(t) = -1</m>.
+      In each case,
+      we ultimately appealed to the Unit Circle and relied on the fact that the answers corresponded to a set of <sq>common angles</sq> listed on <xref ref="commonanglesunitcircle">page</xref>.
+    </p>
+    <p>
+      If, on the other hand,
+      we had been asked to find all angles with <m>\sin(\theta) = \frac{1}{3}</m> or solve
+      <m>\tan(t) = -2</m> for real numbers <m>t</m>,
+      we would have been hard-pressed to do so.
+      With the introduction of the inverse trigonometric functions,
+      however, we are now in a position to solve these equations.
+    </p>
+    <p>
+      A good parallel to keep in mind is how the square root function can be used to solve certain quadratic equations.
+      The equation <m>x^2 = 4</m> is a lot like
+      <m>\sin(\theta) = \frac{1}{2}</m> in that it has friendly,
+      <sq>common value</sq> answers <m>x = \pm 2</m>.
+      The equation <m>x^2 = 7</m>,
+      on the other hand, is a lot like <m>\sin(\theta) = \frac{1}{3}</m>.
+      We know there are answers,
+      but we can't express them using <sq>friendly</sq> numbers.
+    </p>
+    <p>
+      To solve <m>x^2 = 7</m>,
+      we make use of the square root function (which is an inverse to
+      <m>f(x) = x^2</m> on a restricted domain) and write our answer as <m>x = \pm \sqrt{7}</m>.
+      We need the <m>\pm</m> to adjust for the fact that
+      <m>\sqrt{7}</m> is defined to be positive only,
+      but we know we have two solutions,
+      one positive and one negative.
+      Using a calculator, we can certainly <em>approximate</em>
+      the values <m>\pm \sqrt{7}</m>,
+      but as far as exact answers go,
+      we leave them as <m>x = \pm \sqrt{7}</m>.
+    </p>
+    <p>
+      In the same way, we will use the arcsine function
+      (the inverse to the sine function on a restricted domain)
+      to solve <m>\sin(\theta) = \frac{1}{3}</m>.
+      However, we will need to adjust for the fact that there is more than one answer to this equation
+      (infinitely many, in fact!)
+      As it turns out,
+      we will be able to express every solution in terms of <m>\arcsin\left(\frac{1}{3}\right)</m>,
+      as our next example illustrates.
+    </p>
+    <example xml:id="basicinverseeqns">
+      <statement>
+        <p>
+          Solve the following equations.
+          <ol>
+            <li xml:id="basicinverseeqnssine">
+              <p>
+                Find all angles <m>\theta</m> for which <m>\sin(\theta) = \frac{1}{3}</m>.
+              </p>
+            </li>
+            <li xml:id="basicinverseeqnstangent">
+              <p>
+                Find all real numbers <m>t</m> for which <m>\tan(t) = -2</m>
+              </p>
+            </li>
+            <li xml:id="basicinverseeqnssecant">
+              <p>
+                Solve <m>\, \sec(x) = -\frac{5}{3} </m> for <m>x</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                If <m>\sin(\theta) = \frac{1}{3}</m>,
+                then the terminal side of <m>\theta</m>,
+                when plotted in standard position,
+                intersects the Unit Circle at <m>y = \frac{1}{3}</m>.
+                Geometrically, we see that this happens at two places:
+                in Quadrant I and Quadrant II. If we let <m>\alpha</m> denote the acute solution to the equation,
+                then all the solutions to this equation in Quadrant I are coterminal with <m>\alpha</m>,
+                and <m>\alpha</m> serves as the reference angle for all of the solutions to this equation in Quadrant II as seen below.
+                Since <m>\frac{1}{3}</m> isn't the sine of any of the <sq>common angles</sq> we've encountered,
+                we use the arcsine functions to express our answers.
+                By definition,
+                real number <m>t = \arcsin\left(\frac{1}{3}\right)</m>
+                <m>\sin(t) = \frac{1}{3}</m> with <m>0 \lt t \lt \frac{\pi}{2}</m>.
+                Hence, <m>\alpha = \arcsin\left(\frac{1}{3}\right)</m> radians is an acute angle with <m>\sin(\alpha) = \frac{1}{3}</m>.
+                Since all of the Quadrant I solutions <m>\theta</m> are all coterminal with <m>\alpha</m>,
+                we get <m>\theta = \alpha + 2\pi k = \arcsin\left(\frac{1}{3}\right) + 2\pi k</m> for integers <m>k</m>.
+                Turning our attention to Quadrant II, we get one solution to be <m>\pi - \alpha</m>.
+                Hence, the Quadrant II solutions are
+                <m>\theta = \pi - \alpha + 2\pi k = \pi - \arcsin\left(\frac{1}{3}\right) + 2\pi k</m>,
+                for integers <m>k</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3, 1, 3} \tlpointsep{4pt} \axislabels{y}{{<m>\frac{1}{3}</m>} 1} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 20, 5}{2.75*dir(t)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (4.532, 2.113)} \tlabel[cc](5.5, 0.61){<m>\alpha = \arcsin\left(\frac{1}{3}\right)</m> radians} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3, 1, 3} \tlpointsep{4pt} \axislabels{y}{{<m>\frac{1}{3}</m>} 1} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{160, 175, 5}{2.75*dir(t)} \gclear \tlabelrect[cc](0, 2.5){\mbox{<m>\pi</m>} } \arrow \parafcn{5, 175, 5}{2*dir(t)} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (-4.532, 2.113)} \tlabel[cc](-3.45, 0.61){<m>\alpha</m>} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                The real number solutions to
+                <m>\tan(t)=-2</m> correspond to angles <m>\theta</m> with <m>\tan(\theta) = -2</m>.
+                Since tangent is negative only in Quadrants II and IV, we focus our efforts there.
+                The real number <m>t = \arctan(-2)</m> satisfies
+                <m>\tan(t)=-2</m> and <m>-\frac{\pi}{2} \lt t \lt 0</m>.
+                If we let <m>\beta = \arctan(-2)</m> radians,
+                then all of the Quadrant IV solutions to
+                <m>\tan(\theta) = -2</m> are coterminal with <m>\beta</m>.
+                Moreover, as seen below on the right,
+                the solutions from Quadrant II differ by exactly <m>\pi</m> units from the solutions in Quadrant IV (recall,
+                the period of the tangent function is <m>\pi</m>.) Hence,
+                all of the solutions to <m>\tan(\theta) = -2</m> are of the form
+                <m>\theta = \beta + \pi k = \arctan(-2) + \pi k</m> for some integer <m>k</m>.
+                Switching back to the variable <m>t</m>,
+                we record our final answer to <m>\tan(t) = -2</m> as
+                <m>t = \arctan(-2) + \pi k</m> for integers <m>k</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,0.25){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{355, 305, -5}{1.5*dir(t)} \gclear \tlabelrect[cc](4, -1){<m>\beta = \arctan(-2)</m> radians} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (2.5, -4.3301)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,0.25){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{355, 305, -5}{1.5*dir(t)} \arrow \reverse \arrow \parafcn{125, 295, 5}{1.5*dir(t)} \tlabel[cc](-2, -1){<m>\pi</m>} \tlabel[cc](2, -1){<m>\beta</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (-2.5, 4.3301)} \arrow \reverse \arrow \polyline{(5,0), (0,0), (2.5, -4.3301)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                Another tact we could have taken to solve this problem is to use reference angles.
+                Consider the (angle) equation:
+                <m>\tan(\theta) = -2</m>.
+                If we let <m>\alpha</m> be the reference angle for the solutions <m>\theta</m>,
+                we know <m>\alpha</m> is an acute angle with <m>\tan(\alpha) = 2</m>.
+                By definition, the real number <m>t = \arctan(2)</m> satisfies
+                <m>0 \lt t \lt \frac{\pi}{2}</m> with <m>\tan(t) = 2</m>.
+                Hence, the angle <m>\alpha = \arctan(2)</m> radians is the reference angle for our solutions to <m>\tan(\theta) = -2</m>.
+                Adjusting for quadrants,
+                we get our answers to <m>\tan(\theta) = -2</m> are
+                <m>\theta = - \alpha + \pi k = -\arctan(2) + \pi k</m> for integers <m>k</m>.
+                Again, we cosmetically change the variable from <m>\theta</m> back to <m>t</m> so our answer to
+                <m>\tan(t) = -2</m> is <m>t = -\arctan(2) + \pi k</m>.
+                Thanks to the odd property of arctangent,
+                <m>\arctan(-2) = -\arctan(2)</m> and we see this family of solutions is identical to what we obtained earlier.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.25){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 55, 5}{1.5*dir(t)} \gclear \tlabelrect[cc](4, 1){<m>\alpha = \arctan(2)</m> radians} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (2.5, 4.3301)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.25){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \reverse \arrow \parafcn{355, 305, -5}{1.5*dir(t)} \arrow \reverse \arrow \parafcn{125, 295, 5}{1.5*dir(t)} \tlabel[cc](-2, -1){<m>\pi</m>} \tlabel[cc](2, -1){<m>\alpha</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (-2.5, 4.3301)} \arrow \reverse \arrow \polyline{(5,0), (0,0), (2.5, -4.3301)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                In the last equation, <m>\sec(x) = -\frac{5}{3}</m>,
+                we are not told whether or not <m>x</m> represents an angle or a real number.
+                This isn't really much of an issue,
+                since we attack both problems the same way.
+                Taking a cue from our work in <xref ref="TheOtherCircularFunctions">Section</xref>
+                and use a Reciprocal Identity to convert the equation
+                <m>\sec(x) = -\frac{5}{3}</m> to <m>\cos(x) = -\frac{3}{5}</m>.
+                Thinking geometrically,
+                we are looking for angles <m>\theta</m> with <m>\cos(\theta) = -\frac{3}{5}</m>.
+                Since <m>\cos(\theta) \lt 0</m>,
+                we are looking for solutions in Quadrants II and III. Since
+                <m>-\frac{3}{5}</m> isn't the cosine of any of the <sq>common angles</sq>,
+                we'll need to express our solutions in terms of the arccosine function.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 115, 5}{1.5*dir(t)} \gclear \tlabelrect[cc](4, 1.5){<m>\beta = \arccos\left(-\frac{3}{5}\right)</m> radians} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (-2.5, 4.3301)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \dotted \parafcn{5, 115, 5}{1.5*dir(t)} \gclear \tlabelrect[cc](4, 1.5){<m>\beta = \arccos\left(-\frac{3}{5}\right)</m> radians} \arrow \parafcn{355, 245, -5}{1.5*dir(t)} \dashed \polyline{ (0,0), (-2.5, 4.3301)} \gclear \tlabelrect[cc](4, -1.5){<m>-\beta = -\arccos\left(-\frac{3}{5}\right)</m> radians} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (-2.5, -4.3301)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                The real number <m>t = \arccos\left(-\frac{3}{5}\right)</m> is defined so that
+                <m>\frac{\pi}{2} \lt t \lt \pi</m> with <m>\cos(t) = -\frac{3}{5}</m>.
+                Hence, the angle <m>\beta = \arccos\left(-\frac{3}{5}\right)</m> radians is a Quadrant II angle which satisfies <m>\cos(\beta) = -\frac{3}{5}</m>.
+                To obtain a Quadrant III angle solution,
+                we may simply use <m>-\beta = -\arccos\left(-\frac{3}{5}\right)</m> as seen above on the right.
+                Since all angle solutions are coterminal with <m>\beta</m> or <m>-\beta</m>,
+                we get our solutions to <m>\cos(\theta) = -\frac{3}{5}</m> to be <m>\theta = \beta + 2\pi k = \arccos\left(-\frac{3}{5}\right) + 2\pi k</m> or
+                <m>\theta = -\beta + 2\pi k = -\arccos\left(-\frac{3}{5}\right) + 2\pi k</m> for integers <m>k</m>.
+                Switching back to the variable <m>x</m>,
+                we record our final answer to
+                <m>\sec(x) = -\frac{5}{3}</m> as <m>x = \arccos\left(-\frac{3}{5}\right) + 2\pi k</m> or
+                <m>x = -\arccos\left(-\frac{3}{5}\right) + 2\pi k</m> for integers <m>k</m>.
+                As with the previous problem,
+                we can approach solving <m>\cos(\theta) = -\frac{3}{5}</m> using reference angles.
+                Letting <m>\alpha</m> represent the reference angle for the solutions <m>\theta</m>,
+                we know <m>\alpha</m> is an acute angle with <m>\cos(\alpha) = \frac{3}{5}</m>.
+                We know the real number <m>t = \arccos\left( \frac{3}{5} \right)</m> satisfies
+                <m>\cos(t) = \frac{3}{5}</m> and <m>0 \lt t \lt \frac{\pi}{2}</m>,
+                hence <m>\alpha = \arccos\left( \frac{3}{5} \right)</m> radians is the reference angle for the solutions to <m>\cos(\theta) = -\frac{3}{5}</m>.
+                Hence, the Quadrant II solutions to <m>\cos(\theta) = -\frac{3}{5}</m> are
+                <m>\theta = \pi - \alpha + 2\pi k = \pi - \arccos\left( \frac{3}{5} \right) + 2\pi k</m> while the Quadrant IV solutions to <m>\cos(\theta) = -\frac{3}{5}</m> are
+                <m>\theta = \pi + \alpha + 2\pi k = \pi + \arccos\left( \frac{3}{5} \right) + 2\pi k</m> for integers <m>k</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \tlabel(0.25,3.1){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 55, 5}{1.5*dir(t)} \gclear \tlabelrect[cc](4, 1.5){<m>\alpha = \arccos\left(\frac{3}{5}\right)</m> radians} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (2.5, 4.3301)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[18]{-5}{5}{-5}{5} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,5){<m>y</m>} \tlabel(3.1,-0.75){<m>1</m>} \xmarks{-3 step 3 until 3} \ymarks{-3 step 3 until 3} \drawcolor[gray]{0.7} \circle{(0,0),3} \drawcolor{black} \arrow \parafcn{5, 115, 5}{1.25*dir(t)} \gclear \tlabelrect[cc](0.75, 3){<m>\pi - \arccos\left(\frac{3}{5}\right)</m> radians} \arrow \parafcn{5, 235, -5}{dir(t)} \gclear \tlabelrect[cc](0.75, -3){<m>\pi + \arccos\left(-\frac{3}{5}\right)</m> radians} \arrow \reverse \arrow \parafcn{185, 235, 5}{1.5*dir(t)} \gclear \tlabelrect[cc](-4, 1){<m>\alpha = \arccos\left(\frac{3}{5}\right)</m> radians} \arrow \reverse \arrow \parafcn{125, 175, 5}{1.5*dir(t)} \gclear \tlabelrect[cc](-4, -1){<m>\alpha = \arccos\left(\frac{3}{5}\right)</m> radians} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,0), (0,0), (-2.5, -4.3301)} \arrow \reverse \arrow \polyline{ (5,0), (0,0), (-2.5, 4.3301)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+                Shifting back to the variable <m>x</m>,
+                we get our solution to <m>\sec(x) = -\frac{5}{3}</m> are <m>x = \pi - \arccos\left( \frac{3}{5} \right) + 2\pi k</m> or
+                <m>x = \pi + \arccos\left( \frac{3}{5} \right) + 2\pi k</m> for integers <m>k</m>.
+                While these certainly look quite different than what we obtained before,
+                <m>x = \arccos\left(-\frac{3}{5}\right) + 2\pi k</m> or
+                <m>x = -\arccos\left(-\frac{3}{5}\right) + 2\pi k</m> for integers <m>k</m>,
+                they are, in fact, equivalent.
+                To show this, we start with
+                <m>\arccos\left(-\frac{3}{5} \right) = \pi - \arccos\left(\frac{3}{5} \right)</m> and begin writing out specific solutions from each family by choosing specific values of <m>k</m>.
+                We leave these details to the reader.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We close this section with one last sinusoid example.
+    </p>
+    <example xml:id="expandedsinusoidinverseex">
+      <statement>
+        <p>
+          Consider the function <m>f(t) = 3\cos(6t) -4 \sin(6t)</m>.
+          Find a formula for <m>f(t)</m>:
+          <ol>
+            <li>
+              <p>
+                in the form <m>C(t) = A \cos(\omega t + \phi) + B</m> for <m>\omega > 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                in the form <m>S(t) = A \sin(\omega t + \phi) + B</m> for <m>\omega > 0</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                As in <xref ref="expandedsinusoidex1">Example</xref>,
+                we compare the expanded form of
+                <m>C(t) = A \cos(\omega t) \cos(\phi) - A \sin(\omega t) \sin(\phi) + B</m> with <m>f(t) = 3\cos(6t) -4 \sin(6t)</m>.
+                We identify <m>\omega = 6</m> and <m>B = 0</m> and by equating coefficients of <m>\cos(6t)</m> and
+                <m>\sin(6t)</m> get the two equations:
+                <m>A \cos(\phi) = 3</m> and <m>A \sin(\phi) = 4</m>.
+                Using the Pythagorean Identity to eliminate <m>\phi</m>,
+                we get <m>A^2 = (A \cos(\phi))^2 + (A \sin(\phi))^2 = 3^2 + 4^2 = 25</m>.
+                We choose <m>A = 5</m> and work to find the phase angle <m>\phi</m>.
+                Substituting <m>A = 5</m> into our two equations relating <m>A</m> and <m>\phi</m>,
+                we get <m>5 \cos(\phi) = 3</m>,
+                or <m>\cos(\phi) = \frac{3}{5}</m> and <m>5 \sin(\phi) = 4</m>,
+                so <m>\sin(\phi) = \frac{4}{5}</m>.
+                Since both <m>\sin(\phi)</m> and <m>\cos(\phi)</m> are positive,
+                we know <m>\phi</m> is a Quadrant I angle.
+                However, since neither the sine nor cosine value of <m>\phi</m> corresponds to a common angle,
+                we need to express <m>\phi</m> in terms of either an arcsine or arccosine.
+                Since the real number <m>t = \arccos\left(\frac{3}{5}\right)</m> satisfies
+                <m>\cos(t) = \frac{3}{5}</m> and <m>0 \lt t \lt \frac{\pi}{2}</m>,
+                we know the angle <m>\phi = \arccos\left(\frac{3}{5}\right)</m> radians is an acute (Quadrant I) angle which satisfies <m>\cos(\phi) = \frac{3}{5}</m>.
+                Hence, we can take <m>\phi = \arccos\left(\frac{3}{5}\right)</m> and write <m>f(t) = 5 \cos\left(6t + \arccos\left(\frac{3}{5}\right) \right)</m>.
+                In addition,
+                the real number <m>t = \arcsin\left(\frac{4}{5}\right)</m> satisfies
+                <m>\sin(t) = \frac{4}{5}</m> and <m>0 \lt t \lt \frac{\pi}{2}</m>.
+                Hence <m>\phi = \arcsin\left(\frac{4}{5}\right)</m> radians is Quadrant I angle with <m>\sin(\phi) = \frac{4}{5}</m>.
+                This means we could also take <m>\phi = \arcsin\left(\frac{4}{5}\right)</m> and write
+                <m>f(t) = 5 \cos\left(6t + \arcsin\left(\frac{4}{5}\right) \right)</m>. (We could also express <m>\phi</m> in terms of arctangents,
+                if we wanted!) We leave it to the reader to verify (both) solutions analytically and graphically.
+              </p>
+            </li>
+            <li>
+              <p>
+                Once again, we equate the expanded form of
+                <m>S(t) = A \sin(\omega t) \cos(\phi) + A \cos(\omega t) \sin(\phi) + B</m> with <m>f(t) = 3\cos(6t) -4 \sin(6t)</m>.
+                Once again, we get <m>\omega = 6</m> and <m>B = 0</m>.
+                Here, our two equations for <m>A</m> and <m>\phi</m> are
+                <m>A \cos(\phi) = -4</m> and <m>A \sin(\phi) = 3</m>.
+                As before, we get <m>A^2 = (A \cos(\phi))^2 + (A \sin(\phi))^2 = (-4)^2 + 3^2 = 25</m>,
+                and we choose <m>A = 5</m>.
+                Our equations for <m>\phi</m> become:
+                <m>\cos(\phi) = -\frac{4}{5}</m> and <m>\sin(\phi) = \frac{3}{5}</m>.
+                Since <m>\cos(\phi)\lt 0</m> but <m>\sin(\phi) > 0</m>,
+                we know <m>\phi</m> is a Quadrant II angle.
+                As before, since neither the sine nor cosine value of <m>\phi</m> corresponds to a common angle,
+                we need to express <m>\phi</m> in terms of either an arcsine or arccosine.
+                Here, we opt to use the arccosine function,
+                since the range of arccosine,
+                <m>[0, \pi]</m> covers Quadrant II. From
+                <m>\cos(\phi) = -\frac{4}{5}</m> , we get <m>\phi = \arccos\left(-\frac{4}{5}\right)</m>,
+                so <m>f(t) = 5 \sin\left(6t + \arccos\left(-\frac{4}{5}\right) \right)</m>.
+                Had we chosen to work with arcsines,
+                we would need a Quadrant II solution to <m>\sin(\phi) = \frac{3}{5}</m>.
+                Going through the usual machinations,
+                we arrive at <m>\phi = \pi - \arcsin\left( \frac{3}{5} \right)</m>.
+                Hence, an alternative form of our answer is <m>f(t) = 5 \sin \left( 6t + \pi - \arcsin\left( \frac{3}{5} \right) \right)</m>.
+                We leave the checks to the reader.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      IIIII
+    </p>
+  </subsection>
+</section>

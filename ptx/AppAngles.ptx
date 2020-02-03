@@ -1,0 +1,771 @@
+<section xml:id="AppAngles">
+  <title>Angles in Degrees</title>
+  <introduction>
+    <p>
+      This section serves as a review of the concept of <sq>angle</sq> and the use of the degree system to measure angles.
+      Recall that a
+          <idx><h>ray</h><h>definition of</h></idx>
+      <em>ray</em> is usually described as a <sq>half-line</sq> and can be thought of as a line segment in which one of the two endpoints is pushed off infinitely distant from the other,
+      as pictured below.
+      The point from which the ray originates is called the
+          <idx><h>ray</h><h>initial point</h></idx>
+      <em>initial point</em> of the ray.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-1}{7}{-1}{3} \penwd{1.25pt} \arrow \polyline{(0,0), (7,2)} \point[4pt]{(0,0)} \tlabel[cc](-0.25,-0.5){<m>P</m>} \tcaption{A ray with initial point <m>P</m>.} \end{mfpic}
+    </p>
+    <p>
+      When two rays share a common initial point they form an
+          <idx><h>angle</h><h>definition</h></idx>
+      <em>angle</em> and the common initial point is called the
+          <idx><h>angle</h><h>vertex</h></idx>
+          <idx><h>vertex</h><h>of an angle</h></idx>
+      <em>vertex</em> of the angle.
+      Two examples of what are commonly thought of as angles are
+      <me>
+        \begin{array}{cc}  \begin{mfpic}[15]{-5}{5}{-3}{3} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5,2), (0,0), (5,2)} \point[4pt]{(0,0)} \tlabel[cc](-0.1,-0.5){\(P\)} \tcaption{An angle with vertex \(P\).} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{7}{-3}{3} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(7,2), (0,0), (7,-2)} \point[4pt]{(0,0)} \tlabel[cc](-0.25,-0.5){\(Q\)} \tcaption{An angle with vertex \(Q\).} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      However, the two figures below also depict angles - albeit these are,
+      in some sense, extreme cases.
+      In the first case,
+      the two rays are directly opposite each other forming what is known as a
+          <idx><h>angle</h><h>straight</h></idx>
+          <idx><h>straight angle</h></idx>
+      <em>straight angle</em>; in the second,
+      the rays are identical so the <sq>angle</sq> is indistinguishable from the ray itself.
+      <me>
+        \begin{array}{cc}  \begin{mfpic}[15]{-5}{5}{-3}{3} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \point[4pt]{(0,0)} \tlabel[cc](-0.1,-0.5){\(P\)} \tcaption{A straight angle.} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{7}{-3}{3} \penwd{1.25pt} \arrow  \polyline{(0,0), (7,-2)} \point[4pt]{(0,0)} \tlabel[cc](-0.25,-0.5){\(Q\)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      The
+          <idx><h>angle</h><h>measurement</h></idx>
+          <idx><h>measure of an angle</h></idx>
+      <em>measure of an angle</em> is a number which indicates the amount of rotation that separates the rays of the angle.
+      There is one immediate problem with this, as pictured below.
+      <me>
+        \begin{array}{cc}  \begin{mfpic}[15]{-5}{5}{-3}{3} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,-0.9), 40} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,2), (0,0), (5,-2)} \point[4pt]{(0,0)} \drawcolor{white} \arc[c]{(0,0), (2.4,-1.1), -310} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{5}{-3}{3} \arrow \reverse \arrow \arc[c]{(0,0), (2.4,-1.1), -310} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,2), (0,0), (5,-2)} \point[4pt]{(0,0)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      Which amount of rotation are we attempting to quantify?
+      What we have just discovered is that we have at least two angles described by this diagram.<fn>
+      The phrase <sq>at least</sq> will be justified in short order.
+      </fn> Clearly these two angles have different measures because one appears to represent a larger rotation than the other,
+      so we must label them differently.
+      In this book,
+      we use lower case Greek letters such as <m>\alpha</m> (alpha),
+      <m>\beta</m> (beta),
+      <m>\gamma</m> (gamma) and <m>\theta</m> (theta) to label angles.
+      So, for instance, we have
+      <me>
+        \begin{mfpic}[15]{-5}{5}{-3}{3}  \arrow \reverse \arrow \arc[c]{(0,0), (2.5,-0.9), 40} \tlabel[cc](3,0){{\(\alpha\)}} \arrow \reverse \arrow \arc[c]{(0,0), (2.4,-1.1), -310} \tlabel[cc](-3,0){{\(\beta\)}} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(5,2), (0,0), (5,-2)} \point[3pt]{(0,0)} \end{mfpic}
+      </me>
+    </p>
+    <p>
+      One system to measure angles is
+          <idx><h>angle</h><h>degree</h></idx>
+          <idx><h>degree measure</h></idx>
+      <em>degree measure</em>.
+      Quantities measured in degrees are denoted by the symbol <sq><m>^{\circ}</m>.</sq> One complete revolution as shown below is <m>360^{\circ}</m>,
+      and parts of a revolution are measured proportionately.<fn>
+      The choice of <sq><m>360</m></sq> is most often attributed to the
+      <url href="http://en.wikipedia.org/wiki/Degree_(angle)"><em>Babylonians</em></url>.
+      </fn> Thus half of a revolution (a straight angle) measures <m>\frac{1}{2} \left(360^{\circ}\right) = 180^{\circ}</m>,
+      a quarter of a revolution (a
+          <idx><h>right angle</h></idx>
+          <idx><h>angle</h><h>right</h></idx>
+      <em>right angle</em>) measures <m>\frac{1}{4} \left(360^{\circ}\right) = 90^{\circ}</m> and so on.
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[15]{-5}{5}{-3}{3} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 355} \penwd{1.25pt} \arrow  \polyline{(0,0), (5,0)} \point[4pt]{(0,0)} \tcaption{One revolution \(\leftrightarrow 360^{\circ}\)} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{5}{-3}{3} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 175} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(-5,0), (5,0)} \drawcolor{white} \arc[c]{(0,0), (2.5,-0.1), -175} \point[4pt]{(0,0)} \tcaption{\(180^{\circ}\)} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{5}{-3}{5} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 85} \polyline{(0,0.5), (0.5,0.5), (0.5,0)} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(0,5), (0,0),  (5,0)} \drawcolor{white} \arc[c]{(0,0), (2.5,-0.1), -265} \point[4pt]{(0,0)} \tcaption{\(90^{\circ}\)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      Note that in the above figure,
+      we have used the small square <sq><m>\! \! \! \! \! \!</m></sq> to denote a right angle,
+      as is commonplace in Geometry.
+      Recall that if an angle measures strictly between
+      <m>0^{\circ}</m> and <m>90^{\circ}</m> it is called an
+          <idx><h>acute angle</h></idx>
+          <idx><h>angle</h><h>acute</h></idx>
+      <em>acute angle</em> and if it measures strictly between
+      <m>90^{\circ}</m> and <m>180^{\circ}</m> it is called an
+          <idx><h>obtuse angle</h></idx>
+          <idx><h>angle</h><h>obtuse</h></idx>
+      <em>obtuse angle</em>.
+      It is important to note that, theoretically,
+      we can know the measure of any angle as long as we know the proportion it represents of entire revolution.<fn>
+      This is how a protractor is graded.
+      </fn> For instance,
+      the measure of an angle which represents a rotation of
+      <m>\frac{2}{3}</m> of a revolution would measure <m>\frac{2}{3} \left(360^{\circ}\right) = 240^{\circ}</m>,
+      the measure of an angle which constitutes only
+      <m>\frac{1}{12}</m> of a revolution measures
+      <m>\frac{1}{12} \left(360^{\circ}\right) = 30^{\circ}</m> and an angle which indicates no rotation at all is measured as <m>0^{\circ}</m>.
+      <me>
+        \begin{array}{ccc}  \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 235} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2.5,-4.33), (0,0), (5,0)} \point[4pt]{(0,0)} \tcaption{\(240^{\circ}\)} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor{white} \arc[c]{(0,0), (2.5,0.1), 235} \drawcolor{black} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 25} \penwd{1.25pt}\drawcolor{white} \polyline{(-2.5,-4.33), (0,0), (5,0)} \drawcolor{black} \arrow \reverse \arrow  \polyline{(4.33, 2.5), (0,0), (5,0)} \point[4pt]{(0,0)}  \tcaption{\(30^{\circ}\)} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor{white} \arc[c]{(0,0), (2.5,0.1), 235} \penwd{1.25pt} \polyline{(-2.5,-4.33), (0,0), (5,0)} \drawcolor{black} \arrow \polyline{(0,0), (5,0)} \point[3pt]{(0,0)}  \tcaption{\(0^{\circ}\)} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      Using our definition of degree measure,
+      we have that <m>1^{\circ}</m> represents the measure of an angle which constitutes <m>\frac{1}{360}</m> of a revolution.
+      Even though it may be hard to draw,
+      it is nonetheless not difficult to imagine an angle with measure smaller than <m>1^{\circ}</m>.
+      There are two ways to subdivide degrees.
+      The first, and most familiar, is
+          <idx><h>decimal degrees</h></idx>
+          <idx><h>angle</h><h>decimal degrees</h></idx>
+      <em>decimal degrees</em>.
+      For example, an angle with a measure of
+      <m>30.5^{\circ}</m> would represent a rotation halfway between
+      <m>30^{\circ}</m> and <m>31^{\circ}</m>, or equivalently,
+      <m>\frac{30.5}{360} = \frac{61}{720}</m> of a full rotation.
+      This can be taken to the limit using Calculus so that measures like <m>\sqrt{2}^{\, \circ}</m> make sense.<fn>
+      Awesome math pun aside,
+      this is the same idea behind defining irrational exponents in <xref ref="PowerFunctions">Section</xref>.
+      </fn> The second way to divide degrees is the
+          <idx><h>angle</h><h>DMS</h></idx>
+          <idx><h>DMS</h></idx>
+      <em>Degree - Minute - Second</em> (<em>DMS</em>) system.
+      In this system,
+      one degree is divided equally into sixty minutes, and in turn,
+      each minute is divided equally into sixty seconds.<fn>
+      Does this kind of system seem familiar?
+      </fn> In symbols,
+      we write <m>1^{\circ} = 60'</m> and <m>1' = 60''</m>,
+      from which it follows that <m>1^{\circ} = 3600''</m>.
+      To convert a measure of <m>42.125^{\circ}</m> to the DMS system,
+      we start by noting that <m>42.125^{\circ} = 42^{\circ} + 0.125^{\circ}</m>.
+      Converting the partial amount of degrees to minutes,
+      we find <m>0.125^{\circ} \left( \frac{60'}{1^{\circ}} \right) = 7.5' = 7' + 0.5'</m>.
+      Converting the partial amount of minutes to seconds gives <m>0.5' \left(\frac{60''}{1'} \right) = 30''</m>.
+      Putting it all together yields
+      <me>
+        \begin{array}{rcl}  42.125^{\circ} \amp  = \amp   42^{\circ} + 0.125^{\circ} \\ \amp  = \amp  42^{\circ} + 7.5' \\ \amp  = \amp  42^{\circ} + 7' + 0.5' \\ \amp  = \amp  42^{\circ} + 7' + 30'' \\ \amp  = \amp  42^{\circ} 7' 30'' \end{array}
+      </me>
+    </p>
+    <p>
+      On the other hand,
+      to convert <m>117^{\circ}15'45''</m> to decimal degrees,
+      we first compute <m>15' \left(\frac{1^{\circ}}{60'}\right) = \frac{1}{4}^{\circ}</m> and <m>45'' \left(\frac{1^{\circ}}{3600''}\right) = \frac{1}{80}^{\circ}</m>.
+      Then we find
+      <me>
+        \begin{array}{rcl}  117^{\circ}15'45'' \amp  = \amp  117^{\circ} + 15' + 45'' \\ \amp  = \amp  117^{\circ} + \frac{1}{4}^{\circ} + \frac{1}{80}^{\circ} \\ \amp  = \amp  \frac{9381}{80}^{\circ} \\ \amp  = \amp   117.2625^{\circ} \end{array}
+      </me>
+    </p>
+    <p>
+      Recall that two acute angles are called
+          <idx><h>complementary angles</h></idx>
+          <idx><h>angle</h><h>complementary</h></idx>
+      <em>complementary angles</em> if their measures add to <m>90^{\circ}</m>.
+      Two angles, either a pair of right angles or one acute angle and one obtuse angle,
+      are called
+          <idx><h>supplementary angles</h></idx>
+          <idx><h>angle</h><h>supplementary</h></idx>
+      <em>supplementary angles</em> if their measures add to <m>180^{\circ}</m>.
+      In the diagram below,
+      the angles <m>\alpha</m> and <m>\beta</m> are supplementary angles while the pair <m>\gamma</m> and <m>\theta</m> are complementary angles.
+      <me>
+        \begin{array}{cc}  \begin{mfpic}[15]{-5}{5}{-5}{5}  \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 25} \arrow \reverse \arrow \arc[c]{(0,0), (-2.5,0.1), -145} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(-5,0), (5,0)} \arrow \polyline{(0,0),  (4.33, 2.5)} \point[4pt]{(0,0)} \tlabel[cc](3,0.75){{\(\alpha\)}} \tlabel[cc](-0.5,3){{\(\beta\)}} \tcaption{Supplementary Angles} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{6}{-5}{5} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 25} \arrow \reverse \arrow \arc[c]{(0,0), (0.1,2.5), -55} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(0,5), (0,0), (6,0)} \arrow \polyline{(0,0),  (4.33, 2.5)} \point[4pt]{(0,0)} \tlabel[cc](3,0.75){{\(\gamma\)}} \tlabel[cc](1.5,2.5){{\(\theta\)}} \tcaption{Complementary Angles} \end{mfpic} \end{array}
+      </me>
+    </p>
+    <p>
+      In practice,
+      the distinction between the angle itself and its measure is blurred so that the sentence <sq><m>\alpha</m> is an angle measuring
+      <m>42^{\circ}</m></sq> is often abbreviated as <sq><m>\alpha = 42^{\circ}</m>.</sq> It is now time for an example.
+    </p>
+    <example xml:id="degreeex">
+      <statement>
+        <p>
+          Let <m>\alpha = 111.371^{\circ}</m> and <m>\beta = 37^{\circ}28'17''</m>.
+          <ol>
+            <li>
+              <p>
+                Convert <m>\alpha</m> to the DMS system.
+                Round your answer to the nearest second.
+              </p>
+            </li>
+            <li>
+              <p>
+                Convert <m>\beta</m> to decimal degrees.
+                Round your answer to the nearest thousandth of a degree.
+              </p>
+            </li>
+            <li>
+              <p>
+                Sketch <m>\alpha</m> and <m>\beta</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find a supplementary angle for <m>\alpha</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find a complementary angle for <m>\beta</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To convert <m>\alpha</m> to the DMS system,
+                we start with <m>111.371^{\circ} = 111^{\circ}+ 0.371^{\circ}</m>.
+                Next we convert <m>0.371^{\circ} \left(\frac{60'}{1^{\circ}}\right) = 22.26'</m>.
+                Writing <m>22.26' = 22'+ 0.26'</m>,
+                we convert <m>0.26' \left( \frac{60''}{1'} \right) = 15.6''</m>.
+                Hence,
+                <me>
+                  \begin{array}{rcl}  111.371^{\circ} \amp  = \amp  111^{\circ} + 0.371^{\circ} \\ \amp  = \amp  111^{\circ} + 22.26' \\ \amp  = \amp  111^{\circ} + 22' + 0.26' \\ \amp  = \amp  111^{\circ} + 22' + 15.6'' \\ \amp  = \amp  111^{\circ}22'15.6'' \end{array}
+                </me>
+                Rounding to seconds,
+                we obtain <m>\alpha \approx 111^{\circ}22'16''</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To convert <m>\beta</m> to decimal degrees,
+                we convert <m>28' \left(\frac{1^{\circ}}{60'}\right) = \frac{7}{15}^{\, \circ}</m> and <m>17''\left(\frac{1^{\circ}}{3600'}\right) = \frac{17}{3600}^{\, \circ}</m>.
+                Putting it all together, we have
+                <me>
+                  \begin{array}{rcl}  37^{\circ}28'17'' \amp  = \amp  37^{\circ} + 28' + 17'' \\ \amp  = \amp  37^{\circ} +  \frac{7}{15}^{\, \circ} + \frac{17}{3600}^{\, \circ} \\ \amp  = \amp  \frac{134897}{3600}^{\circ} \\ \amp  \approx \amp  37.471^{\circ} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                To sketch <m>\alpha</m>,
+                we first note that <m>90^{\circ} \lt  \alpha \lt  180^{\circ}</m>.
+                Dividing this range in half,
+                we get <m>90^{\circ} \lt  \alpha \lt  135^{\circ}</m>,
+                and once more,
+                we have <m>90^{\circ} \lt  \alpha \lt  112.5^{\circ}</m>.
+                This gives us a pretty good estimate for <m>\alpha</m>,
+                as shown below.<fn>
+                If this process seems hauntingly familiar, it should.
+                Compare this method to the Bisection Method introduced in <xref ref="IVTaninequalities">Section</xref>.
+                </fn>  Proceeding similarly for <m>\beta</m>,
+                we find <m>0^{\circ} \lt  \beta \lt  90^{\circ}</m>,
+                then <m>0^{\circ} \lt  \beta \lt  45^{\circ}</m>,
+                <m>22.5^{\circ} \lt  \beta \lt  45^{\circ}</m>,
+                and lastly, <m>33.75^{\circ} \lt  \beta \lt  45^{\circ}</m>.
+                <me>
+                  \begin{array}{cc}  \begin{mfpic}[15]{-5}{5}{-5}{5} \dotted \polyline{ (-5,0), (0,0), (0,5)} \dotted \polyline{ (-3.5355,3.5355), (0,0)} \dotted \polyline{ (-1.9134,4.6194), (0,0)} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 107} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(-1.822, 4.656), (0,0), (5,0)} \point[4pt]{(0,0)} \tcaption{Angle \(\alpha\)} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{5}{-5}{5} \dotted \polyline{ (0,5), (0,0), (5,0)} \dotted \polyline{ (3.5355,3.5355), (0,0)} \dotted \polyline{ (4.6194,1.9134), (0,0)} \dotted \polyline{ (4.1573,2.7778), (0,0)} \arrow \reverse \arrow \arc[c]{(0,0), (2.5,0.1), 33} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(3.9683, 3.0417), (0,0), (5,0)} \point[4pt]{(0,0)} \tcaption{Angle \(\beta\)} \end{mfpic} \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                To find a supplementary angle for <m>\alpha</m>,
+                we seek an angle <m>\theta</m> so that <m>\alpha + \theta = 180^{\circ}</m>.
+                We get <m>\theta = 180^{\circ} - \alpha = 180^{\circ} - 111.371^{\circ} = 68.629^{\circ}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find a complementary angle for <m>\beta</m>,
+                we seek an angle <m>\gamma</m> so that <m>\beta + \gamma = 90^{\circ}</m>.
+                We get <m>\gamma = 90^{\circ} - \beta = 90^{\circ} - 37^{\circ}28'17''</m>.
+                While we could reach for the calculator to obtain an approximate answer,
+                we choose instead to do a bit of sexagesimal<fn>
+                Like <sq>latus rectum,</sq> this is also a real math term.
+                </fn> arithmetic.
+                We first rewrite <m>90^{\circ} = 90^{\circ} 0' 0'' = 89^{\circ}60' 0'' = 89^{\circ}59'60''</m>.
+                In essence, we are <sq>borrowing</sq>
+                <m>1^{\circ} = 60'</m> from the degree place,
+                and then borrowing <m>1' = 60''</m> from the minutes place.<fn>
+                This is the exact same kind of <sq>borrowing</sq> you used to do in Elementary School when trying to find <m>300 - 125</m>.
+                Back then, you were working in a base ten system;
+                here, it is base sixty.
+                </fn> This yields,
+                <m>\gamma = 90^{\circ} - 37^{\circ}28'17'' = 89^{\circ}59'60'' - 37^{\circ}28'17'' = 52^{\circ}31'43''</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Up to this point,
+      we have discussed only angles which measure between
+      <m>0^{\circ}</m> and <m>360^{\circ}</m>, inclusive.
+      Ultimately, we want to use the arsenal of Algebra which we have stockpiled in <xref ref="IntroductiontoFunctions">Chapters</xref>
+      through <xref ref="SequencesandtheBinomialTheorem"></xref>
+      to not only solve geometric problems involving angles,
+      but also to extend their applicability to other real-world phenomena.
+      A first step in this direction is to extend our notion of <sq>angle</sq> from merely measuring an extent of rotation to quantities which indicate an amount of rotation along with a <em>direction</em>.
+      To that end, we introduce the concept of an
+          <idx><h>angle</h><h>oriented</h></idx>
+          <idx><h>oriented angle</h></idx>
+      <em>oriented angle</em>.
+      As its name suggests, in an oriented angle,
+      the direction of the rotation is important.
+      We imagine the angle being swept out starting from an <idx><h>angle</h><h>initial side</h></idx>
+          <idx><h>initial side of an angle</h></idx>
+      <em>initial side</em> and ending at a <idx><h>angle</h><h>terminal side</h></idx>
+          <idx><h>terminal side of an angle</h></idx>
+      <em>terminal side</em>, as shown below.
+      When the rotation is counter-clockwise<fn>
+      <sq>widdershins</sq>
+      </fn> from initial side to terminal side, we say that the angle is
+          <idx><h>angle</h><h>positive</h></idx>
+          <idx><h>positive angle</h></idx>
+      <em>positive</em>;
+      when the rotation is clockwise, we say that the angle is
+          <idx><h>angle</h><h>negative</h></idx>
+          <idx><h>negative angle</h></idx>
+      <em>negative</em>.
+      <me>
+        \begin{array}{cc}  \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \arc[c]{(0,0), (2.5,0.1), 40} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(3.5355, 3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlabel[cc](2, -0.5){\tiny Initial Side} \tlabel[cc](1.5,2){\tiny \rotatebox{45}{Terminal Side}} \end{mfpic}  \amp    \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \arc[c]{(0,0), (2.5,-0.1), -40} \penwd{1.25pt} \arrow \reverse \arrow  \polyline{(3.5355, -3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlabel[cc](2, 0.5){\tiny Initial Side} \tlabel[cc](1.5,-2){\tiny \rotatebox{-45}{Terminal Side}} \end{mfpic} \\  \text{A positive angle, \(45^{\circ}\)}  \amp   \text{A negative angle, \(-45^{\circ}\)} \end{array}
+      </me>
+    </p>
+    <p>
+      At this point,
+      we also extend our allowable rotations to include angles which encompass more than one revolution.
+      For example, to sketch an angle with measure
+      <m>450^{\circ}</m> we start with an initial side,
+      rotate counter-clockwise one complete revolution
+      (to take care of the <sq>first</sq> <m>360^{\circ}</m>)
+      then continue with an additional
+      <m>90^{\circ}</m> counter-clockwise rotation, as seen below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-3}{5} \arrow \parafcn{0,445,5}{(t+200)*dir(t)/200} \tcaption{<m>450^{\circ}</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(0,5), (0,0), (5,0)} \point[4pt]{(0,0)} \end{mfpic}
+    </p>
+    <p>
+      To further connect angles with the Algebra which has come before,
+      we shall often overlay an angle diagram on the coordinate plane.
+      An angle is said to be in <idx><h>angle</h><h>standard position</h></idx>
+          <idx><h>standard position of an angle</h></idx>
+      <em>standard position</em> if its vertex is the origin and its initial side coincides with the positive horizontal
+      (usually labeled as the <m>x</m>-)
+      axis.
+      Angles in standard position are classified according to where their terminal side lies.
+      For instance,
+      an angle in standard position whose terminal side lies in Quadrant I is called a <sq>Quadrant I angle</sq>.
+      If the terminal side of an angle lies on one of the coordinate axes,
+      it is called a
+          <idx><h>angle</h><h>quadrantal</h></idx>
+          <idx><h>quadrantal angle</h></idx>
+      <em>quadrantal angle</em>.
+      Two angles in standard position are called
+          <idx><h>angle</h><h>coterminal</h></idx>
+          <idx><h>coterminal angle</h></idx>
+      <em>coterminal</em> if they share the same terminal side.<fn>
+      Note that by being in standard position they automatically share the same initial side which is the positive <m>x</m>-axis.
+      </fn> In the figure below,
+      <m>\alpha = 120^{\circ}</m> and
+      <m>\beta = -240^{\circ}</m> are two coterminal Quadrant II angles drawn in standard position.
+      Note that <m>\alpha = \beta + 360^{\circ}</m>,
+      or equivalently, <m>\beta = \alpha - 360^{\circ}</m>.
+      We leave it as an exercise to the reader to verify that coterminal angles always differ by a multiple of <m>360^{\circ}</m>.<fn>
+      It is worth noting that all of the pathologies of Analytic Trigonometry result from this innocuous fact.
+      </fn> More precisely,
+      if <m>\alpha</m> and <m>\beta</m> are coterminal angles,
+      then <m>\beta = \alpha + 360^{\circ} \cdot k</m> where <m>k</m> is an integer.<fn>
+      Recall that this means <m>k = 0, \pm 1, \pm 2, \ldots</m>.
+      </fn>
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(2,2){<m>\alpha = 120^{\circ}</m>} \tlabel(-5,-2){<m>\beta = -240^{\circ}</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 115} \arrow \arc[c]{(0,0), (2.5,-0.1), -235} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      Two coterminal angles, <m>\alpha = 120^{\circ}</m> and
+      <m>\beta = -240^{\circ}</m>, in standard position.
+    </p>
+    <example xml:id="orientedcoterminaldegree">
+      <statement>
+        <p>
+          Graph each of the (oriented) angles below in standard position and classify them according to where their terminal side lies.
+          Find three coterminal angles,
+          at least one of which is positive and one of which is negative.
+          <ol>
+            <li>
+              <p>
+                <m>\alpha = 60^{\circ}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\beta = -225^{\circ}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\gamma = 540^{\circ}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\phi = -750^{\circ}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To graph <m>\alpha = 60^{\circ}</m>,
+                we draw an angle with its initial side on the positive <m>x</m>-axis and rotate counter-clockwise <m>\frac{60^{\circ}}{360^{\circ}} = \frac{1}{6}</m> of a revolution.
+                We see that <m>\alpha</m> is a Quadrant I angle.
+                To find angles which are coterminal,
+                we look for angles <m>\theta</m> of the form <m>\theta = \alpha + 360^{\circ} \cdot k</m>,
+                for some integer <m>k</m>.
+                When <m>k = 1</m>,
+                we get <m>\theta = 60^{\circ} + 360^{\circ} = 420^{\circ}</m>.
+                Substituting <m>k = -1</m> gives <m>\theta = 60^{\circ} - 360^{\circ} = -300^{\circ}</m>.
+                Finally, if we let <m>k = 2</m>,
+                we get <m>\theta = 60^{\circ} + 720^{\circ} = 780^{\circ}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>\beta = - 225^{\circ}</m> is negative,
+                we start at the positive <m>x</m>-axis and rotate <em>clockwise</em>
+                <m>\frac{225^{\circ}}{360^{\circ}} = \frac{5}{8}</m> of a revolution.
+                We see that <m>\beta</m> is a Quadrant II angle.
+                To find coterminal angles,
+                we proceed as before and compute
+                <m>\theta = -225^{\circ} + 360^{\circ} \cdot k</m> for integer values of <m>k</m>.
+                We find <m>135^{\circ}</m>,
+                <m>-585^{\circ}</m> and <m>495^{\circ}</m> are all coterminal with <m>-225^{\circ}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(2.5,1){<m>\alpha = 60^{\circ}</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 55} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(-4.5,-2.5){<m>\beta = -225^{\circ}</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,-0.1), -220} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-3.801, 3.801), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>\alpha = 60^{\circ}</m> in standard position.</cell>
+                    <cell><m>\beta = -225^{\circ}</m> in standard position.</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>\gamma = 540^{\circ}</m> is positive,
+                we rotate counter-clockwise from the positive <m>x</m>-axis.
+                One full revolution accounts for <m>360^{\circ}</m>,
+                with <m>180^{\circ}</m>, or
+                <m>\frac{1}{2}</m> of a revolution remaining.
+                Since the terminal side of <m>\gamma</m> lies on the negative <m>x</m>-axis,
+                <m>\gamma</m> is a quadrantal angle.
+                All angles coterminal with <m>\gamma</m> are of the form <m>\theta = 540^{\circ} + 360^{\circ} \cdot k</m>,
+                where <m>k</m> is an integer.
+                Working through the arithmetic,
+                we find three such angles:
+                <m>180^{\circ}</m>, <m>-180^{\circ}</m> and <m>900^{\circ}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The Greek letter <m>\phi</m> is pronounced <sq>fee</sq> or <sq>fie</sq> and since <m>\phi</m> is negative,
+                we begin our rotation clockwise from the positive <m>x</m>-axis.
+                Two full revolutions account for <m>720^{\circ}</m>,
+                with just <m>30^{\circ}</m> or
+                <m>\frac{1}{12}</m> of a revolution to go.
+                We find that <m>\phi</m> is a Quadrant IV angle.
+                To find coterminal angles,
+                we compute <m>\theta = -750^{\circ} + 360^{\circ} \cdot k</m> for a few integers <m>k</m> and obtain <m>-390^{\circ}</m>,
+                <m>-30^{\circ}</m> and <m>330^{\circ}</m>.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(-4.5,2.5){<m>\gamma = 540^{\circ}</m>} \drawcolor{black} \arrow \parafcn{0,535,5}{(t+200)*dir(t)/200} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5,0), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[15]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \tlabel(0.5,-2.5){<m>\phi = -750^{\circ}</m>} \drawcolor{black} \arrow \parafcn{0,745,5}{(t+100)*dir(0-t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(4.3301, -2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell><m>\gamma = 540^{\circ}</m> in standard position.</cell>
+                    <cell><m>\phi = -750^{\circ}</m> in standard position.</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that since there are infinitely many integers,
+      any given angle has infinitely many coterminal angles,
+      and the reader is encouraged to plot the few sets of coterminal angles found in <xref ref="orientedcoterminaldegree">Example</xref> to see this.
+    </p>
+    <p>
+      As we'll see in <xref ref="AppRightTrig">Section</xref>
+      and throughout <xref ref="GeometricApplicationsofTrigonometry">Chapter</xref>,
+      degree measure is very popular for many applications involving geometry and modeling physical forces.
+      In <xref ref="RadianMeasure">Section</xref>,
+      we'll introduce a different method of measuring angles,
+      <em>radian measure</em>,
+      which is tied directly to arc length and is useful in other applications involving circular motion and periodic phenomenon.
+    </p>
+  </introduction>
+  <subsection xml:id="ExercisesforAppAngles">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="dmsfirst">Exercises</xref>
+      - <xref ref="dmslast"></xref>,
+      convert the angles into the DMS system.
+      Round each of your answers to the nearest second.
+      <ol>
+        <li xml:id="dmsfirst">
+          <p>
+            <m>63.75^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>200.325^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-317.06^{\circ}</m>
+          </p>
+        </li>
+        <li xml:id="dmslast">
+          <p>
+            <m>179.999^{\circ}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="decimaldegfirst">Exercises</xref>
+      - <xref ref="decimaldeglast"></xref>,
+      convert the angles into decimal degrees.
+      Round each of your answers to three decimal places.
+      <ol>
+        <li xml:id="decimaldegfirst">
+          <p>
+            <m>125^{\circ} 50'</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-32^{\circ} 10' 12''</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>502^{\circ} 35'</m>
+          </p>
+        </li>
+        <li xml:id="decimaldeglast">
+          <p>
+            <m>237^{\circ} 58' 43''</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="orientedanglefirst">Exercises</xref>
+      - <xref ref="orientedanglelast"></xref>,
+      graph the oriented angle in standard position.
+      Classify each angle according to where its terminal side lies and then give two coterminal angles,
+      one of which is positive and the other negative.
+      <ol cols="4">
+        <li xml:id="orientedanglefirst">
+          <p>
+            <m>30^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>120^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>225^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>330^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-30^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-135^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-240^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-270^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>405^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>840^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-510^{\circ}</m>
+          </p>
+        </li>
+        <li xml:id="orientedanglelast">
+          <p>
+            <m>-900^{\circ}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            With help from your classmates,
+            explain why if <m>(x,y)</m> is a point on the terminal side of an angle <m>\alpha</m> in standard position,
+            then so is <m>(r\,x, r\,y)</m> for any number <m>r > 0</m>.
+            What happens if <m>r \lt 0</m>?
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>63^{\circ} 45'</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>200^{\circ} 19' 30''</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-317^{\circ} 3' 36''</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>179^{\circ} 59' 56''</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>125.833^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-32.17^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>502.583^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>237.979^{\circ}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>30^{\circ}</m> is a Quadrant I angle coterminal with <m>390^{\circ}</m> and
+          <m>-330^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 25} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(4.3301, 2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>120^{\circ}</m> is a Quadrant II angle coterminal with <m>480^{\circ}</m> and
+          <m>-240^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 115} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>225^{\circ}</m> is a Quadrant III angle coterminal with <m>585^{\circ}</m> and
+          <m>-135^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 220} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-3.5355, -3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>330^{\circ}</m> is a Quadrant IV angle coterminal with <m>690^{\circ}</m> and
+          <m>-30^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5,0.1), 325} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(4.3301, -2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-30^{\circ}</m> is a Quadrant IV angle coterminal with <m>330^{\circ}</m> and
+          <m>-390^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, -0.1), -25} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(4.3301, -2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-135^{\circ}</m> is a Quadrant III angle coterminal with <m>225^{\circ}</m> and
+          <m>-495^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, -0.1), -130} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-3.5355, -3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-240^{\circ}</m> is a Quadrant II angle coterminal with <m>120^{\circ}</m> and
+          <m>-600^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, -0.1), -235} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-270^{\circ}</m> is a quadrantal angle coterminal with <m>90^{\circ}</m> and
+          <m>-630^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \arc[c]{(0,0), (2.5, -0.1), -265} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(0, 5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>405^{\circ}</m> is a Quadrant I angle coterminal with <m>45^{\circ}</m> and
+          <m>-315^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,400,5}{(t+100)*dir(t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(3.5355,3.5355), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>840^{\circ}</m> is a Quadrant II angle coterminal with <m>120^{\circ}</m> and
+          <m>-240^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,835,5}{(t+100)*dir(t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2.5, 4.3301), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-510^{\circ}</m> is a Quadrant III angle coterminal with <m>-150^{\circ}</m> and
+          <m>210^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,505,5}{(t+100)*dir(0-t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4.3301, -2.5), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-900^{\circ}</m> is a quadrantal angle coterminal with <m>-180^{\circ}</m> and
+          <m>180^{\circ}</m> \begin{mfpic}[12]{-5}{5}{-5}{5} \drawcolor[gray]{0.7} \axes \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlabel(5,-0.5){<m>x</m>} \tlabel(0.25,4.75){<m>y</m>} \drawcolor{black} \arrow \parafcn{0,895,5}{(t+100)*dir(0-t)/400} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-5, 0), (0,0), (5,0)} \point[4pt]{(0,0)} \tlpointsep{5pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \end{mfpic}
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

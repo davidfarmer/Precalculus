@@ -1,0 +1,2396 @@
+<section xml:id="FunctionComposition">
+  <title>Function Composition</title>
+  <introduction>
+    <p>
+      In <xref ref="FunctionArithmetic">Section</xref>,
+      we saw how the arithmetic of real numbers carried over into an arithmetic of functions.
+      In this section,
+      we discuss another way to combine functions which is unique to functions and isn't shared with real numbers - function <em>composition</em>.
+    </p>
+    <definition xml:id="functioncompositiondefn">
+      <statement>
+        <p>
+          Let <m>f</m> and <m>g</m> be functions where the real number <m>x</m> is in the domain of <m>f</m> and the real number <m>f(x)</m> is in the domain of <m>g</m>.
+          The <idx><h>function</h><h>composite ! definition of</h></idx>
+              <idx><h>composite function</h><h>definition of</h></idx>
+          <term>composite</term> of <m>g</m> with <m>f</m>, denoted <m>g \circ f</m>,
+          and read <sq><m>g</m> composed with <m>f</m></sq> is defined by the formula:
+          <m>(g \circ f) (x) = g(f(x))</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      To compute <m>(g \circ f)(x)</m>,
+      we use the formula given in <xref ref="functioncompositiondefn">Defintion</xref>:
+      <m>(g \circ f) (x) = g(f(x))</m>.
+      However, from a procedural viewpoint,
+      <xref ref="functioncompositiondefn">Defintion</xref>
+      tells us the output from <m>g \circ f</m> is found by taking the output from <m>f</m>,
+      <m>f(x)</m>, and then making that the input to <m>g</m>.
+      From this perspective, we see
+      <m>g \circ f</m> as a two step process taking an input <m>x</m> and first applying the procedure <m>f</m> then applying the procedure <m>g</m>.
+      Abstractly, we have
+    </p>
+    <p>
+      \begin{mfpic}[10]{-10}{20}{-10}{10} \tlabel[cc](-2,6){<m>f</m>} \tlabel[cc](11,6){<m>g</m>} \tlabel[cc](4.5,-6){<m>g \circ f</m>} \tlabel[cc](-9,-1){<m>x</m>} \tlabel[cc](4,-1){<m>f(x)</m>} \tlabel[cc](18,-2){<m>g(f(x))</m>} \point[2pt]{(-9,0), (4,0), (18,0)} \sclosed \curve{(-6,4), (-12,0), (-6,-5), (-3,0)} \sclosed \curve{(1,3), (6,0), (5,-4)} \sclosed \curve{(18,3), (15,0), (18,-5), (20,0)} \penwd{0.75pt} \arrow \curve{(-8.9,0.25), (-2,5), (3.9,0.25)} \arrow \curve{(4.1,0.25), (11,5), (17.9,0.25)} \arrow \curve{(-8.9,-0.25), (4.5,-5), (17.9,-0.25)} \end{mfpic}
+    </p>
+    <p>
+      In the expression <m>g(f(x))</m>,
+      the function <m>f</m> is often called the <sq>inside</sq> function while <m>g</m> is often called the <sq>outside</sq> function.
+      When evaluating composite function values we present two methods in the example below:
+      the <sq>inside out</sq> and <sq>outside in</sq> methods.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>f(x) = x^2-4x</m>,
+          <m>g(t) = 2-\sqrt{t+3}</m>, and <m>h(s) = \dfrac{2s}{s+1}</m>.
+        </p>
+        <p>
+          In <xref ref="fcexvalfirst">numbers</xref>
+          - <xref ref="fcexvallast"></xref>,
+          find the indicated function value.
+          <ol>
+            <li xml:id="fcexvalfirst">
+              <p>
+                <m>(g \circ f)(1)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(1)</m>
+              </p>
+            </li>
+            <li xml:id="fcexvallast">
+              <p>
+                <m>(g \circ g)(6)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          In <xref ref="fcexformfirst">numbers</xref>
+          - <xref ref="fcexformlast"></xref>,
+          find and simplify the indicated composite functions.
+          State the domain of each.
+          <ol cols="2">
+            <li xml:id="fcexformfirst">
+              <p>
+                <m>(g \circ f)(x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g \circ h)(s)</m>
+              </p>
+            </li>
+            <li xml:id="hogex">
+              <p>
+                <m>(h \circ g)(t)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(h \circ h)(x)</m>
+              </p>
+            </li>
+            <li xml:id="hogoffirst">
+              <p>
+                <m>(h \circ (g \circ f))(x)</m>
+              </p>
+            </li>
+            <li xml:id="fcexformlast">
+              <p>
+                <m>((h \circ g) \circ f)(x)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution xml:id="functioncompex1">
+        <ol>
+          <li>
+            <p>
+              Using <xref ref="functioncompositiondefn">Definition</xref>,
+              <m>(g \circ f)(1) = g(f(1))</m>.
+              Since <m>f(1) = (1)^2 - 4(1) = -3</m> and <m>g(-3) = 2 - \sqrt{(-3)+3} = 2</m>,
+              we have <m>(g \circ f)(1) = g(f(1)) = g(-3) = 2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition, <m>(f \circ g)(1) = f(g(1))</m>.
+              We find <m>g(1) = 2 - \sqrt{1+3} = 0</m>,
+              and <m>f(0) = (0)^2-4(0) = 0</m>,
+              so <m>(f \circ g)(1) = f(g(1)) = f(0) = 0</m>.
+              Comparing this with our answer to the last problem,
+              we see that <m>(g \circ f)(1) \neq (f \circ g)(1)</m> which tells us function composition is not commutative,<fn>
+              That is, in general, <m>g \circ f \neq f \circ g</m>.
+              This shouldn't be too surprising, since, in general,
+              the order of processes matters:
+              adding eggs to a cake batter then baking the cake batter has a much different outcome than baking the cake batter then adding eggs.
+              </fn>
+            </p>
+          </li>
+          <li>
+            <p>
+              Since <m>(g \circ g)(6) = g(g(6))</m>,
+              we <sq>iterate</sq> the process <m>g</m>:
+              that is, we apply the process <m>g</m> to <m>6</m>,
+              then apply the process <m>g</m> again.
+              We find <m>g(6) = 2 - \sqrt{6+3} = -1</m>,
+              and <m>g(-1) = 2 - \sqrt{(-1)+3} = 2 - \sqrt{2}</m>,
+              so <m>(g \circ g)(6) = g(g(6)) = g(-1) = 2-\sqrt{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition, <m>(g \circ f)(x) = g(f(x))</m>.
+              We now illustrate <em>two</em> ways to approach this problem.
+              <ul>
+                <li>
+                  <p>
+                    <em>inside out</em>:  We substitute
+                    <m>f(x) = x^2-4x</m> in for <m>t</m> in the expression <m>g(t)</m> and get
+                    <me>
+                      (g \circ f)(x) = g(f(x)) = g\left(x^2-4x\right) = 2 - \sqrt{\left(x^2-4x\right)+3} = 2 - \sqrt{x^2-4x+3}
+                    </me>
+                    Hence, <m>(g \circ f)(x) = 2 - \sqrt{x^2-4x+3}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <em>outside in</em>:  We use the formula for <m>g</m> first to get
+                    <me>
+                      (g \circ f)(x) = g(f(x)) = 2 - \sqrt{f(x)+3}  = 2 - \sqrt{\left(x^2-4x\right)+3} = 2 - \sqrt{x^2-4x+3}
+                    </me>
+                    We get the same answer as before,
+                    <m>(g \circ f)(x) = 2 - \sqrt{x^2-4x+3}</m>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+            To find the domain of <m>g \circ f</m>,
+            we need to find the elements in the domain of <m>f</m> whose outputs <m>f(x)</m> are in the domain of <m>g</m>.
+            Since the domain of <m>f</m> is all real numbers,
+            we focus on finding the range elements compatible with <m>g</m>.
+            Owing to the presence of the square root in the formula
+            <m>g(t) = 2 - \sqrt{t+3}</m> we require <m>t \geq -3</m>.
+            Hence, we need <m>f(x) \geq -3</m> or <m>x^2-4x \geq -3</m>.
+            To solve this inequality we rewrite as
+            <m>x^2-4x + 3 \geq 0</m> and use a sign diagram.
+            Letting  <m>r(x) = x^2-4x+3</m>,
+            we find the zeros of <m>r</m> to be <m>x = 1</m> and <m>x = 3</m> and obtain  \begin{mfpic}[10]{-5}{5}{-1}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{-2,2} \tlpointsep{6pt} \axislabels {x}{{<m>1</m>} -2, {<m>3</m>} 2} \tlabel[cc](-3.5,1){<m>(+)</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \end{mfpic}  Our solution to <m>x^2-4x+3 \geq 0</m>,
+            and hence the domain of <m>g \circ f</m>,
+            is <m>(-\infty, 1] \cup [3,\infty)</m>.
+          </li>
+          <li>
+            <p>
+              To find <m>(f \circ g)(t)</m>, we find <m>f(g(t))</m>.
+              <ul>
+                <li>
+                  <p>
+                    <em>inside out</em>: We substitute the expression
+                    <m>g(t) = 2 - \sqrt{t+3}</m> in for <m>x</m> in the formula <m>f(x)</m> and get \begin{longtable}{rclr} <m>(f \circ g)(t)</m> &amp; = &amp;
+                    <m>f(g(t))</m> = <m>f\left(2-\sqrt{t+3}\right)</m> &amp; &amp; = &amp;
+                    <m>\left(2-\sqrt{t+3}\right)^2 - 4\left(2-\sqrt{t+3}\right)</m> &amp; &amp; = &amp;
+                    <m>4 - 4\sqrt{t+3} + \left(\sqrt{t+3}\right)^2 - 8 + 4 \sqrt{t+3}</m> &amp; &amp; = &amp;
+                    <m>4 + t+3 - 8</m> &amp; &amp; = &amp;
+                    <m>t-1</m> &amp; \end{longtable}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <em>outside in</em>: We use the formula for <m>f(x)</m> first to get \begin{longtable}{rclr} <m>(f \circ g)(t)</m> &amp; = &amp;
+                    <m>f(g(t))</m> = <m>\left(g(t)\right)^2 - 4\left(g(t)\right)</m>&amp; &amp; = &amp;
+                    <m>\left(2-\sqrt{t+3}\right)^2 - 4\left(2-\sqrt{t+3}\right)</m> &amp; &amp; = &amp;
+                    <m>t-1</m> &amp;
+                    same algebra as before \end{longtable}
+                  </p>
+                </li>
+              </ul>
+            </p>
+            Thus we get <m>(f \circ g)(t) = t-1</m>.
+            To find the domain of <m>f \circ g</m>,
+            we look for the elements <m>t</m> in the domain of <m>g</m> whose outputs,
+            <m>g(t)</m> are in the domain of <m>f</m>.
+            As mentioned previously,
+            the domain of <m>g</m> is limited by the presence of the square root to
+            <m>\{ t \in \mathbb{R} \, | \, t \geq -3\}</m> while the domain of <m>f</m> is all real numbers.
+            Hence, the domain of <m>f \circ g</m> is restricted only by the domain of <m>g</m> and is <m>\{ t \in \mathbb{R} \, | \, t \geq -3\}</m> or,
+            using interval notation, <m>[-3, \infty)</m>.
+            Note that as with <xref ref="funcarithex">Example</xref>
+            in <xref ref="FunctionArithmetic">Section</xref>,
+            had we used the simplified formula for <m>(f \circ g)(t) = t-1</m> to determine domain,
+            we would have arrived at the incorrect answer.
+          </li>
+          <li>
+            <p>
+              To find <m>(g \circ h)(s)</m>,
+              we compute <m>g(h(s))</m>.
+              <ul>
+                <li>
+                  <p>
+                    <em>inside out</em>: We substitute <m>h(s)</m> in for <m>t</m> in the expression <m>g(t)</m> to get \begin{longtable}{rclr} <m>(g \circ h)(s)</m> &amp; = &amp;
+                    <m>g(h(s))</m> = <m>g\left(\dfrac{2s}{s+1}\right)</m> &amp; &amp; = &amp;
+                    <m>2 - \sqrt{\left(\dfrac{2s}{s+1}\right)+3}</m> &amp; &amp; = &amp;
+                    <m>2 - \sqrt{\dfrac{2s}{s+1} + \dfrac{3(s+1)}{s+1}}</m> &amp;
+                    get common denominators &amp; = &amp;
+                    <m>2 - \sqrt{\dfrac{5s+3}{s+1}}</m> &amp; \end{longtable}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <em>outside in</em>: We use the formula for <m>g(t)</m> first to get \begin{longtable}{rclr} <m>(g \circ h)(s)</m> &amp; = &amp;
+                    <m>g(h(s))</m> = <m>2 - \sqrt{h(s)+3}</m>&amp; &amp; = &amp;
+                    <m>2 - \sqrt{\left(\dfrac{2s}{s+1}\right)+3}</m> &amp; &amp; = &amp;
+                    <m>2 - \sqrt{\dfrac{5s+3}{s+1}}</m> &amp;
+                    get common denominators as before \end{longtable}
+                  </p>
+                </li>
+              </ul>
+            </p>
+            To find the domain of <m>g \circ h</m>,
+            we need the elements in the domain of <m>h</m> so that <m>h(s)</m> is in the domain of <m>g</m>.
+            Owing to the <m>s+1</m> in the denominator of the expression  <m>h(s)</m>,
+            we require <m>s \neq -1</m>.
+            Once again, because  of the square root in <m>g(t) = 2 - \sqrt{t+3}</m>,
+            we need <m>t \geq -3</m> or, in this case <m>h(s)  \geq -3</m>.
+            To use a sign diagram to solve,
+            we rearrange this inequality:
+            <me>
+              \begin{array}{rclr}  \dfrac{2s}{s+1} \amp  \geq \amp  -3 \amp  \\ \dfrac{2s}{s+1} +3 \amp    \geq \amp  0 \amp  \\ \dfrac{5s+3}{s+1}  \amp  \geq \amp   0  \amp  \text{ get common denominators as before } \end{array}
+            </me>
+            Defining <m>r(s) = \frac{5s+3}{s+1}</m>,
+            we see <m>r</m> is undefined at <m>s=-1</m> (a carry over from the domain restriction of <m>h</m>) and
+            <m>r(s) = 0</m> at <m>s = -\frac{3}{5}</m>.
+            Our sign diagram is  \begin{mfpic}[10]{-5}{5}{-1}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{-2,2} \tlpointsep{7pt} \axislabels {x}{{<m>-1</m>} -2, {<m>-\frac{3}{5}</m>} 2} \tlabel[cc](-3.5,1){<m>(+)</m>} \tlabel[cc](-2,1){\textinterrobang} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \end{mfpic}  hence our  domain is <m>(-\infty, -1) \cup \left[-\frac{3}{5}, \infty\right)</m>.
+          </li>
+          <li>
+            <p>
+              We find <m>(h \circ g)(t)</m> by finding <m>h(g(t))</m>.
+              <ul>
+                <li>
+                  <p>
+                    <em>inside out</em>: We substitute the expression <m>g(t)</m> for <m>s</m> in the formula <m>h(s)</m> \begin{longtable}{rclr} <m>(h \circ g)(t)</m> &amp; = &amp;
+                    <m>h(g(t))</m> =<m>h\left(2-\sqrt{t+3}\right)</m> &amp; &amp; = &amp;
+                    <m>\dfrac{2 \left(2-\sqrt{t+3} \right)}{\left(2-\sqrt{t+3}\right)+1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4-2\sqrt{t+3}}{3-\sqrt{t+3}}</m> &amp; \end{longtable}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <em>outside in</em>: We use the formula for <m>h(s)</m> first to get \begin{longtable}{rclr} <m>(h \circ g)(t)</m> &amp; = &amp;
+                    <m>h(g(t))</m> = <m>\dfrac{2 \left(g(t)\right)}{\left( g(t)\right) + 1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{2 \left(2-\sqrt{t+3} \right)}{\left(2-\sqrt{t+3}\right)+1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4-2\sqrt{t+3}}{3-\sqrt{t+3}}</m> &amp; \end{longtable}
+                  </p>
+                </li>
+              </ul>
+            </p>
+            To find the domain of <m>h \circ g</m>,
+            we need the elements of the domain of <m>g</m> so that <m>g(t)</m> is in the domain of <m>h</m>.
+            As we've seen already,
+            for <m>t</m> to be in the domain of <m>g</m>, <m>t \geq -3</m>.
+            For <m>s</m> to be in the domain of <m>h</m>,
+            <m>s \neq -1</m>, so we require <m>g(t) \neq -1</m>.
+            Hence, we solve <m>g(t) = 2-\sqrt{t+3} = -1</m> with the intent of excluding the solutions.
+            Isolating the radical expression gives <m>\sqrt{t+3} = 3</m> or <m>t = 6</m>.
+            Sure enough,
+            we check <m>g(6)=-1</m> so we exclude <m>t=6</m> from the domain of <m>h \circ g</m>.
+            Our final answer is <m>[-3, 6) \cup (6, \infty)</m>.
+          </li>
+          <li>
+            <p>
+              To find <m>(h \circ h)(s)</m> we find <m>h(h(s))</m>:
+              <ul>
+                <li>
+                  <p>
+                    <em>inside out</em>: We substitute the expression <m>h(s)</m> for <m>s</m> in the expression <m>h(s)</m> into <m>h</m> to get \begin{longtable}{rclr} <m>(h \circ h)(s)</m> &amp;
+                    <m>=</m> &amp;
+                    <m>h(h(s)) =h\left(\dfrac{2s}{s+1}\right)</m> &amp; &amp;=&amp;
+                    <m>\dfrac{2\left(\dfrac{2s}{s+1}\right)}{\left(\dfrac{2s}{s+1}\right)+1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{\dfrac{4s}{s+1}}{\dfrac{2s}{s+1}+1} \cdot \dfrac{(s+1)}{(s+1)}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{\dfrac{4s}{s+1} \cdot (s+1)}{\left(\dfrac{2s}{s+1}\right)\cdot(s+1)+1\cdot(s+1)}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{\dfrac{4s}{\cancelto{1}{(s+1})} \cdot \cancel{(s+1)}}{\dfrac{2s}{\cancelto{1}{(s+1)}}\cdot\cancel{(s+1)}+s+1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4s}{3s+1}</m> &amp; \end{longtable}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <em>outside in</em>: This approach yields \begin{longtable}{rclr} <m>(h \circ h)(s)</m> &amp; = &amp;
+                    <m>h(h(s)) = \dfrac{2 (h(s))}{h(s) + 1}</m> &amp; [.25in] &amp; = &amp;
+                    <m>\dfrac{2\left(\dfrac{2s}{s+1}\right)}{\left(\dfrac{2s}{s+1}\right)+1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4s}{3s+1}</m> &amp;
+                    same algebra as before \end{longtable}
+                  </p>
+                </li>
+              </ul>
+            </p>
+            To find the domain of <m>h \circ h</m>,
+            we need to find the elements in the domain of <m>h</m> so that the outputs,
+            <m>h(s)</m> are also in the domain of <m>h</m>.
+            The only domain restriction for <m>h</m> comes from the denominator:
+            <m>s \neq -1</m>, so in addition to this,
+            we also need <m>h(s) \neq -1</m>.
+            To this end, we solve <m>h(s) = -1</m> and exclude the answers.
+            Solving <m>\frac{2s}{s+1} = -1</m> gives <m>s = -\frac{1}{3}</m>.
+            The domain of <m>h \circ h</m> is <m>(-\infty, -1) \cup \left(-1, -\frac{1}{3}\right) \cup \left(-\frac{1}{3}, \infty\right)</m>.
+          </li>
+          <li>
+            <p>
+              The expression <m>(h \circ (g \circ f))(x)</m> indicates that we first find the composite,
+              <m>g \circ f</m> and compose the function <m>h</m> with the result.
+              We know from <xref ref="fcexformfirst">number</xref>
+              that <m>(g \circ f)(x) = 2 - \sqrt{x^2-4x+3}</m> with domain <m>(-\infty, 1] \cup [3,\infty)</m>.
+              We now proceed as usual.
+              <ul>
+                <li>
+                  <p>
+                    <em>inside out</em>: We substitute the expression
+                    <m>(g \circ f)(x)</m> for <m>s</m> in the expression <m>h(s)</m> first to get \begin{longtable}{rclr} <m>(h \circ (g \circ f))(x)</m> &amp; = &amp;
+                    <m>h((g \circ f)(x))=h\left(2 - \sqrt{x^2-4x+3}\right)</m> &amp; &amp; = &amp;
+                    <m>\dfrac{2 \left(2 - \sqrt{x^2-4x+3}\right)}{\left(2 - \sqrt{x^2-4x+3}\right)+1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}}</m> &amp; \end{longtable}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <em>outside in</em>: We use the formula for <m>h(s)</m> first to get \begin{longtable}{rclr} <m>(h \circ (g \circ f))(x)</m> &amp; = &amp;
+                    <m>h((g \circ f)(x))=\dfrac{2 \left( (g \circ f)(x)\right)}{ \left( (g \circ f)(x)\right) + 1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{2 \left(2 - \sqrt{x^2-4x+3}\right)}{\left(2 - \sqrt{x^2-4x+3}\right)+1}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}}</m> &amp; \end{longtable}
+                  </p>
+                </li>
+              </ul>
+            </p>
+            To find the domain of <m>h \circ (g \circ f)</m>,
+            we need the domain elements of <m>g \circ f</m>,
+            <m>(-\infty, 1] \cup [3,\infty)</m>,
+            so that <m>(g \circ f)(x)</m> is in the domain of <m>h</m>.
+            As we've seen several times already,
+            the only domain restriction for <m>h</m> is <m>s \neq -1</m>,
+            so we set <m>(g \circ f)(x) = 2 - \sqrt{x^2-4x+3} = -1</m> and exclude the solutions.
+            We get <m>\sqrt{x^2-4x+3} = 3</m>, and,
+            after squaring both sides, we have <m>x^2-4x+3 = 9</m>.
+            We solve <m>x^2-4x-6 = 0</m> using the quadratic formula and obtain <m>x = 2 \pm \sqrt{10}</m>.
+            The reader is encouraged to check that both of these numbers satisfy the original equation,
+            <m>2 - \sqrt{x^2-4x+3} = -1</m> and also belong to the domain of <m>g \circ f</m>,
+            <m>(-\infty, 1] \cup [3,\infty)</m>,
+            and so must be excluded from our final answer.<fn>
+            We can approximate <m>\sqrt{10} \approx 3</m> so
+            <m>2-\sqrt{10} \approx -1</m> and <m>2+\sqrt{10} \approx 5</m>.
+            </fn>  Our final domain for
+            <m>h \circ (f \circ g)</m> is <m>(-\infty, 2 -\sqrt{10}) \cup (2 - \sqrt{10}, 1] \cup \left[3, 2 + \sqrt{10}\right) \cup \left(2+\sqrt{10}, \infty\right)</m>.
+          </li>
+          <li>
+            <p>
+              The expression <m>((h \circ g) \circ f)(x)</m> indicates that we first find the composite
+              <m>h \circ g</m> and then compose that with <m>f</m>.
+              From <xref ref="hogex">number</xref>, we have
+              <me>
+                (h \circ g)(t) = \frac{4-2\sqrt{t+3}}{3-\sqrt{t+3}}
+              </me>
+              with domain <m>[-3, 6) \cup (6, \infty)</m>.
+              <ul>
+                <li>
+                  <p>
+                    <em>inside out</em>: We substitute the expression <m>f(x)</m> for <m>t</m> in the expression <m>(h \circ g)(t)</m> to get
+                    <me>
+                      \begin{array}{rclr} ((h \circ g) \circ f)(x) \amp  = \amp  (h \circ g)(f(x)) = (h \circ g)\left(x^2-4x\right) \amp  \\ \amp  = \amp  \dfrac{4-2\sqrt{\left(x^2-4x\right)+3}}{3-\sqrt{\left(x^2-4x\right)+3}} \amp  \\ \amp  = \amp  \dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}} \amp \end{array}
+                    </me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <em>outside in</em>: We use the formula for
+                    <m>(h \circ g)(t)</m> first to get \begin{longtable}{rclr} <m>((h \circ g) \circ f)(x)</m> &amp; = &amp;
+                    <m>(h \circ g)(f(x))=\dfrac{4-2\sqrt{(f(x))+3}}{3-\sqrt{f(x))+3}}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4 - 2\sqrt{\left(x^2-4x\right)+3}}{3 - \sqrt{\left(x^2-4x\right)+3}}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{4 - 2\sqrt{x^2-4x+3}}{3 - \sqrt{x^2-4x+3}}</m> &amp; \end{longtable}
+                  </p>
+                </li>
+              </ul>
+            </p>
+            Since the domain of <m>f</m> is all real numbers,
+            the challenge here to find the domain of
+            <m>(h \circ g) \circ f</m> is to determine the values <m>f(x)</m> which are in the domain of  <m>h \circ g</m>,
+            <m>[-3, 6) \cup (6, \infty)</m>.
+            At first glance, it appears as if we have two
+            (or three!)
+            inequalities to solve:
+            <m>-3 \leq f(x) \lt  6</m> and <m>f(x) > 6</m>.
+            Alternatively, we could solve
+            <m>f(x) = x^2-4x \geq -3</m> and exclude the solutions to
+            <m>f(x) = x^2-4x = 6</m> which is not only easier from a procedural point of view,
+            but also easier since we've already done both calculations.
+            In <xref ref="fcexformfirst">number</xref>,
+            we solved  <m>x^2-4x \geq -3</m> and obtained the solution
+            <m>(-\infty, 1] \cup [3, \infty)</m> and in <xref ref="hogoffirst">number</xref>,
+            we solved <m>x^2-4x-6 = 0</m> and obtained <m>x = 2 \pm \sqrt{10}</m>.
+            Hence, the domain of <m>(h \circ g) \circ f</m> is  <m>(-\infty, 2 -\sqrt{10}) \cup (2 - \sqrt{10}, 1] \cup \left[3, 2 + \sqrt{10}\right) \cup \left(2+\sqrt{10}, \infty\right)</m>.
+          </li>
+        </ol>
+      </solution>
+    </example>
+    <p>
+      As previously mentioned,
+      it should be clear from <xref ref="functioncompex1">Example</xref> that,
+      in general,
+      <m>g \circ f \neq f \circ g</m>,
+      in other words, function composition is not <em>commutative</em>.
+      However, <xref ref="hogoffirst">numbers</xref>
+      and <xref ref="fcexformlast"></xref>
+      demonstrate the <idx><h>associative property</h><h>for function composition</h></idx> <em>associative</em>
+      property of function composition.
+      That is, when composing three
+      (or more)
+      functions, as long as we keep the order the same,
+      it doesn't matter which two functions we compose first.
+      We summarize the important properties of function composition in the theorem below.
+    </p>
+    <theorem xml:id="functioncompprops">
+      <statement>
+        <p>
+          <em>Properties of Function Composition:</em> Suppose <m>f</m>,
+          <m>g</m>, and <m>h</m> are functions.
+              <idx><h>function</h><h>composite ! properties of</h></idx>
+              <idx><h>composite function</h><h>properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Associative Law of Composition:</em>
+                <m>h \circ (g \circ f) = (h \circ g) \circ f</m>,
+                provided the composite functions are defined.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Composition Identity:</em> The function <m>I(x) = x</m> satisfies:
+                <m>I \circ f = f \circ I =f</m> for all functions, <m>f</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      By repeated applications of <xref ref="functioncompositiondefn">Definition</xref>,
+      we find <m>(h \circ (g \circ f))(x) = h((g \circ f)(x)) = h(g(f(x)))</m>.
+      Similarly, <m>((h \circ g) \circ f)(x) = (h \circ g)(f(x)) = h(g(f(x)))</m>.
+      This establishes that the formulas for the two functions are the same.
+      We leave it to the reader to think about why the domains of these two functions are identical, too.
+      These two facts establish the equality <m>h \circ (g \circ f) = (h \circ g) \circ f</m>.
+      A consequence of the associativity of function composition is that there is no need for parentheses when we write <m>h \circ g \circ f</m>.
+      The second property can also be verified using <xref ref="functioncompositiondefn">Definition</xref>.
+      Recall that the function <m>I(x) = x</m> is called the
+          <idx><h>identity</h><h>function</h></idx>
+      <em>identity function</em> and was introduced in <xref ref="identityexercise">Exercise</xref>
+      in <xref ref="ConstantandLinearFunctions">Section</xref>.
+      If we compose the function <m>I</m> with a function <m>f</m>,
+      then we have <m>(I \circ f)(x) = I(f(x)) = f(x)</m>,
+      and a similar computation shows <m>(f\circ I)(x) = f(I(x)) = f(x)</m>.
+      This establishes that we have an identity for function composition much in the same way the function
+      <m>I(x) = 1</m> is an identity for function multiplication.
+    </p>
+    <p>
+      As we know, not all functions are described by formulas, and,
+      moreover,
+      not all functions are described by just <em>one</em> formula.
+      The next example applies the concept of function composition to functions represented in various and sundry ways.
+    </p>
+    <example xml:id="functioncompotherreprensex">
+      <statement>
+        <p>
+          Consider the following functions:
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = 6x - x^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) \begin{cases}2t-1 \amp \text{ if \(-1 \leq t \lt 3\), } \\ t^2 \amp \text{ if \(t \geq 3\). } \end{cases}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>h = \{ (-3,1), (-2,6), (0,-2), (1,5), (3,-1) \}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>s</m> whose graph is given below:
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          \begin{mfpic}[15]{-3}{6}{-3}{4} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2, -1, 0, 1, 2, 3, 4,5} \ymarks{-2, -1, 0, 1, 2, 3} \tcaption{<m>y = s(t)</m>} \tlpointsep{4pt}
+        </p>
+        <p>
+          \tlabel[cc](-2, 3.5){<m>(-2,3)</m>} \tlabel[cc](1, 3.5){<m>(1,3)</m>} \tlabel[cc](2, -2.5){<m>(2,-2)</m>} \tlabel[cc](5, 0.5){<m>(5, 0)</m>} \axislabels {x}{{<m>-2</m>} -1,{<m>-2</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>2</m>} 2,{<m>-1</m>} -1,{<m>1</m>} 1}
+        </p>
+        <p>
+          \penwd{1.25pt} \polyline{(-2, 3), (1, 3), (2, -2), (5, 0)} \point[4pt]{(-2,3), (1,3), (2,-2)} \pointfillfalse \point[4pt]{(5,0)} \end{mfpic}
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find and simplify the following function values:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>(g \circ f)(2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(h \circ g)(-1)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(h \circ s)(-2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(f \circ s)(0)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find and simplify a formula for <m>(g \circ f)(x)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write <m>s \circ h</m> as a set of ordered pairs.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To find <m>(g \circ f)(2) = g(f(2))</m> we first find <m>f(2) = 6(2)-(2)^2 = 8</m>.
+                    Since <m>8 \geq 3</m>, we use the rule
+                    <m>g(t) = t^2</m> so <m>g(8) = (8)^2 = 64</m>.
+                    Hence, <m>(g \circ f)(3) = g(f(3)) = g(8) = 64</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since <m>(h\circ g)(-1) = h(g(-1))</m> we first need <m>g(-1)</m>.
+                    Since <m>-1 \leq -1 \lt 3</m>,
+                    we use the rule <m>g(t) = 2t-1</m> and find <m>g(-1) = 2(-1)-1 = -3</m>.
+                    Next, we need <m>h(-3)</m>.
+                    Since <m>(-3, 1) \in h</m>, we have that <m>h(-3) =1</m>.
+                    Putting it all together,
+                    we find <m>(h\circ g)(-1) = h(g(-1)) = h(-3) = 1</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To find <m>(h \circ s)(-2) = h(s(-2))</m> , we first need <m>s(-2)</m>.
+                    We see the point <m>(-2,3)</m> is on the graph of <m>s</m>,
+                    so <m>s(-2) = 3</m>.
+                    Next, we see <m>(3,-1) \in h</m>, so <m>h(3) = -1</m>.
+                    Hence, <m>(h \circ s)(-2) = h(s(-2)) = h(3) = -1</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To find <m>(f \circ s)(0) = f(s(0))</m> we infer from the graph of <m>s</m> that it contains the point <m>(0,3)</m>,
+                    so <m>s(0) = 3</m>.
+                    Sine <m>f(3) = 6(3) - (3)^2 = 9</m>,
+                    we have <m>(f \circ s)(0) = f(s(0)) = f(3) = 9</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                To find a formula for <m>(g \circ f)(x) = g(f(x))</m>,
+                we substitute <m>f(x) = 6x-x^2</m> in for <m>t</m> in the formula for <m>g(t)</m>:
+                <me>
+                  (g \circ f)(x) = g(f(x)) = g(6x-x^2) =   \begin{cases}2(6x-x^2) -1 \amp   \text{ if \(-1 \leq 6x-x^2  \lt  3\), }  \\  (6x-x^2)^2  \amp  \text{ if \(6x-x^2 \geq 3\). } \end{cases}
+                </me>
+                Simplifying each expression,
+                we get  <m>2(6x-x^2) -1 = -2x^2+12x-1</m>  for the first piece and
+                <m>(6x-x^2)^2 = x^4 - 12x^3 +36x^2</m> for the second piece.
+                The real challenge comes in  solving the inequalities
+                <m>-1 \leq 6x-x^2  \lt  3</m> and <m>6x-x^2 \geq 3</m>.
+                While we could solve each individually using a sign diagram,
+                a graphical approach works best here.
+                We graph the parabola <m>y = 6x-x^2</m>,
+                finding the vertex is <m>(3, 9)</m> with intercepts <m>(0,0)</m> and <m>(6,0)</m> along with the horizontal lines <m>y = -1</m> and <m>y=3</m> below.
+                We determine the intersection points by solving <m>6x-x^2=-1</m> and <m>6x-x^2=3</m>.
+                Using the quadratic formula,
+                we find the solutions to each equation are
+                <m>x = 3 \pm \sqrt{10}</m> and <m>x = 3 \pm \sqrt{6}</m>,
+                respectively.  \begin{mfpic}[15]{-2}{8}{-2}{10} \axes \tlabel[cc](8,-0.5){<m>x</m>} \tlabel[cc](0.5,10){<m>y</m>} \xmarks{ -1, 0, 1, 2, 3, 4,5,6,7} \ymarks{ -1, 0, 1, 2, 3,5,6,7,8,9} \tcaption{<m>y =  6x-x^2</m>,
+                <m>y=-1</m>,
+                <m>y=3</m>} \tlpointsep{4pt}  \tlabel[cc](-2.25, -1.5){<m>(3-\sqrt{10},-1)</m>} \tlabel[cc](8, -1.5){<m>(3+\sqrt{10},-1)</m>} \gclear \tlabelrect(-1, 3.5){<m>(3-\sqrt{6},3)</m>} \tlabel[cc](7, 3.5){<m>(3+ \sqrt{6},3)</m>}  \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>2</m>} 2,{<m>1</m>} 1,{<m>2</m>} 2,{<m>5</m>} 5,{<m>6</m>} 6,{<m>7</m>} 7,{<m>8</m>} 8,{<m>9</m>} 9}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2, -1), (8,-1)} \arrow \reverse \arrow \polyline{(-2, 3), (8,3)} \arrow \reverse \arrow \function{-0.3, 6.3,0.1}{6*x-(x**2)} \point[4pt]{(3,9), (-0.1622, -1), (0.5505, 3), (0,0), (6,0), (5.449,3),  (6.162,-1)} \end{mfpic}  From the graph,
+                we see the parabola <m>y = 6x - x^2</m> is between the lines <m>y = -1</m> and <m>y=3</m>  from
+                <m>x = 3- \sqrt{10}</m> to <m>x= 3 - \sqrt{6}</m> and again from
+                <m>x = 3+\sqrt{6}</m> to <m>x=3+\sqrt{10}</m>.
+                Hence the solution to  <m>-1 \leq 6x-x^2  \lt  3</m> is <m>[3- \sqrt{10}, 3 - \sqrt{6}) \cup (3+\sqrt{6}, 3+\sqrt{10}]</m>.
+                We also note <m>y = 6x-x^2</m> is above the line <m>y=3</m> for all <m>x</m> between
+                <m>x=3-\sqrt{6}</m> and <m>3+\sqrt{6}</m>.
+                Hence, the solution to <m>6x-x^2 \geq 3</m> is <m>[3-\sqrt{6}, 3+\sqrt{6}]</m>.
+                Hence,
+                <me>
+                  (g \circ f)(x) =  \begin{cases}-2x^2+12x-1 \amp   \text{if \(x \in [3- \sqrt{10}, 3 - \sqrt{6}) \cup (3+\sqrt{6}, 3+\sqrt{10}]\), }  \\  x^4 - 12x^3 + +36x^2  \amp  \text{if \(x \in [3-\sqrt{6}, 3+\sqrt{6}]\).} \end{cases}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Last but not least, we are tasked with representing
+                <m>s \circ h</m> as a set of ordered pairs.
+                Since <m>h</m> is described by the discrete set of points <m>h = \{ (-3,1), (-2,6), (0,-2), (1,5), (3,-1) \}</m>,
+                we find <m>s \circ h</m> point by point.
+                We keep the graph of <m>s</m> handy and construct the table below to help us organize our work.
+                <tabular>
+                  {m{2.5in}m{2.5in}} \begin{mfpic}[15]{-3}{6}{-3}{4} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2, -1, 0, 1, 2, 3, 4,5} \ymarks{-2, -1, 0, 1, 2, 3} \tcaption{<m>y = s(t)</m>} \tlpointsep{4pt} \tlabel[cc](-2, 3.5){<m>(-2,3)</m>} \tlabel[cc](1, 3.5){<m>(1,3)</m>} \tlabel[cc](2, -2.5){<m>(2,-2)</m>} \tlabel[cc](5, 0.5){<m>(5, 0)</m>} \axislabels {x}{{<m>-2</m>} -1,{<m>-2</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>2</m>} 2,{<m>-1</m>} -1,{<m>1</m>} 1} \penwd{1.25pt} \polyline{(-2, 3), (1, 3), (2, -2), (5, 0)} \point[4pt]{(-2,3), (1,3), (2,-2)} \pointfillfalse \point[4pt]{(5,0)} \end{mfpic} &amp; <m>\begin{array}{|r||r|c|} \hline x \amp h(x) \amp s(h(x)) \\ \hline -3 \amp 1 \amp 3 \\ \hline -2 \amp 6 \amp \text{ undefined } \\ \hline 0 \amp -2 \amp 3 \\ \hline 1 \amp 5 \amp \text{ undefined } \\ \hline 3 \amp -1 \amp 3 \\ \hline \end{array}</m>
+                </tabular>
+                Since neither <m>6</m> nor <m>5</m> are in the domain of <m>s</m>,
+                <m>-2</m> and <m>1</m> are not in the domain of <m>s \circ h</m>.
+                Hence, we get <m>s \circ h = \{ (-3,3), (0,3), (3,3) \}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A useful skill in Calculus is to be able to take a complicated function and break it down into a composition of easier functions which our last example illustrates.
+      As with <xref ref="funcarithdecompex">Example</xref>,
+      we want to avoid trivial decompositions, which,
+      when it comes to function composition,
+      are those involving the identity function
+      <m>I(x) = x</m> as described in <xref ref="functioncompprops">Theorem</xref>.
+    </p>
+    <example xml:id="funccompdecompex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Write each of the following functions as a composition of two or more (non-identity) functions.
+              Check your answer by performing the function composition.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>F(x) = |3x-1|</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>G(t) = \dfrac{2}{t^2+1}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>H(s) = \dfrac{\sqrt{s}+1}{\sqrt{s}-1}</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              For <m>F(x) = \sqrt{\dfrac{2x-1}{x^2+4}}</m>,
+              find functions <m>f</m>, <m>g</m>,
+              and <m>h</m> to decompose <m>F</m> nontrivially as <m>F = f \circ \left(\dfrac{g}{h} \right)</m>.
+            </p>
+          </li>
+        </ol>
+        <p>
+          <em>Solution.</em> There are many approaches to this kind of problem,
+          and we showcase a different methodology in each of the solutions below.
+        </p>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  Our goal is to express the function <m>F</m> as
+                  <m>F = g \circ f</m> for functions <m>g</m> and <m>f</m>.
+                  From <xref ref="functioncompositiondefn">Definition</xref>,
+                  we know <m>F(x) = g(f(x))</m>,
+                  and we can think of <m>f(x)</m> as being the <sq>inside</sq> function and <m>g</m> as being the <sq>outside</sq> function.
+                  Looking at <m>F(x) = |3x-1|</m> from an <sq>inside versus outside</sq> perspective,
+                  we can think of <m>3x-1</m> being inside the absolute value symbols.
+                  Taking this cue, we define <m>f(x) = 3x-1</m>.
+                  At this point, we have <m>F(x) = |f(x)|</m>.
+                  What is the outside function?
+                  The function which takes the absolute value of its input,
+                  <m>g(x) = |x|</m>.
+                  Sure enough, this checks:
+                  <m>(g \circ f)(x) = g(f(x)) = |f(x)| = |3x-1| = F(x)</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  We attack deconstructing <m>G</m> from an operational approach.
+                  Given an input <m>t</m>, the first step is to square <m>t</m>,
+                  then add <m>1</m>, then divide the result into <m>2</m>.
+                  We will assign each of these steps a function so as to write <m>G</m> as a composite of
+                  <em>three</em> functions:
+                  <m>f</m>, <m>g</m> and <m>h</m>.
+                  Our first function, <m>f</m>,
+                  is the function that squares its input, <m>f(t) = t^2</m>.
+                  The next function is the function that adds <m>1</m> to its input,
+                  <m>g(t) = t+1</m>.
+                  Our last function takes its input and divides it into <m>2</m>,
+                  <m>h(t) = \frac{2}{t}</m>.
+                  The claim is that <m>G = h \circ g \circ f</m> which checks:
+                  <me>
+                    (h \circ g \circ f)(t) = h(g(f(t))) = h(g\left(t^2\right)) = h\left(t^2+1\right)= \frac{2}{t^2+1} = G(x)
+                  </me>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If we look <m>H(s) = \frac{\sqrt{s}+1}{\sqrt{s}-1}</m> with an eye towards building a complicated function from simpler functions,
+                  we see the expression <m>\sqrt{s}</m> is a simple piece of the larger function.
+                  If we define <m>f(s) = \sqrt{s}</m>,
+                  we have <m>H(s) = \frac{f(s)+1}{f(s)-1}</m>.
+                  If we want to decompose <m>H = g \circ f</m>,
+                  then we can glean the formula for <m>g(s)</m> by looking at what is being done to <m>f(s)</m>.
+                  We take <m>g(s) = \frac{s+1}{s-1}</m>, and check below:
+                  <me>
+                    (g \circ f)(s) = g(f(s)) = \frac{f(s)+1}{f(s)-1} = \frac{\sqrt{s}+1}{\sqrt{s}-1} = H(s)
+                  </me>.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              To write <m>F = f \circ \left(\frac{g}{h} \right)</m> means
+              <me>
+                F(x) =  \sqrt{\dfrac{2x-1}{x^2+4}} = \left( f \circ \left(\dfrac{g}{h} \right) \right)(x) = f \left(  \left(\dfrac{g}{h} \right)(x) \right) = f \left( \dfrac{g(x)}{h(x)} \right)
+              </me>.
+              Working from the inside out,
+              we have a rational expression with  numerator <m>g(x)</m> and denominator <m>h(x)</m>.
+              Looking at the formula for <m>F(x)</m>,
+              one choice is <m>g(x) = 2x-1</m> and <m>h(x) = x^2+4</m>.
+              Making these identifications, we have
+              <me>
+                F(x) = \sqrt{\dfrac{2x-1}{x^2+4}} = \sqrt{\dfrac{g(x)}{h(x)}}
+              </me>.
+              Since <m>F</m> takes the square root of <m>\frac{g(x)}{h(x)}</m>,
+              the our last function <m>f</m> is the function that takes the square root of its input,
+              i.e.,  <m>f(x) = \sqrt{x}</m>.
+              We leave it to the reader to check that,
+              indeed, <m>F = f \circ \left(\frac{g}{h} \right)</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+    <p>
+      We close this section of a real-world application of function composition.
+    </p>
+    <example>
+      <statement>
+        <p>
+          The surface area of a sphere is a function of its radius <m>r</m> and is given by the formula <m>S(r) = 4 \pi r^2</m>.
+          Suppose the sphere is being inflated so that the radius of the sphere is increasing according to the formula <m>r(t) = 3t^2</m>,
+          where <m>t</m> is measured in seconds,
+          <m>t \geq 0</m>, and <m>r</m> is measured in inches.
+          Find and interpret <m>(S \circ r)(t)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If we look at the functions <m>S(r)</m> and <m>r(t)</m> individually,
+          we see the former gives the surface area of a sphere of a given radius while the latter gives the radius at a given time.
+          So, given a specific time, <m>t</m>,
+          we could find the radius at that time,
+          <m>r(t)</m> and feed that into <m>S(r)</m> to find the surface area at that time.
+          From this we see that the surface area <m>S</m> is ultimately a function of time <m>t</m> and we find <m>(S \circ r)(t) = S(r(t)) = 4 \pi (r(t))^2 = 4 \pi \left(3t^2\right)^2 = 36 \pi t^{4}</m>.
+          This formula allows us to compute the surface area directly given the time without going through the <sq>intermediary variable</sq> <m>r</m>.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforFunctionComposition">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="funccompeval1first">Exercises</xref>
+      - <xref ref="funccompeval1last"></xref>,
+      use the given pair of functions to find the following values if they exist.
+      <ul>
+        <li>
+          <p>
+            <m>(g\circ f)(0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f\circ g)(-1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f \circ f)(2)</m>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            <m>(g\circ f)(-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f\circ g)\left(\frac{1}{2}\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f \circ f)(-2)</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ol cols="6">
+      <li xml:id="funccompeval1first">
+        <p>
+          <m>f(x) = x^2</m>, <m>g(t) = 2t+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4-x</m>, <m>g(t) = 1-t^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4-3x</m>, <m>g(t) = |t|</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = |x-1|</m>, <m>g(t) = t^2-5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4x+5</m>, <m>g(t) = \sqrt{t}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{3-x}</m>, <m>g(t) = t^2+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 6-x-x^2</m>, <m>g(t) = t\sqrt{t+10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt[3]{x+1}</m>, <m>g(t) = 4t^2-t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{3}{1-x}</m>,
+          <m>g(t) = \dfrac{4t}{t^2+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{x}{x+5}</m>,
+          <m>g(t) = \dfrac{2}{7-t^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{2x}{5-x^2}</m>, <m>g(t) = \sqrt{4t+1}</m>
+        </p>
+      </li>
+      <li xml:id="funccompeval1last">
+        <p>
+          <m>f(x) =\sqrt{2x+5}</m>, <m>g(t) = \dfrac{10t}{t^2+1}</m>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="funccompexp1first">Exercises</xref>
+      - <xref ref="funccompexp1last"></xref>,
+      use the given pair of functions to find and simplify expressions for the following functions and state the domain of each using interval notation.
+      <ul>
+        <li>
+          <p>
+            <m>(g \circ f)(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f \circ g)(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f \circ f)(x)</m>
+          </p>
+        </li>
+      </ul>
+      <ol cols="6">
+        <li xml:id="funccompexp1first">
+          <p>
+            <m>f(x) = 2x+3</m>, <m>g(t) = t^2-9</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^2 -x+1</m>, <m>g(t) = 3t-5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^2-4</m>, <m>g(t) = |t|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 3x-5</m>, <m>g(t) = \sqrt{t}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = |x+1|</m>, <m>g(t) = \sqrt{t}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 3-x^2</m>, <m>g(t) = \sqrt{t+1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = |x|</m>, <m>g(t) = \sqrt{4-t}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^2-x-1</m>, <m>g(t) = \sqrt{t-5}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 3x-1</m>, <m>g(t) = \dfrac{1}{t+3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{3x}{x-1}</m>,
+            <m>g(t) =\dfrac{t}{t-3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{x}{2x+1}</m>,
+            <m>g(t) = \dfrac{2t+1}{t}</m>
+          </p>
+        </li>
+        <li xml:id="funccompexp1last">
+          <p>
+            <m>f(x) = \dfrac{2x}{x^2-4}</m>, <m>g(t) =\sqrt{1-t}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="threefunccompfirst">Exercises</xref>
+      - <xref ref="threefunccomplast"></xref>, use <m>f(x) = -2x</m>,
+      <m>g(t) = \sqrt{t}</m> and
+      <m>h(s) = |s|</m> to find and simplify expressions for the following functions and state the domain of each using interval notation.
+      <ol cols="2">
+        <li xml:id="threefunccompfirst">
+          <p>
+            <m>(h\circ g \circ f)(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(h\circ f \circ g)(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g\circ f \circ h)(s)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g\circ h \circ f)(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f\circ h \circ g)(t)</m>
+          </p>
+        </li>
+        <li xml:id="threefunccomplast">
+          <p>
+            <m>(f\circ g \circ h)(s)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="pointcompexfirst">Exercises</xref>
+      - <xref ref="pointcompexlast"></xref>,
+      let <m>f</m> be the function defined by
+      <me>
+        f = \{(-3, 4), (-2, 2), (-1, 0), (0, 1), (1, 3), (2, 4), (3, -1)\}
+      </me>
+      and let <m>g</m> be the function defined by
+      <me>
+        g = \{(-3, -2), (-2, 0), (-1, -4), (0, 0), (1, -3), (2, 1), (3, 2)\}
+      </me>.
+    </p>
+    <p>
+      Find the following, if it exists.
+      <ol cols="5">
+        <li xml:id="pointcompexfirst">
+          <p>
+            <m>(f \circ g)(3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(g(-1))</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f \circ f)(0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f \circ g)(-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g \circ f)(3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(f(-3))</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g \circ g)(-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g \circ f)(-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(f(g(0)))</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(f(f(-1)))</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(f(f(f(f(1)))))</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\underbrace{(g \circ g \circ \cdots \circ g)}_{\mbox{<m>n</m> times} }(0)</m>
+          </p>
+        </li>
+        <li xml:id="pointcompexlast">
+          <p>
+            Find the domain and range of
+            <m>f \circ g</m> and <m>g \circ f</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="twofuncgraphcompfirst">Exercises</xref>
+      - <xref ref="twofuncgraphcomplast"></xref>,
+      use the graphs of <m>y=f(x)</m> and <m>y=g(x)</m> below to find the following if it exists.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{-1}{5}{-1}{5}
+          \axes
+          \tlabel[cc](5,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \tlabel[cc](-0.75,1){<m>(0,1)</m>}
+          \tlabel[cc](1,0.5){<m>(1,1)</m>}
+          \tlabel[cc](1.5,3.5){<m>(2,3)</m>}
+          \tlabel[cc](2.5,4.5){<m>(2.5,4.5)</m>}
+          \tlabel[cc](3.5,3.5){<m>(3,3)</m>}
+          \tlabel[cc](4,-0.5){<m>(4,0)</m>}
+          \xmarks{1,2,3,4}
+          \ymarks{1,2,3,4}
+          \tlpointsep{5pt}
+          \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3}
+          \axislabels {y} {{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+          \penwd{1.25pt}
+          \polyline{(0,1), (1,1), (2,3), (2.5, 4),  (3,3), (4,0)}
+          \point[4pt]{(0,1), (1,1), (2,3), (2.5, 4), (3,3), (4,0)}
+          \tcaption{<m>y = f(x)</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{-1}{5}{-1}{5}
+          \axes
+          \tlabel[cc](5,-0.5){<m>x</m>}
+          \tlabel[cc](0.5,5){<m>y</m>}
+          \tlabel[cc](-0.5,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](.5,3.5){<m>(1,3)</m>}
+          \tlabel[cc](2.5,3.5){<m>(2,3)</m>}
+          \tlabel[cc](3,-0.5){<m>(3,0)</m>}
+          \xmarks{1,2,3,4}
+          \ymarks{1,2,3,4}
+          \tlpointsep{5pt}
+          \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2,  {<m>4</m>} 4}
+          \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4}
+          \penwd{1.25pt}
+          \polyline{(0,0), (1,3), (2,3), (3,0)}
+          \point[4pt]{(0,0), (1,3), (2,3), (3,0)}
+          \tcaption{<m>y = g(x)</m>}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <ol cols="3">
+      <li xml:id="twofuncgraphcompfirst">
+        <p>
+          <m>(g\circ f)(1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f \circ g)(3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g\circ f)(2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f\circ g)(0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f\circ f)(4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g \circ g)(1)</m>
+        </p>
+      </li>
+      <li xml:id="twofuncgraphcomplast">
+        <p>
+          Find the domain and range of
+          <m>f \circ g</m> and <m>g \circ f</m>.
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="breakdowncompexfirst">Exercises</xref>
+      - <xref ref="breakdownxomexlast"></xref>,
+      write the given function as a composition of two or more non-identity functions.
+      (There are several correct answers,
+      so check your answer using function composition.)
+    </p>
+    <ol cols="2">
+      <li xml:id="breakdowncompexfirst">
+        <p>
+          <m>p(x) = (2x+3)^3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P(x) = \left(x^2-x+1\right)^5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = \sqrt{2t-1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>H(t) = |7-3t|</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>r(s) = \dfrac{2}{5s+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>R(s) = \dfrac{7}{s^2-1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>q(z) = \dfrac{|z|+1}{|z|-1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>Q(z) = \dfrac{2z^3+1}{z^3-1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v(x) = \dfrac{2x+1}{3-4x}</m>
+        </p>
+      </li>
+      <li xml:id="breakdownxomexlast">
+        <p>
+          <m>w(x) = \dfrac{x^2}{x^4+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Write the function <m>F(x) = \sqrt{\dfrac{x^{3} + 6}{x^{3} - 9}}</m> as a composition of three or more non-identity functions.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>g(x) = -x, \, h(x) = x + 2, \, j(x) = 3x</m> and <m>k(x) = x - 4</m>.
+          In what order must these functions be composed with
+          <m>f(x) = \sqrt{x}</m> to create <m>F(x) = 3\sqrt{-x + 2} - 4</m>?
+        </p>
+      </li>
+      <li>
+        <p>
+          What linear functions could be used to transform
+          <m>f(x) = x^{3}</m> into <m>F(x) = -\frac{1}{2}(2x - 7)^{3} + 1</m>?
+          What is the proper order of composition?
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) = 3x+1</m> and let <m>g(x) = \begin{cases}2x-1 \amp \text{ if \(x \leq 3\) } \\ 4-x \amp \text{ if \(x > 3\) } \end{cases}</m>.
+          Find expressions for <m>(f \circ g)(x)</m> and <m>(g \circ f)(x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The volume <m>V</m> of a cube is a function of its side length <m>x</m>.
+          Let's assume that <m>x = t + 1</m> is also a function of time <m>t</m>,
+          where <m>x</m> is measured in inches and <m>t</m> is measured in minutes.
+          Find a formula for <m>V</m> as a function of <m>t</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose a local vendor charges
+          <m>\dollar2</m> per hot dog and that the number of hot dogs sold per hour <m>x</m> is given by <m>x(t) = -4t^2+20t+92</m>,
+          where <m>t</m> is the number of hours since <m>10</m> AM, <m>0 \leq t \leq 4</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find an expression for the revenue per hour <m>R</m> as a function of <m>x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find and simplify <m>\left(R \circ x\right)(t)</m>.
+              What does this represent?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the revenue per hour at noon?
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Discuss with your classmates how <sq>real-world</sq> processes such as filling out federal income tax forms or computing your final course grade could be viewed as a use of function composition.
+          Find a process for which composition with itself (iteration) makes sense.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          For <m>f(x) = x^2</m> and <m>g(t) = 2t+1</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = 16</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = 19</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = 16</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 4-x</m> and <m>g(t) = 1-t^2</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = -15</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = 2</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = -48</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \frac{13}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = -2</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 4-3x</m> and <m>g(t) = |t|</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = 10</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = 13</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \frac{5}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = -26</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = |x-1|</m> and <m>g(t) = t^2-5</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = -4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = 5</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = 0</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = 11</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \frac{23}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = 2</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 4x+5</m> and <m>g(t) = \sqrt{t}</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = \sqrt{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1)</m> is not real
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = 57</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3)</m> is not real
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = 5+2\sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = -7</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \sqrt{3-x}</m> and <m>g(t) = t^2+1</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = \sqrt{2}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \frac{\sqrt{7}}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = \sqrt{3 - \sqrt{5}}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 6-x-x^2</m> and <m>g(t) = t\sqrt{t+10}</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = 24</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = 6</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \frac{27-2\sqrt{42}}{8}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = -14</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \sqrt[3]{x+1}</m> and <m>g(t) = 4t^2-t</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = \sqrt[3]{6}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = \sqrt[3]{\sqrt[3]{3}+1}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = 4\sqrt[3]{4}+\sqrt[3]{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \frac{\sqrt[3]{12}}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = 0</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{3}{1-x}</m> and <m>g(t) = \frac{4t}{t^2+1}</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = \frac{6}{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = \frac{3}{4}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = \frac{48}{25}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = -5</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2)</m> is undefined
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{x}{x+5}</m> and <m>g(t) = \frac{2}{7-t^2}</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = \frac{2}{7}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1) = \frac{1}{16}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = \frac{2}{37}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = \frac{8}{19}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \frac{8}{143}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = -\frac{2}{13}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{2x}{5-x^2}</m> and <m>g(t) = \sqrt{4t+1}</m>,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1)</m> is not real
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = -\frac{8}{11}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3) = \sqrt{7}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \sqrt{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = \frac{8}{11}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) =\sqrt{2x+5}</m> and <m>g(t) = \frac{10t}{t^2+1}</m> ,
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(0) = \frac{5\sqrt{5}}{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)(-1)</m> is not real
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(2) = \sqrt{11}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(g\circ f)(-3)</m> is not real
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f\circ g)\left(\frac{1}{2}\right) = \sqrt{13}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(-2) = \sqrt{7}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x+3</m> and <m>g(t) = t^2-9</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = 4x^2+12x</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) = 2t^2-15</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = 4x+9</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2 -x+1</m> and <m>g(t) = 3t-5</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = 3x^2-3x-2</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) =9t^2-33t+31</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = x^4-2x^3+2x^2-x+1</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2-4</m> and <m>g(t) = |t|</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = |x^2-4|</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) =|t|^2-4 = t^2-4</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) =x^4-8x^2+12</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 3x-5</m> and <m>g(t) = \sqrt{t}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = \sqrt{3x-5}</m>, domain:
+                <m>\left[ \frac{5}{3}, \infty \right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) = 3\sqrt{t}-5</m>, domain: <m>[0,\infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = 9x-20</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = |x+1|</m> and <m>g(t) = \sqrt{t}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = \sqrt{|x+1|}</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) = |\sqrt{t}+1| = \sqrt{t}+1</m>, domain:
+                <m>[0,\infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = ||x+1|+1| = |x+1|+1</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 3-x^2</m> and <m>g(t) = \sqrt{t+1}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = \sqrt{4-x^2}</m>, domain: <m>[-2,2]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) =2-t</m>, domain: <m>[-1, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = -x^4+6x^2-6</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = |x|</m> and <m>g(t) = \sqrt{4-t}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = \sqrt{4-|x|}</m>, domain: <m>[-4,4]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) =|\sqrt{4-t}| = \sqrt{4-t}</m>,
+                domain: <m>(-\infty, 4]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = | |x| | = |x|</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2-x-1</m> and <m>g(t) = \sqrt{t-5}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = \sqrt{x^2-x-6}</m>, domain:
+                <m>(-\infty, -2] \cup [3,\infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) =t-6-\sqrt{t-5}</m>, domain: <m>[5,\infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) =x^4-2x^3-2x^2+3x+1</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 3x-1</m> and <m>g(t) = \frac{1}{t+3}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = \frac{1}{3x+2}</m>, domain:
+                <m>\left(-\infty, -\frac{2}{3}\right) \cup \left(-\frac{2}{3}, \infty\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) = -\frac{t}{t+3}</m>, domain:
+                <m>\left(-\infty, -3\right) \cup \left(-3, \infty\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = 9x-4</m>, domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{3x}{x-1}</m> and <m>g(t) =\frac{t}{t-3}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) =x</m>, domain:
+                <m>\left(-\infty, 1\right) \cup (1, \infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) =t</m>, domain:
+                <m>\left(-\infty, 3\right) \cup (3,\infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = \frac{9x}{2x+1}</m>, domain:
+                <m>\left(-\infty, -\frac{1}{2}\right) \cup \left(-\frac{1}{2}, 1 \right) \cup \left(1,\infty \right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{x}{2x+1}</m> and <m>g(t) = \frac{2t+1}{t}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) = \frac{4x+1}{x}</m>, domain:
+                <m>\left(-\infty, -\frac{1}{2}\right) \cup \left(-\frac{1}{2}, 0), \cup (0, \infty\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) = \frac{2t+1}{5t+2}</m>, domain:
+                <m>\left(-\infty, -\frac{2}{5}\right) \cup \left(-\frac{2}{5}, 0\right) \cup (0,\infty)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = \frac{x}{4x+1}</m>, domain:
+                <m>\left(-\infty, -\frac{1}{2}\right) \cup \left(-\frac{1}{2}, -\frac{1}{4} \right) \cup \left(-\frac{1}{4},\infty\right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{2x}{x^2-4}</m> and <m>g(t) =\sqrt{1-t}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(g \circ f)(x) =\sqrt{\frac{x^2-2x-4}{x^2-4}}</m>, domain:
+                <m>\left(-\infty, -2\right) \cup \left[1-\sqrt{5}, 2\right) \cup \left[1+\sqrt{5}, \infty\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ g)(t) = -\frac{2\sqrt{1-t}}{t+3}</m>, domain:
+                <m>\left(-\infty, -3\right) \cup \left(-3, 1\right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f \circ f)(x) = \frac{4x-x^3}{x^4-9x^2+16}</m>, domain:
+                <m>\left(-\infty, -\frac{1+\sqrt{17}}{2}\right) \cup \left(-\frac{1+\sqrt{17}}{2}, -2\right) \cup \left(-2, \frac{1-\sqrt{17}}{2}\right) \cup \left(\frac{1-\sqrt{17}}{2}, \frac{-1+\sqrt{17}}{2}\right) \cup \left(\frac{-1+\sqrt{17}}{2}, 2\right) \cup \left(2, \frac{1+\sqrt{17}}{2} \right) \cup \left(\frac{1+\sqrt{17}}{2}, \infty\right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(h\circ g \circ f)(x)= |\sqrt{-2x}|= \sqrt{-2x}</m>,
+          domain: <m>(-\infty, 0]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(h\circ f \circ g)(t) = |-2\sqrt{t}|= 2\sqrt{t}</m>, domain:
+          <m>[0,\infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g\circ f \circ h)(s) = \sqrt{-2|s|}</m>, domain: <m>\{0\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g\circ h \circ f)(x) = \sqrt{|-2x|} = \sqrt{2|x|}</m>, domain:
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f\circ h \circ g)(t) = -2|\sqrt{t}| = -2\sqrt{t}</m>, domain:
+          <m>[0,\infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f\circ g \circ h)(s) = -2\sqrt{|s|}</m>, , domain:
+          <m>(-\infty,\infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f \circ g)(3)= f(g(3)) = f(2) = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(g(-1)) = f(-4)</m> which is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f \circ f)(0) = f(f(0)) = f(1) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f \circ g)(-3) = f(g(-3)) = f(-2) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g \circ f)(3) = g(f(3)) = g(-1) = -4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(f(-3)) = g(4)</m> which is undefined
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g \circ g)(-2) = g(g(-2)) = g(0) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g \circ f)(-2) = g(f(-2)) = g(2) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(f(g(0))) = g(f(0)) = g(1) = -3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(f(f(-1))) = f(f(0)) = f(1) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(f(f(f(f(1))))) = f(f(f(f(3)))) =\\ f(f(f(-1))) = f(f(0)) = f(1) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\underbrace{(g \circ g \circ \cdots \circ g)}_{\mbox{<m>n</m> times} }(0) = 0</m>
+        </p>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              The domain of <m>f \circ g</m> is <m>\{ -3, -2, 0, 1, 2, 3\}</m> and the range of
+              <m>f \circ g</m> is <m>\{1, 2, 3, 4\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The domain of <m>g \circ f</m> is <m>\{ -2, -1, 0, 1, 3 \}</m> and the range of
+              <m>g \circ f</m> is <m>\{ -4, -3, 0, 1, 2 \}</m>.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <m>(g\circ f)(1) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f \circ g)(3) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g\circ f)(2) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f\circ g)(0) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f\circ f)(4) = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g \circ g)(1) = 0</m>
+        </p>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              The domain of <m>f \circ g</m> is <m>[0,3]</m> and the range of <m>f \circ g</m> is <m>[1, 4.5]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The domain of <m>g \circ f</m> is
+              <m>[0,2] \cup [3,4]</m> and the range is <m>[0,3]</m>.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) = 2x+3</m> and <m>g(x) = x^3</m>,
+          then <m>p(x) = (g\circ f)(x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) = x^2-x+1</m> and <m>g(x) = x^5</m>,
+          <m>P(x) =(g\circ f)(x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(t) = 2t-1</m> and <m>g(t) = \sqrt{t}</m>,
+          then <m>h(t) = (g\circ f)(t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(t) = 7-3t</m> and <m>g(t) = |t|</m>,
+          then <m>H(t) = (g\circ f)(t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(s) = 5s+1</m> and <m>g(s) = \frac{2}{s}</m>,
+          then <m>r(s) =(g\circ f)(s)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(s) = s^2-1</m> and <m>g(s) = \frac{7}{s}</m>,
+          then <m>R(s) =(g\circ f)(s)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(z) = |z|</m> and <m>g(z) = \frac{z+1}{z-1}</m>,
+          then <m>q(z) =(g\circ f)(z)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(z) = z^3</m> and <m>g(z)= \frac{2z+1}{z-1}</m>,
+          then <m>Q(z) =(g\circ f)(z)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) =2x</m> and <m>g(x) = \frac{x+1}{3-2x}</m>,
+          then <m>v(x) =(g\circ f)(x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) = x^2</m> and <m>g(x) = \frac{x}{x^2+1}</m>,
+          then <m>w(x) =(g\circ f)(x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \sqrt{\frac{x^{3} + 6}{x^{3} - 9}} = (h(g(f(x)))</m> where
+          <m>f(x) = x^{3}, \, g(x) = \frac{x + 6}{x - 9}</m> and <m>h(x) = \sqrt{x}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 3\sqrt{-x + 2} - 4 = k(j(f(h(g(x)))))</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>F(x) = -\frac{1}{2}(2x - 7)^{3} + 1 = k(j(f(h(g(x)))))</m> where
+          <m>g(x) = 2x, \, h(x) = x - 7, \, j(x) = -\frac{1}{2}x</m> and <m>k(x) = x + 1</m>.
+          You could also have <m>F(x) = H(f(G(x)))</m> where
+          <m>G(x) = 2x - 7</m> and <m>H(x) = -\frac{1}{2}x + 1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f \circ g)(x) = \begin{cases}6x-2 \amp \text{ if \(x \leq 3\) } \\ 13-3x \amp \text{ if \(x > 3\) } \end{cases}</m> and <m>(g \circ f)(x) = \begin{cases}6x+1 \amp \text{if
+          <m>x \leq \frac{2}{3}</m>} \\ 3-3x \amp \text{if <m>x > \frac{2}{3}</m>} \end{cases}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V(x) = x^{3}</m> so <m>V(x(t)) = (t + 1)^{3}</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>R(x) = 2x</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\left(R \circ x \right)(t) = -8t^2+40t+184</m>, <m>0 \leq t \leq 4</m>.
+              This gives the revenue per hour as a function of time.
+            </p>
+          </li>
+          <li>
+            <p>
+              Noon corresponds to <m>t=2</m>,
+              so <m>\left(R \circ x \right)(2) = 232</m>.
+              The hourly revenue at noon is <m>\dollar232</m> per hour.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

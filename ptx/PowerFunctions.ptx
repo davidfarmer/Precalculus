@@ -1,0 +1,1504 @@
+<section xml:id="PowerFunctions">
+  <title>Power Functions</title>
+  <introduction>
+    <p>
+      Monomial, and,
+      more generally, Laurent monomial functions are specific examples of a much larger class of functions called
+      <em>power functions</em>, as defined below.
+    </p>
+    <definition xml:id="powerfunction">
+      <statement>
+        <p>
+          Let <m>a</m> and <m>p</m> be nonzero real numbers.
+          A
+              <idx><h>power function</h></idx>
+              <idx><h>function</h><h>power</h></idx> <term>power function</term> is either a constant function or a function of the form <m>f(x) = a x^p</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      <xref ref="powerfunction">Definition</xref>
+      broadens our scope of functions to include non-integer exponents such as <m>f(x) = 2x^{4/3}</m>,
+      <m>g(t) = t^{0.4}</m> and <m>h(w) = w^{\sqrt{2}}</m>.
+      Our primary aim in this section is to ascribe meaning to these quantities.
+    </p>
+  </introduction>
+  <subsection xml:id="RationalExponents">
+    <title>Rational Number Exponents</title>
+    <p>
+      The road to real number exponents starts by defining rational number exponents.
+    </p>
+    <definition xml:id="rationalexponentdefna">
+      <statement>
+        <p>
+              <idx><h>rational number exponent</h></idx>
+              <idx><h>exponent, rational number</h></idx>
+          Let <m>r</m> be a rational number where in lowest terms <m>r = \frac{m}{n}</m> where <m>m</m> is an integer and <m>n</m> is a natural number.<fn>
+          Recall <sq>lowest terms</sq> means <m>m</m> and <m>n</m> have no common factors other than <m>1</m>.
+          </fn> If <m>n = 1</m>,
+          then <m>x^{r} = x^{m}</m>.
+          If <m>n > 1</m>, then
+          <me>
+            x^{r} = x^{\frac{m}{n}} = \left(\sqrt[n]{x}\right)^m   = \sqrt[n]{x^m}
+          </me>,
+          whenever <m>\left(\sqrt[n]{x} \right)^m</m> is defined.<fn>
+          That is, if <m>n</m> is even,
+          <m>x \geq 0</m> and if <m>m\lt 0</m>, <m>x \neq 0</m>.
+          </fn>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      There are quite a few items worthy of note which are consequences of <xref ref="rationalexponentdefna">Definition</xref>.
+      First off, if <m>m</m> is an integer,
+      then <m>x^{\frac{m}{1}} = x^{m}</m> so expressions like
+      <m>x^{\frac{3}{1}}</m> are synonymous with <m>x^3</m>,
+      as we would expect.<fn>
+      Either <m>n=1</m> is a special case in <xref ref="rationalexponentdefna">Definition</xref>
+      or we need to define what is meant by <m>\sqrt[1]{x}</m>.
+      The authors chose the former.
+      </fn> Second,
+      the definition of <m>x^{\frac{m}{n}}</m> can be taken as just
+      <m>\left(\sqrt[n]{x}\right)^m</m> and shown to be equal to <m>\sqrt[n]{x^m}</m>
+      (or vice-versa)
+      courtesy of properties of radicals.
+      We state both in <xref ref="rationalexponentdefna">Definition</xref>
+      to allow for the reader to choose whichever form is more convenient in a given situation.
+      The critical point to remember is no matter which representation you choose,
+      keep in mind the restrictions if <m>n</m> is even,
+      <m>x \geq 0</m> and if <m>m \lt 0</m>, <m>x \neq 0</m>.
+    </p>
+    <p>
+      Moreover, per this definition,
+      <m>x^{\frac{1}{n}} = \sqrt[n]{x^{1}} = \sqrt[n]{x}</m>,
+      so we may rewrite principal roots as exponents:
+      <m>\sqrt{x} = x^{\frac{1}{2}}</m> and <m>\sqrt[5]{x} = x^{\frac{1}{5}}</m>.
+      This makes sense from an algebraic standpoint since per <xref ref="basicradicalpropseqineq">Theorem</xref>,
+      <m>\left(\sqrt[n]{x} \right)^n = x</m>.
+      Hence if we were to assign an exponent notation to <m>\sqrt[n]{x}</m>,
+      say <m>\sqrt[n]{x} = x^r</m>,
+      then <m>\left(\sqrt[n]{x}\right)^n = (x^r)^n = x</m>.
+      If the properties of exponents are to hold, then, necessarily,
+      <m>(x^r)^n = x^{rn} = x = x^{1}</m>,
+      so <m>rn = 1</m> or <m>r = \frac{1}{n}</m>.
+      While this argument helps <em>motivate</em>
+      the notation, as we shall see shortly,
+      great care must be exercised in applying exponent properties in these cases.
+      The long and short of this is that root functions as defined in <xref ref="RootRadicalFunctions">Section</xref>
+      are all members of the <sq>power functions</sq> family.
+    </p>
+    <p>
+      Another important item worthy of note in <xref ref="rationalexponentdefna">Definition</xref>
+      is that it is absolutely essential we express the rational number <m>r</m> in <em>lowest terms</em>
+      before applying the root-power definition.
+      For example, consider <m>x^{0.4}</m>.
+      Expressing <m>r</m> in lowest terms, we get:
+      <m>r = 0.4 = \frac{4}{10} = \frac{2}{5}</m>.
+      Hence, <m>x^{0.4} = x^{2/5} = (\sqrt[5]{x})^2</m> or <m>\sqrt[5]{x^2}</m>,
+      either of which is defined for all real numbers <m>x</m>.
+      In contrast,
+      consider the equivalence <m>r = 0.4 = \frac{4}{10}</m>.
+      Here, the expression <m>(\sqrt[10]{x})^4</m> is defined only for
+      <m>x \geq 0</m> owing to the presence of the even indexed root,
+      <m>\sqrt[10]{x}</m>.
+      Hence, <m>(\sqrt[10]{x})^4 \neq x^{\frac{4}{10}} = x^{\frac{2}{5}}</m> unless <m>x \geq 0</m>.
+      On the other hand, the expression <m>\sqrt[10]{x^4}</m>
+      <em>is</em> defined for all numbers,
+      <m>x</m>, since <m>x^4 \geq 0</m> for all <m>x</m>.
+      In fact, it can be shown that
+      <m>\sqrt[10]{x^4} = \sqrt[5]{x^2}</m> for all real numbers.
+      This means <m>\sqrt[10]{x^4} = \sqrt[5]{x^2} = x^{\frac{2}{5}} = x^{\frac{4}{10}}</m>.
+      So, to review, in general we have:
+      <m>x^{\frac{4}{10}} = \sqrt[10]{x^4}</m>,
+      but <m>x^{\frac{4}{10}} \neq \left(\sqrt[10]{x}\right)^{4}</m> unless <m>x \geq 0</m>.
+      Once again the easiest way to avoid confusion here is to <em>reduce</em>
+      the exponent to <em>lowest terms</em>
+      before converting it to root-power notation.
+    </p>
+    <p>
+      Likewise, we have to be careful about the properties of exponents when it comes to rational exponents.
+      Consider, for instance, the product rule for integer exponents:
+      <m>x^{m} x^{n} = x^{m+n}</m>.
+      Consider <m>f(x) = x^{\frac{1}{2}} x^{\frac{1}{2}}</m> and <m>g(x) = x^{\frac{1}{2} + \frac{1}{2}}</m>.
+      In the first case,
+      <m>f(x) = x^{\frac{1}{2}} x^{\frac{1}{2}} =\sqrt{x} \sqrt{x} = (\sqrt{x})^2 = x</m> only for <m>x \geq 0</m>.
+      In the second case,
+      <m>g(x) = x^{\frac{1}{2} + \frac{1}{2}} = x^{\frac{2}{2}} = x^{1} = x</m> for \text{ all } real numbers <m>x</m>.
+      Even though <m>f(x) = g(x)</m> for <m>x \geq 0</m>,
+      <m>f</m> and <m>g</m> are <em>different functions</em>
+      since they have <em>different domains</em>.
+    </p>
+    <p>
+      Similarly, the power rule for integer exponents:
+      <m>(x^n)^m = x^{nm}</m> does not hold in general for rational exponents.
+      To see this, consider the three functions:
+      <m>f(x) = (x^{\frac{1}{2}} )^2</m>,
+      <m>g(x) = x^{\frac{2}{2}}</m>,
+      and <m>h(x) = (x^2)^{\frac{1}{2}}</m>.
+      In the first case,
+      <m>f(x) = (x^{\frac{1}{2}})^2 = (\sqrt{x})^2 = x</m> for <m>x \geq 0</m> only
+      (this is the same function <m>f</m> above.)
+      In the second case, the rational number <m>r = \frac{2}{2} = 1</m>,
+      so <m>g(x) = x^{\frac{2}{2}} = x^{\frac{1}{1}} = x^{1} = x</m> for
+      <em>all</em> real numbers, <m>x</m>
+      (this is the same function <m>g</m> from above.)
+      In the last case,
+      <m>h(x) = (x^2)^{\frac{1}{2}} = \sqrt{x^2} = |x|</m> for all real numbers,
+      <m>x</m>.
+      Once again, despite <m>f(x) = g(x) = h(x)</m> for all <m>x \geq 0</m>,
+      <m>f</m>,
+      <m>g</m> and <m>h</m> and are <em>three different functions</em>.
+      We graph <m>f</m>, <m>g</m>, and <m>h</m> below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-4}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[3pt]{(0,0)} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3,4} \tcaption{<m>f(x) = x^{\frac{1}{2}} x^{\frac{1}{2}} = (x^{\frac{1}{2}})^2 = x</m>,
+      <m>x \geq 0</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \polyline{(0,0),(4,4)} \point[4pt]{(0,0)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-4}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3,4} \tcaption{<m>g(x) = x^{\frac{1}{2} + \frac{1}{2}} = x^{\frac{2}{2}} = x</m> } \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -4,-4), (4,4)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{-4}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3,4} \tcaption{<m>h(x) = (x^2)^{\frac{1}{2}} = |x|</m> } \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4,4), (0,0), (4,4)} \end{mfpic}
+    </p>
+    <p>
+      In general, the properties of integer exponents
+      <em>do not extend</em> to rational exponents <em>unless</em>
+      the bases involved represent \text{ non-negative } real numbers <em>or</em>
+      the roots involved are <em>odd</em>.
+      We have the following:
+    </p>
+    <theorem xml:id="exponentprops">
+      <statement>
+        <p>
+          Let <m>r</m> and <m>s</m> are rational numbers.
+          The following properties hold provided none of the computations results in division by <m>0</m> and <em>either</em>
+          <m>r</m> and <m>s</m> have odd denominators <em>or</em>
+          <m>x \geq 0</m> <em>and</em> <m>y \geq 0</m>:
+          <ul>
+            <li>
+              <p>
+                <em>Product Rules:</em> <m>x^{r} x^{s} = x^{r+s}</m> and <m>(xy)^{r} = x^{r} y^{r}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Quotient Rules:</em> <m>\dfrac{x^{r}}{x^{s}} = x^{r-s}</m> and <m>\left( \dfrac{x}{y}\right)^{r} = \dfrac{x^{r}}{y^{r}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Power Rule:</em> <m>(x^{r})^{s} = x^{rs}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Next, we turn our attention to the graphs of
+      <m>f(x) =x^r = x^{\frac{m}{n}}</m> for varying values of <m>m</m> and <m>n</m>.
+      When <m>n</m> is even,
+      the domain is restricted owing to the presence of the even indexed root to <m>[0, \infty)</m>.
+      The range is likewise <m>[0, \infty)</m>,
+      a fact leave to the reader.
+      All of the functions below are increasing on their domains,
+      and it turns out this is always the case provided <m>r>0</m>.
+      There is, however, is a difference in <em>how</em>
+      the functions are increasing - and this is the concept of
+          <idx><h>concavity</h></idx>
+      <em>concavity</em>.
+      As with many concepts we've encountered so far in the text,
+      concavity is most precisely defined using Calculus terminology,
+      but we can nevertheless get a sense of concavity geometrically.
+      For us, a curve is
+          <idx><h>concave up</h></idx>
+          <idx><h>concavity</h><h>concave up</h></idx>
+      <em>concave up</em> over an interval if it resembles a portion of a <sq><m>\smile</m></sq> shape.
+      Similarly, a curve is called
+          <idx><h>concave down</h></idx>
+          <idx><h>concavity</h><h>concave down</h></idx>
+      <em>concave down</em> over an interval if resembles part of a <sq><m>\frown</m></sq> shape.
+      When <m>0 \lt r \lt 1</m>,
+      the graphs of <m>f(x) = x^r</m> resemble the left half of <m>\frown</m> and so are concave down;
+      when <m>r>1</m>,
+      the graphs resemble the right half of a <sq><m>\smile</m></sq> and are hence described as <sq>concave up.</sq>
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[20]{0}{5}{0}{5}
+          \axes
+          \tlabel[cc](5, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 5){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,2,0.1}{(t^2,t)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>f(x)=x^{\frac{1}{2}}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{0}{5}{0}{5}
+          \axes
+          \tlabel[cc](5, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 5){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,1.5,0.1}{(t^4,t^3)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>f(x)=x^{\frac{3}{4}}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{0}{5}{0}{5}
+          \axes
+          \tlabel[cc](5, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 5){<m>y</m>}
+          \tlabel[cc](1.75,1){<m>(1,1)</m>}
+          \tlabel[cc](0,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,1.35,0.1}{(t**4,t**5)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>f(x)=x^{\frac{5}{4}}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[20]{0}{5}{0}{5}
+          \axes
+          \tlabel[cc](5, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 5){<m>y</m>}
+          \tlabel[cc](1.75,1){<m>(1,1)</m>}
+          \tlabel[cc](0,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,1.7,0.1}{(t**2,t**3)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>f(x)=x^{\frac{3}{2}}</m>}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      Below we graph several examples of
+      <m>f(x) =x^r = x^{\frac{m}{n}}</m> where <m>n</m> is odd.
+      Here, the domain is <m>(-\infty, \infty)</m> since the index on the root here is odd.
+      Note that when <m>m</m> is even,
+      the graphs appear to be symmetric about the <m>y</m>-axis and the range looks to be <m>[0, \infty)</m>.
+      When <m>m</m> is odd,
+      the graphs appear to be symmetric about the origin with range <m>(-\infty, \infty)</m>.
+      We leave verification of these facts to the reader.
+      Note here also that for <m>x \geq 0</m>,
+      the graphs are down for <m>0\lt r\lt 1</m> and concave up for <m>r > 1</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-4}{4}{-4}{4}
+          \axes
+          \tlabel[cc](4, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 4){<m>y</m>}
+          \tlabel[cc](2,0.75){<m>(1,1)</m>}
+          \tlabel[cc](0.75,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](-2.25,-0.75){<m>(-1,-1)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.3,1.3,0.1}{(t^5,t^3)}
+          \point[4pt]{(0,0), (1,1), (-1,-1)}
+          \tcaption{<m>f(x)=x^{\frac{3}{5}}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-4}{4}{-4}{4}
+          \axes
+          \tlabel[cc](4, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 4){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0.75,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](-1,1.75){<m>(-1,1)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3,t^2)}
+          \point[4pt]{(0,0), (1,1), (-1,1)}
+          \tcaption{<m>f(x)=x^{\frac{2}{3}}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-4}{4}{-4}{4}
+          \axes
+          \tlabel[cc](4, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 4){<m>y</m>}
+          \tlabel[cc](1.75,1){<m>(1,1)</m>}
+          \tlabel[cc](0.75,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](-2.25,1){<m>(-1,1)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.16,1.16,0.1}{(t^5,t^8)}
+          \point[4pt]{(0,0), (1,1), (-1,1)}
+          \tcaption{<m>f(x)=x^{\frac{8}{5}}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-4}{4}{-4}{4}
+          \axes
+          \tlabel[cc](4, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 4){<m>y</m>}
+          \tlabel[cc](1.75,1){<m>(1,1)</m>}
+          \tlabel[cc](0.75,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](-2.25,-1){<m>(-1,-1)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.3,1.3,0.1}{(t^3,t^5)}
+          \point[4pt]{(0,0), (1,1), (-1,-1)}
+          \tcaption{<m>f(x)=x^{\frac{5}{3}}</m>}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      When <m>r\lt 0</m>,
+      we have variables appear in the denominator which open the opportunities for vertical and horizontal asymptotes.
+      Below are graphed two examples
+    </p>
+    <tabular>
+      {m{2.5in}m{2.5in}}
+      \begin{mfpic}[20]{0}{5}{0}{3}
+      \axes
+      \tlabel[cc](5, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 3){<m>y</m>}
+      \tlabel[cc](-1.25,2.5){VA <m>x =0</m>}
+      \tlabel[cc](2.5, -0.5){HA <m>y =0</m>}
+      \tlabel[cc](1.5,1.5){<m>(1,1)</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \parafcn{0.45,2.5,0.1}{(1/(t**2),t)}
+      \point[4pt]{(1,1)}
+      \tcaption{<m>f(x)=x^{-\frac{1}{2}}</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[15]{-4}{4}{-4}{4}
+      \axes
+      \tlabel[cc](4, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 4){<m>y</m>}
+      \tlabel[cc](-1.25,2.5){VA <m>x =0</m>}
+      \tlabel[cc](2.5, -0.5){HA <m>y =0</m>}
+      \tlabel[cc](1.75,1){<m>(1,1)</m>}
+      \tlabel[cc](-2.25,-1){<m>(-1,-1)</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \parafcn{-2, -0.65,0.1}{(t,1/t**3)}
+      \arrow  \reverse \arrow \parafcn{0.65,2,0.1}{(t,1/t**3)}
+      \point[4pt]{(1,1), (-1,-1)}
+      \tcaption{<m>f(x)=x^{-\frac{1}{3}}</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      Unsurprisingly,
+      <xref ref="linearrootgraphs">Theorem</xref>, which, as stated,
+      applied to root functions, generalizes to all rational powers.
+    </p>
+    <theorem xml:id="linearrationalpowergraphs">
+      <statement>
+        <p>
+          For real numbers <m>a</m>, <m>b</m>, <m>h</m>,
+          and <m>k</m> and rational number <m>r</m> with <m>a, b, r \neq 0</m>,
+          the graph of <m>F(x) = a(bx-h)^r +k</m> can be obtained from the graph of
+          <m>f(x) = x^r</m> by performing the following operations,
+          in sequence:
+          <ol>
+            <li>
+              <p>
+                add <m>h</m> to each of the <m>x</m>-coordinates of the points on the graph of <m>f</m>.
+                This results in a horizontal shift to the right if <m>h > 0</m> or left if <m>h \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y =x^{r}</m> to <m>y = (x-h)^{r}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                divide the <m>x</m>-coordinates of the points on the graph obtained in Step 1 by <m>b</m>.
+                This results in a horizontal scaling,
+                but may also include a reflection about the <m>y</m>-axis if <m>b \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = (x-h)^{r}</m> to <m>y = (bx-h)^{r}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                multiply the <m>y</m>-coordinates of the points on the graph obtained in Step 2 by <m>a</m>.
+                This results in a vertical scaling,
+                but may also include a reflection about the <m>x</m>-axis if <m>a \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = (bx-h)^{r}</m> to <m>y = a(bx-h)^{r}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                add <m>k</m> to each of the <m>y</m>-coordinates of the points on the graph obtained in Step 3.
+                This results in a vertical shift up if <m>k > 0</m> or down if <m>k\lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = a(bx-h)^{r}</m> to <m>y = a(bx-h)^{r}+k</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="linearrationalpowergraphs">Theorem</xref>
+      is identical to that of <xref ref="linearrootgraphs">Theorem</xref>,
+      and we suggest the reader work through the details.
+      We give <xref ref="linearrationalpowergraphs">Theorem</xref>
+      a test run in the following example.
+    </p>
+    <example xml:id="rationalpowershiftex">
+      <statement>
+        <p>
+          Use the given graphs of <m>f</m> and <m>g</m> below long with <xref ref="linearrationalpowergraphs">Theorem</xref>
+          to graph <m>F</m> and <m>G</m>.
+          State the domain and range of <m>F</m> and <m>G</m> using interval notation.
+          <ol>
+            <li>
+              <p>
+                Graph <m>F(x) = (2x-1)^{2.6}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>G(t) = 1 - 2(t+3)^{\frac{3}{8}}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <tabular>
+          {m{2.5in}m{2.5in}}
+          \begin{mfpic}[20]{-3}{3}{-4}{4}
+          \axes
+          \tlabel[cc](3, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 4){<m>y</m>}
+          \tlabel[cc](1.5,1){<m>(1,1)</m>}
+          \tlabel[cc](-2,-1){<m>(-1,-1)</m>}
+          \tlabel[cc](0.5,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5,t**13)}
+          \point[4pt]{(-1,-1), (0,0), (1,1)}
+          \tcaption{<m>f(x)=x^{2.6}</m>}
+          \end{mfpic}
+          &amp;
+          \begin{mfpic}[20]{-1}{5}{-1}{4}
+          \axes
+          \tlabel[cc](5, -0.5){<m>t</m>}
+          \tlabel[cc](0.5, 4){<m>y</m>}
+          \tlabel[cc](1,1.5){<m>(1,1)</m>}
+          \tlabel[cc](0.5,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow  \parafcn{0, 1.22,0.1}{(t**8,t**3)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>g(t)=t^{\frac{3}{8}}</m>}
+          \end{mfpic}
+        </tabular>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The expression  <m>F(x) = (2x-1)^{2.6}</m> is given to us in the form prescribed by <xref ref="linearrationalpowergraphs">Theorem</xref>,
+                and we identify <m>r = 2.6</m>,
+                <m>a = 1</m>, <m>b=2</m>, <m>h=1</m>, and <m>k=0</m>.
+                Even though the graph of <m>f(x) = x^{2.6}</m> is given to us,
+                it's worth taking a moment to reinforce some concepts.
+                Since, in lowest terms, <m>2.6 = \frac{26}{10} = \frac{13}{5}</m>,
+                it makes sense the domain and range of
+                <m>f(x) = x^{2.6}</m> are both all real numbers and the graph is symmetric about the origin.<fn>
+                The domain is all real numbers since the denominator (root) <m>5</m> is odd;
+                the range is all real numbers since the numerator (power) <m>13</m> is odd.
+                Since both power and root are odd,
+                the function itself is an odd function,
+                hence the symmetry about the origin.
+                </fn> Moreover,
+                since <m>2.6>1</m>, the concavity matches what we would expect, too.
+                We proceed as we have several times in the past,
+                beginning with the horizontal shift.
+                Step 1:   add <m>1</m> to each of the <m>x</m>-coordinates of each of the points on the graph of <m>y=x^{2.6}</m>:
+                <me>
+                  \begin{array}{rlc}   \begin{mfpic}[20]{-3}{3}{-4}{4} \axes \tlabel[cc](3, -0.5){\(x\)} \tlabel[cc](0.5, 4){\(y\)} \tlabel[cc](1.5,1){\((1,1)\)} \tlabel[cc](-2,-1){\((-1,-1)\)} \tlabel[cc](0.5,-0.5){\((0,0)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5,t**13)}  \point[4pt]{(-1,-1), (0,0), (1,1)} \tcaption{\(y=x^{2.6}\)}  \end{mfpic} \amp \stackrel{\text{ add \(1\) to each \(x\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[20]{-2}{4}{-4}{4} \axes \tlabel[cc](4, -0.5){\(x\)} \tlabel[cc](0.5, 4){\(y\)} \tlabel[cc](2.5,1){\((2,1)\)} \tlabel[cc](-1,-1){\((0,-1)\)} \tlabel[cc](1.5,-0.5){\((1,0)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5+1,t**13)}  \point[4pt]{(0,-1), (1,0), (2,1)} \tcaption{\(y=(x-1)^{2.6}\)}  \end{mfpic}\\  \text{ \((-1,1)\), \((0,0)\), \((1,1)\) }  \amp  \amp  \text{ \((0,-1)\), \((1,0)\), \((2,1)\) } \end{array}
+                </me>
+                Step 2:   divide each of the <m>x</m>-coordinates of each of the points on the graph of <m>y=(x-1)^{2.6}</m> by <m>2</m>:
+                <me>
+                  \begin{array}{rlc}  \begin{mfpic}[20]{-2}{4}{-4}{4} \axes \tlabel[cc](4, -0.5){\(x\)} \tlabel[cc](0.5, 4){\(y\)} \tlabel[cc](2.5,1){\((2,1)\)} \tlabel[cc](-1,-1){\((0,-1)\)} \tlabel[cc](1.5,-0.5){\((1,0)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{(t**5+1,t**13)}  \point[4pt]{(0,-1), (1,0), (2,1)} \tcaption{\(y=(x-1)^{2.6}\)}  \end{mfpic} \amp \stackrel{\text{ divide to each \(x\)-coordinate by 2 } }{\xrightarrow{}} \amp \begin{mfpic}[20]{-2}{4}{-4}{4} \axes \tlabel[cc](4, -0.5){\(x\)} \tlabel[cc](0.5, 4){\(y\)} \tlabel[cc](1.5,1){\((1,1)\)} \tlabel[cc](-1,-1){\((0,-1)\)} \tlabel[cc](1,-0.5){\(\left(\frac{1}{2},0 \right)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.11, 1.11,0.1}{((t**5+1)/2,t**13)}  \point[4pt]{(0,-1), (0.5,0), (1,1)} \tcaption{\(F(x)=(2x-1)^{2.6}\)}  \end{mfpic}  \\  \text{ \((0,-1)\), \((1,0)\), \((2,1)\) }  \amp  \amp  \text{\((0,-1)\), \(\left(\frac{1}{2},0 \right)\), \((1,1)\)} \end{array}
+                </me>
+                We get the domain and range here are both <m>(-\infty, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We first need to rewrite <m>G(t) = 1 - 2(t+3)^{\frac{3}{8}}</m> in the form required by <xref ref="linearrationalpowergraphs">Theorem</xref>:
+                <m>G(t) =- 2(t+3)^{\frac{3}{8}} + 1</m>.
+                We identify <m>r = \frac{3}{8}</m>,
+                <m>a = -2</m>, <m>b = 1</m>, <m>h = -3</m>, and <m>k = 1</m>.
+                Since <m>\frac{3}{8}</m> is in lowest terms and has an even denominator,
+                it makes sense the domain and range of
+                <m>g(t) = t^{\frac{3}{8}}</m> is <m>[0, \infty)</m>,
+                since the root here, <m>8</m> is even.
+                Also, since <m>0\lt  \frac{3}{8} \lt  1</m>,
+                the graph of  <m>y = t^{\frac{3}{8}}</m> is concave down,
+                as we would expect.
+                As usual, we start with the horizontal shift.
+                Step 1:   add <m>-3</m> to each of the <m>t</m>-coordinates of each of the points on the graph of <m>y=t^{\frac{3}{8}}</m>:
+                <me>
+                  \begin{array}{rlc}  \begin{mfpic}[20]{-1}{5}{-1}{4} \axes \tlabel[cc](5, -0.5){\(t\)} \tlabel[cc](0.5, 4){\(y\)} \tlabel[cc](1,1.5){\((1,1)\)} \tlabel[cc](0.5,-0.5){\((0,0)\)} \penwd{1.25pt} \arrow  \parafcn{0, 1.22,0.1}{(t**8,t**3)} \point[4pt]{(0,0), (1,1)} \tcaption{\(y=t^{\frac{3}{8}}\)}  \end{mfpic}   \amp \stackrel{\text{ add \(-3\) to each \(t\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[20]{-4}{2}{-1}{4} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 4){\(y\)} \tlabel[cc](-2,1.5){\((-2,1)\)} \tlabel[cc](-3,-0.5){\((-3,0)\)} \penwd{1.25pt} \arrow  \parafcn{0, 1.22,0.1}{(t**8-3,t**3)} \point[4pt]{(-3,0), (-2,1)} \tcaption{\(y=(t+3)^{\frac{3}{8}}\)}  \end{mfpic}   \\  \text{ \((0,0)\), \((1,1)\) }  \amp  \amp  \text{ \((-3,0)\), \((-2,1)\) } \end{array}
+                </me>
+                Step 2:  Since <m>b=1</m>, we proceed directly to Step 3.
+                Step 3:   multiply each of the <m>y</m>-coordinates of each of the points on the graph of <m>y=(t+3)^{\frac{3}{8}}</m> by <m>-2</m>:
+                <me>
+                  \begin{array}{rlc}  \begin{mfpic}[20]{-4}{2}{-1}{4} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 4){\(y\)} \tlabel[cc](-2,1.5){\((-2,1)\)} \tlabel[cc](-3,-0.5){\((-3,0)\)} \penwd{1.25pt} \arrow  \parafcn{0, 1.22,0.1}{(t**8-3,t**3)} \point[4pt]{(-3,0), (-2,1)} \tcaption{\(y=(t+3)^{\frac{3}{8}}\)}  \end{mfpic}   \amp \stackrel{\text{ multiply each \(y\)-coordinate by \(-2\) } }{\xrightarrow{}} \amp  \begin{mfpic}[20]{-4}{2}{-4}{1} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 1){\(y\)} \tlabel[cc](-2,-3){\((-2,-2)\)} \tlabel[cc](-3,0.5){\((-3,0)\)} \penwd{1.25pt} \arrow  \parafcn{0, 1.22,0.1}{(t**8-3,(-2)*(t**3))} \point[4pt]{(-3,0), (-2,-2)} \tcaption{\(y=-2(t+3)^{\frac{3}{8}}\)}  \end{mfpic} \\  \text{ \((-3,0)\), \((-2,1)\) }  \amp  \amp  \text{ \((-3,0)\), \((-2,-2)\) } \end{array}
+                </me>
+                Step 4:   add <m>1</m> to each of the <m>y</m>-coordinates of each of the points on the graph of <m>y=-2(t+3)^{\frac{3}{8}}</m>:
+                <me>
+                  \begin{array}{rlc}  \begin{mfpic}[20]{-4}{2}{-4}{1} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 1){\(y\)} \tlabel[cc](-2,-3){\((-2,-2)\)} \tlabel[cc](-3,0.5){\((-3,0)\)} \penwd{1.25pt} \arrow  \parafcn{0, 1.22,0.1}{(t**8-3,(-2)*(t**3))} \point[4pt]{(-3,0), (-2,-2)} \tcaption{\(y=-2(t+3)^{\frac{3}{8}}\)}  \end{mfpic}   \amp \stackrel{\text{ add \(1\) to each  \(y\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[20]{-4}{2}{-3}{2} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 2){\(y\)} \tlabel[cc](-2,-2){\((-2,-1)\)} \tlabel[cc](-3,1.5){\((-3,1)\)} \penwd{1.25pt} \arrow  \parafcn{0, 1.22,0.1}{(t**8-3,(-2)*(t**3)+1)} \point[4pt]{(-3,1), (-2,-1)} \tcaption{\(y=-2(t+3)^{\frac{3}{8}}+1\)}  \end{mfpic} \\  \text{ \((-3,0)\), \((-2,-2)\) }  \amp  \amp  \text{ \((-3,1)\), \((-2,-1)\) } \end{array}
+                </me>
+                From the graph, we get the domain is
+                <m>[-3, \infty)</m> and the range is <m>(-\infty, 1]</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We now turn our attention to more complicated functions involving rational exponents.
+    </p>
+    <example>
+      <statement>
+        <p>
+          For the following functions:
+        </p>
+        <ul>
+          <li>
+            <p>
+              Analytically:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  find the domain.
+                </p>
+              </li>
+              <li>
+                <p>
+                  find the axis intercepts.
+                </p>
+              </li>
+              <li>
+                <p>
+                  analyze the end behavior.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Graph the function with help from a graphing utility and determine:
+              <ul>
+                <li>
+                  <p>
+                    the range.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    the local extrema, if they exist.
+                  </p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>
+                    intervals of increase.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    intervals of decrease.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Construct a sign diagram for each function using the intercepts and graph.
+            </p>
+          </li>
+        </ul>
+        <ol>
+          <li>
+            <p>
+              <m>f(x) = 3x^2(x^3-8)^{-\frac{2}{3}}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(t) = \dfrac{(t^2-4)^{\frac{3}{2}}}{t^2-36}</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We first note that, owing to the negative exponent,
+                the quantity <m>(x^3-8)^{\frac{2}{3}}</m> is in the denominator,
+                alerting us to a potential domain issue.
+                Rewriting <m>(x^3-8)^{\frac{2}{3}}</m> we set about solving <m>\sqrt[3]{(x^3-8)^2} = 0</m>.
+                Cubing both sides and extracting square roots gives <m>x^3-8=0</m> or <m>x =2</m>.
+                Hence, <m>x =2</m> is excluded from the domain.<fn>
+                In general if <m>u^{p} = 0</m> where <m>p>0</m>, then <m>u =0</m>.
+                </fn>   Since the root involved here is odd (<m>3</m>),
+                the only issue we have is with the denominator,
+                hence our domain is <m>\{ x \in \mathbb{R} \, | \, x \neq 2 \}</m> or <m>(-\infty, 2) \cup (2, \infty)</m>.
+                While not required to do so,
+                we analyze the behavior of <m>f</m> near <m>x = 2</m>.
+                As <m>x \rightarrow 2^{-}</m>,
+                <m>3x^2 \approx 12</m> and <m>x^3-8 \approx \text{ small \((-)\) }</m>.
+                Hence, <m>(x^3-8)^{\frac{2}{3}} =\sqrt[3]{(x^3-8)^2} \approx \sqrt[3]{(\text{ small \((-)\) } )^2} \approx \sqrt[3]{\text{ small \((+)\) } } \approx \text{ small\((+)\) }</m>.
+                As such,  <m>f(x) \approx \frac{12}{ \text{ small\((+)\) } } \approx \text{ big \((+)\) }</m>.
+                We conclude as <m>x \rightarrow 2^{-}</m>,
+                <m>f(x) \rightarrow \infty</m>.
+                As <m>x \rightarrow 2^{+}</m>,
+                <m>3x^2 \approx 12</m> and <m>x^3 - 8 \approx \text{ small \((+)\) }</m>,
+                and we likewise get <m>f(x) \rightarrow \infty</m>.
+                This analysis suggests <m>x=2</m> is a vertical asymptote to the graph.
+                To find the <m>x</m>-intercepts,
+                we set <m>f(x) =  3x^2(x^3-8)^{-\frac{2}{3}} = 0</m>,
+                so that <m>3x^2 = 0</m> or <m>x = 0</m>.
+                We get <m>(0,0)</m> is our only <m>x</m>- (and <m>y</m>-)intercept.
+                For end behavior,
+                we note that in the denominator the <m>x^3</m> term dominates the constant term,
+                so as <m>x \rightarrow \pm \infty</m>,
+                <me>
+                  f(x) = 3x^2(x^3-8)^{-\frac{2}{3}} = \dfrac{3x^2}{(x^3-8)^{\frac{2}{3}}} \approx \dfrac{3x^2}{ (x^3)^{ \frac{2}{3} } } = \dfrac{3x^2}{\sqrt[3]{(x^3)^2}} = \dfrac{3x^2}{\sqrt[3]{x^6}} = \dfrac{3x^2}{x^2} = 3
+                </me>.
+                This suggests <m>y = 3</m> is a horizontal asymptote to the graph.
+                Graphing <m>y=f(x)</m> below on the right bears out our analysis regarding zeros and asymptotes.
+                The range appears to be <m>[0, \infty)</m>,
+                with the graph of <m>y = f(x)</m> crossing its horizontal asymptote between <m>x=1</m> and <m>x=2</m>.
+                We see we have  a single local minimum at <m>(0,0)</m> with <m>f</m> is decreasing on <m>(-\infty, 0]</m> and
+                <m>(2, \infty)</m> and increasing on <m>[0, 2)</m>.
+                For the  sign diagram, we note that <m>f</m> has only one zero,
+                <m>x=0</m> and is undefined at <m>x = 2</m>.
+                For all <m>x</m> values between these two numbers,
+                <m>f(x) > 0</m> or <m>(+)</m>.
+                Our  sign diagram for <m>f(x)</m> is below on the right.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./PowerFunctionsGraphics/RationalExpEx01.jpg"/></cell>
+                    <cell>\begin{mfpic}[20]{-4}{2}{-1}{1} \arrow \reverse \arrow \polyline{(-4,0),(2,0)} \xmarks{-2,0} \tlabel[cc](-3, 0.5){<m>(+)</m>} \tlabel[cc](-2,-0.5){<m>0</m>} \tlabel[cc](-2,0.5){<m>0</m>} \tlabel[cc](-1,0.5){<m>(+)</m>} \tlabel[cc](0,-0.5){<m>2</m>} \tlabel[cc](0,0.5){\textinterrobang} \tlabel[cc](1,0.5){<m>(+)</m>} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=f(x)</m></cell>
+                    <cell>Sign Diagram for <m>f(x)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the domain of <m>g(t) = \frac{ (t^2-4)^{\frac{3}{2}} }{t^2-36}</m>,
+                we have two issues to address:
+                the denominator and an even (square) root.
+                Solving <m>t^2 - 36 = 0</m> gives  two excluded values,
+                <m>t = \pm 6</m>.
+                For the numerator,
+                we may rewrite <m>(t^2-4)^{\frac{3}{2}} = (\sqrt{t^2-4})^3</m>,
+                so we require <m>t^2-4 \geq 0</m>, or  <m>t^2 \geq 4</m>.
+                Extracting square roots,
+                we have <m>\sqrt{t^2} \geq \sqrt{4}</m> or
+                <m>|t| \geq 2</m> which means <m>t \leq -2</m> or <m>t \geq 2</m>.
+                Taking into account our excluded values <m>t = \pm 6</m>,
+                we get  the domain of <m>g</m> is <m>(-\infty, -6) \cup (-6, -2] \cup [2, 6) \cup (6, \infty)</m>.
+                Looking near <m>t = -6</m>, we note that as <m>t \rightarrow -6</m>,
+                <m>(t^2-4)^{\frac{3}{2}} \approx 32^{\frac{3}{2}} = 32^{1.5}</m>,
+                a positive number.
+                As <m>t \rightarrow -6^{-}</m>,
+                <m>t^2-36 \approx \text{ small \((+)\) }</m>,
+                so <m>g(t) \approx \frac{32^{1.5}}{\text{ small\((+)\) } } \approx \text{ big \((+)\) }</m>.
+                This suggests as <m>t \rightarrow -6^{-}</m>,
+                <m>g(t) \rightarrow \infty</m>.
+                On the other hand, as <m>t \rightarrow -6^{+}</m>,
+                <m>t^2 -36 \approx \text{ small \((-)\) }</m>,
+                so <m>g(t) \approx \frac{32^{1.5}}{\text{ small\((-)\) } } \approx \text{ big \((-)\) }</m>,
+                suggesting <m>g(t) \rightarrow -\infty</m>.
+                Similarly, we find as <m>t \rightarrow 6^{-}</m>,
+                <m>g(t) \rightarrow -\infty</m> and as <m>t \rightarrow 6^{+}</m>,
+                <m>g(t) \rightarrow \infty</m>.
+                This suggests we have two vertical asymptotes to the graph of <m>y = g(t)</m>:
+                <m>t = -6</m> and <m>t = 6</m>.
+                To find the <m>t</m>-intercepts,
+                we set <m>g(t) = 0</m> and solve <m>(t^2-4)^{\frac{3}{2}} = 0</m>.
+                This reduces to <m>t^2-4 =0</m> or <m>t = \pm 2</m>.
+                As these are
+                (just barely!)
+                in the domain of <m>g</m>,
+                we have two <m>t</m>-intercepts,
+                <m>(-2,0)</m> and <m>(2,0)</m>.
+                The graph of <m>g</m> has no <m>y</m>-intercepts,
+                since <m>0</m> is not in the domain of <m>g</m>,
+                so <m>g(0)</m> is undefined.
+                Regarding end behavior, as <m>t \rightarrow \pm \infty</m>,
+                the <m>t^2</m> in both numerator and denominator dominate the constant terms,
+                so we have
+                <me>
+                  g(t) =  \dfrac{ (t^2-4)^{\frac{3}{2}} }{t^2-36} \approx  \dfrac{\left(t^2\right)^{\frac{3}{2}}}{t^2} = \dfrac{\left(\sqrt{t^2} \right)^3}{t^2} = \dfrac{|t|^3}{t^2} = \dfrac{|t| |t|^2}{t^2} = \dfrac{|t| t^2}{t^2} = |t|
+                </me>.
+                This suggests that as <m>t \rightarrow \infty</m>,
+                the graph of <m>y = g(t)</m> resembles <m>y = |t|</m>.
+                Using the piecewise definition of <m>|t|</m>,
+                we have that as <m>t \rightarrow -\infty</m>,
+                <m>g(t) \approx -t</m> and as
+                <m>t \rightarrow \infty</m>, <m>g(t) \approx t</m>.
+                In other words, the graph of  <m>y = g(t)</m> has <em>two</em>
+                slant asymptotes with slopes <m>\pm 1</m>.
+                Graphing <m>y=g(t)</m> below on the left verifies our analysis.
+                From the graph,
+                the range appears to be <m>(-\infty, 0] \cup [14.697, \infty)</m>.
+                The points <m>(-10, 14.697)</m> and <m>(10, 14.697)</m> are local minimums.
+                <m>g</m> appears to be decreasing on  <m>(-\infty, -10]</m>,
+                <m>[2, 6)</m>, and <m>(6, 10]</m>.
+                Likewise, <m>g</m> is increasing on <m>[-10, -6)</m>,
+                <m>(-6, -2]</m> and <m>[10, \infty)</m>.
+                The graph of <m>y=g(t)</m> certainly appears to be symmetric about the <m>y</m>-axis.
+                We leave it to the reader to show <m>g</m> is, indeed,
+                an even function.
+                For the sign diagram for <m>g(t)</m>,
+                we note that <m>g</m> has zeros
+                <m>t = \pm 2</m> and is undefined at <m>t = \pm 6</m>.
+                Moreover, there is a gap in the domain for all values in the interval <m>(-2,2)</m>,
+                so we excise that portion of the real number line for our discussion.
+                We find <m>g(t) > 0</m> or <m>(+)</m> on the intervals
+                <m>(-\infty -6)</m> and <m>(6, \infty)</m> while
+                <m>g(t) \lt  0</m> or <m>(-)</m> on <m>(-6,-2)</m> and <m>(2, 6)</m>.
+                Our sign diagram for <m>g(t)</m> is below on the right.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./PowerFunctionsGraphics/RationalExpEx02.jpg"/></cell>
+                    <cell>\begin{mfpic}[20][10]{-2}{7}{-1.5}{1.5} \arrow \polyline{(2,0), (-2,0)} \arrow \polyline{(3,0), (7,0)} \xmarks{0, 2, 3, 5} \tlabel[cc](-1,1){<m>(+)</m>} \tlabel[cc](0,-1){<m>-6</m>} \tlabel[cc](0,1){\textinterrobang} \tlabel[cc](1,1){<m>(-)</m>} \tlabel[cc](2,-1){<m>-2</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3,-1){<m>2</m>} \tlabel[cc](3,1){<m>0</m>} \tlabel[cc](4,1){<m>(-)</m>} \tlabel[cc](5,-1){<m>6</m>} \tlabel[cc](5,1){\textinterrobang} \tlabel[cc](6,1){<m>(+)</m>}  \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=g(t)</m></cell>
+                    <cell>Sign Diagram for <m>g(t)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Real Number Exponents</title>
+    <p>
+      We wish now to extend the concept of <sq>exponent</sq> from rational to all real numbers which means we need to discuss how to interpret an irrational exponent.
+      Once again, the notions presented here are best discussed using the language of Calculus or Analysis,
+      but we nevertheless do what we can with the notions we have.
+    </p>
+    <p>
+      Consider the wildly famous irrational number <m>\pi</m>.
+      The number <m>\pi</m> is defined geometrically as the ratio of the circumference of a circle to that circle's diameter.<fn>
+      This works for each and every circle,
+      by the way, regardless of how large or small the circle is!
+      </fn> The reason we use the <em>symbol</em>
+      <sq><m>\pi</m></sq> instead of any numerical expression is that <m>\pi</m> is an irrational number, and,
+      as such, its decimal representation neither terminates nor repeats.
+      Hence we <em>approximate</em> <m>\pi</m> as
+      <m>\pi \approx 3.14</m> or <m>\pi \approx 3.14159265</m>.
+      No matter how many digits we write, however,
+      what we have is a <em>rational number</em>
+      approximation of <m>\pi</m>.
+    </p>
+    <p>
+      The good news is we can approximate <m>\pi</m> to any desired accuracy using rational numbers by taking enough digits,
+      so while we'll never <sq>reach</sq> the <em>exact</em>
+      value of <m>\pi</m> with rational numbers,
+      we can get <em>as close as we like</em>
+      to <m>\pi</m> using rational numbers.
+      That being said,
+      we assume <m>\pi</m> exists on the real number line,
+      despite the fact the list of digits to pinpoint its location is,
+      in some sense,
+      infinite.
+    </p>
+    <p>
+      We take this tack when defining the value of a number raised to an irrational exponent.
+      Consider, for instance, <m>2^{\pi}</m>.
+      We can compute <m>2^3 = 8</m>,
+      <m>2^{3.1} = 2^{\frac{31}{10}} = \sqrt[10]{2^{31}} \approx 8.574</m>,
+      <m>2^{3.14} = 2^{\frac{314}{100}} = 2^{\frac{157}{50}} = \sqrt[50]{2^{157}} \approx 8.8512</m>,
+      and so on,
+      so one way to <em>define</em> <m>2^{\pi}</m> as the unique real number we obtain as the exponents <sq>approach</sq> <m>\pi</m>.
+    </p>
+    <p>
+      It is with this understanding that we present the notion of a <sq>power function,</sq> as described in <xref ref="powerfunction">Definition</xref>:
+      <m>f(x) = a x^p</m> where <m>a</m> and <m>p</m> are nonzero real number parameters.
+      Here the exponent <m>p</m> is open to any (nonzero) real number.
+      Because of how we define real number exponents,
+      if <m>p</m> is irrational,
+      then <m>x \geq 0</m> to avoid having negatives under even-indexed roots as we go through the approximation process.<fn>
+      or <m>x > 0</m> if <m>p</m> is negative.
+      </fn>
+    </p>
+    <p>
+      In general, real number exponents inherit their properties from rational number exponents.
+      For instance, <xref ref="exponentprops">Theorem</xref>
+      also holds for all real number exponents and the graphs of power functions inherit their behavior from graphs of rational exponent functions.
+      More specifically, the graphs of functions of the form
+      <m>f(x)= x^p</m> where <m>p>0</m> all contain the points <m>(0,0)</m> and <m>(1,1)</m>.
+      Moreover, these functions are increasing and their graphs are concave down if
+      <m>0\lt p\lt 1</m> and concave up if <m>p>1</m>.
+    </p>
+    <p>
+      \begin{mfpic}[17]{-1}{9}{-1}{9} \axes \tlabel[cc](9, -0.5){<m>x</m>} \tlabel[cc](0.5, 9){<m>y</m>} \tlabel[cc](5,8){<m>p>1</m>,
+      concave up} \tlabel[cc](6,1.5){<m>0\lt p\lt 1</m>,
+      concave down} \tlabel[cc](0.5, -0.5){<m>(0,0)</m>} \tlabel[cc](1.75, 0.75){<m>(1,1)</m>} \penwd{1.25pt} \arrow \parafcn{0, 3,0.1}{(t**2,t)} \arrow \parafcn{0, 3,0.1}{(t,t**2)} \point[4pt]{(0,0), (1,1)} \tcaption{<m>f(x) = x^p</m> for varying values of <m>p</m>.}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      <xref ref="linearrationalpowergraphs">Theorem</xref>
+      generalizes to real number power functions,
+      so, for instance to graph <m>F(x) = (x-2)^{\pi}</m>,
+      one need only start with <m>y = x^{\pi}</m> and shift horizontally two units to the right.
+      (See the Exercises.)
+    </p>
+    <p>
+      We close this section with an application to economics.
+      According to the
+      <url href="http://www.census.gov/library/publications/2016/demo/p60-256.html "><em>US Census</em></url>,
+      Table 2, the share of money income (2014-2015) is given in the table below on the left.
+      From these data, we can create a cumulative distribution,
+      <m>y = L(x)</m> called the
+          <idx><h>Lorenz Curve</h></idx>
+      <em>Lorenz Curve</em>.
+    </p>
+    <p>
+      The number <m>L(x)</m> gives the percentage of the total national income earned by the bottom <m>x</m> percent of wage earners,
+      ranked from lowest income to highest income.
+      Since the population here is separated into <sq>quintiles,</sq> each data point corresponds to <m>20 \%</m> of the population.
+      So, for example,
+      <m>L(20)</m> is the percentage of money income earned by the lowest <m>20 \%</m> of wage earners.
+      In this case, we see <m>L(20) = 3.1</m>.
+      The number <m>L(40)</m> is the percentage of the money income earned by the bottom <m>40 \%</m> of wage earners - so this includes not only the money from the Second Quintile,
+      but also the Lowest Quintile:
+      <m>L(40) = 8.2 + L(20) = 8.2 + 3.1 = 11.3</m>.
+      Likewise, <m>L(60)</m> is the total income share of the bottom <m>60 \%</m> of wage earners which includes the income from the Middle, Second,
+      and Lowest Quintiles:
+      <m>L(60) = 14.3 + L(40) = 14.3 + (8.2+3.1) = 25.6</m>.
+    </p>
+    <p>
+      Continuing in this manner,
+      we get <m>L(80) = 48.8</m> and <m>L(100) = 100</m>,
+      which is what we would expect:
+      <m>100 \%</m> of the income is earned by <m>100 \%</m> of the population.
+      We summarize these findings below on the right.
+    </p>
+    <tabular>
+      <row>
+        <cell><m>\begin{array}{cc}
+          \text{ Portion of Population }  \amp  \text{  Percent of Money Income }  \\
+          \text{ Lowest Quintile }  \amp  \text{  3.1 }  \\
+          \text{ Second Quintile }  \amp \text{   8.2 }   \\
+          \text{ Middle Quintile }  \amp   \text{ 14.3 }   \\
+          \text{ Fourth Quintile }  \amp   \text{  23.2 }   \\
+          \text{ Highest Quintile }  \amp    \text{ 51.2 }
+          \end{array}</m></cell>
+        <cell><m>\begin{array}{cc}
+          \text{ percent wage earners, \(x\) }  \amp  \text{ percent income, \(L(x)\) }  \\
+          \text{  20 }  \amp  \text{ 3.1 } \\
+          \text{ 40 }   \amp  \text{ 11.3 }   \\
+          \text{ 60 }   \amp  \text{ 25.6 }   \\
+          \text{ 80 } \amp    \text{ 48.8 }   \\
+          \text{ 100 }   \amp   \text{ 100 }
+          \end{array}</m></cell>
+      </row>
+    </tabular>
+    <example xml:id="LorenzEx">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Find power function to model the Lorenz Curve: <m>L(x) = ax^p</m>.
+                Comment on the goodness of fit.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret <m>L(90)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Using
+                <url href="https://www.desmos.com/"><em>desmos</em></url>,
+                we get <m>L(x) = 0.00027901x^{2.7738}</m> with <m>R^2 = 0.993</m>,
+                indicating a pretty good fit.
+                <image width="65%" source="./PowerFunctionsGraphics/LorenzEx.jpg"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                We compute <m>L(90) = 0.00027901(90)^{2.7738} \approx 73.5</m> meaning that the bottom <m>90 \%</m> of the wage earners brought home <m>73.5 \%</m> of the total income.
+                Said differently,
+                the top <m>10 \%</m> of wage earners made over <m>25 \%</m> of the total national income.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="powergraphexfirst">Exercises</xref>
+      - <xref ref="powergraphexlast"></xref>,
+      use the given graphs along with <xref ref="linearrationalpowergraphs">Theorem</xref> to graph the given function.
+      Track at least two points and state the domain and range using interval notation.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-4}{4}{-1}{4} \axes \tlabel[cc](4, -0.5){<m>x</m>} \tlabel[cc](0.5, 4){<m>y</m>} \tlabel[cc](1.75,0.75){<m>(1,1)</m>} \tlabel[cc](-1.75,0.75){<m>(-1,1)</m>} \tlabel[cc](0.5,-0.5){<m>(0,0)</m>} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.5, 1.5,0.1}{(t**3,t**2)} \point[4pt]{(-1,1), (0,0), (1,1)} \tcaption{<m>f(x)=x^{\frac{2}{3}}</m>} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[20]{-4}{4}{-1}{4} \axes \tlabel[cc](4, -0.5){<m>t</m>} \tlabel[cc](0.5, 4){<m>y</m>} \tlabel[cc](2,1){<m>(1,1)</m>} \tlabel[cc](0.5,-0.5){<m>(0,0)</m>} \penwd{1.25pt} \arrow \function{0, 1.5,0.1}{x**3.14} \point[4pt]{(0,0), (1,1)} \tcaption{<m>g(t)=t^{\pi}</m> } \end{mfpic}
+      <ol cols="3">
+        <li xml:id="powergraphexfirst">
+          <p>
+            <m>F(x) = (x-2)^{\frac{2}{3}}-1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>G(t) = (t+3)^{\pi} +1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F(x) = 3-x^{\frac{2}{3}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>G(t) = (1-t)^{\pi}-2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F(x) =(2x+5)^{\frac{2}{3}}+1</m>
+          </p>
+        </li>
+        <li xml:id="powergraphexlast">
+          <p>
+            <m>G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulaforpowergraphfirst">Exercises</xref>
+      - <xref ref="findformulaforpowergraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = a(bx-h)^{\frac{2}{3}}+k</m>.
+    </p>
+    <p>
+      <em>NOTE:</em> There may be more than one solution!
+      <ol>
+        <li xml:id="findformulaforpowergraphfirst">
+          <p>
+            <m>~</m> <m>y=F(x)</m> \begin{mfpic}[20]{-4}{4}{-4}{4} \axes \tlabel[cc](4, -0.5){<m>x</m>} \tlabel[cc](0.5, 4){<m>y</m>} \tlabel[cc](1, -2.5){<m>(1,-2)</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](-0.5,-0.5){<m>(0,0)</m>} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.5, 1.5,0.1}{((t**3)+1,(2*(t**2))-2)} \point[4pt]{(0,0), (1,-2), (2,0)} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformulaforpowergraphlast">
+          <p>
+            <m>~</m> <m>y = F(x)</m> \begin{mfpic}[10][20]{-10}{10}{-2}{6} \axes \tlabel[cc](10, -0.5){<m>x</m>} \tlabel[cc](0.5, 6){<m>y</m>} \tlabel[cc](-10, 0.5){<m>(-9,0)</m>} \tlabel[cc](-1.5,4.5){<m>(-1,4)</m>} \tlabel[cc](1.5,3){<m>(0,3)</m>} \tlabel[cc](7,0.5){<m>(6,0)</m>} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2.15,2.15 ,0.1}{((t**3)-1,4-(t**2))} \point[4pt]{(-9,0), (7,0), (0,3), (-1,4)} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      For each function in <xref ref="powerfcngraphexfirst">Exercises</xref>
+      - <xref ref="powerfcngraphexlast"></xref> below
+    </p>
+    <ul>
+      <li>
+        <p>
+          Analytically:
+        </p>
+        <ul>
+          <li>
+            <p>
+              find the domain.
+            </p>
+          </li>
+          <li>
+            <p>
+              find the axis intercepts.
+            </p>
+          </li>
+          <li>
+            <p>
+              analyze the end behavior.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Graph the function with help from a graphing utility and determine:
+          <ul>
+            <li>
+              <p>
+                the range.
+              </p>
+            </li>
+            <li>
+              <p>
+                the local extrema, if they exist.
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                intervals of increase/decrease.
+              </p>
+            </li>
+            <li>
+              <p>
+                any <sq>unusual steepness</sq> or <sq>local</sq> verticality.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              vertical asymptotes.
+            </p>
+          </li>
+          <li>
+            <p>
+              horizontal / slant asymptotes.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Construct a sign diagram for each function using the intercepts and graph.
+        </p>
+      </li>
+      <li>
+        <p>
+          Comment on any observed symmetry.
+        </p>
+      </li>
+    </ul>
+    <ol cols="5">
+      <li xml:id="powerfcngraphexfirst">
+        <p>
+          <m>f(x) = x^{\frac{2}{3}}(x - 7)^{\frac{1}{3}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{\frac{3}{2}}(x - 7)^{\frac{1}{3}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 2t(t+3)^{-\frac{1}{3}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t^{\frac{3}{2}}(t-2)^{-\frac{1}{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{0.4} (3-x)^{0.6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{0.5} (3-x)^{0.5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 4t (9-t^2)^{-\sqrt{2}}</m>
+        </p>
+      </li>
+      <li xml:id="powerfcngraphexlast">
+        <p>
+          <m>g(t) = 3(t^2+1)^{-\pi}</m>
+        </p>
+      </li>
+      <li xml:id="powerarcexercise">
+        <p>
+          For each function <m>f(x)</m> listed below,
+          compute the average rate of change over the indicated interval.<fn>
+          See <xref ref="arc">Definition</xref>
+          in <xref ref="AverageRateofChange">Section</xref>
+          for a review of this concept, as needed.
+          </fn>  What trends do you observe?
+          How do your answers manifest themselves graphically?
+          Compare the results of this exercise with those of <xref ref="monomialarcexercise">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>
+          and <xref ref="laurentarcexercise">Exercise</xref>
+          in <xref ref="IntroRational">Section</xref>
+          <me>
+            \begin{array}{|r||c|c|c|c|}  \hline  f(x) \amp   [0.9, 1.1] \amp  [0.99, 1.01] \amp [0.999, 1.001] \amp  [0.9999, 1.0001]  \\ \hline x^{\frac{1}{2}} \amp \amp \amp \amp   \\  \hline x^{\frac{2}{3}} \amp \amp \amp \amp   \\ \hline x^{-0.23} \amp \amp \amp \amp    \\  \hline x^{\pi}  \amp \amp \amp \amp    \\  \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li xml:id="WindChillTemperature">
+        <p>
+          The
+          <url href="http://www.nws.noaa.gov/om/windchill/windchillglossary.shtml"><em>National Weather Service</em></url>
+          uses the following formula to calculate the wind chill:
+          <me>
+            W = 35.74 + 0.6215 \, T_{a} - 35.75\, V^{0.16} + 0.4275 \, T_{a} \, V^{0.16}
+          </me>
+          where <m>W</m> is the wind chill temperature in
+          <m>^{\circ}</m>F, <m>T_{a}</m> is the air temperature in
+          <m>^{\circ}</m>F, and  <m>V</m> is the wind speed in miles per hour.
+          Note that <m>W</m> is defined only for air temperatures at or lower than
+          <m>50^{\circ}</m>F and wind speeds above <m>3</m> miles per hour.
+          <ol>
+            <li>
+              <p>
+                Suppose the air temperature is
+                <m>42^{\circ}</m> and the wind speed is <m>7</m> miles per hour.
+                Find the wind chill temperature.
+                Round your answer to two decimal places.
+              </p>
+            </li>
+            <li>
+              <p>
+                Suppose the air temperature is
+                <m>37^{\circ}</m>F and the wind chill temperature is
+                <m>30^{\circ}</m>F. Find the wind speed.
+                Round your answer to two decimal places.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          As a follow-up to <xref ref="WindChillTemperature">Exercise</xref>,
+          suppose the air temperature is <m>28^{\circ}</m>F.
+          <ol>
+            <li>
+              <p>
+                Use the formula from <xref ref="WindChillTemperature">Exercise</xref>
+                to find an expression for the wind chill temperature as a function of the wind speed,
+                <m>W(V)</m>.
+              </p>
+            </li>
+            <li xml:id="WindChill0">
+              <p>
+                Solve <m>W(V) = 0</m>,
+                round your answer to two decimal places, and interpret.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph the function <m>W</m> using a graphing utility and check your answer to <xref ref="WindChill0">part</xref>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="pursuitfurther">
+        <p>
+          Suppose Fritzy the Fox,
+          positioned at a point <m>(x,y)</m> in the first quadrant,
+          spots Chewbacca the Bunny at <m>(0,0)</m>.
+          Chewbacca begins to run along a fence
+          (the positive <m>y</m>-axis)
+          towards his warren.
+          Fritzy, of course,
+          takes chase and constantly adjusts his direction so that he is always running directly at Chewbacca.
+          If Chewbacca's speed is <m>v_{1}</m> and  Fritzy's speed is <m>v_{2}</m>,
+          the path Fritzy will take to intercept Chewbacca,
+          provided <m>v_{2}</m> is directly proportional to, but not equal to,
+          <m>v_{1}</m> is modeled by
+          <me>
+            y = \dfrac{1}{2} \left(\dfrac{x^{1+ v_{1}/v_{2}}}{1+v_{1}/v_{2}}- \dfrac{x^{1-v_{1}/v_{2}}}{1-v_{1}/v_{2}}\right) + \dfrac{v_{1} v_{2}}{v_{2}^2-v_{1}^2}
+          </me>
+          <ol>
+            <li>
+              <p>
+                Determine the path that Fritzy will take if he runs exactly twice as fast as Chewbacca;
+                that is, <m>v_{2} = 2v_{1}</m>.
+                Use your calculator to graph this path for <m>x \geq 0</m>.
+                What is the significance of the <m>y</m>-intercept of the graph?
+              </p>
+            </li>
+            <li>
+              <p>
+                Determine the path Fritzy will take if Chewbacca runs exactly twice as fast as he does;
+                that is, <m>v_{1} = 2v_{2}</m>.
+                Use a graphing utility to graph this path for <m>x > 0</m>.
+                Describe the behavior of <m>y</m> as
+                <m>x \rightarrow 0^{+}</m> and interpret this physically.
+              </p>
+            </li>
+            <li>
+              <p>
+                With the help of your classmates,
+                generalize parts (a) and (b) to two cases:
+                <m>v_{2} > v_{1}</m> and <m>v_{2} \lt v_{1}</m>.
+                We will discuss the case of
+                <m>v_{1} = v_{2}</m> in <xref ref="pursuitlog">Exercise</xref>
+                in <xref ref="ExpLogApplications">Section</xref>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>F(x) = (x-2)^{\frac{2}{3}}-1</m> \begin{mfpic}[20]{-2}{6}{-2}{3} \axes \tlabel[cc](6, -0.5){<m>x</m>} \tlabel[cc](0.25, 3){<m>y</m>} \tlabel[cc](3.5,-0.5){<m>(3,0)</m>} \tlabel[cc](0.5,-0.5){<m>(1,0)</m>} \tlabel[cc](2,-1.5){<m>(2,-1)</m>} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.5, 1.5,0.1}{(t**3+2,t**2-1)} \point[4pt]{(1,0), (2,-1), (3,0)} \tcaption{Domain:
+          <m>(-\infty, \infty)</m>, Range:
+          <m>[-1, \infty)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) = (t+3)^{\pi} +1</m> \begin{mfpic}[20]{-7}{1}{0}{5} \axes \tlabel[cc](1, -0.5){<m>t</m>} \tlabel[cc](0.5, 5){<m>y</m>} \tlabel[cc](-1,2){<m>(-2,2)</m>} \tlabel[cc](-2.5,0.5){<m>(-3,1)</m>} \penwd{1.25pt} \arrow \function{-3,-1.5,0.1}{((x+3)**3.14)+1} \point[4pt]{(-3,1), (-2,2)} \tcaption{Domain:
+          <m>[-3, \infty)</m>, Range:
+          <m>[1, \infty)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 3-x^{\frac{2}{3}} = (-1)x^{\frac{2}{3}} + 3</m> \begin{mfpic}[20]{-4}{4}{-1}{4} \axes \tlabel[cc](4, -0.5){<m>x</m>} \tlabel[cc](0.5, 4){<m>y</m>} \tlabel[cc](1.5,2.25){<m>(1,2)</m>} \tlabel[cc](-1.75,2.25){<m>(-1,2)</m>} \tlabel[cc](0.75,3){<m>(0,3)</m>} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.5, 1.5,0.1}{(t**3,3-(t**2))} \point[4pt]{(-1,2), (0,3), (1,2)} \tcaption{Domain:
+          <m>(-\infty, \infty)</m>, Range:
+          <m>(-\infty,3]</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) = (1-t)^{\pi}-2 = ((-1)t+1)^{\pi}-2</m> \begin{mfpic}[20]{-4}{4}{-3}{2} \axes \tlabel[cc](4, -0.5){<m>t</m>} \tlabel[cc](0.5, 2){<m>y</m>} \tlabel[cc](2,-2){<m>(1,-2)</m>} \tlabel[cc](0.75,-1){<m>(0,-1)</m>} \penwd{1.25pt} \arrow \reverse \function{-0.5, 1,0.1}{((1-x)**3.14)-2} \point[4pt]{(0,-1), (1,-2)} \tcaption{Domain:
+          <m>(-\infty, 1]</m>, Range:
+          <m>[-2, \infty)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) =(2x+5)^{\frac{2}{3}}+1</m> \begin{mfpic}[20]{-6.5}{1.5}{-1}{4} \axes \tlabel[cc](1.5, -0.5){<m>x</m>} \tlabel[cc](0.5, 4){<m>y</m>} \tlabel[cc](-4,1.75){<m>(-3,2)</m>} \tlabel[cc](-2.5,0.5){<m>\left(-\frac{5}{2},1 \right)</m>} \tlabel[cc](-1,1.75){<m>(-2,2)</m>} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.6, 1.6,0.1}{( 0.5*( (t**3)-5),(t**2)+1)} \point[4pt]{(-3,2), (-2.5,1), (-2,2)} \tcaption{Domain:
+          <m>(-\infty, \infty)</m>, Range:
+          <m>[1, \infty)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) = \left( \dfrac{t+3}{2}\right)^{\pi}-1= \left( \frac{1}{2} \, t + \frac{3}{2}\right)^{\pi} -1</m> \begin{mfpic}[20]{-4}{4}{-2}{3} \axes \tlabel[cc](4, -0.5){<m>t</m>} \tlabel[cc](0.5, 3){<m>y</m>} \tlabel[cc](-3,-1.5){<m>(-3,-1)</m>} \tlabel[cc](-1.5,0.5){<m>(-1,0)</m>} \penwd{1.25pt} \arrow \function{-3, -0.2,0.1}{(((x+3)/2)**3.14)-1} \point[4pt]{(-3,-1), (-1,0)} \tcaption{Domain:
+          <m>[-3, \infty)</m>, Range:
+          <m>[-1, \infty)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is: <m>F(x) = 2(x-1)^{\frac{2}{3}}-2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is: <m>F(x) =-(x+1)^{\frac{2}{3}} + 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{\frac{2}{3}}(x - 7)^{\frac{1}{3}}</m> Domain:
+          <m>(-\infty, \infty)</m> Intercepts:
+          <m>(0,0)</m>,
+          <m>(7,0)</m> Graph: \begin{mfpic}[10]{-4}{10}{-5}{5.5} \axes \tlabel[cc](10,-0.5){<m>x</m>} \tlabel[cc](0.5,5.5){<m>y</m>} \tlabel[cc](5,-5){<m>\approx (4.667, -3.704)</m>} \xmarks{-3 step 1 until 9} \ymarks{-4 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>8</m>} 8, {<m>9</m>} 9} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \point[4pt]{(0,0), (7,0), (4.667, -3.704)} \dashed \polyline{(-3, -5.33), (9, 6.67)} \penwd{1.25pt} \arrow \reverse \function{-3,0,0.1}{-((x**2)**(1/3))*((7 - x)**(1/3))} \function{0,7,0.1}{-((x**2)**(1/3))*((7 - x)**(1/3))} \arrow \function{7,9,0.1}{((x**2)**(1/3))*((x - 7)**(1/3))} \end{mfpic} \columnbreak As <m>x \rightarrow -\infty</m>,
+          <m>f(x) \rightarrow -\infty</m> As <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow \infty</m> Range:
+          <m>(-\infty, \infty)</m> Local minimum:
+          <m>\approx (4.667, -3.704)</m> Local maximum:
+          <m>(0,0)</m>
+          (this is a cusp)
+          Increasing:
+          <m>(-\infty, 0]</m>, <m>\approx [4.667, \infty)</m> Decreasing:
+          <m>[0, 4.667]</m> Unusual steepness at <m>x = 7</m> Using Calculus it can be shown that
+          <m>y = x - \frac{7}{3}</m> is a slant asymptote of this graph.
+          Sign Diagram: \begin{mfpic}[10]{-3}{10}{-2}{2} \arrow \reverse \arrow \polyline{(-3,0),(10,0)} \xmarks{0,7} \tlabel[cc](-1.5,1){<m>(-)</m>} \tlabel[cc](0,-1){<m>0</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(-)</m>} \tlabel[cc](7,-1){<m>7</m>} \tlabel[cc](7,1){<m>0</m>} \tlabel[cc](8.5,1){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{\frac{3}{2}}(x - 7)^{\frac{1}{3}}</m> Graph: \begin{mfpic}[15][3]{-1}{8.5}{-20}{30} \axes \tlabel[cc](8.5,-3){<m>x</m>} \tlabel[cc](0.5,30){<m>y</m>} \tlabel[cc](6,-18){<m>\approx (5.727, -14.854)</m>} \xmarks{1 step 1 until 8} \ymarks{-15 step 5 until 25} \tlpointsep{4pt} \axislabels {x}{ {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>8</m>} 8} \axislabels {y}{{<m>-15</m>} -15, {<m>-10</m>} -10, {<m>-5</m>} -5, {<m>5</m>} 5, {<m>10</m>} 10, {<m>15</m>} 15, {<m>20</m>} 20, {<m>25</m>} 25} \point[4pt]{(0,0), (7,0), (5.727, -14.854)} \penwd{1.25pt} \function{0,7,0.1}{-(x**1.5)*((7 - x)**(1/3))} \arrow \function{7,8.5,0.1}{(x**1.5)*((x - 7)**(1/3))} \end{mfpic} \columnbreak Domain:
+          <m>[0, \infty)</m> Intercepts:
+          <m>(0,0)</m>, <m>(7,0)</m> As <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow \infty</m> Range:
+          <m>\approx [-14.854, \infty)</m> Local minimum:
+          <m>\approx (5.727, -14.854)</m> Increasing:
+          <m>\approx [5.727, \infty)</m> Decreasing:
+          <m>\approx [0, 5.727]</m> Unusual steepness at <m>x = 7</m> Sign Diagram: \begin{mfpic}[15]{0}{10}{-1}{1} \reverse \arrow \polyline{(0,0),(10,0)} \xmarks{0, 7} \tlabel[cc](0,-0.5){<m>0</m>} \tlabel[cc](0,0.5){<m>0</m>} \tlabel[cc](3.5, 0.5){<m>(-)</m>} \tlabel[cc](7,-0.5){<m>7</m>} \tlabel[cc](7,0.5){<m>0</m>} \tlabel[cc](8, 0.5){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 2t(t+3)^{-\frac{1}{3}}</m> Graph: \begin{mfpic}[10][5]{-10}{5}{-10}{10} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,10){<m>y</m>} \tlabel[cc](-6,5){<m>\approx (-4.5, 7.862)</m>} \xmarks{-9 step 1 until 4} \ymarks{-8 step 2 until 8} \tlpointsep{4pt} \axislabels {x}{{<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{ {<m>-8</m>} -8, {<m>-6</m>} -6, {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>2</m>} 2, {<m>4</m>} 4, {<m>6</m>} 6, {<m>8</m>} 8} \dashed \polyline{(-3,-9), (-3, 10)} \point[4pt]{(0,0), (-4.5, 7.862)} \penwd{1.25pt} \arrow \reverse \arrow \function{-9,-3.2,0.1}{-(2*x)/((-x-3)**(1/3))} \arrow \reverse \function{-2.8,0,0.1}{(2*x)/((x+3)**(1/3))} \arrow \function{0,5,0.1}{(2*x)/((x+3)**(1/3))} \end{mfpic} \columnbreak Domain:
+          <m>(-\infty, -3) \cup (-3, \infty)</m> Intercept:
+          <m>(0,0)</m> As <m>t \rightarrow \pm \infty</m>,
+          <m>g(t) \rightarrow \infty</m> Range:
+          <m>(-\infty, \infty)</m> Local minimum:
+          <m>\approx (-4.5, 7.862)</m> Increasing:
+          <m>\approx [-4.5, -3)</m>, <m>(-3,\infty)</m> Decreasing:
+          <m>\approx (-\infty, -4.5]</m> Vertical Asymptote:
+          <m>t = -3</m> Sign Diagram: \begin{mfpic}[10]{-3}{10}{-2}{2} \arrow \reverse \arrow \polyline{(-3,0),(10,0)} \xmarks{0,7} \tlabel[cc](-1.5,1){<m>(+)</m>} \tlabel[cc](0,-1){<m>-3</m>} \tlabel[cc](0,1){\textinterrobang} \tlabel[cc](3.5,1){<m>(-)</m>} \tlabel[cc](7,-1){<m>0</m>} \tlabel[cc](7,1){<m>0</m>} \tlabel[cc](8.5,1){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t)= t^{\frac{3}{2}}(t-2)^{-\frac{1}{2}}</m> Domain:
+          <m>(2, \infty)</m> As <m>t \rightarrow \infty</m>,
+          <m>g(t) \rightarrow \infty</m> Graph: \begin{mfpic}[15][10]{-1}{10}{-1}{10} \axes \tlabel[cc](10,-0.5){<m>t</m>} \tlabel[cc](0.5,10){<m>y</m>} \xmarks{1 step 1 until 9} \ymarks{1 step 2 until 9} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \axislabels {y}{{<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7, {<m>9</m>} 9} \dashed \polyline{(2,5), (2,9)} \dashed \polyline{(4,5), (9,10)} \gclear \tlabelrect(3,4){<m>\approx (3, 5.196)</m>} \point[4pt]{(3, 5.196)} \penwd{1.25pt} \arrow \reverse \arrow \function{2.1,8.75,0.1}{(x**1.5)*((x - 2)**(-0.5))} \end{mfpic} \columnbreak Range:
+          <m>\approx [5.196, \infty)</m> Local minimum:
+          <m>\approx (3, 5.196)</m> Increasing:
+          <m>\approx [3, \infty)</m> Decreasing:
+          <m>\approx (2,3]</m> Vertical asymptote:
+          <m>t = 2</m> Using Calculus it can be shown that <m>y = t+1</m> is a slant asymptote of this graph.
+          Sign Diagram: \begin{mfpic}[15]{0}{10}{-1}{1} \reverse \arrow \polyline{(0,0),(4,0)} \xmarks{0} \tlabel[cc](0,-0.5){<m>2</m>} \tlabel[cc](0,0.5){\textinterrobang} \tlabel[cc](2, 0.5){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{0.4}(3-x)^{0.6}</m> Domain:
+          <m>(-\infty, \infty)</m> Intercepts: <m>(0,0)</m>,
+          <m>(3,0)</m> Graph: \begin{mfpic}[20]{-2}{5}{-2}{4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](2,2){<m>\approx (1.2, 1.531)</m>} \xmarks{-1 step 1 until 4} \ymarks{-1 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \point[4pt]{(0,0), (3,0), (1.2, 1.531)} \penwd{1.25pt} \arrow \reverse \function{-2,0,0.1}{((-x)**0.4)*((3-x)**0.6)} \function{0,3,0.1}{(x**0.4)*((3-x)**0.6)} \arrow \function{3,4,0.1}{-(x**0.4)*((x-3)**0.6)} \end{mfpic} \columnbreak As <m>x \rightarrow -\infty</m>,
+          <m>f(x) \rightarrow \infty</m> As <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow -\infty</m> Range:
+          <m>(-\infty, \infty)</m> Local minimum:
+          <m>(0,0)</m>
+          (this is a cusp)
+          Local maximum:
+          <m>\approx (1.2, 1.531)</m> Increasing:
+          <m>\approx [0, 1.2]</m> Decreasing:
+          <m>\approx (-\infty, 0]</m>, <m>[1.2, \infty)</m> Unusual Steepness:
+          <m>x = 3</m> Sign Diagram: \begin{mfpic}[10]{-3}{10}{-2}{2} \arrow \reverse \arrow \polyline{(-3,0),(10,0)} \xmarks{0,7} \tlabel[cc](-1.5,1){<m>(+)</m>} \tlabel[cc](0,-1){<m>0</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \tlabel[cc](7,-1){<m>3</m>} \tlabel[cc](7,1){<m>0</m>} \tlabel[cc](8.5,1){<m>(-)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{0.5}(3-x)^{0.5}</m> Graph: \begin{mfpic}[20]{-2}{5}{-2}{4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](2,2){<m>\approx (1.5, 1.5)</m>} \xmarks{-1 step 1 until 4} \ymarks{-1 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \point[4pt]{(0,0), (3,0), (1.5, 1.5)} \penwd{1.25pt} \function{0,3,0.1}{(x**0.5)*((3-x)**0.5)} \end{mfpic} \columnbreak Domain:
+          <m>[0,3]</m> Intercepts:
+          <m>(0,0)</m>, <m>(3,0)</m> Range:
+          <m>\approx [0, 1.5]</m> Increasing:
+          <m>\approx [0, 1.5]</m> Decreasing:
+          <m>\approx [1.5, 3]</m> Unusual Steepness:<fn>
+          Note you may need to zoom in to see this.
+          </fn>  <m>x=0</m>,
+          <m>x = 3</m> Sign Diagram: \begin{mfpic}[10]{-3}{10}{-2}{2} \polyline{(0,0),(7,0)} \xmarks{0,7} \tlabel[cc](0,-1){<m>0</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \tlabel[cc](7,-1){<m>3</m>} \tlabel[cc](7,1){<m>0</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 4t (9-t^2)^{-\sqrt{2}}</m> Graph: \begin{mfpic}[15]{-4}{4}{-3}{3} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-2 step 1 until 2} \ymarks{-2 step 1 until 2} \tlpointsep{4pt} \axislabels {x}{ {<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \dashed \polyline{(-3,-3), (-3, 3)} \dashed \polyline{(3,-3), (3, 3)} \point[4pt]{(0,0)} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.6,2.6,0.1}{4*x/((9-(x**2))**1.414)} \end{mfpic} \columnbreak Domain:
+          <m>(-3, 3)</m> Intercepts: <m>(0,0)</m> Range:
+          <m>(-\infty, \infty)</m> Increasing:
+          <m>(-3,3)</m> Sign Diagram: \begin{mfpic}[10]{-5}{5}{-2}{2} \polyline{(-5,0),(5,0)} \xmarks{-5,0,5} \tlabel[cc](-5,-1){<m>-3</m>} \tlabel[cc](-5,1){\textinterrobang} \tlabel[cc](-2.5,1){<m>(-)</m>} \tlabel[cc](0,-1){<m>0</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](2.5,1){<m>(+)</m>} \tlabel[cc](5,-1){<m>3</m>} \tlabel[cc](5,1){\textinterrobang} \end{mfpic} Note:
+          <m>g</m> is odd
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 3(t^2+1)^{-\pi}</m> Domain:
+          <m>(-\infty, \infty)</m> Graph: \begin{mfpic}[20]{-4}{4}{-1}{4} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3 step 1 until 3} \ymarks{1 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \point[4pt]{(0,3)} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,3,0.1}{3/(((x**2)+1)**3.14)} \end{mfpic} \columnbreak Intercept:
+          <m>(0,3)</m> As <m>t \rightarrow \pm \infty</m>,
+          <m>g(t) \rightarrow 0</m> Range:
+          <m>(0, 3]</m> Increasing:
+          <m>(-\infty, 0]</m> Decreasing:
+          <m>[0, \infty)</m> Horizontal asymptote:
+          <m>y =0</m> Sign Diagram: \begin{mfpic}[10]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \tlabel[cc](0,1){<m>(+)</m>} \end{mfpic} Note:
+          <m>g</m> is even
+        </p>
+      </li>
+      <li>
+        <p>
+          As in  <xref ref="monomialarcexercise">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>
+          and <xref ref="laurentarcexercise">Exercise</xref>
+          in <xref ref="IntroRational">Section</xref>,
+          the slopes of these curves near <m>x = 1</m> approach the value of the exponent on <m>x</m>.
+          <me>
+            \begin{array}{|r||c|c|c|c|}  \hline  f(x) \amp   [0.9, 1.1] \amp  [0.99, 1.01] \amp [0.999, 1.001] \amp  [0.9999, 1.0001]  \\ \hline x^{\frac{1}{2}} \amp  0.5006 \amp  \approx \frac{1}{2} \amp  \approx \frac{1}{2} \amp  \approx \frac{1}{2} \\ \hline x^{\frac{2}{3}} \amp  0.6672 \amp  0.6667 \amp  \approx \frac{2}{3} \amp  \approx \frac{2}{3}  \\ \hline x^{-0.23} \amp  -0.2310 \amp  \approx -0.23 \amp \approx -0.23 \amp   \approx -0.23  \\  \hline x^{\pi}  \amp 3.1544 \amp  3.1417 \amp  \approx \pi \amp  \approx \pi   \\  \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>W \approx 37.55^{\circ}</m>F.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V \approx 9.84</m> miles per hour.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>W(V) = 53.142 - 23.78 V^{0.16}</m>.
+              Since we are told in <xref ref="WindChillTemperature">Exercise</xref>
+              that wind chill is only effect for wind speeds of more than 3 miles per hour,
+              we restrict the domain to <m>V > 3</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>W(V)=0</m> when <m>V \approx 152.29</m>.
+              This means, according to the model,
+              for the wind chill temperature to be
+              <m>0^{\circ}</m>F, the wind speed needs to be <m>152.29</m> miles per hour.
+            </p>
+          </li>
+          <li>
+            <p>
+              The graph of <m>y = W(V)</m> is below.
+              <image width="73%" source="./PowerFunctionsGraphics/WINDCHILL.jpg"/>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>y = \frac{1}{3}x^{\frac{3}{2}} - x^{\frac{1}{2}} + \frac{2}{3}</m>.
+              The point <m>\left(0,\frac{2}{3}\right)</m> is when Fritzy's path crosses Chewbacca's path - in other words,
+              where Fritzy catches Chewbacca.
+              <image width="73%" source="./PowerFunctionsGraphics/PURSUIT01.jpg"/> <m>y = \frac{1}{3}x^{\frac{3}{2}} - x^{\frac{1}{2}} + \frac{2}{3}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>y = \frac{1}{6}x^3+\frac{1}{2}x^{-1} - \frac{2}{3}</m>.
+              We find as <m>x \rightarrow 0^{+}</m>,
+              <m>y \rightarrow \infty</m> which means,
+              in this case, Fritzy's pursuit never ends;
+              he never catches Chewbacca.
+              This makes sense since Chewbacca has a head start and is running faster than Fritzy.
+              <image width="73%" source="./PowerFunctionsGraphics/PURSUIT02.jpg"/> <m>y = \frac{1}{6}x^3+\frac{1}{2}x^{-1} - \frac{2}{3}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

@@ -1,0 +1,2956 @@
+<section xml:id="GraphsofPolynomials">
+  <title>Graphs of Polynomial Functions</title>
+  <introduction>
+    <p>
+      In <xref ref="IntroductiontoFunctions">Chapter</xref>,
+      we studied functions of the form <m>f(x) = b</m>
+      (constant functions),
+      <m>f(x) = mx+b</m>, <m>m \neq 0</m>
+      (linear functions),
+      and <m>f(x) = ax^2+bx+c</m>, <m>a \neq 0</m>
+      (quadratic functions).
+      In each case, we learned how to construct graphs,
+      find zeros, describe behavior,
+      and use the functions in each family to model real-world phenomena.
+      One might wonder about functions of the form <m>f(x) = ax^3+bx^2+cx+d</m>,
+      <m>a \neq 0</m>,
+      or functions containing even higher powers of <m>x</m>.
+      These are the <em>polynomial functions</em>
+      and are the subject of study in this chapter.<fn>
+      You've seen polynomials before - see <xref ref="AppPolyArith">Section</xref>,
+      for instance.
+      Here, we restrict our attention to polynomial <em>functions</em>
+      which for us means <em>one</em>
+      independent variable instead of expressions with more than one variable.
+      </fn> As you may recall,
+      <em>poly</em>nomials are the result of adding <em>mon</em>omials,
+      so we begin our study of polynomial functions with monomial functions.
+    </p>
+  </introduction>
+  <subsection xml:id="MonomialFunctions">
+    <title>Monomial Functions</title>
+    <definition xml:id="monomialfunction">
+      <statement>
+        <p>
+          A
+              <idx><h>function</h><h>monomial</h></idx>
+              <idx><h>monomial function</h><h>definition of</h></idx>
+          <term>monomial function</term> is a function of the form
+          <me>
+            f(x) = b \qquad \text{ or }  \qquad f(x) = a x^{n}
+          </me>,
+          where <m>a</m> and <m>b</m> are real numbers,
+          <m>a \neq 0</m> and <m>n \in \mathbb{N}</m>.
+          The domain of a monomial function is <m>(-\infty, \infty)</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Monomial functions, by definition,
+      contain the constant functions along with a two parameter family of functions,
+      <m>f(x) = ax^n</m>.
+      We use <m>x</m> as the default independent variable here with <m>a</m> and <m>n</m> as parameters.
+      From <xref ref="SetsofRealNumbers">Section</xref>,
+      we recall that the set <m>\mathbb{N} = \{ 1, 2, 3, \ldots \}</m> is the set of natural numbers,
+      so examples of monomial functions include <m>f(x) = 2x = 2x^{1}</m>,
+      <m>g(t) = -0.1 t^2</m>, and <m>H(s) = \sqrt{2} \, s^{117}</m>.
+      Note that the function <m>f(x) = x^0</m> is
+      <em>not</em> a monomial function.
+      Even though <m>x^0 = 1</m> for all
+      <em>nonzero</em> values of <m>x</m>,
+      <m>0^{0}</m> is undefined,<fn>
+      More specifically, <m>0^0</m> is an
+      <em>indeterminate form.</em>
+      These are studied extensively in Calculus.
+      </fn> and hence <m>f(x) = x^0</m> does <em>not</em>
+      have a domain of <m>(-\infty, \infty)</m>.<fn>
+      This is why we do not describe monomial functions as having the form <m>f(x) = ax^n</m> for any
+      <em>whole</em> number <m>n</m>.
+      See <xref ref="SetsofRealNumbers">Section</xref>
+      </fn>
+    </p>
+    <p>
+      We begin our study of the graphs of polynomial functions by studying graphs of monomial functions.
+      Starting with <m>f(x) = x^n</m> where <m>n</m> is even,
+      we investigate the cases <m>n = 2</m>,
+      <m>4</m> and <m>6</m> at the top of the next page.
+      Numerically, we see that if <m>-1 \lt x \lt 1</m>,
+      <m>x^n</m> becomes much smaller as <m>n</m> increases whereas if <m>x\lt -1</m> or <m>x>1</m>,
+      <m>x^n</m> becomes much larger as <m>n</m> increases.
+      These trends manifest themselves geometrically as the graph <sq>flattening</sq> for
+      <m>|x|\lt 1</m> and <sq>narrowing</sq> for <m>|x| > 1</m> as <m>n</m> increases.<fn>
+      Recall that <m>|x| \lt 1</m> is equivalent to
+      <m>-1\lt x\lt 1</m> and <m>|x|>1</m> is equivalent to <m>x\lt -1</m> or <m>x>1</m>.
+      Using absolute values allow us to describe these sets of real numbers more succinctly.
+      </fn>
+    </p>
+    <tabular>
+      {m{2.5in}m{1.5in}m{1.25in}m{1.25in}}
+      <m>\begin{array}{|r||c|c|c|}  \hline
+      x \amp   x^2 \amp  x^4 \amp  x^6 \\ \hline
+      -2 \amp  4\amp  16\amp  64 \\  \hline
+      -1 \amp  1 \amp  1\amp   1\\  \hline
+      -0.5 \amp  0.25 \amp  0.0625\amp   0.015625 \\  \hline
+      0 \amp   0 \amp  0 \amp  0 \\  \hline
+      0.5 \amp  0.25  \amp   0.0625 \amp  0.015625 \\  \hline
+      1\amp   1 \amp  1\amp   1 \\  \hline
+      2 \amp  4 \amp  16 \amp  64 \\  \hline
+      \end{array}</m>
+      &amp;
+      \begin{mfpic}[10]{-3.5}{3.5}{-1}{10}
+      \axes
+      \tlabel[cc](3.5, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 10){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-3.16228,3.16228,0.1}{x**2}
+      \point[4pt]{(-1,1), (0,0), (1,1)}
+      \tcaption{<m>y=x^2</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[10]{-2}{2}{-1}{10}
+      \axes
+      \tlabel[cc](2, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 10){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-1.77828,1.77828,0.1}{x**4}
+      \point[4pt]{(-1,1), (0,0), (1,1)}
+      \tcaption{<m>y=x^4</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[10]{-2}{2}{-1}{10}
+      \tlabel[cc](2, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 10){<m>y</m>}
+      \axes
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-1.4678,1.4678,0.1}{x**6}
+      \point[4pt]{(-1,1), (0,0), (1,1)}
+      \tcaption{<m>y=x^6</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      From the graphs,
+      it appears as if the range of each of these functions is <m>[0, \infty)</m>.
+      When <m>n</m> is even, <m>x^n \geq 0</m> for all <m>x</m> so the range of
+      <m>f(x) = x^{n}</m> is contained in <m>[0, \infty)</m>.
+      To show that the range of <m>f</m> is all of <m>[0, \infty)</m>,
+      we note that the equation <m>x^n = c</m> for <m>c \geq 0</m> has
+      (at least)
+      one solution for every even integer <m>n</m>,
+      namely <m>x = \sqrt[n]{c}</m>.
+      (See <xref ref="AppRadEqus">Section</xref>
+      for a review of this notation.)
+      Hence, <m>f(\sqrt[n]{c}) = (\sqrt[n]{c})^n = c</m> which shows that every non-negative real number is in the range of <m>f</m>.<fn>
+      This should sound familiar - see the comments regarding the range of
+      <m>f(x) = x^2</m> in <xref ref="QuadraticFunctions">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      Another item worthy of note is the symmetry about the line <m>x =0</m> a.k.a the <m>y</m>-axis.
+      (See <xref ref="symmetrydefn">Definition</xref>
+      for a review of this concept.)
+      With <m>n</m> being even, <m>f(-x) = (-x)^n = x^n = f(x)</m>.
+      At the level of points, we have that for all <m>x</m>,
+      <m>(-x, f(-x)) = (-x,f(x))</m>.
+      Hence for every point <m>(x, f(x))</m> on the graph of <m>f</m>,
+      the point symmetric about the <m>y</m>-axis,
+      <m>(-x, f(x))</m> is on the graph, too.
+      We give this sort of symmetry a name honoring its roots here with even-powered monomial functions:
+    </p>
+    <definition xml:id="evenfunctiondefn">
+      <statement>
+        <p>
+          A function <m>f</m> is said to be
+              <idx><h>function</h><h>even</h></idx>
+              <idx><h>even function</h></idx>
+          <term>even</term> if <m>f(-x) = f(x)</m> for all <m>x</m> in the domain of <m>f</m>.
+        </p>
+        <p>
+          <term>NOTE:</term> A function <m>f</m> is even if and only if the graph of
+          <m>y = f(x)</m> is symmetric about the <m>y</m>-axis.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      An investigation of the odd powered monomial functions (<m>n \geq 3</m>) yields similar results with the major difference being that when a negative number is raised to an odd natural number power the result is still negative.
+      Numerically we see that for <m>|x| > 1</m> the values of <m>|x^n|</m> increase as <m>n</m> increases and the values of <m>|x^n|</m> get closer to <m>0</m> as <m>n</m> increases.
+      This translates graphically into a flattening behavior on the interval <m>(-1, 1)</m> and a narrowing elsewhere.
+      The graphs are shown on the top of the next page.
+    </p>
+    <p>
+      The range of these functions appear to be all real numbers,
+      <m>(-\infty, \infty)</m> which is algebraically sound as the equation <m>x^n = c</m> has a solution for every real number,<fn>
+      Do you see the importance of <m>n</m> being odd here?
+      </fn> namely <m>x = \sqrt[n]{c}</m>.
+      Hence, for every real number <m>c</m>,
+      choose <m>x = \sqrt[n]{c}</m> so that <m>f(x) = f(\sqrt[n]{c}) = (\sqrt[n]{c})^n =c</m>.
+      This shows that every real number is in the range of <m>f</m>.
+    </p>
+    <tabular>
+      {m{2.75in}m{1.25in}m{1.25in}m{1.25in}}
+      <m>\begin{array}{|r||c|c|c|}  \hline
+      x \amp   x^3 \amp  x^5 \amp  x^7 \\ \hline
+      -2 \amp  -8\amp  -32\amp  -128 \\  \hline
+      -1 \amp  -1 \amp  -1\amp   -1\\  \hline
+      -0.5 \amp  0.125 \amp  -0.03125\amp   -0.0078125 \\  \hline
+      0 \amp   0 \amp  0 \amp  0 \\  \hline
+      0.5 \amp  0.125  \amp   0.03125 \amp  0.0078125 \\  \hline
+      1\amp   1 \amp  1\amp   1 \\  \hline
+      2 \amp  8 \amp  32 \amp  128 \\  \hline
+      \end{array}</m>
+      &amp;
+      \begin{mfpic}[10]{-2}{2}{-5}{5}
+      \tlabel[cc](2, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 5){<m>y</m>}
+      \axes
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-1.700,1.700,0.1}{x**3}
+      \point[4pt]{(-1,-1), (0,0), (1,1)}
+      \tcaption{<m>y=x^3</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[10]{-2}{2}{-5}{5}
+      \axes
+      \tlabel[cc](2, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-1.3800,1.3800,0.1}{x**5}
+      \point[4pt]{(-1,-1), (0,0), (1,1)}
+      \tcaption{<m>y=x^5</m>}
+      \end{mfpic}
+      &amp;
+      \begin{mfpic}[10]{-2}{2}{-5}{5}
+      \axes
+      \tlabel[cc](2, -0.5){<m>x</m>}
+      \tlabel[cc](0.5, 5){<m>y</m>}
+      \penwd{1.25pt}
+      \arrow \reverse \arrow \function{-1.2585,1.2585,0.1}{x**7}
+      \point[4pt]{(-1,-1), (0,0), (1,1)}
+      \tcaption{<m>y=x^7</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      Here, since <m>n</m> is odd, <m>f(-x) = (-x)^n = -x^n = -f(x)</m>.
+      This means that whenever <m>(x, f(x))</m> is on the graph,
+      so is the point symmetric about the origin, <m>(-x, -f(x))</m>.
+      (Again, see <xref ref="symmetrydefn">Definition</xref>.)
+      We generalize this property below.
+      Not surprisingly, we name it in honor of its odd powered heritage:
+    </p>
+    <definition xml:id="oddfunctiondefn">
+      <statement>
+        <p>
+          A function <m>f</m> is said to be
+              <idx><h>function</h><h>odd</h></idx>
+              <idx><h>odd function</h></idx>
+          <term>odd</term> if <m>f(-x) = -f(x)</m> for all <m>x</m> in the domain of <m>f</m>.
+        </p>
+        <p>
+          <term>NOTE:</term> A function <m>f</m> is odd if and only if the graph of
+          <m>y = f(x)</m> is symmetric about the origin.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The most important thing to take from the discussion above is the basic shape and common points on the graphs of <m>y = x^n</m> for each of the families when <m>n</m> even and <m>n</m> is odd.
+      While symmetry is nice and should be noted when present,
+      even and odd symmetry are comparatively rare.
+      The point of <xref ref="evenfunctiondefn">Definitions</xref>
+      and <xref ref="oddfunctiondefn"></xref>is to give us the vocabulary to point out the symmetry when appropriate.
+    </p>
+    <p>
+      Moving on, we take a cue from <xref ref="linearabsvaluegraphs">Theorem</xref> and prove the following.
+    </p>
+    <theorem xml:id="linearmononialgraphs">
+      <statement>
+        <p>
+          For real numbers <m>a</m>, <m>h</m> and <m>k</m> with <m>a \neq 0</m>,
+          the graph of <m>F(x) = a(x-h)^n+k</m> can be obtained from the graph of
+          <m>f(x) = x^n</m> by performing the following operations,
+          in sequence:
+          <ol>
+            <li>
+              <p>
+                add <m>h</m> to the <m>x</m>-coordinates of each of the points on the graph of <m>f</m>.
+                This results in a horizontal shift to the right if <m>h > 0</m> or left if <m>h \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of <m>y = x^n</m> to <m>y = (x-h)^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                multiply the <m>y</m>-coordinates of each of the points on the graph obtained in Step 1 by <m>a</m>.
+                This results in a vertical scaling,
+                but may also include a reflection about the <m>x</m>-axis if <m>a \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = (x-h)^n</m> to <m>y = a(x-h)^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                add <m>k</m> to the <m>y</m>-coordinates of each of the points on the graph obtained in Step 2.
+                This results in a vertical shift up if <m>k > 0</m> or down if <m>k\lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = a(x-h)^n</m> to <m>y = a(x-h)^n+k</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      <em>Proof.</em> Our goal is to start with the graph of
+      <m>f(x) = x^n</m> and build it up to the graph of <m>F(x) = a(x-h)^n+k</m>.
+      We begin by examining <m>F_{1}(x) = (x-h)^n</m>.
+      The graph of <m>f(x) = x^n</m> can be described as the set of points <m>\{ (c, c^n) \, | \, c \in \mathbb{R} \}</m>.<fn>
+      We are using the dummy variable <m>c</m> here instead of <m>x</m> for reasons that will become apparent shortly.
+      </fn> Likewise,
+      the graph of <m>F_{1}</m> can be described as the set of points <m>\{(x, (x-h)^n) \, | \, x \in \mathbb{R} \}</m>.
+      If we relabel <m>c =x-h</m> so that <m>x = c+h</m>,
+      then as <m>x</m> varies through all real numbers so does <m>c</m>.<fn>
+      That is, for a fixed number <m>h</m> every real number <m>c</m> can be written as <m>x-h</m> for some real number <m>x</m>,
+      and every real number <m>x</m> can be written as <m>c + h</m> for some real number <m>c</m>.
+      </fn> Hence,
+      we can describe the graph of <m>F_{1}</m> as <m>\{ (c+h, c^n) \, | \, c \in \mathbb{R} \}</m>.
+      This means that we can obtain the graph of <m>F_{1}</m> from the graph of <m>f</m> by adding <m>h</m> to each of the <m>x</m>-coordinates of the points on the graph of <m>f</m> and that establishes the first step of the theorem.
+    </p>
+    <p>
+      Next, we consider the graph of
+      <m>F_{2}(x) = a(x-h)^n</m> as compared to the graph of <m>F_{1}(x) = (x-h)^n</m>.
+      The graph of <m>F_{1}</m> is the set of points
+      <m>\{ (x, (x-h)^n \, | \, x \in \mathbb{R} \}</m> while the graph of <m>F_{2}</m> is the set of points <m>\{ (x, a(x-h)^n) \, | \, x \in \mathbb{R} \}</m>.
+      The only difference between the points <m>(x, (x-h)^n)</m> and
+      <m>(x, a(x-h)^n)</m> is that the <m>y</m>-coordinate in the latter is <m>a</m> times the <m>y</m>-coordinate of the former.
+    </p>
+    <p>
+      In other words,
+      to produce the graph of <m>F_{2}</m> from the graph of <m>F_{1}</m>,
+      we take the <m>y</m>-coordinate of each point on the graph of <m>F_{1}</m> and multiply it by <m>a</m> to get the corresponding point on the graph of <m>F_{2}</m>.
+      If <m>a>0</m>,
+      all we are doing is scaling the <m>y</m>-axis by <m>a</m>.
+      If <m>a\lt 0</m>, then, in addition to scaling the <m>y</m>-axis,
+      we are also reflecting each point across the <m>x</m>-axis.
+      In either case,
+      we have established the second step of the theorem.
+    </p>
+    <p>
+      Last, we compare the graph of
+      <m>F(x) = a(x-h)^n + k</m> to that of <m>F_{2}(x) = a(x-h)^n</m>.
+      Once again, we view the graphs as sets of points in the plane.
+      The graph of <m>F_{2}</m> is
+      <m>\{ (x, a(x-h)^n) \, | \, x \in \mathbb{R} \}</m> and the graph of <m>F</m> is<m>\{ (x, a(x-h)^n+k) \, | \, x \in \mathbb{R} \}</m>.
+      Looking at the corresponding points,
+      <m>(x, a(x-h)^n)</m> and <m>(x, a(x-h)^n+k)</m>,
+      we see that we can obtain all of the points on the graph of <m>F</m> by adding <m>k</m> to each of the <m>y</m>-coordinates to points on the graph of <m>F_{2}</m>.
+      This is equivalent to shifting every point vertically by <m>k</m> units which establishes the third and final step in the theorem.
+    </p>
+    <p>
+      This argument should sound familiar.
+      The proof we presented above is more-or-less the same argument we presented after the proof of <xref ref="linearabsvaluegraphs">Theorem</xref> in <xref ref="AbsoluteValueFunctions">Section</xref>
+      but with <sq><m>| \cdot |</m></sq> replaced by <sq><m>(\cdot)^n</m>.</sq> Also note that using <m>n =2</m> in <xref ref="linearmononialgraphs">Theorem</xref>
+      establishes <xref ref="standardformgraph">Theorem</xref>
+      in <xref ref="QuadraticFunctions">Section</xref>.
+    </p>
+    <p>
+      We now use <xref ref="linearmononialgraphs">Theorem</xref> to graph two different
+      <q>transformed</q>
+      monomial functions.
+      To provide the reader an opportunity to compare and contrast the graphical behaviors exhibited in the case when <m>n</m> is even versus when <m>n</m> is odd,
+      we graph one of each case.
+    </p>
+    <example xml:id="linearmonomialex">
+      <statement>
+        <p>
+          Use <xref ref="linearmononialgraphs">Theorem</xref>
+          to graph the following functions.
+          Label at least three points on each graph.
+          State the domain and range using interval notation.
+          <ol>
+            <li>
+              <p>
+                <m>f(x) = -2(x+1)^4+3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = \dfrac{(2t-1)^3}{5}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                For  <m>f(x) = -2(x+1)^4+3 = -2 (x-(-1))^4+3</m>,
+                we identify <m>n = 4</m>, <m>a = -2</m>,
+                <m>h = -1</m>, and <m>k = 3</m>.
+                Thus to graph <m>f</m>,
+                we start with <m>y = x^4</m> and perform the following steps,
+                in sequence,
+                tracking the points <m>(-1,1)</m>,
+                <m>(0,0)</m> and <m>(1,1)</m> through each step:  Step 1:
+                add <m>-1</m> to the <m>x</m>-coordinates of each of the points on the graph of <m>y=x^4</m>:
+                <me>
+                  \begin{array}{ccc}   \begin{mfpic}[15]{-3}{3}{-1}{5} \axes  \tlabel[cc](3, -0.5){\(x\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-2,1){\((-1,1)\)} \tlabel[cc](1.75,1){\((1,1)\)} \tlabel[cc](0.75,-0.5){\((0,0)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-1.5,1.5,0.1}{x**4} \point[4pt]{(-1,1), (0,0), (1,1)} \tcaption{\(y=x^4\)} \end{mfpic}  \amp \stackrel{\text{ add \(-1\) to each \(x\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-3}{3}{-1}{5} \axes  \tlabel[cc](3, -0.5){\(x\)} \tlabel[cc](0.25, 5){\(y\)} \tlabel[cc](-3,1){\((-2,1)\)} \tlabel[cc](0.75,1){\((0,1)\)} \tlabel[cc](-1.25,-0.5){\((-1,0)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-2.5,0.5,0.1}{(x+1)**4} \point[4pt]{(-2,1), (-1,0), (0,1)} \tcaption{\(y=(x+1)^4\)} \end{mfpic} \\  \text{ \((-1,1)\), \((0,0)\), \((1,1)\) }  \amp  \amp  \text{ \((-2,1)\), \((-1,0)\), \((0,1)\) } \end{array}
+                </me>
+                Step 2:   multiply the <m>y</m>-coordinates of each of the points on the graph of <m>y = (x+1)^4</m> by <m>-2</m>:
+                <me>
+                  \begin{array}{ccc}  \begin{mfpic}[15]{-3}{3}{-1}{5} \axes  \tlabel[cc](3, -0.5){\(x\)} \tlabel[cc](0.25, 5){\(y\)} \tlabel[cc](-3,1){\((-2,1)\)} \tlabel[cc](0.75,1){\((0,1)\)} \tlabel[cc](-1.25,-0.5){\((-1,0)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-2.5,0.5,0.1}{(x+1)**4} \point[4pt]{(-2,1), (-1,0), (0,1)} \tcaption{\(y=(x+1)^4\)} \end{mfpic} \amp  \stackrel{\text{ multiply each \(y\)-coordinate by \(-2\) } }{ \xrightarrow{}}  \amp  \begin{mfpic}[15]{-3}{3}{-5}{1} \axes  \tlabel[cc](3, -0.5){\(x\)} \tlabel[cc](0.25, 1){\(y\)} \tlabel[cc](-3.25,-2){\((-2,-2)\)} \tlabel[cc](1,-2){\((0,-2)\)} \tlabel[cc](-1.25, 0.5){\((-1,0)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-2.25,0.25,0.1}{(-2)*((x+1)**4)} \point[4pt]{(-2,-2), (-1,0), (0,-2)} \tcaption{\(y=-2(x+1)^4\)} \end{mfpic} \\   \text{ \((-2,1)\), \((-1,0)\) , \((0,1)\) } \amp  \amp  \text{ \((-2,-2)\), \((-1,0)\) , \((0,-2)\) } \end{array}
+                </me>
+                Step 3:  add <m>3</m> to the <m>y</m>-coordinates of each of the points on the graph of <m>y = -2(x+1)^4</m>:
+                <me>
+                  \begin{array}{ccc}  \begin{mfpic}[15]{-3}{3}{-5}{1} \axes  \tlabel[cc](3, -0.5){\(x\)} \tlabel[cc](0.25, 1){\(y\)} \tlabel[cc](-3.25,-2){\((-2,-2)\)} \tlabel[cc](1,-2){\((0,-2)\)} \tlabel[cc](-1.25, 0.5){\((-1,0)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-2.25,0.25,0.1}{(-2)*((x+1)**4)} \point[4pt]{(-2,-2), (-1,0), (0,-2)} \tcaption{\(y=-2(x+1)^4\)} \end{mfpic}  \amp  \stackrel{\text{ add \(3\) to each \(y\)-coordinate } }{ \xrightarrow{}}  \amp  \begin{mfpic}[15]{-3}{3}{-2}{4} \axes  \tlabel[cc](3, -0.5){\(x\)} \tlabel[cc](0.25, 4){\(y\)} \tlabel[cc](-3.25,1){\((-2,1)\)} \tlabel[cc](1,1){\((0,1)\)} \tlabel[cc](-1.25, 3.5){\((-1,3)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-2.25,0.25,0.1}{((-2)*((x+1)**4))+3} \point[4pt]{(-2,1), (-1,3), (0,1)} \tcaption{\(y=-2(x+1)^4+3\)} \end{mfpic}  \\    \text{ \((-2,-2)\) , \((-1,0)\) , \((0,-2)\) }  \amp  \amp  \text{ \((-2,1)\), \((-1,3)\), \((0,1)\) } \end{array}
+                </me>
+                The domain here is <m>(-\infty, \infty)</m> while the range is <m>(-\infty, 3]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To use <xref ref="linearmononialgraphs">Theorem</xref>
+                to graph <m>g(t) = \dfrac{(2t-1)^3}{5}</m>,
+                we must rewrite the expression for <m>g(t)</m>:
+                <me>
+                  g(t) =  \dfrac{(2t-1)^3}{5} = \frac{1}{5} \left( 2 \left(t - \frac{1}{2} \right) \right)^3 = \frac{1}{5} (2)^3  \left( t - \frac{1}{2} \right)^3 = \frac{8}{5} \left( t - \frac{1}{2} \right)^3
+                </me>
+                We identify <m>n = 3</m>,
+                <m>h = \frac{1}{2}</m> and <m>a  = \frac{8}{5}</m>.
+                Hence, we start with the graph of <m>y = t^3</m>  and perform the following steps,
+                in sequence,
+                tracking the points <m>(-1,-1)</m>,
+                <m>(0,0)</m> and <m>(1,1)</m> through each step:  Step 1:
+                add <m>\frac{1}{2}</m> to each of the <m>t</m>-coordinates of each of the points on the graph of <m>y=t^3</m>:
+                <me>
+                  \begin{array}{rcl}  \begin{mfpic}[15]{-3}{3}{-5}{5} \axes  \tlabel[cc](3, -0.25){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-2.5,-1){\((-1,-1)\)} \tlabel[cc](1.75,1){\((1,1)\)} \tlabel[cc](0.75,-0.5){\((0,0)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-1.7,1.7,0.1}{x**3} \point[4pt]{(-1,-1), (0,0), (1,1)} \tcaption{\(y=t^3\)} \end{mfpic}  \amp \stackrel{\text{ add \(\frac{1}{2}\) to each \(t\)-coordinate} }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-3}{3}{-5}{5} \axes  \tlabel[cc](3, -0.25){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-2,-1){\(\left(-\frac{1}{2},-1 \right)\)} \tlabel[cc](2.5,1){\(\left(\frac{3}{2},1 \right)\)} \tlabel[cc](0.75,-0.75){\(\left(\frac{1}{2},0 \right)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-1.2, 2.2,0.1}{(x-0.5)**3} \point[4pt]{(-0.5,-1), (0.5,0), (1.5,1)} \tcaption{\(y=\left(t - \frac{1}{2} \right)^3\)} \end{mfpic} \\  \text{ \((-1,-1)\), \((0,0)\), \((1,1)\) }  \amp   \amp  \text{\(\left(-\frac{1}{2},-1 \right)\), \(\left(\frac{1}{2},0 \right)\), \(\left(\frac{3}{2},1 \right)\)} \end{array}
+                </me>
+                Step 2: multiply each of the <m>y</m>-coordinates of the graph of
+                <m>y = \left(t - \frac{1}{2}\right)^3</m> by <m>\frac{8}{5}</m>.
+                <me>
+                  \begin{array}{rcl}  \begin{mfpic}[15]{-3}{3}{-5}{5} \axes  \tlabel[cc](3, -0.25){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-2,-1){\(\left(-\frac{1}{2},-1 \right)\)} \tlabel[cc](2.5,1){\(\left(\frac{3}{2},1 \right)\)} \tlabel[cc](0.75,-0.75){\(\left(\frac{1}{2},0 \right)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-1.2, 2.2,0.1}{(x-0.5)**3} \point[4pt]{(-0.5,-1), (0.5,0), (1.5,1)} \tcaption{\(y=\left(t - \frac{1}{2} \right)^3\)} \end{mfpic}  \amp \stackrel{\text{ multiply each \(y\)-coordinate by \(\frac{8}{5}\)} }{ \xrightarrow{}} \amp  \begin{mfpic}[15]{-3}{3}{-5}{5} \axes  \tlabel[cc](3, -0.25){\(t\)} \tlabel[cc](0.5, 5){\(y\)} \tlabel[cc](-2,-1){\(\left(-\frac{1}{2},-\frac{8}{5} \right)\)} \tlabel[cc](2.5,1){\(\left(\frac{3}{2},\frac{8}{5} \right)\)} \tlabel[cc](0.75,-0.75){\(\left(\frac{1}{2},0 \right)\)}  \penwd{1.25pt} \arrow \reverse \arrow \function{-0.96, 1.96,0.1}{1.6*((x-0.5)**3)} \point[4pt]{(-0.5,-1.6), (0.5,0), (1.5,1.6)} \tcaption{\(y=\frac{8}{5}\left(t - \frac{1}{2} \right)^3\)} \end{mfpic} \\  \text{\(\left(-\frac{1}{2},-1 \right)\), \(\left(\frac{1}{2},0 \right)\), \(\left(\frac{3}{2},1 \right)\)}  \amp  \amp  \text{\(\left(-\frac{1}{2},-\frac{8}{5} \right)\), \(\left(\frac{1}{2},0 \right)\), \(\left(\frac{3}{2},\frac{8}{5} \right)\)} \end{array}
+                </me>
+                Both the domain and range of <m>g</m> is <m>(-\infty, \infty)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      <xref ref="linearmonomialex">Example</xref>
+      demonstrates two big ideas in mathematics:
+      first, resolving a complex problem into smaller,
+      simpler steps, and, second, the value of changing form.<fn>
+      We've seen the importance of changing form several times already,
+      but it never hurts to point it out.
+      </fn>
+    </p>
+    <p>
+      Next we wish to focus on the so-called <idx><h>polynomial function</h><h>end behavior</h></idx>
+          <idx><h>end behavior</h><h>of a function graph</h></idx>
+      <em>end behavior</em> presented in each case.<fn>
+      Sometimes called the <sq>long run</sq> behavior.
+      </fn> The end behavior of a function is a way to describe what is happening to the outputs from a function as the inputs approach the <sq>ends</sq> of the domain.
+      Since domain of monomial functions is <m>(-\infty, \infty)</m>,
+      we are looking to see what these functions do as their inputs <sq>approach</sq> <m>\pm \infty</m>.
+      The best we can do is sample inputs and outputs and infer general behavior from these observations.<fn>
+      and let Calculus students prove our claims.
+      </fn> The good news is we've wrestled with this concept before.
+      Indeed, every time we add <sq>arrows</sq> to the graph of a function,
+      we've indicated its end behavior.
+      Let's revisit the graph of
+      <m>f(x) = x^2</m> using the table below.
+    </p>
+    <tabular>
+      {m{2in}m{2.5in}}
+      <m>\begin{array}{|r||c|}  \hline
+      x \amp   f(x) = x^2  \\ \hline
+      -1000 \amp  1000000 \\  \hline
+      -100 \amp  10000 \\  \hline
+      -10 \amp  100  \\  \hline
+      0 \amp   0  \\  \hline
+      10 \amp  100  \\  \hline
+      100\amp   10000 \\  \hline
+      1000 \amp  1000000 \\  \hline
+      \end{array}</m>
+      &amp;
+      \begin{mfpic}[15][10]{-3.5}{3.5}{-1}{10}
+      \axes
+      \tlabel(3.5, 10){as <m>x \rightarrow \infty</m>, <m>f(x) \rightarrow \infty</m>}
+      \tlabel(-9, 10){as <m>x \rightarrow -\infty</m>, <m>f(x) \rightarrow \infty</m>}
+      \tlabel[cc](-3, -0.75){<m>-\infty  \leftarrow x</m>}
+      \tlabel[cc](3, -0.75){<m>x \rightarrow \infty</m>}
+      \function{-3.1623,3.1623,0.1}{x**2}
+      \tlabel[cc](0.5,10){<m>y</m>}
+      \penwd{1.5pt}
+      \arrow \reverse  \function{-3.1623,-2,0.1}{x**2}
+      \arrow  \function{2,3.1623,0.1}{x**2}
+      \arrow \polyline{(-2,0), (-3.5,0)}
+      \arrow \polyline{(2,0), (3.5,0)}
+      \tcaption{<m>f(x)=x^2</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      As <m>x</m> takes on smaller and smaller values,<fn>
+      said differently, negative values that are larger in absolute value
+      </fn>,
+      we see <m>f(x)</m> takes on larger and larger positive values.
+      The smaller <m>x</m> we use,
+      the larger the <m>f(x)</m> becomes,
+      seemingly without bound.<fn>
+      That is, the <m>f(x)</m> values grow larger than any positive number.
+      They are <sq><em>unbounded</em>.</sq>
+      </fn> We codify this behavior by writing as <m>x \rightarrow -\infty</m>,
+      <m>f(x) \rightarrow \infty</m>.
+      Graphically,
+      the farther to the left we travel on the <m>x</m>-axis,
+      the farther up the <m>y</m>-axis the function values travel.
+      This is why we use an <sq>arrow</sq> on the graph in Quadrant II heading upwards to the left.
+      Similarly, we write as <m>x \rightarrow \infty</m>,
+      <m>f(x) \rightarrow \infty</m> since as the <m>x</m> values increase,
+      so do the <m>f(x)</m> values - seemingly without bound.
+      Graphically we indicate this by an arrow on the graph in Quadrant I heading upwards to the right.
+      This behavior holds for all functions
+      <m>f(x) = x^n</m> where <m>n \geq 2</m> is even.
+    </p>
+    <p>
+      Repeating this investigation for for <m>f(x) = x^3</m>,
+      we find as <m>x \rightarrow -\infty</m>,
+      <m>f(x)</m> becomes unbounded in the negative direction,
+      so we write <m>f(x) \rightarrow -\infty</m>.
+      As <m>x \rightarrow \infty</m>,
+      <m>f(x)</m> becomes unbounded in the positive direction,
+      so we write <m>f(x) \rightarrow \infty</m>.
+      This trend holds for all functions
+      <m>f(x) = x^n</m> where <m>n</m> is odd.
+    </p>
+    <tabular>
+      {m{2in}m{2.5in}}
+      <m>\begin{array}{|r||c|}  \hline
+      x \amp   f(x) = x^3  \\ \hline
+      -1000 \amp  -1000000000 \\  \hline
+      -100 \amp  -1000000 \\  \hline
+      -10 \amp  -1000  \\  \hline
+      0 \amp   0  \\  \hline
+      10 \amp  1000  \\  \hline
+      100\amp   1000000 \\  \hline
+      1000 \amp  1000000000 \\  \hline
+      \end{array}</m>
+      &amp;
+      \begin{mfpic}[15][10]{-3.5}{3.5}{-5}{5}
+      \axes
+      \tlabel(2.5, 5){as <m>x \rightarrow \infty</m>, <m>f(x) \rightarrow \infty</m>}
+      \tlabel(-8, -5){as <m>x \rightarrow -\infty</m>, <m>f(x) \rightarrow -\infty</m>}
+      \tlabel[cc](-3, -0.75){<m>-\infty  \leftarrow x</m>}
+      \tlabel[cc](3, -0.75){<m>x \rightarrow \infty</m>}
+      \arrow \reverse \arrow \function{-1.700,1.700,0.1}{x**3}
+      \tlabel[cc](0.5,5){<m>y</m>}
+      \penwd{1.5pt}
+      \arrow \reverse  \function{-1.700,-1,0.1}{x**3}
+      \arrow  \function{1,1.700,0.1}{x**3}
+      \arrow \polyline{(-2,0), (-3.5,0)}
+      \arrow \polyline{(2,0), (3.5,0)}
+      \tcaption{<m>f(x)=x^3</m>}
+      \end{mfpic}
+    </tabular>
+    <p>
+      <xref ref="endbehaviorofmonomials">Theorem</xref>
+      summarizes the end behavior of monomial functions.
+      The results are a consequence of <xref ref="linearmononialgraphs">Theorem</xref>
+      in that the end behavior of a function of the form
+      <m>y = ax^n</m> only differs from that of <m>y = x^n</m> if there is a reflection,
+      that is, if <m>a\lt 0</m>.
+    </p>
+    <theorem xml:id="endbehaviorofmonomials">
+      <statement>
+        <p>
+          <em>End Behavior of Monomial Functions:</em>
+          <idx><h>end behavior</h><h>of monomial functions</h></idx>
+        </p>
+        <p>
+          Suppose <m>f(x) = a x^{n}</m> where
+          <m>a \neq 0</m> is a real number and <m>n \in \mathbb{N}</m>.
+          <ul>
+            <li>
+              <p>
+                If <m>n</m> is even:
+                <tabular>
+                  {m{4in}m{1in}} if <m>a > 0</m>, as <m>x \rightarrow - \infty</m>, <m>f(x) \rightarrow \infty</m> and as <m>x \rightarrow \infty</m>, <m>f(x) \rightarrow \infty</m>: &amp; \begin{mfpic}[5]{-5}{5}{-1}{5} \arrow \reverse \function{-5,-3, 0.1}{(x**2)/5} \dotted \function{-3,3, 0.1}{(x**2)/5} \arrow \function{3,5, 0.1}{(x**2)/5} \tcaption{<m>a>0</m>} \end{mfpic}
+                </tabular>
+                <tabular>
+                  {m{4in}m{1in}} for <m>a \lt 0</m>, as <m>x \rightarrow - \infty</m>, <m>f(x) \rightarrow -\infty</m> and as <m>x \rightarrow \infty</m>, <m>f(x) \rightarrow -\infty</m>: &amp; \begin{mfpic}[5]{-5}{5}{-5}{1} \arrow \reverse \function{-5,-3, 0.1}{(0-(x**2))/5} \dotted \function{-3,3, 0.1}{-(x**2)/5} \arrow \function{3,5, 0.1}{(0-(x**2))/5} \tcaption{<m>a\lt 0</m>} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>n</m> is odd:
+                <tabular>
+                  {m{4in}m{1in}} for <m>a \lt 0</m>, as <m>x \rightarrow - \infty</m>, <m>f(x) \rightarrow -\infty</m> and as <m>x \rightarrow \infty</m>, <m>f(x) \rightarrow \infty</m>: &amp; \begin{mfpic}[5]{-5}{5}{-1}{5} \arrow \reverse \function{-5,-3, 0.1}{0 - (x**2)/5} \dotted \function{-3,0, 0.1}{-(x**2)/5} \dotted \function{0,3, 0.1}{(x**2)/5} \arrow \function{3,5, 0.1}{(x**2)/5} \tcaption{<m>a>0</m>} \end{mfpic}
+                </tabular>
+                <tabular>
+                  {m{4in}m{1in}} for <m>a \lt 0</m>, as <m>x \rightarrow - \infty</m>, <m>f(x) \rightarrow \infty</m> and as <m>x \rightarrow \infty</m>, <m>f(x) \rightarrow -\infty</m>: &amp; \begin{mfpic}[5]{-5}{5}{-1}{5} \arrow \reverse \function{-5,-3, 0.1}{(x**2)/5} \dotted \function{-3,0, 0.1}{(x**2)/5} \dotted \function{0,3, 0.1}{-(x**2)/5} \arrow \function{3,5, 0.1}{0 - (x**2)/5} \tcaption{<m>a\lt 0</m>} \end{mfpic}
+                </tabular>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+  <subsection xml:id="PolynomialFunctionsSubsection">
+    <title>Polynomial Functions</title>
+    <p>
+      We are now in the position to discuss
+      <em>polynomial</em> functions.
+      Simply stated, <em>poly</em>nomial functions are sums of
+      <em>mon</em>omial functions.
+      The challenge becomes how to describe one of these beasts in general.
+      Up until now,
+      we have used distinct letters to indicate different parameters in our definitions of function families.
+      In other words, we define constant functions as <m>f(x) = b</m>,
+      linear functions as <m>f(x) = mx+b</m>,
+      and quadratic functions as <m>f(x) = ax^2+bx+c</m>.
+      We even hinted at a function of the form <m>f(x) = ax^3+bx^2+cx+d</m>.
+      What happens if we wanted to describe a generic polynomial that required,
+      say, 117 different parameters?
+      Our work around is to use subscripted parameters,
+      <m>a_{k}</m>, that denote the coefficient of <m>x^{k}</m>.
+      For example,
+      instead of writing a quadratic as <m>f(x) = ax^2+bx+c</m>,
+      we describe it as <m>f(x) = a_{2} x^2 + a_{1} x + a_{\mbox{ \tiny<m>0</m>} }</m>,
+      where <m>a_{2}</m>, <m>a_{1}</m>,
+      and <m>a_{\mbox{ \tiny <m>0</m>} }</m> are real numbers and <m>a_{2} \neq 0</m>.
+      As an added example, consider <m>f(x) = 4x^5 - 3x^2 + 2x - 5</m>.
+      We can re-write the formula for <m>f</m> as
+      <m>f(x)= 4x^5 + 0 x^{4} + 0 x^{3} + (-3)x^2 + 2 x + (-5)</m>. and identify <m>a_{5} = 4</m>,
+      <m>a_{4} = 0</m>, <m>a_{3} = 0</m>,
+      <m>a_{2} = -3</m>, <m>a_{1} = 2</m> and <m>a_{0} = -5</m>.
+      This is the notation we use in the following definition.
+    </p>
+    <definition xml:id="polynomialfunction">
+      <statement>
+        <p>
+          A <idx><h>function</h><h>polynomial</h></idx>
+              <idx><h>polynomial function</h><h>definition of</h></idx>
+          <term>polynomial function</term> is a function of the form
+          <me>
+            f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_{2} x^{2} + a_{1} x + a_{0}
+          </me>,
+          where <m>a_{0}</m>, <m>a_{1}</m>,
+          <ellipsis/>, <m>a_{n}</m> are real numbers and <m>n \in \mathbb{N}</m>.
+          The domain of a polynomial function is <m>(-\infty, \infty)</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      As usual, <m>x</m> is used in <xref ref="polynomialfunction">Definition</xref>
+      as the independent variable with the <m>a_{k}</m> each being a parameter.
+      Even though we specify <m>n \in \mathbb{N}</m> so <m>n \geq 1</m>,
+      the value of the <m>a_{k}</m> are unrestricted.
+      Hence, any constant function
+      <m>f(x) = b</m> can be written as <m>f(x) = 0 x + a_{\mbox{ \tiny<m>0</m>} }</m>,
+      and so they are polynomials.
+      Polynomials have an associated vocabulary,<fn>
+      See <xref ref="AppPolyArith">Section</xref>.
+      </fn> and hence, so do polynomial functions.
+    </p>
+    <definition xml:id="degreeandallthat">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ul>
+          <li>
+            <p>
+              Given <m>f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_{2} x^{2} + a_{1} x + a_{0}</m> with
+              <m>n \in \mathbb{N}</m> and <m>a_{n} \neq 0</m>, we say
+            </p>
+            <ul>
+              <li>
+                <p>
+                  The natural number <m>n</m> is called the <idx><h>polynomial function</h><h>degree</h></idx>
+                <idx><h>degree of a polynomial</h></idx>
+                  <em>degree</em> of the polynomial <m>f</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The term <m>a_{n} x^{n}</m> is called the <idx><h>polynomial function</h><h>leading term</h></idx>
+                <idx><h>leading term of a polynomial</h></idx>
+                  <em>leading term</em> of the polynomial <m>f</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The real number <m>a_{n}</m> is called the <idx><h>polynomial function</h><h>leading coefficient</h></idx>
+                <idx><h>leading coefficient of a polynomial</h></idx>
+                  <em>leading coefficient</em> of the polynomial <m>f</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The real number <m>a_{0}</m> is called the <idx><h>polynomial function</h><h>constant term</h></idx>
+                <idx><h>constant term of a polynomial</h></idx>
+                  <em>constant term</em> of the polynomial <m>f</m>.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              If <m>f(x) = a_{0}</m>, and <m>a_{0} \neq 0</m>,
+              we say <m>f</m> has degree <m>0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f(x) = 0</m>, we say <m>f</m> has no degree.<fn>
+              Some authors say <m>f(x) = 0</m> has degree <m>-\infty</m> for reasons not even we will go into.
+              </fn>
+            </p>
+          </li>
+        </ul>
+      </statement>
+    </definition>
+    <p>
+      Again, constant functions are split off in their own separate case <xref ref="degreeandallthat">Definition</xref>
+      because of the ambiguity of <m>0^0</m>.
+      (See the remarks following <xref ref="monomialfunction">Definition</xref>.)
+      A consequence of <xref ref="degreeandallthat">Definition</xref>
+      is that we can now think of nonzero constant functions as <sq>zeroth</sq> degree polynomial functions,
+      linear functions as <sq>first</sq> degree polynomial functions,
+      and quadratic functions as <sq>second</sq> degree polynomial functions.
+    </p>
+    <example xml:id="degreandallthatexample">
+      <statement>
+        <p>
+          Find the degree, leading term,
+          leading coefficient and constant term of the following polynomial functions.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>f(x) = 4x^5 - 3x^2 + 2x - 5</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = 12t - t^3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H(w) = \dfrac{4-w}{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>p(z) = (2z-1)^{3}(z-2)(3z+2)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                There are no surprises with <m>f(x) = 4x^5 - 3x^2 + 2x - 5</m>.
+                It is written in the form of <xref ref="degreeandallthat">Definition</xref>,
+                and we see that the degree is <m>5</m>,
+                the leading term is <m>4x^5</m>,
+                the leading coefficient is <m>4</m> and the constant term is <m>-5</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Two changes here: first,
+                the independent variable is <m>t</m>, not <m>x</m>.
+                Second, the form given in <xref ref="degreeandallthat">Definition</xref>
+                specifies the function be written in descending order of the powers of <m>x</m>,
+                or in this case, <m>t</m>.
+                To that end, we re-write <m>g(t) = 12t - t^3 = -t^3+12t</m>,
+                and see that the degree of <m>g</m> is <m>3</m>,
+                the leading term is <m>- t^3</m>,
+                the leading coefficient is <m>-1</m> and the constant term is <m>0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We need to rewrite the formula for <m>H(w)</m> so that it resembles the form given in <xref ref="degreeandallthat">Definition</xref>:
+                <m>H(w) = \frac{4-w}{5} = \frac{4}{5} - \frac{w}{5} = -\frac{1}{5} w + \frac{4}{5}</m>.
+                We see the degree of <m>H</m> is <m>1</m>,
+                the leading term is <m>-\frac{1}{5} w</m>,
+                the leading coefficient is
+                <m>-\frac{1}{5}</m> and the constant term is <m>\frac{4}{5}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                It may seem that we have some work ahead of us to get <m>p</m> in the form of <xref ref="degreeandallthat">Definition</xref>.
+                However, it is possible to glean the information requested about <m>p</m> without multiplying out the entire expression <m>(2z-1)^{3}(z-2)(3z+2)</m>.
+                The leading term of <m>p</m> will be the term which has the highest power of <m>z</m>.
+                The way to get this term is to multiply the terms with the highest power of <m>z</m> from each factor together - in other words,
+                the leading term of <m>p(z)</m> is the product of the leading terms of the
+                <em>factors</em> of <m>p(z)</m>.
+                Hence, the leading term of <m>p</m> is <m>(2z)^3(z)(3z) = 24z^5</m>.
+                This means that the degree of <m>p</m> is <m>5</m> and the leading coefficient is <m>24</m>.
+                As for the constant term, we can perform a similar operation.
+                The constant term of <m>p</m> is obtained by multiplying the constant terms from each of the <em>factors</em>:
+                <m>(-1)^3(-2)(2) = 4</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We now turn our attention to graphs of polynomial functions.
+      Since polynomial functions are sums of monomial functions,
+      it stands to reason that some of of the properties of those graphs carry over to more general polynomials.
+      We first discuss end behavior.
+      Consider <m>f(x) = x^3-75x+250</m>.
+      Below is the graph of <m>f(x)</m>
+      (solid line)
+      along with the graph of its leading term, <m>y = x^3</m>
+      (dashed line.)
+      Below on the left is a view <sq>near</sq> the origin while below on the right is a <sq>zoomed out</sq> view.
+      Near the origin, the graphs have little in common,
+      but as we look farther out,
+      it becomes that the functions begin to look quite similar.
+    </p>
+    <p>
+      <image width="73%" source="./GraphsofPolynomialsGraphics/PolyEBEx1a.jpg"/> <image width="73%" source="./GraphsofPolynomialsGraphics/PolyEBEx1b.jpg"/>
+    </p>
+    <p>
+      This observation is borne out numerically as well.
+      Based on the table below, as <m>x \rightarrow \pm \infty</m>,
+      it certainly appears as if <m>f(x) \approx g(x)</m>.
+      One way to think about what is happening numerically is that the leading term <m>x^3</m> <em>dominates</em>
+      the lower order terms <m>-75x</m> and <m>250</m> as <m>x \rightarrow \pm \infty</m>.
+      In other words,
+      <m>x^3</m> grows so much faster than <m>-75 x</m> and <m>250</m> that these <sq>lower order terms</sq> don't contribute anything of significance to the <m>x^3</m> so <m>f(x) \approx x^3</m>.
+      Another way to see this is to rewrite <m>f(x)</m> as<fn>
+      Since we are considering  <m>x \rightarrow \pm \infty</m>,
+      we are not concerned with <m>x</m> even being close to <m>0</m>,
+      so these fractions will all be defined.
+      </fn>
+      <me>
+        f(x) = x^3  - 75x + 250 = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right)
+      </me>.
+    </p>
+    <p>
+      As <m>x \rightarrow \pm \infty</m>,
+      both <m>\frac{75}{x^2}</m> and
+      <m>\frac{250}{x^3}</m> have constant numerators but denominators that are becoming unbounded.
+      As such, both <m>\frac{75}{x^2}</m> and <m>\frac{250}{x^3} \rightarrow 0</m>.
+      Therefore, as <m>x \rightarrow \pm \infty</m>,
+      <me>
+        f(x) = x^3 - 75x+250  = x^3 \left(1 -  \frac{75}{x^2} + \frac{250}{x^3} \right) \approx x^3 (1 + 0 + 0) = x^3
+      </me>.
+      <me>
+        \begin{array}{|r||c|c|c|c|c|c|}  \hline  x \amp   f(x) = x^3 -75x+250 \amp   x^3 \amp  -75 x \amp  250 \amp  \frac{75}{x^2} \amp   \frac{250}{x^3}  \\ \hline -1000 \amp  \approx -1 \times 10^9  \amp    -1 \times 10^9 \amp 75000  \amp  250 \amp  7.5 \times 10^{-5} \amp  -2.5 \times 10^{-7} \\  \hline -100 \amp  \approx -9.9 \times 10^5 \amp  -1 \times 10^6 \amp  7500  \amp  250 \amp  0.0075 \amp  -2.5 \times 10^{-4} \\  \hline -10 \amp  0  \amp  -1000  \amp  750 \amp  250  \amp  0.75   \amp  -0.25\\  \hline 10 \amp  500 \amp   1000 \amp   -750 \amp  250   \amp  0.75  \amp   0.25   \\ \hline 100 \amp \approx 9.9 \times 10^5  \amp  1 \times 10^6 \amp    -7500  \amp  250 \amp   0.0075 \amp    2.5 \times 10^{-4} \\ \hline 1000 \amp  \approx 1 \times 10^9 \amp  1 \times 10^9  \amp  -75000 \amp  250 \amp  7.5 \times 10^{-5} \amp  2.5 \times 10^{-7} \\  \hline \end{array}
+      </me>
+    </p>
+    <p>
+      Next, consider <m>g(x) = -0.01x^4 + 5x^2</m>.
+      Following the logic of the above example,
+      we would expect the end behavior of <m>y=g(x)</m> to mimic that of <m>y = -0.01 x^4</m>.
+      When we graph <m>y = g(x)</m>
+      (solid line)
+      on the same set of axes as <m>y = -0.01x^4</m>
+      (dashed line),
+      a view near the origin seems to suggest the exact opposite.
+      However, zooming out reveals that the two graphs do share the same end behavior.<fn>
+      Or at least they appear to within the limits of the technology.
+      </fn>
+    </p>
+    <p>
+      <image width="73%" source="./GraphsofPolynomialsGraphics/PolyEBEx2a.jpg"/> <image width="73%" source="./GraphsofPolynomialsGraphics/PolyEBEx2b.jpg"/>
+    </p>
+    <p>
+      Algebraically, for <m>x \rightarrow \pm \infty</m>,
+      even with the small coefficient of <m>-0.01</m>,
+      <m>-0.01x^4</m> dominates the <m>5x^2</m> term so <m>g(x) \approx -0.01 x^4</m>.
+      More precisely,
+      <me>
+        g(x) = -0.01x^4+5x^2 = x^4 \left(-0.01 + \frac{5}{x^2} \right) \approx x^4(-0.01 + 0)= -0.01x^4
+      </me>.
+    </p>
+    <p>
+      The results of these last two examples generalize below in <xref ref="EBPolynomials">Theorem</xref>.
+    </p>
+    <theorem xml:id="EBPolynomials">
+      <statement>
+        <p>
+              <idx><h>end behavior</h><h>polynomial</h></idx>
+          <em>End Behavior for Polynomial Functions:</em>
+        </p>
+        <p>
+          The end behavior of polynomial function <m>f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_{2} x^{2} + a_{1} x + a_{0}</m> with
+          <m>a_{n} \neq 0</m> matches the end behavior of <m>y = a_{n} x^{n}</m>.
+        </p>
+        <p>
+          That is, the end behavior of a polynomial function is determined by its leading term.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We argue <xref ref="EBPolynomials">Theorem</xref>
+      using an argument similar to ones used above.
+      As <m>x \rightarrow \pm \infty</m>,
+      <me>
+        f(x) =  x^{n} \left( a_{n} +\dfrac{a_{n-1}}{x}+ \ldots + \dfrac{a_{2}}{x^{n-2}} + \dfrac{a_{1}}{x^{n-1}}+\dfrac{a_{0}}{x^{n}}\right) \approx x^n( a_{n} + 0 +\ldots 0) = a_{n} x^n
+      </me>
+    </p>
+    <p>
+      If this argument looks a little fuzzy, it should.
+      In Calculus,
+      we have the tools necessary to more explicitly state what we mean by <m>\approx 0</m>.
+      For now, we'll rely on number sense and algebraic intuition.<fn>
+      Both of which, by the way,
+      can lead one astray, so we must proceed cautiously.
+      </fn>
+    </p>
+    <p>
+      Now that we know how to determine the end behavior of polynomial functions,
+      it's time to investigate what happens <sq>in between</sq> the ends.
+      First and foremost, polynomial functions are
+          <idx><h>continuous</h></idx>
+          <idx><h>function</h><h>continuous</h></idx>
+      <em>continuous</em>.
+      Recall from <xref ref="QuadraticFunctions">Section</xref> that,
+      informally,
+      graphs of continuous functions have no <sq>breaks</sq> or <sq>holes</sq> in them.<fn>
+      Again, the formal definition of <sq>continuity</sq> and properties of continuous functions are discussed in Calculus.
+      </fn> Since monomial functions are continuous
+      (as far as we can tell)
+      and polynomials are sums of monomial functions,
+      it turns out that polynomial functions are continuous as well.
+      Moreover, the graphs of monomial functions,
+      hence polynomial functions, are
+          <idx><h>smooth</h></idx>
+          <idx><h>function</h><h>smooth</h></idx>
+      <em>smooth</em>.
+      Once again, <sq>smoothness</sq> is a concept defined precisely in Calculus,
+      but for us,
+      functions have no <sq>corners</sq> or <sq>sharp turns</sq>.
+      Below we find the graph of a function which is neither smooth nor continuous,
+      and to its right we have a graph of a polynomial, for comparison.
+      The function whose graph appears on the left fails to be continuous where it has a <sq>break</sq> or <sq>hole</sq> in the graph;
+      everywhere else, the function is continuous.
+      The function is continuous at the <sq>corner</sq> and the <sq>cusp</sq>,
+      but we consider these <sq>sharp turns</sq>,
+      so these are places where the function fails to be smooth.
+      Apart from these four places,
+      the function is smooth and continuous.
+      Polynomial functions are smooth and continuous everywhere,
+      as exhibited in the graph on the right.
+      The notion of smoothness is what tells us graphically that,
+      for example, <m>f(x) = |x|</m>,
+      whose graph is the characteristic <sq><m>\vee</m></sq> shape,
+      cannot be a polynomial function,
+      even though it is a piecewise-defined function comprised of polynomial functions.
+      Knowing polynomial functions are continuous and smooth gives us an idea of how to <sq>connect the dots</sq> when sketching the graph from points that we're able to find analytically such as intercepts.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-5}{5}{-2}{5}
+          \penwd{1.25pt}
+          \arrow \polyline{(-3,2),(-5,4)}
+          \arrow \function{-3,-1.5,0.1}{1-(2/(x+1))}
+          \dashed \polyline{(-1,0),(-1,5)}
+          \arrow \parafcn{-1,1.75,0.1}{(t**3,(t**2)+1)}
+          \point[4pt]{(-1,2)}
+          \pointfillfalse
+          \point[4pt]{(3.375,3.25)}
+          \tlabel[cc](-3,1.5){<sq>corner</sq>}
+          \tlabel[cc](-1,-0.5){<sq>break</sq>}
+          \tlabel[cc](0,0.5){<sq>cusp</sq>}
+          \tlabel[cc](3.375,2.5){<sq>hole</sq>}
+          \tcaption{Pathologies not found on graphs of polynomials functions.}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15][7.5]{-5}{5}{-10}{10}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \function{-3,3.5,0.1}{0.5*x*(x+2)*(x-3)}
+          \tcaption{The graph of a polynomial function.}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      Speaking of intercepts,
+      we next focus our attention on the behavior of the graphs of polynomial functions near their zeros.
+      Recall a zero <m>c</m> of a function <m>f</m> is a solution to <m>f(x) = 0</m>.
+      Geometrically,
+      the zeros of a function are the <m>x</m>-coordinates of the <m>x</m>-intercepts of the graph of <m>y = f(x)</m>.
+      Consider the polynomial function <m>f(x) = x^3 (x-2)^2 (x+1)</m>.
+      To find the zeros of <m>f</m>,
+      we set <m>f(x) = x^3 (x-2)^2 (x+1) = 0</m>.
+      Since the expression <m>f(x)</m> is already factored,
+      we set each factor equal to zero.<fn>
+      in accordance with the Zero Product Property of the Real Numbers - see <xref ref="AppRealNumberArithmetic">Section</xref>.
+      </fn> Solving <m>x^3 = 0</m> gives <m>x = 0</m>,
+      <m>(x-2)^2 = 0</m> gives <m>x = 2</m>,
+      and <m>x+1 = 0</m> gives <m>x = -1</m>.
+      Hence, our zeros are <m>x = -1</m>,
+      <m>x = 0</m>, and <m>x = 2</m>.
+      Below, we graph <m>y = f(x)</m> and observe the <m>x</m>-intercepts <m>(-1,0)</m>,
+      <m>(0,0)</m> and <m>(2,0)</m>.
+      We first note that the graph <em>crosses</em>
+      through the <m>x</m>-axis at <m>(-1,0)</m> and <m>(0,0)</m>,
+      but the graph <em>touches</em> and
+      <em>rebounds</em> at <m>(2,0)</m>.
+      Moreover, at <m>(-1,0)</m>,
+      the graph crosses through the axis is a fairly <sq>linear</sq> fashion whereas there is a substantial amount of <sq>flattening</sq> going on near <m>(0,0)</m>.
+      Or aim is to explain these observations and generalize them.
+    </p>
+    <p>
+      <image width="73%" source="./GraphsofPolynomialsGraphics/PolyZeroEx01.jpg"/>
+    </p>
+    <p>
+      First, let's look at what's happening with the formula
+      <m>f(x) = x^3 (x-2)^2 (x+1)</m> when <m>x \approx -1</m>.
+      We know the <m>x</m>-intercept at <m>(-1,0)</m> is due to the presence of the <m>(x+1)</m> factor in the expression for <m>f(x)</m>.
+      So, in this sense,
+      the factor <m>(x+1)</m> is determining a major piece of the behavior of the graph near <m>x = -1</m>.
+      For that reason,
+      we focus instead on the other two factors to see what contribution they make.
+      We find when <m>x \approx -1</m>,
+      <m>x^3 \approx (-1)^3 = -1</m> and <m>(x-2)^2 \approx (-1-2)^2 = 9</m>.
+      Hence, <m>f(x) = x^3 (x-3)^2 (x+1) \approx (-1)^3 (-1-2)^2 (x+1) = -9(x+1)</m>.
+      Below on the left is a graph of <m>y = f(x)</m>
+      (the solid line)
+      and the graph of <m>y = -9(x+1)</m>
+      (the dashed line.)
+      Sure enough,
+      these graphs approximate one another near <m>x = -1</m>.
+    </p>
+    <p>
+      Likewise, let's look near <m>x = 0</m>.
+      The <m>x</m>-intercept <m>(0,0)</m> is due to the <m>x^3</m> term.
+      For <m>x \approx 0</m>,
+      <m>(x-2)^2 \approx (0-2)^2 = 4</m> and <m>(x+1) \approx (0+1) = 1</m>,
+      so <m>f(x) = x^3 (x-3)^2 (x+1) \approx x^3 (-2)^2(1) = 4x^3</m>.
+      Below in the center picture,
+      we have the graph of <m>y = f(x)</m> (again,
+      the solid line) and <m>y = 4x^3</m>
+      (the dashed line)
+      near <m>x=0</m>.
+      Once again, the graphs verify our analysis.
+    </p>
+    <p>
+      Last, but not least, we analyze <m>f</m> near <m>x = 2</m>.
+      Here, the intercept <m>(2,0)</m> is due to the <m>(x-2)^2</m> factor,
+      so we look at the <m>x^3</m> and <m>(x+1)</m> factors.
+      If <m>x \approx 2</m>,
+      <m>x^3 \approx (2)^3 = 8</m> and <m>(x+1) \approx (2+1) = 3</m>.
+      Hence, <m>f(x) = x^3 (x-3)^2 (x+1) \approx (2)^3 (x-2)^2 (2+1) = 24(x-2)^2</m>.
+      Sure enough, as evidenced below on the right,
+      the graphs of <m>y = f(x)</m> and <m>y = 24(x-2)^2</m>.
+    </p>
+    <tabular>
+      {m{2in}m{2in}m{2in}}
+      <image width="37%" source="./GraphsofPolynomialsGraphics/PolyZeroEx02.jpg"/>
+      &amp;
+      <image width="37%" source="./GraphsofPolynomialsGraphics/PolyZeroEx03.jpg"/>
+      &amp;
+      <image width="37%" source="./GraphsofPolynomialsGraphics/PolyZeroEx04.jpg"/>   \\
+      <m>y = f(x)</m> and <m>y = -9(x+1)</m>
+      &amp;
+      <m>y = f(x)</m> and <m>y = 4x^3</m>
+      &amp;
+      <m>y = f(x)</m> and <m>y=24(x-2)^2</m>
+    </tabular>
+    <p>
+      We generalize our observations in <xref ref="polynomialbehaviornearzeros">Theorem</xref> below.
+      Like many things we've seen in this text,
+      a more precise statement and proof can be found in a course on Calculus.
+    </p>
+    <theorem xml:id="polynomialbehaviornearzeros">
+      <statement>
+        <p>
+          Suppose <m>f</m> is a polynomial function and <m>f(x) = (x-c)^m q(x)</m> where
+          <m>m \in \mathbb{N}</m> and <m>q(c) \neq 0</m>.
+          Then the the graph of <m>y = f(x)</m> near <m>(c,0)</m> resembles that of <m>y = q(c) (x-c)^m</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Let's see how <xref ref="polynomialbehaviornearzeros">Theorem</xref>
+      applies to our findings regarding <m>f(x) = x^3 (x-2)^2 (x+1)</m>.
+      For <m>c = -1</m>, <m>(x-c) = (x-(-1)) = (x+1)</m>.
+      We rewrite <m>f(x) = x^3 (x-2)^2 (x+1) = (x-(-1))^1 \left[x^3(x-2)^2\right]</m> and identify <m>m=1</m> and <m>q(x) = x^3 (x-2)^2</m>.
+      We find <m>q(c) = q(-1) = (-1)^3(-1-2)^2 = -9</m> so <xref ref="polynomialbehaviornearzeros">Theorem</xref> says that near <m>(-1,0)</m>,
+      the graph of <m>y=f(x)</m> resembles <m>y = q(-1)(x-(-1))^1 = -9(x+1)</m>.
+      For <m>c=0</m>,
+      <m>(x-c) = (x-0) = x</m> and we can rewrite <m>f(x) = x^3 (x-2)^2 (x+1) = (x-0)^3 \left[(x-2)^2 (x+1)\right]</m>.
+      We identify <m>m=3</m> and <m>q(x) = (x-2)^2(x+1)</m>.
+      In this case <m>q(c) = q(0) = (0-2)^2(0+1) = 4</m>,
+      so <xref ref="polynomialbehaviornearzeros">Theorem</xref>
+      guarantees the graph of <m>y = f(x)</m> near <m>x=0</m> resembles <m>y = q(0)(x-0)^3 = 4x^3</m>.
+      Lastly, for <m>c = 2</m>,
+      we see <m>f(x) = (x-2)^2 \left[x^3 (x+1)\right]</m> and we identify <m>m = 2</m> and <m>q(x) = x^3(x+1)</m>.
+      We find <m>q(2) = 2^3 (2+1)= 24</m>,
+      so <xref ref="polynomialbehaviornearzeros">Theorem</xref>
+      guarantees the graph of <m>y = f(x)</m> resembles <m>y = 24(x-2)^2</m> near <m>x=2</m>.
+    </p>
+    <p>
+      As we already mentioned,
+      the formal statement and proof of <xref ref="polynomialbehaviornearzeros">Theorem</xref> require Calculus.
+      For now, we can understand the theorem as follows.
+      If we factor a polynomial function as
+      <m>f(x) = (x-c)^m q(x)</m> where <m>m \geq 1</m>,
+      then <m>x=c</m> is a zero of <m>f</m>,
+      since <m>f(c) = (c-c)^m q(c) = 0 \cdot q(c) = 0</m>.
+      The stipulation that <m>q(c) \neq 0</m> means that we have essentially factored the expression <m>f(x) = (x-c)^m q(x) = (\text{ going to \(0\) } ) \cdot (\text{ not going to \(0\) } )</m>.
+      Thinking back to <xref ref="linearmononialgraphs">Theorem</xref>,
+      the graph <m>y = q(c) (x-c)^m</m> has an <m>x</m>-intercept at <m>(c,0)</m>,
+      a basic overall shape determined by the exponent <m>m</m>,
+      and end behavior determined by the sign of <m>q(c)</m>.
+      The fact that <em>if</em> <m>x=c</m> is a zero <em>then</em>
+      we are guaranteed we can factor
+      <m>f(x) = (x-c)^m q(x)</m> were <m>q(c) \neq 0</m> and,
+      moreover, such a factorization is unique
+      (so that there's only one value of <m>m</m> possible for each zero)
+      is a consequence of two theorems,
+      <xref ref="polydivthm">Theorem</xref> and The Factor Theorem,
+      <xref ref="factorthm">Theorem</xref>
+      which we'll review in <xref ref="Polydivision">Section</xref>.
+      For now, we assume such a factorization is unique in order to define the following.
+    </p>
+    <definition xml:id="multiplicity">
+      <statement>
+        <p>
+          Suppose <m>f</m> is a polynomial function and <m>m \in \mathbb{N}</m>.
+          If <m>f(x) = (x-c)^m q(x)</m> where <m>q(c) \neq 0</m>,
+          we say <m>x=c</m> is a zero of <idx><h>polynomial function</h><h>zero ! multiplicity</h></idx>
+              <idx><h>multiplicity</h><h>of a zero</h></idx>
+              <idx><h>zero</h><h>multiplicity of</h></idx>
+          <term>multiplicity</term> <m>m</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      So, for <m>f(x) = x^3 (x-2)^2 (x+1) = (x-0)^3(x-2)^2(x-(-1))^1</m>,
+      <m>x=0</m> is a zero of multiplicity <m>3</m>,
+      <m>x=2</m> is a zero of multiplicity <m>2</m>,
+      and <m>x =-1</m> is a zero of multiplicity <m>1</m>.
+      <xref ref="EBPolynomials">Theorems</xref>
+      and <xref ref="polynomialbehaviornearzeros"></xref> give us the following:
+    </p>
+    <theorem xml:id="roleofmultiplicity">
+      <statement>
+        <p>
+          <em>The Role of Multiplicity:</em>
+          Suppose <m>f</m> is a polynomial function and <m>x=c</m> is a zero of multiplicity <m>m</m>.
+              <idx><h>multiplicity</h><h>effect on the graph of a polynomial</h></idx>
+          <ul>
+            <li>
+              <p>
+                If <m>m</m> is even,
+                the graph of <m>y=f(x)</m> touches and rebounds from the <m>x</m>-axis at <m>(c,0)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>m</m> is odd,
+                the graph of <m>y=f(x)</m> crosses through the <m>x</m>-axis at <m>(c,0)</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Our next example showcases how all of the above theory can assist in sketching relatively good graphs of polynomial functions without the assistance of technology.
+    </p>
+    <example xml:id="graphfromtheory">
+      <statement>
+        <p>
+          Let <m>p(x) = (2x-1)(x+1)(1-x^4)</m>.
+          <ol>
+            <li>
+              <p>
+                Find all real zeros of <m>p</m> and state their multiplicities.
+              </p>
+            </li>
+            <li>
+              <p>
+                Describe the behavior of the graph of
+                <m>y = p(x)</m> near each of the <m>x</m>-intercepts.
+              </p>
+            </li>
+            <li>
+              <p>
+                Determine the end behavior and <m>y</m>-intercept of the graph of <m>y = p(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Sketch <m>y = p(x)</m> and check your answer using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find the zeros of <m>p</m>,
+                we set  <m>p(x) =  (2x-1)(x+1)(1-x^4) = 0</m>.
+                Since the expression <m>p(x)</m> is already (partially) factored,
+                we set each factor equal to <m>0</m> and solve.
+                From <m>(2x-1) =0</m>, we get <m>x=\frac{1}{2}</m>;
+                from <m>(x+1) = 0</m> we get  <m>x = -1</m>;
+                and from  solving <m>1-x^4 =0</m> we get <m>x = \pm 1</m>.
+                Hence, the zeros are <m>x = -1</m>,
+                <m>x = \frac{1}{2}</m>, and <m>x = 1</m>.
+                In order to determine the multiplicities,
+                we need to factor <m>p(x)</m> as so we can identify the <m>m</m> and <m>q(x)</m> as described in <xref ref="multiplicity">Definition</xref>.
+                The zero <m>x = -1</m> corresponds to the factor <m>(x+1)</m>.
+                Notice, however, that writing
+                <m>p(x) = (x+1)^1 \left[(2x-1)(1-x^4)\right]</m> with <m>m = 1</m> and <m>q(x) = (2x-1)(1-x^4)</m> does <em>not</em>
+                satisfy <xref ref="multiplicity">Definition</xref> since here,
+                <m>q(-1) = (2(-1)-1)(1-(-1)^4) = 0</m>.
+                Indeed, we can factor <m>(1-x^4) = (1-x^2)(1+x^2) = (1-x)(1+x)(x^2+1)</m> so that
+                <me>
+                  p(x)= (2x-1)(x+1)(1-x^4)  = (2x-1)(x+1)(1-x)(1+x)(x^2+1) = (x+1)^2 \left[(2x-1)(1-x)(x^2+1) \right]
+                </me>.
+                Identifying <m>q(x) = (2x-1)(1-x)(x^2+1)</m>,
+                we find <m>q(-1) = (2(-1)-1)(1-(-1))((-1)^2+1) = -12 \neq 0</m>,
+                which means the multiplicity of <m>x=-1</m> is <m>m=2</m>.
+                The zero <m>x = \frac{1}{2}</m> came from the factor <m>(2x-1) = 2 (x-\frac{1}{2})</m>,
+                so we have
+                <me>
+                  p(x) =  (2x-1)(x+1)^2(1-x)(x^2+1)  = (x -\frac{1}{2})^{1} \left[2 (x+1)^2(1-x)(x^2+1) \right]
+                </me>.
+                If we identify <m>q(x) = 2 (x+1)^2(1-x)(x^2+1)</m>,
+                we find <m>q(\frac{1}{2}) = \frac{45}{16} \neq 0</m> so multiplicity here is <m>m=1</m>.
+                Last but not least, we turn our attention to our last zero,
+                <m>x = 1</m>, which we obtained from solving <m>1-x^4=0</m>.
+                However, from <m>p(x) =  (2x-1)(x+1)^2(1-x)(x^2+1)</m>,
+                we see the zero <m>x=1</m> corresponds to the factor <m>(1-x) = -(x-1)</m>.
+                We have <m>p(x) = (x-1)^{1}\left[- (2x-1)(x+1)^2(x^2+1)\right]</m>.
+                Identifying <m>q(x) = - (2x-1)(x+1)^2(x^2+1)</m>,
+                we see <m>q(1) = -8</m>, so the multiplicity <m>m = 1</m> here as well.
+              </p>
+            </li>
+            <li>
+              <p>
+                From <xref ref="roleofmultiplicity">Theorem</xref>,
+                since the multiplicities of
+                <m>x = \frac{1}{2}</m> and <m>x = 1</m> are both <em>odd</em>,
+                we know the graph of <m>y = p(x)</m> <em>crosses</em>
+                through the <m>x</m>-axis at <m>(\frac{1}{2}, 0)</m> and <m>(1,0)</m>.
+                More specifically,
+                since the multiplicity for both of these zeros is <m>1</m>,
+                the graph will look locally linear at these points.
+                More specifically, based on our calculations above,
+                near <m>x = \frac{1}{2}</m>,
+                the graph will resemble the increasing line
+                <m>y = \frac{45}{16} (x - \frac{1}{2})</m>, and near <m>x = 1</m>,
+                the graph will resemble the decreasing line <m>y = -8(x-1)</m>.
+                Since the multiplicity of <m>x = -1</m> is <em>even</em>,
+                we know the graph of <m>y = p(x)</m> <em>touches</em>
+                and <em>rebounds</em> at <m>(-1,0)</m>.
+                Since the multiplicity of <m>x=-1</m> is <m>2</m>,
+                it will look locally like a parabola.
+                More specifically,
+                the graph near <m>x = -1</m> will resemble <m>y = -12(x+1)^2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Per <xref ref="EBPolynomials">Theorem</xref>,
+                the end behavior of <m>y =p(x)</m>,
+                matches the end behavior of its leading term.
+                As in <xref ref="degreandallthatexample">Example</xref>,
+                we multiply the leading terms from each factor together to obtain the leading term for <m>p(x)</m> : <m>p(x) = (2x-1)(x+1)(1-x^4) = (2x)(x)(-x^4) + \ldots = -2x^6 + \ldots</m>.
+                Since the degree here, <m>6</m>,
+                is even and the leading coefficient <m>-2 \lt 0</m>,
+                we know as <m>x \rightarrow \pm \infty</m>,
+                <m>p(x) \rightarrow -\infty</m>.
+                To find the <m>y</m>-intercept,
+                we find <m>p(0) = (2(0)-1)(0+1)(1-0^4) = -1</m>, hence,
+                the <m>y</m>-intercept is <m>(0,-1)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                From the end behavior, <m>x \rightarrow -\infty</m>,
+                <m>p(x) \rightarrow -\infty</m>,
+                we start the graph in Quadrant III and head towards <m>(-1,0)</m>.
+                At <m>(-1,0)</m>,
+                we <sq>bounce</sq> off of the <m>x</m>-axis and head towards the <m>y</m>-intercept,
+                <m>(0,-1)</m>.
+                We then head towards <m>\left(\frac{1}{2}, 0 \right)</m> and cross through the <m>x</m>-axis there.
+                Finally, we head back to the <m>x</m>-axis and cross through at <m>(1,0)</m>.
+                Owing to the end behavior <m>x \rightarrow \infty</m>,
+                <m>p(x) \rightarrow -\infty</m>,
+                we exit the picture in Quadrant IV. Since polynomial functions are continuous and smooth,
+                we have no holes or gaps in the graph,
+                and all the <sq>turns</sq> are rounded
+                (no abrupt turns or corners.)
+                We produce something resembling the graph below. \begin{mfpic}[40][20]{-2}{2}{-4}{2} \axes \tlabel[cc](2, -0.5){<m>x</m>} \tlabel[cc](0.25, 2){<m>y</m>} \tlabel[cc](-1,0.5){<m>(-1,0)</m>} \tlabel[cc](0.5,-1){<m>(0,-1)</m>} \tlabel[cc](0.25, 0.5){<m>\left( \frac{1}{2},0 \right)</m>} \tlabel[cc](1.25,0.5){<m>(1,0)</m>} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.35,1.2,0.1}{(2*x-1)*(x+1)*(1-(x**4))} \point[4pt]{(-1,0), (0.5,0), (1,0), (0,-1)} \tcaption{<m>y=p(x)</m>} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A couple of remarks about <xref ref="graphfromtheory">Example</xref> are in order.
+      First, notice that the factor <m>(x^2+1)</m> was more of a spectator in our discussion of the zeros of <m>p</m>.
+      Indeed, if we set <m>x^2+1 = 0</m>,
+      we have <m>x^2=-1</m> which provides no
+      <em>real</em> solutions.<fn>
+      The solutions are <m>x = \pm i</m> - see <xref ref="AppCmpNums">Section</xref>.
+      </fn> That being said,
+      the factor <m>x^2+1</m> <em>does</em>
+      affect the shape of the graph (See <xref ref="comparegraphfromtheoryexample">Exercise</xref>.) Next,
+      when connecting up the graph from <m>(-1,0)</m> to <m>(0,-1)</m> to <m>\left(\frac{1}{2}, 0 \right)</m>,
+      there really is no way for us to know how low the graph goes,
+      or where the lowest point is between <m>x = -1</m> and
+      <m>x = \frac{1}{2}</m> unless we plot more points.
+      Likewise, we have no idea how high the graph gets between <m>x = \frac{1}{2}</m> and <m>x = 1</m>.
+      While there are ways to determine these points analytically,
+      more often than not, finding them requires Calculus.
+      Since these points do play an important role in many applications,
+      we'll need to discuss them in this course and, when required,
+      we'll use technology to find them.
+      For that reason, we have the following definition:
+    </p>
+    <definition xml:id="localmaxmindefn">
+      <statement>
+        <p>
+          Suppose <m>f</m> is a function with <m>f(a) = b</m>.
+          <ul>
+            <li>
+              <p>
+                We say <m>f</m> has a <em>local minimum</em>
+                at the point <m>(a,b)</m> if and only if there is an open interval <m>I</m> containing <m>a</m> for which
+                <m>f(a) \leq f(x)</m> for all <m>x</m> in <m>I</m>.
+                The value <m>f(a) = b</m> is called <sq>a local minimum value of <m>f</m>.</sq> <idx><h>local minimum</h><h>formal definition of</h></idx> That is,
+                <m>b</m> is the minimum <m>f(x)</m> value over an
+                <em>open interval</em> containing <m>a</m>.
+                Graphically,
+                no points <sq>near</sq> a local minimum are lower than <m>(a,b)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We say <m>f</m> has a <em>local maximum</em>
+                at the point <m>(a,b)</m> if and only if there is an open interval <m>I</m> containing <m>a</m> for which
+                <m>f(a) \geq f(x)</m> for all <m>x</m> in <m>I</m>.
+                The value <m>f(a) = b</m> is called <sq>a local maximum value of <m>f</m>.</sq> <idx><h>local maximum</h><h>formal definition of</h></idx> That is,
+                <m>b</m> is the maximum <m>f(x)</m> value over an
+                <em>open interval</em> containing <m>a</m>.
+                Graphically,
+                no points <sq>near</sq> a local maximum are higher than <m>(a,b)</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Taken together,
+          the local maximums and local minimums of a function, if they exist,
+          are called the <term>local extrema</term> of the function.
+              <idx><h>local extrema</h><h>formal definition of</h></idx>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Once again, the terminology used in <xref ref="localmaxmindefn">Definition</xref>
+      blurs the line between the function <m>f</m> and its outputs,
+      <m>f(x)</m>.
+      Also, some textbooks use the terms <sq>relative</sq> minimum and <sq>relative</sq> maximum instead of the adjective <sq>local.</sq> Lastly,
+      note the definition of local extrema requires an <em>open</em>
+      interval exist in the domain containing <m>a</m> in order for
+      <m>(a, f(a))</m> to be a candidate for a local maximum or local minimum.
+      We'll have more to say about this in later chapters.
+      If our open interval happens to be <m>(-\infty, \infty)</m>,
+      then our local extrema are the extrema of <m>f</m> - we'll see an example of this momentarily.
+    </p>
+    <p>
+      Below we use a graphing utility to graph <m>y= p(x) = (2x-1)(x+1)(1-x^4)</m>.
+      We first consider the point <m>(-1,0)</m>.
+      Even though there are points on the graph of
+      <m>y = p(x)</m> that are higher than <m>(-1,0)</m>, locally,
+      <m>(-1,0)</m> is the top of a hill.
+      To satisfy <xref ref="localmaxmindefn">Definition</xref>,
+      we need to provide an open interval on which <m>p(-1) = 0</m> is the largest,
+      or maximum function value.
+      Note the definition requires us to provide
+      <em>just one</em> open interval.
+      One that works is the interval <m>(-1.5, -0.5)</m>.
+      We could use any smaller interval or go as large as <m>\left(-\infty, \frac{1}{2} \right)</m>
+      (can you see why?)
+      Next we encounter a <sq>low</sq> point at approximately <m>(-0.2353, -1.1211)</m>.
+      More specifically, for all <m>x</m> in the interval,
+      say, <m>(-0.5, 0)</m>, <m>p(x) \geq 1.1211</m>, Hence,
+      we have a local minimum at <m>(-0.2353, -1.1211)</m>.
+      Lastly, at <m>(0.811, 0.639)</m>,
+      we are back to a high point.
+      In fact, <m>0.639</m> isn't just a local maximum value,
+      based on the graph, it is <em>the</em> maximum of <m>p</m>.
+      Here, we may choose the open interval
+      <m>(-\infty, \infty)</m> as the open interval required by <xref ref="localmaxmindefn">Definition</xref>,
+      since for all <m>x</m>, <m>p(x) \leq 0.639</m>.
+      It is important to note that there is no minimum value of <m>p</m> despite there being a local minimum value.<fn>
+      Some books use the adjectives <sq>global</sq> or <sq>absolute</sq> when describing the extreme values of a function to distinguish them from their local counterparts.
+      </fn>
+    </p>
+    <p>
+      <image width="92.5%" source="./GraphsofPolynomialsGraphics/PolyRelativeExtrema.jpg"/>
+    </p>
+    <p>
+      We close this section with a classic application of a third degree polynomial function.
+    </p>
+    <example xml:id="boxnotopex">
+      <statement>
+        <p>
+          A box with no top is to be fashioned from a <m>10</m> inch <times/> <m>12</m> inch piece of cardboard by cutting out congruent squares from each corner of the cardboard and then folding the resulting tabs.
+          Let <m>x</m> denote the length of the side of the square which is removed from each corner.
+        </p>
+        <tabular>
+          {m{1in}m{2.5in}m{2.5in}}
+          &amp;
+          \begin{mfpic}[15]{-2}{6}{-2}{7}
+          \hatchcolor[gray]{.7}
+          \lhatch \rect{(0,0),(1,1)}
+          \lhatch \rect{(0,5),(1,6)}
+          \lhatch \rect{(4,5),(5,6)}
+          \lhatch \rect{(4,0),(5,1)}
+          \polyline{(0,0),(5,0),(5,6),(0,6),(0,0)}
+          \dashed \polyline{(1,0),(1,1),(0,1)}
+          \dashed \polyline{(4,0),(4,1),(5,1)}
+          \dashed \polyline{(5,5),(4,5),(4,6)}
+          \dashed \polyline{(0,5),(1,5),(1,6)}
+          \dotted \polyline{(1,1),(4,1),(4,5),(1,5),(1,1)}
+          \tlabel[cc](0.5,1.25){ <m>x</m>}
+          \tlabel[cc](1.25,0.5){ <m>x</m>}
+          \tlabel[cc](4.5,1.25){ <m>x</m>}
+          \tlabel[cc](3.75,0.5){ <m>x</m>}
+          \tlabel[cc](4.5,4.75){ <m>x</m>}
+          \tlabel[cc](3.75,5.5){ <m>x</m>}
+          \tlabel[cc](0.5,4.75){ <m>x</m>}
+          \tlabel[cc](1.25,5.5){ <m>x</m>}
+          \arrow \reverse \arrow \polyline{(0,-0.5),(5,-0.5)}
+          \tlabel[cc](2.5,-1){ <m>10</m> in}
+          \arrow \reverse \arrow \polyline{(-0.5,0),(-0.5,6)}
+          \tlabel[cc](-1.5,3){ <m>12</m> in}
+          \end{mfpic}  &amp;
+          \begin{mfpic}[15]{-2}{8}{-2}{4}
+          \dashed \polyline{(0,1),(0,0)}
+          \dashed \polyline{(4,0), (4,1)}
+          \polyline{(0,1),(2,3)}
+          \polyline{(4,1),(6,3)}
+          \dotted \polyline{(0,0),(4,0)}
+          \polyline{(0,1),(4,1)}
+          \polyline{(2,3),(6,3)}
+          \dotted \polyline{(4,0),(6,2)}
+          \dashed \polyline{(6,3),(6,2)}
+          \dashed \polyline{(2,3),(2,2)}
+          \dotted \polyline{(2,2),(6,2)}
+          \dotted \polyline{(2,2),(0,0)}
+          \arrow \reverse \arrow \polyline{(0,-0.5),(4,-0.5)}
+          \tlabel[cc](2,-1){ width}
+          \arrow \reverse \arrow \polyline{(-0.5,0), (-0.5,1)}
+          \tlabel[cc](-1.5,0.5){ height}
+          \arrow \reverse \arrow \polyline{(4.5, -0.25), (6.5,1.75)}
+          \tlabel[cc](6,0.25){ depth}
+          \end{mfpic}
+        </tabular>
+        <ol>
+          <li>
+            <p>
+              Find an expression for <m>V(x)</m>,
+              the volume of the box produced by removing squares of edge length <m>x</m>.
+              Include an appropriate domain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use a graphing utility to help you determine the value of <m>x</m> which produces the box with the largest volume.
+              What is the largest volume?
+              Round your answers to two decimal places.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution xml:id="openbox">
+        <ol>
+          <li>
+            <p>
+              From Geometry,
+              we know that <m>\text{ Volume } = \text{ width } \times \text{ height } \times \text{ depth }</m>.
+              The key is to find each of these quantities in terms of <m>x</m>.
+              From the figure,
+              we see that the height of the box is <m>x</m> itself.
+              The cardboard piece is initially <m>10</m> inches wide.
+              Removing squares with a side length of <m>x</m> inches from each corner leaves <m>10-2x</m> inches for the width.<fn>
+              There's no harm in taking an extra step here and making sure this makes sense.
+              If we chopped out a <m>1</m> inch square from each side,
+              then the width would be <m>8</m> inches,
+              so chopping out <m>x</m> inches would leave <m>10-2x</m> inches.
+              </fn>  As for the depth,
+              the cardboard is initially <m>12</m> inches long,
+              so after cutting out <m>x</m> inches from each side,
+              we would have <m>12-2x</m> inches remaining.
+              Hence, we get <m>V(x) = x(10-2x)(12-2x)</m>.
+              To find a suitable applied domain,
+              we note that to make a box at all we need <m>x > 0</m>.
+              Also the shorter of the two dimensions of the cardboard is <m>10</m> inches,
+              and since we are removing <m>2x</m> inches from this dimension,
+              we also require <m>10 - 2x > 0</m> or <m>x \lt 5</m>.
+              Hence, our applied domain is <m>0 \lt x \lt 5</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using a graphing utility,
+              we find a local maximum at approximately <m>(1.811, 96.771)</m>.
+              Because the domain of <m>V</m> is restricted to the interval <m>(0,5)</m>,
+              the maximum of <m>V</m> is here as well.
+              <image width="92.5%" source="./GraphsofPolynomialsGraphics/PolyBoxExample.jpg"/> This means the maximum volume attainable is approximately <m>96.77</m> cubic inches when we remove squares approximately <m>1.81</m> inches per side.
+            </p>
+          </li>
+        </ol>
+      </solution>
+    </example>
+    <p>
+      Notice that there is a very slight, but important,
+      difference between the function <m>V(x) = x(10-2x)(12-2x)</m>,
+      <m>0 \lt x \lt 5</m> from <xref ref="boxnotopex">Example</xref>
+      and the function <m>p(x) = x(10-2x)(12-2x)</m>: their domains.
+      The domain of <m>V</m> is restricted to the interval <m>(0,5)</m> while the domain of <m>p</m> is <m>(-\infty, \infty)</m>.
+      Indeed, the function <m>V</m> has a maximum of (approximately) <m>96.771</m> at (approximately)
+      <m>x = 1.811</m> whereas for the function <m>p</m>,
+      <m>96.771</m> is a local maximum value only.
+      We leave it to the reader to verify that <m>V</m> has neither a minimum nor a local minimum.
+    </p>
+  </subsection>
+  <subsection xml:id="polygraphexercise">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="polytransfirst">Exercises</xref>
+      - <xref ref="polytranslast"></xref>,
+      given the pair of functions <m>f</m> and <m>F</m>,
+      sketch the graph of <m>y=F(x)</m> by starting with the graph of
+      <m>y = f(x)</m> and using <xref ref="linearmononialgraphs">Theorem</xref>.
+      Track at least three points of your choice through the transformations.
+      State the domain and range of <m>g</m>.
+      <ol cols="3">
+        <li xml:id="polytransfirst">
+          <p>
+            <m>f(x) = x^3</m>, <m>F(x) = (x + 2)^{3} + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^4</m>, <m>F(x) = (x + 2)^{4} + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^4</m>, <m>F(x) = 2 - 3(x - 1)^{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^5</m>, <m>F(x) = -x^{5} - 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^5</m>, <m>F(x) = (x+1)^5+10</m>
+          </p>
+        </li>
+        <li xml:id="polytranslast">
+          <p>
+            <m>f(x) = x^6</m>, <m>F(x) = 8-x^6</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulaforcubicgraphfirst">Exercises</xref>
+      - <xref ref="findformulacubicgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = a(x-h)^3+k</m>.
+      <ol>
+        <li xml:id="findformulaforcubicgraphfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-1.25, -3){<m>(0,-3)</m>} \tlabel[cc](1.25,-2.75){<m>(1,-2)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.4,2.9,0.1}{(x-1)**3-2} \point[4pt]{(1,-2), (0,-3)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformulacubicgraphlast">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1,-1){<m>(0,-1)</m>} \tlabel[cc](-2.25,2.25){<m>(-2,3)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.5,0.5,0.1}{3-(0.5*((x+2)**3))} \point[4pt]{(-2,3), (0,-1)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulaforquartgraphfirst">Exercises</xref>
+      - <xref ref="findformulaquartgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = a(x-h)^4+k</m>.
+      <ol>
+        <li xml:id="findformulaforquartgraphfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-1.25,-4.5){<m>(-1,-4)</m>} \tlabel[cc](1,-2){<m>(0,-2)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,{<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.41,0.41,0.1}{2*((x+1)**4)-4} \point[4pt]{(-1,-4), (0,-2)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformulaquartgraphlast">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-3,0.5){<m>(-2,0)</m>} \tlabel[cc](2.5,0.5){<m>(2,0)</m>} \tlabel[cc](-2,2.5){<m>(0,2.5)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>-2</m>} -2,{<m>-3</m>} -3,{<m>-4</m>} -4,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.5,2.5,0.1}{2.5-(0.1565*(x**4))} \point[4pt]{(-2,0), (2,0), (0, 2.5)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="polyfactsfirst">Exercises</xref>
+      - <xref ref="polyfactslast"></xref>,
+      find the degree, the leading term, the leading coefficient,
+      the constant term and the end behavior of the given polynomial function.
+      <ol cols="5">
+        <li xml:id="polyfactsfirst">
+          <p>
+            <m>f(x) = 4-x-3x^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(x) = 3x^5 - 2x^2 + x + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>q(r) = 1 - 16r^{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Z(b) = 42b - b^{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \sqrt{3}x^{17} + 22.5x^{10} - \pi x^{7} + \frac{1}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>s(t) = -4.9t^{2} + v_{0}t + s_{0}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(x) = (x - 1)(x - 2)(x - 3)(x - 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(t) = -t^2(3 - 5t)(t^{2} + t + 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -2x^3(x+1)(x+2)^2</m>
+          </p>
+        </li>
+        <li xml:id="polyfactslast">
+          <p>
+            <m>G(t) = 4(t-2)^2\left(t+\frac{1}{2}\right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="zeromultgraphfirst">Exercises</xref>
+      - <xref ref="zeromultgraphlast"></xref>,
+      find the real zeros of the given polynomial and their corresponding multiplicities.
+      Use this information along with end behavior to provide a rough sketch of the graph of the polynomial function.
+      Compare your answer with the result from a graphing utility.
+      <ol cols="5">
+        <li xml:id="zeromultgraphfirst">
+          <p>
+            <m>a(x) = x(x + 2)^{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t(t + 2)^{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(z) = -2(z-2)^2(z+1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(x) = (2x+1)^2(x-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F(t) = t^{3}(t+ 2)^{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>P(z) = (z- 1)(z - 2)(z - 3)(z - 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>Q(x) = (x + 5)^{2}(x - 3)^{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(t) = t^2(t-2)^2(t+2)^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>H(z) = (3-z)(z^2+1)</m>
+          </p>
+        </li>
+        <li xml:id="zeromultgraphlast">
+          <p>
+            <m>Z(x) = x(42 - x^{2})</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="evenoddornotpolyfirst">Exercises</xref>
+      - <xref ref="evenoddornotpolylast"></xref>,
+      determine analytically if the following functions are even,
+      odd or neither.
+      Confirm your answer using a graphing utility.
+    </p>
+    <ol cols="6">
+      <li xml:id="evenoddornotpolyfirst">
+        <p>
+          <m>f(x) = 7x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 7t + 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 7</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(s) = 3s^2 - 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h(t) = 4-t^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = x^2-x-6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 2x^3 - x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = -z^5 + 2z^3 - z</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) = t^{6} - t^{4} + t^{2} + 9</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(s) = s(s^2 - 1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = (x^2+1)(x-1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>H(t) = (t^2-1)(t^4+t^2+3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t(t-2)(t+2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P(z) = (2z^{5} - 3z)(5z^3+z)</m>
+        </p>
+      </li>
+      <li xml:id="evenoddornotpolylast">
+        <p>
+          <m>f(x) =0</m>
+        </p>
+      </li>
+      <li xml:id="evenoddpolynomialexercise">
+        <p>
+          Suppose <m>p(x)</m> is a polynomial function written in the form of <xref ref="polynomialfunction">Definition</xref>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              If the nonzero terms of <m>p(x)</m> consist of even powers of <m>x</m>
+              (or a constant),
+              explain why <m>p</m> is even.
+            </p>
+          </li>
+          <li>
+            <p>
+              If the nonzero terms of <m>p(x)</m> consist of odd powers of <m>x</m>,
+              explain why <m>p</m> is odd.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>p(x)</m> the nonzero terms of <m>p(x)</m> contain at least one odd power of <m>x</m> and one even power of <m>x</m>
+              (or a constant term),
+              then <m>p</m> is neither even nor odd.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Use the results of <xref ref="evenoddpolynomialexercise">Exercise</xref>
+          to determine whether the following functions are even, odd,
+          or neither.
+          <ol>
+            <li>
+              <p>
+                <m>p(x) = 3x^4 + x^2 - 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>F(s) = s^3 - 14s</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(t) = 2t^5 - t^2 + 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(x) =x^3(x^2+1)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Show <m>f(x) = |x|</m> is an even function.
+        </p>
+      </li>
+      <li>
+        <p>
+          Rework <xref ref="boxnotopex">Example</xref>
+          assuming the box is to be made from an 8.5 inch by 11 inch sheet of paper.
+          Using scissors and tape, construct the box.
+          Are you surprised?<fn>
+          Consider decorating the box and presenting it to your instructor.
+          If done well enough,
+          maybe your instructor will issue you some bonus points.
+          Or maybe not.
+          </fn>
+        </p>
+      </li>
+      <li>
+        <p>
+          For each function <m>f(x)</m> listed below,
+          compute the average rate of change over the indicated interval.<fn>
+          See <xref ref="arc">Definition</xref>
+          in <xref ref="AverageRateofChange">Section</xref>
+          for a review of this concept, as needed.
+          </fn>  What trends do you observe?
+          How do your answers manifest themselves graphically?
+          <me>
+            \begin{array}{|r||c|c|c|c|c|c|}  \hline  f(x) \amp   [-0.1, 0] \amp  [0, 0.1] \amp [0.9, 1] \amp  [1, 1.1] \amp  [1.9, 2] \amp  [2, 2.1]  \\ \hline 1 \amp \amp \amp \amp \amp \amp  \\  \hline x  \amp \amp \amp \amp \amp \amp  \\  \hline x^2 \amp \amp \amp \amp \amp \amp   \\  \hline x^3 \amp \amp \amp \amp \amp \amp  \\  \hline x^4 \amp \amp \amp \amp \amp \amp  \\ \hline x^5 \amp \amp \amp \amp \amp \amp  \\ \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li xml:id="monomialarcexercise">
+        <p>
+          For each function <m>f(x)</m> listed below,
+          compute the average rate of change over the indicated interval.<fn>
+          See <xref ref="arc">Definition</xref>
+          in <xref ref="AverageRateofChange">Section</xref>
+          for a review of this concept, as needed.
+          </fn>  What trends do you observe?
+          How do your answers manifest themselves graphically?
+          <me>
+            \begin{array}{|r||c|c|c|c|}  \hline  f(x) \amp   [0.9, 1.1] \amp  [0.99, 1.01] \amp [0.999, 1.001] \amp  [0.9999, 1.0001]  \\ \hline 1 \amp \amp \amp \amp    \\  \hline x \amp \amp \amp \amp     \\  \hline x^2 \amp \amp \amp \amp    \\  \hline x^3 \amp \amp \amp \amp    \\  \hline x^4 \amp \amp \amp \amp   \\ \hline x^5 \amp \amp \amp \amp   \\ \hline \end{array}
+          </me>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="lcdmaxprofitexerfirst">Exercises</xref>
+      - <xref ref="lcdmaxprofitexerlast"></xref>,
+      suppose the revenue <m>R</m>,
+      in <em>thousands</em> of dollars,
+      from producing and selling <m>x</m> <em>hundred</em>
+      LCD TVs is given by <m>R(x) = -5x^3+35x^2+155x</m> for <m>0 \leq x \leq 10.07</m>.
+    </p>
+    <ol cols="2">
+      <li xml:id="lcdmaxprofitexerfirst">
+        <p>
+          Use a graphing utility to graph
+          <m>y = R(x)</m> and determine the number of TVs which should be sold to maximize revenue.
+          What is the maximum revenue?
+        </p>
+      </li>
+      <li>
+        <p>
+          Assume the cost, in <em>thousands</em> of dollars,
+          to produce <m>x</m> <em>hundred</em>
+          LCD TVs is given by the function <m>C(x) = 200x + 25</m> for <m>x \geq 0</m>.
+          Find and simplify an expression for the profit function <m>P(x)</m>.
+          (Remember: Profit = Revenue - Cost.)
+        </p>
+      </li>
+      <li xml:id="lcdmaxprofitexerlast">
+        <p>
+          Use a graphing utility to graph
+          <m>y = P(x)</m> and determine the number of TVs which should be sold to maximize profit.
+          What is the maximum profit?
+        </p>
+      </li>
+      <li xml:id="newportaboycost">
+        <p>
+          While developing their newest game, Sasquatch Attack!, the makers of the PortaBoy
+          (from <xref ref="PortaBoyCost">Example</xref>)
+          revised their cost function and now use
+          <m>C(x) = .03x^{3} - 4.5x^{2} + 225x + 250</m>, for <m>x \geq 0</m>.
+          As before, <m>C(x)</m> is the cost to make <m>x</m> PortaBoy Game Systems.
+          Market research indicates that the demand function <m>p(x) = -1.5x + 250</m> remains unchanged.
+          Use a graphing utility to find the production level <m>x</m> that maximizes the <em>profit</em>
+          made by producing and selling <m>x</m> PortaBoy game systems.
+        </p>
+      </li>
+      <li>
+        <p>
+          According to US Postal regulations,
+          a rectangular shipping box must satisfy the following inequality:
+          <q>Length + Girth <m>\leq</m> 130 inches</q>
+          for Parcel Post and
+          <q>Length + Girth <m>\leq</m> 108 inches</q>
+          for other services.
+          Let's assume we have a closed rectangular box with a square face of side length <m>x</m> as drawn below.
+          The length is the longest side and is clearly labeled.
+          The girth is the distance around the box in the other two dimensions so in our case it is the sum of the four sides of the square,
+          <m>4x</m>.
+        </p>
+        <ol>
+          <li xml:id="girthbox1">
+            <p>
+              Assuming that we'll be mailing a box via Parcel Post where Length + Girth <m>=</m> 130 inches,
+              express the length of the box in terms of <m>x</m> and then express the volume <m>V</m> of the box in terms of <m>x</m>.
+            </p>
+          </li>
+          <li xml:id="girthbox2">
+            <p>
+              Find the dimensions of the box of maximum volume that can be shipped via Parcel Post.
+            </p>
+          </li>
+          <li>
+            <p>
+              Repeat <xref ref="girthbox1">parts</xref>
+              and <xref ref="girthbox2"></xref> if the box is shipped using
+              <q>other services</q>.
+            </p>
+          </li>
+        </ol>
+        \begin{mfpic}[8]{-6}{12}{-1}{17} \polyline{(0,0),(-4,3)} \polyline{(-4,3), (-4,8)} \polyline{(-4,8),(0,5)} \polyline{(0,5),(0,0)} \polyline{(0,0),(12,9)} \polyline{(0,5),(12,14)} \polyline{(-4,8),(8,17)} \polyline{(8,17),(12,14)} \polyline{(12,14),(12,9)} \arrow \reverse \arrow \polyline{(0,-0.5),(12,8.5)} \tlabel[cc](8,4){ length} \arrow \reverse \arrow \polyline{(-4, 2.5), (-0.5,-0.125)} \tlabel[cc](-3,0.5){ <m>x</m>} \arrow \reverse \arrow \polyline{(-4.5, 3), (-4.5,8)} \tlabel[cc](-5,5){ <m>x</m>} \end{mfpic}
+      </li>
+      SQUASHEDLIST
+      <li xml:id="sunlighthigherorder">
+        <p>
+          This exercise revisits the data set from <xref ref="regsunlight">Exercise</xref>
+          in <xref ref="QuadraticFunctions">Section</xref>.
+          In that exercise,
+          you were given a chart of the number of hours of daylight they get on the
+          <m>21^{\mbox{st} }</m> of each month in Fairbanks, Alaska based on the 2009 sunrise and sunset data found on the
+          <url href="http://aa.usno.navy.mil/data/docs/RS_OneYear.php"><em>U.S. Naval Observatory</em></url>
+          website.
+          Here <m>x = 1</m> represents January 21, 2009,
+          <m>x = 2</m> represents February 21, 2009, and so on.
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Month</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Number</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+              <cell>6</cell>
+              <cell>7</cell>
+              <cell>8</cell>
+              <cell>9</cell>
+              <cell>10</cell>
+              <cell>11</cell>
+              <cell>12</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Hours of</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Daylight</cell>
+              <cell>5.8</cell>
+              <cell>9.3</cell>
+              <cell>12.4</cell>
+              <cell>15.9</cell>
+              <cell>19.4</cell>
+              <cell>21.8</cell>
+              <cell>19.4</cell>
+              <cell>15.6</cell>
+              <cell>12.4</cell>
+              <cell>9.1</cell>
+              <cell>5.6</cell>
+              <cell>3.3</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ul>
+            <li>
+              <p>
+                Find cubic (third degree) and quartic
+                (fourth degree)
+                polynomials which model this data and comment on the goodness of fit for each.
+                What can we say about using either model to make predictions about the year 2020? (Hint: Think about the end behavior of polynomials.)
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the models to see how many hours of daylight they got on your birthday and then check the website to see how accurate the models are.
+              </p>
+            </li>
+            <li>
+              <p>
+                Sasquatch are largely nocturnal,
+                so what days of the year according to your models allow for at least 14 hours of darkness for field research on the elusive creatures?
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li xml:id="circuitexercisepoly">
+        <p>
+          An electric circuit is built with a variable resistor installed.
+          For each of the following resistance values
+          (measured in kilo-ohms, <m>k \Omega</m>),
+          the corresponding power to the load
+          (measured in milliwatts, <m>mW</m>)
+          is given in the table below.<fn>
+          The authors wish to thank Don Anthan and Ken White of Lakeland Community College for devising this problem and generating the accompanying data set.
+          </fn>
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Resistance: (<m>k \Omega</m>)</cell>
+              <cell>1.012</cell>
+              <cell>2.199</cell>
+              <cell>3.275</cell>
+              <cell>4.676</cell>
+              <cell>6.805</cell>
+              <cell>9.975</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>Power: (<m>mW</m>)</cell>
+              <cell>1.063</cell>
+              <cell>1.496</cell>
+              <cell>1.610</cell>
+              <cell>1.613</cell>
+              <cell>1.505</cell>
+              <cell>1.314</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          <ol>
+            <li>
+              <p>
+                Make a scatter diagram of the data using the Resistance as the independent variable and Power as the dependent variable.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use your calculator to find quadratic (2nd degree),
+                cubic (3rd degree) and quartic (4th degree) regression models for the data and judge the reasonableness of each.
+              </p>
+            </li>
+            <li>
+              <p>
+                For each of the models found above,
+                find the predicted maximum power that can be delivered to the load.
+                What is the corresponding resistance value?
+              </p>
+            </li>
+            <li>
+              <p>
+                Discuss with your classmates the limitations of these models - in particular,
+                discuss the end behavior of each.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Below is a graph of a polynomial function
+          <m>y = p(x)</m> as generated by a graphing utility.
+          Answer the following questions about <m>p</m> based on the graph provided.
+          <image width="56%" source="./GraphsofPolynomialsGraphics/GraphsofPolyExercise.jpg"/>
+          <ol>
+            <li>
+              <p>
+                Describe the end behavior of <m>y = p(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the real zeros of <m>p</m> along with their respective multiplicities.
+              </p>
+            </li>
+            <li>
+              <p>
+                List the local minimums and local maximums of the graph of <m>y = p(x)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                What can be said about the degree of and leading coefficient <m>p(x)</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                It turns out that <m>p(x)</m> is a seventh degree polynomial.<fn>
+                to be exact,
+                <m>p(x) = -0.1\left(x+1.5\right)^2\left(3x\right)\left(x-1\right)^3\left(x+5\right)</m>.
+                </fn>  How can this be?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="comparegraphfromtheoryexample">
+        <p>
+          (This Exercise is a follow up to <xref ref="graphfromtheory">Example</xref>.) Use a graphing utility to compare and contrast the graphs of
+          <m>f(x) = (2x-1)(x+1)^2(1-x)(x^2+1)</m> and <m>g(x) = (2x-1)(x+1)^2(1-x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the graph of <m>y= p(x) = (2x-1)(x+1)(1-x^4)</m> on <xref ref="localmaxminexample">page</xref>
+          to estimate the largest open interval containing
+          <m>x = -0.235</m> which satisfies the the criteria for <sq>local minimum</sq> in <xref ref="localmaxmindefn">Definition</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In light of <xref ref="localmaxmindefn">Definition</xref>,
+          explain why <em>every</em> point on the graph of a constant function is both a local maximum and a local minimum.
+        </p>
+      </li>
+      <li>
+        <p>
+          This exercise involves the greatest integer function,
+          <m>f(x) = \lfloor x \rfloor</m>,
+          introduced in <xref ref="greatestintegerdefn">Example</xref>.
+          Explain why the points <m>(k,k)</m> for integers <m>k</m> are local maximums but not local minimums.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use <xref ref="EBPolynomials">Theorems</xref>
+          and <xref ref="polynomialbehaviornearzeros"></xref>
+          prove <xref ref="roleofmultiplicity">Theorem</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Here are a few other questions for you to discuss with your classmates.
+          <ol>
+            <li>
+              <p>
+                How many and how few local extrema could a polynomial of degree <m>n</m> have?
+              </p>
+            </li>
+            <li>
+              <p>
+                Could a polynomial have two local maxima but no local minima?
+              </p>
+            </li>
+            <li>
+              <p>
+                If a polynomial has two local maxima and two local minima,
+                can it be of odd degree?
+                Can it be of even degree?
+              </p>
+            </li>
+            <li>
+              <p>
+                Can a polynomial have local extrema without having any real zeros?
+              </p>
+            </li>
+            <li>
+              <p>
+                Why must every polynomial of odd degree have at least one real zero?
+              </p>
+            </li>
+            <li>
+              <p>
+                Can a polynomial have two distinct real zeros and no local extrema?
+              </p>
+            </li>
+            <li>
+              <p>
+                Can an <m>x</m>-intercept yield a local extrema?
+                Can it yield an absolute extrema?
+              </p>
+            </li>
+            <li>
+              <p>
+                If the <m>y</m>-intercept yields an absolute minimum,
+                what can we say about the degree of the polynomial and the sign of the leading coefficient?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="LagrangePolyExercise">
+        <p>
+          (This is a follow-up to <xref ref="LagrangeLinearExercise">Exercises</xref>
+          in <xref ref="ConstantandLinearFunctions">Section</xref>
+          and <xref ref="LagrangeQuadExercise"></xref>
+          in <xref ref="QuadraticFunctions">Section</xref>.) The
+          <url href="https://en.wikipedia.org/wiki/Lagrange_polynomial"><em>Lagrange Interpolate</em></url>
+          function <m>L</m>  for four  points:
+          <m>(x_{0}, y_{0})</m>, <m>(x_{1}, y_{1})</m>,  <m>(x_{2}, y_{2})</m>,
+          <m>(x_{3}, y_{3})</m> where <m>x_{0}</m>,
+          <m>x_{1}</m>, <m>x_{2}</m>,
+          and <m>x_{3}</m> are four distinct real numbers is given by the formula:
+          <me>
+            \begin{array}{rcl}  L(x) \amp  = \amp   y_{0}  \dfrac{(x - x_{1}) (x - x_{2}) (x-x_{3})}{(x_{0} - x_{1})(x_{0} - x_{2})(x_{0} - x_{3})}+ y_{1}  \dfrac{(x - x_{0}) (x - x_{2}) (x-x_{3})}{(x_{1} - x_{0})(x_{1} - x_{2})(x_{1} - x_{3})} \\ \amp \amp   +y_{2}  \dfrac{(x - x_{0}) (x - x_{1}) (x-x_{3})}{(x_{2} - x_{0})(x_{2} - x_{1})(x_{2} - x_{3})}+ y_{3}  \dfrac{(x - x_{0}) (x - x_{1}) (x-x_{2})}{(x_{3} - x_{0})(x_{3} - x_{1})(x_{3} - x_{2})} \end{array}
+          </me>
+          <ol>
+            <li>
+              <p>
+                Choose four points with different <m>x</m>-values and construct the Lagrange Interpolate for those points.
+                Verify each of the points lies on the polynomial.
+              </p>
+            </li>
+            <li>
+              <p>
+                Verify that,
+                in general, <m>L(x_{0}) = y_{0}</m>, <m>L(x_{1}) = y_{1}</m>,
+                <m>L(x_{2}) = y_{2}</m>, and <m>L(x_{3}) = y_{3}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>L(x)</m> for the points <m>(-1,1)</m>,
+                <m>(0,0)</m>, <m>(1,1)</m> and <m>(2,4)</m>.
+                What happens?
+              </p>
+            </li>
+            <li>
+              <p>
+                Find <m>L(x)</m> for the points <m>(-1,0)</m>,
+                <m>(0,1)</m>, <m>(1,2)</m> and <m>(2,3)</m>.
+                What happens?
+              </p>
+            </li>
+            <li>
+              <p>
+                Generalize the formula for <m>L(x)</m> to five points.
+                What's the pattern?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>F(x) = (x + 2)^{3} + 1</m> domain:
+          <m>(-\infty, \infty)</m> range:
+          <m>(-\infty, \infty)</m> \begin{mfpic}[20][8]{-5}{1}{-11}{13} \axes \tlabel[cc](1,-0.75){<m>x</m>} \tlabel[cc](0.5,13){<m>y</m>} \point[4pt]{(-4,-7),(-3,0),(-2,1),(-1,2),(0,9)} \xmarks{-4,-3,-2,-1} \ymarks{-10 step 1 until 12} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>-10</m>} -10, {<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11, {<m>12</m>} 12} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.25,0.25,0.1}{((x + 2)**3) + 1} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = (x + 2)^{4} + 1</m> domain:
+          <m>(-\infty, \infty)</m> range:
+          <m>[1, \infty)</m> \begin{mfpic}[20][8]{-5}{1}{-1}{22} \axes \tlabel[cc](1,-0.75){<m>x</m>} \tlabel[cc](0.5,22){<m>y</m>} \point[4pt]{(-4,17),(-3,2),(-2,1),(-1,2),(0,17)} \xmarks{-4,-3,-2,-1} \ymarks{1 step 1 until 21} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11, {<m>12</m>} 12, {<m>13</m>} 13, {<m>14</m>} 14, {<m>15</m>} 15, {<m>16</m>} 16, {<m>17</m>} 17, {<m>18</m>} 18, {<m>19</m>} 19, {<m>20</m>} 20, {<m>21</m>} 21} \penwd{1.25pt} \arrow \reverse \arrow \function{-4.12,0.12,0.1}{((x + 2)**4) + 1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 2 - 3(x - 1)^{4}</m> domain:
+          <m>(-\infty, \infty)</m> range:
+          <m>(-\infty, 2]</m> \begin{mfpic}[20][8]{-1}{3}{-14}{3} \axes \tlabel[cc](3,-0.75){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \point[4pt]{(1,2),(0,-1),(2,-1)} \xmarks{1,2} \ymarks{-13 step 1 until 2} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-13</m>} -13, {<m>-12</m>} -12, {<m>-11</m>} -11, {<m>-10</m>} -10, {<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.5,2.5,0.1}{2 - 3*((x - 1)**4)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -x^{5} - 3</m> domain:
+          <m>(-\infty, \infty)</m> range:
+          <m>(-\infty, \infty)</m> \begin{mfpic}[20][8]{-2}{2}{-11}{11} \axes \tlabel[cc](2,-0.75){<m>x</m>} \tlabel[cc](0.5,11){<m>y</m>} \point[4pt]{(-1,-2),(0,-3),(1,-4)} \xmarks{-1,1} \ymarks{-10 step 1 until 10} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-10</m>} -10, {<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.68,1.5,0.1}{-(x**5) - 3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = (x+1)^5+10</m> domain:
+          <m>(-\infty, \infty)</m> range:
+          <m>(-\infty, \infty)</m> \begin{mfpic}[20][8]{-5}{1}{-1}{22} \axes \tlabel[cc](1,-0.75){<m>x</m>} \tlabel[cc](0.5,22){<m>y</m>} \point[4pt]{(0,11), (-1,10), (-2,9)} \xmarks{-4,-3,-2,-1} \ymarks{1 step 1 until 21} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10, {<m>11</m>} 11, {<m>12</m>} 12, {<m>13</m>} 13, {<m>14</m>} 14, {<m>15</m>} 15, {<m>16</m>} 16, {<m>17</m>} 17, {<m>18</m>} 18, {<m>19</m>} 19, {<m>20</m>} 20, {<m>21</m>} 21} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.64,0.58,0.1}{((x + 1)**5) + 10} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 8-x^{6}</m> domain:
+          <m>(-\infty, \infty)</m> range:
+          <m>(-\infty, 8]</m> \begin{mfpic}[20][8]{-2}{2}{-11}{11} \axes \tlabel[cc](2,-0.75){<m>x</m>} \tlabel[cc](0.5,11){<m>y</m>} \point[4pt]{(-1,7),(0,8),(1,7)} \xmarks{-1,1} \ymarks{-10 step 1 until 10} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-10</m>} -10, {<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.6,1.6,0.1}{8-(x**6)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = (x-1)^3-2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -\frac{1}{2} (x+2)^3+3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 2(x+1)^4-4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -0.15625x^4+2.5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 4-x-3x^2</m> Degree 2 Leading term <m>-3x^{2}</m> Leading coefficient <m>-3</m> Constant term <m>4</m> As
+          <m>x \rightarrow -\infty, \; f(x) \rightarrow -\infty</m> As <m>x \rightarrow \infty, \; f(x) \rightarrow -\infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = 3x^5 - 2x^2 + x + 1</m> Degree 5 Leading term <m>3x^5</m> Leading coefficient <m>3</m> Constant term <m>1</m> As
+          <m>x \rightarrow -\infty, \; g(x) \rightarrow -\infty</m> As <m>x \rightarrow \infty, \; g(x) \rightarrow \infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>q(r) = 1 - 16r^{4}</m> Degree 4 Leading term
+          <m>-16r^{4}</m> Leading coefficient <m>-16</m> Constant term <m>1</m> As
+          <m>r \rightarrow -\infty, \; q(r) \rightarrow -\infty</m> As <m>r \rightarrow \infty, \; q(r) \rightarrow -\infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>Z(b) = 42b - b^{3}</m> Degree 3 Leading term <m>-b^{3}</m> Leading coefficient <m>-1</m> Constant term <m>0</m> As
+          <m>b \rightarrow -\infty, \; Z(b) \rightarrow \infty</m> As <m>b \rightarrow \infty, \; Z(b) \rightarrow -\infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{3}x^{17} + 22.5x^{10} - \pi x^{7} + \frac{1}{3}</m> Degree 17 Leading term <m>\sqrt{3}x^{17}</m> Leading coefficient
+          <m>\sqrt{3}</m> Constant term <m>\frac{1}{3}</m> As
+          <m>x \rightarrow -\infty, \; f(x) \rightarrow -\infty</m> As <m>x \rightarrow \infty, \; f(x) \rightarrow \infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>s(t) = -4.9t^{2} + v_{0}t + s_{0}</m> Degree 2 Leading term
+          <m>-4.9t^{2}</m> Leading coefficient <m>-4.9</m> Constant term <m>s_{0}</m> As
+          <m>t \rightarrow -\infty, \; s(t) \rightarrow -\infty</m> As <m>t \rightarrow \infty, \; s(t) \rightarrow -\infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P(x) = (x - 1)(x - 2)(x - 3)(x - 4)</m> Degree 4 Leading term <m>x^{4}</m> Leading coefficient <m>1</m> Constant term <m>24</m> As
+          <m>x \rightarrow -\infty, \; P(x) \rightarrow \infty</m> As <m>x \rightarrow \infty, \; P(x) \rightarrow \infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(t) = -t^2(3 - 5t)(t^{2} + t + 4)</m> Degree 5 Leading term <m>5t^{5}</m> Leading coefficient <m>5</m> Constant term <m>0</m> As
+          <m>t \rightarrow -\infty, \; p(t) \rightarrow -\infty</m> As <m>t \rightarrow \infty, \; p(t) \rightarrow \infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = -2x^3(x+1)(x+2)^2</m> Degree 6 Leading term <m>-2x^{6}</m> Leading coefficient <m>-2</m> Constant term <m>0</m> As
+          <m>x \rightarrow -\infty, \; f(x) \rightarrow -\infty</m> As <m>x \rightarrow \infty, \; f(x) \rightarrow -\infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) = 4(t-2)^2\left(t+\frac{1}{2}\right)</m> Degree 3 Leading term <m>4t^3</m> Leading coefficient <m>4</m> Constant term <m>8</m> As
+          <m>t \rightarrow -\infty, \; G(t) \rightarrow -\infty</m> As <m>t \rightarrow \infty, \; G(t) \rightarrow \infty</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a(x) = x(x + 2)^{2}</m> <m>x = 0</m> multiplicity 1 <m>x = -2</m> multiplicity 2 \begin{mfpic}[20][10]{-3}{1}{-3}{5} \axes \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[4pt]{(-2,0), (0,0)} \xmarks{-2,-1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,0.65,0.1}{x*((x + 2)**2)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t(t + 2)^{3}</m> <m>t = 0</m> multiplicity 1 <m>t = -2</m> multiplicity 3 \begin{mfpic}[20][20]{-3}{1}{-2}{5} \axes \tlabel[cc](1,-0.5){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[4pt]{(-2,0), (0,0)} \xmarks{-2,-1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,0.3,0.1}{x*((x + 2)**3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(z) = -2(z-2)^2(z+1)</m> <m>z=2</m> multiplicity 2 <m>z=-1</m> multiplicity 1 \begin{mfpic}[20][10]{-3}{3}{-4}{4} \axes \tlabel[cc](3,-0.5){<m>z</m>} \tlabel[cc](0.25,4){<m>y</m>} \point[4pt]{(2,0), (-1,0)} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.70,3.45,0.1}{(-0.4)*((x-2)**2)*(x+1)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = (2x+1)^2(x-3)</m>
+          <m>x=-\frac{1}{2}</m> multiplicity 2 <m>x=3</m> multiplicity 1 \begin{mfpic}[20][10]{-2}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \point[4pt]{(-0.5,0), (3,0)} \xmarks{-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.5,3.3,0.1}{(0.5)*((x+0.5)**2)*(x-3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(t) = t^{3}(t + 2)^{2}</m> <m>t = 0</m> multiplicity 3 <m>t = -2</m> multiplicity 2 \begin{mfpic}[20][10]{-3}{1}{-3}{5} \axes \tlabel[cc](1,-0.5){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[4pt]{(-2,0), (0,0)} \xmarks{-2,-1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.45,0.85,0.1}{(x**3)*((x + 2)**2)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P(z) = (z - 1)(z - 2)(z - 3)(z - 4)</m> <m>z = 1</m> multiplicity 1 <m>z = 2</m> multiplicity 1 <m>z = 3</m> multiplicity 1 <m>z = 4</m> multiplicity 1 \begin{mfpic}[20][10]{0}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>z</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[4pt]{(1,0),(2,0),(3,0),(4,0)} \xmarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \function{0.6,4.4,0.1}{(x - 1)*(x - 2)*(x - 3)*(x - 4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>Q(x) = (x + 5)^{2}(x - 3)^{4}</m> <m>x = -5</m> multiplicity 2 <m>x = 3</m> multiplicity 4 \begin{mfpic}[10][20]{-6}{6}{-1}{3} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \point[4pt]{(-5,0),(3,0)} \xmarks{-5 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \arrow \reverse \arrow \function{-5.9,5.6,0.1}{(((x + 5)**2)*((x - 3)**4))/2000} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = t^2(t-2)^2(t+2)^2</m> <m>t = -2</m> multiplicity 2 <m>t = 0</m> multiplicity 2 <m>t = 2</m> multiplicity 2 \begin{mfpic}[20][10]{-3}{3}{-1}{5} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(-2,0), (0,0), (2,0)} \xmarks{-2 step 1 until 2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.45,2.45,0.1}{(0.2)*(x**2)*((x-2)**2)*((x+2)**2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>H(z) = (3-z)\left(z^2+1\right)</m> <m>z=3</m> multiplicity 1 \begin{mfpic}[20][10]{-1}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>z</m>} \tlabel[cc](0.5,3){<m>y</m>} \point[4pt]{(3,0)} \xmarks{1 step 1 until 3} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-0.75,3.3,0.1}{(0.5)*(3-x)*((x**2)+1)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>Z(x) = x(42 - x^{2})</m>
+          <m>x = -\sqrt{42}</m> multiplicity 1 <m>x = 0</m> multiplicity 1
+          <m>x = \sqrt{42}</m> multiplicity 1 \begin{mfpic}[10]{-7}{7}{-6}{6} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \point[4pt]{(-6.4807,0),(0,0),(6.4807,0)} \xmarks{-6 step 1 until 6} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \penwd{1.25pt} \arrow \reverse \arrow \function{-7,7,0.1}{(42*x - x**3)/20} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          odd
+        </p>
+      </li>
+      <li>
+        <p>
+          neither
+        </p>
+      </li>
+      <li>
+        <p>
+          even
+        </p>
+      </li>
+      <li>
+        <p>
+          even
+        </p>
+      </li>
+      <li>
+        <p>
+          even
+        </p>
+      </li>
+      <li>
+        <p>
+          neither
+        </p>
+      </li>
+      <li>
+        <p>
+          odd
+        </p>
+      </li>
+      <li>
+        <p>
+          odd
+        </p>
+      </li>
+      <li>
+        <p>
+          even
+        </p>
+      </li>
+      <li>
+        <p>
+          odd
+        </p>
+      </li>
+      <li>
+        <p>
+          neither
+        </p>
+      </li>
+      <li>
+        <p>
+          even
+        </p>
+      </li>
+      <li>
+        <p>
+          odd
+        </p>
+      </li>
+      <li>
+        <p>
+          even
+        </p>
+      </li>
+      <li>
+        <p>
+          even <em>and</em> odd
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              even
+            </p>
+          </li>
+          <li>
+            <p>
+              odd
+            </p>
+          </li>
+          <li>
+            <p>
+              neither
+            </p>
+          </li>
+          <li>
+            <p>
+              odd<fn>
+              You need to first multiply out the expression for <m>g(x)</m> so it is in the form prescribed by <xref ref="polynomialfunction">Definition</xref>.
+              </fn>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = |x|</m>,
+          <m>f(-x) = |-x| = |(-1) x| = |-1| |x| = (1) |x| = |x|</m>.
+          Hence, <m>f(-x) = f(x)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V(x) = x(8.5-2x)(11-2x) = 4x^3-39x^2+93.5x</m>, <m>0 \lt x \lt 4.25</m>.
+          Volume is maximized when <m>x \approx 1.58</m>,
+          so we get the dimensions of the box with maximum volume are:
+          height <m>\approx</m> 1.58 inches,
+          width <m>\approx</m> 5.34 inches,
+          and depth <m>\approx</m> 7.84 inches.
+          The maximum volume is <m>\approx</m> 66.15 cubic inches.
+        </p>
+      </li>
+      <li>
+        <p>
+          Each of these average rates of change indicate slope of the curve over the given interval.
+          Smaller slopes correspond to <sq>flatter</sq> curves and higher slopes correspond to <sq>steeper</sq> curves.
+          <me>
+            \begin{array}{|r||c|c|c|c|c|c|}  \hline  f(x) \amp   [-0.1, 0] \amp  [0, 0.1] \amp [0.9, 1] \amp  [1, 1.1] \amp  [1.9, 2] \amp  [2, 2.1]  \\ \hline 1 \amp   0 \amp    0  \amp  0   \amp  0   \amp  0  \amp  0 \\  \hline x \amp   1 \amp    1  \amp  1   \amp  1   \amp  1  \amp  1 \\  \hline x^2 \amp  -0.1 \amp  0.1 \amp  1.9 \amp  2.1 \amp  3.9 \amp  4.1  \\  \hline x^3 \amp  0.01  \amp  0.01 \amp  2.71 \amp  3.31 \amp  11.41 \amp  12.61 \\  \hline x^4\amp   -0.001 \amp  0.001 \amp  3.439 \amp  4.641 \amp  29.679 \amp  34.481 \\ \hline x^5 \amp  0.0001 \amp  0.0001 \amp  4.0951 \amp  6.1051 \amp  72.3901 \amp  88.4101 \\ \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          As we sample points closer to <m>x=1</m>,
+          the slope of the curve approaches the exponent on <m>x</m>.
+          <me>
+            \begin{array}{|r||c|c|c|c|}  \hline  f(x) \amp   [0.9, 1.1] \amp  [0.99, 1.01] \amp [0.999, 1.001] \amp  [0.9999, 1.0001]  \\ \hline 1 \amp   0 \amp    0  \amp  0   \amp  0   \\  \hline x \amp   1 \amp    1  \amp  1   \amp  1   \\  \hline x^2 \amp  2 \amp  2 \amp  2 \amp  2  \\  \hline x^3 \amp  3.01  \amp  3.0001 \amp  \approx 3 \amp  \approx 3  \\  \hline x^4\amp   4.04 \amp  4.0004 \amp  \approx 4 \amp  \approx 4 \\ \hline x^5 \amp  5.1001 \amp  \approx 5.001 \amp  \approx 5 \amp  \approx 5  \\ \hline \end{array}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          The calculator gives the location of the absolute maximum
+          (rounded to three decimal places)
+          as <m>x \approx 6.305</m> and <m>y \approx 1115.417</m>.
+          Since <m>x</m> represents the number of TVs sold in hundreds,
+          <m>x = 6.305</m> corresponds to <m>630.5</m> TVs.
+          Since we can't sell half of a TV, we compare
+          <m>R(6.30) \approx 1115.415</m> and <m>R(6.31) \approx 1115.416</m>,
+          so selling <m>631</m> TVs results in a (slightly) higher revenue.
+          Since <m>y</m> represents the revenue in
+          <em>thousands</em> of dollars,
+          the maximum revenue is <m>$ 1,\!115,\!416</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>P(x) = R(x) - C(x) = -5x^3+35x^2-45x-25</m>,
+          <m>0 \leq x \leq 10.07</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The calculator gives the location of the absolute maximum
+          (rounded to three decimal places)
+          as <m>x \approx 3.897</m> and <m>y \approx 35.255</m>.
+          Since <m>x</m> represents the number of TVs sold in hundreds,
+          <m>x = 3.897</m> corresponds to <m>389.7</m> TVs.
+          Since we can't sell <m>0.7</m> of a TV, we compare
+          <m>P(3.89) \approx 35.254</m> and <m>P(3.90) \approx 35.255</m>,
+          so selling <m>390</m> TVs results in a (slightly) higher revenue.
+          Since <m>y</m> represents the revenue in
+          <em>thousands</em> of dollars,
+          the maximum revenue is <m>$ 35,\!255</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Making and selling 71 PortaBoys yields a maximized profit of $5910.67.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              To maximize the volume,
+              we assume we start with the maximum Length <m>+</m> Girth of <m>130</m>,
+              so the length is <m>130 - 4x</m>.
+              The volume of a rectangular box is <sq>length <times/> width <times/> height</sq> so we get <m>V(x) = x^{2}(130 - 4x) = -4x^{3} + 130x^{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using a graphing utility,
+              we get a (local) maximum of
+              <m>y = V(x)</m> at <m>(21.67, 20342.59)</m>.
+              Hence, the maximum volume is
+              <m>20342.59\mbox{in.} ^{3}</m> using a box with dimensions <m>21.67\mbox{in.} \times 21.67\mbox{in.} \times 43.32\mbox{in.}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If we start with Length <m>+</m> Girth <m>= 108</m> then the length is
+              <m>108 - 4x</m> so <m>V(x) = -4x^{3} + 108x^{2}</m>.
+              Graphing <m>y = V(x)</m> shows a (local) maximum at
+              <m>(18.00, 11664.00)</m> so the dimensions of the box with maximum volume are
+              <m>18.00\mbox{in.} \times 18.00\mbox{in.} \times 36\mbox{in.}</m> for a volume of <m>11664.00\mbox{in.} ^{3}</m>.
+              (Calculus will confirm that the measurements which maximize the volume are <em>exactly</em>
+              18in. by 18in. by 36in., however,
+              as I'm sure you are aware by now,
+              we treat all numerical results as approximations and list them as such.)
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <ul>
+          <li>
+            <p>
+              The cubic regression model is <m>p_{3}(x) = 0.0226x^{3} - 0.9508x^{2} + 8.615x - 3.446</m>.
+              It has <m>R^{2} = 0.9377</m> which isn't bad.
+              The graph of <m>y = p_{3}(x)</m> along with the data is shown below on the left.
+              Note <m>p_{3}</m> hits the <m>x</m>-axis at about
+              <m>x = 12.45</m> making this a bad model for future predictions.
+            </p>
+          </li>
+          <li>
+            <p>
+              To use the model to approximate the number of hours of sunlight on your birthday,
+              you'll have to figure out what decimal value of <m>x</m> is close enough to your birthday and then plug it into the model.
+              Jeff's birthday is July 31 which is 10 days after July 21
+              (<m>x = 7</m>).
+              Assuming 30 days in a month, I think
+              <m>x = 7.33</m> should work for my birthday and <m>p_{3}(7.33) \approx 17.5</m>.
+              The website says there will be about <m>18.25</m> hours of daylight that day.
+            </p>
+          </li>
+          <li>
+            <p>
+              To have 14 hours of darkness we need 10 hours of daylight.
+              We see that <m>p_{3}(1.96) \approx 10</m> and
+              <m>p_{3}(10.05) \approx 10</m> so it seems reasonable to say that we'll have at least 14 hours of darkness from December 21, 2008 (<m>x = 0</m>) to February 21, 2009 (<m>x = 2</m>) and then again from October 21,2009 (<m>x = 10</m>) to December 21, 2009
+              (<m>x = 12</m>).
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              The quartic regression model is <m>p_{4}(x) = 0.0144x^{4} - 0.3507x^{3} + 2.259x^{2} - 1.571x + 5.513</m>.
+              It has <m>R^{2} = 0.9859</m> which is good.
+              The graph of <m>y = p_{4}(x)</m> along with data is shown below on the right.
+              Note <m>p_{4}(15)</m> is above <m>24</m> making this a bad model as well for future predictions.
+            </p>
+          </li>
+          <li>
+            <p>
+              Here, <m>p_{4}(7.33) \approx 18.71</m> so this model more accurately predicts the number of hours of daylight on Jeff's birthday.
+            </p>
+          </li>
+          <li>
+            <p>
+              This model says we'll have at least 14 hours of darkness from December 21, 2008 (<m>x = 0</m>) to about March 1, 2009 (<m>x = 2.30</m>) and then again from October 10, 2009 (<m>x = 9.667</m>) to December 21, 2009
+              (<m>x = 12</m>).
+            </p>
+          </li>
+        </ul>
+        <tabular>
+          <row>
+            <cell><image width="46%" source="./GraphsofPolynomialsGraphics/DaylightRegCubic.jpg"/></cell>
+            <cell><image width="46%" source="./GraphsofPolynomialsGraphics/DaylightRegQuartic.jpg"/></cell>
+          </row>
+          <row>
+            <cell><m>y = p_{3}(x)</m></cell>
+            <cell><m>y = p_{4}(x)</m></cell>
+          </row>
+        </tabular>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              The scatter plot is shown below with each of the three regression models.
+            </p>
+          </li>
+          <li>
+            <p>
+              The quadratic model is <m>P_{2}(x) = -0.021x^{2} + 0.241x + 0.956</m>,
+              <m>R^{2} = 0.7771</m>.
+              The cubic model is <m>P_{3}(x) = 0.005x^{3} - 0.103x^{2} + 0.602x + 0.573</m>,
+              <m>R^{2} = 0.9815</m>.
+              The quartic model is <m>P_{4}(x) = -0.000969x^{4} + 0.0253x^{3} - 0.240x^{2} + 0.944x + 0.330</m>,
+              <m>R^{2} = 0.9993</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The models give maximums: <m>P_{2}(5.737) \approx 1.648</m>,
+              <m>P_{3}(4.232) \approx 1.657</m> and <m>P_{4}(3.784) \approx 1.630</m>.
+            </p>
+          </li>
+        </ol>
+        <tabular>
+          <row>
+            <cell><image width="33%" source="./GraphsofPolynomialsGraphics/CircuitRegQuadratic.jpg"/></cell>
+            <cell><image width="33%" source="./GraphsofPolynomialsGraphics/CircuitRegCubic.jpg"/></cell>
+            <cell><image width="33%" source="./GraphsofPolynomialsGraphics/CircuitRegQuartic.jpg"/></cell>
+          </row>
+          <row>
+            <cell><m>y = P_{2}(x)</m></cell>
+            <cell><m>y = P_{3}(x)</m></cell>
+            <cell><m>y = P_{4}(x)</m></cell>
+          </row>
+        </tabular>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              as <m>x \rightarrow -\infty</m>,
+              <m>p(x) \rightarrow -\infty</m> and as <m>x \rightarrow \infty</m>,
+              <m>p(x) \rightarrow -\infty</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              The zeros appear to be: <m>x=-1.5</m>,
+              even multiplicity - probably <m>2</m> since it doesn't <sq>look like</sq> the graph is very flat near <m>x = 2</m>;
+              <m>x=0</m>, odd multiplicity - probably <m>1</m> since the graph seems fairly linear as it passes through the origin;
+              <m>x=1</m> odd multiplicity - probably <m>3</m> or higher since the graph seems fairly <sq>flat</sq> near <m>x = 1</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              local minimum:
+              approximately <m>(-0.773, -2.888)</m>; local maximums:
+              approximately <m>(-1.5,0)</m>, and <m>(0.32, 0.532)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Based on the graph, even degree
+              (at least <m>6</m> based on multiplicities)
+              with a negative leading coefficient based on the end behavior.
+            </p>
+          </li>
+          <li>
+            <p>
+              We only have a <em>portion</em>
+              of the graph represented here.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          We are looking for the largest open interval containing
+          <m>x = -0.235</m> for which the graph of
+          <m>y = p(x)</m> is at or above <m>y=-1.121</m>.
+          Since each of the gridlines on the <m>x</m>-axis correspond to <m>0.2</m> units,
+          we approximate this interval as <m>(-1.25 \, \text{ ish } , 1.1 \, \text{ ish } )</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>L(x) = x^2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>L(x) = x+1</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

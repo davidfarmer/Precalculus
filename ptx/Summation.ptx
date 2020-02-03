@@ -1,0 +1,1655 @@
+<section xml:id="Summation">
+  <title>Summation Notation</title>
+  <introduction>
+    <p>
+      In the previous section, we introduced sequences.
+      Each of the numbers in the sequence is called a <sq>term</sq> which implies these numbers are meant to be added.
+      To that end,
+      we introduce the following notation which is used to describe the sum of
+      (some of the)
+      terms of a sequence.
+    </p>
+    <definition xml:id="sigmanotation">
+      <statement>
+        <p>
+          <term>Summation Notation:</term> <idx><h>summation notation</h><h>definition of</h></idx> Given a sequence
+          <m>\left\{ a_{n} \right\}_{n=k}^{\infty}</m> and numbers <m>m</m> and <m>p</m> satisfying <m>k \leq m \leq p</m>,
+          the summation from <m>m</m> to <m>p</m> of the sequence <m>\left\{a_{n}\right\}</m> is written
+          <me>
+            \sum_{n=m}^{p} a_{n} = a_{m} + a_{m \mbox{\(+ 1\)} } + \ldots + a_{p}
+          </me>
+        </p>
+        <p>
+          The variable <m>n</m> is called the <idx><h>summation notation</h><h>index of summation</h></idx>
+          <term>index of summation</term>.
+          The number <m>m</m> is called the <idx><h>summation notation</h><h>lower limit of summation</h></idx>
+          <term>lower limit of summation</term>
+          while the number <m>p</m> is called the <idx><h>summation notation</h><h>upper limit of summation</h></idx>
+          <term>upper limit of summation</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In English, <xref ref="sigmanotation">Definition</xref>
+      is simply defining a short-hand notation for adding up the terms of the sequence
+      <m>\left\{ a_{n} \right\}_{n=k}^{\infty}</m> from <m>a_{m}</m> through <m>a_{p}</m>.
+      The symbol <m>\Sigma</m> is the capital Greek letter sigma and is shorthand for <sq>sum</sq>.
+      The lower and upper limits of the summation tells us which term to start with and which term to end with,
+      respectively.
+      For example,
+      using the sequence <m>a_{n} = 2n-1</m> for <m>n \geq 1</m>,
+      we can write <m>a_{\mbox{<m>3</m>} } +a_{\mbox{<m>4</m>} } + a_{\mbox{<m>5</m>} } + a_{\mbox{<m>6</m>} }</m> as
+      <me>
+        \begin{array}{rcl}  \displaystyle{\sum_{n=3}^{6}(2n-1) } \amp  = \amp  (2(3)-1) + (2(4)-1) + (2(5)-1) +  (2(6)-1) \\ \amp  = \amp   5 + 7 + 9 + 11 \\ \amp  = \amp  32 \end{array}
+      </me>
+    </p>
+    <p>
+      The index variable is considered a <sq>dummy variable</sq> in the sense that it may be changed to any letter without affecting the value of the summation.
+      For instance,
+      <me>
+        \displaystyle{\sum_{n=3}^{6}(2n-1)} = \displaystyle{\sum_{k=3}^{6}(2k-1)} = \displaystyle{\sum_{j=3}^{6}(2j-1)}
+      </me>
+    </p>
+    <p>
+      One place you may encounter summation notation is in mathematical definitions.
+      For example,
+      summation notation allows us to define polynomials as functions of the form
+      <me>
+        f(x) = \displaystyle{\sum_{k=0}^{n} a_{k} x^{k}}
+      </me>
+      for real numbers <m>a_{k}</m>,
+      <m>k = 0, 1, \ldots n</m>.
+      The reader is invited to compare this with what is given in <xref ref="polynomialfunction">Definition</xref>.
+      Summation notation is particularly useful when talking about matrix operations.
+      For example,
+      we can write the product of the <m>i</m>th row <m>R_{i}</m> of a matrix <m>A = [a_{ij}]_{m \times n}</m> and the
+      <m>j^{\mbox{th} }</m> column <m>C_{j}</m> of a matrix <m>B = [b_{ij}]_{n \times r}</m> as
+      <me>
+        Ri \cdot Cj = \displaystyle{\sum_{k=1}^{n} a_{ik}b_{kj}}
+      </me>
+    </p>
+    <p>
+      Again, the reader is encouraged to write out the sum and compare it to <xref ref="rowcolumnproduct">Definition</xref>.
+      Our next example gives us practice with this new notation.
+    </p>
+    <example xml:id="seriesex1">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the following sums.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\displaystyle{\sum_{k=1}^{4} \dfrac{13}{100^k} }</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\displaystyle{\sum_{n=0}^{4} \dfrac{n!}{2}}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\displaystyle{\sum_{n=1}^{5} \dfrac{(-1)^{n+1}}{n} (x-1)^n}</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Write the following sums using summation notation.
+              <ol>
+                <li>
+                  <p>
+                    <m>1 + 3 + 5 + \ldots + 117</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>1 - \dfrac{1}{2} + \dfrac{1}{3} - \dfrac{1}{4} + - \ldots + \dfrac{1}{117}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>0.9 + 0.09 + 0.009 + \ldots 0. \! \! \! \! \underbrace{0 \cdots 0}_{\text{ \(n-1\) zeros } } \! \! \! \! 9</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+        <p>
+          <em>Solution.</em>
+        </p>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  We substitute <m>k=1</m> into the formula
+                  <m>\frac{13}{100^k}</m> and add successive terms until we reach <m>k=4</m>.
+                  <me>
+                    \begin{array}{rcl}  \displaystyle{\sum_{k=1}^{4} \dfrac{13}{100^k} } \amp  = \amp  \dfrac{13}{100^1} + \dfrac{13}{100^2} + \dfrac{13}{100^3} + \dfrac{13}{100^4} \\ \amp  = \amp  0.13 + 0.0013 + 0.000013 + 0.00000013 \\ \amp  = \amp  0.13131313 \end{array}
+                  </me>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Proceeding as in (a),
+                  we replace every occurrence of <m>n</m> with the values <m>0</m> through <m>4</m>.
+                  We recall the factorials,
+                  <m>n!</m> as defined in number <xref ref="seqex1">Example</xref>,
+                  <xref ref="factorialintroex">number</xref> and get:
+                  <me>
+                    \begin{array}{rcl}  \displaystyle{\displaystyle{\sum_{n=0}^{4} \dfrac{n!}{2}}} \amp  = \amp  \dfrac{0!}{2} + \dfrac{1!}{2} + \dfrac{2!}{2} + \dfrac{3!}{2} = \dfrac{4!}{2} \\ \amp  = \amp  \dfrac{1}{2} + \dfrac{1}{2} + \dfrac{2 \cdot 1}{2} + \dfrac{3 \cdot 2 \cdot 1}{2} + \dfrac{4 \cdot 3 \cdot 2 \cdot 1 }{2} \\ \amp  = \amp  \dfrac{1}{2} + \dfrac{1}{2} + 1 + 3 + 12 \\ \amp  = \amp  17 \end{array}
+                  </me>
+                </p>
+              </li>
+              <li>
+                <p>
+                  We proceed as before, replacing the index <m>n</m>,
+                  but <em>not</em> the variable <m>x</m>,
+                  with the values <m>1</m> through <m>5</m> and adding the resulting terms.
+                  <me>
+                    \begin{array}{rcl}  \displaystyle{\sum_{n=1}^{5} \dfrac{(-1)^{n+1}}{n} (x-1)^n} \amp  = \amp   \dfrac{(-1)^{1+1}}{1} (x-1)^1 + \dfrac{(-1)^{2+1}}{2} (x-1)^2 + \dfrac{(-1)^{3+1}}{3} (x-1)^3 \\ \amp \amp  + \dfrac{(-1)^{1+4}}{4} (x-1)^4 + \dfrac{(-1)^{1+5}}{5} (x-1)^5 \\ \amp  = \amp  (x-1) - \dfrac{(x-1)^2}{2} +  \dfrac{(x-1)^3}{3} -  \dfrac{(x-1)^4}{4} +  \dfrac{(x-1)^5}{5} \end{array}
+                  </me>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              The key to writing these sums with summation notation is to find the pattern of the terms.
+              To that end,
+              we make good use of the techniques presented in <xref ref="Sequences">Section</xref>.
+              <ol>
+                <li>
+                  <p>
+                    The terms of the sum <m>1</m>, <m>3</m>, <m>5</m>,
+                    etc., form an arithmetic sequence with first term <m>a = 1</m> and common difference <m>d = 2</m>.
+                    Using <xref ref="arithgeoformula">Equation</xref>,
+                    we get <m>a_{n} = 1 + (n-1)2 = 2n-1</m>, <m>n \geq 1</m>.
+                    At this stage, we have the formula for the terms,
+                    namely <m>2n-1</m>, and the lower limit of the summation,
+                    <m>n=1</m>.
+                    To finish the problem,
+                    we need to determine the upper limit of the summation.
+                    In other words,
+                    we need to determine which value of <m>n</m> produces the term <m>117</m>.
+                    Setting <m>a_{n} = 117</m>, we get <m>2n-1=117</m> or <m>n = 59</m>.
+                    Our final answer is
+                    <me>
+                      \begin{array}{rcl} 1 + 3 + 5 + \ldots + 117 \amp  = \amp  \displaystyle{\sum_{n=1}^{59} (2n-1)} \end{array}
+                    </me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We rewrite all of the terms as fractions,
+                    the subtraction as addition,
+                    and associate the negatives <sq><m>-</m></sq> with the numerators to get
+                    <me>
+                      \dfrac{1}{1} + \dfrac{-1}{2} + \dfrac{1}{3} + \dfrac{-1}{4} + \ldots + \dfrac{1}{117}
+                    </me>
+                    The numerators, <m>1</m>, <m>-1</m>,
+                    etc. can be described by the geometric sequence<fn>
+                    This is indeed a geometric sequence with first term <m>a = 1</m> and common ratio <m>r=-1</m>.
+                    </fn> <m>C_{n} = (-1)^{n-1}</m> for <m>n \geq 1</m>,
+                    while the denominators are given by the arithmetic sequence<fn>
+                    It is an arithmetic sequence with first term <m>a=1</m> and common difference <m>d=1</m>.
+                    </fn> <m>D_{n} = n</m> for <m>n \geq 1</m>.
+                    Hence, we get the formula <m>a_{n} = \frac{(-1)^{n-1}}{n}</m> for our terms,
+                    and we find the lower and upper limits of summation to be <m>n=1</m> and  <m>n = 117</m>,
+                    respectively.
+                    Thus
+                    <me>
+                      \begin{array}{rcl} 1 - \dfrac{1}{2} + \dfrac{1}{3} - \dfrac{1}{4} + - \ldots + \dfrac{1}{117} \amp  = \amp  \displaystyle{\sum_{n=1}^{117} \dfrac{(-1)^{n-1}}{n}} \end{array}
+                    </me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Thanks to <xref ref="seqex2">Example</xref>,
+                    we know that one formula for the
+                    <m>n^{\mbox{th} }</m> term is <m>a_{n} = \frac{9}{10^{n}}</m> for <m>n \geq 1</m>.
+                    This gives us a formula for the summation as well as a lower limit of summation.
+                    To determine the upper limit of summation,
+                    we note that to produce the <m>n-1</m> zeros to the right of the decimal point before the <m>9</m>,
+                    we need a denominator of <m>10^{n}</m>.
+                    Hence, <m>n</m> is the upper limit of summation.
+                    Since <m>n</m> is used in the limits of the summation,
+                    we need to choose a different letter for the index of summation.<fn>
+                    To see why, try writing the summation using <sq><m>n</m></sq> as the index.
+                    </fn>  We choose <m>k</m> and get
+                    <me>
+                      \begin{array}{rcl} 0.9 + 0.09 + 0.009 + \ldots 0.\! \! \! \! \underbrace{0 \cdots 0}_{\text{ \(n-1\) zeros } } \! \! \! \! 9 \amp  = \amp  \displaystyle{\sum_{k=1}^{n} \dfrac{9}{10^{k}}} \end{array}
+                    </me>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </example>
+    <p>
+      The following theorem presents some general properties of summation notation.
+    </p>
+    <theorem xml:id="sigmaprops">
+      <statement>
+        <p>
+          <em>Properties of Summation Notation:</em>
+          Suppose <m>\left\{a_{n}\right\}</m> and
+          <m>\left\{b_{n}\right\}</m> are sequences so that the following sums are defined.
+              <idx><h>summation notation</h><h>properties of</h></idx>
+          <ul>
+            <li>
+              <p>
+                <em>Sum and Difference Property:</em>
+                <m>\displaystyle{ \sum_{n=m}^{p} \left(a_{n} \pm b_{n} \right) = \sum_{n=m}^{p} a_{n} \pm \sum_{n=m}^{p} b_{n} }</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Property:</em>
+                <m>\displaystyle{\sum_{n=m}^{p} c \, a_{n} = c \sum_{n=m}^{p} a_{n}}</m>,
+                for any real number <m>c</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Additive Index Property:</em>
+                <m>\displaystyle{\sum_{n=m}^{j} a_{n} + \sum_{n=j+1}^{p} a_{n} = \sum_{n=m}^{p} a_{n}}</m>,
+                for any natural number <m>m \leq j \lt j+1 \leq p</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Re-indexing:</em> <m>\displaystyle{\sum_{n=m}^{p} a_{n} = \sum_{n=m+r}^{p+r} a_{n-r}}</m>,
+                for any integer <m>r</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      There is much to be learned by thinking about why the properties hold,
+      so we leave the proof of these properties to the reader.<fn>
+      To get started, remember the mantra
+      <q>When in doubt, write it out!</q>
+      </fn>
+    </p>
+    <example xml:id="summationpropsex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                If <m>\displaystyle{ \sum_{n=2}^{50} \left(a_{n} - 3 b_{n} \right) = 17}</m> and <m>\displaystyle{ \sum_{n=2}^{50} a_{n} = 10}</m>,
+                find <m>\displaystyle{ \sum_{n=2}^{50} b_{n}}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\displaystyle{ \sum_{n=1}^{20} a_{n} = -3}</m> and <m>\displaystyle{ \sum_{n=1}^{21} a_{n} = 7}</m>,
+                find <m>a_{21}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Rewrite the sum so the index starts at <m>0</m>:
+                <m>\displaystyle{ \sum_{n=2}^{437} n (n-1) x^{n-2}}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Using the Sum and Difference Property along with the Distributive Property  of <xref ref="sigmaprops">Theorem</xref>, we get:
+                <me>
+                  \sum_{n=2}^{50}  \left(a_{n}  - 3 b_{n} \right) =  \sum_{n=2}^{50}  a_{n}  -  \sum_{n=2}^{50} 3 b_{n}  = \sum_{n=2}^{50}  a_{n}  - 3 \sum_{n=2}^{50} b_{n}
+                </me>
+                Hence,<m>\displaystyle{\sum_{n=2}^{50}  a_{n}  - 3 \sum_{n=2}^{50} b_{n} = 17}</m>.
+                If <m>\displaystyle{ \sum_{n=2}^{50}  a_{n}  = 10}</m>,
+                then <m>\displaystyle{10  - 3 \sum_{n=2}^{50} b_{n} = 17}</m> so  <m>\displaystyle{\sum_{n=2}^{50} b_{n} = -\frac{7}{3}}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                There are at least two ways to approach this problem.
+                By definition,
+                <m>\displaystyle{ \sum_{n=1}^{21}  a_{n} = a_{1} + a_{2} + \ldots + a_{21}}</m>.
+                That is, we add up the first <m>21</m> terms of the sequence <m>a_{n}</m>.
+                Similarly, <m>\displaystyle{ \sum_{n=1}^{20}  a_{n} = a_{1} + a_{2} + \ldots + a_{20}}</m> means we add up the first <m>20</m> terms of the sequence.
+                Hence, <m>a_{21} = \displaystyle{ \sum_{n=1}^{21}  a_{n}  - \sum_{n=1}^{20}  a_{n}  = 7-(-3) = 10.}</m>  Alternatively,
+                we can use the Additive Index Property:
+                <me>
+                  \sum_{n=1}^{21}  a_{n} = \sum_{n=1}^{20}  a_{n} + \sum_{n=21}^{21}  a_{n} =  \sum_{n=1}^{20}  a_{n}  + a_{21}
+                </me>,
+                which gives  <m>a_{21} = \displaystyle{ \sum_{n=1}^{21}  a_{n}  - \sum_{n=1}^{20}  a_{n}  = 7-(-3) = 10}</m> as well.
+              </p>
+            </li>
+            <li>
+              <p>
+                To re-index <m>\displaystyle{ \sum_{n=2}^{437} n (n-1) x^{n-2}}</m> so <m>n</m> starts at <m>0</m>,
+                we follow the formula in <xref ref="summationpropsex">Theorem</xref>  with <m>r=-2</m>:
+                <me>
+                  \sum_{n=2}^{437} n (n-1) x^{n-2} =  \sum_{n=2+(-2)}^{437+(-2)} (n-(-2)) (n-(-2)-1) x^{n -(-2) -2} = \sum_{n=0}^{435} (n+2) (n+1) x^{n}
+                </me>.
+                We leave it to the reader to check by writing out the first few,
+                and last few, terms.
+                Alternatively, to better see <em>why</em>
+                the re-indexing works in this way,
+                we can introduce a new counter, <m>k</m>.
+                We want this new counter to start at <m>k =0</m> whereas the current counter starts at <m>n=2</m>,
+                so we want <m>k = n-2</m>.
+                When <m>n=2</m>, <m>k=0</m>,
+                as required, and when <m>n=437</m>, <m>k = 435</m>.
+                Moreover, <m>n = k+2</m>, so substituting this into the sum, we get
+                <me>
+                  \sum_{n=2}^{437} n (n-1) x^{n-2} =  \sum_{k=0}^{435} (k+2) ((k+2)-1) x^{(k+2) -2} = \sum_{k=0}^{435} (k+2) (k+1) x^{k}
+                </me>,
+                which is the same sum we had before,
+                just with a different dummy variable.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We now turn our attention to the sums involving arithmetic and geometric sequences.
+      Given an arithmetic sequence <m>a_{k} = a + (k-1) d</m> for <m>k \geq 1</m>,
+      we let <m>S</m> denote the sum of the first <m>n</m> terms.
+      To derive a formula for <m>S</m>,
+      we write it out in two different ways
+      <me>
+        \begin{array}{ccccccccccc}  S \amp  = \amp  a \amp  + \amp  (a + d) \amp   + \amp  \ldots \amp  + \amp  (a + (n-2)d) \amp  + \amp  (a + (n-1)d) \\  S \amp  = \amp  (a + (n-1)d) \amp  + \amp  (a + (n-2)d)  \amp  + \amp  \ldots \amp  + \amp  (a + d)  \amp  + \amp  a \end{array}
+      </me>
+    </p>
+    <p>
+      If we add these two equations and combine the terms which are aligned vertically, we get
+      <me>
+        2S = (2a + (n-1)d) + (2a + (n-1)d) + \ldots + (2a + (n-1)d) + (2a + (n-1)d)
+      </me>
+    </p>
+    <p>
+      The right hand side of this equation contains <m>n</m> terms,
+      all of which are equal to <m>(2a + (n-1)d)</m> so we get <m>2S = n(2a + (n-1)d)</m>.
+      Dividing both sides of this equation by <m>2</m>, we obtain the formula
+      <me>
+        S =  \dfrac{n}{2} (2a + (n-1)d)
+      </me>
+    </p>
+    <p>
+      If we rewrite the quantity
+      <m>2a + (n-1)d</m> as <m>a + (a + (n-1)d) = a_{\mbox{<m>1</m>} } + a_{n}</m>,
+      we get the formula
+      <me>
+        S = n \left(\dfrac{a_{\mbox{\(1\)} } + a_{n}}{2}\right)
+      </me>
+    </p>
+    <p>
+      A helpful way to remember this last formula is to recognize that we have expressed the sum as the product of the number of terms <m>n</m> and the <em>average</em>
+      of the first and <m>n^{\mbox{th} }</m> terms.
+    </p>
+    <p>
+      To derive the formula for the geometric sum,
+      we start with a geometric sequence <m>a_{k} = ar^{k-1}</m>,
+      <m>k \geq 1</m>,
+      and let <m>S</m> once again denote the sum of the first <m>n</m> terms.
+      Comparing <m>S</m> and <m>rS</m>, we get
+      <me>
+        \begin{array}{ccccccccccccccc}  S \amp  = \amp  a \amp  + \amp  ar \amp   + \amp  ar^2 \amp  + \amp  \ldots \amp  + \amp  ar^{n-2} \amp  + \amp  ar^{n-1} \amp  \amp  \\  r S \amp  = \amp  \amp  \amp  ar \amp  + \amp  ar^2 \amp  + \amp  \ldots \amp   + \amp  ar^{n-2} \amp  + \amp  ar^{n-1} \amp  + \amp  ar^{n} \end{array}
+      </me>
+    </p>
+    <p>
+      Subtracting the second equation from the first forces all of the terms except <m>a</m> and <m>ar^{n}</m> to cancel out and we get <m>S - rS = a - ar^{n}</m>.
+      Factoring, we get <m>S(1-r) = a \left(1-r^{n}\right)</m>.
+      Assuming <m>r \neq 1</m>,
+      we can divide both sides by the quantity <m>(1-r)</m> to obtain
+      <me>
+        S =  a \left( \dfrac{1-r^n}{1-r}\right)
+      </me>
+    </p>
+    <p>
+      If we distribute <m>a</m> through the numerator,
+      we get <m>a - ar^{n} = a_{\mbox{<m>1</m>} } - a_{n\mbox{<m>+ 1</m>} }</m> which yields the formula
+      <me>
+        S =  \dfrac{a_{\mbox{\(1\)} }-a_{n\mbox{\( + 1\)} }}{1-r}
+      </me>
+    </p>
+    <p>
+      In the case when <m>r=1</m>, we get the formula
+      <me>
+        S = \underbrace{a + a + \ldots +a }_{\text{ \(n\) times } } = n \, a
+      </me>
+    </p>
+    <p>
+      Our results are summarized below.<fn>
+      Alternatively,
+      we can use <xref ref="geoseriespreview">Exercise</xref>
+      in <xref ref="Polydivision">Section</xref>.
+      </fn>
+    </p>
+    <proposition xml:id="arithgeosum">
+      <title>Sums of Arithmetic and Geometric Sequences:</title>
+      <statement>
+        <p>
+          [Sums of Arithmetic and Geometric Sequences:]
+          <em>Sums of Arithmetic and Geometric Sequences:</em>
+          <ul>
+            <li>
+              <p>
+                The sum <m>S</m> of the first <m>n</m> terms of an arithmetic sequence
+                <m>a_{k}= a + (k-1)d</m> for <m>k \geq 1</m> is
+                <me>
+                  S = \displaystyle{\sum_{k=1}^{n} a_{k}} = n \left(\dfrac{a_{\mbox{\(1\)} } + a_{n}}{2}\right) = \dfrac{n}{2} (2a + (n-1)d)
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                The sum <m>S</m> of the first <m>n</m> terms of a geometric sequence
+                <m>a_{k}= ar^{k-1}</m> for <m>k \geq 1</m> is
+                <ol>
+                  <li>
+                    <p>
+                      <m>S = \displaystyle{\sum_{k=1}^{n} a_{k}} = \dfrac{a_{\mbox{<m>1</m>} } - a_{n\mbox{<m>+ 1</m>} }}{1-r} =a \left( \dfrac{1-r^n}{1-r}\right)</m>,
+                      if <m>r \neq 1</m>.
+                  <idx><h>sequence</h><h>arithmetic ! sum of first <m>n</m> terms</h></idx>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <m>S = \displaystyle{\sum_{k=1}^{n} a_{k} = \sum_{k=1}^{n} a =n a}</m>,
+                      if <m>r =1</m>.
+                  <idx><h>sequence</h><h>geometric ! sum of first <m>n</m> terms</h></idx>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      While we have made an honest effort to derive the formulas in <xref ref="arithgeosum">Equation</xref>,
+      formal proofs require the machinery in <xref ref="Induction">Section</xref>.
+    </p>
+    <example xml:id="arithgeosumex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <ol>
+              <li>
+                <p>
+                  Find the sum: <m>1 + 3 + 5 + \ldots + 117</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Find a formula for the sum <m>\displaystyle{ \sum_{k=1}^{n} k }</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              The classic
+              <url href="https://en.wikipedia.org/wiki/Wheat_and_chessboard_problem"><em>wheat and chessboard problem</em></url>
+              asks the following question.
+              Given a chessboard with its squares numbered <m>1</m> to <m>64</m>,
+              suppose on the first square was placed one grain of wheat,
+              the second square, two grains,
+              the third square, four grains, and so on,
+              each square receiving twice the number of grains as its predecessor.
+              How many total grains of wheat would end up on the chessboard?
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Recognizing the terms of <m>1 + 3 + 5 + \ldots + 117</m> as <m>1</m>,
+                    <m>3</m>, <m>5</m>, and so on,
+                    we see we have an arithmetic sequence with <m>a=1</m> and <m>d=2</m>.
+                    Using <xref ref="arithgeoformula">Equation</xref>,
+                    we get a formula for the terms <m>a_{n} = 1 + 2(n-1) = 2n-1</m> for <m>n \geq 1</m>.
+                    In order to use the formula in <xref ref="arithgeosum">Equation</xref>,
+                    we need to determine the number of terms being added, <m>n</m>.
+                    Setting <m>2n-1 = 117</m>, we find <m>n = 59</m>.
+                    Feeding in all of our data into <xref ref="arithgeosum">Equation</xref>,
+                    we get <m>1 + 3 + 5 + \ldots + 117 =59 \left(\frac{1+117}{2}\right) = 3481</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Applying the adage <sq>when in doubt,
+                    write it out,</sq> we have <m>\displaystyle{ \sum_{k=1}^{n} k = 1 + 2 + 3 + 4 + \ldots + n}</m>.
+                    We see the terms here form an arithmetic sequence with <m>a = d = 1</m>.
+                    Moreover, we are adding exactly <m>n</m> terms,
+                    so <xref ref="arithgeosum">Equation</xref>
+                    gives <m>\displaystyle{ \sum_{k=1}^{n} k = 1 + 2 + 3 + 4 + \ldots + n = \dfrac{n(n+1)}{2}}</m>.
+                    As a side note, the special case:
+                    <m>1 + 2 + 3 + \ldots + 100</m> was allegedly given to
+                    <url href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss"><em>Carl Friedrich Gauss</em></url>
+                    while he was in elementary school.
+                    Instead of computing the sum in a brute force method,
+                    he arrived at the answer by grouping <m>1+99 = 100</m>,
+                    <m>2+98 = 100</m>,
+                    etc. so that he had <m>50</m> groups of <m>100</m> with <m>50</m> left over for a total of <m>5050</m>.
+                    This is the exact same methodology we used to prove the sum of the arithmetic sequence formula in <xref ref="arithgeosum">Equation</xref>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                Since we are <em>doubling</em> the number of grains of wheat as we move from one square to the next,
+                a geometric sequence with <m>r=2</m> describes the number of grains on each individual square.
+                Since we start with one grain on the first square,
+                the number of grains on the <m>k</m>th square is <m>a_{k} = (1) (2)^{k-1} = 2^{k-1}</m> for <m>k \geq 1</m>.
+                Adding up the number of grains on each square gives:
+                <me>
+                  1 + 2 + \ldots + 2^{64-1} = 1 + 2 + \ldots 2^{63} = \dfrac{1-2^{64}}{1-2} = 2^{64} - 1 \approx 1.8 \times 10^{19}
+                </me>,
+                in accordance with <xref ref="arithgeosum">Equation</xref>.
+                (The weight of these grains would total approximately
+                <m>2.6 \times 10^{15}</m> pounds which is approximately <m>15</m> times the entire biomass of the planet.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      An important application of the geometric sum formula is the investment plan called an <idx><h>annuity</h><h>ordinary ! definition of</h></idx> <em>annuity</em>.
+      Annuities differ from the kind of investments we studied in <xref ref="ExpLogApplications">Section</xref>
+      in that payments are deposited into the account on an on-going basis,
+      and this complicates the mathematics a little.<fn>
+      The reader may wish to re-read the discussion on compound interest in <xref ref="ExpLogApplications">Section</xref> before proceeding.
+      </fn>
+    </p>
+    <p>
+      Suppose you have an account with annual interest rate <m>r</m> which is compounded <m>n</m> times per year.
+      We let <m>i = \frac{r}{n}</m> denote the interest rate per period.
+      Suppose we wish to make ongoing deposits of <m>P</m> dollars at the <em>end</em>
+      of each compounding period.
+      Let <m>A_{k}</m> denote the amount in the account after <m>k</m> compounding periods.
+    </p>
+    <p>
+      Then <m>A_{\mbox{<m>1</m>} } = P</m>,
+      because we have made our first deposit at the <em>end</em>
+      of the first compounding period and no interest has been earned.
+      During the second compounding period,
+      we earn interest on <m>A_{\mbox{<m>1</m>} }</m> so that our initial investment has grown to <m>A_{\mbox{<m>1</m>} }(1+i) = P(1+i)</m> in accordance with <xref ref="simpleinterest">Equation</xref>.
+      Adding our second payment at the end of the second period, we get
+      <me>
+        A_{\mbox{\(2\)} } = A_{\mbox{\(1\)} }(1+i) + P = P(1+i) + P = P(1+i)\left(1 + \dfrac{1}{1+i}\right)
+      </me>
+    </p>
+    <p>
+      The reason for factoring out the <m>P(1+i)</m> will become apparent in short order.
+      During the third compounding period,
+      we earn interest on <m>A_{\mbox{<m>2</m>} }</m> which then grows to <m>A_{\mbox{<m>2</m>} }(1+i)</m>.
+      We add our third payment at the end of the third compounding period to obtain
+      <me>
+        A_{\mbox{\(3\)} } = A_{\mbox{\(2\)} }(1+i) + P = P(1+i)\left(1 + \dfrac{1}{1+i}\right)(1+i) + P = P(1+i)^2\left(1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2}\right)
+      </me>
+    </p>
+    <p>
+      During the fourth compounding period,
+      <m>A_{\mbox{<m>3</m>} }</m> grows to <m>A_{\mbox{<m>3</m>} }(1+i)</m>,
+      and when we add the fourth payment,
+      we factor out <m>P(1+i)^3</m> to get
+      <me>
+        A_{\mbox{\(4\)} } = P(1+i)^3 \left(1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2} + \dfrac{1}{(1+i)^3}\right)
+      </me>
+    </p>
+    <p>
+      This pattern continues so that at the end of the <m>k</m>th compounding, we get
+      <me>
+        A_{k} = P(1+i)^{k-1} \left(1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2} + \ldots + \dfrac{1}{(1+i)^{k-1}}\right)
+      </me>
+    </p>
+    <p>
+      The sum in the parentheses above is the sum of the first <m>k</m> terms of a geometric sequence with <m>a = 1</m> and <m>r = \frac{1}{1+i}</m>.
+      Using <xref ref="arithgeosum">Equation</xref>, we get
+      <me>
+        1 + \dfrac{1}{1+i} + \dfrac{1}{(1+i)^2} + \ldots + \dfrac{1}{(1+i)^{k-1}} = 1 \left(\dfrac{1 - \dfrac{1}{(1+i)^k}}{1 - \dfrac{1}{1+i}}\right) = \ \dfrac{(1+i)\left(1 - (1+i)^{-k}\right)}{i}
+      </me>
+    </p>
+    <p>
+      Hence, we get
+      <me>
+        A_{k} = P(1+i)^{k-1} \left(\dfrac{(1+i)\left(1 - (1+i)^{-k}\right)}{i}\right) = \dfrac{P\left((1+i)^k - 1\right)}{i}
+      </me>
+    </p>
+    <p>
+      If we let <m>t</m> be the number of years this investment strategy is followed,
+      then <m>k = nt</m>,
+      and we get the formula for the future value of an <idx><h>annuity</h><h>ordinary ! future value</h></idx>
+      <em>ordinary annuity</em>.
+    </p>
+    <proposition xml:id="fvannuity">
+      <title>Future Value of an Ordinary Annuity:</title>
+      <statement>
+        <p>
+          [Future Value of an Ordinary Annuity:]
+          <em>Future Value of an Ordinary Annuity:</em>
+          Suppose an annuity offers an annual interest rate <m>r</m> compounded <m>n</m> times per year.
+          Let <m>i = \frac{r}{n}</m> be the interest rate per compounding period.
+          If a deposit <m>P</m> is made at the end of each compounding period,
+          the amount <m>A</m> in the account after <m>t</m> years is given by
+          <me>
+            A = \dfrac{P\left((1+i)^{nt} - 1\right)}{i}
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      The reader is encouraged to substitute
+      <m>i = \frac{r}{n}</m> into <xref ref="fvannuity">Equation</xref> and simplify.
+      Some familiar equations arise which are cause for pause and meditation.
+      One last note:
+      if the deposit <m>P</m> is made a the <em>beginning</em>
+      of the compounding period instead of at the end,
+      the annuity is called an <idx><h>annuity</h><h>annuity-due</h></idx> <em>annuity-due</em>.
+      We leave the derivation of the formula for the future value of an annuity-due as an exercise for the reader.
+    </p>
+    <example xml:id="annuityex">
+      <statement>
+        <p>
+          An ordinary annuity offers a <m>6 \%</m> annual interest rate,
+          compounded monthly.
+          <ol>
+            <li>
+              <p>
+                If monthly payments of <m>\dollar50</m> are made,
+                find the value of the annuity in <m>30</m> years.
+              </p>
+            </li>
+            <li>
+              <p>
+                How many years will it take for the annuity to grow to <m>\dollar100,\! 000</m>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We have <m>r = 0.06</m> and <m>n = 12</m> so that <m>i = \frac{r}{n} = \frac{0.06}{12} = 0.005</m>.
+                With <m>P=50</m> and  <m>t=30</m>,
+                <me>
+                  A = \dfrac{50\left((1+0.005)^{(12)(30)} - 1\right)}{0.005} \approx  50225.75
+                </me>
+                Our final answer is <m>\dollar50,\!225.75</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find how long it will take for the annuity to grow to <m>\dollar100,\!000</m>,
+                we set <m>A = 100000</m> and solve for <m>t</m>.
+                We isolate the exponential and take natural logs of both sides of the equation.
+                <me>
+                  \begin{array}{rcl}  100000 \amp  = \amp   \dfrac{50\left((1+0.005)^{12t} - 1\right)}{0.005} \\  10 \amp  = \amp   (1.005)^{12t} - 1 \\  (1.005)^{12t} \amp  = \amp   11 \\  \ln\left((1.005)^{12t}\right) \amp  = \amp  \ln(11) \\  12t \ln(1.005) \amp  = \amp  \ln(11) \\  t \amp  = \amp  \frac{\ln(11)}{12 \ln(1.005)} \approx 40.06 \end{array}
+                </me>
+                This means that it takes just over <m>40</m> years for the investment to grow to <m>\dollar100,\!000</m>.
+                Comparing this with our answer to part 1, we see that in just <m>10</m> additional years,
+                the value of the annuity nearly doubles.
+                This is a lesson worth remembering.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection>
+    <title>Extensions to Calculus: Geometric Series</title>
+    <p>
+      As defined in <xref ref="Sequences">Section</xref>,
+      sequences are an <em>infinite</em> list of numbers.
+      So far in this section, we have concerned ourselves with adding only
+      <em>finitely</em> many terms.
+      In Calculus, <em>infinite</em> sums, called
+          <idx><h>series</h></idx>
+      <em>series</em> are studied at great length.
+      While we do not have the mathematical machinery to embark upon an exhaustive study here,
+      we can nevertheless focus our attention on what is arguably one of the most prevalent and useful types of series,
+      <em>Geometric Series</em>.
+    </p>
+    <p>
+      As a motivating example, consider the number <m>0.\overline{9}</m>.
+      We can write this number as
+      <me>
+        0.\overline{9} = 0.9999... = 0.9 + 0.09 + 0.009 + 0.0009 + \ldots
+      </me>
+    </p>
+    <p>
+      From <xref ref="seriesex1">Example</xref>,
+      we know we can write the sum of the first <m>n</m> of these terms as
+      <me>
+        0.\underbrace{9 \cdots 9}_{\text{ \(n\) nines } } = .9 + 0.09 + 0.009 + \ldots 0.\! \! \! \! \underbrace{0 \cdots 0}_{\text{ \(n-1\) zeros } } \! \! \! \! 9 = \displaystyle{\sum_{k=1}^{n} \dfrac{9}{10^{k}}}
+      </me>
+    </p>
+    <p>
+      Using <xref ref="arithgeosum">Equation</xref>, we have
+      <me>
+        \displaystyle{\sum_{k=1}^{n} \dfrac{9}{10^{k}}} = \sum_{k=1}^{n} \dfrac{9}{10} \left(\dfrac{1}{10^{k-1}}\right) = \sum_{k=1}^{n} \dfrac{9}{10} \left(\dfrac{1}{10}\right)^{k-1} =  \dfrac{9}{10} \left( \dfrac{1 - \dfrac{1}{10^{n}}}{1 - \dfrac{1}{10}} \right) = 1 - \dfrac{1}{10^{n}}
+      </me>
+    </p>
+    <p>
+      It stands to reason that <m>0.\overline{9}</m> is the same value of
+      <m>1 - \frac{1}{10^{n}}</m> as <m>n \rightarrow \infty</m>.
+      Our knowledge of exponential expressions from <xref ref="ExponentialFunctions">Section</xref>
+      tells us that <m>\frac{1}{10^{n}} \rightarrow 0</m> as <m>n \rightarrow \infty</m>,
+      so <m>1 - \frac{1}{10^{n}} \rightarrow 1</m>.
+      We have just argued that <m>0.\overline{9} = 1</m>,
+      which may shock some readers.<fn>
+      To make this more palatable,
+      it is usually accepted that
+      <m>0.\overline{3} = \frac{1}{3}</m> so that <m>0.\overline{9} = 3\left(0.\overline{3}\right) = 3\left(\frac{1}{3} \right) = 1</m>.
+      </fn>
+    </p>
+    <p>
+      Note that in this manner,
+      any non-terminating decimal can be thought of as an infinite sum whose denominators are the powers of <m>10</m>,
+      so the phenomenon of adding up infinitely many terms and arriving at a finite number is not as foreign of a concept as it may appear.
+    </p>
+    <p>
+      The primary result concerning geometric series is below:
+    </p>
+    <theorem xml:id="geoseries">
+      <statement>
+        <p>
+          <em>Geometric Series:</em> Given the sequence <m>a_{k} = ar^{k-1}</m> for
+          <m>k \geq 1</m>, where <m>|r| \lt  1</m>,
+          <me>
+            a + ar + ar^2 + \ldots = \displaystyle{\sum_{k=1}^{\infty} ar^{k-1}} = \dfrac{a}{1-r}
+          </me>
+        </p>
+        <p>
+          If <m>|r| \geq 1</m>,
+          the sum <m>a + ar + ar^2 + \ldots</m> is not defined.
+              <idx><h>geometric series</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The justification of the result in <xref ref="geoseries">Theorem</xref>
+      comes from taking the formula in <xref ref="arithgeosum">Equation</xref>
+      for the sum of the first <m>n</m> terms of a geometric sequence and examining the formula as <m>n \rightarrow \infty</m>.
+    </p>
+    <p>
+      Assuming <m>|r|\lt 1</m> means <m>-1 \lt  r \lt  1</m>,
+      so <m>r^{n} \rightarrow 0</m> as <m>n \rightarrow \infty</m>.
+      (It is essential to note <m>n</m> is a <em>natural</em>
+      number especially when <m>r \leq 0</m>.)
+      Hence as <m>n \rightarrow \infty</m>,
+      <me>
+        \displaystyle{\sum_{k=1}^{n} a r^{k-1}} = a \left( \dfrac{1-r^n}{1-r}\right) \rightarrow \dfrac{a}{1-r}
+      </me>
+    </p>
+    <p>
+      We'll explore what goes wrong when
+      <m>|r| \geq 1</m> in some of the exercises.
+      For now, we put this theorem to good use in the following example.
+    </p>
+    <example xml:id="geoseriesex">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Find the sum:
+                <m>\dfrac{1}{2} + \dfrac{1}{4} + \dfrac{1}{8} + \ldots</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Represent <m>4.2\overline{17}</m> as a fraction in lowest terms.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We recognize <m>\dfrac{1}{2} + \dfrac{1}{4}  + \dfrac{1}{8} + \ldots</m> as a geometric series with <m>a = r = \frac{1}{2}</m>.
+                Using <xref ref="geoseries">Theorem</xref>, we get
+                <me>
+                  \dfrac{1}{2} + \dfrac{1}{4}  + \dfrac{1}{8} + \ldots = \dfrac{\frac{1}{2}}{1 - \frac{1}{2}} = 1
+                </me>.
+                The interested reader is invited to research this sum as it relates to
+                <url href="https://en.wikipedia.org/wiki/Zeno's_paradoxes"><em>Zeno's Dichotomy Paradox</em></url>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To use  <xref ref="geoseries">Theorem</xref>
+                as it applies to the repeating decimal <m>4.2\overline{17}</m>,
+                we first need to rewrite this decimal in terms of a geometric series.
+                Expanding  <m>4.2\overline{17} = 4.2 + 0.017 + 0.00017 + 0.0000017 + \ldots</m>,
+                we see the series <m>0.017 + 0.00017 + 0.0000017 + \ldots</m> is geometric with <m>a = 0.017</m> and <m>r = 0.01</m>.
+                Hence, we can apply <xref ref="geoseries">Theorem</xref>
+                to that part of the decimal to get:
+                <me>
+                  0.017 + 0.00017 + 0.0000017 + \ldots = \dfrac{0.017}{1 - 0.01} = \dfrac{\frac{17}{1000}}{\frac{99}{100}} = \frac{17}{990}
+                </me>
+                Hence, <m>4.2\overline{17} = 4.2 + \dfrac{17}{990} = \dfrac{42}{10} + \dfrac{17}{990} = \dfrac{835}{198}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We note that another popular method for converting repeating decimals to fractions goes something like this:
+      let <m>x =4.2\overline{17}</m>.
+      Then, <m>100x = 421.7\overline{17}</m>.
+      Hence, <m>99x = 100x - x = 421.7\overline{17} - 4.2\overline{17} = 417.5</m>.
+      Hence, <m>x = \frac{417.5}{99} = \frac{835}{198}</m>.
+      While this procedure results in the same (correct!) answer,
+      the manipulations involved
+      (such as the multiplication and subtraction)
+      are actually using some of the properties listed in <xref ref="sigmaprops">Theorem</xref> extended to infinite sums.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Extensions to Calculus: Area</title>
+    <p>
+      One of the (two) major geometric problems studied in Calculus is finding the area under a curve (more specifically,
+      the area between the graph of a function and the <m>x</m>-axis.)<fn>
+      The area can actually represent a wide variety of things such as displacement,
+      probability,
+      or, as odd as it sounds, volume.
+      </fn> In this section,
+      we explore how summation notation is used to help better formulate this problem, and,
+      as with our study of Geometric Series,
+      sneak a peak into Calculus itself.
+    </p>
+    <p>
+      Suppose we wish to determine the area between the graph of a continuous function
+      <m>y = f(x)</m> over the interval <m>[a,b]</m> and the <m>x</m>-axis as shown below on the left.
+      Since we don't know any area formulas for arbitrary regions,
+      we stick to what we know - rectangles.
+    </p>
+    <p>
+      To keep things simple,
+      we divide <m>[a,b]</m> into <m>n</m> equal pieces (subintervals),
+      and use the right-endpoints of each piece to determine the height of the rectangles.<fn>
+      In Calculus,
+      you'll also use left endpoints and midpoints <ellipsis/>.
+      </fn> We let <m>x_{k}</m> represent the right endpoint of the <m>k</m>th subinterval,
+      so the height of the <m>k</m>th rectangle is <m>f(x_{k})</m>.
+    </p>
+    <p>
+      The width of the <m>k</m>th rectangle is the length of the <m>k</m>th subinterval.
+      Since the interval itself is <m>b-a</m> units long and we are dividing the interval into <m>n</m> <em>equal</em> pieces,
+      each piece is <m>\frac{b-a}{n}</m> units long.
+      For brevity, we'll call this length <sq><m>\Delta x</m>.</sq>
+    </p>
+    <p>
+      Below on the right is a depiction of <m>RS_{\, 7}</m>,
+      a <sq>right endpoint sum</sq> using <m>7</m>
+      (equally spaced)
+      subintervals.<fn>
+      On intervals over which the function is <em>increasing</em>,
+      we find the area of rectangles <em>overestimates</em> the area we want;
+      on intervals over which the function is <em>decreasing</em>,
+      we find the area of the rectangles
+      <em>underestimates</em> the area we want.
+      </fn>
+    </p>
+    <p>
+      \begin{mfpic}[20]{-1}{9}{-1}{4} \fillcolor[gray]{0.7} \gfill \btwnfcn{1,8,0.1}{0}{cos(3.14159*x/4-3.14159/4)+ 2.5} \axes \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](9, -0.5){<m>x</m>} \xmarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{<m>a=x_{0}</m>} 1, {<m>x_{1}</m>} 2, {<m>x_{2}</m>} 3, {<m>x_{3}</m>} 4, {<m>x_{4}</m>} 5, {<m>x_{5}</m>} 6, {<m>x_{6}</m>} 7, {<m>x_{7}=b</m>} 8} \penwd{1.25pt} \function{1, 8, 0.1}{cos(3.14159*x/4-3.14159/4)+ 2.5} \polyline{(1,0), (1,3.5)} \polyline{(8,0), (8,3.2)} \point[4pt]{(1, 3.5), (8, 3.2)}
+    </p>
+    <p>
+      \tcaption{Area under the graph of <m>y = f(x)</m>}
+    </p>
+    <p>
+      \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[20]{-1}{9}{-1}{4} \fillcolor[gray]{0.7} \gfill \btwnfcn{1,2,0.1}{0}{3.2} \gfill \btwnfcn{2,3,0.1}{0}{2.5} \gfill \btwnfcn{3,4,0.1}{0}{1.79} \gfill \btwnfcn{4,5,0.1}{0}{1.5} \gfill \btwnfcn{5,6,0.1}{0}{1.79} \gfill \btwnfcn{6,7,0.1}{0}{2.5} \gfill \btwnfcn{7,8,0.1}{0}{3.2} \point[4pt]{(1, 3.5), (2, 3.2), (3, 2.5), (4, 1.79), (5, 1.5), (6, 1.79), (7, 2.5), (8, 3.2)}
+    </p>
+    <p>
+      \polyline{(2,0), (2,3.2), (1,3.2), (1,0)} \polyline{(3,0), (3,2.5), (2, 2.5)} \polyline{(4,0), (4,1.79), (3,1.79)}
+    </p>
+    <p>
+      \polyline{(5,0), (5,1.5), (4,1.5)}
+    </p>
+    <p>
+      \polyline{(6,0), (6,1.79), (5,1.79), (5, 1.5)}
+    </p>
+    <p>
+      \polyline{(7,0), (7,2.5), (6,2.5), (6, 1.79)}
+    </p>
+    <p>
+      \polyline{(8,0), (8,3.2), (7,3.2), (7, 2.5)}
+    </p>
+    <p>
+      \axes \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](9, -0.5){<m>x</m>} \xmarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{<m>a=x_{0}</m>} 1, {<m>x_{1}</m>} 2, {<m>x_{2}</m>} 3, {<m>x_{3}</m>} 4, {<m>x_{4}</m>} 5, {<m>x_{5}</m>} 6, {<m>x_{6}</m>} 7, {<m>x_{7}=b</m>} 8} \penwd{1.25pt} \function{1, 8, 0.1}{cos(3.14159*x/4-3.14159/4)+ 2.5}
+    </p>
+    <p>
+      \tcaption{Visualizing <m>RS_{\, 7}</m>,
+      a <sq>right endpoint sum.</sq>} \end{mfpic}
+    </p>
+    <p>
+      The idea here is to approximate the area of the shaded region by the sum of the areas of the rectangles.
+      In symbols:
+      <me>
+        \text{ Area }  \approx f(x_{1}) \Delta x + f(x_{2}) \Delta x  + f(x_{3}) \Delta x + \ldots +  f(x_{7}) \Delta x = \sum_{k = 1}^{7} f(x_{k}) \Delta x
+      </me>
+    </p>
+    <p>
+      Our ultimate goal is to find a formula for the area approximation as described above as a function of the number of rectangles <m>n</m> and look to see what happens as <m>n \rightarrow \infty</m>.
+    </p>
+    <p>
+      We first note that the right endpoints <m>x_{k}</m>,
+      are terms in an arithmetic sequence:
+      the first right endpoint,
+      <m>x_{1}</m> is <m>\Delta x</m> to the right of <m>a = x_{0}</m>,
+      so <m>x_{1} = x_{0} + \Delta x</m>;
+      the second right endpoint,
+      <m>x_{2}</m> is <m>\Delta x</m> units to the right of <m>x_{1}</m>,
+      so <m>x_{2} = x_{1} + \Delta x</m>;
+      the third right endpoint <m>x_{3} = x_{2} + \Delta x</m> and so on.
+      In general, <m>x_{k} = x_{k-1} + \Delta x</m>,
+      proving the <m>x_{k}</m> are terms of an arithmetic sequence with common difference <m>d = \Delta x</m>.
+      It follows that <m>x_{k}</m>,
+      the <m>k</m>th right endpoint is
+      <m>k \Delta x</m> units to the right of <m>x_{0} = a</m>,
+      so that <m>x_{k} = a + k \Delta x</m>.
+      We summarize the notation and formulas for right endpoint sums below.
+    </p>
+    <p>
+      <em>Summary of Formulas for Right Endpoint Sums, <m>RS_{n}</m></em>
+      <ul>
+        <li>
+          <p>
+            Number of rectangles: <m>n</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Width of each rectangle: <m>\Delta x = \dfrac{b-a}{n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Right endpoint: <m>x_{k} = a + k \Delta x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Height of <m>k</m>th rectangle: <m>f(x_{k})</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\text{ Area } \approx RS_{n} = \text{ the sum of the area of the rectangles } = \displaystyle{\sum_{k = 1}^{n} f(x_{k}) \Delta x_{k}}</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Below we summarize some common summation formulas we'll need when actually computing these sums.
+      Formal proofs of these require the machinery of <xref ref="Induction">Section</xref> and are found there.
+    </p>
+    <p>
+      <em>Summation Formulas</em>
+      <ul>
+        <li>
+          <p>
+            <m>\displaystyle{\sum_{k=1}^{n} c = c n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle{\sum_{k=1}^{n} k = \dfrac{n(n+1)}{2}}</m>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            <m>\displaystyle{\sum_{k=1}^{n} k^2 = \dfrac{n(n+1)(2n+1)}{6}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle{\sum_{k=1}^{n} k^3 = \dfrac{n^2(n+1)^2}{4}}</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      It is high time for an example.
+    </p>
+    <example xml:id="rightsumex">
+      <statement>
+        <p>
+          Consider <m>f(x) = 4x-x^2</m> over the interval <m>[0,4]</m>.
+          <ol>
+            <li>
+              <p>
+                Graph <m>f</m> over this interval and shade the area between the graph of <m>f</m> and the <m>x</m>-axis.
+              </p>
+            </li>
+            <li>
+              <p>
+                Compute <m>RS_{n}</m> for <m>n=4</m> and <m>n=8</m>.
+                Interpret your results graphically.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find a formula for <m>RS_{n}</m> in terms of <m>n</m> and determine the behavior of <m>RS_{n}</m> as <m>n \rightarrow \infty</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The graph of <m>f(x) = 4x-x^2</m> is a parabola with intercepts <m>(0,0)</m> and <m>(4,0)</m> with a vertex at <m>(2,4)</m>. \begin{mfpic}[20]{-1}{5}{-1}{5} \fillcolor[gray]{0.7} \gfill \btwnfcn{0,4,0.1}{0}{4*x-(x**2)} \axes \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](5, -0.5){<m>x</m>} \xmarks{1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \function{0, 4, 0.1}{4*x-(x**2)} \point[4pt]{(0,0), (2, 4), (4,0)} \tcaption{Area under the graph of <m>y = f(x)</m>} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                To find <m>RS_{4}</m>,
+                we begin by chopping up the interval <m>[0,4]</m> into <m>4</m> equal pieces so each subinterval has length <m>\Delta x  =  \frac{4}{4} = 1</m> unit.
+                Our right endpoints are: <m>x_{1} = 1</m>,
+                <m>x_{2} = 2</m>, <m>x_{3} = 3</m>, and <m>x_{4} = 4</m>.
+                We find <m>f(1) = 3</m>,
+                <m>f(2) = 4</m>, <m>f(3) = 3</m>, and <m>f(4) = 0</m>.
+                Hence,
+                <me>
+                  RS_{4} = \sum_{k=1}^{4} f(x_{k}) \Delta x = f(x_{1}) \Delta x + f(x_{2}) \Delta x + f(x_{3}) \Delta x + f(x_{4}) \Delta x = (3)(1) + (4)(1) + 3(1) + (0)(1) = 10
+                </me>.
+                Geometrically we have approximated the area under the graph of <m>f</m> to be <m>10</m> square units by the adding the areas of the shaded rectangles shaded below on the left.  (Note that since <m>f(x_{4}) = f(4) = 0</m>,
+                the fourth <sq>rectangle</sq> has <m>0</m> height.)  \begin{mfpic}[20]{-1}{5}{-1}{5} \fillcolor[gray]{0.7}  \gfill \btwnfcn{0,1,0.1}{0}{3} \gfill \btwnfcn{1,2,0.1}{0}{4} \gfill \btwnfcn{2,3,0.1}{0}{3}  \point[4pt]{(0,0), (1,3), (2,4), (3,3), (4,0)}  \polyline{(1,0), (1,3), (0,3), (0,0)} \polyline{(2,0), (2,4), (1, 4), (1,0)} \polyline{(3,0), (3,3), (2,3)}   \axes \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](5, -0.5){<m>x</m>} \xmarks{1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt}  \function{0, 4, 0.1}{4*x-(x**2)}  \tcaption{Visualizing
+                <m>RS_{\, 4}</m>} \end{mfpic}   \begin{mfpic}[20]{-1}{5}{-1}{5} \fillcolor[gray]{0.7} \gfill \btwnfcn{0,0.5,0.1}{0}{1.75} \gfill \btwnfcn{0.5,1,0.1}{0}{3} \gfill \btwnfcn{1,1.5,0.1}{0}{3.75} \gfill \btwnfcn{1.5,2,0.1}{0}{4} \gfill \btwnfcn{2,2.5,0.1}{0}{3.75} \gfill \btwnfcn{2.5,3,0.1}{0}{3} \gfill \btwnfcn{3,3.5,0.1}{0}{1.75}  \point[4pt]{(0,0), (0.5, 1.75), (1,3), (1.5, 3.75), (2,4), (2.5, 3.75), (3,3), (3.5, 1.75), (4,0)} \polyline{(0.5,0), (0.5,1.75), (0,1.75), (0,0)} \polyline{(1,0), (1,3), (0.5,3), (0.5,0)} \polyline{(1.5,0), (1.5,3.75), (1,3.75), (1,0)} \polyline{(2,0), (2,4), (1.5, 4), (1.5,0)} \polyline{(2.5,0), (2.5,3.75), (2, 3.75), (2,0)} \polyline{(3,0), (3,3), (2.5,3), (2.5,0)} \polyline{(3.5,0), (3.5,1.75), (3,1.75), (3,0)} \axes \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](5, -0.5){<m>x</m>} \xmarks{0.5, 1,1.5, 2,2.5, 3,3.5, 4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt}  \function{0, 4, 0.1}{4*x-(x**2)}  \tcaption{Visualizing
+                <m>RS_{\, 8}</m>} \end{mfpic}    To find <m>RS_{8}</m>,
+                we divide the interval <m>[0,4]</m> into <m>8</m> equal pieces,
+                so each has length <m>\Delta x = \frac{4}{8} = 0.5</m> units.
+                This produces the right endpoints:
+                <m>x_{1} = 0.5</m>, <m>x_{2} = 1</m>,
+                <m>x_{3} = 1.5</m>, <m>x_{4} = 2</m>, <m>x_{5} = 2.5</m>,
+                <m>x_{6} = 3</m>, <m>x_{7} = 3.5</m>, <m>x_{8} = 4</m>.
+                In addition to the function values we used to compute <m>RS_{4}</m>,
+                we need  <m>f(0.5) = 1.75</m>,
+                <m>f(1.5) = 3.75</m>,  <m>f(2.5) = 3.75</m>,
+                and  <m>f(3.5) = 1.75</m>.
+                Hence,
+                <me>
+                  \begin{array}{rcl}  RS_{8} \amp  = \amp  \displaystyle{\sum_{k=1}^{8} f(x_{k}) \Delta x} \\ \amp  = \amp    f(x_{1}) \Delta x + f(x_{2}) \Delta x + f(x_{3}) \Delta x + f(x_{4}) \Delta x  \\ \amp   \amp   + f(x_{5}) \Delta x + f(x_{6}) \Delta x + f(x_{7}) \Delta x + f(x_{8}) \Delta x \\ \amp  = \amp  (1.75)(0.5) + (3)(0.5) + (3.75)(0.5) + (4)(0.5) \\ \amp     \amp  +  (3.75)(0.5) + (3)(0.5) + (1.75)(0.5) + (0)(0.5) \\ \amp  = \amp  10.5 \end{array}
+                </me>
+                Hence, the area under the graph <m>f</m> is approximately <m>10.5</m> square units as approximated by the sum of the rectangles above on the right.  (Again,
+                since <m>f(x_{8}) = f(4) = 0</m>,
+                the eighth <sq>rectangle</sq> has <m>0</m> height.)
+              </p>
+            </li>
+            <li>
+              <p>
+                To find a formula for <m>RS_{n}</m>,
+                we imagine dividing the interval <m>[0,4]</m> into <m>n</m> equal pieces each of length <m>\Delta x = \frac{4}{n}</m>.
+                We have <m>n</m> right endpoints,
+                <m>x_{1}</m>, <m>x_{2}</m>,
+                <ellipsis/> <m>x_{n}</m> where <m>x_{k} = 0 + k \Delta x = \frac{4k}{n}</m>.
+                Since <m>f(x) = 4x-x^2</m>,
+                <me>
+                  f(x_{k}) = 4x_{k} - x_{k}^2 = 4\left(\dfrac{4k}{n}\right) - \left(\dfrac{4k}{n}\right)^2 = \dfrac{16k}{n} - \dfrac{16k^2}{n^2}
+                </me>.
+                Hence,
+                <me>
+                  \begin{array}{rclr}  RS_{n} \amp  = \amp  \displaystyle{ \sum_{k=1}^{n} f(x_{k}) \Delta x} \amp  \\ \amp  = \amp  \displaystyle{ \sum_{k=1}^{n} \left[\dfrac{16k}{n} - \dfrac{16k^2}{n^2} \right] \left( \dfrac{4}{n} \right)} \amp  \\ \amp  = \amp  \displaystyle{ \sum_{k=1}^{n} \left[\dfrac{64k}{n^2} - \dfrac{64k^2}{n^3} \right]} \amp  \text{Distribute the \( \dfrac{4}{n}\).}   \\ \amp  = \amp  \displaystyle{ \sum_{k=1}^{n} \dfrac{64k}{n^2}  - \sum_{k=1}^{n} \dfrac{64k^2}{n^3} } \amp  \text{ Sum and Difference Property }  \\ \amp  = \amp  \displaystyle{ \dfrac{64}{n^2} \sum_{k=1}^{n} k  - \dfrac{64}{n^3} \sum_{k=1}^{n} k^2 } \amp  \text{ Distributive Property\footnotemark }  \\ \amp  = \amp  \displaystyle{ \dfrac{64}{n^2} \left( \dfrac{n(n+1)}{2} \right) - \dfrac{64}{n^3}\left( \dfrac{n(n+1)(2n+1)}{6} \right) } \amp  \text{ Summation Formulas }  \\ \amp  = \amp  \displaystyle{\dfrac{32(n+1)}{n}  - \dfrac{32(n+1)(2n+1)}{3n^2} =  \dfrac{32n^2-32}{3n^2}}\amp \end{array}
+                </me>
+                Note we can partially check our answer at thus point by substituting <m>n=4</m> and <m>n=8</m> to our formula to <m>RS_{n}</m> to see if we recover our answers from above.
+                We get <m>RS_{4} = \frac{32(4)^2 - 32}{3(4^2)}= \frac{480}{48} = 10</m> and <m>RS_{8} = \frac{32(8)^2 - 32}{3(8)^2} = \frac{2016}{192} = 10.5</m>,
+                as required.
+                Viewing  <m>RS_{n} =  \frac{32n^2-32}{3n^2}</m> as a rational function in the variable <m>n</m>,
+                we may use the techniques from <xref ref="RationalFunctions">Chapter</xref>
+                to get as <m>n \rightarrow \infty</m>,
+                <m>RS_{n} \approx \frac{32n^2}{3n^2} = \frac{32}{3}</m>.
+                Hence, as we use more and more rectangles,<fn>
+                even though they become skinnier and skinner and hence,
+                <em>individually</em> have smaller and smaller areas <ellipsis/>
+                </fn> the sum total of the area of those rectangles approaches <m>\frac{32}{3}</m> square units.
+                In  Calculus, we more or less  <em>define</em>
+                the area under <m>f</m> to be <m>\frac{32}{3}</m> square units.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      It is worth noting that, as with other examples in the text,
+      <xref ref="rightsumex">Example</xref>
+      is more or less lifted straight out of a Calculus lecture.
+      That being said,
+      the vast majority of the mechanics here involve precalculus notions.
+      (The only Calculus bit is when we let <m>n \rightarrow \infty</m>.)
+      In general, the machinations in Calculus amount to applying one new idea to the mechanics of precalculus.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="sumfirst">Exercises</xref>
+      - <xref ref="sumlast"></xref>,
+      find the value of each sum using <xref ref="sigmanotation">Definition</xref>.
+      <ol cols="2">
+        <li xml:id="sumfirst">
+          <p>
+            <m>\displaystyle \sum_{g = 4}^{9} (5g + 3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{k = 3}^{8} \frac{1}{k}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{j = 0}^{5} 2^{j}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{k = 0}^{2} (3k - 5)x^{k}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{i = 1}^{4} \frac{1}{4}(i^{2} + 1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{n = 1}^{100} (-1)^{n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{n = 1}^{5} \frac{(n+1)!}{n!}</m>
+          </p>
+        </li>
+        <li xml:id="sumlast">
+          <p>
+            <m>\displaystyle \sum_{j = 1}^{3} \frac{5!}{j! \, (5-j)!}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="writesumfirst">Exercises</xref>
+      - <xref ref="writesumlast"></xref>,
+      rewrite the sum using summation notation.
+      <ol cols="4">
+        <li xml:id="writesumfirst">
+          <p>
+            <m>8 + 11 + 14 + 17 + 20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1 - 2 + 3 - 4 + 5 - 6 + 7 - 8</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x - \dfrac{x^{3}}{3} + \dfrac{x^{5}}{5} - \dfrac{x^{7}}{7}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1 + 2 + 4 + \cdots + 2^{29}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2 + \frac{3}{2} + \frac{4}{3} + \frac{5}{4} + \frac{6}{5}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\ln(3) + \ln(4) - \ln(5) + \cdots + \ln(20)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1 - \frac{1}{4} + \frac{1}{9} - \frac{1}{16} + \frac{1}{25} - \frac{1}{36}</m>
+          </p>
+        </li>
+        <li xml:id="writesumlast">
+          <p>
+            <m>\frac{1}{2}(x - 5) + \frac{1}{4}(x - 5)^{2} + \frac{1}{6}(x - 5)^{3} + \frac{1}{8}(x - 5)^{4}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findsumformfirst">Exercises</xref>
+      - <xref ref="findsumformulalast"></xref>,
+      use the formulas in <xref ref="arithgeosum">Equation</xref> to find the sum.
+      <ol cols="4">
+        <li xml:id="findsumformfirst">
+          <p>
+            <m>\displaystyle \sum_{n = 1}^{10} 5n+3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{n = 1}^{20} 2n-1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{k = 0}^{15} 3-k</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{n = 1}^{10} \left(\frac{1}{2}\right)^{n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{n = 1}^{5} \left(\frac{3}{2}\right)^{n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle \sum_{k = 0}^{5} 2\left(\frac{1}{4}\right)^{k}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1+4+7+ \ldots +295</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4+2+0-2- \ldots - 146</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1+3+9+ \ldots + 2187</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots + \frac{1}{256}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3 - \frac{3}{2} + \frac{3}{4} - \frac{3}{8}+- \dots +\frac{3}{256}</m>
+          </p>
+        </li>
+        <li xml:id="findsumformulalast">
+          <p>
+            <m>\displaystyle \sum_{n = 1}^{10} -2n + \left(\frac{5}{3}\right)^{n}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="dectofracfirst">Exercises</xref>
+      - <xref ref="dectofraclast"></xref>,
+      use <xref ref="geoseries">Theorem</xref>
+      to express each repeating decimal as a fraction of integers.
+      <ol>
+        <li xml:id="dectofracfirst">
+          <p>
+            <m>0.\overline{7}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>0.\overline{13}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>10.\overline{159}</m>
+          </p>
+        </li>
+        <li xml:id="dectofraclast">
+          <p>
+            <m>-5.8\overline{67}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="annuityfirst">Exercises</xref>
+      - <xref ref="annuitylast"></xref>,
+      use <xref ref="fvannuity">Equation</xref>
+      to compute the future value of the annuity with the given terms.
+      In all cases, assume the payment is made monthly,
+      the interest rate given is the annual rate,
+      and interest is compounded monthly.
+    </p>
+    <ol cols="2">
+      <li xml:id="annuityfirst">
+        <p>
+          payments are $300, interest rate is 2.5%, term is 17 years.
+        </p>
+      </li>
+      <li>
+        <p>
+          payments are $50, interest rate is 1.0%, term is 30 years.
+        </p>
+      </li>
+      <li>
+        <p>
+          payments are $100, interest rate is 2.0%, term is 20 years
+        </p>
+      </li>
+      <li>
+        <p>
+          payments are $100, interest rate is 2.0%, term is 25 years
+        </p>
+      </li>
+      <li>
+        <p>
+          payments are $100, interest rate is 2.0%, term is 30 years
+        </p>
+      </li>
+      <li xml:id="annuitylast">
+        <p>
+          payments are $100, interest rate is 2.0%, term is 35 years
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose an ordinary annuity offers an annual interest rate of <m>2 \%</m>,
+          compounded monthly, for 30 years.
+          What should the monthly payment be to have
+          <m>\dollar100,\!000</m> at the end of the term?
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove the properties listed in <xref ref="sigmaprops">Theorem</xref>.
+        </p>
+      </li>
+      <li xml:id="CauchyBoundProofExercise">
+        <p>
+          PROOF OF CAUCHY's BOUND...
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that the formula for the future value of an annuity due is
+          <me>
+            A = P(1 + i)\left[\frac{(1 + i)^{nt} - 1}{i}\right]
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Discuss with your classmates what goes wrong when trying to find the following sums.<fn>
+          When in doubt, write them out!
+          </fn>
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>\displaystyle{ \sum_{k=1}^{\infty} 2^{k-1}}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\displaystyle{ \sum_{k=1}^{\infty} (1.0001)^{k-1}}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\displaystyle{ \sum_{k=1}^{\infty} (-1)^{k-1}}</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>213</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{341}{280}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>63</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-5 - 2x + x^{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{17}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>20</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>25</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 1}^{5} (3k + 5)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 1}^{8} (-1)^{k - 1}k</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 1}^{4} (-1)^{k - 1} \frac{x^{2k - 1}}{2k - 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 1}^{30} 2^{k-1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 1}^{5} \frac{k + 1}{k}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 3}^{20} (-1)^{k} \ln(k)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 1}^{6} \frac{(-1)^{k - 1}}{k^{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \sum_{k = 1}^{4} \frac{1}{2k}(x - 5)^{k}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>305</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>400</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-72</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{1023}{1024}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{633}{32}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{1365}{512}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>14652</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-5396</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3280</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{255}{256}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{513}{256}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{17771050}{59049}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{7}{9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{13}{99}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{3383}{333}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\dfrac{5809}{990}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          $76,163.67
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dollar20,\!981.40</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dollar29,\!479.69</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dollar38,\!882.12</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>49,\!272.55</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>60,\!754.80</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>\dollar100,\!000</m>,
+          the monthly payment is <m>\approx \dollar202.95</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

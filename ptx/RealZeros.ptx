@@ -1,0 +1,2017 @@
+<section xml:id="RealZeros">
+  <title>Real Zeros of Polynomials</title>
+  <introduction>
+    <p>
+      In <xref ref="Polydivision">Section</xref>,
+      we found that we can use synthetic division to determine if a given real number is a zero of a polynomial function.
+      This section presents results which will help us determine good candidates to test using synthetic division.
+      There are two approaches to the topic of finding the real zeros of a polynomial.
+      The first approach is to use a little bit of Mathematics followed by a good use of technology like graphing utilities.
+      The second approach makes good use of mathematical machinery (theorems) only.
+      For completeness,
+      we include the two approaches but in separate subsections.
+      Both approaches benefit from the following two theorems,
+      the first of which is due to the famous mathematician
+      <url href="http://en.wikipedia.org/wiki/Cauchy"><em>Augustin Cauchy</em></url>.
+      It gives us an interval on which <em>all</em>
+      of the real zeros of a polynomial can be found.
+    </p>
+    <theorem xml:id="CauchysBound">
+      <statement>
+        <p>
+              <idx><h>Cauchy's Bound</h></idx>
+          <em>Cauchy's Bound:</em> Suppose
+          <m>f(x) = a_{n} x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1} x + a_{0}</m> is a polynomial of degree <m>n</m> with <m>n \geq 1</m>.
+          Let <m>M</m> be the largest of the numbers:
+          <m>\frac{|a_{0}|}{|a_{n}|}</m>,
+          <m>\frac{|a_{1}|}{|a_{n}|}</m>,
+          <ellipsis/>, <m>\frac{|a_{n-1}|}{|a_{n}|}</m>.
+          Then all the real zeros of <m>f</m> lie in in the interval <m>[-(M+1),M+1]</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      There's a lot going on in the statement of Cauchy's Bound,
+      so we'll get right to an example and show how it is used.
+      For those wanting a proof of Cauchy's Bound,
+      see <xref ref="CauchyBoundProofExercise">Exercise</xref>
+      in <xref ref="Summation">Section</xref>.
+    </p>
+    <example xml:id="CBex">
+      <statement>
+        <p>
+          Let <m>f(x) = 2x^4+4x^3-x^2-6x-3</m>.
+          Determine an interval which contains all of the real zeros of <m>f</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To find the <m>M</m> stated in Cauchy's Bound,
+          we take the absolute value of the leading coefficient,
+          in this case <m>|2| = 2</m> and divide it into the largest
+          (in absolute value)
+          of the remaining coefficients,
+          in this case <m>|-6| = 6</m>.
+          This yields <m>M=3</m> so it is guaranteed that all of the real zeros of <m>f</m> lie in the interval <m>[-4,4]</m>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Whereas the previous result tells us <em>where</em>
+      we can find the real zeros of a polynomial,
+      the next theorem gives us a list of
+      <em>possible</em> real zeros.
+    </p>
+    <theorem xml:id="RZT">
+      <statement>
+        <p>
+              <idx><h>Rational Zeros Theorem</h></idx>
+          <em>Rational Zeros Theorem:</em>
+          Suppose <m>f(x) = a_{n} x^{n} + a_{n-1}x^{n-1} + \ldots + a_{1} x + a_{0}</m> is a polynomial of degree <m>n</m> with <m>n \geq 1</m>,
+          and <m>a_{0}</m>,
+          <m>a_{1}</m>, <ellipsis/> <m>a_{n}</m> are integers.
+          If <m>r</m> is a rational zero of <m>f</m>,
+          then <m>r</m> is of the form <m>\pm \frac{p}{q}</m>,
+          where <m>p</m> is a factor of the constant term <m>a_{0}</m>,
+          and <m>q</m> is a factor of the leading coefficient <m>a_{n}</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The Rational Zeros Theorem gives us a list of numbers to try in our synthetic division and that is a lot nicer than simply guessing.
+      If none of the numbers in the list are zeros,
+      then either the polynomial has no real zeros at all,
+      or all of the real zeros are irrational numbers.
+      To see why the Rational Zeros Theorem works,
+      suppose <m>c</m> is a zero of <m>f</m> and <m>c = \frac{p}{q}</m> in lowest terms.
+      This means <m>p</m> and <m>q</m> have no common factors.
+      Since <m>f(c) = 0</m>, we have
+      <me>
+        a_{n} \left(\frac{p}{q}\right)^{n} + a_{n-1}\left(\frac{p}{q}\right)^{n-1} + \ldots + a_{1} \left(\frac{p}{q}\right) + a_{0} = 0
+      </me>.
+    </p>
+    <p>
+      Multiplying both sides of this equation by <m>q^n</m>,
+      we clear the denominators to get
+      <me>
+        a_{n}p^{n} + a_{n-1}p^{n-1}q + \ldots + a_{1}p q^{n-1} + a_{0}q^n = 0
+      </me>
+    </p>
+    <p>
+      Rearranging this equation, we get
+      <me>
+        a_{n}p^{n} = -a_{n-1}p^{n-1}q - \ldots - a_{1}p q^{n-1} -a_{0}q^n
+      </me>
+    </p>
+    <p>
+      Now, the left hand side is an integer multiple of <m>p</m>,
+      and the right hand side is an integer multiple of <m>q</m>. (Can you see why?) This means
+      <m>a_{n}p^{n}</m> is both a multiple of <m>p</m> and a multiple of <m>q</m>.
+      Since <m>p</m> and <m>q</m> have no common factors,
+      <m>a_{n}</m> must be a multiple of <m>q</m>.
+      If we rearrange the equation
+      <me>
+        a_{n}p^{n} + a_{n-1}p^{n-1}q + \ldots + a_{1}p q^{n-1} + a_{0}q^n = 0
+      </me>
+      as
+      <me>
+        a_{0}q^n = -a_{n}p^{n} - a_{n-1}p^{n-1}q - \ldots - a_{1}p q^{n-1}
+      </me>
+      we can play the same game and conclude <m>a_{0}</m> is a multiple of <m>p</m>,
+      and we have the result.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>f(x) = 2x^4+4x^3-x^2-6x-3</m>.
+          Use the Rational Zeros Theorem to list all of the possible rational zeros of <m>f</m>.
+        </p>
+      </statement>
+      <solution xml:id="RZTex">
+        <p>
+          To generate a complete list of rational zeros,
+          we need to take each of the factors of constant term, <m>a_{0} = -3</m>,
+          and divide them by each of the factors of the leading coefficient <m>a_{4} = 2</m>.
+          The factors of <m>-3</m> are <m>\pm \, 1</m> and <m>\pm \, 3</m>.
+          Since the Rational Zeros Theorem tacks on a <m>\pm</m> anyway,
+          for the moment,
+          we consider only the positive factors <m>1</m> and <m>3</m>.
+          The factors of <m>2</m> are <m>1</m> and <m>2</m>,
+          so the Rational Zeros Theorem gives the list
+          <m>\left\{\pm \, \frac{1}{1}, \pm \, \frac{1}{2}, \pm \, \frac{3}{1}, \pm \, \frac{3}{2}\right\}</m> or <m>\left\{\pm \, \frac{1}{2}, \pm \, 1, \pm \, \frac{3}{2}, \pm \, 3\right\}</m>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our discussion now diverges between those who wish to use technology and those who do not.
+    </p>
+  </introduction>
+  <subsection>
+    <title>For Those Wishing to use a Graphing Utility</title>
+    <p>
+      At this stage,
+      we know not only the interval in which all of the zeros of <m>f(x) = 2x^4+4x^3-x^2-6x-3</m> are located,
+      but we also know some potential candidates.
+      We can now use our calculator to help us determine all of the real zeros of <m>f</m>,
+      as illustrated in the next example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>f(x) = 2x^4+4x^3-x^2-6x-3</m>.
+          <ol>
+            <li>
+              <p>
+                Graph <m>y=f(x)</m> using a graphing utility over the interval obtained in <xref ref="CBex">Example</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the graph to shorten the list of possible rational zeros obtained in <xref ref="RZTex">Example</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use synthetic division to find the real zeros of <m>f</m>,
+                and state their multiplicities.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <ol>
+          <li>
+            <p>
+              In <xref ref="CBex">Example</xref>,
+              we determined all of the real zeros of <m>f</m> lie in the interval <m>[-4, 4]</m>,
+              so we restrict our attention to that portion of the <m>x</m>-axis.
+            </p>
+          </li>
+          <li>
+            <p>
+              In <xref ref="RZTex">Example</xref>,
+              we learned that any rational zero of <m>f</m> must be in the list <m>\left\{\pm \, \frac{1}{2}, \pm \, 1, \pm \, \frac{3}{2}, \pm \, 3\right\}</m>.
+              From the graph,
+              it looks as if we can rule out any of the positive rational zeros,
+              since the graph seems to cross the <m>x</m>-axis at <m>x \approx 1.225</m>.
+              On the negative side, <m>x=-1</m> looks good.
+              Indeed,  the shape  of the graph near <m>(-1,0)</m> suggests that if <m>x=-1</m> is a zero,
+              it is of multiplicity at least three.
+              We set about synthetically dividing:
+              <me>
+                \begin{array}{rrrrrr}  -1 \, \, \vline\amp  2 \amp  4 \amp  -1  \amp  -6 \amp  -3 \\  \amp  \downarrow     \amp   -2  \amp   -2  \amp  3 \amp  3\\ \hhline{~-----}  \amp   2            \amp    2  \amp  -3 \amp  -3 \amp   \fbox{\(0\)} \end{array}
+              </me>
+              Since <m>f</m> is a fourth degree polynomial,
+              we know that our quotient is a third degree polynomial.
+              If we can do one more successful division,
+              we will have reduced the quotient  to a quadratic,
+              and we can use the quadratic formula, if needed,
+              to find the two  remaining  zeros.
+              Continuing with <m>x=-1</m>:
+              <me>
+                \begin{array}{rrrrrr} -1 \, \, \vline\amp  2 \amp  4 \amp  -1  \amp  -6 \amp  -3 \\  \amp  \downarrow     \amp   -2  \amp   -2  \amp  3 \amp  3\\ \hhline{~-----}  -1 \, \, \vline\amp   2 \amp    2  \amp  -3 \amp  -3 \amp   \fbox{\(0\)}  \\  \amp  \downarrow \amp   -2  \amp   0  \amp  3 \amp \\ \hhline{~----}  \amp  2  \amp    0  \amp  -3\amp  \fbox{0} \amp \end{array}
+              </me>
+              Our quotient polynomial is now <m>2x^2 - 3</m>.
+              Setting this to zero gives <m>2x^2 - 3 = 0</m>,
+              or <m>x^2 = \frac{3}{2}</m>,
+              which gives us <m>x = \pm \, \frac{\sqrt{6}}{2}</m>.
+              Based on our division work,
+              we know that <m>-1</m> has a multiplicity of
+              <em>at least</em> <m>2</m>.
+              The Factor Theorem tells us our remaining zeros,
+              <m>\pm \, \frac{\sqrt{6}}{2}</m>,
+              each have multiplicity at least <m>1</m>.
+              However, <xref ref="nzerosreal">Theorem</xref>
+              tells us <m>f</m> can have at most <m>4</m> real zeros,
+              counting multiplicity,
+              and so we conclude that <m>-1</m> is of multiplicity <em>exactly</em>
+              <m>2</m> and <m>\pm \, \frac{\sqrt{6}}{2} \approx \pm 1.225</m> each has multiplicity <m>1</m>.
+              Thus, we were incorrect in thinking  <m>-1</m> was a zero of multiplicity <m>3</m>.
+              Sure enough,
+              if we adjust zoom in near <m>(-1,0)</m> using graphing utility,
+              we find the graph of <m>y = f(x)</m> touches and rebounds from the <m>x</m>-axis at <m>(-1,0)</m>,
+              typical behavior near a zero of even multiplicity.
+              The lesson here is, once again,
+              technology may <em>suggest</em> a result,
+              but it is only the mathematics which can <em>prove</em>
+              (or in this case, <em>disprove</em>)
+              it.
+            </p>
+          </li>
+        </ol>
+        <tabular>
+          <row>
+            <cell><image width="56%" source="./RealZerosGraphics/RealZerosEx01a.jpg"/></cell>
+            <cell><image width="56%" source="./RealZerosGraphics/RealZerosEx01b.jpg"/></cell>
+          </row>
+        </tabular>
+      </solution>
+    </example>
+    <p>
+      Our next example shows how even a mild-mannered polynomial can cause problems.
+    </p>
+    <example xml:id="polyquadinform">
+      <statement>
+        <p>
+          Let <m>f(x) = x^4 + x^2 - 12</m>.
+          <ol>
+            <li>
+              <p>
+                Use Cauchy's Bound to determine an interval in which all of the real zeros of <m>f</m> lie.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the Rational Zeros Theorem to determine a list of possible rational zeros of <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>y=f(x)</m> using a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find all of the real zeros of <m>f</m> and their multiplicities.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution xml:id="usubex">
+        <ol>
+          <li>
+            <p>
+              Applying Cauchy's Bound, we find <m>M = 12</m>,
+              so all of the real zeros lie in the interval <m>[-13,13]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Applying the Rational Zeros Theorem with constant term
+              <m>a_{0} = -12</m> and leading coefficient <m>a_{4} = 1</m>,
+              we get the list <m>\{\pm \, 1</m>,
+              <m>\pm \, 2</m>, <m>\pm \, 3</m>,
+              <m>\pm \, 4</m>, <m>\pm \, 6</m>, <m>\pm \, 12\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Graphing <m>y=f(x)</m> on the interval
+              <m>[-13,13]</m> produces the graph below on the left.
+              Zooming in a bit gives the graph below on the right.
+              Based on the graph,
+              none of our rational zeros will work. (Do you see why not?)
+              <tabular>
+                <row>
+                  <cell><image width="56%" source="./RealZerosGraphics/RealZerosEx02a.jpg"/></cell>
+                  <cell><image width="56%" source="./RealZerosGraphics/RealZerosEx02b.jpg"/></cell>
+                </row>
+              </tabular>
+            </p>
+          </li>
+          <li>
+            <p>
+              From the graph, we know <m>f</m> has two real zeros,
+              one positive, and one negative.
+              Our only hope at this point is to try and find the zeros of <m>f</m> by setting <m>f(x)=x^4+x^2-12=0</m> and solving.
+              If we stare at this equation long enough,
+              we may recognize it as a <sq>quadratic in disguise</sq> or <sq>quadratic in form</sq>.
+              (See <xref ref="AppQuadEqus">Section</xref>.)
+              In other words, we have three terms:
+              <m>x^4</m>, <m>x^2</m> and <m>12</m>,
+              and the exponent on the first term, <m>x^4</m>,
+              is exactly twice that of the second term, <m>x^2</m>.
+              We may rewrite this as <m>\left(x^2\right)^2 + \left(x^2\right) - 12 = 0</m>.
+              To better see the forest for the trees,
+              we momentarily replace <m>x^2</m> with the variable <m>u</m>.
+              In terms of <m>u</m>, our equation becomes <m>u^2 + u - 12 = 0</m>,
+              which we can readily factor as <m>(u+4)(u-3) = 0</m>.
+              In terms of <m>x</m>,
+              this means <m>x^4+x^2-12= \left(x^2-3\right) \left(x^2 + 4 \right)=0</m>.
+              We get <m>x^2 = 3</m>, which gives us <m>x = \pm \sqrt{3}</m>,
+              or <m>x^2=-4</m>,
+              which admits no real solutions.
+              Since <m>\sqrt{3} \approx 1.73</m>,
+              the two zeros match what we expected from the graph.
+              Turning our attention now to multiplicities,
+              the Factor Theorem guarantees that since <m>x = \pm \sqrt{3}</m> are zeros,
+              <m>(x- \sqrt{3})</m> and <m>(x + \sqrt{3})</m> are factors of <m>f(x)</m>.
+              We've already partially factored <m>f(x)</m> as <m>f(x) = \left(x^2-3\right) \left(x^2 + 4 \right)</m>.
+              Since <m>x^2+4</m> as no real zeros,
+              we know both <m>(x-\sqrt{3})</m> and
+              <m>(x+\sqrt{3})</m> must divide <m>x^2-3</m>.
+              By <xref ref="nzerosreal">Theorem</xref>,
+              <m>x^2-3</m> can only have a total of two zeros, including multiplicities,
+              so we are forced to conclude
+              <m>x = \pm \sqrt{3}</m> are each zeros of multiplicity <m>1</m> of <m>x^2-3</m>,
+              and hence, <m>f(x)</m>.<fn>
+              Alternatively,
+              we could recognize <m>x^2 -3 = x^2-(\sqrt{3})^2 = (x-\sqrt{3})(x+\sqrt{3})</m>,
+              but the above argument works for all quadratic functions,
+              even those which aren't as easy to factor.
+              </fn>
+            </p>
+          </li>
+        </ol>
+      </solution>
+    </example>
+    <p>
+      A couple of remarks are in order.
+      First, the graph of <m>f(x) = x^4 + x^2 - 12</m> appears to be symmetric about the <m>y</m>-axis.
+      Sure enough,
+      we find <m>f(-x) = (-x)^4+(-x)^2 - 12 = x^4+x^2=12 = f(x)</m> proving <m>f</m> is, indeed,
+      an even function,
+      thus <em>proving</em> the symmetry
+      <em>suggested</em> by the graph.
+      Second, the technique used to factor <m>f(x)</m> in <xref ref="usubex">Example</xref> is called
+          <idx><h><m>u</m>-substitution</h></idx>
+      <em>{ <m>u</m>}-substitution</em>.
+      We shall this technique now and then in the sections to come,
+      so it is worth taking the time to let this idea sink in.
+      In general, substitution can help us identify a <sq>quadratic in disguise</sq> - in essence,
+      it helps us <sq>see the forest for the trees.</sq> Last,
+      but not least,
+      it is entirely possible that a polynomial has no real roots at all,
+      or worse,
+      it has real roots but none of the techniques discussed in this section can help us find them exactly.
+      In the latter case, we are forced to approximate using technology.
+    </p>
+  </subsection>
+  <subsection>
+    <title>For Those Wishing NOT to use a Graphing Calculator</title>
+    <p>
+      Suppose we wish to find the zeros of <m>f(x) = 2x^4+4x^3-x^2-6x-3</m>
+      <em>without</em> using the calculator.
+      In this subsection,
+      we present some more advanced mathematical tools (theorems) to help us.
+      Our first result is due to
+      <url href="http://en.wikipedia.org/wiki/Descartes"><em>Ren&#xe9; Descartes</em></url>.
+    </p>
+    <theorem xml:id="DRS">
+      <statement>
+        <p>
+              <idx><h>Descartes' Rule of Signs</h></idx> <em>Descartes' Rule of Signs:</em> Suppose <m>f(x)</m> is the formula for a polynomial function written with descending powers of <m>x</m>.
+          <ul>
+            <li>
+              <p>
+                If <m>P</m> denotes the number of variations of sign in the formula for <m>f(x)</m>,
+                then the number of positive real zeros
+                (counting multiplicity)
+                is one of the numbers \{<m>P</m>,
+                <m>P-2</m>, <m>P-4</m>, <ellipsis/> \}.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>N</m> denotes the number of variations of sign in the formula for <m>f(-x)</m>,
+                then the number of negative real zeros
+                (counting multiplicity)
+                is one of the numbers \{<m>N</m>,
+                <m>N-2</m>, <m>N-4</m>, <ellipsis/>\}.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      A few remarks are in order.
+      First, to use Descartes' Rule of Signs,
+      we need to understand what is meant by a <idx><h>polynomial function</h><h>variations in sign</h></idx>
+          <idx><h>variations in sign</h></idx>
+      <sq><em>variation in sign</em></sq> of a polynomial function.
+      Consider <m>f(x) = 2x^4+4x^3-x^2-6x-3</m>.
+      If we focus on only the <em>signs</em> of the coefficients,
+      we start with a <m>(+)</m>,
+      followed by another <m>(+)</m>,
+      then switch to <m>(-)</m>,
+      and stay <m>(-)</m> for the remaining two coefficients.
+      Since the signs of the coefficients switched <em>once</em>
+      as we read from left to right,
+      we say that <m>f(x)</m> has <em>one</em> variation in sign.
+      When we speak of the variations in sign of a polynomial function <m>f</m> we assume the formula for <m>f(x)</m> is written with descending powers of <m>x</m>,
+      as in <xref ref="polynomialfunction">Definition</xref>,
+      and concern ourselves only with the nonzero coefficients.
+      Second, unlike the Rational Zeros Theorem, Descartes' Rule of Signs gives us an estimate to the <em>number</em>
+      of positive and negative real zeros,
+      not the actual <em>value</em> of the zeros.
+      Lastly, Descartes' Rule of Signs counts multiplicities.
+      This means that, for example,
+      if one of the zeros has multiplicity <m>2</m>, Descsartes' Rule of Signs would count this as <em>two</em> zeros.
+      Lastly, note that the number of positive or negative real zeros always starts with the number of sign changes and decreases by an even number.
+      For example, if <m>f(x)</m> has <m>7</m> sign changes,
+      then, counting multplicities,
+      <m>f</m> has either <m>7</m>, <m>5</m>,
+      <m>3</m> or <m>1</m> positive real zero.
+      This implies that the graph of <m>y=f(x)</m> crosses the positive <m>x</m>-axis at least once.
+      If <m>f(-x)</m> results in <m>4</m> sign changes,
+      then, counting multiplicities,
+      <m>f</m> has <m>4</m>, <m>2</m> or <m>0</m> negative real zeros;
+      hence, the graph of <m>y=f(x)</m> may not cross the negative <m>x</m>-axis at all.
+      The proof of Descartes' Rule of Signs is a bit technical,
+      and can be found
+      <url href="http://www.cut-the-knot.org/fta/ROS2.shtml"><em>here</em></url>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>f(x) = 2x^4+4x^3-x^2-6x-3</m>.
+          Use Descartes' Rule of Signs to determine the possible number and location of the real zeros of <m>f</m>.
+        </p>
+      </statement>
+      <solution xml:id="DRSex">
+        <p>
+          As noted above, the variations of sign of <m>f(x)</m> is <m>1</m>.
+          This means, counting multiplicities,
+          <m>f</m> has exactly <m>1</m> positive real zero.
+          Since <m>f(-x)=2(-x)^4+4(-x)^3-(-x)^2-6(-x)-3=2x^4-4x^3-x^2+6x-3</m> has <m>3</m> variations in sign,
+          <m>f</m> has either <m>3</m> negative real zeros or <m>1</m> negative real zero,
+          counting multiplicities.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Cauchy's Bound gives us a general bound on the zeros of a polynomial function.
+      Our next result helps us determine bounds on the real zeros of a polynomial as we synthetically divide which are often sharper<fn>
+      That is, better, or more accurate.
+      </fn> bounds than Cauchy's Bound.
+    </p>
+    <theorem xml:id="ULbounds">
+      <statement>
+        <p>
+          <em>Upper and Lower Bounds:</em>
+          Suppose <m>f</m> is a polynomial of degree <m>n \geq 1</m>.
+              <idx><h>Upper and Lower Bounds Theorem</h></idx>
+              <idx><h>polynomial function</h><h>zero ! upper bound</h></idx>
+              <idx><h>polynomial function</h><h>zero ! lower bound</h></idx>
+              <idx><h>zero</h><h>upper and lower bounds</h></idx>
+          <ul>
+            <li>
+              <p>
+                If <m>c > 0</m> is synthetically divided into <m>f</m> and all of the numbers in the final line of the division tableau have the same signs,
+                then <m>c</m> is an upper bound for the real zeros of <m>f</m>.
+                That is, there are no real zeros greater than <m>c</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>c \lt 0</m> is synthetically divided into <m>f</m> and the numbers in the final line of the division tableau alternate signs,
+                then <m>c</m> is a lower bound for the real zeros of <m>f</m>.
+                That is, there are no real zeros less than <m>c</m>.
+                <em>NOTE:</em> If the number <m>0</m> occurs in the final line of the division tableau in either of the above cases,
+                it can be treated as <m>(+)</m> or <m>(-)</m> as needed.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The Upper and Lower Bounds Theorem works because of <xref ref="polydivthm">Theorem</xref>.
+      For the upper bound part of the theorem,
+      suppose <m>c>0</m> is divided into <m>f</m> and the resulting line in the division tableau contains,
+      for example, all nonnegative numbers.
+      This means <m>f(x) = (x-c) q(x) + r</m>,
+      where the coefficients of the quotient polynomial and the remainder are nonnegative. (Note that the leading coefficient of <m>q</m> is the same as <m>f</m> so <m>q(x)</m> is not the zero polynomial.) If <m>b > c</m>,
+      then <m>f(b) = (b-c) q(b) + r</m>,
+      where <m>(b-c)</m> and <m>q(b)</m> are both positive and <m>r \geq 0</m>.
+      Hence <m>f(b) > 0</m> which shows <m>b</m> cannot be a zero of <m>f</m>.
+      Thus no real number <m>b > c</m> can be a zero of <m>f</m>,
+      as required.
+      A similar argument proves <m>f(b) \lt 0</m> if all of the numbers in the final line of the synthetic division tableau are non-positive.
+      To prove the lower bound part of the theorem,
+      we note that a lower bound for the negative real zeros of <m>f(x)</m> is an upper bound for the positive real zeros of <m>f(-x)</m>,
+      since all we are doing is reflecting the numbers across the <m>x=0</m>.
+      Applying the upper bound portion to <m>f(-x)</m> gives the result. (Do you see where the alternating signs come in?) With the additional mathematical machinery of Descartes' Rule of Signs and the Upper and Lower Bounds Theorem,
+      we can find the real zeros of
+      <m>f(x) = 2x^4+4x^3-x^2-6x-3</m> without the use of a graphing utility.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>f(x) = 2x^4+4x^3-x^2-6x-3</m>.
+          <ol>
+            <li>
+              <p>
+                Find all of the real zeros of <m>f</m> and their multiplicities.
+              </p>
+            </li>
+            <li>
+              <p>
+                Sketch the graph of <m>y=f(x)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We know from Cauchy's Bound that all of the real zeros lie in the interval <m>[-4,4]</m> and that our possible rational zeros are <m>\pm \, \frac{1}{2}</m>,
+                <m>\pm \, 1</m>, <m>\pm \, \frac{3}{2}</m> and <m>\pm \, 3</m>.
+                Descartes' Rule of Signs guarantees us at least one negative real zero and exactly one positive real zero,
+                counting multiplicity.
+                We try our positive rational zeros,
+                starting with the smallest, <m>\frac{1}{2}</m>.
+                Since the remainder isn't zero,
+                we know <m>\frac{1}{2}</m> isn't a zero.
+                Sadly, the final line in the division tableau has both positive and negative numbers,
+                so <m>\frac{1}{2}</m> is not an upper bound.
+                The only information we get from this division is courtesy of the Remainder Theorem which tells us <m>f\left(\frac{1}{2}\right) = -\frac{45}{8}</m> so the point
+                <m>\left(\frac{1}{2}, -\frac{45}{8}\right)</m> is on the graph of <m>f</m>.
+                We continue to our next possible zero, <m>1</m>.
+                As before, the only information we can glean from this is that <m>(1,-4)</m> is on the graph of <m>f</m>.
+                When we try our next possible zero,
+                <m>\frac{3}{2}</m>, we get that it is not a zero,
+                and we also see that it is an upper bound on the zeros of <m>f</m>,
+                since all of the numbers in the final line of the division tableau are positive.
+                This means there is no point trying our last possible rational zero,
+                <m>3</m>.
+                Descartes' Rule of Signs guaranteed us a positive real zero,
+                and at this point we have shown this zero is irrational.<fn>
+                Since polynomials are continuous,
+                we know the zero lies between <m>1</m> and <m>\frac{3}{2}</m>,
+                since <m>f(1) \lt 0</m> and <m>f\left(\frac{3}{2}\right) > 0</m>.
+                </fn>
+                <tabular>
+                  <row>
+                    <cell><m>\begin{array}{rrrrrr} \frac{1}{2} \, \, \vline\amp 2 \amp 4 \amp -1 \amp -6 \amp -3 \\ \amp \downarrow \amp 1 \amp \frac{5}{2} \amp \frac{3}{4} \amp -\frac{21}{8} \\ \hhline{~-----} \amp 2 \amp 5 \amp \frac{3}{2} \amp -\frac{21}{4} \amp \fbox{<m>-\frac{45}{8}</m>} \end{array}</m></cell>
+                    <cell><m>\begin{array}{rrrrrr} 1 \, \, \vline\amp 2 \amp 4 \amp -1 \amp -6 \amp -3 \\ \amp \downarrow \amp 2 \amp 6 \amp 5 \amp -1 \\ \hhline{~-----} \amp 2 \amp 6 \amp 5 \amp -1 \amp \fbox{<m>-4</m>} \end{array}</m></cell>
+                    <cell><m>\begin{array}{rrrrrr} \frac{3}{2} \, \, \vline\amp 2 \amp 4 \amp -1 \amp -6 \amp -3 \\ \amp \downarrow \amp 3 \amp \frac{21}{2} \amp \frac{57}{4} \amp \frac{99}{8} \\ \hhline{~-----} \amp 2 \amp 7 \amp \frac{19}{2} \amp \frac{33}{4} \amp \fbox{<m>\frac{75}{8}</m>} \end{array}</m></cell>
+                  </row>
+                </tabular>
+                We now turn our attention to negative real zeros.
+                We try the largest possible zero, <m>-\frac{1}{2}</m>.
+                Synthetic division shows us it is not a zero, nor is it a lower bound
+                (since the numbers in the final line of the division tableau do not alternate),
+                so we proceed to <m>-1</m>.
+                This division shows <m>-1</m> is a zero.
+                Descartes' Rule of Signs told us that we may have up to three negative real zeros,
+                counting multiplicity, so we try <m>-1</m> again, and it works once more.
+                At this point, we have taken <m>f</m>,
+                a fourth degree polynomial, and performed two successful divisions.
+                Our quotient polynomial is quadratic,
+                so we look at it to find the remaining zeros.
+                <tabular>
+                  <row>
+                    <cell><m>\begin{array}{rrrrrr} -\frac{1}{2} \, \, \vline\amp 2 \amp 4 \amp -1 \amp -6 \amp -3 \\ \amp \downarrow \amp -1 \amp -\frac{3}{2} \amp \frac{5}{4} \amp \frac{19}{8} \\ \hhline{~-----} \amp 2 \amp 3 \amp -\frac{5}{2} \amp -\frac{19}{4} \amp \fbox{<m>-\frac{5}{8}</m>} \end{array}</m></cell>
+                    <cell><m>\begin{array}{rrrrrr} -1 \, \, \vline\amp 2 \amp 4 \amp -1 \amp -6 \amp -3 \\ \amp \downarrow \amp -2 \amp -2 \amp 3 \amp 3\\ \hhline{~-----} -1 \, \, \vline\amp 2 \amp 2 \amp -3 \amp -3 \amp \fbox{<m>0</m>} \\ \amp \downarrow \amp -2 \amp 0 \amp 3 \amp \\ \hhline{~----} \amp 2 \amp 0 \amp -3\amp \fbox{0} \amp \end{array}</m></cell>
+                  </row>
+                </tabular>
+                Setting the quotient polynomial equal to zero yields <m>2x^2 - 3 = 0</m>,
+                so that <m>x^2 = \frac{3}{2}</m>,
+                or <m>x = \pm \, \frac{\sqrt{6}}{2}</m>.
+                Descartes' Rule of Signs tells us that the positive real zero we found,
+                <m>\frac{\sqrt{6}}{2}</m>, has multiplicity <m>1</m>.
+                Descartes also tells us the total multiplicity of negative real zeros is <m>3</m>,
+                which forces <m>-1</m> to be a zero of multiplicity <m>2</m> and
+                <m>- \frac{\sqrt{6}}{2}</m> to have multiplicity <m>1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We know the end behavior of <m>y=f(x)</m> resembles that of its leading term <m>y=2x^4</m>.
+                This means that the graph enters the scene in Quadrant II and exits in Quadrant I. Since
+                <m>\pm \, \frac{\sqrt{6}}{2}</m> are zeros of multiplicity <m>1</m>,
+                we have that the graph crosses through the <m>x</m>-axis at the points <m>\left( -\frac{\sqrt{6}}{2}, 0 \right)</m> and
+                <m>\left( \frac{\sqrt{6}}{2}, 0 \right)</m> in a fairly linear fashion.
+                Since <m>-1</m> is a zero of multiplicity <m>2</m>,
+                the graph of <m>y=f(x)</m> touches and rebounds off the <m>x</m>-axis at <m>(-1,0)</m> in a parabolic manner.
+                Last, but not least, since <m>f(0) = -3</m>,
+                we get the <m>y</m>-intercept is <m>(0,-3)</m>.
+                Putting all of this together results in the graph below. \begin{mfpic}[20]{-4}{4}{-5}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \tlabel[cc](-4,-0.5){<m>\left( -\frac{\sqrt{6}}{2}, 0 \right)</m>} \tlabel[cc](2,-0.5){<m>\left( \frac{\sqrt{6}}{2}, 0 \right)</m>} \tlabel[cc](-0.75,-1){<m>(0, -3)</m>} \tlabel[cc](-1,0.5){<m>(-1, 0)</m>} \penwd{1.25pt} \arrow \reverse \arrow \function{-3.5,3.25,0.1}{0.1*(x+3)*((x+1)**2)*(x-3)} \point[4pt]{(-3,0),(-1,0),(3,0), (0,-0.9)} \tcaption{<m>y = f(x) = 2x^4+4x^3-x^2-6x-3</m>} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="IVTaninequalities">
+    <title>The Intermediate Value Theorem and Inequalities</title>
+    <p>
+      As we mentioned in <xref ref="GraphsofPolynomials">Section</xref>,
+      polynomial functions are continuous.
+      An important property of continuous functions is that they cannot change sign between two values unless there is a zero in between.
+      We used this property of quadratic functions when constructing sign diagrams to help us solve inequalities
+      (see <xref ref="QuadraticInequalities">Section</xref>.)
+      This property is a version of the celebrated
+      <em>Intermediate Value Theorem</em>.
+    </p>
+    <theorem xml:id="IVT">
+      <statement>
+        <p>
+          <em>The Intermediate Value Theorem (Zero Version):</em>
+          If <m>f</m> is continuous over an interval containing <m>a</m> and <m>b</m> and <m>f(a)</m> and <m>f(b)</m> have different signs,
+          then <m>f</m> has a zero between <m>a</m> and <m>b</m>.
+          That is, for at least one value <m>c</m> between <m>a</m> and <m>b</m>,
+          <m>f(c) = 0</m>.
+              <idx><h>Intermediate Value Theorem</h><h>polynomial zero version</h></idx>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The Intermediate Value Theorem is discussed in greater detail in Calculus,
+      and its proof is usually delayed until a formal analysis course.
+      It is an example of an <sq>existence</sq> theorem - it tells us that,
+      under suitable conditions,
+      a zero exists - but offers us no algorithm to find it.<fn>
+      See the notes on the <sq>Bisection Method</sq> at the end of this section.
+      </fn> Its use to us in this section is that it provides the justification needed to create sign diagrams for general polynomial functions in the same manner in which we constructed them for quadratic functions.
+    </p>
+    <p>
+      <em>Steps for Constructing a Sign Diagram for a Polynomial Function</em>
+    </p>
+    <p>
+      Suppose <m>f</m> is a polynomial function.
+          <idx><h>sign diagram</h><h>polynomial function</h></idx>
+      <ol>
+        <li>
+          <p>
+            Find the zeros of <m>f</m> and place them on the number line with the number <m>0</m> above them.
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose a real number, called a <em>test value</em>,
+            in each of the intervals determined in step 1.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine and record the sign of <m>f(x)</m> for each test value in step 2.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      The Intermediate Value Theorem justifies the use of just one <sq>test</sq> value in the algorithm above,
+      since a continuous function cannot change signs on an interval without there being a zero on that interval.
+      Since we have found the zeros in Step 1 of the algorithm and used these to create the intervals for Step 2, there cannot be any sign changes on any of the intervals in Step 2.
+    </p>
+    <p>
+      Not surprisingly,
+      we use sign diagrams to solve inequalities involving higher order polynomial functions in the same way we used them to solve inequalities involving quadratic functions.
+      We reproduce our algorithm from <xref ref="QuadraticInequalities">section</xref> for reference.
+    </p>
+    <p>
+      <em>Solving Inequalities using Sign Diagrams</em><idx><h>inequality</h><h>solution using sign diagram</h></idx>
+    </p>
+    <p>
+      To solve an inequality using a sign diagram:
+      <ol>
+        <li>
+          <p>
+            Rewrite the inequality so a function <m>f(x)</m> is being compared to <sq><m>0</m>.</sq>
+          </p>
+        </li>
+        <li>
+          <p>
+            Make a sign diagram for <m>f</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Record the solution.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <example xml:id="polyeqineqexample">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Find all of the real solutions to the equation <m>2x^5+6x^3+3 = 3x^4+8x^2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve the inequality <m>2x^5+6x^3+3 \leq 3x^4+8x^2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Interpret your answer to part 2 graphically,
+                and verify using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Finding the real solutions to
+                <m>2x^5+6x^3+3 = 3x^4+8x^2</m> is the same as finding the real solutions to <m>2x^5-3x^4+6x^3-8x^2+3=0</m>.
+                In other words,
+                we are looking for the real zeros of <m>p(x)=  2x^5-3x^4+6x^3-8x^2+3</m>.
+                Using the techniques developed in this section, we get
+                <me>
+                  \begin{array}{rrrrrrr} 1 \, \, \vline\amp  2 \amp  -3 \amp  6  \amp  -8 \amp  0 \amp 3 \\  \amp  \downarrow     \amp   2  \amp   -1  \amp  5 \amp  -3 \amp  -3\\ \hhline{~------}  1 \, \, \vline\amp  2 \amp  -1 \amp  5  \amp  -3 \amp  -3 \amp  \fbox{\(0\)} \\  \amp  \downarrow     \amp   2 \amp   1  \amp  6 \amp  3 \amp \\ \hhline{~-----}  -\frac{1}{2} \, \, \vline\amp   2 \amp   1  \amp  6 \amp  3 \amp   \fbox{\(0\)} \amp  \\  \amp  \downarrow \amp   -1  \amp   0  \amp  -3 \amp \amp \\ \hhline{~----}  \amp  2  \amp    0  \amp  6\amp  \fbox{0} \amp \amp \end{array}
+                </me>
+                The quotient polynomial is
+                <m>2x^2 + 6</m> which has no real zeros so we get <m>x=-\frac{1}{2}</m> and <m>x=1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Our first step is to rewrite this inequality so as to compare a function <m>f(x)</m> to <m>0</m>.
+                We have two options, but choose <m>2x^5-3x^4+6x^3-8x^2+3 \leq 0</m>,
+                since we found the zeros of
+                <m>p(x) = 2x^5-3x^4+6x^3-8x^2+3</m> to be <m>x=-\frac{1}{2}</m> and <m>x=1</m>.
+                We construct our sign diagram below using the test values <m>-1</m>,
+                <m>0</m>,
+                and <m>2</m>. \begin{mfpic}[10]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{-2,2} \arrow \polyline{(-3.5,-1.5),(-3.5,-0.5)} \arrow \polyline{(0,-1.5),(0,-0.5)} \arrow \polyline{(3.5,-1.5),(3.5,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>-\frac{1}{2}</m>} -2, {<m>1</m>} 2} \tlabel[cc](-3.5,1){<m>(-)</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](0,1){<m>(+)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \tlabel[cc](-3.5,-2.25){<m>-1</m>} \tlabel[cc](0,-2.25){<m>0</m>} \tlabel[cc](3.5,-2.25){<m>2</m>} \end{mfpic} The solution to
+                <m>p(x) \lt 0</m> is <m>\left(-\infty, -\frac{1}{2}\right)</m>,
+                and we know <m>p(x) = 0</m> at <m>x=-\frac{1}{2}</m> and <m>x=1</m>.
+                Hence, the solution to <m>p(x) \leq 0</m> is <m>\left(-\infty, -\frac{1}{2}\right] \cup \left\{1\right\}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To interpret this solution graphically,
+                we set <m>f(x) = 2x^5+6x^3+3</m> and <m>g(x) = 3x^4+8x^2</m>.
+                Recall from <xref ref="AbsoluteValueFunctions">Section</xref>
+                the solution to <m>f(x) \leq g(x)</m> is the set of <m>x</m> values for which the graph of <m>f</m> is below the graph of <m>g</m> (where
+                <m>f(x) \lt g(x)</m>) along with the <m>x</m> values where the two graphs intersect (<m>f(x) = g(x)</m>).
+                Graphing <m>f</m> and <m>g</m> using a graphing utility produces the graph below on the left.
+                (The end behavior should tell you which is which.)
+                We see that the graph of <m>f</m> is below the graph of <m>g</m> on <m>\left(-\infty, -\frac{1}{2}\right)</m>.
+                However, it is difficult to see what is happening near <m>x=1</m>.
+                Zooming in (and making the graph of <m>g</m> lighter),
+                we see that the graphs of <m>f</m> and <m>g</m> do intersect at <m>x=1</m>,
+                but the graph of <m>g</m> remains below the graph of <m>f</m> on either side of <m>x = 1</m>.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./RealZerosGraphics/RealZerosEx03a.jpg"/></cell>
+                    <cell><image width="56%" source="./RealZerosGraphics/RealZerosEx03b.jpg"/></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that we could have used end behavior and the concept of multiplicity to create the sign diagram used in <xref ref="polyeqineqexample">Example</xref> as follows.
+      We know the end behavior of <m>p(x) = 2x^5-3x^4+6x^3-8x^2+3</m> matches that of
+      <m>y = 2x^5</m> which means as <m>x \rightarrow -\infty</m>,
+      <m>p(x) \rightarrow -\infty</m>.
+      This means for the interval <m>\left(-\infty, -\frac{1}{2}\right)</m>,
+      <m>p(x) \lt 0</m> or <m>(-)</m>.
+      From our work finding the zeros of <m>p</m>,
+      we can deduce the multiplicity of the zero
+      <m>x = -\frac{1}{2}</m> is <m>1</m> which means the graph of
+      <m>y = p(x)</m> crosses through the <m>x</m>-axis at <m>\left( -\frac{1}{2}, 0 \right)</m>,
+      hence, changing sign from <m>(-)</m> to <m>(+)</m>.
+      Finally, we can deduce the multiplicity of the zero <m>x = 1</m> is <m>2</m> which means the graph of <m>y = p(x)</m> rebounds here,
+      meaning the sign of <m>p(x)</m> for <m>x > 1</m> is <m>(+)</m>.
+      This matches the end behavior,
+      since as <m>x \rightarrow \infty</m>,
+      <m>p(x) \rightarrow \infty</m>.
+      The reader is encouraged to tackle any given problem using whatever tools are comfortable and convenient,
+      but it also never hurts to think outside the box and revisit a problem from a variety of perspectives.
+    </p>
+    <p>
+      Next up is an application problem torn from <xref ref="LCDmaxprofit">page</xref>
+      in the Exercises of <xref ref="GraphsofPolynomials">Section</xref>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Suppose the profit <m>P</m>, in
+          <em>thousands</em> of dollars,
+          from producing and selling <m>x</m> <em>hundred</em>
+          LCD TVs is given by <m>P(x)=-5x^3+35x^2-45x-25</m>,
+          <m>0 \leq x \leq 10.07</m>.
+          How many TVs should be produced to make a profit?
+          Check your answer using a graphing utility.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To <sq>make a profit</sq> means to solve <m>P(x) = -5x^3+35x^2-45x-25 > 0</m>,
+          which we do analytically using a sign diagram.
+          To simplify things,
+          we first factor out the <m>-5</m> common to all the coefficients to get <m>-5\left(x^3 - 7x^2+9x-5\right) > 0</m>,
+          so we can just focus on finding the zeros of <m>f(x) = x^3-7x^2+9x+5</m>.
+          The possible rational zeros of <m>f</m> are <m>\pm 1</m> and <m>\pm 5</m>,
+          and going through the usual computations,
+          we find <m>x=5</m> is the only rational zero.
+          Using this, we factor <m>f(x) = x^3-7x^2+9x+5 = (x-5) \left(x^2-2x-1\right)</m>,
+          and we find the remaining zeros by applying the Quadratic Formula to <m>x^2-2x-1 = 0</m>.
+          We find three real zeros, <m>x=1-\sqrt{2} = -0.414 \ldots</m>,
+          <m>x = 1+\sqrt{2} = 2.414 \ldots</m>, and <m>x = 5</m>,
+          of which only the last two fall in the applied domain of <m>[0, 10.07]</m>.
+          We choose <m>x=0</m>,
+          <m>x=3</m> and <m>x=10.07</m> as our test values and plug them into the function <m>P(x)=-5x^3+35x^2-45x-25</m> (not
+          <m>f(x) =x^3 - 7x^2+9x-5</m>) to get the sign diagram below.
+        </p>
+        <p>
+          \begin{mfpic}[10]{-5}{5}{-2}{2} \polyline{(-5,0),(5,0)} \point[3pt]{(-5,0), (5,0)} \xmarks{-2,2} \arrow \polyline{(-5,-1.5),(-5,-0.5)} \arrow \polyline{(0,-1.5),(0,-0.5)} \arrow \polyline{(5,-1.5),(5,-0.5)} \tlpointsep{4pt} \axislabels {x}{{<m>1+\sqrt{2}</m>} -2, {<m>5</m>} 2} \tlabel[cc](-5,1){<m>(-)</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](0,1){<m>(+)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](-5,-2.25){<m>0</m>} \tlabel[cc](0,-2.25){<m>3</m>} \tlabel[cc](5,-2.25){<m>10.07</m>} \tlabel[cc](5,1){<m>(-)</m>} \end{mfpic}
+        </p>
+        <p>
+          We see immediately that <m>P(x)>0</m> on <m>(1+\sqrt{2},5)</m>.
+          Since <m>x</m> measures the number of TVs in <em>hundreds</em>,
+          <m>x = 1 + \sqrt{2}</m> corresponds to <m>241.4\ldots</m> TVs.
+          Since we can't produce a fractional part of a TV, we need to choose between producing 241 and 242 TVs.
+          From the sign diagram, we see that
+          <m>P(2.41) \lt 0</m> but <m>P(2.42)>0</m> so,
+          in this case we take the next <em>larger</em>
+          integer value and set the minimum production to 242 TVs.
+          At the other end of the interval,
+          we have <m>x=5</m> which corresponds to <m>500</m> TVs.
+          Here, we take the next <em>smaller</em> integer value,
+          <m>499</m> TVs to ensure that we make a profit.
+          Hence, in order to make a profit,
+          at least 242, but no more than 499 TVs need to be produced.
+          We graph <m>y = P(x)</m> below using a graphing utility and see <m>P(x) > 0</m> between
+          <m>x \approx 2.414</m> and <m>x = 5</m>, as predicted.
+        </p>
+        <p>
+          <image width="75%" source="./RealZerosGraphics/RealZerosEx04.jpg"/>
+        </p>
+      </solution>
+    </example>
+    <p>
+      It would be a sin of omission if the authors left the reader with the impression that the theory in this section is compete in that given
+      <em>any</em> polynomial function,
+      provided here are the tools to find all of its real zeros exactly.
+      The reality is this couldn't be further from the truth.
+      In general, no matter how many theorems you throw at a polynomial,
+      it may well be impossible to express its zeros exactly.
+      The polynomial <m>f(x) = x^5-x-1</m> is one such beast.<fn>
+      See this
+      <url href="http://en.wikipedia.org/wiki/Galois_theory"><em>page</em></url>.
+      </fn> According to Descartes' Rule of Signs,
+      <m>f</m> has exactly one positive real zero,
+      and it could have two negative real zeros, or none at all.
+      The Rational Zeros Test gives us <m>\pm 1</m> as rational zeros to try but neither of these work since <m>f(1) = f(-1) = -1</m>.
+      If we try the substitution technique we used in <xref ref="usubex">Example</xref>,
+      we find <m>f(x)</m> has three terms,
+      but the exponent on the <m>x^5</m> isn't exactly twice the exponent on <m>x</m>.
+      How could we go about approximating the positive zero?
+      We use the
+          <idx><h>Bisection Method</h></idx>
+      <em>Bisection Method</em>.
+      The first step in the Bisection Method is to find an interval on which <m>f</m> changes sign.
+      We know <m>f(1) = -1</m> and we find <m>f(2) = 29</m>.
+      By the Intermediate Value Theorem,
+      we know that the zero of <m>f</m> lies in the interval <m>[1,2]</m>.
+      Next, we <sq>bisect</sq> this interval by finding the midpoint,
+      <m>1.5</m>.
+      We compute <m>f(1.5)\approx 5.09</m>.
+      Once again, the Intermediate Value Theorem guarantees our zero is between <m>1</m> and <m>1.5</m>,
+      since <m>f</m> changes sign on this interval.
+      Now, we <sq>bisect</sq> the interval <m>[1,1.5]</m> and find <m>f(1.25) \approx 0.80</m>,
+      so now we have the zero between <m>1</m> and <m>1.25</m>.
+      Bisecting <m>[1,1.25]</m>, we find <m>f(1.125) \approx -0.32</m>,
+      which means the zero of <m>f</m> is between <m>1.125</m> and <m>1.25</m>.
+      We continue in this fashion until we have <sq>sandwiched</sq> the zero between two numbers whose digits agree to a desired amount.<fn>
+      We ask you to approximate this zero to three decimal places using the Bisection Method in <xref ref="bisectionexercise">Exercise</xref>.
+      </fn> You can think of the Bisection Method as reversing the sign diagram process:
+      instead of finding the zeros and checking the sign of <m>f</m> using test values,
+      we are using test values to determine where the signs switch to find the zeros.
+      It is a slow and tedious, yet fool-proof,
+      method for <em>approximating</em>
+      a real zero when the other analytical methods fail us.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="prelimpolystufffirst">Exercises</xref>
+      - <xref ref="prelimpolystufflast"></xref>, for the given polynomial:
+      <ul>
+        <li>
+          <p>
+            Use Cauchy's Bound to find an interval containing all of the real zeros.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the Rational Zeros Theorem to make a list of possible rational zeros.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use Descartes' Rule of Signs to list the possible number of positive and negative real zeros,
+            counting multiplicities.
+          </p>
+        </li>
+      </ul>
+      <ol cols="5">
+        <li xml:id="prelimpolystufffirst">
+          <p>
+            <m>f(x) = x^{3} - 2x^{2} - 5x + 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^{4} + 2x^{3} - 12x^{2} - 40x - 32</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = z^{4} - 9z^{2} - 4z + 12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = z^{3} + 4z^{2} - 11z + 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t^{3} - 7t^{2} + t - 7</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = -2t^{3} + 19t^{2} - 49t + 20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -17x^{3} + 5x^{2} + 34x - 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 36x^{4} - 12x^{3} - 11x^{2} + 2x + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 3z^{3} + 3z^{2} - 11z - 10</m>
+          </p>
+        </li>
+        <li xml:id="prelimpolystufflast">
+          <p>
+            <m>p(z) = 2z^4+z^3-7z^2-3z+3</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findrealzerosexerfirst">Exercises</xref>
+      - <xref ref="findrealzerosexerlast"></xref>,
+      find the real zeros of the polynomial using the techniques specified by your instructor.
+      State the multiplicity of each real zero.
+      <ol cols="2">
+        <li xml:id="findrealzerosexerfirst">
+          <p>
+            <m>f(x) = x^{3} - 2x^{2} - 5x + 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^{4} + 2x^{3} - 12x^{2} - 40x - 32</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = z^{4} - 9z^{2} - 4z + 12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = z^{3} + 4z^{2} - 11z + 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t^{3} - 7t^{2} + t - 7</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = -2t^{3} + 19t^{2} - 49t + 20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -17x^{3} + 5x^{2} + 34x - 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 36x^{4} - 12x^{3} - 11x^{2} + 2x + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 3z^{3} + 3z^{2} - 11z - 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 2z^4+z^3-7z^2-3z+3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 9t^{3} - 5t^{2} - t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 6t^{4} - 5t^{3} - 9t^{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^4+2x^2 - 15</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^4-9x^2+14</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 3z^4-14z^2-5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 2z^4-7z^2+6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = t^6-3t^3-10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 2t^6-9t^3+10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^5-2x^4-4x+8</m>
+          </p>
+        </li>
+        <li xml:id="findrealzerosexerlast">
+          <p>
+            <m>f(x) = 2x^5+3x^4-18x-27</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="realzeroswcalcfirst">Exercises</xref>
+      - <xref ref="realzeroswcalclast"></xref>, use your calculator,<fn>
+      You <em>can</em> do these without your calculator,
+      but it may test your mettle!
+      </fn> to help you find the real zeros of the polynomial.
+      State the multiplicity of each real zero.
+      <ol cols="2">
+        <li xml:id="realzeroswcalcfirst">
+          <p>
+            <m>f(x) = x^{5} - 60x^{3} - 80x^{2} + 960x + 2304</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 25x^{5} - 105x^{4} + 174x^{3} - 142x^{2} + 57x - 9</m>
+          </p>
+        </li>
+        <li xml:id="realzeroswcalclast">
+          <p>
+            <m>f(x) = 90x^{4} - 399x^{3} + 622x^{2} - 399x + 90</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the real zeros of <m>f(x) = x^{3} - \frac{1}{12}x^{2} - \frac{7}{72}x + \frac{1}{72}</m> by first finding a polynomial <m>q(x)</m> with integer coefficients such that
+            <m>q(x) = N \cdot f(x)</m> for some integer <m>N</m>.
+            (Recall that the Rational Zeros Theorem required the polynomial in question to have integer coefficients.)
+            Show that <m>f</m> and <m>q</m> have the same real zeros.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="polyequexerfirst">Exercises</xref>
+      - <xref ref="polyequexerlast"></xref>,
+      find the real solutions of the polynomial equation.
+      (See <xref ref="polyeqineqexample">Example</xref>.)
+      <ol cols="5">
+        <li xml:id="polyequexerfirst">
+          <p>
+            <m>9x^{3} = 5x^{2} + x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>9x^{2}+5x^{3}= 6x^{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>z^{3} + 6 = 2z^{2} + 5z</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>z^{4} + 2z^{3} = 12z^{2} + 40z + 32</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t^{3} - 7t^{2} = 7-t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2t^{3} = 19t^{2} - 49t + 20</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^{3} + x^{2} = \dfrac{11x + 10}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^4+2x^2 = 15</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>14z^{2}+5=3z^{4}</m>
+          </p>
+        </li>
+        <li xml:id="polyequexerlast">
+          <p>
+            <m>2z^5+3z^4 = 18z + 27</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="polyinequexerfirst">Exercises</xref>
+      - <xref ref="polyinequexerlast"></xref>,
+      solve the polynomial inequality and state your answer using interval notation.
+      <ol cols="5">
+        <li xml:id="polyinequexerfirst">
+          <p>
+            <m>-2x^{3} + 19x^{2} - 49x + 20 > 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^{4} - 9x^{2} \leq 4x - 12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(z - 1)^{2} \geq 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4z^3 \geq 3z+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t^4 \leq 16+4t-t^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3t^2 + 2t \lt t^4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{x^3+2 x^2}{2} \lt x+2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{x^3+20x}{8} \geq x^2 + 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2z^4>5z^2+3</m>
+          </p>
+        </li>
+        <li xml:id="polyinequexerlast">
+          <p>
+            <m>z^6 + z^3 \geq 6</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="polyineqfromgraphfirst">Exercises</xref>
+      - <xref ref="polyineqfromgraphlast"></xref>,
+      use the the graph of the given polynomial function to solve the stated inequality.
+    </p>
+    <ol cols="4">
+      <li xml:id="polyineqfromgraphfirst">
+        <p>
+          Solve <m>f(x) \lt 0</m>. \begin{mfpic}[10]{-7}{7}{-6}{6} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-4.5, 0.75){<m>(-6,0)</m>} \tlabel[cc](5, 0.75){<m>(6,0)</m>} \tlabel[cc](1, 0.75){<m>(0,0)</m>} \point[4pt]{(-6,0),(0,0),(6,0)} \xmarks{-6 step 1 until 6} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \penwd{1.25pt} \arrow \reverse \arrow \function{-7,7,0.1}{((x**3) - 36*x)/20} \tcaption{<m>y = f(x)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>g(t) > 0</m>. \begin{mfpic}[20][20]{-3}{3}{-2}{5} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \tlabel[cc](-1.75, 0.3){<m>(-2,0)</m>} \tlabel[cc](0.5, 0.3){<m>(0,0)</m>} \point[4pt]{(-2,0), (0,0)} \xmarks{-2,-1, 1, 2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,0.3,0.1}{x*((x + 2)**3)} \tcaption{<m>y = g(t)</m> } \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>p(z) \geq 0</m> \begin{mfpic}[20][10]{-3}{3}{-4}{4} \axes \tlabel[cc](3,-0.5){<m>z</m>} \tlabel[cc](0.25,4){<m>y</m>} \tlabel[cc](-2, 0.75){<m>(-1,0)</m>} \tlabel[cc](2, 0.75){<m>(2,0)</m>} \point[4pt]{(2,0), (-1,0)} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.70,3.45,0.1}{(-0.4)*((x-2)**2)*(x+1)} \tcaption{<m>y = p(z)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>f(x) \lt 0</m>. \begin{mfpic}[20][10]{-2}{4}{-4}{4} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \tlabel[cc](-0.75, 0.75){<m>\left(-\frac{1}{2},0 \right)</m>} \tlabel[cc](2.5, 0.75){<m>(3,0)</m>} \point[4pt]{(-0.5,0), (3,0)} \xmarks{-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \function{-1.5,3.3,0.1}{(0.5)*((x+0.5)**2)*(x-3)} \tcaption{<m>y = f(x)</m> } \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve <m>F(s) \leq 0</m>. \begin{mfpic}[20][10]{-3}{3}{-5}{5} \axes \tlabel[cc](3,-0.5){<m>s</m>} \tlabel[cc](0.25,5){<m>y</m>} \tlabel[cc](-2, -0.75){<m>(-2,0)</m>} \tlabel[cc](0.5, 0.75){<m>(0,0)</m>} \point[4pt]{(-2,0), (0,0)} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-3,0.65,0.1}{0-x*((x + 2)**2)} \tcaption{<m>y = F(s)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li xml:id="polyineqfromgraphlast">
+        <p>
+          Solve <m>G(t) \geq 0</m>. \begin{mfpic}[20][10]{-3}{3}{-5}{5} \axes \tlabel[cc](-2, 0.75){<m>(-2,0)</m>} \tlabel[cc](0.5, -0.75){<m>(0,0)</m>} \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.25,5){<m>y</m>} \point[4pt]{(-2,0), (0,0)} \xmarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{ {<m>2</m>} 2} \penwd{1.25pt} \arrow \reverse \arrow \function{-2.45,0.85,0.1}{(x**3)*((x + 2)**2)} \tcaption{<m>y = G(t)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the Intermediate Value Theorem,
+          <xref ref="IVT">Theorem</xref> to prove that
+          <m>f(x) = x^{3} - 9x + 5</m> has a real zero in each of the following intervals:
+          <m>[-4, -3], [0, 1]</m> and <m>[2, 3]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the concepts of End Behavior and the Intermediate Value Theorem to prove any odd-degree polynomial function with real number coefficients has at least one real zero.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find an even-degree polynomial function with real number coefficients which has no real zeros.
+        </p>
+      </li>
+      <li xml:id="bisectionexercise">
+        <p>
+          Continue the Bisection Method as introduced <xref ref="bisectionmethod">on</xref>
+          to approximate the real zero of
+          <m>f(x) = x^5-x-1</m> to three decimal places.
+        </p>
+      </li>
+      <li xml:id="sqrt2isirrationalexercise">
+        <p>
+          In this exercise, we prove
+          <m>\sqrt{2}</m> is an irrational number and approximate its value.
+          Let <m>f(x) = x^2-2</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Use Decartes' Rule of Signs to prove <m>f</m> has exactly one positive real zero.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the Intermediate Value Theorem to prove <m>f</m> has a zero in <m>[1,2]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the Rational Zeros Theorem to prove <m>f</m> has no rational zeros.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use the Bisection Method
+              (<xref ref="bisectionmethod">see</xref>)
+              to approximate the zero of <m>f</m> on <m>[1,2]</m> to three decimal places.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          Generalize the argument given in <xref ref="sqrt2isirrationalexercise">Exercise</xref> to prove:
+          <ol>
+            <li>
+              <p>
+                If <m>N</m> is not the perfect square of an integer,
+                then <m>\sqrt{N}</m> is irrational. (HINT: Consider <m>f(x) = x^2-N</m>.)
+              </p>
+            </li>
+            <li>
+              <p>
+                For natural numbers <m>n \geq 2</m>,
+                if <m>N</m> is not the perfect <m>n^{\text{ th } }</m> power of an integer,
+                then <m>\sqrt[n]{N}</m> is irrational. (HINT: Consider <m>f(x) = x^n-N</m>.)
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          In <xref ref="boxnotopex">Example</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>,
+          a box with no top is constructed from a <m>10</m> inch <times/> <m>12</m> inch piece of cardboard by cutting out congruent squares from each corner of the cardboard and then folding the resulting tabs.
+          We determined the volume of that box
+          (in cubic inches)
+          is given by the function<m>V(x) = 4x^3-44x^2+120x</m>,
+          where <m>x</m> denotes the length of the side of the square which is removed from each corner
+          (in inches),
+          <m>0 \lt x \lt 5</m>.
+          Solve the inequality <m>V(x) \geq 80</m> analytically and interpret your answer in the context of that example.
+        </p>
+      </li>
+      <li>
+        <p>
+          From <xref ref="newportaboycost">Exercise</xref>
+          in <xref ref="GraphsofPolynomials">Section</xref>,
+          <m>C(x) = .03x^{3} - 4.5x^{2} + 225x + 250</m>,
+          for <m>x \geq 0</m> models the cost,
+          in dollars, to produce <m>x</m> PortaBoy game systems.
+          If the production budget is <m>\dollar5000</m>,
+          find the number of game systems which can be produced and still remain under budget.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>f(x) = 5x^{7} - 33x^{6} + 3x^{5} - 71x^{4} - 597x^{3} + 2097x^{2} - 1971x + 567</m>.
+          With the help of your classmates,
+          find the <m>x</m>- and <m>y</m>- intercepts of the graph of <m>f</m>.
+          Find the intervals on which the function is increasing,
+          the intervals on which it is decreasing and the local extrema.
+          Sketch the graph of <m>f</m>,
+          using more than one picture if necessary to show all of the important features of the graph.
+        </p>
+      </li>
+      <li>
+        <p>
+          With the help of your classmates,
+          create a list of five polynomials with different degrees whose real zeros cannot be found using any of the techniques in this section.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          For <m>f(x) = x^{3} - 2x^{2} - 5x + 6</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>[-7,7]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm 1</m>,
+                <m>\pm 2</m>, <m>\pm 3</m>, <m>\pm 6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 2 or 0 positive real zeros;
+                there is 1 negative real zero
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^{4} + 2x^{3} - 12x^{2} - 40x - 32</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>[-41,41]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm 1</m>, <m>\pm 2</m>,
+                <m>\pm 4</m>, <m>\pm 8</m>, <m>\pm 16</m>, <m>\pm 32</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There is 1 positive real zero;
+                there are 3 or 1 negative real zeros
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>p(z) = z^{4} - 9z^{2} - 4z + 12</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>[-13,13]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm 1</m>, <m>\pm 2</m>,
+                <m>\pm 3</m>, <m>\pm 4</m>, <m>\pm 6</m>, <m>\pm 12</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 2 or 0 positive real zeros;
+                there are 2 or 0 negative real zeros
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>p(z) = z^{3} + 4z^{2} - 11z + 6</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>[-12,12]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm 1</m>,
+                <m>\pm 2</m>, <m>\pm 3</m>, <m>\pm 6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 2 or 0 positive real zeros;
+                there is 1 negative real zero
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>g(t) = t^{3} - 7t^{2} + t - 7</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>[-8,8]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm 1</m>, <m>\pm 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 3 or 1 positive real zeros;
+                there are no negative real zeros
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>g(t) = -2t^{3} + 19t^{2} - 49t + 20</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>\left[-\frac{51}{2},\frac{51}{2} \right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm \frac{1}{2}</m>,
+                <m>\pm 1</m>, <m>\pm 2</m>, <m>\pm \frac{5}{2}</m>,
+                <m>\pm 4</m>, <m>\pm 5</m>, <m>\pm 10</m>, <m>\pm 20</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 3 or 1 positive real zeros;
+                there are no negative real zeros
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = -17x^{3} + 5x^{2} + 34x - 10</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>[-3,3]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm \frac{1}{17}</m>,
+                <m>\pm \frac{2}{17}</m>, <m>\pm \frac{5}{17}</m>, <m>\pm \frac{10}{17}</m>,
+                <m>\pm 1</m>, <m>\pm 2</m>, <m>\pm 5</m>, <m>\pm 10</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 2 or 0 positive real zeros;
+                there is 1 negative real zero
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 36x^{4} - 12x^{3} - 11x^{2} + 2x + 1</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>\left[-\frac{4}{3},\frac{4}{3}\right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm \frac{1}{36}</m>,
+                <m>\pm \frac{1}{18}</m>, <m>\pm \frac{1}{12}</m>,
+                <m>\pm \frac{1}{9}</m>, <m>\pm \frac{1}{6}</m>, <m>\pm \frac{1}{4}</m>,
+                <m>\pm \frac{1}{3}</m>, <m>\pm \frac{1}{2}</m>, <m>\pm 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 2 or 0 positive real zeros;
+                there are 2 or 0 negative real zeros
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>p(z) = 3z^{3} + 3z^{2} - 11z - 10</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>\left[-\frac{14}{3},\frac{14}{3}\right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm \frac{1}{3}</m>,
+                <m>\pm \frac{2}{3}</m>, <m>\pm \frac{5}{3}</m>, <m>\pm \frac{10}{3}</m>,
+                <m>\pm 1</m>, <m>\pm 2</m>, <m>\pm 5</m>, <m>\pm 10</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There is 1 positive real zero;
+                there are 2 or 0 negative real zeros
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>p(z) = 2z^4+z^3-7z^2-3z+3</m>
+          <ul>
+            <li>
+              <p>
+                All of the real zeros lie in the interval <m>\left[-\frac{9}{2},\frac{9}{2}\right]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Possible rational zeros are <m>\pm \frac{1}{2}</m>, <m>\pm 1</m>,
+                <m>\pm \frac{3}{2}</m>, <m>\pm 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                There are 2 or 0 positive real zeros;
+                there are 2 or 0 negative real zeros
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{3} - 2x^{2} - 5x + 6</m> <m>x = -2</m>, <m>x = 1</m>,
+          <m>x = 3</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{4} + 2x^{3} - 12x^{2} - 40x - 32</m> <m>x = -2</m> (mult. 3), <m>x = 4</m> (mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = z^{4} - 9z^{2} - 4z + 12</m> <m>z = -2</m> (mult. 2),
+          <m>z = 1</m> (mult. 1), <m>z = 3</m> (mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = z^{3} + 4z^{2} - 11z + 6</m> <m>z = -6</m> (mult. 1), <m>z = 1</m> (mult. 2)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t^{3} - 7t^{2} + t - 7</m> <m>t = 7</m> (mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = -2t^{3} + 19t^{2} - 49t + 20</m> <m>t = \frac{1}{2}</m>,
+          <m>t = 4</m>,
+          <m>t = 5</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = -17x^{3} + 5x^{2} + 34x - 10</m> <m>x = \frac{5}{17}</m>,
+          <m>x = \pm \sqrt{2}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 36x^{4} - 12x^{3} - 11x^{2} + 2x + 1</m> <m>x = \frac{1}{2}</m> (mult. 2),
+          <m>x = -\frac{1}{3}</m> (mult. 2)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 3z^{3} + 3z^{2} - 11z - 10</m> <m>z = -2</m>,
+          <m>z = \frac{3 \pm \sqrt{69}}{6}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 2z^4+z^3-7z^2-3z+3</m> <m>z = -1</m>,
+          <m>z = \frac{1}{2}</m>, <m>z=\pm \sqrt{3}</m> (each mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 9t^{3} - 5t^{2} - t</m> <m>t = 0</m>,
+          <m>t = \frac{5 \pm \sqrt{61}}{18}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 6t^{4} - 5t^{3} - 9t^{2}</m> <m>t = 0</m> (mult. 2),
+          <m>t = \frac{5 \pm \sqrt{241}}{12}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^4+2x^2 - 15</m> <m>x = \pm \sqrt{3}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^4-9x^2+14</m> <m>x = \pm \sqrt{2}</m>,
+          <m>x = \pm \sqrt{7}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 3z^4-14z^2-5</m> <m>z = \pm \sqrt{5}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) = 2z^4-7z^2+6</m> <m>z = \pm \frac{\sqrt{6}}{2}</m>,
+          <m>z = \pm \sqrt{2}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t^6-3t^3-10</m> <m>t = \sqrt[3]{-2} = -\sqrt[3]{2}</m>,
+          <m>t = \sqrt[3]{5}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 2t^6-9t^3+10</m> <m>t =\frac{\sqrt[3]{20}}{2}</m>,
+          <m>t = \sqrt[3]{2}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^5-2x^4-4x+8</m> <m>x = 2</m>,
+          <m>x = \pm \sqrt{2}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 2x^5+3x^4-18x-27</m> <m>x = -\frac{3}{2}</m>,
+          <m>x = \pm \sqrt{3}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^{5} - 60x^{3} - 80x^{2} + 960x + 2304</m> <m>x = -4</m> (mult. 3), <m>x = 6</m> (mult. 2)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 25x^{5} - 105x^{4} + 174x^{3} - 142x^{2} + 57x - 9</m>
+          <m>x = \frac{3}{5}</m> (mult. 2), <m>x = 1</m> (mult. 3)
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 90x^{4} - 399x^{3} + 622x^{2} - 399x + 90</m>
+          <m>x = \frac{2}{3}</m>, <m>x = \frac{3}{2}</m>,
+          <m>x = \frac{5}{3}</m>, <m>x = \frac{3}{5}</m> (each has mult. 1)
+        </p>
+      </li>
+      <li>
+        <p>
+          We choose <m>q(x) = 72x^{3} - 6x^{2} - 7x + 1 = 72 \cdot f(x)</m>.
+          Clearly <m>f(x) = 0</m> if and only if
+          <m>q(x) = 0</m> so they have the same real zeros.
+          In this case, <m>x = -\frac{1}{3}, \; x = \frac{1}{6} \;</m> and
+          <m>x = \frac{1}{4}</m> are the real zeros of both <m>f</m> and <m>q</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0, \frac{5\pm \sqrt{61}}{18}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0, \frac{5 \pm \sqrt{241}}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = -2,1,3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z=-2,4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=7</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \frac{1}{2}, 4, 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -2, \frac{3 \pm \sqrt{69}}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \pm \sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = \pm \sqrt{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = -\frac{3}{2}, \pm \sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \frac{1}{2}) \cup (4, 5)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\{-2\} \cup [1, 3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -1] \cup [3, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ -\dfrac{1}{2} \right\} \cup [1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-2,2]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, -1 \right) \cup \left(-1, 0 \right) \cup (2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -2) \cup \left(-\sqrt{2}, \sqrt{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\{2 \} \cup [4,\infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -\sqrt{3}) \cup (\sqrt{3}, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -\sqrt[3]{3}\,) \cup (\sqrt[3]{2}, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) \lt 0</m> on <m>(-\infty, -6) \cup (0, 6)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) > 0</m> on <m>(-\infty, -2) \cup (0, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(z) \geq 0</m> on <m>(-\infty, -1] \cup \{ 2\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) \lt 0</m> on <m>\left( -\infty, -\frac{1}{2} \right) \cup \left(-\frac{1}{2}, 3 \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(s) \leq 0</m> on <m>\{-2\} \cup [0, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>G(t) \geq 0</m> on <m>\{-2\} \cup [0, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Since <m>f(-4)=-23,\; f(-3)=5,\; f(0)=5,\; f(1)=-3,\; f(2)=-5\;</m> and <m>f(3)=5</m> the Intermediate Value Theorem gives that
+          <m>f(x) = x^{3} - 9x + 5</m> has real zeros in the intervals <m>[-4, -3], [0, 1]</m> and <m>[2, 3]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          An odd degree polynomial function <m>f</m> has <sq>mismatched</sq> end behavior.
+          That is, the end behavior of <m>f(x)</m> is either:
+          <m>x \rightarrow -\infty</m>,
+          <m>f(x) \rightarrow -\infty</m> and as <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow \infty</m> or as <m>x \rightarrow -\infty</m>,
+          <m>f(x) \rightarrow \infty</m> and as <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow -\infty</m>.
+          This means at some point,
+          <m>f(x) > 0</m> and at some other point <m>f(x) \lt 0</m>.
+          The Intermediate Value Theorem guarantees at least one place where <m>f(x) = 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The function <m>f(x) = x^2+1</m> has no real zeros.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x \approx 1.167</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>f(x)</m> has only one variation in sign,
+              so the result follows from Descartes' Rule of Signs.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>f(1) = -1\lt 0</m> and <m>f(2) = 2>0</m> so the Intermediate Value Theorem promises a zero in <m>[1,2]</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The Rational Zeros Theorem gives the only possible rational zeros of <m>f</m> are <m>\pm 1</m> and <m>\pm 2</m>.
+              Since <m>f(\pm 1) = -1</m> and <m>f(\pm 2) = 2</m>,
+              <m>f</m> has no rational zeros.
+            </p>
+          </li>
+          <li>
+            <p>
+              The zero of <m>f</m> is <m>\sqrt{2} \approx 1.414</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>V(x) \geq 80</m> on <m>[1,5-\sqrt{5}] \cup [5+\sqrt{5}, \infty)</m>.
+          Only the portion <m>[1,5-\sqrt{5}]</m> lies in the applied domain, however.
+          In the context of the problem,
+          this says for the volume of the box to be at least 80 cubic inches,
+          the square removed from each corner needs to have a side length of at least 1 inch,
+          but no more than <m>5-\sqrt{5} \approx 2.76</m> inches.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>C(x) \leq 5000</m> on (approximately) <m>(-\infty, 82.18]</m>.
+          The portion of this which lies in the applied domain is <m>(0,82.18]</m>.
+          Since <m>x</m> represents the number of game systems,
+          we check <m>C(82) = 4983.04</m> and <m>C(83) = 5078.11</m>,
+          so to remain within the production budget,
+          anywhere between <m>1</m> and <m>82</m> game systems can be produced.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

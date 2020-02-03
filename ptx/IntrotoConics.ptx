@@ -1,0 +1,88 @@
+<section xml:id="IntrotoConics">
+  <title>Introduction to Conics</title>
+  <p>
+    In this chapter,
+    we study the <idx><h>conic sections</h><h>definition</h></idx> <em>Conic Sections</em>
+    - literally <sq>sections of a cone</sq>.
+    Imagine a double-napped cone as seen below being <sq>sliced</sq> by a plane.
+  </p>
+  <p>
+    <image width="37%" source="./IntrotoConicsGraphics/cone.jpg"/>
+  </p>
+  <p>
+    If we slice the cone with a horizontal plane the resulting curve is a <idx><h>circle</h><h>from slicing a cone</h></idx> <em>circle</em>.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Circle01.jpg"/></cell>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Circle02.jpg"/></cell>
+    </row>
+  </tabular>
+  <p>
+    Tilting the plane ever so slightly produces an <idx><h>ellipse</h><h>from slicing a cone</h></idx> <em>ellipse</em>.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Ellipse01.jpg"/></cell>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Ellipse02.jpg"/></cell>
+    </row>
+  </tabular>
+  <p>
+    If the plane cuts parallel to the cone,
+    we get a <idx><h>parabola</h><h>from slicing a cone</h></idx> <em>parabola</em>.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Parabola01.jpg"/></cell>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Parabola02.jpg"/></cell>
+    </row>
+  </tabular>
+  <p>
+    If we slice the cone with a vertical plane,
+    we get a <idx><h>hyperbola</h><h>from slicing a cone</h></idx> <em>hyperbola</em>.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Hyperbola01.jpg"/></cell>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Hyperbola02.jpg"/></cell>
+    </row>
+  </tabular>
+  <p>
+    If the slicing plane contains the vertex of the cone,
+    we get the so-called <sq>degenerate</sq> conics:
+    a point, a line, or two intersecting lines.
+  </p>
+  <tabular>
+    <row>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Point01.jpg"/></cell>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Point02.jpg"/></cell>
+    </row>
+    <row>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Ilines01.jpg"/></cell>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Ilines02.jpg"/></cell>
+    </row>
+    <row>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Tline01.jpg"/></cell>
+      <cell><image width="37%" source="./IntrotoConicsGraphics/Tline02.jpg"/></cell>
+    </row>
+  </tabular>
+  <p>
+    While this geometric introduction to the conic sections has its uses,<fn>
+    See Pierre Boulle's <em>Planet of the Apes</em>
+    for one example - we're serious!
+    </fn> in order to study the applications of the conic sections,
+    we require a more analytic approach.
+    It turns out each of the of the conic sections can be described as as a
+    <em>locus</em> of points - that is,
+    a set of points which satisfy a certain condition involving distance.
+    The reader is referred to <xref ref="AppCartesianPlane">Section</xref>
+    for a review of the distance and related formulas.
+  </p>
+  <p>
+    As we'll see,
+    we'll be able to use the distance formula to algebraically represent the conic sections as graphs of general quadratic equations in two variables.
+    That is, every conic section in the <m>xy</m>-plane can be represented as the graph of an equation of the form
+    <m>Ax^2+Bxy+Cy^2+Dx+Ey +F = 0</m> for real numbers <m>A</m>,
+    <m>B</m>, <m>C</m>, <m>D</m>, <m>E</m>, and <m>F</m>.
+  </p>
+</section>

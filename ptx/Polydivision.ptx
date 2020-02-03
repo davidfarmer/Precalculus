@@ -1,0 +1,1183 @@
+<section xml:id="Polydivision">
+  <title>The Remainder and Factor Theorems</title>
+  <introduction>
+    <p>
+      In <xref ref="GraphsofPolynomials">Section</xref>
+      we saw how much of the <sq>local</sq> behavior of the graph of a polynomial function is determined by the zeros of the polynomial function.
+      In that section,
+      the polynomial functions we were given were mostly, if not completely,
+      factored which greatly simplified the process for determining zeros.
+      In this section,
+      we revisit the relationship between zeros and factors with the ultimate aim of taking a polynomial function given to us in the form stated in <xref ref="polynomialfunction">Definition</xref> and determining its zeros.
+    </p>
+    <p>
+      We start by way of example:
+      suppose we wish to determine the zeros of <m>f(x) = x^3 + 4x^2-5x-14</m>.
+      Setting <m>f(x)=0</m> results in the polynomial equation <m>x^3 + 4x^2-5x-14=0</m>.
+      Despite all of the factoring techniques we learned
+      (and forgot!)
+      in Intermediate Algebra, this equation foils<fn>
+      pun intended
+      </fn> us at every turn.
+      Knowing that the zeros of <m>f</m> correspond to <m>x</m>-intercepts on the graph of <m>y=f(x)</m>,
+      we use a graphing utility to produce the graph below on the left.
+      The graph suggests that the function has three zeros,
+      one of which appears to be <m>x=2</m> and two others for whom we are provided what we assume to be decimal approximations:
+      <m>x \approx -4.414</m> and <m>x \approx -1.586</m>.
+      We can verify if these are zeros easily enough.
+      We find <m>f(2) =(2)^2 + 4(2)^2-5(2)-14 = 0</m>,
+      but <m>f(-4.414) \approx 0.0039</m> and
+      <m>f(-1.586) \approx 0.0022</m>, While these last two values are probably by some measures,
+      <sq>close</sq> to <m>0</m>, they are not
+      <em>exactly</em> equal to <m>0</m>.
+      The question becomes:
+      is there a way to use the fact that <m>x=2</m> is a zero to obtain the other two zeros?
+      Based on our experience, if <m>x=2</m> is a zero,
+      it seems that there should be a factor of <m>(x-2)</m> lurking around in the factorization of <m>f(x)</m>.
+      In other words,
+      we should expect that <m>x^3 + 4x^2-5x-14=(x-2) \, q(x)</m>,
+      where <m>q(x)</m> is some other polynomial.
+      How could we find such a <m>q(x)</m>, if it even exists?
+      The answer comes from our old friend, polynomial division.
+      (See <xref ref="polylongdiv">Section</xref>.)
+      Below on the right, we perform the long division:
+      <m>(x^3 + 4x^2-5x-14) \div (x-2)</m> and obtain <m>x^2+6x+7</m>.
+    </p>
+    <tabular>
+      {m{4in}m{2.5in}}
+      <image width="73%" source="./PolydivisionGraphics/PolyDiv01.jpg"/>
+      &amp;
+      <m>\begin{array}{cccccccccc}
+      \amp  \amp  \amp  \amp  \amp  x^2 \amp  + \amp  6x \amp  + \amp  7 \\ \hhline{~~~|-------}
+      x \amp  - \amp  2 \, \vline\amp  x^3 \amp  + \amp  4x^2 \amp  - \amp  5x \amp  - \amp  14 \\
+      \amp   \amp   -\amp  \left(x^3 \right. \amp  - \amp  \left.  2x^2\right) \amp   \amp   \amp   \amp   \\ \hhline{~~~---~~~~}
+      \amp   \amp   \amp    \amp   \amp  6 x^2 \amp  - \amp  5x \amp   \amp   \\
+      \amp   \amp   \amp    \amp  - \amp  \left(6 x^2 \right. \amp  - \amp  \left. 12x \right) \amp   \amp   \\ \hhline{~~~~~---~~}
+      \amp   \amp   \amp    \amp    \amp   \amp  \amp  7x  \amp  - \amp  14 \\
+      \amp   \amp   \amp    \amp    \amp   \amp  - \amp  \left( 7x \right. \amp  - \amp  \left. 14 \right) \\ \hhline{~~~~~~~---}
+      \amp    \amp   \amp   \amp   \amp   \amp   \amp   \amp   \amp  0
+      \end{array}</m>
+    </tabular>
+    <p>
+      Said differently,
+      <m>f(x) = x^3 + 4x^2-5x-14=(x-2)\left(x^2+6x+7\right)</m>.
+      Using this form of <m>f(x)</m>,
+      we find the zeros by solving <m>(x-2)\left(x^2+6x+7\right)=0</m>.
+      Setting each factor equal to <m>0</m>, we get <m>x-2=0</m>
+      (which gives us our known zero, <m>x=2</m>)
+      as well as <m>x^2+6x+7=0</m>.
+      The latter doesn't factor nicely,
+      so we apply the Quadratic Formula to get <m>x = -3 \pm \sqrt{2}</m>.
+      Sure enough,
+      <m>-3 - \sqrt{2} \approx -4.414</m> and <m>-3 +\sqrt{2} \approx -1.586</m>.
+      We leave it to the reader to show
+      <m>f(-3-\sqrt{2}) = 0</m> and <m>f(-3+\sqrt{2}) = 0</m>.
+      (See <xref ref="verifyrootsex">Exercise</xref>.)
+    </p>
+    <p>
+      The point of this section is to generalize the technique applied here.
+      First up is a friendly reminder of what we can expect when we divide polynomials.
+    </p>
+    <theorem xml:id="polydivthm">
+      <statement>
+        <p>
+          <em>Polynomial Division:</em>
+        </p>
+        <p>
+          Suppose <m>d(x)</m> and <m>p(x)</m> are nonzero polynomial functions where the degree of <m>p</m> is greater than or equal to the degree of <m>d</m>.
+          There exist two unique polynomial functions,
+          <m>q(x)</m> and <m>r(x)</m>, such that <m>p(x) = d(x) \, q(x) + r(x)</m>,
+          where either <m>r(x) = 0</m> or the degree of <m>r</m> is strictly less than the degree of <m>d</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      As you may recall,
+      all of the polynomials in <xref ref="polydivthm">Theorem</xref> have special names.
+      The polynomial <m>p</m> is called the <idx><h>polynomial division</h><h>dividend</h></idx> <em>dividend</em>;
+      <m>d</m> is the <idx><h>polynomial division</h><h>divisor</h></idx> <em>divisor</em>;
+      <m>q</m> is the <idx><h>polynomial division</h><h>quotient</h></idx> <em>quotient</em>;
+      <m>r</m> is the <idx><h>polynomial division</h><h>remainder</h></idx> <em>remainder</em>.
+      If <m>r(x)=0</m> then <m>d</m> is called a <idx><h>polynomial division</h><h>factor</h></idx>
+      <em>factor</em> of <m>p</m>.
+      The word <sq>unique</sq> here is critical in that it guarantees there is only <em>one</em>
+      quotient and remainder for each division problem.<fn>
+      Hence the use of the definite article <sq>the</sq> when speaking of <em>the</em>
+      quotient and <em>the</em> remainder.
+      </fn> The proof of <xref ref="polydivthm">Theorem</xref>
+      is usually relegated to a course in Abstract Algebra,
+      but we can still use the result to establish two important facts which are the basis of the rest of the chapter.
+    </p>
+    <theorem xml:id="remainderthm">
+      <statement>
+        <p>
+              <idx><h>Remainder Theorem</h></idx>
+          <em>The Remainder Theorem:</em>
+          Suppose <m>p</m> is a polynomial function of degree at least <m>1</m> and <m>c</m> is a real number.
+          When <m>p(x)</m> is divided by <m>x-c</m> the remainder is <m>p(c)</m>.
+          Said differently,
+          there is a polynomial function <m>q(x)</m> such that:
+          <me>
+            p(x) = (x-c) q(x) + p(c)
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="remainderthm">Theorem</xref>
+      is a direct consequence of <xref ref="polydivthm">Theorem</xref>.
+      Since <m>x-c</m> has degree <m>1</m>,
+      when a polynomial function is divided by <m>x-c</m>,
+      the remainder is either <m>0</m> or degree <m>0</m> (i.e., a nonzero constant.) In either case,
+      <m>p(x) = (x-c) \, q(x) + r</m>, where <m>r</m>,
+      the remainder, is a real number, possibly <m>0</m>.
+      It follows that <m>p(c) = (c-c) \, q(c) + r = 0 \cdot q(c) + r = r</m>,
+      so we get <m>r = p(c)</m> as required.
+      There is one last <sq>low hanging fruit</sq><fn>
+      Jeff hates this expression and Carl included it just to annoy him.
+      </fn> to collect which we present below.
+    </p>
+    <theorem xml:id="factorthm">
+      <statement>
+        <p>
+              <idx><h>Factor Theorem</h></idx>
+          <em>The Factor Theorem:</em>
+        </p>
+        <p>
+          Suppose <m>p</m> is a nonzero polynomial function.
+          The real number <m>c</m> is a zero of <m>p</m> if and only if <m>(x-c)</m> is a factor of <m>p(x)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Once again, we see the phrase <sq>if and only if</sq> which means there are really two things being said in The Factor Theorem:
+      if <m>(x-c)</m> is a factor of <m>p(x)</m>,
+      then <m>c</m> is a zero of <m>p</m> and the <em>only</em>
+      way <m>c</m> is a zero of <m>p</m> is if <m>(x-c)</m> is a factor of <m>p(x)</m>.
+      We argue the Factor Theorem as follows:
+      if <m>(x-c)</m> is a factor of <m>p(x)</m>,
+      then <m>p(x) = (x-c) \, q(x)</m> for some polynomial <m>q</m>.
+      Hence, <m>p(c) = (c-c) \, q(c) = 0</m>,
+      so <m>c</m> is a zero of <m>p</m>.
+      Conversely, suppose <m>c</m> is a zero of <m>p</m>, so <m>p(c) = 0</m>.
+      The Remainder Theorem tells us <m>p(x) = (x-c)q(x) + p(c) = (x-c)q(x) + 0 = (x-c)q(x)</m>.
+      Hence, <m>(x-c)</m> is a factor of <m>p(x)</m>.
+    </p>
+    <p>
+      We have enough theory to explain why the concept of multiplicity
+      (<xref ref="multiplicity">Definition</xref>)
+      is well-defined.
+      If <m>c</m> is a zero of <m>p</m>,
+      then The Factor Theorem tells us there is a polynomial function
+      <m>q_{\text{ \(1\) } }</m> so that <m>p(x) = (x-c)q_{\text{ \(1\) } }(x)</m>.
+      If <m>q_{\text{ \(1\) } }(c) = 0</m>,
+      then we apply the Factor Theorem to
+      <m>q_{\text{ \(1\) } }</m> and find a polynomial
+      <m>q_{\text{ \(2\) } }</m> so that <m>q_{\text{ \(1\) } }(x)  = (x-c) q_{\text{ \(2\) } }(x)</m>.
+      Hence, we have
+      <me>
+        p(x) = (x-c) q_{\text{ \(1\) } }(x) = (x-c) (x-c) q_{\text{ \(2\) } }(x) = (x-c)^2 q_{\text{ \(2\) } }(x)
+      </me>.
+    </p>
+    <p>
+      We now <sq>rinse and repeat</sq> this process.
+      Since the degree of <m>p</m> is a finite number,
+      this process has to end at some point.
+      That is we arrive at a factorization
+      <m>p(x) = (x-c)^m q(x)</m> where <m>q(c) \neq 0</m>.
+      Suppose we arrive at a different factorization of <m>p</m> using other methods.
+      That is, we find <m>p(x) = (x-c)^k Q(x)</m>,
+      where <m>Q</m> is a polynomial function with <m>Q(c) \neq 0</m>.
+      Then we have <m>(x-c)^m q(x) = (x-c)^k Q(x)</m>.
+      If <m>m \neq k</m>, then either <m>m\lt k</m> or <m>m>k</m>.
+      Assuming the former,
+      then we may divide both sides by <m>(x-c)^{m}</m> to get:
+      <m>q(x) = (x-c)^{k-m} Q(x)</m>.
+      Since <m>k>m</m>,
+      <m>k-m>0</m> and we would have <m>q(c) = (c-c)^{k-m} Q(c) = 0</m>,
+      a contradiction since we are assuming <m>q(c) \neq 0</m>.
+      The assumption that <m>m>k</m> likewise ends in a contradiction.
+      Therefore, we have <m>m = k</m>,
+      so <m>p(x) = (x-c)^m q(x) = (x-c)^m Q(x)</m>.
+      By the uniqueness guaranteed in <xref ref="polydivthm">Theorem</xref>,
+      we must have that <m>q(x) = Q(x)</m>.
+      Hence, we have shown the number <m>m</m>,
+      as well as the quotient polynomial <m>q(x)</m> are unique.
+      The process outlined above,
+      in which we coax out factors of <m>p(x)</m> one at a time until we have all of them serves as a template for our work to come.
+    </p>
+    <p>
+      Of the things The Factor Theorem tells us,
+      the most pragmatic is that we had better find a more efficient way to divide polynomial functions by quantities of the form <m>x-c</m>.
+      Fortunately, people like
+      <url href="http://en.wikipedia.org/wiki/Synthetic_division"><em>Ruffini</em></url>
+      and
+      <url href="http://en.wikipedia.org/wiki/Horner_scheme"><em>Horner</em></url>
+      have already blazed this trail.
+      Let's take a closer look at the long division we performed at the beginning of the section and try to streamline it.
+      First off, let's change all of the subtractions into additions by distributing through the <m>-1</m>s.
+      <me>
+        \begin{array}{cccccccccc}  \amp  \amp  \amp  \amp  \amp  x^2 \amp  + \amp  6x \amp  + \amp  7 \\ \hhline{~~~|-------}  x \amp  - \amp  2 \, \vline\amp  x^3 \amp  + \amp  4x^2 \amp  - \amp  5x \amp  - \amp  14 \\  \amp   \amp   \amp   -x^3  \amp  + \amp    2x^2 \amp   \amp   \amp   \amp   \\ \hhline{~~~---~~~~} \amp   \amp   \amp    \amp   \amp  6 x^2 \amp  - \amp  5x \amp   \amp   \\ \amp   \amp   \amp    \amp  \amp -6 x^2  \amp  + \amp   12x \amp   \amp   \\ \hhline{~~~~~---~~} \amp   \amp   \amp    \amp    \amp   \amp  \amp  7x  \amp  - \amp  14 \\ \amp   \amp   \amp    \amp    \amp   \amp  \amp  - 7x  \amp  + \amp   14  \\ \hhline{~~~~~~~---} \amp    \amp   \amp   \amp   \amp   \amp   \amp   \amp   \amp  0 \end{array}
+      </me>
+    </p>
+    <p>
+      Next, observe that the terms <m>-x^3</m>,
+      <m>-6x^2</m> and <m>-7x</m> are the exact opposite of the terms above them.
+      The algorithm we use ensures this is always the case,
+      so we can omit them without losing any information.
+      Also note that the terms we <sq>bring down</sq>
+      (namely the <m>-5x</m> and <m>-14</m>)
+      aren't really necessary to recopy, so we omit them, too.
+      <me>
+        \begin{array}{cccccccccc}  \amp  \amp  \amp  \amp  \amp  x^2 \amp  + \amp  6x \amp  + \amp  7 \\ \hhline{~~~|-------}  x \amp  - \amp  2 \, \vline\amp  \, \, x^3 \amp  + \amp  4x^2 \amp  - \amp  5x \amp  - \amp  14 \\  \amp   \amp   \amp    \amp   \amp    2x^2 \amp   \amp   \amp   \amp   \\ \hhline{~~~---~~~~} \amp   \amp   \amp    \amp   \amp  6 x^2 \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp    \amp  \amp   \amp   \amp   12x \amp   \amp   \\ \hhline{~~~~~---~~} \amp   \amp   \amp    \amp    \amp   \amp  \amp  7x  \amp   \amp   \\ \amp   \amp   \amp    \amp    \amp   \amp  \amp    \amp   \amp   14  \\ \hhline{~~~~~~~---} \amp    \amp   \amp   \amp   \amp   \amp   \amp   \amp   \amp  0 \end{array}
+      </me>
+    </p>
+    <p>
+      Let's move terms up a bit and copy the <m>x^3</m> into the last row.
+      <me>
+        \begin{array}{cccccccccc}  \amp  \amp  \amp  \amp  \amp  x^2 \amp  + \amp  6x \amp  + \amp  7 \\ \hhline{~~~|-------}  x \amp  - \amp  2 \, \vline\amp  \, \, x^3 \amp  + \amp  4x^2 \amp  - \amp  5x \amp  - \amp  14 \\  \amp   \amp   \amp    \amp  \amp    2x^2 \amp   \amp  12x \amp   \amp  14 \\ \hhline{~~~-------} \amp   \amp   \amp  x^3  \amp   \amp  6 x^2 \amp   \amp  7x \amp   \amp 0 \end{array}
+      </me>
+    </p>
+    <p>
+      Note that by arranging things in this manner,
+      each term in the last row is obtained by adding the two terms above it.
+      Notice also that the quotient polynomial can be obtained by dividing each of the first three terms in the last row by <m>x</m> and adding the results.
+      If you take the time to work back through the original division problem,
+      you will find that this is exactly the way we determined the quotient polynomial.
+      This means that we no longer need to write the quotient polynomial down,
+      nor the <m>x</m> in the divisor, to determine our answer.
+      <me>
+        \begin{array}{cccccccccc}   \amp  \amp  - 2 \, \, \vline\amp  \, \, x^3 \amp  + \amp  4x^2 \amp  - \amp  5x \amp  - \amp  14 \\  \amp   \amp   \amp    \amp  \amp    2x^2 \amp   \amp  12x \amp   \amp  14 \\ \hhline{~~~-------} \amp   \amp   \amp  x^3  \amp   \amp  6 x^2 \amp   \amp  7x \amp   \amp 0 \end{array}
+      </me>
+    </p>
+    <p>
+      We've streamlined things quite a bit so far, but we can still do more.
+      Let's take a moment to remind ourselves where the <m>2x^2</m>,
+      <m>12x</m> and <m>14</m> came from in the second row.
+      Each of these terms was obtained by multiplying the terms in the quotient,
+      <m>x^2</m>,
+      <m>6x</m> and <m>7</m>, respectively,
+      by the <m>-2</m> in <m>x-2</m>,
+      then by <m>-1</m> when we changed the subtraction to addition.
+      Multiplying by <m>-2</m> then by <m>-1</m> is the same as multiplying by <m>2</m>,
+      so we replace the <m>-2</m> in the divisor by <m>2</m>.
+      Furthermore,
+      the coefficients of the quotient polynomial match the coefficients of the first three terms in the last row,
+      so we now take the plunge and write only the coefficients of the terms to get
+      <me>
+        \begin{array}{rrrrr}   2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\  \amp \amp    2 \amp    12 \amp    14 \\ \hhline{~----} \amp  1  \amp    6  \amp   7 \amp   0 \end{array}
+      </me>
+    </p>
+    <p>
+      We have constructed a <idx><h>polynomial division</h><h>synthetic division</h></idx>
+          <idx><h>synthetic division tableau</h></idx>
+      <em>synthetic division tableau</em>
+      for this polynomial division problem.
+      Let's re-work our division problem using this tableau to see how it greatly streamlines the division process.
+      To divide <m>x^3+4x^2-5x-14</m> by <m>x-2</m>,
+      we write <m>2</m> in the place of the divisor and the coefficients of <m>x^3+4x^2-5x-14</m> in for the dividend.
+      Then <sq>bring down</sq> the first coefficient of the dividend.
+    </p>
+    <tabular>
+      <row>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp   \amp     \amp     \amp   \\ \hhline{~----}
+          \amp    \amp      \amp    \amp
+          \end{array}</m></cell>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp  \downarrow \amp     \amp     \amp   \\ \hhline{~----}
+          \amp  1  \amp      \amp    \amp
+          \end{array}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      Next, take the <m>2</m> from the divisor and multiply by the <m>1</m> that was <sq>brought down</sq> to get <m>2</m>.
+      Write this underneath the <m>4</m>, then add to get <m>6</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp  \downarrow  \amp   2  \amp     \amp   \\ \hhline{~----}
+          \amp  1  \amp      \amp    \amp
+          \end{array}</m></cell>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp  \downarrow \amp   2  \amp     \amp   \\ \hhline{~----}
+          \amp  1  \amp    6  \amp    \amp
+          \end{array}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      Now take the <m>2</m> from the divisor times the <m>6</m> to get <m>12</m>,
+      and add it to the <m>-5</m> to get <m>7</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp  \downarrow \amp   2  \amp   12  \amp   \\ \hhline{~----}
+          \amp  1  \amp    6  \amp    \amp
+          \end{array}</m></cell>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp  \downarrow \amp   2  \amp   12  \amp   \\ \hhline{~----}
+          \amp  1  \amp    6  \amp  7  \amp
+          \end{array}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      Finally, take the <m>2</m> in the divisor times the <m>7</m> to get <m>14</m>,
+      and add it to the <m>-14</m> to get <m>0</m>.
+    </p>
+    <tabular>
+      <row>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp  \downarrow \amp   2  \amp   12  \amp  14 \\ \hhline{~----}
+          \amp  1  \amp    6  \amp  7  \amp
+          \end{array}</m></cell>
+        <cell><m>\begin{array}{rrrrr}
+          2 \, \, \vline\amp  1 \amp  4 \amp  -5  \amp  -14 \\
+          \amp  \downarrow \amp   2  \amp   12  \amp  14 \\ \hhline{~----}
+          \amp  1  \amp    6  \amp  7  \amp   \fbox{<m>0</m>}
+          \end{array}</m></cell>
+      </row>
+    </tabular>
+    <p>
+      The first three numbers in the last row of our tableau are the coefficients of the quotient polynomial.
+      Remember, we started with a third degree polynomial and divided by a first degree polynomial,
+      so the quotient is a second degree polynomial.
+      Hence the quotient is <m>x^2+6x+7</m>.
+      The number in the box is the remainder.
+      Synthetic division is our tool of choice for dividing polynomials by divisors of the form <m>x-c</m>.
+      It is important to note that it works <em>only</em>
+      for these kinds of divisors.<fn>
+      You'll need to use good old-fashioned polynomial long division for divisors of degree larger than 1.
+      </fn> Also take note that when a polynomial
+      (of degree at least <m>1</m>)
+      is divided by <m>x-c</m>,
+      the result will be a polynomial of exactly one less degree.
+      Finally, it is worth the time to trace each step in synthetic division back to its corresponding step in long division.
+      While the authors have done their best to indicate where the algorithm comes from,
+      there is no substitute for working through it yourself.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Use synthetic division to perform the following polynomial divisions.
+          Identify the quotient and remainder.
+          Write the dividend,
+          quotient and remainder in the form given in <xref ref="polydivthm">Theorem</xref>.
+          <ol>
+            <li>
+              <p>
+                <m>\left(5x^3 - 2x^2 + 1\right) \div (x-3)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(t^3+8\right) \div (t+2)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{4-8z-12z^2}{2z-3}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          <em>Solution.</em>
+          <ol>
+            <li>
+              <p>
+                When setting up the synthetic division tableau,
+                the coefficients of even <sq>missing</sq> terms need to be accounted for,
+                so we enter <m>0</m> for the coefficient of <m>x</m> in the dividend.
+                <me>
+                  \begin{array}{rrrrr}   3 \, \, \vline\amp  5 \amp  -2 \amp  0  \amp  1 \\  \amp  \downarrow \amp   15  \amp   39  \amp  117 \\ \hhline{~----} \amp  5  \amp    13  \amp  39  \amp   \fbox{\(118\)} \end{array}
+                </me>
+                Since the dividend was a third degree polynomial function,
+                the quotient is a second degree (quadratic) polynomial function with coefficients <m>5</m>,
+                <m>13</m> and <m>39</m>:
+                <m>q(x) = 5x^2+13x+39</m>.
+                The remainder is <m>r(x) = 118</m>.
+                According to <xref ref="polydivthm">Theorem</xref>,
+                we have <m>5x^3 - 2x^2 + 1 = (x-3)\left(5x^2+13x+39 \right) + 118</m>,
+                which we leave to the reader to check.
+              </p>
+            </li>
+            <li>
+              <p>
+                To use synthetic division here,
+                we rewrite <m>t+2</m> as <m>t-(-2)</m> and proceed as before
+                <me>
+                  \begin{array}{rrrrr}   -2 \, \, \vline\amp  1 \amp  0 \amp  0  \amp  8 \\  \amp  \downarrow \amp   -2  \amp   4  \amp  -8 \\ \hhline{~----} \amp  1  \amp    -2  \amp  4  \amp   \fbox{\(0\)} \end{array}
+                </me>
+                We get the quotient <m>q(t) = t^2-2t+4</m> and the remainder <m>r(t) =0</m>.
+                Relating the dividend, quotient and remainder gives:
+                <m>t^3+8 = (t+2)\left( t^2-2t+4 \right)</m>,
+                which is a specific instance of the <sq>sum of cubes</sq> formula some of you may recall from Intermediate Algebra.
+              </p>
+            </li>
+            <li>
+              <p>
+                To divide <m>4-8z-12z^2</m> by <m>2z-3</m>, two things must be done.
+                First, we write the dividend in descending powers of <m>z</m> as <m>-12z^2-8z+4</m>.
+                Second, since synthetic division works only for factors of the form <m>z-c</m>,
+                we factor <m>2z-3</m> as <m>2\left(z-\frac{3}{2}\right)</m>.
+                Hence, we are dividing  <m>-12z^2-8z+4</m> by two factors:
+                <m>2</m> and <m>\left(z-\frac{3}{2}\right)</m>.
+                Dividing first by <m>2</m>, we obtain <m>-6z^2-4z+2</m>.
+                Next, we divide  <m>-6z^2-4z+2</m> by <m>\left(z-\frac{3}{2}\right)</m>:
+                <me>
+                  \begin{array}{rrrr}   \frac{3}{2} \, \, \vline\amp  -6 \amp  -4 \amp  2   \\  \amp  \downarrow \amp   -9  \amp  -\frac{39}{2}  \\ \hhline{~---} \amp   -6  \amp    -13  \amp  \fbox{\(-\frac{35}{2}\)} \end{array}
+                </me>
+                Hence,  <m>-6z^2-4z+2 = \left(z-\frac{3}{2}\right)(-6 z - 13) - \frac{35}{2}</m>.
+                However when it comes to writing  the dividend,
+                quotient and remainder in the form given in <xref ref="polydivthm">Theorem</xref>,
+                we need to find <m>q(z)</m> and <m>r(z)</m> so that  <m>-12z^2-8z+4 = (2z-3) q(z) + r(z)</m>.
+                Hence, starting with <m>-6z^2-4z+2 = \left(z-\frac{3}{2}\right)(-6 z - 13) - \frac{35}{2}</m>,
+                we multiply <m>2</m> back on both sides:
+                <me>
+                  \begin{array}{rcl} -6z^2-4z+2  \amp  = \amp  \left(z-\frac{3}{2}\right)(-6 z - 13) - \frac{35}{2}\\ 2\left(-6z^2-4z+2 \right) \amp  = \amp  2 \left[ \left(z-\frac{3}{2}\right)(-6 z - 13) - \frac{35}{2} \right] \\ -12z^2-8z+4 \amp  = \amp  2 \left(z-\frac{3}{2}\right)(-6 z - 13) - 2 \left(\frac{35}{2} \right) \\ -12z^2-8z+4 \amp  = \amp  (2z-3) (-6 z - 13) - 35 \end{array}
+                </me>
+                At this stage,
+                we have written <m>-12z^2-8z+4</m> in the <em>form</em>
+                <m>(2z-3) q(z) + r(z)</m>,
+                so we identify the quotient as
+                <m>q(z) = -6z-13</m> and the remainder is <m>r(z) = -35</m>.
+                But how can we be sure these are the same quotient and remainder polynomial functions we would have obtained if we had taken the time to do the long division in the first place?
+                Because of the word   <sq>unique</sq> in <xref ref="polydivthm">Theorem</xref>.
+                The theorem states that there is only <em>one</em>
+                way to decompose <m>-12z^2-8z+4</m> as <m>(2z-3)q(z) + r(z)</m>.
+                Since we have found such a way,
+                we can be sure it is the only way.<fn>
+                But it wouldn't hurt to check, just this once.
+                </fn>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </example>
+    <p>
+      The next example pulls together all of the concepts discussed in this section.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>p(x) = 2x^3-5x+3</m>.
+          <ol>
+            <li>
+              <p>
+                Find <m>p(-2)</m> using The Remainder Theorem.
+                Check your answer by substitution.
+              </p>
+            </li>
+            <li>
+              <p>
+                Verify <m>x=1</m> is a zero of <m>p</m> and use this information to all the real zeros of <m>p</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The Remainder Theorem states <m>p(-2)</m> is the remainder when <m>p(x)</m> is divided by <m>x-(-2)</m>.
+                We set up our synthetic division tableau below.
+                We are careful to record the coefficient of <m>x^2</m> as <m>0</m>:
+                <me>
+                  \begin{array}{rrrrr} -2 \, \, \vline\amp  2 \amp  0 \amp  -5  \amp  3 \\  \amp  \downarrow \amp   -4  \amp   8  \amp  -6 \\ \hhline{~----} \amp  2  \amp    -4  \amp  3 \amp   \fbox{\(-3\)} \end{array}
+                </me>
+                According to the Remainder Theorem, <m>p(-2) = -3</m>.
+                We can check this by direct substitution into the formula for <m>p(x)</m>:
+                <m>p(-2) = 2(-2)^3-5(-2)+3 = -16+10+3=-3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We verify <m>x=1</m> is a zero of <m>p</m> by evaluating <m>p(1) = 2(1)^3-5(1)+3 = 0</m>.
+                To see if there are any more real zeros,
+                we need to solve <m>p(x) = 2x^3-5x+3 = 0</m>.
+                From the Factor Theorem,
+                we know since <m>p(1) = 0</m>,
+                we can factor <m>p(x)</m> as <m>(x-1)q(x)</m>.
+                To find <m>q(x)</m>, we use synthetic division:
+                <me>
+                  \begin{array}{rrrrr} 1 \, \, \vline\amp  2 \amp  0 \amp  -5  \amp  3 \\  \amp  \downarrow \amp   2  \amp   2  \amp  -3 \\ \hhline{~----} \amp  2  \amp    2  \amp  -3 \amp   \fbox{\(0\)} \end{array}
+                </me>
+                As promised, our remainder is <m>0</m>,
+                and we get  <m>p(x) = (x-1)\left( 2x^2 + 2x - 3\right)</m>.
+                Setting this form of <m>p(x)</m> equal to  <m>0</m> we get <m>(x-1)\left( 2x^2 + 2x - 3\right) = 0</m>.
+                We recover  <m>x = 1</m> from setting <m>x-1=0</m>  but we also obtain
+                <m>x = \frac{-1 \pm \sqrt{7}}{2}</m> from  <m>2x^2 + 2x - 3=0</m>,
+                courtesy of the Quadratic Formula.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our next example demonstrates how we can extend the synthetic division tableau to accommodate zeros of multiplicity greater than <m>1</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Let <m>p(x) = 4x^4-4x^3-11x^2+12x-3</m>.
+          Show <m>x=\frac{1}{2}</m> is a zero of multiplicity <m>2</m> and find all of the remaining real zeros of <m>p</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          While computing <m>p\left(\frac{1}{2} \right) = 0</m> shows
+          <m>x=\frac{1}{2}</m> is a zero of <m>p</m>,
+          to prove it has multiplicity <m>2</m>,
+          we need to factor <m>p(x) = \left(x - \frac{1}{2}\right)^2 q(x)</m> with
+          <m>q\left( \frac{1}{2} \right) \neq 0</m>,. We set up for synthetic division,
+          but instead of stopping after the first division,
+          we continue the tableau downwards and divide
+          <m>\left(x - \frac{1}{2}\right)</m> directly into the quotient we obtained from the first division as follows:
+          <me>
+            \begin{array}{rrrrrr} \frac{1}{2} \, \, \vline\amp  4 \amp  -4 \amp  -11  \amp  12 \amp  -3 \\  \amp  \downarrow \amp   2  \amp   -1  \amp  -6 \amp  3\\ \hhline{~-----}  \frac{1}{2} \, \, \vline\amp   4  \amp    -2  \amp  -12 \amp  6 \amp   \fbox{\(0\)}  \\  \amp  \downarrow \amp   2  \amp   0  \amp  -6 \amp \\ \hhline{~----}  \amp  4  \amp    0  \amp  -12 \amp  \fbox{0} \amp \end{array}
+          </me>
+        </p>
+        <p>
+          We get:<fn>
+          For those wanting more detail:
+          the first division gives:
+          <m>4x^4-4x^3-11x^2+12x-3=\left(x-\frac{1}{2}\right) \left(4x^3-2x^2-12x+6\right)</m>.
+          The second division gives:
+          <m>4x^3-2x^2-12x+6=\left(x-\frac{1}{2}\right)\left(4x^2-12\right)</m>.
+          </fn> <m>4x^4-4x^3-11x^2+12x-3 = \left(x-\frac{1}{2}\right)^2\left(4x^2-12\right)</m>.
+          Note if we let <m>q(x) = 4x^2-12</m>,
+          then <m>q\left(\frac{1}{2} \right) = 4\left(\frac{1}{2} \right)^2 - 12 = -11 \neq 0</m> which proves
+          <m>x = \frac{1}{2}</m> is a zero of <m>p</m> of multiplicity <m>2</m>.
+          To find the remaining zeros of <m>p</m>,
+          we set the quotient <m>4x^2-12=0</m>,
+          so <m>x^2 = 3</m> and extract square roots to get <m>x = \pm \sqrt{3}</m>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      A couple of things about the last example are worth mentioning.
+      First, the extension of the synthetic division tableau for repeated divisions will be a common site in the sections to come.
+      Typically, we will start with a higher order polynomial and peel off one zero at a time until we are left with a quadratic,
+      whose roots can always be found using the Quadratic Formula.
+      Secondly, we found <m>x = \pm \sqrt{3}</m> are zeros of <m>p</m>.
+      The Factor Theorem guarantees <m>\left(x-\sqrt{3}\right)</m> and
+      <m>\left(x - \left(-\sqrt{3}\right)\right)</m> are both factors of <m>p</m>.
+      We can certainly put the Factor Theorem to the test and continue the synthetic division tableau from above to see what happens.
+      <me>
+        \begin{array}{rrrrrr} \frac{1}{2} \, \, \vline\amp  4 \amp  -4 \amp  -11  \amp  12 \amp  -3 \\  \amp  \downarrow \amp   2  \amp   -1  \amp  -6 \amp  3\\ \hhline{~-----}  \frac{1}{2} \, \, \vline\amp   4  \amp    -2  \amp  -12 \amp  6 \amp   \fbox{\(0\)}  \\  \amp  \downarrow \amp   2  \amp   0  \amp  -6 \amp \\ \hhline{~----}   \sqrt{3} \, \, \vline  \amp  4  \amp    0  \amp  -12 \amp  \fbox{0} \amp    \\  \amp  \downarrow \amp   4\sqrt{3}  \amp  12  \amp  \amp \\ \hhline{~---}  -\sqrt{3} \, \, \vline  \amp  4  \amp   4\sqrt{3}  \amp  \fbox{0} \amp   \amp    \\  \amp  \downarrow \amp   -4\sqrt{3}  \amp    \amp  \amp \\ \hhline{~--}  \amp  4  \amp   \fbox{0}  \amp   \amp   \amp \end{array}
+      </me>
+    </p>
+    <p>
+      This gives us
+      <me>
+        \begin{array}{rcl}  p(x) \amp  = \amp   4x^4-4x^3-11x^2+12x-3 \\ \amp  = \amp  \left(x-\frac{1}{2}\right)^2 \left(x-\sqrt{3}\right)\left(x - \left(-\sqrt{3}\right)\right) (4) \\ \amp  = \amp   4\left(x-\frac{1}{2}\right)^2 \left(x-\sqrt{3}\right)\left(x - \left(-\sqrt{3}\right)\right) \end{array}
+      </me>
+    </p>
+    <p>
+      We have shown that <m>p</m> is a product of its leading coefficient times linear factors of the form <m>(x-c)</m> where <m>c</m> are zeros of <m>p</m>.
+      It may surprise and delight the reader that, in theory,
+      all polynomials can be reduced to this kind of factorization.
+      We leave that discussion to <xref ref="ComplexZeros">Section</xref>,
+      because the zeros may not be real numbers.
+      Our final theorem in the section gives us an upper bound on the number of real zeros.
+    </p>
+    <theorem xml:id="nzerosreal">
+      <statement>
+        <p>
+          Suppose <m>f</m> is a polynomial of degree <m>n \geq 1</m>.
+          Then <m>f</m> has at most <m>n</m> real zeros, counting multiplicities.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      <xref ref="nzerosreal">Theorem</xref>
+      is a consequence of the Factor Theorem and polynomial multiplication.
+      Every zero <m>c</m> of <m>f</m> gives us a factor of the form <m>(x-c)</m> for <m>f(x)</m>.
+      Since <m>f</m> has degree <m>n</m>,
+      there can be at most <m>n</m> of these factors.
+      The next section provides us some tools which not only help us determine where the real zeros are to be found,
+      but which real numbers they may be.
+    </p>
+    <p>
+      We close this section with a summary of several concepts previously presented.
+      You should take the time to look back through the text to see where each concept was first introduced and where each connection to the other concepts was made.
+    </p>
+    <p>
+      <em>Connections Between Zeros, Factors and Graphs of Polynomial Functions</em>
+    </p>
+    <p>
+      Suppose <m>p</m> is a polynomial function of degree <m>n \geq 1</m>.
+      The following statements are equivalent:
+      <ul>
+        <li>
+          <p>
+            The real number <m>c</m> is a zero of <m>p</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(c) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x = c</m> is a solution to the polynomial equation <m>p(x) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(x - c)</m> is a factor of <m>p(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            The point <m>(c, 0)</m> is an <m>x</m>-intercept of the graph of <m>y = p(x)</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="synthdivreviewfirst">Exercises</xref>
+      - <xref ref="synthdivreviewlast"></xref>,
+      use synthetic division to perform the following polynomial divisions.
+      Identify the quotient and remainder.
+      Write the dividend,
+      quotient and remainder in the form given in <xref ref="polydivthm">Theorem</xref>.
+      <ol cols="2">
+        <li xml:id="synthdivreviewfirst">
+          <p>
+            <m>\left(3x^2-2x+1 \right) \div \left(x-1\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(x^2-5 \right) \div \left(x-5\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(3-4t-2t^2 \right) \div \left(t+1\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(4t^2-5t +3\right) \div \left(t+3\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(z^3 + 8 \right) \div \left(z+2\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(4z^3 +2z-3 \right) \div \left(z -3\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(18x^2-15x-25\right) \div \left(x - \frac{5}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(4x^2-1 \right) \div \left(x - \frac{1}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(2t^3+t^2+2t+1 \right) \div \left(t + \frac{1}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(3t^3 - t + 4 \right) \div \left(t - \frac{2}{3} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(2z^3 - 3z +1 \right) \div \left(z - \frac{1}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(4z^4-12z^3+13z^2 -12z+9\right) \div \left(z - \frac{3}{2} \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(x^4-6x^2+9 \right) \div \left(x -\sqrt{3} \right)</m>
+          </p>
+        </li>
+        <li xml:id="synthdivreviewlast">
+          <p>
+            <m>\left(x^6-6x^4+12x^2-8\right) \div \left(x +\sqrt{2} \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="remainderexerfirst">Exercises</xref>
+      - <xref ref="remainderexerlast"></xref>,
+      find <m>p(c)</m> using the Remainder Theorem.
+      If <m>p(c) = 0</m>,
+      use the Factor Theorem to partially factor the polynomial function.
+      <ol cols="5">
+        <li xml:id="remainderexerfirst">
+          <p>
+            <m>p(x) = 2x^2 - x + 1</m>, <m>c = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(x) = 4x^2-33x-180</m>, <m>c = 12</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(t) = 2t^3 - t + 6</m>, <m>c=-3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(t) = t^3+2t^2+3t+4</m>, <m>c =-1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) =3z^3-6z^2+4z-8</m>, <m>c=2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(z) = 8z^3+12z^2+6z+1</m>, <m>c =-\frac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(x) = x^4 - 2x^2+4</m>, <m>c=\frac{3}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(x) = 6x^4-x^2+2</m>, <m>c =-\frac{2}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>p(t) = t^4 +t^3-6t^2-7t-7</m>, <m>c=-\sqrt{7}</m>
+          </p>
+        </li>
+        <li xml:id="remainderexerlast">
+          <p>
+            <m>p(t) = t^2-4t+1</m>, <m>c =2-\sqrt{3}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="factorpolyzerofirst">Exercises</xref>
+      - <xref ref="factorpolyzerolast"></xref>,
+      you are given a polynomial function and one of its zeros.
+      Find the remaining real zeros and factor the polynomial.
+    </p>
+    <ol cols="5">
+      <li xml:id="factorpolyzerofirst">
+        <p>
+          <m>x^{3} - 6x^{2} + 11x - 6, \;\; c = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{3} - 24x^{2} + 192x - 512, \;\; c = 8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3t^{3} + 4t^{2} - t - 2, \;\; c = \frac{2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2t^3-3t^2-11t+6, \;\; c=\frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z^3+2z^2-3z-6, \;\; c = -2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2z^3-z^2-10z+5, \;\; c=\frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4x^{4} - 28x^{3} + 61x^{2} - 42x + 9</m>,
+          <m>c = \frac{1}{2}</m> is a zero of multiplicity 2
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t^5+2t^4-12t^3-38t^2-37t-12</m>,
+          <m>c=-1</m> is a zero of multiplicity 3
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>125z^{5} - 275z^{4} - 2265z^{3} - 3213z^{2} - 1728z - 324</m>,
+          <m>c = -\frac{3}{5}</m> is a zero of multiplicity 3
+        </p>
+      </li>
+      <li xml:id="factorpolyzerolast">
+        <p>
+          <m>x^{2} - 2x - 2, \;\; c = 1 - \sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Find a quadratic polynomial with <em>integer</em>
+          coefficients which has <m>x = \dfrac{3}{5} \pm \dfrac{\sqrt{29}}{5}</m> as its real zeros.
+        </p>
+      </li>
+      <li xml:id="verifyrootsex">
+        <p>
+          For <m>f(x) = x^3 + 4x^2-5x-14</m>,
+          show <m>f(-3-\sqrt{2}) = 0</m> and <m>f(-3+\sqrt{2}) = 0</m> two ways:
+        </p>
+        <ol>
+          <li>
+            <p>
+              By direct substitution.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using synthetic division and the Factor Theorem
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li xml:id="oneisazeroex">
+        <p>
+          Let <m>f(x) = a_{n} x^{n} + a_{n-1} x^{n-1} + \ldots + a_{2} x^{2} + a_{1} x + a_{0}</m> be a polynomial function with the property that <m>a_{n}+a_{n-1} + \ldots + a_{1} + a_{0} = 0</m>.
+          (That is, the sum of the coefficients and the constant term is <m>0</m>.)
+          Prove that <m>(x-1)</m> is a factor of <m>f(x)</m>.
+          HINT: Show <m>f(1) = 0</m> and invoke the Factor Theorem
+        </p>
+      </li>
+      <li>
+        <p>
+          Verify the result in <xref ref="oneisazeroex">number</xref> with the functions:
+          <m>f(x) = x^3 - 2x + 1</m> and <m>f(x) = 3x^4-x-2</m>.
+        </p>
+      </li>
+      <li xml:id="monomialdiffquotex">
+        <p>
+          Suppose <m>a</m> is a nonzero real number.
+          Find the quotients below, using synthetic division as required.
+          <ul>
+            <li>
+              <p>
+                <m>\dfrac{x - a}{x-a}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{x^2 - a^2}{x-a}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{x^3 - a^3}{x-a}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{x^4 - a^4}{x-a}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{x^5 - a^5}{x-a}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        Based on the pattern that evolves, find the quotient: <m>\dfrac{x^{10} - a^{10}}{x-a}</m>. What about <m>\dfrac{x^{n} - a^{n}}{x-a}</m>?
+      </li>
+      <li xml:id="geoseriespreview">
+        <p>
+          Use your result from <xref ref="monomialdiffquotex">number</xref> to rewrite the sum:
+          <m>1 + r + r^2 + \dots + r^{n-2} + r^{n-1}</m> as a quotient.
+          What assumptions need to be made about <m>r</m>?
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\left(3x^2-2x+1 \right) = \left(x-1\right) (3x+1)+2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x^2-5 \right)= \left(x-5\right)(x+5) + 20</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(3-4t-2t^2 \right) = \left(t+1\right)(-2t-2)+5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(4t^2-5t +3\right) = \left(t+3\right)(4t-17)+54</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(z^3 + 8 \right) = \left(z+2\right) \left(z^2-2z+4\right) + 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(4z^3 +2z-3 \right) = \left(z -3\right) \left(4z^2+12z+38\right) + 111</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(18x^2-15x-25\right) = \left(x - \frac{5}{3} \right)(18x+15)+0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(4x^2-1 \right) = \left(x - \frac{1}{2} \right)(4x+2)+0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(2t^3+t^2+2t+1 \right) = \left(t + \frac{1}{2} \right)\left(2t^2+2\right)+0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(3t^3 - t + 4 \right) = \left(t - \frac{2}{3} \right) \left(3t^2+2t+\frac{1}{3}\right) + \frac{38}{9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(2z^3 - 3z +1 \right) = \left(z - \frac{1}{2} \right) \left(2z^2+z-\frac{5}{2}\right)-\frac{1}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(4z^4-12z^3+13z^2 -12z+9\right) = \left(z - \frac{3}{2} \right) \left(4z^3-6z^2+4z-6 \right)+0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x^4-6x^2+9 \right) = \left(x -\sqrt{3} \right) \left(x^3+\sqrt{3} \,x^2-3x-3\sqrt{3}\right) + 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x^6-6x^4+12x^2-8\right) = \left(x +\sqrt{2} \right) \left(x^5-\sqrt{2} \, x^4-4x^3+4\sqrt{2} \, x^2+4x-4\sqrt{2}\right) + 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(4) = 29</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(12) =0</m>, <m>p(x) = (x-12)(4x+15)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(-3)=-45</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(-1)=2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(2) =0</m>, <m>p(z)= (z-2) \left(3z^2+4\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p\left(-\frac{1}{2}\right) = 0</m>,
+          <m>p(z) = \left(z+\frac{1}{2}\right)\left(8z^2+8z+2\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p\left(\frac{3}{2}\right) = \frac{73}{16}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p\left(-\frac{2}{3}\right) = \frac{74}{27}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(-\sqrt{7}) = 0</m>,
+          <m>p(t) = (t+\sqrt{7})\left(t^3+(1-\sqrt{7}) t^2+(1-\sqrt{7})t-\sqrt{7} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(2-\sqrt{3}) =0</m>, <m>p(t) = (t-(2-\sqrt{3}))(t-(2+\sqrt{3}))</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{3} - 6x^{2} + 11x - 6 = (x - 1)(x - 2)(x - 3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{3} - 24x^{2} + 192x - 512 = (x - 8)^{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3t^{3} + 4t^{2} - t - 2 = 3\left(t - \frac{2}{3}\right)(t + 1)^{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2t^3-3t^2-11t+6 = 2\left(t-\frac{1}{2}\right)(t+2)(t-3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z^3+2z^2-3z-6 = (z+2)(z+\sqrt{3})(z-\sqrt{3})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2z^3-z^2-10z+5=2\left(z-\frac{1}{2}\right)(z+\sqrt{5})(z-\sqrt{5})</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4x^{4} - 28x^{3} + 61x^{2} - 42x + 9 = 4\left(x - \frac{1}{2} \right)^{2}(x - 3)^{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t^5+2t^4-12t^3-38t^2-37t-12 = (t+1)^3(t+3)(t-4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>125z^{5} - 275z^{4} - 2265z^{3} - 3213z^{2} - 1728z - 324</m> = <m>125\left(z + \frac{3}{5} \right)^{3}(z + 2)(z - 6)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{2} - 2x - 2 = (x - (1 - \sqrt{3}))(x - (1 + \sqrt{3}))</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>p(x) = 5x^{2} - 6x - 4</m>
+        </p>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              For <m>f(x) = x^3 - 2x + 1</m>,
+              the coefficients <m>1+(-2) + 1 = 0</m> and <m>f(x) = (x-1)(x^2+x-1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For <m>f(x) = 3x^4-x-2</m> the coefficients
+              <m>3+(-1)+(-2) = 0</m> and <m>f(x) = (x-1)(3x^3+3x^2+3x+2)</m>.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li>
+            <p>
+              <m>\dfrac{x - a}{x-a} = 1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dfrac{x^2 - a^2}{x-a} = x+a</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dfrac{x^3 - a^3}{x-a} = x^2+ax+a^2</m>
+            </p>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <p>
+              <m>\dfrac{x^4 - a^4}{x-a} = x^3 + ax^2 + a^2x + a^3</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dfrac{x^5 - a^5}{x-a} = x^4+ax^3 + a^2x^2+a^3x+a^4</m>
+            </p>
+          </li>
+        </ul>
+        Following the pattern:
+        <ul>
+          <li>
+            <p>
+              <m>\dfrac{x^{10} - a^{10}}{x-a} = x^{9} + ax^8 + a^2x^7+a^3x^6+a^4x^5+a^5x^4+a^6x^3+a^7x^2+a^8x+a^9</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dfrac{x^{n} - a^{n}}{x-a} = x^{n-1} + ax^{n-2} + a^2x^{n-3} + \ldots + a^{n-2} x + a^{n-1}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Put <m>x=1</m> and <m>a = r</m> so that <m>1 + r + r^2 + \dots + r^{n-2} + r^{n-1} = \dfrac{1 - r^{n}}{1-r}</m>.
+          Here, <m>r \neq 1</m> as otherwise we'd be dividing by <m>0</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

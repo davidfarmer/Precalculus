@@ -1,0 +1,899 @@
+<section xml:id="AugMatrices">
+  <title>Systems of Linear Equations: Augmented Matrices</title>
+  <introduction>
+    <p>
+      In <xref ref="LinSystems">Section</xref>
+      we introduced Gaussian Elimination as a means of transforming a system of linear equations into triangular form with the ultimate goal of producing an equivalent system of linear equations which is easier to solve.
+      If we take a step back and study the process,
+      we see that all of our moves are determined entirely by the <em>coefficients</em>
+      of the variables involved,
+      and not the variables themselves.
+      Much the same thing happened when we studied long division in <xref ref="Polydivision">Section</xref>.
+      Just as we developed synthetic division to streamline that process,
+      in this section,
+      we introduce a similar bookkeeping device to help us solve systems of linear equations,
+      the <em>matrix</em>.
+    </p>
+    <p>
+      A
+          <idx><h>matrix</h><h>definition</h></idx>
+      <em>matrix</em> as a rectangular array of real numbers.
+      We typically enclose matrices with <sq>square brackets</sq> of the likes of <sq><m>\left[ \right.</m></sq> and <sq><m>\left. \right]</m></sq>,
+      and we size matrices by the number of rows and columns they have.
+      For example, the
+          <idx><h>matrix</h><h>size</h></idx>
+      <em>size</em>
+      (sometimes called the
+          <idx><h>matrix</h><h>dimension</h></idx>
+          <idx><h>dimension</h><h>of a matrix</h></idx>
+      <em>dimension</em>)
+      of
+      <me>
+        \left[ \begin{array}{rrr} 3 \amp  0 \amp  -1 \\ 2 \amp  -5 \amp  10 \end{array}  \right]
+      </me>
+      is <m>2 \times 3</m> because it has <m>2</m> rows and <m>3</m> columns.
+      The individual numbers in a matrix are called its
+          <idx><h>matrix</h><h>entry</h></idx>
+          <idx><h>entry</h><h>in a matrix</h></idx> <em>entries</em> and are usually labeled with double subscripts: the first tells which row the element is in and the second tells which column it is in.
+      The rows are numbered from top to bottom and the columns are numbered from left to right.
+      Matrices themselves are usually denoted by uppercase letters (<m>A</m>,
+      <m>B</m>,
+      <m>C</m>,
+      etc.) while their entries are usually denoted by the corresponding letter.
+      So, for instance, if we have
+      <me>
+        A = \left[ \begin{array}{rrr} 3 \amp  0 \amp  -1 \\ 2 \amp  -5 \amp  10 \end{array}  \right]
+      </me>
+      then <m>a_{11} = 3</m>, <m>a_{12} = 0</m>, <m>a_{13} = -1</m>,
+      <m>a_{21} = 2</m>, <m>a_{22} = -5</m>, and <m>a_{23} = 10</m>.
+      We shall explore matrices as mathematical objects with their own algebra in <xref ref="MatArithmetic">Section</xref>
+      and introduce them here solely as a bookkeeping device.
+      Consider the system of linear equations from number 2 in <xref ref="GaussEqnEx">Example</xref>
+      <me>
+        \left\{ \begin{array}{lrcr} (E1) \amp  2x+3y-z \amp  = \amp  1 \\ (E2) \amp  10x-z \amp  = \amp  2 \\ (E3) \amp  4x-9y+2z \amp  = \amp  5 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      We encode this system into a matrix by assigning each equation to a corresponding row.
+      Within that row,
+      each variable and the constant gets its own column,
+      and to separate the variables on the left hand side of the equation from the constants on the right hand side,
+      we use a vertical bar, <m>|</m>.
+      Note that in <m>E2</m>, since <m>y</m> is not present,
+      we record its coefficient as <m>0</m>.
+      The matrix associated with this system is
+      <me>
+        \begin{array}{c} \begin{array}{rrrrrrr} \amp  \amp  \amp   x \amp   y \amp   z \amp   c \end{array} \begin{array}{r} (E1) \rightarrow \\ (E2) \rightarrow \\ (E3) \rightarrow \end{array}   \left[ \begin{array}{rrr|r} 2 \amp  3 \amp  -1 \amp  1\\ 10 \amp  0 \amp  -1 \amp  2 \\ 4 \amp  -9 \amp  2 \amp  5 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      This matrix is called an
+          <idx><h>matrix</h><h>augmented</h></idx>
+          <idx><h>augmented matrix</h></idx>
+      <em>augmented matrix</em> because the column containing the constants is appended to the matrix containing the coefficients.<fn>
+      We shall study the coefficient and constant matrices separately in <xref ref="MatArithmetic">Section</xref>.
+      </fn> To solve this system,
+      we can use the same kind operations on the <em>rows</em>
+      of the matrix that we performed on the
+      <em>equations</em> of the system.
+      More specifically,
+      we have the following analog of <xref ref="equationmoves">Theorem</xref> below.
+    </p>
+    <theorem xml:id="rowops">
+      <statement>
+        <p>
+          <em>Row Operations:</em> Given an augmented matrix for a system of linear equations,
+          the following row operations produce an augmented matrix which corresponds to an equivalent system of linear equations.
+              <idx><h>matrix</h><h>row operations</h></idx>
+              <idx><h>row operations for a matrix</h></idx>
+          <ul>
+            <li>
+              <p>
+                Interchange any two rows.
+              </p>
+            </li>
+            <li>
+              <p>
+                Replace a row with a nonzero multiple of itself.<fn>
+                That is, the row obtained by multiplying each entry in the row by the same nonzero number.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Replace a row with itself plus a nonzero multiple of another row.<fn>
+                Where we add entries in corresponding columns.
+                </fn>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      As a demonstration of the moves in <xref ref="rowops">Theorem</xref>,
+      we revisit some of the steps that were used in solving the systems of linear equations in <xref ref="GaussEqnEx">Example</xref>
+      of <xref ref="LinSystems">Section</xref>.
+      The reader is encouraged to perform the indicated operations on the rows of the augmented matrix to see that the machinations are identical to what is done to the coefficients of the variables in the equations.
+      We first see a demonstration of switching two rows using the first step of part 1 in <xref ref="GaussEqnEx">Example</xref>.
+      <me>
+        \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  3x-y+z \amp  = \amp  3 \\ (E2) \amp  2x-4y+3z \amp  = \amp  16 \\ (E3)  \amp   x-y+z \amp  = \amp  5 \end{array}  \right.  \amp \xrightarrow{\text{ Switch \(E1\) and \(E3\) } }  \amp  \left\{ \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  2x-4y+3z \amp  = \amp  16 \\ (E3) \amp  3x-y+z \amp  = \amp  3 \end{array}  \right. \end{array}
+      </me>
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 3 \amp  -1 \amp  1 \amp  3 \\ 2 \amp  -4 \amp  3 \amp  16 \\ 1 \amp  -1 \amp  1 \amp  5 \end{array}  \right]  \amp \xrightarrow{\text{ Switch \(R1\) and \(R3\) } }  \amp  \left[ \begin{array}{rrr|r} 1 \amp  -1 \amp  1 \amp  5  \\ 2 \amp  -4 \amp  3 \amp  16 \\ 3 \amp  -1 \amp  1 \amp  3 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Next, we have a demonstration of replacing a row with a nonzero multiple of itself using the first step of part 3 in <xref ref="GaussEqnEx">Example</xref>.
+      <me>
+        \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  3x_{1} +x_{2} + x_{4} \amp  = \amp  6 \\ (E2) \amp  2x_{1} + x_{2} -x_{3}  \amp  = \amp  4  \\ (E3) \amp   x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \end{array}  \right.  \amp \xrightarrow{\text{Replace \(E1\) with \(\frac{1}{3}E1\)} }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp  2x_{1} + x_{2} -x_{3}  \amp  = \amp  4  \\ (E3) \amp   x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \end{array}  \right. \end{array}
+      </me>
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rrrr|r} 3 \amp   1 \amp  0 \amp  1 \amp  6  \\ 2 \amp  1 \amp  -1 \amp  0 \amp  4 \\ 0 \amp  1 \amp  -3 \amp  -2 \amp  0 \end{array}  \right]  \amp \xrightarrow{\text{Replace \(R1\) with \(\frac{1}{3}R1\)} }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  \frac{1}{3} \amp  0 \amp  \frac{1}{3} \amp  2  \\ 2 \amp  1 \amp  -1 \amp  0 \amp  4 \\ 0 \amp  1 \amp  -3 \amp  -2 \amp  0 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Finally, we have an example of replacing a row with itself plus a multiple of another row using the second step from part 2 in <xref ref="GaussEqnEx">Example</xref>.
+      <me>
+        \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  10x-z \amp  = \amp  2 \\ (E3) \amp   4x-9y+2z \amp  = \amp  5 \end{array}  \right. \amp \xrightarrow[\text{ Replace \(E3\) with \(-4E1 + E3\) } ]{\text{ Replace \(E2\) with \(-10E1 + E2\) } }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  -15y+4z \amp  = \amp  -3 \\ (E3) \amp  -15y+4z \amp  = \amp  3 \end{array}  \right. \end{array}
+      </me>
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  \frac{3}{2} \amp  -\frac{1}{2} \amp  \frac{1}{2}  \\ 10 \amp  0 \amp  -1 \amp  2 \\ 4 \amp  -9 \amp  2 \amp  5 \end{array}  \right]  \amp \xrightarrow[\text{ Replace \(R3\) with \(-4R1 + R3\) } ]{\text{ Replace \(R2\) with \(-10R1 + R2\) } } \amp  \left[ \begin{array}{rrr|r} 1 \amp  \frac{3}{2} \amp  -\frac{1}{2} \amp  \frac{1}{2}  \\ 0 \amp  -15 \amp  4 \amp  -3 \\ 0 \amp  -15 \amp  4 \amp  3 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      The matrix equivalent of <sq>triangular form</sq> is <idx><h>matrix</h><h>row echelon form</h></idx>
+          <idx><h>row echelon form</h></idx>
+      <em>row echelon form</em>.
+      The reader is encouraged to refer to <xref ref="systemtriangularform">Definition</xref> for comparison.
+      Note that the analog of <sq>leading variable</sq> of an equation is <sq>leading entry</sq> of a row.
+      Specifically, the first nonzero entry
+      (if it exists)
+      in a row is called the <idx><h>matrix</h><h>leading entry</h></idx>
+      <em>leading entry</em> of that row.
+    </p>
+    <definition xml:id="rowechelonform">
+      <statement>
+        <p>
+          A matrix is said to be in <term>row echelon form</term>
+          provided all of the following conditions hold:
+          <ol>
+            <li>
+              <p>
+                The first nonzero entry in each row is <m>1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading <m>1</m> of a given row must be to the right of the leading <m>1</m> of the row above it.
+              </p>
+            </li>
+            <li>
+              <p>
+                Any row of all zeros cannot be placed above a row with nonzero entries.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      To solve a system of a linear equations using an augmented matrix,
+      we encode the system into an augmented matrix and apply Gaussian Elimination to the rows to get the matrix into row-echelon form.
+      We then decode the matrix and back substitute.
+      The next example illustrates this nicely.
+    </p>
+    <example xml:id="GaussExMatrix">
+      <statement>
+        <p>
+          Use an augmented matrix to transform the following system of linear equations into triangular form.
+          Solve the system.
+          <me>
+            \left\{ \begin{array}{rcl} 3x  - y  + z \amp  = \amp  8 \\ x +  2y  -  z \amp  = \amp  4 \\  2x+ 3y - 4z \amp  = \amp  10 \end{array}  \right.
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We first encode the system into an augmented matrix.
+          <me>
+            \begin{array}{ccc}  \left\{ \begin{array}{rcl} 3x  - y  + z \amp  = \amp  8 \\ x +  2y  -  z \amp  = \amp  4 \\  2x+ 3y - 4z \amp  = \amp  10 \end{array}  \right.  \amp  \xrightarrow{\text{ Encode into the matrix } }  \amp  \left[ \begin{array}{rrr|r} 3 \amp  -1 \amp  1 \amp  8 \\ 1 \amp  2 \amp  -1 \amp  4 \\ 2 \amp  3 \amp  -4 \amp  10 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Thinking back to Gaussian Elimination at an equations level,
+          our first order of business is to get <m>x</m> in <m>E1</m> with a coefficient of <m>1</m>.
+          At the matrix level,
+          this means getting a leading <m>1</m> in <m>R1</m>.
+          This is in accordance with the first criteria in <xref ref="rowechelonform">Definition</xref>.
+          To that end, we interchange <m>R1</m> and <m>R2</m>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 3 \amp  -1 \amp  1 \amp  8 \\ 1 \amp  2 \amp  -1 \amp  4 \\ 2 \amp  3 \amp  -4 \amp  10 \end{array}  \right]  \amp  \xrightarrow{\text{ Switch \(R1\) and \(R2\) } }  \amp  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 3 \amp  -1 \amp  1 \amp  8 \\ 2 \amp  3 \amp  -4 \amp  10 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Our next step is to eliminate the <m>x</m>'s from <m>E2</m> and <m>E3</m>.
+          From a matrix standpoint,
+          this means we need <m>0</m>'s below the leading <m>1</m> in <m>R1</m>.
+          This guarantees the leading <m>1</m> in <m>R2</m> will be to the right of the leading <m>1</m> in <m>R1</m> in accordance with the second requirement of <xref ref="rowechelonform">Definition</xref>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 3 \amp  -1 \amp  1 \amp  8 \\ 2 \amp  3 \amp  -4 \amp  10 \end{array}  \right] \amp \xrightarrow[\text{ Replace \(R3\) with \(-2R1+R3\) } ]{\text{ Replace \(R2\) with \(-3R1 +R2\) } } \amp \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  -7 \amp  4 \amp  -4 \\ 0 \amp  -1 \amp  -2  \amp  2 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Now we repeat the above process for the variable <m>y</m>.
+          That is, we need the leading entry in <m>R2</m> to be <m>1</m>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  -7 \amp  4 \amp  -4 \\ 0 \amp  -1 \amp  -2  \amp  2 \end{array}  \right] \amp \xrightarrow{\text{Replace \(R2\) with \(-\frac{1}{7}R2\)} } \amp \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  1 \amp  -\frac{4}{7} \amp  \frac{4}{7} \\ 0 \amp  -1 \amp  -2 \amp  2 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          To ensure the leading <m>1</m> in <m>R3</m> is to the right of the leading <m>1</m> in <m>R2</m>,
+          we get a <m>0</m> in the second column of <m>R3</m>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  1 \amp  -\frac{4}{7} \amp  \frac{4}{7} \\ 0 \amp  -1 \amp  -2 \amp  2 \end{array}  \right] \amp \xrightarrow{\text{ Replace \(R3\) with \(R2+R3\) } } \amp \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  1 \amp  -\frac{4}{7} \amp  \frac{4}{7} \\ 0 \amp  0 \amp  -\frac{18}{7} \amp  \frac{18}{7} \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Finally, we get the leading entry in <m>R3</m> to be <m>1</m>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  1 \amp  -\frac{4}{7} \amp  \frac{4}{7} \\ 0 \amp  0 \amp  -\frac{18}{7} \amp  \frac{18}{7} \end{array}  \right] \amp \xrightarrow{\text{Replace \(R3\) with \(-\frac{7}{18}R3\)} } \amp \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  1 \amp  -\frac{4}{7} \amp  \frac{4}{7} \\ 0 \amp  0 \amp 1 \amp  -1 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Decoding from the matrix gives a system in triangular form
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  1 \amp  -\frac{4}{7} \amp  \frac{4}{7} \\ 0 \amp  0 \amp 1 \amp  -1 \end{array}  \right] \amp \xrightarrow{\text{ Decode from the matrix } } \amp \left \{ \begin{array}{rcr} x + 2y-z \amp  = \amp  4 \\ y - \frac{4}{7} z \amp  = \amp  \frac{4}{7} \\ z \amp  = \amp  -1 \end{array}  \right. \end{array}
+          </me>
+        </p>
+        <p>
+          We get <m>z=-1</m>,
+          <m>y = \frac{4}{7} z + \frac{4}{7} = \frac{4}{7}(-1)+\frac{4}{7} = 0</m> and
+          <m>x = -2y+z+4 = -2(0)+(-1)+4 = 3</m> for a final answer of <m>(3,0,-1)</m>.
+          We leave it to the reader to check.
+        </p>
+      </solution>
+    </example>
+    <p>
+      As part of Gaussian Elimination,
+      we used row operations to obtain <m>0</m>'s beneath each leading <m>1</m> to put the matrix into row echelon form.
+      If we also require that <m>0</m>'s are the only numbers above a leading <m>1</m>,
+      we have what is known as the <idx><h>matrix</h><h>reduced row echelon form</h></idx> <idx><h>reduced row echelon form</h></idx>
+      <em>reduced row echelon form</em> of the matrix.
+    </p>
+    <definition xml:id="reducedrowechelonform">
+      <statement>
+        <p>
+          A matrix is said to be in <term>reduced row echelon form</term>
+          provided both of the following conditions hold:
+          <ol>
+            <li>
+              <p>
+                The matrix is in row echelon form.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading <m>1</m>s are the only nonzero entry in their respective columns.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Of what significance is the reduced row echelon form of a matrix?
+      To illustrate,
+      let's take the row echelon form from <xref ref="GaussExMatrix">Example</xref>
+      and perform the necessary steps to put into reduced row echelon form.
+      We start by using the leading <m>1</m> in <m>R3</m> to zero out the numbers in the rows above it.
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  -1 \amp  4 \\ 0 \amp  1 \amp  -\frac{4}{7} \amp  \frac{4}{7} \\ 0 \amp  0 \amp 1 \amp  -1 \end{array}  \right] \amp \xrightarrow[\text{Replace \(R2\) with \(\frac{4}{7} R3 + R2\)} ]{\text{ Replace \(R1\) with \(R3+R1\) } } \amp \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  0 \amp  3 \\ 0 \amp  1 \amp  0 \amp  0 \\ 0 \amp  0 \amp 1 \amp  -1 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      Finally, we take care of the <m>2</m> in <m>R1</m> above the leading <m>1</m> in <m>R2</m>.
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  2 \amp  0 \amp  3 \\ 0 \amp  1 \amp  0 \amp  0 \\ 0 \amp  0 \amp 1 \amp  -1 \end{array}  \right] \amp \xrightarrow{\text{ Replace \(R1\) with \(-2R2+R1\) } } \amp \left[ \begin{array}{rrr|r} 1 \amp  0 \amp  0 \amp  3 \\ 0 \amp  1 \amp  0 \amp  0 \\ 0 \amp  0 \amp 1 \amp  -1 \end{array}  \right] \end{array}
+      </me>
+    </p>
+    <p>
+      To our surprise and delight, when we decode this matrix,
+      we obtain the solution instantly without having to deal with any back-substitution at all.
+      <me>
+        \begin{array}{ccc}  \left[ \begin{array}{rrr|r} 1 \amp  0 \amp  0 \amp  3 \\ 0 \amp  1 \amp  0 \amp  0 \\ 0 \amp  0 \amp 1 \amp  -1 \end{array}  \right]  \amp \xrightarrow{\text{ Decode from the matrix } } \amp \left\{ \begin{array}{rcr} x \amp  = \amp  3 \\ y \amp  = \amp  0 \\ z \amp  = \amp  -1 \end{array}  \right. \end{array}
+      </me>
+    </p>
+    <p>
+      Note that in the previous discussion,
+      we could have started with <m>R2</m> and used it to get a zero above its leading <m>1</m> and then done the same for the leading <m>1</m> in <m>R3</m>.
+      By starting with <m>R3</m>, however, we get more zeros first,
+      and the more zeros there are,
+      the faster the remaining calculations will be.<fn>
+      Carl also finds starting with <m>R3</m> to be more symmetric,
+      in a purely poetic way.
+      </fn> It is also worth noting that while a matrix has several<fn>
+      infinite, in fact
+      </fn> row echelon forms,
+      it has only one reduced row echelon form.
+      The process by which we have put a matrix into reduced row echelon form is called <idx><h>system of equations</h><h>Gauss-Jordan Elimination</h></idx> <idx><h>Gauss-Jordan Elimination</h></idx>
+      <em>Gauss-Jordan Elimination</em>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Solve the following system using an augmented matrix.
+          Use Gauss-Jordan Elimination to put the augmented matrix into reduced row echelon form.
+          <me>
+            \left \{ \begin{array}{rcr} x_{2} - 3x_{1} + x_{4} \amp  = \amp  2 \\ 2x_{1} + 4x_{3} \amp  = \amp  5 \\ 4x_{2}-x_{4} \amp  = \amp  3 \end{array}  \right.
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We first encode the system into a matrix. (Pay attention to the subscripts!)
+          <me>
+            \begin{array}{ccc}  \left\{ \begin{array}{rcr} x_{2} - 3x_{1} + x_{4} \amp  = \amp  2 \\ 2x_{1} + 4x_{3} \amp  = \amp  5 \\ 4x_{2}-x_{4} \amp  = \amp  3 \end{array}  \right.  \amp  \xrightarrow{\text{ Encode into the matrix } }  \amp  \left[ \begin{array}{rrrr|r} -3 \amp  1 \amp  0 \amp  1 \amp  2 \\ 2 \amp  0 \amp  4 \amp  0 \amp  5 \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Next, we get a leading <m>1</m> in the first column of <m>R1</m>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrrr|r} -3 \amp  1 \amp  0 \amp  1 \amp  2 \\ 2 \amp  0 \amp  4 \amp  0 \amp  5 \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right] \amp  \xrightarrow{\text{Replace \(R1\) with \(-\frac{1}{3}R1\)} }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 2 \amp  0 \amp  4 \amp  0 \amp  5 \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Now we eliminate the nonzero entry below our leading <m>1</m>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 2 \amp  0 \amp  4 \amp  0 \amp  5 \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right] \amp  \xrightarrow{\text{ Replace \(R2\) with \(-2R1+R2\) } }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  \frac{2}{3} \amp  4 \amp  \frac{2}{3} \amp  \frac{19}{3} \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          We proceed to get a leading <m>1</m> in <m>R2</m>.
+          <me>
+            \begin{array}{ccc}   \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  \frac{2}{3} \amp  4 \amp  \frac{2}{3} \amp  \frac{19}{3} \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right]  \amp  \xrightarrow{\text{Replace \(R2\) with \(\frac{3}{2}R2\)} }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  6 \amp  1 \amp  \frac{19}{2} \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          We now zero out the entry below the leading <m>1</m> in <m>R2</m>.
+          <me>
+            \begin{array}{ccc}   \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  6 \amp  1 \amp  \frac{19}{2} \\ 0 \amp  4 \amp  0 \amp  -1 \amp  3 \end{array}  \right]  \amp  \xrightarrow{\text{ Replace \(R3\) with \(-4R2+R3\) } }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  6 \amp  1 \amp  \frac{19}{2} \\ 0 \amp  0\amp  -24 \amp  -5 \amp  -35 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Next, it's time for a leading <m>1</m> in <m>R3</m>.
+          <me>
+            \begin{array}{ccc}   \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  6 \amp  1 \amp  \frac{19}{2} \\ 0 \amp  0\amp  -24 \amp  -5 \amp  -35 \end{array}  \right] \amp  \xrightarrow{\text{Replace \(R3\) with \(-\frac{1}{24}R3\)} }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  6 \amp  1 \amp  \frac{19}{2} \\ 0 \amp  0\amp  1 \amp  \frac{5}{24} \amp  \frac{35}{24} \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          The matrix is now in row echelon form.
+          To get the reduced row echelon form,
+          we start with the last leading <m>1</m> we produced and work to get <m>0</m>'s above it.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  6 \amp  1 \amp  \frac{19}{2} \\ 0 \amp  0\amp  1 \amp  \frac{5}{24} \amp  \frac{35}{24} \end{array}  \right]\amp  \xrightarrow{\text{ Replace \(R2\) with \(-6R3+R2\) } }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  0 \amp  -\frac{1}{4} \amp  \frac{3}{4} \\ 0 \amp  0\amp  1 \amp  \frac{5}{24} \amp  \frac{35}{24} \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Lastly, we get a <m>0</m> above the leading <m>1</m> of <m>R2</m>.
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrrr|r} 1 \amp  -\frac{1}{3} \amp  0 \amp  -\frac{1}{3} \amp  -\frac{2}{3} \\ 0 \amp  1 \amp  0 \amp  -\frac{1}{4} \amp  \frac{3}{4} \\ 0 \amp  0\amp  1 \amp  \frac{5}{24} \amp  \frac{35}{24} \end{array}  \right]  \amp  \xrightarrow{\text{Replace \(R1\) with \(\frac{1}{3}R2+R1\)} }  \amp  \left[ \begin{array}{rrrr|r} 1 \amp  0 \amp  0 \amp  -\frac{5}{12} \amp  -\frac{5}{12} \\ 0 \amp  1 \amp  0 \amp  -\frac{1}{4} \amp  \frac{3}{4} \\ 0 \amp  0\amp  1 \amp  \frac{5}{24} \amp  \frac{35}{24} \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          At last, we decode to get
+          <me>
+            \begin{array}{ccc}  \left[ \begin{array}{rrrr|r} 1 \amp  0 \amp  0 \amp  -\frac{5}{12} \amp  -\frac{5}{12} \\ 0 \amp  1 \amp  0 \amp  -\frac{1}{4} \amp  \frac{3}{4} \\ 0 \amp  0\amp  1 \amp  \frac{5}{24} \amp  \frac{35}{24} \end{array}  \right]  \amp \xrightarrow{\text{ Decode from the matrix } } \amp \left\{ \begin{array}{rcr} x_{1} - \frac{5}{12} x_{4} \amp  = \amp  -\frac{5}{12} \\ x_{2} - \frac{1}{4}x_{4} \amp  = \amp  \frac{3}{4} \\ x_{3} + \frac{5}{24} x_{4} \amp  = \amp  \frac{35}{24} \end{array}  \right. \end{array}
+          </me>
+        </p>
+        <p>
+          We see <m>x_{4}</m> is free and assign it the parameter <m>t</m>.
+          We obtain <m>x_{3} = -\frac{5}{24} t + \frac{35}{24}</m>,
+          <m>x_{2} = \frac{1}{4} t + \frac{3}{4}</m>,
+          and <m>x_{1} = \frac{5}{12}t - \frac{5}{12}</m>.
+          Our solution is <m>\left\{ \left( \frac{5}{12}t - \frac{5}{12}, \frac{1}{4} t + \frac{3}{4}, -\frac{5}{24} t + \frac{35}{24}, t \right) : -\infty \lt t \lt \infty \right\}</m> which we leave to the reader to check.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Like all good algorithms,
+      putting a matrix in row echelon or reduced row echelon form can easily be programmed into a calculator, and,
+      doubtless, your graphing calculator has such a feature.
+      We make use of thus feature in next example to avoid tedious arithmetic.
+    </p>
+    <example xml:id="matrixcurvefitting">
+      <statement>
+        <p>
+          Find the quadratic function passing through the points <m>(-1,3)</m>,
+          <m>(2,4)</m>, <m>(5,-2)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          According to <xref ref="quadraticfunction">Definition</xref>,
+          a quadratic function has the form
+          <m>f(x) =ax^2+bx+c</m> where <m>a \neq 0</m>.
+          Our goal is to find <m>a</m>,
+          <m>b</m> and <m>c</m> so that the three given points are on the graph of <m>f</m>.
+        </p>
+        <p>
+          Since <m>(-1,3)</m> is on the graph of <m>f</m>, we now <m>f(-1) = 3</m>.
+          This gives <m>a(-1)^2+b(-1) + c = 3</m>, or <m>a-b+c=3</m>.
+          This last equation is a linear equation with the variables <m>a</m>,
+          <m>b</m> and <m>c</m>.
+          Similarly, if the point <m>(2,4)</m> is on the graph of <m>f</m>,
+          then <m>f(2) = 4</m>, so <m>4a+2b+c = 4</m>.
+          Lastly, the point <m>(5,-2)</m> is on the graph of <m>f</m> gives us <m>25a+5b+c = -2</m>.
+          Putting these together, we obtain a system of three linear equations,
+          which we encode into the matrix below.
+          <me>
+            \begin{array}{ccc}  \left\{ \begin{array}{rcr} a-b+c \amp  = \amp  3 \\ 4a+2b+c \amp  = \amp  4 \\ 25a+5b+c \amp  = \amp  -2 \end{array}  \right.  \amp  \xrightarrow{\text{ Encode into the matrix } }  \amp  \left[ \begin{array}{rrr|r} 1 \amp  -1 \amp  1 \amp  3 \\ 4 \amp  2 \amp  1 \amp  4 \\ 25 \amp  5 \amp  1 \amp  -2 \end{array}  \right] \end{array}
+          </me>
+        </p>
+        <p>
+          Using a calculator,<fn>
+          We've tortured you enough already with fractions in this exposition!
+          </fn> we find <m>a = -\frac{7}{18}</m>,
+          <m>b = \frac{13}{18}</m> and <m>c = \frac{37}{9}</m>.
+          Hence, the one and only quadratic which fits the bill is <m>f(x) = -\frac{7}{18} x^2 + \frac{13}{18} x + \frac{37}{9}</m>.
+          To verify this analytically,
+          we see that <m>f(-1) = 3</m>,
+          <m>f(2) = 4</m>, and <m>f(5) = -2</m>.
+          We can use the calculator to check our solution as well by plotting the three data points and the function <m>f</m>.
+        </p>
+        <tabular>
+          <row>
+            <cell><image width="37%" source="./AugMatricesGraphics/RREF01.jpg"/></cell>
+            <cell><image width="37%" source="./AugMatricesGraphics/QUADFIT01.jpg"/></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>The graph of <m>f(x) = -\frac{7}{18} x^2 + \frac{13}{18} x + \frac{37}{9}</m></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>with the points <m>(-1,3)</m>, <m>(2,4)</m> and <m>(5,-2)</m></cell>
+          </row>
+        </tabular>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforAugMatrices">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="rreffirst">Exercises</xref>
+      - <xref ref="rreflast"></xref>,
+      state whether the given matrix is in reduced row echelon form,
+      row echelon form only or in neither of those forms.
+      <ol cols="2">
+        <li xml:id="rreffirst">
+          <p>
+            <m>\left[ \begin{array}{rr|r} 1 \amp 0 \amp 3 \\ 0 \amp 1 \amp 3 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrr|r} 3 \amp -1 \amp 1 \amp 3 \\ 2 \amp -4 \amp 3 \amp 16 \\ 1 \amp -1 \amp 1 \amp 5 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrr|r} 1 \amp 1 \amp 4 \amp 3 \\ 0 \amp 1 \amp 3 \amp 6 \\ 0 \amp 0 \amp 0 \amp 1 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrr|r} 1 \amp 0 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 1 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrrr|r} 1 \amp 0 \amp 4 \amp 3 \amp 0 \\ 0 \amp 1 \amp 3 \amp 6 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \amp 0 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="rreflast">
+          <p>
+            <m>\left[ \begin{array}{rrr|r} 1 \amp 1 \amp 4 \amp 3 \\ 0 \amp 1 \amp 3 \amp 6 \end{array} \right]</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="decodefirst">Exercises</xref>
+      - <xref ref="decodelast"></xref>,
+      the following matrices are in reduced row echelon form.
+      Determine the solution of the corresponding system of linear equations or state that the system is inconsistent.
+      <ol cols="2">
+        <li xml:id="decodefirst">
+          <p>
+            <m>\left[ \begin{array}{rr|r} 1 \amp 0 \amp -2 \\ 0 \amp 1 \amp 7 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrr|r} 1 \amp 0 \amp 0 \amp -3 \\ 0 \amp 1 \amp 0 \amp 20 \\ 0 \amp 0 \amp 1 \amp 19 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrrr|r} 1 \amp 0 \amp 0 \amp 3 \amp 4 \\ 0 \amp 1 \amp 0 \amp 6 \amp -6 \\ 0 \amp 0 \amp 1 \amp 0 \amp 2 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrrr|r} 1 \amp 0 \amp 0 \amp 3 \amp 0 \\ 0 \amp 1 \amp 2 \amp 6 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \amp 1 \end{array} \right]</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left[ \begin{array}{rrrr|r} 1 \amp 0 \amp -8 \amp 1 \amp 7 \\ 0 \amp 1 \amp 4 \amp -3 \amp 2 \\ 0 \amp 0 \amp 0 \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \amp 0 \end{array} \right]</m>
+          </p>
+        </li>
+        <li xml:id="decodelast">
+          <p>
+            <m>\left[ \begin{array}{rrr|r} 1 \amp 0 \amp 9 \amp -3 \\ 0 \amp 1 \amp -4 \amp 20 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solveaugfirst">Exercises</xref>
+      - <xref ref="solveauglast"></xref>,
+      solve the following systems of linear equations using the techniques discussed in this section.
+      Compare and contrast these techniques with those you used to solve the systems in the Exercises in <xref ref="LinSystems">Section</xref>.
+    </p>
+    <ol cols="2">
+      <li xml:id="solveaugfirst">
+        <p>
+          <m>\left\{ \begin{array}{rcr} -5x + y \amp = \amp 17 \\ x + y \amp = \amp 5 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} x + y + z \amp = \amp 3 \\ 2x - y + z \amp = \amp 0 \\ -3x + 5y + 7z \amp = \amp 7 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} 4x - y + z \amp = \amp 5 \\ 2y + 6z \amp = \amp 30 \\ x + z \amp = \amp 5 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} x-2y+3z \amp = \amp 7 \\ -3x+y+2z \amp = \amp -5 \\ 2x+2y+z \amp = \amp 3 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} 3x-2y+z \amp = \amp -5 \\ x+3y-z \amp = \amp 12 \\ x+y+2z \amp = \amp 0 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} 2x-y+z\amp = \amp -1 \\ 4x+3y+5z \amp = \amp 1 \\ 5y+3z \amp = \amp 4 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} x-y+z \amp = \amp -4 \\ -3x+2y+4z \amp = \amp -5 \\ x-5y+2z \amp = \amp -18 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} 2x-4y+z \amp = \amp -7 \\ x-2y+2z \amp = \amp -2 \\ -x+4y-2z \amp = \amp 3 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} 2x-y+z \amp = \amp 1 \\ 2x+2y-z \amp = \amp 1 \\ 3x+6y+4z \amp = \amp 9 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} x-3y-4z \amp = \amp 3 \\ 3x+4y-z \amp = \amp 13 \\ 2x-19y-19z \amp = \amp 2 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} x+y+z \amp = \amp 4 \\ 2x-4y-z\amp = \amp -1 \\ x-y \amp = \amp 2 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} x-y+z \amp = \amp 8 \\ 3x+3y-9z \amp = \amp -6 \\ 7x-2y+5z \amp = \amp 39 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left\{ \begin{array}{rcr} 2x-3y+z \amp = \amp -1 \\ 4x-4y+4z \amp = \amp -13 \\ 6x-5y+7z \amp = \amp -25 \end{array} \right.</m>
+        </p>
+      </li>
+      <li xml:id="solveauglast">
+        <p>
+          <m>\left\{ \begin{array}{rcr} x_{1} - x_{3} \amp = \amp -2 \\ 2x_{2} - x_{4} \amp = \amp 0 \\ x_{1} - 2x_{2} + x_{3} \amp = \amp 0 \\ -x_{3} + x_{4} \amp = \amp 1 \end{array} \right.</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          It's time for another meal at our local buffet.
+          This time, 22 diners (5 of whom were children) feasted for <m>\dollar162.25</m>,
+          before taxes.
+          If the kids buffet is <m>\dollar4.50</m>,
+          the basic buffet is <m>\dollar7.50</m>, and the deluxe buffet
+          (with crab legs)
+          is <m>\dollar9.25</m>, find out how many diners chose the deluxe buffet.
+        </p>
+      </li>
+      <li>
+        <p>
+          Carl wants to make a party mix consisting of almonds
+          (which cost <m>\dollar7</m> per pound),
+          cashews
+          (which cost <m>\dollar5</m> per pound),
+          and peanuts
+          (which cost <m>\dollar2</m> per pound.)
+          If he wants to make a <m>10</m> pound mix with a budget of <m>\dollar35</m>,
+          what are the possible combinations almonds, cashews,
+          and peanuts? (You may find it helpful to review <xref ref="lucasmixex">Example</xref>
+          in <xref ref="LinSystems">Section</xref>.)
+        </p>
+      </li>
+      <li xml:id="threepointsmatrixfunctionfitex">
+        <p>
+          Using <xref ref="matrixcurvefitting">Example</xref> as a guide,
+          determine the values of coefficients <m>a</m>, <m>b</m>,
+          and <m>c</m> so the graph of the given function below contains the points <m>(-2,1)</m>,
+          <m>(1,4)</m>, <m>(3,-2)</m>:
+        </p>
+        <ol>
+          <li>
+            <p>
+              a quadratic function: <m>f(x) = ax^2+bx+c</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              a function of the form: <m>g(x) = ax^3+bx+c</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              a function of the form: <m>h(x) = ax^{-1}+bx^2+c</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          At 9 PM, the temperature was <m>60^{\circ}</m>F; at midnight,
+          the temperature was <m>50^{\circ}</m>F; and at 6 AM, the temperature was
+          <m>70^{\circ}</m>F . Use the technique in <xref ref="matrixcurvefitting">Example</xref>
+          to fit a quadratic function to these data with the temperature,
+          <m>T</m>, measured in degrees Fahrenheit,
+          as the dependent variable,
+          and the number of hours after 9 PM, <m>t</m>,
+          measured in hours, as the independent variable.
+          What was the coldest temperature of the night?
+          When did it occur?
+        </p>
+      </li>
+      <li>
+        <p>
+          The price for admission into the Stitz-Zeager Sasquatch Museum and Research Station is $15 for adults and $8 for kids 13 years old and younger.
+          When the Zahlenreich family visits the museum their bill is $38 and when the Nullsatz family visits their bill is $39.
+          One day both families went together and took an adult babysitter along to watch the kids and the total admission charge was $92.
+          Later that summer,
+          the adults from both families went without the kids and the bill was $45.
+          Is that enough information to determine how many adults and children are in each family?
+          If not, state whether the resulting system is inconsistent or consistent dependent.
+          In the latter case, give at least two plausible solutions.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the technique in <xref ref="matrixcurvefitting">Example</xref>
+          to find the line between the points <m>(-3, 4)</m> and <m>(6, 1)</m>.
+          How does your answer compare to the slope-intercept form of the line in <xref ref="slopeintercept">Equation</xref>?
+        </p>
+      </li>
+      <li>
+        <p>
+          With the help of your classmates,
+          find at least two different row echelon forms for the matrix
+          <me>
+            \left[ \begin{array}{rr|r} 1 \amp  2 \amp  3 \\ 4 \amp  12 \amp  8 \end{array}  \right]
+          </me>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          Reduced row echelon form
+        </p>
+      </li>
+      <li>
+        <p>
+          Neither
+        </p>
+      </li>
+      <li>
+        <p>
+          Row echelon form only
+        </p>
+      </li>
+      <li>
+        <p>
+          Reduced row echelon form
+        </p>
+      </li>
+      <li>
+        <p>
+          Reduced row echelon form
+        </p>
+      </li>
+      <li>
+        <p>
+          Row echelon form only
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-2, 7)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-3, 20, 19)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-3t + 4, -6t - 6, 2, t)</m> for all real numbers <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Inconsistent
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(8s - t + 7, -4s + 3t + 2, s, t)</m> for all real numbers <m>s</m> and <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-9t - 3, 4t + 20, t)</m> for all real numbers <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-2, 7)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(1, 2, 0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-t + 5, -3t + 15, t)</m> for all real numbers <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2,-1,1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(1,3,-2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Inconsistent
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(1,3,-2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-3,\frac{1}{2},1\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{1}{3},\frac{2}{3},1\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{19}{13} t + \frac{51}{13},-\frac{11}{13} t+\frac{4}{13},t\right)</m> for all real numbers <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Inconsistent
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(4,-3,1\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-2t - \frac{35}{4},-t - \frac{11}{2},t\right)</m> for all real numbers <m>t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(1, 2, 3, 4)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          This time, 7 diners chose the deluxe buffet.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>t</m> represents the amount
+          (in pounds)
+          of peanuts, then we need <m>1.5 t - 7.5</m> pounds of almonds and <m>17.5 - 2.5t</m> pounds of cashews.
+          Since we can't have a negative amount of nuts, <m>5 \leq t \leq 7</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>f(x) = -\frac{4}{5} x^2+\frac{1}{5} x + \frac{23}{5}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = -0.4 x^3 + 2.2 x + 2.2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>h(x) = 0.6 x^{-1} - 0.7 x^2 + 4.1</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>T(t) = \frac{20}{27} t^2 - \frac{50}{9} t + 60</m>.
+          Lowest temperature of the evening <m>\frac{595}{12} \approx 49.58^{\circ}</m>F at 12:45 AM.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>x_{1}</m> and <m>x_{2}</m> be the numbers of adults and children,
+          respectively,
+          in the Zahlenreich family and let <m>x_{3}</m> and <m>x_{4}</m> be the numbers of adults and children,
+          respectively, in the Nullsatz family.
+          The system of equations determined by the given information is
+          <m>\left\{ \begin{array}{rcr} 15x_{1} + 8x_{2} \amp = \amp 38 \\ 15x_{3} + 8x_{4} \amp = \amp 39 \\ 15x_{1} + 8x_{2} + 15x_{3} + 8x_{4} \amp = \amp 77 \\ 15x_{1} + 15x_{3} \amp = \amp 45 \end{array} \right.</m> We subtracted the cost of the babysitter in E3 so the constant is 77, not 92.
+          This system is consistent dependent and its solution is <m>\left(\frac{8}{15}t + \frac{2}{5}, -t + 4, -\frac{8}{15}t + \frac{13}{5}, t \right)</m>.
+          Our variables represent numbers of adults and children so they must be whole numbers.
+          Running through the values
+          <m>t = 0, 1, 2, 3, 4</m> yields only one solution where all four variables are whole numbers;
+          <m>t = 3</m> gives us <m>(2, 1, 1, 3)</m>.
+          Thus there are 2 adults and 1 child in the Zahlenreichs and 1 adult and 3 kids in the Nullsatzs.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

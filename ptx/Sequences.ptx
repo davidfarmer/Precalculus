@@ -1,0 +1,1130 @@
+<section xml:id="Sequences">
+  <title>Sequences</title>
+  <introduction>
+    <p>
+      In this section, we introduce <em>sequences</em>
+      which are an important class of functions whose domains are,
+      more or less,
+      the set of natural numbers.<fn>
+      Recall that this is the set <m>\mathbb{N} = \{1, 2, 3, \ldots\}</m>.
+      </fn> Before we get to far ahead of ourselves,
+      let's look at what the term <sq>sequence</sq> means mathematically.
+      Informally, we can think of a sequence as an infinite list of numbers.
+      For example, consider the sequence
+      <men xml:id="seq1">
+        \frac{1}{2}, -\frac{3}{4}, \frac{9}{8}, -\frac{27}{16}, \ldots \tag{1}
+      </men>
+    </p>
+    <p>
+      As usual, the periods of
+          <idx><h>ellipsis (<ellipsis/>)</h></idx>
+      ellipsis, <m>\ldots</m>,
+      indicate that the proposed pattern continues forever.
+      Each of the numbers in the list is called a <em>term</em>,
+      and we call <m>\frac{1}{2}</m> the <sq>first term</sq>,
+      <m>-\frac{3}{4}</m> the <sq>second term</sq>,
+      <m>\frac{9}{8}</m> the <sq>third term</sq> and so forth.
+      In numbering them this way,
+      we are setting up a function,
+      which we'll call <sq><m>a</m></sq> per tradition,
+      between the natural numbers and the terms in the sequence.
+      <me>
+        \begin{array}{|r||r|}  \hline  n \amp  a(n)  \\  \hline 1  \amp  \frac{1}{2} \\  \hline 2 \amp  -\frac{3}{4}  \\ \hline 3 \amp  \frac{9}{8}  \\ \hline 4 \amp  -\frac{27}{16}  \\ \hline \vdots \amp  \vdots  \\ \hline \end{array}
+      </me>
+    </p>
+    <p>
+      In other words, <m>a(n)</m> is the
+      <m>n^{\text{ th } }</m> term in the sequence.
+      We formalize these ideas in our definition of a sequence and introduce some accompanying notation.
+    </p>
+    <definition xml:id="sequencedefn">
+      <statement>
+        <p>
+              <idx><h>sequence</h><h>definition of</h></idx>
+          A <term>sequence</term> is a function <m>a</m> whose domain is the natural numbers.
+          The value <m>a(n)</m> is often written as <m>a_{n}</m> and is called the <idx><h>sequence</h><h><m>n^{\textrm{th} }</m> term</h></idx>
+          <term> <m>n^{\textbf{th}}</m> term</term> of the sequence.
+          The sequence itself is usually denoted using the notation:
+          <m>a_{n}</m>, <m>n \geq 1</m> or the notation:
+          <m>\left\{ a_{n} \right\}_{n = 1}^{\infty}</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Applying the notation provided in <xref ref="sequencedefn">Definition</xref>
+      to the sequence given <xref ref="seq1"/>,
+      we have <m>a_{\text{ \tiny\(1\) } } = \frac{1}{2}</m>,
+      <m>a_{\text{ \tiny\(2\) } } = -\frac{3}{4}</m>,
+      <m>a_{\text{ \tiny\(3\) } } = \frac{9}{8}</m>.
+    </p>
+    <p>
+      Suppose we wanted to know <m>a_{\text{ \tiny\(117\) } }</m>, that is,
+      the <m>117^{\text{ th } }</m> term in the sequence.
+      While the pattern of the sequence is apparent,
+      it would benefit us greatly to have an explicit formula for <m>a_{n}</m>.
+      Unfortunately,
+      there is no general algorithm that will produce a formula for every sequence,
+      so any formulas we do develop will come from that greatest of teachers,
+      experience.
+      In other words, it is time for an example.
+    </p>
+    <example xml:id="seqex1">
+      <statement>
+        <p>
+          Write the first four terms of the following sequences.
+          <ol cols="3">
+            <li>
+              <p>
+                <m>a_{n} = \dfrac{5^{n-1}}{3^{n}}</m>, <m>n \geq 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>b_{k} = \dfrac{(-1)^{k}}{2k+1}</m>, <m>k \geq 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ 2n - 1 \right\}_{n=1}^{\infty}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{\dfrac{1 + (-1)^{i}}{i} \right\}_{i=2}^{\infty}</m>
+              </p>
+            </li>
+            <li xml:id="introrecursiveex01">
+              <p>
+                <m>a_{\text{ \tiny\(1\) } } = 7</m>,
+                <m>a_{n \text{ \tiny\( + 1\) } } = 2 - a_{n}</m>, <m>n \geq 1</m>
+              </p>
+            </li>
+            <li xml:id="factorialintroex">
+              <p>
+                <m>f_{\text{ \tiny\(0\) } } = 1</m>,
+                <m>f_{n} =n \cdot f_{n-\text{ \tiny\(1\) } }</m>, <m>n \geq 1</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since we are given <m>n \geq 1</m>,
+                the first four terms of the sequence are <m>a_{\text{ \tiny\(1\) } }</m>,
+                <m>a_{\text{ \tiny\(2\) } }</m>,
+                <m>a_{\text{ \tiny\(3\) } }</m> and <m>a_{\text{ \tiny\(4\) } }</m>.
+                Since the notation <m>a_{\text{ \tiny\(1\) } }</m> means the same thing as <m>a(1)</m>,
+                we obtain our first term by replacing every occurrence of <m>n</m> in the formula for <m>a_{n}</m> with <m>n=1</m> to get <m>a_{\text{ \tiny\(1\) } } = \frac{5^{1-1}}{3^{1}} = \frac{1}{3}</m>.
+                Proceeding similarly,
+                we get <m>a_{\text{ \tiny\(2\) } } = \frac{5^{2-1}}{3^{2}} =\frac{5}{9}</m>,
+                <m>a_{\text{ \tiny\(3\) } } = \frac{5^{3-1}}{3^{3}} =\frac{25}{27}</m> and <m>a_{\text{ \tiny\(4\) } } = \frac{5^{4-1}}{3^{4}} =\frac{125}{81}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For this sequence we have <m>k \geq 0</m>,
+                so the first four terms are <m>b_{\text{ \tiny\(0\) } }</m>,
+                <m>b_{\text{ \tiny\(1\) } }</m>,
+                <m>b_{\text{ \tiny\(2\) } }</m> and <m>b_{\text{ \tiny\(3\) } }</m>.
+                Proceeding as before,
+                replacing in this case the variable <m>k</m> with the appropriate whole number,
+                beginning with <m>0</m>,
+                we get <m>b_{\text{ \tiny\(0\) } } = \frac{(-1)^{0}}{2(0)+1} = 1</m>,
+                <m>b_{\text{ \tiny\(1\) } } = \frac{(-1)^{1}}{2(1)+1} = - \frac{1}{3}</m>,
+                <m>b_{\text{ \tiny\(2\) } } = \frac{(-1)^{2}}{2(2)+1} = \frac{1}{5}</m> and <m>b_{\text{ \tiny\(3\) } } = \frac{(-1)^{3}}{2(3)+1} = -\frac{1}{7}</m>.
+                As a side-note,
+                this sequence is called an <idx><h>sequence</h><h>alternating</h></idx> <em>alternating</em>
+                sequence since the signs alternate between <sq><m>+</m></sq> and <sq><m>-</m>.</sq> The reader is encouraged to think what component of the formula is producing this effect.
+              </p>
+            </li>
+            <li>
+              <p>
+                The notation <m>\left\{ 2n - 1 \right\}_{n=1}^{\infty}</m> means <m>a_{n} = 2n -1</m>,
+                <m>n \geq 1</m>.
+                We get <m>a_{\text{ \tiny\(1\) } } = 1</m>,
+                <m>a_{\text{ \tiny\(2\) } } = 3</m>,
+                <m>a_{\text{ \tiny\(3\) } } = 5</m> and <m>a_{\text{ \tiny\(4\) } } = 7</m>.
+                In other words, we get the first four odd natural numbers.
+                The reader is encouraged to examine whether or not this pattern continues indefinitely.
+              </p>
+            </li>
+            <li>
+              <p>
+                Here, we are using the letter <m>i</m> as a counter,
+                not as the imaginary unit we saw in <xref ref="ComplexZeros">Section</xref>.
+                Proceeding as before,
+                we set <m>a_{i} = \frac{1 + (-1)^{i}}{i}</m>, <m>i \geq 2</m>.
+                We find <m>a_{\text{ \tiny\(2\) } } = 1</m>,
+                <m>a_{\text{ \tiny\(3\) } } = 0</m>,
+                <m>a_{\text{ \tiny\(4\) } } = \frac{1}{2}</m> and <m>a_{\text{ \tiny\(5\) } } = 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To obtain the terms of this sequence,
+                we start with <m>a_{\text{ \tiny\(1\) } } = 7</m> and use the equation <m>a_{n \text{ +\tiny\(1\) } } = 2 - a_{n}</m> for
+                <m>n \geq 1</m> to generate successive terms.
+                When <m>n = 1</m>, this equation becomes
+                <m>a_{\text{ \tiny\(1 + 1\) } } = 2 - a_{\text{ \tiny\(1\) } }</m> which simplifies to <m>a_{\text{ \tiny\(2\) } } = 2 - a_{\text{ \tiny\(1\) } } = 2 - 7 = -5</m>.
+                When <m>n = 2</m>, the equation becomes
+                <m>a_{\text{ \tiny\(2 + 1\) } } = 2 - a_{\text{ \tiny\(2\) } }</m> so we get <m>a_{\text{ \tiny\(3\) } } = 2 - a_{\text{ \tiny\(2\) } } = 2 - (-5) = 7</m>.
+                Finally, when <m>n = 3</m>,
+                we get <m>a_{\text{ \tiny\(3 + 1\) } } = 2 - a_{\text{ \tiny\(3\) } }</m> so <m>a_{\text{ \tiny\(4\) } } = 2 - a_{\text{ \tiny\(3\) } } = 2-7 = -5</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As with the problem above,
+                we are given a place to start with
+                <m>f_{\text{ \tiny\(0\) } } = 1</m> and given a formula to build other terms of the sequence.
+                Substituting <m>n = 1</m> into the equation <m>f_{n} = n \cdot f_{n-\text{ \tiny\(1\) } }</m>,
+                we get <m>f_{\text{ \tiny\(1\) } } = 1 \cdot f_{\text{ \tiny\(0\) } } = 1 \cdot 1 = 1</m>.
+                Advancing to <m>n = 2</m>,
+                we get <m>f_{\text{ \tiny\(2\) } } = 2 \cdot f_{\text{ \tiny\(1\) } } = 2 \cdot 1 = 2</m>.
+                Finally, <m>f_{\text{ \tiny\(3\) } } = 3 \cdot f_{\text{ \tiny\(2\) } } = 3 \cdot 2 = 6</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Some remarks about <xref ref="seqex1">Example</xref> are in order.
+      We first note that since sequences are functions,
+      we can graph them in the same way we graph functions.
+      For example, if we wish to graph the sequence
+      <m>\left\{ b_{k} \right\}_{k=0}^{\infty}</m> from <xref ref="seqex1">Example</xref>,
+      we graph the equation <m>y=b(k)</m> for the values <m>k \geq 0</m>.
+      That is, we plot the points
+      <m>(k, b(k))</m> for the values of <m>k</m> in the domain,
+      <m>k = 0, 1, 2, \ldots</m>.
+      The resulting collection of points is the graph of the sequence.
+      Note that we do not connect the dots in a pleasing fashion as we are used to doing,
+      because the domain is just the whole numbers in this case,
+      not a collection of intervals of real numbers.<fn>
+      If you feel a sense of nostalgia,
+      you should see <xref ref="FunctionsandtheirRepresentations">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      \begin{mfpic}[20]{-1}{4}{-2}{2} \point[4pt]{(0,1), (1,-0.3333), (2,0.2), (3, -0.1428) } \axes \tlabel[cc](4,-0.5){<m>k</m>} \tlabel[cc](0.5,2){<m>y</m>} \xmarks{1,2,3} \ymarks{-1.5, -1, -0.5, 0.5, 1, 1.5} \tlpointsep{10pt} \axislabels {x}{{ <m>1</m>} 1, { <m>2</m>} 2, { <m>3</m>} 3} \tlpointsep{4pt} \axislabels {y}{{
+      <m>-\frac{3}{2}</m>} -1.5, { <m>-1</m>} -1, { <m>-\frac{1}{2}</m>} -0.5, {
+      <m>\frac{1}{2}</m>} 0.5, { <m>1</m>} 1, { <m>\frac{3}{2}</m>} 1.5} \end{mfpic}
+    </p>
+    <p>
+      Graphing <m>y = b_{k} = \dfrac{(-1)^{k}}{2k+1}</m>, <m>k \geq 0</m>
+    </p>
+    <p>
+      Speaking of <m>\left\{ b_{k} \right\}_{k=0}^{\infty}</m>,
+      the astute and mathematically minded reader will correctly note that this technically isn't a sequence,
+      since according to <xref ref="sequencedefn">Definition</xref>,
+      sequences are functions whose domains are the
+      <em>natural</em> numbers,
+      not the <em>whole</em> numbers,
+      as is the case with <m>\left\{ b_{k} \right\}_{k=0}^{\infty}</m>.
+      In other words,
+      to satisfy <xref ref="sequencedefn">Definition</xref>,
+      we need to shift the variable <m>k</m> so it starts at <m>k=1</m> instead of <m>k=0</m>.
+    </p>
+    <p>
+      To see how we can do this, it helps to think of the problem graphically.
+      What we want is to shift the graph of <m>y=b(k)</m> to the right one unit,
+      and thinking back to <xref ref="Transformations">Section</xref>,
+      we can accomplish this by replacing <m>k</m> with <m>k-1</m> in the definition of <m>\left\{ b_{k} \right\}_{k=0}^{\infty}</m>.
+    </p>
+    <p>
+      Specifically,
+      let <m>c_{k} = b_{k-\text{ \tiny\(1\) } }</m> where <m>k - 1 \geq 0</m>.
+      We get <m>c_{k} = \frac{(-1)^{k-1}}{2(k-1)+1} = \frac{(-1)^{k-1}}{2k-1}</m>,
+      where now <m>k \geq 1</m>.
+      We leave to the reader to verify that
+      <m>\left\{ c_{k} \right\}_{k=1}^{\infty}</m> generates the same list of numbers as does <m>\left\{ b_{k} \right\}_{k=0}^{\infty}</m>,
+      but the former satisfies <xref ref="sequencedefn">Definition</xref>,
+      while the latter does not.
+    </p>
+    <p>
+      Like so many things in this text,
+      we acknowledge that this point is pedantic and join the vast majority of authors who adopt a more relaxed view of <xref ref="sequencedefn">Definition</xref>
+      to include any function which generates a list of numbers which can then be matched up with the natural numbers.<fn>
+      We're basically talking about the <sq>countably infinite</sq> subsets of the real number line when we do this.
+      </fn>
+    </p>
+    <p>
+      One last note about <xref ref="seqex1">Example</xref>
+      concerns the manner in which the sequences in <xref ref="introrecursiveex01">numbers</xref>
+      and <xref ref="factorialintroex"></xref> are defined.
+      We say these two sequences are described <idx><h>sequence</h><h>recursive</h></idx> <sq><em>recursively</em>.</sq> In each instance,
+      an initial value of the sequence is given which is then followed by a
+          <idx><h>recursion equation</h></idx>
+      <em>recursion equation</em> <m>-</m> a formula which enables us to use known terms of the sequence to determine other terms.
+    </p>
+    <p>
+      The terms of the sequence from <xref ref="factorialintroex">number</xref> is given notation and name:
+      <m>f_{n}=n!</m> is called
+          <idx><h>factorial</h></idx>
+      <em><m>n</m>-factorial</em>.
+      Using the <sq>!</sq> notation,
+      we can describe the factorial sequence as:
+      <m>0! = 1</m> and <m>n! = n(n-1)!</m> for <m>n \geq 1</m>.
+    </p>
+    <p>
+      After <m>0! = 1</m> the next four terms, written out in detail,
+      are <m>1! = 1 \cdot 0! = 1 \cdot 1 = 1</m>,
+      <m>2! = 2 \cdot 1! = 2 \cdot 1 = 2</m>,
+      <m>3! = 3 \cdot 2! = 3 \cdot 2 \cdot 1 = 6</m> and <m>4! = 4 \cdot 3! = 4 \cdot 3 \cdot 2 \cdot 1 = 24</m>.
+      From this, we see a more informal way of computing <m>n!</m>,
+      which is <m>n! = n\cdot(n -1)\cdot(n -2) \cdots 2 \cdot 1</m> with <m>0! = 1</m> as a special case. (We will study factorials in greater detail in <xref ref="Binomial">Section</xref>.)<fn>
+      Another famous sequence, the
+      <url href="http://en.wikipedia.org/wiki/Fibonacci_number"><em>Fibonacci Numbers</em></url>
+      are defined also recursively and are explored in the exercises.
+      </fn>
+    </p>
+    <p>
+      While none of the sequences in <xref ref="seqex1">Example</xref>
+      worked out to be the sequence in <xref ref="seq1"/>,
+      they do give us some insight into what kinds of patterns to look for.
+      Two patterns in particular are given in the next definition.
+    </p>
+    <definition xml:id="arithgeodefn">
+      <statement>
+        <p>
+          <term>Arithmetic and Geometric Sequences:</term>
+          Suppose <m>\left\{ a_{n} \right\}_{n=k}^{\infty}</m> is a sequence<fn>
+          Note that we have adjusted for the fact that not all <sq>sequences</sq> begin at <m>n=1</m>.
+          </fn>
+          <ul>
+            <li>
+              <p>
+                If there is a number <m>d</m> so that
+                <m>a_{n \text{ \tiny\( + 1\) } } = a_{n} + d</m> for all <m>n \geq k</m>,
+                then <m>\left\{ a_{n} \right\}_{n=k}^{\infty}</m> is called an <idx><h>sequence</h><h>arithmetic ! definition of</h></idx>
+                  <idx><h>arithmetic sequence</h></idx>
+                <em>arithmetic sequence</em>.
+                The number <m>d</m> is called the <idx><h>sequence</h><h>arithmetic ! common difference</h></idx>
+                <em>common difference</em>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If there is a number <m>r</m> so that
+                <m>a_{n \text{ \tiny\( + 1\) } } = r a_{n}</m> for all <m>n \geq k</m>,
+                then <m>\left\{ a_{n} \right\}_{n=k}^{\infty}</m> is called a <idx><h>sequence</h><h>geometric ! definition of</h></idx>
+                  <idx><h>geometric sequence</h></idx>
+                <em>geometric sequence</em>.
+                The number <m>r</m> is called the <idx><h>sequence</h><h>geometric ! common ratio</h></idx>
+                <em>common ratio</em>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In English, an arithmetic sequence is one in which we proceed from one term to the next by always <em>adding</em>
+      the fixed number <m>d</m>.
+      If this sort of <sq>constant change</sq> idea sounds familiar,
+      it should.
+      Indeed, arithmetic sequences are merely
+      <em>linear</em> functions,
+      something we will explore in more detail shortly.
+      Note the name <sq>common difference</sq> comes from a slight rewrite of the recursion equation from
+      <m>a_{n \text{ \tiny\( + 1\) } } = a_{n} + d</m> to <m>a_{n \text{ \tiny\( + 1\) } } - a_{n} = d</m>.
+      That is, every pair of successive terms has the <em>same</em>
+      or <em>common</em> difference, <m>d</m>.
+    </p>
+    <p>
+      Analogously,
+      a geometric sequence is one in which we proceed from one term to the next by always <em>multiplying</em>
+      by the same fixed number <m>r</m>.
+      If this notion sounds familiar,
+      it is because geometric sequences are, in fact,
+      <em>exponential</em> functions.
+      Again, we will explore this connection in more detail later.
+      We note that if <m>a_{n} \neq 0</m>,
+      we can rearrange the recursion equation to get <m>\frac{a_{n+1}}{a_{n}} = r</m>.
+      Hence, every pair of successive terms has the <em>same</em>
+      or <em>common</em> ratio, <m>r</m>.
+    </p>
+    <p>
+      Some sequences are arithmetic,
+      some are geometric and some are neither as the next example illustrates.<fn>
+      Can a sequence be both arithmetic <em>and</em> geometric?
+      See <xref ref="arithmeticandgeometricexercise">Exercise</xref>.
+      </fn>
+    </p>
+    <example xml:id="arithgeoex1">
+      <statement>
+        <p>
+          Determine if the following sequences are arithmetic, geometric or neither.
+          If arithmetic, find the common difference <m>d</m>;
+          if geometric, find the common ratio <m>r</m>.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>a_{n} = \dfrac{5^{n-1}}{3^{n}}</m>, <m>n \geq 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>b_{k} = \dfrac{(-1)^{k}}{2k+1}</m>, <m>k \geq 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ 2n - 1 \right\}_{n=1}^{\infty}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{1}{2}, -\dfrac{3}{4}, \dfrac{9}{8}, -\dfrac{27}{16}, \ldots</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A good rule of thumb to keep in mind when working with sequences is
+          <q>When in doubt, write it out!</q>
+          Writing out the first several terms can help you identify the pattern of the sequence should one exist.
+          <ol>
+            <li>
+              <p>
+                From <xref ref="seqex1">Example</xref>,
+                we know that the first four terms of this sequence are
+                <m>\frac{1}{3}, \, \frac{5}{9}, \, \frac{25}{27}</m> and <m>\frac{125}{81}</m>.
+                To see if this is an arithmetic sequence,
+                we look at the successive differences of terms.
+                We find that <m>a_{\text{ \tiny\(2\) } } - a_{\text{ \tiny\(1\) } } = \frac{5}{9} - \frac{1}{3} = \frac{2}{9}</m> and <m>a_{\text{ \tiny\(3\) } } - a_{\text{ \tiny\(2\) } } = \frac{25}{27} - \frac{5}{9} = \frac{10}{27}</m>.
+                Since we get different numbers,
+                there is no <sq>common difference</sq> and we have established that the sequence is
+                <em>not</em> arithmetic.
+                To see if the sequence is geometric,
+                we compute the ratios of successive terms.
+                The first three ratios  <em>suggest</em>
+                the sequence is geometric:
+                <me>
+                  \frac{a_{\text{ \tiny\(2\) } }}{a_{\text{ \tiny\(1\) } }} = \frac{\frac{5}{9}}{\frac{1}{3}} = \frac{5}{3}, \;\;\; \frac{a_{\text{ \tiny\(3\) } }}{a_{\text{ \tiny\(2\) } }} = \frac{\frac{25}{27}}{\frac{5}{9}} = \frac{5}{3} \;\; \text{ and }  \;\; \frac{a_{\text{ \tiny\(4\) } }}{a_{\text{ \tiny\(3\) } }} = \frac{\frac{125}{81}}{\frac{25}{27}} = \frac{5}{3}
+                </me>
+                To <em>prove</em> the sequence is geometric, however,
+                we must show that <m>\frac{a_{n+1}}{a_{n}} = r</m> for all <m>n</m>:
+                <me>
+                  \dfrac{a_{n\text{ \tiny\( + 1\) } }}{a_{n}} = \dfrac{\dfrac{5^{(n+1)-1}}{3^{n+1}}}{\dfrac{5^{n-1}}{3^{n}}} = \dfrac{5^{n}}{3^{n+1}} \cdot \dfrac{3^{n}}{5^{n-1}} = \dfrac{5}{3}
+                </me>
+                Hence, the sequence is geometric with common ratio <m>r = \frac{5}{3}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Again, we have <xref ref="seqex1">Example</xref>
+                to thank for providing the first four terms of this sequence:
+                <m>1, \, -\frac{1}{3}, \, \frac{1}{5}</m> and <m>-\frac{1}{7}</m>.
+                We find <m>b_{\text{ \tiny\(1\) } } - b_{\text{ \tiny\(0\) } } = -\frac{4}{3}</m> and <m>b_{\text{ \tiny\(2\) } } - b_{\text{ \tiny\(1\) } } = \frac{8}{15}</m>.
+                Hence, the sequence is not arithmetic.
+                To see if it is geometric,
+                we compute <m>\frac{b_{\text{ \tiny\(1\) } }}{b_{\text{ \tiny\(0\) } }} = -\frac{1}{3}</m> and <m>\frac{b_{\text{ \tiny\(2\) } }}{b_{\text{ \tiny\(1\) } }} = -\frac{3}{5}</m>.
+                Since there is no <sq>common ratio,</sq> we conclude the sequence is not geometric, either.
+              </p>
+            </li>
+            <li>
+              <p>
+                As we saw in <xref ref="seqex1">Example</xref>,
+                the sequence <m>\left\{ 2n - 1 \right\}_{n=1}^{\infty}</m> generates the odd numbers:
+                <m>1, 3, 5, 7, \ldots</m>.
+                Computing the first few differences,
+                we find <m>a_{\text{ \tiny\(2\) } } - a_{\text{ \tiny\(1\) } } = 2</m>,
+                <m>a_{\text{ \tiny\(3\) } } - a_{\text{ \tiny\(2\) } } = 2</m>,
+                and <m>a_{\text{ \tiny\(4\) } } - a_{\text{ \tiny\(3\) } } = 2</m>.
+                This suggests that the sequence is arithmetic.
+                To prove this is the case, we find
+                <me>
+                  a_{n \text{ \tiny\( + 1\) } } - a_{n} = (2(n+1)-1) - (2n-1) = 2n+2-1-2n+1 = 2
+                </me>
+                This establishes that the sequence is arithmetic with common difference <m>d = 2</m>.
+                To see if it is geometric,
+                we compute <m>\frac{a_{\text{ \tiny\(2\) } }}{a_{\text{ \tiny\(1\) } }} = 3</m> and  <m>\frac{a_{\text{ \tiny\(3\) } }}{a_{\text{ \tiny\(2\) } }} = \frac{5}{3}</m>.
+                Since these ratios are different,
+                we conclude the sequence is not geometric.
+              </p>
+            </li>
+            <li>
+              <p>
+                We met our last sequence at the beginning of the section.
+                Given that <m>a_{\text{ \tiny\(2\) } } - a_{\text{ \tiny\(1\) } } = -\frac{5}{4}</m> and <m>a_{\text{ \tiny\(3\) } } - a_{\text{ \tiny\(2\) } } = \frac{15}{8}</m>,
+                the sequence is not arithmetic.
+                Computing the first few ratios, however,
+                gives us <m>\frac{a_{\text{ \tiny\(2\) } }}{a_{\text{ \tiny\(1\) } }} = -\frac{3}{2}</m>,
+                <m>\frac{a_{\text{ \tiny\(3\) } }}{a_{\text{ \tiny\(2\) } }} = -\frac{3}{2}</m> and <m>\frac{a_{\text{ \tiny\(4\) } }}{a_{\text{ \tiny\(3\) } }} = -\frac{3}{2}</m>.
+                Since these are the only terms given to us,
+                we <em>assume</em> that the pattern of ratios continue in this fashion and conclude that the sequence is geometric.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We are now one step away from determining an explicit formula for the sequence given in <xref ref="seq1"/>.
+      We know that it is a geometric sequence and our next result gives us the explicit formula we require.
+    </p>
+    <proposition xml:id="arithgeoformula">
+      <title>Formulas for Arithmetic and Geometric Sequences:</title>
+      <statement>
+        <p>
+          [Formulas for Arithmetic and Geometric Sequences:]
+          <em>Formulas for Arithmetic and Geometric Sequences:</em>
+          <ul>
+            <li>
+              <p>
+                <idx><h>sequence</h><h>arithmetic ! formula for <m>n^{\textrm{th} }</m> term</h></idx>
+                An arithmetic sequence with first term
+                <m>a_{1} = a</m> and common difference <m>d</m> is given by
+                <me>
+                  a_{n} = a + (n-1) d,  n \geq 1
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <idx><h>sequence</h><h>geometric ! formula for <m>n^{\textrm{th} }</m> term</h></idx>
+                A geometric sequence with first term
+                <m>a_{1} = a</m> and common ratio <m>r \neq 0</m> is given by
+                <me>
+                  a_{n} = ar^{n-1},  n \geq 1
+                </me>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      An intuitive way to arrive at <xref ref="arithgeoformula">Equation</xref>
+      appeals to <xref ref="arithgeodefn">Definition</xref> directly.
+      Given an arithmetic sequence with first term <m>a</m> and common difference <m>d</m>,
+      the way we get from one term to the next is by adding <m>d</m>.
+      Hence, the terms of the sequence are:
+      <m>a</m>, <m>a+d</m>, <m>a+2d</m>,
+      <m>a+3d</m>, <ellipsis/>.
+      We see that to reach the <m>n</m>th term,
+      we add <m>d</m> to <m>a</m> exactly <m>(n-1)</m> times,
+      which is exactly what the formula says.<fn>
+      We formalize this argument in <xref ref="Induction">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      Note if we rewrite the formula
+      <m>a_{n} = a_{1} + (n-1) d</m> using traditional function notation as
+      <m>a(n) = a(1) + d (n-1)</m> we can see arithmetic sequences are linear functions.<fn>
+      Note here <m>a</m> is a <em>function</em>,
+      so the expressions <m>a(n)</m> and <m>a(1)</m> here represent the
+      <em>outputs</em> from <m>a</m>.
+      On the other hand,
+      the expression <m>d(n-1)</m> indicates <em>multiplication</em>
+      of the real numbers <m>d</m> and <m>(n-1)</m>.
+      </fn> Indeed,
+      relabeling the function <m>a</m> as <sq><m>f</m></sq> and the independent variable <m>n</m> as <sq><m>x</m>,</sq> we can make the identifications <m>x_{0} = 1</m>,
+      and <m>m=d</m> so as to put the equation
+      <m>a(n) = a(1) + d  (n-1)</m> into the form of <xref ref="linearfunctionpointslope">Equation</xref>:
+      <me>
+        \begin{array}{ccccc} a(n) \amp  = \amp  a(1) \amp  + \amp  d (n-1) \\ f(x) \amp  = \amp  f(1) \amp  + \amp  m (x-1) \end{array}
+      </me>
+    </p>
+    <p>
+      Hence, arithmetic sequences are linear functions with slope <m>d</m> whose domains are the natural numbers.
+    </p>
+    <p>
+      The derivation of the formula for geometric series follows similarly.
+      Here, we start with the first term <m>a</m> and go from one term to the next by multiplying by <m>r</m>.
+      We get <m>a, ar, ar^2, ar^3</m> and so forth.
+      The <m>n</m>th term results from multiplying <m>a</m> by <m>r</m> exactly <m>(n-1)</m> times.<fn>
+      We note here that the reason <m>r=0</m> is excluded from <xref ref="arithgeoformula">Equation</xref>
+      is to avoid an instance of <m>0^{0}</m> which is an indeterminant form.
+      (See the remarks following <xref ref="monomialfunction">Definition</xref>
+      in <xref ref="GraphsofPolynomials">Section</xref>.)
+      </fn>
+    </p>
+    <p>
+      In the same way arithmetic sequences are linear functions,
+      geometric sequences are exponential functions.
+      Writing <m>a_{n} = a_{1} r^{n-1}</m> as <m>a(n) = a(1) r^{n-1}</m>,
+      we can relabel <m>a</m> as <m>f</m> and <m>n</m> as <m>x</m> and make the identifications
+      <m>x_{0} = 1</m> and <m>b = r</m> to put the equation into the form described in <xref ref="expfcnpointbaseform">Definition</xref>:
+      <me>
+        \begin{array}{ccc} a(n) \amp  = \amp  a(1) r^{n-1} \\ f(x) \amp  = \amp  f(1) b^{x-1} \end{array}
+      </me>
+    </p>
+    <p>
+      So, geometric sequences are exponential functions with base <m>r</m> whose domains are the natural numbers.
+    </p>
+    <p>
+      With <xref ref="arithgeoformula">Equation</xref> in place,
+      we finally have the tools required to find an explicit formula for the <m>n</m>th term of the sequence given in <xref ref="seq1"/>.
+      We know from <xref ref="arithgeoex1">Example</xref>
+      that it is geometric with common ratio <m>r = -\frac{3}{2}</m>.
+      The first term is <m>a = \frac{1}{2}</m> so by <xref ref="arithgeoformula">Equation</xref>
+      we get <m>a_{n} = ar^{n-1} = \frac{1}{2} \left( - \frac{3}{2}\right)^{n-1}</m> for <m>n \geq 1</m>.
+      After a touch of simplifying,
+      we get <m>a_{n} = \frac{(-3)^{n-1}}{2^{n}}</m> for <m>n \geq 1</m>.
+      Note that we can easily check our answer by substituting in values of <m>n</m> and seeing that the formula generates the sequence given in <xref ref="seq1"/>.
+      We leave this to the reader.
+      In particular,
+      the 117th term in the sequence is <m>a_{117} = \frac{1}{2} \left(-\frac{3}{2} \right)^{117-1} = \frac{3^{116}}{2^{117}}</m>.
+    </p>
+    <p>
+      Our next example gives us more practice finding patterns.
+    </p>
+    <example xml:id="seqex2">
+      <statement>
+        <p>
+          Find an explicit formula for the
+          <m>n^{\text{ th } }</m> term of the following sequences.
+          <ol>
+            <li>
+              <p>
+                <m>0.9, 0.09, 0.009, 0.0009, \ldots</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{2}{5}, 2, -\dfrac{2}{3}, -\dfrac{2}{7}, \ldots</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>1, -\dfrac{2}{7}, \dfrac{4}{13}, -\dfrac{8}{19}, \ldots</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Although this sequence may seem strange,
+                the reader can verify it is actually a geometric sequence with common ratio <m>r = 0.1 = \frac{1}{10}</m>.
+                With <m>a = 0.9 = \frac{9}{10}</m>,
+                we get <m>a_{n} = \frac{9}{10} \left(\frac{1}{10}\right)^{n-1}</m> for <m>n \geq 0</m>.
+                Simplifying,
+                we get <m>a_{n} = \frac{9}{10^{n}}</m>, <m>n \geq 1</m>.
+                There is more to this sequence than meets the eye and we shall return to this example in the next section.
+              </p>
+            </li>
+            <li>
+              <p>
+                As the reader can verify, this sequence is neither arithmetic nor geometric.
+                In an attempt to find a pattern,
+                we rewrite the second term with a denominator to make all the terms appear as fractions and associate the <sq><m>-</m></sq> with the denominators so we have a constant numerator:
+                <me>
+                  \frac{2}{5}, \frac{2}{1}, \frac{2}{-3}, -\frac{2}{-7}, \ldots
+                </me>
+                This tells us that we can tentatively sketch out the formula for the sequence as
+                <m>a_{n} = \frac{2}{D_{n}}</m> where <m>D_{n}</m> is the sequence of denominators.
+                The sequence of the denominators:
+                <m>5,1,-3,-7, \ldots</m> is seen to be an arithmetic sequence with a common difference of <m>-4</m>.
+                Using <xref ref="arithgeoformula">Equation</xref>
+                with <m>a = 5</m> and <m>d = -4</m>,
+                we get the <m>n</m>th denominator by the formula <m>D_{n} = 5 + (n-1)(-4) = 9-4n</m> for <m>n \geq 1</m>.
+                Hence, our final answer is <m>a_{n} = \frac{2}{9-4n}</m>,
+                <m>n \geq 1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The sequence as given is neither arithmetic nor geometric,
+                so we proceed as in the last problem to try to get patterns individually for the numerator and denominator.
+                Letting <m>C_{n}</m> and <m>D_{n}</m> denote the sequence of numerators and denominators,
+                respectively,  so that <m>a_{n} = \frac{C_{n}}{D_{n}}</m>.
+                After some experimentation,<fn>
+                Here we take <sq>experimentation</sq> to mean a frustrating guess-and-check session.
+                </fn> we choose to write the first term as a fraction and associate the negatives <sq><m>-</m></sq> with the numerators.
+                This yields
+                <me>
+                  \frac{1}{1}, \frac{-2}{7}, \frac{4}{13}, \frac{-8}{19}, \ldots
+                </me>
+                The numerators form the sequence
+                <m>1, -2, 4, -8, \ldots</m> which is geometric with <m>a=1</m> and <m>r = -2</m>,
+                so we get <m>C_{n} = (-2)^{n-1}</m>, for <m>n \geq 1</m>.
+                The denominators <m>1, 7, 13, 19, \ldots</m> form an arithmetic sequence with <m>a = 1</m> and <m>d = 6</m>.
+                Hence, we get <m>D_{n} = 1 + 6(n-1) = 6n-5</m>, for <m>n \geq 1</m>.
+                Putting these two formulas together,
+                we obtain our formula for <m>a_{n} = \frac{C_{n}}{D_{n}} = \frac{(-2)^{n-1}}{6n-5}</m>,
+                for <m>n \geq 1</m>.
+                We leave it to the reader to show that this checks out.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      While the last problem in <xref ref="seqex2">Example</xref>
+      was neither geometric nor arithmetic,
+      it did resolve into a combination of these two kinds of sequences.
+      If handed the sequence <m>2, 5, 10, 17, \ldots</m>,
+      we would be hard-pressed to find a formula for <m>a_{n}</m> if we restrict our attention to these two archetypes.
+      We said before that there is no general algorithm for finding the explicit formula for the <m>n</m>th term of a given sequence,
+      and it is only through experience gained from evaluating sequences from explicit formulas that we learn to begin to recognize number patterns.
+    </p>
+    <p>
+      The pattern <m>1, 4, 9, 16, \ldots</m> is rather recognizable as the squares,
+      so the formula <m>a_{n} = n^2</m>,
+      <m>n \geq 1</m> may not be too hard to determine.
+      With this in mind, it's possible to see
+      <m>2, 5, 10, 17, \ldots</m> as the sequence <m>1 + 1, 4 + 1, 9 + 1, 16 + 1 , \ldots</m>,
+      so that <m>a_{n} = n^2 + 1</m>, <m>n \geq 1</m>.
+    </p>
+    <p>
+      Of course, since we are given only a small
+      <em>sample</em> of the sequence,
+      we shouldn't be too disappointed to find out this isn't the <em>only</em>
+      formula which generates this sequence.
+      For example,
+      consider the sequence defined by <m>b_{n} = -\frac{1}{4} n^4 + \frac{5}{2} n^3 - \frac{31}{4} n^2 + \frac{25}{2} n - 5</m>,
+      <m>n \geq 1</m>.
+      The reader is encouraged to verify that it also produces the terms <m>2, 5, 10, 17</m>.
+      In fact, it can be shown that given any finite sample of a sequence,
+      there are infinitely many explicit formulas all of which generate those same finite points.
+      This means that there will be infinitely many correct answers to some of the exercises in this section.<fn>
+      For more on this, see
+      <url href="http://www.math.kent.edu/~white/papers/pattern.pdf"><em>When Every Answer is Correct: Why Sequences and Number Patterns Fail the Test</em></url>.
+      </fn> Just because your answer doesn't match ours doesn't mean it's wrong.
+      As always, when in doubt, write your answer out.
+      As long as it produces the same terms in the same order as what the problem wants,
+      your answer is correct.
+    </p>
+    <p>
+      Sequences play a major role in the Mathematics of Finance,
+      as we have already seen with <xref ref="compoundinterest">Equation</xref>
+      in <xref ref="ExpLogApplications">Section</xref>.
+      Recall that if we invest <m>P</m> dollars at an annual percentage rate <m>r</m> and compound the interest <m>n</m> times per year,
+      the formula for <m>A_{k}</m>,
+      the amount in the account after <m>k</m> compounding periods,
+      is <m>A_{k} = P\left(1 + \frac{r}{n}\right)^{k} = \left[P\left(1 + \frac{r}{n}\right)\right]\left(1 + \frac{r}{n}\right)^{k-1}</m>,
+      <m>k \geq 1</m>.
+      We leave it to the reader to show this is a geometric sequence with first term
+      <m>P\left(1 + \frac{r}{n}\right)</m> and common ratio <m>\left(1 + \frac{r}{n}\right)</m>.
+    </p>
+    <p>
+      In retirement planning,
+      it is seldom the case that an investor deposits a set amount of money into an account and waits for it to grow.
+      Usually, additional payments of principal are made at regular intervals and the value of the investment grows accordingly.
+      This kind of investment is called an <em>annuity</em>
+      and will be discussed in the next section once we have developed more mathematical machinery that enables us to <em>add</em> sequences.
+      For now, we invite you to gain some practice with sequence notation some of the more basic pattern recognition that goes along with it.
+    </p>
+    <p>
+      Exercises on <sq>re-indexing</sq> the sequence, some more applications.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="writeoutseqfirst">Exercises</xref>
+      - <xref ref="writeoutseqlast"></xref>,
+      write out the first four terms of the given sequence.
+      <ol cols="2">
+        <li xml:id="writeoutseqfirst">
+          <p>
+            <m>a_{n} = 2^{n} - 1</m>, <m>n \geq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>d_{j} = (-1)^{\frac{j(j+1)}{2}}</m>, <m>j \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ 5k - 2 \right\}_{k=1}^{\infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \dfrac{n^2+1}{n+1} \right\}_{n=0}^{\infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \dfrac{x^{n}}{n^{2}} \right\}_{n=1}^{\infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \dfrac{\ln(n)}{n} \right\}_{n=1}^{\infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>a_{1} = 3</m>, <m>a_{n+1} = a_{n} - 1</m>, <m>n \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>d_{0} = 12</m>,
+            <m>d_{m} = \dfrac{d_{m\mbox{-\tiny<m>1</m>} }}{100}</m>,
+            <m>m \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>b_{1} = 2</m>,
+            <m>b_{k\mbox{+\tiny<m>1</m>} } =3b_{k}+1</m>, <m>k \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>c_{0} = -2</m>,
+            <m>c_{j} = \dfrac{c_{j\mbox{-\tiny<m>1</m>} }}{(j+1)(j+2)}</m>,
+            <m>j \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>a_{1} = 117</m>,
+            <m>a_{n\mbox{+\tiny<m>1</m>} } = \dfrac{1}{a_{n}}</m>,
+            <m>n \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>s_{0} = 1</m>,
+            <m>s_{n\mbox{+\tiny<m>1</m>} } = x^{n + 1} + s_{n}</m>,
+            <m>n \geq 0</m>
+          </p>
+        </li>
+        <li xml:id="writeoutseqlast">
+          <p>
+            <m>F_{0} = 1</m>, <m>F_{1} = 1</m>,
+            <m>F_{n} = F_{n\mbox{-\tiny<m>1</m>} } + F_{n\mbox{-\tiny<m>2</m>} }</m>,
+            <m>n \geq 2</m> (This is the famous
+            <url href="http://en.wikipedia.org/wiki/Fibonacci_number"><em>Fibonacci Sequence</em></url>
+            )
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="alggeoneithfirst">Exercises</xref>
+      - <xref ref="alggeoneithlast"></xref>
+      determine if the given sequence is arithmetic, geometric or neither.
+      If it is arithmetic, find the common difference <m>d</m>;
+      if it is geometric, find the common ratio <m>r</m>.
+      <ol cols="4">
+        <li xml:id="alggeoneithfirst">
+          <p>
+            <m>\left\{ 3n-5 \right\}_{n=1}^{\infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>a_{n} = n^2+3n+2</m>, <m>n \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{1}{3}</m>, <m>\dfrac{1}{6}</m>,
+            <m>\dfrac{1}{12}</m>, <m>\dfrac{1}{24}</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ 3 \left(\dfrac{1}{5}\right)^{n-1} \right\}_{n=1}^{\infty}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>17</m>, <m>5</m>, <m>-7</m>, <m>-19</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2</m>, <m>22</m>, <m>222</m>, <m>2222</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>0.9</m>, <m>9</m>, <m>90</m>, <m>900</m>, <ellipsis/>
+          </p>
+        </li>
+        <li xml:id="alggeoneithlast">
+          <p>
+            <m>a_{n} = \dfrac{n!}{2}</m>, <m>n \geq 0</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="nthtermfirst">Exercises</xref>
+      - <xref ref="nthtermlast"></xref>,
+      find an explicit formula for the
+      <m>n^{\mbox{th} }</m> term of the given sequence.
+      Use the formulas in <xref ref="arithgeoformula">Equation</xref> as needed.
+      <ol cols="4">
+        <li xml:id="nthtermfirst">
+          <p>
+            <m>3</m>, <m>5</m>, <m>7</m>, <m>9</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1</m>, <m>-\dfrac{1}{2}</m>,
+            <m>\dfrac{1}{4}</m>, <m>-\dfrac{1}{8}</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1</m>, <m>\dfrac{2}{3}</m>,
+            <m>\dfrac{4}{5}</m>, <m>\dfrac{8}{7}</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1</m>, <m>\dfrac{2}{3}</m>,
+            <m>\dfrac{1}{3}</m>, <m>\dfrac{4}{27}</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1</m>, <m>\dfrac{1}{4}</m>,
+            <m>\dfrac{1}{9}</m>, <m>\dfrac{1}{16}</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x</m>, <m>-\dfrac{x^3}{3}</m>,
+            <m>\dfrac{x^5}{5}</m>, <m>-\dfrac{x^7}{7}</m>, <ellipsis/>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>0.9, 0.99, 0.999, 0.9999, \ldots</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>27, 64, 125, 216, \ldots</m>
+          </p>
+        </li>
+        <li xml:id="nthtermlast">
+          <p>
+            <m>1, 0, 1, 0, \ldots</m>
+          </p>
+        </li>
+        <li xml:id="arithmeticandgeometricexercise">
+          <p>
+            Find a sequence which is both arithmetic and geometric.
+            (Hint: Start with <m>a_{n} = c</m> for all <m>n</m>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Show that a geometric sequence can be transformed into an arithmetic sequence by taking the natural logarithm of the terms.
+          </p>
+        </li>
+        <li>
+          <p>
+            Thomas Robert Malthus is credited with saying,
+            <q>The power of population is indefinitely greater than the power in the earth to produce subsistence for man.
+            Population, when unchecked, increases in a geometrical ratio.
+            Subsistence increases only in an arithmetical ratio.
+            A slight acquaintance with numbers will show the immensity of the first power in comparison with the second.</q>
+            (See this
+            <url href="http://en.wikipedia.org/wiki/Malthus"><em>webpage</em></url>
+            for more information.) Discuss this quote with your classmates from a sequences point of view.
+          </p>
+        </li>
+        <li>
+          <p>
+            This classic problem involving sequences shows the power of geometric sequences.
+            Suppose that a wealthy benefactor agrees to give you one penny today and then double the amount she gives you each day for 30 days.
+            So, for example,
+            you get two pennies on the second day and four pennies on the third day.
+            How many pennies do you get on the <m>30^{\mbox{th} }</m> day?
+            What is the <em>total</em> dollar value of the gift you have received?
+          </p>
+        </li>
+        <li>
+          <p>
+            Research the terms <sq>arithmetic mean</sq> and <sq>geometric mean.</sq> With the help of your classmates,
+            show that a given term of a arithmetic sequence <m>a_{k}</m>,
+            <m>k \geq 2</m> is the arithmetic mean of the term immediately preceding,
+            <m>a_{k\mbox{\tiny<m>-1</m>} }</m> it and immediately following it,
+            <m>a_{k\mbox{\tiny<m>+1</m>} }</m>.
+            State and prove an analogous result for geometric sequences.
+          </p>
+        </li>
+        <li>
+          <p>
+            Discuss with your classmates how the results of this section might change if we were to examine sequences of other mathematical things like complex numbers or matrices.
+            Find an explicit formula for the
+            <m>n^{\mbox{th} }</m> term of the sequence <m>i, -1, -i, 1, i, \ldots</m>.
+            List out the first four terms of the matrix sequences we discussed in <xref ref="Markovchain">Exercise</xref>
+            in <xref ref="MatArithmetic">Section</xref>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>0, 1, 3, 7</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-1, -1, 1, 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3, 8, 13, 18</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>1, 1, \frac{5}{3}, \frac{5}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x, \frac{x^{2}}{4}, \frac{x^{3}}{9}, \frac{x^{4}}{16}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>0, \frac{\ln(2)}{2}, \frac{\ln(3)}{3}, \frac{\ln(4)}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3, 2, 1, 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>12, 0.12, 0.0012, 0.000012</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2, 7, 22, 67</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-2, -\frac{1}{3}, -\frac{1}{36}, -\frac{1}{720}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>117, \frac{1}{117}, 117, \frac{1}{117}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>1, x + 1, x^{2} + x + 1, x^{3} + x^{2} + x + 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>1, 1, 2, 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          arithmetic, <m>d = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          neither
+        </p>
+      </li>
+      <li>
+        <p>
+          geometric, <m>r = \frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          geometric, <m>r = \frac{1}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          arithmetic, <m>d = -12</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          neither
+        </p>
+      </li>
+      <li>
+        <p>
+          geometric, <m>r = 10</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          neither
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = 1 + 2n, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = \left(-\frac{1}{2}\right)^{n - 1}, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = \frac{2^{n - 1}}{2n - 1}, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = \frac{n}{3^{n - 1}}, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = \frac{1}{n^{2}}, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{(-1)^{n - 1}x^{2n - 1}}{2n -1}, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = \frac{10^{n} - 1}{10^{n}}, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = (n + 2)^{3}, \; n \geq 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>a_{n} = \frac{1 + (-1)^{n-1}}{2}, \; n \geq 1</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

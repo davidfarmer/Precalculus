@@ -1,0 +1,11 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="SystemsofEquationsandMatrices">
+  <title>Systems of Equations and Matrices</title>
+  <xi:include  href="LinSystems.ptx"/>
+  <xi:include  href="AugMatrices.ptx"/>
+  <xi:include  href="MatArithmetic.ptx"/>
+  <xi:include  href="MatMethods.ptx"/>
+  <xi:include  href="Determinants.ptx"/>
+  <xi:include  href="ParFrac.ptx"/>
+  <xi:include  href="NonLinearEquations.ptx"/>
+  <xi:include  href="NonLinearInequalities.ptx"/>
+</chapter>

@@ -1,0 +1,1841 @@
+<section xml:id="AbsoluteValueFunctions">
+  <title>Absolute Value Functions</title>
+  <subsection xml:id="GraphsofAbsoluteValueFunctions">
+    <title>Graphs of Absolute Value Functions</title>
+    <p>
+      In <xref ref="ConstantandLinearFunctions">Section</xref>,
+      we revisited lines in a function context.
+      In this section, we revisit the absolute value in a similar manner,
+      so it may be useful to refresh yourself with the basics in <xref ref="AppAbsValEqIneq">Section</xref>.
+      Recall that the absolute value of a real number <m>x</m>,
+      denoted <m>|x|</m>,
+      can be defined as the distance from <m>x</m> to <m>0</m> on the real number line.<fn>
+      More generally,
+      <m>|x - c|</m> is the distance from <m>x</m> to <m>c</m> on the number line.
+      </fn> This definition is very useful for several applications,
+      and lends itself well to solving equations and inequalities such as
+      <m>|x - 2| + 1 = 5</m> or <m>2|t + 1| > 4</m>.
+    </p>
+    <p>
+      We now wish to explore solving more complicated equations and inequalities,
+      such as <m>|x - 2| + 1 = x</m> and <m>2|t + 1| \geq t + 4</m>.
+      We'll approach these types of problems from a function standpoint and use the interplay between the graphical and analytical representations of these functions to obtain solutions.
+      The key to this section is understanding the absolute value from that function
+      (or procedural)
+      standpoint.
+    </p>
+    <p>
+      Consider a real number <m>x \geq 0</m> such as <m>x = 0</m>,
+      <m>x = \pi</m> or <m>x = 117.42</m>.
+      When computing absolute values,
+      we find <m>|0| = 0</m>, <m>|\pi| = \pi</m> and <m>|117.42| = 117.42</m>.
+      In general, if <m>x \geq 0</m>,
+      the absolute value function does nothing to change the input,
+      so <m>|x| = x</m>.
+      On the other hand, if <m>x \lt 0</m>, say <m>x = -1</m>,
+      <m>x = -\sqrt{42}</m> or <m>x = -117.42</m>, we get <m>|-1| = 1</m>,
+      <m>|-\sqrt{42}| = \sqrt{42}</m> and <m>|-117.42| = 117.42</m>.
+      That is, if <m>x \lt 0</m>,
+      <m>|x|</m> returns the exact <em>opposite</em>
+      of the input <m>x</m>, so <m>|x| = -x</m>.
+    </p>
+    <p>
+      Putting these two observations together, we have the following.
+    </p>
+    <definition xml:id="absolutevaluepiecewise">
+      <statement>
+        <p>
+          The <idx><h>absolute value</h><h>definition of</h></idx>
+              <idx><h>function</h><h>absolute value</h></idx>
+          <term>absolute value</term> of a real number <m>x</m>,
+          denoted <m>|x|</m>, is given by
+          <me>
+            |x| =  \begin{cases}-x \amp   \text{ if \(x \lt  0\) }  \\ x \amp  \text{ if \(x \geq 0\) } \end{cases}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In <xref ref="absolutevaluepiecewise">Definition</xref>,
+      it is <em>absolutely</em> essential to read <sq><m>-x</m></sq> as <sq>the <em>opposite</em>
+      of <m>x</m></sq> as <em>opposed</em>
+      to <sq>negative <m>x</m></sq> in order to avoid serious errors later.
+      To see that this description agrees with our previous experience,
+      consider <m>|117.42|</m>.
+      Given that <m>117.42 \geq 0</m>,
+      we use the rule <m>|x| = x</m>.
+      Hence, <m>|117.42| = 117.42</m>.
+      Likewise, <m>|0| = 0</m>.
+      To compute <m>|-\sqrt{42}|</m>,
+      we note that <m>-\sqrt{42} \lt 0</m> we use the rule <m>|x| = -x</m> in this case.
+      We get <m>|-\sqrt{42}| = -(-\sqrt{42})</m>
+      (the opposite of <m>-\sqrt{42}</m>),
+      so <m>|-\sqrt{42}| = -(-\sqrt{42}) = \sqrt{42}</m>.
+    </p>
+    <p>
+      Another way to view <xref ref="absolutevaluepiecewise">Definition</xref>
+      is to think of <m>-x = (-1)x</m> and <m>x = (1)x</m>.
+      That is, <m>|x|</m> multiplies negative inputs by <m>-1</m> and non-negative inputs by <m>1</m>.
+      This viewpoint is especially useful in graphing <m>f(x) = |x|</m>.
+      For <m>x\lt 0</m>, <m>|x| = (-1)x</m>,
+      so the graph of <m>y = |x|</m> is the graph of <m>y = -x = (-1) x</m>:
+      a line with slope <m>-1</m> and <m>y</m>-intercept <m>(0,0)</m>.
+      Likewise, for <m>x \geq 0</m>, <m>|x| = x</m>,
+      so the graph of <m>y = |x|</m> is the graph of <m>y = x = (1)x</m>:
+      a line with slope <m>1</m> and <m>y</m>-intercept <m>(0,0)</m>.
+    </p>
+    <p>
+      At the top of the next page we graph each piece and then put them together.
+      Note that when graphing <m>f(x) = |x|</m> for <m>x \lt 0</m>,
+      we have a hole at <m>(0, 0)</m> because the inequality <m>x \lt 0</m> is strict.
+      However, the point <m>(0, 0)</m> is included in the graph of <m>f(x) = |x|</m> for <m>x \geq 0</m>,
+      so there is no hole in our final graph.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{0}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-3.25,2){<m>(-2,2)</m>} \tlabel[cc](-2.25,1){<m>(-1,1)</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4} \tcaption{<m>f(x) = |x|</m>,
+      <m>x \lt 0</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \gclear \tlabelrect(0,-0.5){<m>(0,0)</m>} \penwd{1.25pt} \arrow \reverse \polyline{( -4,4), (0,0)} \point[4pt]{(0,0), (-1,1), (-2,2)} \pointfillfalse \point[4pt]{(0,0)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{0}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3,2){<m>(2,2)</m>} \tlabel[cc](2,1){<m>(1,1)</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4} \tcaption{<m>f(x) = |x|</m>,
+      <m>x \geq 0</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \gclear \tlabelrect(0,-0.5){<m>(0,0)</m>} \penwd{1.25pt} \arrow \polyline{(0,0), (4,4)} \point[4pt]{(0,0), (1,1), (2,2)} \point[4pt]{(0,0)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-4}{4}{0}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-3.25,2){<m>(-2,2)</m>} \tlabel[cc](-2.25,1){<m>(-1,1)</m>} \tlabel[cc](3,2){<m>(2,2)</m>} \tlabel[cc](2,1){<m>(1,1)</m>} \point[3pt]{(0,0)} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3,4} \tcaption{<m>f(x) = |x|</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \gclear \tlabelrect(0,-0.5){<m>(0,0)</m>} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4,4),(0,0),(4,4)} \point[4pt]{(0,0), (1,1), (-1,1), (2,2), (-2,2)} \end{mfpic}
+    </p>
+    <p>
+      The graph of <m>f(x) = |x|</m> is a very distinctive <sq><m>\vee</m></sq> shape and is worth remembering.
+      The point <m>(0, 0)</m> on the graph is called the
+          <idx><h>vertex</h></idx>
+          <idx><h>vertex</h><h>absolute value function</h></idx> <em>vertex</em>.
+      This terminology makes sense from a geometric viewpoint because <m>(0, 0)</m> is the point where two lines meet to form an angle.
+      We will also see this term used in <xref ref="QuadraticFunctions">Section</xref> where,
+      more generally,
+      it corresponds to the graphical location of the sole maximum or minimum of a quadratic function.
+    </p>
+    <p>
+      We put <xref ref="absolutevaluepiecewise">Definition</xref>
+      to good use in the next example and review the basics of graphing along the way.
+    </p>
+    <example xml:id="absvaluegraph1">
+      <statement>
+        <p>
+          For each of the functions below,
+          analytically find the zeros of the function and the axis intercepts of the graph,
+          if any exist.
+          Rewrite the function using <xref ref="absolutevaluepiecewise">Definition</xref>
+          as a piecewise-defined function and sketch its graph.
+          From the graph, determine the vertex,
+          find the range of the function and any extrema,
+          and then list the intervals over which the function is increasing,
+          decreasing or constant.
+          <ol>
+            <li>
+              <p>
+                <m>f(x) = |x - 3|</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = |t| - 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>h(u) = |2u - 1| - 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>i(w) = 4 - 2|3w - 1|</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In what follows below, we will be doing quite a bit of substitution.
+          As we have mentioned before, when substituting one expression in for another,
+          the use of parentheses or other grouping symbols is highly recommended.
+          Also, the dependent variable wasn't specified so we use the default <m>y</m> in each case.
+          <ol>
+            <li>
+              <p>
+                To find the zeros of <m>f</m>,
+                we solve <m>f(x) = 0</m> or <m>|x - 3| = 0</m>.
+                We get <m>x = 3</m> so  the sole <m>x</m>-intercept of the graph of <m>f</m> is <m>(3, 0)</m>.
+                To find the <m>y</m>-intercept,
+                we compute <m>f(0) = |0 - 3| = 3</m> and obtain <m>(0,3)</m>.
+                Using <xref ref="absolutevaluepiecewise">Definition</xref>
+                to rewrite the expression for <m>f(x)</m> means that we substitute the expression <m>x - 3</m> in for <m>x</m> and simplify.
+                Note that when substituting the <m>x - 3</m> in for <m>x</m>,
+                we do so for <em>every</em> instance of <m>x</m>  <mdash/> both in the formula (output) as well as the inequality
+                (input).
+                <me>
+                  \begin{array}{ccc}  f(x) = |x - 3| = \begin{cases}-(x - 3) \amp   \text{ if \((x - 3) \lt  0\) }  \\ (x - 3)  \amp  \text{ if \((x - 3) \geq 0\) } \end{cases}  \amp  \longrightarrow \amp  f(x) = \begin{cases}-x + 3 \amp   \text{ if \(x \lt  3\) }  \\ x - 3  \amp  \text{ if \(x \geq 3\) } \end{cases} \end{array}
+                </me>
+                As both pieces of the graph of <m>f</m> are lines,
+                we need just two points for each piece.
+                We already have two points for the graph:
+                <m>(0, 3)</m> and <m>(3, 0)</m>.
+                These two points both lie on the line
+                <m>y = -x + 3</m> but the strictness of the inequality means
+                <m>f(x) = -x + 3</m> only for <m>x \lt  3</m>,
+                <em>not</em> <m>x = 3</m>,
+                so we would have a hole at <m>(3, 0)</m> instead of a point there.
+                For <m>x \geq 3</m>, <m>f(x) = x - 3</m>,
+                so the hole we thought we had  at <m>(3, 0)</m> gets plugged because <m>f(3) = 3 - 3 = 0</m>.
+                We need just one more point for <m>f(x)</m> where
+                <m>x \geq 3</m> and choose somewhat arbitrarily <m>x = 6</m>.
+                We find <m>f(6) = |6 - 3| = 3</m> so our final point on the graph is <m>(6, 3)</m>.
+                Now that we have a complete graph,<fn>
+                We know it's complete because we did the Math - no trusting technology on this example!
+                </fn>  we see that the vertex is <m>(3, 0)</m> and the range  is <m>[0, \infty)</m>.
+                The minimum of <m>f</m> is <m>0</m> when <m>x = 3</m> and <m>f</m> has no maximum.
+                Also, <m>f</m>  is decreasing over
+                <m>(-\infty, 3]</m> and increasing on <m>[3, \infty)</m>.
+                The graph is given below on the left.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the zeros of <m>g</m>,
+                we solve <m>g(t) = |t| - 3 = 0</m> and get <m>|t| = 3</m> or <m>t = \pm 3</m>.
+                Hence, the <m>t</m>-intercepts of the graph of <m>g</m> are <m>(-3, 0)</m> and <m>(3, 0)</m>.
+                To find the <m>y</m>-intercept,
+                we compute <m>g(0) = |0| - 3 = -3</m> and get <m>(0, -3)</m>.
+                To rewrite <m>g(t)</m> has a piecewise defined function,
+                we first substitute <m>t</m> in for <m>x</m> in <xref ref="absolutevaluepiecewise">Definition</xref>
+                to get a piecewise definition of <m>|t|</m>.
+                This breaks the domain into two pieces:
+                <m>t \lt  0</m> and <m>t \geq 0</m>.
+                For <m>t\lt 0</m>, <m>|t| = -t</m>,
+                so <m>g(t) = |t| - 3 = (-t) - 3 = -t - 3</m>.
+                Likewise, for <m>t \geq 0</m>,
+                <m>|t| = t</m> so <m>g(t) = |t| - 3 = t - 3</m>.
+                <me>
+                  \begin{array}{ccc}  |t|  = \begin{cases}-t \amp  \text{ if \(t  \lt  0\) }  \\ t  \amp  \text{ if \(t \geq 0\) } \end{cases}  \amp  \longrightarrow  \amp  g(t) = |t| - 3 =   \begin{cases}-t  - 3\amp   \text{ if \(t  \lt  0\) }  \\ t  - 3 \amp  \text{ if \(t \geq 0\) } \end{cases} \end{array}
+                </me>
+                Once again, we have two lines to graph,
+                but in this case we have three points:
+                <m>(-3, 0)</m>, <m>(0, -3)</m> and <m>(3, 0)</m>.
+                Both <m>(-3, 0)</m> and <m>(0, -3)</m> lie on <m>y = -t - 3</m>,
+                but <m>g(t) = -t - 3</m> only for <m>t \lt  0</m>.
+                This would yield a hole at <m>(0, -3)</m>, but,
+                just like in the previous example,
+                the hole is plugged  thanks to the second piece of the function because <m>g(0) = 0 - 3 = -3</m>.
+                We also pick up the second <m>t</m>-intercept,
+                <m>(3, 0)</m> and this helps us complete our graph.
+                We see that the vertex is <m>(0, -3)</m> and the range is  <m>[-3, \infty)</m>.
+                The minimum of <m>g</m> is <m>-3</m> at <m>t = 0</m> and there is no maximum.
+                Also, <m>g</m> is decreasing on
+                <m>(-\infty, 0]</m> and increasing on <m>[0, \infty)</m>.
+                The graph of <m>g</m> is shown below on the right.  \begin{mfpic}[15]{-1}{7}{-1}{5}  \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{1,2,3,4,5,6} \ymarks{-1, 1,2,3,4} \tcaption{<m>f(x) = |x-3|</m> } \tlpointsep{4pt}  \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2,  {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{ <m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2,  {<m>4</m>} 4} \tlabel[cc](-1,3){<m>(0,3)</m>} \tlabel[cc](3,-0.5){<m>(3,0)</m>} \tlabel[cc](7,3){<m>(6,3)</m>}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-0.5,3.5),(3,0),(6.5,3.5)} \point[4pt]{(0,3), (3,0), (6,3)} \end{mfpic}  \begin{mfpic}[15]{-4}{4}{-4}{2} \axes \tlabel[cc](4.5,-0.5){<m>t</m>} \tlabel[cc](0.5,2){<m>y</m>} \tcaption{<m>g(t) = |t|-3</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-4,-3,-2,-1,1} \tlpointsep{4pt}  \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4,  {<m>-2</m>} -2,{ <m>-1</m>} -1, {<m>1</m>} 1} \tlabel[cc](-3.5,-0.65){<m>(-3,0)</m>} \tlabel[cc](3.5,-0.65){<m>(3,0)</m>} \tlabel[cc](-1.25,-3){<m>(0,-3)</m>}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4,1), (0,-3), (4,1)} \point[4pt]{(0,-3),(3,0),(-3,0)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                Solving <m>h(u) = |2u - 1| - 3 = 0</m> gives
+                <m>|2u - 1| = 3</m> or <m>2u - 1 = \pm 3</m>.
+                We get two zeros:
+                <m>u = -1</m> and <m>u  = 2</m> which correspond to two <m>u</m>-intercepts:
+                <m>(-1, 0)</m> and <m>(2, 0)</m>.
+                We find <m>h(0) = |2(0) - 1| - 3 = -2</m> so our <m>y</m>-intercept is <m>(0, -2)</m>.
+                To rewrite <m>h(u)</m> as a piecewise defined function,
+                we first rewrite <m>|2u - 1|</m> as a piecewise function.
+                Substituting the expression <m>2u - 1</m> in for <m>x</m> in  <xref ref="absolutevaluepiecewise">Definition</xref> gives:
+                <me>
+                  \begin{array}{ccc}  |2u - 1|  = \begin{cases}-(2u - 1) \amp   \text{ if \(2u - 1  \lt  0\) }  \\ 2u - 1 \amp  \text{ if \(2u - 1 \geq 0\) } \end{cases}  \amp  \longrightarrow  \amp  |2u - 1|  =   \begin{cases}-2u + 1 \amp   \text{if \(u \lt  {\textstyle \frac{1}{2}}\)}  \\ 2u - 1  \amp  \text{if \(u \geq {\textstyle \frac{1}{2}}\)} \end{cases} \end{array}
+                </me>
+                Hence, for <m>u \lt   \frac{1}{2}</m>,
+                <m>|2u - 1| = -2u + 1</m> so <m>h(u) = |2u - 1| - 3 = (-2u + 1) - 3 = -2u - 2</m>.
+                Likewise, for <m>u \geq   \frac{1}{2}</m>,
+                <m>|2u - 1| = 2u - 1</m> so <m>h(u) = |2u - 1| - 3 = (2u - 1) - 3 = 2u - 4</m>.
+                <me>
+                  \begin{array}{ccc}  h(u)  =   |2u - 1| - 3 =  \begin{cases}(-2u + 1) - 3 \amp  \text{if \(u \lt  {\textstyle \frac{1}{2}}\)}  \\ (2u - 1) - 3  \amp  \text{if \(u \geq {\textstyle \frac{1}{2}}\)} \end{cases}  \amp  \longrightarrow  \amp  h(u)  =   \begin{cases}-2u - 2  \amp  \text{if \(u \lt  {\textstyle \frac{1}{2}}\)}  \\ 2u - 4   \amp  \text{if \(u \geq {\textstyle \frac{1}{2}}\)} \end{cases} \end{array}
+                </me>
+                We have three points to help us graph <m>y = h(u)</m>:
+                <m>(-1, 0)</m>, <m>(0, -2)</m> and <m>(2, 0)</m>.
+                Unlike in the last two examples,
+                these points do not give us information at the  value
+                <m>u = \frac{1}{2}</m> where the rule for <m>h(u)</m> changes.
+                Substituting <m>u = \frac{1}{2}</m> into the expression <m>-2u - 2</m> gives <m>-3</m>,
+                so from <m>h(u) = -2u - 2</m>,
+                <m>u \lt   \frac{1}{2}</m>,
+                we get a hole at <m>\left(\frac{1}{2}, -3 \right)</m>.
+                However, this hole is filled because
+                <m>h\left(\frac{1}{2}\right) = 2\left(\frac{1}{2}\right) - 4  = -3</m> and this produces the vertex at <m>\left(\frac{1}{2}, -3 \right)</m>.
+                The range of <m>h</m> is <m>[-3, \infty)</m>,
+                with the minimum of <m>h</m> being <m>-3</m> at <m>t = \frac{1}{2}</m>.
+                Moreover, <m>h</m> is decreasing on
+                <m>\left(-\infty, \frac{1}{2} \right]</m>  and increasing on <m>\left[ \frac{1}{2}, \infty \right)</m>.
+                The graph of <m>h</m> is given below on the left.
+              </p>
+            </li>
+            <li>
+              <p>
+                Solving <m>i(w) = 4 - 2|3w - 1| = 0</m> yields
+                <m>|3w - 1| = 2</m> or <m>3w - 1 = \pm 2</m>.
+                This gives two zeros, <m>w = -\frac{1}{3}</m> and <m>w = 1</m>,
+                which correspond to two <m>w</m>-intercepts,
+                <m>\left(-\frac{1}{3}, 0 \right)</m> and  <m>(1, 0)</m>.
+                Also, <m>i(0) = 4 - 2|3(0) - 1| = 2</m>,
+                so the <m>y</m>-intercept of the graph is <m>(0, 2)</m>.
+                As in the previous example,
+                the first step in rewriting <m>i(w)</m> as a piecewise defined function is to rewrite
+                <m>|3w - 1|</m> as a piecewise function.
+                Once again, we substitute the expression <m>3w - 1</m> in for every occurrence of <m>x</m> in <xref ref="absolutevaluepiecewise">Definition</xref>:
+                <me>
+                  \begin{array}{ccc}  |3w - 1|  = \begin{cases}-(3w - 1) \amp   \text{ if \(3w - 1  \lt  0\) }  \\ 3w - 1  \amp  \text{ if \(3w - 1 \geq 0\) } \end{cases}  \amp  \longrightarrow  \amp  |3w - 1|  =   \begin{cases}-3w + 1 \amp   \text{if \(w \lt   {\textstyle \frac{1}{3}}\) }  \\ 3w - 1  \amp  \text{if \(w \geq  {\textstyle \frac{1}{3}}\)} \end{cases} \end{array}
+                </me>
+                Thus for <m>w \lt   \frac{1}{3}</m>,
+                <m>|3w - 1| = -3w + 1</m>,
+                so <m>i(w) = 4 - 2|3w - 1| = 4 - 2(-3w + 1) = 6w + 2</m>.
+                Likewise, for <m>w \geq  \frac{1}{3}</m>,
+                <m>|3w - 1| = 3w - 1</m> so <m>i(w) = 4 - 2|3w - 1|  = 4 - 2(3w - 1) = -6w + 6</m>.
+                <me>
+                  \begin{array}{ccc}  i(w)  =  4 - 2 |3w - 1| =  \begin{cases}4 - 2(-3w + 1) \amp   \text{if \(w \lt  {\textstyle \frac{1}{3}}\) }  \\ 4 - 2(3w - 1)  \amp  \text{if \(w \geq {\textstyle \frac{1}{3}}\)} \end{cases}  \amp  \longrightarrow  \amp  i(w)  =   \begin{cases}6w + 2  \amp   \text{if \(w \lt  {\textstyle \frac{1}{3}}\) }  \\ -6w + 6   \amp  \text{if \(w \geq {\textstyle \frac{1}{3}}\)} \end{cases} \end{array}
+                </me>
+                As with the previous example,
+                we have three points on the graph of <m>i</m>:
+                <m>\left(-\frac{1}{3}, 0 \right)</m>,
+                <m>(0, 2)</m> and  <m>(1, 0)</m>,
+                but no information about happens at <m>w = \frac{1}{3}</m>.
+                Substituting this value of <m>w</m> into the formula <m>6w + 2</m> would produce a hole at <m>\left(\frac{1}{3}, 4\right)</m>.
+                As we've seen several times already, however,
+                <m>i\left(\frac{1}{3}\right) = 4</m> so we don't have a hole at
+                <m>\left(\frac{1}{3}, 4\right)</m> but, rather, the vertex.
+                From the graph we see that the range of <m>i</m> is
+                <m>(-\infty, 4]</m> with the maximum of <m>i</m> being <m>4</m> when <m>w = \frac{1}{3}</m>.
+                Also,  <m>i</m> is increasing over
+                <m>\left( -\infty, \frac{1}{3} \right]</m> and decreasing on <m>\left[ \frac{1}{3}, \infty \right)</m>.
+                Its graph is given below on the right.    \begin{mfpic}[15]{-2}{3}{-3}{3} \axes \tlabel[cc](3.5,-0.5){<m>u</m>} \tlabel[cc](0.5,3){<m>y</m>} \tcaption{
+                <m>h(u) = |2u - 1| - 3</m>} \xmarks{-1,1,2} \ymarks{-3,-2,-1,1,2}  \tlabel[cc](-2,-0.5){<m>(-1,0)</m>} \tlabel[cc](-1,-2){<m>(0,-2)</m>} \tlabel[cc](2.5,-0.5){<m>(2,0)</m>} \tlabel[cc](0.5,-3.5){<m>\left(\frac{1}{2},-3 \right)</m>} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1} \axislabels {y}{ {<m>1</m>} 1,  {<m>2</m>} 2}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2,2), (0.5,-3), (3, 2)} \point[4pt]{ (-1,0), (0,-2), (0.5,-3), (2,0)} \end{mfpic}    \begin{mfpic}[15][11.666666] {-2}{3}{-4}{5} \axes \tlabel[cc](3,-0.5){<m>w</m>} \tlabel[cc](0.5,5){<m>y</m>} \tcaption{<m>i(w) = 4 - 2|3w - 1|</m>} \xmarks{-1,1,2} \ymarks{-3,-2,-1,1,2,3,4}  \tlabel[cc](1.33,4){<m>\left( \frac{1}{3}, 4\right)</m>} \tlabel[cc](1.5,0.5){<m>(1,0)</m>} \tlabel[cc](-.75,2){<m>(0,2)</m>} \tlabel[cc](-1.33,0.5){<m>\left( -\frac{1}{3}, 0\right)</m>} \tlpointsep{4pt}  \axislabels {y}{ {<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1,  {<m>3</m>} 3, {<m>4</m>} 4}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-1,-4), (0.3333,4), (1.6667, -4)} \point[4pt]{ (-0.3333,0), (1,0), (0,2), (0.3333, 4)} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As we take a step back and look at the graphs produced in <xref ref="absvaluegraph1">Example</xref>,
+      some patterns begin to emerge.
+      Indeed, each of the graphs has the common <sq><m>\vee</m></sq> shape
+      (in the case of the function <m>i</m> it's a <sq><m>\wedge</m></sq>)
+      with the vertex located at the <m>x</m>-value where the rule for each function changes from one formula to the other.
+      It turns out that, independent variable labels aside,
+      each and every function in <xref ref="absvaluegraph1">Example</xref>
+      can be rewritten in the form
+      <m>F(x) = a|x - h| + k</m> for real number parameters <m>a</m>,
+      <m>h</m> and <m>k</m>.
+    </p>
+    <p>
+      Each of the functions from <xref ref="absvaluegraph1">Example</xref>
+      is rewritten in this form below and we record the vertex along with the slopes of the lines in the graph.
+      <ul>
+        <li>
+          <p>
+            <m>f(x) = |x - 3| = (1)|x - 3| + 0</m>:
+            <m>\;\; a = 1</m>, <m>h = 3</m>,
+            <m>k = 0; \;\;</m> vertex <m>(3,0); \;\;</m> slopes <m>\pm 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = |t| - 3 = (1)|t - 0| + (-3)</m>:
+            <m>\;\; a = 1</m>, <m>h = 0</m>,
+            <m>k = -3; \;\;</m> vertex <m>(0, -3); \;\;</m> slopes <m>\pm 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>h(u) = |2u - 1| - 3 = 2 \left| u - \frac{1}{2} \right| + (-3)</m>:
+            <m>\;\; a = 2</m>, <m>h = \frac{1}{2}</m>,
+            <m>k = -3; \;\;</m> vertex <m>\left(\frac{1}{2}, -3\right)</m>;
+            <m>\;\;</m> slopes <m>\pm 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i(w) = 4 - 2|3w - 1| = -6 \left| w - \frac{1}{3} \right| + 4</m>:
+            <m>\;\; a = -6</m>, <m>h = \frac{1}{3}</m>,
+            <m>k = 4; \;\;</m> vertex <m>\left(\frac{1}{3}, 4\right)</m>;
+            <m>\;\;</m> slopes <m>\pm 6</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      These specific examples suggest the following theorem.
+    </p>
+    <theorem xml:id="linearabsvaluegraphs">
+      <statement>
+        <p>
+          For real numbers <m>a</m>, <m>h</m> and <m>k</m> with <m>a \neq 0</m>,
+          the graph of <m>F(x) = a|x - h| + k</m> consists of parts of two lines with slopes <m>\pm a</m> which meet at a vertex <m>(h, k)</m>.
+          If <m>a > 0</m>, the shape resembles <sq><m>\vee</m></sq>.
+          If <m>a\lt 0</m>, the shape resembles <sq><m>\wedge</m></sq>.
+          Moreover, the graph is symmetric about the line <m>x = h</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      <em>Proof.</em> What separates Mathematics from the other sciences is its ability to actually <em>prove</em>
+      patterns like the one stated in the theorem above as opposed to just <em>verifying</em>
+      it by working more examples.
+      The proof of <xref ref="linearabsvaluegraphs">Theorem</xref>
+      uses the exact same concepts as were used in <xref ref="absvaluegraph1">Example</xref>,
+      just in a more general context by which we mean using letters as parameters instead of numbers.
+    </p>
+    <p>
+      The first step is to rewrite <m>|x - h|</m> as a piecewise function.
+      <me>
+        \begin{array}{ccc}  |x - h|  = \begin{cases}-(x - h) \amp   \text{ if \(x - h  \lt  0\) }  \\ x - h  \amp  \text{ if \(x - h \geq 0\) } \end{cases}  \amp  \longrightarrow  \amp  |x - h|  =   \begin{cases}-x + h \amp   \text{ if \(x \lt   h\) }  \\ x - h  \amp  \text{ if \(x \geq h\) } \end{cases} \end{array}
+      </me>
+    </p>
+    <p>
+      We plug that work into <m>F(x)</m> to rewrite it as a piecewise function.
+      For <m>x \lt  h</m>, we have <m>|x - h| = -x + h</m>, so
+      <me>
+        F(x) = a|x - h| + k = a(-x + h) + k = -ax + ah + k = -ax + (ah + k)
+      </me>
+    </p>
+    <p>
+      Similarly, for <m>x \geq h</m>,
+      we have <m>|x - h| = x - h</m>, so
+      <me>
+        F(x) = a|x - h| + k = a(x - h) + k = ax - ah + k = ax + (-ah + k)
+      </me>
+    </p>
+    <p>
+      Hence,
+      <me>
+        \begin{array}{ccc}  F(x)  =  a|x - h| + k =  \begin{cases}a(-x + h) + k \amp   \text{ if \(x \lt  h\) }  \\ a(x - h) + k  \amp  \text{ if \(x \geq h\) } \end{cases}  \amp  \longrightarrow  \amp  F(x)   =   \begin{cases}-ax + (ah + k)  \amp  \text{ if \(x \lt  h\) }  \\ ax + (-ah + k)  \amp  \text{ if \(x \geq h\) } \end{cases} \end{array}
+      </me>
+    </p>
+    <p>
+      All three parameters, <m>a</m>,
+      <m>h</m> and <m>k</m>, are fixed
+      (but arbitrary)
+      real numbers.
+      Thus, for any given choice of <m>a</m>,
+      <m>h</m> and <m>k</m> the numbers <m>ah + k</m> and <m>-ah + k</m> are also just numbers as opposed to variables.
+      This shows that the graph of <m>F</m> is comprised of pieces of two <em>lines</em>,
+      <m>y = -ax + (ah + k)</m> and <m>y = ax + (-ah + k)</m>,
+      the former with slope <m>-a</m> and the latter with slope <m>a</m>.
+      Note that substituting <m>x = h</m> into <m>y = -ax + (ah + k)</m> produces
+      <m>y = -ah + (ah + k) = k</m> and substituting <m>x = h</m> into
+      <m>y = ax + (-ah + k)</m> also produces <m>y = ah + (-ah + k) = k</m>.
+      This tells us that the two linear pieces meet at the point <m>(h, k)</m>.
+    </p>
+    <p>
+      If <m>a > 0</m> then <m>-a \lt 0</m> so the line <m>y = -ax + (ah + k)</m>,
+      hence <m>F</m>, is decreasing on <m>(-\infty, h]</m>.
+      Similarly, the line <m>y = ax + (-ah + k)</m>,
+      hence <m>F</m>, is increasing on <m>[h, \infty)</m>.
+      This produces a <sq><m>\vee</m></sq> shape.
+      On the other hand,
+      if <m>a \lt 0</m> then <m>-a > 0</m> which produces a <sq><m>\wedge</m></sq> shape because <m>F</m> is increasing on
+      <m>(-\infty,
+      h]</m> followed by decreasing on <m>[h, \infty)</m>.
+      (Said another way,
+      <m>-a > 0</m> means that the first linear piece has a positive slope and <m>a \lt 0</m> means that the second piece has a negative slope.)
+    </p>
+    <p>
+      To show that the graph is symmetric about the line <m>x = h</m>,
+      we need to show that if we move left or right the same distance away from <m>x = h</m>,
+      then we get the same <m>y</m>-value on the graph.
+      Suppose we move <m>\Delta x</m> to the right or left of <m>h</m>.
+      The <m>y</m>-values are the function values so we need to show that <m>F(a + \Delta x) = F(a - \Delta x)</m>.
+      Given that
+      <me>
+        F(a + \Delta x) = a| a + \Delta x - a| + k = a |\Delta x| + k
+      </me>
+      and
+      <me>
+        F(a - \Delta x) = a | a - \Delta x - a| + k = a|-\Delta x| + k = a|\Delta x| + k
+      </me>
+      we see that <m>F(a + \Delta x) = F(a - \Delta x)</m>.
+      Thus we have shown that the <m>y</m>-values on the graph on either side of <m>x = h</m> are equal provided we move the same distance away from <m>x = a</m>.
+      This completes the proof.
+    </p>
+    <p>
+      The line <m>x = a</m> in <xref ref="linearabsvaluegraphs">Theorem</xref>
+      is called the <idx><h>axis of symmetry</h><h>of an absolute value function</h></idx>
+      <em>axis of symmetry</em>
+      of the graph of <m>y = F(x)</m>.
+      This language is consistent with the basics of symmetry discussed in <xref ref="AppCartesianPlane">Section</xref>
+      and we will build upon our work here in several upcoming sections.
+      For now, we simply present two graphs illustrating the concept of the axis of symmetry below.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-2}{5} \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \dashed \polyline{(0,0), (0,5)} \dashed \polyline{(-2,3), (2,3)} \arrow \reverse \arrow \polyline{(-2, -1.25), (-0.05, -1.25)} \arrow \reverse \arrow \polyline{(2, -1.25), (0.05, -1.25)} \arrow \reverse \arrow \polyline{(2,0.15), (2,2.85)} \arrow \reverse \arrow \polyline{(-2,0.15), (-2,2.85)} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](1,-1.5){<m>\Delta x</m>} \tlabel[cc](-1,-1.5){<m>\Delta x</m>} \tlabel[cc](0,-0.5){<m>h</m>} \tlabel[cc](2,-0.5){<m>h + \Delta x</m>} \tlabel[cc](-2,-0.5){<m>h - \Delta x</m>} \tlabel[cc](-3.5,3){<m>F(h - \Delta x)</m>} \tlabel[cc](3.5,3){<m>F(h + \Delta x)</m>} \xmarks{-2,0,2} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4,5), (0,1), (4,5)} \point[4pt]{(-2,3), (2,3)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{-2}{5} \arrow \reverse \arrow \polyline{(-5,0), (5,0)} \dashed \polyline{(0,0), (0,5)} \dashed \polyline{(-2,3), (2,3)} \arrow \reverse \arrow \polyline{(-2, -1.25), (-0.05, -1.25)} \arrow \reverse \arrow \polyline{(2, -1.25), (0.05, -1.25)} \arrow \reverse \arrow \polyline{(2,0.15), (2,2.85)} \arrow \reverse \arrow \polyline{(-2,0.15), (-2,2.85)} \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](1,-1.5){<m>\Delta x</m>} \tlabel[cc](-1,-1.5){<m>\Delta x</m>} \tlabel[cc](0,-0.5){<m>h</m>} \tlabel[cc](2,-0.5){<m>h + \Delta x</m>} \tlabel[cc](-2,-0.5){<m>h - \Delta x</m>} \tlabel[cc](-3.5,3){<m>F(h - \Delta x)</m>} \tlabel[cc](3.5,3){<m>F(h + \Delta x)</m>} \xmarks{-2,0,2} \tlpointsep{4pt} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-4,1), (0,5), (4,1)} \point[4pt]{(-2,3), (2,3)} \end{mfpic}
+    </p>
+    <p>
+      While <xref ref="linearabsvaluegraphs">Theorem</xref>
+      and its proof are specific to the particular family of absolute value functions,
+      there are ideas here that apply to all functions.
+      Thus we wish to take a slight detour away from the main narrative to argue this result again from an even more generalized viewpoint.
+      Our goal is to <sq>build</sq> the formula
+      <m>F(x) = a|x - h| + k</m> from <m>f(x) = |x|</m> in three stages,
+      each corresponding to the role of one of the parameters <m>a</m>,
+      <m>h</m> and <m>k</m>,
+      and track the geometric changes that go along with each stage.
+      We will revisit all of the ideas described below in complete generality in <xref ref="Transformations">Section</xref>.
+    </p>
+    <p>
+      The graph of <m>f(x) = |x|</m> consists of the points <m>\{ (c, |c|) \, | \, c \in \mathbb R\}</m>.<fn>
+      See the box on <xref ref="waystorepresentfunctionsbox">page</xref>.
+      Also, we use <sq><m>c</m></sq> as our dummy variable to avoid the confusion that would arise by over-using <sq><m>x</m></sq>.
+      </fn> Consider <m>F_{1}(x) = |x - h|</m>.
+      The graph of <m>F_{1}</m> is the set of points <m>\{ (x, |x - h|) \, | \, x \in \mathbb{R} \}</m>.
+      If we relabel <m>x - h = c</m>, then <m>x = c + h</m>,
+      and as <m>x</m> varies through all of the real numbers,
+      so does <m>c</m> and vice-versa.<fn>
+      That is, every real number <m>c</m> can be written as <m>x - h</m> for some <m>x</m>,
+      and every real number <m>x</m> can be written as <m>c + h</m> for some <m>c</m>.
+      </fn>
+    </p>
+    <p>
+      Hence, we can write <m>\{ (x, |x - h|) \, | \, x \in \mathbb{R} \} = \{ (c + h, |c|) \, | \, c \in \mathbb{R} \}</m>.
+      If we fix a <m>y</m>-coordinate, <m>|c|</m>,
+      we see that the corresponding points on the graph of <m>f</m> and <m>F_{1}</m>,
+      <m>(c, |c|)</m> and <m>(c + h, |c|)</m>, respectively,
+      differ only in that one is horizontally shifted by <m>h</m>.
+      In other words, to get the graph of <m>F_{1}</m>,
+      we simply take the graph of <m>f</m> and shift each point horizontally by adding <m>h</m> to the <m>x</m>-coordinate.
+      Translating the graph in this manner preserves the <sq><m>\vee</m></sq> shape and symmetry,
+      but moves the vertex from <m>(0, 0)</m> to <m>(h, 0)</m>.
+    </p>
+    <p>
+      Next, we examine <m>F_{2}(x) = a|x - h|</m> and compare its graph to that of <m>F_{1}(x) = |x - h|</m>.
+      The graph of <m>F_{2}</m> consists of the points
+      <m>\{ (x, a|x - h|) \, | \, x \in \mathbb{R} \}</m> whereas the graph of <m>F_{1}</m> consists of the points <m>\{ (x, |x - h|) \, | \, x \in \mathbb{R} \}</m>.
+      The only difference between the points <m>(x, |x - h|)</m> and
+      <m>(x, a|x - h|)</m> is that the <m>y</m>-coordinate of one is <m>a</m> times the <m>y</m>-coordinate of the other.
+      If <m>a > 0</m>,
+      all we are doing is scaling the <m>y</m>-axis by a factor of <m>a</m>.
+      As we've seen when plotting points and graphing functions,
+      the scaling of the <m>y</m>-axis affects only the relative vertical displacement of points<fn>
+      See the discussion following <xref ref="timetempex1">Example</xref>
+      regarding the plot of Skippy's data.
+      </fn> and not the overall shape.
+    </p>
+    <p>
+      If <m>a \lt 0</m>, then in addition to scaling the vertical axis,
+      we are reflecting the points across the <m>x</m>-axis.<fn>
+      See the box on <xref ref="reflectionsinabox">page</xref>
+      in <xref ref="AppCartesianPlane">Section</xref>.
+      </fn> Such a transformation doesn't change the <sq><m>\vee</m></sq> shape except for flipping it upside-down to make it a <sq><m>\wedge</m></sq>.
+      In either case,
+      the vertex <m>(h, 0)</m> stays put at <m>(h, 0)</m> because the <m>y</m>-value of the vertex is <m>0</m> and
+      <m>a \cdot 0 = 0</m> regardless if <m>a > 0</m> or <m>a \lt 0</m>.
+    </p>
+    <p>
+      Last, we examine the graph of
+      <m>F(x) = a|x - h| + k</m> to see how it relates to the graph of <m>F_{2}(x) = a|x - h|</m>.
+      The graph of <m>F</m> consists of the points
+      <m>\{ (x, a|x - h| + k ) \, | \, x \in \mathbb{R} \}</m> whereas the graph of <m>F_{2}</m> consists of the points <m>\{ (x, a|x - h|) \, | \, x \in \mathbb{R} \}</m>.
+      The difference between the corresponding points <m>(x, a|x - h|)</m> and
+      <m>(x, a|x - h| + k )</m> is the addition of <m>k</m> in the <m>y</m>-coordinate of the latter.
+      Adding <m>k</m> to each of the <m>y</m>-values translates the graph of <m>F_{2}</m> vertically by <m>k</m> units.
+      The basic shape doesn't change but the vertex goes from <m>(h, 0)</m> to <m>(h, k)</m>.
+    </p>
+    <p>
+      In summary, the graph of <m>F(x) = a|x - h| + k</m> can be obtained from the graph of <m>f(x) = |x|</m> in three steps:
+      first, add <m>h</m> to each of the <m>x</m>-coordinates;
+      second, multiply each <m>y</m>-coordinate by <m>a</m>;
+      and third, add <m>k</m> to each <m>y</m>-coordinate.
+      Geometrically,
+      these steps mean that we first move the graph left or right,
+      then scale the <m>y</m>-axis by a factor of <m>a</m>
+      (and reflect across the <m>x</m>-axis if <m>a \lt 0</m>),
+      and then move the graph up or down.
+      Throughout all of these <em>transformations</em>,
+      the graph maintains its <sq><m>\vee</m></sq> or <sq><m>\wedge</m></sq> shape.
+    </p>
+    <p>
+      Of course, not every function involving absolute values can be written in the form given in <xref ref="linearabsvaluegraphs">Theorem</xref>.
+      A good example of this is <m>G(x) = |x - 2| - x</m>.
+      However recognizing the ones that can be rewritten will greatly simplify the graphing process.
+      In the next example, we graph four more absolute value functions,
+      two using <xref ref="linearabsvaluegraphs">Theorem</xref>
+      and two using <xref ref="absolutevaluepiecewise">Definition</xref>.
+    </p>
+    <example xml:id="absvaluegraph2">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Graph each of the functions below using <xref ref="linearabsvaluegraphs">Theorem</xref>
+                or by rewriting it as a piecewise defined function using <xref ref="absolutevaluepiecewise">Definition</xref>.
+                Find the zeros, axis-intercepts and the extrema
+                (if any exist)
+                and then list the intervals over which the function is increasing,
+                decreasing or constant. \columnsep{10pt}
+              </p>
+            </li>
+            <li xml:id="absfunctionfromgraph">
+              <p>
+                Use <xref ref="linearabsvaluegraphs">Theorem</xref>
+                to write a possible formula for <m>H(x)</m> whose graph is given below: \begin{mfpic}[20]{-3}{3}{-3}{4} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{2,-1, 1, 2} \ymarks{-2,-1,1,2,3,4} \tcaption{<m>y=H(x)</m>} \tlpointsep{4pt} \tlabel[cc](-1.25, 1){<m>(0,1)</m>} \tlabel[cc](1, 3.5){<m>(1,3)</m>} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-2</m>} -2, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2,-3), (1, 3), (4, -3)} \point[4pt]{(0,1), (1,3)} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Rewriting <m>F(x) = |x + 3| + 2 = (1)|x - (-3)| + 2</m>,
+                    we have <m>F(x)</m> in the form stated in <xref ref="linearabsvaluegraphs">Theorem</xref> with <m>a = 1</m>,
+                    <m>h = -3</m> and <m>k = 2</m>.
+                    The vertex is <m>(-3, 2)</m> and the graph will be a <sq><m>\vee</m></sq> shape.
+                    Seeing as the vertex is already above the <m>x</m>-axis and the graph opens upwards,
+                    there are no <m>x</m>-intercepts on the graph of <m>F</m>,
+                    hence there are no zeros.<fn>
+                    Alternatively,
+                    setting <m>|x + 3| + 2 = 0</m> gives <m>|x + 3| = -2</m>.
+                    Absolute values are never negative thus we have no solution.
+                    </fn>  With <m>F(0) = 5</m>,
+                    the <m>y</m>-intercept is <m>(0,5)</m>.
+                    To get a third point,
+                    we can pick an arbitrary <m>x</m>-value to the left of the vertex or we could use symmetry:
+                    three units to the <em>right</em>
+                    of the vertex the <m>y</m>-value is <m>5</m>,
+                    so the same must be true three units to the <em>left</em>
+                    of the vertex, at <m>x = -6</m>.
+                    Sure enough, <m>F(-6) = |-6 + 3| + 2 = |-3| + 2 = 5</m>.
+                    The range of <m>F</m> is <m>[2, \infty)</m> with its minimum of <m>2</m> when <m>x = -3</m> and <m>F</m> decreasing on
+                    <m>(-\infty, -3]</m> then increasing on <m>[-3, \infty)</m>.
+                    The graph is in the middle of the next page on the left.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We see in the formula for <m>f(t)</m> that <m>t</m> appears only once to the first power inside the absolute values,
+                    so we proceed to rewrite it in the form <m>a|t-h|+k</m>:
+                    <me>
+                      \begin{array}{rcl}  f(x) \amp  =\amp   \dfrac{4 - |5-3t|}{2} \\ \amp  = \amp  - \dfrac{|5-3t|}{2} + \dfrac{4}{2} \\ \amp  = \amp  \left(-\dfrac{1}{2}\right) \left| (-3) \left( t - \dfrac{5}{3} \right) \right| + 2  \\ \amp  = \amp   \left(-\dfrac{1}{2}\right) |-3|  \left| t - \dfrac{5}{3}  \right|  + 2 \\ \amp  = \amp  -\dfrac{3}{2}   \left| t - \dfrac{5}{3}  \right|  + 2. \end{array}
+                    </me>
+                    Matching up the constants in the formula <m>f(t)</m> to the parameters of <m>F(x)</m> in  <xref ref="linearabsvaluegraphs">Theorem</xref>,
+                    we identify <m>a = -\frac{3}{2}</m>,
+                    <m>h = \frac{5}{3}</m> and <m>k = 2</m>.
+                    Hence the vertex is <m>\left(\frac{5}{3}, 2 \right)</m>,
+                    and the graph is shaped like <sq><m>\wedge</m></sq> comprised of pieces of lines with slopes <m>\pm \frac{3}{2}</m>.
+                    To find the zeros of <m>f</m>, we set <m>f(t) = 0</m>.
+                    (We can use either expression here.)
+                    Solving <m>-\frac{3}{2}   \left| t - \frac{5}{3}  \right|  + 2=0</m>,
+                    we get <m>\left| t - \frac{5}{3}  \right| = \frac{4}{3}</m>,
+                    so <m>t - \frac{5}{3} = \pm \frac{4}{3}</m>.
+                    Hence our zeros are <m>t = \frac{1}{3}</m> and <m>t = 3</m>,
+                    producing the <m>t</m>-intercepts <m>\left(\frac{1}{3}, 0 \right)</m> and <m>(3, 0)</m>.
+                    Using either formula gives  <m>f(0) = -\frac{1}{2}</m>,
+                    so our <m>y</m>-intercept is <m>\left(0, -\frac{1}{2}\right)</m>.
+                    Plotting the vertex, along with the intercepts,
+                    gives us enough information to produce the graph below on the right.
+                    The range is <m>(-\infty, 2]</m>  with a maximum of <m>2</m> at
+                    <m>t = \frac{5}{3}</m> and <m>f</m> is increasing on <m>\left(-\infty, \frac{5}{3} \right]</m> then decreasing on
+                    <m>\left[ \frac{5}{3}, \infty \right)</m>.    \begin{mfpic}[15]{-7}{1}{-1}{6} \axes \tlabel[cc](1,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-6, -5,-4,-3,-2,-1} \ymarks{1,2,3,4,5} \tcaption{<m>F(x) = |x+3|+2</m>} \tlpointsep{4pt}  \tlabel[cc](-7.25, 5){<m>(-6,5)</m>} \tlabel[cc](-3, 1.5){<m>(-3,2)</m>} \tlabel[cc](1, 5){<m>(0,5)</m>} \axislabels {x}{{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,   {<m>-1</m>} -1} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-7,6), (-3, 2), (1, 6)} \point[4pt]{(-6, 5), (-3, 2), (0, 5)} \end{mfpic}     \begin{mfpic}[21]{-2}{5}{-2}{3} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-1, 2,3,4} \ymarks{-1,1,2} \tcaption{<m>f(t) = \dfrac{4 - |5-3t|}{2}</m>} \tlpointsep{4pt}  \tlabel[cc](3.35, 0.25){<m>(3,0)</m>} \tlabel[cc](1.6667, 2.5){<m>\left( \frac{5}{3}, 2 \right)</m>} \tlabel[cc](0.75, -0.35){<m>\left( \frac{1}{3}, 0 \right)</m>} \tlabel[cc](-1, -0.5){<m>\left(0, - \frac{1}{2} \right)</m>} \axislabels {x}{ {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-1,-2), (1.6667, 2), (4.3333, -2)} \point[4pt]{(1.6667, 2), (0, -0.5), (0.3333,0), (3,0)} \end{mfpic}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We are unable to apply <xref ref="linearabsvaluegraphs">Theorem</xref>
+                    to <m>G(x) = |x-2| - x</m> because there is an <m>x</m> both inside and outside of the absolute value.
+                    We can, however,
+                    rewrite the function as a piecewise function using <xref ref="absolutevaluepiecewise">Definition</xref>.
+                    Our first step is to rewrite <m>|x-2|</m> as a piecewise function:
+                    <me>
+                      \begin{array}{ccc}  |x-2|  = \begin{cases}-(x - 2) \amp   \text{ if \(x - 2  \lt  0\) }  \\ x - 2  \amp  \text{ if \(x - 2 \geq 0\) } \end{cases}  \amp  \longrightarrow  \amp  |x - 2|  = \begin{cases}-x + 2 \amp   \text{ if \(x \lt  2\) }  \\ x - 2  \amp  \text{ if \(x \geq 2\) } \end{cases} \end{array}
+                    </me>
+                    Hence, for <m>x \lt  2</m>,
+                    <m>|x - 2| = -x + 2</m> so <m>G(x) = |x - 2| - x = (-x + 2) - x = -2x + 2</m>.
+                    Likewise, for <m>x \geq 2</m>,
+                    <m>|x - 2| = x - 2</m> so <m>G(x) = |x - 2| - x = x - 2 - x = -2</m>.
+                    <me>
+                      \begin{array}{ccc}  G(x) = |x - 2| - x =  \begin{cases}(-x + 2) - x \amp   \text{ if \(x \lt  2\) }  \\ (x - 2) - x  \amp  \text{ if \(x \geq 2\) } \end{cases}  \amp  \longrightarrow  \amp  G(x) =  \begin{cases}-2x + 2 \amp   \text{ if \(x \lt  2\) }  \\ -2 \amp  \text{ if \(x \geq 2\) } \end{cases} \end{array}
+                    </me>
+                    To find the zeros of <m>G</m>, we set <m>G(x) = 0</m>.
+                    Solving <m>|x - 2| - x = 0</m> can be problematic,
+                    given that <m>x</m> is both inside and outside of the absolute values.<fn>
+                    We'll return to this momentarily.
+                    </fn>  We can,
+                    however, use the piecewise description of <m>G(x)</m>.
+                    With <m>G(x) = -2x + 2</m> for <m>x \lt  2</m>,
+                    we solve <m>-2x + 2 = 0</m> to get <m>x = 1</m>.
+                    This works because <m>1 \lt  2</m>,
+                    so we have <m>x = 1</m> as the zero of <m>G</m> corresponding to the <m>x</m>-intercept <m>(1,0)</m>.
+                    The other piece of <m>G(x)</m> is
+                    <m>G(x) = -2</m> which is never <m>0</m>.
+                    For the <m>y</m>-intercept, we find
+                    <m>G(0) = 2</m>, and get <m>(0, 2)</m>.
+                    To graph <m>y = G(x)</m>,
+                    we have the line <m>y = -2x + 2</m> which contains <m>(0, 2)</m> and <m>(1, 0)</m> and continues to a hole at <m>(2, -2)</m>.
+                    At this point,
+                    <m>G(x) = -2</m> takes over and we have a horizontal line containing <m>(2, -2)</m> extending indefinitely to the right.
+                    The range of <m>G</m> is <m>[-2, \infty)</m> with a minimum value of <m>-2</m> attained for all <m>x \geq 2</m>.
+                    Moreover, <m>G</m> is decreasing on
+                    <m>(-\infty, 2]</m> and then constant on <m>[2, \infty)</m>.
+                    The graph is below on the left.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Once again we are unable to use <xref ref="linearabsvaluegraphs">Theorem</xref>
+                    because <m>g(t) = |t - 2| - |t|</m>  has two absolute values with no apparent way to combine them.
+                    Thus we proceed by re-writing the function <m>g</m> with two separate applications of <xref ref="absolutevaluepiecewise">Definition</xref>
+                    to remove each instance of the absolute values.
+                    To start with we have:
+                    <me>
+                      \begin{array}{ccc}  |t|  = \begin{cases}-t \amp   \text{ if \(t  \lt  0\) }  \\ t  \amp  \text{ if \(t \geq 0\) } \end{cases}  \amp  \text{ and }  \amp  |t - 2|  = \begin{cases}-t + 2 \amp   \text{ if \(t \lt  2\) }  \\ t - 2  \amp  \text{ if \(t \geq 2\) } \end{cases} \end{array}
+                    </me>
+                    Taken together, these break the domain into <em>three</em> pieces:
+                    <m>t \lt  0</m>, <m>0 \leq t \lt  2</m> and <m>t \geq 2</m>.
+                    For <m>t \lt  0</m>, <m>|t| = -t</m> and <m>|t - 2| = -t + 2</m>.
+                    Therefore <m>g(t) = |t - 2| - |t| = (-t + 2) - (-t) = 2</m>  for <m>t \lt  0</m>.
+                    For <m>0 \leq t \lt  2</m>, <m>|t| = t</m> and <m>|t - 2| = -t + 2</m>,
+                    so <m>g(t) = |t-2| - |t| = (-t+2) - t) = -2t + 2</m>.
+                    Last, for <m>t \geq 2</m>,
+                    <m>|t| = t</m> and <m>|t - 2| = t - 2</m>,
+                    so <m>g(t) = |t-2| - |t| = (t - 2) - (t) = -2</m>.
+                    Putting all three parts together yields:
+                    <me>
+                      g(t) = |t - 2| - |t| = \begin{cases}(-t + 2) - (-t) \amp   \text{ if \(t \lt  0\) }  \\ (-t + 2) - (t)  \amp  \text{ if \(0 \leq t \lt  2\) }  \\ (t - 2) - (t) \amp   \text{ if \(t \geq 2\) } \end{cases}  = \begin{cases}2 \amp   \text{ if \(t \lt  0\) }  \\ -2t + 2  \amp  \text{ if \(0 \leq t \lt  2\) }  \\ -2 \amp   \text{ if \(t \geq 2\) } \end{cases}
+                    </me>
+                    As with the previous example,
+                    we'll delay discussing the absolute value algebra needed to find the zeros of <m>g</m> and use the piecewise description instead.
+                    To graph <m>g</m>, we have the horizontal line <m>y = 2</m> up to,
+                    but not including, the point <m>(0, 2)</m>.
+                    For <m>0 \leq t \lt  2</m>,
+                    we have the line <m>y = -2t + 2</m> which has a <m>y</m>-intercept at <m>(0, 2)</m>
+                    (thus picking up where the first part left off)
+                    and a <m>t</m>-intercept at <m>(1, 0)</m>.
+                    This piece ends with a hole at <m>(2, -2)</m> which is promptly plugged by the horizontal line <m>y = -2</m> for <m>t \geq 2</m>.
+                    Hence the only zero of <m>t</m> is <m>t = 1</m>.
+                    The range of <m>g</m> is <m>[-2,2]</m> with a minimum of <m>-2</m> achieved for all <m>t \geq 2</m>,
+                    and a maximum of <m>2</m> for <m>t \leq 0</m>.
+                    We note that <m>g</m> is constant on
+                    <m>(-\infty, 0]</m> and <m>[2, \infty)</m>,
+                    but with different values, and <m>g</m> is decreasing on <m>[0, 2]</m>.
+                    The graph is given below on the right.  \begin{mfpic}[15]{-2}{5}{-3}{4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-1, 0, 1, 2, 3, 4} \ymarks{-2, -1, 0, 1, 2, 3} \tcaption{<m>G(x) = |x-2| - x</m>} \tlpointsep{4pt}  \tlabel[cc](0.75, 2){<m>(0,2)</m>} \tlabel[cc](1.5, 0.5){<m>(1,0)</m>} \tlabel[cc](1, -2){<m>(2,-2)</m>} \axislabels {x}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1,{<m>2</m>} 2,  {<m>3</m>} 3}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-1,4), (2, -2), (5, -2)} \point[4pt]{(0,2), (1,0), (2,-2)} \end{mfpic}     \begin{mfpic}[15]{-2}{5}{-3}{4} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-1, 0, 1, 2, 3, 4} \ymarks{-2, -1, 0, 1, 2, 3} \tcaption{<m>g(t) = |t-2| - |t|</m>} \tlpointsep{4pt}  \tlabel[cc](0.75, 2){<m>(0,2)</m>} \tlabel[cc](1.5, 0.5){<m>(1,0)</m>} \tlabel[cc](1, -2){<m>(2,-2)</m>} \axislabels {x}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>3</m>} 3}  \penwd{1.25pt} \arrow \reverse \arrow \polyline{(-2, 2), (0, 2), (2, -2), (5, -2)} \point[4pt]{(0,2), (1,0), (2,-2)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                We are told to use <xref ref="linearabsvaluegraphs">Theorem</xref>
+                to find a formula for <m>H(x)</m> so we start with
+                <m>H(x) = a|x - h| + k</m> and look for real numbers <m>a</m>,
+                <m>h</m> and <m>k</m> that make sense.
+                The vertex is labeled as <m>(1, 3)</m>,
+                meaning <m>h = 1</m> and <m>k = 3</m>.
+                Hence we know <m>H(x) = a|x - 1| + 3</m>,
+                so all that is left for us to find is the value of <m>a</m>.
+                The only other point labeled for us is <m>(0, 1)</m>, meaning <m>H(0) = 1</m>.
+                Substituting <m>x = 0</m> into our formula for <m>H(x)</m> gives:
+                <m>H(0) = a|0 - 1| + 3 = a + 3</m>.
+                Given that <m>H(0) = 1</m>, we have <m>a + 3 = 1</m>, so <m>a = -2</m>.
+                Our final answer is <m>H(x) = -2|x-1|+3</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      If nothing else, <xref ref="absvaluegraph2">Example</xref>
+      demonstrates the value of <em>changing forms</em>
+      of functions and the utility of the interplay between algebraic and graphical descriptions of functions.
+      These themes resonate time and time again in this and later courses in Mathematics.
+    </p>
+  </subsection>
+  <subsection xml:id="EquationsInequalitiesGraphically">
+    <title>Graphical Solution Techniques for Equations and Inequalities</title>
+    <p>
+      Consider the basic equation and related inequalities:
+      <m>|x| = 3</m>, <m>|x| \lt 3</m> and <m>|x| > 3</m>.
+      At some point you learned how to solve these using properties of the absolute value inspired by the distance definition.
+      (If not, see <xref ref="AppAbsValEqIneq">Section</xref>.)
+      While there is nothing wrong with this understanding,
+      we wish to use these problems to motivate powerful graphical techniques which we'll use to solve more complicated equations and inequalities in this section,
+      and in many other sections of the textbook.
+    </p>
+    <p>
+      To that end, let's call <m>f(x) = |x|</m> and <m>g(x) = 3</m>.
+      If we graph <m>y = f(x)</m> and
+      <m>y = g(x)</m> on the same set of axes then,
+      by looking for <m>x</m> values where <m>f(x) = g(x)</m>,
+      we are looking for <m>x</m>-values which have the same <m>y</m>-value on both graphs.
+      That is, the solutions to <m>f(x) = g(x)</m> are the <m>x</m>-coordinates of the
+      <em>intersection points</em> of the two graphs.
+      We graph <m>y = f(x) = |x|</m>
+      (the characteristic <sq><m>\vee</m></sq>)
+      along with <m>y = g(x) = 3</m>
+      (the horizontal line)
+      below on the far left.
+      Indeed, the two graphs intersect at <m>(-3, 3)</m> and <m>(3, 3)</m> so our solutions to
+      <m>f(x) = g(x)</m> are the <m>x</m>-values of these points,
+      <m>x = \pm 3</m>.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{0}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1.5, 3.5){<m>y = 3</m>} \tlabel[cc](2.5, 1.5){<m>y = |x|</m>} \xmarks{-4, -3,-2,-1,0, 1,2,3,4} \ymarks{1,2,3,4} \tcaption{Graphically solving <m>|x| = 3</m>.} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>0</m>} 0, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)} \arrow \reverse \arrow \polyline{(-5,3), (5,3)} \penwd{1.25pt} \point[4pt]{(-3,3), (3,3)} \point[4pt]{(-3,0), (3,0)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{0}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1.5, 3.5){<m>y = 3</m>} \tlabel[cc](2.5, 1.5){<m>y = |x|</m>} \xmarks{-4, -3,-2,-1,0, 1,2,3,4} \ymarks{1,2,3,4} \tcaption{Graphically solving
+      <m>|x| \lt 3</m>.} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>0</m>} 0, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)} \arrow \reverse \arrow \polyline{(-5,3), (5,3)} \penwd{1.25pt} \polyline{(-3,3),(0,0),(3,3)} \polyline{(-3,3), (3,3)} \polyline{(-3,0), (3,0)} \pointfillfalse \point[4pt]{(-3,3), (3,3)} \point[4pt]{(-3,0), (3,0)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-5}{5}{0}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1.5, 3.5){<m>y = 3</m>} \tlabel[cc](2.5, 1.5){<m>y = |x|</m>} \xmarks{-4, -3,-2,-1,0, 1,2,3,4} \ymarks{1,2,3,4} \tcaption{Graphically solving <m>|x| > 3</m>.} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>0</m>} 0, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \reverse \arrow \polyline{(-5,5),(0,0),(5,5)} \arrow \reverse \arrow \polyline{(-5,3), (5,3)} \penwd{1.25pt} \arrow \polyline{(-3,3),(-5,5)} \arrow \polyline{(3,3), (5,5)} \arrow \polyline{(-3,3),(-5,3)} \arrow \polyline{(3,3), (5,3)} \arrow \polyline{(-3,0),(-5,0)} \arrow \polyline{(3,0), (5,0)} \pointfillfalse \point[4pt]{(-3,3), (3,3)} \point[4pt]{(-3,0), (3,0)} \end{mfpic}
+    </p>
+    <p>
+      Likewise, if we wish to solve <m>|x| \lt 3</m>,
+      we can view this as a functional inequality
+      <m>f(x) \lt g(x)</m> which means we are looking for the <m>x</m>-values where the <m>f(x)</m> values are less than the corresponding <m>g(x)</m> values.
+      On the graphs,
+      this means we'd be looking for the <m>x</m>-values where the <m>y</m>-values of <m>y = f(x)</m> are less than,
+      hence <em>below</em>, those on the graph of <m>y = g(x)</m>.
+    </p>
+    <p>
+      In the middle picture above we see that the graph of <m>f</m> is below the graph of <m>g</m> between <m>x = -3</m> and <m>x = 3</m>,
+      so our solution is <m>-3 \lt x \lt 3</m>,
+      or in interval notation, <m>(-3, 3)</m>.
+      Finally, the inequality <m>|x| > 3</m> is equivalent to
+      <m>f(x) > g(x)</m> so we are looking for the <m>x</m>-values where the graph of <m>f</m> is <em>above</em>
+      the graph of <m>g</m>.<fn>
+      Solving <m>f(x) > g(x)</m> is equivalent to solving <m>g(x) \lt f(x)</m> - that is,
+      finding where the graph of <m>g</m> is below the graph of <m>f</m>.
+      </fn> The picture on the far right on the previous page shows that this is true for all
+      <m>x \lt -3</m> or for all <m>x > 3</m>.
+      In interval notation,
+      the solution set is <m>(-\infty, -3) \cup (3, \infty)</m>.
+    </p>
+    <p>
+      The methodology and reasoning behind solving the above equation and inequalities extend to any pair of functions <m>f</m> and <m>g</m>,
+      since when graphed on the same set of axes,
+      function outputs are always the dependent variable or the ordinate
+      (second coordinate)
+      of the ordered pairs which comprise the graph.
+      In general:
+    </p>
+    <p>
+      <em>Graphical Interpretation of Equations and Inequalities</em>
+    </p>
+    <p>
+      Suppose <m>f</m> and <m>g</m> are functions whose domains and ranges are sets of real numbers.
+          <idx><h>inequality</h><h>graphical interpretation</h></idx>
+      <ul>
+        <li>
+          <p>
+            The solutions to <m>f(x)=g(x)</m> are the <m>x</m>-values where the graphs of <m>f</m> and <m>g</m> intersect.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solution to <m>f(x) \lt g(x)</m> is the set of <m>x</m>-values where the graph of <m>f</m> is
+            <em>below</em> the graph of <m>g</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The solution to <m>f(x) > g(x)</m> is the set of <m>x</m>-values where the graph of <m>f</m>
+            <em>above</em> the graph of <m>g</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Let's return to <xref ref="absvaluegraph2">Example</xref>
+      where were asked to find the zeros of the functions
+      <m>G(x) = |x-2| -x</m> and <m>g(t) = |t-2|-|t|</m>.
+      In that Example,
+      instead of tackling the algebra involving the absolute values head on we rewrote each function as a piecewise-defined function and obtained our solutions that way.
+    </p>
+    <p>
+      Let's see what this looks like graphically.
+      Note that solving <m>|x-2|-x=0</m> is equivalent to solving <m>|x-2|=x</m>.
+      We graphed <m>y = |x-2|</m> and <m>y=x</m> on the same set of axes on the left of the top of the next page and it appears as if we have just one point of intersection,
+      corresponding to just one solution.
+    </p>
+    <p>
+      Indeed, we can <em>show</em> that there is just one point of intersection.
+      The graph of <m>y = |x-2|</m> is comprised of parts of two lines,
+      <m>y =-(x-2)</m> and <m>y = x-2</m>.
+      The first line has a slope of <m>-1</m> and the second has slope <m>1</m>.
+      The line <m>y = x</m> also has a slope <m>1</m> meaning it and the <sq>right half</sq> of
+      <m>y =|x-2|</m> are parallel, so they never intersect.
+      If our graphs are accurate enough,
+      we may even be able to guess that the solution is <m>x = 1</m>,
+      which we can verify by substituting <m>x = 1</m> into
+      <m>|x-2| = x</m> and seeing that it checks.
+    </p>
+    <p>
+      Likewise, solving <m>|t-2| - |t| = 0</m> is equivalent to solving <m>|t-2| = |t|</m>.
+      We graphed <m>y = |t-2|</m> and <m>y=|t|</m> on the right at the top of the next page and used the same arguments to get the solution <m>t = 1</m> here as well.
+    </p>
+    <p>
+      \begin{mfpic}[15]{-3}{7}{-1}{5} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](2.75, 4){<m>y = x</m>} \tlabel[cc](5.25, 1.5){<m>y = |x-2|</m>} \xmarks{-2,-1,0, 1,2,3,4,5,6} \ymarks{1,2,3,4} \tcaption{Graphically solving
+      <m>|x-2| = x</m>.} \tlpointsep{4pt} \axislabels {x}{ {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \reverse \arrow \polyline{(-3,5),(2,0),(7,5)} \arrow \reverse \arrow \polyline{(-1, -1), (5,5)} \penwd{1.25pt} \point[4pt]{(1,1)} \point[4pt]{(1,0)} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[15]{-3}{7}{-1}{5} \axes \tlabel[cc](7,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](2.75, 4){<m>y = |t|</m>} \tlabel[cc](5.25, 1.5){<m>y = |t-2|</m>} \xmarks{-2,-1,0, 1,2,3,4,5,6} \ymarks{1,2,3,4} \tcaption{Graphically solving
+      <m>|t-2| = |t|</m>.} \tlpointsep{4pt} \axislabels {x}{ {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \arrow \reverse \arrow \polyline{(-3,5),(2,0),(7,5)} \arrow \reverse \arrow \polyline{(-5, 5), (0,0), (5,5)} \penwd{1.25pt} \point[4pt]{(1,1)} \point[4pt]{(1,0)} \end{mfpic}
+    </p>
+    <p>
+      There is more to see here.
+      Consider solving <m>|x-2|-x=0</m> algebraically using the techniques from a previous Algebra course
+      (or <xref ref="AppAbsValEqIneq">Section</xref>).
+      Our first step would be to isolate the absolute value quantity:
+      <m>|x-2| = x</m>.
+      We then <sq>drop</sq> the absolute value by paying the price of a <sq><m>\pm</m></sq>:
+      <m>x-2 = \pm x</m>.
+      This gives us two equations:
+      <m>x - 2 = x</m> and <m>x - 2 = -x</m>.
+      The first equation,
+      <m>x-2 = x</m> reduces to <m>-2 = 0</m> which has no solution.
+      The second equation, <m>x-2 = -x</m>,
+      does have a solution, namely <m>x = 1</m>.
+    </p>
+    <p>
+      How does the algebra tie into the graphs above?
+      Instead of <sq>dropping</sq> the absolute value and tagging the right hand side with a <m>\pm</m>,
+      we can think about the piecewise definition of <m>|x-2|</m> and write
+      <m>|x-2| = \pm(x-2)</m> depending on if <m>x \lt 2</m> or if <m>x \geq 2</m>.
+      That is, <m>|x-2| = x</m> is more precisely equivalent to the two equations:
+      <m>-(x-2) = x</m> which is valid for <m>x \lt 2</m> or <m>x-2 = x</m> which is valid for <m>x \geq 2</m>.
+    </p>
+    <p>
+      Graphically,
+      the first equation is looking for intersection points between the <sq>left half</sq> of the <sq><m>\vee</m></sq> of
+      <m>y = |x-2|</m> and the line <m>y =x</m>.
+      Indeed, <m>-(x-2)=x</m> is equivalent to
+      <m>x-2 = -x</m> from which we obtain our solution <m>x = 1</m>.
+      Likewise, the second equation,
+      <m>x-2 = x</m> is looking for intersection points of the <sq>right half</sq> of the <sq><m>\vee</m></sq> and the line <m>y = x</m>,
+      but there is none.
+      The equation <m>-2=0</m> is telling us that for us to have any solutions,
+      the lines <m>y = x-2</m> and <m>y = x</m>,
+      which have the same slope, must also have the same <m>y</m>-intercepts:
+      that is, <m>-2</m> would have to equal <m>0</m> and that's just silly.
+    </p>
+    <p>
+      Similarly, when solving <m>|t-2| - |t| = 0</m> or <m>|t-2| = |t|</m>,
+      we can use our graphs to prove that the only intersection point is when the <sq>left half</sq> of
+      <m>y = |t-2|</m> intersects the <sq>right half</sq> of <m>y = |t|</m> - that is,
+      when <m>-(t-2) = t</m>.
+      The moral of the story is this:
+      careful graphs can help us simplify the algebra,
+      because we can narrow down the cases.
+      This is especially useful in solving inequalities,
+      as we'll see in our next example.
+    </p>
+    <example xml:id="abseqnineqex">
+      <statement>
+        <p>
+          Solve the following equations and inequalities.
+          <ol>
+            <li>
+              <p>
+                <m>4-|x| = 0.9x - 3.6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>|t-3| - |t|= 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>|x+1|\geq \dfrac{x+4}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2 \lt |t-1| \leq 5</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin by graphing <m>y = 4 - |x|</m> and
+                <m>y = 0.9x - 3.6</m> to look for intersection points.
+                Using <xref ref="linearabsvaluegraphs">Theorem</xref>,
+                we know that the graph of <m>y = 4-|x| = -|x|+4</m> has a vertex at <m>(0,4)</m> and is a <sq><m>\wedge</m></sq> shape,
+                so there are <m>x</m>-intercepts to find.
+                Solving <m>4-|x| = 0</m>, we get <m>|x| = 4</m>, or <m>x = \pm 4</m>.
+                Hence, we have two <m>x</m>-intercepts:
+                <m>(-4,0)</m> and <m>(4,0)</m>.
+                We know from <xref ref="AppLines">Section</xref>
+                that the graph of <m>y = 0.9x - 3.6</m> is a line with slope <m>0.9</m> and <m>y</m>-intercept <m>(0, -3.6)</m>.
+                To find the <m>x</m>-intercept here we solve
+                <m>0.9x - 3.6 = 0</m> and get <m>x = 4</m>.
+                Hence, <m>(4,0)</m> is an <m>x</m>-intercept here as well,
+                and we have stumbled upon one solution to
+                <m>4-|x| = 0.9x - 3.6</m>, namely <m>x = 4</m>.
+                The question is if there are any other solutions.
+                Our graph (below on the left) certainly looks as if there is just one intersection point,
+                but we know from <xref ref="linearabsvaluegraphs">Theorem</xref>
+                that the slopes of the linear parts of <m>y = 4 - |x|</m> are <m>\pm 1</m>.
+                The slope of <m>y = 0.9x - 3.6</m> is <m>0.9</m> and
+                <m>0.9 \neq 1</m> so we know that the left hand side of the<sq><m>\wedge</m></sq> must meet up with the graph of the line because they are not parallel.<fn>
+                See <xref ref="parallelperpendicularslopetheorem">Theorem</xref>.
+                </fn>  <xref ref="absolutevaluepiecewise">Definition</xref>
+                tells us that when <m>x\lt 0</m>, <m>|x| = -x</m>,
+                so <m>4-|x| = 4-(-x) = 4+x</m>.
+                Hence we set about solving
+                <m>4+x = 0.9x - 3.6</m> and get <m>x = -76</m>.
+                Both <m>x = -76</m> and <m>x = 4</m> check in our original equation,
+                <m>4-|x| = 0.9x - 3.6</m>, so we have found our two solutions.<fn>
+                Our picture shows only one of the solutions.
+                We encourage you to take the time with a graphing utility to get the picture to show both points of intersection.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                While we could graph <m>y = |t-3| - |t|</m> and <m>y = 3</m> to help us find solutions,
+                we choose to rewrite the equation as <m>|t-3| = |t| + 3</m>.
+                This way, we have somewhat easier graphs to deal with,
+                namely <m>y = |t-3|</m> and <m>y = |t|+3</m>.
+                The first graph, <m>y = |t-3|</m>,
+                has a vertex at <m>(3,0)</m> and is shaped like a <sq><m>\vee</m></sq> with slopes <m>\pm 1</m> and a <m>y</m>-intercept of <m>(0, 3)</m>.
+                The second graph, <m>y = |t|+3</m>,
+                has a vertex at <m>(0,3)</m> and is also shaped like a <sq><m>\vee</m>,</sq> with slopes <m>\pm 1</m>,
+                and has no <m>t</m>-intercepts.
+                To our surprise and delight, the graphs
+                (below on the right)
+                appear to overlap for <m>t \leq 0</m>.
+                Indeed, for <m>t \leq 0</m>,
+                <m>|t-3| = -(t-3) = -t+3</m> and <m>|t| + 3 = - t+3</m>.
+                Since the formulas are <em>identical</em>
+                for these values of <m>t</m>,
+                our solutions are all values of <m>t</m> with <m>t \leq 0</m>.
+                Using interval notation, we state our solution as <m>(-\infty, 0]</m>.
+                (The other parts of the graphs are non-intersecting parallel lines so we ignored them.)
+                \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \reverse \arrow \polyline{(-5,-1), (0,4),(5,-1)} \arrow \reverse \arrow \polyline{(-1.5, -5), (5, 0.9)} \tlabel[cc](3,3){<m>y = 4 - |x|</m>} \tlabel[cc](3, -3){<m>y =0.9x-3.6</m>} \tcaption{Solving
+                <m>4-|x| = 0.9x - 3.6</m>.} \xmarks{-4 step 1 until 4} \ymarks{-4 step 1 until 4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \point[4pt]{(4,0)} \end{mfpic} \begin{mfpic}[15]{-5}{5}{-5}{5} \arrow \reverse \arrow \polyline{(-2,5), (3,0),(5,2)} \arrow \reverse \arrow \polyline{(-2, 5), (0,3), (2, 5)} \xmarks{-4 step 1 until 4} \ymarks{-4 step 1 until 4} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](3,2){<m>y=|t-3|</m>} \tlabel[cc](3,4.5){<m>y=|t|+3</m>} \tcaption{Solving
+                <m>|t-3|-|t| = 3</m>.} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \polyline{(0,3), (-2,5)} \arrow \polyline{(0,0), (-5,0)} \point[4pt]{(0,3), (0,0)} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>|x+1|\geq \frac{x+4}{2}</m>,
+                we first graph <m>y = |x+1|</m> and <m>y = \frac{x+4}{2} = \frac{1}{2} x + 2</m>.
+                The former is <sq><m>\vee</m></sq> shaped with a vertex at <m>(-1,0)</m> and a <m>y</m>-intercept of <m>(0,1)</m>.
+                The latter is a line with <m>y</m>-intercept <m>(0,2)</m>,
+                slope <m>m = \frac{1}{2}</m> and <m>x</m>-intercept <m>(-4,0)</m>.
+                The picture in the middle of the next page on the right shows two intersection points.
+                To find these, we solve the equations:
+                <m>-(x+1) = \frac{x+4}{2}</m>, obtaining <m>x = -2</m>,
+                and <m>x+1 = \frac{x+4}{2}</m> obtaining <m>x = 2</m>.
+                Graphically, the inequality
+                <m>|x+1|\geq \frac{x+4}{2}</m> is looking for where the graph of <m>y = |x+1|</m>,
+                the <sq><m>\vee</m>,</sq> intersects (<m>=</m>) or is above (<m>></m>) the line <m>y = \frac{x+4}{2}</m>.
+                The graph shows this happening whenever <m>x \leq -2</m> or <m>x \geq 2</m>.
+                Using interval notation,
+                our solution is <m>(-\infty, -2] \cup [2, \infty)</m>.
+                While we cannot check every single <m>x</m> value individually,
+                choosing test values <m>x \lt -2</m>, <m>x = 2</m>,
+                <m>-2 \lt x \lt 2</m>, <m>x = 2</m>,
+                and <m>x > 2</m> to see if the original inequality
+                <m>|x+1|\geq \frac{x+4}{2}</m> holds would help us verify our solution.
+              </p>
+            </li>
+            <li>
+              <p>
+                Recall that the inequality
+                <m>2 \lt |t-1| \leq 5</m> is an example of a <sq>compound</sq> inequality in that is two inequalities in one.<fn>
+                See <xref ref="linearineqreview">Example</xref>
+                for examples of linear compound inequalities.
+                </fn>  The values of <m>t</m> in the solution set need to satisfy <m>2 \lt |t-1|</m>
+                <em>and</em> <m>|t-1| \leq 5</m>.
+                To help us sort through the cases,
+                we graph the horizontal lines <m>y =2</m> and <m>y = 5</m> along with the <sq><m>\vee</m></sq> shaped
+                <m>y= |t-1|</m> with vertex <m>(1,0)</m> and <m>y</m>-intercept <m>(0,1)</m>.
+                Geometrically, we are looking for where
+                <m>y = |t-1|</m> is strictly <em>above</em>
+                the line <m>y = 2</m> but <em>below</em>
+                (or meets)
+                the line <m>y = 5</m>.
+                Solving <m>|t-1| = 2</m> gives <m>t = -1</m> and <m>t = 3</m> whereas solving
+                <m>|t-1| = 5</m> gives <m>t = -4</m> or <m>t = 6</m>.
+                Per the graph
+                (below on the right),
+                we see that <m>y = |t-1|</m> lies between <m>y=2</m> and <m>y=5</m> when
+                <m>-4 \leq t \lt -1</m> and again when <m>3 \lt t \leq 6</m>.
+                In interval notation, our solution is <m>[-4, -1) \cup (3, 6]</m>.
+                As with the previous example,
+                it is impossible to check each and every one of these solutions,
+                but choosing <m>t</m> values both in and around the solution intervals would give us some numerical confidence we have the correct and complete solution. \arrow \reverse \arrow \polyline{(-5,4), (-1,0),(4,5)} \arrow \reverse \arrow \polyline{(-5,-0.5),(5,4.5)} \xmarks{-4 step 1 until 4} \ymarks{1 step 1 until 4} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-3,3.5){<m>y=|x+1|</m>} \tlabel[cc](5,3.5){<m>y=\dfrac{x+4}{2}</m>} \tcaption{Solving
+                <m>|x+1|\geq \dfrac{x+4}{2}</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.5pt} \arrow \polyline{(-2,1), (-5,4)} \arrow \polyline{(-2,1), (-5,-0.5)} \arrow \polyline{(2,3), (4,5)} \arrow \polyline{(2,3), (5,4.5)} \arrow \polyline{(-2,0), (-5,0)} \arrow \polyline{(-2,0), (-5,0)} \arrow \polyline{(2,0), (5,0)} \point[4pt]{(-2,1),(2,3), (-2,0), (2,0)} \end{mfpic} \begin{mfpic}[12][10]{-9}{10}{-1}{9} \arrow \reverse \arrow \polyline{(-7,8),(1,0),(9,8)} \arrow \reverse \arrow \polyline{(-8,2),(9,2)} \arrow \reverse \arrow \polyline{(-8,5),(9,5)} \point[4pt]{(-4,5), (-4,0), (6,5), (6,0)} \tcaption{Solving
+                <m>2 \lt |t-1| \leq 5</m>} \xmarks{-8 step 1 until 9} \ymarks{1 step 1 until 8} \axes \tlabel[cc](10,-0.5){<m>t</m>} \tlabel[cc](0.5,9){<m>y</m>} \tlabel[cc](-6,1.25){<m>y=2</m>} \tlabel[cc](-6,4.25){<m>y=5</m>} \tlabel[cc](-4,7){<m>y=|t-1|</m>} \tlpointsep{4pt} \axislabels {x}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5,{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9} \axislabels {y}{{<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.5pt} \polyline{(-4, 5), (-1,2)} \polyline{(3, 2), (6,5)} \polyline{(-4,0), (-1,0)} \polyline{(3,0), (6,0)} \pointfillfalse \point[4pt]{(-1,2), (-1,0), (3,0),(3,2), } \end{mfpic} \columnsep{10pt}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We will see the interplay of Algebra and Geometry throughout the rest of this course.
+      In the Exercises,
+      do not hesitate to use whatever mix of algebraic and graphical methods you deem necessary to solve the given equation or inequality.
+      Indeed, there is great value in checking your algebraic answers graphically and vice-versa.
+    </p>
+    <p>
+      One of the classic applications of inequalities involving absolute values is the notion of tolerances.<fn>
+      The underlying concept of Calculus can be phrased in terms of tolerances,
+      so this is well worth your attention.
+      </fn> Recall that for real numbers <m>x</m> and <m>c</m>,
+      the quantity <m>|x-c|</m> may be interpreted as the distance from <m>x</m> to <m>c</m>.
+      Solving inequalities of the form
+      <m>|x-c| \leq d</m> for <m>d > 0</m> can then be interpreted as finding all numbers <m>x</m> which lie within <m>d</m> units of <m>c</m>.
+      We can think of the number <m>d</m> as a <sq>tolerance</sq> and our solutions <m>x</m> as being within an accepted tolerance of <m>c</m>.
+      We use this principle in the next example.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Suppose a manufacturer needs to produce a <m>24</m> inch by <m>24</m> inch square piece of particle board as part of a home office desk kit.
+          How close does the side of the piece of particle board need to be cut to <m>24</m> inches to guarantee that the area of the piece is within a tolerance of <m>0.25</m> square inches of the target area of <m>576</m> square inches?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>x</m> denote the length of the side of the square piece of particle board so that the area of the board is <m>x^2</m> square inches.
+          Our tolerance specifies that the area of the board, <m>x^2</m>,
+          needs to be within <m>0.25</m> square inches of <m>576</m>.
+          Mathematically, this translates to <m>|x^2 - 576| \leq 0.25</m>.
+          Rewriting, we get <m>-0.25 \leq x^2 - 576 \leq 0.25</m>,
+          or <m>575.75 \leq  x^2  \leq 576.25</m>.
+          At this point,
+          we take advantage of the fact that the square root is increasing.<fn>
+          This means that for <m>a</m>, <m>b \geq 0</m>,
+          if <m>a \leq b</m>, then <m>\sqrt{a} \leq \sqrt{b}</m>.
+          </fn> Therefore, taking square roots preserves the inequality.
+          When simplifying,
+          we keep in mind that since <m>x</m> represents a length,
+          <m>x>0</m>.
+          <me>
+            \begin{array}{rclr}  575.75 \leq \amp  x^2 \amp  \leq 576.25 \amp   \\ \sqrt{575.75} \leq \amp  \sqrt{x^2} \amp  \leq \sqrt{576.25} \amp  \text{ (take square roots.) }  \\ \sqrt{575.75} \leq \amp  |x| \amp  \leq \sqrt{576.25} \amp  \text{(\(\sqrt{x^2} = |x|\))}  \\ \sqrt{575.75} \leq \amp  x \amp  \leq \sqrt{576.25} \amp  \text{ (\(|x| = x\) since \(x>0\)) } \end{array}
+          </me>
+        </p>
+        <p>
+          The side of the piece of particle board must be between
+          <m>\sqrt{575.75} \approx 23.995</m> and <m>\sqrt{576.25} \approx 24.005</m> inches,
+          a tolerance of (approximately) <m>0.005</m> inches of the target length of <m>24</m> inches,
+          to ensure that the area is within <m>0.25</m> square inches of <m>576</m>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="graphbasicabsvalexerfirst">Exercises</xref>
+      - <xref ref="graphbasicabsvalexerlast"></xref>,
+      graph the function using <xref ref="linearabsvaluegraphs">Theorem</xref>.
+      Find the axis intercepts of each graph, if any exist.
+      From the graph, determine the domain and range of each function,
+      the maximum and minimum of each function, if they exist,
+      and list the intervals on which the function is increasing,
+      decreasing or constant.
+      <ol cols="2">
+        <li xml:id="graphbasicabsvalexerfirst">
+          <p>
+            <m>f(x) = |x + 4|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = |x| + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = |4x|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = -3|t|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = 3|t + 4| - 4</m>
+          </p>
+        </li>
+        <li xml:id="graphbasicabsvalexerlast">
+          <p>
+            <m>g(t) = \dfrac{1}{3}|2t - 1|</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulaforabsgraphfirst">Exercises</xref>
+      - <xref ref="findformulaabsgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = a|x-h|+k</m>.
+      <ol cols="3">
+        <li xml:id="findformulaforabsgraphfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1, -1){<m>(0,-1)</m>} \tlabel[cc](-1.25,-3.5){<m>(-1,-3)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -4.5,4), (-1,-3), (2.5,4)} \point[4pt]{(-1,-3), (0,-1)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-3.5, 0.5){<m>(-1.5,0)</m>} \tlabel[cc](3.5, 0.5){<m>(4,0)</m>} \tlabel[cc](-1.75, -1.5){<m>(0,-1.5)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -5,3.5), (1.25,-2.75), (5,1)} \point[4pt]{(-1.5,0), (0,-1.5), (1.25,-2.75), (4,0)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-3.75, 0.5){<m>(-3,0)</m>} \tlabel[cc](1.75, 0.5){<m>(1,0)</m>} \tlabel[cc](0.75, 1){<m>(0,1)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -5,-2), (-1,2), (5, -4)} \point[4pt]{(-3,0), (-1,2), (1,0), (0,1) } \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformulaabsgraphlast">
+          <p>
+            <m>~</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-1,1){<m>(0,1)</m>} \tlabel[cc](-3, 0.5){<m>(-2,0)</m>} \tlabel[cc](3.5, -0.5){<m>(4,0)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -5,-1.5), (1,1.5), (5,-0.5)} \point[4pt]{(-2,0), (0,1), (4,0), (1, 1.5)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="makeaveewithabsval">
+          <p>
+            With help from a graphing utility,
+            graph the following pairs of functions on the same set of axes:
+            <ul>
+              <li>
+                <p>
+                  <m>f(x) = 2-x</m> and <m>g(x) = | 2-x |</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>f(x) = x^2-4</m> and <m>g(x) = | x^2 -4 |</m>
+                </p>
+              </li>
+            </ul>
+          </p>
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = x^3</m> and <m>g(x) = | x^3 |</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(x) = \sqrt{x}-4</m> and <m>g(x) = | \sqrt{x} -4|</m>
+              </p>
+            </li>
+          </ul>
+          Choose more functions <m>f(x)</m> and graph <m>y = f(x)</m> alongside <m>y = | f(x)|</m> until you can explain how, in general, one would obtain the graph of <m>y = | f(x) |</m> given the graph of <m>y = f(x)</m>. How does your explanation tie in with with <xref ref="absolutevaluepiecewise">Definition</xref>?
+        </li>
+        <li>
+          <p>
+            Explain the function below cannot be written in the form <m>F(x) = a|x-h|+k</m>.
+            Write <m>F(x)</m> as a piecewise-defined linear function. \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-1,-1.25){<m>(0,-1)</m>} \tlabel[cc](1, -2.5){<m>(1,-2)</m>} \tlabel[cc](1.75, 0.5){<m>(2.6,0)</m>} \tlabel[cc](-2.75, 0.5){<m>(-1,0)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-2</m>} -2,{<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4,{<m>-2</m>} -2, {<m>-2</m>} -2, {<m>-3</m>} -3,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \arrow \polyline{( -4,3), (1,-2), (5,3)} \point[4pt]{(1,-2), (0,-1), (-1,0), (2.6,0)} \tcaption{ <m>y = F(x)</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="graphadvabsvalexerfirst">Exercises</xref>
+      - <xref ref="graphadvabsvalexerlast"></xref>,
+      graph the function by rewriting each function as a piecewise defined function using <xref ref="absolutevaluepiecewise">Definition</xref>.
+      Find the axis intercepts of each graph, if any exist.
+      From the graph, determine the domain and range of each function,
+      the maximum and minimum of each function, if they exist,
+      and list the intervals on which the function is increasing,
+      decreasing or constant.
+      <ol cols="3">
+        <li xml:id="graphadvabsvalexerfirst">
+          <p>
+            <m>f(x) = x + |x| - 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = |x+2| - x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = |x+2| - |x|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = |t+ 4| + |t- 2|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(t) = \dfrac{|t + 4|}{t + 4}</m>
+          </p>
+        </li>
+        <li xml:id="graphadvabsvalexerlast">
+          <p>
+            <m>g(t) = \dfrac{|2 - t|}{2 - t}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            With the help of your classmates,
+            find an absolute value function whose graph is given below. \begin{mfpic}[10]{-10}{10}{-1}{5} \axes \tlabel[cc](10,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8} \ymarks{1,2,3,4} \tlpointsep{5pt} \axislabels {x}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \polyline{(-4,0), (-9,5)} \arrow \polyline{(4,0), (9, 5)} \polyline{(-4,0), (0,4), (4,0)} \point[4pt]{(-4, 0), (0, 4), (4, 0)} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solveabsvalequfirsta">Exercises</xref>
+      - <xref ref="solveabsvalequlasta"></xref>, solve the equation.
+      <ol cols="4">
+        <li xml:id="solveabsvalequfirsta">
+          <p>
+            <m>|x| = 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|3x-1| = 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|4-x| = 7</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4 - |t| = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2|5t+1| - 3 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|7t-1| + 2 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{5 - |w|}{2} = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{2}{3} |5-2w| - \frac{1}{2} = 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|w| = w + 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|2x-1| = x+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4 - |x| = 2x+1</m>
+          </p>
+        </li>
+        <li xml:id="solveabsvalequlasta">
+          <p>
+            <m>|x-4| = x-5</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Solve the equations in <xref ref="moreabsvalequfirsta">Exercises</xref>
+      - <xref ref="moreabsvalequlasta"></xref>
+      using the property that if
+      <m>|a| = |b|</m> then <m>a = \pm b</m>.
+      <ol cols="2">
+        <li xml:id="moreabsvalequfirsta">
+          <p>
+            <m>|3x - 2| = |2x + 7|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|3x+1| = |4x|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|1-2x| = |x+1|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|4-t| - |t+2| = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|2-5t| = 5 |t+1|</m>
+          </p>
+        </li>
+        <li xml:id="moreabsvalequlasta">
+          <p>
+            <m>3|t-1| = 2|t+1|</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solveinequabsfirst">Exercises</xref>
+      - <xref ref="solveinequabslast"></xref>, solve the inequality.
+      Write your answer using interval notation.
+      <ol cols="2">
+        <li xml:id="solveinequabsfirst">
+          <p>
+            <m>|3x - 5| \leq 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|7x + 2| > 10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|2t+1| - 5 \lt 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|2-t| - 4 \geq -3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|3w+5| + 2 \lt 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2|7-w| +4 > 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2 \leq |4-x| \lt 7</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>1 \lt |2x - 9| \leq 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|t + 3| \geq |6t + 9|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|t-3| - |2t+1| \lt 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|1-2x| \geq x + 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x + 5 \lt |x+5|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x \geq |x+1|</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>|2x + 1| \leq 6-x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>t + |2t-3| \lt 2</m>
+          </p>
+        </li>
+        <li xml:id="solveinequabslast">
+          <p>
+            <m>|3-t| \geq t-5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Show that if <m>\delta</m> is a real number with <m>\delta > 0</m>,
+            the solution to <m>|x-a| \lt \delta</m> is the interval:
+            <m>(a - \delta, a + \delta)</m>.
+            That is, an interval centered at <m>a</m> with <sq>radius</sq> <m>\delta</m>.
+          </p>
+        </li>
+        <li xml:id="triangleinequalityreals">
+          <p>
+            The
+            <url href="http://en.wikipedia.org/wiki/Triangle_inequality"><em>Triangle Inequality</em></url>
+            for real numbers states that for all real numbers <m>x</m> and <m>a</m>,
+            <m>|x+a| \leq |x| + |a|</m> and, moreover,
+            <m>|x+a| = |x|+|a|</m> if and only if <m>x</m> and <m>a</m> are both positive,
+            both negative,
+            or one or the other is <m>0</m>.
+            Graph each pair of functions below on the same pair of axes and use the graphs to verify the triangle inequality in each instance.
+            <ul>
+              <li>
+                <p>
+                  <m>f(x) = |x+2|</m> and <m>g(x) = |x|+2</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>f(x) = |x+4|</m> and <m>g(x) = |x|+4</m>.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>f(x) = |x + 4|</m> <m>x</m>-intercept <m>(-4, 0)</m> <m>y</m>-intercept <m>(0, 4)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>[0, \infty)</m> Decreasing on <m>(-\infty, -4]</m> Increasing on
+          <m>[-4, \infty)</m> Minimum is <m>0</m> at <m>(-4,0)</m> No maximum \begin{mfpic}[18][20]{-9}{2}{-1}{5} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5,4.75){<m>y</m>} \xmarks{-8,-7,-6,-5,-4,-3,-2,-1,1} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \polyline{(-4,0), (-8.5,4.5)} \arrow \polyline{(-4,0), (1,5)} \point[4pt]{(-4, 0), (0,4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = |x| + 4</m> No <m>x</m>-intercepts <m>y</m>-intercept <m>(0, 4)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>[4, \infty)</m> Decreasing on <m>(-\infty, 0]</m> Increasing on
+          <m>[0, \infty)</m> Minimum is <m>4</m> at <m>(0,4)</m> No maximum \begin{mfpic}[15]{-5}{5}{-1}{9} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,8.75){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \polyline{(0, 4), (-4.5,8.5)} \arrow \polyline{(0,4), (4.5,8.5)} \point[4pt]{(0,4)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = |4x|</m> <m>x</m>-intercept <m>(0, 0)</m> <m>y</m>-intercept <m>(0, 0)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>[0, \infty)</m> Decreasing on <m>(-\infty, 0]</m> Increasing on
+          <m>[0, \infty)</m> Minimum is <m>0</m> at <m>(0,0)</m> No maximum \begin{mfpic}[15]{-3}{3}{-1}{9} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,8.75){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \polyline{(0, 0), (-2.125,8.5)} \arrow \polyline{(0,0), (2.125,8.5)} \point[4pt]{(0,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = -3|t|</m> <m>t</m>-intercept <m>(0, 0)</m> <m>y</m>-intercept <m>(0, 0)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>(-\infty, 0]</m> Increasing on <m>(-\infty, 0]</m> Decreasing on
+          <m>[0, \infty)</m> Maximum is <m>0</m> at <m>(0, 0)</m> No minimum \begin{mfpic}[15]{-3}{3}{-7}{1} \axes \tlabel[cc](3,-0.5){<m>t</m>} \tlabel[cc](0.5,.75){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-6,-5,-4,-3,-2,-1} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \arrow \polyline{(0, 0), (-2.1,-6.3)} \arrow \polyline{(0,0), (2.1,-6.3)} \point[4pt]{(0,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = 3|t + 4| - 4</m> <m>t</m>-intercepts <m>\left(-\frac{16}{3}, 0\right)</m>,
+          <m>\left(-\frac{8}{3}, 0\right)</m> <m>y</m>-intercept <m>(0, 8)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>[-4, \infty)</m> Decreasing on <m>(-\infty, -4]</m> Increasing on
+          <m>[-4, \infty)</m> Minimum is <m>-4</m> at <m>(-4,-4)</m> No maximum \begin{mfpic}[10]{-9}{2}{-5}{10} \axes \tlabel[cc](2,-0.5){<m>t</m>} \tlabel[cc](0.5,9.75){<m>y</m>} \xmarks{-8,-7,-6,-5,-4,-3,-2,-1,1} \ymarks{-4,-3,-2,-1,1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.35pt} \arrow \polyline{(-4,-4), (-8.5,9.5)} \arrow \polyline{(-4,-4), (0.5,9.5)} \point[4pt]{(-4, -4), (0,8), (-5.333, 0), (-2.6667, 0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \frac{1}{3}|2t - 1|</m> <m>t</m>-intercepts <m>\left(\frac{1}{2}, 0\right)</m> <m>y</m>-intercept <m>\left(0, \frac{1}{3}\right)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>[0, \infty)</m> Decreasing on <m>\left(-\infty, \frac{1}{2}\right]</m> Increasing on
+          <m>\left[\frac{1}{2}, \infty\right)</m> Minimum is <m>0</m> at
+          <m>\left(\frac{1}{2},0\right)</m> No maximum \begin{mfpic}[15]{-4}{5}{-1}{3} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,2.75){<m>y</m>} \xmarks{-3,-2,-1,1,2,3,4} \ymarks{1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \polyline{(0.5,0), (-4,3)} \arrow \polyline{(0.5,0), (5,3)} \point[3pt]{(0,0.3333), (0.5, 0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = 2|x+1|-3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = |x-1.25|-2.75</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -|x+1|+2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -\frac{1}{2} |x+1|+\frac{3}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          In each case,
+          the graph of <m>g</m> can be obtained from the graph of <m>f</m> by reflecting the portion of the graph of <m>f</m> which lies below the <m>x</m>-axis about the <m>x</m>-axis.
+          This meshes with <xref ref="absolutevaluepiecewise">Definition</xref>
+          since what we are doing algebraically is making the negative <m>y</m>-values positive.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>F(x) = a|x-h| + k</m>, then for the vertex to be at <m>(1,-2)</m>,
+          <m>h  =1</m> and <m>k = -2</m> so <m>F(x) = a |x-1| - 2</m>.
+          Since <m>(0,-1)</m> is on the graph,
+          <m>F(0) = -1</m> so <m>-1 = a|0-1|-2</m> which means <m>a = 1</m>.
+          This means <m>F(x) = |x-1|-2</m>.
+          However, <m>(2.6,0)</m> is also on the graph,
+          so it should work out that <m>F(2.6) = 0</m>.
+          However, we find <m>F(2.6) = |2.6-1| - 2 = -0.4 \neq 0</m>.
+          <me>
+            F(x) =  \begin{cases}-x-1 \amp   \text{ if \(x \leq 1\), }  \\ \frac{5}{4} x - \frac{13}{4}  \amp  \text{ if \(x \geq 1\), } \end{cases}
+          </me>
+        </p>
+      </li>
+      <li>
+        <p>
+          Re-write <m>f(x) = x+|x| - 3</m> as <m>{\displaystyle f(x) = \left\{ \begin{array}{rcl} -3 \amp \mbox{ if } \amp x \lt 0\\ 2x -3 \amp \mbox{ if } \amp x \geq 0 \end{array} \right. }</m> <m>x</m>-intercept <m>\left(\frac{3}{2}, 0\right)</m> <m>y</m>-intercept <m>(0,-3)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>[-3, \infty)</m> Increasing on <m>[0,\infty)</m> Constant on
+          <m>(-\infty, 0]</m> Minimum is <m>-3</m> at <m>(x,-3)</m> where
+          <m>x \leq 0</m> No maximum \begin{mfpic}[15]{-3}{3}{-4}{3} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-2,-1,1,2} \ymarks{-4,-3,-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \polyline{(0,-3), (-3,-3)} \arrow \polyline{(0,-3), (3,3)} \point[4pt]{(1.5,0), (0,-3)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Re-write <m>f(x) = |x+2| - x</m> as <m>{\displaystyle f(x) = \left\{ \begin{array}{rcl} -2x-2 \amp \mbox{ if } \amp x \lt -2\\ 2 \amp \mbox{ if } \amp x \geq -2 \end{array} \right. }</m> No <m>x</m>-intercepts <m>y</m>-intercept <m>(0,2)</m> Domain <m>(-\infty, \infty)</m> Range
+          <m>[2, \infty)</m> Decreasing on <m>(-\infty, -2]</m> Constant on
+          <m>[-2,\infty)</m> Minimum is <m>2</m> at every point <m>(x,2)</m> where
+          <m>x \geq -2</m> No maximum \begin{mfpic}[15]{-4}{3}{-1}{4} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-3,-2,-1,1,2} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \arrow \polyline{(-2,2), (-3,4)} \arrow \polyline{(-2,2), (3,2)} \point[4pt]{(-2,2), (0,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Re-write <m>f(x) = |x+2|-|x|</m> as <m>{\displaystyle f(x) = \left\{ \begin{array}{rcl} -2 \amp \mbox{ if } \amp x \lt -2\\ 2x+2 \amp \mbox{ if } \amp -2 \leq x \lt 0 \\ 2 \amp \mbox{ if } \amp x \geq 0 \end{array} \right. }</m> <m>x</m>-intercept <m>\left(-1, 0\right)</m> <m>y</m>-intercept <m>(0,2)</m> Domain <m>(-\infty, \infty)</m> Range <m>[-2,2]</m> Increasing on <m>[-2,0]</m> Constant on <m>(-\infty, -2]</m> Constant on
+          <m>[0,\infty)</m> Minimum is <m>-2</m> at <m>(x,-2)</m> where
+          <m>x \leq -2</m> Maximum is <m>2</m> at <m>(x,2)</m> where
+          <m>x \geq 0</m> \begin{mfpic}[15]{-4}{3}{-3}{3} \axes \tlabel[cc](3,-0.5){<m>x</m>} \tlabel[cc](0.5,3){<m>y</m>} \xmarks{-3,-2,-1,1,2} \ymarks{-2,-1,1,2} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \penwd{1.25pt} \arrow \polyline{(-2,-2), (-4,-2)} \arrow \polyline{(0,2), (3,2)} \polyline{(-2,-2), (0,2)} \point[4pt]{(-2,-2), (-1,0), (0,2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Re-write <m>g(t) = |t+ 4| + |t - 2|</m> as <m>{\displaystyle g(t) = \left\{ \begin{array}{rcl} -2t - 2 \amp \mbox{ if } \amp t \lt -4\\ 6 \amp \mbox{ if } \amp -4 \leq t \lt 2\\ 2t + 2 \amp \mbox{ if } \amp t \geq 2 \end{array} \right. }</m> No <m>t</m>-intercept <m>y</m>-intercept <m>(0, 6)</m> Domain <m>(-\infty, \infty)</m> Range <m>[6, \infty)</m> Decreasing on
+          <m>(-\infty, -4]</m> Constant on <m>[-4, 2]</m> Increasing on
+          <m>[2, \infty)</m> Minimum is <m>6</m> at <m>(t, 6)</m> where
+          <m>-4 \leq t \leq 2</m> No maximum \begin{mfpic}[15]{-6}{4}{-1}{9} \axes \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,8.75){<m>y</m>} \xmarks{-5,-4,-3,-2,-1,1,2,3} \ymarks{1,2,3,4,5,6,7,8} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \arrow \polyline{(-4,6), (-5.5,9)} \arrow \polyline{(2,6), (3.5,9)} \polyline{(2,6), (-4,6)} \point[4pt]{(2,6), (-4,6), (0,6)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Re-write <m>g(t) = \dfrac{|t + 4|}{t + 4}</m> as <m>{\displaystyle g(t) = \left\{ \begin{array}{rcl} -1 \amp \mbox{ if } \amp t \lt -4\\ 1 \amp \mbox{ if } \amp t > -4 \end{array} \right. }</m> No <m>t</m>-intercept <m>y</m>-intercept <m>(0, 1)</m> Domain <m>(-\infty, -4) \cup (-4, \infty)</m> Range
+          <m>\{-1, 1\}</m> Constant on <m>(-\infty, -4)</m> Constant on
+          <m>(-4, \infty)</m> Minimum is <m>-1</m> at every point <m>(t, -1)</m> where
+          <m>t \lt -4</m> Maximum is <m>1</m> at <m>(t, 1)</m> where <m>t > -4</m> \begin{mfpic}[15]{-8}{2}{-2}{2} \axes \tlabel[cc](2,-0.5){<m>t</m>} \tlabel[cc](0.5,1.75){<m>y</m>} \xmarks{-8,-7,-6,-5,-4,-3,-2,-1,1} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \polyline{(-4,1), (2,1)} \arrow \polyline{(-4,-1), (-8,-1)} \point[4pt]{(0,1)} \pointfillfalse \point[4pt]{(-4,1), (-4,-1)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          Re-write <m>g(t) = \dfrac{|2-t|}{2-t}</m> as
+          <m>{\displaystyle g(t) = \left\{ \begin{array}{rcl} 1 \amp \mbox{ if } \amp t \lt 2\\ -1 \amp \mbox{ if } \amp t > 2 \end{array} \right. }</m> No <m>t</m>-intercept <m>y</m>-intercept <m>(0, 1)</m> Domain <m>(-\infty, 2) \cup (2, \infty)</m> Range
+          <m>\{-1, 1\}</m> Constant on <m>(-\infty, 2)</m> Constant on
+          <m>(2, \infty)</m> Minimum is <m>-1</m> at <m>(t, -1)</m> where <m>t > 2</m> Maximum is <m>1</m> at every point <m>(t, 1)</m> where <m>t \lt 2</m> \begin{mfpic}[13]{-4}{6}{-2}{2} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,1.75){<m>y</m>} \xmarks{-3,-2,-1,1,2,3,4,5} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-1</m>} -1, {<m>1</m>} 1} \penwd{1.25pt} \arrow \polyline{(2,1), (-4,1)} \arrow \polyline{(2,-1), (6,-1)} \point[4pt]{(0,1)} \pointfillfalse \point[4pt]{(2,1), (2,-1)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = | |x|-4|</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -6</m> or <m>x=6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -3</m> or <m>x= \frac{11}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -3</m> or <m>x= 11</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -1</m> or <m>t= 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=-\frac{1}{2}</m> or <m>t= \frac{1}{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          no solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w=-3</m> or <m>w= 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = -\frac{13}{8}</m> or <m>w = \frac{53}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w =-\frac{3}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=0</m> or <m>x= 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          no solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -1</m> or <m>x = 9</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -\frac{1}{7}</m> or <m>x = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0</m> or <m>x = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\frac{3}{10}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \frac{1}{5}</m> or <m>t = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[\frac{1}{3}, 3\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, -\frac{12}{7} \right) \cup \left(\frac{8}{7}, \infty\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-3,2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty,1] \cup [3,\infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-3,2] \cup [6,11)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[3, 4) \cup (5, 6]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[-\frac{12}{7}, -\frac{6}{5}\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -4) \cup \left( \frac{2}{3}, \infty\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, -\frac{4}{3} \right] \cup [6, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -5)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No Solution.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ -7, \frac{5}{3}\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( 1, \frac{5}{3} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

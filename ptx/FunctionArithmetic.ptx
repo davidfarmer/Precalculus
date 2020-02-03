@@ -1,0 +1,2724 @@
+<section xml:id="FunctionArithmetic">
+  <title>Function Arithmetic</title>
+  <introduction>
+    <p>
+      As we mentioned in <xref ref="GraphsofFunctions">Section</xref>,
+      in this chapter,
+      we are studying functions in a more abstract and general setting.
+      In this section,
+      we begin our study of what can be considered as the
+      <em>algebra of functions</em>
+      by defining <em>function arithmetic.</em>
+    </p>
+    <p>
+      Given two real numbers,
+      we have four primary arithmetic operations available to us:
+      addition, subtraction, multiplication, and division
+      (provided we don't divide by <m>0</m>.)
+      Since the functions we study in this text have ranges which are sets of real numbers,
+      it makes sense we can extend these arithmetic notions to functions.
+    </p>
+    <p>
+      For example, to add two functions means we add their outputs;
+      to subtract two functions, we subtract their outputs, and so on and so forth.
+      More formally, given two functions <m>f</m> and <m>g</m>,
+      we <em>define</em> a new function <m>f+g</m> whose rule is determined by adding the outputs of <m>f</m> and <m>g</m>.
+      That is <m>(f+g)(x) = f(x) + g(x)</m>.
+      While this looks suspiciously like some kind of distributive property,
+      it is nothing of the sort.
+      The <sq><m>+</m></sq> sign in the expression <sq><m>f+g</m></sq> is part of the <em>name</em>
+      of the function we are defining,<fn>
+      We could have just as easily called this new function <m>S(x)</m> for <sq>sum</sq> of <m>f</m> and <m>g</m> and defined <m>S</m> by <m>S(x) = f(x) + g(x)</m>.
+      </fn> whereas the plus sign <sq><m>+</m></sq> sign in the expression
+      <m>f(x) + g(x)</m> represents real number addition:
+      we are adding the output from <m>f</m>,
+      <m>f(x)</m> with the output from <m>g</m>,
+      <m>g(x)</m> to determine the output from the sum function,
+      <m>(f+g)(x)</m>.
+    </p>
+    <p>
+      Of course, in order to define
+      <m>(f+g)(x)</m> by the formula <m>(f+g)(x) = f(x) + g(x)</m>,
+      both <m>f(x)</m> and <m>g(x)</m> need to be defined in the first place;
+      that is, <m>x</m> must be in the domain of <m>f</m>
+      <em>and</em> the domain of <m>g</m>.
+      You'll recall<fn>
+      see <xref ref="AppSetTheory">Section</xref>.
+      </fn> this means <m>x</m> must be in the <em>intersection</em>
+      of the domains of <m>f</m> and <m>g</m>.
+      We define the following.
+    </p>
+    <definition xml:id="functionarithmeticdefn">
+      <statement>
+        <p>
+              <idx><h>function</h><h>arithmetic</h></idx>
+          Suppose <m>f</m> and <m>g</m> are functions and <m>x</m> is in both the domain of <m>f</m> and the domain of <m>g</m>.
+          <ul>
+            <li>
+              <p>
+                The
+                  <idx><h>function</h><h>sum</h></idx>
+                <em>sum</em> of <m>f</m> and <m>g</m>,
+                denoted <m>f+g</m>, is the function defined by the formula
+                <me>
+                  (f+g)(x) = f(x) + g(x)
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                The <idx><h>function</h><h>difference</h></idx> <em>difference</em>
+                of <m>f</m> and <m>g</m>,
+                denoted <m>f-g</m>, is the function defined by the formula
+                <me>
+                  (f-g)(x) = f(x) - g(x)
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                The
+                  <idx><h>function</h><h>product</h></idx>
+                <em>product</em> of <m>f</m> and <m>g</m>,
+                denoted <m>fg</m>, is the function defined by the formula
+                <me>
+                  (fg)(x) = f(x)g(x)
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                The
+                  <idx><h>function</h><h>quotient</h></idx>
+                <em>quotient</em> of <m>f</m> and <m>g</m>,
+                denoted <m>\dfrac{f}{g}</m>, is the function defined by the formula
+                <me>
+                  \left(\dfrac{f}{g}\right)(x) = \dfrac{f(x)}{g(x)}
+                </me>,
+                provided <m>g(x) \neq 0</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We put these definitions to work for us in the next example.
+    </p>
+    <example xml:id="funcarithex">
+      <statement>
+        <p>
+          Consider the following functions:
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = 6x^2 - 2x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = 3-\dfrac{1}{t}</m>, <m>t > 0</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>h = \{ (-3,2), (-2,0.4), (0,\sqrt{2}), (3, -6) \}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>s</m> whose graph is given below:
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          \begin{mfpic}[15]{-2}{5}{-3}{4} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,4){<m>y</m>} \xmarks{-1, 0, 1, 2, 3, 4} \ymarks{-2, -1, 0, 1, 2, 3} \tcaption{<m>y = s(t)</m>} \tlpointsep{4pt}
+        </p>
+        <p>
+          \tlabel[cc](1, -2.5){<m>(0,-2)</m>} \tlabel[cc](2, 0.5){<m>(1,0)</m>} \tlabel[cc](2, 2.5){<m>(2,2)</m>} \tlabel[cc](-2, -2.5){<m>(-2, -2)</m>} \axislabels {x}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>2</m>} 2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>3</m>} 3}
+        </p>
+        <p>
+          \penwd{1.25pt} \arrow \polyline{(-2, -2), (0, -2), (2, 2), (5, 2)} \point[4pt]{(-2,-2), (0,-2), (1,0), (2,2)} \end{mfpic}
+        </p>
+        <ol cols="2">
+          <li xml:id="funcarithfindvaluesex">
+            <p>
+              Find and simplify the following function values:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>(f+g)(1)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(s-f)(-1)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(fg)(2)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\left( \dfrac{s}{h} \right)(0)</m>
+                </p>
+              </li>
+              <li xml:id="threefunctionsfirstex">
+                <p>
+                  <m>((s+g)+h)(3)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>(s+(g+h))(3)</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\left(\dfrac{f+h}{s}\right)(3)</m>
+                </p>
+              </li>
+              <li xml:id="threefunctionslastex">
+                <p>
+                  <m>(f(g-h))(-2)</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Find the domain of each of the following functions:
+              <ol>
+                <li>
+                  <p>
+                    <m>hg</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\dfrac{f}{s}</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li xml:id="arithexpressionex">
+            <p>
+              Find expressions for the functions below.
+              State the domain for each.
+              <ol>
+                <li xml:id="proddomainex">
+                  <p>
+                    <m>(fg)(x)</m>
+                  </p>
+                </li>
+                <li xml:id="quotdomainex">
+                  <p>
+                    <m>\left(\dfrac{g}{f}\right)(t)</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    By definition, <m>(f+g)(1) = f(1) + g(1)</m>.
+                    We find <m>f(1) = 6(1)^2-2(1) = 4</m> and <m>g(1) = 3 - \frac{1}{1} = 2</m>.
+                    So we get <m>(f+g)(1) = 4+2 = 6</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To find <m>(s-f)(-1) = s(-1) - f(-1)</m>,
+                    we need both <m>s(-1)</m> and <m>f(-1)</m>.
+                    To get <m>s(-1)</m>, we look to the graph of
+                    <m>y = s(t)</m> and look for the <m>y</m>-coordinate of the point on the graph with the <m>t</m>-coordinate of <m>-1</m>.
+                    While not labeled directly,
+                    we infer the point <m>(-1,-2)</m> is on the graph which means <m>s(-1) = -2</m>.
+                    For <m>f(-1)</m>, we compute:
+                    <m>f(-1) = 6(-1)^2-2(-1) = 8</m>.
+                    Putting it all together, we get <m>(s-f)(-1) = (-2) -(8) = -10</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Since <m>(fg)(2) = f(2)g(2)</m>,
+                    we first compute <m>f(2)</m> and <m>g(2)</m>.
+                    We find <m>f(2) = 6(2)^2-2(2) = 20</m> and <m>g(2) = 2 + \frac{1}{2} = \frac{5}{2}</m>,
+                    so <m>(fg)(2) = f(2) g(2) = (20)\left(\frac{5}{2}\right) = 50</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    By definition,
+                    <m>\left( \frac{s}{h} \right)(0) = \frac{s(0)}{h(0)}</m>.
+                    Since <m>(0, -2)</m> is on the graph of <m>y=s(t)</m>,
+                    so we know <m>s(0) = -2</m>.
+                    Likewise, the ordered pair <m>(0, \sqrt{2}) \in h</m>,
+                    so <m>h(0) = \sqrt{2}</m>.
+                    We get <m>\left( \frac{s}{h} \right)(0) = \frac{s(0)}{h(0)} = \frac{-2}{\sqrt{2}} = -\sqrt{2}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The expression <m>((s+g)+h)(3)</m> involves
+                    <em>three</em> functions.
+                    Fortunately,
+                    they are grouped so that we can apply <xref ref="functionarithmeticdefn">Definition</xref>
+                    by first considering the sum of the two functions <m>(s+g)</m> and <m>h</m>,
+                    then to the sum of the two functions <m>s</m> and <m>g</m>:
+                    <m>((s+g)+h)(3) = (s+g)(3)+h(3) = (s(3)+g(3))+h(3)</m>.
+                    To get <m>s(3)</m>, we look to the graph of <m>y = s(t)</m>.
+                    We infer the point <m>(3,2)</m> is on the graph of <m>s</m>,
+                    so <m>s(3) = 2</m>.
+                    We compute <m>g(3) = 3-\frac{1}{3} = \frac{8}{3}</m>.
+                    To find <m>h(3)</m>, we note
+                    <m>(3, -6) \in h</m>, so <m>h(3) = -6</m>.
+                    Hence, <m>((s+g)+h)(3) = (s+g)(3)+h(3) = (s(3)+g(3))+h(3) = \left(2+\frac{8}{3}\right) + (-6) = -\frac{4}{3}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The expression <m>(s+(g+h))(3)</m> is very similar to the previous problem,
+                    <m>((s+g)+h)(3)</m> except that the <m>g</m> and <m>h</m> are grouped together here instead of the <m>s</m> and <m>g</m>.
+                    We proceed as above applying <xref ref="functionarithmeticdefn">Definition</xref>
+                    twice and find <m>(s+(g+h))(3) = s(3) + (g+h)(3) = s(3)+(g(3)+h(3))</m>.
+                    Substituting the values for <m>s(3)</m>,
+                    <m>g(3)</m> and <m>h(3)</m>,
+                    we get <m>(s+(g+h))(3) = 2 + \left(\frac{8}{3} + (-6)\right) = -\frac{4}{3}</m>, which,
+                    not surprisingly, matches our answer to the previous problem.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Once again, we find the expression
+                    <m>\left(\frac{f+h}{s}\right)(3)</m> has more than two functions involved.
+                    As with all fractions,
+                    we treat <sq><m>-</m></sq> as a grouping symbol and interpret <m>\left(\frac{f+h}{s}\right)(3) = \frac{(f+h)(3)}{s(3)} = \frac{f(3)+h(3)}{s(3)}</m>.
+                    We compute <m>f(3) = 6(3)^2-2(3) = 48</m> and have
+                    <m>h(3) = -6</m> and <m>s(3) = 2</m> from above.
+                    Hence, <m>\left(\frac{f+h}{s}\right)(3) = \frac{f(3)+h(3)}{s(3)} = \frac{48+(-6)}{2} = 21</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We need to need to exercise caution in parsing <m>(f(g-h))(-2)</m>.
+                    In this context, <m>f</m>, <m>g</m>,
+                    and <m>h</m> are all functions,
+                    so we interpret <m>(f(g-h))</m> as the function and <m>-2</m> as the argument.
+                    We view the function <m>f(g-h)</m> as the product of <m>f</m> and the function <m>g-h</m>.
+                    Hence, <m>(f(g-h))(-2) = f(-2) [(g-h)(-2)] = f(-2) [g(-2) - h(-2)]</m>.
+                    We compute <m>f(-2) = 6(-2)^2-2(-2) = 28</m>,
+                    and <m>g(-2)= 3 - \frac{1}{-2} = 3 + \frac{1}{2} = \frac{7}{2} = 3.5</m>.
+                    Since <m>(-2, 0.4) \in h</m>, <m>h(-2) = 0.4</m>.
+                    Putting this altogether,
+                    we get <m>(f(g-h))(-2) = f(-2) [(g-h)(-2)] = f(-2) [g(-2) - h(-2)] = 28(3.5-0.4) = 28(3.1) = 86.8</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To find the domain of <m>hg</m>,
+                    we need to find the real numbers in both the domain of <m>h</m> and the domain of <m>g</m>.
+                    The domain of <m>h</m> is <m>\{ -3, -2, 0, 3 \}</m> and the domain of <m>g</m> is
+                    <m>\{ t \in \mathbb{R} \, | \, t > 0 \}</m> so the only real number in common here is <m>3</m>.
+                    Hence, the domain of <m>hg</m> is <m>\{ 3\}</m>,
+                    which may be small, but it's better than nothing.<fn>
+                    Since <m>(hg)(3) = h(3)g(3) = (-6)\left(\frac{8}{3}\right) = -16</m>,
+                    we can write <m>hg = \{ (3,-16) \}</m>.
+                    </fn>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To find the domain of <m>\frac{f}{s}</m>,
+                    we first note the domain of <m>f</m> is all real numbers,
+                    but that the domain of <m>s</m>,
+                    based on the graph, is just <m>[-2, \infty)</m>.
+                    Moreover, <m>s(t) = 0</m> when <m>t=1</m>,
+                    so we must exclude this value from the domain of <m>\frac{f}{s}</m>.
+                    Hence, we are left with <m>[-2, 1) \cup (1, \infty)</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    By definition, <m>(fg)(x) = f(x)g(x)</m>.
+                    We are given <m>f(x) = 6x^2-2x</m> and
+                    <m>g(t) = 3 - \frac{1}{t}</m> so <m>g(x) = 3 - \frac{1}{x}</m>.
+                    Hence,
+                    <me>
+                      \begin{array}{rclr}   (fg)(x) \amp  = \amp  f(x)g(x) \amp  \\ \amp  = \amp   \left( 6x^2-2x \right) \left( 3 - \dfrac{1}{x} \right) \amp  \\ \amp  = \amp   18x^2 - 6x^2 \left(\dfrac{1}{x}\right) - 2x(3) + 2x \left(\dfrac{1}{x}\right)  \amp  \text{ distribute }  \\ \amp  = \amp  18x^2 - 6x - 6x + 2 \amp  \\ \amp  = \amp  18x^2 - 12x + 2 \amp \end{array}
+                    </me>
+                    To find the domain of <m>fg</m>,
+                    we note the domain of <m>f</m> is all real numbers,
+                    <m>(-\infty, \infty)</m> whereas the domain of <m>g</m> is restricted to <m>\{ t \in \mathbb{R} \, | \, t > 0 \} = (0, \infty)</m>.
+                    Hence, the domain of <m>fg</m> is likewise restricted to <m>(0, \infty)</m>.
+                    Note if we relied solely on the
+                    <em>simplified formula</em>
+                    for <m>(fg)(x) = 18x^2 - 12x + 2</m>,
+                    we would have obtained the <em>incorrect</em>
+                    answer for the domains of <m>fg</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To find an expression for <m>\left(\frac{g}{f}\right)(t) = \frac{f(t)}{g(t)}</m> we first note
+                    <m>f(t) = 6t^2-2t</m> and <m>g(t) = 3 - \frac{1}{t}</m>.
+                    Hence: \begin{longtable}{rclr} <m>\left( \dfrac{g}{f}\right)(t)</m> &amp;
+                    <m>=</m> &amp; <m>\dfrac{g(t)}{f(t)}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{3-\dfrac{1}{t}}{6t^2 - 2t}</m> = <m>\dfrac{3-\dfrac{1}{t}}{6t^2 - 2t} \cdot \dfrac{t}{t}</m> &amp;
+                    simplify compound fractions &amp; = &amp;
+                    <m>\dfrac{\left(3-\dfrac{1}{t}\right) t}{\left(6t^2 - 2t\right)t}</m> = <m>\dfrac{3t-1}{\left(6t^2 - 2t\right)t}</m> &amp; &amp; = &amp;
+                    <m>\dfrac{3t-1}{2t^2(3t-1)}</m> = <m>\dfrac{\cancelto{1}{(3t-1)}}{2t^2\cancel{(3t-1)}}</m> &amp;
+                    factor and cancel &amp; = &amp;
+                    <m>\dfrac{1}{2t^2}</m> &amp; \end{longtable} Hence,
+                    <m>\left(\frac{g}{f} \right)(t) = \frac{1}{2t^2} = \frac{1}{2} t^{-2}</m>.
+                    To find the domain of <m>\frac{g}{f}</m>,
+                    a real number must be both in the domain of <m>g</m>,
+                    <m>(0, \infty)</m>, and the domain of <m>f</m>,
+                    <m>(-\infty, \infty)</m> so we start with the set <m>(0, \infty)</m>.
+                    Additionally, we require <m>f(t) \neq 0</m>.
+                    Solving <m>f(t) = 0</m> amounts to solving
+                    <m>6t^2-2t = 0</m> or <m>2t(3t-1) = 0</m>.
+                    We find <m>t = 0</m> or <m>t = \frac{1}{3}</m> which means we need to exclude these values from the domain.
+                    Hence, our final answer for the domain of
+                    <m>\frac{g}{f}</m> is <m>\left(0, \frac{1}{3} \right) \cup \left(\frac{1}{3}, \infty \right)</m>.
+                    Note that, once again, using the
+                    <em>simplified formula</em>
+                    for <m>\left(\frac{g}{f}\right)(t)</m> to determine the domain of <m>\frac{g}{f}</m>,
+                    would have produced erroneous results.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      A few remarks are in order.
+      First, in <xref ref="funcarithfindvaluesex">number</xref>
+      <xref ref="threefunctionsfirstex">parts</xref>
+      through <xref ref="threefunctionslastex"></xref>,
+      we first encountered combinations of <em>three</em>
+      functions despite <xref ref="functionarithmeticdefn">Definition</xref>
+      only addressing combinations of
+      <em>two</em> functions at a time.
+      It turns out that function arithmetic inherits many of the same properties of real number arithmetic.
+      For example,
+      we showed above that <m>((s+g)+h)(3) = (s+(g+h))(3)</m>.
+      In general, given any three functions <m>f</m>, <m>g</m>,
+      and <m>h</m>,
+      <m>(f+g)+h = f +(g+h)</m> that is,
+      function addition is <em>assocative</em>.
+      To see this,
+      choose an element <m>x</m> common to the domains of <m>f</m>,
+      <m>g</m>,
+      and <m>h</m>.
+      Then
+      <me>
+        \begin{array}{rclr}  ((f+g)+h)(x) \amp  = \amp  (f+g)(x)+h(x) \amp  \text{ definiton of \(((f+g)+h)(x)\) }  \\  \amp  = \amp  (f(x)+g(x))+h(x) \amp  \text{ definition of \((f+g)(x)\) }  \\ \amp  = \amp  f(x) + (g(x)+h(x)) \amp  \text{ associative property of real number addition }  \\ \amp  = \amp  f(x) + (g+h)(x) \amp  \text{ definition of \((g+h)(x)\) }  \\ \amp  = \amp  (f+(g+h))(x) \amp  \text{ definition of \((f+(g+h))(x)\) } \end{array}
+      </me>
+    </p>
+    <p>
+      The key step to the argument is that
+      <m>(f(x)+g(x))+h(x) = f(x) + (g(x)+h(x))</m> which is true courtesy of the associative property of real number addition.
+      And just like with real number addition,
+      because function addition is associative,
+      we may write <m>f+g+h</m> instead of <m>(f+g)+h</m> or <m>f+(g+h)</m> even though,
+      when it comes down to computations,
+      we can only add two things together at a time.<fn>
+      Addition is a <sq>binary</sq> operation - meaning it is defined only on two objects at once.
+      Even though we write <m>1+2+3 = 6</m>, mentally,
+      we add just two of numbers together at any given time to get our answer:
+      for example, <m>1+2+3 = (1+2)+3 = 3+3 = 6</m>.
+      </fn>
+    </p>
+    <p>
+      For completeness,
+      we summarize the properties of function arithmetic in the theorem below.
+      The proofs of the properties all follow along the same lines as the proof of the associative property and are left to the reader.
+      We investigate some additional properties in the exercises.
+    </p>
+    <theorem xml:id="functionarithmeticprops">
+      <statement>
+        <p>
+          Suppose <m>f</m>, <m>g</m> and <m>h</m> are functions.
+          <ul>
+            <li>
+              <p>
+                <em>Commutative Law of Addition:</em> <m>f+g =g+f</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Associative Law of Addition:</em>
+                <m>(f+g) + h = f+(g+h)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Additive Identity:</em> The function <m>Z(x) = 0</m> satisfies:
+                <m>f+Z = Z+f = f</m> for all functions <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Additive Inverse:</em>  The function
+                <m>F(x) = -f(x)</m> for all <m>x</m> in the domain of <m>f</m> satisfies:
+                <me>
+                  f+F=F+f=Z
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Commutative Law of Multiplication:</em> <m>fg = gf</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Associative Law of Multiplication:</em> <m>(fg)h =f(gh)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Multiplicative Identity:</em>
+                The function <m>I(x) = 1</m> satisfies:
+                <m>fI = If = f</m> for all functions <m>f</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Multiplicative Inverse:</em>
+                If <m>f(x) \neq 0</m> for all <m>x</m> in the domain of <m>f</m>,
+                then <m>F(x) = \dfrac{1}{f(x)}</m> satisfies:
+                <me>
+                  fF=Ff = I
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Distributive Law of Multiplication over Addition:</em> <m>f(g+h) = fg+fh</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In the next example, we decompose given functions into sums,
+      differences, products and/or quotients of other functions.
+      Note that there are infinitely many different ways to do this,
+      including some trivial ones.
+      For example, suppose we were instructed to decompose
+      <m>f(x) = x+2</m> into a sum or difference of functions.
+      We could write <m>f = g+h</m> where
+      <m>g(x) = x</m> and <m>h(x) = 2</m> or we could choose
+      <m>g(x) = 2x+3</m> and <m>h(x) = -x-1</m>.
+      More simply,
+      we could write <m>f = g+h</m> where <m>g(x) = x+2</m> and <m>h(x) = 0</m>.
+      We'll call this last decomposition a <sq>trivial</sq> decomposition.
+      Likewise, if we ask for a decomposition of <m>f(x) = 2x</m> as a product,
+      a nontrivial solution would be <m>f = gh</m> where <m>g(x) = 2</m> and
+      <m>h(x) = x</m> whereas a trivial solution would be <m>g(x) = 2x</m> and <m>h(x) = 1</m>.
+      In general, non-trivial solutions to decomposition problems avoid using the additive identity,
+      <m>0</m>,
+      for sums and differences and the multiplicative identity,
+      <m>1</m>, for products and quotients.
+    </p>
+    <example xml:id="funcarithdecompex">
+      <statement>
+        <ol>
+          <li>
+            <p>
+              For <m>f(x) = x^2 - 2x</m>, find functions <m>g</m>,
+              <m>h</m> and <m>k</m> to decompose <m>f</m> nontrivially as:
+              <ol>
+                <li>
+                  <p>
+                    <m>f = g-h</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>f = g+h</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>f = gh</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>f = g(h-k)</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              For <m>F(t) = \dfrac{2t+1}{\sqrt{t^2-1}}</m>, find functions <m>G</m>,
+              <m>H</m> and <m>K</m> to decompost <m>F</m> nontrivially as:
+              <ol>
+                <li>
+                  <p>
+                    <m>F = \dfrac{G}{H}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>F = GH</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>F = G+H</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>F = \dfrac{G+H}{K}</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To decompose <m>f = g-h</m>,
+                    we need functions <m>g</m> and <m>h</m> so <m>f(x) = (g-h)(x) = g(x) - h(x)</m>.
+                    Given <m>f(x) = x^2 - 2x</m>,
+                    one option is to let <m>g(x) = x^2</m> and <m>h(x) = 2x</m>.
+                    To check, we find <m>(g-h)(x) = g(x) - h(x) = x^2-2x = f(x)</m> as required.
+                    In addition to checking the formulas match up,
+                    we also need to check domains.
+                    There isn't much work here since the domains of <m>g</m> and <m>h</m> are all real numbers which combine to give the domain of <m>f</m> which is all real numbers.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In order to write <m>f = g+h</m>,
+                    we need <m>f(x) = (g+h)(x) = g(x) + h(x)</m>.
+                    One way to accomplish this is to write <m>f(x) = x^2 - 2x = x^2+(-2x)</m> and identify
+                    <m>g(x) = x^2</m> and <m>h(x) = -2x</m>.
+                    To check, <m>(g+h)(x) = g(x) + h(x) = x^2 - 2x = f(x)</m>.
+                    Again, the domains for both <m>g</m> and <m>h</m> are all real numbers which combine to give <m>f</m> its domain of all real numbers.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To write <m>f = gh</m>, we require <m>f(x) = (gh)(x) = g(x) h(x)</m>.
+                    In other words, we need to factor <m>f(x)</m>.
+                    We find <m>f(x) = x^2-2x = x(x-2)</m>,
+                    so one choice is to select
+                    <m>g(x) = x</m> and <m>h(x) = x-2</m>.
+                    Then <m>(gh)(x) = g(x)h(x) = x(x-2) = x^2-2x = f(x)</m>,
+                    as required.
+                    As above, the domains of <m>g</m> and <m>h</m> are all real numbers which combine to give <m>f</m> the correct domain of <m>(-\infty, \infty)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    We need to be careful here interpreting the equation <m>f = g(h-k)</m>.
+                    What we have is an equality of <em>functions</em>
+                    so the parentheses here <em>do not</em>
+                    represent function notation here, but,
+                    rather function <em>multiplication</em>.
+                    The way to parse <m>g(h-k)</m>, then,
+                    is the function <m>g</m> <em>times</em> the function <m>h-k</m>.
+                    Hence, we seek functions <m>g</m>, <m>h</m>,
+                    and <m>k</m> so that <m>f(x) = [g(h-k)](x) = g(x) [(h-k)(x)] = g(x) (h(x) - k(x))</m>.
+                    From the previous example, we know we can rewrite <m>f(x) = x(x-2)</m>,
+                    so one option is to set <m>g(x) = h(x) = x</m> and
+                    <m>k(x) = 2</m> so that <m>[g(h-k)](x) = g(x) [(h-k)(x)] = g(x) (h(x) - k(x)) = x(x-2) = x^2-2x = f(x)</m>,
+                    as required.
+                    As above, the domain of all constituent functions is
+                    <m>(-\infty, \infty)</m> which matches the domain of <m>f</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To write <m>F = \frac{G}{H}</m>,
+                    we need <m>G(t)</m> and <m>H(t)</m> so <m>F(t)= \left(\frac{G}{H}\right)(t) = \frac{G(t)}{H(t)}</m>.
+                    We choose <m>G(t) = 2t+1</m> and <m>H(t) = \sqrt{t^2-1}</m>.
+                    Sure enough,
+                    <m>\left(\frac{G}{H}\right)(t) = \frac{G(t)}{H(t)} = \frac{2t+1}{ \sqrt{t^2-1}} = F(t)</m> as required.
+                    When it comes to the domain of <m>F</m>,
+                    owing to the square root, we require <m>t^2-1 \geq 0</m>.
+                    Since we have a denominator as well,
+                    we require <m>\sqrt{t^2-1} \neq 0</m>.
+                    The former requirement is the same restriction on <m>H</m>,
+                    and the latter requirement comes from <xref ref="functionarithmeticdefn">Definition</xref>.
+                    Starting with the domain of <m>G</m>, all real numbers,
+                    and working through the details,
+                    we arrive at the correct domain of <m>F</m>,
+                    <m>(-\infty, -1) \cup (1, \infty)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Next, we are asked to find functions <m>G</m> and <m>H</m> so <m>F (t) = (GH)(t)  = G(t) H(t)</m>.
+                    This means we need to rewrite the expression for <m>F(t)</m> as a product.
+                    One way to do this is to convert radical notation to exponent notation:
+                    <me>
+                      F(t) = \dfrac{2t+1}{\sqrt{t^2-1}} = \dfrac{2t+1}{\left(t^2-1 \right)^{\frac{1}{2}}} = (2t+1) \left(t^2-1\right)^{-\frac{1}{2}}
+                    </me>.
+                    Choosing <m>G(t) = 2t+1</m> and <m>H(t) = \left(t^2-1\right)^{-\frac{1}{2}}</m>,
+                    we see <m>(GH)(t)  = G(t) H(t) = (2t+1) \left(t^2-1\right)^{-\frac{1}{2}}</m> as required.
+                    The domain restrictions on <m>F</m> stem from the presence of the square root in the denominator - both are addressed when finding the domain of <m>H</m>.
+                    Hence, we obtain the correct domain of <m>F</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    To express <m>F</m> as a sum of functions <m>G</m> and <m>H</m>,
+                    we could rewrite
+                    <me>
+                      F(t) =  \dfrac{2t+1}{\sqrt{t^2-1}} = \dfrac{2t}{\sqrt{t^2-1}} + \dfrac{1}{\sqrt{t^2-1}}
+                    </me>,
+                    so that <m>G(t) =  \frac{2t}{\sqrt{t^2-1}}</m> and <m>H(t) =  \frac{1}{\sqrt{t^2-1}}</m>.
+                    Indeed, <m>(G+H)(t) = G(t)+H(t) =  \frac{2t}{\sqrt{t^2-1}} +  \frac{1}{\sqrt{t^2-1}} = \frac{2t+1}{\sqrt{t^2-1}} = F(t)</m>,
+                    as required.
+                    Moreover, the domain restrictions for <m>F</m> are the same for both <m>G</m> and <m>H</m>,
+                    so we get agreement on the domain, as required.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Last, but not least, to write <m>F = \frac{G+H}{K}</m>,
+                    we require <m>F(t) =\left(\frac{G+H}{K}\right)(t) = \frac{(G+H)(t)}{K(t)} = \frac{G(t)+H(t)}{K(t)}</m>.
+                    Identifying <m>G(t) = 2t</m>,
+                    <m>H(t) = 1</m>, and <m>K(t) = \sqrt{t^2-1}</m>, we get
+                    <me>
+                      \left(\dfrac{G+H}{K}\right)(t) = \dfrac{(G+H)(t)}{K(t)} = \dfrac{G(t) + H(t)}{K(t)} = \dfrac{2t+1}{\sqrt{t^2-1}} = F(t)
+                    </me>.
+                    Concerning domains,
+                    the domain of both <m>G</m> and <m>H</m> are all real numbers,
+                    but the domain of <m>K</m> is restricted to <m>t^2-1 \geq 0</m>.
+                    Coupled with the restriction stated in <xref ref="functionarithmeticdefn">Definition</xref> that <m>K(t) \neq 0</m>,
+                    we recover the domain of <m>F</m>,
+                    <m>(-\infty, -1) \cup (1, \infty)</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="differencequotients">
+    <title>Difference Quotients</title>
+    <p>
+      Recall in <xref ref="AverageRateofChange">Section</xref>
+      the concept of the average rate of change of a function over the interval <m>[a,b]</m> is the slope between the two points
+      <m>(a, f(a))</m> and <m>(b, f(b))</m> and is given by
+      <me>
+        \dfrac{\Delta[f(x)]}{\Delta x} = \dfrac{f(b)-f(a)}{b-a}
+      </me>.
+    </p>
+    <p>
+      Consider a function <m>f</m> defined over an interval containing <m>x</m> and <m>x+h</m> where <m>h \neq 0</m>.
+      The average rate of change of <m>f</m> over the interval <m>[x,x+h]</m> is thus given by the formula:<fn>
+      assuming <m>h>0</m>;  otherwise,
+      we  the interval is <m>[x+h, x]</m>.
+      We get the same formula for the difference quotient either way.
+      </fn>
+      <me>
+        \dfrac{\Delta[f(x)]}{\Delta x} = \dfrac{f(x+h)-f(x)}{h},  h \neq 0
+      </me>.
+    </p>
+    <p>
+      The above is an example of what is traditionally called the
+      <em>difference quotient</em>
+      or <em>Newton quotient</em> of <m>f</m>,
+      since it is the <em>quotient</em>
+      of two <em>differences</em>,
+      namely <m>\Delta[f(x)]</m> and <m>\Delta x</m>.
+      Another formula for the difference quotient sticks keeps with the notation <m>\Delta x</m> instead of <m>h</m>:
+      <me>
+        \dfrac{\Delta[f(x)]}{\Delta x} = \dfrac{f(x+\Delta x)-f(x)}{\Delta x},  \Delta x \neq 0
+      </me>.
+    </p>
+    <p>
+      It is important to understand that in this formulation of the difference quotient,
+      the variables <sq><m>x</m></sq> and <sq><m>\Delta x</m></sq> are distinct - that is they do not combine as like terms.
+    </p>
+    <p>
+      In <xref ref="IntroRational">Section</xref>,
+      the average rate of change of position function <m>s</m> can be interpreted as the average velocity
+      (see <xref ref="averagevelocitydefn">Definition</xref>.)
+      We can likewise re-cast this definition.
+      After relabeling <m>t = t_{0}+ \Delta t</m>, we get
+      <me>
+        \overline{v}(\Delta t) = \dfrac{\Delta [s(t)]}{\Delta t} = \dfrac{s(t_{0} + \Delta t) - s(t_{0})}{\Delta t},  \Delta t \neq 0
+      </me>,
+      which measures the average velocity between time <m>t_{0}</m> and time
+      <m>t_{0} + \Delta t</m> as a function of <m>\Delta t</m>.
+    </p>
+    <p>
+      Note that, regardless of which form the difference quotient takes,
+      when <m>h</m>, <m>\Delta x</m>,
+      or <m>\Delta t</m> is <m>0</m>,
+      the difference quotient returns the indeterminant form <sq><m>\frac{0}{0}</m>.</sq> As we've seen with rational functions in <xref ref="IntroRational">Section</xref>,
+      when this happens,
+      we can reduce the fraction to lowest terms to see if we have a vertical asymptote or hole in the graph.
+      With this in mind,
+      when we speak of <sq>simplifying the difference quotient,</sq> we mean to manipulate the expression until the factor of <sq><m>h</m></sq> or <sq><m>\Delta x</m></sq> cancels out from the denominator.
+    </p>
+    <p>
+      Our next example invites us to simplify three difference quotients,
+      each cast slightly differently.
+      In each case,
+      the bulk of the work involves Intermediate Algebra.
+      We refer the reader to <xref ref="AppRatExpEqus">Sections</xref>
+      and <xref ref="AppRadEqus"></xref>
+      for additional review, if needed.
+    </p>
+    <example xml:id="differencequotientex">
+      <statement>
+        <p>
+          Find and simplify the indicated difference quotients for the following functions:
+        </p>
+        <ol>
+          <li>
+            <p>
+              For <m>f(x) = x^2-x-2</m>, find and simplify:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\dfrac{f(3+h)-f(3)}{h}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\dfrac{f(x+h)-f(x)}{h}</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              For <m>g(x) = \dfrac{3}{2x+1}</m>, find and simplify:
+              <ol>
+                <li>
+                  <p>
+                    <m>\dfrac{g(\Delta x)-g(0)}{\Delta x}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\dfrac{g(x+\Delta x)-g(x)}{\Delta x}</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r(t) = \sqrt{t}</m>, find and simplify:
+              <ol>
+                <li>
+                  <p>
+                    <m>\dfrac{r(9+\Delta t)-r(9)}{\Delta t}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\dfrac{r(t+\Delta t)- r(t)}{\Delta t}</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    For our first difference quotient,
+                    we find <m>f(3+h)</m> by substituting the quantity <m>(3+h)</m> in for <m>x</m>:
+                    <me>
+                      \begin{array}{rclr} f(3+h) \amp  = \amp  (3+h)^2 - (3+h) -2 \amp  \\ \amp  = \amp  9 + 6h+h^2 - 3 - h -2 \amp  \\ \amp  = \amp  4 + 5h + h^2 \amp \end{array}
+                    </me>
+                    Since <m>f(3) = (3)^2-3-2 = 4</m>,
+                    we get for the difference quotient:
+                    <me>
+                      \begin{array}{rclr}  \dfrac{f(3+h)-f(3)}{h} \amp  = \amp  \dfrac{(4 + 5h + h^2) -4}{h} \amp  \\ \amp  = \amp  \dfrac{5h+h^2}{h} \amp  \\ \amp  = \amp   \dfrac{h(5+h)}{h} \amp  \text{ factor }  \\ \amp  = \amp   \dfrac{\cancel{h}(5+h)}{\cancel{h}} \amp  \text{ cancel }  \\ \amp  = \amp  5+h \end{array}
+                    </me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    For the second difference quotient,
+                    we first find <m>f(x+h)</m>,
+                    we replace every occurrence of <m>x</m> in the formula
+                    <m>f(x) = x^2-x-2</m> with the quantity <m>(x+h)</m> to get
+                    <me>
+                      \begin{array}{rclr}  f(x+h) \amp  = \amp  (x+h)^2 - (x+h) -2 \amp  \\ \amp  = \amp  x^2 + 2xh + h^2 - x - h - 2. \end{array}
+                    </me>
+                    So the difference quotient is    \begin{longtable}{rclr}  <m>\dfrac{f(x+h)-f(x)}{h}</m> &amp; = &amp;
+                    <m>\dfrac{\left(x^2+2xh+h^2-x-h-2 \right)-\left(x^{2}-x-2 \right)}{h}</m> &amp;  &amp; = &amp;
+                    <m>\dfrac{x^2+2xh+h^2-x-h-2-x^2+x+2}{h}</m> &amp;  &amp; = &amp;
+                    <m>\dfrac{2xh+h^2-h}{h}</m> &amp;  &amp; = &amp;
+                    <m>\dfrac{h \left(2x+h-1\right)}{h}</m> &amp; factor  &amp; = &amp;
+                    <m>\dfrac{\cancel{h} \left(2x+h-1\right)}{\cancel{h}}</m> &amp;
+                    cancel  &amp; = &amp;
+                    <m>2x+h-1</m>.  \end{longtable}  Note if we substitute <m>x=3</m> into this expression,
+                    we obtain <m>5+h</m> which agrees with our answer from the first difference quotient.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    Rewriting <m>\Delta x = 0 + \Delta x</m>,
+                    we see the first expression really is a difference quotient:
+                    <me>
+                      \dfrac{g(\Delta x)-g(0)}{\Delta x} = \dfrac{g(0+\Delta x)-g(0)}{\Delta x}
+                    </me>.
+                    Since <m>g(\Delta x) = \frac{3}{2 \Delta x + 1}</m> and <m>g(0) = \frac{3}{2(0)+1} = 3</m>,
+                    our difference quotient is:  \begin{longtable}{rclr}  <m>\dfrac{g(0+\Delta x)-g(0)}{\Delta x}</m> &amp; = &amp;
+                    <m>\dfrac{\dfrac{3}{2\Delta x+1}-3}{\Delta x}</m> &amp;  &amp; = &amp;
+                    <m>\dfrac{\dfrac{3}{2\Delta x+1}-3}{\Delta x} \cdot \dfrac{(2\Delta x+1)}{(2\Delta x+1)}</m> &amp;  &amp; = &amp;
+                    <m>\dfrac{3-3(2\Delta x+1)}{\Delta x(2\Delta x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{3 - 6 \Delta x - 3}{\Delta x(2\Delta x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{-6\Delta x}{\Delta x(2\Delta x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{-6\cancel{\Delta x}}{\cancel{\Delta x}(2\Delta x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{-6}{2\Delta x+1}</m>.  &amp;  \end{longtable}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    For our next difference quotient,
+                    we first find <m>g(x+\Delta x)</m> by replacing every occurrence of <m>x</m> in the formula for <m>g(x)</m> with the quantity <m>(x+\Delta x)</m>:
+                    <me>
+                      \begin{array}{rclr} g(x+\Delta x) \amp  = \amp  \dfrac{3}{2(x+\Delta x)+1} \amp  \\ \amp  = \amp  \dfrac{3}{2x+2\Delta x+1}. \end{array}
+                    </me>
+                    Hence,  \begin{longtable}{rclr}  <m>\dfrac{g(x+\Delta x)-g(x)}{\Delta x}</m> &amp; = &amp;
+                    <m>\dfrac{\dfrac{3}{2x+2\Delta x+1}-\dfrac{3}{2x+1}}{\Delta x}</m> &amp;  &amp; = &amp;
+                    <m>\dfrac{\dfrac{3}{2x+2\Delta x+1}-\dfrac{3}{2x+1}}{\Delta x} \cdot \dfrac{(2x+2\Delta x+1)(2x+1)}{(2x+2\Delta x+1)(2x+1)}</m> &amp;  &amp; = &amp;
+                    <m>\dfrac{3(2x+1)-3(2x+2\Delta x+1)}{\Delta x(2x+2\Delta x+1)(2x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{6x+3-6x-6\Delta x-3}{\Delta x(2x+2\Delta x+1)(2x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{-6\Delta x}{\Delta x(2x+2\Delta x+1)(2x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{-6\cancel{\Delta x}}{\cancel{\Delta x}(2x+2\Delta x+1)(2x+1)}</m>  &amp;  &amp; = &amp;
+                    <m>\dfrac{-6}{(2x+2\Delta x+1)(2x+1)}</m>.  &amp;  \end{longtable}  Since we have managed to cancel the factor <sq><m>\Delta x</m></sq> from the denominator,
+                    we are done.
+                    Substituting <m>x=0</m> into our final expression gives
+                    <m>\frac{-6}{2 \Delta x +1}</m> thus checking our previous answer.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    We start with <m>r(9+\Delta t) = \sqrt{9+\Delta t}</m> and <m>r(9) = \sqrt{9} = 3</m> and get:
+                    <me>
+                      \dfrac{r(9+\Delta t)-r(9)}{\Delta t} = \dfrac{\sqrt{9+\Delta t} - 3}{\Delta t}
+                    </me>.
+                    In order to cancel the factor <sq><m>\Delta t</m></sq> from the <em>denominator</em>,
+                    we set about rationalizing the <em>numerator</em>
+                    by multiplying both numerator and denominator by the conjugate of the numerator,
+                    <m>\sqrt{9+\Delta t} - 3</m>:
+                    <me>
+                      \begin{array}{rcll}  \dfrac{r(9+\Delta t) - r(9)}{\Delta t} \amp  = \amp  \dfrac{\sqrt{9+\Delta t} - 3}{\Delta t} \amp  \\  \amp  = \amp  \dfrac{\left(\sqrt{9+\Delta t} - 3 \right)}{\Delta t} \cdot \dfrac{\left(\sqrt{9+\Delta t} + 3\right)}{\left(\sqrt{9+\Delta t} + 3\right)} \amp  \text{ Multiply by the conjugate. }  \\  \amp  = \amp   \dfrac{\left(\sqrt{9+\Delta t}\right)^2 -(3)^2}{\Delta t\left(\sqrt{9+\Delta t} + 3\right)} \amp  \text{ Difference of Squares. } \\  \amp  = \amp   \dfrac{(9+\Delta t) - 9}{\Delta t\left(\sqrt{9+\Delta t} + 3\right)} \amp  \\  \amp  = \amp   \dfrac{\Delta t}{\Delta t\left(\sqrt{9+\Delta t} + 3\right)} \amp  \\  \amp  = \amp   \dfrac{\cancelto{1}{\Delta t}}{\cancel{\Delta t}\left(\sqrt{9+\Delta t} + 3\right)} \amp  \\   \amp  = \amp   \dfrac{1}{\sqrt{9+\Delta t} +3} \amp \end{array}
+                    </me>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    As one might expect,
+                    we use this same strategy to simplify our final  different quotient.
+                    We have:
+                    <me>
+                      \begin{array}{rcll}  \dfrac{r(t+\Delta t) - r(t)}{\Delta t} \amp  = \amp  \dfrac{\sqrt{t+\Delta t} - \sqrt{t}}{\Delta t} \amp  \\  \amp  = \amp  \dfrac{\left(\sqrt{t+\Delta t} - \sqrt{t}\right)}{\Delta t} \cdot \dfrac{\left(\sqrt{t+\Delta t} + \sqrt{t}\right)}{\left(\sqrt{t+\Delta t} + \sqrt{t}\right)} \amp  \text{ Multiply by the conjugate. }  \\  \amp  = \amp   \dfrac{\left(\sqrt{t+\Delta t}\right)^2 - \left(\sqrt{t}\right)^2}{\Delta t\left(\sqrt{t+\Delta t} + \sqrt{t}\right)} \amp  \text{ Difference of Squares. } \\  \amp  = \amp   \dfrac{(t+\Delta t) - t}{\Delta t\left(\sqrt{t+\Delta t} + \sqrt{t}\right)} \amp  \\  \amp  = \amp   \dfrac{\Delta t}{\Delta t\left(\sqrt{t+\Delta t} + \sqrt{t}\right)} \amp  \\  \amp  = \amp   \dfrac{\cancelto{1}{\Delta t}}{\cancel{\Delta t}\left(\sqrt{t+\Delta t} + \sqrt{t}\right)} \amp  \\   \amp  = \amp   \dfrac{1}{\sqrt{t+\Delta t} + \sqrt{t}} \amp \end{array}
+                    </me>
+                    Since we have canceled the original <sq><m>\Delta t</m></sq> factor from the denominator,
+                    we are done.
+                    Setting <m>t=9</m> in this expression,
+                    we get <m>\frac{1}{\sqrt{9+\Delta t} +3}</m> which agrees with our previous answer.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We close this section revisiting the situation in <xref ref="averagevelocityrocketex">Example</xref>.
+    </p>
+    <example xml:id="averagevelocityrocketexreprise">
+      <statement>
+        <p>
+          Let <m>s(t) = -5t^2+100t</m>,
+          <m>0 \leq t \leq 20</m> give the height of a model rocket above the Moon's surface, in feet,
+          <m>t</m> seconds after liftoff.
+          <ol>
+            <li>
+              <p>
+                Find, and simplify:
+                <m>\overline{v}(\Delta t) = \dfrac{s(15+ \Delta t) - s(15)}{\Delta t}</m>,
+                for <m>\Delta t \neq 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find and interpret <m>\overline{v}(-1)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>y = \overline{v}(t)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Describe the behavior of <m>\overline{v}</m> as <m>\Delta t \rightarrow 0</m> and interpret.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find <m>\overline{v}(\Delta t)</m>,
+                we first find <m>s(15+\Delta t)</m>:
+                <me>
+                  \begin{array}{rclr} s(15+\Delta t) \amp  = \amp  -5(15+\Delta t)^2 + 100(15+\Delta t) \amp  \\ \amp  = \amp  -5(225+30 \Delta t + (\Delta t)^2) + 1500 + 100 \Delta t\amp  \\ \amp  = \amp  -5(\Delta t)^2 -50 \Delta t +375 \amp \end{array}
+                </me>
+                Since <m>s(15) = -5(15)^2 + 100(15) = 375</m>, we get:
+                <me>
+                  \begin{array}{rclr}  \overline{v}(\Delta t)\amp  = \amp  \dfrac{s(15+ \Delta t) - s(15)}{\Delta t} \amp  \\ \amp  = \amp  \dfrac{(-5(\Delta t)^2-50 \Delta t + 375) - 375}{\Delta t} \amp  \\ \amp  = \amp  \dfrac{\Delta t (-5 \Delta t - 50)}{\Delta t} \amp  \\ \amp  = \amp  \dfrac{\cancel{\Delta} t (-5 \Delta t - 50)}{\cancel{\Delta t}} \amp  \\ \amp  = \amp  -5 \Delta t - 50 \amp  \text{ \(\Delta t \neq 0\) } \end{array}
+                </me>
+                In addition to the restriction <m>\Delta t \neq 0</m>,
+                we also know the domain of <m>s</m> is <m>0 \leq t \leq 20</m>.
+                Hence, we also require  <m>0 \leq 15 + \Delta t \leq 20</m> or  <m>-15 \leq \Delta \leq 5</m>.
+                Our final answer is <m>\overline{v}(\Delta t) = -5 \Delta t - 50</m>,
+                for <m>\Delta t \in [-15, 0) \cup (0, 5]</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                We find <m>\overline{v}(-1) = -5(-1) - 50 = -45</m>.
+                This means the average velocity over between time
+                <m>t=15+(-1) = 14</m> seconds and <m>t=15</m> seconds is <m>-45</m> feet per second.
+                This indicates the rocket is, on average,
+                heading <em>downwards</em> at a rate of <m>45</m> feet per second.
+              </p>
+            </li>
+            <li>
+              <p>
+                The graph of <m>y = -5 \Delta t - 50</m> is a line with slope <m>-5</m> and <m>y</m>-intercept <m>(0, -50)</m>.
+                However, since the domain of
+                <m>\overline{v}</m> is <m>[-15, 0) \cup (0, 5]</m>,
+                we the graph of <m>\overline{v}</m> is a line <em>segment</em>
+                from <m>(-15, 25)</m> to <m>(5, -75)</m> with a hole at
+                <m>(0, -50)</m>. \begin{mfpic}[15]{-4}{2}{-8}{3} \axes \axismarks{x}{-4, -3, -2, -1,1} \axismarks{y}{-7 step 1 until 2} \tlabel[cc](2, -0.5){<m>\Delta t</m>} \tlabel[cc](0.5, 3){<m>y</m>} \tlabel[cc](-4.5, 2.5){<m>(-15, 25)</m>} \tlabel[cc](2.25, -7.5){<m>(5,-75)</m>} \tlabel[cc](1.25, -5){<m>(0,-50)</m>} \penwd{1.25pt} \polyline{(-3, 2.5), (1, -7.5)} \point[4pt]{(-3, 2.5), (1, -7.5)} \pointfillfalse \point[4pt]{(0, -5)} \tcaption{<m>y=\overline{v}(\Delta t)</m>} \end{mfpic}
+              </p>
+            </li>
+            <li>
+              <p>
+                As <m>\Delta t \rightarrow 0</m>,
+                <m>\overline{v}(\Delta t) \rightarrow -50</m> meaning as we approach <m>t=15</m>,
+                the velocity of the rocket approaches <m>-50</m> feet per second.
+                Recall from <xref ref="averagevelocityrocketex">Example</xref>
+                that this is the so-called <em>instantaneous velocity</em>
+                of the rocket <em>at</em> <m>t=15</m> seconds.
+                That is, <m>15</m> seconds after lift-off,
+                the rocket is heading back towards the surface of the moon at a rate of <m>15</m> feet per second.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      The reader is invited to compare <xref ref="averagevelocityrocketex">Example</xref>
+      in <xref ref="IntroRational">Section</xref>
+      with <xref ref="averagevelocityrocketexreprise">Exercise</xref> above.
+      We obtain the \text{ exact same } information because we are asking the <em>exact same</em>
+      questions - they are just framed differently.
+    </p>
+  </subsection>
+  <subsection xml:id="ExercisesforFunctionArithmetic">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="basicarithonefirst">Exercises</xref>
+      - <xref ref="basicarithonelast"></xref>,
+      use the pair of functions <m>f</m> and <m>g</m> to find the following values if they exist.
+      <ul>
+        <li>
+          <p>
+            <m>(f+g)(2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f-g)(-1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g-f)(1)</m>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            <m>(fg)\left(\frac{1}{2}\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{f}{g}\right)(0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{g}{f}\right)\left(-2\right)</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ol cols="5">
+      <li xml:id="basicarithonefirst">
+        <p>
+          <m>f(x) = 3x+1</m> and <m>g(t) = 4-t</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^2</m> and <m>g(t) = -2t+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^2 - x</m> and <m>g(t) = 12-t^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 2x^3</m> and <m>g(t) = -t^2-2t-3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{x+3}</m> and <m>g(t) = 2t-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{4-x}</m> and <m>g(t) = \sqrt{t+2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 2x</m> and <m>g(t) = \dfrac{1}{2t+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^2</m> and <m>g(t) = \dfrac{3}{2t-3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = x^2</m> and <m>g(t) = \dfrac{1}{t^2}</m>
+        </p>
+      </li>
+      <li xml:id="basicarithonelast">
+        <p>
+          <m>f(x) = x^2+1</m> and <m>g(t) = \dfrac{1}{t^2+1}</m>
+        </p>
+      </li>
+    </ol>
+    <p>
+      <xref ref="arithfromgraphfirst">Exercises</xref>
+      - <xref ref="arithfromgraphlast"></xref>
+      refer to the functions <m>f</m> and <m>g</m> whose graphs are below.
+    </p>
+    <p>
+      \begin{mfpic}[19]{-5}{5}{-5}{5} \tlabel[cc](-3,0.5){ <m>\left( -2, 0 \right)</m>} \tlabel[cc](2.5,0.5){
+      <m>\left(2, 0 \right)</m>} \tlabel[cc](4,-3.5){
+      <m>\left( 4, -3 \right)</m>} \tlabel[cc](-4,-3.5){ <m>\left(-4, -3 \right)</m>} \tlabel[cc](1,3.5){
+      <m>\left(0, 3 \right)</m>} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4}
+    </p>
+    <p>
+      \point[4pt]{(-2,0), (2,0), (4,-3), (-4,-3), (0,3)} \penwd{1.25pt} \function{-4,4,.1}{3*cos(3.14159265*x/4)} \tcaption{<m>y = f(x)</m>} \end{mfpic}
+    </p>
+    <p>
+      \begin{mfpic}[19]{-5}{5}{-5}{5} \tlabel[cc](-4,-2.5){
+      <m>\left( -4, -2 \right)</m>} \tlabel[cc](-2,0.5){ <m>\left(-1, 0 \right)</m>} \tlabel[cc](-1,2){
+      <m>\left( 0,2 \right)</m>} \axes \tlabel[cc](5,-0.5){<m>t</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{5pt}
+    </p>
+    <p>
+      \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>4</m>} 4, {<m>3</m>} 3}
+    </p>
+    <p>
+      \point[4pt]{(-4,-2), (-1,0), (0,2)} \penwd{1.25pt} \polyline{(-4,-2), (-1,0), (0,2)} \arrow \polyline{(0,2), (5,2)} \tcaption{<m>y = g(t)</m>} \end{mfpic}
+      <ol cols="4">
+        <li xml:id="arithfromgraphfirst">
+          <p>
+            <m>(f + g)(-4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f + g)(0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f- g)(4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(fg)(-4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(fg)(-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(fg)(4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\dfrac{f}{g}\right)(0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\dfrac{f}{g}\right)(2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\dfrac{g}{f}\right)(-1)</m>
+          </p>
+        </li>
+        <li xml:id="arithfromgraphlast">
+          <p>
+            Find the domains of <m>f+g</m>, <m>f-g</m>,
+            <m>fg</m>, <m>\dfrac{f}{g}</m> and <m>\dfrac{g}{f}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="reformarithfirst">Exercises</xref>
+      - <xref ref="reformarithlast"></xref>,
+      let <m>f</m> be the function defined by
+      <me>
+        f = \{(-3, 4), (-2, 2), (-1, 0), (0, 1), (1, 3), (2, 4), (3, -1)\}
+      </me>
+      and let <m>g</m> be the function defined by
+      <me>
+        g = \{(-3, -2), (-2, 0), (-1, -4), (0, 0), (1, -3), (2, 1), (3, 2)\}
+      </me>
+    </p>
+    <p>
+      Compute the indicated value if it exists.
+      <ol cols="4">
+        <li xml:id="reformarithfirst">
+          <p>
+            <m>(f + g)(-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f - g)(2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(fg)(-1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g + f)(1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(g - f)(3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(gf)(-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{f}{g}\right)(-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{f}{g}\right)(-1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{f}{g}\right)(2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{g}{f}\right)(-1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{g}{f}\right)(3)</m>
+          </p>
+        </li>
+        <li xml:id="reformarithlast">
+          <p>
+            <m>\left(\frac{g}{f}\right)(-3)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="basicarithtwofirst">Exercises</xref>
+      - <xref ref="basicarithtwolast"></xref>,
+      use the pair of functions <m>f</m> and <m>g</m> to find the domain of the indicated function then find and simplify an expression for it.
+      <ul>
+        <li>
+          <p>
+            <m>(f+g)(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(f-g)(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(fg)(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{f}{g}\right)(x)</m>
+          </p>
+        </li>
+      </ul>
+      <ol cols="5">
+        <li xml:id="basicarithtwofirst">
+          <p>
+            <m>f(x) = 2x+1</m> and <m>g(x) = x-2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 1-4x</m> and <m>g(x) = 2x-1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^2</m> and <m>g(x) = 3x-1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^2-x</m> and <m>g(x) = 7x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^2-4</m> and <m>g(x) = 3x+6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -x^2+x+6</m> and <m>g(x) = x^2-9</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{x}{2}</m> and <m>g(x) = \dfrac{2}{x}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) =x-1</m> and <m>g(x) = \dfrac{1}{x-1}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x</m> and <m>g(x) = \sqrt{x+1}</m>
+          </p>
+        </li>
+        <li xml:id="basicarithtwolast">
+          <p>
+            <m>f(x) =\sqrt{x-5}</m> and <m>g(x) = f(x) = \sqrt{x-5}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="decomposebasicfirst">Exercises</xref>
+      - <xref ref="decomposebasiclast"></xref>,
+      write the given function as a nontrivial decomposition of functions as directed.
+      <ol cols="2">
+        <li xml:id="decomposebasicfirst">
+          <p>
+            For <m>p(z) = 4z-z^3</m>,
+            find functions <m>f</m> and <m>g</m> so that <m>p=f-g</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>p(z) = 4z-z^3</m>,
+            find functions <m>f</m> and <m>g</m> so that <m>p=f+g</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>g(t) = 3t|2t-1|</m>,
+            find functions <m>f</m> and <m>h</m> so that <m>g = fh</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>r(x) = \dfrac{3-x}{x+1}</m>,
+            find functions <m>f</m> and <m>g</m> so <m>r = \dfrac{f}{g}</m>.
+          </p>
+        </li>
+        <li xml:id="decomposebasiclast">
+          <p>
+            For <m>r(x) = \dfrac{3-x}{x+1}</m>,
+            find functions <m>f</m> and <m>g</m> so <m>r = fg</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Can <m>f(x) = x</m> be decomposed as <m>f = g-h</m> where
+            <m>g(x) = x+\dfrac{1}{x}</m> and <m>h(x) = \dfrac{1}{x}</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Discuss with your classmates how to phrase the quantities revenue and profit in <xref ref="revenueprofitdefns">Definition</xref>
+            terms of function arithmetic as defined in <xref ref="functionarithmeticdefn">Definition</xref>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="diffquotexerfirsta">Exercises</xref>
+      - <xref ref="diffquotexerlasta"></xref>,
+      find and simplify the difference quotients:
+      <ul>
+        <li>
+          <p>
+            <m>\dfrac{f(2+h) - f(2)}{h}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{f(x+h) - f(x)}{h}</m>
+          </p>
+        </li>
+      </ul>
+      <ol cols="5">
+        <li xml:id="diffquotexerfirsta">
+          <p>
+            <m>f(x) = 2x - 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -3x + 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 6</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 3x^2 - x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -x^2 + 2x - 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = 4x^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x-x^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = x^{3} + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = mx + b\;</m> where <m>m \neq 0</m>
+          </p>
+        </li>
+        <li xml:id="diffquotexerlasta">
+          <p>
+            <m>f(x) = ax^{2} + bx + c\;</m> where <m>a \neq 0</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="diffquotexerfirstb">Exercises</xref>
+      - <xref ref="diffquotexerlastb"></xref>,
+      find and simplify the difference quotients:
+      <ul>
+        <li>
+          <p>
+            <m>\dfrac{f(-1+\Delta x) - f(-1)}{\Delta x}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{f(x+\Delta x) - f(x)}{\Delta x}</m>
+          </p>
+        </li>
+      </ul>
+      <ol cols="4">
+        <li xml:id="diffquotexerfirstb">
+          <p>
+            <m>f(x) = \dfrac{2}{x}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{3}{1-x}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{1}{x^2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{2}{x+5}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{1}{4x-3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{3x}{x+2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \dfrac{x}{x - 9}</m>
+          </p>
+        </li>
+        <li xml:id="diffquotexerlastb">
+          <p>
+            <m>f(x) = \dfrac{x^2}{2x+1}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="diffquotexerfirstc">Exercises</xref>
+      - <xref ref="diffquotexerlastc"></xref>,
+      find and simplify the difference quotients:
+      <ul>
+        <li>
+          <p>
+            <m>\dfrac{g(\Delta t) - g(0)}{\Delta t}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{g(t+\Delta t) - g(t)}{\Delta t}</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ol cols="5">
+      <li xml:id="diffquotexerfirstc">
+        <p>
+          <m>g(t) = \sqrt{9-t}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{2t+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{-4t+5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{4-t}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{at+b}</m>, where <m>a \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t \sqrt{t}</m>
+        </p>
+      </li>
+      <li xml:id="diffquotexerlastc">
+        <p>
+          <m>g(t) = \sqrt[3]{t}</m>.
+          <em>HINT:</em> <m>(a-b)\left(a^2+ab+b^2\right) = a^3 - b^3</m>
+        </p>
+      </li>
+      <li xml:id="posnegdecompexercise">
+        <p>
+          In this exercise,
+          we explore decomposing a function into its positive and negative parts.
+          Given a function <m>f</m>,
+          we define the <idx><h>positive part of a function</h></idx>
+          <em>positive part</em> of <m>f</m>,
+          denoted <m>f_{+}</m> and <idx><h>negative part of a function</h></idx>
+          <em>negative part</em> of <m>f</m>, denoted <m>f_{-}</m> by:
+          <me>
+            f_{+}(x) = \dfrac{f(x) + |f(x)|}{2}, \qquad \text{ and }  \qquad f_{-}(x) = \dfrac{f(x) - |f(x)|}{2}
+          </me>.
+          <ol>
+            <li>
+              <p>
+                Using a graphing utility,
+                graph each of the functions <m>f</m> below along with <m>f_{+}</m> and <m>f_{-}</m>.
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <m>f(x) = x-3</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>f(x) = x^2-x-6</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>f(x) = 4x-x^3</m>
+                  </p>
+                </li>
+              </ul>
+              Why is <m>f_{+}</m> called the <sq>positive part</sq> of <m>f</m> and <m>f_{-}</m> called the <sq>negative part</sq> of <m>f</m>?
+            </li>
+            <li>
+              <p>
+                Show that <m>f = f_{+} + f_{-}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use <xref ref="absolutevaluepiecewise">Definition</xref>
+                to rewrite the expressions for <m>f_{+}(x)</m> and
+                <m>f_{-}(x)</m> as piecewise defined functions.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          For <m>f(x) = 3x+1</m> and <m>g(x) = 4-x</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = 9</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = -7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = -1</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = \frac{35}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = \frac{1}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = -\frac{6}{5}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2</m> and <m>g(x) = -2x+1</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = -2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = -2</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = \frac{5}{4}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2 - x</m> and <m>g(x) = 12-x^2</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = 10</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = -9</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = 11</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = -\frac{47}{16}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = \frac{4}{3}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x^3</m> and <m>g(x) = -x^2-2x-3</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = 5</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = -8</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = -\frac{17}{16}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = \frac{3}{16}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \sqrt{x+3}</m> and <m>g(x) = 2x-1</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = 3+\sqrt{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = 3+\sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = -1</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = -\sqrt{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = -5</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \sqrt{4-x}</m> and <m>g(x) = \sqrt{x+2}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = 2+\sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = -1+\sqrt{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = 0</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = \frac{\sqrt{35}}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = \sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = 0</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x</m> and <m>g(x) = \frac{1}{2x+1}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = \frac{21}{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = -1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = -\frac{5}{3}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = \frac{1}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = \frac{1}{12}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2</m> and <m>g(x) = \frac{3}{2x-3}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) = 7</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = \frac{8}{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = -4</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) = -\frac{3}{8}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = -\frac{3}{28}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2</m> and <m>g(x) = \frac{1}{x^2}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) =\frac{17}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = 0</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) =1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0)</m> is undefined.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = \frac{1}{16}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2+1</m> and <m>g(x) = \frac{1}{x^2+1}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(2) =\frac{26}{5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(-1) = \frac{3}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(g-f)(1) = -\frac{3}{2}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)\left(\frac{1}{2}\right) =1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(0) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{g}{f}\right)\left(-2\right) = \frac{1}{25}</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f + g)(-4) = -5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f + g)(0) = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f-g)(4) = -5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(fg)(-4) = 6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(fg)(-2) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(fg)(4) = -6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\dfrac{f}{g}\right)(0) = \dfrac{3}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\dfrac{f}{g}\right)(2) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\dfrac{g}{f}\right)(-1) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The domains of <m>f+g</m>, <m>f-g</m> and <m>fg</m> are all <m>[-4,4]</m>.
+          The domain of <m>\frac{f}{g}</m> is <m>[-4, -1) \cup (-1,4]</m> and the domain of
+          <m>\frac{g}{f}</m> is <m>[-4, -2) \cup (-2,2) \cup (2, 4]</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f + g)(-3) = 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(f - g)(2) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(fg)(-1) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g + f)(1) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(g - f)(3) = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(gf)(-3) = -8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{f}{g}\right)(-2)</m> does not exist
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{f}{g}\right)(-1) = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{f}{g}\right)(2) = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{g}{f}\right)(-1)</m> does not exist
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{g}{f}\right)(3) = -2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{g}{f}\right)(-3) = -\frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 2x+1</m> and <m>g(x) = x-2</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = 3x-1</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = x+3</m> Domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = 2x^2-3x-2</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) = \frac{2x+1}{x-2}</m> Domain:
+                <m>(-\infty, 2) \cup (2, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = 1-4x</m> and <m>g(x) = 2x-1</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = -2x</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = 2-6x</m> Domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = -8x^2+6x-1</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) = \frac{1-4x}{2x-1}</m> Domain:
+                <m>\left(-\infty, \frac{1}{2} \right) \cup \left(\frac{1}{2}, \infty \right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2</m> and <m>g(x) = 3x-1</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = x^2+3x-1</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = x^2-3x+1</m> Domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = 3x^3-x^2</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) = \frac{x^2}{3x-1}</m> Domain:
+                <m>\left(-\infty, \frac{1}{3} \right) \cup \left(\frac{1}{3}, \infty \right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2-x</m> and <m>g(x) = 7x</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = x^2+6x</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = x^2-8x</m> Domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = 7x^3-7x^2</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) = \frac{x-1}{7}</m> Domain:
+                <m>\left(-\infty, 0 \right) \cup \left(0, \infty \right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = x^2-4</m> and <m>g(x) = 3x+6</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = x^2+3x+2</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = x^2-3x-10</m> Domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = 3x^3+6x^2-12x-24</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) = \frac{x-2}{3}</m> Domain:
+                <m>\left(-\infty, -2 \right) \cup \left(-2, \infty \right)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = -x^2+x+6</m> and <m>g(x) = x^2-9</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = x-3</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = -2x^2+x+15</m> Domain:
+                <m>(-\infty, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = -x^4+x^3+15x^2-9x-54</m> Domain:
+                <m>(-\infty, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) = -\frac{x+2}{x+3}</m> Domain:
+                <m>\left(-\infty, -3 \right) \cup \left(-3, 3 \right) \cup (3, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \frac{x}{2}</m> and <m>g(x) = \frac{2}{x}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = \frac{x^2+4}{2x}</m> Domain:
+                <m>(-\infty, 0) \cup (0, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = \frac{x^2-4}{2x}</m> Domain:
+                <m>(-\infty,0) \cup (0, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = 1</m> Domain: <m>(-\infty,0) \cup (0, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) = \frac{x^2}{4}</m> Domain:
+                <m>(-\infty,0) \cup (0, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) =x-1</m> and <m>g(x) = \frac{1}{x-1}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = \frac{x^2-2x+2}{x-1}</m> Domain:
+                <m>(-\infty, 1) \cup (1, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = \frac{x^2-2x}{x-1}</m> Domain:
+                <m>(-\infty,1) \cup (1, \infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = 1</m> Domain: <m>(-\infty,1) \cup (1, \infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) =x^2-2x+1</m> Domain:
+                <m>(-\infty,1) \cup (1, \infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) =x</m> and <m>g(x) = \sqrt{x+1}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = x+\sqrt{x+1}</m> Domain:
+                <m>[-1,\infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) = x-\sqrt{x+1}</m> Domain: <m>[-1,\infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) = x\sqrt{x+1}</m> Domain:
+                <m>[-1,\infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) =\frac{x}{\sqrt{x+1}}</m> Domain:
+                <m>(-1,\infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>f(x) = \sqrt{x-5}</m> and <m>g(x) = f(x) = \sqrt{x-5}</m>
+          <ul>
+            <li>
+              <p>
+                <m>(f+g)(x) = 2\sqrt{x-5}</m> Domain:
+                <m>[5,\infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(f-g)(x) =0</m> Domain: <m>[5,\infty)</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>(fg)(x) =x-5</m> Domain: <m>[5,\infty)</m> \columnbreak
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left(\frac{f}{g}\right)(x) =1</m> Domain: <m>(5,\infty)</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(z) = 4z</m> and <m>g(z) = z^3</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(z) = 4z</m> and <m>g(z) = - z^3</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(t) = 3t</m> and <m>h(t) = |2t-1|</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(x) = 3-x</m> and <m>g(x) = x+1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is <m>f(x) = 3-x</m> and <m>g(x) = (x+1)^{-1}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          No.
+          The equivalence does not hold when <m>x = 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2</m>, <m>2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-3</m>, <m>-3</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>0</m>, <m>0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3h+11</m>, <m>6x+3h-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-h-2</m>, <m>-2x-h+2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4h+16</m>, <m>8x+4h</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-h-3</m>, <m>-2x-h+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>h^2+6h+12</m>, <m>3x^{2} + 3xh + h^{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>m</m>, <m>m</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>ah + 4a+b</m>, <m>2ax + ah + b</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2}{\Delta x-1}</m>,
+          <m>\dfrac{-2}{x(x+\Delta x)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-3}{2(\Delta x - 2)}</m>,
+          <m>\dfrac{3}{(x+\Delta x-1)(x-1)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2-\Delta x}{(\Delta x - 1)^2}</m>,
+          <m>\dfrac{-(2x+\Delta x)}{x^2(x+\Delta x)^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-1}{2(\Delta x+4)}</m>,
+          <m>\dfrac{-2}{(x+5)(x+\Delta x+5)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{4}{7(4 \Delta x - 7)}</m>,
+          <m>\dfrac{-4}{(4x-3)(4x+4\Delta x-3)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{6}{\Delta x + 1}</m>,
+          <m>\dfrac{6}{(x+2)(x+\Delta x+2)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{9}{10(\Delta x - 10)}</m>,
+          <m>\dfrac{-9}{(x - 9)(x + \Delta x - 9)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{\Delta x}{2 \Delta x - 1}</m>,
+          <m>\dfrac{2x^2+2x\Delta x+2x+\Delta x}{(2x+1)(2x+2\Delta x+1)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-1}{\sqrt{9-\Delta t} +3}</m>,
+          <m>\dfrac{-1}{\sqrt{9-t-\Delta t} + \sqrt{9-t}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{2}{\sqrt{2\Delta t+1} + 1}</m>,
+          <m>\dfrac{2}{\sqrt{2t+2\Delta t+1} + \sqrt{2t+1}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-4}{\sqrt{5-4\Delta t} + \sqrt{5}}</m>,
+          <m>\dfrac{-4}{\sqrt{-4t-4\Delta t+5} + \sqrt{-4t+5}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{-1}{\sqrt{4-\Delta t} + 2}</m>,
+          <m>\dfrac{-1}{\sqrt{4-t-\Delta t} + \sqrt{4-t}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{a}{\sqrt{a\Delta t+b} + \sqrt{b}}</m>,
+          <m>\dfrac{a}{\sqrt{at+a\Delta t+b} + \sqrt{at+b}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(\Delta t)^{\frac{1}{2}}</m>,
+          <m>\dfrac{3t^2+3t\Delta t+(\Delta t)^2}{(t+\Delta t)^{3/2} + t^{3/2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{1}{(\Delta t)^{2/3}}</m>,
+          <m>\dfrac{1}{(t+\Delta t)^{2/3} + (t+\Delta t)^{1/3} t^{1/3} + t^{2/3}}</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>(f_{+} + f_{-})(x) = f_{+}(x) + f_{-}(x) = \dfrac{f(x) + |f(x)|}{2} + \dfrac{f(x) - |f(x)|}{2} = \dfrac{2f(x)}{2} = f(x)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>
+                f_{+}(x)  =  \begin{cases}0 \amp   \text{ if \(f(x) \lt  0\) }  \\ f(x) \amp  \text{ if \(f(x)  \geq 0\) } \end{cases} ,  \qquad    f_{-}(x)  =  \begin{cases}f(x) \amp   \text{ if \(f(x) \lt  0\) }  \\ 0 \amp  \text{ if \(f(x)  \geq 0\) } \end{cases}
+              </me>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

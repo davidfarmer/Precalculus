@@ -1,0 +1,1187 @@
+<section xml:id="Ellipses">
+  <title>Ellipses</title>
+  <introduction>
+    <p>
+      In the definition of a circle,
+      <xref ref="circledefn">Definition</xref>,
+      we fixed a point called the <em>center</em>
+      and considered all of the points which were a fixed distance <m>r</m> from that one point.
+      For our next conic section, the ellipse,
+      we fix two distinct points and a distance <m>d</m> to use in our definition.
+    </p>
+    <definition xml:id="ellipsedefn">
+      <statement>
+        <p>
+          Given two distinct points <m>F_{1}</m> and <m>F_{2}</m> in the plane and a fixed distance <m>d</m>,
+          an <idx><h>ellipse</h><h>definition of</h></idx> <term>ellipse</term>
+          is the set of all points <m>(x, y)</m> in the plane such that the sum of each of the distances from <m>F_{1}</m> and <m>F_{2}</m> to <m>(x, y)</m> is <m>d</m>.
+          The points <m>F_{1}</m> and <m>F_{2}</m> are called the
+              <idx><h>ellipse</h><h>foci</h></idx>
+              <idx><h>focus (foci)</h><h>of an ellipse</h></idx> <term>foci</term><fn>
+          the plural of <sq>focus</sq>
+          </fn> of the ellipse.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      \begin{mfpic}[20]{-6}{6}{-5}{5}
+    </p>
+    <p>
+      \dashed \polyline{(-3,0), (4,2.4)} \dashed \polyline{(3,0), (4,2.4)}
+    </p>
+    <p>
+      \tlabel[cc](5, 2.4){<m>(x, y)</m>} \tlabel[cc](-1,1.1){<m>d_{1}</m>} \tlabel[cc](3,1.1){<m>d_{2}</m>} \tlabel[cc](-3,-0.5){<m>F_{1}</m>} \tlabel[cc](3,-0.5){<m>F_{2}</m>} \plotsymbol[3pt]{Asterisk}{(-3,0)} \plotsymbol[3pt]{Asterisk}{(3,0)} \tcaption{<m>d_{1} + d_{2} = d</m> for all <m>(x, y)</m> on the ellipse} \penwd{1.25pt} \ellipse{(0,0),5,4} \point[4pt]{(4,2.4)} \end{mfpic}
+    </p>
+    <p>
+      We may imagine taking a length of string and anchoring it to two points on a piece of paper.
+      The curve traced out by taking a pencil and moving it so the string is always taut is an ellipse.
+      Each ellipse has an assortment of parameters associated with it which we sketch below.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-6}{6}{-5}{5} \dotted[1pt, 3pt] \polyline{(-5,0), (5,0)} \dotted[1pt, 3pt] \polyline{(0,-4), (0,4)} \tlabel[cc](-3,-0.5){<m>F_{1}</m>} \tlabel[cc](3,-0.5){<m>F_{2}</m>} \plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)} \plotsymbol[3pt]{Cross}{(0,0)} \tlabel[cc](5.5,0){<m>V_{2}</m>} \tlabel[cc](-5.5,0){<m>V_{1}</m>} \gclear \tlabelrect[cc](0,-0.5){<m>C</m>} \tlabel[cc](2.5,0.5){ Major Axis} \tlabel[cc](-0.5,2){ \rotatebox{90}{Minor Axis}} \penwd{1.25pt} \ellipse{(0,0),5,4} \point[4pt]{(5,0),(-5,0)} \end{mfpic}
+    </p>
+    <p>
+      An ellipse with center <m>C</m>;
+      foci <m>F_{1}</m>, <m>F_{2}</m>;
+      and vertices <m>V_{1}</m>, <m>V_{2}</m>
+    </p>
+    <p>
+      As depicted above, the
+          <idx><h>ellipse</h><h>center</h></idx>
+          <idx><h>center</h><h>of an ellipse</h></idx>
+      <em>center</em> of the ellipse is the midpoint of the line segment connecting the two foci.
+      The <idx><h>ellipse</h><h>major axis</h></idx>
+          <idx><h>major axis of an ellipse</h></idx>
+      <em>major axis</em> of the ellipse is the line segment connecting two opposite ends of the ellipse which also contains the center and foci.
+      The <idx><h>ellipse</h><h>minor axis</h></idx>
+          <idx><h>minor axis of an ellipse</h></idx>
+      <em>minor axis</em> of the ellipse is the line segment connecting two opposite ends of the ellipse which contains the center but is perpendicular to the major axis.
+      The
+          <idx><h>ellipse</h><h>vertices</h></idx>
+          <idx><h>vertex</h><h>of an ellipse</h></idx>
+      <em>vertices</em> of an ellipse are the points of the ellipse which lie on the major axis.
+    </p>
+    <p>
+      Notice that the center is also the midpoint of the major axis,
+      hence it is the midpoint of the vertices.
+      Also note that the major axis is the longer of the two axes through the center,
+      hence the moniker <sq>major.</sq> Likewise,
+      the minor axis is the shorter of the two,
+      whence the adjective <sq>minor.</sq>
+    </p>
+    <p>
+      In order to derive the standard equation of an ellipse,
+      we assume that the ellipse has its center at <m>(0,0)</m>,
+      its major axis along the <m>x</m>-axis,
+      and has foci <m>(c,0)</m> and <m>(-c,0)</m> and vertices <m>(-a,0)</m> and <m>(a,0)</m>.
+      We will label the <m>y</m>-intercepts of the ellipse as <m>(0,b)</m> and <m>(0,-b)</m> (We assume <m>a</m>,
+      <m>b</m>,
+      and <m>c</m> are all positive numbers.)
+    </p>
+    <p>
+      \begin{mfpic}[20]{-6}{6}{-5}{5} \axes \dashed \polyline{(-3,0), (4,2.4)} \dashed \polyline{(3,0), (4,2.4)} \tlabel[cc](-3,-0.5){<m>(-c,0)</m>} \tlabel[cc](3,-0.5){<m>(c,0)</m>} \plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)} \plotsymbol[3pt]{Cross}{(0,0)} \tlabel[cc](-6,-0.5){<m>(-a,0)</m>} \tlabel[cc](6,-0.5){<m>(a,0)</m>} \tlabel[cc](1,4.5){<m>(0,b)</m>} \tlabel[cc](1, -4.5){<m>(0,-b)</m>} \tlabel[cc](5, 2.4){<m>(x,y)</m>} \tlabel(6,0.25){<m>x</m>} \tlabel(-0.5,5){<m>y</m>} \penwd{1.25pt} \ellipse{(0,0),5,4} \point[4pt]{(4,2.4),(-5,0),(5,0),(0,4),(0,-4)} \end{mfpic}
+    </p>
+    <p>
+      Note that since <m>(a,0)</m> is on the ellipse,
+      it must satisfy the conditions of <xref ref="ellipsedefn">Definition</xref>.
+      That is, the distance from <m>(-c,0)</m> to <m>(a,0)</m> plus the distance from <m>(c,0)</m> to <m>(a,0)</m> must equal the fixed distance <m>d</m>.
+      Since all of these points lie on the <m>x</m>-axis, we get
+      <me>
+        \begin{array}{rclr} \mbox{distance from \((-c,0)\) to \((a,0)\)}  + \mbox{distance from \((c,0)\) to \((a,0)\)}  \amp  = \amp  d \amp  \\ (a+c) + (a-c) \amp  = \amp  d \amp  \\ 2a \amp  = \amp  d \end{array}
+      </me>
+    </p>
+    <p>
+      In other words,
+      the fixed distance <m>d</m> mentioned in the definition of the ellipse is none other than the length of the major axis.
+      We now use that fact <m>(0,b)</m> is on the ellipse,
+      along with the fact that <m>d=2a</m> to get
+      <me>
+        \begin{array}{rclr} \mbox{distance from  \((-c,0)\) to \((0,b)\)}  + \mbox{distance from \((c,0)\) to \((0,b)\)}  \amp  = \amp  2a \amp  \\ \sqrt{(0-(-c))^2+(b-0)^2} + \sqrt{(0-c)^2+(b-0)^2} \amp  = \amp  2a \amp  \\ \sqrt{b^2+c^2}+\sqrt{b^2+c^2} \amp  = \amp  2a  \\ 2 \sqrt{b^2+c^2} \amp  = \amp  2a \\ \sqrt{b^2+c^2} \amp  = \amp  a \end{array}
+      </me>
+    </p>
+    <p>
+      From this, we get <m>a^2 = b^2 + c^2</m>,
+      or <m>b^2 = a^2 - c^2</m>, which will prove useful later.
+      Now consider a point <m>(x,y)</m> on the ellipse.
+      Applying <xref ref="ellipsedefn">Definition</xref>, we get
+      <me>
+        \begin{array}{rclr} \mbox{distance from  \((-c,0)\) to \((x,y)\)}  + \mbox{distance from \((c,0)\) to \((x,y)\)}  \amp  = \amp  2a \amp  \\ \sqrt{(x-(-c))^2+(y-0)^2} + \sqrt{(x-c)^2+(y-0)^2} \amp  = \amp  2a \amp  \\ \sqrt{(x+c)^2+y^2}+\sqrt{(x-c)^2+y^2} \amp  = \amp  2a \end{array}
+      </me>
+    </p>
+    <p>
+      In order to make sense of this situation,
+      we need to make good use of Intermediate Algebra.
+      <me>
+        \begin{array}{rclr}  \sqrt{(x+c)^2+y^2}+\sqrt{(x-c)^2+y^2} \amp  = \amp  2a  \amp  \\ \sqrt{(x+c)^2+y^2} \amp  = \amp  2a - \sqrt{(x-c)^2+y^2} \amp  \\ \left(\sqrt{(x+c)^2+y^2}\right)^2 \amp  = \amp  \left(2a - \sqrt{(x-c)^2+y^2}\right)^2 \amp  \\ (x+c)^2+y^2 \amp  = \amp  4a^2 - 4a\sqrt{(x-c)^2+y^2} + (x-c)^2+y^2 \amp  \\ 4a\sqrt{(x-c)^2+y^2} \amp  = \amp  4a^2 + (x-c)^2 - (x+c)^2 \amp  \\ 4a\sqrt{(x-c)^2+y^2} \amp  = \amp  4a^2 - 4cx \amp  \\ a\sqrt{(x-c)^2+y^2} \amp  = \amp  a^2 - cx \amp  \\ \left(a\sqrt{(x-c)^2+y^2}\right)^2 \amp  = \amp  \left(a^2 - cx\right)^2 \amp  \\ a^2\left((x-c)^2+y^2\right) \amp  = \amp  a^4 - 2a^2cx +c^2 x^2 \amp  \\  a^2x^2 - 2a^2cx + a^2c^2+a^2 y^2 \amp  = \amp  a^4 - 2a^2cx +c^2 x^2 \amp  \\  a^2x^2 - c^2 x^2 +a^2 y^2 \amp  = \amp  a^4  - a^2c^2 \amp  \\ \left(a^2 - c^2\right) x^2 +a^2 y^2 \amp  = \amp  a^2 \left(a^2 - c^2\right)  \amp \end{array}
+      </me>
+    </p>
+    <p>
+      We are nearly finished.
+      Recall that <m>b^2 = a^2 - c^2</m> so that
+      <me>
+        \begin{array}{rclr} \left(a^2 - c^2\right)x^2 +a^2 y^2 \amp  = \amp  a^2\left(a^2 - c^2\right) \amp  \\ b^2 x^2 +a^2 y^2 \amp  = \amp  a^2 b^2 \amp  \\  \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} \amp  = \amp  1 \amp \end{array}
+      </me>
+    </p>
+    <p>
+      This equation is for an ellipse centered at the origin.
+      To get the formula for the ellipse centered at <m>(h,k)</m>,
+      we could use the transformations from <xref ref="Transformations">Section</xref>
+      or re-derive the equation using <xref ref="ellipsedefn">Definition</xref>
+      and the distance formula to obtain the formula below.
+    </p>
+    <proposition xml:id="standardellipse">
+      <title>The Standard Equation of an Ellipse:</title>
+      <statement>
+        <p>
+          [The Standard Equation of an Ellipse:] <idx><h>ellipse</h><h>standard equation</h></idx>
+          <em>The Standard Equation of an Ellipse:</em>
+        </p>
+        <p>
+          For positive unequal numbers <m>a</m> and <m>b</m>,
+          the equation of an ellipse with center <m>(h,k)</m> is
+          <me>
+            \dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1
+          </me>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Some remarks about <xref ref="standardellipse">Equation</xref> are in order.
+      First note that the values <m>a</m> and <m>b</m> determine how far in the <m>x</m> and <m>y</m> directions,
+      respectively,
+      one counts from the center to arrive at points on the ellipse.
+    </p>
+    <p>
+      Also note that if <m>a > b</m>,
+      then we have an ellipse whose major axis is horizontal,
+      and hence, the foci lie to the left and right of the center.
+      In this case, as we've seen in the derivation,
+      the distance from the center to the focus,
+      <m>c</m>, can be found by <m>c = \sqrt{a^2 - b^2}</m>.
+    </p>
+    <p>
+      If <m>b > a</m>,
+      the roles of the major and minor axes are reversed,
+      and the foci lie above and below the center.
+      In this case, <m>c = \sqrt{b^2 - a^2}</m>.
+      In either case,
+      it's best to just remember that <m>c</m> is the distance from the center to each focus, and,
+      formulaically,
+      <m>c = \sqrt{\mbox{bigger denominator} - \mbox{smaller denominator} }</m>.
+    </p>
+    <p>
+      Finally, it is worth mentioning that if we compare <xref ref="standardellipse">Equation</xref>
+      with the alternate standard equation of the circle,
+      <xref ref="standardcirclealternate">Equation</xref>,
+      the only difference between the forms is that with a circle,
+      the denominators are the same,
+      and with an ellipse, they are different.
+    </p>
+    <p>
+      If we take a transformational approach,
+      we can consider both <xref ref="standardellipse">Equations</xref>
+      and <xref ref="standardcirclealternate"></xref>
+      as shifts and stretches of the Unit Circle
+      <m>x^2 + y^2 = 1</m> in <xref ref="UnitCircle">Definition</xref>.
+      Replacing <m>x</m> with <m>(x-h)</m> and <m>y</m> with <m>(y-k)</m> causes the usual horizontal and vertical shifts.
+      Replacing <m>x</m> with <m>\frac{x}{a}</m> and <m>y</m> with
+      <m>\frac{y}{b}</m> causes the usual vertical and horizontal stretches.
+    </p>
+    <p>
+      In other words,
+      it is perfectly fine to think of an ellipse as the deformation of a circle in which the circle is stretched farther in one direction than the other.
+    </p>
+    <example xml:id="ellipsesfirstex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Graph each of the following equations below in the <m>xy</m>-plane.
+              Find the center, the lines which contain the major and minor axes,
+              the vertices, the endpoints of the minor axis, and the foci.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>25(x+1)^2 + 9(y-2)^2 = 225</m>.
+                </p>
+              </li>
+              <li xml:id="ctsellipseex">
+                <p>
+                  <m>x^2+4y^2-2x+24y+33 = 0</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Graph <m>f(x) = 1 + 2\sqrt{-x^2-4x-3}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the standard form of the equation of an ellipse which satisfies the following characteristics:
+              <ol>
+                <li>
+                  <p>
+                    the foci are at <m>(2,1)</m> and <m>(4,1)</m> and vertex <m>(0,1)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    the ellipse graphed below: \begin{mfpic}[20]{-1}{7}{-5}{5} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](0.5,0.3){<m>(0,0)</m>} \tlabel[cc](1.5,2.75){<m>(1,3)</m>} \tlabel[cc](5.3,0.3){<m>(6,0)</m>} \xmarks{1,2,3,4,5,6} \ymarks{-4, -3, -2, -1, 0, 1, 2, 3, 4} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-4</m>} -4,{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \ellipse{(3,0),3,4.025} \point[4pt]{(0,0), (6,0), (1,3)} \end{mfpic}
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    To put   <m>25(x+1)^2 + 9 (y-2)^2 = 225</m> in the form prescribed by <xref ref="standardellipse">Equation</xref>,
+                    we rewrite the quantity <m>(x+1)</m> as
+                    <m>(x-(-1))</m> and divide through by <m>225</m> to obtain an expression equal to <m>1</m>:
+                    <me>
+                      25 (x+1)^2 + 9 (y-2)^2 = 225 \rightarrow \dfrac{(x-(-1))^2}{9}  + \dfrac{(y-2)^2}{25} = 1 \leftrightarrow  \dfrac{(x-(-1))^2}{(3)^2}  + \dfrac{(y-2)^2}{(5)^2} = 1
+                    </me>.
+                    We identify <m>h = -1</m> and  <m>k = 2</m>,
+                    so the center of the ellipse is <m>(-1,2)</m>.
+                    We have <m>a = 3</m> so  we move <m>3</m> units left and right from the center to obtain two points on the ellipse:
+                    <m>(-1-3, 2) = (-4,2)</m> and <m>(-1+3, 2) = (2,2)</m>.
+                    Likewise, since <m>b=5</m>,
+                    we move up and down <m>5</m> units from the center to find two more points on the ellipse:
+                    <m>(-1,2+5) = (-1,7)</m> and <m>(-1, 2-5) = (-1,-3)</m>.
+                    As an aid to sketching, we draw a rectangle matching this description,
+                    called a <idx><h>ellipse</h><h>guide rectangle</h></idx>
+                  <idx><h>guide rectangle</h><h>for an ellipse</h></idx>
+                    <em>guide rectangle</em>,
+                    and sketch the ellipse inside this rectangle as seen below on the left.
+                    Since we moved farther from the center in the <m>y</m> direction than in the <m>x</m> direction,
+                    the major axis will lie along the vertical line <m>x=-1</m>,
+                    while the minor axis lies along the horizontal line <m>y = 2</m>.
+                    The vertices are the points on the ellipse which lie along the major axis so in this case,
+                    they are the points <m>(-1,7)</m> and <m>(-1,-3)</m>,
+                    and the endpoints of the minor axis are <m>(-4,2)</m> and <m>(2,2)</m>.
+                    (Notice these points are the four points we used to draw the guide rectangle.)
+                    To find the foci, we find <m>c = \sqrt{25-9} = \sqrt{16} = 4</m>,
+                    which means the foci lie <m>4</m> units from the center.
+                    Since the major axis is vertical,
+                    the foci lie <m>4</m> units above and below the center,
+                    at <m>(-1, 2-4) = (-1,-2)</m> and <m>(-1, 2+4) = (-1,6)</m>.
+                    Our final graph appears below on the right.
+                    <tabular>
+                      <row>
+                        <cell>\begin{mfpic}[20]{-5}{3}{-4}{8} \axes \tlabel(3,-0.5){<m>x</m>} \tlabel(0.5,8){<m>y</m>} \tlabel[cc](-4.75,2){<m>(-4,2)</m>} \tlabel[cc](2.5,2){<m>(2,2)</m>} \tlabel[cc](-1,7.5){<m>(-1,7)</m>} \tlabel[cc](-1,-3.5){<m>(-1,-3)</m>} \tcaption{The graph of <m>25(x+1)^2 + 9 (y-2)^2 = 225</m>.} \xmarks{-4, -3, -2, -1, 0, 1, 2} \ymarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7}  \dotted[1pt, 3pt] \polyline{(-4,-3), (2,-3), (2,7), (-4,7), (-4,-3) } \plotsymbol[3pt]{Cross}{(-1,2)}  \tlpointsep{4pt}  \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1} \axislabels {y}{  {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6}  \penwd{1.25pt} \ellipse{(-1,2),3,5} \point[4pt]{(-4,2), (2,2), (-1,7), (-1,-3)} \end{mfpic}</cell>
+                        <cell>\begin{mfpic}[20]{-5}{3}{-4}{8} \axes \tlabel(3,-0.5){<m>x</m>} \tlabel(0.5,8){<m>y</m>} \tlabel[cc](-4.75,2){<m>(-4,2)</m>} \tlabel[cc](2.5,2){<m>(2,2)</m>} \tlabel[cc](-1,7.5){<m>(-1,7)</m>} \tlabel[cc](-1,-3.5){<m>(-1,-3)</m>} \tcaption{The graph of <m>25(x+1)^2 + 9 (y-2)^2 = 225</m>.} \xmarks{-4, -3, -2, -1, 0, 1, 2} \ymarks{-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7} \ellipse{(-1,2),3,5} \plotsymbol[3pt]{Asterisk}{(-1,-2)} \plotsymbol[3pt]{Asterisk}{(-1,6)} \plotsymbol[3pt]{Cross}{(-1,2)} \point[3pt]{(-1,7)} \point[3pt]{(-1,-3)} \dotted[1pt, 3pt] \polyline{(-1,7), (-1,-3)} \dotted[1pt, 3pt] \polyline{(-4,2), (2,2)} \tlpointsep{4pt}  \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2,  {<m>1</m>} 1,  {<m>2</m>} 2} \axislabels {y}{ {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1,  {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6}  \penwd{1.25pt} \ellipse{(-1,2),3,5} \point[4pt]{(-4,2), (2,2), (-1,7), (-1,-3)} \end{mfpic}</cell>
+                      </row>
+                    </tabular>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    In the equation <m>x^2+4y^2-2x+24y+33 = 0</m> we have a sum of two squares with unequal coefficients,
+                    it's a good bet we have an ellipse on our hands.<fn>
+                    Recall the equation of a parabola has exactly <em>one</em>
+                    squared variable and the equation of a circle has two squared variables,
+                    but  with <em>identical</em> coefficients.
+                    </fn>    In order to put this equation into the form stated in <xref ref="standardellipse">Equation</xref>,
+                    we need to complete both squares and then divide,
+                    if necessary, to get the right-hand side equal to <m>1</m>:
+                    <me>
+                      \begin{array}{rclr} x^2+4y^2-2x+24y+33 \amp  = \amp  0 \amp  \\  x^2-2x+4y^2+24y \amp  = \amp  -33 \amp  \text{ subtract \(33\) from both sides }  \\  x^2 - 2x + 4\left(y^2+6y\right)  \amp   = \amp  - 33 \amp   \text{ factor out leading coefficients }  \\  \left(x^2 - 2x +\underline{1}\right) + 4\left(y^2+6y+\underline{\underline{9}}\right)  \amp   = \amp  - 33 + \underline{1} + 4(\, \underline{\underline{9}} \, )\amp  \text{ complete the squares }  \\  (x-1)^2 + 4(y+3)^2  \amp   = \amp  4 \amp  \text{ factor }   \\  \dfrac{(x-1)^2 + 4(y+3)^2}{4}  \amp   = \amp  \dfrac{4}{4} \amp  \text{ divide through by \(4\) }  \\  \dfrac{(x-1)^2}{4} + (y+3)^2 \amp  = \amp  1 \amp  \\  \dfrac{(x-1)^2}{(2)^2} + \dfrac{(y-(-3))^2}{(1)^2} \amp  = \amp  1 \amp   \text{ rewrite in the form of <xref ref="standardellipse">Equation</xref> } \end{array}
+                    </me>
+                    Now that this equation is in the standard form of <xref ref="standardellipse">Equation</xref>,
+                    identify <m>h = 1</m> and  <m>k = -3</m> so our ellipse is centered at <m>(1,-3)</m>.
+                    With <m>a=2</m>,
+                    we move <m>2</m> units left and right from the center to get two points on the ellipse:
+                    <m>(1-2,-3) = (-1,-3)</m> and <m>(1+2, -3) = (3,-3)</m>.
+                    Since <m>b=1</m>,
+                    we move <m>1</m> unit up and down from the center to obtain two additional points on the ellipse:
+                    <m>(1,-3+1) = (1,-2)</m> and <m>(1,-3-1) = (1,-4)</m>.
+                    Since we moved farther from the center in the <m>x</m> direction than in the <m>y</m> direction,
+                    the major axis will lie along the horizontal line <m>y=-3</m> so the minor axis lies along the vertical line <m>x = 1</m>.
+                    The vertices are the points on the ellipse which lie along the major axis so in this case,
+                    they are the points <m>(-1,-3)</m> and <m>(3,-3)</m>,
+                    and the endpoints of the minor axis are <m>(1,-2)</m> and <m>(1,-4)</m>.
+                    To find the foci, we find <m>c = \sqrt{4-1} = \sqrt{3}</m>,
+                    which means the foci lie <m>\sqrt{3}</m> units from the center.
+                    Since the major axis is horizontal,
+                    the foci lie <m>\sqrt{3}</m> units to the left and right of the center,
+                    at <m>(1-\sqrt{3},-3)</m> and <m>(1+\sqrt{3},-3)</m>.
+                    Plotting all of this information gives the graph below on the left.
+                  </p>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <p>
+                At first glance, it doesn't seem as if the function
+                <m>f(x) = 1 + 2\sqrt{-x^2-4x-3}</m> will have <em>any</em>
+                graph owing to the presence of the <sq><m>-</m></sq> signs which decorate <em>all</em>
+                of the terms beneath the radical.
+                However, since <m>x</m> is a <em>variable</em>,
+                <m>-x^2 -4x -3</m> is not necessarily negative.<fn>
+                Indeed, we leave it to the reader to show <m>-x^2-4x-3 \geq 0</m> on <m>[-3,-1]</m>.
+                </fn>     Recall to graph the function <m>f(x) = 1 + 2\sqrt{-x^2-4x-3}</m>,
+                we graph the equation <m>y = 1 + 2\sqrt{-x^2-4x-3}</m>.
+                To make sense of this equation in the context of this chapter,
+                we first isolate, then eliminate,
+                the square root in order to obtain a quadratic equation in one or more variables.
+                From <m>y = 1 + 2\sqrt{-x^2-4x-3}</m>,
+                we get <m>y-1 =  2\sqrt{-x^2-4x-3}</m> so that <m>(y-1)^2 = (2\sqrt{-x^2-4x-3})^2</m>.
+                Hence,  <m>(y-1)^2 = 4(-x^2-4x-3)</m> which is equivalent to <m>4x^2 + 16x + (y-1)^2 = -12</m>.
+                At this point,
+                we see we have the sum of two squared variables with unequal coefficients present which indicates an ellipse,
+                so we complete the square on <m>x</m> and rewrite the equation so it fits  <xref ref="standardellipse">Equation</xref>:
+                <me>
+                  \begin{array}{rclr} 4x^2 + 16x + (y-1)^2 \amp  = \amp   -12 \amp  \\  4 \left(x^2 + 4x \right)+(y-1)^2  \amp   = \amp  -12 \amp   \text{ factor out leading coefficient of \(x^2\) }  \\  4\left(x^2 + 4x +\underline{4}\right) + (y-1)^2  \amp   = \amp  -12 + 4( \, \underline{4} \, ) \amp  \text{ complete the square in \(x\) }  \\  4(x+2)^2 + (y-1)^2  \amp   = \amp  4 \amp  \text{ factor }   \\  \dfrac{4(x+2)^2 + (y-1)^2}{4}  \amp   = \amp  \dfrac{4}{4} \amp  \text{ divide through by \(4\) }  \\  (x+2)^2 + \dfrac{(y-1)^2}{4} \amp  = \amp  1 \amp  \\  \dfrac{(x-(-2))^2}{(1)^2} + \dfrac{(y-1)^2}{(2)^2} \amp  = \amp  1 \amp   \text{ rewrite in the form of <xref ref="standardellipse">Equation</xref> } \end{array}
+                </me>
+                We identify <m>h=-2</m> and <m>k=1</m> so the ellipse is centered at <m>(-2,1)</m>.
+                With <m>a=1</m>,
+                we move <m>1</m> unit to the left and to the right an obtain the points
+                <m>(-2-1,1) = (-3,1)</m> and <m>(-2+1, 1) = (-1,1)</m>.
+                With <m>b=2</m>,
+                we move <m>2</m> units up and down from the center to obtain two more points on the graph of the ellipse:
+                <m>(-2, 1+2) = (-2,3)</m> and <m>(-2, 1-2) = (-2,-1)</m>.
+                However, the graph of <m>f(x) = 1 + 2\sqrt{-x^2-4x-3}</m>  cannot be the
+                <em>entire</em> ellipse,
+                else it would violate the vertical line test.
+                This means the graph of <m>f</m> must be a
+                <em>portion</em> of the ellipse.
+                Since, by definition <m>\sqrt{-x^2-4x-3} \geq 0</m>,
+                we know <m>f(x) =  1 + 2\sqrt{-x^2-4x-3} \geq 1</m>.
+                Hence, the graph of  <m>f</m> must be the
+                <em>upper</em> half of the ellipse,
+                as denoted below on the right.
+                <tabular>
+                  <row>
+                    <cell>\begin{mfpic}[25]{-2}{5}{-5}{1} \axes \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25, 1){<m>y</m>} \xmarks{-1,0,1,2,3,4} \ymarks{-4,-3,-2,-1,0} \tlabel[cc](4,-3){<m>(3,-3)</m>} \tlabel[cc](-2,-3){<m>(-1,-3)</m>} \tlabel[cc](1,-1.5){<m>(1,-2)</m>} \tlabel[cc](1,-4.5){<m>(1,-4)</m>} \tcaption{The graph of <m>x^2+4y^2-2x+24y+33 = 0</m>.} \dotted[1pt, 3pt] \polyline{(-1,-3),(3,-3)} \dotted[1pt, 3pt] \polyline{(1,-2),(1,-4)} \plotsymbol[3pt]{Asterisk}{(2.732050808,-3)} \plotsymbol[3pt]{Asterisk}{(-0.732050808,-3)} \plotsymbol[3pt]{Cross}{(1,-3)} \tlpointsep{4pt}  \axislabels {x}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-4</m>} -4,  {<m>-2</m>} -2, {<m>-1</m>} -1,}  \penwd{1.25pt} \ellipse{(1,-3),2,1} \point[4pt]{(3,-3), (-1,-3), (1,-2), (1,-4)} \end{mfpic}</cell>
+                    <cell>\begin{mfpic}[25]{-4}{2}{-2}{4} \axes \tlabel[cc](2,-0.5){<m>x</m>} \tlabel[cc](0.5, 4){<m>y</m>} \xmarks{-3,-2,-1,1} \ymarks{-1,2,3} \tlabel[cc](-3.75,1){<m>(-3,1)</m>} \gclear \tlabelrect(-0.25,1){<m>(-1,1)</m> } \tlabel[cc](-2,3.25){<m>(-2,3)</m>} \tcaption{The graph of <m>f(x) = 1 + 2\sqrt{-x^2-4x-3}</m>.} \dotted \ellipse{(-2,1),1,2} \tlpointsep{4pt}  \axislabels {x}{ {<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1} \axislabels {y}{ {<m>-1</m>} -1,{<m>2</m>} 2,{<m>3</m>} 3 }  \penwd{1.25pt} \parafcn{0, 3.14 , 0.1}{(cos(t)-2, (2*sin(t))+1)} \point[4pt]{(-3,1), (-1,1), (-2,3)} \end{mfpic}</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <ol>
+                <li>
+                  <p>
+                    We plot the information given to us below and notice immediately that the major axis is horizontal,
+                    which means <m>a > b</m>.
+                    Since the center is the midpoint of the foci,
+                    we know the center of the ellipse is  <m>(3, 1)</m> which means  <m>h = 3</m> and <m>k = 1</m>.
+                    Since one vertex is at <m>(0,1)</m>,
+                    which is <m>3</m> units from the center,
+                    we have that <m>a = 3</m>, so <m>a^2 =  9</m>.
+                    At this point,
+                    all that remains is to find <m>b^2</m>.   \begin{mfpic}[25]{-1}{6}{0}{2} \axes \xmarks{ 0,1,2,3,4,5} \ymarks{0,1} \point[3pt]{(0,1)} \plotsymbol[3pt]{Asterisk}{(2,1)} \plotsymbol[3pt]{Asterisk}{(4,1)} \tlabel(6, -0.25){<m>x</m>} \tlabel(0.25,2){<m>y</m>} \tlpointsep{4pt}  \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>1</m>} 1}  \end{mfpic}  Since the foci,
+                    <m>(2,1)</m> and <m>(4,1)</m>,
+                    are <m>1</m> unit away from the center, we have <m>c=1</m>.
+                    Putting this together with the fact that  <m>a > b</m>,
+                    we get <m>c = \sqrt{a^2-b^2}</m>,
+                    or <m>1 = \sqrt{9-b^2}</m>.
+                    Squaring both sides gives <m>1 = 9-b^2</m> or   <m>b^2 = 8</m>.
+                    Feeding all of this data into <xref ref="standardellipse">Equation</xref>,
+                    we get our final answer:
+                    <me>
+                      \dfrac{(x-3)^2}{9}+\dfrac{(y-1)^2}{8}=1
+                    </me>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    From the diagram, we infer the ellipse is taller than it is wide.
+                    More specifically,
+                    the labeled points <m>(0,0)</m> and <m>(6,0)</m> are the endpoints of the minor axis.
+                    This gives the center is <m>(3,0)</m>,
+                    so <m>h = 3</m> and <m>k = 0</m>.
+                    Moreover, we have <m>a = 3</m>.
+                    While it certainly <em>appears</em>
+                    that the vertices are <m>(3, \pm 4)</m>,
+                    in which case we'd have <m>b = 4</m>,
+                    these points aren't labeled.
+                    Instead, we use the labeled point <m>(1,3)</m> to calculate <m>b^2</m>.
+                    At this stage, we know the equation of the ellipse is
+                    <me>
+                      \dfrac{(x-3)^2}{9} + \dfrac{y^2}{b^2} = 1
+                    </me>,
+                    so upon substituting <m>x=1</m> and <m>y=3</m>,
+                    we obtain <m>\frac{4}{9} + \frac{9}{b^2} = 1</m>.
+                    Solving this equation, we get <m>b^2 = \frac{81}{5}</m>.
+                    Hence, our final answer is:
+                    <me>
+                      \dfrac{(x-3)^2}{9}+\dfrac{5(y-1)^2}{81}=1
+                    </me>.
+                    Note the vertices of the ellipse are <m>\left(3, \pm \sqrt{\frac{81}{5}} \right) \approx (3, \pm 4)</m> but they are not
+                    <em>exactly</em> <m>(3, \pm 4)</m>.
+                  </p>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      As seen in <xref ref="ellipsesfirstex">Example</xref> above,
+      it is often necessary to algebraically manipulate a given equation into the standard form of <xref ref="standardellipse">Equation</xref> in order to graph.
+      We summarize one approach below.
+    </p>
+    <p>
+      <em>To Write the Equation of an Ellipse in Standard Form</em>
+      <ol>
+        <li>
+          <p>
+            Group common variables together on one side of the equation and put the constant on the other.
+          </p>
+        </li>
+        <li>
+          <p>
+            Complete the square on both variables as needed.
+          </p>
+        </li>
+        <li>
+          <p>
+            Divide both sides, if needed,
+            to obtain <m>1</m> on one side of the equation.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      If we think of a circle as being <sq>perfectly round,</sq> then ellipses,
+      being deformed circles,
+      have varying degrees of <sq>roundness.</sq> We quantify this idea with the notion of
+      <em>eccentricity</em> defined formally below.
+    </p>
+    <definition xml:id="ellipseeccentricity">
+      <statement>
+        <p>
+          The <idx><h>ellipse</h><h>eccentricity</h></idx>
+              <idx><h>eccentricity</h></idx>
+          <term>eccentricity</term> of an ellipse,
+          denoted <m>e</m>, is the following ratio:
+          <me>
+            e = \dfrac{\mbox{distance from the center to a focus} }{\mbox{distance from the center to a vertex} }
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In an ellipse,
+      the foci are closer to the center than the vertices, so <m>0 \lt e \lt 1</m>.
+      The ellipse below on left has eccentricity <m>e \approx 0.66</m>;
+      for the ellipse below on the right, <m>e \approx 0.98</m>.
+      In general, the closer the eccentricity is to <m>0</m>,
+      the less <sq>eccentric</sq> or more <sq>circular</sq> the ellipse appears.
+      On the other hand, the closer the eccentricity is to <m>1</m>,
+      the more <sq>eccentric</sq> the ellipse is and it appears less <sq>circular.</sq>
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[10]{-5}{5}{-3}{3}
+          \penwd{1.25pt}
+          \ellipse{(0,0),4,3}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[10]{-5}{5}{-3}{3}
+          \penwd{1.25pt}
+          \ellipse{(0,0),5,1}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>e \approx 0.66</m></cell>
+        <cell><m>e \approx 0.98</m></cell>
+      </row>
+    </tabular>
+    <p>
+      According to
+      <url href="https://en.wikipedia.org/wiki/Kepler's_laws_of_planetary_motion"><em>Kepler's Laws of Planetary Motion</em></url>,
+      each planet orbits the Sun in an elliptical path with the Sun at one focus.
+      The eccentricity is therefore an important orbital parameter.
+      We investigate the orbit of Mercury in the following example.
+    </p>
+    <example xml:id="MecuryOribitEx">
+      <statement>
+        <p>
+          According to
+          <url href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_british.html"><em>NASA</em></url>,
+          Mercury orbits the Sun in an elliptical orbit.
+          If at perihelion,<fn>
+          the closest Mercury is to the Sun
+          </fn> Mercury is 28.6 megamiles from the Sun and at aphelion,<fn>
+          the farthest Mercury is from the Sun
+          </fn> Mercury is 43.4 megamiles from the Sun,
+          find the eccentricity of Mercury's orbit,
+          rounded to three decimal places.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Per Kepler's Laws,
+          the orbit of Mercury is an ellipse with the Sun at one focus.
+          Since we are told to assume the Sun is positioned at <m>(0,0)</m>,
+          we are free to choose if the major axis of the ellipse lies on the <m>x</m>- or <m>y</m>-axis.
+          We choose the former.
+        </p>
+        <p>
+          With the information given,
+          we know one vertex is 28.6 units away from the focus and the other is 43.4 units.
+          Again, we are free to chose which direction is which,
+          so we decide to put one vertex at
+          <m>(-28.6, 0)</m> and the other is <m>(43.4, 0)</m>.
+          Schematically, we have:
+        </p>
+        <p>
+          \begin{mfpic}[15]{-6}{6}{-2}{2} \axes \tlabel(6,-0.5){<m>x</m>} \tlabel(0.5,1){<m>y</m>} \xmarks{-5,-4,-3,-2,-1,0,1,2,3,4,5} \ymarks{-1,1} \tlabel[cc](-2.86, 0.5){<m>(-28.6, 0)</m>} \tlabel[cc](4.34, 0.5){<m>(43.4, 0)</m>} \plotsymbol[4pt]{Asterisk}{(0,0)} \point[4pt]{(-2.86,0),(4.34,0)} \tlpointsep{4pt}
+        </p>
+        <p>
+          \axislabels {x}{ {<m>-50</m>} -5,{<m>-30</m>} -3,{<m>-10</m>} -1,{<m>10</m>} 1,{<m>30</m>} 3,{<m>50</m>} 5} \end{mfpic}
+        </p>
+        <p>
+          Since the center is the midpoint of the vertices,
+          we find the center to be <m>(7.4, 0)</m>.
+          This means the focus <m>(0,0)</m> is <m>7.4</m> units from the center and each vertex is <m>36</m> units from the center.
+          This is precisely what we need to determine the eccentricity of Mercury's orbit:
+          <me>
+            e = \dfrac{\mbox{distance from the center to a focus} }{\mbox{distance from the center to a vertex} }  = \dfrac{7.4}{36} \approx 0.205
+          </me>.
+        </p>
+        <p>
+          To our delight, we find answer agrees with
+          <url href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_british.html"><em>NASA</em></url>.
+          With an eccentricity of <m>0.205</m>,
+          we expect Mercury's orbit to be fairly <sq>round.</sq> In <xref ref="MercuryOrbitGraph">Exercise</xref>,
+          we invite the reader to find the equation of Mercury's orbit to confirm this conclusion graphically.
+        </p>
+      </solution>
+    </example>
+    <p>
+      As with parabolas,
+      ellipses have a <idx><h>ellipse</h><h>reflective property</h></idx> reflective property.
+      If we imagine the dashed lines below representing sound waves,
+      then it can be shown that the waves emanating from one focus reflect off the top of the ellipse and head towards the other focus.
+    </p>
+    <p>
+      \begin{mfpic}[20]{-6}{6}{-5}{5} \dashed \polyline{(-3,0), (4,2.4)} \dashed \polyline{(3,0), (4,2.4)} \tlabel[cc](-3,-0.5){<m>F_{1}</m>} \tlabel[cc](3,-0.5){<m>F_{2}</m>} \plotsymbol[3pt]{Asterisk}{(-3,0),(3,0)} \penwd{1.25pt} \parafcn{0,3.14,.1}{(5*cos(t),4*sin(t))} \point[4pt]{(4,2.4)} \end{mfpic}
+    </p>
+    <p>
+      Such geometry is exploited in the construction of so-called <sq>Whispering Galleries</sq>.
+      If a person whispers at one focus,
+      a person standing at the other focus will hear the first person as if they were standing right next to them.
+      We explore the Whispering Galleries in our last example.
+    </p>
+    <example xml:id="whisgalleryex">
+      <statement>
+        <p>
+          Jamie and Jason want to exchange secrets
+          (terrible secrets)
+          from across a crowded whispering gallery.
+          Recall that a whispering gallery is a room which,
+          in cross section, is half of an ellipse.
+          If the room is 40 feet high at the center and 100 feet wide at the floor,
+          how far from the outer wall should each of them stand so that they will be positioned at the foci of the ellipse?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Ultimately, we are looking for information about the relative position of foci and the vertices,
+          so we assume the whispering gallery can be represented by the upper half of an ellipse centered at the origin with its major axis along the <m>x</m>-axis.
+          Graphing the data yields the schematic below.
+        </p>
+        <p>
+          \begin{mfpic}[25]{-6}{6}{-1}{5} \axes \tlabel(6,-0.5){<m>x</m>} \tlabel(0.5,5){<m>y</m>}
+        </p>
+        <p>
+          \arrow \reverse \arrow \polyline{(-5,-0.5),(5,-0.5)} \gclear \tlabelrect[cc](0,-1.5){<m>100</m> units wide} \arrow \reverse \arrow \polyline{(0,0.25),(0,3.75)} \gclear \tlabelrect[cc](0, 2){<m>40</m> units tall} \penwd{1.25pt} \parafcn{0,pi,0.1}{(5*cos t, 4*sin t)} \end{mfpic}
+        </p>
+        <p>
+          Since the ellipse is <m>100</m> units wide and <m>40</m> units tall,
+          we get <m>a=50</m> and <m>b=40</m>, respectively.
+          From this, we get <m>c = \sqrt{50^2-40^2} = \sqrt{900} = 30</m>,
+          which means the foci are <m>30</m> units from the center.
+          Hence, the foci are <m>50-30=20</m> units from the vertices so Jason and Jamie should stand <m>20</m> feet from opposite ends of the gallery to exchange their secrets in what amounts to very public privacy.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforEllipses">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="graphellipseexfirst">Exercises</xref>
+      - <xref ref="graphellipseexlast"></xref>,
+      graph the ellipse in the <m>xy</m>-plane.
+      Find the center,
+      the lines which contain the major and minor axes, the vertices,
+      the endpoints of the minor axis,
+      the foci and the eccentricity.
+      <ol cols="4">
+        <li xml:id="graphellipseexfirst">
+          <p>
+            <m>\dfrac{x^{2}}{169} + \dfrac{y^{2}}{25} = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{x^2}{9} + \dfrac{y^2}{25} = 1</m>
+          </p>
+        </li>
+        <li xml:id="oddellipsethree">
+          <p>
+            <m>\dfrac{(x - 2)^{2}}{4} + \dfrac{(y + 3)^{2}}{9} = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{(x + 5)^{2}}{16} + \dfrac{(y - 4)^{2}}{1} = 1</m>
+          </p>
+        </li>
+        <li xml:id="oddellipsefive">
+          <p>
+            <m>\dfrac{(x - 1)^{2}}{10} + \dfrac{(y - 3)^{2}}{11} = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{(x-1)^2}{9}+\dfrac{(y+3)^2}{4} = 1</m>
+          </p>
+        </li>
+        <li xml:id="oddellipseseven">
+          <p>
+            <m>\dfrac{(x+2)^2}{16}+\dfrac{(y-5)^2}{20} = 1</m>
+          </p>
+        </li>
+        <li xml:id="graphellipseexlast">
+          <p>
+            <m>\dfrac{(x-4)^2}{8} + \dfrac{(y-2)^2}{18} = 1</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="stdformellipseexfirst">Exercises</xref>
+      - <xref ref="stdformellipseexlast"></xref>,
+      put the equation in standard form.
+      Find the center,
+      the lines which contain the major and minor axes, the vertices,
+      the endpoints of the minor axis,
+      the foci and the eccentricity.<fn>
+      <ellipsis/> assuming the equation were graphed in the <m>xy</m>-plane.
+      </fn>
+      <ol cols="4">
+        <li xml:id="stdformellipseexfirst">
+          <p>
+            <m>9x^2+25y^2-54x-50y-119=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>12x^{2} + 3y^{2} - 30y + 39 = 0</m>
+          </p>
+        </li>
+        <li xml:id="oddellipseeleven">
+          <p>
+            <m>5x^{2} + 18y^{2} - 30x + 72y + 27 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x^2 - 2x + 2y^2 - 12y + 3 = 0</m>
+          </p>
+        </li>
+        <li xml:id="oddellipsethirteen">
+          <p>
+            <m>9x^2 + 4y^2 - 4y - 8 = 0</m>
+          </p>
+        </li>
+        <li xml:id="stdformellipseexlast">
+          <p>
+            <m>6x^2+5y^2-24x+20y+14=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            For each of the odd numbered equations given in <xref ref="oddellipseone">Exercises</xref>
+            - <xref ref="oddellipsethirteen"></xref>,
+            find two or more explicit functions of <m>x</m> represented by each of the equations.
+            (See <xref ref="horizontalparabolaex">Example</xref>
+            in <xref ref="Parabolas">Section</xref>.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="semiellipsefunctionfirst">Exercises</xref>
+      - <xref ref="semiellipsefunctionlast"></xref>,
+      graph each function by recognizing it as a semi ellipse.
+      <ol cols="2">
+        <li xml:id="semiellipsefunctionfirst">
+          <p>
+            <m>f(x) = \sqrt{16-4x^2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>g(x) = -\frac{1}{2} \sqrt{6x-x^2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = -2\sqrt{3-2x-x^2}</m>
+          </p>
+        </li>
+        <li xml:id="semiellipsefunctionlast">
+          <p>
+            <m>g(x) = -2 + 2\sqrt{9-x^2}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="buildellipsefromgraphfirst">Exercises</xref>
+      - <xref ref="buildellipsefromgraphlast"></xref>,
+      find an equation for the ellipse or semi ellipse whose graph is given.
+      <ol cols="2">
+        <li xml:id="buildellipsefromgraphfirst">
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-4}{6}{-5}{5} \axes \tlabel[cc](6,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1, 4.5){<m>(1,4)</m>} \tlabel[cc](1.25, -4.75){<m>(1,-4)</m>} \tlabel[cc](-3, 0.75){<m>(-2,0)</m>} \tlabel[cc](5, 0.75){<m>(4,0)</m>} \xmarks{-3 step 1 until 5} \ymarks{-4 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{ {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>5</m>} 5} \axislabels {y}{ {<m>-4</m>} -4, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>4</m>} 4 } \penwd{1.25pt} \ellipse{(1,0), 3,4} \point[4pt]{(-2,0), (4,0), (1,4), (1,-4)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-1}{9}{-1}{9} \axes \tlabel[cc](9,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \tlabel[cc](1, 4){<m>(0,4)</m>} \tlabel[cc](7, 4){<m>(8,4)</m>} \tlabel[cc](4, 7.75){<m>(4,7)</m>} \tlabel[cc](4, 0.25){<m>(4,1)</m>} \xmarks{1 step 1 until 8} \ymarks{1 step 1 until 8} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \penwd{1.25pt} \ellipse{(4,4), 4, 3} \point[4pt]{(4,1), (0,4), (4,7), (8,4)} \end{mfpic}
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-5}{5}{-1}{6} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](-4, 3.5){<m>(-4,3)</m>} \tlabel[cc](4, 3.5){<m>(4,3)</m>} \tlabel[cc](0.75, -0.75){<m>(0, 0)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>4</m>} 4, {<m>3</m>} 3, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{-4,4,0.1}{3-0.75*sqrt(16-(x**2))} \point[4pt]{(-4,3), (0,0), (4,3)} \end{mfpic} \columnbreak
+          </p>
+        </li>
+        <li xml:id="buildellipsefromgraphlast">
+          <p>
+            <m>~</m> \begin{mfpic}[13]{-1}{9}{-1}{6} \axes \tlabel[cc](9,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \tlabel[cc](6, -0.75){<m>(6,0)</m>} \tlabel[cc](4, 4.5){<m>(4,4)</m>} \tlabel[cc](2, -0.75){<m>(2, 0)</m>} \xmarks{1 step 1 until 8} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>8</m>} 8, {<m>7</m>} 7 } \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \function{2,6,0.1}{2*sqrt(8*x-12-(x**2))} \point[4pt]{(6,0), (2,0), (4,4)} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="buildellipsefirst">Exercises</xref>
+      - <xref ref="buildellipselast"></xref>,
+      find the standard form of the equation of the ellipse which has the given properties.
+      <ol cols="2">
+        <li xml:id="buildellipsefirst">
+          <p>
+            Center <m>(3, 7)</m>, Vertex <m>(3, 2)</m>, Focus <m>(3, 3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Foci <m>(0, \pm 5)</m>, Vertices <m>(0, \pm 8)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Foci <m>(\pm 3, 0)</m>, length of the Minor Axis <m>10</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Vertices <m>(3,2)</m>,
+            <m>(13,2)</m>; Endpoints of the Minor Axis <m>(8,4)</m>,
+            <m>(8,0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Center <m>(5,2)</m>, Vertex <m>(0,2)</m>,
+            eccentricity <m>\frac{1}{2}</m>
+          </p>
+        </li>
+        <li xml:id="buildellipselast">
+          <p>
+            All points on the ellipse are in Quadrant IV except <m>(0, -9)</m> and <m>(8, 0)</m>.
+            (One might also say that the ellipse is
+            <q>tangent to the axes</q>
+            at those two points.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Repeat <xref ref="whisgalleryex">Example</xref>
+            for a whispering gallery 200 feet wide and 75 feet tall.
+          </p>
+        </li>
+        <li xml:id="ellipsearchex">
+          <p>
+            An elliptical arch is constructed which is 6 feet wide at the base and 9 feet tall in the middle.
+            Find the height of the arch exactly 1 foot in from the base of the arch.
+            Compare your result with your answer to <xref ref="parabolaarch">Exercise</xref>
+            in <xref ref="Parabolas">Section</xref>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The Earth's orbit around the sun is an ellipse with the sun at one focus and eccentricity <m>e \approx 0.0167</m>.
+            The length of the semimajor axis
+            (that is, half of the major axis)
+            is defined to be <m>1</m> astronomical unit (AU).
+            The vertices of the elliptical orbit are given special names:
+            <sq>aphelion</sq> is the vertex farthest from the sun,
+            and <sq>perihelion</sq> is the vertex closest to the sun.
+            Find the distance in AU between the sun and aphelion and the distance in AU between the sun and perihelion.
+          </p>
+        </li>
+        <li xml:id="MercuryOrbitGraph">
+          <p>
+            This exercise is a follow-up to <xref ref="MecuryOribitEx">Example</xref>.
+            Find the equation of the ellipse which models the orbit of Mercury.
+            Graph the ellipse using a graphing utility,
+            and comment on the <sq>roundness</sq> of the orbit.
+          </p>
+        </li>
+        <li>
+          <p>
+            Some famous examples of whispering galleries include
+            <url href="http://www.stpauls.co.uk/"><em>St.
+            Paul's Cathedral</em></url>
+            in London, England,
+            <url href="http://www.aoc.gov/cc/capitol/nat_stat_hall.cfm"><em>National Statuary Hall</em></url>
+            in Washington, D.C., and
+            <url href="http://www.cincymuseum.org/"><em>The Cincinnati Museum Center</em></url>.
+            With the help of your classmates,
+            research these whispering galleries.
+            How does the whispering effect compare and contrast with the scenario in <xref ref="whisgalleryex">Example</xref>?
+          </p>
+        </li>
+        <li>
+          <p>
+            With the help of your classmates, research
+            <q>extracorporeal shock-wave lithotripsy</q>. It uses the reflective property of the ellipsoid to dissolve kidney stones.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\dfrac{x^{2}}{169} + \dfrac{y^{2}}{25} = 1</m> Center <m>(0, 0)</m> Major axis along <m>y = 0</m> Minor axis along <m>x = 0</m> Vertices
+          <m>(13, 0), \, (-13, 0)</m> Endpoints of Minor Axis <m>(0,-5)</m>,
+          <m>(0,5)</m> Foci <m>(12, 0), \, (-12, 0)</m>
+          <m>e = \frac{12}{13}</m> \begin{mfpic}[7][10]{-14}{14}{-6}{6} \axes \tlabel(14,-0.5){<m>x</m>} \tlabel(0.5,6){<m>y</m>} \xmarks{-13 step 1 until 13} \ymarks{-5 step 1 until 5} \plotsymbol[4pt]{Asterisk}{(-12,0), (12,0)} \plotsymbol[4pt]{Cross}{(0,0)} \point[4pt]{(-13,0), (13,0), (0,5), (0,-5)} \tlpointsep{4pt} \axislabels {x}{{<m>-13</m>} -13, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>13</m>} 13} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \ellipse{(0,0),13,5} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{x^{2}}{9} + \dfrac{y^{2}}{25} = 1</m> Center <m>(0, 0)</m> Major axis along <m>x = 0</m> Minor axis along <m>y = 0</m> Vertices
+          <m>(0,5), \, (0,-5)</m> Endpoints of Minor Axis <m>(-3,0)</m>,
+          <m>(3,0)</m> Foci <m>(0,-4), \, (0,4)</m>
+          <m>e = \frac{4}{5}</m> \begin{mfpic}[10]{-4}{4}{-6}{6} \axes \tlabel(4,-0.5){<m>x</m>} \tlabel(0.5,6){<m>y</m>} \xmarks{-3 step 1 until 3} \ymarks{-5 step 1 until 5} \plotsymbol[4pt]{Asterisk}{(0,-4), (0,4)} \plotsymbol[4pt]{Cross}{(0,0)} \point[4pt]{(-3,0), (3,0), (0,5), (0,-5)} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1.25pt} \ellipse{(0,0),3,5} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x - 2)^{2}}{4} + \dfrac{(y + 3)^{2}}{9} = 1</m> Center <m>(2, -3)</m> Major axis along <m>x = 2</m> Minor axis along <m>y = -3</m> Vertices
+          <m>(2, 0), \, (2, -6)</m> Endpoints of Minor Axis <m>(0,-3)</m>,
+          <m>(4,-3)</m> Foci <m>(2, -3 + \sqrt{5}), \, (2, -3 - \sqrt{5})</m>
+          <m>e = \frac{\sqrt{5}}{3}</m> \begin{mfpic}[15]{-1}{5}{-7}{1} \axes \tlabel(5,-0.5){<m>x</m>} \tlabel(0.5,1){<m>y</m>} \xmarks{1 step 1 until 4} \ymarks{-6 step 1 until 0} \plotsymbol[4pt]{Asterisk}{(2, -0.7639), (2,-5.23606)} \plotsymbol[4pt]{Cross}{(2,-3)} \point[4pt]{(2,0), (2,-6), (0,-3), (4,-3)} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \ellipse{(2,-3),2,3} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x + 5)^{2}}{16} + \dfrac{(y - 4)^{2}}{1} = 1</m> Center <m>(-5, 4)</m> Major axis along <m>y = 4</m> Minor axis along <m>x = -5</m> Vertices
+          <m>(-9, 4), \, (-1, 4)</m> Endpoints of Minor Axis <m>(-5,3)</m>,
+          <m>(-5,5)</m> Foci <m>(-5 + \sqrt{15}, 4), \, (-5 - \sqrt{15}, 4)</m>
+          <m>e = \frac{\sqrt{15}}{4}</m> \begin{mfpic}[16]{-10}{1}{-.5}{6} \axes \tlabel(1,-0.5){<m>x</m>} \tlabel(0.5,6){<m>y</m>} \xmarks{-9 step 1 until -1} \ymarks{1 step 1 until 5} \plotsymbol[4pt]{Asterisk}{(-8.873,4), (-1.127,4)} \plotsymbol[4pt]{Cross}{(-5,4)} \point[4pt]{(-9,4), (-1,4), (-5,5), (-5,3)} \tlpointsep{4pt} \axislabels {x}{{<m>-9</m>} -9, {<m>-8</m>} -8, {<m>-7</m>} -7, {<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \penwd{1pt} \ellipse{(-5,4),4,1} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x - 1)^{2}}{10} + \dfrac{(y - 3)^{2}}{11} = 1</m> Center <m>(1, 3)</m> Major axis along <m>x = 1</m> Minor axis along <m>y = 3</m> Vertices
+          <m>(1, 3 + \sqrt{11}), \, (1, 3 - \sqrt{11})</m> Endpoints of the Minor Axis
+          <m>(1-\sqrt{10}, 3), \, (1+\sqrt{10}, 3)</m> Foci <m>(1, 2), \, (1, 4)</m>
+          <m>e = \frac{\sqrt{11}}{11}</m> \begin{mfpic}[18]{-3}{5}{-1}{7} \axes \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,7){<m>y</m>} \xmarks{-2 step 1 until 4} \ymarks{1 step 1 until 6} \plotsymbol[4pt]{Asterisk}{(1,2), (1,4)} \plotsymbol[4pt]{Cross}{(1,3)} \point[4pt]{(1,6.3166), (1,-0.3166), (-2.1623, 3), (4.1623,3)} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \penwd{1.25pt} \ellipse{(1,3),3.1623,3.3166} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-1)^2}{9}+\dfrac{(y+3)^2}{4} = 1</m> Center <m>(1, -3)</m> Major axis along <m>y = -3</m> Minor axis along <m>x = 1</m> Vertices
+          <m>(4, -3), \, (-2, -3)</m> Endpoints of the Minor Axis <m>(1,-1)</m>,
+          <m>(1,-5)</m> Foci <m>(1+\sqrt{5}, -3), \, (1-\sqrt{5}, -3)</m>
+          <m>e = \frac{\sqrt{5}}{3}</m> \begin{mfpic}[18]{-3}{5}{-6}{1} \axes \tlabel(5,-0.25){<m>x</m>} \tlabel(0.25,1){<m>y</m>} \xmarks{-2 step 1 until 4} \ymarks{-5 step 1 until -1} \plotsymbol[4pt]{Asterisk}{(3.2361,-3), (-1.2361,-3)} \plotsymbol[4pt]{Cross}{(1,-3)} \point[4pt]{(4,-3), (-2,-3), (1,-1), (1,-5)} \tlpointsep{4pt} \axislabels {x}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \penwd{1.25pt} \ellipse{(1,-3),3,2} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x+2)^2}{16}+\dfrac{(y-5)^2}{20} = 1</m> Center <m>(-2, 5)</m> Major axis along <m>x = -2</m> Minor axis along <m>y = 5</m> Vertices
+          <m>(-2, 5 + 2\sqrt{5}), \, (-2, 5 - 2\sqrt{5})</m> Endpoints of the Minor Axis <m>(-6,5)</m>,
+          <m>(2,5)</m> Foci <m>(-2, 7), \, (-2, 3)</m>
+          <m>e = \frac{\sqrt{5}}{5}</m> \begin{mfpic}[18]{-7}{3}{-1}{11} \axes \tlabel(3,-0.25){<m>x</m>} \tlabel(0.25,11){<m>y</m>} \xmarks{-6 step 1 until 2} \ymarks{1 step 1 until 11} \plotsymbol[4pt]{Asterisk}{(-2,7), (-2,3)} \plotsymbol[4pt]{Cross}{(-2,5)} \point[4pt]{(-2,9.4721), (-2,0.5279), (-6,5), (2,5)} \tlpointsep{4pt} \axislabels {x}{{<m>-6</m>} -6,{<m>-5</m>} -5,{<m>-4</m>} -4,{<m>-3</m>} -3,{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8, {<m>9</m>} 9, {<m>10</m>} 10 } \penwd{1.25pt} \ellipse{(-2,5),4,4.4721} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-4)^2}{8}+\dfrac{(y-2)^2}{18} = 1</m> Center <m>(4, 2)</m> Major axis along <m>x = 4</m> Minor axis along <m>y = 2</m> Vertices
+          <m>(4, 2 + 3\sqrt{2}), \, (4, 2 - 3\sqrt{2})</m> Endpoints of the Minor Axis <m>(4-2\sqrt{2},2)</m>,
+          <m>(4+2\sqrt{2},2)</m> Foci <m>(4, 2+\sqrt{10}), \, (4, 2-\sqrt{10})</m>
+          <m>e = \frac{\sqrt{5}}{3}</m> \begin{mfpic}[18]{-1}{8}{-4}{8} \axes \tlabel(8,-0.25){<m>x</m>} \tlabel(0.25,8){<m>y</m>} \xmarks{1 step 1 until 7} \ymarks{-3 step 1 until 7} \plotsymbol[4pt]{Asterisk}{(4,5.1623), (4,-1.1623)} \plotsymbol[4pt]{Cross}{(4,2)} \point[4pt]{(4,6.2426), (4,-2.2426), (1.1716, 2), (6.828,2)} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \penwd{1.25pt} \ellipse{(4,2),2.8284,4.2426} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-3)^2}{25} + \dfrac{\left(y-1\right)^2}{9} = 1</m> Center
+          <m>\left(3, 1 \right)</m> Major Axis along <m>y=1</m> Minor Axis along <m>x=3</m> Vertices <m>\left( 8, 1 \right)</m>,
+          <m>(-2, 1)</m> Endpoints of Minor Axis <m>\left(3,4\right)</m>,
+          <m>\left(3,-2\right)</m> Foci <m>\left(7,1 \right)</m>,
+          <m>\left(-1, 1\right)</m> <m>e = \frac{4}{5}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{x^{2}}{3} + \dfrac{(y - 5)^{2}}{12} = 1</m> Center <m>(0, 5)</m> Major axis along <m>x = 0</m> Minor axis along <m>y = 5</m> Vertices
+          <m>(0, 5 - 2\sqrt{3}), (0, 5 + 2\sqrt{3})</m> Endpoints of Minor Axis <m>(-\sqrt{3},5)</m>,
+          <m>(\sqrt{3},5)</m> Foci <m>(0, 2), (0, 8)</m> <m>e = \frac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x - 3)^{2}}{18} + \dfrac{(y + 2)^{2}}{5} = 1</m> Center <m>(3, -2)</m> Major axis along <m>y = -2</m> Minor axis along <m>x = 3</m> Vertices
+          <m>(3 - 3\sqrt{2}, -2), (3 + 3\sqrt{2}, -2)</m> Endpoints of Minor Axis <m>(3,-2+\sqrt{5})</m>,
+          <m>(3,-2-\sqrt{5})</m> Foci
+          <m>(3 - \sqrt{13}, -2), (3 + \sqrt{13}, -2)</m> <m>e = \frac{\sqrt{26}}{6}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x - 1)^{2}}{16} + \dfrac{(y - 3)^{2}}{8} = 1</m> Center <m>(1,3)</m> Major Axis along <m>y=3</m> Minor Axis along <m>x=1</m> Vertices <m>(5, 3)</m>,
+          <m>(-3,3)</m> Endpoints of Minor Axis <m>(1,3+2\sqrt{2})</m>,
+          <m>(1,3-2\sqrt{2})</m> Foci <m>(1 + 2 \sqrt{2}, 3)</m>,
+          <m>(1-2 \sqrt{2},3)</m> <m>e = \frac{\sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{x^2}{1} + \dfrac{4\left(y-\frac{1}{2}\right)^2}{9} = 1</m> Center
+          <m>\left(0, \frac{1}{2} \right)</m> Major Axis along <m>x=0</m>
+          (the <m>y</m>-axis)
+          Minor Axis along <m>y=\frac{1}{2}</m> Vertices <m>\left( 0, 2 \right)</m>,
+          <m>(0, -1)</m> Endpoints of Minor Axis <m>\left(-1, \frac{1}{2} \right)</m>,
+          <m>\left(1, \frac{1}{2} \right)</m> Foci <m>\left(0, \frac{1+\sqrt{5}}{2}\right)</m>,
+          <m>\left(0, \frac{1-\sqrt{5}}{2}\right)</m> <m>e = \frac{\sqrt{5}}{3}</m> \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-2)^2}{5} + \dfrac{\left(y+2\right)^2}{6} = 1</m> Center
+          <m>\left(2, -2 \right)</m> Major Axis along <m>x=2</m> Minor Axis along <m>y=-2</m> Vertices <m>\left( 2, -2+\sqrt{6} \right)</m>,
+          <m>(2, -2-\sqrt{6})</m> Endpoints of Minor Axis <m>\left(2-\sqrt{5},-2 \right)</m>,
+          <m>\left(2+\sqrt{5},-2\right)</m> Foci <m>\left(2,-1 \right)</m>,
+          <m>\left(2, -3\right)</m> <m>e = \frac{\sqrt{6}}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>~</m> For <xref ref="oddellipseone">number</xref>:
+          <ul>
+            <li>
+              <p>
+                <m>f(x) = \frac{5}{13} \sqrt{169-x^2}</m> represents the upper half of the ellipse.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(x) = -\frac{5}{13} \sqrt{169-x^2}</m> represents the lower half of the ellipse.
+              </p>
+            </li>
+          </ul>
+        </p>
+        For <xref ref="oddellipsethree">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = -3 + \frac{3}{2} \sqrt{4x-x^2}</m> represents the upper half of the ellipse.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = -3 - \frac{3}{2} \sqrt{4x-x^2}</m> represents the lower half of the ellipse.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddellipsefive">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = 3 + \frac{1}{10} \sqrt{990+220x-110x^2}</m> represents the upper half of the ellipse.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = 3 - \frac{1}{10} \sqrt{990+220x-110x^2}</m> represents the lower half of the ellipse.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddellipseseven">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = 5 + \frac{1}{2} \sqrt{60-20x-5x^2}</m> represents the upper half of the ellipse.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = 5 - \frac{1}{2} \sqrt{60-20x-5x^2}</m> represents the lower half of the ellipse.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddellipsenine">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = 1 + \frac{3}{5} \sqrt{16+6x-x^2}</m> represents the upper half of the ellipse.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = 1 - \frac{3}{5} \sqrt{16+6x-x^2}</m> represents the lower half of the ellipse.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddellipseeleven">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = -2 + \frac{1}{6} \sqrt{90+60x-10x^2}</m> represents the upper half of the ellipse.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = -2 - \frac{1}{6} \sqrt{90+60x-10x^2}</m> represents the lower half of the ellipse.
+            </p>
+          </li>
+        </ul>
+        For <xref ref="oddellipsethirteen">number</xref>:
+        <ul>
+          <li>
+            <p>
+              <m>f(x) = \frac{1}{2} + \frac{3}{2} \sqrt{1-x^2}</m> represents the upper half of the ellipse.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(x) = \frac{1}{2} - \frac{3}{2} \sqrt{1-x^2}</m> represents the lower half of the ellipse.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{16-4x^2}</m> \begin{mfpic}[15]{-4}{4}{-1}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-2, -0.5){<m>(-2,0)</m>} \tlabel[cc](2, -0.5){<m>(2, 0)</m>} \tlabel[cc](-1, 4.5){<m>(0,4)</m>} \xmarks{-3 step 1 until 3} \ymarks{0 step 1 until 4} \tlpointsep{4pt} \axislabels {y}{ {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \penwd{1.25pt} \function{-2,2,0.1}{sqrt(16-4*(x**2))} \point[4pt]{(-2,0), (0,4), (2,0)} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = -\frac{1}{2} \sqrt{6x-x^2}</m> \begin{mfpic}[15]{-1}{7}{-4.5}{1.5} \axes \tlabel[cc](7,-0.5){<m>x</m>} \tlabel[cc](0.5,1.5){<m>y</m>} \tlabel[cc](3, -2.25){<m>\left(3,-\frac{3}{2} \right)</m>} \tlabel[cc](-0.5, 0.75){<m>(0,0)</m>} \tlabel[cc](6, 0.5){<m>(6,0)</m>} \xmarks{1 step 1 until 6} \ymarks{-4 step 1 until -1} \tlpointsep{4pt} \axislabels {x}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \function{0, 6, 0.1}{-0.5*sqrt(6*x-(x**2))} \point[4pt]{(0,0), (3,-1.5), (6,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = -2\sqrt{3-2x-x^2}</m> \begin{mfpic}[20]{-4}{4}{-6}{2} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,2){<m>y</m>} \tlabel[cc](-3, 0.5){<m>(-3,0)</m>} \tlabel[cc](-1.25, -4.5){<m>(-1,-4)</m>} \tlabel[cc](1, 0.5){<m>(1,0)</m>} \xmarks{-3 step 1 until 3} \ymarks{-5 step 1 until 1} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>2</m>} 2,{<m>3</m>} 3} \axislabels {y}{ {<m>1</m>} 1, {<m>-2</m>} -2,{<m>-3</m>} -3, {<m>-1</m>} -1, {<m>-5</m>} -5} \penwd{1.25pt} \function{-3,1,0.1}{-2*sqrt(3-2*x-(x**2))} \point[4pt]{(-3,0), (-1,-4), (1,0)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(x) = -2 + 2\sqrt{9-x^2}</m> \begin{mfpic}[20]{-4}{4}{-3}{5} \axes \tlabel[cc](4,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](1,4.25){<m>(0,4)</m>} \tlabel[cc](-3, -2.5){<m>(-3,-2)</m>} \tlabel[cc](3, -2.5){<m>(3,-2)</m>} \xmarks{-3 step 1 until 3} \ymarks{-2 step 1 until 4} \tlpointsep{4pt} \axislabels {x}{ {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>2</m>} 2, {<m>3</m>} 3, {<m>1</m>} 1} \axislabels {y}{ {<m>2</m>} 2,{<m>3</m>} 3,{<m>1</m>} 1, {<m>-1</m>} -1, {<m>-2</m>} -2} \penwd{1.25pt} \function{-3,3,0.1}{-2+2*sqrt(9-(x**2))} \point[4pt]{(0,4), (-3,-2), (3,-2)} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-1)^2}{9} + \dfrac{y^2}{16} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-4)^2}{16} + \dfrac{(y-4)^2}{9} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 3 - \frac{3}{4} \sqrt{16-x^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 2 \sqrt{8x-x^2-12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x - 3)^{2}}{9} + \dfrac{(y - 7)^{2}}{25} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{x^{2}}{39} + \dfrac{y^{2}}{64} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{x^{2}}{34} + \dfrac{y^{2}}{25} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x - 8)^{2}}{25} + \dfrac{(y - 2)^{2}}{4} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-5)^{2}}{25} + \dfrac{4(y-2)^{2}}{75} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x - 8)^{2}}{64} + \dfrac{(y + 9)^{2}}{81} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Jamie and Jason should stand
+          <m>100-25\sqrt{7} \approx 33.86</m> feet from opposite ends of the gallery.
+        </p>
+      </li>
+      <li>
+        <p>
+          The arch can be modeled by the upper half of <m>\frac{x^2}{9} + \frac{y^2}{81} = 1</m>.
+          One foot in from the base of the arch corresponds to either <m>x = \pm 2</m>.
+          Plugging in <m>x = \pm 2</m> gives
+          <m>y = \pm 3\sqrt{5}</m> and since <m>y</m> represents a height,
+          we choose <m>y=3\sqrt{5} \approx 6.71</m> feet.
+        </p>
+      </li>
+      <li>
+        <p>
+          Distance from the sun to aphelion
+          <m>\approx 1.0167</m> AU. Distance from the sun to perihelion <m>\approx 0.9833</m> AU.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dfrac{(x-7.4)^2}{1296} + \dfrac{y^2}{1241.24} = 1</m>.
+          Graphing this equation<fn>
+          <ellipsis/> using the <sq>Zoom Square</sq> setting <ellipsis/>
+          </fn> reveals a very <sq>round</sq> orbit.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

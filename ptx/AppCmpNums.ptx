@@ -1,0 +1,1414 @@
+<section xml:id="AppCmpNums">
+  <title>Complex Numbers</title>
+  <introduction>
+    <p>
+      The results of <xref ref="AppQuadEqus">Section</xref>
+      tell us that the equation <m>x^{2} + 1 = 0</m> has no real number solutions.
+      However, it <em>would</em> have solutions if we could make sense of <m>\sqrt{-1}</m>.
+      The <em>Complex Numbers</em>
+          <idx><h>numbers</h><h>complex</h></idx>
+          <idx><h>complex numbers</h></idx>
+      do just that - they give us a mechanism for working with <m>\sqrt{-1}</m>.
+      As such, the set of complex numbers fill in an algebraic gap left by the set of real numbers.
+    </p>
+    <p>
+      Here's the basic plan.
+      There is no real number <m>x</m> with <m>x^2 = -1</m>,
+      since for any real number <m>x^2 \geq 0</m>.
+      However, we could formally extract square roots and write <m>x = \pm \sqrt{-1}</m>.
+      We build the complex numbers by relabeling the quantity <m>\sqrt{-1}</m> as <m>i</m>,
+      the unfortunately misnamed <idx><h>imaginary unit, <m>i</m></h></idx>
+          <idx><h>complex number</h><h>imaginary unit, <m>i</m></h></idx>
+      <em>imaginary unit</em>.<fn>
+      Some Technical Mathematics textbooks label it <sq><m>j</m></sq>.
+      While it carries the adjective <sq>imaginary</sq>,
+      these numbers have essential real-world implications.
+      For example,
+      every electronic device owes its existence to the study of <sq>imaginary</sq> numbers.
+      </fn> The number <m>i</m>, while not a real number,
+      is defined so that it plays along well with real numbers and acts very much like any other radical expression.
+      For instance, <m>3(2i) = 6i</m>,
+      <m>7i-3i = 4i</m>, <m>(2-7i) + (3 + 4i) = 5-3i</m>, and so forth.
+      The key properties which distinguish <m>i</m> from the real numbers are listed below.
+    </p>
+    <definition xml:id="idefn">
+      <statement>
+        <p>
+          The imaginary unit <m>i</m> satisfies the two following properties:
+          <ol>
+            <li>
+              <p>
+                <m>i^2 = -1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>c</m> is a real number with
+                <m>c \geq 0</m> then <m>\sqrt{-c} = i \sqrt{c}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Property 1 in <xref ref="idefn">Definition</xref>
+      establishes that <m>i</m> does act as a square root<fn>
+      Note the use of the indefinite article <sq>a</sq>.
+      Whatever beast is chosen to be <m>i</m>,
+      <m>-i</m> is the other square root of <m>-1</m>.
+      </fn> of <m>-1</m>,
+      and property 2 establishes what we mean by the <sq>principal square root</sq> of a negative real number.
+      In property 2, it is important to remember the restriction on <m>c</m>.
+      For example,
+      it is perfectly acceptable to say <m>\sqrt{-4} = i \sqrt{4} = i(2) = 2i</m>.
+      However, <m>\sqrt{-(-4)} \neq i \sqrt{-4}</m>, otherwise, we'd get
+      <me>
+        2 = \sqrt{4} = \sqrt{-(-4)} = i \sqrt{-4} = i (2i) = 2i^2 = 2(-1) = -2
+      </me>,
+      which is unacceptable.
+      The moral of this story is that the general properties of radicals do not apply for even roots of negative quantities.
+      With <xref ref="idefn">Definition</xref> in place,
+      we can define the set of <idx><h>complex number</h><h>definition of</h></idx>
+      <em>complex numbers</em>.
+    </p>
+    <definition xml:id="complexdefn">
+      <statement>
+        <p>
+          A <term>complex number</term> is a number of the form <m>a+bi</m>,
+          where <m>a</m> and <m>b</m> are real numbers and <m>i</m> is the imaginary unit.
+          The set of complex numbers is denoted <m>\C</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Complex numbers include things you'd normally expect,
+      like <m>3+2i</m> and <m>\frac{2}{5} - i\sqrt{3}</m>.
+      However, don't forget that <m>a</m> or <m>b</m> could be zero,
+      which means numbers like <m>3i</m> and <m>6</m> are also complex numbers.
+      In other words, don't forget that the complex numbers
+      <em>include</em> the real numbers,<fn>
+      To use the language of <xref ref="SetsofRealNumbers">Section</xref>,
+      <m>\R \subseteq \C</m>.
+      </fn> so <m>0</m> and
+      <m>\pi - \sqrt{21}</m> are both considered complex numbers.
+      The arithmetic of complex numbers is as you would expect.
+      The only things you need to remember are the two properties in <xref ref="idefn">Definition</xref>.
+      The next example should help recall how these animals behave.
+    </p>
+    <example xml:id="complexzeroex1">
+      <statement>
+        <p>
+          Perform the indicated operations.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>(1-2i) - (3+4i)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(1-2i)(3+4i)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\dfrac{1-2i}{3-4i}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sqrt{-3} \sqrt{-12}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sqrt{(-3)(-12)}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(x-[1+2i])(x-[1-2i])</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                As mentioned earlier,
+                we treat expressions involving <m>i</m> as we would any other radical.
+                We distribute and combine like terms:
+                <me>
+                  \begin{array}{rclr}  (1-2i) - (3+4i) \amp  = \amp   1-2i-3-4i \amp  \text{ Distribute }  \\ \amp  = \amp   -2 - 6i \amp  \text{ Gather like terms } \end{array}
+                </me>
+                Technically,
+                we'd have to rewrite our answer  <m>-2-6i</m> as <m>(-2) + (-6)i</m> to be
+                (in the strictest sense)
+                <sq>in the form <m>a+bi</m></sq>.
+                That being said, even pedants have their limits,
+                so <m>-2-6i</m> is good enough.
+              </p>
+            </li>
+            <li>
+              <p>
+                Using the Distributive Property (a.k.a.
+                F.O.I.L.), we get
+                <me>
+                  \begin{array}{rclr}  (1-2i)(3+4i)  \amp  = \amp  (1)(3) + (1)(4i) - (2i)(3) - (2i)(4i) \amp  \text{ F.O.I.L. }  \\ \amp  = \amp  3+4i-6i-8i^2 \amp  \\ \amp  = \amp  3 - 2i - 8(-1) \amp  \text{ \(i^2=-1\) }  \\ \amp  = \amp  3 - 2i + 8 \amp  \\ \amp  = \amp  11 - 2i \amp \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                How in the world are we supposed to simplify <m>\frac{1-2i}{3-4i}</m>?
+                Well, we deal with the denominator <m>3-4i</m> as we would any other denominator containing two terms,
+                one of which is a square root.<fn>
+                See <xref ref="rationalizingdenomandnumer">subsection</xref>
+                for a more thorough treatment of this type of maneuver.
+                </fn> We multiply both numerator and denominator by <m>3+4i</m>,
+                the (complex) conjugate of <m>3 - 4i</m>.
+                Doing so produces
+                <me>
+                  \begin{array}{rclr}  \dfrac{1-2i}{3-4i} \amp  = \amp  \dfrac{(1-2i)(3+4i)}{(3-4i)(3+4i)} \amp  \text{ Equivalent Fractions }  \\  \amp  = \amp    \dfrac{3 + 4i - 6i - 8i^2}{9 - 16i^2} \amp  \text{ F.O.I.L. } \\ \amp  = \amp  \dfrac{3 - 2i - 8(-1)}{9  - 16(-1)} \amp  \text{ \(i^2 = -1\) } \\ \amp  = \amp   \dfrac{11 - 2i}{25} \amp  \\ \amp  = \amp  \dfrac{11}{25} - \dfrac{2}{25} \, i \amp \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                We use property 2 of <xref ref="idefn">Definition</xref> first,
+                then apply the rules of radicals applicable to real numbers to get <m>\sqrt{-3} \sqrt{-12} = \left(i \sqrt{3}\right) \left(i \sqrt{12}\right) = i^2 \sqrt{3\cdot 12} = -\sqrt{36} = -6</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We adhere to the order of operations here and perform the multiplication before the radical to get <m>\sqrt{(-3)(-12)} = \sqrt{36} = 6</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We brute force multiply using the distributive property and find that
+                <me>
+                  \begin{array}{rclr} (x-[1+2i])(x-[1-2i]) \amp  = \amp   x^2 -x[1-2i]-x[1+2i]+[1-2i][1+2i] \amp  \text{ F.O.I.L. } \\  \amp   = \amp  x^2-x+2ix-x-2ix+1-2i+2i-4i^2 \amp  \text{ Distribute }  \\ \amp   = \amp  x^2-2x + 1-4(-1)\amp  \text{ Gather like terms } \\ \amp  =  \amp  x^2 -2x +5 \amp  i^2=-1 \end{array}
+                </me>
+                This type of factoring will be revisited in <xref ref="ComplexZeros">Section</xref>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In the previous example,
+      we used the <sq>conjugate</sq> idea from <xref ref="AppRadEqus">Section</xref>
+      to divide two complex numbers.
+      More generally,
+      the <idx><h>complex number</h><h>complex conjugate ! definition of</h></idx>
+          <idx><h>conjugate</h><h>complex conjugate ! definition of</h></idx>
+      <em>complex conjugate</em> of a complex number <m>a+bi</m> is the number <m>a-bi</m>.
+      The notation commonly used for complex conjugation is a <sq>bar</sq>:
+      <m>\overline{a+bi} = a-bi</m>.
+      For example,
+      <m>\overline{3+2i} = 3-2i</m> and <m>\overline{3-2i} = 3+2i</m>.
+      To find <m>\overline{6}</m>,
+      we note that <m>\overline{6} = \overline{6+0i}= 6 - 0i = 6</m>,
+      so <m>\overline{6} = 6</m>.
+      Similarly, <m>\overline{4i} = -4i</m>,
+      since <m>\overline{4i} = \overline{0 + 4i} = 0 - 4i = -4i</m>.
+      Note that <m>\overline{3+\sqrt{5}} = 3 + \sqrt{5}</m>,
+      not <m>3 - \sqrt{5}</m>,
+      since <m>\overline{3+\sqrt{5}} = \overline{3+\sqrt{5} + 0i} = 3+\sqrt{5} - 0i = 3+\sqrt{5}</m>.
+      Here, the conjugation specified by the <sq>bar</sq> notation involves reversing the sign before <m>i = \sqrt{-1}</m>,
+      not before <m>\sqrt{5}</m>.
+      The properties of the conjugate are summarized in the following theorem.
+    </p>
+    <theorem xml:id="conjugateprops">
+      <statement>
+        <p>
+              <idx><h>complex number</h><h>conjugate ! properties of</h></idx>
+              <idx><h>conjugate of a complex number</h><h>properties of</h></idx>
+          <em>Properties of the Complex Conjugate:</em>
+          Let <m>z</m> and <m>w</m> be complex numbers.
+          <ul>
+            <li>
+              <p>
+                <m>\overline{\overline{z}} = z</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\overline{z+w} = \overline{z} + \overline{w}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\overline{zw} = \overline{z} \, \overline{w}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\overline{z^{n}} = \left(\overline{z}\right)^n</m>,
+                for any natural number <m>n</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z</m> is a real number if and only if <m>\overline{z} = z</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      <xref ref="conjugateprops">Theorem</xref>
+      says in part that complex conjugation works well with addition,
+      multiplication and powers.
+      The proofs of these properties can best be achieved by writing out <m>z = a+bi</m> and
+      <m>w = c+di</m> for real numbers <m>a</m>,
+      <m>b</m>, <m>c</m> and <m>d</m>.
+      Next, we compute the left and right sides of each equation and verify that they are the same.
+    </p>
+    <p>
+      The proof of the first property is a very quick exercise.<fn>
+      Trust us on this.
+      </fn> To prove the second property,
+      we compare <m>\overline{z+w}</m> with <m>\overline{z} + \overline{w}</m>.
+      We have <m>\overline{z} + \overline{w} = \overline{a+bi} + \overline{c+di}  = a-bi + c-di</m>.
+      To find <m>\overline{z+w}</m>, we first compute
+      <me>
+        z+w = (a+bi) + (c+di) = (a+c)+(b+d)i
+      </me>
+      so
+      <me>
+        \overline{z+w} = \overline{(a+c)+(b+d)i} = (a+c) - (b+d)i = a+c - bi - di = a - bi + c - di = \overline{z} + \overline{w}
+      </me>
+    </p>
+    <p>
+      As such, we have established <m>\overline{z+w} = \overline{z}+\overline{w}</m>.
+      The proof for multiplication works similarly.
+      The proof that the conjugate works well with powers can be viewed as a repeated application of the product rule,
+      and is best proved using a technique called Mathematical Induction.<fn>
+      See <xref ref="Induction">Section</xref>.
+      </fn> The last property is a characterization of real numbers.
+      If <m>z</m> is real, then <m>z = a + 0i</m>,
+      so <m>\overline{z} = a - 0i = a = z</m>.
+      On the other hand, if <m>z=\overline{z}</m>,
+      then <m>a+bi = a - bi</m> which means <m>b=-b</m> so <m>b=0</m>.
+      Hence, <m>z = a +0i = a</m> and is real.
+    </p>
+    <p>
+      We now return to the business of solving quadratic equations.
+      Consider <m>x^2-2x+5 = 0</m>.
+      The discriminant <m>b^2 - 4ac = -16</m> is negative,
+      so we know by <xref ref="discriminanttheoremrealversion">Theorem</xref>
+      there are no <em>real</em> solutions,
+      since the Quadratic Formula would involve the term <m>\sqrt{-16}</m>.
+      Complex numbers, however,
+      are built just for such situations,
+      so we can go ahead and apply the Quadratic Formula to get:
+      <me>
+        x = \dfrac{-(-2) \pm \sqrt{(-2)^2-4(1)(5)}}{2(1)} = \dfrac{2 \pm \sqrt{-16}}{2} = \dfrac{2 \pm 4i}{2} = 1 \pm 2i
+      </me>.
+    </p>
+    <example xml:id="complexsolnsreviewex">
+      <statement>
+        <p>
+          Find the complex solutions to the following equations.<fn>
+          Remember, all real numbers are complex numbers,
+          so <sq>complex solutions</sq> means both real and non-real answers.
+          </fn>
+          <ol>
+            <li>
+              <p>
+                <m>\dfrac{2x}{x+1} = x+3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2t^4 = 9t^2 + 5</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^3 + 1 = 0</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Clearing fractions yields a quadratic equation so we then proceed as in <xref ref="AppQuadEqus">Section</xref>.
+                <me>
+                  \begin{array}{rclr}   \dfrac{2x}{x+1} \amp  = \amp   x+3 \amp  \\ 2x \amp  = \amp  (x+3)(x+1) \amp  \text{ Multiply by \((x+1)\) to clear denominators }  \\  2x \amp  = \amp  x^2 + x + 3x + 3 \amp  \text{ F.O.I.L. }  \\  2x \amp  = \amp  x^2 + 4x + 3 \amp  \text{ Gather like terms }  \\  0 \amp  = \amp  x^2 + 2x + 3 \amp  \text{ Subtract \(2x\) } \end{array}
+                </me>
+                From here, we apply the Quadratic Formula
+                <me>
+                  \begin{array}{rclr}  x  \amp  =  \amp  \dfrac{-2 \pm \sqrt{2^2 - 4(1)(3)}}{2(1)}  \amp  \text{ Quadratic Formula } \\ \amp  = \amp   \dfrac{-2 \pm \sqrt{-8}}{2} \amp  \text{ Simplify } \\ \amp  =  \amp  \dfrac{-2 \pm i \sqrt{8}}{2} \amp  \text{ Definition of \(i\) } \\ \amp  =  \amp  \dfrac{-2 \pm i 2\sqrt{2}}{2} \amp  \text{ Product Rule for Radicals } \\ \amp  = \amp  \dfrac{\cancel{2}(-1 \pm i\sqrt{2})}{\cancel{2}} \amp  \text{ Factor and reduce } \\ \amp  = \amp  -1 \pm i \sqrt{2} \amp \end{array}
+                </me>
+                We get two answers:
+                <m>x = -1 + i\sqrt{2}</m> and its conjugate <m>x = -1 - i\sqrt{2}</m>.
+                Checking both of these answers reviews all of the salient points about complex number arithmetic and is therefore strongly encouraged.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since we have three terms,
+                and the exponent on one term (<sq><m>4</m></sq> on <m>t^4</m>) is exactly twice the exponent on the other (<sq><m>2</m></sq> on <m>t^2</m>),
+                we have a Quadratic in Disguise.
+                We proceed accordingly.
+                <me>
+                  \begin{array}{rclr}  2t^4 \amp  = \amp  9t^2 + 5 \amp  \\  2t^4 - 9t^2 - 5 \amp  = \amp  0 \amp  \text{ Subtract \(9t^2\) and \(5\) }  \\ (2t^2 + 1)(t^2 - 5) \amp  = \amp  0 \amp  \text{ Factor }  \\ 2t^2 + 1 = 0 \amp  \text{ or }  \amp  t^2 = 5 \amp  \text{ Zero Product Property } \end{array}
+                </me>
+                From <m>2t^2 + 1 = 0</m> we get <m>2t^2 = -1</m>,
+                or <m>t^2 = -\frac{1}{2}</m>.
+                We extract square roots as follows:
+                <me>
+                  t = \pm \sqrt{-\dfrac{1}{2}} = \pm i \sqrt{\dfrac{1}{2}} = \pm i \dfrac{\sqrt{1}}{\sqrt{2}} = \pm i \dfrac{1}{\sqrt{2}} = \pm \dfrac{i \sqrt{2}}{2}
+                </me>,
+                where we have rationalized the denominator per convention.
+                From <m>t^2 = 5</m>, we get <m>t = \pm \sqrt{5}</m>.
+                In total, we have four complex solutions - two real:
+                <m>t = \pm \sqrt{5}</m> and two non-real:
+                <m>t = \pm \frac{i \sqrt{2}}{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find  the <em>real</em> solutions to  <m>z^3 + 1 = 0</m>,
+                we can subtract the <m>1</m> from both sides and extract cube roots:
+                <m>z^3 = -1</m>, so <m>z  = \sqrt[3]{-1} = -1</m>.
+                It turns out there are two more non-real complex number solutions to this equation.
+                To get at these, we factor:
+                <me>
+                  \begin{array}{rclr}  z ^ 3 + 1 \amp  = \amp  0 \amp  \\ (z + 1)(z^2 - z + 1) \amp  = \amp  0 \amp  \text{ Factor (Sum of Two Cubes) }  \\ z + 1 = 0 \amp  \text{ or }  \amp  z^2 - z + 1 = 0 \amp \end{array}
+                </me>
+                From <m>z+1 = 0</m>, we get our real solution <m>z = -1</m>.
+                From <m>z^2 -z + 1 = 0</m>, we apply the Quadratic Formula to get:
+                <me>
+                  z = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(1)}}{2(1)} = \dfrac{1 \pm \sqrt{-3}}{2} = \dfrac{1 \pm i\sqrt{3}}{2}
+                </me>
+                Thus we get <em>three</em> solutions to <m>z^3 + 1 = 0</m> - one real:
+                <m>z = -1</m> and two non-real:
+                <m>z =  \frac{1 \pm i\sqrt{3}}{2}</m>.
+                As always, the reader is encouraged to test their algebraic mettle and check these solutions.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      It is no coincidence that the non-real solutions to the equations in <xref ref="complexsolnsreviewex">Example</xref>
+      appear in complex conjugate pairs.
+      Any time we use the Quadratic Formula to solve an equation with
+      <em>real</em> coefficients,
+      the answers will form a complex conjugate pair owing to the <m>\pm</m> in the Quadratic Formula.
+      This leads us to a generalization of <xref ref="discriminanttheoremrealversion">Theorem</xref> which we state below.
+    </p>
+    <theorem xml:id="discriminanttheoremcomplexversion">
+      <statement>
+        <p>
+          <em>Discriminant Theorem:</em> Given a Quadratic Equation <m>ax^2 + bx + c = 0</m>,
+          where <m>a</m>,
+          <m>b</m> and <m>c</m> are real numbers,
+          let <m>D = b^2 - 4ac</m> be the discriminant.
+          <ul>
+            <li>
+              <p>
+                If <m>D > 0</m>,
+                there are two distinct real number solutions to the equation.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>D = 0</m>, there is one (repeated) real number solution.
+                <em>Note:</em> <sq>Repeated</sq> here comes from the fact that <sq>both</sq> solutions
+                <m>\frac{-b \pm 0}{2a}</m> reduce to <m>-\frac{b}{2a}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>D \lt 0</m>,
+                there are two non-real solutions which form a complex conjugate pair.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We will have much more to say about complex solutions to equations in <xref ref="ComplexZeros">Section</xref>
+      and we will revisit <xref ref="discriminanttheoremcomplexversion">Theorem</xref> then.
+    </p>
+  </introduction>
+  <subsection xml:id="ExercisesforAppCmpNums">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="compnumbasicfirst">Exercises</xref>
+      - <xref ref="compnumbasiclast"></xref>,
+      use the given complex numbers <m>z</m> and <m>w</m> to find and simplify the following.
+      <ul>
+        <li>
+          <p>
+            <m>z+w</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>zw</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>z^2</m>
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>
+            <m>\dfrac{1}{z}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{z}{w}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{w}{z}</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <ul>
+      <li>
+        <p>
+          <m>\overline{z}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z\overline{z}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(\overline{z})^2</m>
+        </p>
+      </li>
+    </ul>
+    <ol cols="5">
+      <li xml:id="compnumbasicfirst">
+        <p>
+          <m>z = 2+3i</m>, <m>w = 4i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = 1+i</m>, <m>w = -i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = i</m>, <m>w = -1+2i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = 4i</m>, <m>w = 2-2i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = 3-5i</m>, <m>w = 2+7i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = -5+i</m>, <m>w = 4+2i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = \sqrt{2} - i\sqrt{2}</m>,
+          <m>w = \sqrt{2} + i\sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = 1 - i\sqrt{3}</m>, <m>w = -1 - i\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = \dfrac{1}{2} + \dfrac{\sqrt{3}}{2} \, i</m>,
+          <m>w = -\dfrac{1}{2} + \dfrac{\sqrt{3}}{2} \,i</m>
+        </p>
+      </li>
+      <li xml:id="compnumbasiclast">
+        <p>
+          <m>z = -\dfrac{\sqrt{2}}{2} + \dfrac{\sqrt{2}}{2} \, i</m>,
+          <m>w = -\dfrac{\sqrt{2}}{2} - \dfrac{\sqrt{2}}{2} \, i</m>
+        </p>
+      </li>
+    </ol>
+    <p>
+      In <xref ref="rootsofnegfirst">Exercises</xref>
+      - <xref ref="rootsofneglast"></xref>, simplify the quantity.
+      <ol cols="2">
+        <li xml:id="rootsofnegfirst">
+          <p>
+            <m>\sqrt{-49}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{-9}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{-25}\sqrt{-4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{(-25)(-4)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{-9}\sqrt{-16}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{(-9)(-16)}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{-(-9)}</m>
+          </p>
+        </li>
+        <li xml:id="rootsofneglast">
+          <p>
+            <m>-\sqrt{(-9)}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      We know that <m>i^{2} = -1</m> which means
+      <m>i^{3} = i^{2} \cdot i = (-1) \cdot i = -i</m> and <m>i^{4} = i^{2} \cdot i^{2} = (-1)(-1) = 1</m>.
+      In <xref ref="powerofifirst">Exercises</xref>
+      - <xref ref="powerofilast"></xref>,
+      use this information to simplify the given power of <m>i</m>.
+      <ol cols="2">
+        <li xml:id="powerofifirst">
+          <p>
+            <m>i^{5}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i ^{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i^{7}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i^{8}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i^{15}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i^{26}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>i^{117}</m>
+          </p>
+        </li>
+        <li xml:id="powerofilast">
+          <p>
+            <m>i^{304}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solvecomplexfirst">Exercises</xref>
+      - <xref ref="solvecomplexlast"></xref>,
+      find all complex solutions.
+      <ol cols="4">
+        <li xml:id="solvecomplexfirst">
+          <p>
+            <m>3x^2 + 6 = 4x</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>15t^2+2t+5= 3t(t^2+1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3y^2 + 4 = y^4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{2}{1-w}= w</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{y}{3} - \dfrac{3}{y} = y</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{x^3}{2x-1} = \dfrac{x}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x =\dfrac{2}{\sqrt{5} - x}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{5y^4 + 1}{y^2-1} = 3y^2</m>
+          </p>
+        </li>
+        <li xml:id="solvecomplexlast">
+          <p>
+            <m>z^{4} = 16</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Multiply and simplify:
+            <m>\left(x - [3 - i\sqrt{23}]\right)\left(x - [3+i\sqrt{23}]\right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          For <m>z = 2+3i</m> and <m>w = 4i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = 2+7i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = -12+8i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = -5 + 12i</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = \frac{2}{13} - \frac{3}{13} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = \frac{3}{4} - \frac{1}{2} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = \frac{12}{13} + \frac{8}{13} \,i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = 2-3i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 13</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = -5-12i</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = 1+i</m> and <m>w = -i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = 1-i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = 2i</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = \frac{1}{2} - \frac{1}{2} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = -1+i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = -\frac{1}{2} - \frac{1}{2} \, i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = 1-i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = -2i</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = i</m> and <m>w = -1+2i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = -1+3i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = -2-i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = -1</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = -i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = \frac{2}{5} - \frac{1}{5} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = 2+i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = -i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = -1</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = 4i</m> and <m>w = 2-2i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = 2+2i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = 8+8i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = -16</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = -\frac{1}{4} \,i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = -1+i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = -\frac{1}{2} - \frac{1}{2} \,i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = -4i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 16</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = -16</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = 3-5i</m> and <m>w = 2+7i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = 5+2i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = 41+11i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = -16-30i</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = \frac{3}{34} + \frac{5}{34} \,i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = -\frac{29}{53} - \frac{31}{53} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = -\frac{29}{34} + \frac{31}{34} \,i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = 3+5i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 34</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = -16+30i</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = -5+i</m> and <m>w = 4+2i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = -1+3i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = -22-6i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = 24-10i</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = -\frac{5}{26} - \frac{1}{26} \,i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = -\frac{9}{10} + \frac{7}{10} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = -\frac{9}{13} - \frac{7}{13} \,i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = -5-i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 26</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = 24+10i</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = \sqrt{2} - i\sqrt{2}</m> and <m>w = \sqrt{2} + i\sqrt{2}</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = 2\sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = -4i</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = \frac{\sqrt{2}}{4} + \frac{\sqrt{2}}{4} \,i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = -i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = \sqrt{2}+i\sqrt{2}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 4</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = 4i</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = 1 - i\sqrt{3}</m> and <m>w = -1-i\sqrt{3}</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = -2i\sqrt{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = -4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = -2-2i\sqrt{3}</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = \frac{1}{4} + \frac{\sqrt{3}}{4} \,i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = \frac{1}{2} + \frac{\sqrt{3}}{2} \,i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = \frac{1}{2} - \frac{\sqrt{3}}{2} \,i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = 1+i\sqrt{3}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 4</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = -2+2i\sqrt{3}</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = \frac{1}{2} + \frac{\sqrt{3}}{2} \, i</m> and <m>w = -\frac{1}{2} + \frac{\sqrt{3}}{2} \,i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z+w = i\sqrt{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = -1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 = -\frac{1}{2} + \frac{\sqrt{3}}{2} \,i</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = \frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = \frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = \frac{1}{2} + \frac{\sqrt{3}}{2} \, i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = \frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = -\frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          For <m>z = -\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \, i</m> and <m>w = -\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \, i</m>
+          <ul>
+            <li>
+              <p>
+                <m>z + w = -\sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>zw = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^2 =-i</m>
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                <m>\frac{1}{z} = -\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \, i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{z}{w} = -i</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{w}{z} = i</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              <m>\overline{z} = -\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \, i</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>z\overline{z} = 1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(\overline{z})^2 = i</m>
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          <m>7i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-10</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>10</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-12</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>12</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-3i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i^{5} = i^{4} \cdot i = 1 \cdot i = i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i ^{6} = i^{4} \cdot i^{2} = 1 \cdot (-1) = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i^{7} = i^{4} \cdot i^{3} = 1 \cdot (-i) = -i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i^{8} = i^{4} \cdot i^{4} = \left(i^{4}\right)^{2} = (1)^{2} =1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i^{15} = \left(i^{4}\right)^{3} \cdot i^{3} = 1 \cdot (-i) = -i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i ^{26} = \left(i^{4}\right)^{6} \cdot i^{2} = 1\cdot (-1) = -1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i^{117} = \left(i^{4}\right)^{29} \cdot i = 1 \cdot i = i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i ^{304} = \left(i^{4}\right)^{76} = 1^{76} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{2 \pm i\sqrt{14}}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 5, \pm \dfrac{i \sqrt{3}}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \pm 2, \pm i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = \dfrac{1 \pm i \sqrt{7}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \pm \dfrac{3i \sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x= 0, \dfrac{1 \pm i\sqrt{2}}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\sqrt{5} \pm i\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \pm i, \pm \dfrac{i\sqrt{2}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>z = \pm 2, \pm 2i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^2 - 6x + 32</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

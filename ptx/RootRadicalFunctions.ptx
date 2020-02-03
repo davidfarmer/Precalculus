@@ -1,0 +1,1589 @@
+<section xml:id="RootRadicalFunctions">
+  <title>Root and Radical Functions</title>
+  <introduction>
+    <p>
+      In <xref ref="ConstantandLinearFunctions">Sections</xref>,
+      <xref ref="AbsoluteValueFunctions"></xref>
+      and <xref ref="QuadraticFunctions"></xref>,
+      we studied constant, linear, absolute value,<fn>
+      These were introduced, as you may recall,
+      as piecewise-defined linear functions.
+      </fn> and quadratic functions.
+      Constant, linear and quadratic functions were specific examples of polynomial functions,
+      which we studied in generality in <xref ref="PolynomialFunctions">Chapter</xref>.
+      <xref ref="PolynomialFunctions">Chapter</xref>
+      culminated with the Real Factorization Theorem,
+      <xref ref="realfactorization">Theorem</xref>,
+      which says that all polynomial functions with real coefficients can be thought of as products of linear and quadratic functions.
+      Our next step was to enlarge our field<fn>
+      This is a really bad math pun.
+      </fn> of study to rational functions in <xref ref="RationalFunctions">Chapter</xref>.
+      Being quotients of polynomials,
+      we can ultimately view this family of functions as being built up of linear and quadratic functions as well.
+      So in some sense,
+      <xref ref="ConstantandLinearFunctions">Sections</xref>,
+      <xref ref="AbsoluteValueFunctions"></xref> and <xref ref="QuadraticFunctions"></xref>
+      along with <xref ref="PolynomialFunctions">Chapters</xref>
+      and <xref ref="RationalFunctions"></xref>
+      can be thought of as an exhaustive study of linear and quadratic<fn>
+      If we broaden our concept of functions to allow for complex valued coefficients,
+      the Complex Factorization Theorem,
+      <xref ref="complexfactorization">Theorem</xref>,
+      tells us every function we have studied thus far is a combination of linear functions.
+      </fn> functions.
+      We now turn our attention to functions involving radicals which cannot be written in terms of linear functions.
+      For a more detailed review of the basics of roots and radicals,
+      we refer the reader to <xref ref="AppRealNumberArithmetic">Sections</xref>
+      and <xref ref="AppRadEqus"></xref>.
+    </p>
+  </introduction>
+  <subsection xml:id="RootFunctions">
+    <title>Root Functions</title>
+    <p>
+      As with polynomial functions and rational functions,
+      we begin our study of functions involving radical with a special family of functions:
+      the (principal) root functions.
+    </p>
+    <definition xml:id="principalrootfunction">
+      <statement>
+        <p>
+          Let <m>n \in \mathbb{N}</m> with <m>n \geq 2</m>.
+          The <idx><h><m>n</m>th root function</h></idx>
+              <idx><h>function, <m>n</m>th root</h></idx> <term><m>n</m> th (principal) root function</term> is the function <m>f(x) = \sqrt[n]{x}</m>.
+        </p>
+        <p>
+          <term>NOTE:</term> If <m>n</m> is even,
+          the domain of <m>f</m> is <m>[0, \infty)</m>;
+          if <m>n</m> is odd,
+          the domain of <m>f</m> is <m>(-\infty, \infty)</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The domain restriction for even indexed roots means that,
+      once again,
+      we are restricting our attention to
+      <em>real</em> numbers.<fn>
+      Although we discussed imaginary numbers in <xref ref="ComplexZeros">Section</xref>,
+      we restrict our attention to real numbers in this section.
+      See the epilogue on <xref ref="complexepilogue">page</xref> for more details.
+      </fn> We graph a few members of the root function family below,
+      and quickly notice that,
+      as with the monomial, and, more generally,
+      the Laurent monomial functions,
+      the behavior of the root functions depends primarily on whether the root is even or odd.
+    </p>
+    <p>
+      In addition to having the common domain of <m>[0, \infty)</m>,
+      the graphs of <m>f(x) = \sqrt[n]{x}</m> for even indices <m>n</m> all share the points <m>(0,0)</m> and <m>(1,1)</m>.
+      As <m>n</m> increases,
+      the functions become <sq>steeper</sq> near the <m>y</m>-axis and <sq>flatter</sq> as <m>x \rightarrow \infty</m>.
+      To show <m>f(x) \rightarrow \infty</m> as <m>x \rightarrow \infty</m>, we show,
+      more generally, the range of <m>f</m> is <m>[0, \infty)</m>.
+      Indeed, if <m>c \geq 0</m> is a real number,
+      then <m>f(c^n) = \sqrt[n]{c^n} = c</m> so <m>c</m> is in the range of <m>f</m>.
+      Note that <m>f</m> is increasing:
+      that is, if <m>a\lt b</m>,
+      then <m>f(a) = \sqrt[n]{a} \lt \sqrt[n]{b} = f(b)</m>.
+      This property is useful in solving certain types of polynomial inequalities.<fn>
+      See <xref ref="rootstosolvepolyineq">Exercise</xref>.
+      </fn>
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{0}{9}{0}{3}
+          \axes
+          \tlabel[cc](9, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 3){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,3,0.1}{(t^2,t)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>y=\sqrt{x}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{0}{9}{0}{3}
+          \axes
+          \tlabel[cc](9, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 3){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,1.732,0.1}{(t^4,t)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>y=\sqrt[4]{x}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{0}{9}{0}{3}
+          \axes
+          \tlabel[cc](9, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 3){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0,-0.5){<m>(0,0)</m>}
+          \penwd{1.25pt}
+          \arrow \parafcn{0,1.442,0.1}{(t^6,t)}
+          \point[4pt]{(0,0), (1,1)}
+          \tcaption{<m>y=\sqrt[6]{x}</m>}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      The functions <m>f(x) = \sqrt[n]{x}</m> for odd natural numbers
+      <m>n \geq 3</m> also follow a predictable trend - steepening near <m>x = 0</m> and flattening as <m>x \rightarrow \pm \infty</m>.
+      The range for these functions is
+      <m>(-\infty, \infty)</m> since if <m>c</m> is any real number,
+      <m>f(c^n) = \sqrt[n]{c^n} = c</m>,
+      so <m>c</m> is in the range of <m>f</m>.
+      Like the even indexed roots, the odd indexed roots are also increasing.
+      Moreover, these graphs appear to be symmetric about the origin.
+      Sure enough, when <m>n</m> is odd,
+      <m>f(-x) = \sqrt[n]{-x} = -\sqrt[n]{x} = -f(x)</m> so <m>f</m> is an odd function.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-4}{4}{-3}{3}
+          \axes
+          \tlabel[cc](4, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 3){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0.75,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](-1.25,-1.75){<m>(-1,-1)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3,t)}
+          \point[4pt]{(0,0), (1,1), (-1,-1)}
+          \tcaption{<m>y=\sqrt[3]{x}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-4}{4}{-3}{3}
+          \axes
+          \tlabel[cc](4, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 3){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0.75,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](-1.25,-1.75){<m>(-1,-1)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.319,1.319,0.1}{(t^5,t)}
+          \point[4pt]{(0,0), (1,1), (-1,-1)}
+          \tcaption{<m>y=\sqrt[5]{x}</m>}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-4}{4}{-3}{3}
+          \axes
+          \tlabel[cc](4, -0.5){<m>x</m>}
+          \tlabel[cc](0.5, 3){<m>y</m>}
+          \tlabel[cc](1,1.75){<m>(1,1)</m>}
+          \tlabel[cc](0.75,-0.5){<m>(0,0)</m>}
+          \tlabel[cc](-1.25,-1.75){<m>(-1,-1)</m>}
+          \penwd{1.25pt}
+          \arrow \reverse \arrow \parafcn{-1.219,1.219,0.1}{(t^7,t)}
+          \point[4pt]{(0,0), (1,1), (-1,-1)}
+          \tcaption{<m>y=\sqrt[7]{x}</m>}
+          \end{mfpic}</cell>
+      </row>
+    </tabular>
+    <p>
+      At this point,
+      you're probably expecting a theorem like <xref ref="linearabsvaluegraphs">Theorems</xref>,
+      <xref ref="standardformgraph"></xref>,
+      <xref ref="linearmononialgraphs"></xref>,
+      <xref ref="linearlaurentlgraphs"></xref> - that is,
+      a theorem which tells us how to obtain the graph of <m>F(x) = a \sqrt[n]{x-h}+k</m> from the graph of
+      <m>f(x) = \sqrt[n]{x}</m> - and you would not be wrong.
+      Here, however,
+      we need to add an extra parameter <sq><m>b</m></sq> to the recipe and discuss functions of the form <m>F(x) = a \sqrt[n]{bx-h}+k</m>.
+      The reason is that, with all of the previous function families,
+      we were always able to factor out the coefficient of <m>x</m>.
+      We list some examples of this below,
+      and invite the reader to revisit other examples in the text:
+      <ul>
+        <li>
+          <p>
+            <m>F(x) = |6-2x| = |-2x+6| = |-2(x+3)| = |-2||x+3| = 2 |x+3|</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F(x) = (2x-1)^2 + 1 = \left[2 \left(x - \frac{1}{2}\right)\right]^2+1 = (2)^2 \left(x - \frac{1}{2}\right)^2 + 1 = 4\left(x - \frac{1}{2}\right)^2 + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>F(x) = \frac{2}{(1-x)^3}- 5 = \frac{2}{[(-1)(x-1)]^3} - 5= \frac{2}{(-1)^3(x-1)^3} - 5 = \frac{2}{- (x-1)^3} - 5 = \frac{-2}{(x-1)^3} - 5</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      For a function like <m>F(x) = \sqrt{4x-12} + 1 = \sqrt{4(x-6)} + 1 = \sqrt{4}\sqrt{x-3} + 1 = 2 \sqrt{x-3} + 1</m>,
+      this approach works fine.
+      However, if the coefficient of <m>x</m> is
+      <em>negative</em>, for example,
+      <m>F(x) = \sqrt{1-x} = \sqrt{(-1)(x-1)}</m> we get stuck the product rule for radicals doesn't extend to negative quantities when the index is even.<fn>
+      Since, otherwise,
+      <m>-1 = i^2 = i \cdot i = \sqrt{-1}\sqrt{-1} = \sqrt{(-1)(-1)} = \sqrt{1} = 1</m>,
+      a contradition.
+      </fn> Hence we add an extra parameter which means we have an extra step.
+      We state <xref ref="linearrootgraphs">Theorem</xref> below.
+    </p>
+    <theorem xml:id="linearrootgraphs">
+      <statement>
+        <p>
+          For real numbers <m>a</m>,
+          <m>b</m>, <m>h</m>, and <m>k</m> with <m>a, b \neq 0</m>,
+          the graph of <m>F(x) = a\sqrt[n]{bx-h} +k</m> can be obtained from the graph of
+          <m>f(x) = \sqrt[n]{x}</m> by performing the following operations,
+          in sequence:
+          <ol>
+            <li>
+              <p>
+                add <m>h</m> to each of the <m>x</m>-coordinates of the points on the graph of <m>f</m>.
+                This results in a horizontal shift to the right if <m>h > 0</m> or left if <m>h \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = \sqrt[n]{x}</m> to <m>y = \sqrt[n]{x-h}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                divide the <m>x</m>-coordinates of the points on the graph obtained in Step 1 by <m>b</m>.
+                This results in a horizontal scaling,
+                but may also include a reflection about the <m>y</m>-axis if <m>b \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = \sqrt[n]{x-h}</m> to <m>y = \sqrt[n]{bx-h}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                multiply the <m>y</m>-coordinates of the points on the graph obtained in Step 2 by <m>a</m>.
+                This results in a vertical scaling,
+                but may also include a reflection about the <m>x</m>-axis if <m>a \lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = \sqrt[n]{bx-h}</m> to <m>y = a\sqrt[n]{bx-h}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                add <m>k</m> to each of the <m>y</m>-coordinates of the points on the graph obtained in Step 3.
+                This results in a vertical shift up if <m>k > 0</m> or down if <m>k\lt 0</m>.
+                <em>NOTE:</em> This transforms the graph of
+                <m>y = a\sqrt[n]{bx-h}</m> to <m>y = a\sqrt[n]{bx-h} + k</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      <em>Proof.</em> As usual,
+      we <sq>build</sq> the graph of
+      <m>F(x) = a \sqrt[n]{bx-h}+k</m> starting with the graph of <m>f(x) = \sqrt[n]{x}</m> one step at a time.
+      First, we consider the graph of <m>F_{1}(x) = \sqrt{x-h}</m>.
+      A generic point on the graph of <m>F_{1}</m> looks like <m>(x, \sqrt[n]{x-h})</m>.
+      Note that if <m>n</m> is odd,
+      <m>x</m> can be any real number whereas if <m>n</m> is even <m>x-h \geq 0</m> so <m>x \geq h</m>.
+      If we let <m>c = x-h</m>,
+      then <m>x = c+h</m> and we can change (dummy) variables<fn>
+      again this is because every real number can be represented as both <m>x-h</m> for some value <m>x</m> and as <m>c+h</m> for some value <m>c</m>.
+      </fn> and obtain a new representation of the point:
+      <m>(c+h, \sqrt[n]{c})</m>.
+      Note that if <m>n</m> is odd,
+      <m>x</m> and <m>c</m> vary through all real numbers;
+      if <m>n</m> is even, <m>x \geq h</m> and, hence, <m>c \geq 0</m>.
+      Since a generic point on the graph of
+      <m>f(x) = \sqrt[n]{x}</m> can be represented as
+      <m>(c, \sqrt[n]{c})</m> for applicable values of <m>c</m>,
+      we see that we can obtain every point on the graph of <m>F_{1}</m> by adding <m>h</m> to each <m>x</m>-coordinate of the graph of <m>f</m>,
+      establishing step 1 of the theorem.
+    </p>
+    <p>
+      Proceeding to
+      (the new!)
+      step 2, a point on the graph of
+      <m>F_{2}(x) = \sqrt[n]{bx-h}</m> has the form <m>(x, \sqrt[n]{bx-h})</m>.
+      If <m>n</m> is odd, as usual,
+      <m>x</m> can vary through all real numbers.
+      If <m>n</m> is even, we require <m>bx-h \geq 0</m> or <m>bx \geq h</m>.
+      If <m>b>0</m>, this gives <m>x \geq \frac{h}{b}</m>.
+      If, on the other hand, <m>b\lt 0</m>,
+      the we have <m>x \leq \frac{h}{b}</m>.
+      Let <m>c = bx</m> and since by assumption <m>b \neq 0</m>,
+      we have <m>x = \frac{c}{b}</m>.
+      Once again, we change dummy variables from <m>x</m> to <m>c</m> and describe a generic point on the graph of <m>F_{2}</m> as <m>\left( \frac{c}{b}, \sqrt[n]{c - h} \right)</m>.
+      If <m>n</m> is odd,
+      <m>x</m> and <m>c</m> can vary through all real numbers.
+      If <m>n</m> is even and <m>b>0</m>,
+      then <m>x \geq \frac{h}{b}</m> and,
+      hence, <m>c = bx \geq h</m>;
+      if <m>b\lt 0</m>,
+      then <m>x \leq \frac{h}{b}</m> also gives <m>c = bx \geq h</m>.
+      Since a generic point on the graph of <m>F_{1}</m> can be represented as
+      <m>(c, \sqrt{c-h})</m> for applicable values of <m>c</m>,
+      we see we can obtain every point on the graph of <m>F_{2}</m> by dividing every <m>x</m>-coordinate on the graph of <m>F_{1}</m> by <m>b</m>,
+      as per step 2 of the theorem.
+    </p>
+    <p>
+      The proof of steps 3 and 4 of <xref ref="linearrootgraphs">Theorem</xref>
+      are identical to the proof of <xref ref="linearmononialgraphs">Theorem</xref>
+      (just with <m>\sqrt[n]{\cdot}</m> instead of
+      <m>( \cdot )^n</m>) so we invite the reader to work through the details on their own.
+    </p>
+    <p>
+      We demonstrate <xref ref="linearrootgraphs">Theorem</xref> in the following example.
+    </p>
+    <example xml:id="rootshifts">
+      <statement>
+        <p>
+          <xref ref="linearrootgraphs">Theorem</xref>
+          to graph the following functions.
+          Label at least three points on the graph.
+          State the domain and range using interval notation.
+          <ol>
+            <li>
+              <p>
+                <m>f(x) = 1 -2 \sqrt[3]{x+3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>g(t) = \dfrac{\sqrt{1-2t}}{4}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin by rewriting the expression for <m>f(x)</m> in the form prescribed <xref ref="linearrootgraphs">Theorem</xref>:
+                <m>f(x) = -2 \sqrt[3]{x+3} + 1</m>.
+                We identify <m>n=3</m>, <m>a = -2</m>, <m>b = 1</m>,
+                <m>h = -3</m> and <m>k = 1</m>.
+                Step 1:   add <m>-3</m> to each of the <m>x</m>-coordinates of each of the points on the graph of <m>y=\sqrt[3]{x}</m>:
+                <me>
+                  \begin{array}{rlc}   \begin{mfpic}[15]{-4}{4}{-3}{3} \axes \tlabel[cc](4,-0.5){\(x\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](1,1.75){\((1,1)\)} \tlabel[cc](0.75,-0.5){\((0,0)\)} \tlabel[cc](-1.25,-1.75){\((-1,-1)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3,t)} \point[4pt]{(0,0), (1,1), (-1,-1)} \tcaption{\(y=\sqrt[3]{x}\)} \end{mfpic}  \amp \stackrel{\text{ add \(-3\) to each \(x\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-7}{1}{-3}{3} \axes \tlabel[cc](1,-0.5){\(x\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](-2,1.75){\((-2,1)\)} \tlabel[cc](-2,-0.5){\((-3,0)\)} \tlabel[cc](-4.25,-1.75){\((-4,-1)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,t)} \point[4pt]{(-2,1), (-3,0), (-4,-1)}  \tcaption{\(y=\sqrt[3]{x+3}\)} \end{mfpic} \\  \text{ \((-1,1)\), \((0,0)\), \((1,1)\) }  \amp  \amp  \text{ \((-4,-1)\), \((-3,0)\), \((-2,1)\) } \end{array}
+                </me>
+                Since <m>b=1</m>, we can proceed to Step 3
+                (since dividing a real by <m>1</m> just results in the same real number.)
+                Step 3:
+                multiply each of the <m>y</m>-coordinates of each point on the graph of <m>y = \sqrt[3]{x+3}</m> by  <m>-2</m>:
+                <me>
+                  \begin{array}{rlc}   \begin{mfpic}[15]{-7}{1}{-3}{3} \axes \tlabel[cc](1,-0.5){\(x\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](-2,1.75){\((-2,1)\)} \tlabel[cc](-2,-0.5){\((-3,0)\)} \tlabel[cc](-4.25,-1.75){\((-4,-1)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,t)} \point[4pt]{(-2,1), (-3,0), (-4,-1)}  \tcaption{\(y=\sqrt[3]{x+3}\)} \end{mfpic}  \amp \stackrel{\text{ multiply each \(y\)-value by \(-2\) } }{\xrightarrow{}} \amp  \begin{mfpic}[15][7.5]{-7}{1}{-6}{6} \axes \tlabel[cc](1,-0.5){\(x\)} \tlabel[cc](0.5, 6){\(y\)} \tlabel[cc](-2,-4){\((-2,-2)\)} \tlabel[cc](-4,-1){\((-3,0)\)} \tlabel[cc](-4,3.5){\((-4,2)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,-2*t)} \point[4pt]{(-2,-2), (-3,0), (-4,2)}  \tcaption{\(y=-2\sqrt[3]{x+3}\)} \end{mfpic}\\  \text{ \((-4,-1)\), \((-3,0)\), \((-2,1)\) }  \amp  \amp  \text{ \((-4,2)\), \((-3,0)\), \((-2,-2)\) } \end{array}
+                </me>
+                Step 4:   add <m>1</m> to <m>y</m>-coordinates of each point on the graph of <m>y = -2 \sqrt[3]{x+3}</m>:
+                <me>
+                  \begin{array}{rlc}   \begin{mfpic}[15][7.5]{-7}{1}{-6}{6} \axes \tlabel[cc](1,-0.5){\(x\)} \tlabel[cc](0.5, 6){\(y\)} \tlabel[cc](-2,-4){\((-2,-2)\)} \tlabel[cc](-4,-1){\((-3,0)\)} \tlabel[cc](-4,3.5){\((-4,2)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,-2*t)} \point[4pt]{(-2,-2), (-3,0), (-4,2)}  \tcaption{\(y=-2\sqrt[3]{x+3}\)} \end{mfpic}  \amp \stackrel{\text{ add \(1\) to each \(y\)-value } }{\xrightarrow{}} \amp  \begin{mfpic}[15][7.5]{-7}{1}{-5}{7} \axes \tlabel[cc](1,-0.5){\(x\)} \tlabel[cc](0.5, 7){\(y\)} \tlabel[cc](-2,-3){\((-2,-1)\)} \tlabel[cc](-4,1){\((-3,1)\)} \tlabel[cc](-4,4.5){\((-4,1)\)} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-1.587,1.587,0.1}{(t^3-3,1-2*t)} \point[4pt]{(-2,-1), (-3,1), (-4,3)}  \tcaption{\(y=-2\sqrt[3]{x+3}+1\)} \end{mfpic}\\  \text{ \((-4,2)\), \((-3,0)\), \((-2,-2)\) }   \amp  \amp \text{ \((-4,3)\), \((-3,1)\), \((-2,-1)\) } \end{array}
+                </me>
+                We get the domain and range of <m>f</m> are <m>(-\infty, \infty)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>g(t) = \dfrac{\sqrt{1-2t}}{4} = \frac{1}{4} \sqrt{-2t+1}</m>,
+                we identify <m>n=2</m>,
+                <m>a = \frac{1}{4}</m>, <m>b = -2</m>,
+                <m>h = -1</m> and <m>k =0</m>.
+                Since we are asked to label <em>three</em> points on the graph,
+                we track <m>(4,2)</m> along with <m>(0,0)</m> and <m>(1,1)</m>.<fn>
+                As <m>\sqrt{4} = 2</m>,
+                we know <m>(4,2)</m> is on the graph of <m>y = \sqrt{t}</m>.
+                </fn>   Step 1:   add <m>-1</m> to each of the <m>t</m>-coordinates of each of the points on the graph of <m>y=\sqrt{t}</m>:
+                <me>
+                  \begin{array}{rlc}   \begin{mfpic}[15]{0}{9}{0}{3} \axes \tlabel[cc](9, -0.5){\(t\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](0,-0.5){\((0,0)\)} \tlabel[cc](1,1.75){\((1,1)\)} \tlabel[cc](4,2.5){\((4,2)\)} \penwd{1.25pt} \arrow \parafcn{0,3,0.1}{(t^2,t)} \point[4pt]{(0,0), (1,1), (4,2)}  \tcaption{\(y=\sqrt{t}\)} \end{mfpic}   \amp \stackrel{\text{ add \(-1\) to each \(t\)-coordinate } }{\xrightarrow{}} \amp  \begin{mfpic}[15]{-1}{8}{0}{3} \axes \tlabel[cc](8, -0.5){\(t\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](-1,-0.5){\((-1,0)\)} \gclear \tlabelrect(0,1.75){\((0,1)\)} \tlabel[cc](3,2.5){\((3,2)\)} \penwd{1.25pt} \arrow \parafcn{0,3,0.1}{(t^2-1,t)} \point[4pt]{(-1,0), (0,1), (3,2)}  \tcaption{\(y=\sqrt{t+1}\)} \end{mfpic} \\  \text{ \((0,0)\), \((1,1)\), \((4,2)\) }  \amp  \amp  \text{ \((-1,0)\), \((0,1)\), \((3,2)\) } \end{array}
+                </me>
+                Step 2:   divide each of the <m>t</m>-coordinates of each of the points on the graph of <m>y = \sqrt{t+1}</m> by <m>-2</m>:
+                <me>
+                  \begin{array}{rlc}   \begin{mfpic}[15]{-1}{8}{0}{3} \axes \tlabel[cc](8, -0.5){\(t\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](-1,-0.5){\((-1,0)\)} \gclear \tlabelrect(0,1.75){\((0,1)\)} \tlabel[cc](3,2.5){\((3,2)\)} \penwd{1.25pt} \arrow \parafcn{0,3,0.1}{(t^2-1,t)} \point[4pt]{(-1,0), (0,1), (3,2)}  \tcaption{\(y=\sqrt{t+1}\)} \end{mfpic}   \amp \stackrel{\text{ divide each \(t\)-coordinate by \(-2\): } }{\xrightarrow{}} \amp  \begin{mfpic}[25][15]{-4}{2}{0}{3} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](0.5,-0.5){\(\left(\frac{1}{2},0 \right)\)} \gclear \tlabelrect(0,1.75){\((0,1)\)} \tlabel[cc](-1.5,1){\(\left(-\frac{3}{2},2 \right)\)} \penwd{1.25pt} \arrow \parafcn{0,3,0.1}{((t^2-1)/(-2),t)} \point[4pt]{(0.5,0), (0,1), (-1.5,2)}  \tcaption{\(y=\sqrt{-2t+1}\)} \end{mfpic} \\  \text{ \((-1,0)\), \((0,1)\), \((3,2)\) }  \amp  \amp  \text{\(\left(\frac{1}{2},0 \right)\), \((0,1)\), \(\left(-\frac{3}{2},2 \right)\)} \end{array}
+                </me>
+                Step 3:  multiply each of the <m>y</m>-coordinates of each of the points on the graph of
+                <m>y = \sqrt{-2t+1}</m> by <m>\frac{1}{4}</m>:
+                <me>
+                  \begin{array}{rlc}   \begin{mfpic}[25][15]{-4}{2}{0}{3} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 3){\(y\)} \tlabel[cc](0.5,-0.5){\(\left(\frac{1}{2},0 \right)\)} \gclear \tlabelrect(0,1.75){\((0,1)\)} \tlabel[cc](-1.5,1){\(\left(-\frac{3}{2},2 \right)\)} \penwd{1.25pt} \arrow \parafcn{0,3,0.1}{((t^2-1)/(-2),t)} \point[4pt]{(0.5,0), (0,1), (-1.5,2)}  \tcaption{\(y=\sqrt{-2t+1}\)} \end{mfpic}   \amp \stackrel{\text{ multiply each \(y\)-coordinate by \(\frac{1}{4}\):} }{\xrightarrow{}} \amp  \begin{mfpic}[25]{-4}{2}{0}{2} \axes \tlabel[cc](2, -0.5){\(t\)} \tlabel[cc](0.5, 2){\(y\)} \tlabel[cc](0.5,-0.5){\(\left(\frac{1}{2},0 \right)\)} \gclear \tlabelrect(0,1){\(\left(0, \frac{1}{4} \right)\)} \tlabel[cc](-1.5,1){\(\left(-\frac{3}{2}, \frac{1}{2} \right)\)} \penwd{1.25pt} \arrow \parafcn{0,3,0.1}{((t^2-1)/(-2),t/4)} \point[4pt]{(0.5,0), (0,0.25), (-1.5,0.5)}  \tcaption{\(y=\frac{1}{4}\sqrt{-2t+1}\)} \end{mfpic} \\  \text{\(\left(\frac{1}{2},0 \right)\), \((0,1)\), \(\left(-\frac{3}{2},2 \right)\)}  \amp  \amp  \text{\(\left(\frac{1}{2},0 \right)\), \(\left(0, \frac{1}{4} \right)\), \(\left(-\frac{3}{2}, \frac{1}{2} \right)\)} \end{array}
+                </me>
+                We get the domain is <m>\left(-\infty, \frac{1}{2} \right]</m> and the range is <m>[0, \infty)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="OtherFunctionsinvolvingRadicals">
+    <title>Other Functions involving Radicals</title>
+    <p>
+      Now that we have some practice with basic root functions,
+      we turn our attention to more general functions involving radicals.
+      In general, Calculus is the best tool with which to study these functions.
+      Nevertheless,
+      we will use what algebra we know in combination with a graphing utility to help us visualize these functions and preview concepts which are studied in greater depth in later courses.
+      In the table below,
+      we summarize some of the properties of radicals from elsewhere in this text
+      (and Intermediate Algebra)
+      we will be using in the coming examples.
+    </p>
+    <theorem xml:id="basicradicalpropseqineq">
+      <statement>
+        <p>
+          <em>Some Useful Properties of Radicals:</em>
+          Suppose <m>\sqrt[n]{x}</m>,
+          <m>\sqrt[n]{a}</m>, and <m>\sqrt[n]{b}</m> are real numbers.<fn>
+          i.e., if <m>n</m> is odd,
+          <m>x</m>, <m>a</m>, and <m>b</m> can be any real numbers;
+          if, on the other hand <m>n</m> is even,
+          <m>x \geq 0</m>, <m>a \geq 0</m>, and <m>b \geq 0</m>.
+          </fn>
+        </p>
+        <p>
+          <em>Simplifying <m>n</m> th powers and <m>n</m> th roots:</em><fn>
+          a.k.a., <sq>Inverse Properties.</sq> See <xref ref="InverseFunctions">Section</xref>.
+          </fn>
+          <ul>
+            <li>
+              <p>
+                <m>\left( \sqrt[n]{x}\right)^n = x</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                if <m>n</m> is odd, then <m>\sqrt[n]{x^n} = x</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                if <m>n</m> is even, then <m>\sqrt[n]{x^n} = |x|</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          <em>Root Functions Preserve Inequality:</em><fn>
+          i.e., root functions are increasing.
+          </fn> if <m>a \leq b</m>,
+          then <m>\sqrt[n]{a} \leq \sqrt[n]{b}</m>.
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <statement>
+        <p>
+          For the following functions:
+        </p>
+        <ul>
+          <li>
+            <p>
+              Analytically:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  find the domain.
+                </p>
+              </li>
+              <li>
+                <p>
+                  find the axis intercepts.
+                </p>
+              </li>
+              <li>
+                <p>
+                  analyze the end behavior.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              Graph the function with help from a graphing utility and determine:
+              <ul>
+                <li>
+                  <p>
+                    the range.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    the local extrema, if they exist.
+                  </p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>
+                    intervals of increase.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    intervals of decrease.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Construct a sign diagram for each function using the intercepts and graph.<fn>
+              We'll revisit sign diagrams for these functions in <xref ref="PowerEqIneq">Section</xref>
+              where we will use them to solve inequalities (surprised?)
+              </fn>
+            </p>
+          </li>
+        </ul>
+        <ol cols="2">
+          <li>
+            <p>
+              <m>f(x) = 3x \sqrt[3]{2-x}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>g(t) = \sqrt[3]{\dfrac{8t}{t+1}}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>h(x) = \dfrac{3x}{\sqrt{x^2 + 1}}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r(t) = t^{-1} \sqrt{16t^4-1}</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                When looking for the domain, we have two thing to watch out for:
+                denominators
+                (which we must make sure aren't <m>0</m>)
+                and even indexed radicals
+                (whose radicands we must ensure are nonnegative.)
+                Looking at the expression for <m>f(x)</m>,
+                we have no denominators nor do we have an even indexed radical,
+                so we are confident the domain is all real numbers, <m>(-\infty, \infty)</m>.
+                To find the <m>x</m>-intercepts,
+                we find the zeros of <m>f</m> by solving <m>f(x) = 3x \sqrt[3]{2-x} = 0</m>.
+                Using the zero product property,
+                we get <m>3x = 0</m> or <m>\sqrt[3]{2-x} = 0</m>.
+                The former gives <m>x = 0</m> and to solve the latter,
+                we cube both sides and get <m>2 - x = 0</m> or <m>x = 2</m>.
+                Hence, the <m>x</m>-intercepts are <m>(0,0)</m> and <m>(2,0)</m>.
+                Since <m>(0,0)</m> is also on the <m>y</m>-axis and functions can can have at most one <m>y</m>-intercept,
+                we know <m>(0,0)</m> is the only <m>y</m>-intercept.<fn>
+                Why is this, again?
+                </fn>  That being said,
+                we can quickly verify <m>f(0) = 3(0) \sqrt[3]{2-0} = 0</m>.
+                To determine the end behavior,
+                we consider <m>f(x)</m> as <m>x \rightarrow \pm \infty</m>.
+                Using <sq>number sense,</sq><fn>
+                remember this means we use the adjective <sq>big</sq> here to mean large in <em>absolute value</em>
+                </fn> we have <m>f(x) = 3x \sqrt[3]{2-x} = 3x \sqrt[3]{-x+2} \approx (\text{ big \((+)\) } ) \sqrt[3]{\text{ big \((-)\) } } = (\text{ big \((+)\) } )(\text{ big \((-)\) } ) = \text{ big \((-)\) }</m>,
+                so <m>f(x) \rightarrow -\infty</m>.
+                As <m>x \rightarrow -\infty</m> we get <m>f(x) = 3x \sqrt[3]{-x+2} \approx (\text{ big \((-)\) } ) \sqrt[3]{\text{ big \((+)\) } } = (\text{ big \((-)\) } )(\text{ big \((+)\) } ) = \text{ big \((-)\) }</m>,
+                so <m>f(x) \rightarrow -\infty</m> here, too.
+                We graph <m>f</m> below on the left.
+                From the graph,
+                the range appears to be <m>(-\infty, 3.572]</m> with a local maximum
+                (which also happens to be <em>the</em> maximum)
+                at <m>(1.5, 3.572)</m>.
+                We also see <m>f</m> appears to be increasing on
+                <m>(-\infty, 1.5)</m> and decreasing on <m>(1.5, \infty)</m>.
+                It is also worth noting that there appears to be <sq>unusual steepness</sq> near the <m>x</m>-intercept <m>(2,0)</m>.
+                We invite the reader to zoom in on the graph near <m>(2,0)</m> to see that the function is <sq>locally vertical.</sq><fn>
+                Of course, the Vertical Line Test prohibits the graph from actually
+                <em>being</em> a vertical line.
+                This behavior is more precisely defined and more closely studied in Calculus.
+                </fn>  To create a sign diagram for <m>f(x)</m>,
+                we note that the function has zeros <m>x = 0</m> and <m>x=2</m>.
+                For <m>x\lt 0</m>,
+                <m>f(x) \lt 0</m> or <m>(-)</m>, for <m>0\lt x\lt 2</m>,
+                <m>f(x) > 0</m> or <m>(+)</m>,
+                and for <m>x>2</m>, <m>f(x) \lt 0</m> or <m>(-)</m>.
+                The sign diagram for <m>f(x)</m> is below on the right.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./RootRadicalFunctionsGraphics/RadicalGraphEx01.jpg"/></cell>
+                    <cell>\begin{mfpic}[20]{-4}{2}{-1}{1} \arrow \reverse \arrow \polyline{(-4,0),(2,0)} \xmarks{-2,0} \tlabel[cc](-3, 0.5){<m>(-)</m>} \tlabel[cc](-2,-0.5){<m>0</m>} \tlabel[cc](-2,0.5){<m>0</m>} \tlabel[cc](-1,0.5){<m>(+)</m>} \tlabel[cc](0,-0.5){<m>2</m>} \tlabel[cc](0,0.5){<m>0</m>} \tlabel[cc](1,0.5){<m>(-)</m>} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=f(x)</m></cell>
+                    <cell>Sign Diagram for <m>f(x)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                The index of the radical in the expression for <m>g(t)</m> is odd,
+                so our only concern is the denominator.
+                Setting <m>t+1=0</m> gives <m>t=-1</m>, which we exclude,
+                so our domain is <m>\{ t \in \mathbb{R} \, | \, t \neq -1\}</m> or using interval notation,
+                <m>(-\infty, -1) \cup (-1, \infty)</m>.
+                If we take the time to analyze the behavior of <m>g</m> near <m>t=-1</m>,
+                we find that as <m>t \rightarrow -1^{-}</m>,
+                <m>g(t) = \sqrt[3]{\frac{8t}{t+1}} \approx \sqrt[3]{\frac{-8}{\text{ small \((-)\) } }} \approx \sqrt[3]{\text{ big\((+)\) } } = \text{ big \((+)\) }</m>.
+                That is, as <m>t \rightarrow -1^{-}</m>,
+                <m>g(t) \rightarrow \infty</m>.
+                Likewise, as <m>t \rightarrow -1^{+}</m>,
+                <m>g(t) \approx \sqrt[3]{\frac{-8}{\text{ small \((+)\) } }} \approx \sqrt[3]{\text{ big \((-)\) } } = \text{ big \((-)\) }</m>.
+                This suggests as <m>t \rightarrow -1^{+}</m>,
+                <m>g(t) \rightarrow -\infty</m>.
+                This behavior points to a vertical asymptote, <m>t=-1</m>.
+                To find the <m>t</m>-intercepts of the graph of <m>g</m>,
+                we find the zeros of <m>g</m> by setting <m>g(t) = \sqrt[3]{\frac{8t}{t+1}} = 0</m>.
+                Cubing both sides and clearing denominators gives <m>8t = 0</m> or <m>t = 0</m>.
+                Hence our <m>t</m>-, and in this case,
+                <m>y</m>- intercept is <m>(0,0)</m>.
+                To determine the end behavior,
+                we note that as <m>t \rightarrow \pm \infty</m>,
+                <m>\frac{8t}{t+1} \rightarrow \frac{8}{1} = 8</m>.
+                Hence, it stands to reason that as <m>t\rightarrow \pm \infty</m>,
+                <m>g(t) = \sqrt[3]{\frac{8t}{t+1}} \rightarrow \sqrt[3]{8} = 2</m>.
+                This suggests the graph of
+                <m>y = g(t)</m> has a horizontal asymptote at <m>y = 2</m>.
+                We graph <m>y = g(t)</m> below on the left.
+                The graph confirms our suspicions about the asymptotes <m>t = -1</m> and <m>y = 2</m>.
+                Moreover, the range appears to be <m>(-\infty, 2) \cup (2, \infty)</m>.
+                We could check if the graph ever crosses its horizontal asymptote by attempting to solve <m>g(t) = \sqrt[3]{\frac{8t}{t+1}} = 2</m>.
+                Cubing both sides and clearing denominators gives
+                <m>8t = 8(t+1)</m> which gives <m>0 = 8</m>, a contradiction.
+                This proves <m>2</m> is not in the range, as we had suspected.
+                Scanning the graph,
+                there appears to be no local extrema, and, moreover,
+                the graph suggests <m>g</m> is increasing on
+                <m>(-\infty, -1)</m> and again on <m>(-1, \infty)</m>.
+                As with the previous example,
+                the graph appears locally vertical near its intercept <m>(0,0)</m>.
+                To create a sign diagram for <m>g(t)</m>,
+                we note that the function is undefined when <m>t = -1</m>
+                (so we place a <sq>\textinterrobang</sq> above it)
+                and has a zero <m>t=0</m>.
+                When <m>t\lt -1</m>, <m>g(t) > 0</m> or <m>(+)</m>,
+                for <m>-1\lt t\lt 0</m>,
+                <m>g(t)\lt 0</m> or <m>(-)</m>, and for <m>t>0</m>,
+                <m>g(t) > 0</m> or <m>(+)</m>. Below on the right is a sign diagram for <m>g(t)</m>.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./RootRadicalFunctionsGraphics/RadicalGraphEx02.jpg"/></cell>
+                    <cell>\begin{mfpic}[20]{-4}{2}{-1}{1} \arrow \reverse \arrow \polyline{(-4,0),(2,0)} \xmarks{-2,0} \tlabel[cc](-3, 0.5){<m>(+)</m>} \tlabel[cc](-2,-0.5){<m>-1</m>} \tlabel[cc](-2,0.5){\textinterrobang} \tlabel[cc](-1,0.5){<m>(-)</m>} \tlabel[cc](0,-0.5){<m>0</m>} \tlabel[cc](0,0.5){<m>0</m>} \tlabel[cc](1,0.5){<m>(+)</m>} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=g(t)</m></cell>
+                    <cell>Sign Diagram for <m>g(t)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                The expression for <m>h(x) = \frac{3x}{\sqrt{x^2 + 1}}</m> has both a denominator and an even-indexed radical,
+                so we have to be extra cautious here.
+                Fortunately for us, the quantity
+                <m>x^2+1 >0</m> for al real numbers <m>x</m>.
+                Not only does this mean <m>\sqrt{x^2+1}</m> is always defined,
+                it also tells us <m>\sqrt{x^2+1}>0</m> for all <m>x</m>, too.
+                This means the domain of <m>h</m> is all real numbers,
+                <m>(-\infty, \infty)</m>.
+                Solving for the zeros of <m>h</m> gives only <m>x = 0</m>, and we find,
+                once again,
+                <m>(0,0)</m> is both our lone <m>x</m>- and <m>y</m>-intercept.
+                Moving on to end behavior, as <m>x \rightarrow \pm \infty</m>,
+                the term <m>x^2</m> is the dominant term in the radicand in the denominator.
+                As such, <m>h(x) = \frac{3x}{\sqrt{x^2 + 1}} \approx \frac{3x}{\sqrt{x^2}} = \frac{3x}{|x|}</m>.
+                As <m>x \rightarrow \infty</m>, <m>|x| = x</m>
+                (since <m>x>0</m>),
+                so <m>h(x) \approx \frac{3x}{x} = 3</m>,
+                so <m>h(x) \rightarrow 3</m>.
+                Likewise, as <m>x \rightarrow -\infty</m>, <m>|x| = -x</m>
+                (since <m>x\lt 0</m>)
+                and hence, <m>h(x)\approx \frac{3x}{-x} = -3</m>,
+                so <m>h(x) \rightarrow -3</m>.
+                This analysis suggests the graph of <m>y=h(x)</m> has not one,
+                but <em>two</em> horizontal asymptotes.<fn>
+                We warned you this was coming <ellipsis/> see the discussion following <xref ref="hathm">Theorem</xref>
+                in <xref ref="IntroRational">Section</xref>.
+                </fn> The graph of <m>h</m> below on the left bears this out.
+                From the graph,
+                we see the range of <m>h</m> appears to be <m>(-3,3)</m>.
+                Attempting to solve <m>h(x) = \frac{3x}{\sqrt{x^2 + 1}} = \pm 3</m> gives,
+                in either case,
+                <m>9x^2 = 9(x^2+1)</m> which reduces to <m>0 = 9</m>, a contradiction.
+                Hence, the graph of <m>y = h(x)</m> never reaches its horizontal asymptotes.
+                Moreover, <m>h</m> appears to be always increasing,
+                with no local extrema or <sq>unusual</sq> steepness.
+                One last remark:
+                it appears as if the graph of <m>h</m> is symmetric about the origin.
+                We check <m>h(-x) = \frac{3(-x)}{\sqrt{(-x)^2+1}} = - \frac{3x}{\sqrt{x^2 + 1}} = -h(x)</m> which verifies <m>h</m> is odd.
+                Since the domain of <m>h</m> is all real number and the only zero of <m>h</m> is <m>x=0</m>,
+                the sign diagram for <m>h(x)</m> is fairly straight forward.
+                For <m>x\lt 0</m>, <m>h(x)\lt 0</m> or <m>(-)</m> and for <m>x>0</m>,
+                <m>h(x) >0</m> or <m>(+)</m>.
+                The sign diagram for <m>h(x)</m> is below on the right.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./RootRadicalFunctionsGraphics/RadicalGraphEx03.jpg"/></cell>
+                    <cell>\begin{mfpic}[20]{-4}{2}{-1}{1} \arrow \reverse \arrow \polyline{(-2,0),(2,0)} \xmarks{0} \tlabel[cc](-1,0.5){<m>(-)</m>} \tlabel[cc](0,-0.5){<m>0</m>} \tlabel[cc](0,0.5){<m>0</m>} \tlabel[cc](1,0.5){<m>(+)</m>} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=h(x)</m></cell>
+                    <cell>Sign Diagram for <m>h(x)</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                The first thing to note about the expression
+                <m>r(t) = t^{-1} \sqrt{16t^4-1}</m> is that <m>t^{-1} = \frac{1}{t}</m>.
+                Hence, we must exclude <m>t=0</m> from the domain straight away.
+                Next, we have an even-indexed radical expression:
+                <m>\sqrt{16t^4-1}</m>.
+                In order for this to return a real number,
+                we require <m>16t^4-1 \geq 0</m>.
+                Instead of using a sign diagram to solve this,<fn>
+                See <xref ref="RealZeros">Section</xref>
+                </fn> we opt instead to <em>carefully</em>
+                use properties of radicals.
+                Isolating <m>t^4</m>, we have <m>t^4 \geq \frac{1}{16}</m>.
+                Since the root functions are increasing,
+                we can apply the fourth root to both sides and preserve the inequality:
+                <m>\sqrt[4]{t^4} \geq \sqrt[4]{\frac{1}{16}}</m> which gives<fn>
+                Recall: <m>\sqrt[n]{x^n} = |x|</m>,
+                not <m>x</m>, if <m>n</m> is even.
+                </fn> <m>|t| \geq \frac{1}{2}</m>.
+                Note that since <m>t =0</m> does
+                <em>not</em> satisfy this inequality,
+                restricting <m>t</m> in this manner takes care of
+                <em>both</em> domain issues,
+                so the domain is <m>\left(-\infty, -\frac{1}{2} \right] \cup \left[\frac{1}{2}, \infty \right)</m>.
+                Next, we look for zeros.
+                Setting <m>r(t) = t^{-1} \sqrt{16t^4-1} = \frac{\sqrt{16t^4-1}}{t}=0</m> gives <m>\sqrt{16t^4-1} = 0</m>.
+                After squaring both sides,
+                we get <m>16t^4-1 = 0</m> or <m>t^4 = \frac{1}{16}</m>.
+                Extracting fourth roots, we get <m>t = \pm \frac{1}{2}</m>.
+                Both of these are (barely!) in the domain of <m>r</m>,
+                so our <m>t</m> intercepts are
+                <m>\left( -\frac{1}{2}, 0\right)</m> and <m>\left( \frac{1}{2}, 0\right)</m>.
+                Note, the graph of <m>r</m> has no <m>y</m>-intercept,
+                since <m>r(0)</m> is undefined
+                (<m>t=0</m> is not in the domain of <m>r</m>).
+                Concerning end behavior,
+                we note the term <m>16t^4</m> dominates the radicand
+                <m>\sqrt{16t^4-1}</m> as <m>t \rightarrow \pm \infty</m>, hence,
+                <m>r(t) = \frac{\sqrt{16t^4-1}}{t} \approx \frac{\sqrt{16t^4}}{t} = \frac{4t^2}{t} = 4t</m>.
+                This suggests the graph of
+                <m>y = r(t)</m> has a slant asymptote with slope <m>4</m>.<fn>
+                Note: this analysis suggests the slant asymptote is <m>y = 4t+b</m>,
+                but from this analysis, we cannot determine the value of <m>b</m>.
+                As with slant asymptotes in <xref ref="IntroRational">Section</xref>,
+                we'd need to perform a more detailed analysis which we omit in this case owing to the complexity of the function.
+                </fn>  We graph <m>y=r(t)</m> below on the left.
+                We see the range appears to be all real numbers, <m>(-\infty, \infty)</m>.
+                It appears as if <m>r</m> is increasing on
+                <m>\left(-\infty, -\frac{1}{2} \right]</m> and again on <m>\left[\frac{1}{2}, \infty \right)</m>.
+                The graph does appear to be asymptotic to <m>y = 4t</m>,
+                and it also appears to be symmetric about the origin.
+                Sure enough,
+                we find <m>r(-t) = \frac{\sqrt{16(-t)^4-1}}{-t} = - \frac{\sqrt{16t^4-1}}{t} = -r(t)</m>,
+                proving <m>r</m> is an odd function.
+                To construct the sign diagram for <m>r(t)</m> we note <m>r</m> has two zeros,
+                <m>t = \pm \frac{1}{2}</m>.
+                For <m>t \lt \frac{1}{2}</m>,
+                <m>r(t) \lt 0</m> or <m>(-)</m> and when <m>t > \frac{1}{2}</m>,
+                <m>r(t) > 0</m> or <m>(+)</m>.
+                When <m>-\frac{1}{2} \lt t \lt \frac{1}{2}</m>,
+                <m>r</m> is undefined so we have removed that segment from the diagram,
+                as seen below on the right.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./RootRadicalFunctionsGraphics/RadicalGraphEx04.jpg"/></cell>
+                    <cell>\begin{mfpic}[20][10]{0}{4}{-1.5}{1.5} \arrow \polyline{(2,0), (0,0)} \arrow \polyline{(3,0), (5,0)} \xmarks{2,3} \tlabel[cc](2,-1){<m>-\frac{1}{2}</m>} \tlabel[cc](1,1){<m>(-)</m>} \tlabel[cc](4,1){<m>(+)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3,1){<m>0</m>} \tlabel[cc](3,-1){<m>\frac{1}{2}</m>} \end{mfpic}</cell>
+                  </row>
+                  <row>
+                    <cell>The graph of <m>y=r(t)</m></cell>
+                    <cell>Sign Diagram for <m>r(t)</m>.</cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We end this section with a classic application of root functions.
+    </p>
+    <example xml:id="SasquatchCable">
+      <statement>
+        <p>
+          Carl wishes to get high speed internet service installed in his remote Sasquatch observation post located <m>30</m> miles from Route <m>117</m>.
+          The nearest junction box is located <m>50</m> miles down the road from the post,
+          as indicated in the diagram below.
+          Suppose it costs <m>$ 15</m> per mile to run cable along the road and <m>$ 20</m> per mile to run cable off of the road.
+          <ol>
+            <li>
+              <p>
+                Find an expression <m>C(x)</m> which computes the cost of connecting the Junction Box to the Outpost as a function of <m>x</m>,
+                the number of miles the cable is run along Route <m>117</m> before heading off road directly towards the Outpost.
+                Determine a reasonable applied domain for the problem.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use your calculator to graph <m>y=C(x)</m> on its domain.
+                What is the minimum cost?
+                How far along Route <m>117</m> should the cable be run before turning off of the road?
+              </p>
+            </li>
+          </ol>
+        </p>
+        <p>
+          \begin{mfpic}[12]{-1}{15}{-1}{9}
+        </p>
+        <p>
+          \xmarks{0, 4}
+        </p>
+        <p>
+          \arrow \reverse \arrow \polyline{(0,8.75),(0,0.25)}
+        </p>
+        <p>
+          \arrow \reverse \arrow \polyline{(0.25,0),(3.75,0)}
+        </p>
+        <p>
+          \arrow \reverse \arrow \polyline{(4.25,0),(9.75,0)}
+        </p>
+        <p>
+          \arrow \reverse \arrow \polyline{(0,-1),(10,-1)}
+        </p>
+        <p>
+          \dashed \polyline{(4,0),(0,9)}
+        </p>
+        <p>
+          \point[3pt]{(0,9), (10,0)}
+        </p>
+        <p>
+          \tlabel[cc](1.25,9){Outpost}
+        </p>
+        <p>
+          \tlabel[cc](12,0){Junction Box}
+        </p>
+        <p>
+          \tlabel[cc](7,0.5){<m>x</m>}
+        </p>
+        <p>
+          \tlabel[cc](2,0.5){<m>y</m>}
+        </p>
+        <p>
+          \tlabel[cc](3,4.5){<m>z</m>}
+        </p>
+        <p>
+          \tlabel[cc](5,-.5){Route <m>117</m>}
+        </p>
+        <p>
+          \tlabel[cc](5,-2){<m>50</m> miles}
+        </p>
+        <p>
+          \tlabel[cc](-0.5,0){\rotatebox{90}{ <m>30</m> miles}}
+        </p>
+        <p>
+          \end{mfpic}
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The cost is broken into two parts:
+                the cost to run cable along Route <m>117</m> at <m>\dollar15</m> per mile,
+                and the cost to run it off road at <m>\dollar20</m> per mile.
+                Since <m>x</m> represents the miles of cable run along Route <m>117</m>,
+                the cost for that portion is <m>15x</m>.
+                From the diagram,
+                we see that the number of miles the cable is run off road is <m>z</m>,
+                so the cost of that portion is <m>20z</m>.
+                Hence, the total cost is <m>15x + 20z</m>.
+                Our next goal is to determine <m>z</m> in terms of <m>x</m>.
+                The diagram suggests we can use the Pythagorean Theorem to get <m>y^2+30^2 = z^2</m>.
+                But we also see <m>x+y = 50</m> so that <m>y=50-x</m>.
+                Substituting <m>(50-x)</m> in for <m>y</m> we obtain <m>z^2 = (50-x)^2+900</m>.
+                Solving for <m>z</m>, we obtain <m>z = \pm \sqrt{(50-x)^2+900}</m>.
+                Since <m>z</m> represents a distance,
+                we choose <m>z = \sqrt{(50-x)^2+900}</m>.
+                Hence, the cost as a function of <m>x</m> is given by <m>C(x) = 15x + 20\sqrt{(50-x)^2+900}</m>.
+                From the context of the problem,
+                we have <m>0 \leq x \leq 50</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We graph <m>y=C(x)</m> below and find our (local) minimum to be at the point <m>(15.98, 1146.86)</m>.
+                Here the <m>x</m>-coordinate tells us that in order to minimize cost,
+                we should run <m>15.98</m> miles of cable along Route 117 and then turn off of the road and head towards the outpost.
+                The <m>y</m>-coordinate tells us that the minimum cost,
+                in dollars,
+                to do so is <m>\dollar1146.86</m>.
+                The ability to stream live SasquatchCasts?
+                Priceless.
+                <image width="75%" source="./RootRadicalFunctionsGraphics/CostCableEx.jpg"/>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="radicalgraphexfirst">Exercises</xref>
+      - <xref ref="radicalgraphexlast"></xref>,
+      given the pair of functions <m>f</m> and <m>F</m>,
+      sketch the graph of <m>y=F(x)</m> by starting with the graph of
+      <m>y = f(x)</m> and using <xref ref="linearrootgraphs">Theorem</xref>.
+      Track at least two points and state the domain and range using interval notation.
+      <ol cols="4">
+        <li xml:id="radicalgraphexfirst">
+          <p>
+            <m>f(x) = \sqrt{x}</m>, <m>F(x) = \sqrt{x+3}-2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \sqrt{x}</m>, <m>F(x) = \sqrt{4-x}-1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \sqrt[3]{x}</m>, <m>F(x) = \sqrt[3]{x-1}-2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \sqrt[3]{x}</m>, <m>F(x) = -\sqrt[3]{8x + 8} + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \sqrt[4]{x}</m>, <m>F(x) = \sqrt[4]{x-1}-2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \sqrt[4]{x}</m>, <m>F(x) = -3\sqrt[4]{x - 7} +1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>f(x) = \sqrt[5]{x}</m>, <m>F(x) = \sqrt[5]{x + 2} + 3</m>
+          </p>
+        </li>
+        <li xml:id="radicalgraphexlast">
+          <p>
+            <m>f(x) = \sqrt[8]{x}</m>, <m>F(x) = \sqrt[8]{-x} - 2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulaforsqrtgraphfirst">Exercises</xref>
+      - <xref ref="findformulaforsqrtgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = a\sqrt{bx-h}+k</m>.
+    </p>
+    <p>
+      <em>NOTE:</em> There may be more than one solution!
+      <ol>
+        <li xml:id="findformulaforsqrtgraphfirst">
+          <p>
+            <m>~</m> <m>y=F(x)</m> \begin{mfpic}[15]{-5}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-4, 2.5){<m>(-4,2)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \function{-4,5,0.1}{2-sqrt(x+4)} \point[4pt]{(-4,2), (0,0)} \tcaption{ <m>x</m>,<m>y</m>-intercept <m>(0,0)</m>} \end{mfpic}
+          </p>
+        </li>
+        <li xml:id="findformulaforsqrtgraphlast">
+          <p>
+            <m>~</m> <m>y = F(x)</m> \begin{mfpic}[15]{-5}{5}{-1}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \reverse \function{-5,1,0.1}{2*sqrt(1-x)} \point[4pt]{(1,0), (0,2)} \tcaption{ <m>x</m>-intercept <m>(1,0)</m>,
+            <m>y</m>-intercept <m>(0,2)</m>} \end{mfpic}
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="findformulaforcubedrootgraphfirst">Exercises</xref>
+      - <xref ref="findformulaforcubedrootgraphlast"></xref>,
+      find a formula for each function below in the form <m>F(x) = a\sqrt[3]{bx-h}+k</m>.
+    </p>
+    <p>
+      <em>NOTE:</em> There may be more than one solution!
+    </p>
+    <ol cols="2">
+      <li xml:id="findformulaforcubedrootgraphfirst">
+        <p>
+          <m>~</m> <m>y=F(x)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](-1, 1.75){<m>(-1,1)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-2.25,2,0.1}{((0-0.5*(t**3))-0.5,t)} \point[4pt]{(-0.5,0), (0,-1), (-1,1)} \tcaption{ <m>x</m>-intercept
+          <m>\left(-\frac{1}{2}, 0\right)</m>,<m>y</m>-intercept <m>(0,-1)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li xml:id="findformulaforcubedrootgraphlast">
+        <p>
+          <m>~</m> <m>y = F(x)</m> \begin{mfpic}[15]{-5}{5}{-5}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \tlabel[cc](2, -2){<m>(1,-2)</m>} \xmarks{-4,-3,-2,-1,1,2,3,4} \ymarks{-4,-3,-2, -1, 1,2,3,4} \tlpointsep{4pt} \axislabels {x}{ {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-5,1,0.1}{( (0.125*((t+2)**3))+1 ,t)} \point[4pt]{(2,0), (0,-4), (1,-2)} \tcaption{ <m>x</m>-intercept <m>(2,0)</m>,
+          <m>y</m>-intercept <m>(0,-4)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li xml:id="rootstosolvepolyineq">
+        <p>
+          Use the fact that the <m>n</m>th root functions are increasing to solve the following polynomial inequalities:
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>x^3 \leq 64</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>2 - t^5 \lt 34</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dfrac{(2z+1)^3}{4} \geq 2</m>
+            </p>
+          </li>
+        </ol>
+        For the following inequalities, remember <m>\sqrt[n]{x^{n}} = |x|</m> if <m>n</m> is even:
+        <ol>
+          <li>
+            <p>
+              <m>x^4 \leq 16</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>6-t^6 \lt -58</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dfrac{(2z+1)^4}{3} \geq 27</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <p>
+      For each function in <xref ref="algfcngraphexfirst">Exercises</xref>
+      - <xref ref="algfcngraphexlast"></xref> below
+    </p>
+    <ul>
+      <li>
+        <p>
+          Analytically:
+        </p>
+        <ul>
+          <li>
+            <p>
+              find the domain.
+            </p>
+          </li>
+          <li>
+            <p>
+              find the axis intercepts.
+            </p>
+          </li>
+          <li>
+            <p>
+              analyze the end behavior.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Graph the function with help from a graphing utility and determine:
+          <ul>
+            <li>
+              <p>
+                the range.
+              </p>
+            </li>
+            <li>
+              <p>
+                the local extrema, if they exist.
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p>
+                intervals of increase/decrease.
+              </p>
+            </li>
+            <li>
+              <p>
+                any <sq>unusual steepness</sq> or <sq>local</sq> verticality.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <ul>
+          <li>
+            <p>
+              vertical asymptotes.
+            </p>
+          </li>
+          <li>
+            <p>
+              horizontal / slant asymptotes.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Construct a sign diagram for each function using the intercepts and graph.
+        </p>
+      </li>
+      <li>
+        <p>
+          Comment on any observed symmetry.
+        </p>
+      </li>
+    </ul>
+    <ol cols="5">
+      <li xml:id="algfcngraphexfirst">
+        <p>
+          <m>f(x) = \sqrt{1 - x^{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{x^2-1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t \sqrt{1-t^2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t \sqrt{t^2-1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt[4]{\dfrac{16x}{x^{2} - 9}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{5x}{\sqrt[3]{x^{3} + 8}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{t(t + 5)(t - 4)}</m>
+        </p>
+      </li>
+      <li xml:id="algfcngraphexlast">
+        <p>
+          <m>g(t) = \sqrt[3]{t^{3} + 3t^{2} - 6t - 8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Rework <xref ref="SasquatchCable">Example</xref>
+          so that the outpost is 10 miles from Route 117 and the nearest junction box is 30 miles down the road for the post.
+        </p>
+      </li>
+      <li>
+        <p>
+          The volume <m>V</m> of a right cylindrical cone depends on the radius of its base <m>r</m> and its height <m>h</m> and is given by the formula <m>V = \frac{1}{3} \pi r^2 h</m>.
+          The surface area <m>S</m> of a right cylindrical cone also depends on <m>r</m> and <m>h</m> according to the formula <m>S = \pi r \sqrt{r^2+h^2}</m>.
+          In the following problems,
+          suppose a cone is to have a volume of 100 cubic centimeters.
+          <ol>
+            <li xml:id="heightintermsofr">
+              <p>
+                Use the formula for volume to find the height as a function of <m>r</m>,
+                <m>h(r)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the formula for surface area along with your answer to <xref ref="heightintermsofr"></xref>
+                to find the surface area as a function of <m>r</m>, <m>S(r)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use your calculator to find the values of <m>r</m> and <m>h</m> which minimize the surface area.
+                What is the minimum surface area?
+                Round your answers to two decimal places.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li xml:id="pendulumproblem">
+        <p>
+          The period of a pendulum in seconds is given by
+          <me>
+            T = 2\pi \sqrt{\dfrac{L}{g}}
+          </me>
+          (for small displacements) where <m>L</m> is the length of the pendulum in meters and <m>g = 9.8</m> meters per second per second is the acceleration due to gravity.
+          My Seth-Thomas antique schoolhouse clock needs
+          <m>T = \frac{1}{2}</m> second and I can adjust the length of the pendulum via a small dial on the bottom of the bob.
+          At what length should I set the pendulum?
+        </p>
+      </li>
+      <li>
+        <p>
+          According to Einstein's Theory of Special Relativity,
+          the observed mass  of an object is a function of how fast the object is traveling.
+          Specifically,
+          if  <m>m_{r}</m> is the mass of the object at rest,
+          <m>v</m> is the speed of the object and <m>c</m> is the speed of light,
+          then the observed mass of the object <m>m(v)</m> is given by:
+          <me>
+            m(v) = \dfrac{m_{r}}{\sqrt{1 - \dfrac{v^{2}}{c^{2}}}}
+          </me>
+          <ol>
+            <li>
+              <p>
+                Find the applied domain of the function.
+              </p>
+            </li>
+            <li>
+              <p>
+                Compute <m>m(.1c), \, m(.5c), \, m(.9c)</m> and <m>m(.999c)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As <m>v \rightarrow c^{-}</m>,
+                what happens to <m>m(x)</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                How slowly must the object be traveling so that the observed mass is no greater than 100 times its mass at rest?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Find the inverse of <m>k(x) = \dfrac{2x}{\sqrt{x^{2} - 1}}</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>F(x) = \sqrt{x+3}-2</m> \begin{mfpic}[15]{-5}{5}{-3}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(-3,-2), (-2,-1), (1,0)} \ymarks{-2,-1,1,2,3,4} \xmarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3,{<m>4</m>} 4 } \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{-2,0.8,0.1}{(((t+2)**2)-3,t)} \tcaption{Domain:
+          <m>[-3, \infty)</m>, Range:
+          <m>[-2, \infty)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \sqrt{4-x}-1 = \sqrt{-x+4} - 1</m> \begin{mfpic}[15]{-5}{5}{-3}{5} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,5){<m>y</m>} \point[4pt]{(4,-1), (3,0), (0,1)} \ymarks{-2,-1,1,2,3,4} \xmarks{-4,-3,-2,-1,1,2,3,4} \tlpointsep{4pt} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2, {<m>3</m>} 3,{<m>4</m>} 4 } \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \penwd{1.25pt} \arrow \parafcn{-1,2,0.1}{(4-((t+1)**2),t)} \tcaption{Domain:
+          <m>(-\infty, 4]</m>, Range:
+          <m>[-1, \infty)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \sqrt[3]{x-1}-2</m> \begin{mfpic}[8][13]{-10}{12}{-5}{1} \axes \tlabel[cc](12,-0.5){<m>x</m>} \tlabel[cc](0.75,1){<m>y</m>} \point[4pt]{(-7, -4), (0,-3), (1,-2), (2,-1), (9,0)} \ymarks{-4,-3,-2,-1} \xmarks{-9 step 1 until 11} \tlpointsep{4pt} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {x}{{<m>-9</m>} -9, {<m>-7</m>} -7, {<m>-5</m>} -5, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7, {<m>9</m>} 9, {<m>11</m>} 11} \penwd{1.25pt} \arrow \reverse \arrow \parafcn{-4.2,0.2,0.1}{(((t + 2)**3) + 1,t)} \tcaption{Domain:
+          <m>(-\infty, \infty)</m>, Range:
+          <m>(-\infty, \infty)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -\sqrt[3]{8x + 8} + 4</m> \begin{mfpic}[10][9]{-7}{9}{-1}{8} \axes \tlabel[cc](9,-0.5){<m>x</m>} \tlabel[cc](0.5,8){<m>y</m>} \xmarks{-6 step 1 until 8} \ymarks{1 step 1 until 7} \tlpointsep{4pt} \axislabels {x}{ {<m>-5</m>} -5, {<m>-3</m>} -3, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7 } \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7} \point[4pt]{(-2,6),(-1,4),(0,2),(7,0)} \penwd{1.25pt} \arrow \reverse \function{-7,-1,0.1}{2*((-x - 1)**(1/3)) + 4} \arrow \function{-1,8.5,0.1}{-2*((x + 1)**(1/3)) + 4} \tcaption{Domain:
+          <m>(-\infty, \infty)</m>, Range:
+          <m>(-\infty, \infty)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \sqrt[4]{x-1}-2</m> \begin{mfpic}[8][25]{-1}{22}{-3}{1} \axes \tlabel[cc](22,-0.75){<m>x</m>} \tlabel[cc](0.5,1){<m>y</m>} \point[4pt]{(1,-2),(2,-1),(17,0)} \ymarks{-2,-1} \xmarks{1 step 1 until 21} \tlpointsep{4pt} \axislabels {y}{{<m>-2</m>} -2, {<m>-1</m>} -1} \axislabels {x}{{<m>1</m>} 1, {<m>3</m>} 3, {<m>5</m>} 5, {<m>7</m>} 7, {<m>9</m>} 9, {<m>11</m>} 11, {<m>13</m>} 13, {<m>15</m>} 15, {<m>17</m>} 17, {<m>19</m>} 19, {<m>21</m>} 21} \penwd{1.25pt} \arrow \parafcn{-2,0.12,0.1}{(((t + 2)**4) + 1,t)} \tcaption{Domain:
+          <m>[1, \infty)</m>, Range:
+          <m>[-2, \infty)</m>} \end{mfpic} \columnbreak
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = -3\sqrt[4]{x - 7} +1</m> \begin{mfpic}[5][13]{-1}{25}{-6}{2} \axes \tlabel[cc](25,-0.5){<m>x</m>} \tlabel[cc](0.5,2){<m>y</m>} \xmarks{1 step 1 until 23} \ymarks{-5 step 1 until 1} \tlpointsep{4pt} \axislabels {x}{ {<m>6</m>} 6, {<m>8</m>} 8, {<m>23</m>} 23} \axislabels {y}{{<m>1</m>} 1, {<m>-1</m>} -1, {<m>-2</m>} -2, {<m>-3</m>} -3, {<m>-4</m>} -4, {<m>-5</m>} -5} \point[4pt]{(7,1),(8,-2),(23,-5)} \penwd{1.25pt} \arrow \function{7,25,0.1}{1-3*((x - 7)**(0.25)) } \tcaption{Domain:
+          <m>[7, \infty)</m>, Range:
+          <m>(-\infty, 1]</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \sqrt[5]{x + 2} + 3</m> \begin{mfpic}[2][10]{-37}{33}{-1}{6} \axes \tlabel[cc](33,-0.5){<m>x</m>} \tlabel[cc](2,6){<m>y</m>} \xmarks{-34,-2,30} \ymarks{1 step 1 until 5} \tlpointsep{4pt} \axislabels {x}{{<m>-34</m>} -34, {<m>-2</m>} -2, {<m>30</m>} 30} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \point[4pt]{(-34,1),(-3,2),(-2,3),(-1,4),(30,5)} \penwd{1.25pt} \arrow \function{-2,33,0.1}{((x + 2)**(0.20)) + 3} \arrow \reverse \function{-37,-2,0.1}{(-((-x - 2)**(0.20))) + 3} \tcaption{Domain:
+          <m>(-\infty, \infty)</m>, Range:
+          <m>(-\infty, \infty)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>F(x) = \sqrt[8]{-x} - 2</m> \begin{mfpic}[3][15]{-45}{5}{-3}{1} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](1.5,1){<m>y</m>} \xmarks{-40,-30,-20,-10} \ymarks{-2,-1} \tlpointsep{4pt} \axislabels {x}{ {<m>-20</m>} -20, {<m>-10</m>} -10} \axislabels {y}{{<m>-2</m>} -2} \point[4pt]{(0,-2),(-1,-1)} \penwd{1.25pt} \arrow \reverse \function{-45,0,0.1}{((-x)**0.125) - 2} \tcaption{Domain:
+          <m>(-\infty, 0]</m>, Range:
+          <m>[-2, \infty)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is: <m>F(x) = -\sqrt{x+4}+2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is: <m>F(x) =2\sqrt{-x+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is: <m>F(x) = -\sqrt[3]{2x+1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          One solution is: <m>F(x) =2\sqrt[3]{x-1}-2</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>(-\infty, 4]</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-2, \infty)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\left[ \frac{1}{2}, \infty \right)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>[-2,2]</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-\infty, -2) \cup (2, \infty)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-\infty, -2] \cup [1, \infty)</m>
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>f(x) = \sqrt{1 - x^2}</m> Domain:
+          <m>[-1, 1]</m> Intercepts:
+          <m>(-1,0)</m>,
+          <m>(1,0)</m> Graph: \begin{mfpic}[50]{-1.5}{1.5}{-0.15}{1.5} \axes \tlabel[cc](1.5,-0.15){<m>x</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \tlabel[cc](0.25,1.15){<m>(0,1)</m>} \xmarks{-1,1} \ymarks{1} \tlpointsep{4pt} \axislabels {x}{{<m>-1</m>} -1, {<m>1</m>} 1} \point[4pt]{(0,1), (-1,0), (1,0)} \penwd{1.25pt} \parafcn{0,3.14159,0.1}{(cos(t),sin(t))} \end{mfpic} \columnbreak Range:
+          <m>[0,1]</m> Local maximum:
+          <m>(0,1)</m> Increasing:
+          <m>[-1,0]</m>, Decreasing:
+          <m>[0,1]</m> Unusual steepness<fn>
+          You may need to zoom in to see this.
+          </fn> at <m>x = -1</m> and <m>x = 1</m> Sign Diagram: \begin{mfpic}[20][10]{0}{4}{-1.5}{1.5} \polyline{(0,0), (4,0)} \xmarks{0,4} \tlabel[cc](0,-1){<m>-1</m>} \tlabel[cc](2,1){<m>(+)</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](4,1){<m>0</m>} \tlabel[cc](4,-1){<m>1</m>} \end{mfpic} Note:
+          <m>f</m> is even.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{x^2-1}</m> Domain:
+          <m>(-\infty, -1] \cup [1,\infty)</m> Intercepts:
+          <m>(-1,0)</m>,
+          <m>(1,0)</m> Graph: \begin{mfpic}[20]{-4}{4}{-1}{4} \axes \tlabel[cc](4,-0.25){<m>x</m>} \tlabel[cc](0.25,4){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \point[4pt]{(-1,0), (1,0)} \dashed \polyline{(0,0), (4,4)} \dashed \polyline{(0,0), (-4,4)} \penwd{1.25pt} \arrow \parafcn{0,2,0.1}{(cosh(t),sinh(t))} \arrow \parafcn{0,2,0.1}{(-cosh(t),sinh(t))} \end{mfpic} \columnbreak As <m>x \rightarrow \pm \infty</m>,
+          <m>f(x) \rightarrow \infty</m> Range:
+          <m>[0, \infty)</m> Increasing:
+          <m>[1, \infty)</m>, Decreasing:
+          <m>(-\infty, -1]</m> Unusual steepness<fn>
+          You may need to zoom in to see this.
+          </fn>at <m>x = -1</m> and <m>x = 1</m> Using Calculus,
+          one can show <m>y = \pm x</m> are slant asymptotes to the graph.
+          Sign Diagram: \begin{mfpic}[20][10]{0}{4}{-1.5}{1.5} \arrow \polyline{(2,0), (0,0)} \arrow \polyline{(3,0), (5,0)} \xmarks{2,3} \tlabel[cc](2,-1){<m>-1</m>} \tlabel[cc](1,1){<m>(+)</m>} \tlabel[cc](4,1){<m>(+)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3,1){<m>0</m>} \tlabel[cc](3,-1){<m>1</m>} \end{mfpic} Note:
+          <m>f</m> is even.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t\sqrt{1-t^2}</m> Domain:
+          <m>[-1,1]</m> Intercepts:
+          <m>(-1,0)</m>, <m>(0,0)</m>,
+          <m>(1,0)</m> Graph: \begin{mfpic}[50][40]{-1.5}{1.5}{-1}{1.5} \axes \tlabel[cc](1.5,-0.15){<m>t</m>} \tlabel[cc](0.25,1.5){<m>y</m>} \tlabel[cc](-1,0.15){<m>-1</m>} \tlabel[cc](0.7,0.7){<m>\approx (0.707, 0.5)</m>} \tlabel[cc](-0.7,-0.7){<m>\approx (-0.707, -0.5)</m>} \xmarks{-1,1} \ymarks{-1,1} \tlpointsep{4pt} \axislabels {x}{ {<m>1</m>} 1} \axislabels {y}{{<m>1</m>} 1,{<m>-1</m>} -1} \point[4pt]{(-1,0), (1,0),(0,0), (-0.707, -0.5), (0.707, 0.5)} \penwd{1.25pt} \parafcn{0,3.14159,0.1}{(cos(t),cos(t)*sin(t))} \end{mfpic} \columnbreak Range:
+          <m>\approx [-0.5, 0.5]</m> Local minimum <m>\approx (-0.707, -0.5)</m> Local maximum:
+          <m>\approx (0.707, 0.5)</m> Increasing:
+          <m>\approx [-0.707, 0.707]</m> Decreasing:
+          <m>\approx [-1, -0.707]</m>,
+          <m>[0.707, 1]</m> Unusual steepness at <m>t = -1</m> and <m>t = 1</m> Sign Diagram: \begin{mfpic}[20][10]{0}{4}{-1.5}{1.5} \polyline{(0,0), (5,0)} \xmarks{0,2.5,5} \tlabel[cc](0,-1){<m>-1</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](1.25,1){<m>(-)</m>} \tlabel[cc](2.5,-1){<m>0</m>} \tlabel[cc](3.75,1){<m>(+)</m>} \tlabel[cc](2.5,1){<m>0</m>} \tlabel[cc](5,-1){<m>1</m>} \tlabel[cc](5,1){<m>0</m>} \end{mfpic} Note:
+          <m>g</m> is odd.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = t\sqrt{t^2-1}</m> Domain:
+          <m>(-\infty, -1] \cup [1,\infty)</m> Intercepts:
+          <m>(-1,0)</m>,
+          <m>(1,0)</m> Graph: \begin{mfpic}[20][15]{-4}{4}{-4}{4} \axes \tlabel[cc](4,-0.25){<m>t</m>} \tlabel[cc](0.25,4){<m>y</m>} \xmarks{-3,-2,-1,1,2,3} \ymarks{-3,-2,-1,1,2,3} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \axislabels {y}{{<m>-3</m>} -3,{<m>-2</m>} -2,{<m>-1</m>} -1,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3} \point[4pt]{(-1,0), (1,0)} \penwd{1.25pt} \arrow \reverse \function{-1.9,-1,0.1}{x*sqrt((x**2)-1)} \arrow \function{1,1.9,0.1}{x*sqrt((x**2)-1)} \end{mfpic} \columnbreak As <m>t \rightarrow -\infty</m>,
+          <m>g(t) \rightarrow -\infty</m> As <m>t \rightarrow \infty</m>,
+          <m>g(t) \rightarrow \infty</m> Range:
+          <m>(-\infty, \infty)</m> Increasing:
+          <m>(-\infty, -1]</m>,
+          <m>[1, \infty)</m> Unusual steepness at <m>t = -1</m> and <m>t = 1</m> Sign Diagram: \begin{mfpic}[20][10]{0}{4}{-1.5}{1.5} \arrow \polyline{(2,0), (0,0)} \arrow \polyline{(3,0), (5,0)} \xmarks{2,3} \tlabel[cc](2,-1){<m>-1</m>} \tlabel[cc](1,1){<m>(-)</m>} \tlabel[cc](4,1){<m>(+)</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3,1){<m>0</m>} \tlabel[cc](3,-1){<m>1</m>} \end{mfpic} Note:
+          <m>g</m> is odd.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt[4]{\dfrac{16x}{x^2 - 9}}</m> Domain:
+          <m>(-3, 0] \cup (3, \infty)</m> Graph: \begin{mfpic}[15]{-3.5}{9}{-1}{6} \axes \tlabel[cc](9,-0.5){<m>x</m>} \tlabel[cc](0.5,6){<m>y</m>} \xmarks{-3 step 1 until 8} \ymarks{1,2,3,4,5} \tlpointsep{4pt} \axislabels {x}{{<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \point[4pt]{(0,0)} \dashed \polyline{(-3,-1), (-3,6)} \dashed \polyline{(3,-1), (3,6)} \penwd{1.25pt} \arrow \reverse \function{-2.93,0,0.1}{((16*x)/((x**2) - 9))**(0.25)} \arrow \reverse \arrow \function{3.05,9,0.1}{((16*x)/((x**2) - 9))**(0.25)} \end{mfpic} \columnbreak Intercept:
+          <m>(0,0)</m> As <m>x \rightarrow \infty</m>,
+          <m>f(x) \rightarrow 0</m> Range:
+          <m>[0, \infty)</m> Decreasing:
+          <m>(-3, 0]</m>,
+          <m>(3, \infty)</m> Unusual steepness at <m>x = 0</m> Vertical asymptotes:
+          <m>x = -3</m> and <m>x = 3</m> Horizontal asymptote:
+          <m>y = 0</m> Sign Diagram: \begin{mfpic}[15]{-3}{6}{-1}{1} \polyline{(-3,0),(0,0)} \arrow \polyline{(3,0),(6,0)} \xmarks{-3,0,3} \tlabel[cc](-1.5,0.75){<m>(+)</m>} \tlabel[cc](-3,-0.75){<m>-3</m>} \tlabel[cc](-3,0.75){\textinterrobang} \tlabel[cc](0,-0.75){<m>0</m>} \tlabel[cc](0,0.75){<m>0</m>} \tlabel[cc](3,0.75){\textinterrobang} \tlabel[cc](3,-0.75){<m>3</m>} \tlabel[cc](4.5,0.75){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \dfrac{5x}{\sqrt[3]{x^{3} + 8}}</m> Graph: \begin{mfpic}[10][8]{-5}{5}{-7}{9} \axes \tlabel[cc](5,-0.5){<m>x</m>} \tlabel[cc](0.5,9){<m>y</m>} \xmarks{-4 step 1 until 4} \ymarks{-6 step 1 until 8} \tlpointsep{4pt} \axislabels {x}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4} \axislabels {y}{{<m>-6</m>} -6, {<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3,{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>7</m>} 7, {<m>8</m>} 8} \dashed \polyline{(-5,5), (5,5)} \dashed \polyline{(-2,-7), (-2,9)} \point[4pt]{(0,0)} \penwd{1.25pt} \arrow \reverse \arrow \function{-5,-2.2,0.1}{(-5*x)/((-(x**3) - 8)**(1/3))} \arrow \reverse \arrow \function{-1.8,5,0.1}{(5*x)/(((x**3) + 8)**(1/3))} \end{mfpic} \columnbreak Domain:
+          <m>(-\infty, -2) \cup (-2, \infty)</m> Intercept:
+          <m>(0,0)</m> As <m>x \rightarrow \pm \infty</m>,
+          <m>f(x) \rightarrow 5</m> Range:
+          <m>(-\infty, 5) \cup (5, \infty)</m> Increasing:
+          <m>(-\infty, -2)</m>,
+          <m>(-2, \infty)</m> Vertical asymptote <m>x = -2</m> Horizontal asymptote <m>y = 5</m> Sign Diagram: \begin{mfpic}[20]{-4}{2}{-1}{1} \arrow \reverse \arrow \polyline{(-4,0),(2,0)} \xmarks{-2,0} \tlabel[cc](-3, 0.5){<m>(+)</m>} \tlabel[cc](-2,-0.5){<m>-2</m>} \tlabel[cc](-2,0.5){\textinterrobang} \tlabel[cc](-1,0.5){<m>(-)</m>} \tlabel[cc](0,-0.5){<m>0</m>} \tlabel[cc](0,0.5){<m>0</m>} \tlabel[cc](1,0.5){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt{t(t + 5)(t - 4)}</m> Domain:
+          <m>[-5, 0] \cup [4, \infty)</m> Intercepts <m>(-5,0)</m>,
+          <m>(0,0)</m>, <m>(4,0)</m> As <m>t \rightarrow \infty</m>,
+          <m>g(t) \rightarrow \infty</m> Graph: \begin{mfpic}[10]{-6}{6}{-1}{10} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,10){<m>y</m>} \tlabel[cc](-3.5,7){<m>\approx (-2.937, 6.483)</m>} \xmarks{-5 step 1 until 5} \ymarks{1 step 1 until 9} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6, {<m>8</m>} 8, {<m>9</m>} 9} \point[4pt]{(-5,0),(0,0),(4,0), (-2.937, 6.483)} \penwd{1.25pt} \function{-5,0,0.1}{sqrt((x**3) + (x**2) - (20*x))} \arrow \function{4,5.5,0.1}{sqrt((x**3) + (x**2) - (20*x))} \end{mfpic} \columnbreak Range:
+          <m>[0, \infty)</m> Local maximum <m>\approx (-2.937, 6.483)</m> Increasing:
+          <m>\approx [-5, -2.937]</m>, <m>[4, \infty)</m> Decreasing:
+          <m>\approx [-2.937,0]</m> Unusual steepness at
+          <m>t = -5, t = 0</m> and <m>t = 4</m> Sign Diagram: \begin{mfpic}[10]{-5}{8}{-1}{1} \polyline{(-5,0),(0,0)} \arrow \polyline{(4,0),(8,0)} \xmarks{-5,0,4} \tlabel[cc](-5,-1){<m>-5</m>} \tlabel[cc](-5,1){<m>0</m>} \tlabel[cc](-2.5,1){<m>(+)</m>} \tlabel[cc](0,-1){<m>0</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](4,-1){<m>4</m>} \tlabel[cc](4,1){<m>0</m>} \tlabel[cc](6,1){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g(t) = \sqrt[3]{t^{3} + 3t^{2} - 6t - 8}</m> Domain:
+          <m>(-\infty, \infty)</m> Intercepts:
+          <m>(-4,0)</m>, <m>(-1,0)</m>, <m>(0,-2)</m>,
+          <m>(2,0)</m> Graph: \begin{mfpic}[10]{-6}{6}{-5}{7} \axes \tlabel[cc](6,-0.5){<m>t</m>} \tlabel[cc](0.5,7){<m>y</m>} \tlabel[cc](-4,3){<m>\approx (-2.732, 2.182)</m>} \tlabel[cc](3.25,-2.75){<m>\approx (0.732, -2.182)</m>} \xmarks{-5 step 1 until 5} \ymarks{-4 step 1 until 6} \tlpointsep{4pt} \axislabels {x}{{<m>-5</m>} -5, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>1</m>} 1, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5} \axislabels {y}{{<m>-4</m>} -4, {<m>-3</m>} -3, {<m>-2</m>} -2, {<m>-1</m>} -1, {<m>1</m>} 1, {<m>2</m>} 2, {<m>3</m>} 3, {<m>4</m>} 4, {<m>5</m>} 5, {<m>6</m>} 6} \point[4pt]{(-4,0),(-1,0),(2,0), (-2.732, 2.182),(0.732, -2.182) } \dashed \polyline{(-6,-5), (5,6)} \penwd{1.25pt} \arrow \reverse \function{-6,-4,0.1}{-((-((x**3) + (3*(x**2)) - (6*x) - 8))**(1/3))} \function{-4,-1,0.1}{((x**3) + (3*(x**2)) - (6*x) - 8)**(1/3)} \function{-1,2,0.1}{-((-((x**3) + (3*(x**2)) - (6*x) - 8))**(1/3))} \arrow \function{2,6,0.1}{((x**3) + (3*(x**2)) - (6*x) - 8)**(1/3)} \end{mfpic} \columnbreak as <m>t \rightarrow -\infty</m>,
+          <m>g(t) \rightarrow -\infty</m> as <m>t \rightarrow \infty</m>,
+          <m>g(t) \rightarrow \infty</m> Range:
+          <m>(-\infty, \infty)</m> Local maximum:
+          <m>\approx (-2.732, 2.182)</m> Local minimum:
+          <m>\approx (0.732, -2.182)</m> Increasing:
+          <m>\approx (-\infty, -2.732]</m>,
+          <m>[0.732, \infty)</m> Decreasing:
+          <m>\approx [-2.732, 0.732]</m> Unusual steepness at
+          <m>t = -4, t = -1</m> and <m>t = 2</m> Using Calculus it can be shown that
+          <m>y = t + 1</m> is a slant asymptote of this graph.
+          Sign Diagram: \begin{mfpic}[10]{-8}{6}{-1}{1} \arrow \reverse \arrow \polyline{(-8,0),(6,0)} \xmarks{-4,-1,2} \tlabel[cc](-6,1){<m>(-)</m>} \tlabel[cc](-4,-1){<m>-4</m>} \tlabel[cc](-4,1){<m>0</m>} \tlabel[cc](-2.5,1){<m>(+)</m>} \tlabel[cc](-1,-1){<m>-1</m>} \tlabel[cc](-1,1){<m>0</m>} \tlabel[cc](0.5,1){<m>(-)</m>} \tlabel[cc](2,-1){<m>2</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](4,1){<m>(+)</m>} \end{mfpic}
+        </p>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          <m>C(x) = 15x+20\sqrt{100+(30-x)^2}</m>, <m>0 \leq x \leq 30</m>.
+          The calculator gives the absolute minimum at approximately <m>(18.66, 582.29)</m>.
+          This means to minimize the cost,
+          approximately 18.66 miles of cable should be run along Route 117 before turning off the road and heading towards the outpost.
+          The minimum cost to run the cable is approximately <m>\dollar582.29</m>.
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>h(r) = \frac{300}{\pi r^2}</m>, <m>r > 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S(r) = \pi r \sqrt{r^2+\left(\frac{300}{\pi r^2}\right)^2} = \frac{\sqrt{\pi^2 r^6+90000}}{r}</m>,
+              <m>r>0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              The calculator gives the absolute minimum at the point <m>\approx (4.07, 90.23)</m>.
+              This means the radius should be (approximately) 4.07 centimeters and the height should be 5.76 centimeters to give a minimum surface area of 90.23 square centimeters.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>9.8 \left(\dfrac{1}{4\pi}\right)^{2} \approx 0.062</m> meters or <m>6.2</m> centimeters
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>[0, c)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>~</m>
+              <tabular>
+                <row>
+                  <cell><m>m(.1c) = \dfrac{m_{r}}{\sqrt{.99}} \approx 1.005m_{r}</m></cell>
+                  <cell><m>m(.5c) = \dfrac{m_{r}}{\sqrt{.75}} \approx 1.155m_{r}</m></cell>
+                </row>
+                <row>
+                  <cell><m>m(.9c) = \dfrac{m_{r}}{\sqrt{.19}} \approx 2.294m_{r}</m></cell>
+                  <cell><m>m(.999c) = \dfrac{m_{r}}{\sqrt{.0.001999}} \approx 22.366m_{r}</m></cell>
+                </row>
+              </tabular>
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>v \rightarrow c^{-}, \, m(x) \rightarrow \infty</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              If the object is traveling no faster than approximately <m>0.99995</m> times the speed of light,
+              then its observed mass will be no greater than <m>100m_{r}</m>.
+            </p>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <p>
+          <m>k^{-1}(x) = \dfrac{x}{\sqrt{x^{2} - 4}}</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

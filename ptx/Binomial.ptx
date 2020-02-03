@@ -1,0 +1,886 @@
+<section xml:id="Binomial">
+  <title>The Binomial Theorem</title>
+  <introduction>
+    <p>
+      In this section, we aim to prove the celebrated
+      <em>Binomial Theorem</em>.
+      Simply stated,
+      the Binomial Theorem is a formula for the expansion of quantities <m>(a+b)^n</m> for natural numbers <m>n</m>.
+      In High School Algebra,
+      you probably have seen specific instances of the formula, namely
+      <me>
+        \begin{array}{rclr}  (a+b)^1 \amp  = \amp  a + b \amp  \\ (a+b)^2 \amp  = \amp  a^2 + 2ab + b^2 \amp  \\ (a+b)^3 \amp  = \amp  a^3 + 3a^2 b + 3ab^2 + b^3 \amp \end{array}
+      </me>
+    </p>
+    <p>
+      If we wanted the expansion for <m>(a+b)^4</m> we would write
+      <m>(a+b)^4 = (a+b)(a+b)^3</m> and use the formula that we have for <m>(a+b)^3</m> to get <m>(a+b)^4 = (a+b) \left( a^3 + 3a^2 b + 3ab^2 + b^3 \right) = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4</m>.
+      Generalizing this a bit,
+      we see that if we have a formula for <m>(a+b)^{k}</m>,
+      we can obtain a formula for
+      <m>(a+b)^{k+1}</m> by rewriting the latter as <m>(a+b)^{k+1} = (a+b)(a+b)^{k}</m>.
+      Clearly this means Mathematical Induction plays a major role in the proof of the Binomial Theorem.<fn>
+      It's pretty much the reason <xref ref="Induction">Section</xref> is in the book.
+      </fn> Before we can state the theorem we need to revisit the sequence of factorials which were introduced in <xref ref="seqex1">Example</xref>
+      <xref ref="factorialintroex">number</xref>
+      in <xref ref="Sequences">Section</xref>.
+    </p>
+    <definition xml:id="factorialdefn">
+      <statement>
+        <p>
+          <term>Factorials:</term>
+        </p>
+        <p>
+          For a whole number <m>n</m>,
+              <idx><h>factorial</h></idx>
+          { <m>n</m>} <term>factorial</term>,
+          denoted <m>n!</m>, is the term <m>f_{n}</m> of the sequence:
+          <me>
+            f_{0} = 1, f_{n} =n \cdot f_{n-1},  n \geq 1
+          </me>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Recall this means <m>0! = 1</m> and <m>n! = n(n-1)!</m> for <m>n \geq 1</m>.
+      Hence, <m>1! = 1 \cdot 0! = 1 \cdot 1 = 1</m>,
+      <m>2! = 2 \cdot 1! = 2 \cdot 1 = 2</m>,
+      <m>3! = 3 \cdot 2! = 3 \cdot 2 \cdot 1 = 6</m> and <m>4! = 4 \cdot 3! = 4 \cdot 3 \cdot 2 \cdot 1 = 24</m>.
+      Informally, <m>n! = n\cdot(n -1)\cdot(n -2) \cdots 2 \cdot 1</m> with <m>0! = 1</m> as our <sq>base case.</sq> Our first example familiarizes us with some of the basics of factorial computations.
+    </p>
+    <example xml:id="factorialex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              Simplify the following expressions.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  <m>\dfrac{3! \, 2!}{0!}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\dfrac{7!}{5!}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\dfrac{1000!}{998! \, 2!}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\dfrac{(k+2)!}{(k-1)!}</m>, <m>k \geq 1</m>
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>
+              Prove <m>n! > 3^n</m> for all <m>n \geq 7</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We keep in mind the mantra,
+                <q>When in doubt, write it out!</q>
+                as we simplify the following.
+                <ol>
+                  <li>
+                    <p>
+                      Recall <m>0! = 1</m>, by definition,
+                      <m>3! = 3 \cdot 2 \cdot 1 = 6</m> and <m>2! = 2 \cdot 1 = 2</m>.
+                      Hence, <m>\frac{3! \, 2!}{0!} = \frac{(6)(2)}{1} = 12</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      We have <m>7! = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 5040</m> and
+                      <m>5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120</m> so <m>\frac{7!}{5!} = \frac{5040}{120} = 42</m>.
+                      While this is correct,
+                      we note that we could have saved ourselves some of time had we approached the problem as follows:
+                      <me>
+                        \dfrac{7!}{5!} = \dfrac{7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = \dfrac{7 \cdot 6 \cdot \cancel{5} \cdot \cancel{4} \cdot \cancel{3} \cdot \cancel{2} \cdot \cancel{1}}{\cancel{5} \cdot \cancel{4} \cdot \cancel{3} \cdot \cancel{2} \cdot \cancel{1}} = 7 \cdot 6 = 42
+                      </me>
+                      In fact, should we want to fully exploit the recursive nature of the factorial,
+                      we can write
+                      <me>
+                        \dfrac{7!}{5!} = \dfrac{7 \cdot 6 \cdot 5!}{5!} = \dfrac{7 \cdot 6 \cdot \cancel{5!}}{\cancel{5!}} = 42
+                      </me>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Keeping in mind the lesson we learned from the previous problem, we have
+                      <me>
+                        \dfrac{1000!}{998! \, 2!} = \dfrac{1000 \cdot 999 \cdot 998!}{998! \cdot 2!} = \dfrac{1000 \cdot 999 \cdot \cancel{998!}}{\cancel{998!} \cdot 2!} = \dfrac{999000}{2} = 499500
+                      </me>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      This problem continues the theme which we have seen in the previous two problems.
+                      We first note that since <m>k+2</m> is larger than <m>k-1</m>,
+                      <m>(k+2)!</m> contains all of the factors of <m>(k-1)!</m> and as a result we can get the <m>(k-1)!</m> to cancel from the denominator.
+                      To see this,
+                      we begin by writing out <m>(k+2)!</m> starting with <m>(k+2)</m> and multiplying it by the numbers which precede it until we reach <m>(k-1)</m>:
+                      <m>(k+2)! = (k+2)(k+1)(k)(k-1)!</m>.
+                      As a result, we have
+                      <me>
+                        \dfrac{(k+2)!}{(k-1)!} = \dfrac{(k+2)(k+1)(k)(k-1)!}{(k-1)!} = \dfrac{(k+2)(k+1)(k) \cancel{(k-1)!}}{\cancel{(k-1)!}} = k(k+1)(k+2)
+                      </me>
+                      The stipulation <m>k \geq 1</m> is there to ensure that all of the factorials involved are defined.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+            <li>
+              <p>
+                We proceed by induction and let <m>P(n)</m> be the inequality <m>n! > 3^n</m>.
+                The base case here is <m>n=7</m> and we see that <m>7! = 5040</m> is larger than
+                <m>3^7 = 2187</m>, so <m>P(7)</m> is true.
+                Next, we assume that <m>P(k)</m> is true, that is,
+                we assume <m>k! > 3^k</m> and attempt to show <m>P(k+1)</m> follows.
+                Using the properties of the factorial,
+                we have <m>(k+1)! = (k+1) k!</m> and since <m>k! > 3^k</m>,
+                we have <m>(k+1)! > (k+1) 3^{k}</m>.
+                Since <m>k \geq 7</m>, <m>k+1 \geq 8</m>,
+                so <m>(k+1) 3^{k} \geq 8 \cdot 3^{k} > 3 \cdot 3^{k} = 3^{k+1}</m>.
+                Putting all of this together,
+                we have <m>(k+1)! = (k+1) k! > (k+1)3^{k} > 3^{k+1}</m> which shows <m>P(k+1)</m> is true.
+                By the Principle of Mathematical Induction,
+                we have <m>n! > 3^{n}</m> for all <m>n \geq 7</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Of all of the mathematical functions we have discussed in the text,
+      factorials grow most quickly.
+      In <xref ref="factorialex">Example</xref> above,
+      we proved that <m>n!</m> overtakes <m>3^{n}</m> at <m>n=7</m>.
+      <sq>Overtakes</sq> may be too polite a word,
+      since <m>n!</m> thoroughly trounces <m>3^n</m> for <m>n \geq 7</m>,
+      as any reasonable set of data will show.
+    </p>
+    <p>
+      It can be shown that for any real number <m>x > 0</m>,
+      not only does <m>n!</m> eventually overtake <m>x^n</m>,
+      but the ratio <m>\frac{x^n}{n!} \rightarrow 0</m> as <m>n \rightarrow \infty</m>.
+      (This is extremely important for Calculus.)
+    </p>
+    <p>
+      Applications of factorials in the wild often involve counting arrangements.
+      For example,
+      if you have fifty songs on your mp3 player and wish arrange these songs in a playlist in which the order of the songs matters,
+      it turns out that there are <m>50!</m> different possible playlists.
+    </p>
+    <p>
+      If you wish to select only ten of the songs to create a playlist,
+      then there are <m>\frac{50!}{40!}</m> such playlists.
+      If, on the other hand,
+      you just want to select ten song files out of the fifty to put on a flash memory card so that now the order no longer matters,
+      there are <m>\frac{50!}{40! 10!}</m> ways to achieve this.<fn>
+      For reference,
+      <me>
+        \begin{array}{ccl} 50! \amp  = \amp   30414093201713378043612608166064768844377641568960512000000000000, \\  \dfrac{50!}{40!} \amp  = \amp  37276043023296000,  \text{ and }  \\ \dfrac{50!}{40!  10!} \amp  = \amp  10272278170 \end{array}
+      </me>
+      </fn>
+    </p>
+    <p>
+      While some of these ideas are explored in the Exercises,
+      the authors encourage you to take courses such as Finite Mathematics, Discrete Mathematics and Statistics.
+      We introduce these concepts here because this is how the factorials make their way into the Binomial Theorem,
+      as our next definition indicates.
+    </p>
+    <definition xml:id="binomialcoeff">
+      <statement>
+        <p>
+          <term>Binomial Coefficients:</term>
+          Given two whole numbers <m>n</m> and <m>j</m> with <m>n \geq j</m>, the
+              <idx><h>binomial coefficient</h></idx>
+          binomial coefficient { <m>\displaystyle \binom{n}{j}</m>} (read,
+          <sq><m>n</m> choose <m>j</m></sq>) is the whole number given by
+          <me>
+            \binom{n}{j} = \dfrac{n!}{j! (n-j)!}
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The name <sq>binomial coefficient</sq> will be justified shortly.
+      For now, we can physically interpret
+      <m>\binom{n}{j}</m>as the number of ways to select <m>j</m> items from <m>n</m> items where the order of the items selected is unimportant.
+      For example,
+      suppose you won two free tickets to a special screening of the latest Hollywood blockbuster and have five good friends each of whom would love to accompany you to the movies.
+      There are <m>\binom{5}{2}</m> ways to choose who goes with you.
+      Applying <xref ref="binomialcoeff">Definition</xref>, we get
+      <me>
+        \binom{5}{2} = \dfrac{5!}{2! (5-2)!} = \dfrac{5!}{2! 3!} = \dfrac{5 \cdot 4}{2} = 10
+      </me>
+    </p>
+    <p>
+      So there are <m>10</m> different ways to distribute those two tickets among five friends.
+      (Some will see it as <m>10</m> ways to decide which three friends have to stay home.)
+      The reader is encouraged to verify this by actually taking the time to list all of the possibilities.
+    </p>
+    <p>
+      We now state and prove a theorem which is crucial to the proof of the Binomial Theorem.
+    </p>
+    <theorem xml:id="addbinomcoeff">
+      <statement>
+        <p>
+          For natural numbers <m>n</m> and <m>j</m> with <m>n \geq j</m>,
+          <me>
+            \binom{n}{j-1} + \binom{n}{j} = \binom{n+1}{j}
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of <xref ref="addbinomcoeff">Theorem</xref>
+      is purely computational and uses the definition of binomial coefficients,
+      the recursive property of factorials and common denominators.
+      <me>
+        \begin{array}{rcl}  \displaystyle{\binom{n}{j-1} + \binom{n}{j}} \amp  = \amp  \dfrac{n!}{(j-1)! (n-(j-1))!} + \dfrac{n!}{j! (n-j)!}  \\  \amp  = \amp  \dfrac{n!}{(j-1)! (n-j+1)!} + \dfrac{n!}{j! (n-j)!}  \\  \amp  = \amp  \dfrac{n!}{(j-1)! (n-j+1)(n-j)!} + \dfrac{n!}{j(j-1)! (n-j)!}  \\  \amp  = \amp  \dfrac{n! \, j}{j(j-1)! (n-j+1)(n-j)!} + \dfrac{n! (n-j+1)}{j(j-1)! (n-j+1)(n-j)!} \\  \amp  = \amp  \dfrac{n! \, j}{j! (n-j+1)!} + \dfrac{n! (n-j+1)}{j! (n-j+1)!} \\  \amp  = \amp  \dfrac{n! \, j + n! (n-j+1)}{j! (n-j+1)!} \\  \amp  = \amp  \dfrac{n!\left( j + (n-j+1)\right)}{j! (n-j+1)!} \\  \amp  = \amp  \dfrac{(n+1) n!}{j! (n+1-j))!} \\  \amp  = \amp  \dfrac{(n+1)!} {j! ((n+1)-j))!} \\  \amp  = \amp  \displaystyle{\binom{n+1}{j}} \, \checkmark \end{array}
+      </me>
+    </p>
+    <p>
+      We are now in position to state and prove the Binomial Theorem where we see that binomial coefficients are just that - coefficients in the binomial expansion.
+    </p>
+    <theorem xml:id="BinomialTheorem">
+      <statement>
+        <p>
+              <idx><h>Binomial Theorem</h></idx> <em>Binomial Theorem:</em> For nonzero real numbers <m>a</m> and <m>b</m>,
+          <me>
+            (a+b)^{n} =\displaystyle{\sum_{j=0}^{n} \binom{n}{j} a^{n-j} b^{\, j}}
+          </me>
+          for all natural numbers <m>n</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      To get a feel of what this theorem is saying and how it really isn't as hard to remember as it may first appear,
+      let's consider the specific case of <m>n=4</m>.
+      According to the theorem, we have
+      <me>
+        \begin{array}{rcl}  (a+b)^{4} \amp  = \amp  \displaystyle{\sum_{j=0}^{4} \binom{4}{j} a^{4-j} b^{\, j}} \\ \amp  = \amp  \displaystyle{\binom{4}{0}a^{4-0}b^{0} + \binom{4}{1}a^{4-1}b^{1} + \binom{4}{2}a^{4-2}b^{2} + \binom{4}{3}a^{4-3}b^{3} + \binom{4}{4}a^{4-4}b^{4}} \\ \amp  = \amp  \displaystyle{\binom{4}{0}a^{4} + \binom{4}{1}a^{3}b + \binom{4}{2}a^{2}b^{2} + \binom{4}{3}ab^{3} + \binom{4}{4}b^{4}} \end{array}
+      </me>
+    </p>
+    <p>
+      We forgo the simplification of the coefficients in order to note the pattern in the expansion.
+      First note that in each term,
+      the total of the exponents is <m>4</m> which matched the exponent of the binomial <m>(a+b)^{4}</m>.
+      The exponent on <m>a</m> begins at <m>4</m> and decreases by one as we move from one term to the next while the exponent on <m>b</m> starts at <m>0</m> and increases by one each time.
+    </p>
+    <p>
+      Also note that the binomial coefficients themselves have a pattern.
+      The upper number, <m>4</m>,
+      matches the exponent on the binomial <m>(a+b)^4</m> whereas the lower number changes from term to term and matches the exponent of <m>b</m> in that term.
+    </p>
+    <p>
+      This is no coincidence and corresponds to the kind of counting we discussed earlier.
+      If we think of obtaining <m>(a+b)^4</m> by multiplying <m>(a+b)(a+b)(a+b)(a+b)</m>,
+      our answer is the sum of all possible products with exactly four factors - some <m>a</m>,
+      some <m>b</m>.
+      If we wish to count, for instance,
+      the number of ways we obtain <m>1</m> factor of <m>b</m> out of a total of <m>4</m> possible factors,
+      thereby forcing the remaining <m>3</m> factors to be <m>a</m>,
+      the answer is <m>\binom{4}{1}</m>.
+      Hence, the term <m>\binom{4}{1}a^{3}b</m> is in the expansion.
+      The other terms which appear cover the remaining cases.
+    </p>
+    <p>
+      While the foregoing discussion gives an indication as to
+      <em>why</em> the theorem is true,
+      a formal proof requires Mathematical Induction.<fn>
+      and a fair amount of tenacity and attention to detail.
+      </fn>
+    </p>
+    <p>
+      To prove the Binomial Theorem,
+      we let <m>P(n)</m> be the expansion formula given in the statement of the theorem and we note that <m>P(1)</m> is true since
+      <me>
+        \displaystyle{\sum_{j=0}^{1} \binom{1}{j} a^{1-j} b^{\, j}} =  \displaystyle{\binom{1}{0}a^{1-0}b^{0} +  \binom{1}{1}a^{1-1}b^{1}} = a+b = (a+b)^{1}
+      </me>.
+    </p>
+    <p>
+      Now we assume that <m>P(k)</m> is true.
+      That is, we assume that we can expand <m>(a+b)^k</m> using the formula given in <xref ref="BinomialTheorem">Theorem</xref>
+      and attempt to show that <m>P(k+1)</m> is true.
+      <me>
+        \begin{array}{rcl}  (a+b)^{k+1} \amp  = \amp  (a+b)(a+b)^{k} \\ \amp  = \amp  (a+b) \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{\, j}}  \\ \amp  = \amp  a \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{\, j}} +  b \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{\, j}} \\ \amp  = \amp  \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k+1-j} b^{\, j}} +  \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{\, j+1}} \end{array}
+      </me>
+    </p>
+    <p>
+      Our goal is to combine as many of the terms as possible within the two summations.
+    </p>
+    <p>
+      As the counter <m>j</m> in the first summation runs from <m>0</m> through <m>k</m>,
+      we get terms involving <m>a^{k+1}</m>,
+      <m>a^{k}b</m>, <m>a^{k-1}b^2</m>,
+      <ellipsis/>, <m>ab^{k}</m>.
+      In the second summation, we get terms involving <m>a^{k}b</m>,
+      <m>a^{k-1}b^{2}</m>, <ellipsis/>, <m>ab^{k}</m>, <m>b^{k+1}</m>.
+      In other words,
+      apart from the first term in the first summation and the last term in the second summation,
+      we have terms common to both summations.
+    </p>
+    <p>
+      Our next move is to <sq>kick out</sq> the terms which we cannot combine and rewrite the summations so that we can combine them.
+      To that end, we note
+      <me>
+        \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k+1-j} b^{\, j} = a^{k+1}+ \sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{\, j}}
+      </me>
+      and
+      <me>
+        \displaystyle{\sum_{j=0}^{k} \binom{k}{j} a^{k-j} b^{\, j+1} = \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{\, j+1} + b^{k+1}}
+      </me>
+      so that
+      <me>
+        (a+b)^{k+1} = \displaystyle{a^{k+1} + \sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{\, j} + \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{\, j+1}  + b^{k+1}}
+      </me>
+    </p>
+    <p>
+      We now wish to write
+      <me>
+        \displaystyle{\sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{\, j} + \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{\, j+1}}
+      </me>
+      as a single summation.
+      The wrinkle is that the first summation starts with <m>j=1</m>,
+      while the second starts with <m>j=0</m>.
+      Even though the sums produce terms with the same powers of <m>a</m> and <m>b</m>,
+      they do so for different values of <m>j</m>.
+      To resolve this,
+      we need to shift the index on the second summation so that the index <m>j</m> starts at <m>j=1</m> instead of <m>j=0</m> and we make use of <xref ref="sigmaprops">Theorem</xref> in the process.
+      <me>
+        \begin{array}{rcl}  \displaystyle{ \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{\, j+1}} \amp  = \amp  \displaystyle{\sum_{j=0+1}^{k-1+1} \binom{k}{j-1} a^{k-(j-1)} b^{\, (j-1)+1}} \\ \amp  = \amp  \displaystyle{\sum_{j=1}^{k} \binom{k}{j-1} a^{k+1-j} b^{\, j}} \end{array}
+      </me>
+    </p>
+    <p>
+      We can now combine our two sums using <xref ref="sigmaprops">Theorem</xref>
+      and simplify using <xref ref="addbinomcoeff">Theorem</xref>
+      <me>
+        \begin{array}{rcl}  \displaystyle{\sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{\, j} + \sum_{j=0}^{k-1} \binom{k}{j} a^{k-j} b^{\, j+1}} \amp  = \amp  \displaystyle{\sum_{j=1}^{k} \binom{k}{j} a^{k+1-j} b^{\, j} + \sum_{j=1}^{k} \binom{k}{j-1} a^{k+1-j} b^{\, j}} \\  \amp  = \amp  \displaystyle{\sum_{j=1}^{k} \left[ \binom{k}{j} + \binom{k}{j-1} \right] a^{k+1-j} b^{\, j} } \\  \amp  = \amp  \displaystyle{\sum_{j=1}^{k} \binom{k+1}{j} a^{k+1-j} b^{\, j} } \end{array}
+      </me>
+    </p>
+    <p>
+      Using this and the fact that
+      <m>\binom{k+1}{0} = 1</m> and <m>\binom{k+1}{k+1} = 1</m>, we get
+      <me>
+        \begin{array}{rcl}  (a+b)^{k+1} \amp  = \amp  a^{k+1} + \displaystyle{\sum_{j=1}^{k} \binom{k+1}{j} a^{k+1-j} b^{\, j} } + b^{k+1} \\ \amp  = \amp  \displaystyle{ \binom{k+1}{0} a^{k+1} b^{0} + \sum_{j=1}^{k} \binom{k+1}{j} a^{k+1-j} b^{\, j}  + \binom{k+1}{k+1} a^{0} b^{k+1}} \\ \amp  = \amp  \displaystyle{  \sum_{j=0}^{k+1} \binom{k+1}{j} a^{(k+1)-j} b^{\, j}} \end{array}
+      </me>
+      which shows that <m>P(k+1)</m> is true.
+      Hence, by induction,
+      we have established that the Binomial Theorem holds for all natural numbers <m>n</m>.
+    </p>
+    <example xml:id="binomialthmex">
+      <statement>
+        <p>
+          Use the Binomial Theorem to find the following.
+          <ol>
+            <li>
+              <p>
+                <m>(x-2)^4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2.1^{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The term containing <m>x^3</m> in the expansion <m>(2x+y)^{5}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Since <m>(x-2)^4 = (x+(-2))^4</m>,
+                we identify <m>a = x</m>, <m>b = -2</m> and <m>n=4</m> and obtain
+                <me>
+                  \begin{array}{rcl}  (x-2)^4\! \amp  =  \amp  \displaystyle{\sum_{j=0}^{4} \binom{4}{j} x^{4-j} (-2)^{\, j}} \\ \amp   =  \amp  \displaystyle{\binom{4}{0} x^{4-0} (-2)^{0} \!+\! \binom{4}{1} x^{4-1} (-2)^{1} \!+\! \binom{4}{2} x^{4-2} (-2)^{2} \!+\! \binom{4}{3} x^{4-3} (-2)^{3} \!+\! \binom{4}{4} x^{4-4} (-2)^{4}} \\ \amp   =  \amp  x^4 -8x^3 + 24x^2 - 32x + 16 \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                At first this problem seem misplaced,
+                but we can write <m>2.1^{3} = (2 + 0.1)^3</m>.
+                Identifying <m>a =2</m>, <m>b = 0.1</m> and <m>n=3</m>, we get
+                <me>
+                  \begin{array}{rcl}  (2+0.1)^3 \amp  = \amp  \displaystyle{\sum_{j=0}^{3} \binom{3}{j} 2^{3-j} (0.1) ^{\, j}} \\ \amp  = \amp  \displaystyle{\binom{3}{0} 2^{3-0}(0.1)^{0} + \binom{3}{1} 2^{3-1} (0.1)^{1} + \binom{3}{2} 2^{3-2}(0.1)^{2} + \binom{3}{3} 2^{3-3}(0.1)^{3}} \\ \amp  = \amp  8 + 1.2 + 0.06 + 0.001 \\ \amp  = \amp  9.261 \end{array}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                Identifying <m>a = 2x</m>,
+                <m>b = y</m> and <m>n=5</m>, the Binomial Theorem gives
+                <me>
+                  (2x+y)^{5} = \displaystyle{\sum_{j=0}^{5} \binom{5}{j} (2x)^{5-j} y^{\, j}}
+                </me>
+                Since we are concerned with only the term containing <m>x^3</m>,
+                there is no need to expand the entire sum.
+                The exponents on each term must add to <m>5</m> and if the exponent on <m>x</m> is <m>3</m>,
+                the exponent on <m>y</m> must be <m>2</m>.
+                Plucking out the term <m>j=2</m>, we get
+                <me>
+                  \displaystyle{\binom{5}{2} (2x)^{5-2} y^{2}} = 10 (2x)^3y^2 = 80x^3y^2
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      An important application of binomial coefficients is computing probabilities using the eponymous
+          <idx><h>binomial distribution</h></idx>
+      <em>binomial distribution</em>.
+      Suppose an experiment has a probability <m>p</m> of <sq>success</sq> and a probability of <m>1-p</m> of <sq>failure.</sq><fn>
+      In other words, there are just two possible outcomes:
+      success or failure,
+      and the fact these probabilities add to <m>1</m> means one or the other,
+      but not both, will happen.
+      This situation is called a <em>Bernoulli Trial</em>.
+      </fn> For instance,
+      suppose we roll a <sq>fair</sq> six-sided die.
+      Let us say a <sq>success</sq> is rolling a four.
+      Then the probability here of a success is
+      <m>p = \frac{1}{6}</m> while the probability of failure here,
+      or <em>not</em> rolling a four,
+      is <m>1-\frac{1}{6} = \frac{5}{6}</m>.
+    </p>
+    <p>
+      If we run this experiment <m>n</m> times,
+      then the probability of <em>exactly</em>
+      <m>j</m> successes is given by <m>\displaystyle{\binom{n}{j} p^{\, j} (1-p)^{n-j}}</m>.
+    </p>
+    <p>
+      Here, the binomial coefficient counts the number of ways we can produce <m>j</m> successes out of <m>n</m> trials.
+      The <sq>bi</sq> in <sq>binomial</sq> comes from the fact that each trial produces one of two outcomes:
+      a <sq>success</sq>
+      (with a probability of <m>p</m>)
+      or <sq>failure</sq>
+      (with probability <m>1-p</m>).
+    </p>
+    <p>
+      So, for instance, if we roll the fair die <m>5</m> times,
+      the probability we get <em>exactly</em> <m>2</m> fours is:
+      <me>
+        \binom{5}{2} \left( \frac{1}{6} \right)^{2} \left( \frac{5}{6} \right)^{5-2} =  \frac{625}{3888} \approx  16 \%
+      </me>
+    </p>
+    <p>
+      Moreover, the probability <m>\displaystyle{\binom{n}{j} p^{\, j} (1-p)^{n-j}}</m> is the <m>j</m>th term in the binomial expansion of <m>((1-p)+p)^{n} = 1^{n} = 1</m>.
+      That is,
+      <me>
+        1 = 1^{n} = ((1-p)+p)^{n} = \displaystyle{\sum_{j=0}^{n} \binom{n}{j} (1-p)^{n-j} p^{\, j}}
+      </me>
+    </p>
+    <p>
+      The fact that the <em>sum</em> of the probabilities of all the possibilities (<m>0</m> successful trials up through <m>n</m> successful trials) is <m>1</m> can be loosely translated as the probability <em>something</em>
+      will happen is <m>100 \%</m>.
+    </p>
+    <p>
+      Suppose we wanted to compute the probability of rolling <em>at least</em>
+      <m>2</m> fours on <m>5</m> rolls.
+      To achieve this,
+      we add the probabilities of obtaining exactly <m>2</m> fours,
+      <m>3</m> fours, <m>4</m> fours, and <m>5</m> fours.
+      That is, we get a partial sum of the binomial expansion:
+      <me>
+        \begin{array}{rcl}  \displaystyle{\sum_{j=2}^{5} \binom{5}{j} \left( \frac{5}{6} \right)^{5-j} \left(\frac{5}{6} \right)^{\, j}} \amp   = \amp   \underbrace{\binom{5}{2} \left( \frac{1}{6} \right)^{2} \left( \frac{5}{6} \right)^{5-2}}_{\text{ probability of \(2\) fours } }   + \underbrace{\binom{5}{3} \left( \frac{1}{6} \right)^{3} \left( \frac{5}{6} \right)^{5-3}}_{\text{ probability of \(3\) fours } }  \\ \amp \amp  + \underbrace{\binom{5}{4} \left( \frac{1}{6} \right)^{4} \left( \frac{5}{6} \right)^{5-4}}_{\text{ probability of \(4\) fours } } + \underbrace{\binom{5}{5} \left( \frac{1}{6} \right)^{5} \left( \frac{5}{6} \right)^{5-5}}_{\text{ probability of \(5\) fours } } \\  \amp  = \amp   \frac{736}{3888} \approx 20 \% \end{array}
+      </me>
+    </p>
+    <p>
+      We summarize the properties of the binomial distribution below.
+    </p>
+    <theorem xml:id="BinomialDistribution">
+      <statement>
+        <p>
+              <idx><h>Binomial Theorem</h></idx> <em>Binomial Distribution:</em> If an experiment has a probability of success of <m>p</m> then the probability of <em>exactly</em> <m>j</m> successes in <m>n</m> independent Bernoulli Trials is:
+          <me>
+            \displaystyle{\binom{n}{j} p^{\, j} (1-p)^{n-j}}
+          </me>
+          for <m>0 \leq j \leq n</m>.
+        </p>
+        <p>
+          The probability of <em>at least</em>
+          <m>k</m> successes in <m>n</m> independent Bernoulli Trials is:
+          <me>
+            \displaystyle{ \sum_{j=k}^{n} \binom{n}{j} p^{\, j} (1-p)^{n-j}}
+          </me>
+          for <m>0 \leq k \leq n</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We close this section with
+          <idx><h>Pascal's Triangle</h></idx>
+      <url href="http://en.wikipedia.org/wiki/Pascal's_triangle"><em>Pascal's Triangle</em></url>,
+      named in honor of the mathematician
+      <url href="http://en.wikipedia.org/wiki/Blaise_Pascal"><em>Blaise Pascal</em></url>.
+      Pascal's Triangle is obtained by arranging the binomial coefficients in the triangular fashion below.
+      <me>
+        \begin{array}{ccccccccc} \amp   \amp   \amp   \amp   \displaystyle{\binom{0}{0}}  \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp   \displaystyle{\binom{1}{0}}  \amp   \amp   \displaystyle{\binom{1}{1}}  \amp   \amp   \amp \\ \amp   \amp   \amp   \amp   \searrow \, \swarrow \amp   \amp   \amp   \amp   \\ \amp   \amp   \displaystyle{\binom{2}{0}}  \amp   \amp   \displaystyle{\binom{2}{1}}  \amp   \amp   \displaystyle{\binom{2}{2}}  \amp   \amp \\ \amp                              \amp   \amp    \searrow \, \swarrow      \amp  \amp    \searrow \, \swarrow      \amp  \amp                              \amp  \\ \amp   \displaystyle{\binom{3}{0}}  \amp   \amp   \displaystyle{\binom{3}{1}}  \amp   \amp   \displaystyle{\binom{3}{2}}  \amp   \amp   \displaystyle{\binom{3}{3}}  \amp   \\ \amp   \amp   \searrow \, \swarrow   \amp   \amp   \searrow \, \swarrow   \amp   \amp   \searrow \, \swarrow   \amp   \amp  \\ \displaystyle{\binom{4}{0}}  \amp   \amp   \displaystyle{\binom{4}{1}}  \amp   \amp   \displaystyle{\binom{4}{2}}  \amp   \amp   \displaystyle{\binom{4}{3}}  \amp   \amp   \displaystyle{\binom{4}{4}} \\ \amp   \amp      \amp   \amp   \vdots  \amp   \amp      \amp   \amp \end{array}
+      </me>
+    </p>
+    <p>
+      Since <m>\displaystyle{\binom{n}{0} = 1}</m> and
+      <m>\displaystyle{\binom{n}{n} = 1}</m> for all whole numbers <m>n</m>,
+      each row of Pascal's Triangle is bookended with <m>1</m>.
+    </p>
+    <p>
+      To generate the numbers in the middle of the rows
+      (from the third row onwards),
+      we take advantage of the additive relationship expressed in <xref ref="addbinomcoeff">Theorem</xref>.
+      For instance,
+      <me>
+        \binom{1}{0} + \binom{1}{1} = \binom{2}{1},   \binom{2}{0} + \binom{2}{1} = \binom{3}{1},  \binom{2}{1} + \binom{2}{2} = \binom{3}{2}
+      </me>
+      and so forth.
+      This relationship is indicated by the arrows in the array above.
+    </p>
+    <p>
+      With these two facts in hand,
+      we can quickly generate Pascal's Triangle in the following way:
+      we start with the first two rows, <m>1</m> and <m>1 1</m>.
+      Each successive row begins and ends with <m>1</m> and the middle numbers are generated using <xref ref="addbinomcoeff">Theorem</xref>.
+    </p>
+    <p>
+      Below we attempt to demonstrate this building process to generate the first five rows of Pascal's Triangle.
+      <me>
+        \begin{array}{ccc}  \begin{array}{ccccccccc} \amp   \amp   \amp   \amp   1  \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp   1  \amp   \amp   1  \amp   \amp   \amp \\ \amp   \amp   \amp   \amp   \searrow \, \swarrow \amp   \amp   \amp   \amp   \\ \amp   \amp   \fbox{1}  \amp   \amp   \underline{1+1}  \amp   \amp    \fbox{1}  \amp   \amp \end{array}  \amp  \xrightarrow{}  \amp   \begin{array}{ccccccccc} \amp   \amp   \amp   \amp   1  \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp   1  \amp   \amp   1  \amp   \amp   \amp \\ \amp   \amp   1  \amp   \amp   2  \amp   \amp 1  \amp   \amp \end{array}  \\  \amp \amp \begin{array}{ccccccccc} \amp   \amp   \amp   \amp   1  \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp   1  \amp   \amp   1  \amp   \amp   \amp \\ \amp   \amp   1  \amp   \amp   2  \amp   \amp 1  \amp   \amp \\ \amp  \amp   \amp    \searrow \, \swarrow \amp  \amp    \searrow \, \swarrow \amp  \amp   \amp  \\ \amp     \fbox{1}  \amp   \amp   \underline{1+2}  \amp   \amp   \underline{2+1}  \amp   \amp     \fbox{1}  \amp \end{array}  \amp  \xrightarrow{}  \amp  \begin{array}{ccccccccc} \amp   \amp   \amp   \amp   1  \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp   1  \amp   \amp   1  \amp   \amp   \amp \\ \amp   \amp   1  \amp   \amp   2  \amp   \amp 1  \amp   \amp \\ \amp   1  \amp   \amp   3  \amp   \amp   3  \amp   \amp   1  \amp \end{array}  \\  \amp \amp \begin{array}{ccccccccc} \amp   \amp   \amp   \amp   1  \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp   1  \amp   \amp   1  \amp   \amp   \amp \\ \amp   \amp   1  \amp   \amp  2  \amp   \amp 1  \amp   \amp \\ \amp   1  \amp   \amp   3  \amp   \amp  3  \amp   \amp   1  \amp   \\ \amp   \amp   \searrow \, \swarrow   \amp   \amp   \searrow \, \swarrow   \amp   \amp   \searrow \, \swarrow   \amp   \amp  \\ \fbox{1}  \amp   \amp   \underline{1+3}  \amp   \amp   \underline{3+3}  \amp   \amp   \underline{3+1}  \amp   \amp     \fbox{1} \end{array}  \amp  \xrightarrow{}  \amp   \begin{array}{ccccccccc} \amp   \amp   \amp   \amp   1  \amp   \amp   \amp   \amp   \\ \amp   \amp   \amp   1  \amp   \amp   1  \amp   \amp   \amp \\ \amp   \amp   1  \amp   \amp  2  \amp   \amp 1  \amp   \amp \\ \amp   1  \amp   \amp   3  \amp   \amp  3  \amp   \amp   1  \amp   \\ 1  \amp   \amp   4  \amp   \amp   6  \amp   \amp   4 \amp   \amp   1 \end{array} \end{array}
+      </me>
+    </p>
+    <p>
+      To see how we can use Pascal's Triangle to expedite the Binomial Theorem,
+      suppose we wish to expand <m>(3x-y)^{4}</m>.
+      The coefficients we need are <m>\binom{4}{j}</m> for
+      <m>j = 0, 1, 2, 3, 4</m> and are the numbers which form the fifth row of Pascal's Triangle.
+    </p>
+    <p>
+      Since we know that the exponent of <m>(3x)</m> in the first term is <m>4</m> and then decreases by one as we go from left to right while the exponent of <m>(-y)</m> starts at <m>0</m> in the first term and then increases by one as we move from left to right,
+      we quickly obtain
+      <me>
+        \begin{array}{rcl}  (3x-y)^{4} \amp  = \amp  (1)(3x)^{4} + (4)(3x)^3(-y) + (6)(3x)^2(-y)^2 + 4(3x)(-y)^3 + 1(-y)^4 \\ \amp  = \amp  81x^4 - 108x^3y + 54x^2y^2 -12xy^3 + y^4 \end{array}
+      </me>
+    </p>
+    <p>
+      We would like to stress that Pascal's Triangle is a very quick method to expand an
+      <em>entire</em> binomial.
+      If only a term
+      (or two or three)
+      is required,
+      then the Binomial Theorem is definitely the way to go.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="simpfactfirst">Exercises</xref>
+      - <xref ref="simpfactlast"></xref>,
+      simplify the given expression.
+      <ol cols="3">
+        <li xml:id="simpfactfirst">
+          <p>
+            <m>\left(3!\right)^2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{10!}{7!}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{7!}{2^3 3!}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{9!}{4! 3! 2!}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{(n+1)!}{n!}</m>, <m>n \geq 0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{(k-1)!}{(k+2)!}</m>, <m>k \geq 1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle{\binom{8}{3}}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\displaystyle{\binom{117}{0}}</m>
+          </p>
+        </li>
+        <li xml:id="simpfactlast">
+          <p>
+            <m>\displaystyle{\binom{n}{n-2}}</m>, <m>n \geq 2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="pascalfirst">Exercises</xref>
+      - <xref ref="pascallast"></xref>,
+      use Pascal's Triangle to expand the given binomial.
+      <ol>
+        <li xml:id="pascalfirst">
+          <p>
+            <m>(x+2)^5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(2x-1)^4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\frac{1}{3} x + y^2\right)^3</m>
+          </p>
+        </li>
+        <li xml:id="pascallast">
+          <p>
+            <m>\left(x - x^{-1} \right)^{4}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="pascalcomplexfirst">Exercises</xref>
+      - <xref ref="pascalcomplexlast"></xref>,
+      use Pascal's Triangle to simplify the given power of a complex number.
+      <ol cols="2">
+        <li xml:id="pascalcomplexfirst">
+          <p>
+            <m>(1+2i)^4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(-1 + i \sqrt{3}\right)^3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left(\dfrac{\sqrt{3}}{2} + \dfrac{1}{2}\, i\right)^3</m>
+          </p>
+        </li>
+        <li xml:id="pascalcomplexlast">
+          <p>
+            <m>\left(\dfrac{\sqrt{2}}{2} - \dfrac{\sqrt{2}}{2} \, i\right)^4</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="usebinomfirst">Exercises</xref>
+      - <xref ref="usenbinomlast"></xref>,
+      use the Binomial Theorem to find the indicated term.
+      <ol cols="2">
+        <li xml:id="usebinomfirst">
+          <p>
+            The term containing <m>x^3</m> in the expansion <m>(2x-y)^{5}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            The term containing <m>x^{117}</m> in the expansion <m>(x+2)^{118}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            The term containing <m>x^{\frac{7}{2}}</m> in the expansion <m>\left(\sqrt{x}-3\right)^8</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            The term containing <m>x^{-7}</m> in the expansion <m>\left(2x - x^{-3} \right)^{5}</m>
+          </p>
+        </li>
+        <li xml:id="usenbinomlast">
+          <p>
+            The constant term in the expansion <m>\left(x + x^{-1} \right)^{8}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Use the Prinicple of Mathematical Induction to prove <m>n! > 2^{n}</m> for <m>n \geq 4</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove <m>\displaystyle{\sum_{j=0}^{n} \binom{n}{j} = 2^{n}}</m> for all natural numbers <m>n</m>. (HINT: Use the Binomial Theorem!)
+          </p>
+        </li>
+        <li>
+          <p>
+            With the help of your classmates, research
+            <url href="http://en.wikipedia.org/wiki/Pascal's_triangle#Patterns_and_properties"><em>Patterns and Properties of Pascal's Triangle</em></url>.
+          </p>
+        </li>
+        <li>
+          <p>
+            You've just won three tickets to see the new film,
+            <sq><m>8.\overline{9}</m>.</sq> Five of your friends, Albert, Beth, Chuck, Dan,
+            and Eugene,
+            are interested in seeing it with you.
+            With the help of your classmates,
+            list all the possible ways to distribute your two extra tickets among your five friends.
+            Now suppose you've come down with the flu.
+            List all the different ways you can distribute the three tickets among these five friends.
+            How does this compare with the first list you made?
+            What does this have to do with the fact that <m>\binom{5}{2} = \binom{5}{3}</m>?
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="6">
+      <li>
+        <p>
+          <m>36</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>720</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>105</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>1260</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>n+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{1}{k(k+1)(k+2)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>56</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\frac{n(n-1)}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(x+2)^5 = x^5+10x^4+40x^3+80x^2+80x+32</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2x-1)^4 = 16x^4-32x^3+24x^2-8x+1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(\frac{1}{3} x + y^2\right)^3 = \frac{1}{27} x^3+\frac{1}{3}x^2y^2+xy^4+y^6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(x - x^{-1} \right)^{4} = x^4-4x^2+6-4x^{-2}+x^{-4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-7-24i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>i</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>80x^3y^2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>236x^{117}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-24x^{\frac{7}{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-40 x^{-7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>70</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

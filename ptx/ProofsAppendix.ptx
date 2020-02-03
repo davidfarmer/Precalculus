@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ProofsAppendix">
+  <title>Selected Proofs</title>
+  <xi:include  href="QDensity.ptx"/>
+  <xi:include  href="section17-3.ptx"/>
+  <xi:include  href="section17-3.ptx"/>
+  <xi:include  href="section17-4.ptx"/>
+</chapter>

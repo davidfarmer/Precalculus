@@ -1,0 +1,772 @@
+<section xml:id="LinSystems">
+  <title>Systems of Linear Equations: Gaussian Elimination</title>
+  <introduction>
+    <p>
+      Up until now,
+      when we concerned ourselves with solving different types of equations there was only one equation to solve at a time.
+      Given an equation <m>f(x) = g(x)</m>,
+      we could check our solutions geometrically by finding where the graphs of <m>y=f(x)</m> and <m>y=g(x)</m> intersect.
+      The <m>x</m>-coordinates of these intersection points correspond to the solutions to the equation <m>f(x) = g(x)</m>,
+      and the <m>y</m>-coordinates were largely ignored.
+      If we modify the problem and ask for the intersection points of the graphs of <m>y=f(x)</m> and <m>y=g(x)</m>,
+      where both the solution to <m>x</m> and <m>y</m> are of interest,
+      we have what is known as a <idx><h>system of equations</h><h>definition</h></idx>
+      <em>system of equations</em>, written as
+      <me>
+        \left\{ \begin{array}{rcl} y \amp  = \amp  f(x) \\ y \amp  = \amp  g(x) \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      The <sq>curly bracket</sq> notation means we are to find all <em>pairs</em>
+      of points <m>(x,y)</m> which satisfy
+      <em>both</em> equations.
+    </p>
+    <p>
+      We assume the reader has some experience with systems of equations from high school algebra - specifically systems of linear equations comprised of two equations and two unknowns.
+      We encourage the reader to read through <xref ref="AppLinearSystems">Section</xref>
+      before proceeding if for no other reason than to refresh themselves on the basic mechanics and vocabulary involved.
+      In order to move this section beyond a review of high school algebra,
+      we define what is meant by a linear equation in <m>n</m> variables.
+    </p>
+    <definition xml:id="lineareqnnvariables">
+      <statement>
+        <p>
+          A <idx><h>equation</h><h>linear of <m>n</m> variables</h></idx>
+              <idx><h>linear equation</h><h><m>n</m> variables</h></idx>
+          <term>linear equation in <term>n</term> variables</term>,
+          <m>x_{1}</m>, <m>x_{2}</m>,
+          <ellipsis/>, <m>x_{n}</m>, is an equation of the form:
+          <me>
+            a_{1} x_{1} + a_{2} x_{2} + \ldots + a_{n} x_{n} = c
+          </me>,
+          where <m>a_{1}</m>, <m>a_{2}</m>,
+          <ellipsis/> <m>a_{n}</m> and <m>c</m> are real numbers and at least one of <m>a_{1}</m>,
+          <m>a_{2}</m>, <ellipsis/>, <m>a_{n}</m> is nonzero.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Instead of using more familiar variables like <m>x</m>,
+      <m>y</m>,
+      and even <m>z</m> and/or <m>w</m> in <xref ref="lineareqnnvariables">Definition</xref>,
+      we use subscripts to distinguish the different variables.
+      We have no idea how many variables may be involved,
+      so we use numbers to distinguish them instead of letters.
+      (There is an endless supply of distinct numbers.)
+    </p>
+    <p>
+      As an example, the linear equation
+      <m>3x_{1} - x_{2} = 4</m> represents the same relationship between the variables <m>x_{1}</m> and <m>x_{2}</m> as the equation <m>3x-y=4</m> does between the variables <m>x</m> and <m>y</m>.
+      And, just as we cannot combine the terms in the expression <m>3x-y</m>,
+      we cannot combine the terms in the expression <m>3x_{1} - x_{2}</m>.
+    </p>
+    <p>
+      Coupling more than one linear equation in <m>n</m> variables results in a
+      <em>system of linear equations in
+      <em>n</em> variables</em>.
+          <idx><h>system of equations</h><h>linear ! <m>n</m> variables</h></idx>
+      When solving these systems,
+      it becomes increasingly important to keep track of what operations are performed to which equations and to develop a strategy based on the kind of manipulations
+      (substitution and elimination)
+      taught in high school.
+      To this end,
+      we first remind ourselves of the maneuvers which can be applied to a system of linear equations that result in an equivalent system.<fn>
+      That is, a system with the same solution set.
+      </fn>
+    </p>
+    <theorem xml:id="equationmoves">
+      <statement>
+        <p>
+          Given a system of equations,
+          the following moves will result in an equivalent system:
+          <ul>
+            <li>
+              <p>
+                Interchange the position of any two equations.
+              </p>
+            </li>
+            <li>
+              <p>
+                Replace an equation with a nonzero multiple of itself.<fn>
+                That is, an equation which results from multiplying both sides of the equation by the same nonzero number.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Replace an equation with itself plus a nonzero multiple of another equation.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The first move,
+      while it obviously admits an equivalent system, seems silly to state,
+      but our perception will change as we consider more equations and more variables in this,
+      and later sections.
+    </p>
+    <p>
+      Consider the system of equations
+      <me>
+        \left\{ \begin{array}{rcr} x-\frac{1}{3}y+\frac{1}{2}z  \amp  = \amp  1 \\ y - \frac{1}{2} z \amp  = \amp  4 \\ z \amp  = \amp  -1 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      We have <m>z = -1</m>, so we substitute this into the second equation
+      <m>y - \frac{1}{2} (-1) = 4</m> to obtain <m>y = \frac{7}{2}</m>.
+      Substituting <m>y = \frac{7}{2}</m> and <m>z=-1</m> into the first equation we get <m>x - \frac{1}{3}\left(\frac{7}{2}\right) + \frac{1}{2}(-1) = 1</m>.
+      This gives <m>x = \frac{8}{3}</m>.
+      The reader can verify that these values of <m>x</m>,
+      <m>y</m> and <m>z</m> satisfy all three original equations.
+    </p>
+    <p>
+      It is tempting for us to write the solution to this system by extending the usual <m>(x,y)</m> notation to <m>(x,y,z)</m> and list our solution as <m>\left(\frac{8}{3},\frac{7}{2},-1\right)</m>.
+      The question quickly becomes what does an <sq>ordered triple</sq> like <m>\left(\frac{8}{3},\frac{7}{2},-1\right)</m> represent?
+      Just as ordered pairs are used to locate points on the two-dimensional plane,
+      ordered triples can be used to locate points in space.<fn>
+      You were asked to think about this in <xref ref="orderedtripleexercise">Exercise</xref>
+      in <xref ref="AppCartesianPlane">Section</xref>.
+      </fn>
+    </p>
+    <p>
+      Moreover, just as equations involving the variables <m>x</m> and <m>y</m> describe graphs of one-dimensional lines and curves in the two-dimensional plane,
+      equations involving variables <m>x</m>, <m>y</m>,
+      and <m>z</m> describe objects called <em>surfaces</em>
+      in three-dimensional space.
+      Each of the equations in the above system can be visualized as a plane situated in three-space.
+      Geometrically, the system is trying to find the intersection,
+      or common point, of all three planes.
+      If you imagine three sheets of notebook paper each representing a portion of these planes,
+      you will start to see the complexities involved in how three such planes can intersect.
+    </p>
+    <p>
+      Below is a sketch of the three planes.
+      It turns out that any two of these planes intersect in a line,<fn>
+      These lines are described by <sq>parametric solutions</sq> to the systems formed by taking any two of these equations by themselves.
+      (Again, see <xref ref="AppLinearSystems">Section</xref>.)
+      We'll see an example of this sort of solution in this section shortly.
+      </fn> so our intersection point is where all three of these lines meet.
+    </p>
+    <p>
+      <image width="56%" source="./LinSystemsGraphics/3planes01.jpg"/>
+    </p>
+    <p>
+      Since the geometry for equations involving more than two variables is complicated,
+      we will focus our efforts on the algebra.
+      Returning to the system
+      <me>
+        \left\{ \begin{array}{rcr} x-\frac{1}{3}y+\frac{1}{2}z  \amp  = \amp  1 \\ y - \frac{1}{2} z \amp  = \amp  4 \\ z \amp  = \amp  -1 \end{array}  \right.
+      </me>
+      we note the reason it was so easy to solve is because of its structure.
+      The third equation is solved for <m>z</m> and the second equation involves only <m>y</m> and <m>z</m>.
+      Since the coefficient of <m>y</m> is <m>1</m>,
+      it makes it easy to solve for <m>y</m> using our known value for <m>z</m>.
+      Lastly, the coefficient of <m>x</m> in the first equation is <m>1</m> making it easy to substitute the known values of <m>y</m> and <m>z</m> and then solve for <m>x</m>.
+    </p>
+    <p>
+      We formalize this pattern below for the most general systems of linear equations.
+      Again, we use subscripted variables to describe the general case.
+      The variable with the smallest subscript in a given equation is typically called the <idx><h>system of equations</h><h>leading variable</h></idx>
+      <em>leading variable</em> of that equation.
+    </p>
+    <definition xml:id="systemtriangularform">
+      <statement>
+        <p>
+          A system of linear equations with variables <m>x_{1}</m>,
+          <m>x_{2}</m>,
+          <ellipsis/> <m>x_{n}</m> is said to be in <idx><h>system of equations</h><h>triangular form</h></idx>
+              <idx><h>triangular form</h></idx>
+          <term>triangular form</term> provided all of the following conditions hold:
+          <ol>
+            <li>
+              <p>
+                The subscripts of the variables in each equation are always increasing from left to right.
+              </p>
+            </li>
+            <li>
+              <p>
+                The leading variable in each equation has coefficient <m>1</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The subscript on the leading variable in a given equation is greater than the subscript on the leading variable in the equation above it.
+              </p>
+            </li>
+            <li>
+              <p>
+                Any equation without variables<fn>
+                necessarily an identity or contradiction
+                </fn> cannot be placed above an equation with variables.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In our previous system,
+      if we make the obvious choices <m>x = x_{1}</m>, <m>y = x_{2}</m>,
+      and <m>z = x_{3}</m>, we see that the system is in triangular form.<fn>
+      If letters are used instead of subscripted variables,
+      <xref ref="systemtriangularform">Definition</xref>
+      can be suitably modified using alphabetical order of the variables instead of numerical order on the subscripts of the variables.
+      </fn> An example of a more complicated system in triangular form is
+      <me>
+        \left\{ \begin{array}{rcr} x_{1} - 4x_{3} + x_{4} - x_{6} \amp  = \amp  6 \\ x_{2} + 2x_{3} \amp  = \amp  1 \\ x_{4} + 3x_{5} - x_{6} \amp  = \amp  8 \\ x_{5} + 9x_{6} \amp  = \amp  10 \end{array}  \right.
+      </me>
+    </p>
+    <p>
+      Our goal henceforth will be to transform a given system of linear equations into triangular form using the moves in <xref ref="equationmoves">Theorem</xref>.
+    </p>
+    <example xml:id="GaussEqnEx">
+      <statement>
+        <p>
+          Use <xref ref="equationmoves">Theorem</xref>
+          to put the following systems into triangular form and then solve the system if possible.
+          Classify each system as consistent independent,
+          consistent dependent, or inconsistent.<fn>
+          See <xref ref="AppLinearSystems">Section</xref> for a review of these terms.
+          </fn>
+          <ol>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} 3x-y+z \amp = \amp 3 \\ 2x-4y+3z \amp = \amp 16 \\ x-y+z \amp = \amp 5 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} 2x+3y-z \amp = \amp 1 \\ 10x-z \amp = \amp 2 \\ 4x-9y+2z \amp = \amp 5 \end{array} \right.</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\left\{ \begin{array}{rcr} 3x_{1} +x_{2} + x_{4} \amp = \amp 6 \\ 2x_{1} + x_{2} -x_{3} \amp = \amp 4 \\ x_{2} -3x_{3} -2x_{4} \amp = \amp 0 \end{array} \right.</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For definitiveness,
+          we label the topmost equation in each system <m>E1</m>,
+          the equation beneath that <m>E2</m>, and so forth.
+          <ol>
+            <li>
+              <p>
+                We put the system in triangular form using an algorithm known as <idx><h>system of equations</h><h>Gaussian Elimination</h></idx>
+                  <idx><h>Gaussian Elimination</h></idx> <em>Gaussian Elimination</em>.
+                Starting with <m>x</m>,
+                we transform the system so that conditions 2 and 3 in <xref ref="systemtriangularform">Definition</xref> are satisfied.
+                Then we move on to the next variable,
+                in this case <m>y</m>, and repeat.
+                Since the variables in all of the equations have a consistent ordering from left to right,
+                our first move is to get an <m>x</m> in <m>E1</m>'s spot with a coefficient of <m>1</m>.
+                While there are many ways to do this,
+                the easiest is to apply the first move listed in <xref ref="equationmoves">Theorem</xref>
+                and interchange <m>E1</m> and <m>E3</m>.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  3x-y+z \amp  = \amp  3 \\ (E2)  \amp  2x-4y+3z \amp  = \amp  16 \\ (E3)  \amp   x-y+z \amp  = \amp  5 \end{array}  \right.  \amp \xrightarrow{\text{ Switch \(E1\) and \(E3\) } }  \amp  \left\{ \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  2x-4y+3z \amp  = \amp  16 \\ (E3) \amp  3x-y+z \amp  = \amp  3 \end{array}  \right. \end{array}
+                </me>
+                To satisfy <xref ref="systemtriangularform">Definition</xref>,
+                we need to eliminate the <m>x</m>'s from <m>E2</m> and <m>E3</m>.
+                We accomplish this by replacing each of them with a sum of themselves and a multiple of <m>E1</m>.
+                To eliminate the <m>x</m> from <m>E2</m>,
+                we need to multiply <m>E1</m> by <m>-2</m> then add;
+                to eliminate the <m>x</m> from <m>E3</m>,
+                we need to multiply <m>E1</m> by <m>-3</m> then add.
+                Applying the third move listed in <xref ref="equationmoves">Theorem</xref> twice, we get
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  2x-4y+3z \amp  = \amp  16 \\ (E3) \amp  3x-y+z \amp  = \amp  3 \end{array}  \right.  \amp  \xrightarrow[\text{ Replace \(E3\) with \(-3E1 + E3\) } ]{\text{ Replace \(E2\) with \(-2E1 + E2\) } }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  -2y+z \amp  = \amp  6 \\ (E3) \amp  2y-2z \amp  = \amp  -12 \end{array}  \right. \end{array}
+                </me>
+                Now we enforce the conditions stated in <xref ref="systemtriangularform">Definition</xref> for the variable <m>y</m>.
+                To that end we need to get the coefficient of <m>y</m> in <m>E2</m> equal to <m>1</m>.
+                We apply the second move listed in <xref ref="equationmoves">Theorem</xref>
+                and replace <m>E2</m> with itself times <m>-\frac{1}{2}</m>.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  -2y+z \amp  = \amp  6 \\ (E3) \amp  2y-2z \amp  = \amp  -12 \end{array}  \right.  \amp \xrightarrow{\text{Replace \(E2\) with \(-\frac{1}{2}E2\)} }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  y - \frac{1}{2}z \amp  = \amp  -3\\ (E3) \amp  2y-2z \amp  = \amp  -12 \end{array}  \right. \end{array}
+                </me>
+                To eliminate the <m>y</m> in <m>E3</m>, we add <m>-2E2</m> to it.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  y - \frac{1}{2}z \amp  = \amp  -3\\ (E3) \amp  2y-2z \amp  = \amp  -12 \end{array}  \right. \amp \xrightarrow{\text{ Replace \(E3\) with \(-2E2 + E3\) } }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  y - \frac{1}{2}z \amp  = \amp  -3\\ (E3) \amp  -z \amp  = \amp  -6 \end{array}  \right. \end{array}
+                </me>
+                Finally, we apply the second move from  <xref ref="equationmoves">Theorem</xref>
+                one last time and multiply <m>E3</m> by <m>-1</m> to satisfy the conditions of <xref ref="systemtriangularform">Definition</xref> for the variable <m>z</m>.
+                <me>
+                  \begin{array}{ccc}   \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  y - \frac{1}{2}z \amp  = \amp  -3\\ (E3) \amp  -z \amp  = \amp  -6 \end{array}  \right.  \amp \xrightarrow{\text{ Replace \(E3\) with \(-1E3\) } }  \amp \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  y - \frac{1}{2}z \amp  = \amp  -3\\ (E3) \amp  z \amp  = \amp  6 \end{array}  \right. \end{array}
+                </me>
+                Substituting  <m>z=6</m> into <m>E2</m> gives
+                <m>y - 3 = -3</m> so that <m>y = 0</m>.
+                With <m>y=0</m> and <m>z=6</m>,
+                <m>E1</m> becomes <m>x - 0 + 6 = 5</m>, or <m>x = -1</m>.
+                Hence, our solution is <m>(-1,0,6)</m>.
+                We leave it to the reader to check that substituting the respective values for <m>x</m>,
+                <m>y</m>,
+                and <m>z</m> into the original system results in three identities.
+                Since there is a solution to the system,
+                the system is classified as consistent.
+                Since there are no free variables,<fn>
+                Again, see <xref ref="AppLinearSystems">Section</xref>
+                for a review of this concept, if needed.
+                </fn>  the system is classified as  independent.
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as above,
+                our first step is to get an equation with <m>x</m> in the <m>E1</m> position with <m>1</m> as its coefficient.
+                Since there is no easy fix, we multiply <m>E1</m> by <m>\frac{1}{2}</m>.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  2x+3y-z \amp  = \amp  1 \\ (E2) \amp  10x-z \amp  = \amp  2 \\ (E3) \amp   4x-9y+2z \amp  = \amp  5 \end{array}  \right.  \amp \xrightarrow{\text{Replace \(E1\) with \(\frac{1}{2}E1\)} }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  10x-z \amp  = \amp  2 \\ (E3) \amp   4x-9y+2z \amp  = \amp  5 \end{array}  \right. \end{array}
+                </me>
+                Now it's time to take care of the <m>x</m>'s in <m>E2</m> and <m>E3</m>.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  10x-z \amp  = \amp  2 \\ (E3) \amp   4x-9y+2z \amp  = \amp  5 \end{array}  \right. \amp \xrightarrow[\text{ Replace \(E3\) with \(-4E1 + E3\) } ]{\text{ Replace \(E2\) with \(-10E1 + E2\) } }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  -15y+4z \amp  = \amp  -3 \\ (E3) \amp  -15y+4z \amp  = \amp  3 \end{array}  \right. \end{array}
+                </me>
+                Our next step is to get the coefficient of <m>y</m> in <m>E2</m> equal to <m>1</m>.
+                To that end, we have
+                <me>
+                  \begin{array}{ccc} \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  -15y+4z \amp  = \amp  -3 \\ (E3) \amp  -15y+4z \amp  = \amp  3 \end{array}  \right.  \amp \xrightarrow{\text{Replace \(E2\) with \(-\frac{1}{15}E2\)} }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  y - \frac{4}{15}z \amp  = \amp  \frac{1}{5} \\ (E3) \amp  -15y+4z \amp  = \amp  3 \end{array}  \right. \end{array}
+                </me>
+                Finally, we rid <m>E3</m> of <m>y</m>.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  y - \frac{4}{15}z \amp  = \amp  \frac{1}{5} \\ (E3) \amp  -15y+4z \amp  = \amp  3 \end{array}  \right. \amp \xrightarrow{\text{ Replace \(E3\) with \(15E2 + E3\) } }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x-y+z \amp  = \amp  5 \\ (E2) \amp  y - \frac{1}{2}z \amp  = \amp  -3\\ (E3) \amp  0 \amp  = \amp  6 \end{array}  \right. \end{array}
+                </me>
+                The last equation, <m>0=6</m>,
+                is a contradiction so the system has no solution.
+                According to <xref ref="equationmoves">Theorem</xref>,
+                since this system has no solutions,
+                neither does the original, thus we have an inconsistent system.
+              </p>
+            </li>
+            <li>
+              <p>
+                For our last system, we begin by multiplying <m>E1</m> by
+                <m>\frac{1}{3}</m> to get a coefficient of <m>1</m> on  <m>x_{1}</m>.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  3x_{1} +x_{2} + x_{4} \amp  = \amp  6 \\ (E2) \amp  2x_{1} + x_{2} -x_{3}  \amp  = \amp  4  \\ (E3) \amp   x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \end{array}  \right.  \amp \xrightarrow{\text{Replace \(E1\) with \(\frac{1}{3}E1\)} }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp  2x_{1} + x_{2} -x_{3}  \amp  = \amp  4  \\ (E3) \amp   x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \end{array}  \right. \end{array}
+                </me>
+                Next we eliminate <m>x_{1}</m> from <m>E2</m>
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp  2x_{1} + x_{2} -x_{3}  \amp  = \amp  4  \\ (E3) \amp   x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \end{array}  \right.  \amp  \xrightarrow[\text{ with \(-2E1 + E2\) } ]{\text{ Replace \(E2\) } } \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp         \frac{1}{3} x_{2} -x_{3} -\frac{2}{3}x_{4} \amp  = \amp  0  \\ (E3) \amp   x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \end{array}  \right. \end{array}
+                </me>
+                We switch <m>E2</m> and <m>E3</m> to get a coefficient of <m>1</m> for <m>x_{2}</m>.
+                <me>
+                  \begin{array}{ccc}  \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp         \frac{1}{3} x_{2} -x_{3} -\frac{2}{3}x_{4} \amp  = \amp  0  \\ (E3) \amp   x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \end{array}  \right.  \amp \xrightarrow{\text{ Switch \(E2\) and \(E3\) } }  \amp \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp     x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \\ (E3) \amp   \frac{1}{3} x_{2} -x_{3} -\frac{2}{3}x_{4} \amp  = \amp  0 \end{array}  \right. \end{array}
+                </me>
+                Finally, we eliminate <m>x_{2}</m> in <m>E3</m>.
+                <me>
+                  \begin{array}{ccc} \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp     x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \\ (E3) \amp   \frac{1}{3} x_{2} -x_{3} -\frac{2}{3}x_{4} \amp  = \amp  0 \end{array}  \right.  \amp  \xrightarrow[\text{with \(-\frac{1}{3}E2 + E3\)} ]{\text{ Replace \(E3\) }  }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x_{1} + \frac{1}{3}x_{2} + \frac{1}{3}x_{4} \amp  = \amp  2 \\ (E2) \amp     x_{2} -3x_{3} -2x_{4} \amp  = \amp  0 \\ (E3) \amp  0 \amp  = \amp  0 \end{array}  \right. \end{array}
+                </me>
+                Equation <m>E3</m> reduces to <m>0=0</m>,which is always true.
+                Since we have no equations with <m>x_{3}</m> or <m>x_{4}</m> as leading variables,
+                they are both <sq>free</sq> variables so we have a consistent dependent system.
+                We <sq>parametrize</sq> the solution set by letting
+                <m>x_{3} = s</m> and <m>x_{4} = t</m>.
+                From <m>E2</m>, we get <m>x_{2} =  3s + 2t</m>.
+                Substituting this and <m>x_{4} = t</m> into <m>E1</m>,
+                we have <m>x_{1} + \frac{1}{3}\left( 3s+2t \right) + \frac{1}{3}t = 2</m> which gives <m>x_{1} = 2 - s - t</m>.
+                Our solution is the set <m>\{ (2-s-t,2s+3t,s,t) \, | \, -\infty \lt  s, t \lt  \infty\}</m>.<fn>
+                Here, any choice of <m>s</m> and <m>t</m> determines a point in <m>4</m>-dimensional space.
+                Yeah, we have trouble visualizing that, too.
+                </fn>  We leave it to the reader to verify that the substitutions
+                <m>x_{1} = 2-s-t</m>, <m>x_{2} = 3s+2t</m>,
+                <m>x_{3} = s</m> and <m>x_{4} = t</m> satisfy the equations in the original system regardless of the choices made for the parameters <m>s</m> and <m>t</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Like all algorithms, Gaussian Elimination has the advantage of always producing what we need,
+      but it can also be inefficient at times.
+      For example,
+      when solving the second system in <xref ref="GaussEqnEx">Example</xref>,
+      it is clear after we eliminated the <m>x</m>'s in the second step to get the system
+      <me>
+        \left\{ \begin{array}{lrcr} (E1) \amp  x+\frac{3}{2}y-\frac{1}{2}z \amp  = \amp  \frac{1}{2} \\ (E2) \amp  -15y+4z \amp  = \amp  -3 \\ (E3) \amp  -15y+4z \amp  = \amp  3 \end{array}   \right.
+      </me>
+      that equations <m>E2</m> and <m>E3</m>,
+      taken together, produce a contradiction.
+      (We have identical left hand sides and different right hand sides.)
+      However, the algorithm takes an additional two steps to reach this conclusion.
+    </p>
+    <p>
+      We also note that substitution in Gaussian Elimination is delayed until all the elimination is done,
+      whence the name <idx><h>system of equations</h><h>back-substitution</h></idx>
+          <idx><h>back substitution</h></idx>
+      <em>back-substitution</em>.
+      This may also be inefficient in many cases.
+    </p>
+    <p>
+      Lastly, we note that the last system in <xref ref="GaussEqnEx">Example</xref> is underdetermined,<fn>
+      Recall this means we have fewer equations than unknowns.
+      </fn> and as it is consistent,
+      we necessarily have free variables in our answer.
+      We close this section with a standard <sq>mixture</sq> type application of systems of linear equations which features an application of a consistent dependent system.
+    </p>
+    <example xml:id="lucasmixex">
+      <statement>
+        <p>
+          Lucas needs to create a <m>500</m> milliliters (mL) of a <m>40 \%</m> acid solution.
+          He has stock solutions of <m>30 \%</m> and <m>90 \%</m> acid as well as all of the distilled water he wants.
+          Set-up and solve a system of linear equations which determines all of the possible combinations of the stock solutions and water which would produce the required solution.
+        </p>
+        <p>
+          <em>Solution.</em> We are after three unknowns, the amount
+          (in mL)
+          of the <m>30 \%</m> stock solution
+          (which we'll call <m>x</m>),
+          the amount (in mL) of the <m>90 \%</m> stock solution
+          (which we'll call <m>y</m>)
+          and the amount
+          (in mL)
+          of water
+          (which we'll call <m>w</m>).
+          We now need to determine some relationships between these variables.
+        </p>
+        <p>
+          Our goal is to produce <m>500</m> milliliters of a <m>40 \%</m> acid solution.
+          This product has two defining characteristics.
+          First, it must be <m>500</m> mL; second,
+          it must be <m>40 \%</m> acid.
+          We take each of these qualities in turn.
+        </p>
+        <p>
+          First, the total volume of <m>500</m> mL must be the sum of the volumes of the two stock solutions and the water:
+          <me>
+            \mbox{amount of  \(30 \%\) stock solution}  + \mbox{amount of  \(90 \%\) stock solution}  + \mbox{amount of water}  = 500 \, \mbox{mL}
+          </me>
+        </p>
+        <p>
+          Using our defined variables, this reduces to <m>x+y+w = 500</m>.
+        </p>
+        <p>
+          Next, we need to make sure the final solution is <m>40 \%</m> acid.
+          Since water contains no acid,
+          the acid will come from the stock solutions only.
+          We find <m>40 \%</m> of <m>500</m> mL to be <m>200</m> mL which means the final solution must contain <m>200</m> mL of acid.
+          We have
+          <me>
+            \mbox{amount of  acid in \(30 \%\) stock solution}  + \mbox{amount of acid \(90 \%\) stock solution}   = 200 \, \mbox{mL}
+          </me>
+        </p>
+        <p>
+          The amount of acid in <m>x</m> mL of <m>30 \%</m> stock is <m>0.30x</m> and the amount of acid in <m>y</m> mL of <m>90 \%</m> solution is <m>0.90y</m>.
+          We have <m>0.30x + 0.90y = 200</m>.
+          Converting to fractions,<fn>
+          We do this only because we believe students can use all of the practice with fractions they can get!
+          </fn> our system of equations becomes
+          <me>
+            \left\{ \begin{array}{rcl} x+y+w \amp  = \amp  500 \\ \frac{3}{10}x + \frac{9}{10}y \amp  = \amp  200 \end{array}  \right.
+          </me>
+        </p>
+        <p>
+          We first eliminate the <m>x</m> from the second equation
+          <me>
+            \begin{array}{ccc} \left\{  \begin{array}{lrcr}  (E1) \amp  x+y+w \amp  = \amp  500 \\ (E2) \amp  \frac{3}{10}x + \frac{9}{10}y \amp  = \amp  200 \end{array}  \right.  \amp  \xrightarrow{\text{Replace \(E2\) with \(-\frac{3}{10}E1 + E2\)} }  \amp  \left\{  \begin{array}{lrcr}  (E1) \amp  x+y+w \amp  = \amp  500 \\ (E2) \amp   \frac{3}{5}y - \frac{3}{10}w \amp  = \amp  50 \end{array}  \right. \end{array}
+          </me>
+        </p>
+        <p>
+          Next, we get a coefficient of <m>1</m> on the leading variable in <m>E2</m>
+          <me>
+            \begin{array}{ccc}   \left\{  \begin{array}{lrcr}  (E1) \amp  x+y+w \amp  = \amp  500 \\ (E2) \amp   \frac{3}{5}y - \frac{3}{10}w \amp  = \amp  50 \end{array}  \right.  \amp  \xrightarrow{\text{Replace \(E2\) with \(\frac{5}{3}E2\)} }  \amp   \left\{  \begin{array}{lrcr}  (E1) \amp  x+y+w \amp  = \amp  500 \\ (E2) \amp   y - \frac{1}{2}w \amp  = \amp  \frac{250}{3} \end{array}  \right. \end{array}
+          </me>
+        </p>
+        <p>
+          Notice that we have no equation to determine <m>w</m>,
+          and as such, <m>w</m> is free.
+          Setting <m>w = t</m> in <m>E2</m>,
+          we get <m>y = \frac{1}{2} t + \frac{250}{3}</m>.
+          Substituting for <m>w</m> and <m>y</m> in <m>E1</m> gives
+          <m>x + \left(\frac{1}{2} t + \frac{250}{3}\right) + t = 500</m> so that <m>x = -\frac{3}{2} t + \frac{1250}{3}</m>.
+        </p>
+        <p>
+          This system is consistent,
+          dependent and its solution set is <m>\{ \left(-\frac{3}{2} t + \frac{1250}{3}, \frac{1}{2} t + \frac{250}{3}, t\right) \, | \, - \infty \lt t \lt \infty\}</m>.
+        </p>
+        <p>
+          While this answer checks algebraically,
+          we have neglected to take into account that <m>x</m>, <m>y</m> and <m>w</m>,
+          being amounts of acid and water, need to be nonnegative.
+          That is, <m>x \geq 0</m>, <m>y \geq 0</m> and <m>w \geq 0</m>.
+        </p>
+        <p>
+          The constraint <m>x \geq 0</m> gives us <m>-\frac{3}{2} t + \frac{1250}{3} \geq 0</m>,
+          or <m>t \leq \frac{2500}{9}</m>.
+          From <m>y \geq 0</m>, we get
+          <m>\frac{1}{2} t + \frac{250}{3} \geq 0</m> or <m>t \geq -\frac{500}{3}</m>.
+          The condition <m>z \geq 0</m> yields <m>t \geq 0</m>,
+          and we see that when we take the set theoretic intersection of these intervals,
+          we get <m>0 \leq t \leq \frac{2500}{9}</m>.
+          This gives our final answer is <m>\{ \left(-\frac{3}{2} t + \frac{1250}{3}, \frac{1}{2} t + \frac{250}{3}, t\right) \, | \,0 \leq t \leq \frac{2500}{9} \}</m>.
+        </p>
+        <p>
+          Of what practical use is our answer?
+          Suppose there is only <m>100</m> mL of the <m>90 \%</m> solution remaining and it is due to expire.
+          Can we use all of it to make our required solution?
+          We would have <m>y = 100</m> so that <m>\frac{1}{2} t + \frac{250}{3} = 100</m>,
+          and we get <m>t = \frac{100}{3}</m>.
+          This means the amount of <m>30 \%</m> solution required is
+          <m>x = -\frac{3}{2} t + \frac{1250}{3} = -\frac{3}{2} \left(\frac{100}{3}\right) + \frac{1250}{3} = \frac{1100}{3}</m> mL, and for the water,
+          <m>w = t = \frac{100}{3}</m> mL. The reader is invited to check that mixing these three amounts of our constituent solutions produces the required <m>40 \%</m> acid mix.
+        </p>
+      </statement>
+    </example>
+  </introduction>
+  <subsection xml:id="ExercisesforLinSystems">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="triangfirst">Exercises</xref>
+      - <xref ref="trianglast"></xref>,
+      put each system of linear equations into triangular form and solve the system if possible.
+      Classify each system as consistent independent,
+      consistent dependent, or inconsistent.
+      <ol cols="2">
+        <li xml:id="triangfirst">
+          <p>
+            <m>\left\{ \begin{array}{rcr} -5x + y \amp = \amp 17 \\ x + y \amp = \amp 5 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x + y + z \amp = \amp 3 \\ 2x - y + z \amp = \amp 0 \\ -3x + 5y + 7z \amp = \amp 7 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="dependentsystemmuliple">
+          <p>
+            <m>\left\{ \begin{array}{rcr} 4x - y + z \amp = \amp 5 \\ 2y + 6z \amp = \amp 30 \\ x + z \amp = \amp 5 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 4x - y + z \amp = \amp 5 \\ 2y + 6z \amp = \amp 30 \\ x + z \amp = \amp 6 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x + y + z \amp = \amp -17 \\ y - 3z \amp = \amp 0 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-2y+3z \amp = \amp 7 \\ -3x+y+2z \amp = \amp -5 \\ 2x+2y+z \amp = \amp 3 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 3x-2y+z \amp = \amp -5 \\ x+3y-z \amp = \amp 12 \\ x+y+2z \amp = \amp 0 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 2x-y+z\amp = \amp -1 \\ 4x+3y+5z \amp = \amp 1 \\ 5y+3z \amp = \amp 4 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-y+z \amp = \amp -4 \\ -3x+2y+4z \amp = \amp -5 \\ x-5y+2z \amp = \amp -18 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 2x-4y+z \amp = \amp -7 \\ x-2y+2z \amp = \amp -2 \\ -x+4y-2z \amp = \amp 3 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 2x-y+z \amp = \amp 1 \\ 2x+2y-z \amp = \amp 1 \\ 3x+6y+4z \amp = \amp 9 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-3y-4z \amp = \amp 3 \\ 3x+4y-z \amp = \amp 13 \\ 2x-19y-19z \amp = \amp 2 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x+y+z \amp = \amp 4 \\ 2x-4y-z\amp = \amp -1 \\ x-y \amp = \amp 2 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-y+z \amp = \amp 8 \\ 3x+3y-9z \amp = \amp -6 \\ 7x-2y+5z \amp = \amp 39 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 2x-3y+z \amp = \amp -1 \\ 4x-4y+4z \amp = \amp -13 \\ 6x-5y+7z \amp = \amp -25 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} 2x_{1} + x_{2} - 12x_{3} - x_{4} \amp = \amp 16 \\ -x_{1} + x_{2} + 12x_{3} - 4x_{4} \amp = \amp -5 \\ 3x_{1} + 2x_{2} - 16x_{3} - 3x_{4} \amp = \amp 25 \\ x_{1} + 2x_{2} - 5x_{4} \amp = \amp 11 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x_{1} - x_{3} \amp = \amp -2 \\ 2x_{2} - x_{4} \amp = \amp 0 \\ x_{1} - 2x_{2} + x_{3} \amp = \amp 0 \\ -x_{3} + x_{4} \amp = \amp 1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li xml:id="trianglast">
+          <p>
+            <m>\left\{ \begin{array}{rcr} x_{1} - x_{2} - 5x_{3} + 3x_{4} \amp = \amp -1 \\ x_{1} + x_{2} + 5x_{3} - 3x_{4} \amp = \amp 0 \\ x_{2} + 5x_{3} - 3x_{4} \amp = \amp 1 \\ x_{1} - 2x_{2} - 10x_{3} + 6x_{4} \amp = \amp -1 \end{array} \right.</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Find two other forms of the parametric solution to <xref ref="dependentsystemmuliple">Exercise</xref>
+            above by reorganizing the equations so that <m>x</m> or <m>y</m> can be the free variable.
+          </p>
+        </li>
+        <li xml:id="herbalteablend">
+          <p>
+            At The Crispy Critter's Head Shop and Patchouli Emporium along with their dried up weeds,
+            sunflower seeds and astrological postcards they sell an herbal tea blend.
+            By weight, Type I herbal tea is 30% peppermint, 40% rose hips and 30% chamomile, Type II has percents 40%, 20% and 40%, respectively,
+            and Type III has percents 35%, 30% and 35%, respectively.
+            How much of each Type of tea is needed to make 2 pounds of a new blend of tea that is equal parts peppermint,
+            rose hips and chamomile?
+          </p>
+        </li>
+        <li>
+          <p>
+            Discuss with your classmates how you would approach <xref ref="herbalteablend">Exercise</xref>
+            above if they needed to use up a pound of Type I tea to make room on the shelf for a new canister.
+          </p>
+        </li>
+        <li>
+          <p>
+            If you were to try to make 100 mL of a <m>60\%</m> acid solution using stock solutions at <m>20\%</m> and <m>40\%</m>,
+            respectively,
+            what would the triangular form of the resulting system look like?
+            Explain.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <p>
+      Because triangular form is not unique,
+      we give only one possible answer to that part of the question.
+      Yours may be different and still be correct.
+      <ol>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x + y \amp = \amp 5 \\ y \amp = \amp 7 \end{array} \right.</m> Consistent independent Solution <m>(-2, 7)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x - \frac{5}{3}y - \frac{7}{3}z \amp = \amp -\frac{7}{3} \\ y + \frac{5}{4}z \amp = \amp 2 \\ z \amp = \amp 0 \end{array} \right.</m> Consistent independent Solution <m>(1, 2, 0)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x - \frac{1}{4}y + \frac{1}{4}z \amp = \amp \frac{5}{4} \\ y + 3z \amp = \amp 15 \\ 0 \amp = \amp 0 \end{array} \right.</m> Consistent dependent Solution
+            <m>(-t + 5, -3t + 15,
+            t)</m> for all real numbers <m>t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x - \frac{1}{4}y + \frac{1}{4}z \amp = \amp \frac{5}{4} \\ y + 3z \amp = \amp 15 \\ 0 \amp = \amp 1 \end{array} \right.</m> Inconsistent No solution
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x + y + z \amp = \amp -17 \\ y - 3z \amp = \amp 0 \end{array} \right.</m> Consistent dependent Solution
+            <m>(-4t - 17, 3t,
+            t)</m> for all real numbers <m>t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-2y+3z \amp = \amp 7 \\ y - \frac{11}{5}z \amp = \amp -\frac{16}{5} \\ z \amp = \amp 1 \end{array} \right.</m> Consistent independent Solution <m>(2,-1,1)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x+y+2z \amp = \amp 0 \\ y - \frac{3}{2}z \amp = \amp 6 \\ z \amp = \amp -2 \end{array} \right.</m> Consistent independent Solution <m>(1,3,-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x - \frac{1}{2} y + \frac{1}{2} z \amp = \amp -\frac{1}{2} \\ y + \frac{3}{5} z \amp = \amp \frac{3}{5} \\ 0 \amp = \amp 1 \end{array} \right.</m> Inconsistent no solution
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-y+z \amp = \amp -4 \\ y - 7z \amp = \amp 17 \\ z \amp = \amp -2 \end{array} \right.</m> Consistent independent Solution <m>(1,3,-2)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-2y+2z \amp = \amp -2 \\ y \amp = \amp \frac{1}{2} \\ z \amp = \amp 1 \end{array} \right.</m> Consistent independent Solution <m>\left(-3,\frac{1}{2},1\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-\frac{1}{2} y+\frac{1}{2} z \amp = \amp \frac{1}{2} \\ y - \frac{2}{3} z \amp = \amp 0 \\ z \amp = \amp 1 \end{array} \right.</m> Consistent independent Solution <m>\left(\frac{1}{3},\frac{2}{3},1\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x-3y-4z \amp = \amp 3 \\ y + \frac{11}{13} z \amp = \amp \frac{4}{13} \\ 0 \amp = \amp 0 \end{array} \right.</m> Consistent dependent Solution
+            <m>\left(\frac{19}{13} t + \frac{51}{13},-\frac{11}{13} t+\frac{4}{13},t\right)</m> for all real numbers <m>t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x+y+z \amp = \amp 4 \\ y + \frac{1}{2} z \amp = \amp \frac{3}{2} \\ 0 \amp = \amp 1 \end{array} \right.</m> Inconsistent no solution
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x- y + z \amp = \amp 8 \\ y -2z \amp = \amp -5 \\ z \amp = \amp 1 \end{array} \right.</m> Consistent independent Solution <m>\left(4,-3,1\right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x- \frac{3}{2} y + \frac{1}{2} z \amp = \amp -\frac{1}{2} \\ y + z \amp = \amp -\frac{11}{2} \\ 0 \amp = \amp 0 \end{array} \right.</m> Consistent dependent Solution
+            <m>\left(-2t - \frac{35}{4},-t - \frac{11}{2},t\right)</m> for all real numbers <m>t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x_{1} + \frac{2}{3}x_{2} - \frac{16}{3}x_{3} - x_{4} \amp = \amp \frac{25}{3} \\ x_{2} + 4x_{3} - 3x_{4} \amp = \amp 2 \\ 0 \amp = \amp 0 \\ 0 \amp = \amp 0 \end{array} \right.</m> Consistent dependent Solution
+            <m>(8s - t + 7, -4s + 3t + 2, s, t)</m> for all real numbers <m>s</m> and <m>t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x_{1} - x_{3} \amp = \amp -2 \\ x_{2} - \frac{1}{2}x_{4} \amp = \amp 0 \\ x_{3} - \frac{1}{2} x_{4} \amp = \amp 1 \\ x_{4} \amp = \amp 4 \end{array} \right.</m> Consistent independent Solution <m>(1, 2, 3, 4)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\left\{ \begin{array}{rcr} x_{1} - x_{2} - 5x_{3} + 3x_{4} \amp = \amp -1 \\ x_{2} + 5x_{3} - 3x_{4} \amp = \amp \frac{1}{2} \\ 0 \amp = \amp 1 \\ 0 \amp = \amp 0 \end{array} \right.</m> Inconsistent No solution
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>x</m> is the free variable then the solution is
+            <m>(t, 3t, -t + 5)</m> and if <m>y</m> is the free variable then the solution is <m>\left(\frac{1}{3}t, t, -\frac{1}{3}t + 5\right)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{4}{3}- \frac{1}{2}t</m> pounds of Type I,
+            <m>\frac{2}{3} - \frac{1}{2}t</m> pounds of Type II and <m>t</m> pounds of Type III where <m>0 \leq t \leq \frac{4}{3}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+</section>

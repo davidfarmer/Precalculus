@@ -1,0 +1,1037 @@
+<section xml:id="PowerEqIneq">
+  <title>Equations and Inequalities involving Power Functions</title>
+  <introduction>
+    <p>
+      In this section,
+      we set about solving equations and inequalities involving power functions.
+      Our first example demonstrates the usual sorts of strategies to employ when solving equations.
+    </p>
+    <example xml:id="powerequationex">
+      <statement>
+        <p>
+          Solve the following equations analytically and verify your answers using a graphing utility.
+          <ol cols="3">
+            <li xml:id="first">
+              <p>
+                <m>(7-x)^{\frac{3}{2}} = 8</m>
+              </p>
+            </li>
+            <li xml:id="second">
+              <p>
+                <m>(2t-1)^{\frac{2}{3}} -4 = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>(x+3)^{0.5} = 2(7-x)^{0.5}+1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2t^{\frac{2}{3}} + 5t^{\frac{1}{3}} = 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>2(3x-1)^{-0.5} = 3x (3x-1)^{-1.5}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>6(9-t^2)^{\frac{1}{3}} = 4t^2 (9-t^2)^{-\frac{2}{3}}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                One way to proceed to solve
+                <m>(7-x)^{\frac{3}{2}} = 8</m> is to use <xref ref="rationalexponentdefna">Definition</xref>
+                to rewrite <m>(7-x)^{\frac{3}{2}}</m> as either
+                <m>(\sqrt{7-x})^3</m> or <m>\sqrt{(7-x)^3}</m>.
+                We opt for the former since, thinking ahead,
+                <m>8</m> is a perfect cube:
+                <me>
+                  \begin{array}{rclr}  (7-x)^{\frac{3}{2}} \amp  = \amp  8 \amp  \\  (\sqrt{7-x})^3 \amp  = \amp  8 \amp  \text{ rewrite using <xref ref="rationalexponentdefna">Definition</xref> }  \\  \sqrt[3]{(\sqrt{7-x})^3} \amp  = \amp  \sqrt[3]{8} \amp  \text{ extract cube roots }   \\  \sqrt{7-x} \amp  = \amp  2 \amp  \text{\(\sqrt[3]{u^3}= u\)} \end{array}
+                </me>
+                From <m>\sqrt{7-x} =  2</m>,
+                we square both sides and obtain <m>7-x = 4</m>, so <m>x = 3</m>.
+                We verify our answer analytically by substituting <m>x=3</m> into the original equation and it checks.
+                Geometrically, we are looking for where the graph of
+                <m>f(x) = (7-x)^{\frac{3}{2}}</m> intersects the graph of <m>g(x) = 8</m>.
+                While we could sketch both curves by hand and gauge the reasonableness of the result,<fn>
+                consider this an exercise!
+                </fn> we are instructed to use a graphing utility.
+                Below on the left and see the intersection point of both graphs is <m>(3,8)</m>,
+                thereby checking our solution <m>x = 3</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding similarly to the above,
+                to solve <m>(2t-1)^{\frac{2}{3}} -4 = 0</m>,
+                we rewrite <m>(2t-1)^{\frac{2}{3}}</m> as <m>(\sqrt[3]{2t-1})^2</m> and solve:
+                <me>
+                  \begin{array}{rclr} (2t-1)^{\frac{2}{3}} -4  \amp  = \amp  0 \amp  \\  (\sqrt[3]{2t-1})^2 - 4 \amp  = \amp  0 \amp  \text{ rewrite using <xref ref="rationalexponentdefna">Definition</xref> }  \\ (\sqrt[3]{2t-1})^2 \amp  = \amp  4 \amp  \text{ isolate the variable term }  \\  \sqrt{(\sqrt[3]{2t-1})^2 } \amp  = \amp  \sqrt{4} \amp  \text{ extract square roots }  \\  |\sqrt[3]{2t-1}| \amp  = \amp  2 \amp  \text{\(\sqrt{u^2} = |u|\)}  \\  \sqrt[3]{2t-1} \amp  = \amp  \pm 2 \amp  \text{ for \(c>0\), \(|u| = c\) is equivalent to \(u = \pm c\). } \end{array}
+                </me>
+                From <m>\sqrt[3]{2t-1}  = 2</m> we cube both sides and obtain <m>2t-1 = 8</m>,
+                so <m>t = \frac{9}{2} = 4.5</m>.
+                Similarly, from <m>\sqrt[3]{2t-1}  = -2</m>,
+                we cube both sides and obtain <m>2t-1 = -8</m>,
+                so <m>t = -\frac{7}{2} = -3.5</m>.
+                Both of these solutions check in the given equation.
+                In this case we are looking for where the graph of
+                <m>f(t) = (2t-1)^{\frac{2}{3}} -4</m> intersects the graph of
+                <m>g(t) = 0</m> - i.e., the <m>t</m>-intercepts of the graph of <m>g</m>.
+                We find these are <m>(-3.5,0)</m> and <m>(4.5,0)</m>, as predicted.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./PowerEqIneqGraphics/PowerEqEx01.jpg"/></cell>
+                    <cell><image width="56%" source="./PowerEqIneqGraphics/PowerEqEx02.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>Checking <m>(7-x)^{\frac{3}{2}} = 8</m></cell>
+                    <cell>Checking  <m>(2t-1)^{\frac{2}{3}} -4 = 0</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>0.5 = \frac{1}{2}</m>,
+                we may rewrite <m>(x+3)^{0.5} = 2(7-x)^{0.5}+1</m> as  <m>(x+3)^{\frac{1}{2}} = 2(7-x)^{\frac{1}{2}}+1</m>.
+                Using <xref ref="rationalexponentdefna">Definition</xref>,
+                we then have <m>\sqrt{x+3} = 2\sqrt{7-x} + 1</m>.
+                Since one of the square roots is already isolated,
+                we can rid ourselves of it by squaring both sides.
+                <me>
+                  \begin{array}{rclr}  \sqrt{x+3} \amp  = \amp  2\sqrt{7-x} + 1 \amp  \\  (\sqrt{x+3})^2 \amp  = \amp  (2\sqrt{7-x} + 1)^2 \amp  \text{ square both sides }  \\  x+3 \amp  = \amp  (2 \sqrt{7-x})^2 + 2 (2 \sqrt{7-x})(1) + 1 \amp  \text{\((\sqrt{u})^2 = u\) and \((a+b)^2 = a^2 + 2ab +b^2\)}  \\   x+3 \amp  = \amp  4(7-x) + 4\sqrt{7-x} + 1 \amp   \text{\((ab)^2 = a^2b^2\) and, again, \((\sqrt{u})^2 = u\)}  \\  x+3 \amp  = \amp  28-4x+4\sqrt{7-x} + 1 \amp  \\  5x-26 \amp  = \amp  4\sqrt{7-x} \amp  \text{isolate \(\sqrt{7-x}\)} \end{array}
+                </me>
+                We square both sides <em>again</em>
+                and get <m>(5x-26)^2 = (4\sqrt{7-x})^2</m> which reduces to <m>25x^2-260x+676 = 16(7-x)</m>.
+                At last, we have a quadratic equation which we can solve by setting to zero and factoring.
+                We get  <m>25x^2-244x+564 = 0</m>,
+                so <m>(x-6)(25x-94) = 0</m> so <m>x = 6</m> or <m>x = \frac{94}{25} = 3.76</m>.
+                When we go to check these answers,
+                we find <m>x=6</m> does check,
+                but <m>x = 3.76</m> does not.
+                Hence, <m>x=3.76</m> is an <sq>extraneous</sq> solution.<fn>
+                We invite the reader to see at which point in our machinations <m>x=3.76</m> <em>does</em> check.
+                Knowing a solution is extraneous is one thing;
+                understanding <em>how</em> it came about is another.
+                </fn>  We graph both
+                <m>f(x) = \sqrt{x+3}</m> and <m>g(x) = 2\sqrt{7-x} + 1</m> below
+                (once again, we could graph these by hand!)
+                and confirm there is only one intersection point, <m>(6,3)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                While we <em>could</em> approach solving
+                <m>2t^{\frac{2}{3}} + 5t^{\frac{1}{3}} = 3</m> as the previous example,
+                we would encounter cubing binomials<fn>
+                that is, expanding things like <m>(a+b)^3</m>.
+                </fn> which we would prefer to avoid.
+                Instead, we take a step back and notice there are three terms here with the exponent on one term,
+                <m>t^{\frac{2}{3}}</m> exactly twice the exponent on another term,
+                <m>t^{\frac{1}{3}}</m>.
+                We have ourselves a <sq>quadratic in disguise.</sq><fn>
+                See <xref ref="AppQuadEqus">Section</xref> or, more recently,
+                <xref ref="polyquadinform">Example</xref>
+                in <xref ref="RealZeros">Section</xref>.
+                </fn> To help us see the forest for the trees,
+                we let <m>u = t^{\frac{1}{3}}</m> so that <m>u^2 = t^{\frac{2}{3}}</m>.
+                (Note that since root here, <m>3</m>, is odd,
+                we can use the properties of exponents stated in <xref ref="exponentprops">Theorem</xref>.)
+                Hence, in terms of <m>u</m>,
+                the equation <m>2t^{\frac{2}{3}} + 5t^{\frac{1}{3}} = 3</m> becomes the quadratic <m>2u^2 + 5u = 3</m>,
+                or <m>2u^2 + 5u - 3 = 0</m>.
+                Factoring gives <m>(2u-1)(u+3) = 0</m> so
+                <m>u = t^{\frac{1}{3}} = \frac{1}{2}</m> or <m>u = t^{\frac{1}{3}} = -3</m>.
+                Since <m>t^{\frac{1}{3}} = \sqrt[3]{t}</m>,
+                we solve both equations by cubing both sides to get <m>t = \frac{1}{8} = 0.125</m> and <m>t = -27</m>.
+                Both of these solutions check in our original equation.
+                Looking at the graphs of <m>f(t) = 2t^{\frac{2}{3}} + 5t^{\frac{1}{3}}</m> and <m>g(t) = 3</m>,
+                we find two intersection points,
+                <m>(-27,3)</m> and <m>(0.125,3)</m>, as required.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./PowerEqIneqGraphics/PowerEqEx03.jpg"/></cell>
+                    <cell><image width="56%" source="./PowerEqIneqGraphics/PowerEqEx04.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>Checking <m>(x+3)^{0.5} = 2(7-x)^{0.5}+1</m></cell>
+                    <cell>Checking <m>2t^{\frac{2}{3}} + 5t^{\frac{1}{3}} = 3</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                Next we are to solve <m>2(3x-1)^{-0.5}  = 3x (3x-1)^{-1.5}</m> which,
+                when written without negative exponents is:
+                <m>\frac{2}{(3x-1)^{0.5}} = \frac{3x}{(3x-1)^{1.5}}</m>.
+                Since the rational exponents here are
+                <m>0.5 = \frac{1}{2}</m> and <m>1.5 = \frac{3}{2}</m>,
+                both involve an <em>even</em> indexed root
+                (the square root in this case!)
+                which means <m>3x-1 \geq 0</m>.
+                Moreover, since the <m>3x-1</m> resides in the <em>denominator</em>
+                <m>3x - 1 \neq 0</m> so our equation is really valid only for values of <m>x</m> where <m>3x-1>0</m> or <m>x > \frac{1}{3}</m>.
+                Hence, we clear denominators and can apply <xref ref="exponentprops">Theorem</xref>:
+                <me>
+                  \begin{array}{rclr}  \dfrac{2}{(3x-1)^{0.5}} \amp  = \amp  \dfrac{3x}{(3x-1)^{1.5}} \amp  \\  \left[ \dfrac{2}{(3x-1)^{0.5}} \right] \cdot (3x-1)^{1.5} \amp  = \amp  \left[  \dfrac{3x}{(3x-1)^{1.5}} \right ] \cdot (3x-1)^{1.5} \amp  \\  2 \cdot \dfrac{(3x-1)^{1.5}}{(3x-1)^{0.5}} \amp  = \amp  3x \amp  \\  2 (3x-1)^{1.5-0.5} \amp  = \amp  3x \amp  \text{ <xref ref="exponentprops">Theorem</xref> applies since \(3x-1 > 0\). }  \\  2 (3x-1)^{1} \amp  = \amp  3x \amp \end{array}
+                </me>
+                We get <m>6x-2 = 3x</m>, or <m>x = \frac{2}{3}</m>.
+                Since <m>x = \frac{2}{3} > \frac{1}{3}</m>,
+                we keep it and, sure enough, it  checks in our original equation.
+                Graphically we see <m>f(x)=2(3x-1)^{-0.5}</m> intersects <m>g(x) = 3x (3x-1)^{-1.5}</m> at the point
+                <m>(0.6667, 2)</m> which is the graphing utility's way of representing <m>\left(\frac{2}{3}, 2\right)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Our last equation to solve is <m>6(9-t^2)^{\frac{1}{3}} = 4t^2 (9-t^2)^{-\frac{2}{3}}</m>,
+                which, when rewritten without negative exponents is:
+                <m>6(9-t^2)^{\frac{1}{3}} = \frac{4t^2}{(9-t^2)^{\frac{2}{3}}}</m>  .   Again,
+                the root here (<m>3</m>) is odd,
+                so we can use the exponent properties listed in <xref ref="exponentprops">Theorem</xref>.
+                We begin by clearing denominators:
+                <me>
+                  \begin{array}{rclr}  6(9-t^2)^{\frac{1}{3}} \amp  = \amp  \frac{4t^2}{(9-t^2)^{\frac{2}{3}}} \amp  \\  6(9-t^2)^{\frac{1}{3}} \cdot (9-t^2)^{\frac{2}{3}} \amp  = \amp  \left[   \frac{4t^2}{(9-t^2)^{\frac{2}{3}}}  \right ] \cdot (9-t^2)^{\frac{2}{3}} \amp  \\  6(9-t^2)^{\frac{1}{3} + \frac{2}{3}}\amp  = \amp  4t^2 \amp   \text{ <xref ref="exponentprops">Theorem</xref> applies since the root here \(3\) is odd. }  \\  6(9-t^2)^{1} \amp  = \amp  4t^2 \amp \end{array}
+                </me>
+                We get <m>54 - 6t^2 = 4t^2</m> or <m>10t^2 = 54</m>.
+                As fraction <m>t^2 = \frac{54}{10} = \frac{27}{5}</m> so <m>t = \pm \sqrt{\frac{27}{5}} = \pm 3 \sqrt{15}{5}</m>.
+                While not the easiest to check analytically,
+                both of these solutions do work in the original equation.
+                Graphing <m>f(t) = 6(9-t^2)^{\frac{1}{3}}</m> and <m>g(t) =  4t^2 (9-t^2)^{-\frac{2}{3}}</m> below,
+                we see the graphs intersect when
+                <m>t \approx \pm 2.324</m> which are decimal approximations of our exact answers.
+                <tabular>
+                  <row>
+                    <cell><image width="56%" source="./PowerEqIneqGraphics/PowerEqEx05.jpg"/></cell>
+                    <cell><image width="56%" source="./PowerEqIneqGraphics/PowerEqEx06.jpg"/></cell>
+                  </row>
+                  <row>
+                    <cell>Checking <m>2(3x-1)^{-0.5}  = 3x (3x-1)^{-1.5}</m></cell>
+                    <cell>Checking  <m>6(9-t^2)^{\frac{1}{3}} = 4t^2 (9-x^2)^{\frac{2}{3}}</m></cell>
+                  </row>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that <xref ref="powerequationex">Example</xref>,
+      there are several ways to correctly solve each equation,
+      and we endeavored to demonstrate a variety of methods.
+      For example, for <xref ref="first">number</xref>,
+      instead of converting <m>(7-x)^{\frac{3}{2}}</m> to a radical equation,
+      we could use <xref ref="exponentprops">Theorem</xref>.
+      Since the root here (<m>2</m>) is even,
+      we know <m>7-x \geq 0</m> or <m>x \leq 7</m>.
+      Hence we may apply exponent properties:
+      <me>
+        \begin{array}{rclr}  (7-x)^{\frac{3}{2}} \amp  = \amp  8 \amp  \\  \left[(7-x)^{\frac{3}{2}}\right]^{\frac{2}{3}} \amp  = \amp  8^{\frac{2}{3}} \amp  \text{raise both sides to the \(\frac{2}{3}\) power}  \\  (7-x)^{\frac{3}{2} \cdot \frac{2}{3}} \amp  = \amp  4 \amp  \text{ <xref ref="exponentprops">Theorem</xref> }  \\  (7-x)^{1} \amp  = \amp  4 \end{array}
+      </me>
+      from which we get <m>x = 3</m>.
+      If we try this same approach to solve <xref ref="second">number</xref>,
+      however, we encounter difficulty.
+      From <m>(2t-1)^{\frac{2}{3}} -4 = 0</m>,
+      we get <m>(2t-1)^{\frac{2}{3}}  =4</m>.
+      <me>
+        \begin{array}{rclr}  (2t-1)^{\frac{2}{3}} \amp  = \amp  4 \amp  \\  \left[(2t-1)^{\frac{2}{3}}  \right]^{\frac{3}{2}} \amp  = \amp  4^{\frac{3}{2}}\amp  \text{raise both sides to the \(\frac{3}{2}\) power} \end{array}
+      </me>
+    </p>
+    <p>
+      Since the root here (<m>3</m>) is odd,
+      we have no restriction on <m>2t-1</m> but the exponent
+      <m>\frac{3}{2}</m> has an even denominator.
+      Hence, <xref ref="exponentprops">Theorem</xref>
+      <em>does not apply</em>.
+      That is,
+      <me>
+        \left[(2t-1)^{\frac{2}{3}}  \right]^{\frac{3}{2}} \neq (2t-1)^{\frac{2}{3} \cdot \frac{3}{2}} = (2t-1)^{1} = (2t-1)
+      </me>.
+    </p>
+    <p>
+      Note that if we weren't careful,
+      we'd have <m>2t-1 = 4^{\frac{3}{2}} = 8</m> which gives <m>t= \frac{9}{2} = 4.5</m> only.
+      We'd have missed the solution <m>t = -3.5</m>.
+      Truth be told, you <em>can</em>
+      simplify <m>\left[(2t-1)^{\frac{2}{3}} \right]^{\frac{3}{2}}</m> - just not using <xref ref="exponentprops">Theorem</xref>.
+      We leave it as an exercise to show <m>\left[(2t-1)^{\frac{2}{3}} \right]^{\frac{3}{2}} = |2t-1|</m> and,
+      more generally,
+      <m>\left(x^{\frac{2}{3}}\right)^{\frac{3}{2}} = |x|</m>.
+    </p>
+    <p>
+      Our next example is an application of the
+      <url href="https://en.wikipedia.org/wiki/Cobb-Douglas_production_function"><em>Cobb Douglas</em></url>
+      production model of an economy.
+      The Cobb-Douglas model states that the yearly total dollar value of the production output in an economy is a function of <em>two</em> variables:
+      labor (the total number of hours worked in a year) and capital
+      (the total dollar value of the physical goods required for manufacturing.)
+      The equation relating the production output level <m>P</m>,
+      labor <m>L</m> and capital <m>K</m> takes the form
+      <m>P = a L^{b} K^{1-b}</m> where <m>0 \lt b \lt 1</m>;
+      that is, the production level varies jointly with some power of the labor and capital.
+    </p>
+    <example xml:id="CobbDouglasEx">
+      <statement>
+        <p>
+          In their original paper <em>A Theory of Production</em><fn>
+          available
+          <url href="http://bit.ly/2dxlstt"><em>here</em></url>.
+          </fn> Cobb and Douglas modeled the output of the US Economy (using 1899 as a baseline) using the formula
+          <m>P = 1.01 L^{0.75} K^{0.25}</m> where <m>P</m>, <m>L</m>,
+          and <m>K</m> were percentages of the 1899 figures for total production,
+          labor, and capital, respectively.
+          <ol>
+            <li>
+              <p>
+                For 1910, the recorded labor and capital figures for the US Economy are <m>144 \%</m> and <m>208 \%</m> of the 1899 figures,
+                respectively.
+                Find <m>P</m> using these figures and interpret your answer.
+              </p>
+            </li>
+            <li>
+              <p>
+                The recorded production value figure for 1920 is <m>231 \%</m> of the 1899 figure.
+                Use this to write <m>K</m> as a function of <m>L</m>, <m>K = f(L)</m>.
+                Find and interpret <m>f(193)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Graph <m>K = f(L)</m> and interpret the behavior as
+                <m>L \rightarrow 0^{+}</m> and <m>L \rightarrow \infty</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                In this case,
+                <m>P = 1.01 L^{0.75} K^{0.25} = 1.01 (144)^{0.75} (208)^{0.25} \approx 159</m> which means the dollar value of the total US Production in 1920 was approximately <m>159 \%</m> of what it was in 1899.<fn>
+                This answer is remarkably accurate.
+                Note: all the dollar values here are recorded in <sq>1880</sq> dollars,
+                per the source article.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                We are given <m>P = 231 = 1.01L^{0.75} K^{0.25}</m>,
+                so to write <m>K</m> as a function of <m>L</m>,
+                we need to solve this equation for <m>K</m>.
+                Since <m>L</m> and <m>K</m> are positive by definition,
+                we can employ properties of exponents:
+                <me>
+                  \begin{array}{rclr}  231 \amp  = \amp  1.01 L^{0.75} K^{0.25} \amp  \\  \dfrac{231}{1.01 L^{0.75}} \amp  = \amp   \dfrac{1.01 L^{0.75} K^{0.25}}{1.01 L^{0.75}} \amp  \text{\(L>0\), hence \(L^{0.75} \neq 0\).} \\  K^{0.25} \amp  = \amp  228.\overline{7128}L^{-0.75} \amp  \text{ rewrite }  \\  \left(K^{0.25}\right)^{\frac{1}{0.25}} \amp  = \amp  \left(228.\overline{7128}L^{-0.75}\right)^{\frac{1}{0.25}} \amp  \\  K^{\frac{0.25}{0.25}} \amp  = \amp  (228.\overline{7128})^{\frac{1}{0.25}} L^{-\frac{0.75}{0.25}} \amp  \text{ <xref ref="exponentprops">Theorem</xref> }  \\  K \amp  = \amp   (228.\overline{7128})^{4} L^{-3} \amp  \text{ simplify } \end{array}
+                </me>
+                Hence, <m>K = f(L) =  (228.\overline{7128})^{4} L^{-3}</m> where <m>L>0</m>.
+                We find <m>f(193) =  (228.\overline{7128})^{4} (193)^{-3} \approx 381</m> meaning that in order to maintain a production level of <m>231 \%</m> of 1889 with a labor level at <m>193 \%</m> of 1889,
+                the required capital is <m>381 \%</m> that of 1889.<fn>
+                The actual recorded figure is 407.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                The function <m>f(L)</m> is a Laurent Monomial
+                (see <xref ref="IntroRational">Section</xref>)
+                with <m>n = 3</m> and <m>a = (228.\overline{7128})^{4}</m>.
+                As such, as <m>L \rightarrow 0^{+}</m>,
+                <m>f(L) \rightarrow \infty</m>.
+                This means that in order to maintain the given production level,
+                as the available labor diminishes,
+                the capital requirement become unbounded.
+                As <m>L \rightarrow \infty</m>,
+                we have <m>f(L) \rightarrow 0</m> meaning that as the available labor increases,
+                the need for capital diminishes.
+                The graph of <m>f</m> is called an <sq>isoquant</sq> - meaning <sq>same quantity.</sq> In this context,
+                the graph displays all combinations of labor and capital,
+                <m>(L,K)</m> which result in the <em>same</em>
+                production level, in this case,
+                <m>231 \%</m> of what was produced in 1889. \begin{mfpic}[25]{-1}{3}{-1}{3} \axes \tlabel[cc](3, -0.5){<m>L</m>} \tlabel[cc](-0.5, 3){<m>K</m>} \tlabel[cc](2.5,1){<m>(1, (228.\overline{7128})^{4})</m>} \penwd{1.25pt} \arrow \reverse \arrow \function{0.7,2,0.1}{1/(x**3)} \point[4pt]{(1,1)} \tcaption{<m>K = f(L) = (228.\overline{7128})^{4} L^{-3}</m>} \end{mfpic}
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Next, we move on to solving inequalities with power functions.
+      As we've seen with other types of non-linear inequalities,<fn>
+      see <xref ref="QuadraticFunctions">Sections</xref>,
+      <xref ref="RealZeros"></xref>,
+      and <xref ref="RationalIneq"></xref>
+      </fn> an invaluable tool for us is the Sign Diagram.
+      <em>Steps for Constructing a Sign Diagram for an Algebraic Function</em>
+    </p>
+    <p>
+      Suppose <m>f</m> is an algebraic function.
+          <idx><h>sign diagram</h><h>algebraic function</h></idx>
+      <ol>
+        <li>
+          <p>
+            Place any values excluded from the domain of <m>f</m> on the number line with an <sq>\textinterrobang</sq> above them.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the zeros of <m>f</m> and place them on the number line with the number <m>0</m> above them.
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose a test value in each of the intervals determined in steps 1 and 2.
+          </p>
+        </li>
+        <li>
+          <p>
+            Determine and record the sign of <m>f(x)</m> for each test value in step 3.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      As you may recall, since sign diagrams compare functions to <m>0</m>,
+      the first step in solving inequalities using a sign diagram is to gather all the nonzero terms one one side of the inequality.
+      We demonstrate this technique in the following example.
+    </p>
+    <example xml:id="powerineqex">
+      <statement>
+        <p>
+          <m>~</m>
+        </p>
+        <p>
+          Solve the following inequalities.
+          Check your answers graphically with a calculator.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>2-\sqrt[4]{x+3} \geq 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t^{2/3} \lt t^{4/3} - 6</m>
+              </p>
+            </li>
+            <li xml:id="third">
+              <p>
+                <m>3 (2-x)^{\frac{1}{3}} \leq x (2-x)^{-\frac{2}{3}}</m>
+              </p>
+            </li>
+            <li xml:id="fourth">
+              <p>
+                <m>(t-4)^{\frac{2}{3}} \geq -\dfrac{2t}{3(t-4)^{\frac{1}{3}}}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To solve <m>2-\sqrt[4]{x+3} \geq 0</m>,
+                it is tempting to rewrite this inequality as
+                <m>2 \geq \sqrt[4]{x+3}</m> and rid ourselves of the fourth root by raising both sides of this inequality to the fourth power.
+                While this technique works <em>sometimes</em>,
+                it doesn't work <em>all</em> the time since raising both sides of an inequality to the fourth
+                (more generally, to an even)
+                power does not necessarily preserve inequalities .<fn>
+                For instance, <m>-2 \leq 1</m> but <m>(-2)^{4} \geq (1)^2</m>.
+                We invite the reader to see what goes wrong if attempting to solve either of the following inequalities using this method:
+                <m>-2 \geq \sqrt[4]{x+3}</m>, which has no solution,
+                or <m>-2 \leq \sqrt[4]{x+3}</m>,
+                whose solution is <m>[-3,\infty)</m>.
+                </fn>  For that reason,
+                we solve this inequality using a sign diagram since this technique will <em>always</em>
+                produce a correct solution.
+                We already have all the nonzero terms on one side of the inequality,
+                so we let <m>r(x) = 2-\sqrt[4]{x+3}</m> and proceed to make a sign diagram.
+                Owing to the presence of the fourth root,
+                we know <m>x+3 \geq 0</m> or <m>x \geq -3</m>.
+                Hence, we only concern ourselves with the portion of the number line representing <m>[3, \infty)</m>.
+                Next, we find the zeros of <m>r</m> by solving <m>r(x) = 2-\sqrt[4]{x+3}=0</m>.
+                We get <m>\sqrt[4]{x+3} = 2</m>,
+                so <m>x+3= 16</m> and we get <m>x=13</m>.
+                We find this solution checks in our original equation,<fn>
+                Recall that raising both sides to an even power could produce extraneous solutions,
+                so it is important we check here.
+                </fn>  and proceed to construct the sign diagram below on the left.
+                Since we are looking for where <m>r(x) = 2-\sqrt[4]{x+3} \geq 0</m>,
+                we are looking for the zeros of <m>r</m> along with the intervals over which <m>r(x)</m> is <m>(+)</m>.
+                We record our answer as <m>[-3, 13]</m>.
+                Below on the right is the graph of <m>y = 2-\sqrt[4]{x+3}</m>,
+                and we can see that, indeed,
+                the graph is above the <m>x</m>-axis (<m>y=0</m>) from
+                <m>[-3, 13)</m> and meets the <m>x</m>-axis at <m>x=13</m>,
+                verifying our answer.
+                <tabular>
+                  {m{2in}m{2.5in}} \begin{mfpic}[10]{0}{8}{-2}{2} \arrow \polyline{(0,0), (8,0)} \xmarks{0,4} \tlabel[cc](0,-1){<m>-3</m>} \tlabel[cc](2,1){<m>(+)</m>} \tlabel[cc](4,-1){<m>13</m>} \tlabel[cc](4,1){<m>0</m>} \tlabel[cc](6,1){<m>(-)</m>} \end{mfpic} &amp; <image width="56%" source="./PowerEqIneqGraphics/PowerIneqEx01.jpg"/>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>t^{\frac{2}{3}} \lt t^{\frac{4}{3}} - 6</m>,
+                we first rewrite as <m>t^{\frac{4}{3}} -t^{\frac{2}{3}} - 6 > 0</m>.
+                We set <m>r(t) = t^{\frac{4}{3}} -t^{\frac{2}{3}} - 6</m> and note that since the denominators in the exponents are <m>3</m>,
+                they correspond to cube roots,
+                which means the domain of <m>r</m> is <m>(-\infty, \infty)</m>.
+                To find the zeros for the sign diagram,
+                we set <m>r(t) = 0</m> and attempt to solve <m>t^{\frac{4}{3}} - t^{\frac{2}{3}} - 6 = 0</m>.
+                Since there are three terms, and the exponent on one of the variable terms,
+                <m>t^{\frac{4}{3}}</m>,
+                is exactly twice that of the other, <m>t^{\frac{2}{3}}</m>,
+                we have ourselves a <sq>quadratic in disguise.</sq> If we let <m>u = t^{\frac{2}{3}}</m>,
+                then <m>u^2 = t^{\frac{4}{3}}</m>,
+                so in terms of <m>u</m>, we have <m>u^2 - u - 6 = 0</m>.
+                Solving we get <m>u = -2</m> or <m>u = 3</m>,
+                hence <m>t^{\frac{2}{3}} = -2</m> or <m>t^{\frac{2}{3}} = 3</m>.
+                In root-power notation, these are
+                <m>\sqrt[3]{t^2} = -2</m> or <m>\sqrt[3]{t^2}= 3</m>.
+                Cubing both sides of these equations results in <m>t^2 = -8</m>,
+                which admits no real solution,
+                or <m>t^2 = 27</m>, which gives <m>t = \pm 3 \sqrt{3}</m>.
+                Using these zeros, we construct the sign diagram below on the left.
+                We find <m>r(t) = t^{\frac{4}{3}} -t^{\frac{2}{3}} - 6 > 0</m> on <m>\left(-\infty, -3 \sqrt{3}\right)\cup \left(3 \sqrt{3}, \infty\right)</m>.
+                To check our answer graphically,
+                we set <m>f(t) = t^{\frac{2}{3}}</m> and <m>g(t) = t^{\frac{4}{3}}-6</m>.
+                The solution to <m>t^{\frac{2}{3}} \lt t^{\frac{4}{3}} - 6</m> corresponds to the inequality <m>f(t) \lt g(t)</m>,
+                which means we are looking for the <m>t</m> values for which the graph of <m>f</m> is
+                <em>below</em> the graph of <m>g</m>.
+                On the graph below on the right,
+                we see the graph of <m>f</m>
+                (the lighter colored curve)
+                is below the graph of <m>g</m>
+                (the darker colored curve)
+                for <m>t \lt - 5.196</m> and again for <m>t > 5.196</m>,
+                which are the grapher's approximations to <m>\pm 3 \sqrt{3}</m>.
+                <tabular>
+                  {m{2in}m{2.5in}} \begin{mfpic}[10]{-5}{5}{-1}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{-2,2} \tlabel[cc](-3.5,1){<m>(+)</m>} \tlabel[cc](-2,-1){<m>-3 \sqrt{3}</m>} \tlabel[cc](-2,1){<m>0</m>} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,-1){<m>3 \sqrt{3}</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](3.5,1){<m>(+)</m>} \end{mfpic} &amp; <image width="56%" source="./PowerEqIneqGraphics/PowerIneqEx02.jpg"/>
+                </tabular>
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>3 (2-x)^{\frac{1}{3}} \leq x (2-x)^{-\frac{2}{3}}</m>,
+                we first gather all the nonzero terms to one side and obtain <m>3 (2-x)^{\frac{1}{3}} - x (2-x)^{-\frac{2}{3}} \leq 0</m>.
+                Setting <m>r(x) = 3 (2-x)^{\frac{1}{3}} - x (2-x)^{-\frac{2}{3}}</m>,
+                we note  since the denominators of the rational exponents are odd,
+                we have no domain concerns owing to even indexed roots.
+                However, the negative exponent on the second term indicates a denominator.
+                Rewriting <m>r(x)</m> with positive exponents, we obtain
+                <me>
+                  r(x) =  3 (2-x)^{\frac{1}{3}} - \frac{x}{(2-x)^{\frac{2}{3}}}
+                </me>
+                Setting the denominator equal to zero we get <m>(2-x)^{\frac{2}{3}} = 0</m>,
+                which reduces to  <m>2-x=0</m>, or <m>x=2</m>.
+                Hence, the domain of <m>r</m> is <m>(-\infty, 2) \cup (2, \infty)</m>.
+                To find the zeros of <m>r</m>,
+                we set <m>r(x) = 0</m>, so we set about solving
+                <me>
+                  3 (2-x)^{\frac{1}{3}} - \frac{x}{(2-x)^{\frac{2}{3}}} = 0
+                </me>.
+                Clearing denominators,
+                we get <m>3  (2-x)^{\frac{1}{3}} (2-x)^{\frac{2}{3}} - x = 0</m>.
+                Since the denominators of the exponents are odd,
+                we may use <xref ref="exponentprops">Theorem</xref>
+                to simplify this to <m>3(2-x)^{1} - x = 0</m>,
+                and obtain <m>6-4x = 0</m> or <m>x = \frac{3}{2}</m>.
+                In order for us to be able to more easily determine the sign of <m>r(x)</m> at the test values,
+                we rewrite <m>r(x)</m> as a single term.<fn>
+                This also gives us a chance to review some good intermediate algebra!
+                </fn>  There are two schools of thought on how to proceed,
+                so we demonstrate both.
+                <ul>
+                  <li>
+                    <p>
+                      <em>Factoring Approach.</em>  From <m>r(x) = 3 (2-x)^{\frac{1}{3}} - x (2-x)^{-\frac{2}{3}}</m>,
+                      we note that the quantity <m>(2-x)</m> is common to both terms.
+                      When we factor out common factors,
+                      we factor out the quantity with the
+                      <em>smaller</em> exponent.
+                      In this case, since <m>-\frac{2}{3} \lt  \frac{1}{3}</m>,
+                      we factor <m>(2-x)^{-\frac{2}{3}}</m> from both quantities.
+                      While it may seem odd to do so,
+                      we need to factor <m>(2-x)^{-\frac{2}{3}}</m> <em>from</em>
+                      <m>(2-x)^{\frac{1}{3}}</m>,
+                      which results in subtracting the exponent
+                      <m>-\frac{2}{3}</m> from <m>\frac{1}{3}</m>.
+                      We proceed using the usual properties of exponents.
+                      <me>
+                        \begin{array}{rclr}  r(x)  \amp  = \amp  3 (2-x)^{\frac{1}{3}} - x (2-x)^{-\frac{2}{3}} \amp  \\ \amp  = \amp  (2-x)^{-\frac{2}{3}} \left[ 3 (2-x)^{\frac{1}{3} - \left(-\frac{2}{3}\right)} - x\right] \amp  \\ \amp  = \amp  (2-x)^{-\frac{2}{3}}\left[3(2-x)^{\frac{3}{3}} - x\right] \amp  \\ \amp  = \amp  (2-x)^{-\frac{2}{3}}\left[3(2-x)^{1} - x\right] \amp   \\ \amp  = \amp  (2-x)^{-\frac{2}{3}}\left(6-4x\right) \amp  \\ \amp  = \amp  (2-x)^{-\frac{2}{3}}\left(6-4x\right) \amp \end{array}
+                      </me>
+                      Written without negative exponents,
+                      we have <m>r(x) = \dfrac{6-4x}{(2-x)^{\frac{2}{3}}}</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <em>Common Denominator Approach.</em>  We rewrite
+                      <me>
+                        \begin{array}{rclr}  r(x)  \amp  = \amp  3 (2-x)^{\frac{1}{3}} - x (2-x)^{-\frac{2}{3}} \amp  \\ \amp  = \amp  3 (2-x)^{\frac{1}{3}} - \dfrac{x}{(2-x)^{\frac{2}{3}}} \amp  \\ \amp  = \amp  \dfrac{3 (2-x)^{\frac{1}{3}}(2-x)^{\frac{2}{3}}}{(2-x)^{\frac{2}{3}}} - \dfrac{x}{(2-x)^{\frac{2}{3}}} \amp  \text{ common denominator }  \\ \amp  = \amp  \dfrac{3 (2-x)^{\frac{1}{3} + \frac{2}{3}}}{(2-x)^{\frac{2}{3}}} - \dfrac{x}{(2-x)^{\frac{2}{3}}} \amp  \text{ <xref ref="exponentprops">Theorem</xref> }   \\ \amp  = \amp  \dfrac{3 (2-x)^{\frac{3}{3}}}{(2-x)^{\frac{2}{3}}} - \dfrac{x}{(2-x)^{\frac{2}{3}}} \amp  \\ \amp  = \amp  \dfrac{3 (2-x)^1}{(2-x)^{\frac{2}{3}}} - \dfrac{x}{(2-x)^{\frac{2}{3}}} \amp   \\ \amp  = \amp  \dfrac{3 (2-x) - x}{(2-x)^{\frac{2}{3}}} \amp  \\ \amp  = \amp  \dfrac{6-4x}{(2-x)^{\frac{2}{3}}} \amp \end{array}
+                      </me>
+                    </p>
+                  </li>
+                </ul>
+              </p>
+              Using either approach, we end up with the same, simpler,
+              expression for <m>r(x)</m> and we use that to create our sign diagram as shown below on the left.
+              We find <m>r(x) \leq 0</m> on <m>\left[\frac{3}{2},2\right) \cup (2, \infty)</m>.
+              To check this graphically, we set <m>f(x)=3 (2-x)^{\frac{1}{3}}</m>
+              (the lighter curve)
+              and <m>g(x) = x (2-x)^{-\frac{2}{3}}</m>
+              (the darker curve).
+              We confirm that the graphs intersect at
+              <m>x=\frac{3}{2}</m> and the graph of <m>f</m> is below the graph of <m>g</m> for <m>x > \frac{3}{2}</m>,
+              with the exception of <m>x=2</m> where it appears the graph of <m>g</m> has a vertical asymptote.
+              <tabular>
+                {m{2in}m{2.5in}}  \begin{mfpic}[10]{-5}{5}{-1}{2}  \arrow \reverse \arrow \polyline{(-5,0),(5,0)}  \xmarks{-2,2}  \tlabel[cc](-3.5,1){<m>(+)</m>}  \tlabel[cc](-2,-1.25){<m>\frac{3}{2}</m>}  \tlabel[cc](-2,1){<m>0</m>}  \tlabel[cc](0,1){<m>(-)</m>}  \tlabel[cc](2,-1){<m>2</m>}  \tlabel[cc](2,1){\textinterrobang}  \tlabel[cc](3.5,1){<m>(-)</m>}  \end{mfpic}  &amp;  <image width="56%" source="./PowerEqIneqGraphics/PowerIneqEx03.jpg"/>
+              </tabular>
+            </li>
+            <li>
+              <p>
+                While it may be tempting to begin solving  our last inequality by clearing denominators,
+                owing to the odd root,
+                the quantity <m>3(t-4)^{\frac{1}{3}}</m> can be both positive and negative for different values of <m>t</m>.
+                This means that if we chose to multiply both sides of our inequality by this quantity,
+                we have no guarantee if the inequality would be preserved.
+                Hence we proceed as usual by gathering all the nonzero terms to one side, and,
+                with the ultimate goal of creating a sign diagram, get common denominators.
+                <me>
+                  \begin{array}{rclr}  (t-4)^{\frac{2}{3}} \amp  \geq \amp   - \dfrac{2t}{3(t-4)^{\frac{1}{3}}} \amp  \\   (t-4)^{\frac{2}{3}} + \dfrac{2t}{3(t-4)^{\frac{1}{3}}}  \amp  \geq \amp  0 \\  \dfrac{ (t-4)^{\frac{2}{3}} \cdot 3(t-4)^{\frac{1}{3}} }{3(t-4)^{\frac{1}{3}}}  + \dfrac{2t}{3(t-4)^{\frac{1}{3}}} \amp  \geq \amp  0 \amp  \text{ common denominator }  \\  \dfrac{3(t-4)^{\frac{2}{3}+\frac{1}{3}}}{3(t-4)^{\frac{1}{3}}}  + \dfrac{2t}{3(t-4)^{\frac{1}{3}}} \amp  \geq \amp  0 \amp  \text{ <xref ref="exponentprops">Theorem</xref> }  \\  \dfrac{3(t-4)^{1}}{3(t-4)^{\frac{1}{3}}}  + \dfrac{2t}{3(t-4)^{\frac{1}{3}}} \amp  \geq \amp  0 \amp  \\  \dfrac{3(t-4) + 2t}{3(t-4)^{\frac{1}{3}}}   \amp  \geq \amp  0 \amp  \\  \dfrac{5t-12}{3(t-4)^{\frac{1}{3}}}   \amp  \geq \amp  0 \amp \end{array}
+                </me>
+                We identify <m>r(t)</m> as the left hand side of the inequality and see right away we must exclude <m>t=4</m> from the domain owing to the quantity <m>(t-4)</m> in the denominator.
+                As we have already mentioned,
+                the root here (<m>3</m>) is odd,
+                so we have no domain issues stemming from that.
+                To find the zeros of <m>r</m>,
+                we set <m>r(t) = 0</m> which quickly reduces to solving <m>5t-12 = 0</m>.
+                We get <m>t = \frac{12}{5}</m>.
+                From the sign diagram, we find
+                <m>r(t) \geq 0</m> on <m>\left(-\infty, \frac{5}{12} \right] \cup (4, \infty)</m>.
+                Graphing <m>f(t) = (t-4)^{\frac{2}{3}}</m>
+                (the lighter curve)
+                and <m>g(t) = -\frac{2t}{3(t-4)^{\frac{1}{3}}}</m>
+                (the darker curve),
+                we see the graph of <m>f</m> is above the graph of <m>g</m> for
+                <m>t \lt  2.4</m> and again for <m>t > 4</m>,
+                with an intersection point at <m>t=2.4 = \frac{12}{5}</m>.
+                <tabular>
+                  {m{2in}m{2.5in}}  \begin{mfpic}[10]{-5}{5}{-1}{2}  \arrow \reverse \arrow \polyline{(-5,0),(5,0)}  \xmarks{-2,2}  \tlabel[cc](-3.5,1){<m>(+)</m>}  \tlabel[cc](-2,-1.25){<m>\frac{12}{5}</m>}  \tlabel[cc](-2,1){<m>0</m>}  \tlabel[cc](0,1){<m>(-)</m>}  \tlabel[cc](2,-1){<m>4</m>}  \tlabel[cc](2,1){\textinterrobang}  \tlabel[cc](3.5,1){<m>(+)</m>}  \end{mfpic}  &amp;  <image width="56%" source="./PowerEqIneqGraphics/PowerIneqEx04.jpg"/>
+                </tabular>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Note that in <xref ref="powerineqex">Example</xref>
+      <xref ref="third">number</xref>,
+      since <m>(2-x)^{\frac{2}{3}}</m> is always positive for <m>x \neq 2</m>
+      (owing to the squared exponent),
+      we <em>could</em> have short-cut the sign diagram,
+      choosing to clear denominators instead:
+      <me>
+        \begin{array}{rclr}  3 (2-x)^{\frac{1}{3}} \amp  \leq \amp  x (2-x)^{-\frac{2}{3}} \amp  \\  3 (2-x)^{\frac{1}{3}} \amp  \leq \amp  \dfrac{x}{(2-x)^{\frac{2}{3}}} \amp  \\  \left[3 (2-x)^{\frac{1}{3}} \right] \left[  (2-x)^{\frac{2}{3}}\right]\amp  \leq \amp  \dfrac{x}{(2-x)^{\frac{2}{3}}}  \left[  (2-x)^{\frac{2}{3}}\right]\amp   \text{ provided \(x \neq 2\) }  \\ 3 (2-x)^{\frac{1}{3}} (2-x)^{\frac{2}{3}} \amp  \leq \amp  x\amp   \\  3 (2-x)^{\frac{1}{3}+\frac{2}{3}} \amp  \leq \amp  x\amp  \\  3(2-x) \amp  \leq \amp  x  \amp \end{array}
+      </me>
+    </p>
+    <p>
+      Hence, we get <m>6-3x \leq x</m> or
+      <m>x \geq \frac{3}{2}</m>, provided <m>x \neq 2</m>.
+      This matches our solution <m>\left[\frac{3}{2},2\right) \cup (2, \infty)</m>.
+      If, on the other hand,
+      we tried this same manipulation with <xref ref="fourth">number</xref>,
+      we would clear denominators,
+      assuming <m>t \neq 4</m> to obtain
+      <m>3(t-4) \geq -2t</m> or <m>t \geq \frac{12}{5}</m> which is
+      <em>not</em> the correct solution.
+      The moral of the story is the more you understand,
+      the less you need to rely on memorized processes and the more efficient your solution methodologies can become.
+      The sign diagram algorithm is a fail-safe method, but,
+      in some cases, may be far from the most efficient one.
+      It's always best to understand the <em>why</em>
+      of a procedure as much as the <em>how</em>.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="powereqineqexfirsta">Exercises</xref>
+      - <xref ref="powereqineqexlasta"></xref>,
+      solve the equation or inequality.
+    </p>
+    <ol cols="2">
+      <li xml:id="powereqineqexfirsta">
+        <p>
+          <m>x+1 = (3x+7)^{\frac{1}{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2x+1 = (3-3x)^{\frac{1}{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t + (3t+10)^{0.5} = -2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3t+(6-9t)^{0.5}=2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{-1.5} = 8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2x - 1 = (x + 1)^{-0.5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t^{\frac{2}{3}} = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(t - 2)^{\frac{1}{2}} + (t - 5)^{\frac{1}{2}} = 3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2x+1)^{\frac{1}{2}} = 3 + (4-x)^{\frac{1}{2}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5 - (4-2x)^{\frac{2}{3}} = 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2t^{\frac{2}{3}} = 6 - t^{\frac{1}{3}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2t^{\frac{1}{3}} = 1-3t^{\frac{2}{3}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2x^{1.5} = 15x^{0.75} + 8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>35x^{-0.75} = x^{-1.5} +216</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>10-\sqrt{t-2} \leq 11</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t^{\frac{2}{3}} \leq 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt[3]{x} \leq x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2-3x)^{\frac{1}{3}} > 3x</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(t^2-1)^{-\frac{1}{2}} \geq 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(t^2-1)^{-\frac{1}{3}} \leq 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3(x-1)^{\frac{1}{3}} +x (x-1)^{-\frac{2}{3}} \geq 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>3(x-1)^{\frac{2}{3}} +2x (x-1)^{-\frac{1}{3}} \geq 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2 (t-2)^{-\frac{1}{3}} -\frac{2}{3} t(t-2)^{-\frac{4}{3}} \leq 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>-\frac{4}{3} (t-2)^{-\frac{4}{3}} + \frac{8}{9} t (t-2)^{-\frac{7}{3}} \geq 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>2x^{-\frac{1}{3}}(x-3)^{\frac{1}{3}} + x^{\frac{2}{3}} (x-3)^{-\frac{2}{3}} \geq 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\sqrt[3]{x^{3} + 3x^{2} - 6x - 8} > x + 1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4(7-t)^{0.75} - 3t(7-t)^{-0.25} \leq 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4t^{0.75}(t - 3)^{-\frac{2}{3}} +9t^{-0.25}(t - 3)^{\frac{1}{3}} \lt 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x^{-\frac{1}{3}} (x-3)^{-\frac{2}{3}} - x^{-\frac{4}{3}} (x-3)^{-\frac{5}{3}} (x^2-3x+2) \geq 0</m>
+        </p>
+      </li>
+      <li xml:id="powereqineqexlasta">
+        <p>
+          <m>\frac{2}{3}(t + 4)^{\frac{3}{5}}(t - 2)^{-\frac{1}{3}} + \frac{3}{5}(t + 4)^{-\frac{2}{5}}(t - 2)^{\frac{2}{3}} \geq 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The Cobb-Douglas production model<fn>
+          See <xref ref="CobbDouglasEx">Example</xref>
+          for more details on these sorts of models.
+          </fn> for the country of Sasquatchia is <m>P = 1.25L^{0.4}K^{0.6}</m>.
+          Here, <m>P</m> represents the country's production
+          (measured in thousands of Bigfoot Bullion),
+          <m>L</m> represents the total labor
+          (measured in thousands of hours)
+          and <m>K</m> represents the total investment in capital (measured in Bigfoot Bullion.)
+        </p>
+        <ol>
+          <li xml:id="KintermsofLCobbexercise">
+            <p>
+              Let <m>P = 300</m> and solve for <m>K</m> as a function of <m>L</m>.
+              If <m>L = 100</m>, what is <m>K</m>?
+              Interpret each of the quantities in this case.
+            </p>
+          </li>
+          <li>
+            <p>
+              Graph your answer to <xref ref="KintermsofLCobbexercise"></xref> using a graphing utility.
+              What information does an ordered pair <m>(L, K)</m> on this graph represent?
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>x=3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{1}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=-3</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\frac{1}{3}, \; \frac{2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{1}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \pm 8</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=-2, 6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=-8, \frac{27}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=-1, \frac{1}{27}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=16</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{1}{81}, \frac{1}{16}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-8,8]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-1, 0] \cup [1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, \frac{1}{3} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ -\frac{\sqrt{5}}{2}, -1\right) \cup \left(1, \frac{\sqrt{5}}{2}\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, -\frac{3\sqrt{2}}{4} \right] \cup (-1,1) \cup \left[ \frac{3\sqrt{2}}{4}, \infty \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \frac{3}{4}, 1\right) \cup (1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( -\infty, \frac{3}{5} \right] \cup (1, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, 2) \cup (2,3]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(2,6]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, 0) \cup [2,3) \cup (3, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -1)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[4,7)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(0, \frac{27}{13} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, 0) \cup (0,3)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -4) \cup \left(-4, -\frac{22}{19}\right] \cup (2, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>K=f(L) = (240)^{ \frac{5}{3}} L^{- \frac{2}{3}}</m>.
+              <m>f(100) \approx 430.2148</m>.
+              This means in order for the production level of Sasquatchia to reach 300,000 Bigfoot Bullion with a labor investment of 100,000 hours,
+              the country needs to invest approximately 430 Bigfoot Bullion into capital.
+            </p>
+          </li>
+          <li>
+            <p>
+              If a point <m>(L,K)</m> is on the graph of this function,
+              it means a combination of <m>L</m> thousand hours of labor with an investment of <m>K</m> Bigfoot Bullion into the Sasquatian Economy will result in a production level of 300,000 Bigfoot Bullion.
+              <image width="73%" source="./PowerEqIneqGraphics/CobbDouglasExercise.jpg"/>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

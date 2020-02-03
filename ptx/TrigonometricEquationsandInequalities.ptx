@@ -1,0 +1,2776 @@
+<section xml:id="TrigonometricEquationsandInequalities">
+  <title>Equations and Inequalities Involving the Circular Functions</title>
+  <introduction>
+    <p>
+      In <xref ref="TheCircularFunctionsSineandCosine">Sections</xref>,
+      <xref ref="TheOtherCircularFunctions"></xref>
+      and most <xref ref="TheInverseTrigonometricFunctions">recently</xref>,
+      we solved some basic equations involving the trigonometric functions.
+      Below we summarize the techniques we've employed thus far.
+      Note that we use the neutral letter <sq><m>u</m></sq> as the argument of each circular function for generality.
+      <em>Strategies for Solving Basic Equations Involving the Circular Functions</em>
+      <ul>
+        <li>
+          <p>
+            To solve <m>\cos(u) = c</m> or
+            <m>\sin(u) = c</m> for <m>-1 \leq c \leq 1</m>,
+            first solve for <m>u</m> in the interval
+            <m>[0,2\pi)</m> and add integer multiples of the period <m>2\pi</m>.
+            If <m>c \lt -1</m> or of <m>c > 1</m>,
+            there are no real solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            To solve <m>\sec(u) = c</m> or
+            <m>\csc(u) = c</m> for <m>c \leq -1</m> or <m>c \geq 1</m>,
+            convert to cosine or sine, respectively, and solve as above.
+            If <m>-1 \lt c \lt 1</m>, there are no real solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            To solve <m>\tan(u) = c</m> for any real number <m>c</m>,
+            first solve for <m>u</m> in the interval
+            <m>\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)</m> and add integer multiples of the period <m>\pi</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            To solve <m>\cot(u) = c</m> for <m>c \neq 0</m>,
+            convert to tangent and solve as above.
+            If <m>c = 0</m>, the solution to <m>\cot(u) = 0</m> is
+            <m>u = \frac{\pi}{2} + \pi k</m> for integers <m>k</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Using the above guidelines,
+      we can comfortably solve <m>\sin(x) = \frac{1}{2}</m> and find the solution <m>x = \frac{\pi}{6} + 2\pi k</m> or
+      <m>x = \frac{5\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+      But how do we solve the related equation <m>\sin(3x) = \frac{1}{2}</m>?
+    </p>
+    <p>
+      Since this equation has the <em>form</em>
+      <m>\sin(u) = \frac{1}{2}</m>,
+      we know the solutions take the form <m>u= \frac{\pi}{6} + 2\pi k</m> or
+      <m>u = \frac{5\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+      Since the argument of sine here is <m>3x</m>,
+      we have <m>3x= \frac{\pi}{6} + 2\pi k</m> or <m>3x = \frac{5\pi}{6} + 2\pi k</m>.
+    </p>
+    <p>
+      To solve for <m>x</m>, we divide both sides<fn>
+      Don't forget to divide the <m>2\pi k</m> by <m>3</m> as well!
+      </fn> of these equations by <m>3</m>,
+      and obtain <m>x = \frac{\pi}{18} + \frac{2\pi}{3} k</m> or
+      <m>x = \frac{5\pi}{18} + \frac{2\pi}{3}k</m> for integers <m>k</m>.
+      This is the technique employed in the example below.
+    </p>
+    <example xml:id="TrigEqnEx1">
+      <statement>
+        <p>
+          Solve the following equations and check your answers analytically.
+          List the solutions which lie in the interval
+          <m>[0,2\pi)</m> and verify them using a graphing utility.
+          <ol cols="2">
+            <li>
+              <p>
+                <m>\cos(2\theta) = -\frac{\sqrt{3}}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\csc\left(\frac{1}{3}\theta-\pi \right) = \sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cot\left(3t \right) = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sec^{2}(t) = 4</m>
+              </p>
+            </li>
+            <li xml:id="arctanin02pi">
+              <p>
+                <m>\tan\left(\frac{x}{2}\right) = -3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(2x) = 0.87</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The solutions to <m>\cos(u) =-\frac{\sqrt{3}}{2}</m> are <m>u = \frac{5\pi}{6} + 2\pi k</m> or
+                <m>u = \frac{7\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+                Since the argument of cosine here is <m>2\theta</m>,
+                this means <m>2\theta = \frac{5\pi}{6} + 2\pi k</m> or
+                <m>2\theta = \frac{7\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+                Solving for <m>\theta</m> gives <m>\theta = \frac{5\pi}{12} + \pi k</m> or
+                <m>\theta = \frac{7\pi}{12} + \pi k</m> for integers <m>k</m>.
+                To check these answers analytically,
+                we substitute them into the original equation.
+                For any integer <m>k</m>:
+                <me>
+                  \begin{array}{rclr}  \cos\left( 2\left[\frac{5\pi}{12} + \pi k\right]\right) \amp   = \amp   \cos\left(\frac{5\pi}{6} + 2\pi k\right) \amp  \\ \amp  =  \amp    \cos\left(\frac{5\pi}{6}\right) \amp  \text{ (the period of cosine is \(2\pi\)) }  \\ \amp  =  \amp  -\frac{\sqrt{3}}{2} \amp \end{array}
+                </me>
+                Similarly, we find <m>\cos\left( 2\left[\frac{7\pi}{12} + \pi k\right]\right) = \cos\left(\frac{7\pi}{6} + 2\pi k\right) = \cos\left(\frac{7\pi}{6}\right) = -\frac{\sqrt{3}}{2}</m>.
+                To determine which of our solutions lie in <m>[0,2\pi)</m>,
+                we substitute integer values for <m>k</m>.
+                The solutions we keep come from the values of <m>k = 0</m> and <m>k =1</m> and are
+                <m>\theta = \frac{5\pi}{12}</m>,  <m>\frac{7\pi}{12}</m>,
+                <m>\frac{17\pi}{12}</m> and <m>\frac{19\pi}{12}</m>.
+                Using a calculator, we graph
+                <m>y = \cos(2\theta)</m> and <m>y = -\frac{\sqrt{3}}{2}</m> over
+                <m>[0,2\pi)</m> and examine where these two graphs intersect to verify our answers.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq01.jpg"/>  {
+                <m>y = \cos(2\theta)</m>} and <m>y=-\frac{\sqrt{3}}{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since this equation has the form <m>\csc(u) = \sqrt{2}</m>,
+                we rewrite this as <m>\sin(u) = \frac{\sqrt{2}}{2}</m> and find <m>u = \frac{\pi}{4} + 2\pi k</m> or
+                <m>u = \frac{3\pi}{4} + 2\pi  k</m> for integers <m>k</m>.
+                Since the argument of cosecant here is <m>\left(\frac{1}{3}\theta-\pi \right)</m>,
+                <m>\frac{1}{3}\theta-\pi = \frac{\pi}{4} + 2\pi k</m> or <m>\frac{1}{3}\theta - \pi = \frac{3\pi}{4} + 2\pi k</m>.
+                To solve <m>\frac{1}{3} \theta-\pi = \frac{\pi}{4} + 2\pi k</m>,
+                we first add <m>\pi</m> to both sides to get  <m>\frac{1}{3} \theta = \frac{\pi}{4} + 2\pi k + \pi</m>.
+                A common error is to treat the <sq><m>2\pi k</m></sq> and <sq><m>\pi</m></sq> terms as <sq>like</sq> terms and try to combine them when they are not.
+                We can, however,
+                combine the <sq><m>\pi</m></sq> and <sq><m>\frac{\pi}{4}</m></sq> terms to get <m>\frac{1}{3} \theta = \frac{5\pi}{4} + 2\pi k</m>.
+                We now finish by multiplying both sides by <m>3</m> to get  <m>\theta  = 3 \left( \frac{5\pi}{4} + 2\pi k \right) = \frac{15 \pi}{4} + 6\pi k</m>,
+                where <m>k</m>, as always, runs through the integers.
+                Solving the other equation,
+                <m>\frac{1}{3} \theta-\pi = \frac{3\pi}{4} + 2\pi k</m> produces
+                <m>\theta = \frac{21\pi}{4} + 6 \pi k</m> for integers <m>k</m>.
+                To check the first family of answers, we substitute,
+                combine line terms, and simplify.
+                <me>
+                  \begin{array}{rclr}  \csc\left(\frac{1}{3} \left[ \frac{15\pi}{4} + 6 \pi  k \right] - \pi   \right)  \amp   = \amp   \csc\left(\frac{5\pi}{4} + 2\pi k - \pi \right) \amp  \\ \amp  =  \amp    \csc\left(\frac{\pi}{4} + 2\pi k\right) \amp   \\ \amp  =  \amp  \csc\left(\frac{\pi}{4}\right) \amp  \text{ (the period of cosecant is \(2\pi\)) }  \\ \amp  = \amp  \sqrt{2} \amp \end{array}
+                </me>
+                The family <m>\theta = \frac{21\pi}{4} + 6 \pi  k</m> checks similarly.
+                Despite having infinitely many solutions,
+                we find that <em>none</em> of them lie in <m>[0,2\pi)</m>.
+                To verify this graphically,
+                we check that <m>y = \csc\left(\frac{1}{3} \theta -\pi\right)</m> and
+                <m>y =\sqrt{2}</m> do not intersect at all over the interval <m>[0,2\pi)</m>.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq02.jpg"/> {
+                <m>y = \csc\left(\frac{1}{3} \theta -\pi\right)</m>} and <m>y =\sqrt{2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Since <m>\cot(3t) = 0</m> has the form <m>\cot(u) = 0</m>,
+                we know <m>u = \frac{\pi}{2} + \pi k</m>, so, in this case,
+                <m>3t =  \frac{\pi}{2} + \pi k</m> for integers <m>k</m>.
+                Solving for <m>t</m> yields <m>t = \frac{\pi}{6} + \frac{\pi}{3} k</m>.
+                Checking our answers, we get
+                <me>
+                  \begin{array}{rclr}  \cot\left(3\left[ \frac{\pi}{6} + \frac{\pi}{3} k\right]\right)  \amp   = \amp   \cot\left(\frac{\pi}{2} + \pi k\right)  \amp  \\ \amp  =  \amp    \cot\left(\frac{\pi}{2}\right) \amp   \text{ (the period of cotangent is \(\pi\)) }  \\ \amp  =  \amp  0 \amp \end{array}
+                </me>
+                As <m>k</m> runs through the integers, we obtain six answers,
+                corresponding to <m>k=0</m> through <m>k=5</m>,
+                which lie in <m>[0, 2\pi)</m>:
+                <m>x = \frac{\pi}{6}</m>, <m>\frac{\pi}{2}</m>, <m>\frac{5\pi}{6}</m>,
+                <m>\frac{7\pi}{6}</m> , <m>\frac{3\pi}{2}</m> and  <m>\frac{11\pi}{6}</m>.
+                Graphing <m>y = \cot(3t)</m> and <m>y=0</m>
+                (the <m>t</m>-axis),
+                we confirm our result.<fn>
+                On many calculators, there is no function button for cotangent.
+                In that case,
+                we would use the quotient identity and graph <m>y = \frac{\cos(3t)}{\sin(3t)}</m> instead.
+                The reader is invited to see what happens if we would graph <m>y= \frac{1}{\tan(3t)}</m> instead.
+                </fn>  <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq03.jpg"/>  {  <m>y = \cot(3t)</m>}  and <m>y=0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The complication in solving an equation like
+                <m>\sec^{2}(t) = 4</m> comes not from the argument of secant,
+                which is just <m>t</m>, but rather,
+                the fact the secant is being squared:
+                <m>\sec^{2}(t) = (\sec(t))^2 = 4</m>.
+                To get this equation to look like one of the forms listed on <xref ref="trigeqnstrategy1">page</xref>,
+                we extract square roots to get <m>\sec(t) = \pm 2</m>.
+                Converting to cosines, we have  <m>\cos(t) = \pm \frac{1}{2}</m>.
+                For <m>\cos(t) = \frac{1}{2}</m>,
+                we get <m>t = \frac{\pi}{3} + 2\pi k</m> or
+                <m>t = \frac{5\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                For <m>\cos(t) = -\frac{1}{2}</m>,
+                we get <m>t = \frac{2\pi}{3} + 2\pi k</m> or
+                <m>t = \frac{4\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                If we take a step back and think of these families of solutions geometrically,
+                we see we are finding the measures of all angles with a reference angle of <m>\frac{\pi}{3}</m>.
+                As a result,
+                these solutions can be combined and we may write our solutions as <m>t = \frac{\pi}{3} + \pi k</m> and
+                <m>t = \frac{2\pi}{3} + \pi k</m> for integers <m>k</m>.
+                To check the first family of solutions, we note that,
+                depending on the integer <m>k</m>,
+                <m>\sec\left(\frac{\pi}{3} + \pi k\right)</m> doesn't always equal <m>\sec\left(\frac{\pi}{3}\right)</m>.
+                It is true, though,  that for all integers <m>k</m>,
+                <m>\sec\left(\frac{\pi}{3} + \pi k\right) = \pm \sec\left(\frac{\pi}{3}\right) = \pm 2</m>.  (Can you show this?)  Hence,
+                checking our first family of solutions gives:
+                <me>
+                  \begin{array}{rclr}  \sec^{2}\left(\frac{\pi}{3} + \pi k\right)  \amp   = \amp   \left( \pm \sec\left(\frac{\pi}{3}\right)\right)^2  \amp  \\ \amp  =  \amp    (\pm 2)^2 \amp   \\ \amp  =  \amp  4 \amp \end{array}
+                </me>
+                The check for the family of solutions <m>t =\frac{2\pi}{3} + \pi k</m> is similar.
+                The solutions which lie in
+                <m>[0,2\pi)</m> come from the values <m>k = 0</m> and <m>k=1</m>,
+                namely <m>t = \frac{\pi}{3}</m>,
+                <m>\frac{2\pi}{3}</m>, <m>\frac{4\pi}{3}</m> and <m>\frac{5\pi}{3}</m>.
+                Graphing <m>y = (\sec(t))^2</m> and <m>y=4</m> confirms our results.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq04.jpg"/>  { <m>y = (\sec(t))^2</m>} and  <m>y = 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The equation  <m>\tan\left(\frac{x}{2}\right) = -3</m> has the form <m>\tan(u) = -3</m>,
+                whose solution is <m>u = \arctan(-3) + \pi k</m>.
+                Hence, <m>\frac{x}{2} = \arctan(-3) + \pi k</m>,
+                so  <m>x = 2\arctan(-3) + 2\pi k</m> for integers <m>k</m>.
+                To check, we note
+                <me>
+                  \begin{array}{rclr}  \tan\left(\frac{2\arctan(-3) + 2\pi k}{2}\right)  \amp   = \amp  \tan\left( \arctan(-3) + \pi k \right)  \amp  \\ \amp  =  \amp  \tan\left(\arctan(-3) \right) \amp  \text{ (the period of tangent is \(\pi\)) }  \\ \amp  =  \amp  -3 \amp  (\text{ See Theorem }<xref ref="arctangentcotangentfunctionprops"></xref>) \end{array}
+                </me>
+                To determine which of our answers lie in the interval <m>[0,2\pi)</m>,
+                we first need to get an idea of the value of <m>2\arctan(-3)</m>.
+                While we could easily find an approximation using a calculator,<fn>
+                Your instructor will let you know if you should abandon the analytic route at this point and use your calculator.
+                </fn> we proceed analytically, as is our custom.
+                To get started, we note that since <m>-3 \lt  0</m>,
+                it  <m>-\frac{\pi}{2} \lt  \arctan(-3) \lt  0</m>.
+                Hence,  <m>-\pi \lt  2\arctan(-3) \lt  0</m>.
+                With regard to our solutions,
+                <m>x = 2\arctan(-3) + 2\pi k</m>,
+                we see for <m>k = 0</m>, we get <m>x = 2\arctan(-3) \lt  0</m>,
+                so we discard this answer and all answers
+                <m>x = 2\arctan(-3) + 2\pi k</m> where <m>k \lt  0</m>.
+                Next, we turn our attention to <m>k = 1</m> and get <m>x = 2\arctan(-3) + 2\pi</m>.
+                Starting with the inequality <m>-\pi \lt  2\arctan(-3) \lt  0</m>,
+                we add through <m>2\pi</m>  and get <m>\pi \lt  2\arctan(-3) +2\pi \lt  2\pi</m>.
+                This means <m>x = 2\arctan(-3) + 2\pi</m> lies in <m>[0,2\pi)</m>.
+                Advancing <m>k</m> to <m>2</m> produces <m>x = 2\arctan(-3) + 4\pi</m>.
+                Once again, we get from <m>-\pi \lt  2\arctan(-3) \lt  0</m> that <m>3\pi \lt  2\arctan(-3) + 4\pi \lt  4\pi</m>.
+                Since this is outside the interval of interest, <m>[0,2\pi)</m>,
+                we discard <m>x = 2\arctan(-3) + 4\pi</m> and all solutions of the form <m>x = 2\arctan(-3) + 2\pi k</m> for <m>k > 2</m>.
+                Graphically,
+                <m>y = \tan\left(\frac{x}{2}\right)</m> and <m>y = -3</m> intersect only once on
+                <m>[0,2\pi)</m> at <m>x = 2\arctan(-3) + 2\pi\approx 3.785</m>.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq05.jpg"/>  {  <m>y = \tan\left(\frac{x}{2}\right)</m>} and  <m>y = -3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>\sin(2x) = 0.87</m>,
+                we first note that it has the form <m>\sin(u) = 0.87</m>,
+                which has the family of solutions <m>u = \arcsin(0.87) + 2\pi k</m> or
+                <m>u =\pi -  \arcsin(0.87) + 2\pi k</m> for integers <m>k</m>.
+                Since the argument of sine here is <m>2x</m>,
+                we get <m>2x = \arcsin(0.87) + 2\pi k</m> or
+                <m>2x =\pi -  \arcsin(0.87) + 2\pi k</m> which gives <m>x = \frac{1}{2} \arcsin(0.87) + \pi k</m> or
+                <m>x =\frac{\pi}{2} -  \frac{1}{2}\arcsin(0.87) + \pi k</m> for integers <m>k</m>.
+                To check,
+                <me>
+                  \begin{array}{rclr}  \sin\left(2\left[\frac{1}{2} \arcsin(0.87) + \pi k\right]\right)  \amp   = \amp  \sin\left(\arcsin(0.87) + 2\pi k\right)  \amp  \\ \amp  =  \amp  \sin\left(\arcsin(0.87)\right) \amp  \text{ (the period of sine is \(2\pi\)) }  \\ \amp  =  \amp  0.87\amp  (\text{ See Theorem }<xref ref="arccosinesinefunctionprops"></xref>) \end{array}
+                </me>
+                For the family <m>x =\frac{\pi}{2} -  \frac{1}{2}\arcsin(0.87) + \pi k</m> , we get
+                <me>
+                  \begin{array}{rclr}  \sin\left(2\left[\frac{\pi}{2} - \frac{1}{2} \arcsin(0.87) + \pi k\right]\right)  \amp   = \amp  \sin\left(\pi - \arcsin(0.87) + 2\pi k\right) \amp  \\ \amp  =  \amp  \sin\left(\pi - \arcsin(0.87)\right) \amp  \text{ (the period of sine is \(2\pi\)) }  \\ \amp  =  \amp  \sin\left(\arcsin(0.87)\right) \amp  \text{ (\(\sin(\pi - t) = \sin(t)\)) }  \\ \amp  =  \amp  0.87\amp  (\text{ See Theorem }<xref ref="arccosinesinefunctionprops"></xref>) \end{array}
+                </me>
+                To determine which of these solutions lie in <m>[0,2\pi)</m>,
+                we first need to get an idea of the value of <m>x=\frac{1}{2} \arcsin(0.87)</m>.
+                Once again, we could use the calculator,
+                but we adopt an analytic route here.
+                By definition,
+                <m>0 \lt  \arcsin(0.87) \lt  \frac{\pi}{2}</m> so that multiplying through by
+                <m>\frac{1}{2}</m> gives us <m>0 \lt  \frac{1}{2} \arcsin(0.87) \lt  \frac{\pi}{4}</m>.
+                Starting with the family of solutions <m>x = \frac{1}{2} \arcsin(0.87) + \pi k</m>,
+                we use the same kind of arguments as in our solution to <xref ref="arctanin02pi">number</xref>
+                above and find only the solutions corresponding to <m>k =0</m> and <m>k=1</m> lie in <m>[0,2\pi)</m>:
+                <m>x = \frac{1}{2} \arcsin(0.87)</m> and <m>x = \frac{1}{2} \arcsin(0.87) + \pi</m>.
+                Next, we move to the family
+                <m>x =\frac{\pi}{2} -  \frac{1}{2}\arcsin(0.87) + \pi k</m> for integers <m>k</m>.
+                Here, we need to get a better estimate of <m>\frac{\pi}{2} - \frac{1}{2} \arcsin(0.87)</m>.
+                From the inequality <m>0 \lt  \frac{1}{2}\arcsin(0.87) \lt  \frac{\pi}{4}</m>,
+                we first multiply through by <m>-1</m> and then add
+                <m>\frac{\pi}{2}</m> to get <m>\frac{\pi}{2} > \frac{\pi}{2} -\frac{1}{2} \arcsin(0.87) >  \frac{\pi}{4}</m>,
+                or <m>\frac{\pi}{4} \lt  \frac{\pi}{2} -\frac{1}{2} \arcsin(0.87) \lt  \frac{\pi}{2}</m>.
+                Proceeding with the usual arguments,
+                we find the only solutions which lie in
+                <m>[0,2\pi)</m> correspond to <m>k = 0</m> and <m>k=1</m>,
+                namely <m>x =\frac{\pi}{2} -  \frac{1}{2}\arcsin(0.87)</m> and  <m>x = \frac{3\pi}{2} - \frac{1}{2}\arcsin(0.87)</m>.
+                All told, we have found four solutions to <m>\sin(2x) = 0.87</m> in <m>[0,2\pi)</m>:
+                <m>x =\frac{1}{2} \arcsin(0.87) \approx 0.528</m>,
+                <m>x=\frac{1}{2} \arcsin(0.87) + \pi \approx 3.669</m>,
+                <m>x =\frac{\pi}{2} -  \frac{1}{2}\arcsin(0.87) \approx 1.043</m> and  <m>x = \frac{3\pi}{2} - \frac{1}{2}\arcsin(0.87) \approx 4.185</m>.
+                By graphing <m>y = \sin(2x)</m> and
+                <m>y = 0.87</m>, we confirm our results.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq06.jpg"/>  {
+                <m>y = \sin(2x)</m>} and  <m>y = 0.87</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      If one looks closely at the equations and solutions in <xref ref="TrigEqnEx1">Example</xref>,
+      an interesting relationship evolves between the frequency of the circular function involved in the equation and how many solutions one can expect in the interval <m>[0, 2\pi)</m>.
+      This relationship is explored in <xref ref="frequencynumberconnection">Exercise</xref>.
+    </p>
+    <p>
+      Each of the problems in <xref ref="TrigEqnEx1">Example</xref>
+      featured one circular function.
+      If an equation involves two different circular functions or if the equation contains the same circular function but with different arguments,
+      we will need to employ identities and Algebra to reduce the equation to the same form as those given on <xref ref="trigeqnstrategy1">page</xref>.
+      We demonstrate these techniques in the following example.
+    </p>
+    <example xml:id="TrigEqIdEx1">
+      <statement>
+        <p>
+          Solve the following equations and list the solutions which lie in the interval <m>[0,2\pi)</m>.
+          Verify your solutions on <m>[0,2\pi)</m> graphically.
+          <ol cols="4">
+            <li>
+              <p>
+                <m>3\sin^{3}(\theta) = \sin^{2}(\theta)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sec^{2}(\theta) = \tan(\theta) + 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(2t) = 3\cos(t) - 2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(3t) = 2- \cos(t)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(3x) = \cos(5x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(2x) =\sqrt{3} \cos(x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(x)\cos\left(\frac{x}{2}\right) + \cos(x)\sin\left(\frac{x}{2}\right) = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\cos(x) - \sqrt{3} \sin(x) = 2</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                One approach to solving  <m>3\sin^{3}(\theta) = \sin^{2}(\theta)</m> begins with dividing both sides by <m>\sin^{2}(\theta)</m>.
+                Doing so, however, assumes that
+                <m>\sin^{2}(\theta) \neq 0</m> which means we risk losing solutions.
+                Instead, we take a cue from <xref ref="PolynomialFunctions">Chapter</xref>
+                (since what we have here is a polynomial equation in terms of
+                <m>\sin(\theta)</m>) and gather all the nonzero terms on one side and factor:
+                <me>
+                  \begin{array}{rclr}  3\sin^{3}(\theta) \amp  = \amp   \sin^{2}(\theta) \amp  \\ 3\sin^{3}(\theta) -  \sin^{2}(\theta) \amp  = \amp  0 \amp   \\ \sin^{2}(\theta) (3 \sin(\theta) - 1) \amp  = \amp  0 \amp  \text{Factor out \(\sin^{2}(\theta)\) from both terms.} \end{array}
+                </me>
+                We get <m>\sin^{2}(\theta) = 0</m> or <m>3\sin(\theta) - 1 = 0</m>,
+                so <m>\sin(\theta) = 0</m> or <m>\sin(\theta) = \frac{1}{3}</m>.
+                The solution to <m>\sin(\theta) = 0</m> is <m>\theta = \pi k</m>,
+                with <m>\theta = 0</m> and
+                <m>\theta = \pi</m> being the two solutions which lie in <m>[0,2\pi)</m>.
+                To solve <m>\sin(\theta) = \frac{1}{3}</m>,
+                we use the arcsine function to get <m>\theta = \arcsin\left(\frac{1}{3}\right) + 2\pi k</m> or
+                <m>\theta = \pi - \arcsin\left(\frac{1}{3}\right) + 2\pi k</m> for integers <m>k</m>.
+                We find the two solutions here which lie in <m>[0,2\pi)</m> to be
+                <m>\theta = \arcsin\left(\frac{1}{3}\right) \approx 0.34</m> and <m>\theta = \pi - \arcsin\left(\frac{1}{3}\right) \approx 2.80</m>.
+                To check graphically, we plot <m>y = 3(\sin(\theta))^3</m> and
+                <m>y = (\sin(\theta))^2</m> and find the  <m>\theta</m>-coordinates of the intersection points of these two curves.<fn>
+                Note that we do <em>not</em> list
+                <m>\theta = 2\pi</m> as part of the solution over the interval
+                <m>[0,2\pi)</m> since <m>2\pi</m> is not in <m>[0, 2\pi)</m>.
+                </fn>  (Some extra zooming may be required near <m>\theta=0</m> and
+                <m>\theta=\pi</m> to verify that these two curves do in fact intersect four times.)      <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq07.jpg"/>  {
+                <m>y = 3(\sin(\theta))^3</m>} and  <m>y = (\sin(\theta))^2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                We see immediately in the equation
+                <m>\sec^{2}(\theta) = \tan(\theta) + 3</m> that there are two different circular functions present,
+                so we look for an identity to express both sides in terms of the same function.
+                We use the Pythagorean Identity
+                <m>\sec^{2}(\theta) = 1 + \tan^{2}(\theta)</m> to exchange <m>\sec^{2}(\theta)</m>  for tangents.
+                What results is a <sq>quadratic in disguise:</sq><fn>
+                See <xref ref="AppQuadEqus">Section</xref> for a review of this concept.
+                </fn>
+                <me>
+                  \begin{array}{rclr}  \sec^{2}(\theta) \amp   = \amp  \tan(\theta) + 3 \amp  \\ 1 + \tan^{2}(\theta) \amp  = \amp  \tan(\theta) + 3\amp  \text{(Since \(\sec^{2}(\theta) = 1 + \tan^{2}(\theta)\).)}  \\ \tan^{2}(\theta) - \tan(\theta) -2 \amp  = \amp  0 \amp  \\ u^2 - u - 2 \amp  = \amp  0 \amp  \text{ Let \(u = \tan(\theta)\). }  \\ (u + 1)(u - 2) \amp  = \amp  0 \amp \end{array}
+                </me>
+                This gives <m>u = -1</m> or <m>u = 2</m>.
+                Since <m>u = \tan(\theta)</m>,
+                we have <m>\tan(\theta) = -1</m> or <m>\tan(\theta) = 2</m>.
+                From <m>\tan(\theta) = -1</m>,
+                we get <m>\theta = -\frac{\pi}{4} + \pi k</m> for integers <m>k</m>.
+                To solve <m>\tan(\theta) = 2</m>,
+                we employ the arctangent function and get
+                <m>\theta = \arctan(2) + \pi k</m> for integers <m>k</m>.
+                From the first set of solutions,
+                we get <m>\theta = \frac{3\pi}{4}</m> and
+                <m>\theta = \frac{7\pi}{4}</m> as our answers which lie in <m>[0,2\pi)</m>.
+                Using the same sort of argument we saw in <xref ref="TrigEqnEx1">Example</xref>,
+                we get  <m>\theta=\arctan(2) \approx 1.107</m> and
+                <m>\theta = \pi + \arctan(2) \approx 4.249</m> as answers from our second set of solutions which lie in <m>[0,2\pi)</m>.
+                We verify our solutions below graphically.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq08.jpg"/> {
+                <m>y =(\sec(\theta))^2</m>} and <m>y = \tan(\theta) + 3</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The good news is that in the equation <m>\cos(2t) = 3\cos(t) - 2</m>,
+                we have the same circular function, cosine,  throughout.
+                The bad news is that we have different arguments, <m>2t</m> and <m>t</m>.
+                Using the double angle identity
+                <m>\cos(2t) = 2\cos^{2}(t) - 1</m> results in another quadratic in disguise:'
+                <me>
+                  \begin{array}{rclr}  \cos(2t) \amp  = \amp  3\cos(t) - 2 \amp  \\ 2\cos^{2}(t) -1 \amp  = \amp  3\cos(t) -2 \amp  \text{(Since \(\cos(2t) = 2\cos^{2}(t) -1\).)}  \\ 2\cos^{2}(t) - 3\cos(t) +1 \amp  = \amp  0 \amp  \\ 2 u^2 - 3 u + 1 \amp  = \amp  0 \amp  \text{ Let \(u = \cos(t)\). } \\ (2u - 1)(u - 1) \amp  = \amp  0 \amp \end{array}
+                </me>
+                We get <m>u = \frac{1}{2}</m> or <m>u = 1</m>,
+                so   <m>\cos(t) = \frac{1}{2}</m> or <m>\cos(t) = 1</m>.
+                Solving  <m>\cos(t) = \frac{1}{2}</m>,
+                we get <m>t = \frac{\pi}{3} + 2\pi k</m> or
+                <m>t = \frac{5\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                From <m>\cos(t) = 1</m>, we get
+                <m>t = 2\pi k</m> for integers <m>k</m>.
+                The answers which lie in <m>[0,2\pi)</m> are <m>t =0</m>,
+                <m>\frac{\pi}{3}</m>, and <m>\frac{5\pi}{3}</m>.
+                Graphing <m>y = \cos(2t)</m> and <m>y = 3\cos(t) - 2</m>,
+                we find that the curves intersect in three places on
+                <m>[0,2\pi)</m> and confirm our results.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq09.jpg"/>  {
+                <m>y =\cos(2t)</m>} and <m>y = 3 \cos(t)  - 2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve <m>\cos(3t) = 2- \cos(t)</m>,
+                we take a cue from the previous problem and look for an identity to rewrite
+                <m>\cos(3t)</m> in terms of <m>\cos(t)</m>.
+                From <xref ref="doubleangleex">Example</xref>,
+                <xref ref="cosinepolynomial">number</xref>,
+                we know that <m>\cos(3t) = 4\cos^{3}(t) - 3\cos(t)</m>.
+                This transforms the equation into a polynomial in terms of <m>\cos(t)</m>.
+                <me>
+                  \begin{array}{rclr}  \cos(3t) \amp  = \amp 2- \cos(t) \amp  \\ 4\cos^{3}(t) - 3\cos(t) \amp  = \amp  2- \cos(t) \amp  \\ 2\cos^{3}(t) - 2\cos(t) -2  \amp  = \amp  0 \amp  \\ 4 u^3 - 2 u -2  \amp  = \amp  0 \amp  \text{ Let \(u = \cos(t)\). } \end{array}
+                </me>
+                Using what we know from <xref ref="PolynomialFunctions">Chapter</xref>,
+                we factor <m>4u^3-2u-2</m> as
+                <m>(u-1)\left(4u^2+4u+2\right)</m> and set each factor equal to <m>0</m>.
+                We get either <m>u-1 = 0</m> or  <m>4u^2+2u+2=0</m>,
+                and since the discriminant of the latter is negative,
+                the only real solution to <m>4u^3-2u-2=0</m> is <m>u = 1</m>.
+                Since <m>u = \cos(t)</m>,
+                we get <m>\cos(t) = 1</m>, so
+                <m>t = 2\pi k</m> for integers <m>k</m>.
+                The only solution which lies in <m>[0,2\pi)</m> is <m>t = 0</m>.
+                Our graph below confirms this.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq10.jpg"/>  {
+                <m>y = \cos(3t)</m>} and  <m>y = 2- \cos(t)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                While we could approach solving the equation
+                <m>\cos(3x) = \cos(5x)</m> in the same manner as we did the previous two problems,
+                we choose instead to showcase the utility of the Sum to Product Identities.<fn>
+                We invite the reader to try the <sq>polynomial approach</sq> used in the previous problem to see what difficulties are encountered.
+                </fn>  From <m>\cos(3x) = \cos(5x)</m>,
+                we get <m>\cos(5x) - \cos(3x) = 0</m>,
+                and it is the presence of <m>0</m> on the right hand side that indicates a switch to a product would be a good move.<fn>
+                Since a <em>product</em> equalling zero means,
+                necessarily, one or both <em>factors</em> is <m>0</m>.
+                See <xref ref="propertiesofzero">page</xref>.
+                </fn>  Using <xref ref="sumtoproduct">Theorem</xref>,
+                we rewrite <m>\cos(5x) - \cos(3x)</m> as <m>- 2 \sin\left( \frac{5x + 3x}{2}\right)\sin\left( \frac{5x - 3x}{2}\right) = -2 \sin(4x)\sin(x)</m>.
+                Hence, our original equation
+                <m>\cos(3x) = \cos(5x)</m> is equivalent to <m>-2 \sin(4x) \sin(x) = 0</m>.
+                From <m>-2 \sin(4x) \sin(x) = 0</m>,
+                we get either <m>\sin(4x) = 0</m> or <m>\sin(x)</m> = 0.
+                Solving <m>\sin(4x) = 0</m> gives
+                <m>x = \frac{\pi}{4} k</m> for integers <m>k</m>,
+                and the solution to <m>\sin(x) = 0</m> is
+                <m>x = \pi k</m> for integers <m>k</m>.
+                The second set of solutions is contained in the first set of solutions,<fn>
+                As always, when in doubt, write it out!
+                </fn> so our final solution to <m>\cos(5x) = \cos(3x)</m> is
+                <m>x = \frac{\pi}{4} k</m> for integers <m>k</m>.
+                There are eight of these answers which lie in <m>[0,2\pi)</m>:
+                <m>x = 0</m>, <m>\frac{\pi}{4}</m>,
+                <m>\frac{\pi}{2}</m>, <m>\frac{3\pi}{4}</m>, <m>\pi</m>,
+                <m>\frac{5\pi}{4}</m>, <m>\frac{3\pi}{2}</m> and <m>\frac{7\pi}{4}</m>.
+                Our plot of the graphs of <m>y = \cos(3x)</m> and <m>y = \cos(5x)</m> below
+                (after some careful zooming)
+                bears this out.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq11.jpg"/> {
+                <m>y = \cos(3x)</m>} and <m>y = cos(5x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                In the equation   <m>\sin(2x) =\sqrt{3} \cos(x)</m>,
+                we not only  have different circular functions involved,
+                but we also have different arguments to contend with.
+                Using the double angle identity
+                <m>\sin(2x) = 2 \sin(x) \cos(x)</m> makes all of the arguments the same and we proceed to gather all of the nonzero terms on one side of the equation and factor.
+                <me>
+                  \begin{array}{rclr}  \sin(2x) \amp  = \amp  \sqrt{3} \cos(x) \amp  \\ 2 \sin(x) \cos(x) \amp  = \amp  \sqrt{3} \cos(x)  \amp  \text{ (Since \(\sin(2x) = 2\sin(x) \cos(x)\).) }  \\ 2\sin(x) \cos(x) - \sqrt{3} \cos(x) \amp  = \amp  0 \amp  \\ \cos(x) (2 \sin(x) - \sqrt{3}) \amp  = \amp  0 \amp \end{array}
+                </me>
+                We get <m>\cos(x) = 0</m> or <m>\sin(x) = \frac{\sqrt{3}}{2}</m>.
+                From <m>\cos(x) = 0</m>,
+                we obtain <m>x = \frac{\pi}{2} + \pi k</m> for integers <m>k</m>.
+                From <m>\sin(x) = \frac{\sqrt{3}}{2}</m>,
+                we get <m>x = \frac{\pi}{3} + 2\pi k</m> or
+                <m>x = \frac{2\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                The answers which lie in <m>[0,2\pi)</m> are
+                <m>x = \frac{\pi}{2}</m>, <m>\frac{3\pi}{2}</m>,
+                <m>\frac{\pi}{3}</m> and <m>\frac{2\pi}{3}</m>,
+                as verified graphically below.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq12.jpg"/>  {
+                <m>y = \sin(2x)</m>} and  <m>y = \sqrt{3} \cos(x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Unlike the previous problem,
+                there seems to be no quick way to get the circular functions or their arguments to match in the equation <m>\sin(x)\cos\left(\frac{x}{2}\right) + \cos(x)\sin\left(\frac{x}{2}\right) = 1</m>.
+                If we stare at it long enough, however,
+                we realize that the left hand side is the expanded form of the sum formula for <m>\sin\left(x + \frac{x}{2}\right)</m>.
+                Hence, our original equation is equivalent to <m>\sin\left(\frac{3}{2} x\right) = 1</m>.
+                Solving, we find <m>x = \frac{\pi}{3} + \frac{4\pi}{3} k</m> for integers <m>k</m>.
+                Two of these solutions lie in <m>[0,2\pi)</m>:
+                <m>x = \frac{\pi}{3}</m> and <m>x = \frac{5\pi}{3}</m>.
+                Graphing <m>y = \sin(x)\cos\left(\frac{x}{2}\right) + \cos(x)\sin\left(\frac{x}{2}\right)</m> and <m>y = 1</m> validates our solutions.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq13.jpg"/> { <m>y = \sin(x)\cos\left(\frac{x}{2}\right) + \cos(x)\sin\left(\frac{x}{2}\right)</m>} and <m>y = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                With the absence of double angles or squares,
+                there doesn't seem to be much we can do with the equation <m>\cos(x) - \sqrt{3} \sin(x) = 2</m>.
+                However, since the frequencies of the sine and cosine terms are the same,
+                we can rewrite the left hand side of this equation as a sinusoid.
+                To fit <m>f(x) = \cos(x) - \sqrt{3} \sin(x)</m> to the form <m>A\sin(\omega t + \phi) + B</m>,
+                we use what we learned in <xref ref="expandedsinusoidex1">Example</xref>
+                and find <m>A = 2</m>, <m>B = 0</m>,
+                <m>\omega = 1</m> and <m>\phi = \frac{5\pi}{6}</m>.
+                Hence, we can rewrite the equation
+                <m>\cos(x) - \sqrt{3} \sin(x) = 2</m> as <m>2 \sin\left(x + \frac{5\pi}{6}\right) = 2</m>,
+                or <m>\sin\left(x + \frac{5\pi}{6}\right) = 1</m>.
+                Solving, we get <m>x = - \frac{\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                Only one of our solutions, <m>x = \frac{5\pi}{3}</m>,
+                which corresponds to <m>k=1</m>, lies in <m>[0,2\pi)</m>.
+                Geometrically, we see that
+                <m>y = \cos(x) - \sqrt{3} \sin(x)</m> and <m>y = 2</m> intersect just once,
+                supporting our answer.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq14.jpg"/> {
+                <m>y = \cos(x) - \sqrt{3} \sin(x)</m>} and <m>y = 2</m> An alternative way to solve this problem is to <em>introduce</em>
+                squares in order to exchange sines and cosines using a Pythagorean Identity.
+                From <m>\cos(x) - \sqrt{3} \sin(x) = 2</m> we get
+                <m>\sqrt{3} \sin(x) = \cos(x) - 2</m> so that <m>\left(\sqrt{3} \sin(x)\right)^2 = \left(\cos(x) - 2\right)^2</m>.
+                Simplifying, we get:
+                <m>3 \sin^{2}(x) = \cos^{2}(x) - 4 \cos(x) + 4</m>.
+                Substituting <m>\sin^{2}(x) = 1 - \cos^{2}(x)</m>,
+                we get <m>3(1 - \cos^{2}(x)) = \cos^{2}(x) - 4\cos(x) + 4</m> which results in the quadratic equation:
+                <m>4 \cos^{2}(x) - 4 \cos(x) +1 = 0</m>.
+                Letting <m>u = \cos(x)</m>,
+                we get <m>4u^2 - 4u + 1 = 0</m> or <m>(2u - 1)^2 = 0</m>.
+                We get <m>u = \cos(x) = \frac{1}{2}</m>.
+                Solving <m>\cos(x) = \frac{1}{2}</m> gives <m>x = \frac{\pi}{3} + 2\pi k</m> as well as
+                <m>x = \frac{5\pi}{3} + 2\pi k</m> for integers, <m>k</m>.
+                Of these two families, only solutions of the form
+                <m>x = \frac{5\pi}{3} + 2\pi k</m> checks in our original equation.<fn>
+                We've seen how squaring both sides can lead to extraneous solutions in <xref ref="AppRadEqus">Section</xref>
+                and <xref ref="RootRadicalPowerFunctions">Chapter</xref>.
+                Here, squaring both sides admits an entire
+                <em>family</em> of extraneous solutions.
+                </fn>  We leave it the reader to verify this representation of solutions to
+                <m>\cos(x) - \sqrt{3} \sin(x) = 2</m> is equivalent to the one we found previously.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We repeat here the advice given when solving systems of nonlinear equations in <xref ref="NonLinearEquations">section</xref>
+      <mdash/> when it comes to solving equations involving the circular functions,
+      it helps to just try something.
+    </p>
+    <p>
+      Next, we focus on solving inequalities involving the circular functions.
+      Since these functions are continuous on their domains,
+      we may use the sign diagram technique we've used in the past to solve the inequalities.<fn>
+      See <xref ref="firstsigndiagram">pages</xref>,
+      <xref ref="rationalsigndiagram"></xref>,
+      <xref ref="algebraicsigndiagram"></xref>,
+      as well as <xref ref="expineq">Examples</xref>
+      and <xref ref="logineq"></xref>
+      for a review of this technique, as needed.
+      </fn>
+    </p>
+    <example xml:id="TrigIneqEx1">
+      <statement>
+        <p>
+          Solve the following inequalities on <m>[0,2\pi)</m>.
+          Express your answers using interval notation and verify your answers graphically.
+          <ol>
+            <li>
+              <p>
+                <m>2\sin(t) \leq 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\sin(2x) > \cos(x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\tan(x) \geq 3</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin solving <m>2\sin(t) \leq 1</m> by collecting all of the terms on one side of the equation and zero on the other to get <m>2\sin(t) - 1 \leq 0</m>.
+                Next, we let <m>f(t) = 2\sin(t) - 1</m> and note that our original inequality is equivalent to solving <m>f(t) \leq 0</m>.
+                We now look to see where,
+                if ever, <m>f</m> is undefined and where <m>f(t) = 0</m>.
+                Since the domain of <m>f</m> is all real numbers,
+                we can immediately set about finding the zeros of <m>f</m>.
+                Solving <m>f(t) = 0</m>,
+                we have <m>2\sin(t) - 1=0</m> or <m>\sin(t) = \frac{1}{2}</m>.
+                The solutions here are <m>t = \frac{\pi}{6} + 2\pi k</m> and
+                <m>t = \frac{5\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+                Since we are restricting our attention to <m>[0,2\pi)</m>,
+                only <m>t = \frac{\pi}{6}</m> and <m>t = \frac{5\pi}{6}</m> are of concern.
+                Next, we choose test values in
+                <m>[0,2\pi)</m> other than the zeros and determine if <m>f</m> is positive or negative there.
+                For <m>t = 0</m> we have <m>f(0) = -1</m>,
+                for <m>t = \frac{\pi}{2}</m> we get
+                <m>f\left(\frac{\pi}{2}\right) = 1</m> and for <m>t = \pi</m> we get <m>f(\pi) = -1</m>.
+                Since our original inequality is equivalent to <m>f(t) \leq 0</m>,
+                we are looking for where the function is negative <m>(-)</m> or <m>0</m>,
+                and we get the intervals <m>\left[0, \frac{\pi}{6}\right] \cup \left[\frac{5\pi}{6}, 2\pi \right)</m>.
+                We can confirm our answer graphically by seeing where the graph of
+                <m>y = 2\sin(t)</m> crosses or is below the graph of <m>y = 1</m>. \begin{mfpic}[10]{-6}{6}{-2}{2} \polyline{(-6,0),(6,0)} \xmarks{-6,-2,2,6} \tlpointsep{6pt} \tlabel[cc](-6,-1){<m>0</m>} \tlabel[cc](-4,1){<m>(-)</m>} \tlabel[cc](-2,-1){<m>\frac{\pi}{6}</m>} \tlabel[cc](-2,1){0} \tlabel[cc](0,1){<m>(+)</m>} \tlabel[cc](2,-1){<m>\frac{5\pi}{6}</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](4,1){<m>(-)</m>} \tlabel[cc](6,-1){<m>2\pi</m>} \end{mfpic} <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq15.jpg"/> { <m>y = 2\sin(t)</m>} and <m>y = 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                We first rewrite <m>\sin(2x) > \cos(x)</m> as
+                <m>\sin(2x) - \cos(x) > 0</m> and let <m>f(x) = \sin(2x) - \cos(x)</m>.
+                Our original inequality is thus equivalent to <m>f(x) > 0</m>.
+                The domain of <m>f</m> is all real numbers,
+                so we can advance to finding the zeros of <m>f</m>.
+                Setting <m>f(x) = 0</m> yields <m>\sin(2x) - \cos(x) = 0</m>,
+                which, by way of the double angle identity for sine,
+                becomes <m>2\sin(x)\cos(x) - \cos(x) = 0</m> or <m>\cos(x) (2\sin(x) - 1) = 0</m>.
+                From <m>\cos(x) = 0</m>,
+                we get <m>x = \frac{\pi}{2} + \pi k</m> for integers <m>k</m> of which only <m>x = \frac{\pi}{2}</m> and
+                <m>x = \frac{3\pi}{2}</m> lie in <m>[0,2\pi)</m>.
+                For <m>2\sin(x) - 1 = 0</m>,
+                we get <m>\sin(x) = \frac{1}{2}</m> which gives <m>x = \frac{\pi}{6} + 2\pi k</m> or
+                <m>x = \frac{5\pi}{6} + 2\pi k</m> for integers <m>k</m>.
+                Of those, only <m>x = \frac{\pi}{6}</m> and
+                <m>x = \frac{5\pi}{6}</m> lie in <m>[0,2\pi)</m>.
+                Choosing test values, we get:
+                for <m>x =0</m> we find <m>f(0) = -1</m>;
+                when <m>x = \frac{\pi}{4}</m> we get <m>f\left(\frac{\pi}{4}\right) =1 - \frac{\sqrt{2}}{2} = \frac{2 - \sqrt{2}}{2}</m>;
+                for <m>x = \frac{3\pi}{4}</m> we get <m>f\left(\frac{3\pi}{4}\right) =-1 + \frac{\sqrt{2}}{2} = \frac{\sqrt{2} - 2}{2}</m>;
+                when <m>x=\pi</m> we have <m>f(\pi) = 1</m>, and lastly,
+                for <m>x = \frac{7\pi}{4}</m> we get <m>f\left(\frac{7\pi}{4}\right) = -1 - \frac{\sqrt{2}}{2} = \frac{-2 - \sqrt{2}}{2}</m>.
+                We see <m>f(x) > 0</m> on <m>\left(\frac{\pi}{6}, \frac{\pi}{2}\right) \cup \left(\frac{5\pi}{6}, \frac{3\pi}{2}\right)</m>,
+                so this is our answer.
+                Geometrically, we see the graph of
+                <m>y = \sin(2x)</m> is indeed above the graph of
+                <m>y = \cos(x)</m> on those intervals. \begin{mfpic}[10]{-10}{10}{-2}{2} \polyline{(-10,0),(10,0)} \xmarks{-10,-6,-2,2,6,10} \tlpointsep{6pt} \tlabel[cc](-10,-1){<m>0</m>} \tlabel[cc](-8,1){<m>(-)</m>} \tlabel[cc](-6,-1){<m>\frac{\pi}{6}</m>} \tlabel[cc](-6,1){0} \tlabel[cc](-4,1){<m>(+)</m>} \tlabel[cc](-2,-1){<m>\frac{\pi}{2}</m>} \tlabel[cc](-2,1){0} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,-1){<m>\frac{5\pi}{6}</m>} \tlabel[cc](2,1){0} \tlabel[cc](4,1){<m>(+)</m>} \tlabel[cc](6,-1){<m>\frac{3\pi}{2}</m>} \tlabel[cc](6,1){0} \tlabel[cc](8,1){<m>(-)</m>} \tlabel[cc](10,-1){<m>2\pi</m>} \end{mfpic} <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq16.jpg"/> {
+                <m>y = \sin(2x)</m>} and <m>y = \cos(x)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as above, we rewrite <m>\tan(x) \geq 3</m> as
+                <m>\tan(x) - 3 \geq 0</m> and let <m>f(x) = \tan(x) - 3</m>.
+                We note that on <m>[0,2\pi)</m>,
+                <m>f</m> is undefined at <m>x =\frac{\pi}{2}</m> and <m>\frac{3\pi}{2}</m>,
+                so those values will need the usual disclaimer on the sign diagram.<fn>
+                See <xref ref="rationalsigndiagram">page</xref>
+                for a discussion of the non-standard character known as the interrobang.
+                </fn>  Moving along to zeros,
+                solving <m>f(x) = \tan(x) - 3 = 0</m> requires the arctangent function.
+                We find <m>x = \arctan(3) + \pi k</m> for integers <m>k</m> and of these,
+                only <m>x = \arctan(3)</m> and
+                <m>x = \arctan(3) + \pi</m> lie in <m>[0,2\pi)</m>.
+                Since <m>3 > 0</m>, we know
+                <m>0 \lt \arctan(3) \lt \frac{\pi}{2}</m> which allows us to position these zeros correctly on the sign diagram.
+                To choose test values,
+                we begin with <m>x=0</m> and find <m>f(0) = -3</m>.
+                Finding a convenient test value in the interval
+                <m>\left(\arctan(3), \frac{\pi}{2}\right)</m> is a bit more challenging.
+                Since the arctangent function is increasing and is bounded above by <m>\frac{\pi}{2}</m>,
+                the number <m>x = \arctan(117)</m> is guaranteed<fn>
+                We could have chosen any value <m>\arctan(t)</m> where <m>t > 3</m>.
+                </fn> to lie between
+                <m>\arctan(3)</m> and <m>\frac{\pi}{2}</m>.
+                We see that <m>f(\arctan(117)) = \tan(\arctan(117)) - 3 = 114</m>.
+                For our next test value,
+                we take <m>x = \pi</m> and find <m>f(\pi) = -3</m>,
+                which brings us to finding a test value in the interval <m>\left(\arctan(3) + \pi, \frac{3\pi}{2} \right)</m>.
+                From <m>\arctan(3) \lt \arctan(117) \lt \frac{\pi}{2}</m> we get
+                <m>\arctan(3) + \pi \lt \arctan(117) + \pi \lt \frac{3\pi}{2}</m> by adding <m>\pi</m> through the inequality.
+                We find <m>f(\arctan(117)+\pi) = \tan(\arctan(117) + \pi) -3 = \tan(\arctan(117)) - 3 = 114</m>.
+                For our last test value,
+                we choose <m>x = \frac{7\pi}{4}</m> and find <m>f\left(\frac{7\pi}{4}\right) = -4</m>.
+                Since we want <m>f(x) \geq 0</m>,
+                we see that our answer is <m>\left[ \arctan(3), \frac{\pi}{2}\right) \cup \left[\arctan(3)+\pi, \frac{3\pi}{2}\right)</m>.
+                Using the graphs of <m>y = \tan(x)</m> and <m>y = 3</m>,
+                we see when the graph of the former is above
+                (or meets)
+                the graph of the latter. (Note,
+                <m>\arctan(3) \approx 1.249</m> and
+                <m>\arctan(3) + \pi \approx 4.391</m>.) \begin{mfpic}[10]{-10}{10}{-2}{2} \polyline{(-10,0),(10,0)} \xmarks{-10,-6,-2,2,6,10} \tlpointsep{6pt} \tlabel[cc](-10,-1){<m>0</m>} \tlabel[cc](-8,1){<m>(-)</m>} \tlabel[cc](-6,-1){
+                <m>\arctan(3)</m>} \tlabel[cc](-6,1){0} \tlabel[cc](-4,1){<m>(+)</m>} \tlabel[cc](-2,-1){<m>\frac{\pi}{2}</m>} \tlabel[cc](-2,1){\textinterrobang} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,-1){
+                <m>(\arctan(3)+\pi)</m>} \tlabel[cc](2,1){0} \tlabel[cc](4,1){<m>(+)</m>} \tlabel[cc](6,-1){<m>\frac{3\pi}{2}</m>} \tlabel[cc](6,1){\textinterrobang} \tlabel[cc](8,1){<m>(-)</m>} \tlabel[cc](10,-1){<m>2\pi</m>} \end{mfpic} <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/TrigEquIneq17.jpg"/> { <m>y = \tan(x)</m>} and <m>y =3</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Our next example puts solving equations and inequalities to good use <mdash/> finding domains of functions.
+    </p>
+    <example xml:id="TrigDomainEx1">
+      <statement>
+        <p>
+          Express the domain of the following functions using extended interval notation.<fn>
+          See <xref ref="extendedinterval">Section</xref>
+          for details about this notation.
+          </fn>
+          <ol>
+            <li>
+              <p>
+                <m>f(x) = \csc\left(2x + \frac{\pi}{3}\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(t) = \dfrac{\sin(t)}{2\cos(t) - 1}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>f(x) = \sqrt{1 - \cot(x)}</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To find the domain of <m>f(x) = \csc\left(2x + \frac{\pi}{3}\right)</m>,
+                we rewrite <m>f</m> in terms of sine as <m>f(x) = \frac{1}{\sin\left(2x + \frac{\pi}{3}\right)}</m>.
+                Since the sine function is defined everywhere,
+                our only concern comes from zeros in the denominator.
+                Solving <m>\sin\left(2x + \frac{\pi}{3}\right) = 0</m>,
+                we get <m>x = -\frac{\pi}{6} + \frac{\pi}{2} k</m> for integers <m>k</m>.
+                In set-builder notation,
+                our domain is  <m>\left\{ x \, | \, x  \neq  -\frac{\pi}{6} + \frac{\pi}{2} k \, \text{ for integers \(k\) }  \right\}</m>.
+                To help visualize the domain,
+                we follow the old mantra <sq>When in doubt,
+                write it out!</sq> We get <m>\left\{ x \, | \, x  \neq  -\frac{\pi}{6}, \frac{2\pi}{6}, -\frac{4\pi}{6}, \frac{5\pi}{6}, -\frac{7\pi}{6}, \frac{8\pi}{6}, \ldots \right\}</m>,
+                where we have kept the denominators <m>6</m> throughout to help see the pattern.
+                Graphing the situation on a number line,
+                we have  \begin{mfpic}[15]{-6}{6}{-1}{2} \arrow \reverse \arrow \polyline{(-6,0), (6,0)} \xmarks{-5,-3,-1,1,3,5} \tlpointsep{5pt} \axislabels {x}{{ <m>-\frac{7\pi}{6}</m>} -5,{
+                <m>-\frac{4\pi}{6}</m>} -3, { <m>-\frac{\pi}{6}</m>} -1,{
+                <m>\frac{2\pi}{6}</m>} 1,{ <m>\frac{5\pi}{6}</m>} 3,  {
+                <m>\frac{8\pi}{6}</m>} 5}  \penwd{1.5} \arrow \reverse \arrow \polyline{(-5.75,1), (5.75,1)}  \penwd{0.75}  \gclear \circle{(-5,1),0.15} \circle{(-5,1),0.15}  \gclear \circle{(-3,1),0.15} \circle{(-3,1),0.15}  \gclear \circle{(-1,1),0.15} \circle{(-1,1),0.15}  \gclear \circle{(5,1),0.15} \circle{(5,1),0.15}  \gclear \circle{(3,1),0.15} \circle{(3,1),0.15}  \gclear \circle{(1,1),0.15} \circle{(1,1),0.15}  \end{mfpic}  Proceeding as in <xref ref="extendedinterval">Section</xref>,
+                we let <m>x_{k}</m> denote the <m>k</m>th number excluded from the domain and we have
+                <m>x_{k} = -\frac{\pi}{6} + \frac{\pi}{2} k = \frac{(3k-1)\pi}{6}</m> for integers <m>k</m>.
+                The intervals which comprise the domain are of the form <m>\left(x_{k}, x_{\mbox{\tiny <m>k+1</m>} }  \right) = \left(\frac{(3k-1)\pi}{6}, \frac{(3k+2)\pi}{6} \right)</m> as <m>k</m> runs through the integers.
+                Using extended interval notation,
+                we have that the domain is
+                <me>
+                  \bigcup_{k = -\infty}^{\infty}  \left(\dfrac{(3k-1)\pi}{6}, \dfrac{(3k+2)\pi}{6} \right)
+                </me>
+                We can check our answer by substituting in values of <m>k</m> to see that it matches our diagram.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the domains of <m>\sin(t)</m> and <m>\cos(t)</m> are all real numbers,
+                the only concern when finding the domain of
+                <m>f(t) =  \frac{\sin(t)}{2\cos(t) - 1}</m> is division by zero so we set the denominator equal to zero and solve.
+                From <m>2\cos(t) - 1 = 0</m> we get
+                <m>\cos(t) = \frac{1}{2}</m> so <m>t = \frac{\pi}{3} + 2\pi k</m> or
+                <m>t = \frac{5\pi}{3} + 2\pi k</m> for integers <m>k</m>.
+                Using set-builder notation,
+                the domain is <m>\left\{ t \, | \, t  \neq \frac{\pi}{3} + 2\pi k \, \text{ and }  \, t \neq \frac{5\pi}{3} + 2\pi k \, \text{ for integers \(k\) }  \right\}</m>.
+                Writing this out,
+                we find the domain is  <m>\left\{ t \, | \, t  \neq \pm \frac{\pi}{3}, \pm \frac{5\pi}{3}, \pm \frac{7\pi}{3}, \pm \frac{11\pi}{3}, \ldots \right\}</m>,
+                so we have  \begin{mfpic}[15]{-6}{6}{-1}{2} \arrow \reverse \arrow \polyline{(-8,0), (8,0)} \xmarks{-7,-5,-3,-1,1,3,5,7} \tlpointsep{5pt} \axislabels {x}{{ <m>-\frac{11\pi}{3}</m>} -7,{ <m>-\frac{7\pi}{3}</m>} -5,{ <m>-\frac{5\pi}{3}</m>} -3, {
+                <m>-\frac{\pi}{3}</m>} -1,{ <m>\frac{\pi}{3}</m>} 1,{
+                <m>\frac{5\pi}{3}</m>} 3,  { <m>\frac{7\pi}{3}</m>} 5,  {
+                <m>\frac{11\pi}{3}</m>} 7}  \penwd{1.5} \arrow \reverse \arrow \polyline{(-7.75,1), (7.75,1)}  \penwd{0.75}  \gclear \circle{(-7,1),0.15} \circle{(-7,1),0.15}  \gclear \circle{(-5,1),0.15} \circle{(-5,1),0.15}  \gclear \circle{(-3,1),0.15} \circle{(-3,1),0.15}  \gclear \circle{(-1,1),0.15} \circle{(-1,1),0.15}  \gclear \circle{(7,1),0.15} \circle{(7,1),0.15}  \gclear \circle{(5,1),0.15} \circle{(5,1),0.15}  \gclear \circle{(3,1),0.15} \circle{(3,1),0.15}  \gclear \circle{(1,1),0.15} \circle{(1,1),0.15}   \end{mfpic}  Unlike the previous example,
+                we have <em>two</em> different families of points to consider,
+                and we present two ways of dealing with this kind of situation.
+                One way is to generalize what we did in the previous example and use the formulas we found in our domain work to describe the intervals.
+                To that end,
+                we let  <m>a_{k} = \frac{\pi}{3} + 2\pi k = \frac{(6k+1)\pi}{3}</m> and
+                <m>b_{k} = \frac{5\pi}{3} + 2\pi k = \frac{(6k+5) \pi}{3}</m> for integers <m>k</m>.
+                The goal now is to write the domain in terms of the <m>a</m>'s an <m>b</m>'s.
+                We find <m>a_{0} =  \frac{\pi}{3}</m>,
+                <m>a_{1} =  \frac{7\pi}{3}</m>,
+                <m>a_{\mbox{\tiny <m>-1</m>} } =  -\frac{5\pi}{3}</m>,
+                <m>a_{2} =  \frac{13\pi}{3}</m>,
+                <m>a_{\mbox{\tiny <m>-2</m>} } =  -\frac{11\pi}{3}</m>,
+                <m>b_{0} =  \frac{5\pi}{3}</m>,
+                <m>b_{1} =  \frac{11\pi}{3}</m>,
+                <m>b_{\mbox{\tiny <m>-1</m>} } =  -\frac{\pi}{3}</m>,
+                <m>b_{2} =  \frac{17\pi}{3}</m>  and <m>b_{\mbox{\tiny <m>-2</m>} } =  -\frac{7\pi}{3}</m>.
+                Hence, in terms of the <m>a</m>'s and <m>b</m>'s, our domain is
+                <me>
+                  \ldots  \left(a_{\mbox{\tiny \(-2\)} }, b_{\mbox{\tiny \(-2\)} }  \right) \cup \left(b_{\mbox{\tiny \(-2\)} }, a_{\mbox{\tiny \(-1\)} }  \right)\cup \left(a_{\mbox{\tiny \(-1\)} }, b_{\mbox{\tiny \(-1\)} }  \right)\cup \left(b_{\mbox{\tiny \(-1\)} }, a_{0}  \right)\cup \left(a_{0}, b_{0}  \right)\cup \left(b_{0}, a_{1}  \right)\cup \left(a_{1}, b_{1}  \right)\cup \dots
+                </me>
+                If we group these intervals in pairs,
+                <m>\left(a_{\mbox{\tiny <m>-2</m>} }, b_{\mbox{\tiny <m>-2</m>} }  \right) \cup \left(b_{\mbox{\tiny <m>-2</m>} }, a_{\mbox{\tiny <m>-1</m>} }  \right)</m>,
+                <m>\left(a_{\mbox{\tiny <m>-1</m>} }, b_{\mbox{\tiny <m>-1</m>} }  \right)\cup \left(b_{\mbox{\tiny <m>-1</m>} }, a_{0}  \right)</m>,
+                <m>\left(a_{0}, b_{0}  \right)\cup \left(b_{0}, a_{1}  \right)</m> and so forth,
+                we see a pattern emerge of the form  <m>\left(a_{k}, b_{k}  \right)\cup \left(b_{k}, a_{\mbox{\tiny <m>k+1</m>} }  \right)</m> for integers <m>k</m> so that our domain can be written as
+                <me>
+                  \bigcup_{k = -\infty}^{\infty} \left(a_{k}, b_{k}  \right)\cup \left(b_{k}, a_{\mbox{\tiny \(k+1\)} }  \right) =  \bigcup_{k = -\infty}^{\infty} \left(\frac{(6k+1)\pi}{3}, \frac{(6k+5) \pi}{3}  \right)\cup \left(\frac{(6k+5) \pi}{3}, \frac{(6k+7)\pi}{3}  \right)
+                </me>
+                A second approach to the problem exploits the periodic nature of <m>f</m>.
+                Since <m>\cos(t)</m> and <m>\sin(t)</m> have period <m>2\pi</m>,
+                it's not too difficult to show the function <m>f</m> repeats itself every <m>2\pi</m> units.<fn>
+                This doesn't necessarily mean the period of <m>f</m> is <m>2\pi</m>.
+                The tangent function is comprised of sine and cosine,
+                but its period is half theirs.
+                The reader is invited to investigate the period of <m>f</m>.
+                </fn>  This means if we can find a formula for the domain on an interval of length <m>2\pi</m>,
+                we can express the entire domain by translating our answer left and right on the <m>t</m>-axis by adding integer multiples of <m>2\pi</m>.
+                One such interval that arises naturally from our domain work is  <m>\left[\frac{\pi}{3}, \frac{7\pi}{3}\right]</m>.
+                The portion of the domain here is  <m>\left(\frac{\pi}{3}, \frac{5\pi}{3}\right) \cup \left(\frac{5\pi}{3}, \frac{7\pi}{3}\right)</m>.
+                Adding integer multiples of <m>2\pi</m>,
+                we obtain the family of intervals:
+                <m>\left(\frac{\pi}{3} + 2\pi k, \frac{5\pi}{3} + 2\pi k \right) \cup \left(\frac{5\pi}{3} + 2\pi k, \frac{7\pi}{3} + 2\pi k\right)</m> for integers <m>k</m>.
+                We leave it to the reader to show that getting common denominators leads to our previous answer.
+              </p>
+            </li>
+            <li>
+              <p>
+                To find the domain of <m>f(x) = \sqrt{1-\cot(x)}</m>, we first note that,
+                due to the presence of the <m>\cot(x)</m> term,
+                <m>x \neq \pi k</m> for integers <m>k</m>.
+                Next, we recall that for the square root to be defined,
+                we need <m>1 - \cot(x) \geq 0</m>.
+                Unlike the inequalities we solved in <xref ref="TrigIneqEx1">Example</xref>,
+                we are not restricted here to a given interval.
+                Our strategy is to solve this inequality over <m>(0,\pi)</m>
+                (the same interval which generates a fundamental cycle of cotangent)
+                and then add integer multiples of the period, in this case,
+                <m>\pi</m>.
+                We let <m>g(x) = 1 - \cot(x)</m> and set about making a sign diagram for <m>g</m> over the interval <m>(0,\pi)</m> to find where <m>g(x) \geq 0</m>.
+                We note that <m>g</m> is undefined for
+                <m>x = \pi k</m> for integers <m>k</m>, in particular,
+                at the endpoints of our interval <m>x = 0</m> and <m>x = \pi</m>.
+                Next, we look for the zeros of <m>g</m>.
+                Solving <m>g(x) = 0</m>,
+                we get <m>\cot(x) = 1</m> or
+                <m>x = \frac{\pi}{4} + \pi k</m> for integers <m>k</m> and only one of these,
+                <m>x = \frac{\pi}{4}</m>, lies in <m>(0,\pi)</m>.
+                Choosing the test values <m>x = \frac{\pi}{6}</m> and <m>x = \frac{\pi}{2}</m>,
+                we get <m>g\left(\frac{\pi}{6}\right) = 1 - \sqrt{3}</m>,
+                and <m>g\left(\frac{\pi}{2}\right) = 1</m>.
+                We construct the sign diagram for <m>g</m> over the interval
+                <m>(0, \pi)</m> below:  \begin{mfpic}[10]{-2}{6}{-2}{2} \polyline{(-2,0),(6,0)} \xmarks{-2,2,6}  \tlpointsep{6pt}  \tlabel[cc](-2,-1){<m>0</m>} \tlabel[cc](-2,1){\textinterrobang} \tlabel[cc](0,1){<m>(-)</m>} \tlabel[cc](2,-1){<m>\frac{\pi}{4}</m>} \tlabel[cc](2,1){<m>0</m>} \tlabel[cc](4,1){<m>(+)</m>} \tlabel[cc](6,-1){<m>\pi</m>} \tlabel[cc](6,1){\textinterrobang} \end{mfpic} We find
+                <m>g(x) \geq 0</m> on <m>\left[\frac{\pi}{4}, \pi \right)</m>.
+                Adding multiples of the period we get our solution to consist of the intervals  <m>\left[\frac{\pi}{4} + \pi k, \pi + \pi k  \right) = \left[\frac{(4k+1)\pi}{4}, (k+1)\pi \right)</m>.
+                Using extended interval notation, we have our final answer:
+                <me>
+                  \bigcup_{k = -\infty}^{\infty} \left[\dfrac{(4k+1)\pi}{4}, (k+1)\pi \right)
+                </me>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In our next example, we solve equations and inequalities involving the
+      <em>inverse</em> circular functions.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Solve the following equations and inequalities analytically.
+          Check your answers using a graphing utility.
+          <ol cols="3">
+            <li>
+              <p>
+                <m>\arcsin(2x) = \frac{\pi}{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4\arccos(t)-3\pi = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>3 \, \text{ arcsec } (2x-1) + \pi = 2 \pi</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4\arctan^2(t)-3\pi \arctan(t)-\pi^2 = 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\pi^2-4\arccos^{2}(x) \lt 0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>4 \, \text{ arccot } (3t) > \pi</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                To solve <m>\arcsin(2x) = \frac{\pi}{3}</m>,
+                we first note that <m>\frac{\pi}{3}</m> is in the range of the arcsine function
+                (so a solution exists!)
+                Next, we exploit the inverse property of sine and arcsine from <xref ref="arccosinesinefunctionprops">Theorem</xref>
+                <me>
+                  \begin{array}{rclr}  \arcsin(2x) \amp  = \amp  \frac{\pi}{3} \amp  \\ \sin\left(\arcsin(2x)\right) \amp  = \amp  \sin\left(\frac{\pi}{3}\right) \amp  \\ 2x \amp  = \amp  \frac{\sqrt{3}}{2} \amp  \text{ Since \(\sin(\arcsin(u)) = u\) }  \\ x \amp  = \amp  \frac{\sqrt{3}}{4} \amp \end{array}
+                </me>
+                Below we see the graphs of
+                <m>y = \arcsin(2x)</m> and <m>y = \frac{\pi}{3}</m>,
+                intersect at <m>x = \frac{\sqrt{3}}{4} \approx 0.4430</m>.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/ARCSINEQN.jpg"/>  {
+                <m>y = \arcsin(2x)</m>} and  <m>y = \frac{\pi}{3}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Our first step in solving <m>4\arccos(t)-3\pi = 0</m> is to isolate the arccosine.
+                We get <m>\arccos(t) = \frac{3\pi}{4}</m>.
+                Since <m>\frac{3\pi}{4}</m> is in the range of arccosine,
+                we may apply <xref ref="arccosinesinefunctionprops">Theorem</xref>
+                <me>
+                  \begin{array}{rclr}  \arccos(t) \amp  = \amp  \frac{3\pi}{4} \amp  \\ \cos\left(\arccos(t)\right) \amp  = \amp  \cos\left(\frac{3\pi}{4}\right) \amp  \\ t \amp  = \amp  -\frac{\sqrt{2}}{2} \amp  \text{ Since \(\cos(\arccos(u)) = u\) } \end{array}
+                </me>
+                Below we see the graph of <m>y = 4\arccos(t) - 3\pi</m> crosses <m>y = 0</m> at <m>t=-\frac{\sqrt{2}}{2} \approx -0.7071</m>.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/ARCCOSEQN.jpg"/>  { <m>y=4\arccos(t) - 3\pi</m>} and <m>y =0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                From <m>3 \, \text{ arcsec } (2x-1) + \pi = 2 \pi</m>,
+                we get <m>\text{ arcsec } (2x-1) = \frac{\pi}{3}</m>.
+                Regardless of how the range of arcsecant is chosen,
+                since <m>0 \leq \frac{\pi}{3} \lt  \frac{\pi}{2}</m>,
+                both <xref ref="arcsecantcosecantfunctionprops1">Theorems</xref>
+                <xref ref="arcsecantcosecantfunctionprops2"></xref>, apply:
+                <me>
+                  \begin{array}{rclr}  \text{ arcsec } (2x-1)\amp  = \amp  \frac{\pi}{3} \amp  \\ \sec(\text{ arcsec } (2x-1)) \amp  = \amp  \sec\left(\frac{\pi}{3}\right) \amp  \\ 2x -1 \amp  = \amp  2 \amp  \text{Since \(\sec(\text{ arcsec }(u)) = u\)}  \\ x \amp  = \amp  \frac{3}{2} \end{array}
+                </me>
+                Below we see the graphs of <m>y=3 \, \text{ arcsec } (2x-1) + \pi</m> and
+                <m>y = 2\pi</m> intersect at <m>x=\frac{3}{2} = 1.5</m>.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/ARCSECEQN.jpg"/>  { <m>y = 3 \, \text{ arcsec } (2x-1) + \pi</m>} and <m>y = 2\pi</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                With the presence of both <m>\arctan^{2}(t)</m> (
+                <m>= (\arctan(t))^2</m>) and <m>\arctan(t)</m>,
+                we substitute <m>u = \arctan(t)</m> to reveal a quadratic in disguise:
+                <m>4u^2 -3\pi u - \pi^2 = 0</m>.
+                Factoring, (don't let the <m>\pi</m> throw you!) we get <m>(4u+\pi)(u - \pi) = 0</m>,
+                so <m>u = \arctan(t) = -\frac{\pi}{4}</m> or <m>u = \arctan(t) = \pi</m>.
+                Since <m>-\frac{\pi}{4}</m> is in the range of arctangent,
+                but <m>\pi</m> is not, we only get solutions from the first equation.
+                Using <xref ref="arctangentcotangentfunctionprops">Theorem</xref>, we get
+                <me>
+                  \begin{array}{rclr}  \arctan(t) \amp  = \amp  -\frac{\pi}{4} \amp  \\ \tan(\arctan(t)) \amp  = \amp  \tan\left(-\frac{\pi}{4}\right) \amp  \\ t \amp  = \amp  -1 \amp  \text{ Since \(\tan(\arctan(u)) = u\). } \end{array}
+                </me>
+                We verify this result graphically below.
+                <image width="41%" source="./TrigonometricEquationsandInequalitiesGraphics/ARCTANEQN.jpg"/>  {  <m>y=4\arctan^2(t)-3\pi \arctan(t)-\pi^2</m> } and <m>y=0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Since the inverse circular functions are continuous on their domains,
+                we can solve inequalities featuring these functions using sign diagrams.
+                Since all of the nonzero terms of
+                <m>\pi^2-4\arccos^{2}(x) \lt 0</m> are on one side of the inequality,
+                we let <m>f(x) = \pi^2-4\arccos^{2}(x)</m> and note the domain of <m>f</m> is limited by the <m>\arccos(x)</m> to <m>[-1,1]</m>.
+                Next, we find the zeros of <m>f</m> by setting <m>f(x) = \pi^2-4\arccos^{2}(x) = 0</m>.
+                We get <m>\arccos(x) = \pm \frac{\pi}{2}</m>,
+                and since the range of arccosine is <m>[0,\pi]</m>,
+                we focus our attention on <m>\arccos(x) = \frac{\pi}{2}</m>.
+                Using <xref ref="arccosinesinefunctionprops">Theorem</xref>,
+                we get <m>x = \cos\left(\frac{\pi}{2}\right) = 0</m> as our only zero which breaks our domain <m>[-1,1]</m> into two test intervals:
+                <m>[-1,0)</m> and <m>(0,1]</m>.
+                Choosing test values <m>x = \pm 1</m>,
+                we get <m>f(-1) = -3\pi^2 \lt 0</m> and <m>f(1) = \pi^2 > 0</m>.
+                Since we are looking for where <m>f(x) = \pi^2-4\arccos^{2}(x) \lt 0</m>,
+                our answer is <m>[-1,0)</m>.
+                Geometrically, we find the graph of
+                <m>y = \pi^2-4\arccos^{2}(x)</m> is below <m>y = 0</m>
+                (the <m>x</m>-axis)
+                on <m>[-1,0)</m>. \begin{mfpic}[10]{-5}{5}{-2}{2} \polyline{(-5,0),(5,0)} \xmarks{-5,0,5} \tlpointsep{6pt} \tlabel[cc](-5,-1){<m>-1</m>} \tlabel[cc](-2.5,1){<m>(-)</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](0,-1){<m>0</m>} \tlabel[cc](5,-1){<m>1</m>} \tlabel[cc](2.5,1){<m>(+)</m>} \end{mfpic} <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/ARCCOSINEQ.jpg"/> { <m>y = \pi^2-4\arccos^{2}(x)</m>} and <m>y=0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                As in the previous problem,
+                we will use a sign diagram to solve <m>4 \, \text{ arccot } (3t) > \pi</m>.
+                Our first step is to rewrite the inequality as <m>4 \, \text{ arccot } (3t) -  \pi > 0</m>.
+                We let <m>f(t) = 4 \, \text{ arccot } (3t) -  \pi</m>,
+                and find the domain of <m>f</m> is all real numbers, <m>(-\infty, \infty)</m>.
+                To find the zeros of <m>f</m>,
+                we set <m>f(t) = 4 \, \text{ arccot } (3t) -  \pi = 0</m> and solve.
+                We get <m>\text{ arccot } (3t) = \frac{\pi}{4}</m>,
+                and since <m>\frac{\pi}{4}</m> is in the range of arccotangent,
+                we may apply <xref ref="arctangentcotangentfunctionprops">Theorem</xref> and solve
+                <me>
+                  \begin{array}{rclr}  \text{ arccot } (3t) \amp  = \amp  \frac{\pi}{4} \amp  \\ \cot(\text{ arccot } (3t)) \amp  = \amp  \cot\left(\frac{\pi}{4}\right) \amp  \\ 3t \amp  = \amp  1 \amp  \text{Since \(\cot(\text{ arccot }(u)) = u\).}  \\ t \amp  = \amp  \frac{1}{3} \amp \end{array}
+                </me>
+                Next, we make a sign diagram for <m>f</m>.
+                Since the domain of <m>f</m> is all real numbers,
+                and there is only one zero of <m>f</m>,
+                <m>t = \frac{1}{3}</m>, we have two test intervals,
+                <m>\left(-\infty, \frac{1}{3}\right)</m> and  <m>\left(\frac{1}{3}, \infty \right)</m>.
+                Ideally, we wish to find test values <m>t</m> in these intervals so that
+                <m>\text{ arccot } (3t)</m> corresponds to one of our oft-used <sq>common</sq> angles.
+                After a bit of computation,<fn>
+                Set <m>3t</m> equal to the cotangents of the <sq>common angles</sq> and choose accordingly.
+                </fn> we choose <m>t=0</m> for the interval  <m>\left(-\infty, \frac{1}{3}\right)</m> and
+                <m>t = \frac{\sqrt{3}}{3}</m> for the interval <m>\left(\frac{1}{3}, \infty \right)</m>.
+                We find <m>f(0) = \pi > 0</m> and <m>f\left(\frac{\sqrt{3}}{3}\right) = -\frac{\pi}{3} \lt  0</m>.
+                Since we are looking for where <m>f(t) > 0</m>,
+                we get our answer <m>\left(-\infty, \frac{1}{3}\right)</m>.
+                Graphically, we see  the graph of
+                <m>y = 4 \, \text{ arccot } (3t)</m>  is above the horizontal line <m>y = \pi</m> on
+                <m>\left(-\infty, \frac{1}{3}\right)= \left(-\infty, 0.\overline{3} \right)</m>.    \begin{mfpic}[10]{-5}{5}{-2}{2} \arrow \reverse \arrow \polyline{(-5,0),(5,0)} \xmarks{0}  \tlpointsep{6pt}   \tlabel[cc](-2.5,1){<m>(+)</m>} \tlabel[cc](0,1){<m>0</m>} \tlabel[cc](0,-1){<m>\frac{1}{3}</m>} \tlabel[cc](2.5,1){<m>(-)</m>} \end{mfpic}  <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/ARCCOTINEQ.jpg"/>  {  <m>y = 4 \, \text{ arccot } (3t)</m>} and  <m>y=\pi</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="harmomicmotion">
+    <title>Harmonic Motion</title>
+    <p>
+      One of the major applications of the circular functions
+      (sinusoids in particular!)
+      in Science and Engineering is the study of
+          <idx><h>harmonic motion</h></idx>
+      <em>harmonic motion</em>, We close this chapter with a brief foray into this topic since it pulls together many important concepts from both <xref ref="FoundationsofTrigonometry">Chapters</xref>
+      and <xref ref="AnalyticalTrigonometry"></xref>.
+      The equations for harmonic motion can be used to describe a wide range of phenomena,
+      from the motion of an object on a spring,
+      to the response of an electronic circuit.
+      In this subsection,
+      we restrict our attention to modeling a simple spring system.
+      Before we jump into the Mathematics,
+      there are some Physics terms and concepts we need to discuss.
+    </p>
+    <p>
+      In Physics, <sq>mass</sq> is defined as a measure of an object's resistance to straight-line motion whereas <sq>weight</sq> is the amount of force (pull) gravity exerts on an object.
+      An object's mass cannot change,<fn>
+      Well, assuming the object isn't subjected to relativistic speeds <ellipsis/>
+      </fn> while its weight could change.
+      An object which weighs 6 pounds on the surface of the Earth would weigh 1 pound on the surface of the Moon,
+      but its mass is the same in both places.
+      In the English system of units,
+      <sq>pounds</sq> (lbs.) is a measure of force (weight),
+      and the corresponding unit of mass is the <sq>slug</sq>.
+      In the SI system,
+      the unit of force is <sq>Newtons</sq> (N) and the associated unit of mass is the <sq>kilogram</sq>
+      (kg).
+    </p>
+    <p>
+      We convert between mass and weight using the formula<fn>
+      This is a consequence of Newton's Second Law of Motion <m>F = ma</m> where <m>F</m> is force,
+      <m>m</m> is mass and <m>a</m> is acceleration.
+      In our present setting,
+      the force involved is weight which is caused by the acceleration due to gravity.
+      </fn> <m>w = mg</m>.
+      Here, <m>w</m> is the weight of the object,
+      <m>m</m> is the mass and <m>g</m> is the acceleration due to gravity.
+      In the English system,
+      <m>g = 32 \frac{\text{ feet } }{\text{ second } ^2}</m>,
+      and in the SI system,
+      <m>g = 9.8\frac{\text{ meters } }{\text{ second } ^2}</m>.
+      Hence, on Earth a <em>mass</em>
+      of 1 slug <em>weighs</em> 32 lbs. and a <em>mass</em>
+      of 1 kg <em>weighs</em> 9.8 N.<fn>
+      Note that <m>1</m> pound <m>= 1 \, \frac{\text{ slug foot } }{\text{ second } ^2}</m> and <m>1</m> Newton <m>= 1 \, \frac{\text{ kg meter } }{\text{ second } ^2}</m>.
+      </fn> Suppose we attach an object with mass <m>m</m> to a spring as depicted below.
+    </p>
+    <tabular>
+      <row>
+        <cell>\begin{mfpic}[15]{-3}{3}{-2}{5}
+          \dashed \polyline{(-3,0.5), (3,0.5)}
+          \hatchcolor[gray]{.7}
+          \lhatch \rect{(-3,4), (3,5)}
+          \fillcolor[gray]{.7}
+          \gfill \rect{(-0.5,0), (0.5,1)}
+          \polyline{(0,4), (0,3.5), (0.25,3.25), (-0.25, 3), (0.25,2.75), (-0.25,2.5), (0.25,2.25), (-0.25,2), (0.25,1.75), (-0.25,1.5), (0, 1.25), (0,1)}
+          \penwd{1.025}
+          \rect{(-3,4), (3,5)}
+          \rect{(-0.5,0), (0.5,1)}
+          \drawcolor{white} \polyline{(-3,-2), (-3,2)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-3}{3}{-2}{5}
+          \dashed \polyline{(-3,0.5), (3,0.5)}
+          \hatchcolor[gray]{.7}
+          \lhatch \rect{(-3,4), (3,5)}
+          \fillcolor[gray]{.7}
+          \gfill \rect{(-0.5,0.95), (0.5,1.95)}
+          \polyline{(0,4), (0,3.5), (0.25,3.4), (-0.25, 3.25), (0.25,3.1), (-0.25,2.95), (0.25,2.8), (-0.25,2.65), (0.25,2.5), (-0.25,2.35), (0, 2.2), (0,1.95)}
+          \penwd{1.025}
+          \rect{(-3,4), (3,5)}
+          \rect{(-0.5,0.95), (0.5,1.95)}
+          \drawcolor{white} \polyline{(-3,-2), (-3,2)}
+          \end{mfpic}</cell>
+        <cell>\begin{mfpic}[15]{-3}{3}{-2}{5}
+          \dashed \polyline{(-3,0.5), (3,0.5)}
+          \hatchcolor[gray]{.7}
+          \lhatch \rect{(-3,4), (3,5)}
+          \fillcolor[gray]{.7}
+          \gfill \rect{(-0.5,-1.35), (0.5,-0.35)}
+          \polyline{(0,4), (0,3.5), (0.25,3.1), (-0.25, 2.7), (0.25,2.3), (-0.25, 1.9), (0.25,1.5), (-0.25,1.1), (0.25,0.7), (-0.25,0.3), (0, -0.1), (0,-0.35)}
+          \penwd{1.025}
+          \rect{(-3,4), (3,5)}
+          \rect{(-0.5,-1.35), (0.5,-0.35)}
+          \drawcolor{white} \polyline{(-3,-2), (-3,2)}
+          \end{mfpic}</cell>
+      </row>
+      <row>
+        <cell><m>x(t) = 0</m> at the</cell>
+        <cell><m>x(t) \lt  0</m> above the</cell>
+        <cell><m>x(t) > 0</m> below the</cell>
+      </row>
+      <row>
+        <cell>equilibrium position</cell>
+        <cell>equilibrium position</cell>
+        <cell>equilibrium position</cell>
+      </row>
+    </tabular>
+    <p>
+      The weight of the object will stretch the spring.
+      The system is said to be in <sq>equilibrium</sq> when the weight of the object is perfectly balanced with the restorative force of the spring.
+      How far the spring stretches to reach equilibrium depends on the spring's <sq>spring constant</sq>.
+      Usually denoted by the letter <m>k</m>,
+      the spring constant relates the force <m>F</m> applied to the spring to the amount <m>d</m> the spring stretches in accordance with
+      <url href="http://en.wikipedia.org/wiki/Hooke's_law"><em>Hooke's Law</em></url><fn>
+      Look familiar?
+      We saw Hooke's Law in <xref ref="AppVariation">Section</xref>.
+      </fn> <m>F = kd</m>.
+    </p>
+    <p>
+      If the object is released above or below the equilibrium position,
+      or if the object is released with an upward or downward velocity,
+      the object will bounce up and down on the end of the spring until some external force stops it.
+      If we let <m>x(t)</m> denote the object's displacement from the equilibrium position at time <m>t</m>,
+      then <m>x(t) = 0</m> means the object is at the equilibrium position,
+      <m>x(t) \lt 0</m> means the object is <em>above</em>
+      the equilibrium position,
+      and <m>x(t) > 0</m> means the object is
+      <em>below</em> the equilibrium position.
+      The function <m>x(t)</m> is called the <sq>equation of motion</sq> of the object.<fn>
+      To keep units compatible,
+      if we are using the English system,
+      we use feet (ft.) to measure displacement.
+      If we are in the SI system, we measure displacement in meters (m).
+      Time is always measured in seconds (s).
+      </fn>
+    </p>
+    <p>
+      If we ignore all other influences on the system except gravity and the spring force,
+      then Physics tells us that gravity and the spring force will battle each other forever and the object will oscillate indefinitely.
+      In this case, we describe the motion as <sq>free</sq>
+      (meaning there is no external force causing the motion)
+      and <sq>undamped</sq>
+      (meaning we ignore friction caused by surrounding medium,
+      which in our case is air).
+    </p>
+    <p>
+      The following theorem, which comes from Differential Equations,
+      gives <m>x(t)</m> as a function of the mass <m>m</m> of the object,
+      the spring constant <m>k</m>,
+      the initial displacement <m>x_{\text{ \tiny \(0\) } }</m> of the object and initial velocity <m>v_{\text{ \tiny \(0\) } }</m> of the object.
+    </p>
+    <p>
+      As with <m>x(t)</m>,
+      <m>x_{\text{ \tiny \(0\) } } = 0</m> means the object is released from the equilibrium position,
+      <m>x_{\text{ \tiny \(0\) } } \lt 0</m> means the object is released <em>above</em>
+      the equilibrium position and
+      <m>x_{\text{ \tiny \(0\) } }>0</m> means the object is released <em>below</em>
+      the equilibrium position.
+      As far as the initial velocity <m>v_{\text{ \tiny \(0\) } }</m> is concerned,
+      <m>v_{\text{ \tiny \(0\) } } =0</m> means the object is released <sq>from rest,</sq>
+      <m>v_{\text{ \tiny \(0\) } }\lt 0</m> means the object is heading <em>upwards</em>
+      and <m>v_{\text{ \tiny \(0\) } }>0</m> means the object is heading <em>downwards</em>.<fn>
+      The sign conventions here are carried over from Physics.
+      If not for the spring, the object would fall towards the ground,
+      which is the <sq>natural</sq> or <sq>positive</sq> direction.
+      Since the spring force acts in direct opposition to gravity,
+      any movement upwards is considered <sq>negative</sq>.
+      </fn>
+    </p>
+    <theorem xml:id="freeundampedmotion">
+      <statement>
+        <p>
+          <em>Equation for Free Undamped Harmonic Motion:</em>
+          Suppose an object of mass <m>m</m> is suspended from a spring with spring constant <m>k</m>.
+          If the initial displacement from the equilibrium position is
+          <m>x_{\text{ \tiny \(0\) } }</m> and the initial velocity of the object is <m>v_{\text{ \tiny \(0\) } }</m>,
+          then the displacement <m>x</m> from the equilibrium position at time <m>t</m> is given by <m>x(t) = A \sin(\omega t + \phi)</m> where
+          <ul>
+            <li>
+              <p>
+                <m>\omega = \sqrt{\dfrac{k}{m}}</m> and <m>A = \sqrt{x_{\text{ \tiny \(0\) } }^2 + \left( \dfrac{v_{\text{ \tiny \(0\) } }}{\omega}\right)^2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A\sin(\phi) = x_{\text{ \tiny \(0\) } }</m> and <m>A\omega\cos(\phi) = v_{\text{ \tiny \(0\) } }</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      It is a great exercise in <sq>dimensional analysis</sq> to verify that the formulas given in <xref ref="freeundampedmotion">Theorem</xref>
+      work out so that <m>\omega</m> has units
+      <m>\frac{1}{s}</m> and <m>A</m> has units ft. or m, depending on which system we choose.
+    </p>
+    <example xml:id="freeudampedex">
+      <statement>
+        <p>
+          Suppose an object weighing 64 pounds stretches a spring 8 feet.
+          <ol>
+            <li>
+              <p>
+                If the object is attached to the spring and released 3 feet below the equilibrium position from rest,
+                find the equation of motion of the object, <m>x(t)</m>.
+                When does the object first pass through the equilibrium position?
+                Is the object heading upwards or downwards at this instant?
+              </p>
+            </li>
+            <li>
+              <p>
+                If the object is attached to the spring and released 3 feet below the equilibrium position with an upward velocity of <m>8</m> feet per second,
+                find the equation of motion of the object, <m>x(t)</m>.
+                What is the longest distance the object travels <em>above</em>
+                the equilibrium position?
+                When does this first happen?
+                Confirm your result using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In order to use the formulas in <xref ref="freeundampedmotion">Theorem</xref>,
+          we first need to determine the spring constant <m>k</m> and the mass of the object <m>m</m>.
+        </p>
+        <p>
+          To find <m>k</m>, we use Hooke's Law <m>F = kd</m>.
+          We know the object weighs <m>64</m> lbs. and stretches the spring <m>8</m> ft.. Using <m>F = 64</m> and <m>d = 8</m>,
+          we get <m>64 = k \cdot 8</m>,
+          or <m>k = 8 \frac{\text{ lbs. } }{\text{ ft. } }</m>.
+        </p>
+        <p>
+          To find <m>m</m>,
+          we use <m>w = mg</m> with <m>w = 64</m> lbs. and <m>g =32 \frac{\text{ ft. } }{s^2}</m>.
+          We get <m>m = 2</m> slugs.
+          We can now proceed to apply <xref ref="freeundampedmotion">Theorem</xref>.
+          <ol>
+            <li>
+              <p>
+                With <m>k = 8</m> and <m>m = 2</m>,
+                we get <m>\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{8}{2}} = 2</m>.
+                Since the object is released 3 feet <em>below</em>
+                the equilibrium position <sq>from rest,</sq>
+                <m>x_{\text{ \tiny \(0\) } } = 3</m> and <m>v_{\text{ \tiny \(0\) } } = 0</m>.
+                Therefore, <m>A = \sqrt{x_{\text{ \tiny \(0\) } }^2 + \left( \frac{v_{\text{ \tiny \(0\) } }}{\omega}\right)^2} = \sqrt{3^2 + 0^2} = 3</m>.
+                To determine the phase <m>\phi</m>,
+                we have <m>A\sin(\phi) = x_{\text{ \tiny \(0\) } }</m>,
+                which in this case gives <m>3 \sin(\phi) = 3</m> so <m>\sin(\phi) = 1</m>.
+                Only <m>\phi = \frac{\pi}{2}</m> and angles coterminal to it satisfy this condition,
+                so we pick<fn>
+                For confirmation,
+                we note that <m>A\omega\cos(\phi) = v_{\text{ \tiny \(0\) } }</m>,
+                which in this case reduces to <m>6\cos(\phi) = 0</m>.
+                </fn> the phase to be <m>\phi = \frac{\pi}{2}</m>.
+                Hence, the equation of motion is <m>x(t) = 3\sin\left(2t + \frac{\pi}{2}\right)</m>.
+                To find when the object passes through the equilibrium position we solve <m>x(t)= 3\sin\left(2t + \frac{\pi}{2}\right) = 0</m>.
+                Going through the usual analysis we find
+                <m>t = -\frac{\pi}{4} + \frac{\pi}{2} k</m> for integers <m>k</m>.
+                Since we are interested in the <em>first</em>
+                time the object passes through the equilibrium position,
+                we look for the smallest positive <m>t</m> value which in this case is
+                <m>t = \frac{\pi}{4} \approx 0.78</m> seconds after the start of the motion.
+                Common sense suggests that if we release the object <em>below</em>
+                the equilibrium position,
+                the object should be traveling <em>upwards</em>
+                when it first passes through it.
+                To check this answer, we graph one cycle of <m>x(t)</m>.
+                Since our applied domain in this situation is <m>t \geq 0</m>,
+                and the period of <m>x(t)</m> is <m>T = \frac{2\pi}{\omega} = \frac{2\pi}{2} = \pi</m>,
+                we graph <m>x(t)</m> over the interval <m>[0,\pi]</m>.
+                Remembering that <m>x(t) > 0</m> means the object is below the equilibrium position and
+                <m>x(t) \lt 0</m> means the object is above the equilibrium position,
+                the fact our graph is crossing through the <m>t</m>-axis from positive <m>x</m> to negative <m>x</m> at
+                <m>t = \frac{\pi}{4}</m> confirms our answer. \begin{mfpic}[30][15]{-0.5}{4}{-3.25}{3.5} \axes \point[4pt]{(0,3), (0.78,0), (1.57,-3), (2.36,0), (3.14,3)} \tlabel[cc](4,-0.5){<m>t</m>} \tlabel[cc](0.5,3.5){<m>x</m>} \xmarks{0.78, 1.57, 2.36, 3.14} \ymarks{-3,-2,-1,1,2,3} \tlabelsep{5pt} \axislabels{x}{{<m>\frac{\pi}{4}</m>} 0.78, {<m>\frac{\pi}{2}</m>} 1.57,{<m>\frac{3\pi}{4}</m>} 2.36, {<m>\pi</m>} 3.14} \axislabels{y}{{<m>-3</m>} -3, {<m>-2</m>} -2,{<m>-1</m>} -1, {<m>1</m>} 1,{<m>2</m>} 2,{<m>3</m>} 3} \penwd{1.25pt} \arrow \function{0, 0.65, 0.1}{3*sin(2*x+1.57)} \arrow \function{0.65, 1, 0.1}{3*sin(2*x+1.57)} \function{1, 3.14, 0.1}{3*sin(2*x+1.57)} \end{mfpic} <m>x(t)= 3\sin\left(2t + \frac{\pi}{2}\right)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                The only difference between this problem and the previous problem is that we now release the object with an upward velocity of <m>8 \, \frac{\text{ ft } }{s}</m>.
+                We still have <m>\omega = 2</m> and <m>x_{\text{ \tiny \(0\) } } = 3</m>,
+                but now we have <m>v_{\text{ \tiny \(0\) } } = -8</m>,
+                the negative indicating the velocity is directed upwards.
+                Here, we get <m>A = \sqrt{x_{\text{ \tiny \(0\) } }^2 + \left( \frac{v_{\text{ \tiny \(0\) } }}{\omega}\right)^2} = \sqrt{3^2 + (-4)^2} = 5</m>.
+                From <m>A\sin(\phi) = x_{\text{ \tiny \(0\) } }</m>,
+                we get <m>5\sin(\phi) = 3</m> which gives <m>\sin(\phi) = \frac{3}{5}</m>.
+                From <m>A\omega\cos(\phi) = v_{\text{ \tiny \(0\) } }</m>,
+                we get <m>10\cos(\phi) = -8</m>,
+                or <m>\cos(\phi) = -\frac{4}{5}</m>.
+                Hence, <m>\phi</m> is a Quadrant II angle which we can describe in terms of either arcsine or arccosine.
+                Since the range of arccosine covers Quadrant II, we choose to express <m>\phi</m> in terms of the arccosine:
+                <m>\phi = \arccos\left( -\frac{4}{5} \right)</m>.
+                Hence, <m>x(t)= 5 \sin\left(2t + \arccos\left(-\frac{4}{5}\right) \right)</m>.
+                Since the amplitude of <m>x(t)</m> is <m>5</m>,
+                the object will travel at most <m>5</m> feet above the equilibrium position.
+                To find when this happens,
+                we solve the equation <m>x(t)= 5 \sin\left(2t +\arccos\left( -\frac{4}{5} \right) \right)= -5</m>,
+                the negative once again signifying that the object is <em>above</em>
+                the equilibrium position.
+                Going through the usual machinations,
+                we get <m>t = -\frac{1}{2} \arccos\left( -\frac{4}{5} \right)-\frac{\pi}{4} + \pi k</m> for integers <m>k</m>.
+                The smallest (positive) of these values occurs when <m>k=1</m>, that is,
+                <m>t =-\frac{1}{2} \arccos\left( -\frac{4}{5} \right)+ \frac{3\pi}{4} \approx 1.107</m> seconds after the start of the motion.
+                Graphing <m>x(t) = 5 \sin\left(2t + \arccos\left( -\frac{4}{5} \right) \right)</m>,
+                we find the coordinates of the first relative minimum of to be approximately
+                <m>(1.107,-5)</m> . <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/Sinusoid05.jpg"/> <m>x(t) = 5 \sin\left(2t + \arccos\left( -\frac{4}{5} \right) \right)</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Though beyond the scope of this course,
+      it is possible to model the effects of friction and other external forces acting on the system.<fn>
+      Take a good Differential Equations class to see this!
+      </fn>
+    </p>
+    <p>
+      While we may not have the Physics and Calculus background to <em>derive</em>
+      equations of motion for these scenarios,
+      we can certainly analyze them.
+      We examine three cases in the following example.
+    </p>
+    <example xml:id="underdampedresonance">
+      <statement>
+        <p>
+          <m>~</m>
+          <ol>
+            <li>
+              <p>
+                Write <m>x(t) = 5e^{-t/5} \cos(t) + 5e^{-t/5} \sqrt{3} \sin(t)</m> in the form <m>x(t) = A(t) \sin(\omega t + \phi)</m>.
+                Graph <m>x(t)</m> using a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                Write <m>x(t) = (t+3)\sqrt{2} \cos(2t) + (t+3) \sqrt{2} \sin(2t)</m> in the form <m>x(t) = A(t) \sin(\omega t + \phi)</m>.
+                Graph <m>x(t)</m> using a graphing utility.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the period of <m>x(t) = 5\sin(6t) - 5\sin\left(8t\right)</m>.
+                Graph <m>x(t)</m> using a graphing utility.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We start rewriting <m>x(t) = 5e^{-t/5} \cos(t) + 5e^{-t/5} \sqrt{3} \sin(t)</m> by factoring out
+                <m>5e^{-t/5}</m> from both terms to get <m>x(t) = 5e^{-t/5} \left( \cos(t) + \sqrt{3} \sin(t)\right)</m>.
+                We convert what's left in parentheses to the required form using the technique introduced in <xref ref="expandedsinusoid">Example</xref>
+                from <xref ref="MoreTrigonometricIdentities">Section</xref>.
+                We find <m>\left( \cos(t) + \sqrt{3} \sin(t)\right) = 2\sin\left(t+\frac{\pi}{3}\right)</m> so that <m>x(t) = 10e^{-t/5} \sin\left(t + \frac{\pi}{3}\right)</m>.
+                Graphing <m>x(t)</m> reveals some interesting behavior.
+                The sinusoidal nature continues indefinitely,
+                but it is being attenuated.
+                In the sinusoid <m>A \sin(\omega t + \phi)</m>,
+                the coefficient <m>A</m> of the sine function is the amplitude.
+                In the case of <m>x(t) = 10e^{-t/5} \sin\left(t + \frac{\pi}{3}\right)</m>,
+                we can think of the <em>function</em>
+                <m>A(t) = 10e^{-t/5}</m> as the amplitude.<fn>
+                This is the same sort of phenomenon we saw on <xref ref="beats">page</xref>
+                in <xref ref="expandedsinusoid">Section</xref>.
+                </fn>  As <m>t \rightarrow \infty</m>,
+                <m>10e^{-t/5} \rightarrow 0</m> which means the amplitude shrinks towards zero.
+                Indeed, if we graph <m>x = \pm 10e^{-t/5}</m> along with <m>x(t) = 10e^{-t/5} \sin\left(t + \frac{\pi}{3}\right)</m>,
+                we see this attenuation taking place with the exponentials acting as a <sq>wave envelope.</sq> <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/Sinusoid06.jpg"/> {
+                <m>x(t) = 10e^{-t/5} \sin\left(t + \frac{\pi}{3}\right)</m>} and <m>x= \pm 10e^{-t/5}</m> In this case,
+                the function <m>x(t)</m> corresponds to the motion of an object on a spring where there is a slight force which acts to <sq>damp</sq>,
+                or slow the motion.
+                An example of this kind of force would be the friction of the object against the air.
+                According to this model, the object oscillates forever,
+                but with increasingly smaller and smaller amplitude.
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as in the first example,
+                we factor out <m>(t+3)\sqrt{2}</m> from each term in the function <m>x(t)</m> to get <m>x(t) = (t+3)\sqrt{2}(\cos(2t) + \sin(2t))</m>.
+                We find <m>(\cos(2t) + \sin(2t)) = \sqrt{2} \sin\left(2t + \frac{\pi}{4}\right)</m>,
+                so an equivalent form of <m>x(t)</m> is  <m>x(t) = 2(t+3) \sin\left(2t + \frac{\pi}{4}\right)</m>.
+                Graphing <m>x(t)</m>, we find the sinusoid's amplitude growing.
+                This isn't too surprising  since our amplitude function here is <m>A(t) = 2(t+3) = 2t+6</m>,
+                grows without bound as <m>t \rightarrow \infty</m>.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/Sinusoid08.jpg"/>  { <m>x(t)= 2(t+3) \sin\left(2t + \frac{\pi}{4}\right)</m>} and
+                <m>x = \pm 2(t+3)</m>    The phenomenon illustrated here is <sq>forced</sq> motion.
+                That is, we imagine that the entire apparatus on which the spring is attached is oscillating as well.
+                In this particular case,
+                we are witnessing a <sq>resonance</sq> effect <mdash/> the frequency of the external oscillation matches the frequency of the motion of the object on the spring.
+                In a mechanical system,
+                this will result in some sort of structural failure.<fn>
+                The reader is invited to investigate the destructive implications of
+                <url href="http://en.wikipedia.org/wiki/Resonance"><em>resonance</em></url>.
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Last, but not least, we come to <m>x(t) = 5\sin(6t) - 5\sin(8t)</m>.
+                To find the period of this function,
+                we need to determine the length of the smallest interval on which both <m>f(t) = 5\sin(6t)</m> and
+                <m>g(t) = 5\sin(8t)</m> complete a whole number of cycles.
+                To do this, we take the ratio of their frequencies and reduce to lowest terms:
+                <m>\frac{6}{8} = \frac{3}{4}</m>.
+                This tells us that for every <m>3</m> cycles <m>f</m> makes,
+                <m>g</m> makes <m>4</m>.
+                Hence, the period of <m>x(t)</m> is three times the period of <m>f(t)</m> (which is four times the period of <m>g(t)</m>),
+                or <m>\pi</m>.
+                We check our work by graphing <m>x(t)</m> over <m>[0,\pi]</m> The reader may recognize <m>x(t)</m> an example of the <sq>beats</sq> phenomenon we first saw <xref ref="beats">on</xref>
+                in <xref ref="expandedsinusoid">Section</xref>.
+                Indeed, using a sum to product identity,
+                we may rewrite <m>x(t)</m> as <m>x(t) = -10 \sin(t) \cos(7t)</m>.
+                As we saw <xref ref="beats">on</xref>
+                (and <xref ref="beatexfirst">Exercises</xref>
+                - <xref ref="beatexlast"></xref>
+                in <xref ref="MoreTrigonometricIdentities">Section</xref>),
+                the lower frequency factor,
+                <m>-10\sin(t)</m> determines the <sq>wave-envelope,</sq> <m>x = \pm 10 \sin(t)</m>.
+                <image width="73%" source="./TrigonometricEquationsandInequalitiesGraphics/Sinusoid10.jpg"/> { <m>x(t) = 5\sin(6t) - 5\sin(8t)</m>} and
+                <m>x = \pm 10 \sin(t)</m> over <m>[0,\pi]</m> This equation of motion also results from <sq>forced</sq> motion,
+                but here the frequency of the external oscillation is different than that of the object on the spring.
+                Since the sinusoids here have different frequencies,
+                they are <sq>out of sync</sq> and do not amplify each other as in the previous example.
+                Instead, through a combination of constructive and destructive interference,
+                the mass continues to oscillate no more than <m>10</m> units from its equilibrium position indefinitely.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <p>
+      In <xref ref="solvebasicfirst">Exercises</xref>
+      - <xref ref="solvebasiclast"></xref>,
+      find <em>all</em> of the exact solutions of the equation and then list those solutions which are in the interval <m>[0, 2\pi)</m>.
+      <ol cols="6">
+        <li xml:id="solvebasicfirst">
+          <p>
+            <m>\sin \left( 5 \theta \right) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( 3t \right) = \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin \left( -2x \right) = \dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan \left( 6 \theta \right) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc \left( 4 t \right) = -1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec \left( 3x \right) = \sqrt{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot \left( 2 \theta \right) = -\dfrac{\sqrt{3}}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( 9t \right) = 9</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin \left( \dfrac{x}{3} \right) = \dfrac{\sqrt{2}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( \theta+ \dfrac{5\pi}{6} \right) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin \left( 2t - \dfrac{\pi}{3} \right) = -\dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2\cos \left( x + \dfrac{7\pi}{4} \right) = \sqrt{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc( \theta) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan \left( 2t - \pi \right) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan^{2} \left( x \right) = 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec^{2} \left( \theta \right) = \dfrac{4}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos^{2} \left( t \right) = \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li xml:id="solvebasiclast">
+          <p>
+            <m>\sin^{2} \left( x \right) = \dfrac{3}{4}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solveidentfirst">Exercises</xref>
+      - <xref ref="solveidentlast"></xref>, solve the equation,
+      giving the exact solutions which lie in <m>[0, 2\pi)</m>
+      <ol cols="2">
+        <li xml:id="solveidentfirst">
+          <p>
+            <m>\sin \left( \theta \right) = \cos \left( \theta \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin \left( 2t \right) = \sin \left( t \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin \left( 2x \right) = \cos \left( x \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( 2\theta \right) = \sin \left( \theta \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( 2t \right) = \cos \left( t \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(2x) = 2 - 5\cos(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3\cos(2 \theta ) + \cos(\theta) + 2 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(2t) = 5\sin(t) - 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3\cos(2x) = \sin(x) + 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2\sec^{2}(\theta) = 3 - \tan(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan^{2}(t) = 1-\sec(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot^{2}(x) = 3\csc(x) - 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(\theta) = 2\csc(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(t) \csc(t)\cot(t) = 6-\cot^{2}(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(2x) = \tan(x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot^{4}(\theta) = 4\csc^{2}(\theta) - 7</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(2t) + \csc^{2}(t) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan^{3} \left( x \right) = 3\tan \left( x \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan^{2} \left( \theta \right) = \dfrac{3}{2} \sec \left( \theta \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos^{3} \left( t \right) = -\cos \left( t \right)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan (2x) - 2\cos(x) = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\csc^{3}(\theta) + \csc^{2}(\theta) = 4\csc(\theta) + 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2\tan(t) = 1 - \tan^{2}(t)</m>
+          </p>
+        </li>
+        <li xml:id="solveidentlast">
+          <p>
+            <m>\tan \left( x \right) = \sec \left( x \right)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="solvemoreidentfirst">Exercises</xref>
+      - <xref ref="solvemoreidentlast"></xref>, solve the equation,
+      giving the exact solutions which lie in <m>[0, 2\pi)</m>
+      <ol cols="2">
+        <li xml:id="solvemoreidentfirst">
+          <p>
+            <m>\sin(6\theta) \cos(\theta) = -\cos(6\theta) \sin(\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(3t)\cos(t) = \cos(3t) \sin(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(2x)\cos(x) + \sin(2x)\sin(x) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(5\theta)\cos(3\theta) - \sin(5\theta)\sin(3\theta) = \dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t) + \cos(t) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(x) + \sqrt{3} \cos(x) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{2} \cos(\theta) - \sqrt{2} \sin(\theta) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{3} \sin(2t) + \cos(2t) = 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(2x) - \sqrt{3} \sin(2x) = \sqrt{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3\sqrt{3}\sin(3\theta) - 3\cos(3\theta) = 3\sqrt{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(3t) = \cos(5t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(4x) = \cos(2x)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(5\theta) = \sin(3\theta)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(5t) = -\cos(2t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(6x) + \sin(x) = 0</m>
+          </p>
+        </li>
+        <li xml:id="solvemoreidentlast">
+          <p>
+            <m>\tan(x) = \cos(x)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="firstinveqn">Exercises</xref>
+      - <xref ref="lastinveqn"></xref>, solve the equation.
+      <ol cols="5">
+        <li xml:id="firstinveqn">
+          <p>
+            <m>\arccos(2x) = \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\pi - 2\arcsin(t) = 2\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4\arctan(3x-1)-\pi=0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>6 \, \text{ arccot } (2t) - 5\pi = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4 \,\text{ arcsec } \left(\frac{x}{2}\right) = \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>12 \,\text{ arccsc } \left(\frac{t}{3}\right) = 2\pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>9 \arcsin^{2}(x) - \pi^2 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>9 \arccos^{2}(t) - \pi^2 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>8 \, \text{ arccot } ^{2}(x)+3\pi^2=10 \pi \, \text{ arccot } (x)</m>
+          </p>
+        </li>
+        <li xml:id="lastinveqn">
+          <p>
+            <m>6 \arctan(t)^2= \pi \arctan(x)+\pi^2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="firstineqfirst">Exercises</xref>
+      - <xref ref="firstineqlast"></xref>, solve the inequality.
+      Express the exact answer in <em>interval</em> notation,
+      restricting your attention to <m>0 \leq x \leq 2\pi</m>.
+      <ol cols="4">
+        <li xml:id="firstineqfirst">
+          <p>
+            <m>\sin \left( x \right) \leq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan \left( t \right) \geq \sqrt{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec^{2} \left( x \right) \leq 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos^{2} \left( t \right) > \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos \left( 2x \right) \leq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin \left( t + \dfrac{\pi}{3} \right) > \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot^{2} \left( x \right) \geq \dfrac{1}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2\cos(t) \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(5x) \geq 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(3t) \leq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec(x) \leq \sqrt{2}</m>
+          </p>
+        </li>
+        <li xml:id="firstineqlast">
+          <p>
+            <m>\cot(t) \leq 4</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="secondineqefirst">Exercises</xref>
+      - <xref ref="secondineqlast"></xref>, solve the inequality.
+      Express the exact answer in <em>interval</em> notation,
+      restricting your attention to <m>-\pi \leq x \leq \pi</m>.
+      <ol cols="2">
+        <li xml:id="secondineqefirst">
+          <p>
+            <m>\cos \left( x \right) > \dfrac{\sqrt{3}}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(t) > \dfrac{1}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sec \left( x \right) \leq 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin^{2} \left( t \right) \lt \dfrac{3}{4}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot \left( x \right) \geq -1</m>
+          </p>
+        </li>
+        <li xml:id="secondineqlast">
+          <p>
+            <m>\cos(t) \geq \sin(t)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="thirdineqfirst">Exercises</xref>
+      - <xref ref="thirdineqlast"></xref>, solve the inequality.
+      Express the exact answer in <em>interval</em> notation,
+      restricting your attention to <m>-2\pi \leq x \leq 2\pi</m>.
+      <ol cols="2">
+        <li xml:id="thirdineqfirst">
+          <p>
+            <m>\csc \left( x \right) > 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos(t) \leq \dfrac{5}{3}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cot(x) \geq 5</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\tan^{2} \left( t \right) \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sin(2x) \geq \sin(x)</m>
+          </p>
+        </li>
+        <li xml:id="thirdineqlast">
+          <p>
+            <m>\cos(2t) \leq \sin(x)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="invineqfirst">Exercises</xref>
+      - <xref ref="invineqlast"></xref>,
+      solve the given inequality.
+      <ol cols="2">
+        <li xml:id="invineqfirst">
+          <p>
+            <m>\arcsin(2x) > 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3 \arccos(t) \leq \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>6 \, \text{ arccot } (7x) \geq \pi</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\pi > 2\arctan(t)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2\arcsin(x)^2 > \pi \arcsin(x)</m>
+          </p>
+        </li>
+        <li xml:id="invineqlast">
+          <p>
+            <m>12 \arccos(t)^2+2\pi^2>11\pi \arccos(t)</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="domainfirst">Exercises</xref>
+      - <xref ref="domainlast"></xref>,
+      express the domain of the function using the extended interval notation.
+      (See <xref ref="TrigDomainEx1">Example</xref>
+      and <xref ref="extendedinterval">Section</xref> for details.)
+    </p>
+    <ol cols="4">
+      <li xml:id="domainfirst">
+        <p>
+          <m>f(x) = \dfrac{1}{\cos(x) - 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \dfrac{\cos(t)}{\sin(t) + 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \sqrt{\tan^{2}(x) - 1}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \sqrt{2 - \sec(t)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = \csc(2x)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \dfrac{\sin(t)}{2 + \cos(t)}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(x) = 3\csc(x) + 4\sec(x)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>f(t) = \ln\left( |\cos(t)| \right)</m>
+        </p>
+      </li>
+      <li xml:id="domainlast">
+        <p>
+          <m>f(x) = \arcsin(\tan(x))</m>
+        </p>
+      </li>
+      <li xml:id="frequencynumberconnection">
+        <ol>
+          <li>
+            <p>
+              With the help of your classmates,
+              determine the number of solutions to <m>\sin(x) = \frac{1}{2}</m> in <m>[0,2\pi)</m>.
+              Then find the number of solutions to <m>\sin(2x) = \frac{1}{2}</m>,
+              <m>\sin(3x) = \frac{1}{2}</m> and <m>\sin(4x) = \frac{1}{2}</m> in <m>[0,2\pi)</m>.
+              What pattern emerges?
+              Explain how this pattern would help you solve equations like <m>\sin(11x) = \frac{1}{2}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Repeat the above exercise focusing on <m>\sin\left(\frac{x}{2}\right) = \frac{1}{2}</m>,
+              <m>\sin\left(\frac{3x}{2}\right) = \frac{1}{2}</m> and <m>\sin\left(\frac{5x}{2}\right) = \frac{1}{2}</m>.
+              What pattern emerges here?
+            </p>
+          </li>
+          <li>
+            <p>
+              Replace sine with tangent and
+              <m>\frac{1}{2}</m> with <m>1</m> and repeat the whole exploration.
+            </p>
+          </li>
+        </ol>
+      </li>
+      SQUASHEDLIST
+      <li>
+        <p>
+          Suppose an object weighing <m>10</m> pounds is suspended from the ceiling by a spring which stretches <m>2</m> feet to its equilibrium position when the object is attached.
+          <ol>
+            <li>
+              <p>
+                Find the spring constant <m>k</m> in
+                <m>\frac{\text{ lbs. } }{\text{ ft. } }</m> and the mass of the object in slugs.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the equation of motion of the object if it is released from <m>1</m> foot <em>below</em>
+                the equilibrium position from rest.
+                When is the first time the object passes through the equilibrium position?
+                In which direction is it heading?
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the equation of motion of the object if it is released from <m>6</m> inches <em>above</em>
+                the equilibrium position with a <em>downward</em>
+                velocity of <m>2</m> feet per second.
+                Find when the object passes through the equilibrium position heading downwards for the third time.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi k}{5}; \; \theta = 0, \dfrac{\pi}{5}, \dfrac{2\pi}{5}, \dfrac{3\pi}{5}, \dfrac{4\pi}{5}, \pi, \dfrac{6\pi}{5}, \dfrac{7\pi}{5}, \dfrac{8\pi}{5}, \dfrac{9\pi}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{\pi}{9} + \dfrac{2\pi k}{3}</m> or <m>t = \dfrac{5\pi}{9} + \dfrac{2\pi k}{3}; \; t = \dfrac{\pi}{9}, \dfrac{5\pi}{9}, \dfrac{7\pi}{9}, \dfrac{11\pi}{9}, \dfrac{13\pi}{9}, \dfrac{17\pi}{9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{2\pi}{3} + \pi k</m> or <m>x = \dfrac{5\pi}{6} + \pi k; \; x = \dfrac{2\pi}{3}, \dfrac{5\pi}{6}, \dfrac{5\pi}{3}, \dfrac{11\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{24} + \dfrac{\pi k}{6}; \; \theta = \dfrac{\pi}{24}, \dfrac{5\pi}{24}, \dfrac{3\pi}{8}, \dfrac{13\pi}{24}, \dfrac{17\pi}{24}, \dfrac{7\pi}{8}, \dfrac{25\pi}{24}, \dfrac{29\pi}{24}, \dfrac{11\pi}{8}, \dfrac{37\pi}{24}, \dfrac{41\pi}{24}, \dfrac{15\pi}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{3\pi}{8} + \dfrac{\pi k}{2}; \; t = \dfrac{3\pi}{8}, \dfrac{7\pi}{8}, \dfrac{11\pi}{8}, \dfrac{15\pi}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\pi}{12} + \dfrac{2\pi k}{3}</m> or <m>x = \dfrac{7\pi}{12} + \dfrac{2\pi k}{3}; \; x = \dfrac{\pi}{12}, \dfrac{7\pi}{12}, \dfrac{3\pi}{4}, \dfrac{5\pi}{4}, \dfrac{17\pi}{12}, \dfrac{23\pi}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{3} + \dfrac{\pi k}{2}; \; \theta = \dfrac{\pi}{3}, \dfrac{5\pi}{6}, \dfrac{4\pi}{3}, \dfrac{11\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{3\pi}{4} + 6\pi k</m> or <m>x = \dfrac{9\pi}{4} + 6\pi k; \; x = \dfrac{3\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = -\dfrac{\pi}{3} + \pi k; \; \theta = \dfrac{2\pi}{3}, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{3\pi}{4} + \pi k</m> or <m>t = \dfrac{13\pi}{12} + \pi k; \; t = \dfrac{\pi}{12}, \dfrac{3\pi}{4}, \dfrac{13\pi}{12}, \dfrac{7\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -\dfrac{19\pi}{12} + 2\pi k</m> or <m>x = \dfrac{\pi}{12} + 2\pi k; \; x = \dfrac{\pi}{12}, \dfrac{5\pi}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{5\pi}{8} + \dfrac{\pi k}{2}; \; t = \dfrac{\pi}{8}, \dfrac{5\pi}{8}, \dfrac{9\pi}{8}, \dfrac{13\pi}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\pi}{3} + \pi k</m> or <m>x = \dfrac{2\pi}{3} + \pi k; \; x = \dfrac{\pi}{3}, \dfrac{2\pi}{3}, \dfrac{4\pi}{3}, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{6} + \pi k</m> or <m>\theta = \dfrac{5\pi}{6} + \pi k; \; \theta = \dfrac{\pi}{6}, \dfrac{5\pi}{6}, \dfrac{7\pi}{6}, \dfrac{11\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{\pi}{4} + \dfrac{\pi k}{2}; \; t = \dfrac{\pi}{4}, \dfrac{3\pi}{4}, \dfrac{5\pi}{4}, \dfrac{7\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\pi}{3} + \pi k</m> or <m>x = \dfrac{2\pi}{3} + \pi k; \; x = \dfrac{\pi}{3}, \dfrac{2\pi}{3}, \dfrac{4\pi}{3}, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{4}, \dfrac{5\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 0, \dfrac{\pi}{3}, \pi, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\pi}{6}, \dfrac{\pi}{2}, \dfrac{5\pi}{6}, \dfrac{3\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{6}, \dfrac{5\pi}{6}, \dfrac{3\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 0, \dfrac{2\pi}{3}, \dfrac{4\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=\dfrac{\pi}{3}, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{2\pi}{3}, \dfrac{4\pi}{3}, \arccos\left(\dfrac{1}{3}\right), 2\pi -\arccos\left(\dfrac{1}{3}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=\dfrac{\pi}{6}, \dfrac{5\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{7\pi}{6}, \dfrac{11\pi}{6}, \arcsin\left(\dfrac{1}{3}\right), \pi - \arcsin\left(\dfrac{1}{3}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta=\dfrac{3\pi}{4}, \dfrac{7\pi}{4}, \arctan\left(\dfrac{1}{2}\right), \pi +\arctan\left(\dfrac{1}{2}\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=0, \dfrac{2\pi}{3}, \dfrac{4\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x=\dfrac{\pi}{6}, \dfrac{5\pi}{6}, \dfrac{\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta=\arctan(2), \pi + \arctan(2)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{\pi}{6}, \dfrac{7\pi}{6}, \dfrac{5\pi}{6}, \dfrac{11\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0, \pi, \dfrac{\pi}{4}, \dfrac{3\pi}{4}, \dfrac{5\pi}{4}, \dfrac{7\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{6}, \dfrac{\pi}{4}, \dfrac{3\pi}{4}, \dfrac{5\pi}{6}, \dfrac{7\pi}{6}, \dfrac{5\pi}{4}, \dfrac{7\pi}{4}, \dfrac{11\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{\pi}{2}, \dfrac{3\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0, \dfrac{\pi}{3}, \dfrac{2\pi}{3}, \pi, \dfrac{4\pi}{3}, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{3}, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{\pi}{2}, \dfrac{3\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\pi}{6}, \dfrac{\pi}{2}, \dfrac{5\pi}{6}, \dfrac{3\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{6}, \dfrac{5\pi}{6}, \dfrac{7\pi}{6}, \dfrac{3\pi}{2}, \dfrac{11\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{\pi}{8}, \dfrac{5\pi}{8}, \dfrac{9\pi}{8}, \dfrac{13\pi}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = 0, \dfrac{\pi}{7}, \dfrac{2\pi}{7}, \dfrac{3\pi}{7}, \dfrac{4\pi}{7}, \dfrac{5\pi}{7}, \dfrac{6\pi}{7}, \pi, \dfrac{8\pi}{7}, \dfrac{9\pi}{7}, \dfrac{10\pi}{7}, \dfrac{11\pi}{7}, \dfrac{12\pi}{7}, \dfrac{13\pi}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=0, \dfrac{\pi}{2}, \pi, \dfrac{3\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{48}, \dfrac{11\pi}{48}, \dfrac{13\pi}{48}, \dfrac{23\pi}{48}, \dfrac{25\pi}{48}, \dfrac{35\pi}{48}, \dfrac{37\pi}{48}, \dfrac{47\pi}{48}, \dfrac{49\pi}{48}, \dfrac{59\pi}{48}, \dfrac{61\pi}{48}, \dfrac{71\pi}{48}, \dfrac{73\pi}{48}, \dfrac{83\pi}{48}, \dfrac{85\pi}{48}, \dfrac{95\pi}{48}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 0, \dfrac{\pi}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{\pi}{2}, \dfrac{11\pi}{6}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{12}, \dfrac{17\pi}{12}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 0, \pi, \dfrac{\pi}{3}, \dfrac{4\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{17 \pi}{24}, \dfrac{41 \pi}{24}, \dfrac{23\pi}{24}, \dfrac{47\pi}{24}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = \dfrac{\pi}{6}, \dfrac{5\pi}{18}, \dfrac{5\pi}{6}, \dfrac{17\pi}{18}, \dfrac{3\pi}{2}, \dfrac{29\pi}{18}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 0, \dfrac{\pi}{4}, \dfrac{\pi}{2}, \dfrac{3\pi}{4}, \pi, \dfrac{5\pi}{4}, \dfrac{3\pi}{2}, \dfrac{7\pi}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0, \dfrac{\pi}{3}, \dfrac{2\pi}{3}, \pi, \dfrac{4\pi}{3}, \dfrac{5\pi}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\theta = 0, \dfrac{\pi}{8}, \dfrac{3\pi}{8}, \dfrac{5\pi}{8}, \dfrac{7\pi}{8}, \pi, \dfrac{9\pi}{8}, \dfrac{11\pi}{8}, \dfrac{13\pi}{8}, \dfrac{15\pi}{8}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{\pi}{7}, \dfrac{\pi}{3}, \dfrac{3\pi}{7}, \dfrac{5\pi}{7}, \pi, \dfrac{9\pi}{7}, \dfrac{11\pi}{7}, \dfrac{5\pi}{3}, \dfrac{13\pi}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 0, \dfrac{2\pi}{7}, \dfrac{4\pi}{7}, \dfrac{6\pi}{7}, \dfrac{8\pi}{7}, \dfrac{10\pi}{7}, \dfrac{12\pi}{7}, \dfrac{\pi}{5}, \dfrac{3\pi}{5}, \pi, \dfrac{7\pi}{5}, \dfrac{9\pi}{5}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \arcsin \left( \dfrac{-1 + \sqrt{5}}{2} \right) \approx 0.6662, \pi - \arcsin \left( \dfrac{-1 + \sqrt{5}}{2} \right) \approx 2.4754</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -\frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=-1</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \frac{2}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t=-\frac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = 2\sqrt{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = 6</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \pm \frac{\sqrt{3}}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \frac{1}{2}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = -1,0</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\sqrt{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \pi, 2\pi \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \dfrac{\pi}{3}, \dfrac{\pi}{2} \right) \cup \left[ \dfrac{4\pi}{3}, \dfrac{3\pi}{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ 0, \dfrac{\pi}{3} \right] \cup \left[ \dfrac{2\pi}{3}, \dfrac{4\pi}{3} \right] \cup \left[ \dfrac{5\pi}{3}, 2\pi \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ 0, \dfrac{\pi}{4} \right) \cup \left( \dfrac{3\pi}{4}, \dfrac{5\pi}{4} \right) \cup \left( \dfrac{7\pi}{4}, 2\pi \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \dfrac{\pi}{4}, \dfrac{3\pi}{4} \right] \cup \left[ \dfrac{5\pi}{4}, \dfrac{7\pi}{4} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ 0, \dfrac{\pi}{2} \right) \cup \left( \dfrac{11\pi}{6}, 2\pi \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( 0, \dfrac{\pi}{3} \right] \cup \left[ \dfrac{2\pi}{3}, \pi \right) \cup \left( \pi, \dfrac{4\pi}{3} \right] \cup \left[ \dfrac{5\pi}{3}, 2\pi \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[0, \dfrac{\pi}{3}\right] \cup \left[\dfrac{5\pi}{3}, 2\pi\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[0, 2\pi]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[0, \dfrac{\pi}{4} \right] \cup \left(\dfrac{\pi}{2}, \dfrac{3\pi}{2}\right) \cup \left[\dfrac{7\pi}{4}, 2\pi\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[\text{ arccot } (4), \pi \right) \cup \left[ \pi + \text{ arccot } (4), 2\pi\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( -\dfrac{\pi}{6}, \dfrac{\pi}{6} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( \arcsin\left(\dfrac{1}{3}\right), \pi - \arcsin\left(\dfrac{1}{3}\right) \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ -\pi, -\dfrac{\pi}{2} \right) \cup \left[ -\dfrac{\pi}{3}, \dfrac{\pi}{3} \right] \cup \left( \dfrac{\pi}{2}, \pi \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( -\dfrac{2\pi}{3}, -\dfrac{\pi}{3} \right) \cup \left( \dfrac{\pi}{3}, \dfrac{2\pi}{3} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( -\pi, -\dfrac{\pi}{4} \right] \cup \left( 0, \dfrac{3\pi}{4} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ -\dfrac{3\pi}{4}, \dfrac{\pi}{4} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( -2\pi, -\dfrac{3\pi}{2} \right) \cup \left( -\dfrac{3\pi}{2}, -\pi \right) \cup \left( 0, \dfrac{\pi}{2} \right) \cup \left( \dfrac{\pi}{2}, \pi \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-2\pi, 2\pi]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-2\pi, \text{ arccot } (5) - 2\pi\right] \cup \left(-\pi, \text{ arccot } (5) - \pi\right] \cup \left(0, \text{ arccot } (5)\right] \cup \left(\pi, \pi + \text{ arccot } (5)\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ -\dfrac{7\pi}{4}, -\dfrac{3\pi}{2} \right) \cup \left( -\dfrac{3\pi}{2}, -\dfrac{5\pi}{4} \right] \cup \left[ -\dfrac{3\pi}{4}, -\dfrac{\pi}{2} \right) \cup \left( -\dfrac{\pi}{2}, -\dfrac{\pi}{4} \right] \cup \left[ \dfrac{\pi}{4}, \dfrac{\pi}{2} \right) \cup \left( \dfrac{\pi}{2}, \dfrac{3\pi}{4} \right] \cup \left[ \dfrac{5\pi}{4}, \dfrac{3\pi}{2} \right) \cup \left( \dfrac{3\pi}{2}, \dfrac{7\pi}{4} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ -2\pi, -\dfrac{5\pi}{3} \right] \cup \left[ -\pi, -\dfrac{\pi}{3} \right] \cup \left[ 0, \dfrac{\pi}{3} \right] \cup \left[ \pi, \dfrac{5\pi}{3} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ -\dfrac{11\pi}{6}, -\dfrac{7\pi}{6} \right] \cup \left[ \dfrac{\pi}{6}, \dfrac{5\pi}{6} \right] \cup, \left\{ -\dfrac{\pi}{2}, \dfrac{3\pi}{2} \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(0, \frac{1}{2}\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[\frac{1}{2}, 1\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, \frac{\sqrt{3}}{7} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[-1,0)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[-1, -\frac{1}{2}\right) \cup \left( \frac{\sqrt{2}}{2}, 1\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left( 2k\pi, (2k+2)\pi \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left( \dfrac{(4k - 1)\pi}{2}, \dfrac{(4k + 3)\pi}{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left\{ \left[ \dfrac{(4k + 1)\pi}{4}, \dfrac{(2k + 1)\pi}{2} \right) \cup \left( \dfrac{(2k + 1)\pi}{2}, \dfrac{(4k + 3)\pi}{4} \right] \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left\{ \left[ \dfrac{(6k - 1)\pi}{3}, \dfrac{(6k + 1)\pi}{3} \right] \cup \left( \dfrac{(4k + 1)\pi}{2}, \dfrac{(4k + 3)\pi}{2} \right) \right\}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left( \dfrac{k\pi}{2}, \dfrac{(k+1)\pi}{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left( \dfrac{k\pi}{2}, \dfrac{(k+1)\pi}{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left( \dfrac{(2k - 1)\pi}{2}, \dfrac{(2k+1)\pi}{2} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\displaystyle \bigcup_{k=-\infty}^{\infty} \left[ \dfrac{(4k - 1)\pi}{4}, \dfrac{(4k+1)\pi}{4} \right]</m>
+        </p>
+      </li>
+      <li>
+        <ol>
+          <li>
+            <p>
+              <m>k = 5 \, \frac{\text{ lbs. } }{\text{ ft. } }</m> and <m>m = \frac{5}{16} \, \text{ slugs }</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x(t) = \sin\left(4t + \frac{\pi}{2}\right)</m>.
+              The object first passes through the equilibrium point when
+              <m>t = \frac{\pi}{8} \approx 0.39</m> seconds after the motion starts.
+              At this time, the object is heading upwards.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>x(t) = \frac{\sqrt{2}}{2} \sin\left(4t + \frac{7\pi}{4}\right)</m>.
+              The object passes through the equilibrium point heading downwards for the third time when <m>t = \frac{17\pi}{16} \approx 3.34</m> seconds.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </subsection>
+</section>

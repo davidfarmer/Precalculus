@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="IntroductiontoFunctions">
+  <title>Introduction to Functions</title>
+  <xi:include  href="FunctionsandtheirRepresentations.ptx"/>
+  <xi:include  href="ConstantandLinearFunctions.ptx"/>
+  <xi:include  href="AbsoluteValueFunctions.ptx"/>
+  <xi:include  href="QuadraticFunctions.ptx"/>
+</chapter>

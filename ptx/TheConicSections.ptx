@@ -1,0 +1,8 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="TheConicSections">
+  <title>The Conic Sections</title>
+  <xi:include  href="IntrotoConics.ptx"/>
+  <xi:include  href="Parabolas.ptx"/>
+  <xi:include  href="Circles.ptx"/>
+  <xi:include  href="Ellipses.ptx"/>
+  <xi:include  href="Hyperbolas.ptx"/>
+</chapter>

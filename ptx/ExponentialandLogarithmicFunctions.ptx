@@ -1,0 +1,9 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ExponentialandLogarithmicFunctions">
+  <title>Exponential and Logarithmic Functions</title>
+  <xi:include  href="ExponentialFunctions.ptx"/>
+  <xi:include  href="LogarithmicFunctions.ptx"/>
+  <xi:include  href="PropertiesofLogarithms.ptx"/>
+  <xi:include  href="ExponentialEquationsandInequalities.ptx"/>
+  <xi:include  href="LogarithmicEquationsandInequalities.ptx"/>
+  <xi:include  href="ExpLogApplications.ptx"/>
+</chapter>

@@ -1,0 +1,8 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="PolarCoordinatesandParametricEquations">
+  <title>Polar Coordinates and Parametric Equations</title>
+  <xi:include  href="PolarCoordinates.ptx"/>
+  <xi:include  href="PolarGraphs.ptx"/>
+  <xi:include  href="PolarComplex.ptx"/>
+  <xi:include  href="PolarConics.ptx"/>
+  <xi:include  href="ParametricEquations.ptx"/>
+</chapter>

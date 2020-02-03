@@ -1,0 +1,995 @@
+<section xml:id="AppLinearEqIneq">
+  <title>Linear Equations and Inequalities</title>
+  <introduction>
+    <p>
+      In the introduction to this chapter we said that we were going to review
+      <q>the concepts,
+      skills and vocabulary we believe are prerequisite to a rigorous,
+      college-level Precalculus course.</q>
+      So far, we've presented a lot of vocabulary and concepts but we haven't done much to refresh the skills needed to survive in the Precalculus wilderness.
+      Thus over the course of the next few sections we will focus our review on the Algebra skills needed to solve basic equations and inequalities,
+      with one brief detour in <xref ref="AppLines">Section</xref>
+      where we discuss graphing lines in the plane.
+      In general, equations and inequalities fall into one of three categories:
+      conditional, identity or contradiction,
+      depending on the nature of their solutions.
+      A <em>conditional</em><idx><h>equation</h><h>conditional</h></idx>
+          <idx><h>inequality</h><h>conditional</h></idx>
+      equation or inequality is true for only
+      <em>certain</em> real numbers.
+      For example,
+      <m>2x+1 = 7</m> is true precisely when <m>x = 3</m>,
+      and <m>w - 3 \leq 4</m> is true precisely when <m>w \leq 7</m>.
+      An <em>identity</em>
+          <idx><h>equation</h><h>identity</h></idx>
+          <idx><h>inequality</h><h>identity</h></idx>
+      is an equation or inequality that is true for
+      <em>all</em> real numbers.
+      For example, <m>2x -3 = 1+x-4+x</m> or <m>2t \leq 2t + 3</m>.
+      A <em>contradiction</em><idx><h>equation</h><h>contradiction</h></idx>
+          <idx><h>inequality</h><h>contradiction</h></idx>
+      is an equation or inequality that is <em>never</em> true.
+      Examples here include <m>3x - 4 = 3x + 7</m> and <m>a - 1 > a + 3</m>.
+    </p>
+    <p>
+      As you may recall,
+      solving an equation or inequality means finding all of the values of the variable,
+      if any exist, which make the given equation or inequality true.
+      This often requires us to manipulate the given equation or inequality from its given form to an easier form.
+      For example,
+      if we're asked to solve <m>3 - 2(x-3) = 7x + 3(x+1)</m>,
+      we get <m>x = \frac{1}{2}</m>,
+      but not without a fair amount of algebraic manipulation.
+      In order to obtain the correct answer(s), however,
+      we need to make sure that whatever maneuvers we apply are reversible in order to guarantee that we maintain a chain of <em>equivalent</em>
+      equations or inequalities.
+      Two equations or inequalities are called
+      <em>equivalent</em><idx><h>equation</h><h>equivalent</h></idx>
+          <idx><h>inequality</h><h>equivalent</h></idx>
+      if they have the same solutions.
+      We summarize these <sq>legal moves</sq> in the box below.
+      <em>Procedures which Generate Equivalent Equations</em>
+      <ul>
+        <li>
+          <p>
+            Add (or subtract) the same real number to (from) both sides of the equation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Multiply (or divide) both sides of the equation by the same
+            <em>nonzero</em> real number.<fn>
+            Multiplying both sides of an equation by <m>0</m> collapses the equation to <m>0 = 0</m>,
+            which doesn't do anybody any good.
+            </fn>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      <em>Procedures which Generate Equivalent Inequalities</em>
+      <ul>
+        <li>
+          <p>
+            Add (or subtract) the same real number to (from) both sides of the equation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Multiply (or divide) both sides of the equation by the same
+            <em>positive</em> real number.<fn>
+            Remember that if you multiply both sides of an inequality by a negative real number,
+            the inequality sign is reversed:
+            <m>3 \leq 4</m>, but <m>(-2)(3) \geq (-2)(4)</m>.
+            </fn>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection xml:id="LinearEqn">
+    <title>Linear Equations</title>
+    <p>
+      The first equations we wish to review are <em>linear</em>
+      equations as defined below.
+    </p>
+    <definition xml:id="lineareqndefn">
+      <statement>
+        <p>
+              <idx><h>equation</h><h>linear</h></idx>
+          An equation is said to be <term>linear</term> in a variable <m>x</m> if it can be written in the form <m>ax = b</m> where <m>a</m> and <m>b</m> are expressions which do not involve <m>x</m> and <m>a \neq 0</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      One key point about <xref ref="lineareqndefn">Definition</xref>
+      is that the exponent on the unknown <sq><m>x</m></sq> in the equation is <m>1</m>,
+      that is <m>x = x^1</m>.
+      Our main strategy for solving linear equations is summarized below.
+      <em>Strategy for Solving Linear Equations</em>
+    </p>
+    <p>
+      In order to solve an equation which is linear in a given variable,
+      say <m>x</m>:
+      <ol>
+        <li>
+          <p>
+            Isolate all of the terms containing <m>x</m> on one side of the equation,
+            putting all of the terms not containing <m>x</m> on the other side of the equation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Factor out the <m>x</m> and divide both sides of the equation by its coefficient.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      We illustrate this process with a collection of examples below.
+    </p>
+    <example xml:id="lineareqnreview">
+      <statement>
+        <p>
+          Solve the following equations for the indicated variable.
+          Check your answer.
+          <ol cols="3">
+            <li>
+              <p>
+                Solve for <m>x</m>: <m>3x - 6 = 7x + 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>t</m>: <m>3 - 1.7t = \dfrac{t}{4}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>a</m>:
+                <m>\dfrac{1}{18}(7 - 4a) + 2 = \dfrac{a}{3} - \dfrac{4-a}{12}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>y</m>: <m>8 y \sqrt{3} + 1 = 7 - \sqrt{12}(5 - y)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>x</m>: <m>\dfrac{3x-1}{2} = x\sqrt{50} + 4</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>y</m>: <m>x(4-y) = 8y</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                The variable we are asked to solve for is <m>x</m> so our first move is to gather all of the terms involving <m>x</m> on one side and put the remaining terms on the other.<fn>
+                In the margin notes, when we speak of operations,
+                e.g.,<sq>Subtract <m>7x</m>,</sq> we mean to subtract <m>7x</m> from
+                <em>both</em> sides of the equation.
+                The <sq>from both sides of the equation</sq> is omitted in the interest of spacing.
+                </fn>
+                <me>
+                  \begin{array}{rclr} 3x - 6 \amp   = \amp  7x + 4 \amp  \\ (3x-6) - 7x + 6 \amp   = \amp  (7x+4) -7x +6 \amp   \text{ Subtract \(7x\), add \(6\) }  \\ 3x - 7x - 6 + 6 \amp  = \amp  7x - 7x + 4 + 6 \amp  \text{ Rearrange terms }  \\ -4x \amp  = \amp  10 \amp  \text{ \(3x-7x = (3-7)x = -4x\) }  \\ \dfrac{-4x}{-4} \amp  = \amp  \dfrac{10}{-4} \amp  \text{ Divide by the coefficient of \(x\) }  \\ x \amp  = \amp  -\dfrac{5}{2} \amp  \text{ Reduce to lowest terms } \end{array}
+                </me>
+                To check our answer, we substitute
+                <m>x = -\frac{5}{2}</m> into each side of the <em>orginial</em>
+                equation to see the equation is satisfied.
+                Sure enough,
+                <m>3\left(-\frac{5}{2}\right) - 6 = -\frac{27}{2}</m> and <m>7\left(-\frac{5}{2}\right) + 4 = -\frac{27}{2}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                In our next example,
+                the unknown is <m>t</m> and we not only have a fraction but also a decimal to wrangle.
+                Fortunately,
+                with equations we can multiply both sides to rid us of  these computational obstacles:
+                <me>
+                  \begin{array}{rclr}  3 - 1.7t  \amp  = \amp   \dfrac{t}{4} \amp  \\ 40(3 - 1.7t)  \amp  = \amp   40 \left(\dfrac{t}{4}\right) \amp  \text{ Multiply by \(40\) }  \\ 40(3) - 40(1.7t)  \amp  = \amp   \dfrac{40 t}{4} \amp  \text{ Distribute }  \\ 120 - 68t \amp  = \amp  10 t \amp  \\ (120 -68t) + 68 t \amp  = \amp  10t + 68 t \amp  \text{ Add \(68t\) to both sides }  \\ 120 \amp  = \amp  78 t \amp  \text{ \(68t + 10t = (68 + 10)t = 78 t\) } \\ \dfrac{120}{78} \amp  = \amp  \dfrac{78t}{78} \amp   \text{ Divide by the coefficient of \(t\) } \\ \dfrac{120}{78} \amp  = \amp  t \amp  \\ \dfrac{20}{13} \amp  = \amp  t \amp  \text{ Reduce to lowest terms } \end{array}
+                </me>
+                To check, we again substitute
+                <m>t = \frac{20}{13}</m> into each side of the original equation.
+                We find that <m>3 - 1.7 \left(\frac{20}{13}\right) = 3 - \left(\frac{17}{10}\right)\left(\frac{20}{13}\right) =   \frac{5}{13}</m> and <m>\frac{(20/13)}{4} = \frac{20}{13} \cdot \frac{1}{4} = \frac{5}{13}</m> as well.
+              </p>
+            </li>
+            <li>
+              <p>
+                To solve this next equation, we begin once again by clearing fractions.
+                The least common denominator here is <m>36</m>:
+                <me>
+                  \begin{array}{rclr}  \dfrac{1}{18}(7 - 4a) + 2 \amp  = \amp  \dfrac{a}{3} - \dfrac{4-a}{12} \amp  \\  36 \left(\dfrac{1}{18}(7 - 4a) + 2\right) \amp  = \amp  36 \left(\dfrac{a}{3} - \dfrac{4-a}{12}\right) \amp  \text{ Multiply by \(36\) }  \\  \dfrac{36}{18} (7-4a) + (36)(2) \amp  = \amp  \dfrac{36a}{3} - \dfrac{36(4-a)}{12} \amp  \text{ Distribute }  \\  2(7-4a)  + 72 \amp  = \amp  12 a - 3(4-a) \amp  \text{ Distribute }  \\  14  - 8a + 72 \amp  = \amp  12a - 12 + 3a \amp  \\  86 - 8a \amp  = \amp  15 a - 12 \amp  \text{ \(12 a + 3a = (12+3)a = 15a\) }  \\  (86-8a)+8a+12 \amp  = \amp  (15a-12) + 8a + 12 \amp  \text{ Add \(8a\) and \(12\) }  \\  86 + 12 - 8a + 8a \amp  = \amp  15a + 8a - 12 + 12 \amp  \text{ Rearrange terms }  \\  98 \amp  = \amp  23 a \amp  \text{ \(15a + 8a = (15+8)a = 23a\) }  \\  \dfrac{98}{23} \amp  = \amp  \dfrac{23a}{23} \amp  \text{ Divide by the coefficient of \(a\) }  \\  \dfrac{98}{23} \amp  = \amp  a \amp \end{array}
+                </me>
+                The check, as usual, involves substituting
+                <m>a = \frac{98}{23}</m> into both sides of the original equation.
+                The reader is encouraged to work through the
+                (admittedly messy)
+                arithmetic.
+                Both sides work out to <m>\frac{199}{138}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The square roots may dishearten you but we treat them just like the real numbers they are.
+                Our strategy is the same:  get everything with the variable
+                (in this case <m>y</m>)
+                on one side,
+                put everything else on the other and divide by the coefficient of the variable.
+                We've added a few steps to the narrative that we would ordinarily omit just to help you see that this equation is indeed linear.
+                <me>
+                  \begin{array}{rclr}  8 y \sqrt{3} + 1 \amp  = \amp  7 - \sqrt{12}(5 - y) \amp  \\  8 y \sqrt{3} + 1 \amp  = \amp  7 - \sqrt{12}(5)  + \sqrt{12} y \amp  \text{ Distribute }  \\  8 y \sqrt{3} + 1 \amp  = \amp  7 - (2 \sqrt{3})5 + (2 \sqrt{3})y \amp  \text{\(\sqrt{12} = \sqrt{4\cdot 3} = 2 \sqrt{3}\)}  \\  8 y \sqrt{3} + 1 \amp  = \amp  7 - 10 \sqrt{3} + 2y \sqrt{3}  \amp   \\  (8 y \sqrt{3} + 1) - 1 - 2y\sqrt{3} \amp  = \amp  (7 - 10 \sqrt{3} + 2y \sqrt{3}) - 1 - 2y\sqrt{3}  \amp  \text{Subtract \(1\) and \(2y\sqrt{3}\)}   \\  8 y \sqrt{3} - 2y\sqrt{3} + 1 - 1 \amp  = \amp  7 - 1 - 10 \sqrt{3} + 2y \sqrt{3}  - 2y\sqrt{3}  \amp  \text{ Rearrange terms }   \\  (8\sqrt{3}-2\sqrt{3})y \amp  = \amp  6 - 10 \sqrt{3}  \amp  \\  6 y \sqrt{3} \amp  = \amp  6 - 10 \sqrt{3}  \amp   \text{ See note below }  \\  \dfrac{6 y \sqrt{3}}{6 \sqrt{3}}  \amp  = \amp  \dfrac{6 - 10 \sqrt{3}}{6 \sqrt{3}}  \amp  \text{Divide \(6\sqrt{3}\)}  \\  y \amp  = \amp  \dfrac{2 \cdot \sqrt{3} \cdot \sqrt{3} - 2 \cdot 5 \cdot \sqrt{3}}{2 \cdot 3 \cdot \sqrt{3}} \amp  \\  y \amp  = \amp  \dfrac{\cancel{2} \cancel{\sqrt{3}}(\sqrt{3} - 5)}{\cancel{2} \cdot 3 \cdot \cancel{\sqrt{3}}} \amp   \text{ Factor and cancel }  \\  y \amp  = \amp  \dfrac{\sqrt{3} - 5}{3} \amp \end{array}
+                </me>
+                In the list of computations above we marked the row <m>6 y \sqrt{3} = 6 - 10 \sqrt{3}</m> with a note.
+                That's because we wanted to draw your attention to this line without breaking the flow of the manipulations.
+                The equation <m>6 y \sqrt{3} = 6 - 10 \sqrt{3}</m> is in fact linear according to <xref ref="lineareqndefn">Definition</xref>:
+                the variable is <m>y</m>,
+                the value of <m>A</m> is <m>6\sqrt{3}</m> and <m>B = 6 - 10 \sqrt{3}</m>.
+                Checking the solution, while not trivial, is good mental exercise.
+                Each side works out to be <m>\frac{27 - 40 \sqrt{3}}{3}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Proceeding as before, we simplify radicals and clear denominators.
+                Once we gather all of the terms containing <m>x</m> on one side and move the other terms to the other,
+                we factor out <m>x</m> to identify its coefficient then divide to get our answer.
+                <me>
+                  \begin{array}{rclr}  \dfrac{3x-1}{2} \amp  = \amp   x\sqrt{50} + 4 \amp  \\  \dfrac{3x-1}{2} \amp  = \amp   5x\sqrt{2} + 4 \amp  \text{\(\sqrt{50} = \sqrt{25 \cdot 2}\)}  \\  2\left(\dfrac{3x-1}{2}\right) \amp  = \amp  2 \left(5x\sqrt{2} + 4 \right) \amp  \text{ Multiply by \(2\) }  \\  \dfrac{\cancel{2} \cdot (3x-1)}{\cancel{2}} \amp  = \amp  2 (5x \sqrt{2}) + 2\cdot 4 \amp  \text{ Distribute }  \\  3x - 1 \amp  = \amp  10x \sqrt{2} + 8 \amp  \\  (3x-1) - 10x\sqrt{2} + 1 \amp  = \amp  (10x \sqrt{2} + 8) - 10x\sqrt{2} + 1 \amp  \text{Subtract \(10x\sqrt{2}\),  add \(1\)}  \\  3x - 10x\sqrt{2} - 1 + 1 \amp  = \amp  10x\sqrt{2} - 10x\sqrt{2} + 8 + 1 \amp  \text{ Rearrange terms }  \\  3x - 10x\sqrt{2} \amp  = \amp  9 \amp  \\  (3 - 10\sqrt{2}) x \amp  = \amp  9 \amp  \text{ Factor }  \\  \dfrac{(3 - 10\sqrt{2}) x}{3 - 10\sqrt{2}} \amp  = \amp  \dfrac{9}{3 - 10\sqrt{2}} \amp  \text{ Divide by the coefficient of \(x\) }  \\  x \amp  = \amp  \dfrac{9}{3 - 10\sqrt{2}} \amp \end{array}
+                </me>
+                The reader is encouraged to check this solution - it isn't as bad as it looks if you're careful!
+                Each side works out to be <m>\dfrac{12 + 5\sqrt{2}}{3-10\sqrt{2}}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If we were instructed to solve our last equation for <m>x</m>,
+                we'd be done in one step:
+                divide both sides by <m>(4-y)</m> - assuming <m>4-y \neq 0</m>, that is.
+                Alas, we are instructed to solve for <m>y</m>,
+                which means we have some more work to do.
+                <me>
+                  \begin{array}{rclr}  x(4-y) \amp  = \amp  8y \amp  \\  4x - xy \amp  = \amp  8y \amp  \text{ Distribute }  \\  (4x - xy) + xy \amp  = \amp  8y + xy \amp  \text{ Add \(xy\) }  \\  4x \amp  = \amp  (8+x)y \amp  \text{ Factor } \end{array}
+                </me>
+                In order to finish the problem,
+                we need to divide both sides of the equation by the coefficient of <m>y</m> which in this case is <m>8+x</m>.
+                This expression contains a variable so we need to stipulate that we may perform this division only if <m>8 + x \neq 0</m>, or,
+                in other words, <m>x \neq -8</m>.
+                Hence, we write our solution as:
+                <me>
+                  y = \dfrac{4x}{8+x},  \text{ provided \(x \neq -8\) }
+                </me>
+                What happens if <m>x = -8</m>?
+                Substituting <m>x = -8</m> into the original equation gives
+                <m>(-8)(4-y) = 8y</m> or <m>-32 + 8y = 8y</m>.
+                This reduces to <m>-32 = 0</m>, which is a contradiction.
+                This means there is no solution when <m>x = -8</m>,
+                so we've covered all the bases.
+                Checking our answer requires some Algebra we haven't reviewed yet in this text,
+                but the necessary skills <em>should</em>
+                be lurking somewhere in the mathematical mists of your mind.
+                The adventurous reader is invited to plug
+                <m>y = \frac{4x}{8 + x}</m> into the original equation and show that both sides work out to <m>\frac{32x}{x + 8}</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="LinearInequal">
+    <title>Linear Inequalities</title>
+    <p>
+      We now turn our attention to linear inequalities.
+      Unlike linear equations which admit at most one solution,
+      the solutions to linear inequalities are generally intervals of real numbers.
+      While the solution strategy for solving linear inequalities is the same as with solving linear equations,
+      we need to remind ourselves that,
+      should we decide to multiply or divide both sides of an inequality by a
+      <em>negative</em> number,
+      we need to reverse the direction of the inequality.
+      (See the footnote in the box on <xref ref="equivalenteqnineq">page</xref>.)
+      In the example below,
+      we work not only some <sq>simple</sq> linear inequalities in the sense there is only one inequality present,
+      but also some <sq>compound</sq> linear inequalities which require us to revisit the notions of intersection and union.
+    </p>
+    <example xml:id="linearineqreview">
+      <statement>
+        <p>
+          Solve the following inequalities for the indicated variable.
+          <ol cols="3">
+            <li>
+              <p>
+                Solve for <m>x</m>: <m>\dfrac{7-8x}{2} \geq 4x + 1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>y</m>: <m>\dfrac{3}{4} \leq \dfrac{7-y}{2} \lt 6</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>t</m>: <m>2t-1 \leq 4-t \lt 6t+1</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>x</m>: <m>5 + \sqrt{7} x \leq 4x + 1 \leq 8</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for <m>w</m>:
+                <m>2.1 - 0.01w \leq -3</m> or <m>2.1-0.01w \geq 3</m>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                We begin by clearing denominators and gathering all of the terms containing <m>x</m> to one side of the inequality and putting the remaining terms on the other.
+                <me>
+                  \begin{array}{rclr}  \dfrac{7-8x}{2} \amp  \geq \amp  4x + 1 \amp  \\  2\left(\dfrac{7-8x}{2}\right) \amp  \geq \amp  2(4x + 1) \amp  \text{ Multiply by \(2\) }  \\  \dfrac{\cancel{2}(7-8x)}{\cancel{2}} \amp  \geq \amp  2(4x) + 2(1) \amp  \text{ Distribute }  \\  7 - 8x \amp  \geq \amp  8x + 2 \amp  \\  (7-8x) + 8x-2 \amp  \geq \amp  8x+2 + 8x -2 \amp  \text{ Add \(8x\), subtract \(2\) }  \\  7 - 2 - 8x + 8x \amp  \geq \amp  8x + 8x + 2 - 2 \amp  \text{ Rearrange terms }  \\  5 \amp  \geq \amp   16x \amp  \text{ \(8x + 8x = (8+8)x = 16x\) }  \\  \dfrac{5}{16} \amp  \geq \amp  \dfrac{16x}{16} \amp  \text{ Divide by the coefficient of \(x\) }  \\  \dfrac{5}{16} \amp  \geq \amp  x \amp \end{array}
+                </me>
+                We get <m>\frac{5}{16} \geq x</m> or,
+                said differently,  <m>x \leq \frac{5}{16}</m>.
+                We express this set<fn>
+                Using set-builder notation,
+                our <sq>set</sq> of solutions here is <m>\{ x \, | \, x \leq \frac{5}{16} \}</m>.
+                </fn> of real numbers as  <m>\left(-\infty, \frac{5}{16}\right]</m>.
+                Though not required to do so,
+                we could partially check our answer by substituting
+                <m>x = \frac{5}{16}</m> and a few other values in our solution set (<m>x =0</m>,
+                for instance) to make sure the inequality holds.
+                (It also isn't a bad idea to choose an <m>x > \frac{5}{16}</m>,
+                say <m>x = 1</m>, to see that the inequality
+                <em>doesn't</em> hold there.)
+                The only real way to actually show that our answer works for <em>all</em>
+                values in our solution set is to start with
+                <m>x \leq \frac{5}{16}</m> and reverse all of the steps in our solution procedure to prove it is equivalent to our original inequality.
+              </p>
+            </li>
+            <li>
+              <p>
+                We have our first example of a <sq>compound</sq> inequality.
+                The solutions to
+                <me>
+                  \dfrac{3}{4} \leq \dfrac{7-y}{2} \lt  6
+                </me>
+                must satisfy
+                <me>
+                  \dfrac{3}{4} \leq \dfrac{7-y}{2} \qquad \text{\underline{and}}  \qquad \dfrac{7-y}{2} \lt  6
+                </me>
+                One approach is to solve each of these inequalities separately,
+                then intersect their solution sets.
+                While this method works
+                (and will be used later for more complicated problems),
+                our variable <m>y</m> appears only in the middle expression so we can proceed by working both inequalities at once:
+                <me>
+                  \begin{array}{rclr}  \dfrac{3}{4} \leq \amp  \dfrac{7-y}{2} \amp  \lt  6 \amp  \\  4\left(\dfrac{3}{4} \right) \leq \amp  4\left( \dfrac{7-y}{2}\right) \amp  \lt  4(6) \amp  \text{ Multiply by \(4\) }  \\  \dfrac{\cancel{4} \cdot 3}{\cancel{4}} \leq \amp  \dfrac{\cancelto{2}{4}(7-y)}{\cancel{2}} \amp   \lt  24 \amp  \\  3 \leq \amp  2(7-y) \amp  \lt  24 \amp  \\  3 \leq \amp  2(7)-2y \amp  \lt  24 \amp  \text{ Distrbute } \\  3 \leq \amp  14-2y \amp  \lt  24 \amp  \\  3 -14 \leq \amp  (14-2y) - 14 \amp  \lt  24 - 14 \amp  \text{ Subtract \(14\) } \\  -11 \leq \amp  -2y \amp  \lt  10 \amp  \\  \dfrac{-11}{-2} \geq \amp  \dfrac{-2y}{-2} \amp  > \dfrac{10}{-2} \amp  \text{ Divide by the coefficient of \(y\) }  \\ [-5pt] \amp                  \amp                   \amp  \text{ Reverse inequalities }  \\ [-3pt]  \dfrac{11}{2}  \geq \amp  y \amp  > -5 \amp \end{array}
+                </me>
+                Our final answer is <m>\frac{11}{2} \geq y > -5</m>, or,
+                said differently,  <m>-5 \lt  y \leq \frac{11}{2}</m>.
+                In interval notation, this is <m>\left( -5, \frac{11}{2} \right]</m>.
+                We could check the reasonableness of our answer as before,
+                and the reader is encouraged to do so.
+              </p>
+            </li>
+            <li>
+              <p>
+                We have another compound inequality and what distinguishes this one from our previous example is that <sq><m>t</m></sq> appears on both sides of both inequalities.
+                In this case,
+                we need to create two separate inequalities and find all of the real numbers <m>t</m> which satisfy both <m>2t-1 \leq 4-t</m>
+                <em>and</em> <m>4-t \lt 6t + 1</m>.
+                The first inequality, <m>2t-1 \leq 4-t</m>,
+                reduces to <m>3t \leq 5</m> or <m>t \leq \frac{5}{3}</m>.
+                The second inequality, <m>4-t \lt 6t+1</m>,
+                becomes <m>3 \lt 7t</m> which reduces to <m>t > \frac{3}{7}</m>.
+                Thus our solution is all real numbers <m>t</m> with <m>t \leq \frac{5}{3}</m> <em>and</em>
+                <m>t > \frac{3}{7}</m>, or,
+                writing this as a compound inequality,
+                <m>\frac{3}{7} \lt t \leq \frac{5}{3}</m>.
+                Using interval notation,<fn>
+                If we intersect the solution sets of the two individual inequalities,
+                we get the answer, too:
+                <m>\left(-\infty, \frac{5}{3}\right] \cap \left(\frac{3}{7}, \infty\right) = \left( \frac{3}{7}, \frac{5}{3} \right]</m>.
+                </fn> we express our solution as <m>\left( \frac{3}{7}, \frac{5}{3} \right]</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As before, with this inequality  we have no choice but to solve each inequality individually and intersect the solution sets.
+                Starting with the leftmost inequality,
+                we first note that the in the term <m>\sqrt{7} x</m>,
+                the vinculum of the square root extends over the <m>7</m> only,
+                meaning the <m>x</m> is not part of the radicand.
+                In order to avoid confusion,
+                we will write <m>\sqrt{7} x</m> as <m>x \sqrt{7}</m>.
+                <me>
+                  \begin{array}{rclr}  5 + x\sqrt{7}  \amp  \leq \amp  4x+1  \amp  \\  (5 + x\sqrt{7} ) -4x  - 5 \amp  \leq\amp   (4x + 1) - 4x - 5  \amp  \text{ Subtract \(4x\) and \(5\) }  \\  x\sqrt{7} - 4x + 5 - 5 \amp  \leq \amp  4x - 4x + 1 - 5 \amp  \text{ Rearrange terms }  \\  x(\sqrt{7} - 4) \amp  \leq \amp  -4 \amp  \text{ Factor } \end{array}
+                </me>
+                At this point,
+                we need to exercise a bit of caution because the number <m>\sqrt{7} - 4</m> is negative.<fn>
+                Since <m>4 \lt  7 \lt  9</m>,
+                it stands to reason that <m>\sqrt{4} \lt  \sqrt{7} \lt  \sqrt{9}</m> so <m>2 \lt  \sqrt{7} \lt  3</m>.
+                </fn> When we divide by it the inequality reverses:
+                <me>
+                  \begin{array}{rclr}  x(\sqrt{7} - 4) \amp  \leq \amp  -4 \amp  \\  \dfrac{x(\sqrt{7}-4)}{\sqrt{7}-4} \amp  \geq \amp  \dfrac{-4}{\sqrt{7} - 4} \amp  \text{ Divide by the coefficient of \(x\) }  \\ [-8pt] \amp       \amp                           \amp  \text{ Reverse inequalities }  \\ [-3pt]  x \amp  \geq \amp  \dfrac{-4}{\sqrt{7} - 4} \amp  \\  x \amp  \geq \amp  \dfrac{-4}{-(4 - \sqrt{7})} \amp   \\  x \amp  \geq \amp  \dfrac{4}{4 -\sqrt{7}} \amp \end{array}
+                </me>
+                We're only half done because we still have the rightmost inequality to solve.
+                Fortunately, that one seems rather mundane:
+                <m>4x+1 \leq 8</m> reduces to
+                <m>x \leq \frac{7}{4}</m> without too much incident.
+                Our solution is <m>x \geq \frac{4}{4-\sqrt{7}}</m> <em>and</em>
+                <m>x \leq \frac{7}{4}</m>.
+                We may be tempted to write
+                <m>\frac{4}{4-\sqrt{7}} \leq x \leq \frac{7}{4}</m> and call it a day but that would be nonsense!
+                To see why, notice that <m>\sqrt{7}</m> is between <m>2</m> and <m>3</m> so <m>\frac{4}{4 - \sqrt{7}}</m> is between
+                <m>\frac{4}{4-2} = 2</m> and <m>\frac{4}{4-3} = 4</m>.
+                In particular, we get <m>\frac{4}{4 - \sqrt{7}} > 2</m>.
+                On the other hand, <m>\frac{7}{4} \lt  2</m>.
+                This means that our <sq>solutions</sq> have to be simultaneously  greater than <m>2</m> AND less than <m>2</m>  which is impossible.
+                Therefore, this compound inequality has no solution,
+                which means we did all that work for nothing.<fn>
+                Much like how people walking on treadmills get nowhere.
+                Math is the endurance cardio of the brain, folks!
+                </fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                Our last example is yet another compound inequality but here,
+                instead of the two inequalities being connected with the conjunction <sq><em>and</em></sq>,
+                they are connected with <sq><em>or</em></sq>,
+                which indicates that we need to find the
+                <em>union</em> of the results of each.
+                Starting with <m>2.1 - 0.01w \leq -3</m>,
+                we get <m>-0.01 w \leq -5.1</m>, which gives<fn>
+                Don't forget to flip the inequality!
+                </fn> <m>w \geq 510</m>.
+                The second inequality, <m>2.1-0.01w \geq 3</m>,
+                becomes <m>-0.01w \geq 0.9</m>,
+                which reduces to <m>w \leq -90</m>.
+                Our solution set consists of all real numbers <m>w</m> with <m>w \geq 510</m>
+                <em>or</em> <m>w \leq -90</m>.
+                In interval notation, this is <m>(-\infty, -90] \cup [510, \infty)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="ExercisesforAppLinearEqIneq">
+    <title>Exercises</title>
+    <p>
+      In <xref ref="lineareqfirst">Exercises</xref>
+      - <xref ref="lineareqlast"></xref>,
+      solve the given linear equation and check your answer.
+      <ol cols="3">
+        <li xml:id="lineareqfirst">
+          <p>
+            <m>3x - 4 = 2 - 4(x-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{3 - 2t}{4} = 7t+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{2(w-3)}{5} = \dfrac{4}{15} - \dfrac{3w+1}{9}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-0.02y + 1000 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{49w - 14}{7}= 3w - (2-4w)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>7 - (4-x) = \dfrac{2x-3}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3 t\sqrt{7} + 5 = 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\sqrt{50} y = \dfrac{6 - \sqrt{8} y}{3}</m>
+          </p>
+        </li>
+        <li xml:id="lineareqlast">
+          <p>
+            <m>4 - (2x+1) = \dfrac{x \sqrt{7}}{9}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="literalexfirst">equations</xref>
+      - <xref ref="literalexlast"></xref>,
+      solve each equation for the indicated variable.
+      <ol cols="2">
+        <li xml:id="literalexfirst">
+          <p>
+            Solve for <m>y</m>: <m>3x+2y = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>x</m>: <m>3x+2y = 4</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>C</m>: <m>F = \dfrac{9}{5} C + 32</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>x</m>: <m>p = -2.5x + 15</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>x</m>: <m>C = 200x + 1000</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>y</m>: <m>x= 4(y+1) + 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>w</m>: <m>vw - 1 = 3v</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>v</m>: <m>vw - 1 = 3v</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>y</m>: <m>x(y-3) = 2y+1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>\pi</m>: <m>C = 2\pi r</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>V</m>: <m>PV = nRT</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>R</m>: <m>PV = nRT</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>g</m>: <m>E = mgh</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            Solve for <m>m</m>: <m>E = \dfrac{1}{2} mv^2</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In <xref ref="subex1">Exercises</xref> - <xref ref="subex2"></xref>,
+      the subscripts on the variables have no intrinsic mathematical meaning;
+      they're just used to distinguish one variable from another.
+      In other words,
+      treat <sq><m>P_{\text{ \tiny \(1\) } }</m></sq> and <sq><m>P_{\text{ \tiny \(2\) } }</m></sq> as two different variables as you would <sq><m>x</m></sq> and <sq><m>y</m>.</sq> (The same goes for <sq><m>x</m></sq> and <sq><m>x_{\text{ \tiny \(0\) } }</m>,</sq> etc.)
+    </p>
+    <ol cols="3">
+      <li xml:id="subex1">
+        <p>
+          Solve for <m>V_{\text{ \tiny \(2\) } }</m>:
+          <m>P_{\text{ \tiny \(1\) } }V_{\text{ \tiny \(1\) } } = P_{\text{ \tiny \(2\) } }V_{\text{ \tiny \(2\) } }</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve for <m>t</m>: <m>x = x_{\text{ \tiny \(0\) } } + at</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          Solve for <m>x</m>:
+          <m>y-y_{\text{ \tiny \(0\) } } = m(x -x_{\text{ \tiny \(0\) } })</m>
+        </p>
+      </li>
+      <li xml:id="subex2">
+        <p>
+          Solve for <m>T_{\text{ \tiny \(1\) } }</m>:
+          <m>q = mc(T_{\text{ \tiny \(2\) } } -T_{\text{ \tiny \(1\) } })</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          With the help of your classmates,
+          find values for <m>c</m> so that the equation:
+          <m>2x - 5c = 1 - c(x+2)</m>
+        </p>
+        <ol>
+          <li>
+            <p>
+              has <m>x = 42</m> as a solution.
+            </p>
+          </li>
+          <li>
+            <p>
+              has no solution (that is, the equation is a contradiction.)
+            </p>
+          </li>
+        </ol>
+        Is it possible to find a value of <m>c</m> so the equation is an identity?
+        Explain.
+      </li>
+    </ol>
+    <p>
+      In <xref ref="linineqnexfirst">Exercises</xref>
+      - <xref ref="linineqnexlast"></xref>,
+      solve the given inequality.
+      Write your answer using interval notation.
+      <ol cols="6">
+        <li xml:id="linineqnexfirst">
+          <p>
+            <m>3 - 4x \geq 0</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2t - 1 \lt 3 - (4t-3)</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{7 -y}{4} \geq 3y + 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>0.05R + 1.2 > 0.8 - 0.25R</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>7 - (2-x) \leq x+3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\dfrac{10m+1}{5} \geq 2m - \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>x \sqrt{12} - \sqrt{3} > \sqrt{3} x + \sqrt{27}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2t - 7 \leq \sqrt[3]{18} t</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>117y \geq y\sqrt{2} - 7y \sqrt[4]{8}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{1}{2} \leq 5x - 3 \leq \dfrac{1}{2}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-\dfrac{3}{2} \leq \dfrac{4 - 2t}{10} \lt \dfrac{7}{6}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>-0.1 \leq \dfrac{5-x}{3} - 2 \lt 0.1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2y \leq 3-y \lt 7</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>3x \geq 4-x \geq 3</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>6-5t > \dfrac{4t}{3} \geq t - 2</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>2x+1 \leq -1</m> \text{ or } <m>2x+1 \geq 1</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>4-x \leq 0</m> \text{ or } <m>2x+7 \lt x</m>
+          </p>
+        </li>
+        <li xml:id="linineqnexlast">
+          <p>
+            <m>\dfrac{5-2x}{3} > x</m> \text{ or } <m>2x + 5 \geq 1</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Answers</title>
+    <ol cols="2">
+      <li>
+        <p>
+          <m>x = \dfrac{18}{7}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\dfrac{1}{30}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = \dfrac{61}{33}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = 50000</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          All real numbers.
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = -\dfrac{5}{3\sqrt{7}} = -\dfrac{5\sqrt{7}}{21}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{6}{17\sqrt{2}} = \dfrac{3 \sqrt{2}}{17}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{27}{18+\sqrt{7}}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{4 - 3x}{2}</m> or <m>y = -\dfrac{3}{2}x + 2</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{4 - 2y}{3}</m> or <m>x = -\dfrac{2}{3} y + \dfrac{4}{3}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>C = \dfrac{5}{9}(F - 32)</m> or <m>C = \dfrac{5}{9} F - \dfrac{160}{9}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{p - 15}{-2.5} = \dfrac{15-p}{2.5}</m> or <m>x = -\dfrac{2}{5} p + 6</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{C - 1000}{200}</m> or <m>x = \dfrac{1}{200} C - 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{x-7}{4}</m> or <m>y = \dfrac{1}{4} x - \dfrac{7}{4}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>w = \dfrac{3v+1}{v}</m>, provided <m>v \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>v = \dfrac{1}{w-3}</m>, provided <m>w \neq 3</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>y = \dfrac{3x+1}{x-2}</m>, provided <m>x \neq 2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\pi = \dfrac{C}{2r}</m>, provided <m>r \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V = \dfrac{nRT}{P}</m>, provided <m>P \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>R = \dfrac{PV}{nT}</m>, provided <m>n \neq 0, T \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>g = \dfrac{E}{mh}</m>, provided <m>m \neq 0, h \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>m = \dfrac{2E}{v^2}</m>, provided <m>v^2 \neq 0</m>
+          (so <m>v \neq 0</m>).
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>V_{\text{ \tiny \(2\) } } = \dfrac{P_{\text{ \tiny \(1\) } }V_{\text{ \tiny \(1\) } }}{P_{\text{ \tiny \(2\) } }}</m>,
+          provided <m>P_{\text{ \tiny \(2\) } } \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>t = \dfrac{x - x_{\text{ \tiny \(0\) } }}{a}</m>, provided <m>a \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>x = \dfrac{y-y_{\text{ \tiny \(0\) } } + mx_{\text{ \tiny \(0\) } }}{m}</m> or
+          <m>x = x_{\text{ \tiny \(0\) } } + \dfrac{y-y_{\text{ \tiny \(0\) } }}{m}</m>,
+          provided <m>m \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>T_{\text{ \tiny \(1\) } } = \dfrac{mcT_{\text{ \tiny \(2\) } } - q}{mc}</m> or <m>T_{\text{ \tiny \(1\) } } = T_{\text{ \tiny \(2\) } } - \dfrac{q}{mc}</m>,
+          provided <m>m \neq 0, c \neq 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, \dfrac{3}{4}\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\infty, \dfrac{7}{6} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left( -\infty, \dfrac{3}{13}\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\dfrac{4}{3}, \infty\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          No solution.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(4, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \dfrac{7}{2 - \sqrt[3]{18}}, \infty\right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>[0, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[ \dfrac{1}{2}, \dfrac{7}{10}\right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\dfrac{23}{6}, \dfrac{19}{2} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left(-\dfrac{13}{10}, -\dfrac{7}{10} \right]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-4,1]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\{1 \} = [1,1]</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\left[-6, \dfrac{18}{19} \right)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -1] \cup [0, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, -7) \cup [4, \infty)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(-\infty, \infty)</m>
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>
